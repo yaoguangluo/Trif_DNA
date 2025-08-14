@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第十四章_DNA搜索与筛选应用
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/>
+    <br/>应用
+    <br/>
+    <br/>DNN分词词汇花. refer page 下册80~
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_5.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>三维词汇花例子
+    <br/>
+    <br/>DNN 词汇花综合筛选观测: 通过选出一篇数据文字, 进行DNN计算后得到紫色tag标识,
+    然后在三维词汇花组件中进行相应的功能计算展示输出, 并进行主界面的筛选组件过滤和筛选输出结果.
+    <br/>
+    <br/>DNA搜索的应用实现
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_6.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>在没有设计元基之前, 我便设计了多种完整的数据聚类搜索函数. 我一直在思考,
+    (稍后我会加非元基搜索的多种实例展示. ) 如果加入了元基计算, 要达到怎么样一种预期效果,
+    快, 广, 准, 是必要的. 其次？ 我想到很多, 但终究不如实践与推导. 于是我设计
+    了这个计算模式的版本如图. 效果不错, 但很粗糙, 因为是我的第一代元基搜索. 我一会一直优化它.
+    这个两张搜索 关于风湿性风寒, 筛选出了白芷, 我结合中医看了下, 筛出的都是君药, 我之后会
+    按书上的意思推选出臣药 出来. 让计算观测功能更加丰富, 严谨, 准确
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_7.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>简单介绍下中药本草页面的逻辑上面横条是全局栏目, 用于 搜索, 筛选, 观测和全局控制,
+    中药页的上部分是一个六行显 示的表格, 默认排序输出价值元组. 下面则是数据观测部分, 从一维
+    的线性文本, 2 维的图片数据, 到三维的属性花, 组成了数据 分析的核心部分. 现在, 经络和性味
+    的元基筛选已经成功, 如上图展示
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_8.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>上图通过无关性味的E 元基过滤后, 搜索麻风 列出的中医方剂进行 DNN 深度分析价值词汇,
+    然后进行三维属性聚类观测, 此时, 中医药页面显示其相关对症的有价值中药列次在表格中方便查阅.
+    之后这元基变换函数我会升级在数据变换 API中. 同 时, 上面的应用是中医方剂和中医本草两个页面
+    进行耦合操作, 然后在三维图中观测, 养疗经的全局分类依次打分排序体系支持多种 复杂的分析操作.
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_9.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>上面这张图的原理是点击方剂元组后, DNN 展示的数据词汇(根据不同的精度, 词汇数目可以控制)
+    进行分类, 分类后的第一 层展开, 开始进行第二层功效搜索, 进行聚类. 这样一分一聚 就生成了DNN
+    三维词汇花的骨架结构. 如图 乌燕一药含有 苦参, 苦参有治疗痈肿的功效.
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_10.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>上面这张图方便在药物聚类搜索后查看其主要禁忌, 于是我设计了这个功能组件.
+    之后禁忌属性也会全部语义方式元基肽化.
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_11.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>上面这张图恰好与 DNN 观测相反. 我将乌燕一方剂进行主要功效拓扑, 然后每一个有价值功效分类进行
+    相关对症的药物聚 类展示, 如图, 乌燕对传染性疾病有价值, 传染病对症的药物有熊胆(黄疸类肺皮血肝胆部
+    等疾病). 入手足疾病, 桂花治疗手痛. 如果关联有疑惑, 于是可以通过中药页表格搜索进行持续傻瓜化搜索.
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_12.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>第四节DNA筛选的动机
+    <br/>
+    <br/>上面这张图, 通过元基的经络和性味筛选后, 再过滤风险中的标识文字, 于是禁忌三维花开始清晰.
+    通常一味药的功效越 强, 毒性就越大, 禁忌就越多, 于是禁忌观测将这类危险级别高的药物在这里
+    进行了归纳观测.
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_13.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>上面这张图为 搜索白术后出现的 DNN 价值词汇, 如果其中词汇属于功效则进行第二次对症药物搜索,
+    因为搜索的数据太 多, 为了方便清晰显示, 于是进行 T 坐标进行时间轴控制避免花屏
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_14.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>上面这张图展示了白术的属性列分类进行 PCA(主要成份显示)显示. 如白术, 进行禁忌, 功效,
+    用量, 性味进行分类扩展, 其功效在进行 PCA 扩展 益气, 健脾, 治疗溃疡, 在搭配上可以和茯苓
+    黄芩入伍等. 在用量上一般在 6-12 克炮制中药.
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_15.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>上图的西药 DNN 关联, 不多解释了, 西药的数据类似 中药方剂页 DNN 功效聚类显示, 同理.
+    上图点击肿痛按胶囊, 图中显示有治疗肿胀作用, 而肿胀的对症西药也有很多, 如甘露醇, 醇类,
+    激素类等, 该药有缓解疼痛, 治疗溃疡等作用, 其对症药物也有很多显示, 如图, 方便职业医生的查询思维拓展.
+    <br/>
+    <br/>第五节 DNA筛选的应用需求
+    <br/><img class="banner_img" style="width: 100%" src="../images/5_7108/14/14_16.jpg"
+              alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>目前养疗经采用的元基筛选属于混合语义元基进行单元基筛选. 之后, 随着语义语料库的
+    丰富和全部文字肽化, 准备 进行三元基词汇筛选
+    <br/>
+    <br/>Implements of 3-Dimensional DNN lexical flowers.
+    <br/>
+    <br/>PAGE258, the 3-Dimensional and observational lexical flowers,
+    where showed POS arrangement, PCA of text mining, and word
+    segmentation. First input a text do the word segments, then did a word
+    statistic, and the Deta parser mind-read procedures, to find Its DNN
+    tokens, and rendered the PCA lexicons by each DNN token's score.
+    Finally built a mapped result to respond to the lexical flower's
+    engine, YangLiaoJing, and prepare to show Its 3-Dimensional
+    demo-reflections by using JOGL 3D API. Not only the mapped result could
+    be filtered by scale vernier, also the rendered lexicons flower could
+    be. The scale vernier could explain more factors here the schedule
+    controlled the amounts of lexicons, nodes of lexicons, and classes of
+    lexicons. Amounts of lexicons means petal clusters under the same
+    functional lexicons, such like an Umbrena, for example '轻身', '止渴', '明目'
+    under '苦参' etc. Nodes of lexicons means a classification of the
+    determined attributes where expanded as a blooming flowers, for
+    example '苦参','酒' etc. Classes of lexicons means a whole layers of this
+    lexicon flower, for example '乌燕病名'. The scale vernier could make more
+    procedures of scheduling, filtering, abstracting and expanding etc.
+    <br/>
+    <br/>The author YaoguangLuo 稍后优化语法
+    <br/>
+
+</div>
+</body>
