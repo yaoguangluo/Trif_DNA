@@ -42,6 +42,7 @@ DNA十六元基索引PDE工程
 ###### 4 DNA元基催化与肽计算 英文书籍编码扩展 对应 SRC/WAP HTML文件
 ###### 5 其他语言翻译扩展 对应 GCC EXTENSION 文件夹
 ###### 6 OSGI 语言节点 插件统一化工程 见 tinshell node
+###### 7 语料库 见 DetaResources lyg文件集
 &nbsp;
 &nbsp;
 # --索引目录--
