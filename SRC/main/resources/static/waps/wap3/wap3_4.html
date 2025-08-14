@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第三章 德塔 ETL 人工智能可视化数据流分析引擎系统.
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/>
+    <br/>基础应用: 元基催化与肽计算 编译机的神经元模拟机
+    <br/>
+
+    <br/>ETL unicorn 计算节点的设计描述
+    <br/>
+    <br/>作者一开始设计etl节点已经有了基于knime的sdk应用近3年的实际研发经验, 当时因为knime
+    2009年 只支持表格 输入与输出, 不支持object传输, 于是作者设计etl的 unicorn pipe line
+    主要动机是进行Rein.Hart的计算机视觉作业中能将图片像素, object, 和后来作者音频处理也能将
+    java sound的音频的计算传输. 在函数计算的过程中, 输出就比较唯一了, 即一个object 就能够解释
+    一切, 于是作者最后将 节点 设计成 一种 编码机 的结构, 编码机的意思是 输入可以多种多样如3个
+    input, 但输出仅仅只有一个格式, 具体的编码解码知识点, 作者的编码机知识点来自于印度基督大学
+    jpsir的 digital logic 数字逻辑课学习. 描述人 罗瑶光
+    <br/>
+    <br/>Implements of the trace of ETL unicorn
+    <br/>
+    <br/>The author started a development of ETL unicorn after he had
+    three years of good experience of Knime SDK, at 2009. The most two
+    reasons for only table I/O format, and non-support of object values,
+    the author needed a ImageIO object to finish his dream of convolutional
+    pipes after --Computer Vision-- class by Dr. ReinHart. The author had to
+    build a new ETL to support all kinds of input objects. Seem the ETL
+    unicorn did a well demostribution, and now became an engine of Tinshell
+    nero-pipes. <br/>
+    <br/>
+    皮肤 <br/>
+    <br/>
+    1 德塔ETL 皮肤采用bitmap实现, 可以自由替换. refer page 333, 334 <br/>
+    <br/>
+    关于ETL节点的神经元皮肤文字描述 <br/>
+    <br/>
+    作者在linkedin中阅读了牛津大学的牛顿霍华德教授的几张人类的真实神经元图片, 于是想把自己的ETL
+    的皮肤设计成这个神经元的样子, 觉得很高大上. 于是用bitmap的矩阵来描绘出神经元的边界.
+    <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/3/3_8.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>
+    图中的左边红绿蓝神经组织图片来自牛顿霍华德的linkedin 发布. 作者 节点皮肤设计形状
+    发散思维联想
+    借鉴了红色圆圈内的神经元结构. <br/>
+    <br/>
+    作者跟随牛先生做一些疾病病人的非盈利技术研究, 如阅读障碍病人的思维模式研究,
+    循序渐进的思维研究学者
+    模式. 作者和巴黎一大的学生数据处理, 最后研究有一定的成果. <br/>
+    <br/>
+    1 作者识别了关于男性和女性的思维方式 平均密度集, 和遇到问题的思维波动方式, <br/>
+    <br/>
+    2 阅读障碍主要的体现方式, 如 阅读点和时间面, 阅读频率等细节上, 以及阅读障碍高峰
+    <br/>
+    <br/>
+    产生的时候, 思维的混乱程度, 波形抑制程度等.作者现在的阅读能力很大概率得益于经常在研究,
+    工作和学习中有效的避开这些阅读问题细节. 对牛先生是感激的. 描述人 罗瑶光 <br/>
+    <br/>
+    Implements of nero-cell-skin of ETL unicorn nodes. <br/>
+    <br/>
+    The original nero-cell picture here and the author referred Dr. Newton
+    Howard. At 2015, the author followed Mr. Newton to do a dyslexia
+    analyzing project, and partner with Paris I's student. Finally got 2
+    development results lists of. <br/>
+    <br/>
+    1 The density of nero computing's between women and wen, and Its mean of
+    ratios about Alpha-brain wavelet. <br/>
+    <br/>
+    2 The PCA of dyslexia and ICA of each patient, especially in a
+    dyslexia-peak domain of messy mind, low pass catching and frequent
+    reading. And these theories of almost are changed from the author's
+    thinking when at those times. <br/>
+    <br/>
+    (之后我会进行代码的优化优化, 将 bitmap的表达形式 array[][] swap成 array[]+
+    array[], 这样50*50的界面 含有200个点, 2500次遍历 就变成了200次, 界面刷新时间
+    缩减到原来的十分之一甚至更短. 罗瑶光) <br/>
+    <br/>
+    写清楚点, array[10行][10位]= 1 or true 如果坐标矩阵第10行第10位 是像素显示标记1,
+    那么可以swap成 array[0]=10行, + array[0]=10位, 这样极大的减少计算array的内存buffer
+    占用. 再举例 array[13行][9位]= 1 or true 如果坐标矩阵第13行第9位 是像素显示标记1,
+    那么可以接下来swap成 array[1]=13行, + array[1]=9位, 方便理解. <br/>
+    <br/>
+    Them has a new method of computing way of bitmap matrix. For example,
+    array[weight][height] was a matrix, made It into an array[n]+ array[n].
+    So the 200 points of 50 heights* 50 weights of array[50][50], means the
+    ordinary perform were 50* 50= 2500 times, and now was 200 times of
+    array of x[200] + array of y[200]. The optimization-effect ratio was
+    2500/200= 12.5. Made a well example of input array[10][10], which
+    equals true, so swapped for array of x[0]= 10 and array of y[0]= 10, then
+    the next input array[13][9], which could swap for array of x[1]= 13 and
+    arrayofy[1]= 9, It seems fast and cool. <br/>
+    <br/>
+    2 德塔ETL 皮肤包含指标, 箭头, 连线, 节点外形, 控间外形设计. refer page 332, 319~
+    <br/>
+    <br/>
+    3 德塔ETL 的控件采用jdk的组件 component进行2次开发. refer page 334~ <br/>
+    <br/>
+    4 德塔ETL 的引擎界面的描点画线基于AWT Swing的canvas 画布系统实现. refer page 311~
+    <br/>
+    <br/>
+    另外德塔早期曾用界面 LYG-AI 如下: <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/3/3_9.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>
+
+</div>
+</body>

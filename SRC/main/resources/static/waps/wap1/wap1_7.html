@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第一章_德塔自然语言图灵系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/> 基础应用: 元基催化与肽计算 编译机的语言分析机
+    <br/>
+
+    动态 POS函数流水阀门细化遍历 内核匹配 <br/>
+    1 动态的核分为前序核和后序核两种. 根据词汇分析的位置进行实时变动更新. refer page 97
+    <br/>
+    <br/>
+    2 前序核主要缓存存储词汇的位置和词性, 用于POS词性搭配的 POS函数流水阀门细化遍历 计算.
+    refer page 97 <br/>
+    <br/>
+    3 后序核主要缓存词汇的切词链 后面准备 跟进的词语. 用于POS语法的修正计算, 如连词匹配.
+    refer page 97 <br/>
+    <br/>
+    4 内核采用StringBuilder做核载体进行计算加速. refer page 97 <br/>
+    <br/>
+    Dynamic River Flows Gate Function Marching and Circustantly Loop the
+    POS Kernel Computing. <br/>
+    1 Dynamic kernel contains prefix and postfix two types, can read the
+    word token one by one. It does dynamic computing also at the same time.
+    <br/>
+    <br/>
+    2 Prefix kernel stores a POS cache buffer by each current word piece of
+    information such as positions, frequency etc, to accelerate the word
+    marching. <br/>
+    <br/>
+    3 Postfix relevant to the optimization of word marching and
+    segmentation. For example, checking the conjunctional relationship and
+    continuing the word token link list. <br/>
+    <br/>
+    4 The algorithms kernel uses StringBuilder to do higher computing
+    affections according to computer language grammar. <br/>
+    <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/1/1_4.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    POS函数流水阀门细化遍历前序内核关系图, 图中举例 如果是非常理想来进行分词. 首先通过索引字典森林长度
+    匹配可以切分出 ‘如果’, ‘是非常’, ‘理想’, 3个索引关联词句, 作者词库无‘常理’词汇, 如果有,
+    可另 行讨论. ‘如果’ 和 ‘理想’是比较稳定的词汇. ‘是非常’属于三字词, 于是开始流水阀门切分,
+    3字词索引 没有 ‘是非常’ 这个词汇, 于是开始流水阀门自然语言计算处理 (如果三字词有这个词汇,
+    就流水阀门计算三 字词的词性词汇搭配, 如果有就return, 没有同样要更进细化成2字词来做流水法门.
+    这是该算法的强大之处). 首先拆分为‘是非-常’ 和 ‘是-非常’ 这两种词汇, 于是开始分析两种搭配
+	词汇的POS词性, 通过分析每个词汇 的前后链接词汇的词性(如 ‘是非’的前链词汇是‘如果’, ‘非常’
+	的前链是‘是’,‘常’的前链是‘是非’和‘非’, ‘理想’的前链包含‘常’和‘非常’)来确定切词, (这个词汇
+	搭配是严谨固定的语法, 不含概率计算事件. )如果 2字词搭配出现语法错误和无索引搜索关联, 则更进
+	流水阀门至单字切词, 图中计算比较幸运得到2字切词计算结果, 按照流水阀门NERO-NLP-POS的水流
+	计算, 在连副副 ‘如果-是-非常’ 计算时便return了结果, 没有在计算到连名副‘如果-是非-常’是因为
+	连副副的语法计算的流水阀门高, 优先计算并输出了.
+    描述人 罗瑶光 <br/>
+    <br/>
+    POS functional gate river flows and their relationships. For example,
+    the author did the word segmentation by using '如果是非常理想' in this
+    sentence. At the first through the indexed forest mapped dictionary,
+    Deta Parser could cut '如果是非常理想' into ‘如果’, ‘是非常’, ‘理想’ those three
+    associated chars word sets token list. And in this result list, ‘如果’
+    and ‘理想’ these two lexical words seems to be immutably boned. ‘是非常’ was
+    a three chars word token, then did an inner marching computing by using
+    POS functional gate river flows theory. And at this time, the orthos
+    corpus mapped base of the author's Deta Parser system which could not
+    find any verbals such as‘是非常’, then continued do the two chars marched
+    for the next step. About more powerful of these algorithms, was the
+    Chinese chars literacy-grammar marching system, for the chars segmental
+    section, ‘是非常’ did a separation into two types such as ‘是非-常’ and
+    ‘是-非常’, then analyzed contrast and distinguished by these two
+    segments. After analysis of each word and Its prefix and postfix, POS
+    combined with relationships, (The prefix token of ‘是非’ was ‘如果’, the
+    prefix token of ‘非常’ was ‘是’, the prefix tokens of ‘常’ were ‘是非' and
+    ‘非’, and the prefix tokens of '理想’ were ‘常’ and ‘非常’). This POS word
+    segmentational theory was fixedly and immutably, which means It should
+    not contain any probability events here. If at this time, the DetaPaser
+    did not find any associated chars’ relationships, then promoted to the
+    next steps as reading and cutting sequence-list chars as single one by
+    one. Above all, the result of the sample graph did a good show that
+    DetaParser did a ‘如果-是-非常’ response because the priority of
+    (Conjunction- Adj, v- Adj, v) was higher than (conjunction- noun- adj,
+    v). <br/>
+    Author: Yaoguang Luo <br/>
+    <br/>
+    2019年3月18日之前作者Github的 该算法函数编码框架已经出现 <br/>
+    https://github.
+    com/yaoguangluo/Deta_Parser/commit/25b90c9847d15df85c5c991448f2c271e0ad8106
+    <br/>
+    注意: 链接的CNN 关键词的 历史记录 属于作者用词错误, 作者当年基础学术累积不够,
+    关于卷积的知识仅仅学了计算机视觉的理论课,
+    以为带内核计算的都叫CNN卷积 <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/1/1_5.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/1/1_6.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/1/1_7.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+
+    另外作者发现自己还有一个错误, 就是以为序列链表方式计算就叫隐马科夫链计算. 所以
+    CNN+隐马可夫这两个技术词汇, 伴随作者10年之久.
+    今天进行ppt严谨定义, 翻阅大量定义文献资料, 才发现这些错误. 予以纠正. 作者的ANN和RNN
+    出现的文本分析内核计算才是真正的CNN卷积计算. <br/>
+    <br/>
+    POS <br/>
+    Deta Parser的分词词性基于自身的词性语料库, 格式为 词汇/词性, 举例如 香蕉/名词,
+    deta的语料库录入系统函数作者的写法是用string的contains 字符串来进行map 索引登记,
+    于是这种格式有一个巨大的好处,
+    可以进行复合标注. 如果香蕉/水果名词, 浏阳/地理名词城市名词, 基于这种格式,
+    形容词谓词特指等复杂复合词性可以很好的被计算机理解.
+    德塔分词的词性基于每两个邻近词汇的固定搭配, 如主语后面必为谓语, 名词+ 连词+ 后面必为名词,
+    形容词+ 连词+ 后面必为形容词, 动词+
+    后面 必为宾语 +宾语补足语, 这种来自人类语言文学的严谨固定搭配定义分词逐渐的取代了统计和概率论分词.
+    这些价值全部融入Deta分词api.
+    描述人 罗瑶光. <br/>
+    <br/>
+    Deta POS <br/>
+    Deta parser of the word segmentation, was based on Its corpus of POS or
+    classes. The formative base was like a 'Verbal/POS'. For example,
+    ''Banana/Noun', the parser-engine might read the corpus base sequently,
+    then to store the verbal 'Balana' as a key, and the POS was a key
+    store. Also, the key store of POS could be a complex type of the
+    annotational string. For example, 'Banana/Noun' might be a
+    'Banana/FruitNoun', and one more example of
+    'LiuYang/CitynameGeographyNoun'. Meant the computer could easily
+    understand a complex grammar-environment in how to parser the word
+    correctly. Especially in a stable grammar-environment, such as Subject+
+    Predecate, Noun+ Conjunction+ Noun, Adjective+ Conjunction+ Adjective,
+    Verb+ Subject or Adverb. Because of the strict and stable definition.
+    Therefore, Deta parser did not contain a probabilistic Statistics about
+    word segmentation. <br/>
+    Author Yaoguangluo 稍后优化语法. <br/>
+    <br/>
+    1 德塔分词的核心类, 包含了词性的搭配切分所有函数. refer page 97, 116 <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/1/1_8.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+
+</div>
+</body>

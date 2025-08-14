@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第一章_德塔自然语言图灵系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/> 基础应用: 元基催化与肽计算 编译机的语言分析机
+    <br/>
+    ANN <br/>
+    德塔词性的卷积计算ANN, 主要包含意识比率算子, 环境比率算子, 动机比率算子, 情绪比率算子.
+    这个四个算子 的组合计算产生了一些高级决策, 如 情感比重, 动机比重, 词权比重, 持续度,
+    趋势比重, 预测比重, 猜想比重, 意识综合. 这些决策在文本分析的领域可以拥有实际评估和
+    决策的价值. 同时意识综合 summing 也是德塔DNN计算的一个输入参数组件, 用于文本中心
+    思想词汇标识计算. <br/>
+    <br/>
+    ANN, DetaParser ANN computing. It mainly contained a mind set,
+    environment set, motivation set and emotion set etc. Those sets were
+    computed as an advanced decision, which emphasized weights as a
+    comprehensive of trending, continuing, predicting, guessing and minding
+    etc. With an associating in text mining and analyzed domain. This
+    decision either would value a true estimation, or would calculate a
+    summing centre for the next steps. <br/>
+    <br/>
+    1词性卷积计算refer page 182 <br/>
+    2用于确定文本的中心 <br/>
+    2. 1 算子组成 <br/>
+    2. 1. 1 S SENSING 意识比率 <br/>
+    2. 1. 2 E ENVIRONMENT 环境比率 <br/>
+    2. 1. 3 M MOTIVATION 动机比率 <br/>
+    2. 1. 4 E EMOTION 情绪比率 <br/>
+    refer page 18 <br/>
+    关于比率的描述: <br/>
+    罗瑶光先生个人认为比率的价值体现在比重, 举例如果100个词汇中有80个形容词, 则初步判断为文章
+    形容词比重大, 文章属于比较强表达细腻的散文文笔. 举例如果100个词汇中有80个动词, 则初步
+    判断为文章动词比重大, 文章属于比较强刻画生动的活动状态的叙述文笔. 这个比重能够很好的解释
+    一些文章中的作者的动机和行为习惯. 以及写作风格. <br/>
+    <br/>
+    1 举例 如动机比率, 如果文中出现菜刀, 顶板, 油锅, 五花肉, 香料, 这些词汇, 这些词汇的动机
+    map索引key 出现大量的 烹饪, value时候, 那么计算机便能从这些比率中得到很多潜在的意识信息,
+    阅读者和计算机首先便能从文章中了解到是描述烹饪过程的文章. <br/>
+    <br/>
+    2 举例 如环境比率, 如果文中出现菜刀, 顶板, 油锅, 五花肉, 香料, 这些词汇, 这些词汇的动机
+    map索引key 出现大量的 厨房, 酒店, value时候, 那么计算机便能从这些比率中得到很多潜在
+    的意识信息, 阅读者和 计算机首先便能从文章中了解到是描述酒店厨师的烹饪过程的文章. <br/>
+    <br/>
+    3 举例 如文学性比率, 如果文中出现菜刀, 顶板, 油锅, 五花肉, 香料, 这些词汇, 这些词汇的大量
+    属于名词的比重大, 那么计算机便能从这些比率中得到很多潜在的信息, 阅读者和计算机首先便能从
+    文章中了解到是描述酒店厨师的烹饪过程的技术类文章. 描述人罗瑶光 <br/>
+    <br/>
+    Implements a Ratio of POS. <br/>
+    Mr. YaoguangLuo considered the ratio of POS which means the proportion
+    of lexicons. For example, their paper had 80 adjectives in 100 words,
+    so the proportion of lexicon means that the essay contained a lot of
+    strokes, it more liked a prose. Of course, assumed their paper had 80
+    verbs in 100 words, so the proportion of lexicon means that the essay
+    contained a lot of actions, seemed their essay more likes a narrate
+    story. Therefore, the author considered that ratios of POS could make a
+    good descriptive activity, which to make a prediction of a personal
+    written grammar. Examples as below. <br/>
+    <br/>
+    1. Implements a ratio of motivation. <br/>
+    Assumed their paper appeared five words: Kitchen Knife, Chopping Board,
+    Wok, Streaky-Meat and Spicy-Condiment. Resulted a higher motivation of
+    lexicon was cooking. It meand the humanoid computer could read and find
+    a potential information from this paper, would easily to know this
+    paper was about to make a narrate of how to cook the food. <br/>
+    <br/>
+    2. Implements a ratio of environment. <br/>
+    Although their paper appeared five words: Kitchen Knife, Chopping
+    Board, Wok, Streaky-Meat and Spicy-Condiment. Resulted a higher
+    environment of lexicon was kitchen. It meaned the humanoid computer
+    would easily to know this paper was about to cook a food in where the
+    address was a Hotel, Canting, Caffeteria, Pizzeria, Rosticerria or
+    Restaurant. <br/>
+    <br/>
+    3. Implements a ratio of literature. <br/>
+    Even their paper still appeared above five words. But resulted a higher
+    ratio of POS was Noun. It meand the humanoid computer would easily to
+    know this paper was about a definite essay of Cooking Science and
+    Technology. <br/>
+    Author: YaoguangLuo 稍后翻译语法 <br/>
+    <br/>
+</div>
+</body>

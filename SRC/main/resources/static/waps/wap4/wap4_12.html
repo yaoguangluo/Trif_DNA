@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第四章 德塔 Socket 流可编程数据库语言引擎系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/>
+    <br/>基础应用: 元基催化与肽计算 编译机的计算存储机
+    <br/>
+
+    <br/>灾后重建
+    <br/>
+    <br/>1 德塔数据库包含logbin 系统. refer page 398,
+    <br/>
+    <br/>2 德塔数据库包含logbin 系统基于单个写操作进行log保存 并行加密成文件. refer page
+    399
+    <br/>
+    <br/>3 单个写操作用时间戳作和写增量序列进行对应标识, 避免混乱. refer page 399
+    <br/>
+    <br/>4 德塔数据库包含logbin 系统 并支持热备和错误写 实时rollback 检测. refer page 398
+    <br/>
+    <br/>德塔的logbin系统, 一开始是设计在try catch 中, 因为德塔数据库融合了cache 和
+    DMA两种存储系统, 于是, 作者将logbin 的 rollback进行先内存模拟执行写操作, 成功后再执行物理
+    写操作, 并记录操作日志. 如物理写操作还失败, 就rollback 到上次写请求. 这种 3步logbin机制,
+    作者认为 高安全性.
+</div>
+</body>

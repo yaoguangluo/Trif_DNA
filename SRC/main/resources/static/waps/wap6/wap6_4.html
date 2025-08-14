@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第六章_数据预测引擎系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/>
+    <br/>基础应用: 元基催化与肽计算 编译机的进制仿生计算机
+    <br/>
+
+    雷达机 <br/>
+    <br/>
+    1 数据预测引擎的雷达机主要体现在坐标群的边缘识别和归纳计算. refer page 577 <br/>
+    <br/>
+    2 坐标群的边缘识别和归纳计算 采用角度 + 中心到点距离进行进行轮循链接. refer page 576
+    <br/>
+    <br/>
+    3 链接的面形成 极速计算边缘包含, 确定坐标的团大小面积, 密度. refer page 577 <br/>
+    <br/>
+    4 极速边缘计算的价值可以迅速利用在所有实时坐标系统中. refer page 593 <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/6/6_3.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/6/6_4.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/6/6_5.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>
+    整理漂亮些, 迫使作者设计这个算法, 最早来自作者的计算机视觉课程关于Reinhart给作者布置
+    作业求坐标的边缘链接算法, 作者当时用的是谷歌搜索的传统经典的切线向量计算, 基于一个个
+    坐标来解边缘的坐标链接, 作者一直在思考切线角度算法, 速度太慢了. 跟作者第一代TSP超过23
+    个坐标点后的计算速度有的一拼, 坐标点越多, 就越慢. 这个算法问世后拔去了作者至少5年的心头刺.
+    <br/>
+    <br/>
+    Radar Mechine <br/>
+    <br/>
+    The Data Prediction of Side End Radar which is used for the recognition
+    of edging coordinates. The computing of generalisation is circularly to
+    find a ratio collection of vectors between the central weight point and
+    each outer coordinates. Compare to the outer coordinates, because the
+    distance from inner coordinates which is shorter than distance of scale
+    input, hence will be removed by this scale filter. Then makes an
+    arrangement of this vector list more sequence, means sorting them from
+    the ratio of zero to the ratio of 360 (2* Pi). Finally makes the line
+    connections of each two outer adjacent coordinates in this vector
+    list. It may get a side end of input coordinates. Then find a density
+    is simply, because the author considers: {Density = Area of Side End /
+    Amount of Coordinates} <br/>
+    <br/>
+    Author YaoguangLuo 稍后优化语法 <br/>
+    <br/>
+    Gitee 20200306 感想, 2011年我在做路德大学计算机视觉的项目时候, 有一个作业题是要我标记
+    坐标边缘集合, 我当时是用斜率梯度与切线比来计算临近两个边缘坐标的小线段系数, 记得当时我只有
+    20来个坐标计算, 得到结果花费了我几秒钟时间, 最近养生软件也遇到相似功能, 需求迫使我重新设计
+    一种新的算法, 于是这个算法就设计出来了. 前后计算10000坐标也就花费了几秒,
+    速度快了600~3000倍, 于是我将它开源了. <br/>
+    <br/>
+    今天来描述下这个函数的运算逻辑: <br/>
+    <br/>
+    1需求, 写这个算法, 我的动机是出现不规则的坐标团, 我怎么快速的将团的边缘坐标集合拿出来.
+    2当时所想, 如果我将团的重心求出, 然后基于重心坐标辐射团的每一个子坐标, 一旦距离小于scale精度,
+    就过滤掉, 那么这个算法应该比传统的边缘计算速度要快数百甚至数万(指数方)倍, 于是基于这个逻辑
+    开始写论证代码. 3效果, 效果稳定, 可以很好的观测边缘坐标分布. 缺点也有精度不高. 4结论,
+    精确度 会出现点误差, 为了弥补, 我思考了很久, 我将这个算法定义为 重心距过滤边缘算法,
+    适用于 海量坐标团 的边缘计算中过滤非主要成份预处理, 减少计算总量, 提高算能. 有效高精度处理
+    模式为: 先重心距过滤 边缘算法, 然后斜率梯度与切线比边缘计算(其实还有更好的思想, 比如基于重心
+    和过滤后 的坐标距离 排序, 取最长的百分比坐标集, 因为这些坐标往往属于外围坐标. ), 再输出.
+    6另外, getDistance函数 原理是维度坐标的 向量位移 绝对值总和, 在计算速度上更快. 如果小伙伴
+    在自己 的工程中需要高精度, 可以改写成 开方的 欧基里德位移即可.
+    <br/>
+    <br/>
+
+</div>
+</body>

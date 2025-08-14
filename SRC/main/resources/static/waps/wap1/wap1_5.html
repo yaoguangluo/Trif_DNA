@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第一章_德塔自然语言图灵系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/> 基础应用: 元基催化与肽计算 编译机的语言分析机
+    <br/>
+    神经网络索引 <br/>
+    1 德塔分词的词汇字典用map进行索引, 因为Jdk8+的map对象的key支持2分搜索,
+    搜索速度到了峰值. refer page, 129, 131 <br/>
+    <br/>
+    2 德塔分词的索引不断的将大map进行细化分类, 如词长map, 词类map, 词性map,
+    让搜索再次加速. refer page 55,<br/>
+    <br/>
+    3 德塔分词的索引map支持 2次组合计算, 支持分布式服务器进行索引cache.
+    关于2次组合计算作者不建议单机使用. refer page 92, <br/>
+    <br/>
+    4 德塔分词map的key用string的 char对应ASCII int进行标识来执行find key,
+    方便二分搜索存储和 StringBuilder高速计算, 实现底层核统一. refer page 92 <br/>
+    <br/>
+    Nero Network Index Forest <br/>
+    1 Deta Parser did a word segmental indexed map by using humanoid
+    semantic verbal dictionary, for the reason why using JDK8+ tool to do
+    the map search logic, is that It had already integrated the binary
+    search tree, balanced map-tree arrangement and other technologies. <br/>
+    <br/>
+    2 Deta Parser’s balanced binary search tree method made an observer
+    mode of averaged classification with all types of the reflection java
+    concurrent maps, those maps included the char word length, verbal types
+    and part of speech corpus, etc. The author did It to accelerate the
+    Nero-marching speedly for searching the words. <br/>
+    <br/>
+    3 Deta Parser supported the secondary indexing computing combinations,
+    this way could be suitable for the distributed cache of searching
+    systems. The author did not suggest this technology which be used on a
+    single desktop. <br/>
+    <br/>
+    4 For the computing logic, Finally Deta Parser functions used string
+    builder to accelerate the searching engine. <br/>
+    <br/>
+    神经网络索引的价值主要体现在2个地方, 切词的关联索引上和 词汇map索引上. 切词的关联索引价值,
+    主要体现在将词汇的文字进行链化提取, 这种链化计算方式将词库中本相对独立的海量词汇进行了按
+    人类语言文学中的顶针方法进行了有效的前后长度关联(NERO), 其价值有利于大文本的文字进行有必
+    要关联链的 小段小段的提取(NLP), 类似挤牙膏一样, 挤出来就刷牙用掉(POS). <br/>
+    <br/>
+    词汇map索引价值, 主要体现在 词汇的文字进行链化合理切分,
+    这种链化切分方式将词库中根据不同属性的分类map来组合匹配按人类语言文学中的词汇词性和主谓宾搭配
+    严谨定义来切分. 其价值在这些分类map可以自适应设计和多样化扩展. 增加切词准确度和灵活度,
+    适应
+    各种不同的场景, 类似牙刷机制, 挤出牙膏根据 匹配不同的牙刷和刷牙方法(NERO + POS), 匹配
+    适应不同的口腔环境. 描述人 罗瑶光, 稍后优化下. <br/>
+    <br/>
+    The accomplishment of the neural network-index is mainly reflected in
+    two sections, 1 for the relevance index of word segmentation, and 2
+    for the lexical indexed map. The associated and relevance-index-value
+    of word segmentation, is mainly reflected in the chained extraction of
+    words. This chained calculation method effectively correlates the
+    relatively independent of a large number of words in the thesaurus,
+    according to the Thimble Theory in human language and Literature
+    (Nero). The value of the big data document process, splits the word
+    chain links list into small chars-token (max 4) sections, and It is
+    similar to a squeezing toothpaste, and a brushing teeth (POS) after a
+    squeezed out with the DetaParser marching engine.
+    <br/>
+    The index value of the lexical map is mainly reflected in the
+    reasonable chain-segmentation of lexical characters. This chain of word
+    segmental method, combines and matches the classified maps in the
+    thesaurus, according to different attributes. And then separates them
+    according to the rigorous definition of lexical POS and SVO’s
+    collocation in human literary languages. The adaptive industrial system
+    designed and diversified the expansion of this classification, will
+    increase the accuracy and flexibility of word segmentation and adapt to
+    different segmental scenes. Similar to the way of toothbrushes, the
+    extruded toothpaste is matched to adapt to different oral
+    cavity-environments, according to different toothbrushes and brushing
+    methods (Nero + POS).
+    <br/>
+    Author: Yaoguang.Luo <br/>
+    <br/>
+
+</div>
+</body>
