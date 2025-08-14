@@ -1,0 +1,22 @@
+
+
+
+
+
+luoyaoguang430181198505250014@luoyaoguang430181198505250014deMacBook-Air CSO % javac Test.java -h .
+
+luoyaoguang430181198505250014@luoyaoguang430181198505250014deMacBook-Air CSO %
+ gcc -dynamiclib -I /Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/include
+ -I /Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/include/darwin -o CSO_Test.dylib CSO_Test.c
+
+
+gcc -S jni_sortESU9D.c -o jni_sortESU9D.s
+
+
+cd /Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/project/TinOS/GccExtension/jniFFT/
+cd /Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/project/TinOS/GccExtension/jnisort/
+cd /Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/project/TinOS/PythonExtension/jni/
+gcc -dynamiclib -I /Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/include -I /Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/include/darwin -o libHelloWorld.dylib TestDib.c
+
+
+gcc -dynamiclib -I /Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/include -I /Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/include/darwin -o libHelloLYGFFT.dylib LYGFFT.c
