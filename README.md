@@ -32,6 +32,18 @@ DNA十六元基索引PDE工程
 ###### 3 web rest接口 --用于服务器部署中所有第三方应用的需求操作接口测试, 围绕逻辑功能测试。
 &nbsp;
 &nbsp;
+# --工程细节--
+&nbsp;
+###### 1 元基花 染色体仿生函数 十六元基 DNA 索引组 
+######   对应 C_L_A C_L_O C_L_P C_L_M C_L_V C_L_E C_L_C C_L_S C_L_I C_L_D C_L_U C_L_Q C_L_A文件夹
+######   对应 C_R_A C_R_O C_R_P C_R_M C_R_V C_R_E C_R_C C_R_S C_R_I C_R_D C_R_U C_R_Q C_R_A文件夹
+###### 2 元基枝 工程接口仿生函数 对应 YLJ_HRJ 文件夹
+###### 3 孢子 OSGI+面向对象继承 进化计算仿生接口 对应 BLOOMING 文件夹
+###### 4 DNA元基催化与肽计算 英文书籍编码扩展 对应 SRC/WAP HTML文件
+###### 5 其他语言翻译扩展 对应 GCC EXTENSION 文件夹
+###### 6 OSGI 语言节点 插件统一化工程 见 tinshell node
+&nbsp;
+&nbsp;
 # --索引目录--
 &nbsp;
 ###### --测试函数文件所在具体位置--工程目录中SRC下面的test/java/InterfaceTest 区。
