@@ -14,14 +14,22 @@ import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+/*
+ * 著作权人, 作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
+ * (lyg.tin@gmail.com2018年回国后因国内G网屏蔽不再使用）
+ * 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
+ * */
 //著作权人+ 作者= 罗瑶光
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
     public IMV_SIQ annotationMap = new IMV_SIQ();
 
-    public void searchFromTable(App NE) {
+    public void searchFromTable(App NE, int rangeScale) {
         AES_QMS_XSD_TIH key = NE._I_U.key;
         DefaultTableModel newTableModel = NE._I_U.newTableModel;
         Object[][] tableData_old = NE._I_U.tableData_old;
@@ -58,7 +66,8 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
         String[] string = List_ESU_X_listToArray._E(list);
         String[] stringReg = new String[key._S_.length() / 3];
         for (int i = 0; i < stringReg.length; i++) {
-            stringReg[i] = key._S_.substring(i * 3, (i * 3 + 3) < key._S_.length() ? (i * 3 + 3) : key._S_.length() - 1);
+            stringReg[i] = key._S_.substring(i * 3, (i * 3 + 3) < key._S_.length()
+                ? (i * 3 + 3) : key._S_.length() - 1);
         }
         while (iteratorForCopy.hasNext()) {
             String iteratorForCopyString = iteratorForCopy.next();
@@ -80,7 +89,7 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
                     if (key._S_.contains(score[copyCount].replace(" ", ""))) {
                         reg[copyCount] += 500;
                     }
-                    int wfs = (int)wordFrequencySearch.get_frequency();
+                    int wfs = (int) wordFrequencySearch.get_frequency();
                     wfs = wfs > 5 ? 5 : wfs;
                     if (!pos.containsKey(mapSearchaAtII)) {
                         reg[copyCount] += 1;
@@ -160,7 +169,7 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
         newTableModel.getDataVector().clear();
         Here:
         for (int i = copy_xj.size() - 1; i > -1; i--) {
-            if (score_code[i] < 1) {
+            if (score_code[i] < rangeScale) {
                 continue Here;
             }
             if (app.app_S.shuming_filter_box.isSelected()) {
@@ -182,7 +191,7 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
     }
 
     //再精简点 稍后去DefaultTableModel 直接输出 搜索排序后的 Object[][] 即可。
-    public List<Object[]> searchFromTablewithScale(App NE) {
+    public List<Object[]> searchFromTablewithScale(App NE, int rangeScale, boolean isKey) {
         AES_QMS_XSD_TIH searchkey = NE._I_U.searchkey;
         ArrayList<String> nameContent = NE._I_U.nameContent;
         IMV_SIQ textContent = NE._I_U.textContent;
@@ -222,6 +231,9 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
             String iteratorForCopyString = iteratorForCopy.next();
             score[copyCount] = iteratorForCopyString;
             String temps = textContent.get(iteratorForCopyString).toString();
+            if (isKey) {
+                temps = iteratorForCopyString.toString();
+            }
             Iterator<String> iteratorWordFrequency = mapSearchWithoutSort.keySet().iterator();
             Here:
             while (iteratorWordFrequency.hasNext()) {
@@ -240,7 +252,7 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
                     }
                     if (!pos.containsKey(mapSearchaAtII)) {
                         reg[copyCount] += 1;
-                        int wfs = (int)wordFrequencySearch.get_frequency();
+                        int wfs = (int) wordFrequencySearch.get_frequency();
                         wfs = wfs > 5 ? 5 : wfs;
                         score_code[copyCount] += 1 << mapSearchaAtII.length() << wfs;
                         continue Here;
@@ -252,7 +264,7 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
                         reg[copyCount] += 2;
                     }
                     reg[copyCount] += 1;
-                    int wfs = (int)wordFrequencySearch.get_frequency();
+                    int wfs = (int) wordFrequencySearch.get_frequency();
                     wfs = wfs > 5 ? 5 : wfs;
                     score_code[copyCount] += (iteratorForCopyString.contains(mapSearchaAtII)
                         ? 2 : 1) * (!S_Maps.mingCi.containsKey(mapSearchaAtII)
@@ -315,17 +327,27 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
             copyCount++;
         }
         NE.app_S.lYGSortESU9D.javaSort(score_code, score);
+        //有结果就输出结果，无结果便输出全部，因为有0打分，可输出后筛选。
+        if (count == 0) {
+            count = nameContent.size();
+        } else {
+            rangeScale = 1;
+        }
         Object[][] tableData = new Object[count][18];
         int new_count = 0;
         Here:
         for (int i = nameContent.size() - 1; i > -1; i--) {
-            if (score_code[i] < 1) {
+            if (score_code[i] < rangeScale) {
                 continue Here;
+            }
+            String value = "";
+            if (textContent.containsKey(score[i])) {
+                value = textContent.getString(score[i]).toString();
             }
             tableData[new_count] = new Object[]{new_count + 1,
                 score_code[i],
                 score[i],
-                textContent.get(score[i]).toString()
+                value
             };
             outputList.add(tableData[new_count]);
             new_count += 1;
@@ -361,8 +383,8 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
         NE._I_U.lookrot = lookrot;
         NE._I_U._AE = _AE;
 
-        List<Object[]> outputList
-            = new StaticFunctionMapQ_VECS_E().searchFromTablewithScale(NE);
+        List<Object[]> outputList = new StaticFunctionMapQ_VECS_E()
+            .searchFromTablewithScale(NE, 0, false);
         Iterator<Object[]> iterator = outputList.iterator();
         while (iterator.hasNext()) {
             Object[] object = iterator.next();
@@ -378,7 +400,8 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
         NE._I_U.lookrot = lookrot;
         NE._I_U._AE = _AE;
 
-        outputList = new StaticFunctionMapQ_VECS_E().searchFromTablewithScale(NE);
+        outputList = new StaticFunctionMapQ_VECS_E()
+            .searchFromTablewithScale(NE, 0, false);
         iterator = outputList.iterator();
         while (iterator.hasNext()) {
             Object[] object = iterator.next();
@@ -393,7 +416,8 @@ public class StaticFunctionMapQ_VECS_E implements StaticFunctionMapQ_VECS_C {
         NE._I_U.textContent = textContent;
         NE._I_U.lookrot = lookrot;
         NE._I_U._AE = _AE;
-        outputList = new StaticFunctionMapQ_VECS_E().searchFromTablewithScale(NE);
+        outputList = new StaticFunctionMapQ_VECS_E()
+            .searchFromTablewithScale(NE, 0, false);
         iterator = outputList.iterator();
         while (iterator.hasNext()) {
             Object[] object = iterator.next();
