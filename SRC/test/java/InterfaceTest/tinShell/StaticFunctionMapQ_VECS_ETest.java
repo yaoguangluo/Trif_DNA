@@ -71,8 +71,8 @@ class StaticFunctionMapQ_VECS_ETest {
         commonTestInition.NE._I_U.textContent = textContent;
         commonTestInition.NE._I_U.lookrot = lookrot;
         commonTestInition.NE._I_U._AE = _AE;
-        List<Object[]> outputList
-            = new StaticFunctionMapQ_VECS_E().searchFromTablewithScale(commonTestInition.NE);
+        List<Object[]> outputList = new StaticFunctionMapQ_VECS_E()
+            .searchFromTablewithScale(commonTestInition.NE, 0, false);
         Iterator<Object[]> iterator = outputList.iterator();
         while (iterator.hasNext()) {
             Object[] object = iterator.next();
@@ -88,7 +88,8 @@ class StaticFunctionMapQ_VECS_ETest {
         commonTestInition.NE._I_U.lookrot = lookrot;
         commonTestInition.NE._I_U._AE = _AE;
 
-        outputList = new StaticFunctionMapQ_VECS_E().searchFromTablewithScale(commonTestInition.NE);
+        outputList = new StaticFunctionMapQ_VECS_E()
+            .searchFromTablewithScale(commonTestInition.NE, 0, false);
         iterator = outputList.iterator();
         while (iterator.hasNext()) {
             Object[] object = iterator.next();
@@ -104,7 +105,8 @@ class StaticFunctionMapQ_VECS_ETest {
         commonTestInition.NE._I_U.textContent = textContent;
         commonTestInition.NE._I_U.lookrot = lookrot;
         commonTestInition.NE._I_U._AE = _AE;
-        outputList = new StaticFunctionMapQ_VECS_E().searchFromTablewithScale(commonTestInition.NE);
+        outputList = new StaticFunctionMapQ_VECS_E()
+            .searchFromTablewithScale(commonTestInition.NE, 0, false);
         iterator = outputList.iterator();
         while (iterator.hasNext()) {
             Object[] object = iterator.next();
