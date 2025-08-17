@@ -29,8 +29,11 @@ import java.util.List;
  * 本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
  * 作为一个世界级科学家，就不能思维总定固一个区域的层面，眼光思考的是整个体系的脉络，挑战的是整个环境变化。--罗瑶光
  * */
-class DemoPOSTest {
-
+public class DemoPOSTest {
+    public IMV_SIQ_SS noun = new IMV_SIQ_SS();
+    public IMV_SIQ_SS verb = new IMV_SIQ_SS();
+    public IMV_SIQ_SS adj = new IMV_SIQ_SS();
+    public IMV_SIQ_SS adv = new IMV_SIQ_SS();
     @Test
     void main() {
         //初始化
@@ -63,10 +66,6 @@ class DemoPOSTest {
     public void testPOS(List<String> sets, IMV_SIQ pos){
         //结果归纳
         //1 名词 动词 形容词归纳
-        IMV_SIQ_SS noun = new IMV_SIQ_SS();
-        IMV_SIQ_SS verb = new IMV_SIQ_SS();
-        IMV_SIQ_SS adj = new IMV_SIQ_SS();
-        IMV_SIQ_SS adv = new IMV_SIQ_SS();
         System.out.println("-展示词性-");
         for (int j = 0; j < 1; j++) {
             for (int i = 0; i < sets.size(); i++) {
