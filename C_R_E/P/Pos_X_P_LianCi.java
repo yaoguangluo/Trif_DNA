@@ -19,6 +19,15 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 
+// Pos_X_P_LianCi 76 行 缺失3行函数，我知道2019年为什么婆婆 要我相亲，又学货车了，
+// 刚好2019年当年检查和准备写到这3行检查的时候打断了我的跟进思维。我要做的是严防能
+// 轻易靠近我的本地亲戚。特别是严防无继承关系的直系亲戚。间接说明我写代码有人帮？要不是
+// 最近我开始写地毯式商业测试，全源码覆盖和使用测试，除了面对本地人无尽滋扰，7年了无一人告知我。。。
+// 同时我也清楚了，我当年数十万字的复制网上的文字进行数月的分词测试，都没有碰到这个组合条件，检测这个问题出来，
+// 说明浏览器的显示return到我电脑终端的时候也早就过滤了这个 -和- 的三字 问题，花钱买拆开机无敌
+// 哈哈 面对这种问题我要做的是地毯式功能测试即可。稍后做整体 含null功能测试。间接说明，mock等api
+// 是一种整体的规范式编码测试，只是对于需要专业类结果导向的功能测试趋近无效。 --罗瑶光
+
 public class Pos_X_P_LianCi extends Pos_X_P_JieCi implements X_P_LianCi {
     public int P_LianCiPostFixOfThree(List<String> outputList, int countLength,
                                       String[] strings, StringBuilder[] prefixWord) {
@@ -73,9 +82,12 @@ public class Pos_X_P_LianCi extends Pos_X_P_JieCi implements X_P_LianCi {
             fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWord[S_Pos.INT_ZERO].length());
             return countLength - S_Pos.INT_ONE;
         }
+        outputList.add(strings[S_Pos.INT_ZERO]);//奇怪我3三字的连词关于单字没匹配这行函数缺失了？2025
+        fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWord[S_Pos.INT_ZERO].length());
+        fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ZERO]);
         return countLength - S_Pos.INT_THREE;
     }
-
+//奇怪没做为什么要减去？
     public int P_LianCiOfThreeForMap(IMV_SIQ_SS outputList
         , int countLength, String[] strings, StringBuilder[] fixWord, App NE) {
         if (outputList.size() == S_Pos.INT_ZERO) {
