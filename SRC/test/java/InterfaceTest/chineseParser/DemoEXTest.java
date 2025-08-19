@@ -22,13 +22,13 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 /*
- * 这是一个 关于极速分词 测试main函数demo的test版本，对这个测试函数进行广泛的跟进测试，用于补充流水阀门POS函数集合
- * 让分词更加准确目前的四字分词内核函数量99.7%, 可以继续用牺牲分词速度的方式再提高分词质量，价值在面向司法和宣传等
- * 及其严谨的场合环境应用。在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，
- * 直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看数据，
- * 也可以用println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输入输出
- * 都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
- * --罗瑶光
+ * 这是一个 关于极速分词 测试main函数demo的test版本，对这个测试函数进行广泛的跟进测试，用于补充流水
+ * 阀门POS函数集合让分词更加准确目前的四字分词内核函数量99.7%, 可以继续用牺牲分词速度的方式再提高分词
+ * 质量，价值在面向司法和宣传等及其严谨的场合环境应用。在导入了api之后进行系统集成，然后用下面的对应的
+ * 函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，
+ * 然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
+ * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业
+ * 化落地。--罗瑶光
  * */
 class DemoEXTest {
     Map<String, String>[] verbal;
@@ -50,8 +50,8 @@ class DemoEXTest {
         new LoadVerbalOutputMap().exec(verbal, ss, ss1);
         new LoadVerbalOutputMap1().exec(verbal, ss, ss1);
         new LoadVerbalOutputMap2().exec(verbal, ss, ss1);
-        //ss ss1导入字符--见DemoEXTest_input.txt DemoEXTest_input1.txt DemoEXTest_input2.txt 文件
-        //初始化-----------------------------------------------------------------
+        //ss ss1导入字符--见DemoEXTest_input.txt DemoEXTest_input1.txt
+        //DemoEXTest_input2.txt 文件初始化-------------------------------------------
         //环境初始化。以后接口优化做 junit系统化测试 下面的环境配置 可以写在 test before()里面。
         CommonTestInition commonTestInition = new CommonTestInition();
         commonTestInition.initEnvironment("去弹窗组件流测试");
@@ -91,7 +91,7 @@ class DemoEXTest {
             }
             String size = verbal[i].get("-size-");
             double sizeD = Double.valueOf(size);
-            score[i] = score[i]/ sizeD;
+            score[i] = score[i] / sizeD;
             System.out.println();
             System.out.println("数据保持单字拆解条件下-分词后过滤新兴潮流代词缩写词人名" +
                 "等行业专业名词后对比正确率为->" + (score[i] * 100) + "%");
@@ -103,13 +103,14 @@ class DemoEXTest {
         System.out.println("共计正确分词数-->" + totalSegbals);
         double ratio = totalSegbals / totalVerbals;
         System.out.println("总分词正确比率-->" + +(ratio * 100) + "%");
-        System.out.println("分词环境-总分词正确比率-代表数据保持单字拆解条件下-分词后过滤新兴潮流代词" +
-            "缩写词人名等行业专业名词后的对比正确率");
+        System.out.println("分词环境-总分词正确比率-代表数据保持单字拆解条件下-分词后过滤新兴潮流代词"
+            + "缩写词人名等行业专业名词后的对比正确率");
         System.out.println("分词环境-总分词正确比率 含有社会10余个专业领域的-web随机短文摘录分词");
         System.out.println("分词环境-总分词正确比率 含有罗瑶光先生以前的笔记随机长文摘录分词");
         System.out.println("分词环境-总分词正确比率 含有当前流行的浏览器AI自动生成的随机长文摘录分词");
         System.out.println("分词环境-总分词正确比率 属于全部去标点符号的歧义短文分词比率");
-        System.out.println("分词环境-总分词正确比率 不适用太多单字词的古文，古文建议用分句api，不应该用分词api。");
+        System.out.println("分词环境-总分词正确比率 不适用太多单字词的古文，古文建议用分句api，不应该"
+            + "用分词api。");
         //结束
         commonTestInition.endEnvironment();
     }
