@@ -20,10 +20,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 /*
- * 这是一个 //处理海量坐标的欧拉最短环路计算 测试main函数demo的test版本，在导入了api之后进行系统集成，然后
- * 用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，
- * 然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
- * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
+ * 这是一个 //处理海量坐标的欧拉最短环路计算 测试main函数demo的test版本，在导入了api之后进行系统
+ * 集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照
+ * 输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示
+ * 输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个
+ * 文件里。及其傻瓜化的流程，方便商业化落地。
  * --罗瑶光
  * */
 class TSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest {
@@ -53,17 +54,19 @@ class TSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest {
         List<Line2D> lines = TSP2D_X_getYaoguangLuo2DEulerRingTSP2D._E(AMV_MVS_VSQs);
         //输出
         for (Line2D lines2D : lines) {
-            System.out.print("x-" + lines2D.getBegin().getX() + "-y-" + lines2D.getBegin().getY());
+            System.out.print("x-" + lines2D.getBegin().getX() + "-y-"
+                + lines2D.getBegin().getY());
             System.out.print("----");
-            System.out.print("x-" + lines2D.getEnd().getX() + "-y-" + lines2D.getEnd().getY());
+            System.out.print("x-" + lines2D.getEnd().getX() + "-y-"
+                + lines2D.getEnd().getY());
             System.out.println();
         }
-        //结束
-        //测试结果
-        //10.0--10.0----7.0--9.0
-        //1.0--10.0----2.0--5.0
-        //1.0--10.0----7.0--9.0
-        //10.0--10.0----10.0--1.0
-        //10.0--1.0----2.0--5.0
     }
 }
+//结束
+//测试结果
+//10.0--10.0----7.0--9.0
+//1.0--10.0----2.0--5.0
+//1.0--10.0----7.0--9.0
+//10.0--10.0----10.0--1.0
+//10.0--1.0----2.0--5.0
