@@ -20,13 +20,14 @@ class LiterarinessLevelTestTest {
     @Test
     void IQ_EducationLevel() {
     }
+
     /*
      * 这是一个 用于文本的词汇比重计算文学分析程度的德塔图灵分词个人著作权中的权重内核模块计算
-     * 测试main函数demo的test版本，在导入了api之后进行系统集成，然后
-     * 用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，
-     * 然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
-     * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
-     * --罗瑶光
+     * 测试main函数demo的test版本，在导入了api之后进行系统集成，然后 用下面的对应的函数中源码逻辑
+     * 进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取
+     * 输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。系统
+     * 需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，
+     * 方便商业化落地。 --罗瑶光
      * */
     @Test
     void main() {
@@ -38,22 +39,26 @@ class LiterarinessLevelTestTest {
         double[][] kernel = new double[3][];
         kernel[0] = new InitBehaviorICAKernel().getBehaviorICAKernel(S_String.text1
             , commonTestInition.NE);
-        System.out.println("kernel0->" + kernel[0][0] + "--" + kernel[0][1] + "--" + kernel[0][2]);
+        System.out.println("kernel0->" + kernel[0][0]
+            + "--" + kernel[0][1] + "--" + kernel[0][2]);
 
         kernel[1] = new InitBehaviorICAKernel().getBehaviorICAKernel(S_String.text2
             , commonTestInition.NE);
-        System.out.println("kernel0->" + kernel[1][0] + "--" + kernel[1][1] + "--" + kernel[1][2]);
+        System.out.println("kernel0->" + kernel[1][0]
+            + "--" + kernel[1][1] + "--" + kernel[1][2]);
 
         kernel[2] = new InitBehaviorICAKernel().getBehaviorICAKernel(S_String.text3
             , commonTestInition.NE);
-        System.out.println("kernel0->" + kernel[2][0] + "--" + kernel[2][1] + "--" + kernel[2][2]);
+        System.out.println("kernel0->" + kernel[2][0]
+            + "--" + kernel[2][1] + "--" + kernel[2][2]);
         //下面高级用法商业自适应去开发。
         LiterarinessLevelTest educationLevelTest = new LiterarinessLevelTest();
         educationLevelTest.IQ_EducationLevel(kernel);
         //output
         //建议用public getter，别被我的测试文件进行偷懒操作。
         for (int i = 0; i < educationLevelTest.literarinessLevel.length; i++) {
-            System.out.println("EducationLevel" + i + "->" + educationLevelTest.literarinessLevel[i]);
+            System.out.println("EducationLevel" + i
+                + "->" + educationLevelTest.literarinessLevel[i]);
         }
         System.out.println(educationLevelTest.literarinessDuration);
         //end
