@@ -88,15 +88,15 @@ class RestNLPPortImplTest {
         commonTestInition.initEnvironment("去弹窗组件流测试");
         //计算
         String ss = new String("罗瑶光先生从2018年10月开始，所有个人著作权作品，全部开源，" +
-            "到现在，和无数群体，技术社团" +
-            "正面交锋7年，一直0纠纷，罗瑶光先生认为，一件作品，一个事物，如果有价值，就应该像教材一样在真实" +
-            "的环境中实践测试和论证，能经得起所有人长年累月不断地挑剔的东西，才是货真价实的，罗瑶光的个人著作权" +
-            "作品都是互联网，大数据产业领域基础作品，2018年后，在60余互联网app上发布德塔开源的作品，罗瑶光先生" +
-            "认为开源作品对同行呈现包容性。同时对垄断产业有约束性。");
+            "到现在，和无数群体，技术社团正面交锋7年，一直0纠纷，罗瑶光先生认为，一件作品，一个事物，" +
+            "如果有价值，就应该像教材一样在真实的环境中实践测试和论证，能经得起所有人长年累月不断地" +
+            "挑剔的东西，才是货真价实的，罗瑶光的个人著作权作品都是互联网，大数据产业领域基础作品，" +
+            "2018年后，在60余互联网app上发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。" +
+            "同时对垄断产业有约束性。");
         Object object = RestNLPPortImpl.dataZF(ss, commonTestInition.NE);
         IMV_SIQ _IMV_SIQ = (IMV_SIQ) object;
-        String string= _IMV_SIQ.getString("zf");
-        string= URLDecoder.decode(string,"UTF8");
+        String string = _IMV_SIQ.getString("zf");
+        string = URLDecoder.decode(string, "UTF8");
         System.out.println(string);
         commonTestInition.endEnvironment();
     }
