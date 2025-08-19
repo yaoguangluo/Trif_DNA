@@ -45,7 +45,8 @@ class SortFlowerTalkTest {
         CommonTestInition commonTestInition = new CommonTestInition();
         commonTestInition.initEnvironment("去弹窗组件流测试");
         //优化后 索引变化了。
-        commonTestInition.NE._I_U._AE = (CogsBinaryForest_AE) commonTestInition.NE.app_S._AE;
+        commonTestInition.NE._I_U._AE = (CogsBinaryForest_AE) commonTestInition
+            .NE.app_S._AE;
         //计算搜索
         //配置环境，
         String[] argv = commonTestInition.NE._I_U.argv;
