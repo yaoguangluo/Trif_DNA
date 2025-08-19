@@ -14,10 +14,11 @@ import org.junit.jupiter.api.Test;
  * */
 
 /*
- * 这是一个 数据中极值边缘凸显和空间立体凹凸特征表达 测试main函数demo的test版本，在导入了api之后进行系统集成，然后
- * 用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，
- * 然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
- * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
+ * 这是一个 数据中极值边缘凸显和空间立体凹凸特征表达 测试main函数demo的test版本，在导入了api之后进行
+ * 系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照
+ * 输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示
+ * 输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件
+ * 里。及其傻瓜化的流程，方便商业化落地。
  * --罗瑶光
  * */
 class SobelTest {
@@ -30,8 +31,9 @@ class SobelTest {
                 input[i][j] = ((int) (Math.random() * 10000)) % 255;
             }
         }
-        //exe mag 和 dir 用于图片中极值边缘凸显和空间立体凹凸特征表达。 refer思想：路德大学RenHart，ComputerVision 绿皮书
-        //关于 for (int i = , p = ，。。; i < ，。。; ++i, ++p，。。) { ，这种多参数 for loop， Refer 罗阳。我当年也是第一次看到这种语法支持。
+        //exe mag 和 dir 用于图片中极值边缘凸显和空间立体凹凸特征表达。 refer思想：路德大学
+        // RenHart，ComputerVision 绿皮书关于 for (int i = , p = ，。。; i < ，。。; ++i
+        // , ++p，。。) { ，这种多参数 for loop， Refer 罗阳。我当年也是第一次看到这种语法支持。
         int[][] output = Sobel.P(input, 2);
         //output
         for (int i = 0; i < 16; i++) {
@@ -40,7 +42,6 @@ class SobelTest {
             }
             System.out.println();
         }
-        //
     }
 
     @Test
