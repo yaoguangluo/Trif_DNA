@@ -33,10 +33,10 @@ class LenovoInitTest {
 
     /*
      * 这是一个 用于文本的词汇意义来计算文章的内容属性的德塔图灵分词个人著作权中的权重内核模块
-     * 测试main函数demo的test版本，在导入了api之后进行系统集成，然后
-     * 用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，
-     * 然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
-     * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
+     * 测试main函数demo的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行
+     * 复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出
+     * 需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。系统需要
+     * jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
      * --罗瑶光
      * */
     @Test
@@ -57,10 +57,13 @@ class LenovoInitTest {
             String word = Iterator.next();
             commonTestInition.NE.app_S.emotionSample = environmentSampleMap.get_S(word);
             if (null != commonTestInition.NE.app_S.emotionSample.getDistinction()) {
-                if (lenovo.containsKey(commonTestInition.NE.app_S.emotionSample.getDistinction())) {
-                    System.out.print(lenovo.get(commonTestInition.NE.app_S.emotionSample.getDistinction()).toString() + " ");
+                if (lenovo.containsKey(commonTestInition.NE.app_S.emotionSample
+                    .getDistinction())) {
+                    System.out.print(lenovo.get(commonTestInition.NE.app_S
+                        .emotionSample.getDistinction()).toString() + " ");
                 } else {
-                    System.out.print(commonTestInition.NE.app_S.emotionSample.getDistinction() + " ");
+                    System.out.print(commonTestInition.NE.app_S
+                        .emotionSample.getDistinction() + " ");
                 }
             }
         }
@@ -71,13 +74,17 @@ class LenovoInitTest {
             String word = Iterator.next();
             commonTestInition.NE.app_S.emotionSample = environmentSampleMap.get_S(word);
             if (null != commonTestInition.NE.app_S.emotionSample.getMotivation()) {
-                if (commonTestInition.NE.app_S.emotionSample.getMotivation().contains("语料库空")) {
+                if (commonTestInition.NE.app_S.emotionSample
+                    .getMotivation().contains("语料库空")) {
                     continue;
                 }
-                if (lenovo.containsKey(commonTestInition.NE.app_S.emotionSample.getMotivation())) {
-                    System.out.print(lenovo.get(commonTestInition.NE.app_S.emotionSample.getMotivation()).toString() + " ");
+                if (lenovo.containsKey(commonTestInition.NE.app_S
+                    .emotionSample.getMotivation())) {
+                    System.out.print(lenovo.get(commonTestInition.NE
+                        .app_S.emotionSample.getMotivation()).toString() + " ");
                 } else {
-                    System.out.print(commonTestInition.NE.app_S.emotionSample.getMotivation() + " ");
+                    System.out.print(commonTestInition.NE
+                        .app_S.emotionSample.getMotivation() + " ");
                 }
             }
         }
@@ -88,13 +95,17 @@ class LenovoInitTest {
             String word = Iterator.next();
             commonTestInition.NE.app_S.emotionSample = environmentSampleMap.get_S(word);
             if (null != commonTestInition.NE.app_S.emotionSample.getTrending()) {
-                if (commonTestInition.NE.app_S.emotionSample.getTrending().contains("语料库空")) {
+                if (commonTestInition.NE.app_S.emotionSample
+                    .getTrending().contains("语料库空")) {
                     continue;
                 }
-                if (lenovo.containsKey(commonTestInition.NE.app_S.emotionSample.getTrending())) {
-                    System.out.print(lenovo.get(commonTestInition.NE.app_S.emotionSample.getTrending()).toString() + " ");
+                if (lenovo.containsKey(commonTestInition.NE
+                    .app_S.emotionSample.getTrending())) {
+                    System.out.print(lenovo.get(commonTestInition
+                        .NE.app_S.emotionSample.getTrending()).toString() + " ");
                 } else {
-                    System.out.print(commonTestInition.NE.app_S.emotionSample.getTrending() + " ");
+                    System.out.print(commonTestInition.NE
+                        .app_S.emotionSample.getTrending() + " ");
                 }
             }
         }
@@ -107,13 +118,17 @@ class LenovoInitTest {
             String word = Iterator.next();
             commonTestInition.NE.app_S.emotionSample = environmentSampleMap.get_S(word);
             if (null != commonTestInition.NE.app_S.emotionSample.getPrediction()) {
-                if (commonTestInition.NE.app_S.emotionSample.getPrediction().contains("语料库空")) {
+                if (commonTestInition.NE.app_S.emotionSample
+                    .getPrediction().contains("语料库空")) {
                     continue;
                 }
-                if (lenovo.containsKey(commonTestInition.NE.app_S.emotionSample.getPrediction())) {
-                    System.out.print(lenovo.get(commonTestInition.NE.app_S.emotionSample.getPrediction()).toString() + " ");
+                if (lenovo.containsKey(commonTestInition.NE.app_S
+                    .emotionSample.getPrediction())) {
+                    System.out.print(lenovo.get(commonTestInition
+                        .NE.app_S.emotionSample.getPrediction()).toString() + " ");
                 } else {
-                    System.out.print(commonTestInition.NE.app_S.emotionSample.getPrediction() + " ");
+                    System.out.print(commonTestInition.NE.app_S
+                        .emotionSample.getPrediction() + " ");
                 }
             }
         }
@@ -139,6 +154,7 @@ class LenovoInitTest {
 //    倾向探索：
 //    自闭 善良 自恋，自爱 平庸，碌碌之人 自恋，自爱 逆商 优秀
 //    决策挖掘：
-//    防御 合作 合作 示威 Disconnected from the target VM, address: '127.0.0.1:54933', transport: 'socket'
+//    防御 合作 合作 示威
+//    Disconnected from the target VM, address: '127.0.0.1:54933', transport: 'socket'
 //
 //    Process finished with exit code 0
