@@ -19,10 +19,11 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 /*
- * 这是一个 处理处理商旅森林 isolation Forest_X_getTSPForestIsolationGroups2D 测试main函数demo的test版本，在导入了api之后进行系统集成，然后
- * 用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，
- * 然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
- * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
+ * 这是一个 处理处理商旅森林 isolation Forest_X_getTSPForestIsolationGroups2D 测试main函数demo
+ * 的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行
+ * ，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看数据，
+ * 也可以用println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输入
+ * 输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
  * --罗瑶光
  * */
 @SuppressWarnings("unused")
@@ -62,7 +63,8 @@ public class DemoCoords3Test {
         input.add(position2D5);
 
 //		//处理商旅森林 isolation
-        Map<Double, List<AMV_MVS_VSQ_2D>> output = Forest_X_getTSPForestIsolationGroups2D._E(input, 12);
+        Map<Double, List<AMV_MVS_VSQ_2D>> output
+            = Forest_X_getTSPForestIsolationGroups2D._E(input, 12);
         Iterator<Double> iterator = output.keySet().iterator();
         while (iterator.hasNext()) {
             double temp = iterator.next();
@@ -78,7 +80,8 @@ public class DemoCoords3Test {
         //
         //double v= FindPCAMeanDistance.findMeanDistanceFromPositions2D(input, 5, 4);
         //System.out.println(v);
-        double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D._E(input, 3, 4);
+        double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D._E(input
+            , 3, 4);
         for (int i = 0; i < v.length; i++) {
             System.out.println(v[i]);
         }
@@ -86,7 +89,8 @@ public class DemoCoords3Test {
 
     public static void _E(List<AMV_MVS_VSQ_2D> inputs) {
         //处理商旅森林 isolation
-        Map<Double, List<AMV_MVS_VSQ_2D>> output = Forest_X_getTSPForestIsolationGroups2D._E(inputs, 12);
+        Map<Double, List<AMV_MVS_VSQ_2D>> output
+            = Forest_X_getTSPForestIsolationGroups2D._E(inputs, 12);
         Iterator<Double> iterator = output.keySet().iterator();
         while (iterator.hasNext()) {
             double temp = iterator.next();
@@ -98,17 +102,18 @@ public class DemoCoords3Test {
                 System.out.println(temp1.getX() + ":" + temp1.getY());
             }
         }
-
         //
-//        AMV_MVS_VSQ_2D position2D5 = new AMV_MVS_VSQ_2D();
-//        position2D5.I_X(15);
-//        position2D5.I_Y(25);
-//        inputs.add(position2D5);
-        //double v= FindPCAMeanDistance.findMeanDistanceFromPositions2D(input, 5, 4);
-        //System.out.println(v);
-        double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D._E(inputs, 3, 4);
+        double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D._E(inputs
+            , 3, 4);
         for (int i = 0; i < v.length; i++) {
             System.out.println(v[i]);
         }
     }
 }
+//105
+//        AMV_MVS_VSQ_2D position2D5 = new AMV_MVS_VSQ_2D();
+//        position2D5.I_X(15);
+//        position2D5.I_Y(25);
+//        inputs.add(position2D5);
+//double v= FindPCAMeanDistance.findMeanDistanceFromPositions2D(input, 5, 4);
+//System.out.println(v);
