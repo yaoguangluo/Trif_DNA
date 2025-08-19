@@ -19,11 +19,11 @@ import java.util.List;
  * */
 class DemoTSLTTest {
     /*
-     * 这是一个 用于中英文翻译测试探索， 测试main函数demo的test版本，在导入了api之后进行系统集成，然后
-     * 用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，
-     * 然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
-     * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
-     * --罗瑶光
+     * 这是一个 用于中英文翻译测试探索， 测试main函数demo的test版本，在导入了api之后进行系统集成
+     * ，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照
+     * 输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println
+     * 来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都
+     * 注释在这个文件里。及其傻瓜化的流程，方便商业化落地。--罗瑶光
      * */
     @Test
     void main() {
@@ -31,27 +31,27 @@ class DemoTSLTTest {
         CommonTestInition commonTestInition = new CommonTestInition();
         commonTestInition.initEnvironment("去弹窗组件流测试");
         //exec
-//        IMV_SIQ ce = ((BinaryForest_AE) _A).getCnToEn();
-//        IMV_SIQ ec = ((BinaryForest_AE) _A).getEnToCn();
-//        IMV_SIQ poscc = ((BinaryForest_AE) _A).getPosCnToCn();
-//        IMV_SIQ posec = ((BinaryForest_AE) _A).getPosEnToCn();
-//        IMV_SIQ posee = ((BinaryForest_AE) _A).getPosEnToEn();
-//        IMV_SIQ fce = ((BinaryForest_AE) _A).getFullCnToEn();
-//        IMV_SIQ fec = ((BinaryForest_AE) _A).getFullEnToCn();
+        //IMV_SIQ ce = ((BinaryForest_AE) _A).getCnToEn();
+        //IMV_SIQ ec = ((BinaryForest_AE) _A).getEnToCn();
+        //IMV_SIQ poscc = ((BinaryForest_AE) _A).getPosCnToCn();
+        //IMV_SIQ posec = ((BinaryForest_AE) _A).getPosEnToCn();
+        //IMV_SIQ posee = ((BinaryForest_AE) _A).getPosEnToEn();
+        //IMV_SIQ fce = ((BinaryForest_AE) _A).getFullCnToEn();
+        //IMV_SIQ fec = ((BinaryForest_AE) _A).getFullEnToCn();
         System.out.println("输入");
         String v = "如流枫之回雪, 若浣花洗月";
-////		 //String v= "数据一直在更新中";
-//		String v= "中国正在崛起的道路上奔跑";
-//		String v= "我一直在奔跑, 我需要一双翅膀！";
-//		String v= "他也一直在奔跑, 他同样需要一双翅膀！";
+        //// //String v= "数据一直在更新中";
+        //String v= "中国正在崛起的道路上奔跑";
+        //String v= "我一直在奔跑, 我需要一双翅膀！";
+        //String v= "他也一直在奔跑, 他同样需要一双翅膀！";
         System.out.println(v);
         Translator ts = new Translator_E();
         ts.IV_(commonTestInition.NE.app_S._A);
-//		TimeCheck t= new TimeCheck();
-//		t.begin();
+        //TimeCheck t= new TimeCheck();
+        //t.begin();
         List<Verbal> verbals = ts.index(commonTestInition.NE.app_S._A, v);
         String ch = ts.getChineseSentenseFromVerbalList(verbals);
-//		t.end();
+        //t.end();
         System.out.println("中文");
         System.out.println(ch);
 
@@ -80,13 +80,11 @@ class DemoTSLTTest {
             System.out.print(verbals.get(i).getExplain()
                 == null ? verbals.get(i).getChinese() : verbals.get(i).getExplain());
         }
-//		t.duration();
-
-//		ReadEnglish readEnglish= new ReadEnglish();
-//		readEnglish.setPreReadText(en);
-//		readEnglish.start();
+        //t.duration();
+        //ReadEnglish readEnglish= new ReadEnglish();
+        //readEnglish.setPreReadText(en);
+        //readEnglish.start();
         //output
-
         //end
         commonTestInition.endEnvironment();
     }
