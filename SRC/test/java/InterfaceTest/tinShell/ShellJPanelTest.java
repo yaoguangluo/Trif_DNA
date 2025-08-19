@@ -69,18 +69,22 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
-// mock api 和test me api 注释：Generated with love by TestMe :) Please report issues and submit feature
+// mock api 和test me api 注释：Generated with love by TestMe :)
+// Please report issues and submit feature
 // requests at: http://weirddev.com/forum#!/testme
 class ShellJPanelTest {
     //    @Mock
 //    App NE;
     @Mock
     LinkNode thisNodeInfo;
-    //Field jlabel_box of type JCheckBox[] - was not mocked since Mockito doesn't mock arrays
-    //Field tabNamesHook of type boolean[] - was not mocked since Mockito doesn't mock arrays
+    //Field jlabel_box of type JCheckBox[]
+    // - was not mocked since Mockito doesn't mock arrays
+    //Field tabNamesHook of type boolean[]
+    // - was not mocked since Mockito doesn't mock arrays
     @Mock
     JTextPane jTextPane;
-    //Field stringBuilder of type StringBuilder - was not mocked since Mockito doesn't mock a
+    //Field stringBuilder of type StringBuilder
+    // - was not mocked since Mockito doesn't mock a
     // Final class when 'mock-maker-inline' option is not set
     @Mock
     JTextPane outputjTextPane;
@@ -156,12 +160,14 @@ class ShellJPanelTest {
 
     @Mock
     Component modalComp;
-    //Field modalAppContext of type AppContext - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
+    //Field modalAppContext of type AppContext - was not mocked since Mockito
+    // doesn't mock a Final class when 'mock-maker-inline' option is not set
 
 
     @Mock
     Container parent;
-    //Field appContext of type AppContext - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
+    //Field appContext of type AppContext - was not mocked since Mockito doesn't
+    // mock a Final class when 'mock-maker-inline' option is not set
     @Mock
     Color foreground;
     @Mock
@@ -172,7 +178,8 @@ class ShellJPanelTest {
     Font peerFont;
     @Mock
     Cursor cursor;
-    //Field locale of type Locale - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
+    //Field locale of type Locale - was not mocked since Mockito doesn't
+    // mock a Final class when 'mock-maker-inline' option is not set
     @Mock
     GraphicsConfiguration graphicsConfig;
     @Mock
@@ -181,10 +188,12 @@ class ShellJPanelTest {
     DropTarget dropTarget;
     @Mock
     Vector<PopupMenu> popups;
-    //Field focusTraversalKeys of type Set[] - was not mocked since Mockito doesn't mock arrays
+    //Field focusTraversalKeys of type Set[] - was not mocked since
+    // Mockito doesn't mock arrays
     @Mock
     Object LOCK;
-    //Field acc of type AccessControlContext - was not mocked since Mockito doesn't mock a
+    //Field acc of type AccessControlContext - was not mocked since
+    // Mockito doesn't mock a
     // Final class when 'mock-maker-inline' option is not set
     @Mock
     Dimension minSize;
@@ -192,7 +201,8 @@ class ShellJPanelTest {
     Dimension prefSize;
     @Mock
     Dimension maxSize;
-    //Field componentOrientation of type ComponentOrientation - was not mocked since Mockito
+    //Field componentOrientation of type ComponentOrientation -
+    // was not mocked since Mockito
     // doesn't mock a Final class when 'mock-maker-inline' option is not set
     @Mock
     ComponentListener componentListener;
@@ -216,11 +226,14 @@ class ShellJPanelTest {
     PropertyChangeSupport changeSupport;
     @Mock
     Object objectLock;
-    //Field compoundShape of type Region - was not mocked since Mockito doesn't mock a
+    //Field compoundShape of type Region - was not mocked since
+    // Mockito doesn't mock a
     // Final class when 'mock-maker-inline' option is not set
-    //Field mixingCutoutRegion of type Region - was not mocked since Mockito doesn't mock
+    //Field mixingCutoutRegion of type Region - was not mocked
+    // since Mockito doesn't mock
     // a Final class when 'mock-maker-inline' option is not set
-    //Field eventCache of type EventQueueItem[] - was not mocked since Mockito doesn't mock arrays
+    //Field eventCache of type EventQueueItem[] - was not mocked
+    // since Mockito doesn't mock arrays
     @Mock
     Map<Class<?>, Boolean> coalesceMap;
 
@@ -241,10 +254,11 @@ class ShellJPanelTest {
     }
 
     /*
-     * 这是一个 tinshell 批处理测试 执行复杂条件搜索逻辑， 测试main函数demo的test版本，在导入了api之后进行系统集成，然后
-     * 用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，
-     * 然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
-     * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
+     * 这是一个 tinshell 批处理测试 执行复杂条件搜索逻辑， 测试main函数demo的test版本，在导入
+     * 了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可
+     * 出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看
+     * 数据，也可以用println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，
+     * 本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
      * --罗瑶光
      * */
     @Test
@@ -272,9 +286,11 @@ class ShellJPanelTest {
             if (null == NE.app_S._A) {
                 return;
             }//later normalization
-            MakeContainerXLS makeContainerXLS = new MakeContainerXLS(NE.app_S._A, NE.app_S
-                , NE.app_S.jTabbedpane, NE.app_S.tabNames, NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn
-                , NE.app_S.fMHMMListOneTime_E_X_S.posEnToEn, NE.app_S.fMHMMListOneTime_E_X_S.enToCn
+            MakeContainerXLS makeContainerXLS = new MakeContainerXLS(NE.app_S._A
+                , NE.app_S, NE.app_S.jTabbedpane, NE.app_S.tabNames
+                , NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn
+                , NE.app_S.fMHMMListOneTime_E_X_S.posEnToEn
+                , NE.app_S.fMHMMListOneTime_E_X_S.enToCn
                 , NE.app_S.fMHMMListOneTime_E_X_S.fullCnToEn, "xls"
                 , NE.app_S.emotionSample, NE.app_S.ratioMap_E, NE.app_S.sensingTest, NE
             );
@@ -301,10 +317,13 @@ class ShellJPanelTest {
             System.out.println("path table:" + XLSTableName);
             System.out.println("name table:" + XLSTableNamePath);
             //init test
-            //准备测试命令，sonar覆盖率30%，提高覆盖率方式，我的DNA元基催化与肽计算中所有的命令都按下面方式模拟一遍就可以100%。
-            //我做的是模拟loader runner 批处理，不是sonar体系逻辑。我写测试是满足我罗瑶光的欲望，我的欲望不会告诉大家。大家要sonar，
+            //准备测试命令，sonar覆盖率30%，提高覆盖率方式，我的DNA元基催化与肽计算中
+            // 所有的命令都按下面方式模拟一遍就可以100%。
+            //我做的是模拟loader runner 批处理，不是sonar体系逻辑。我写测试是满足我
+            // 罗瑶光的欲望，我的欲望不会告诉大家。大家要sonar，
             // 去100%填满mock所有单元函数即可。
-            String tinshell = ("首先获取一个表，名字是" + XLSTableName + "，如果有这个表，准备下一步选择;\r\n" +
+            String tinshell = ("首先获取一个表，名字是" + XLSTableName
+                + "，如果有这个表，准备下一步选择;\r\n" +
                 "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n" +
                 "条件为:和:中药名称|包含|菜谱;\r\n" +
                 "条件为:和:风险规避|不包含|孕;\r\n" +
@@ -318,7 +337,8 @@ class ShellJPanelTest {
             //osgi view init
             OSU_OVQ_OSQ_VSQ _SQ__OVQ_OSQ_VSQ = new OSU_OVQ_OSQ_VSQ();
             //命令需要的表格生成
-            //later//Object object = _SQ__OVQ_OSQ_VSQ.outputOut.get(S_ShellETL.SHELL_ETL_TIN_SHELL_ETL);
+            //later//Object object = _SQ__OVQ_OSQ_VSQ.outputOut.get(
+            // S_ShellETL.SHELL_ETL_TIN_SHELL_ETL);
             Object object = new TinMap();
             //do test
             TinMap tinMap = (TinMap) object;
@@ -333,26 +353,19 @@ class ShellJPanelTest {
             //输出
             while (iterator.hasNext()) {
                 String string = iterator.next();
-                NE.app_S.appConfig.SectionJPanel.jTextPane.setText(output.get(string).toString());
+                NE.app_S.appConfig.SectionJPanel.jTextPane
+                    .setText(output.get(string).toString());
                 System.out.println("line-->:" + output.get(string).toString());
                 //stringBuilder.append("/r/n" + output.get(string).toString());
             }
             //DNA序列记忆标注
             if (null != NE.app_S.helpVerbaMap.didJustNow) {
-                Iterator<String> iterators = NE.app_S.helpVerbaMap.didJustNow.keySet().iterator();
+                Iterator<String> iterators = NE.app_S.helpVerbaMap
+                    .didJustNow.keySet().iterator();
                 while (iterators.hasNext()) {
                     System.out.println("Action-->:" + iterators.next());
                 }
             }
-            //本花语测试输出如下，
-            //Action-->:selectRowsByAttributesOfGetCulumns
-            //Action-->:P_ListNeedStart
-            //Action-->:selectRowsByAttributesOfAggregation
-            //Action-->:P_TableName
-            //Action-->:selectRowsByAttributesOfCondition
-            //Action-->:addFindColumnsInMemoryClass
-            //DNA执行统计标注
-            //DNA新陈代谢标注
             //关闭
             NE.stop();
         } catch (Exception e1) {
@@ -371,70 +384,139 @@ class ShellJPanelTest {
 //    line-->:true
 //    line-->:操作
 //    line-->:0
-//    line-->:[{rowValue={功效={culumnValue=功专托痘疮。下乳汁。吐风痰。中风证以虾半斤。入葱姜酱料水煮。先吃虾。次吃汁。
-//    以鹅翎探引吐出痰涎即愈。能壮阳道。动风发呛。...., culumnName=功效}, 中药名称={culumnValue=<div style="background:black"><
-//    font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red">
-//    <div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="backg
-//    round:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><fon
-//    t color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red">虾菜谱
-//    </font></div></font></div></font></div></font></div></font></div></font></div></font></div></font></div></font><
-//    /div></font></div>, culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=功专温中益气
-//    。多食热中发渴。发疮疥。一名。鱼。...., culumnName=功效}, 中药名称={culumnValue=<div style="background:black"><font color=
-//    "red"><div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style=
-//    "background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black">
-//    <font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red">
-//    <div style="background:black"><font color="red"><div style="background:black"><font color="red">鲢鱼菜谱</font></div>
-//    </font></div></font></div></font></div></font></div></font></div></font></div></font></div></font></div></font></div>,
-//    culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=功专补五脏。除风湿。尾血疗口眼。斜。
-//    少和麝。左涂右。右。涂左。正则洗去。滴耳治耳痛。滴鼻治鼻衄。点目治痘后生翳。头治百虫入耳。...., culumnName=功效}, 中药名称={culumnValue=
-//    <div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background
-//    :black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color=
-//    "red"><div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style=
-//    "background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black">
-//    <font color="red">鳝鱼菜谱</font></div></font></div></font></div></font></div></font></div></font></div></font></div>
-//    </font></div></font></div></font></div>, culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}},
-//    {rowValue={功效={culumnValue=功专调胃气。...., culumnName=功效}, 中药名称={culumnValue=<div style="background:black"><font
-//    color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red">
-//    <div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:
-//    black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red">
-//    <div style="background:black"><font color="red"><div style="background:black"><font color="red">鲂鱼菜谱</font></div>
-//    </font></div></font></div></font></div></font></div></font></div></font></div></font></div></font></div></font></div>,
-//    culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=马铃薯生长肌肉, 健骨, 抗癌。.
-//    , culumnName=功效}, 中药名称={culumnValue=<div style="background:black"><font color="red"><div style="background:black">
-//    <font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red">
-//    <div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:
-//    black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red">
-//    <div style="background:black"><font color="red">马铃薯菜谱</font></div></font></div></font></div></font></div></font></div>
-//    </font></div></font></div></font></div></font></div></font></div>, culumnName=中药名称}, 打分={culumnValue=0,
-//    culumnName=打分}}}, {rowValue={功效={culumnValue=山羊蹄子增强免疫, 健骨, 补元气。., culumnName=功效}, 中药名称={culumnValue=<div
-//    style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black">
-//    <font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red"><div
-//    style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:
-//    black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color
-//    ="red">山羊蹄菜谱</font></div></font></div></font></div></font></div></font></div></font></div></font></div></font>
-//    </div></font></div></font></div>, culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效=
-//    {culumnValue=功专暖中益气。醒酒解渴。同米粉煮羹食。调中收痔。煮食疗阳事不起。俗名泥鳅。...., culumnName=功效}, 中药名称={culumnValue=<div
-//    style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background
-//    :black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red">
-//    <div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black">
-//    <font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red">鳅鱼菜谱</font>
-//    </div></font></div></font></div></font></div></font></div></font></div></font></div></font></div></font></div></font></div>, culumnName=中药名称},
-//    打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=咖喱去腥开胃生津防腐杀虫提神充饥抗癌。., culumnName=功效}, 中药名称
-//    ={culumnValue=<div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black">
-//    <font color="red"><div style="background:black"><font color="red"><div style="background:black">
-//    <font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black">
-//    <font color="red"><div style="background:black"><font color="red">食物咖喱菜谱</font></div></font></div></font>
-//    </div></font></div></font></div></font></div></font></div></font></div></font></div></font></div>, culumnName=中药名称}, 打分={culumnValue=0,
+//    line-->:[{rowValue={功效={culumnValue=功专托痘疮。下乳汁。吐风痰。中风证以虾半斤。
+//    入葱姜酱料水煮。先吃虾。次吃汁。
+//    以鹅翎探引吐出痰涎即愈。能壮阳道。动风发呛。...., culumnName=功效}, 中药名称={culumnValue
+//    =<div style="background:black"><
+//    font color="red"><div style="background:black"><font color="red"><div style=
+//    "background:black"><font color="red">
+//    <div style="background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style="backg
+//    round:black"><font color="red"><div style="background:black"><font color
+//    ="red"><div style="background:black"><fon
+//    t color="red"><div style="background:black"><font color="red"><div style
+//    ="background:black"><font color="red">虾菜谱
+//    </font></div></font></div></font></div></font></div></font></div></font>
+//    </div></font></div></font></div></font><
+//    /div></font></div>, culumnName=中药名称}, 打分={culumnValue=0, culumnName
+//    =打分}}}, {rowValue={功效={culumnValue=功专温中益气
+//    。多食热中发渴。发疮疥。一名。鱼。...., culumnName=功效}, 中药名称={culumnValue
+//    =<div style="background:black"><font color=
+//    "red"><div style="background:black"><font color="red"><div style="background
+//    :black"><font color="red"><div style=
+//    "background:black"><font color="red"><div style="background:black"><font color
+//    ="red"><div style="background:black">
+//    <font color="red"><div style="background:black"><font color="red"><div style
+//    ="background:black"><font color="red">
+//    <div style="background:black"><font color="red"><div style="background:black">
+//    <font color="red">鲢鱼菜谱</font></div>
+//    </font></div></font></div></font></div></font></div></font></div></font>
+//    </div></font></div></font></div></font></div>,
+//    culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效
+//    ={culumnValue=功专补五脏。除风湿。尾血疗口眼。斜。
+//    少和麝。左涂右。右。涂左。正则洗去。滴耳治耳痛。滴鼻治鼻衄。点目治痘后生翳。头治百虫入耳。
+//    ...., culumnName=功效}, 中药名称={culumnValue=
+//    <div style="background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style="background
+//    :black"><font color="red"><div style="background:black"><font color="red">
+//    <div style="background:black"><font color=
+//    "red"><div style="background:black"><font color="red"><div style="background
+//    :black"><font color="red"><div style=
+//    "background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style="background:black">
+//    <font color="red">鳝鱼菜谱</font></div></font></div></font></div></font></div>
+//    </font></div></font></div></font></div>
+//    </font></div></font></div></font></div>, culumnName=中药名称}, 打分={culumnValue
+//    =0, culumnName=打分}}},
+//    {rowValue={功效={culumnValue=功专调胃气。...., culumnName=功效}, 中药名称
+//    ={culumnValue=<div style="background:black"><font
+//    color="red"><div style="background:black"><font color="red"><div style
+//    ="background:black"><font color="red">
+//    <div style="background:black"><font color="red"><div style="background
+//    :black"><font color="red"><div style="background:
+//    black"><font color="red"><div style="background:black"><font color="red">
+//    <div style="background:black"><font color="red">
+//    <div style="background:black"><font color="red"><div style="background
+//    :black"><font color="red">鲂鱼菜谱</font></div>
+//    </font></div></font></div></font></div></font></div></font></div></font>
+//    </div></font></div></font></div></font></div>,
+//    culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}}, {rowValue
+//    ={功效={culumnValue=马铃薯生长肌肉, 健骨, 抗癌。.
+//    , culumnName=功效}, 中药名称={culumnValue=<div style="background:black">
+//    <font color="red"><div style="background:black">
+//    <font color="red"><div style="background:black"><font color="red"><div style
+//    ="background:black"><font color="red">
+//    <div style="background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style="background:
+//    black"><font color="red"><div style="background:black"><font color="red">
+//    <div style="background:black"><font color="red">
+//    <div style="background:black"><font color="red">马铃薯菜谱</font></div></font>
+//    </div></font></div></font></div></font></div>
+//    </font></div></font></div></font></div></font></div></font></div>, culumnName
+//    =中药名称}, 打分={culumnValue=0,
+//    culumnName=打分}}}, {rowValue={功效={culumnValue=山羊蹄子增强免疫, 健骨, 补元气。
+//    ., culumnName=功效}, 中药名称={culumnValue=<div
+//    style="background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style="background:black">
+//    <font color="red"><div style="background:black"><font color="red"><div style
+//    ="background:black"><font color="red"><div
+//    style="background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style="background:
+//    black"><font color="red"><div style="background:black"><font color="red">
+//    <div style="background:black"><font color
+//    ="red">山羊蹄菜谱</font></div></font></div></font></div></font></div></font>
+//    </div></font></div></font></div></font>
+//    </div></font></div></font></div>, culumnName=中药名称}, 打分={culumnValue=0
+//    , culumnName=打分}}}, {rowValue={功效=
+//    {culumnValue=功专暖中益气。醒酒解渴。同米粉煮羹食。调中收痔。煮食疗阳事不起。俗名泥鳅。
+//    ...., culumnName=功效}, 中药名称={culumnValue=<div
+//    style="background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style="background
+//    :black"><font color="red"><div style="background:black"><font color="red">
+//    <div style="background:black"><font color="red">
+//    <div style="background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style="background:black">
+//    <font color="red"><div style="background:black"><font color="red"><div style
+//    ="background:black"><font color="red">鳅鱼菜谱</font>
+//    </div></font></div></font></div></font></div></font></div></font></div>
+//    </font></div></font></div></font></div></font></div>, culumnName=中药名称},
+//    打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue
+//    =咖喱去腥开胃生津防腐杀虫提神充饥抗癌。., culumnName=功效}, 中药名称
+//    ={culumnValue=<div style="background:black"><font color="red"><div style
+//    ="background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style="background:black"><font color="red"><div style
+//    ="background:black">
+//    <font color="red"><div style="background:black"><font color="red"><div style
+//    ="background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style="background:black">
+//    <font color="red"><div style="background:black"><font color="red">食物咖喱菜谱
+//    </font></div></font></div></font>
+//    </div></font></div></font></div></font></div></font></div></font></div></font>
+//    </div></font></div>, culumnName=中药名称}, 打分={culumnValue=0,
 //    culumnName=打分}}}, {rowValue={功效={culumnValue=常用于润肺护肤抗癌。., culumnName=功效},
-//    中药名称={culumnValue=<div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font
-//    color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black">
-//    <font color="red"><div style="background:black"><font color="red">西红柿菜谱</font></div></font></div>
-//    </font></div></font></div></font></div></font></div></font></div></font></div></font></div></font></div>, culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=蛋有消炎解毒, 壮阳, 补元气, 提神, 预防感冒。., culumnName=功效},
-//    中药名称={culumnValue=<div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style=
-//    "background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font color="red"><div style="background:black"><font
+//    中药名称={culumnValue=<div style="background:black"><font color="red"><div style
+//    ="background:black"><font color="red"><div style="background:black"><
+//    font color="red"><div style="background:black"><font
+//    color="red"><div style="background:black"><font color="red"><div style="background:
+//    black"><font color="red"><div style="background:black"><font color="red">
+//    <div style="background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style="background:black"><font color="red">西红柿菜谱</font>
+//    </div></font></div>
+//    </font></div></font></div></font></div></font></div></font></div></font></div>
+//    </font></div></font></div>, culumnName=中药名称}, 打分={culumnValue=0
+//    , culumnName=打分}}}, {rowValue={功效={culumnValue=蛋有消炎解毒, 壮阳, 补元气,
+//    提神, 预防感冒。., culumnName=功效},
+//    中药名称={culumnValue=<div style="background:black"><font color="red"><div style
+//    ="background:black"><font color="red"><div style="background:black">
+//    <font color="red"><div style=
+//    "background:black"><font color="red"><div style="background:black"><font color
+//    ="red"><div style="background:black"><font color="red"><div style
+//    ="background:black"><font
 //    color="red"><div style="background:black"><font color="red"><div
-//    style="background:black"><font color="red"><div style="background:black"><font color="red">鸡鸭鸽子鹌鹑蛋菜谱</font></div></font></div></font></div></font></div>
-//    </font></div></font></div></font></div></font></div></font></div></font></div>, culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}}]
+//    style="background:black"><font color="red"><div style="background:black"><font
+//    color="red">鸡鸭鸽子鹌鹑蛋菜谱</font></div></font></div></font></div></font></div>
+//    </font></div></font></div></font></div></font></div></font></div></font></div>,
+//    culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}}]
 //    line-->:10
 //    line-->:success
 //    line-->:0
@@ -448,3 +530,13 @@ class ShellJPanelTest {
 //    Disconnected from the target VM, address: '127.0.0.1:52726', transport: 'socket'
 //
 //    Process finished with exit code 0
+
+//本花语测试输出如下，
+//Action-->:selectRowsByAttributesOfGetCulumns
+//Action-->:P_ListNeedStart
+//Action-->:selectRowsByAttributesOfAggregation
+//Action-->:P_TableName
+//Action-->:selectRowsByAttributesOfCondition
+//Action-->:addFindColumnsInMemoryClass
+//DNA执行统计标注
+//DNA新陈代谢标注
