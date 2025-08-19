@@ -130,7 +130,8 @@ public class CommonTestInition {
         app_S.nERO_C_OneTime_E = new NERO_C_OneTime_E();
         app_S.studyVerbaMap.putObject("nERO_C_OneTime_E", app_S.nERO_C_OneTime_E);
         app_S.fMHMMListOneTime_E = new FMHMMListOneTime_E();
-        app_S.studyVerbaMap.putObject("fMHMMListOneTime_E", app_S.fMHMMListOneTime_E);
+        app_S.studyVerbaMap.putObject("fMHMMListOneTime_E"
+            , app_S.fMHMMListOneTime_E);
         //分词引擎初始化
         System.out.println("*分词引擎 init*");
         app_S._A = new CogsBinaryForest_AE();
@@ -145,7 +146,8 @@ public class CommonTestInition {
         System.out.println("*自然语言环境 init*");
         app_S._A.IV_Mixed(NE);
         app_S.fMHMMListOneTime_E_X_S = (FMHMMListOneTime_E_X_S) app_S._A.fHMMList;
-        app_S.studyVerbaMap.putObject("fMHMMListOneTime_E_X_S", app_S.fMHMMListOneTime_E_X_S);
+        app_S.studyVerbaMap.putObject("fMHMMListOneTime_E_X_S"
+            , app_S.fMHMMListOneTime_E_X_S);
         app_S._A.forestRoots = app_S._A.fHMMList.getMap();
         app_S.studyVerbaMap.putObject("_A.forestRoots ", app_S._A.forestRoots);
         app_S.pos_X_P = new Pos_X_P();
@@ -155,9 +157,11 @@ public class CommonTestInition {
         //枝叶 register*/
         System.out.println("*其他枝叶 register*");
         app_S.pos_X_P.wordsForest = app_S.fMHMMListOneTime_E_X_S.posCnToCn;
-        app_S.studyVerbaMap.putObject("pos_X_P.wordsForest", app_S.pos_X_P.wordsForest);
+        app_S.studyVerbaMap.putObject("pos_X_P.wordsForest"
+            , app_S.pos_X_P.wordsForest);
         app_S.nlp_CE_X_S.wordsForest = app_S.fMHMMListOneTime_E_X_S.posCnToCn;
-        app_S.studyVerbaMap.putObject("nlp_CE_X_S.wordsForest", app_S.nlp_CE_X_S.wordsForest);
+        app_S.studyVerbaMap.putObject("nlp_CE_X_S.wordsForest"
+            , app_S.nlp_CE_X_S.wordsForest);
         app_S._A.wordsForest = app_S.fMHMMListOneTime_E_X_S.posCnToCn;
         app_S.studyVerbaMap.putObject("_A.wordsForest", app_S._A.wordsForest);
         app_S._A.nlp_C = app_S.nlp_CE_X_S;//later..*/
