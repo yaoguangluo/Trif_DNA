@@ -25,18 +25,11 @@ import java.util.ArrayList;
  * */
 class Sample_X_I_MapAddPluginTest {
     /*
-     * 这是一个 tinshell 批处理测试XSLX文件 一键执行复杂条件的ETL节点流拆分搜索语句逻辑， 测试main函数demo的test版本，
-     * 在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，
-     * 源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println
-     * 来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。
-     * 及其傻瓜化的流程，方便商业化落地。
-     * 关于早期git的错别字问题产生文字描述下，1 windows的中文输入法 词汇一旦确定回车后会和首个词汇互换，
-     * 稍不留神就第一个词汇输入正确，第二次就因互换了导致记忆欺骗就输入错误了。2 这时候配合劣质传感器 拆机机
-     * 不开发票的 设备 偷偷放电，手指触摸微微酥麻+眼睛边角靠近太阳穴刺痒麻，头顶，后颈，鼻两侧，背部，足弓内侧，
-     * 小腿中段外侧配合刺痒麻，再配合光敏效应和大脑奇奇怪怪的意识比如反正罗瑶光是富兰克林的板凳重复更近编码矫正方式，
-     * 这次有问题下次改，总是越来越好的思想，一旦上传，之后又莫名被临时的重要事件优先级一变化先放下手头任务，good luck，
-     * 只要以后不再cover这个错误小领域的更新，就永久 错别字在网上了。因为罗瑶光东西太多，又是个人行为，不会去cover那
-     * 些数不尽的身边人+同行的社会套路。抽经酥麻，好玩吗？当然如果给我钱请我吃饭，我倒是会留意下优先级。
+     * 这是一个 tinshell 批处理测试XSLX文件 一键执行复杂条件的ETL节点流拆分搜索语句逻辑， 测试main
+     * 函数demo的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到
+     * 工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，
+     * 可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的
+     * java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
      * --罗瑶光
      * */
     @Test
@@ -61,9 +54,11 @@ class Sample_X_I_MapAddPluginTest {
             if (null == NE.app_S._A) {
                 return;
             }//later normalization
-            MakeContainerXLS makeContainerXLS = new MakeContainerXLS(NE.app_S._A, NE.app_S
-                , NE.app_S.jTabbedpane, NE.app_S.tabNames, NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn
-                , NE.app_S.fMHMMListOneTime_E_X_S.posEnToEn, NE.app_S.fMHMMListOneTime_E_X_S.enToCn
+            MakeContainerXLS makeContainerXLS = new MakeContainerXLS(NE.app_S._A
+                , NE.app_S, NE.app_S.jTabbedpane, NE.app_S.tabNames
+                , NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn
+                , NE.app_S.fMHMMListOneTime_E_X_S.posEnToEn
+                , NE.app_S.fMHMMListOneTime_E_X_S.enToCn
                 , NE.app_S.fMHMMListOneTime_E_X_S.fullCnToEn, "xls"
                 , NE.app_S.emotionSample, NE.app_S.ratioMap_E, NE.app_S.sensingTest, NE
             );
@@ -93,14 +88,14 @@ class Sample_X_I_MapAddPluginTest {
             //模式1 需要界面配置好PLETL的命令然后保存，之后执行这个保存文件 去弹窗输出即可
             //物理形式加密文，非古拉丁语语义加密
             //模式2 类似ShellJPanelTest例子进行拆分TinMap的人类shell和花语言命令计算输出。
-            //模式1计算
-            //一键导入文件
+            //模式1计算//一键导入文件
             //--文件位置-package test.java.InterfaceTest.tinShell.bootBatchFilePLETL;
             //--tinshell OSGI插件密文-tinshellExample.etl --加密方式-普通物理加密方式。
             //--tinshell OSGI插件密钥-tinshellExample.etl.dna --加密方式-普通物理加密方式。
             //--package OSI.OPE.gui; --line page 151
             NE._I_U.gUISample.fileCurrentpath
-                = "/Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/project/batchPLETL/tinshellExample.etl";
+                = "/Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/" +
+                "project/batchPLETL/tinshellExample.etl";
             File file = new File(NE._I_U.gUISample.fileCurrentpath);
             if (!file.isFile()) {
                 System.out.println(S_Annotation.ATTENSION_RECHOICE);
@@ -137,10 +132,11 @@ class Sample_X_I_MapAddPluginTest {
             //输出, 高级用法注意循环哟，罗瑶光只举出简单例子。
             LinkNode linkNode = NE._I_U.gUISample.first.first.clone();
             while (null != linkNode) {
-                //这函数是我在用eclipse在联想电脑上创作的，一把个人著作权很正常，因为实名发票的联想电脑GPRS乱飘，
-                //后换上海组装地实名发票指纹苹果电脑serial-FVFJCDL0Q6LC-上海马吉路88号产地的货，
-                //浏阳天虹苹果店买的金色笔记本。自从我2010年后就再没去过上海了。--罗瑶光
-                //2010年后任何上海同事我都没有再见过面，我以后会浏阳出门时候会注意下各类橡胶头套装扮的社会人尾随卡点猫腻。
+                // 这函数是我在用eclipse在联想电脑上创作的，一把个人著作权很正常，因为实名发票
+                // 的联想电脑GPRS乱飘，后换上海组装地实名发票指纹苹果电脑serial-FVFJCDL0Q6LC-
+                // 上海马吉路88号产地的货，浏阳天虹苹果店买的金色笔记本。自从我2010年后就再没去
+                // 过上海了。--罗瑶光2010年后任何上海同事我都没有再见过面，我以后会浏阳出门时候
+                // 会注意下各类橡胶头套装扮的社会人尾随卡点猫腻。
                 System.out.println("执行->" + linkNode.thisFace.nodeConfiguration);
                 TinMap tinMap = linkNode.thisFace._SQ__OVQ_OSQ_VSQ.outputOut;
                 TinMap tinShell = (TinMap) tinMap.get("TinShellETL");
@@ -159,10 +155,20 @@ class Sample_X_I_MapAddPluginTest {
                 }
                 linkNode = linkNode.next;
             }
-            /*
-            //输出-注意测试XLS文件是一个纯文字表格文件，不要有图片和特殊符号。
-            //tinshel花语拆开封装入2个节点的 ETL存档执行，输出都正确如下
-执行->首先获取一个表，名字是临时XLS1753753458245，如果有这个表，准备下一步选择;条件为:和:功效|DNN搜索|功效|菜谱|4;条件为:和:中药名称|包含|菜谱;条件为:和:风险规避|不包含|孕;条件为:和:性味|不包含|凉;条件为:和:性味|不包含|咸;
+            //结束
+            NE.stop();
+
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+/*
+//输出-注意测试XLS文件是一个纯文字表格文件，不要有图片和特殊符号。
+//tinshel花语拆开封装入2个节点的 ETL存档执行，输出都正确如下
+执行->首先获取一个表，名字是临时XLS1753753458245，如果有这个表，准备下一步选择;条件为:和
+:功效|DNN搜索|功效|菜谱|4;条件为:和:中药名称|包含|菜谱;条件为:和:风险规避|不包含|孕;条件为
+:和:性味|不包含|凉;条件为:和:性味|不包含|咸;
 列数->16
 虾菜谱
 鲢鱼菜谱
@@ -268,11 +274,3 @@ class Sample_X_I_MapAddPluginTest {
 </font></div></font></div></font></div></font></div></font></div></font></div>
 </font></div></font></div></font></div>
              */
-            //结束
-            NE.stop();
-
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-}
