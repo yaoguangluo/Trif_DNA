@@ -52,15 +52,17 @@ public class LYG9DWithLongTopSort5D {
 
     //养疗经表格出现 关于xnor的=号剔除问题, 这个版本测试成功。已经集成入养疗经
     //从早期把从大到小的>= 的非改为< 当出现大量等值或0的例子, 依旧有个别的重名。
-    //增加等于后 消除了重名这个问题, 我在思考, immutable的对象比对需要本身, 所以这里不是 非的问题, 是Xnor的问题。
-    //罗瑶光
+    //增加等于后 消除了重名这个问题, 我在思考, immutable的对象比对需要本身, 所以这里不是
+    // 非的问题, 是Xnor的问题。罗瑶光
     //我设立个top2D, --细节竟然没有一个人关注这些细节...20210716
     //等于号不能省, 见从大到小的老版本, > 的非为 <=, 已经在养疗经中测试通过。罗瑶光
     private int partition(long[] array, int leftPoint, int rightPoint) {
-        long x = array[leftPoint] <= array[rightPoint] ? array[leftPoint] : array[rightPoint];
+        long x = array[leftPoint] <= array[rightPoint]
+            ? array[leftPoint] : array[rightPoint];
         int leftPointReflection = leftPoint;
         while (leftPointReflection < rightPoint) {
-            while (!(array[leftPointReflection] > x || leftPointReflection++ >= rightPoint)) {
+            while (!(array[leftPointReflection] > x
+                || leftPointReflection++ >= rightPoint)) {
             }
             while (array[rightPoint--] > x) {
             }
