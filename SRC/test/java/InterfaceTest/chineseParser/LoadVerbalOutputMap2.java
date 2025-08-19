@@ -149,15 +149,15 @@ class LoadVerbalOutputMap2 {
         for (int i = 37; i < 52; i++) {
             String[] strings = ss1[i].split("-");
             verbal[i] = new HashMap<>();
-            int size=0;
+            int size = 0;
             for (int j = 0; j < strings.length; j++) {
-                if(strings[j].equals(" ")&&strings[j].equals("-")){
-                }else{
+                if (strings[j].equals(" ") && strings[j].equals("-")) {
+                } else {
                     size++;
                     verbal[i].put(strings[j], "");
                 }
             }
-            verbal[i].put("-size-", ""+size);
+            verbal[i].put("-size-", "" + size);
         }
     }
 }
