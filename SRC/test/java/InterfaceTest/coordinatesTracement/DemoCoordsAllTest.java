@@ -34,17 +34,21 @@ class DemoCoordsAllTest {
         DemoCoords1Test._E_(inputs);
         System.out.println("//处理fissile Fissile_X_fissilePosition2D");
         DemoCoords2Test._E(inputs);
-        System.out.println("//处理处理商旅森林 isolation Forest_X_getTSPForestIsolationGroups2D");
+        System.out.println("//处理处理商旅森林 isolation " +
+            "Forest_X_getTSPForestIsolationGroups2D");
         DemoCoords3Test._E(inputs);
         System.out.println("//处理商旅簇 isolation Isolation_X_getTSPIsolationGroups2D");
         DemoCoords4Test._E(inputs);
         System.out.println("//处理fusion 先 fissile 采样 Fissile_X_fissilePosition2D");
         DemoCoords5Test._E(inputs);
-        System.out.println("//处理fusion 先 fissile 采样 然后fusion 1 观测heart Euclid_X_findHeartPosition2D");
+        System.out.println("//处理fusion 先 fissile 采样 然后fusion 1 " +
+            "观测heart Euclid_X_findHeartPosition2D");
         DemoCoords6Test._E(inputs);
-        System.out.println("//处理fusion 先 fissile 采样 然后fusion 1 观测heart 再 Fusion_X_fusionPosition2DwithHeart");
+        System.out.println("//处理fusion 先 fissile 采样 然后fusion 1 " +
+            "观测heart 再 Fusion_X_fusionPosition2DwithHeart");
         DemoCoords7Test._E(inputs);
-        System.out.println("//处理Classification Classification_X_addNewPositionWithoutHeart");
+        System.out.println("//处理Classification " +
+            "Classification_X_addNewPositionWithoutHeart");
         DemoCoords8Test._E(inputs);
     }
 }
