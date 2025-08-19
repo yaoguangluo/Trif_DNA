@@ -94,7 +94,6 @@ class FlowerTalkEncodingTest {
         }
         // 名名，单字，等各类组合，见末尾注释的老接口函数
         //
-
         //2.1 罗氏DNN 价值词汇 真实应用方式
         DNNTest dNNTest = new DNNTest();
         ANNTest aNNTest = new ANNTest();
@@ -156,7 +155,6 @@ class FlowerTalkEncodingTest {
         //举例一旦出现 -获取-， -表名- 这类词汇，可直接触发 硬盘里，资源下，内存中等已经有的某类表名集合
         // 比如（怎么也捂不热哟 等）进行对应的输入文匹配，一旦输入文也有该表名（怎么也捂不热哟）一旦有就
         // 确定了，比如 怎么也捂不热哟 这个表，直接锁定该表或者相似的表名， 方便优先跟进操作。
-
         //设置输入待搜索列表，
         commonTestInition.endEnvironment();
     }
