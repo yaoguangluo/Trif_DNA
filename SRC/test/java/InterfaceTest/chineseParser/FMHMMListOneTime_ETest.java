@@ -135,7 +135,8 @@ class FMHMMListOneTime_ETest {
         System.out.println("乱码-代词总数-->" + S_Maps.daiCi.get("自身"));
         System.out.println("乱码-定名词总数-->" + S_Maps.dingMingCi.get("中"));
         System.out.println("乱码-动词总数-->" + S_Maps.dongCi.get("耍"));
-        System.out.println("乱码-副词总数-->" + S_Maps.fuCi.get("仿佛"));//这个副词体系在中文理解上都有问题，因为英文是+地后戳。。
+        System.out.println("乱码-副词总数-->" + S_Maps.fuCi.get("仿佛"));
+        //这个副词体系在中文理解上都有问题，因为英文是+地后戳。。
         System.out.println("乱码-介词总数-->" + S_Maps.jieCi.get("在"));
         System.out.println("乱码-连词总数-->" + S_Maps.lianCi.get("假如"));
         System.out.println("乱码-量词总数-->" + S_Maps.liangCi.get("吨"));
