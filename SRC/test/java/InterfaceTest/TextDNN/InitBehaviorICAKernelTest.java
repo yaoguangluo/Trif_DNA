@@ -19,10 +19,11 @@ import java.util.List;
 class InitBehaviorICAKernelTest {
     /*
      * 这是一个 用于文本的词汇比重计算文章作者的写作习惯的德塔图灵分词个人著作权中的权重内核模块计算
-     *  测试main函数demo的test版本，在导入了api之后进行系统集成，然后
-     * 用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，
-     * 然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
-     * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
+     *  测试main函数demo的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑
+     * 进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后
+     * 获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
+     * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，
+     * 方便商业化落地。
      * --罗瑶光
      * */
     @Test
@@ -43,18 +44,18 @@ class InitBehaviorICAKernelTest {
 
     @Test
     void main() {
-        //环境初始化。
-        CommonTestInition commonTestInition = new CommonTestInition();
-        commonTestInition.initEnvironment("去弹窗组件流测试");
-        //exec
-        InitBehaviorICAKernel initBehaviorICAKernel = new InitBehaviorICAKernel();
-        initBehaviorICAKernel.getBehaviorICAKernel(S_String.text1, commonTestInition.NE);
-        //output
-        List<String> list = initBehaviorICAKernel.getForRestReturn();
-        for(String string:list){
-            System.out.println(string);
-        }
-        commonTestInition.endEnvironment();
+  //环境初始化。
+  CommonTestInition commonTestInition = new CommonTestInition();
+  commonTestInition.initEnvironment("去弹窗组件流测试");
+  //exec
+  InitBehaviorICAKernel initBehaviorICAKernel = new InitBehaviorICAKernel();
+  initBehaviorICAKernel.getBehaviorICAKernel(S_String.text1, commonTestInition.NE);
+  //output
+  List<String> list = initBehaviorICAKernel.getForRestReturn();
+  for(String string:list){
+System.out.println(string);
+  }
+  commonTestInition.endEnvironment();
     }
 }
 /*输出观测
@@ -66,7 +67,7 @@ trif
 情绪比率：0.16831683168316833
 感染比率：1.2399339933993399
 观测角度：
-    物资       逻辑                              学者      化学 哲学         哲学                                 娱乐 宇宙   地理            哲学
+    物资 逻辑  学者 化学 哲学   哲学 娱乐 宇宙 地理哲学
 0.2727272727272727
 信任比率：
 危险 警惕 利益 了解 贪婪 远离 教育 帮助 纠正 需求 英雄 疑虑 进步 思想 了解
