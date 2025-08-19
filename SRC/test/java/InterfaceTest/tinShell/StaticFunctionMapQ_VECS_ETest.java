@@ -31,10 +31,11 @@ class StaticFunctionMapQ_VECS_ETest {
     }
 
     /*
-     * 这是一个 最简线性表格 执行字符串条件搜索逻辑，测试main函数demo的test版本，在导入了api之后进行系统集成，然后
-     * 用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，
-     * 然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
-     * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
+     * 这是一个 最简线性表格 执行字符串条件搜索逻辑，测试main函数demo的test版本，在导入了
+     * api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，
+     * 即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以
+     * 用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。系统需要jdk1.8
+     * 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
      * 注意搜索前滤掉一些符号和字母特殊标记等，增加中文行搜索的精确度 --罗瑶光
      * */
     @Test
@@ -43,7 +44,8 @@ class StaticFunctionMapQ_VECS_ETest {
         CommonTestInition commonTestInition = new CommonTestInition();
         commonTestInition.initEnvironment("去弹窗组件流测试");
         //优化后 索引变化了。
-        commonTestInition.NE._I_U._AE = (CogsBinaryForest_AE) commonTestInition.NE.app_S._AE;
+        commonTestInition.NE._I_U._AE = (CogsBinaryForest_AE) commonTestInition
+            .NE.app_S._AE;
         //计算搜索
         //配置环境，
         String[] argv = commonTestInition.NE._I_U.argv;
