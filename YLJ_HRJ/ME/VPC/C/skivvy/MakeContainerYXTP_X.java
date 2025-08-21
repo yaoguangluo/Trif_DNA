@@ -81,6 +81,9 @@ public class MakeContainerYXTP_X extends Thread implements Runnable {
             listMap.put(type, output);
             //}
         }
+        if (null == topButton) {
+			return;// trif all later
+		}
         topButton.doClick();
 
         String string = typeList.get(typeList.size() - 1);
@@ -268,4 +271,5 @@ public class MakeContainerYXTP_X extends Thread implements Runnable {
         }
         return output;
     }
+
 }
