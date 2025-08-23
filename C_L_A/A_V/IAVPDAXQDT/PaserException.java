@@ -10,5 +10,6 @@ import java.io.IOException;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 
+@SuppressWarnings("serial")
 public class PaserException extends IOException {
 }

@@ -847,7 +847,8 @@ public class FullDNATokenPDI {
         return InitonPDE;
     }
 
-    public String initonSect(String key) {
+    @SuppressWarnings("unchecked")
+	public String initonSect(String key) {
         String pdis = "";
         IMV_SIQ map = new IMV_SIQ();
         map.put("0", "A");
@@ -878,7 +879,8 @@ public class FullDNATokenPDI {
         return pdis;
     }
 
-    public String initonDeSect(String key) {
+    @SuppressWarnings("unchecked")
+	public String initonDeSect(String key) {
         String pdis = "";
         IMV_SIQ map = new IMV_SIQ();
         map.put("A", "0");

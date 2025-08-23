@@ -23,46 +23,49 @@ import S_A.pheromone.IMV_SIQ_X_;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class LenovoInit {
-    public SensingMap getSensingMap() {
-        return sensingMap;
-    }
+	public SensingMap getSensingMap() {
+		return sensingMap;
+	}
 
-    public void I_SensingMap(SensingMap sensingMap) {
-        this.sensingMap = sensingMap;
-    }
+	public void I_SensingMap(SensingMap sensingMap) {
+		this.sensingMap = sensingMap;
+	}
 
-    public EnvironmentInit getEnvironmentInit() {
-        return environmentInit;
-    }
+	public EnvironmentInit getEnvironmentInit() {
+		return environmentInit;
+	}
 
-    //	public void I_EnvironmentInit(EnvironmentInit environmentInit) {
+	// public void I_EnvironmentInit(EnvironmentInit
+	// environmentInit) {
 //		this.environmentInit= environmentInit;
 //	}
-    private SensingMap sensingMap;
-    private EnvironmentInit environmentInit;
+	private SensingMap sensingMap;
+	private EnvironmentInit environmentInit;
 
-    @SuppressWarnings("unused")
-    public static void main(String[] argv, EnvironmentInit environmentInit
-        , EmotionMap_E emotionMap_E, RatioMap_E ratioMap_E, CogsBinaryForest_AE _AE
-        , SensingMap_E sensingMap_E, EmotionSample emotionSample) {
-        LenovoInit lenovoInit = new LenovoInit();
-        lenovoInit.IV_(S_String.text1, new App());
-        IMV_SIQ_X_ environmentSampleMap
-            = lenovoInit.getEnvironmentInit().getEmotionSampleMap();
-        IMV_SIQ lenovo = lenovoInit.getSensingMap().getLenovoMap();
-    }
+	@SuppressWarnings("unused")
+	public static void main(String[] argv, EnvironmentInit environmentInit,
+			EmotionMap_E emotionMap_E, RatioMap_E ratioMap_E,
+			CogsBinaryForest_AE _AE, SensingMap_E sensingMap_E,
+			EmotionSample emotionSample) {
+		LenovoInit lenovoInit = new LenovoInit();
+		lenovoInit.IV_(S_String.text1, new App());
+		IMV_SIQ_X_ environmentSampleMap = lenovoInit.getEnvironmentInit()
+				.getEmotionSampleMap();
+		IMV_SIQ lenovo = lenovoInit.getSensingMap().getLenovoMap();
+	}
 
-    public void IV_(String text, App NE) {
-        environmentInit.IV_(text, NE);
-        this.environmentInit = environmentInit;
-        sensingMap = NE.app_S.sensingMap_E;
-        sensingMap.IV_LenovoMap(((BinaryForest_AE) environmentInit.get_A()));
-    }
+	public void IV_(String text, App NE) {
+		environmentInit.IV_(text, NE);
+		//this.environmentInit = environmentInit;
+		//this.environmentInit = NE.app_S.environmentInit;//later trif
+		sensingMap = NE.app_S.sensingMap_E;
+		sensingMap.IV_LenovoMap(((BinaryForest_AE) environmentInit.get_A()));
+	}
 
-    public void IV_Exclude_A(String text, App NE) {
-        NE.app_S.environmentInit.IV_Exclude_A(text, NE);
-        this.environmentInit = NE.app_S.environmentInit;
-        sensingMap = NE.app_S.sensingMap_E;
-        sensingMap.IV_LenovoMap(((BinaryForest_AE) environmentInit.get_A()));
-    }
+	public void IV_Exclude_A(String text, App NE) {
+		NE.app_S.environmentInit.IV_Exclude_A(text, NE);
+		this.environmentInit = NE.app_S.environmentInit;
+		sensingMap = NE.app_S.sensingMap_E;
+		sensingMap.IV_LenovoMap(((BinaryForest_AE) environmentInit.get_A()));
+	}
 }

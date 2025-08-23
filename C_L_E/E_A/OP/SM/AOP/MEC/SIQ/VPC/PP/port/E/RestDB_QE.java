@@ -14,59 +14,65 @@ import S_A.pheromone.IMV_SIQ;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings({ "unchecked", "resource", "unused" })
 public class RestDB_QE {
-	public static IMV_SIQ selectRowsByAttribute(String baseName, String tableName
-		, String culumnName, String value, String token, String email, String password
-		, String auth) {
-		IMV_SIQ output= new IMV_SIQ();
-		if(token != null && !token.equalsIgnoreCase("")){
-			String checkStatus= LoginService_E.checkTokenStatus(token, "common");
-			if(checkStatus.contains("invalid")&&(auth.contains("1"))) {
+	public static IMV_SIQ selectRowsByAttribute(String baseName,
+			String tableName, String culumnName, String value, String token,
+			String email, String password, String auth) {
+		IMV_SIQ output = new IMV_SIQ();
+		if (token != null && !token.equalsIgnoreCase("")) {
+			String checkStatus = LoginService_E.checkTokenStatus(token,
+					"common");
+			if (checkStatus.contains("invalid") && (auth.contains("1"))) {
 				output.put("loginInfo", "unsuccess");
 				output.put("returnResult", checkStatus);
 				return output;
 			}
-		}else if(email != null && !email.equalsIgnoreCase("")){
-			String checkStatus= LoginService_E.checkRightsStatusDNA(email, password, "DB");
-			if(checkStatus.contains("invalid")) {
+		} else if (email != null && !email.equalsIgnoreCase("")) {
+			String checkStatus = LoginService_E.checkRightsStatusDNA(email,
+					password, "DB");
+			if (checkStatus.contains("invalid")) {
 				output.put("loginInfo", "unsuccess");
 				output.put("returnResult", checkStatus);
 				return output;
 			}
-		}else{
-			output.put("loginInfo", "unsuccess");
-			output.put("returnResult", "invalid request");
-			return output;
-		}	
-		output.put("obj", Q_Rows_E_X_selectRowsByAttribute._E(baseName
-			, tableName, culumnName, value));
-		return output;
-	}
-
-	public static IMV_SIQ selectRowsByTablePath(String tablePath, String pageBegin
-			, String pageEnd, String direction, String token, String email, String password
-		, String auth)  {
-		IMV_SIQ output= new IMV_SIQ();
-		if(token != null && !token.equalsIgnoreCase("")){
-			String checkStatus= LoginService_E.checkTokenStatus(token, "common");
-			if(checkStatus.contains("invalid")&&(auth.contains("1"))) {
-				output.put("loginInfo", "unsuccess");
-				output.put("returnResult", checkStatus);
-				return output;
-			}
-		}else if(email != null && !email.equalsIgnoreCase("")){
-			String checkStatus= LoginService_E.checkRightsStatus(email, password, "DB");
-			if(checkStatus.contains("invalid")) {
-				output.put("loginInfo", "unsuccess");
-				output.put("returnResult", checkStatus);
-				return output;
-			}
-		}else{
+		} else {
 			output.put("loginInfo", "unsuccess");
 			output.put("returnResult", "invalid request");
 			return output;
 		}
-		output= Q_Rows_E_X_selectRowsByTablePath._E(tablePath, pageBegin, pageEnd, direction);
+		output.put("obj", Q_Rows_E_X_selectRowsByAttribute._E(baseName,
+				tableName, culumnName, value));
+		return output;
+	}
+
+	public static IMV_SIQ selectRowsByTablePath(String tablePath,
+			String pageBegin, String pageEnd, String direction, String token,
+			String email, String password, String auth) {
+		IMV_SIQ output = new IMV_SIQ();
+		if (token != null && !token.equalsIgnoreCase("")) {
+			String checkStatus = LoginService_E.checkTokenStatus(token,
+					"common");
+			if (checkStatus.contains("invalid") && (auth.contains("1"))) {
+				output.put("loginInfo", "unsuccess");
+				output.put("returnResult", checkStatus);
+				return output;
+			}
+		} else if (email != null && !email.equalsIgnoreCase("")) {
+			String checkStatus = LoginService_E.checkRightsStatus(email,
+					password, "DB");
+			if (checkStatus.contains("invalid")) {
+				output.put("loginInfo", "unsuccess");
+				output.put("returnResult", checkStatus);
+				return output;
+			}
+		} else {
+			output.put("loginInfo", "unsuccess");
+			output.put("returnResult", "invalid request");
+			return output;
+		}
+		output = Q_Rows_E_X_selectRowsByTablePath._E(tablePath, pageBegin,
+				pageEnd, direction);
 		return output;
 	}
 }

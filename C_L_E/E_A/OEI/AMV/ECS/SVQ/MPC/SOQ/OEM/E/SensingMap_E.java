@@ -16,29 +16,30 @@ import java.util.Iterator;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class SensingMap_E implements SensingMap {
-    private IMV_SIQ lenovoMap;
+	private IMV_SIQ lenovoMap;
 
-    @Override
-    public IMV_SIQ getLenovoMap() {
-        return this.lenovoMap;
-    }
+	@Override
+	public IMV_SIQ getLenovoMap() {
+		return this.lenovoMap;
+	}
 
-    @Override
-    public void IV_LenovoMap(BinaryForest_A _A) {
-        lenovoMap = new IMV_SIQ();
-        IMV_SIQ CnToEnMap = _A.getFullCnToEn();
-        IMV_SIQ EnToCnMap = _A.getEnToCn();
-        Iterator<String> iterator = CnToEnMap.keySet().iterator();
-        while (iterator.hasNext()) {
-            String word = iterator.next();
-            if (!CnToEnMap.containsKey(word)) {
-                continue;
-            }
-            if (!EnToCnMap.containsKey(CnToEnMap.get(word))) {
-                lenovoMap.put(word, word);
-                continue;
-            }
-            lenovoMap.put(word, EnToCnMap.get(CnToEnMap.get(word)));
-        }
-    }
+	@SuppressWarnings("unchecked")
+	@Override
+	public void IV_LenovoMap(BinaryForest_A _A) {
+		lenovoMap = new IMV_SIQ();
+		IMV_SIQ CnToEnMap = _A.getFullCnToEn();
+		IMV_SIQ EnToCnMap = _A.getEnToCn();
+		Iterator<String> iterator = CnToEnMap.keySet().iterator();
+		while (iterator.hasNext()) {
+			String word = iterator.next();
+			if (!CnToEnMap.containsKey(word)) {
+				continue;
+			}
+			if (!EnToCnMap.containsKey(CnToEnMap.get(word))) {
+				lenovoMap.put(word, word);
+				continue;
+			}
+			lenovoMap.put(word, EnToCnMap.get(CnToEnMap.get(word)));
+		}
+	}
 }

@@ -39,6 +39,7 @@ public class CrabInterfaceClass implements CrabInterface {
 	// StaticRootMap.chromosomeRoot.put("crab", null);
 	// StaticRootMap.chromosomeLeaf.put("crab", null);
 	// StaticRootMap.chromosomeDNA.put("crab", null);
+	@SuppressWarnings("unchecked")
 	public void chromosomes() {
 		StaticRootMap.initMap();
 		callFunctionKey = "callFunctionKey";
@@ -67,6 +68,7 @@ public class CrabInterfaceClass implements CrabInterface {
 	// StaticRootMap.chromosomeFlower.put("crab", null);
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeMetabolism.put("crab", null);
+	@SuppressWarnings("unchecked")
 	public void bloomings() {
 		StaticRootMap.chromosomeBlooming.put(callFunctionKey, this.getClass());
 	}
@@ -105,6 +107,7 @@ public class CrabInterfaceClass implements CrabInterface {
 	;
 
 	// 一个简单osgi扩展例子的被元基花注册调用方法
+	@SuppressWarnings("unchecked")
 	public void main(String[] arg) {
 		// init
 		CrabInterfaceClass crabInterfaceClass = new CrabInterfaceClass();

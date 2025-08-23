@@ -61,7 +61,8 @@ public class ServerRestMap_Standard {
 
 	public static void returnResponse(VPCSRequest vPCSRequest,
 			VPCSResponse vPCSResponse) {
-		vPCSResponse.getSleeperHall().removeThreadById(vPCSResponse.getHashCode());
+		vPCSResponse.getSleeperHall()
+				.removeThreadById(vPCSResponse.getHashCode());
 	}
 
 	public static void P_Rest(VPCSRequest vPCSRequest,
@@ -177,6 +178,7 @@ public class ServerRestMap_Standard {
 		}
 	}
 
+	@SuppressWarnings("resource")
 	public static void P_Buffer(VPCSRequest vPCSRequest,
 			VPCSResponse vPCSResponse) {
 		String builderToString;

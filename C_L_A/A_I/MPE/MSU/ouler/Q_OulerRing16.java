@@ -282,6 +282,7 @@ TVI8
 0
  * */
 	
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		//init AOPM VECS IDUQ TXH DD
 		//初始环路

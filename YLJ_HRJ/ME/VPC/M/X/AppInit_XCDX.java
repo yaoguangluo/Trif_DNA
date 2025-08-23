@@ -12,8 +12,8 @@ import O_V.OSI.AOP.VPC.server.RestServer;
 import S_A.SVQ.stable.S_File;
 import exception.thread.DetaThread;
 import DVIAQVIMIV.SkinPathDetectTrip_E;
-import DetaSrc.org.deta.boot.vpc.controller.ServerInitController;
-import DetaSrc.org.html5.upload.FileUploaderSimpleDNA;
+//import DetaSrc.org.deta.boot.vpc.controller.ServerInitController;
+//import DetaSrc.org.html5.upload.FileUploaderSimpleDNA;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -47,7 +47,8 @@ import java.util.ArrayList;
  * */
 public class AppInit_XCDX {
 	@SuppressWarnings({ "deprecation", "unchecked" })
-	public void IV_(App app, App NE) throws IOException, InterruptedException {// later duplicate
+	public void IV_(App app, App NE) throws IOException, InterruptedException {// later
+																			   // duplicate
 		// Register Medicine Report
 		DetaLabelConjunction.detaLabelConjunction = new DetaLabelConjunction();
 		DetaLabelConjunction.detaLabelConjunction.IV_();
@@ -105,7 +106,7 @@ public class AppInit_XCDX {
 //		FileUploaderSimpleDNA.newADNAMap(app);
 //		ServerInitController serverInitController= new ServerInitController();
 //		serverInitController.initServer(app);
-		
+
 		app.app_S.appConfig.SectionJPanel.jTextPane.setText("rest inject");
 		if (app.app_S.appConfig.SectionJPanel.jTextPane != null) {
 			String text = app.app_S.appConfig.SectionJPanel.jTextPane.getText();

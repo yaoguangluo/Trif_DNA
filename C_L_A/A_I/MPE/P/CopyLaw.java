@@ -15,46 +15,50 @@ import java.util.concurrent.ConcurrentLinkedDeque;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
-public class CopyLaw{
+public class CopyLaw {
 	public DNA copy(DNA dna) {
-		DNA newDna= new DNA();
-		newDna.functionLineDeque= copy(dna.getMaskLineDeque());
-		newDna.maskLineDeque= mask(newDna.functionLineDeque
-				, dna.getFunctionLineDeque(), dna.getMaskLineDeque());
-		newDna.functionLineMap= copyMap(newDna.maskLineDeque);
-		newDna.maskLineMap= copyMap(newDna.functionLineDeque);
-		return newDna;	
+		DNA newDna = new DNA();
+		newDna.functionLineDeque = copy(dna.getMaskLineDeque());
+		newDna.maskLineDeque = mask(newDna.functionLineDeque,
+				dna.getFunctionLineDeque(), dna.getMaskLineDeque());
+		newDna.functionLineMap = copyMap(newDna.maskLineDeque);
+		newDna.maskLineMap = copyMap(newDna.functionLineDeque);
+		return newDna;
 	}
 
-	public ConcurrentHashMap<Integer, PDN> copyMap(ConcurrentLinkedDeque<PDN> functionLineDeque) {
-		ConcurrentHashMap<Integer, PDN> output= new IMV_SIQ();
-		Iterator<PDN> iterator= functionLineDeque.iterator();
-		int count= 0;
-		while(iterator.hasNext()) {
-			PDN pdn= iterator.next();
-			boolean[] booleanPdn= pdn.getPdn();
-			boolean[] booleanPdnNew= new boolean[booleanPdn.length];
-			for(int i= 0; i< booleanPdn.length; i++) {
-				booleanPdnNew[i]= !booleanPdn[i];
+	@SuppressWarnings("unchecked")
+	public ConcurrentHashMap<Integer, PDN> copyMap(
+			ConcurrentLinkedDeque<PDN> functionLineDeque) {
+		ConcurrentHashMap<Integer, PDN> output = new IMV_SIQ();
+		Iterator<PDN> iterator = functionLineDeque.iterator();
+		int count = 0;
+		while (iterator.hasNext()) {
+			PDN pdn = iterator.next();
+			boolean[] booleanPdn = pdn.getPdn();
+			boolean[] booleanPdnNew = new boolean[booleanPdn.length];
+			for (int i = 0; i < booleanPdn.length; i++) {
+				booleanPdnNew[i] = !booleanPdn[i];
 			}
-			PDN pdnNew= new PDN();
+			PDN pdnNew = new PDN();
 			pdnNew.I_Pdn(booleanPdnNew);
 			output.put(count++, pdnNew);
 		}
 		return output;
 	}
-	
-	public ConcurrentLinkedDeque<PDN> mask(ConcurrentLinkedDeque<PDN> originDeque
-			, ConcurrentLinkedDeque<PDN> newDeque, ConcurrentLinkedDeque<PDN> maskOutput) {
-		Iterator<PDN> iteratorOriginDeque= originDeque.iterator();
-		Iterator<PDN> iteratorNewDeque= newDeque.iterator();
-		while(iteratorOriginDeque.hasNext()) {
-			PDN pdnOriginDeque= iteratorOriginDeque.next();
-			PDN pdnNewDeque= iteratorNewDeque.next();
-			boolean[] booleanPdnOriginDeque= pdnOriginDeque.getPdn();
-			boolean[] booleanPdnNewDeque= pdnNewDeque.getPdn();
-			for(int i= 0; i< booleanPdnOriginDeque.length; i++) {
-				if(booleanPdnOriginDeque[i]!= booleanPdnNewDeque[i]) {
+
+	public ConcurrentLinkedDeque<PDN> mask(
+			ConcurrentLinkedDeque<PDN> originDeque,
+			ConcurrentLinkedDeque<PDN> newDeque,
+			ConcurrentLinkedDeque<PDN> maskOutput) {
+		Iterator<PDN> iteratorOriginDeque = originDeque.iterator();
+		Iterator<PDN> iteratorNewDeque = newDeque.iterator();
+		while (iteratorOriginDeque.hasNext()) {
+			PDN pdnOriginDeque = iteratorOriginDeque.next();
+			PDN pdnNewDeque = iteratorNewDeque.next();
+			boolean[] booleanPdnOriginDeque = pdnOriginDeque.getPdn();
+			boolean[] booleanPdnNewDeque = pdnNewDeque.getPdn();
+			for (int i = 0; i < booleanPdnOriginDeque.length; i++) {
+				if (booleanPdnOriginDeque[i] != booleanPdnNewDeque[i]) {
 					return null;
 				}
 			}
@@ -62,17 +66,18 @@ public class CopyLaw{
 		return maskOutput;
 	}
 
-	public ConcurrentLinkedDeque<PDN> copy(ConcurrentLinkedDeque<PDN> maskLineDeque) {
-		ConcurrentLinkedDeque<PDN> output= new ConcurrentLinkedDeque<>();
-		Iterator<PDN> iterator= maskLineDeque.iterator();
-		while(iterator.hasNext()) {
-			PDN pdn=iterator.next();
-			boolean[] booleanPdn= pdn.getPdn();
-			boolean[] booleanPdnNew= new boolean[booleanPdn.length];
-			for(int i= 0; i< booleanPdn.length; i++) {
-				booleanPdnNew[i]= !booleanPdn[i];
+	public ConcurrentLinkedDeque<PDN> copy(
+			ConcurrentLinkedDeque<PDN> maskLineDeque) {
+		ConcurrentLinkedDeque<PDN> output = new ConcurrentLinkedDeque<>();
+		Iterator<PDN> iterator = maskLineDeque.iterator();
+		while (iterator.hasNext()) {
+			PDN pdn = iterator.next();
+			boolean[] booleanPdn = pdn.getPdn();
+			boolean[] booleanPdnNew = new boolean[booleanPdn.length];
+			for (int i = 0; i < booleanPdn.length; i++) {
+				booleanPdnNew[i] = !booleanPdn[i];
 			}
-			PDN pdnNew= new PDN();
+			PDN pdnNew = new PDN();
 			pdnNew.I_Pdn(booleanPdnNew);
 			output.add(pdnNew);
 		}
@@ -80,12 +85,12 @@ public class CopyLaw{
 	}
 
 	public DNA mutationCopy(DNA dna) {
-		DNA newDna= new DNA();
-		newDna.maskLineDeque= copy(dna.getMaskLineDeque());
-		newDna.functionLineDeque= mask(newDna.maskLineDeque
-				, dna.getFunctionLineDeque(), dna.getMaskLineDeque());
-		newDna.functionLineMap= copyMap(newDna.maskLineDeque);
-		newDna.maskLineMap= copyMap(newDna.functionLineDeque);
-		return newDna;	
+		DNA newDna = new DNA();
+		newDna.maskLineDeque = copy(dna.getMaskLineDeque());
+		newDna.functionLineDeque = mask(newDna.maskLineDeque,
+				dna.getFunctionLineDeque(), dna.getMaskLineDeque());
+		newDna.functionLineMap = copyMap(newDna.maskLineDeque);
+		newDna.maskLineMap = copyMap(newDna.functionLineDeque);
+		return newDna;
 	}
 }

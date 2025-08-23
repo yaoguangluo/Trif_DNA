@@ -20,67 +20,73 @@ import java.io.IOException;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class RestDBConfig_E {
-    public static IMV_SIQ setDBPath(String basePath, String token, String auth) {
-        IMV_SIQ output;
-        try {
-            output = new IMV_SIQ();
-            String checkStatus = LoginService_E.checkTokenStatus(token, "level");
-            if (checkStatus.contains("invalid") && (auth.contains("1"))) {
-                output.put("loginInfo", "unsuccess");
-                output.put("returnResult", checkStatus);
-                return output;
-            }
-            //检查配置文件
-            File config = new File(ConfigIndex.detaDBPath);
-            if (config.exists()) {
-                config.delete();
-            }
-            //重写配置文件
-            FileWriter fw = null;
+	@SuppressWarnings("unchecked")
+	public static IMV_SIQ setDBPath(String basePath, String token,
+			String auth) {
+		IMV_SIQ output;
+		try {
+			output = new IMV_SIQ();
+			String checkStatus = LoginService_E.checkTokenStatus(token,
+					"level");
+			if (checkStatus.contains("invalid") && (auth.contains("1"))) {
+				output.put("loginInfo", "unsuccess");
+				output.put("returnResult", checkStatus);
+				return output;
+			}
+			// 检查配置文件
+			File config = new File(ConfigIndex.detaDBPath);
+			if (config.exists()) {
+				config.delete();
+			}
+			// 重写配置文件
+			FileWriter fw = null;
 
-            fw = new FileWriter(ConfigIndex.detaDBPath, true);
-            fw.write("path->" + basePath);
-            fw.close();
-            //写缓存
-            Cache c = new Cache();
-            c.I_Value(basePath);
-            Cache_M.putCache("DBPath", c);
-            //锁定表
-            File fileDBPath = new File(basePath);
-            if (fileDBPath.isDirectory()) {
-                output.put("info", "isDirectory" + Cache_M.getCacheInfo("DBPath")
-                        .getValue().toString());
-            } else {
-                fileDBPath.mkdir();
-                output.put("info", "isCreated" + Cache_M.getCacheInfo("DBPath")
-                        .getValue().toString());
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return output;
-    }
-    public static IMV_SIQ setDBTable(String tableName, String token
-            , String auth) {
-        IMV_SIQ output = new IMV_SIQ();
-        String checkStatus = LoginService_E.checkTokenStatus(token, "level");
-        if (checkStatus.contains("invalid") && (auth.contains("1"))) {
-            output.put("loginInfo", "unsuccess");
-            output.put("returnResult", checkStatus);
-            return output;
-        }
-        //是否有
-        String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString() + "/" + tableName;
-        //锁定表
-        File fileDBPath = new File(DBPath);
-        if (fileDBPath.isDirectory()) {
-            output.put("info", "isDirectory:" + DBPath);
-        } else {
-            fileDBPath.mkdir();
-            output.put("info", "isCreated:" + DBPath);
-        }
-        //有就输出
-        //没有就创建
-        return output;
-    }
+			fw = new FileWriter(ConfigIndex.detaDBPath, true);
+			fw.write("path->" + basePath);
+			fw.close();
+			// 写缓存
+			Cache c = new Cache();
+			c.I_Value(basePath);
+			Cache_M.putCache("DBPath", c);
+			// 锁定表
+			File fileDBPath = new File(basePath);
+			if (fileDBPath.isDirectory()) {
+				output.put("info", "isDirectory"
+						+ Cache_M.getCacheInfo("DBPath").getValue().toString());
+			} else {
+				fileDBPath.mkdir();
+				output.put("info", "isCreated"
+						+ Cache_M.getCacheInfo("DBPath").getValue().toString());
+			}
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		return output;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static IMV_SIQ setDBTable(String tableName, String token,
+			String auth) {
+		IMV_SIQ output = new IMV_SIQ();
+		String checkStatus = LoginService_E.checkTokenStatus(token, "level");
+		if (checkStatus.contains("invalid") && (auth.contains("1"))) {
+			output.put("loginInfo", "unsuccess");
+			output.put("returnResult", checkStatus);
+			return output;
+		}
+		// 是否有
+		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString()
+				+ "/" + tableName;
+		// 锁定表
+		File fileDBPath = new File(DBPath);
+		if (fileDBPath.isDirectory()) {
+			output.put("info", "isDirectory:" + DBPath);
+		} else {
+			fileDBPath.mkdir();
+			output.put("info", "isCreated:" + DBPath);
+		}
+		// 有就输出
+		// 没有就创建
+		return output;
+	}
 }

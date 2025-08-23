@@ -2,8 +2,6 @@ package E_A.ME.analysis.E;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CogsBinaryForest_AETest {
 
     @Test

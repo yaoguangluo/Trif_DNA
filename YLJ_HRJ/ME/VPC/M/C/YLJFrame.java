@@ -27,10 +27,9 @@ public class YLJFrame {
 		// vpcs，于是做动态app，有600文件要改动加NE。
 		// 20250308 罗瑶光
 		// 稍后进行刚染色分支的内存泄露检测。202504071633 罗瑶光
-		NE.app_S.frame = new JFrame("华瑞集 " 
-				+ "花语实验版本V5.0196701" + "浏阳德塔软件开发有限公司 "
-				+ "湖南省浏阳市集里街道-大塘冲路一段 208号-阳光家园小区第10栋别墅 "
-				+ "罗瑶光* 15116110525-430181198505250014");
+		NE.app_S.frame = new JFrame("华瑞集 " + "花语实验版本V5.0196701"
+				+ "浏阳德塔软件开发有限公司 " + "湖南省浏阳市集里街道" + "-大塘冲路一段 " + "208号-"
+				+ "阳光家园小区第10栋别墅 " + "罗瑶光* 15116110525-" + "430181198505250014");
 		NE.app_S.frame.setIconImage(NE.app_S.logo.getImage());
 		NE.app_S.frame.setLayout(null);
 		NE.app_S.frame.setSize(WindowsUI.commonWidth,

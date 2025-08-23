@@ -588,7 +588,8 @@ public class FullTokenPDI {
         return InitonPDE;
     }
 
-    public String initonSect(String key) {
+    @SuppressWarnings("unchecked")
+	public String initonSect(String key) {
         String pdis = "";
         IMV_SIQ map = new IMV_SIQ();
         map.put("0", "A");

@@ -233,7 +233,8 @@ public class AE_X extends AS implements A {
         IV_condition(3, NE);
     }
 
-    public void IV_condition(int indexType, App NE) {
+    @SuppressWarnings("unchecked")
+	public void IV_condition(int indexType, App NE) {
         this.fHMMList = NE.app_S.fMHMMListOneTime_E;
         if (1 == indexType) {
             fHMMList.index();
@@ -265,7 +266,7 @@ public class AE_X extends AS implements A {
         wordsForest = fHMMList.getPosCnToCn();
         wordsForests = fHMMList.getWordsForests();
         emotionMap = NE.app_S.emotionMap_E;
-        sensingTest = sensingTest;
+        sensingTest = sensingTest;//trif
         //
         this.fHMMList.flushRedundant();
     }

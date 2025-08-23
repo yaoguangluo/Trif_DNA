@@ -73,6 +73,7 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	// StaticRootMap.chromosomeFlower.put("crab", null);
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeMetabolism.put("crab", null);
+	@SuppressWarnings("unchecked")
 	public void bloomings() {
 		StaticRootMap.chromosomeBlooming.put(callFunctionKey, this.getClass());
 	}
@@ -103,7 +104,7 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	// StaticRootMap.chromosomeRNA.put("crab", null);
 	// System.out.println("Hello Word!");
 	// return null;
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
 		if (NE.app_S.workVerbaMap.cartesianWorkActionsRights.containsKey("名为-列")
 				|| NE.app_S.workVerbaMap.cartesianWorkActionsRights

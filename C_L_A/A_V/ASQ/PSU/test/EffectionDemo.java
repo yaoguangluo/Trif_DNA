@@ -13,7 +13,8 @@ import S_A.pheromone.IMV_SIQ;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class EffectionDemo {
-    public static void main(String[] argv) {
+    @SuppressWarnings("unchecked")
+	public static void main(String[] argv) {
         TimeCheck timeCheck = new TimeCheck();
         //titan sets
         //20230106-System.out.println(1);

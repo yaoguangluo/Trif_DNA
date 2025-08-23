@@ -13,14 +13,15 @@ import java.util.concurrent.ConcurrentHashMap;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
-public class Race{
+public class Race {
 	public ConcurrentHashMap<String, Family> getRace() {
 		return race;
 	}
 
 	public void I_Race(ConcurrentHashMap<String, Family> race) {
-		this.race= race;
+		this.race = race;
 	}
 
-	ConcurrentHashMap<String, Family> race= new IMV_SIQ();
+	@SuppressWarnings("unchecked")
+	ConcurrentHashMap<String, Family> race = new IMV_SIQ();
 }

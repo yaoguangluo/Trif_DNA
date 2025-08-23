@@ -22,11 +22,12 @@ import java.io.InputStreamReader;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings({"unchecked", "resource"})
 public class EmotionMap_E extends EmotionMap_ES implements EmotionMap {
     //NE.resourceTail, 因为eclipse打包比ideaij简洁明确，对于程序员编码工程不是sdk研发者。
     //导致工程转ideaj打包缺少一把资源文件上层路径问题，于是
     //加个变量来校正
-    public void IV_PositiveMap(App NE) {
+	public void IV_PositiveMap(App NE) {
         positiveMap = new IMV_SIQ();
         DetaFile file = new DetaFile(S_Pos.WORDS_SOURSE_LINK_POS_POSITIVE);
         InputStream in = DetaFileInputStream.E(file.getDetaCanonicalPath()
@@ -61,7 +62,7 @@ public class EmotionMap_E extends EmotionMap_ES implements EmotionMap {
         cReader.closeDeta();
     }
 
-    public void IV_TrendingMap(App NE) {
+	public void IV_TrendingMap(App NE) {
         trendingMap = new IMV_SIQ();
         DetaFile file = new DetaFile(S_Pos.WORDS_SOURSE_LINK_TRENDING);
         InputStream in = DetaFileInputStream.E(file.getDetaCanonicalPath()

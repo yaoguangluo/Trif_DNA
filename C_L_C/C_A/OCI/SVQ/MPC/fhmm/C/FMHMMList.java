@@ -1,16 +1,9 @@
 package C_A.OCI.SVQ.MPC.fhmm.C;
 
-import E_A.ME.euclid.E.Euclid_CE;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
-import S_A.SVQ.stable.S_Pos;
 import S_A.pheromone.IMV_SIQ;
-import exception.file.O.DetaBufferedReader;
-import exception.file.O.DetaInputStreamReader;
-
-import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
@@ -22,7 +15,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public interface FMHMMList extends FHMMList {
-    public Map<Integer, Map> getRoot();
+    @SuppressWarnings("rawtypes")
+	public Map<Integer, Map> getRoot();
 
     public void index();
 

@@ -38,6 +38,7 @@ public class AddActionInterfaceClass implements CrabInterface {
 	// StaticRootMap.chromosomeRoot.put("crab", null);
 	// StaticRootMap.chromosomeLeaf.put("crab", null);
 	// StaticRootMap.chromosomeDNA.put("crab", null);
+	@SuppressWarnings("unchecked")
 	public void chromosomes() {
 		StaticRootMap.initMap();
 		callFunctionKey = "callFunctionKey";
@@ -64,6 +65,7 @@ public class AddActionInterfaceClass implements CrabInterface {
 	// StaticRootMap.chromosomeFlower.put("crab", null);
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeMetabolism.put("crab", null);
+	@SuppressWarnings("unchecked")
 	public void bloomings() {
 		StaticRootMap.chromosomeBlooming.put(callFunctionKey, this.getClass());
 	}

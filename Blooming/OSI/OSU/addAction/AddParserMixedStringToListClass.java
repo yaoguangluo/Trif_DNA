@@ -53,6 +53,7 @@ public class AddParserMixedStringToListClass implements CrabInterface {
 	// StaticRootMap.chromosomeRoot.put("crab", null);
 	// StaticRootMap.chromosomeLeaf.put("crab", null);
 	// StaticRootMap.chromosomeDNA.put("crab", null);
+	@SuppressWarnings("unchecked")
 	public void chromosomes() {
 		StaticRootMap.initMap();
 		callFunctionKey = "callFunctionKey";
@@ -79,6 +80,7 @@ public class AddParserMixedStringToListClass implements CrabInterface {
 	// StaticRootMap.chromosomeFlower.put("crab", null);
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeMetabolism.put("crab", null);
+	@SuppressWarnings("unchecked")
 	public void bloomings() {
 		StaticRootMap.chromosomeBlooming.put(callFunctionKey, this.getClass());
 	}
@@ -105,6 +107,7 @@ public class AddParserMixedStringToListClass implements CrabInterface {
 	// StaticRootMap.chromosomeRNA.put("crab", null);
 	// System.out.println("Hello Word!");
 	// return null;
+	@SuppressWarnings({ "unused" })
 	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
 		System.out.println("Hello Word!");
 		inputValues = StaticFunctionMap.preValues(NE.app_S.outputMap, 传参因子);
