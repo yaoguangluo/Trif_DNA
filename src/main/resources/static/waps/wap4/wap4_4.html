@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第四章 德塔 Socket 流可编程数据库语言引擎系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/>
+    <br/>基础应用: 元基催化与肽计算 编译机的计算存储机
+    <br/>
+
+
+    <br/>VPCS服务器
+
+    <br/>
+    <br/>Gitee 20190620 感想: 关于vpcs的描述: 最早我的项目都是基于大众化MVC结构,
+    这个结构陪伴我5年的时间. 第一次使用mvp是我在设计ios的暗夜法师游戏设计时候要进行对象
+    数据小规模刷新机制, mvc太重了, 我开始将CONTROLLER 细化. 我的结构开始走向mvpc模式.
+    当时感觉是不错的, 后来在用spring mvc的时候, 普遍是IOC的mvpc设计进行自动注册封装,
+    一次我在进行mock mvc测试的时候 偶尔一个细节打动了我, 就是我看到的并发是个假象,
+    只是个list的先行注册分解而已, 我后来在用spring boot, thinkphp, laravel, zend
+    等框架的技术, 我这个问题重复了100遍在脑海里, 是什么封装驱动这个注册分解模式？于是我开始
+    用c moonguse来做线性服务器, 并模拟了, rust, golang等编译型注册原理, 我找到了实质,
+    那就是tcp握手规则, 我开始设计tcp rxtx进行数据交换, 设计了VPC结构, 发现一个大问题就是
+    数据没有格式化, 于是我开始寻求一种在多线程线性服务器运算握手的时候能够带数据交换的一种
+    常用格式(稳定的)的进行业务, 多好？我找到了就是socket 套接字. 于是我将socket进行
+    服务器部署, 将文件数据, 脚本数据, rest接口数据, 动态数据, 等进行一个个函数封装,
+    然后将函数的数据和socket线程分离, 便于运维, 测试, 数据计算浪费管理, 这就是vpcs第一版本.
+    特点就是数据与逻辑分离, 线程与资源分离, 业务与控制分离, 之后蜂群计算阵列, 非常方便我
+    的initon DNA 催化布局. vpcs第二个版本是我在尝试用springboot mybatis 布局的时候,
+    发现局部注册太臃肿了,
+    ***主观情绪略***,
+    于是我开始设计第三代vpcs版本, 将v p c s 四个部分进行全面的map注册模式, 我当时想到的好处是
+    1 以后map reduce 非常方便, 2 全部量子碎片化, 速度性能要爆炸, 3碎片逻辑进行微分催化
+    1对1 Initon mask进行肽链重用, dna的早期框架我有足够条件进行论证, 现在vpcs进入第4代了,
+    我开始考虑情感化线程操作. 我一直在准备着. 让情感与计算分离.
+    <br/>
+    <br/>Implements of VPCS server notes on Gitee, 2019-06-20.
+    <br/>
+    <br/>In an early time of author's projects, MVC backend was a popular
+    solution for web development. And the first MVP project of IOS game:
+    <br/>
+    <br/>https://github.com/yaoguangluo/dark-wizard-game/tree/master/DOW2
+    <br/>
+    <br/>, the author appreciated Its object oriented schedules and Its
+    refreshment. Due to the MVC was too heavy, so the author did a
+    definition of game controllers. And finally separated the macros and
+    prototypes as a type of MVPC. Since the author did a Java test job at
+    Folsom Intel, after he used Java mockito MVC API, mixed with Junit4 to
+    make a spring-boot and hibernate test. He found that all functions could
+    be tested as a single process, and this process contained a classify of
+    schedules. These schedules included singletons, sonar spells, spring web
+    boots and spring injects. And these schedules were tested one by one
+    like a time sequenced line-waterfowls. So, the test process before
+    deployment which was a synchronization, but the true of Its inner
+    schedules were an asynchronization. The author took more questions
+    about sonar qube registrations because those contained lots
+    unforeseeable encrypt dlls. The author tried to explain well between
+    asynchronization and synchronization by reading the professional book
+    of Operating System, TCP/IP, Software Engineering and How to
+    programming. After he did a simulation by using CGI, Mongoose C, Rust
+    and Golang etc. Then he got a result of TCP hands shaking and time
+    sequenced Rest-calling. He became to know the asynchronization
+    distinct to synchronization. Then announced a first 'VPC' at
+    <br/>
+    <br/>https://github.com/yaoguangluo/VPC5.0/commit/dc06dbc3750879155871d45ce9cdb8be29825a60
+    <br/>
+    <br/>https://github.com/yaoguangluo/document/commit/390b77a854ddcba2fe38021b184d2dae5e22975f
+    <br/>
+    <br/>2017年10月19日 GMT+8 12:15. Because of his VPC project, was built by
+    spring-boot and mybatis, which was unforeseeable. The author couldn't
+    test and catch the question well, then try to code a new bottom OSI
+    layer of rest call allocations about his theory of VPC. He began to
+    think about camel rpc, golang grpc, TCP rxtx hands shaking, RS485,
+    power-link flips and modbus hands shaking. Finally, the author used SSH
+    Sockets to simulate the hands shaking CGI. After he had simulated an
+    iluwatar handler-schedules, he got so many efficiency problems of
+    memory garbage, unused performs and dead locks. Then he try to make
+    separations of data and logics, schedules and resource, business and
+    controllers. And now the VPC became a VPCS, VECS of AOPM VECS IDUQ
+    TXHF, a part of Deta DNA hexadecimal meta base initons. For the listed
+    bee coordinates classify of 'Swarm Computing' at chapter 6 and DNA AOPM-VPCS
+    catalytic computing-array at chapter 7. The author used socket flows of
+    hands shaking, to instead spring-boot and mybatis, the author did an
+    affordable Deta PLSQL, to instead MYSQL. And now he prepared to make a
+    new separation of ethics and computings.
+
+    <br/>
+    <br/>Gitee 20190625 感想: 我花时间进行论证vpcs 和 rpc, mvc, mvp, 微软的handler event
+    优势和差异性对比.
+    <br/>
+    <br/>vpcs定义:
+    是标准的从mvc(mode-view-contoller)到mvp(mode-view-process)到mvpc(mode-view-process-controller)到vpcs(view-process-controller
+    interface- static map)的一个过程. vpc 在第5版本时候, 作者将mode去掉了, 将 process分成
+    sleeper 和 sets, 正式命名vpcs
+    <br/>
+    <br/>第二版vpcs 作者将view 拆分为 vision 和 pillow, 逐渐形成 vision-
+    pillow-controller-sleeper 的vpcs结构 第三版vpcs 作者将 set 保存在pillow中
+    让sleeper线程和pillow分开 让skivvy来管理, 逐渐形成 vision-sleepers-
+    pillow-controller-skivvy 的vspcs结构 做到逻辑与任务分开, 线程与资源分开的模式.
+    <br/>
+    <br/>vpcs随着工程的发展已经进化到了 HVPCS
+    (hallkeeper-vision-pillow-controller-sleeper) (运行与维护分离, 执行与逻辑分离,
+    任务与资源分离) ***主观情绪略***, Hall的词汇来自作者在路德认识 留学生服务的Hall教授.
+    <br/>
+    <br/>1 对比微软的handler events 优势: vspcs更实用于让大型综合调度瞬间简化,
+    因为本身就包含了RR机制思想. 2
+    对比web的rpc 优势: rpc大家可以看下illuwatar的包 和 go的rpc 异步消息机制,
+    vspcs的机制是通过触发来运行逻辑http 协议是socket流进行rest, bits等处理(类似的功能软件是redis
+    ), 3
+    而rpc是 tcp连接当然连接速度会更快, refer go 的最新 grpc https://blog. csdn.
+    net/lk2684753/article/details/84436190 ***主观情绪略***. 4 illuwatar rpc
+    是微软c#的handler events线程注册机制的java 注册封装模式, 是时时动态的, 计算量增大. 5
+    vspcs
+    采用酒店的服务管理思想进行程序化, (***主观情绪略***)这是世界第一篇关于酒店业务调度思想的软件论文.
+    作者设计和更新它的需求的直接动机是为了方便日后进行海量并发的VPCS矩阵蜂群计算中满足
+    低计算量, 低浪费量, 无监控死角的微分催化计算业务.
+    <br/>
+    <br/>作者再加点addition: Apache Camel, 作者在几年前用这个包做异步消息, ***主观情绪略***,
+    作者refer 2本书 1 java. net白皮书 2 java how to program 6th 蓝皮书
+    开始用socket做握手发送数据包, 发现速度不错. 再加点料, 为什么作者会接触camel,
+    作者在加州路德大学读书的时候有一次在计算科学实验室做嵌入式OSGI思想研究的时候,
+    在谷歌上推荐弹出了个camel, 这是作者第一次看到它.
+    关于作者ETL unicorn的 OSGI思想 灵感动机来自 liferay的theme控件, 不是camel, 在这里申明下,
+    因为作者的动机是要走节点图形的继承, 而不是插件化OSGI包. 关于作者的 ETL unicorn的 OSGI
+    函数更严格来讲不是OSGI,
+    而是继承的子类对象们进行统一分类管理而已.
+
+    <br/>
+    <br/>Implements of VPCS server notes on Gitee. 2019-06-25
+    <br/>
+    <br/>The author did a contrasted analyst of VPCS, RPC, MVC, MVP, and
+    compared each to Microsoft's Handler and Event. He did a conclusion of
+    VPCS, from MVC(Mode-View-Contoller) to MVP(Mode-View-Process), then
+    again from an MVPC(Mode-View-Process-Controller) to VPCS
+    (View-Process-Controller Interface- Static Map). At VPC5.0 edition, the
+    author had removed the Mode, and separated Mode and Process into
+    sleeper and sets, announced It as VPCS.
+    <br/>
+    <br/>Then The author did an evolution of VPCS, to separate the View
+    into Vison and Pillow, gradually into a different type of VPCS (Vision-
+    Pillow-Controller-Sleeper). Seem not done, the author continued to
+    integrate the Set into Pillow, and built a skivvy to arrage the Pillow
+    set. As a VSPCS(Vision-Sleepers-Pillow-Controller-Skivvy), and now
+    became an HVPCS(Hallkeeper-Vision-Pillow-Controller-Skivvy) by instead
+    Skivvy of a Hall. For the VPCS HTTP server and schedure. (Not for DNA
+    Initons Encoding, which was a simple of Vision, Execution, Controller
+    and Static).
+    <br/>
+    <br/>Compare to the Microsoft handler events, VSPCS schedure and Its
+    RR (Round Robin or Early Birds) could be simpler than other factory
+    modes. Compare to the RPC, VSPCS simulated the concurrented,
+    asyntronized, inner time sequenced threads-schedure (see HTTP request
+    and responce Java sources), instead of illuwatars incremented,
+    asyntronized handler and event. Golang RPC refers (https://blog. csdn.
+    net/lk2684753/article/details/84436190). VSPCS did an example of
+    Hotel-Daily-Arrangement. Because of 3 messy environments as
+    Hotel-Daily-Arrangement, Hospital-Daily-Arrangement, and
+    Bus-Stations-Daily-Arrangement. The author considered It could do well
+    in a business of catalytic computings. In order to satisfy a reduced
+    computings and wastes, and raised a seamlessly monitoring. The author
+    thanked Operating System, Apache Camel and Its Mini OSGI, Java.net,
+    Java How to Program 6th, Liferay and Its theme system here the Cheers.
+
+    <br/>
+    <br/>Gitee 20190826 感想 为什么我不用spring？
+    <br/>
+    <br/>很多年前, 很多人带着各种各样的问题问我为什么Java spring 那么好了, 为什么
+    我要另创socket流分发服务器？我可以告诉大家的动机.
+    <br/>
+    <br/>1: 安全和同源配置问题. 2016年我在美国注册了comforx软件公司, 当时设计个电商系统,
+    因为我用的是spring后端,
+    我发现一个大问题, 为什么被同源限制, 如果是拒绝恶意攻击, 至少可以用户自定义设置配置呀,
+    而这个功能一直被spring给控制了,
+    当时我郁闷的用2台电脑和2个不同的公网域名IP才解决的这个问题. 我的动机很明确,
+    我要自己写web服务器.
+    <br/>
+    <br/>2: 市场的开源产品大, 重. spring 我觉得太大了.
+    2015年我在亚米上班的时候竟然听见吴迪和little说java太重了(little想用C), 太重了, 内存,
+    什么的太大了,
+    我当时候在想, 可以用spring boot 或者golang 呀, 我当时给王浩雷推荐了go lang, 王浩雷说
+    go lang
+    当时生态系统不全, 做工程没有java 安全和高效, 特别是开发周期.
+    <br/>
+    <br/>3: 方便我的vpcs实验论证. 最早接触socket是在印度那本java how to program 6th,
+    第一次使用socket 是在上海章总那, 做 C# 蓝牙 大文件传输, 用到了32feet, 当时我问章总,
+    为什么我的软件智能一台一台手机单独发送, 不能群发, 章总给我一个别人的C#软件(2012年那个硬盘我在美国Del
+    Ma AVE
+    "弄丢***主观情绪略***"了, 记得QQ(313699483)里面有我和爸妈聊天的记录),
+    说这个别人实现了你看看多线程的原理,
+    我说多线程我知道, 于是我专门独自写了个多线程哲学家进餐算法, 章总当时之后没说话,
+    我后来(2014年)意识了, 不是多线程的问题,
+    是我的握手没有并发管理. 这个socket并发握手, 我特意做了个sleeper Hall 来管理. 以及后来的
+    VPCS论文.
+    <br/>
+    <br/>4: 统一, 全局, 生态化, 高效. 小到极致, 我的数据库不仅用socket流, 我的缓存, 前端,
+    后端都是采用我的socket流, 现在我一台电脑启动整个前端, 后端, 缓存, 和数据库, 4个工程,
+    2兆内存, 全部搞定.
+    <br/>
+    <br/>5: http协议成熟. 为什么我不用rxtx, 我之前已经解释了, 因为rxtx的数据还是原始数据,
+    协议太低了,
+    对我的工程设计研发周期变大, 所以我采用http socket流模式.
+    <br/>
+    <br/>之前我还遇到了些问题, 比如jar, zip, wav, mp4, js, 等文件怎么分发？rest是最好分发的,
+    因为就是http而已, 可以js 就不一样了, 有 application js, 还有file js, 记得几个月前我一直苦恼
+    application js的分发, 后来我设计了 unzipped buffer 等格式, 针对不同的web 对象数据全部搞定的时候,
+    我发现我的socket服务器源码 核心代码 40kb都不到, 哪有spring 100兆, spring mvc 17兆,
+    spring
+    boot 40兆等那么大, 关于我的socket基础怎么来的？感谢三本书 3堂课: 《java how to program
+    6th
+    蓝皮子印度买的》《java net白皮子 美国工业城市frys买的》《c cgi 路德图书馆 》/ 路德大学的计算机网络,
+    本科的通信原理,
+    基督大学的数据结构, 操作系统. ***主观情绪略***
+    <br/>
+    <br/>还有, 关于一些零散的记忆累计, 我也需要感激的:
+    <br/>
+    <br/>1在chinacache的时候管理互联网ip认证项目, 我非常系统的接触了tcp握手的协议码解释.
+    <br/>
+    <br/>2在路德大学上香港老师的计算机网络数据编码课非常系统的接触较验机制和TCP编码原理.
+    <br/>
+    <br/>3我在2个大学中系统的学习了2次操作系统专业课程.
+    <br/>
+    <br/>4我在上海电气接触过power link的tcp 以太帧.
+    <br/>
+    <br/>5感谢w3c, web2. 0, http协议官网给我提供了常用文件的 header头 定义规范.
+    <br/>
+    <br/>6分发压缩我要感谢gzip, 我的socket数据库引擎系统个人软著不包括gzip压缩, 说到压缩,
+    用处是真的很大.
+    因为它让我的握手时间和效率大大增加了.
+    <br/>
+    <br/>最早我没有用到压缩的, 因为服务器是花生壳转发, 所以我握手比直接服务器发布慢了一点,
+    而且走别人的分发代理,
+    格式还要被强制统一, 我前几个月为了这个问题头疼了几天, 后来用gzip统一压缩大文件,
+    10兆变2兆, 格式保障了, 速度也上来了.
+    小伙伴如果不想用gzip, 可以剔除掉, 记得把forwadtype里面分流的函数修改下就行了.
+
+
+    <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/4/4_4.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>VPCS调度内核
+    <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/4/4_5.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>1 VPCS服务器支持每秒400万QPS的web请求. refer page 389,
+    <br/>
+    <br/>2 VPCS服务器采用TCP rest request模式, 标准化http response. refer page 388,
+    395
+    <br/>
+    <br/>3 VPCS服务器可自由设计前端和后端集成. refer page 见德塔官网 和 养料经admin 两个实例
+    <br/>
+    <br/>4 VPCS服务器完全支持post 个 get 2种请求模式, 可扩展. refer page 481, 488
+
+    <br/>
+
+
+</div>
+</body>

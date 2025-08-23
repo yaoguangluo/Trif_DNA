@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="DetaDB"/>
+	<classpathentry kind="src" path="javacv-bin"/>
+	<classpathentry kind="src" path="lib"/>
+	<classpathentry kind="src" path="Blooming"/>
+	<classpathentry kind="src" path="C_L_A"/>
+	<classpathentry kind="src" path="C_L_C"/>
+	<classpathentry kind="src" path="C_L_D"/>
+	<classpathentry kind="src" path="C_L_E"/>
+	<classpathentry kind="src" path="C_L_I"/>
+	<classpathentry kind="src" path="C_L_M"/>
+	<classpathentry kind="src" path="C_L_O"/>
+	<classpathentry kind="src" path="C_L_P"/>
+	<classpathentry kind="src" path="C_L_Q"/>
+	<classpathentry kind="src" path="C_L_S"/>
+	<classpathentry kind="src" path="C_L_U"/>
+	<classpathentry kind="src" path="C_L_V"/>
+	<classpathentry kind="src" path="C_R_A"/>
+	<classpathentry kind="src" path="C_R_C"/>
+	<classpathentry kind="src" path="C_R_D"/>
+	<classpathentry kind="src" path="C_R_E"/>
+	<classpathentry kind="src" path="C_R_I"/>
+	<classpathentry kind="src" path="C_R_M"/>
+	<classpathentry kind="src" path="C_R_O"/>
+	<classpathentry kind="src" path="C_R_P"/>
+	<classpathentry kind="src" path="C_R_S"/>
+	<classpathentry kind="src" path="C_R_U"/>
+	<classpathentry kind="src" path="C_R_V"/>
+	<classpathentry kind="src" path="DetaResources"/>
+	<classpathentry kind="src" path="ext"/>
+	<classpathentry kind="src" path="GccExtension"/>
+	<classpathentry kind="src" path="HRJ_YLJ_node"/>
+	<classpathentry kind="src" path="InitonsFlowerExtension"/>
+	<classpathentry kind="src" path="YLJ_HRJ"/>
+	<classpathentry kind="src" path="hvpcs"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/myLib"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

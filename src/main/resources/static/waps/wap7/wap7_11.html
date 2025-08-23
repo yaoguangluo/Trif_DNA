@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第七章 类人DNA与神经元基于催化算子映射编码方式
+    <br/>The Initons Catalytic Reflection Between Humanoid DNA and Nero
+    Cell
+    <br/>类人 DNA 与 神经元基于催化算子映射编码方式
+    <br/>Yaoguang Luo, Rongwu Luo
+    <br/>罗瑶光, 罗荣武
+    <br/>Keywords
+    <br/>VPCS, AOPM, IDUC, Nero, Artificial, Decoder, Medical, Paralling,
+    Computing,
+    <br/>Humanoid, ETL, Parser, Data Mining
+    <br/>关键词
+    <br/>VPCS 架构 AOPM 逻辑 IDUC 编码 神经元 人工 解码 医学 并行计算 类人仿生 ETL 数据挖掘
+    爬取
+
+    <br/>Theory on YAOGUANG's Array Split Peak Defect
+    <br/>Mr. Yaoguang. Luo
+    <br/>Outline: In the common software development factory, engineer
+    always did more and more interactions with data structure and math
+    algorithms. Especially in the recursion, convolution, sort and generic
+    loops, scientist likes to find a simple, more sufficiently and
+    alignment way to face the project requirements with the large
+    association. For instance, me, I really got a real-world problem at
+    this domain while I use quicksort, also for another project such like
+    Deta parser. What is the peak array split defect? How does It count the
+    real-world problems? Why need find It and how to get the nice solution?
+    Cool, this paper will cause an implementation about our goals, ok now,
+    keep forward to the context where I talking as below, thanks for more
+    theory, DETAils and the source code implementations please check the
+    bottom reference section.
+    <br/>在一些主流的软件研发企业, 工程师总是花费很多时间在数据结构和数学算法上, 特别是在递归,
+    演化, 排序, 和常规循环. 科学家因此想发现一种简单高效的算法来解决一些需求, 比如我,
+    如快速排序, 德塔分词, 什么是非对称数 列切分, 这些逻辑怎么解决当前真实的社会问题?
+    这篇文章能够解释许多问题, 丰富的论据和论证以及论证的源码我都会毫不保留的提供.
+    <br/>Peak, Array, Split, Defect, Recursion, Convolution, Sort, Generic
+    <br/>Goal one: Quicksort Yaoguang. Luo 4D
+    <br/>DETAils:
+    <br/>For example the array input as below where we gave 11 digits.
+    <br/>关于基数拆分初始, 给定 11 个数列 队,
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_18.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>
+    <br/>1.1 The first split, we could see the digit-6 will auto arranged
+    to the right part.
+    <br/>第一次拆分如上, 我们会发现 6 被默认在右方.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_19.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>
+    <br/>1.2 And the second split, we may see the digit-3 will be auto
+    arranged to the right part
+    <br/>第二次拆分, 发现 3 在右方.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_20.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>
+    <br/>1.3 The third split, we may see the digit-4. 7. 10 will be auto
+    arranged to the right part
+    <br/>第三次拆分, 发现 4, 7, 10 出现在右方.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_21.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>
+    <br/>2 Thinking:
+    <br/>
+    After the split array showing, we could see clear that the big
+    problem about the asymmetry defect, as I did an annotation of N, so the
+    i of N will absolutely find a n/POW (2, i) value points, as an
+    insufficiency asymmetry defect mode, I fall in thinking…if I do any
+    compute theory as the same with this mode style, for example in the
+    recursion or inner loops, it will autonomic separate to the 2 different
+    process way, it necessary to do indifferent flows.
+    <br/>
+    通过上面的迭代微分, 可以发现一个有规律的非对称非基数缺陷问题. 我用数学标识数组 n,
+    n 为基数, 则 n的第 i 次拆分, 关于这个 n/pow(2, i)的缺陷数, 呈现不饱和对称模型,
+    这个细节我引起了思考如果, 我在做函数递归, 2 分迭代, 和矩阵微分的时候, 出现了类似的
+    基数划分, 我有必要考虑通过 2 种算法内核形式来处理基数列和偶数的计算.
+    <br/>
+    <br/>3 Problems:
+    <br/>So, after the above thoughts, I may get any flashes, First, the
+    even and odd digits both are asymmetry while in the Differential loops.
+    For this noise, I defined as (Tinoise Peak) Second, once we did a split
+    compute under this mode, It must get more unfair sets. I defined as
+    (Tinsets defect). Third, if this mode almost in the messy and timer
+    data system, It will catch more time and asserts wastes or exceptions.
+    <br/>通过这个实验, 我得到一些答案: 1 不论是基数还是偶数都会增加不对称, 而不是仅仅是
+    基数的问题. 这个噪声, 我定义为罗瑶光拆分噪声峰. 2 拆分的基偶划分, 必然会造成内部计算
+    算子的不平衡, 我定义为罗瑶光算子缺陷. 3 如果这个缺陷在海量数据处理中有时序性, 那么
+    这个算子缺陷会产生巨大的计算浪费.
+    <br/>
+    <br/>4 Solutions:
+    <br/>
+    For the god like, I find three solutions while I currently
+    enrolled in my projects. First: computer logic acceleration, at least
+    It can avoid the waste of the compute by using inner process optimism.
+    -- To avoid the deep recursion. Second, reduce the compute sets. For
+    any less memory system, we may reduce more and more memory garbages
+    after we reduce the inner register or temp value sets. Third, we may
+    make an optimization of the function logic where to instead the old
+    complex functions. Those ways include the condition, algorithm, method
+    or discrete optimization. End, we may use mathematics of double
+    differential, deep definition, acquisition or polynomial to get the
+    solutions.
+    <br/>
+    这个细节体现在罗瑶光小高峰过滤快速算法中. 1 增强计算逻辑, 我们可以通过增加函数内部的
+    计算性能来弥补深度迭代浪费. 2 减少计算算子, 我们通过减少计算临时变量和算子来避免内存
+    垃圾增量. 3 化简计算条件, 我们可以通过函数优化, 条件优化, 来化简计算逻辑. 4 重微分
+    迭代, 我们也可以进行微分, 重微分, 条件微分, 迭代来进行多项式展开计算.
+    <br/>(因为html的小于号是关键字，于是替换成文字)
+    <br/>5 True Instances, let me show the algorithms here,
+    <br/>private int partition(int[] a, int lp, int rp) {//第5版本 topsort
+    //为int x= a[lp] 小于等于 a[rp]? a[lp]: a[rp];
+    <br/> int x= a[lp]小于 a[rp]? a[lp]: a[rp]; //reduce the compute values,
+    //reduce the recursion peak int lp1= lp;
+    <br/> while(lp1++ 小于 rp){
+    <br/> while(!(a[lp1++]> x|| lp1> rp)) {// reduce the condition
+    //differential check, reduce the recursion loops
+    <br/> }
+    <br/> while(a[rp-- ]> x){}
+    <br/> if(-- lp1小于 ++rp){
+    <br/> int temp= a[rp]; a[rp]= a[lp1]; a[lp1]= temp;
+    <br/> }
+    <br/> }
+    <br/> a[lp]= a[rp]; a[rp]= x; return rp;
+    <br/>}
+    <br/>From this code: in a common quicksort way, the recursion based
+    on the average deep split, suppose the initial array length is N {1, 2,
+    3…n} is an Odd, so the separate two arrays will cause an asymmetry
+    defect, those timer asymmetry compute peak collection will cause more
+    and more probability problems such like jam, lock, time waste and heap
+    increment.
+    <br/>
+    这段代码 说明在传统的快速排序中, 递归总是基于平均的深度分裂, 如果产生非对称的
+    迭代函数, 我们需要讨论一些算法来过滤这些计算概率高峰, 如 呼叫拥堵, 时间损耗, 内存
+    堆增量等问题因素.
+    <br/>The odd peak binary split as below:
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_22.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>
+    How to avoid those timer distinction peaks? I go more absolutely
+    research where focus on these problems, first, differential flows. This
+    flash is not suitable for here, May good for the Deta parser, I will
+    show you later. Second, compute acceleration. Yep, this is a good way,
+    for example find the big X as the code blew, It will cause the while
+    loop ability accelerations.
+    <br/>
+    怎么避免时间高峰? 我有一些明确的逻辑, 首先流微分, 其次是计算加速, 和循环优化加速.
+
+    <br/>int x= a[lp]< a[rp]? a[lp]: a[rp];
+    <br/>(int x= a[lp]< =a[rp]? a[lp]: a[rp];)适用于string swap top sort 5D
+
+    <br/>Third, De Morgan condition differential as the code below, It
+    will cause the condition ability accelerations.
+    <br/>第三, 离散定律变换 也能进行决策条件优化.
+    <br/>while(!(a[lp1]>x|| lp1>=rp)) {
+    <br/>At last, but the least, value reduce, code optimization both are
+    very important way of the peak avoid filter.
+    <br/>最后至少, 算子减少, 代码优化都能有效的进行计算小高峰过滤.
+
+    <br/>
+    <br/>Goal Two: Deta parser
+    <br/>
+    <br/>6 DETAils:
+    <br/>
+    Last year I help my father to develop the study software about
+    getting the medicine data collection for quick search. I’ m going to
+    try to build a search engine system, input format is a string, how to
+    get a Chinese string array split?
+    <br/>
+    去年, 我帮我父亲研发学习软件, 关于医学数据的迅捷搜索. 在设计搜索引擎的过程中,
+    我遇到了一个问题就是格式化字符串中有效的拆分中文词汇.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_23.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>
+    <br/>convolution length indicate by marching Nero index tree as
+    below: 2|1|2|3
+    <br/>如图, 演化的开始按照神经森林词汇索引进行面切分, 如下.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_24.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>
+    <br/>convolution POS indicate as below: n |c |n |adv |adj
+    <br/>切分后进行面中的词性切分如下
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_25.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>
+    <br/>convolution split
+    <br/>词性切分后进行组合如下
+
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_26.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>
+    <br/>7 Thinks:
+    <br/>
+    While I use this way on my Deta project Chinese separations, I
+    met so many problems, the more and more important problem is the POS
+    frequency peak waste, my POS flow functions will spend a lot of time to
+    do the low prior convolutional split condition check first… It cost me
+    a lot of time… after I did a collection of my projects, the results are
+    clear.
+    <br/>
+    思考了下, 当我用这种方法进行德塔工程, 我遇到了许多问题, 特别是词性拆分算法的频率峰,
+    很多时候高频使用的函数总在不常用的函数后面, 造成了时间浪费, 于是开始频率阀门排列优化.
+    <br/>
+    <br/>8 Problems:
+    <br/>
+    First, convolution kernel gets asymmetry problems. Second,
+    unnecessary conditions check loops. Third, unimportant heap register
+    values. End, values sets and conditions sets too more.
+    <br/>
+    首先, 演化的内核 有许多非对称的问题, 其次, 不必要的条件和循环检查, 然后
+    不重要的堆注册的变量繁琐, 最后静态算子,
+    条件算子过多.
+    <br/>
+    <br/>9 Solutions:
+    <br/>
+    First, format the convolution kernel of the index dictionary
+    tree, for example I use the char ASCII as the index length to reduce
+    the match time of the convolution length indication. Also, I define the
+    POS convolution kernel size less than five. Second, I did a condition
+    frequency statistic, and re arrangement it, at the same time, reduced a
+    lot of the inner sets to avoid the compute pause.
+    <br/>
+    首先, 格式化索引树内核, 比如 ASCII 索引, 按长度划分, 同样, 词性内核我定义长度不超过
+    5 个字, 第二我统计了执行条件函数的频率, 然后流水阀门重新排序了, 高频的放在前面. 依次
+    排列. 同时, 尽可能的减少内部条件算子, 避免计算高峰.
+    <br/>
+    <br/>10 True instance:
+    <br/>
+    <br/>11 Finally I developed a convolution String array split way for
+    marching as below: orange color are presplit sets
+    <br/>
+    <br/>11.1 Check 4 chars slang
+    <br/>最后, 我设计一套内核方式, 字符串词切分先 4 字成语谚语比较
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_27.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>
+    <br/>11.2 Check 3 chars key word
+    <br/>不是成语然后 3 字比较
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_28.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>Check 2chars normal word
+    <br/>然后 2 字比较
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/7/7_29.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>
+    <br/>最后单词拆分
+    <br/>In order to make a compute acceleration, I did 2 string builder
+    array to store the pre-order sets.
+    <br/>为了计算加速, 我设计了 2 个数组用来存储分词坐标的前缀 词储.
+    <br/>in order to make a PCA POS acceleration, I did 5 chars marching
+    array to store the post order sets.
+    <br/>为了进行主要词性拆分加速, 我另外还设计了 5 个长度 后缀 字储.
+    <br/>It seems the Nero Index, NLP and POS for the PCA separation with
+    convolution kernel marching by using stepwise iterative differentiation
+    got much higher sufficiency.
+    <br/>计算拆分的高效性可以使用我的德塔分词的作品测试. 充分的数据论证其性能是优秀的.
+    <br/>
+</div>
+</body>

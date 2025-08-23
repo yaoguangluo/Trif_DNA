@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第六章_数据预测引擎系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/>
+    <br/>基础应用: 元基催化与肽计算 编译机的进制仿生计算机
+    <br/>
+
+    状态机 <br/>
+    <br/>
+    1 数据预测引擎的状态机主要包含 压力状态, 轨迹状态, refer page 571, 573, <br/>
+    <br/>
+    2 压力状态体现在坐标团的之间的距离, 和团中心和重心的距离分析. refer page 571 <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/6/6_6.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>
+    Gitee 20200305 感想 《通过坐标团的 精度匹配分割的内部坐标聚类团 进行 每个聚类团的
+    重心和中心距离 求解 获取有效的团稳定观测数据模型》 <br/>
+    <br/>
+    关于这类算法, 早期思想, 我想设计出一种机器人的视觉观测算法, 能迅速有效通过坐标点集合
+    计算出坐标团的运动轨迹. 用在运动趋势和轨迹判断等领域上. 因为作者开发条件有限, 无法从
+    硬件和物理层来进行实验, 于是最早研发的主要软体观测数据是重心和中心这两个关键词. 一开始
+    作者认为团坐标的中心如果和重心能吻合, 则表示观测对象团趋向于稳定, 于是从这个关键点入手.
+    发现一个豁然开朗的数据轨迹领域. 如果坐标团的重心和中心有位移段, 作者认为在某种观测角度
+    上属于 势能, 这个势能 一旦解释为向量, 可以定义为运动趋势, 怎么计算这种运动趋势？作者
+    加入了稳定性, 向量和压强等参考名词来解释这个计算过程如下. 团坐标的中心 意思是团的中心点.
+    团坐标的重心 意思是团的PCA密度点. <br/>
+    <br/>
+    如果中心和重心坐标临近, 则位移短, 作者定义为该坐标团稳定非充能状态. 如果中心和重心有位移,
+    那么从中心到重心的方向为物体的运动势能方向, 团趋向于该方向运动, 重心区的密度大小和重心中心
+    位移同时确定了运动势能的大小. 如果将该重心区的团坐标集合再次切裂成小团, 计算每个小团的
+    运动趋势和轨迹, 进行微积分统计, 就能正确的分析出大团的整个运动周期过程. 之后的函数有相关基础编码.
+    <br/>
+    <br/>
+    动机, 早期动机为当坐标切裂融聚算法 完成后, 作者想基于此做工程实践, 确定它的使用价值,
+    于是
+    想在交通领域上模拟, 后来发现这个思想可以在任何运动学和流体力学, 分子力学上施展, 于是有强烈
+    的动机来完善它. ***去主观情绪*** <br/>
+    <br/>
+    当时所想, 这类函数的观测点毕竟只有3维, 重心, 坐标数和中心, 社会领域适用面已经无比宽广.
+    如果能再加一维 参数(比如体积等), 那么这类基础算法的社会应用价值将再次无限扩大. <br/>
+    <br/>
+    Notes on Gitee 20200305, cords-clusters separation according to the
+    fissile-scale were based on adjacent-distance of each two cords, then
+    found each trend-distance between Its cluster-centre and
+    cluster-weight. In order to make an observation of stable-clusters. <br/>
+    <br/>
+    In an early time, the author tried to find an algorithm of vision, to
+    speedy and quickly trace the movement with this algorithm []-. His
+    purpose was that trended an action and traced a prediciton by using
+    software code. Due to the limited development, he maily used two
+    observable keys with centres and weights. He considered a stable-cluster
+    could be defined as a coincided position of Its centre and weight. Then
+    did a project about cords movement and computation with computer. Then
+    considered a way of observation could be defined as a potential energy.
+    Here the once be explained as a vector, also could mean as a trending
+    movement. He continued to find a computing way of how to make an
+    exploration with these aboves. <br/>
+    <br/>
+    The author added a Stability, Vector and Pressure, he considered a
+    central point of each cluster could be defined as a Stable-section. And
+    a weight point of each cluster could be defined as a Stress-section.
+    Then did vectorial connections where from each Stable-section to
+    Stress-section, The author considered these vectors could be defined as
+    PCA densities. <br/>
+    <br/>
+    The length of each vectorial link could be defined as a 1
+    energy-status, 2 trending directions, 3 and ranged densities. Here the
+    ranged of 2 and 3, could also deteminate the statement of 1. The author
+    continued to consider that agained a differential fissile-cluster, then
+    could create a condition with statistics, means to do a more scaled
+    analyzing of actions, densities, molecules and mechanics. <br/>
+    <br/>
+    Finally, he thought this algorithm
+    []- now only contains number of cords,
+    weights and centres, he considered It could add one more set about
+    area. For example, side end of cords. It might be used widely arround
+    the real world. <br/>
+    <br/>
+    The author: YaoguangLuo 稍后优化语法. <br/>
+    <br/>
+    3 轨迹状态体现在坐标团的内部欧基里德距离熵增和团中心KNN迁移熵增分析. refer page 569,
+    570 <br/>
+    <br/>
+    4 数据预测引擎的状态机应用在非线性坐标计算系统中. refer page <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/6/6_7.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/6/6_8.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>
+    轨迹算法做漂亮些. 这个算法基础思想来自欧基里德mean距离, 讲课教授是M. klassen, Refer下,
+    当时讲pearson
+    pangningtan教材章节, 讲的很仔细. <br/>
+    <br/>
+    Gitee 20200307 感想 《2维 3维 坐标集 切裂 重心 轨迹 跟踪算法JAVA源码》 <br/>
+    <br/>
+    1 最近我总是被一些计算思想困扰我很久, 比如数据团的切裂和融聚的模拟过程如果没有按预期的算法执行怎么办？
+    <br/>
+    <br/>
+    比如坐标团的运动趋势, 因为一些误差导致最终结果变形, 站在运维的角度我怎么及时可控, 可观测？
+    <br/>
+    <br/>
+    2 2012年上卡教授的数据分析课, 坐在赵川童鞋旁边, 想起那一副老实巴交的样子, 我问题一下子多到爆炸.
+    特别是rosemead去thousand oaks学校的商旅路径计算, 先走10 101高速还是先走105405~101高速..
+    ？要满足我不堵车, 既看海, 又跨山需求. 2个小时到学校不迟到, 重点是60美金汽油能开1个星期.
+    knn的增量我一定要进行轨迹可控, 不然100万次计算如果是最后10万次出错, 我只要按轨迹把后面10万
+    次修正, 而不是再做一次100万次计算. 提高算能是我的核心思想. <br/>
+    <br/>
+    动机, 一大堆数学问题堆在一起, 我头皮发麻, 我急切需要一种算法, 来保证(计算可控, 趋势可控,
+    观测透明) <br/>
+    <br/>
+    我定义为算能挖掘体系. 于是开始设计这类算法. 论证, 这个算法最终完善了当前版本, 能将KNN的划分
+    重心轨迹按时间顺序记录了, 这个轨迹不但可以计算加速度, 还可以提高观测和轨迹趋势预判的准确性.
+    结果, 这个算法特别适用于金融领域, 运动领域加速度计算, action游戏领域, 空间几何领域等
+    做轨迹 坐标趋势和预测计算. 不足, 因为循环计算轨迹坐标的, 团的坐标数越多, 计算量增大,
+    这个 做算法之前 先执行PCA重心团筛选函数可以大幅减少循环计算量, 提高算能. <br/>
+    <br/>
+
+</div>
+</body>

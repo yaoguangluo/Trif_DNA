@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第四章 德塔 Socket 流可编程数据库语言引擎系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/>
+    <br/>基础应用: 元基催化与肽计算 编译机的计算存储机
+    <br/>
+    <br/>DETAPLSQLCommands
+
+    <br/>
+    <br/>setRoot:[path];
+    <br/>baseName:[baseName];
+    <br/>tableName:[tableName]:[operation];
+    <br/>getCulumns:[difinition1]:[difinition2]:[difinition3]:[difinition4]:[difinition5];
+    <br/>culumnName:[culumnName]:[dataType];
+    <br/>changeCulumnName:[newCulumnName]:[oldCulumnName];
+    <br/>culumnValue:[culumnName]:[culumnValue];
+    <br/>condition:[operation]:[difinition1]:[difinition2]:[difinition3];
+    <br/>join:[baseName]:[tableName];
+    <br/>relation[operation]:[difinition1]:[difinition2]:[difinition3] ;
+    <br/>aggregate[operation]:[difinition1]:[difinition2]:[difinition3];
+
+    <br/>
+    <br/>CommandsDefinition
+
+    <br/>
+    <br/>setRoot:[path];
+    <br/>The setRoot:[path]; is mostly used for set the database path.
+
+    <br/>
+    <br/>baseName:[baseName];
+    <br/>The baseName:[baseName]; is mostly used for set the current
+    database name in the PLSQL language compiler system.
+
+    <br/>
+    <br/>tableName:[tableName]:[operation];
+    <br/>The tableName:[tableName]'[operation]; is mostly used for set the
+    current table name in current database with the operations. For example
+    tableName:tableName:select; this command will tell PLSQL system, now
+    begin to do the select function section.
+
+    <br/>
+    <br/>getCulumns:[difinition1]:[difinition2]:[difinition3]:[difinition4]:[difinition5]
+    ;
+    <br/>The
+    getCulumns:[difinition1]:[difinition2]:[difinition3]:[difinition4]:[difinition5]:..
+    .. ..; mostly be used for select columns.
+
+    <br/>
+    <br/>culumnName:[culumnName]:[dataType];
+    <br/>The culumnName:[culumnName]:[dataType]; mostly be used for create
+    the table columns.
+
+    <br/>
+    <br/>changeCulumnName:[oldCulumnName]:[newCulumnName];
+    <br/>The changeCulumnName:[newCulumnName]:[oldCulumnName]; mostly be
+    used for change the table columns.
+
+    <br/>
+    <br/>culumnValue:[culumnName]:[culumnValue];
+    <br/>The culumnValue:[culumnName]:[culumnValue]; mostly be used for
+    update the columns value.
+
+    <br/>
+    <br/>condition:[operation]:[difinition1]:[difinition2]:[difinition3]:..
+    . ;
+    <br/>The
+    condition:[operation]:[difinition1]:[difinition2]:[difinition3]:.. .;
+    mostly be used for
+
+    <br/>
+    <br/>join:[baseName]:[tableName];
+    <br/>The join:[baseName]:[tableName]; mostly be used for select and
+    update of delete with conditions.
+
+    <br/>
+    <br/>relation[operation]:[difinition1]:[difinition2]:[difinition3]:..
+    . ;
+    <br/>The
+    relation[operation]:[difinition1]:[difinition2]:[difinition3]:.. .;
+    mostly be used for join section condition
+
+    <br/>
+    <br/>aggregate[operation]:[difinition1]:[difinition2]:[difinition3]:..
+    . ;
+    <br/>The
+    aggregate[operation]:[difinition1]:[difinition2]:[difinition3]:.. .;
+    mostly be used for limit, sort or addition operations.
+
+    <br/>
+    <br/>CommandSamples
+    <br/>
+    <br/>select samples
+    <br/>tableName:test:select;
+    <br/>condition:or:testCulumn1|<|20:testCulumn2|==|fire;
+    <br/>condition:and:testCulumn1|>|100:testCulumn2|==|fire;
+
+    <br/>
+    <br/>select where in samples
+    <br/>setRoot:C:/DetaDB;
+    <br/>baseName:backend;
+    <br/>tableName:usr:select;
+    <br/>condition:or:u_id|in|3, 4, 5;
+
+    <br/>
+    <br/>select join samples
+    <br/>tableName:utest:select;
+    <br/>condition:or:testCulumn1|<|20:testCulumn2|==|fire;
+    <br/>condition:and:testCulumn1|>|100:testCulumn2|==|fire; join:stest;
+    <br/>relation:or:uid|==|sid:ussd|==|sssd;
+    relation:and:utoken|=!|stoken:umap|==|smap;
+
+    <br/>
+    <br/>select join samples
+    <br/>tableName:utest:select;
+    <br/>condition:or:utestCulumn1|<|20:utestCulumn2|==|fire;
+    <br/>condition:and:utestCulumn1|>|100:utestCulumn2|==|fire;
+    <br/>getCulumns:utestCulumn1|as|uid::utestCulumn2|as|ussd:utoken:umap;
+    <br/>join:backend:stest;
+    <br/>condition:and:stestCulumn1|>|100:stestCulumn2|==|fire;
+    <br/>getCulumns:stestCulumn1|as|sid|:stestCulumn2|as|sssd:stoken:smap;
+    <br/>relation:or:uid|==|sid:ussd|==|sssd;
+    <br/>relation:and:utoken|=!|stoken:umap|==|smap;
+    <br/>aggregation:limit:2|~|10;
+
+    <br/>
+    <br/>insert samples tableName:test:
+    <br/>insert; culumnValue:date0:19850525;
+    <br/>culumnValue:date1:19850526;
+    <br/>culumnValue:date2:19850527;
+    <br/>culumnValue:date3:19850528;
+    <br/>culumnValue:date4:19850529;
+
+    <br/>
+    <br/>update samples
+    <br/>tableName:test:update;
+    <br/>condition:or:testCulumn1|<|20:testCulumn2|==|fire;
+    <br/>condition:and:testCulumn1|>|100:testCulumn2|==|fire;
+    <br/>culumnValue:date0:19850525;
+    <br/>culumnValue:date1:19850526;
+
+    <br/>
+    <br/>update samples
+    <br/>tableName:test:update;
+    <br/>condition:or:testCulumn1|<|20:testCulumn2|==|fire;
+    <br/>condition:and:testCulumn1|>|100:testCulumn2|==|fire;
+    <br/>join:backend:utest;
+    <br/>condition:and:uCulumn3|<|20;
+    <br/>relation:and:testCulumn1|==|uCulumn1:testCulumn2|!=|uCulumn2;
+    <br/>culumnValue:date0:19850525;
+    <br/>culumnValue:date1:19850526;
+
+    <br/>
+    <br/>delete samples
+    <br/>tableName:test:delete;
+    <br/>condition:or:testCulumn1|<|20:testCulumn2|==|fire;
+    <br/>condition:and:testCulumn1|>|100:testCulumn2|==|fire;
+
+    <br/>
+    <br/>create samples
+    <br/>tableName:test:create;
+    <br/>culumnName:pk:culumn1:string;
+    <br/>culumnName:uk:culumn1:long;
+    <br/>culumnName:uk:culumn1:obj;
+    <br/>culumnName:nk:culumn1:double;
+
+    <br/>
+    <br/>drop samples
+    <br/>tableName:test:drop;
+
+    <br/>
+    <br/>change samples
+    <br/>tableName:test:change;
+    <br/>changeCulumnName:oldCulumnName:newCulumnName;
+
+    <br/>
+    <br/>RealWorldSamplesByUsingDETAPLSQLDatabase
+    <br/>setRoot:C:/DetaDB;
+    <br/>baseName:backend;
+    <br/>tableName:usr:select;
+    <br/>condition:or:u_id|<=|3:u_id|>|7;
+    <br/>condition:and:u_email|!equal|321:u_name|!equal|123;
+    <br/>getCulumns:u_id|as|detaId:u_email|as|detaEmail;
+    <br/>join:backend:usrToken;
+    <br/>condition:and:u_level|equal|low;
+    <br/>getCulumns:u_id|as|sId:u_level:u_password|as|SSID;
+    <br/>relation:and:detaId|==|sId;
+    <br/>aggregation:limit:0|~|1;
+
+    <br/>
+    <br/>Compare Tranditioanl SQL:
+
+    <br/>
+    <br/>SELECT u. u_id as detaId, u. u_email as detaEmail, t. u_id as
+    sId, t. u_level, t. u_password as SSID
+    <br/>FROM usr as U
+    <br/>INNER JOIN (SELECT t. u_id as sId, t. u_level, t. u_password as
+    SSID
+    <br/>FROM usrToken as t
+    <br/>WHERE t. u_level equal "low") AS B on U. detaId == B. sId;
+    <br/>WHERE (u. u_id <=3 || u. u_id>7 ) && (u. u_email !equal '321' &&
+    u. u_name !equal 123);
+    <br/>LIMIT 0, 1;
+
+    <br/>
+    <br/>Acknowledgement
+    <br/>The Deta PLSQL database system source code link:
+    <br/>https://github. com/yaoguangluo/DETA_DataBase
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/4/4_6.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>
+    <br/>1 德塔PLSQL语言是一种从上到下的脚本执行语言. refer page 377,
+    <br/>
+    <br/>2 德塔PLSQL语言包含常用增删改查命令. refer page 406~409, 471, 1035
+    <br/>
+    <br/>3 德塔PLSQL语言支持join和 aggregation 高级操作. refer page 419, 431, 435,
+    438, 447
+    <br/>
+    <br/>4 德塔PLSQL语言行 可批处理, 可拆分. refer page 1035~1041 将例子写入main, class编译,
+    然后 bash boot class 即可. 还可以bash 定时批处理.
+
+    <br/>
+
+</div>
+</body>

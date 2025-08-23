@@ -1,0 +1,520 @@
+package OSI.OSU.SI.OSI.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.addZYBCBook;
+
+import exception.file.O.DetaBufferedReader;
+import exception.file.O.DetaInputStreamReader;
+import S_A.SVQ.stable.S_File;
+import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SIQ_;
+import U_V.PEU.S.UVIMIACI.VerbalSource;
+
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+/*
+ * 著作权人, 作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
+ * (lyg.tin@gmail.com2018年回国后因国内G网屏蔽不再使用）
+ * 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
+ * */
+public class dictionary{	
+	public List<String> dic_list;
+	public IMV_SIQ dic_map;
+	public IMV_SIQ dic_li;
+	public IMV_SIQ dic_hai;
+	public IMV_SIQ dic_xz;
+	public IMV_SIQ dic_xw;
+	public IMV_SIQ dic_jm;
+	public IMV_SIQ dic_ya;
+	public IMV_SIQ dic_cy;
+	public IMV_SIQ dic_cj;
+	public IMV_SIQ dic_jj;
+	public IMV_SIQ dic_zf;
+	public List<String> txtToList() {
+		List<String> dic_list= new ArrayList<>();
+		InputStream in= this.getClass().getResourceAsStream("bcqj.txt");
+		DetaBufferedReader cReader= new DetaBufferedReader(DetaInputStreamReader.E(in));  
+		String ctempString= null; 
+		while ((ctempString= cReader.readDetaLine()) != null) {  
+			if(!ctempString.replace(" ", "").equals(""))
+				dic_list.add(ctempString);
+		}
+		cReader.closeDeta();
+		return dic_list;
+	}
+	
+	@SuppressWarnings("unused")
+	public IMV_SIQ_ listToMap(IMV_SIQ_ dic_map, List<String> dic_list) {
+		for(int i= 0; i < dic_list.size(); i++) {
+			if(dic_list.get(i).contains("摘要")) {
+				if(i+3 < dic_list.size()) {
+					String med_name= dic_list.get(i+3).replace("[中药名称]", "");
+					String med_text= "";
+					int j= i+2;						while(++j < dic_list.size() && !dic_list.get(j).contains("摘要")) {
+						med_text += "\n" + dic_list.get(j);
+					}
+					med_name= med_name.replaceAll(" ", "").replace("〔", "").replace("〕", ":");
+							if(!dic_map.containsKey(med_name)) {
+						dic_map.put(med_name, med_text+"〕〕");
+					}else {
+						dic_map.put(med_name
+								, dic_map.get(med_name)+ "叠加："+ med_text+"〕〕");
+					}
+				}
+			}
+		}
+		return dic_map;
+	}
+	
+	public IMV_SIQ_ mapToIndex(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ pinyin= new IMV_SIQ_();
+		try {
+			InputStream inputStreamp= new VerbalSource().getClass().getResourceAsStream(S_File.PinYinCN_lyg);
+    		DetaBufferedReader cReaderp= new DetaBufferedReader(DetaInputStreamReader.E(inputStreamp, "UTF8"));
+    		//index
+    		String cInputStringp;
+    		while ((cInputStringp= cReaderp.readDetaLine())!= null) {
+    			String[] words= cInputStringp.split("->");
+    			if(words.length>1) {
+    				pinyin.put(words[0], words[1]);
+    			}
+    		}
+    		cReaderp.close();
+		}catch(Exception e) {
+
+		}
+		IMV_SIQ_ dic_index= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		while (iter.hasNext()) {
+			String index= iter.next().replaceAll(" ", "").replace("〔", "").replace("〕", ":");
+			StringBuilder stringBuilder= new StringBuilder() ;
+			for(int l= 0; l< index.length(); l++) {
+				if(pinyin.containsKey(""+ index.charAt(l))) {
+					stringBuilder.append(""+ pinyin.getString(""+ index.charAt(l)).toUpperCase().charAt(0));
+				}
+			}
+			//med_name= stringBuilder.toString()+ ":"+ index;	
+			dic_index.put(index, stringBuilder.toString());
+		}
+		return dic_index;
+	}
+	
+	public IMV_SIQ_ mapToMap_yw(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ dic_yw= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name.trim()).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("笔记原文(.*?)\\["); 
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0);
+				temp=temp.replace("笔记原文]", "").replace("[", ".");
+			}
+//			if(!dic_yw.containsKey(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"))) {
+//				dic_yw.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
+//						, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+//			}
+			med_name= med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":");
+			if(!dic_yw.containsKey(med_name)) {
+				dic_yw.put(med_name
+						, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}else {
+				dic_yw.put(med_name
+						, dic_yw.get(med_name)+ "叠加："+ temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}
+		}
+		return dic_yw;
+	}
+	
+	public IMV_SIQ_ mapToMap_li(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ dic_li= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name.trim()).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("功效(.*?)\\["); 
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0);
+				temp=temp.replace("功效]", "").replace("[", ".");
+			}
+			med_name= med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":");
+			if(!dic_li.containsKey(med_name)) {
+				dic_li.put(med_name
+						, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}else {
+				dic_li.put(med_name
+						, dic_li.get(med_name)+ "叠加："+ temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}
+		}
+		return dic_li;
+	}
+	
+	public IMV_SIQ_ mapToMap_hai(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ dic_hai= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());	
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name.trim()).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("风险规避(.*?)\\["); 
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0);
+				temp=temp.replace("风险规避]", "").replace("[", "");
+			}
+//			if(!dic_hai.containsKey(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"))) {
+//				dic_hai.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
+//						, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+//	//			}
+//			med_name= med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":");
+			if(!dic_hai.containsKey(med_name)) {
+				dic_hai.put(med_name
+						, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}else {
+				dic_hai.put(med_name
+						, dic_hai.get(med_name)+ "叠加："+ temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}
+		}
+		return dic_hai;
+	}
+	
+	public IMV_SIQ_ mapToMap_xz(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ dic_xz= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name.trim()).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("中医馆药理(.*?)\\["); 
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0);
+				temp=temp.replace("中医馆药理]", "").replace("[", "");
+			}
+//			if(!dic_xz.containsKey(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"))) {
+//				dic_xz.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
+//						, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+//			}
+			med_name= med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":");
+			if(!dic_xz.containsKey(med_name)) {
+				dic_xz.put(med_name
+						, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}else {
+				dic_xz.put(med_name
+						, dic_xz.get(med_name)+ "叠加："+ temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}
+		}
+		return dic_xz;
+	}
+
+	public IMV_SIQ_ mapToMap_zf(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ dic_zf= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("搭配(.*?)\\["); 
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0);
+				temp=temp.replace("搭配]", "").replace("[", "");
+			}
+			dic_zf.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
+					, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+		}
+		return dic_zf;
+	}
+	
+	public IMV_SIQ_ mapToMap_cj(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ dic_cj= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("常见药(.*?)药小节完"); 
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0).replace("常见药]", "");
+			}
+			dic_cj.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
+					, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+		}
+		return dic_cj;
+	}
+	
+
+	public IMV_SIQ_ mapToMap_jj(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ dic_jj= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("经解(.*?)\\["); 
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0);
+				temp=temp.replace("经解]", "").replace("[", "");
+			}
+			dic_jj.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
+					, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+		}
+		return dic_jj;
+	}
+
+	public IMV_SIQ_ mapToMap_cy(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ dic_cy= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("崇源(.*?)\\["); 
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0);
+				temp=temp.replace("崇源]", "").replace("[", "");
+			}
+			dic_cy.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
+					, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+		}
+		return dic_cy;
+	}
+
+	public IMV_SIQ_ mapToMap_ya(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ dic_ya= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("愚按(.*?)\\["); 
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0);
+				temp=temp.replace("愚按]", "").replace("[", "");
+			}
+			dic_ya.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
+					, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+		}
+		return dic_ya;
+	}
+
+	public IMV_SIQ_ mapToMap_jm(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ dic_jm= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("经脉/经络(.*?)\\["); 
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0);
+				temp=temp.replace("经脉/经络]", "").replace("[", "");
+			}
+			temp= temp.replace("胃", "胃PES");
+			temp= temp.replace("心", "心OEIT");
+			temp= temp.replace("包", "包ESIT");
+			temp= temp.replace("肝", "肝APMSUH");
+			temp= temp.replace("脾", "脾OSU");
+			temp= temp.replace("肺", "肺SIDH");
+			temp= temp.replace("肾", "肾PVDH");
+			temp= temp.replace("小肠", "小肠MCI");
+			temp= temp.replace("大肠", "大肠CID");
+			temp= temp.replace("胆", "胆MSIH");
+			temp= temp.replace("肠", "肠CI");
+			temp= temp.replace("膀胱", "膀胱MVID");
+			if(med_text.contains("骨")||med_text.contains("络")||med_text.contains("筋")) {
+				temp= temp+ "骨OMVSI";	
+			}
+			if(med_text.contains("耳")) {
+				temp= temp+ "耳VIQX";	
+			}
+			if(med_text.contains("鼻")) {
+				temp= temp+ "鼻VIDX";	
+			}
+			if(med_text.contains("喉")) {
+				temp= temp+ "喉AVUX";	
+			}
+			if(med_text.contains("眼")|| med_text.contains("目")|| med_text.contains("翳")) {
+				temp= temp+ "眼VQX";	
+			}
+			if(med_text.contains("皮")) {
+				temp= temp+ "皮MVIDX";	
+			}
+			if(med_text.contains("嘴")) {
+				temp= temp+ "嘴ODQ";	
+			}
+			if(med_text.contains("眉")) {
+				temp= temp+ "眉OEU";	
+			}
+			if(med_text.contains("手")) {
+				temp= temp+ "手OPMVTX";	
+			}
+			if(med_text.contains("脚")) {
+				temp= temp+ "脚EUT";	
+			}
+			if(med_text.contains("血")||med_text.contains("气")) {
+				temp= temp+ "血气MEH";	
+			}
+			if(med_text.contains("淋")) {
+				temp= temp+ "淋AVSDQ";	
+			}
+			if(med_text.contains("髓")||med_text.contains("脑")||med_text.contains("神经")) {
+				temp= temp+ "髓APMCS";	
+			}
+//			temp= temp.replace("骨", "骨OMVSI");
+//			temp= temp.replace("耳", "耳VIQX");
+//			temp= temp.replace("鼻", "鼻VIDX");
+//			temp= temp.replace("喉", "喉AVUX");
+//			temp= temp.replace("眼", "眼VQX");
+//			temp= temp.replace("皮", "皮MVIDX");
+//			temp= temp.replace("嘴", "嘴ODQ");
+//			temp= temp.replace("眉", "眉OEU");
+//			temp= temp.replace("手", "手OPMVTX");
+//			temp= temp.replace("脚", "脚EUT");
+//			temp= temp.replace("血", "血MEH");
+//			temp= temp.replace("淋巴", "淋巴AVSDQ");
+//			temp= temp.replace("脑", "脑APMCS");
+			dic_jm.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
+					, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+		}
+		return dic_jm;
+	}
+
+	public IMV_SIQ_ mapToMap_xw(IMV_SIQ_ dic_map) {
+		IMV_SIQ_ dic_xw= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("性味(.*?)\\["); 
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0);
+				temp=temp.replace("性味]", "").replace("[", "");
+			}
+			//if(!dic_xw.containsKey(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"))) {
+			//dic_xw.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
+			//		, temp.replace("经络", "").replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			med_name= med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":");
+			//仅仅语义词汇方式元基肽译。
+			temp= temp.replace("酸", "酸OPESI");
+			temp= temp.replace("甜", "甜OSI");
+			temp= temp.replace("苦", "苦MECD");
+			temp= temp.replace("辣", "辣OESI");
+			temp= temp.replace("辛", "辣OPESI");
+			temp= temp.replace("咸", "咸OMD");
+			temp= temp.replace("凉", "凉MCD");
+			temp= temp.replace("甘", "甘SI");
+			temp= temp.replace("寒", "寒MD");
+			temp= temp.replace("热", "热PSI");
+			temp= temp.replace("温", "温ESI");
+			temp= temp.replace("燥", "燥PESI");
+			temp= temp.replace("涩", "涩PMI");
+			temp= temp.replace("平", "平MS");
+			temp= temp.replace("淡", "淡U");
+			temp= temp.replace("微", "微U");
+			if(!dic_xw.containsKey(med_name)) {
+				dic_xw.put(med_name
+						, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}else {
+				dic_xw.put(med_name
+						, dic_xw.get(med_name)+ "叠加："+ temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}
+		}
+		//}
+		return dic_xw;
+	}
+
+	public IMV_SIQ_ mapToMap_yl(IMV_SIQ_ dic_map, IMV_SIQ dic_xw,
+			IMV_SIQ dic_li, IMV_SIQ dic_xz, IMV_SIQ dic_jm)  {
+		IMV_SIQ_ dic_yl= new IMV_SIQ_();
+		Iterator<String> iter= dic_map.keySet().iterator();
+		List<String> copy= new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for(int i=0;i<copy.size();i++){
+			String med_name= copy.get(i);
+			String med_text= dic_map.get(med_name).toString()
+.replace("\n", "");
+			Pattern p=Pattern.compile("用量/克, 别名, 其他, 备注(.*?)\\[");
+			Matcher m= p.matcher(med_text); 
+			String temp= "";
+			if (m.find()) {
+				temp=m.group(0);
+				temp=temp.replace("用量/克, 别名, 其他, 备注]", "").replace("[", "");
+			}
+//			if(!dic_yl.containsKey(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"))) {
+//				dic_yl.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
+//						, temp.replace("经络", "").replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")+":");
+//			}
+			med_name= med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":");
+			if(!dic_yl.containsKey(med_name)) {
+				dic_yl.put(med_name
+						, temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}else {
+				dic_yl.put(med_name
+						, dic_yl.get(med_name)+ "叠加："+ temp.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"));
+			}
+		}
+		return dic_yl;	
+	}	
+}

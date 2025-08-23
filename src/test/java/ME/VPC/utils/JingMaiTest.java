@@ -1,0 +1,177 @@
+package test.java.ME.VPC.utils;
+
+import ME.VPC.utils.JingMai;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import javax.accessibility.AccessibleContext;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.FocusTraversalPolicy;
+import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.GraphicsConfiguration;
+import java.awt.Image;
+import java.awt.LayoutManager;
+import java.awt.PopupMenu;
+import java.awt.dnd.DropTarget;
+import java.awt.event.ComponentListener;
+import java.awt.event.ContainerListener;
+import java.awt.event.FocusListener;
+import java.awt.event.HierarchyBoundsListener;
+import java.awt.event.HierarchyListener;
+import java.awt.event.InputMethodListener;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelListener;
+import java.awt.image.BufferStrategy;
+import java.beans.PropertyChangeSupport;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Vector;
+/*
+ * 著作权人, 作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
+ * (lyg.tin@gmail.com2018年回国后因国内G网屏蔽不再使用）
+ * 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
+ * */
+class JingMaiTest {
+    @Mock
+    ImageIcon png1;
+    @Mock
+    ImageIcon png2;
+    @Mock
+    ImageIcon png3;
+    @Mock
+    ImageIcon png4;
+    @Mock
+    ImageIcon png5;
+    @Mock
+    ImageIcon png6;
+    @Mock
+    ImageIcon png7;
+    @Mock
+    ImageIcon png8;
+    @Mock
+    ImageIcon png9;
+    @Mock
+    ImageIcon png10;
+    @Mock
+    ImageIcon png11;
+    @Mock
+    ImageIcon png12;
+    @Mock
+    Image screenImage;
+    @Mock
+    Graphics2D screenGraphic;
+    @Mock
+    Image backgroundImage;
+            @Mock
+    List<Component> component;
+    @Mock
+    LayoutManager layoutMgr;
+    @Mock
+    FocusTraversalPolicy focusTraversalPolicy;
+    @Mock
+    Set<Thread> printingThreads;
+    @Mock
+    ContainerListener containerListener;
+    @Mock
+    Color preserveBackgroundColor;
+    
+    @Mock
+    Component modalComp;
+    //Field modalAppContext of type AppContext - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
+
+    
+    
+    @Mock
+    Container parent;
+    //Field appContext of type AppContext - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
+    @Mock
+    Color foreground;
+    @Mock
+    Color background;
+    @Mock
+    Font font;
+    @Mock
+    Font peerFont;
+    @Mock
+    Cursor cursor;
+    //Field locale of type Locale - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
+    @Mock
+    GraphicsConfiguration graphicsConfig;
+    @Mock
+    BufferStrategy bufferStrategy;
+    @Mock
+    DropTarget dropTarget;
+    @Mock
+    Vector<PopupMenu> popups;
+    //Field focusTraversalKeys of type Set[] - was not mocked since Mockito doesn't mock arrays
+    @Mock
+    Object LOCK;
+    //Field acc of type AccessControlContext - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
+    @Mock
+    Dimension minSize;
+    @Mock
+    Dimension prefSize;
+    @Mock
+    Dimension maxSize;
+    //Field componentOrientation of type ComponentOrientation - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
+    @Mock
+    ComponentListener componentListener;
+    @Mock
+    FocusListener focusListener;
+    @Mock
+    HierarchyListener hierarchyListener;
+    @Mock
+    HierarchyBoundsListener hierarchyBoundsListener;
+    @Mock
+    KeyListener keyListener;
+    @Mock
+    MouseListener mouseListener;
+    @Mock
+    MouseMotionListener mouseMotionListener;
+    @Mock
+    MouseWheelListener mouseWheelListener;
+    @Mock
+    InputMethodListener inputMethodListener;
+    @Mock
+    PropertyChangeSupport changeSupport;
+    @Mock
+    Object objectLock;
+    //Field compoundShape of type Region - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
+    //Field mixingCutoutRegion of type Region - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
+    //Field eventCache of type EventQueueItem[] - was not mocked since Mockito doesn't mock arrays
+    @Mock
+    Map<Class<?>, Boolean> coalesceMap;
+    
+    @Mock
+    AccessibleContext accessibleContext;
+    @InjectMocks
+    JingMai jingMai;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    void testPaint() {
+        // mock trif jingMai.paint(null);
+    }
+}
+
+//Generated with love by TestMe :) Please report issues and submit feature requests at: http://weirddev.com/forum#!/testme

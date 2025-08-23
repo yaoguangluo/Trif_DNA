@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第一章_德塔自然语言图灵系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/> 基础应用: 元基催化与肽计算 编译机的语言分析机
+    <br/>
+    分词<br/>
+    <br/>
+
+    <br/>
+    <br/> 1 德塔的分词是一种前序《排队论》逐字遍历文字索引, 通过索引中的词汇匹配 按长度进行提取
+    , 然后将提取的词汇串 进行词性切分的过程. refer page 12 ~
+
+    <br/>
+    <br/>2 德塔的分词文字索引采用关联分类生成小文件map集(词性map, 词长map, 词类map),
+    进行整体加速, 作为一个催化细化过程. refer page 44, 54, 92,
+
+    <br/>
+    <br/> 3 德塔的词汇匹配目前有多个国家语言字符集, 可统一, 可拆分, 目前最大划分处理长度为
+    4, 划分切词采用动态 类似CNN 卷积(遍历pos函数语句的内核计算, 非卷积的积分叠加计算)
+    StringBuilder核做POS识别. refer page 45, 119, 120,
+
+    <br/>
+    <br/> 4 德塔的词性切分按照4字词 3字词 2字词 单字 进行逐级按词汇的 POS搭配语法模式进行归纳,
+    按文本的POS出现频率进行流水阀门方式优化. refer page 97, 116,
+
+    <br/>
+    <br/> Deta parser, a sentence and word segmentational marching tool
+    (NERO-NLP-POS), was based on an in-order sequence verbals computation,
+    the computer monitored the humanoid specification, to read articles,
+    sentences by each word one by one as the river flows, then cut the word
+    link list by using stop method such as the index length recognizing,
+    word dictionary marching, then extracted the pre-materials for the
+    continuing POS (part of speech) process.
+    <br/>
+    <br/> At the first. The author built a lot of association maps and
+    classification sets, which did a nice verbal data storage of all kinds
+    of the literary otho corpus (NERO), for instance, POS maps, word length
+    maps and word type maps, to better catalyz the system-tuning of
+    accelerations.
+    <br/>
+    <br/> Each lexical map could make a combination, classification and
+    definition, the author used the StringBuilder function to do the word
+    segmentation by non-conventional different kernel computations. Like
+    the water sequence flowed from top to bottom, from left to right, then
+    gathered statistics of the frequency-prototype usages, made the queued
+    optimizations at the same time and catalyzed the system-tuning of
+    accelerations.
+    <br/>
+    <br/> The word segmentation and Its POS cut ways by following 4
+    Chinese chars’ words, 3 chars’ words, 2 chars’ words to loop check the
+    POS lexical dictionary-map storages. Kernel computations work for
+    finding a marching verbals word, then returned the response to the NLP
+    engine.
+    <br/> Yaoguang.Luo<br/>
+    <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/1/1_2.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/1/1_3.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/> (德塔分词逻辑, 已经纠正红色字 ‘卷积’改为‘内核’, 因为第四修订版本已包含卷积两字,
+    ppt所有书中的原图纠正内容统一更新在第5版, 罗瑶光)
+
+</div>
+</body>

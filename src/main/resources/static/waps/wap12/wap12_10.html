@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第十二章_DNA语料数据库加密技术.
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/>
+    <br/><br/>Session会话加密
+
+    <br/><br/>DNA数据库数据加密
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/12/12_19.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+
+    <br/><br/>今天来组织点文字描述下这个逻辑: A 为待加密文件, B 为肽展公式计算的降元级别,
+    C 为肽展公式计算的增元级别. 通过计算会 发现一次降元和一次增元计算后, 文件与结果已经不对应.
+
+    <br/><br/>Token元基概率钥匙归纳
+
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/12/12_20.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+
+    <br/><br/>于是我开始进行离散逻辑推导归纳, 发现MPOASCEV 的肽展计算能让C 与 B 计算结果吻合.
+    但 A 还是不等于 C
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/12/12_21.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+
+    <br/><br/>而反向的 A 进行 MPOASCEV 肽展计算, A 也是不等于 C, 于是我开始思考是函数的问题还是概率的问题.
+    于是进行概率钥匙 推导计算 Token 元基概率钥匙推导如下:
+
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/12/12_22.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+
+    <br/><br/>通过测试研究发现, 我得到一个结论, A 到 B 的时候, 已经将元基中的组合拓扑不稳定的元基过滤了,
+    于是B 到 C 和 C 到 B 的过程是一个循环可破解的过程, 于是我继续跟进测试, 得到健全的列表归纳如下:
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/12/12_23.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+
+    <br/><br/>在上面表中, 2 组概率钥匙 D, I, D 用于服务器端计算, I 用于客户端通讯.
+    目前已经在养疗经中实用, 效果不错. T 为带钥匙计算, 中间的的 DI 为增元降元计算识别, 右边
+    DI 为钥匙种类. 早期的肽展公式我没有单独量化, 可以见 git 的 catalytic 最早肽展计算, 24
+    个分类能依次展示, 现在我把其概率串量化的版 本这里也展示出来, 保证演化的完整性.
+
+
+    <br/><br/>Session Encription
+    <br/><br/>A means a Pre-Encription for a decrement, B means a PDE class for an
+    increment and a decrement, and C means a PDS class for an increment. After PDN
+    extensional computings, we could find that results and originals were not equals.
+    <br/><br/>DNA---AOPM------VECS------IDUQ-------
+    <br/><br/>A->B---true--------true--------true--------
+    <br/><br/>B->C---true--------true--------true--------
+    <br/><br/>A!=C---false-------false--------false-------
+    <br/><br/>C->B---true--------true--------true--------
+
+    <br/><br/>Then did a conclusion of PDE tokens with XOR.
+    <br/><br/>XOR---------A----------B----------C---------
+    <br/><br/>A->B---AOPMVECS-------------------------
+    <br/><br/>B->C--------------VECSAOPM--------------
+    <br/><br/>A!=C-----------------------------------------
+    <br/><br/>C->B--------------------------MPOASCEV—
+
+    <br/><br/>The author used discrete logic to make prove out of what he discovered, the
+    C and B might be the same with PDE of MPOASCEV, but is seeming here A still not equals
+    to C.
+    <br/><br/>XNOR--------A-----------B----------C---------
+    <br/><br/>A->B---MPOASCEV----------------------------
+    <br/><br/>B->C----------------VECSAOPM---------------
+    <br/><br/>A!=C--------------------------------------------
+    <br/><br/>C->B----------------------------MPOASCEV---
+
+    <br/><br/>Neither with PDE of VECSAOPM and nor with PDE of MPOASCEV, where A still not
+    equals to C. Then the author did a proof about using probability.
+    <br/><br/>PDE-KEY---------A-------------------B-------------------C-----------
+    <br/><br/>A->B-------AOPMVECS--FD------------------------------------------
+    <br/><br/>B->C----------------------------VECSAOPM--FI----------------------
+    <br/><br/>A->B-------AOPMVECS--TD-------------------------------------------
+    <br/><br/>B->C----------------------------VECSAOPM--TI-----------------------
+    <br/><br/>C->B-------------------------------------------------MPOASCEV--TI--
+    <br/><br/>B->C----------------------------VECSAOPM--TI-----------------------
+    <br/><br/>C=A->B--- MPOASCEV---TI-------------------------------------------
+
+    <br/><br/>According to the researching and testing, he considered filtering-operations
+    were triggered and caused by during of where A to B, he thought that 'B to C' and 'C
+    to B' could roll back cyclically. Then the author continued a proof about using above
+    arguments.
+    <br/><br/>---DNA------------PDE-B-------------PDE-C------------DNA-KEY
+    <br/><br/>--AOPMVECS--TDD---VECSAOPM--TII----------------------DNA
+    <br/><br/>-----------------------------------MPOASCEV--TDI-----FULLDNA
+    <br/><br/>------------------MPOASCEV--TDI----VECSAOPM--TII-----FULLBACKDNA
+    <br/><br/>------------------VECSAOPM--TII-----MPOASCEV--TDI----FULLUPDNA
+    <br/><br/>
+    Above tab, for example DI, the author did 3 tokens to target a way of key
+    use. First char of T and F, means T with key and F without a key. Without a key means
+    no key, and needed to create a new PDE key in the procedure. Second char of I and D,
+    means I for Initon class do a PDE increment and D for Initon class do a PDE decrement.
+    And third char of where I and D means I for PDE increment key and D for PDE decrement
+    key. For example, TDD at second line, above tab, where means first T for PDE procedure
+    with key, second D for PDE Decrement procedure 'from PDC to PDE' or 'from PDE to PDS',
+    and third D for this PDE procedure with a Decrement key. Seem cool the cheers.
+    <br/><br/>The author YaoguangLuo 稍后优化语法.
+
+
+</div>
+</body>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第十六章_TinShell插件_元基花模拟染色体组计算索引系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+
+
+    <br/><br/>总结 在进化计算中, 软件进行元基编码的新陈代谢方式
+    <br/><br/>关键词:进化计算, 数据软件, 元基索引, 新陈代谢
+    <br/><br/>2018年10月, 设计养疗经软件, 我花了一个月就把中药搜索的功能实现了.
+    当时心里只是有点不服, 因为我应该多花点精力做些什么, 于是开始包装和优化.
+    第一个值得优化的问题就是药材搜索的搜索速度. 我采用的是开源插件进行文本分词搜索,
+    当我不断的加医学教材书进行搜索内容扩充, 于是搜索开始了卡顿. 需求迫使我必须自己写一个新的分词算法,
+    解决卡顿问题. 软件的元基编码的新陈代谢优化系统拉开了帷幕.
+    <br/><br/>In October 2018, I designed the YangLiaoJing(YLJ) software and had spend one
+    month realizing the function of traditional Chinese medicine search. At that time, I
+    was just a little dissatisfied, because I should spend more energy on what I
+    undertake, so started packaging and optimization. The first problem worth optimizing
+    is the search speed of herbal medicine search. I used the open-source API for text
+    word segmentation search. When I continued to add medical textbooks to expand the
+    search content, then the search engine got sili-works. Demand forced me to write a new
+    word segmentation algorithm to solve the Caton problem. The Metabase(Init-Aton,
+    Initons) coding metabolic optimization system of software has begun.
+
+    <br/><br/>分词算法开始自己写, 一开始, 我要面对如何设计算法的困难. 当算法设计好了,
+    我的新问题是如何搭配这些算法来设计处理模块. 最后我还要思考怎么优化这些功能模块.
+    我的思维很简单, 就是先将函数进行简单的分类吧, 按软件工程瀑布模型分类, 如分析类, 操作类,
+    处理类, 运维类, 管理类, 执行类, 控制类. 等等. 于是我开始将软件项目进行基础功能的应用分类归纳,
+    产生了很多基础软件作品. 我发现这些作品不同的组合不但能解决我的问题, 还能解决许多工业,
+    农业, 服务业的需求问题.
+    <br/><br/>In the beginning, I had to face the multiple difficulties of how to design
+    the algorithms. When these algorithms were designed, my new problem is how to match
+    these to design the processing module. Finally, I have to think about how to optimize
+    these functional modules. Like the sequence brainstorm flows. My thinking is very
+    simple, that is to simply classify the functions according to the waterfall mode of
+    software engineering. Such as analysis, operation, processing, operation and
+    maintenance, management, execution and control wait. So I began to classify and
+    summarize the application of basic functions of software projects and produced a lot
+    of basic software works. I found that the different combinations of these works can
+    not only solve my problems but also solve the needs of many industries, including
+    agriculture and industrial services.
+
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_9.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>这个过程中, 我得到了很多有意思的价值发现, 如分词作品, 排序作品, 服务器作品,
+    ETL作品, 数据计算作品, 数据库作品, 数据变换作品, 数据预测作品等.
+    <br/><br/>In this process, I got many interesting value discoveries, such as word
+    segmentation works, sorting works, WEB server works, ETL works, data calculation
+    works, database works, data transformation works, data prediction works and etc.
+    <br/><br/>2019年04月03日 1. 罗瑶光. 《德塔自然语言图灵系统 V10. 6. 1》. 中华人民共和国国家版权局,
+    软著登字第3951366号. 2019.
+    <br/><br/>2014年10月19日 2. 罗瑶光. 《Java数据分析算法引擎系统 V1. 0. 0》. 中华人民共和国国家版权局,
+    软著登字第4584594号. 2014.
+    <br/><br/>2019年06月10日 3. 罗瑶光. 《德塔ETL人工智能可视化数据流分析引擎系统 V1. 0.
+    2》. 中华人民共和国国家版权局, 软著登字第4240558号. 2019.
+    <br/><br/>2019年06月24日 4. 罗瑶光. 《德塔 Socket流可编程数据库语言引擎系统 V1. 0. 0》.
+    中华人民共和国国家版权局, 软著登字第4317518号. 2019.
+    <br/><br/>2019年09月16日 5. 罗瑶光. 《德塔数据结构变量快速转换 V1. 0》. 中华人民共和国国家版权局,
+    软著登字第4607950号. 2019.
+    <br/><br/>2020年03月03日 6. 罗瑶光. 《数据预测引擎系统 V1. 0. 0》. 中华人民共和国国家版权局,
+    软著登字第5447819号. 2020.
+
+
+    <br/><br/>有了这些基础算法包和医药数据搜索软件项目, 于是我开始优化和扩展软件的应用价值.
+    将这些价值发现变成价值体现. 我的研发思维还是很简单, 思考, 如果我罗瑶光, 此时此刻就是这个软件,
+    我会在怎么做？我会怎么分析问题？怎么解决问题？怎么计算结果？怎么整理结果？这个思维看起来很简单,
+    实现起来各种阻力. 还能怎么办？硬着头皮, 将困难不断的细化, 一点一点的解决累积. 将成果分类归纳.
+    随着函数的分类细化, 我的数据计算软件作品越来越多. 我在思考怎么进行将函数的有效的归纳和分类,
+    如设计一个项目目录索引方式？于是AOPM-VPCS的语义元基编码帮我解决了很多问题.
+    最后这个DNA语义元基编码体系为我解决了大量函数分类的问题. 目前DNA元基编码理论一直在优化中,
+    目前包含了AOPM-VECS-IDUQ-TXHF16个生化语义元基算子.
+    <br/><br/>With these basic algorithm packages and medical data search software
+    projects, I began to optimize and expand the application value of the software. Turn
+    these value discoveries into value embodiment. My R&D thinking is still very simple.
+    Thinking, the author is this software at this moment. What will he do? How can he
+    analyze the problem? How to solve the problem? How to calculate the result? How to
+    sort out the results? with this thinking. It looks very simply, and there are all
+    kinds of resistance to realizing It What else can he do? Harden the scalp,
+    continuously refine the difficulties and solve them bit by bit. Classify and summarize
+    the achievements with the classification and refinement of functions, my data
+    calculation software works became scattered and complex. Did I think about how to
+    effectively summarize and classify functions, such as designing an item directory
+    index? So, the semantic Initons coding of AOPM - VPCS, helped me solve many problems.
+    Finally, this DNA semantic Initons coding system solves the problem of a large number
+    of function classifications for me. At present, the theory of DNA Initons meta-base
+    coding has been optimized. At present, It includes 16 biochemical semantic Initons
+    meta-base operators AOPM-VECS-IDUQ-TXHF.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_10.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>这个过程中, 我得到了很多有意思的价值发现, 如DNA元基催化算子的发现,
+    语义肽展公式的推导, 催化算子的生化解码. 非卷积视觉肽计算, 肽元基加密.
+    具体体现在类人仿生的认知思维表达模式, 类人仿生的神经元计算思维模式, 类人仿生的任务处理思维模式.
+
+    <br/><br/>In this process, I got many interesting value discoveries, such as the
+    discovery of the DNA elementary catalytic operator, the derivation of semantic peptide
+    expansion (PDN-Extension, PDE) formula, and the biochemical decoding of the catalytic
+    operator. Nonconvolution visual PDE calculation, PDE element base encryption. It is
+    embodied in the cognitive thinking expression mode of humanoid bionics, the neuron
+    computing thinking mode of humanoid bionics, and the task processing thinking mode of
+    humanoid bionics.
+    <br/><br/>2020年10月09日 7. 罗瑶光, 罗荣武. 《类人DNA与 神经元基于催化算子映射编码方式
+    V_1. 2. 2》. 中华人民共和国国家版权局, 国作登字-2021-A-00097017. 2021.
+    <br/><br/>2020年10月31日 8. 罗瑶光. 《肽展公式推导与元基编码进化计算以及它的应用发现》.
+    中华人民共和国国家版权局, 国作登字-2021-A-00042587. 2021.
+    <br/><br/>2020年11月29日 9. 罗瑶光. 《DNA催化与肽展计算和AOPM-TXH-VECS-IDUQ元基解码013026中文版本》.
+    中华人民共和国国家版权局, 国作登字-2021-A-00042586. 2021.
+    <br/><br/>2021年03月05日 10. 罗瑶光, 罗荣武. 《DNA元基催化与肽计算第二卷养疗经应用研究20210305》.
+    中华人民共和国国家版权局, 国作登字-2021-L-00103660. 2021.
+    <br/><br/>2021年09月13日 11. 罗瑶光, 罗荣武. 《DNA 元基催化与肽计算 第三修订版V039010912》.
+    中华人民共和国国家版权局, 国作登字-2021-L-00268255. 2021.
+    <br/><br/>2021年10月16日 12. 罗瑶光. 《DNA元基索引ETL中文脚本编译机V0. 0. 2》.
+    中华人民共和国国家版权局, SD-2021R11L2844054. 2021. (登记号:2022SR0011067)
+    软著登字第8965266号.
+
+    <br/><br/>当我的软件开始了DNA元基编码优化方式, 我一直在思考怎么让我的软件自主进行进化计算分析.
+    我的思维还是很简单设计这个编码的新陈代谢方式, 为软件赋予原始的生命特征活性. 于是我开始研究,
+    发现元基编码在函数分类索引中有巨大价值. 索引能进行分类, 聚类, 记录, 裁剪, 表达, 等实际功能.
+    如果索引一旦具备了新陈代谢的活性, 那软件的进化方式便具备了生命进化特征.
+    于是我开始进行系统性的软件遗传特征编码, 将软件任务进行格式化的函数序列来描述.
+    这个函数序列中的函数进行编码, 于是产生3个编码,
+
+    <br/><br/>When my software started the optimization of DNA meta coding, I have been
+    thinking about how to let my software conduct evolutionary computing analysis
+    independently. My thinking is still very simple. I design the metabolic mode of this
+    code to give the original life feature activity to the software. So, I began to study
+    and found that Initons coding has great value in the functional classification index.
+    The index can carry out classification, clustering, recording, cutting, expression and
+    other practical functions. Once the index has metabolic activity, the evolution of
+    software will have the characteristics of life evolution. So, I began to carry out
+    systematic software genetic feature coding to describe the formatted function sequence
+    of software tasks.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_11.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>紫色标注refer：https://github.com/yaoguangluo/document/commit/390b77a854ddcba2fe38021b184d2dae5e22975f
+    <br/><br/>1 具体的某一函数在函数集染色体索引分类中的序列编码位.
+    <br/><br/>2 具体任务包含的函数序列的序列位组合标记编码.
+    <br/><br/>3 多个任务组成的神经元节点处理的流etl档案中的任务集编码.
+
+    <br/><br/>于是DNA元基催化与肽计算的遗传编码的软件生命诞生了.
+    <br/><br/>这个过程中, 我得到了很多有意思的价值发现, 如DNA元基索引的染色体分类方式,
+    DNA元基索引的新陈代谢方式, DNA元基索引的函数序列遗传方式.
+    <br/><br/>2021年12月26日 13. 罗瑶光. 《TinShell插件_元基花模拟染色体组计算索引系统
+    V20211227》. 中华人民共和国国家版权局, SD-2021R11L3629232. 2022. (受理号:2022R11S0138561).
+    <br/><br/>2022年01月27日 14. 罗瑶光, 罗荣武. 《DNA元基催化与肽计算 第四修订版 V00919》.
+    中华人民共和国国家版权局, SD-2022Z11L0025809. 2022. (受理号:2022Z11S1032939). 登记号:
+    国作登字-2022-L-10071310
+    <br/><br/>有了这个方向, 下一步我的 BloomChromosome_V19001_20220108. jar 准备进行全面的新陈代谢优化.
+    <br/><br/>The functions of this sequence are encoded, resulting in three aspects.
+    <br/><br/>1 The sequence position of DNA Initons encoding the specific software
+    functions after indexing chromosome classifications.
+    <br/><br/>2 The sequence position of a specific task, which contains a component list
+    and its combinational targeting of DNA encoding.
+    <br/><br/>3 Multiple assignments were combined in ETL workflow documents such as the
+    NeoCell of DNA encoding.
+    <br/><br/>Thus, the software life of genetic coding of DNA unit catalysis and peptide
+    calculation was born. In this direction, the next step is my java API
+    (BloomChromosome_V19001_20220108. jar), which is ready for comprehensive metabolic
+    optimization.
+    <br/><br/>As the author once said:
+    <br/><br/>In the evolutionary domain of software computation, the DNA catalytic and
+    the PDN metabolic is an effective evolutionary method where based on indexing
+    optimization by humanoid Initons (16 Init-Atons, AOPM VECS IDUQ TXHF).
+
+    <br/><br/>后序
+    <br/><br/>作者会更进 在 华瑞集 和 养疗经 2 个产品上多花点功夫.
+    <br/><br/>DNA 催化与肽计算 养疗经应用研究第二卷
+    <br/><br/>前言在这里感谢 人卫九的 《药理学》 和 《临床药理学》, 该论著的 酸醚醇酶 酚酯酰酮
+    八个肽键 化学式 和 生化活性来自这两本书, 基础是人卫九的《有机化学》; 感谢 ECLIPSE
+    开源编辑器伴随我14 年; 感谢我使用的一切免费开源的电子产品, 满足我走到今天的技术支撑;
+    感谢我曾经受到良好且漫长的基础科学教育. 感谢父亲提出的医学理念: 广, 准, 快, 和养疗经
+    的中医辩证思维. 感谢我的家庭, 在我研发养疗经 这 2 年多的包容, 支持.
+    <br/><br/>The author appreciated the eight chemical metas graph of Acid, Enzyme,
+    Phenol, Ester, Amide, Ether, Alcohol and Ketone, where from the foundamental book
+    of《Pharmacology》and《Clinical Pharmacology》. He also could thank for Eclipse IDE by
+    when its fifteen years accompanyings be used for free. Appreciated his father's
+    theroies of widely, determinatly and speedly for software use, and his tranditional
+    medical dialectica of SDSVD. And also said 'thanks for his farmily' here about 3 years
+    emotional supportings.
+
+    <br/><br/>自从有了大数据开源作品集, DNA 语义编码, 肽展公式推导 和元基生化解码,
+    我一直在思考怎么将这些思想成果集成在养疗经 大数据软件进行具体应用实践, 收获颇丰, 从
+    2018 年秋开始设计《华瑞集》和《养疗经》到现在, 我花了很长的时间在医学大数据领域不断深入,
+    我的动机很明显, 优化和完善生产关系, 创造生产力, 探索新的生产资料, 逐步的在医学和计算领域进行深入实践.
+    每次研发我需要的功能. 便遇到各种瓶颈, 剖析下才发现是基础不足, 基础来自一个体系的积累和沉淀不足,
+    说白了就是领域空白, 于是不暇思索, 就填补这个空白. 我结合我的自身已有的基础(计算机应用,
+    计算机科学, 计算机电子信息, 医学大数据) 于是全身心将青春投注在《生化计算领域》.
+    <br/><br/>Since he did an open-source assignment at big data domain. For example, DNA
+    literary encodings, derivational peptide PDN extensions (PDE formula), and metabase,
+    Initons decodings. The author tried to make a practice about using his authorised
+    portaits of sortings, parserings, indexings, searchings, cords predictions, VPCS
+    schedures, web service and his catalytic metabolisms. The author had been working
+    graduatly in the medical data domain since he had branches of 《HuangRuiJi》and
+    《YangLiaoJing》. Absolutly his motivations were making an optimization for productive
+    relationships, creating a new productivity, and exploring a new productive source.
+    Every time he meets any bottlenecks during this medical practive times, he considered
+    that were his lacks of basic fundations, then had been fixed these lacks. The author
+    graduatly to practise medical applications with his foundational educations of
+    Computer Application, Science, and Electronics, and Computer informations where at the
+    medical big datas. As a Bio-chemical computings for evolutions.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_12.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>养疗经 引导控制面板
+
+    <br/><br/>这个页面用于引导和配置养疗经引擎启动的布局, 和 DNA 属性数据的计算操作的配置可观测.
+    目前养疗经的18110 版本(18. 1. 1. 0)已经集成了元基数据库, 之后, 我会设计 PLSQL
+    养疗经控制台和TIN shell 控制元基自动化. 终于奠定了扎实基础. 这个软件脱离了人的控制,
+    多美好, 这个 TIN S h e l l 便是养疗经的语言 和 思维, 国家若需要, 我会以华瑞集的形式开源.
+    在哲学上的思考, 软件是一种生命, 不过目前是单细胞藻类这个级别, 如果一旦赋予了智慧活性,
+    其进化速度1 小时就能颠覆人类智慧的5000 年之久. 所以一开始就要掂量好,
+    于是我仅仅在医学数据领域上先设计一个缺陷大脑, 满足其安全级别
+    <br/><br/>This page mainly used for well boot the YangLiaoJing software. Correctly In
+    order to config the observational attributes. And now the YangLiaoJing had already
+    integrated a Tinshell, PLORM and PDE, the author considered a catalytic software was a
+    life. But now is seeming just like an alga cell. He did not make any bio-activity and
+    mebolisms to it. Because he just afraid the metabolic speed, will easily cause alot of
+    problem and situation of 'an out of control'.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_13.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>养疗经 中医药搜索页(十二经络图片和药材图片不属于DNA元基催化与肽计算版权保护内容,
+    <br/><br/>来源: 百度图片搜索关键字 ‘药材名 + 无版权’或‘十二经络图片 + 无版权’)
+
+    <br/><br/>这个页面用于中药的搜索多维展示. 上面是一个表格, 囊括了 2400
+    余味中医学药物和药食同源元组成份, 涉及他们的名称, 经络, 性味, 功效, 风险, 等属性列,
+    点击这些表的元组, 能够进行通过一维的线性, 二维的图表和三维的属性数据挖掘计算观测.
+    并通过全局的搜索和带精度筛选计算有价值的结果. 图中的 图片我是在百度搜狗上搜索中药的无版权图片
+    得到的, 所以颜色规格不是很统一, 以后可以专门设计一套漂亮的. 三维的引擎用的是开源的JOGL
+    图形渲染架构, 其余都是JDK 原生组件二次开发. 这里标识, 感谢. 这个中药页, 2018 年秋,
+    是帮父亲做个医学搜索软件, 后来发现实用性很强, 就结合 中医方剂 和 中医诊断 直 接扩展多个页面,
+    最后设计 西医页面 也并上了, 大一统. 父亲用了一年多, 感谢其一直在帮我做测试.
+    <br/><br/>Now a days, YangLiaoJing contained more than 2,400 Chinese medicines and did
+    well an arrangement with Name, Meridian, Nature and flavour Taste, Efficacy and Risk
+    etc columns. The author did a 1-Dimensional word texts, 2 Dimensional pictures and
+    arraies, and 3 Dimensional lexical-flower observations. Especially with scaled
+    schedures, filters and searches, the author appreciated for his fathor with
+    YangLiaoJing testing. And the 600 pictures of medicine plants where author searched
+    with Baidu and Sougou by using key word 'Medicine Name + Copyleft and No
+    Restrictions'.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_14.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>养疗经八纲六经辨证 大综合 罗盘, 一开始设计这个罗盘, 是根据中医学的八纲辨证来进行罗盘归纳,
+    渐渐的, 养生居家内容越来越多, 也越来越丰富, 于是一个罗盘放不下, 我就设计了罗盘组,
+    然后设计三维罗盘.
+    <br/><br/>如图, 八纲, 三焦, 营卫, 气血, 六经, 天星, 风水, 养生, 居家, 数术, 节气,
+    都很好的归纳在这里. 现在随着养疗经的不断升级优化, 现在元基罗盘也录入了. 我的动机很明显,
+    通过元基的语义罗盘和生化罗盘 双元观测, 将中医和西医进行无理级别 融合辩证搜索观测.
+    很多次提到无理级这个词汇, 我在这里解释下: 无理级学术的意思是,
+    将两个或多个领域根据某种观测角度和应用方法进行耦合推导, 挖掘其共同点拓展. 具体的实例如
+    1: 通过元基的生化和语义两种不同的学科耦合(语文和化学)根据罗盘的方位分类归纳,
+    来联系中医和西医的关联点. 然后拓展(医学).
+    <br/><br/><br/><br/>通过软件工程的生命周期PCA 处理AOPM 和软件架构的MVC 优化VPCS,
+    进行推导优化数据库的增删改查IDUQ 算法然后进行DNA 编码最后解码语义生化TX-H 元基(计算机科学,
+    生物化学, 基因工程)和肽展公式(生化计算领域)
+    <br/><br/>An implement of this picture, the eight principal syndromes: Yin and Yang,
+    Tri-jiao, Nutrient and Defense, QI-blood, Six Meridians, Celestial Star and Astrology,
+    Geomantic Fengshui, Health, Home Geomantic, Numerology Astrology, and Solar Terms,
+    were concluded by a well YangLiaoJing. The author built a compass to make an
+    arrangement with these sets. His motivation was a conjunction and an adjunction with
+    Literatures, Biologies, Chemistries, Physics and Medicines. The author considered and
+    defined an 'undirectly logical and associational science-extension' of '无理级学术',
+    ULASE, was tried to make a derivation and observation with two or more independent
+    science systems, where based on the ratio of observations and the way of derivations.
+    For example, the science adjunction with literatures and chemisties. where directly
+    was arranged on the compass. Also, could be the Chinese medicines and Western
+    medicines.
+    <br/><br/>The author graduatly proved a PCA of SDLCs as AOPM, a PCA of computer
+    achitectures as VECS, and PCA of Data manipulations as IDUQ. And a well PDN extension
+    and D-R-NA decodings of AOPM VECS IDUQ TXHF. Here an ULASE was a conjunction and an
+    adjunction with Computer Science, Bio-Chemistry and Gene Science.
+    <br/><br/>通过不断优化分词和排序, 最后进行微分催化逻辑归纳(算法, 离散数学),
+    发现一些数据都是增删改查的元函数(数据库原理), 等等太多了, 不一一介绍. 我要的做的很简单,
+    持续的坚韧的在养疗经中进行不断的研发探索和应用归纳. 目的很明确, 优化和完善生产关系,
+    创造生产力, 探索新的生产资料.
+    <br/><br/>因为这个罗盘, 中医可以和基因, DNA, 居家, 养生, 地理, 星象, 西医, 军事,
+    等各种基础科学进行无理级别耦合, 进行混合拓扑计算. 为了方便多角度对比, 我设计了多个观测角小组件叠加,
+    目前是第一代版本, 之后这些罗盘数据将全部元基化做索引计算, 满足生产力更新发展的需要.
+
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_15.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>养疗经医学经典搜索页面
+
+    <br/><br/>关于养疗经的搜索, 理念是父亲的快, 广, 准. 我在这里归纳下细节, 一开始,
+    我所理解的快是算法快, 广是数据面广, 准是搜索内容准确. 随着研究的持续进展, 我现在的理解全部颠覆了,
+    我认为的快是数据认知速度快, 广是关联的数据拓扑面广泛, 准是搜索的精度自适应.
+    从最早的快排优化到极速排序, 再到极速小高峰过滤催化快排, 与象契文字混合排序,
+    现在开始元基肽展计算带精度搜索, 我的思维有开始改变了, 我所认为的快是自主进化速度加快,
+    广是无理级推导点广泛, 准是在算能的低耗上高效计算.
+    <br/><br/><br/><br/>Implements of YangLiaoJing search component with his father's used
+    'speedly', 'widely', and 'determinatly'. The author considered before the 'speedly'
+    means was operated speedly by users, 'widely' means widely used in data domains,
+    'determinatly' means determinatly searched with scales. And now he considered again
+    'speedly' means data cognized speedly, 'widely' means data topologics were widely
+    used, and 'determinatly' means searching determinatly fitted by user wants with
+    scales. From the original 'Sir Charles Antony Richard Hoare-QuickSort4D' to author's
+    TopSort6D, and now a Mixed Literary Sort with Asian Pictos and western Wedges. And Its
+    DNA catalytics and PDE metabolics of indexing optimizations. The author then
+    considered a new that here the 'speedly' means speedly evoluted with PDE, 'widely'
+    means widely derivated with ULASE, and 'determinatly' means reduced computing
+    energies.
+    <br/><br/>元基进入生化计算领域, 一切即将改变, 下一个快广准有所期待. 养疗经设计到现在,
+    我设计了很多算法, 于是归纳下如下:
+    <br/><br/>微分催化算法: 和我一直打交道的主算法,
+    通过对功能函数的人类理解思维进行函数编码并不断微分优化逻辑结构来提高算能的过程.
+    如我的极速小高峰过滤快排. 德塔分词, 德塔数据库等, 元老: 牛顿和莱布尼茨.
+    <br/><br/>认知算法: 通过对函数编码进行语法拆分提取重用高的函数, 确定主要成分并优化减少运算错误的高效算法.
+    Unicorn ETL, Socket rest Deta VPCS boot 分级函数. 元老: OSGI, SONAR常规算法,
+    通过某种学科根据需求进行编辑的算法用于高效的完成需求任务. 进化算法,
+    通过肽展计算和元基生化和语义无理级变换来适应其软件版本不断升级的环境. 自主修复和完善其生命周期.
+    <br/><br/>其他算法体系略. 我设计这些算法, 和体系, 一开始是为了满足养疗经的性能,
+    后来成了养疗经的升级和需求变更推动算法的优化更新, 现在发现养疗经就是一个算法系统. 在
+    DNA 的层次, 语言是算法.. 是一种智慧高级文明的线性算法.
+    <br/><br/>The author thought that Initon's applications in bio-chemical domain, where
+    could be expected by how about concluding with 'speedly', 'widely', and
+    'determinatly'.
+    <br/><br/>The author defined a catalytic algorithm, means the functional algorithms
+    and components where could have been graduatly being optimized by humanoid literatures
+    or human beings. In order to reduce the computing energies. Such as the small and
+    defect peak-filtering, Deta Parser and Deta socket-flows VPCS DataBase, and Its PLSQL
+    and PLORM. The author could refer Mr.Newton and Mr.Leibniz here the Cheers.
+    <br/><br/>The author defined a cognitive algorithm, means the functional algorithms
+    and components could have been graduatly being fissiled and combined with
+    compile-languages grammar, to reduce the computational errors and times. Such as the
+    Unicorn ETL, and VPCS standard API, the author could refer OSGI, and Sonarlint here.
+    <br/><br/>The author defined a regular algorithm, means basic foundational definitions
+    at natural science. For example, mathematics and discrete-math etc.
+    <br/><br/>The author also defined an evolutionary algorithm: In the evolutionary
+    domain of software computation, the DNA catalyst and the PDN metabolism is an
+    effective evolutionary method were based on indexing optimization by humanoid Initons
+    (16 Init-Atons, AOPM VECS IDUQ TXHF). In order to make a self SDLC and Dev-Ops. The
+    author considered that YangLiaoJing was an algorithm system. At DNA domain, the
+    language could be defined as an algorithm, means a higher civilizational
+    lined-algorithm from humanoid AI.
+
+    <br/><br/>上图这个版面, 我习惯用2 维表格来进行表达, 当点击一行元组的CELL 集,
+    便能在下面的文本框进行全文展示和跟进计算, 左边的是展示 PCA, 我这样布局是因为有很大的优化空间.
+    方便我更好的理解数据和傻瓜化应用(这里是一个拓扑点, 先标注下). 设计这个文本搜索页,
+    动机是方便父亲搜索数据的同时进行快速的阅读和观测. 于是添加了 DNN 算法, 读心术,
+    搜索高亮和中文语音发音等满足高效应用.
+
+    <br/><br/>Above picture showed a 2-Dimensional table, after clicked the area theme of
+    cell from each row tupe by a mouse operation. It will trigger a cell related texted
+    segmential reflections and DNN analysis. For example, the left part was a PCA theme
+    list, and right part was a procedures text with hight lights. In order to make a
+    foolished showing for users. For example, user's readings and manipulations. The
+    author added more tab-controllers of DNN, pronunciations, page number, and
+    translations.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_16.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>养疗经医学图像之智能分析页面
+
+    <br/><br/>这个页面是 德塔 JAVA 卷积数据分析的作品在这里的应用. (索贝尔, 高斯, 拉普拉斯,
+    傅里叶, Emboss 是先贤引用) 关于这个版面, 我一开始是想做个红外监控, 于是进行了红光过滤,
+    后来就干脆把计算机视觉的先贤的卷积算法都添加进去, 用来研究皮肤五官相诊,
+    现在元基的肽展腐蚀算法也并入的养疗经, 观测面大幅增加, 于是我设计了带精度的游标计算,
+    数据可以不断扩展, 也可以进行无理级耦合叠加观测. 现在这个相诊的功能主要应用于舌头, 皮肤,
+    五官, 骨骼观测, 和特殊图片逻辑观测区分.
+    <br/><br/>This picture was an application with Java convolutional computings, refer
+    '2014年10月19日 2.罗瑶光. 《Java数据分析算法引擎系统 V1.0.0》. 中华人民共和国国家版权局,
+    软著登字第4584594号. 2014. '. The author developed a lot of software codes by using
+    his 《Computer Vision》 theory where from his MSCS education at California Lutheran
+    University, CLU, USA. For example of Sobel, Guassian, Laplas, DCT and Emboss. In an
+    early time, he just wants to build a ray monitor, to abstract out the red color, and
+    finally he added all of his visionary code where developed with Computer Vision's
+    theory at CLU, to make a research for skin detections. And now became a mixed
+    non-convolutional visionary detection which integrated with PDE formula, scaled
+    observational computing, and visionary data extensions. To do the research of ULASE.
+    And now this conponient could be applicated in visions of Tongue, Skin, Face and Bones
+    etc logical observations.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_17.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>养疗经图片索引急速搜索页,
+    <br/><br/>上述图片中的搜索内容不是养疗经软件的组成部分, 仅仅是图片搜索功能的展示(图片来自超声学医学教材).
+    父亲提议养疗经需要增加一个图片搜索的页面, 于是设计了一种傻瓜格式, 下面一排是图片分类,
+    右边是图片搜索排序, 左边是可操作界面显示, 可以鼠标进行多种观测操作,
+    也可以结合相诊中的导入来耦合复杂计算. 我做了一层像素处理和管道队列排序, 10
+    万张图片从计算搜索到排序显示出来 整个过程速度在 0. 3 秒内. 满足之后的高并发 REST
+    并行计算横向服务器扩展.
+    <br/><br/>Above picture, its search contents, were not a part of YangLiaoJing
+    software, means a training data from a China Medical Textbook. Author's father
+    suggested a requirment, to let YangLiaoJing do the picture search as easy and simple
+    as an foollish way. Then he tried to build a big main theme for picture shows in
+    software left part, and at right part of main theme, were the quadrant themes for list
+    rotations, and in bottom part of software, was vectorial themes for categories
+    rotations. Finally, it became very simple with few buttons to do a lot of
+    manipulations, and searched 300 thousand of pictures in second. The author considered
+    It could be integrated in REST servers.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_18.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>养疗经文本编辑分析页面
+    <br/><br/>这个页面, 我用来做中药的药方在推荐出来后进行文字打印前的编辑, 和计算逻辑观测,
+    左边是文本编辑框, 用来编辑文字. 右边是观测文本框, 可以进行翻译, 数据挖掘, 高亮搜索,
+    语法显色区分等实际功能. 之后我会添加更多的功能, 满足需求计算面. 关于这个页面,
+    一开始我想直接集成 JAVA 开源组件, 后来发现太大了, 因为我的养疗经整个架构体系上层都是自主研发,
+    一个 word 的开源java 框架就大到超过养疗经源码总量了, 于是还是自己根据需求来设计了.
+    我要抓住这个页面的需求: 为文字打印前修改编辑的预览和文本NLP 计算观测. 其他的功能先不考虑.
+    <br/><br/>This picture, was mainly for page prints after a words-edition. The words
+    here could be a searched result of medicines, or an essay and other texted lexicons.
+    To the left parts was an observational theme. Where could show the multi-lexicons
+    translations without grammar, high lights, and word segements etc.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_19.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>养疗经智慧声诊
+
+    <br/><br/>养疗经智慧声诊分析与调制解调页面,这个页面全部基于傅里叶算法对音频的 频率调制与解调,
+    就不多做描述了, 用于声诊, 噪音检测和碎石. 因为低频调制对 生物器官有很多作用, 危险级别高,
+    于是我分离成了肽插件, 没有集成在养疗经主引擎里. 我想到了很多扩展的功能插件, 因为涉及到临床医学,
+    同样, 危险级很高, 就不在这里进行过于详细的表述了. 我会将右下角的 AOEIU 五种元音的声谱图片去掉,
+    换成类似相诊中的按钮, 来配置右上角的调制解调按钮, 来模拟器官共振声频, 用来临床医疗.
+    <br/><br/>YangLiaoJing and Its sound manipulations were based on DFT, FFT and DCT. It
+    could be used widely at noise detections, ultrasonic lithotripsy and 'Four Diagnostic
+    Methods of TCM'. Because its lower and higher frequent wave risks for organes and
+    bones, so the author stoped his personal continuing development. He separated It out
+    to an OSGI and PDE file part. For medical research, the author will fully follow his
+    father's opinions, becasue the medicine was a rigorous science.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_20.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>养疗经中西医诊断选择页面.
+    <br/><br/>这个功能是西医检测的应用功能, 我没有花精力完善, 优先级降低. 因为不是基础科学,
+    之后养疗经开始社会应用, 我会逐步完善这个功能. 关键词索引字典见书尾.
+    <br/><br/>This conponient implemented a western medical detection.
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/16/16_21.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/><br/>养疗经的 ETL 配置计算页面.
+    <br/><br/>这个页面是 德塔 Unicorn ETL 分析的作品在这里的应用. 目前可以介绍下, 这个 ETL
+    的组件和扩展组件已经完成第一代肽化, 这个 etl 的界面应用研发走向不会和 KNIME, WEKA,
+    kette, orange 等有太多区别, 所以不做过多表述, 我的需求走向很简单, 以第三章的 肽元基ETL
+    研究发展为主要方向. 另外, 我的 ETL 会有 2 种结构, 一种是神经网络语义链计算模式,
+    一种是生化卷积计算模式. 用来区分模拟人的左脑思维和右脑思维. 我没有时间耗费在应用层上,
+    好比一个大树, 枝叶繁茂, 我无暇顾及, 基础研发才是我的强项, 因为我已经专注了 3 年在生化计算领域.
+    目前收获颇丰, 我下一步要做的工作已经设计好了.
+    <br/><br/>At this picture, Deta ETL Unicorn had finished a version 1 of PDE
+    metabolisms. Therefore, the trends of Deta ETL will similar to Knime, Weka, Kettle and
+    Orange. (But once the Tinshell node done, the author considered that his conceptions
+    could be totally changed. Meant all of ETL node might be the same with Tinshell node
+    by using human script languages for input and ouput). The author will spend more times
+    on a foundational simulation of nero-net and bio-convolutional computing with human
+    languages and brain minds. Such as a tree with a lot of nodes and foliages, and now he
+    kept an eye on Its roots. He mentioned a nero ETL could have two parts, one of
+    semantic link for storage, and another convolutional link for computings.
+</div>
+</body>

@@ -1,0 +1,26 @@
+	public Map<String, String> getFullCnToPy() {
+		this.fullCnToPy.put("Èº ", "yuan");
+		this.fullCnToPy.put("Èπ ", "chun");
+		this.fullCnToPy.put("È∏≤ÈπÜ", "qu yu");
+		this.fullCnToPy.put("È≤öÈ±º", "ji yu");
+		this.fullCnToPy.put("È≤ ", "hou");
+		this.fullCnToPy.put("ÈÜçÈÜê", "ti hu");
+		this.fullCnToPy.put("Ë± ", "bao");
+		this.fullCnToPy.put("Ëü ", "zhe");
+		this.fullCnToPy.put("Ëõ¥Ëû¨", "qi cao");
+		this.fullCnToPy.put("Ëò ", "huai");
+		this.fullCnToPy.put("Â† ", "jin");
+		this.fullCnToPy.put("Ê™ ", "bo");
+		this.fullCnToPy.put("Êø ", "pu");
+		this.fullCnToPy.put("Á® ", "lv");
+		this.fullCnToPy.put("Á© ", "kuang");
+		this.fullCnToPy.put("ÁÆ ", "jun");
+		this.fullCnToPy.put("Ëä ", "ji");
+		this.fullCnToPy.put("Ëå®Ëè∞", "ci gu");
+		this.fullCnToPy.put("Ëç ", "ren");
+		this.fullCnToPy.put("Ëç ", "rao");
+		this.fullCnToPy.put("Ëè ", "lu");
+		this.fullCnToPy.put("Ëè ", "song");
+		this.fullCnToPy.put("Ëï ", "ji");
+		this.fullCnToPy.put("Ëò©Ëíå", "fan cai");
+
