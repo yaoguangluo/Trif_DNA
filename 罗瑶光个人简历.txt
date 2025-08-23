@@ -170,6 +170,28 @@
   --元基催化与肽计算 的论著思想进行不断地 温故 测试 实践 论证 错别字修正 功能描述具体和多语言版本翻译等。
 --个人爱好
   罗瑶光先生喜欢艺术，比如书法 水彩 钢琴 剑术 烹饪等。
+--个人荣誉
+  --Github趋势周刊99# Github Trending 99th Weeks
+    Github Trending ALL Top 25th Languages
+    Github Trending yaoguangluo/Deta_Cache
+    Github Trending yaoguangluo/DETA_BackEnd
+    Github Trending yaoguangluo/NeroParser
+  --Gitcode http://gitcode.com/yaoguangluo1985525/ 下 Trif 工程
+    -华瑞集R-api-商业化逻辑测试-实践应用描述版本-V0.066---商业用户量940+
+  --2016年 HACCP Manager Certificate, NEHA, FDA, 美国环境资源部, 美国农业部, 美国食品和药物管理局。
+  --世界数据档案馆: Medal 2020 Arctic Code Vault Contributor, PIQL, SNSK, AWA, Kongeriket Norge
+  --OpenSourceSoftware.Xyz: Top 25 open source softwares projects of pos in 2021
+  --嘉宾 2008, AICTE 印度GATEWAY, Bangalore， 编号-luoyaoguang@mca.christuniversity.in
+  --嘉宾 2012-3, IEEE 美国好奇号火星登陆分析 Thousand Oaks 编号--yaoguang@clunet.edu
+  --嘉宾 2019, 世界计算机大会, ChangSha , 编号-15116110525-ID52501688
+  --嘉宾 2021, 世界计算大会, ChangSha , 编号-15116110525-ID96180754
+  --嘉宾 2024, CCF大会, 中国计算协会，ChangSha , 编号-15116110525-24112000000089020785
+  --嘉宾 2024, Nature, 英国自然杂志， Peking , 编号-15116110525-313699483@qq.com-24122000000059221766
+  --国际计算机协会 - 2020 EI pending ID， 编号-EI ACM, A2050-ICITEE2020
+  --国际计算机协会 -终身科学家-Since 2011- ACM Pro Member. 编号-0626136
+  --世界四大会计事物所- Parser: 2019 四会插件排名世界第二位, Deloitte - 联想拯救者2代 单机每秒分词2200万中文字java插件
+  --中国首次世界计算大会--长沙-徽章-会章 -- MIIT: Medal 2019  
+  
 
 
 
