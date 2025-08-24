@@ -135,22 +135,6 @@ public class ServerInit_C {
 		// 20230106-System.out.println("----德塔VPCS数据库服务器启动一切正常-总耗时:"
 		// + time_P.duration()+ "毫秒");
 		app.app_S.ready = true;
-//        while (true) {
-//            if (sleeper_H.getThreadsCount() < S_Web.SLEEPERS_RANGE) {
-//                VPCSRequest vPCSRequest = new VPCSRequest();
-//                VPCSResponse vPCSResponse = new VPCSResponse();
-//                Sleeper_X sleeper = new Sleeper_X();
-//                sleeper.goToBedroom(S_HTTP.PORT_DATABASE, vPCSRequest, vPCSResponse);
-//                try {
-//                    sleeper.hugPillow(sleeper_H, server.accept(), sleeper.hashCode());
-//                    sleeper.sleeping();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            } else {
-//                haoHiYooFaker(sleeper_H);
-//            }
-//        }
 
 		App appReg = app;
 		System.out.flush();
@@ -223,3 +207,21 @@ public class ServerInit_C {
 ////			e.printStackTrace();
 ////		}
 //	}
+
+//138
+//while (true) {
+//if (sleeper_H.getThreadsCount() < S_Web.SLEEPERS_RANGE) {
+//  VPCSRequest vPCSRequest = new VPCSRequest();
+//  VPCSResponse vPCSResponse = new VPCSResponse();
+//  Sleeper_X sleeper = new Sleeper_X();
+//  sleeper.goToBedroom(S_HTTP.PORT_DATABASE, vPCSRequest, vPCSResponse);
+//  try {
+//      sleeper.hugPillow(sleeper_H, server.accept(), sleeper.hashCode());
+//      sleeper.sleeping();
+//  } catch (IOException e) {
+//      e.printStackTrace();
+//  }
+//} else {
+//  haoHiYooFaker(sleeper_H);
+//}
+//}

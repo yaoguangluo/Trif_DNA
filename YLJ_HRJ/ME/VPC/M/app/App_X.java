@@ -205,7 +205,7 @@ public class App_X extends App {
 		System.out.println("启动400编码调试开始-00000026");
 		app_S.appInit = new AppInit_XCDX();
 		app_S.studyVerbaMap.putObject("appInit", app_S.appInit);
-		app_S.appInit.IV_(this, NE);
+		app_S.appInit.IV_(this);
 		app_S.studyVerbaMap.putObject("appInit", app_S.appInit);
 	}
 }

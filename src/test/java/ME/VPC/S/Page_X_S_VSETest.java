@@ -58,6 +58,7 @@ import java.util.Vector;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.when;
+
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -68,272 +69,293 @@ import static org.mockito.Mockito.when;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 class Page_X_S_VSETest {
-    @Mock
-    JTextPane data;
-    @Mock
-    JTextPane statistic;
-    @Mock
-    JTextField name;
-    @Mock
-    JTable table;
-    //Field tableData_old of type Object[] - was not mocked since Mockito doesn't mock arrays
-    @Mock
-    DefaultTableModel newTableModel;
-    @Mock
-    CogsBinaryForest_AE _A;
-    @Mock
-    IMV_SIQ posFec;
-    @Mock
-    JTextPane text;
-    @Mock
-    DetabbedPane jTabbedpane;
-    @Mock
-    App_S app_S;
-    @Mock
-    ReadChinese readChinese;
-    @Mock
-    DetaButton buttonSum;
-    @Mock
-    DetaButton buttonCrt;
-    @Mock
-    DetaButton buttonPrev;
-    @Mock
-    DetaButton buttonNext;
-    @Mock
-    DetaButton buttonCTE;
-    @Mock
-    DetaButton buttonFRS;
-    @Mock
-    DetaButton buttonETC;
-    @Mock
-    DetaButton buttonCTV;
-    @Mock
-    IMV_SIQ dic_xj;
-    @Mock
-    IMV_SIQ pos;
-    @Mock
-    IMV_SIQ pose;
-    @Mock
-    IMV_SIQ etc;
-    @Mock
-    IMV_SIQ cte;
-    @Mock
-    IMV_SIQ posec;
-    @Mock
-    IMV_SIQ posFullec;
-    @Mock
-    List<Verbal> verbals;
-    @Mock
-    List<String> copy;
-    @Mock
-    List<String> dic_list;
-    @Mock
-    List<String> sets;
-    @Mock
-    List<String> copy_xj;
-    @Mock
-    IMV_SIQ_ dic_map;
-    @Mock
-    IMV_SIQ dic_chu_fang;
-    @Mock
-    IMV_SIQ dic_mz;
-    @Mock
-    IMV_SIQ dic_zf;
-    @Mock
-    IMV_SIQ dic_yy;
-    @Mock
-    IMV_SIQ dic_fg;
-    @Mock
-    IMV_SIQ dic_ff;
-    @Mock
-    IMV_SIQ_ dic_sy;
-    @Mock
-    IMV_SIQ dic_tl;
-    @Mock
-    IMV_SIQ dic_bzm;
-    @Mock
-    IMV_SIQ_ dic_gn;
-    @Mock
-    IMV_SIQ dic_lcbx;
-    @Mock
-    IMV_SIQ dic_lcyy;
-    @Mock
-    IMV_SIQ dic_zhfx;
-    @Mock
-    IMV_SIQ dic_zhjb;
-    @Mock
-    IMV_SIQ dic_yao_ming;
-    @Mock
-    IMV_SIQ dic_chengfen_danwei;
-    @Mock
-    IMV_SIQ dic_yong_fa;
-    @Mock
-    IMV_SIQ dic_yong_liang;
-    @Mock
-    IMV_SIQ dic_yao_li;
-    @Mock
-    IMV_SIQ dic_zhu_yi;
-    @Mock
-    IMV_SIQ dic_shi_ying;
-    @Mock
-    IMV_SIQ dic_bu_liang_fan_ying;
-    @Mock
-    IMV_SIQ dic_yao_wu_xiang_hu_zuo_yong;
-    @Mock
-    IMV_SIQ dic_qi_ta;
-    @Mock
-    IMV_SIQ dic_jie_shao;
-    @Mock
-    IMV_SIQ_ dic_lx;
-    @Mock
-    IMV_SIQ_ dic_by;
-    @Mock
-    IMV_SIQ_ dic_wx;
-    @Mock
-    IMV_SIQ_ dic_bl;
-    @Mock
-    IMV_SIQ_ dic_lc;
-    @Mock
-    IMV_SIQ_ dic_zd;
-    @Mock
-    IMV_SIQ_ dic_bf;
-    @Mock
-    IMV_SIQ_ dic_zl;
-    @Mock
-    IMV_SIQ_ dic_jy;
-    @Mock
-    IMV_SIQ_ dic_yh;
-    @Mock
-    IMV_SIQ_ dic_yf;
-    @Mock
-    IMV_SIQ_ dic_yx;
-    @Mock
-    Map<String, Map<String, Double>> DNNmap;
-    @Mock
-    EmotionSample emotionSample;
-    @Mock
-    RatioMap ratioMap;
-    @Mock
-    RatioMap_E ratioMap_E;
-    @Mock
-    SensingTest sensingTest;
-            @Mock
-    List<Component> component;
-    @Mock
-    LayoutManager layoutMgr;
-    @Mock
-    FocusTraversalPolicy focusTraversalPolicy;
-    @Mock
-    Set<Thread> printingThreads;
-    @Mock
-    ContainerListener containerListener;
-    @Mock
-    Color preserveBackgroundColor;
-    
-    @Mock
-    Component modalComp;
-    //Field modalAppContext of type AppContext - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
+	@Mock
+	JTextPane data;
+	@Mock
+	JTextPane statistic;
+	@Mock
+	JTextField name;
+	@Mock
+	JTable table;
+	// Field tableData_old of type Object[] - was not mocked
+	// since Mockito doesn't mock arrays
+	@Mock
+	DefaultTableModel newTableModel;
+	@Mock
+	CogsBinaryForest_AE _A;
+	@Mock
+	IMV_SIQ posFec;
+	@Mock
+	JTextPane text;
+	@Mock
+	DetabbedPane jTabbedpane;
+	@Mock
+	App_S app_S;
+	@Mock
+	ReadChinese readChinese;
+	@Mock
+	DetaButton buttonSum;
+	@Mock
+	DetaButton buttonCrt;
+	@Mock
+	DetaButton buttonPrev;
+	@Mock
+	DetaButton buttonNext;
+	@Mock
+	DetaButton buttonCTE;
+	@Mock
+	DetaButton buttonFRS;
+	@Mock
+	DetaButton buttonETC;
+	@Mock
+	DetaButton buttonCTV;
+	@Mock
+	IMV_SIQ dic_xj;
+	@Mock
+	IMV_SIQ pos;
+	@Mock
+	IMV_SIQ pose;
+	@Mock
+	IMV_SIQ etc;
+	@Mock
+	IMV_SIQ cte;
+	@Mock
+	IMV_SIQ posec;
+	@Mock
+	IMV_SIQ posFullec;
+	@Mock
+	List<Verbal> verbals;
+	@Mock
+	List<String> copy;
+	@Mock
+	List<String> dic_list;
+	@Mock
+	List<String> sets;
+	@Mock
+	List<String> copy_xj;
+	@Mock
+	IMV_SIQ_ dic_map;
+	@Mock
+	IMV_SIQ dic_chu_fang;
+	@Mock
+	IMV_SIQ dic_mz;
+	@Mock
+	IMV_SIQ dic_zf;
+	@Mock
+	IMV_SIQ dic_yy;
+	@Mock
+	IMV_SIQ dic_fg;
+	@Mock
+	IMV_SIQ dic_ff;
+	@Mock
+	IMV_SIQ_ dic_sy;
+	@Mock
+	IMV_SIQ dic_tl;
+	@Mock
+	IMV_SIQ dic_bzm;
+	@Mock
+	IMV_SIQ_ dic_gn;
+	@Mock
+	IMV_SIQ dic_lcbx;
+	@Mock
+	IMV_SIQ dic_lcyy;
+	@Mock
+	IMV_SIQ dic_zhfx;
+	@Mock
+	IMV_SIQ dic_zhjb;
+	@Mock
+	IMV_SIQ dic_yao_ming;
+	@Mock
+	IMV_SIQ dic_chengfen_danwei;
+	@Mock
+	IMV_SIQ dic_yong_fa;
+	@Mock
+	IMV_SIQ dic_yong_liang;
+	@Mock
+	IMV_SIQ dic_yao_li;
+	@Mock
+	IMV_SIQ dic_zhu_yi;
+	@Mock
+	IMV_SIQ dic_shi_ying;
+	@Mock
+	IMV_SIQ dic_bu_liang_fan_ying;
+	@Mock
+	IMV_SIQ dic_yao_wu_xiang_hu_zuo_yong;
+	@Mock
+	IMV_SIQ dic_qi_ta;
+	@Mock
+	IMV_SIQ dic_jie_shao;
+	@Mock
+	IMV_SIQ_ dic_lx;
+	@Mock
+	IMV_SIQ_ dic_by;
+	@Mock
+	IMV_SIQ_ dic_wx;
+	@Mock
+	IMV_SIQ_ dic_bl;
+	@Mock
+	IMV_SIQ_ dic_lc;
+	@Mock
+	IMV_SIQ_ dic_zd;
+	@Mock
+	IMV_SIQ_ dic_bf;
+	@Mock
+	IMV_SIQ_ dic_zl;
+	@Mock
+	IMV_SIQ_ dic_jy;
+	@Mock
+	IMV_SIQ_ dic_yh;
+	@Mock
+	IMV_SIQ_ dic_yf;
+	@Mock
+	IMV_SIQ_ dic_yx;
+	@Mock
+	Map<String, Map<String, Double>> DNNmap;
+	@Mock
+	EmotionSample emotionSample;
+	@Mock
+	RatioMap ratioMap;
+	@Mock
+	RatioMap_E ratioMap_E;
+	@Mock
+	SensingTest sensingTest;
+	@Mock
+	List<Component> component;
+	@Mock
+	LayoutManager layoutMgr;
+	@Mock
+	FocusTraversalPolicy focusTraversalPolicy;
+	@Mock
+	Set<Thread> printingThreads;
+	@Mock
+	ContainerListener containerListener;
+	@Mock
+	Color preserveBackgroundColor;
 
-    
-    
-    @Mock
-    Container parent;
-    //Field appContext of type AppContext - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
-    @Mock
-    Color foreground;
-    @Mock
-    Color background;
-    @Mock
-    Font font;
-    @Mock
-    Font peerFont;
-    @Mock
-    Cursor cursor;
-    //Field locale of type Locale - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
-    @Mock
-    GraphicsConfiguration graphicsConfig;
-    @Mock
-    BufferStrategy bufferStrategy;
-    @Mock
-    DropTarget dropTarget;
-    @Mock
-    Vector<PopupMenu> popups;
-    //Field focusTraversalKeys of type Set[] - was not mocked since Mockito doesn't mock arrays
-    @Mock
-    Object LOCK;
-    //Field acc of type AccessControlContext - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
-    @Mock
-    Dimension minSize;
-    @Mock
-    Dimension prefSize;
-    @Mock
-    Dimension maxSize;
-    //Field componentOrientation of type ComponentOrientation - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
-    @Mock
-    ComponentListener componentListener;
-    @Mock
-    FocusListener focusListener;
-    @Mock
-    HierarchyListener hierarchyListener;
-    @Mock
-    HierarchyBoundsListener hierarchyBoundsListener;
-    @Mock
-    KeyListener keyListener;
-    @Mock
-    MouseListener mouseListener;
-    @Mock
-    MouseMotionListener mouseMotionListener;
-    @Mock
-    MouseWheelListener mouseWheelListener;
-    @Mock
-    InputMethodListener inputMethodListener;
-    @Mock
-    PropertyChangeSupport changeSupport;
-    @Mock
-    Object objectLock;
-    //Field compoundShape of type Region - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
-    //Field mixingCutoutRegion of type Region - was not mocked since Mockito doesn't mock a Final class when 'mock-maker-inline' option is not set
-    //Field eventCache of type EventQueueItem[] - was not mocked since Mockito doesn't mock arrays
-    @Mock
-    Map<Class<?>, Boolean> coalesceMap;
-    
-    @Mock
-    AccessibleContext accessibleContext;
-    @InjectMocks
-    Page_X_S_VSE page_X_S_VSE;
+	@Mock
+	Component modalComp;
+	// Field modalAppContext of type AppContext - was not mocked
+	// since Mockito doesn't mock a Final class when
+	// 'mock-maker-inline' option is not set
 
-    @BeforeEach
-    void setUp() {
-        MockitoAnnotations.initMocks(this);
-    }
+	@Mock
+	Container parent;
+	// Field appContext of type AppContext - was not mocked
+	// since Mockito doesn't mock a Final class when
+	// 'mock-maker-inline' option is not set
+	@Mock
+	Color foreground;
+	@Mock
+	Color background;
+	@Mock
+	Font font;
+	@Mock
+	Font peerFont;
+	@Mock
+	Cursor cursor;
+	// Field locale of type Locale - was not mocked since
+	// Mockito doesn't mock a Final class when
+	// 'mock-maker-inline' option is not set
+	@Mock
+	GraphicsConfiguration graphicsConfig;
+	@Mock
+	BufferStrategy bufferStrategy;
+	@Mock
+	DropTarget dropTarget;
+	@Mock
+	Vector<PopupMenu> popups;
+	// Field focusTraversalKeys of type Set[] - was not mocked
+	// since Mockito doesn't mock arrays
+	@Mock
+	Object LOCK;
+	// Field acc of type AccessControlContext - was not mocked
+	// since Mockito doesn't mock a Final class when
+	// 'mock-maker-inline' option is not set
+	@Mock
+	Dimension minSize;
+	@Mock
+	Dimension prefSize;
+	@Mock
+	Dimension maxSize;
+	// Field componentOrientation of type ComponentOrientation -
+	// was not mocked since Mockito doesn't mock a Final class
+	// when 'mock-maker-inline' option is not set
+	@Mock
+	ComponentListener componentListener;
+	@Mock
+	FocusListener focusListener;
+	@Mock
+	HierarchyListener hierarchyListener;
+	@Mock
+	HierarchyBoundsListener hierarchyBoundsListener;
+	@Mock
+	KeyListener keyListener;
+	@Mock
+	MouseListener mouseListener;
+	@Mock
+	MouseMotionListener mouseMotionListener;
+	@Mock
+	MouseWheelListener mouseWheelListener;
+	@Mock
+	InputMethodListener inputMethodListener;
+	@Mock
+	PropertyChangeSupport changeSupport;
+	@Mock
+	Object objectLock;
+	// Field compoundShape of type Region - was not mocked since
+	// Mockito doesn't mock a Final class when
+	// 'mock-maker-inline' option is not set
+	// Field mixingCutoutRegion of type Region - was not mocked
+	// since Mockito doesn't mock a Final class when
+	// 'mock-maker-inline' option is not set
+	// Field eventCache of type EventQueueItem[] - was not
+	// mocked since Mockito doesn't mock arrays
+	@Mock
+	Map<Class<?>, Boolean> coalesceMap;
 
-    @Test
-    void testDoFwaArrangement() {
-        when(_A.sortWordFrequencyMapToSortMap(any())).thenReturn(new IMV_SIQ_S_());
+	@Mock
+	AccessibleContext accessibleContext;
+	@InjectMocks
+	Page_X_S_VSE page_X_S_VSE;
 
-        // mock trif IMV_SIQ_S_ result = page_X_S_VSE.doFwaArrangement(new IMV_SIQ_SS(), new App());
-        // mock trif Assertions.assertEquals(new IMV_SIQ_S_(), result);
-    }
+	@BeforeEach
+	void setUp() {
+		MockitoAnnotations.initMocks(this);
+	}
 
-    @Test
-    void testInitPage() {
-        // mock trif page_X_S_VSE.initPage(null, new App());
-    }
+	@Test
+	void testDoFwaArrangement() {
+		when(_A.sortWordFrequencyMapToSortMap(any()))
+				.thenReturn(new IMV_SIQ_S_());
 
-    @Test
-    void testSimpleClicked() {
-        when(_A.sortWordFrequencyMapToSortMap(any())).thenReturn(new IMV_SIQ_S_());
-        List<String> strings = new ArrayList<>();
-        strings.add("String");
-        when(_A.parserMixedString(anyString())).thenReturn(new ArrayList<>(strings));
+		// mock trif IMV_SIQ_S_ result =
+		// page_X_S_VSE.doFwaArrangement(new IMV_SIQ_SS(), new
+		// App());
+		// mock trif Assertions.assertEquals(new IMV_SIQ_S_(),
+		// result);
+	}
 
-        page_X_S_VSE.simpleClicked(new App());
-    }
+	@Test
+	void testInitPage() {
+		// mock trif page_X_S_VSE.initPage(null, new App());
+	}
 
-    @Test
-    void testTableSections() {
-        // mock trif page_X_S_VSE.tableSections(new App());
-    }
+	@Test
+	void testSimpleClicked() {
+		when(_A.sortWordFrequencyMapToSortMap(any()))
+				.thenReturn(new IMV_SIQ_S_());
+		List<String> strings = new ArrayList<>();
+		strings.add("String");
+		when(_A.parserMixedString(anyString()))
+				.thenReturn(new ArrayList<>(strings));
+
+		page_X_S_VSE.simpleClicked(new App());
+	}
+
+	@Test
+	void testTableSections() {
+		// mock trif page_X_S_VSE.tableSections(new App());
+	}
 }
 
 //Generated with love by TestMe :) Please report issues and submit feature requests at: http://weirddev.com/forum#!/testme

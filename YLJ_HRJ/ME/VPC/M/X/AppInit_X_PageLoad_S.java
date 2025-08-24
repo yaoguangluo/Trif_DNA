@@ -13,6 +13,7 @@ import ME.VPC.M.app.AppHospital;
 import M_V.MVQ.button.HrjButton;
 import O_V.OPM.ESU.admin.VPCSRestPanel;
 import O_V.OSI.AOP.VPC.server.BootVPCSFrontEnd;
+import O_V.OSI.AOP.VPC.server.RestServer;
 import P_V.PCS.thread.SocketThreadPool;
 import S_A.pheromone.MSI_EVD_SVX_TVS_DAH;
 import exception.thread.DetaThread;
@@ -51,6 +52,11 @@ import java.io.IOException;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
+	protected void bootDetaHVPCS(App NE) {
+		RestServer rest = new RestServer(NE);// 300mb
+		rest.start();
+	}
+	
 	protected void bootDetaFrontEnd(App NE) {
 //		new BootVPCSFrontEnd(NE.app_S).start();
 //		DetaThread.sleepDeta(5);

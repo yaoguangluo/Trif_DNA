@@ -28,7 +28,8 @@ import java.io.IOException;
  * */
 public class AppInit_X_PageLoad_SD {
 
-	protected void doAmedicinefilter(App NE) throws InterruptedException, IOException {
+	protected void doAmedicinefilter(App NE)
+			throws InterruptedException, IOException {
 		App app = NE;
 		VPCSRestPanel vPCSRestPanel = app.app_S.appConfig.vPCSRestPanel;
 		// --------------------------------------------------------------------------------
