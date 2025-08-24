@@ -20,24 +20,23 @@ import java.awt.Color;
  * */
 public class MakeContainerGJJD extends MakeContainer_X_S_s {
 
-    public MakeContainerGJJD(App app_NE) {
-        super(app_NE);
-        NE = app_NE;
-    }
+	public MakeContainerGJJD(App app_NE) {
+		super(app_NE);
+		NE = app_NE;
+	}
 
-    public void run() {
-        if (null == jTabbedpane) {
-            return;//fatal trif
-        }
-        jTabbedpane.validate();
-        DetaThread.sleepDeta(1000);
-        app_S.fyydPage = new FyydPage(app_S.text, NE);
-        app_S.fyydPage.setName("古籍");
-        jTabbedpane.addTab("古籍", new ImageIcon()
-            , app_S.fyydPage, "古籍");// 加入第一个页面
-        Color[] colors = TableRender.getTableCellRender();
-        jTabbedpane.setBackgroundAt(jTabbedpane.getTabCount() - 1
-            , colors[jTabbedpane.getTabCount() % 3]);
-        jTabbedpane.validate();
-    }
+	public void run() {
+		if (null == jTabbedpane) {
+			return;// fatal trif
+		}
+		jTabbedpane.validate();
+		DetaThread.sleepDeta(1000);
+		app_S.fyydPage = new FyydPage(app_S.text, NE);
+		app_S.fyydPage.setName("古籍");
+		jTabbedpane.addTab("古籍", new ImageIcon(), app_S.fyydPage, "古籍");// 加入第一个页面
+		Color[] colors = TableRender.getTableCellRender();
+		jTabbedpane.setBackgroundAt(jTabbedpane.getTabCount() - 1,
+				colors[jTabbedpane.getTabCount() % 3]);
+		jTabbedpane.validate();
+	}
 }

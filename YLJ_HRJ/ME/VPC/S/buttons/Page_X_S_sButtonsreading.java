@@ -22,39 +22,40 @@ import java.awt.event.ActionListener;
  * */
 //_IVS_Q=reading
 public class Page_X_S_sButtonsreading {
-    public static DetaButton data_X_reading(Page_X_S_sVSQ pages, App_S app_S, App NE) {
-        DetaButton buttonCTV = new DetaButton("阅读关");
-        pages.readChinese = new ReadChinese(buttonCTV, app_S);
-        buttonCTV.setBounds(740, 0, 100, 30);
-        buttonCTV.addActionListener(new ActionListener() {
-            @SuppressWarnings("deprecation")
-            public void actionPerformed(ActionEvent e) {
-                if (buttonCTV.getText().equalsIgnoreCase("阅读开")) {
-                    pages.readChinese.waitString = true;
-                    pages.readChinese.waitWord = true;
-                    return;
-                }
-                if (pages.readChinese.getState()
-                    .toString().equalsIgnoreCase("TERMINATED")) {
-                    pages.readChinese.I_NullSap();
-                    pages.readChinese = new ReadChinese(buttonCTV, app_S);
-                }
-                if (pages.sets == null) {
-                    return;
-                }
-                if (pages.readChinese.finish == 0) {
-                    if (!pages.readChinese.isAlive()) {
-                        pages.buttonCTV.setLabel("阅读开");
-                        pages.buttonCTV.updateUI();
-                        DetaThread.sleepDeta(200);
-                        pages.readChinese.I_PreReadList(pages.sets, NE);
-                        if (pages.readChinese.finish == 2) {
-                            pages.readChinese.start();
-                        }
-                    }
-                }
-            }
-        });
-        return buttonCTV;
-    }
+	public static DetaButton data_X_reading(Page_X_S_sVSQ pages, App_S app_S,
+			App NE) {
+		DetaButton buttonCTV = new DetaButton("阅读关");
+		pages.readChinese = new ReadChinese(buttonCTV, app_S);
+		buttonCTV.setBounds(740, 0, 100, 30);
+		buttonCTV.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				if (buttonCTV.getText().equalsIgnoreCase("阅读开")) {
+					pages.readChinese.waitString = true;
+					pages.readChinese.waitWord = true;
+					return;
+				}
+				if (pages.readChinese.getState().toString()
+						.equalsIgnoreCase("TERMINATED")) {
+					pages.readChinese.I_NullSap();
+					pages.readChinese = new ReadChinese(buttonCTV, app_S);
+				}
+				if (pages.sets == null) {
+					return;
+				}
+				if (pages.readChinese.finish == 0) {
+					if (!pages.readChinese.isAlive()) {
+						pages.buttonCTV.setLabel("阅读开");
+						pages.buttonCTV.updateUI();
+						DetaThread.sleepDeta(200);
+						pages.readChinese.I_PreReadList(pages.sets, NE);
+						if (pages.readChinese.finish == 2) {
+							pages.readChinese.start();
+						}
+					}
+				}
+			}
+		});
+		return buttonCTV;
+	}
 }

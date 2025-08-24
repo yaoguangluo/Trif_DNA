@@ -20,49 +20,53 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class FqzDictionary extends Dictionary_S {
-    public List<String> txtToListName() {
-        temp_list = new ArrayList<>();
-        temp_list.add(S_File.fqznkgkqfs_txt);
-        temp_list.add(S_File.byzymxk_txt);
-        temp_list.add(S_File.byxpqlgl_txt);
-        temp_list.add(S_File.cyblqym_txt);
-        temp_list.add(S_File.rkjccsz_txt);
-        temp_list.add(S_File.fkbbmzly_txt);
-        temp_list.add(S_File.fkms_txt);
-        temp_list.add(S_File.fkycqsja_txt);
-        temp_list.add(S_File.frlf_txt);
-        temp_list.add(S_File.fqznkmfs_txt);
-        temp_list.add(S_File.fqznkmfs_txt);
-        return temp_list;
-    }
+	public List<String> txtToListName() {
+		temp_list = new ArrayList<>();
+		temp_list.add(S_File.fqznkgkqfs_txt);
+		temp_list.add(S_File.byzymxk_txt);
+		temp_list.add(S_File.byxpqlgl_txt);
+		temp_list.add(S_File.cyblqym_txt);
+		temp_list.add(S_File.rkjccsz_txt);
+		temp_list.add(S_File.fkbbmzly_txt);
+		temp_list.add(S_File.fkms_txt);
+		temp_list.add(S_File.fkycqsja_txt);
+		temp_list.add(S_File.frlf_txt);
+		temp_list.add(S_File.fqznkmfs_txt);
+		temp_list.add(S_File.fqznkmfs_txt);
+		return temp_list;
+	}
 
-    public IMV_SIQ_ listNameToMap(List<String> dic_list) {
-        dic_map = new IMV_SIQ_();
-        for (int i = 0; i < dic_list.size(); i++) {
-            String para = "";
-            String name = dic_list.get(i).toString();
-            InputStream in = new BookIndex().getClass().getResourceAsStream(name);
-            DetaBufferedReader cReader;
-            if (name.equalsIgnoreCase(S_File.byzymxk_txt)
-                || name.equalsIgnoreCase(S_File.cyblqym_txt)
-                || name.equalsIgnoreCase(S_File.fqznkgkqfs_txt)) {
-                cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF-16"));
-            } else {
-                cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF8"));
-            }
-            String ctempString = null;
-            int index = 0;
-            while ((ctempString = cReader.readDetaLine()) != null) {
-                if (!ctempString.replace(" ", "").equals("")) {
-                    para += ctempString;
-                    if (ctempString.replace(" ", "").contains("^^")) {
-                        dic_map.put(name + (index++), para.replace("\\s+", " "));
-                        para = "";
-                    }
-                }
-            }
-            cReader.closeDeta();
-        }
-        return dic_map;
-    }
+	public IMV_SIQ_ listNameToMap(List<String> dic_list) {
+		dic_map = new IMV_SIQ_();
+		for (int i = 0; i < dic_list.size(); i++) {
+			String para = "";
+			String name = dic_list.get(i).toString();
+			InputStream in = new BookIndex().getClass()
+					.getResourceAsStream(name);
+			DetaBufferedReader cReader;
+			if (name.equalsIgnoreCase(S_File.byzymxk_txt)
+					|| name.equalsIgnoreCase(S_File.cyblqym_txt)
+					|| name.equalsIgnoreCase(S_File.fqznkgkqfs_txt)) {
+				cReader = new DetaBufferedReader(
+						DetaInputStreamReader.E(in, "UTF-16"));
+			} else {
+				cReader = new DetaBufferedReader(
+						DetaInputStreamReader.E(in, "UTF8"));
+			}
+			String ctempString = null;
+			int index = 0;
+			while ((ctempString = cReader.readDetaLine()) != null) {
+				if (!ctempString.replace(" ", "").equals("")) {
+					para += ctempString;
+					if (ctempString.replace(" ", "").contains("^^")) {
+						dic_map.put(name + (index++),
+								para.replace("\\s+", " "));
+						para = "";
+					}
+				}
+			}
+			cReader.closeDeta();
+		}
+		return dic_map;
+	}
 }

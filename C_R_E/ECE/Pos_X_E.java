@@ -20,111 +20,127 @@ import java.util.List;
  * */
 
 public class Pos_X_E extends Pos_X_O implements X_E {
-    public void I_FixWordsOfTwo(int charPosition, StringBuilder inputString
-        , StringBuilder[] fixWords) {
-        fixWords[S_Pos.INT_ONE].delete(S_Pos.INT_ZERO, fixWords[S_Pos.INT_ONE].length());
-        if (charPosition + S_Pos.INT_SEVEN < inputString.length()) {
-            fixWords[S_Pos.INT_ONE].append(inputString.substring(charPosition
-                + S_Pos.INT_TWO, charPosition + S_Pos.INT_SEVEN));
-            return;
-        }
-        fixWords[S_Pos.INT_ONE].append(inputString.substring(charPosition
-            + S_Pos.INT_TWO, inputString.length()));
-    }
+	public void I_FixWordsOfTwo(int charPosition, StringBuilder inputString,
+			StringBuilder[] fixWords) {
+		fixWords[S_Pos.INT_ONE].delete(S_Pos.INT_ZERO,
+				fixWords[S_Pos.INT_ONE].length());
+		if (charPosition + S_Pos.INT_SEVEN < inputString.length()) {
+			fixWords[S_Pos.INT_ONE]
+					.append(inputString.substring(charPosition + S_Pos.INT_TWO,
+							charPosition + S_Pos.INT_SEVEN));
+			return;
+		}
+		fixWords[S_Pos.INT_ONE].append(inputString
+				.substring(charPosition + S_Pos.INT_TWO, inputString.length()));
+	}
 
-    //!(A(B+C+D))=!A+!(B+C+D)
-    public int loopCheckBackFix(StringBuilder[] fixWord, int backPosition
-        , int countLength, List<String> outputList, String[] strings
-        , int[] nestCountInputStringLength) {
-        String charPositionAtFixWord = S_Pos.EMPTY_STRING
-            + fixWord[S_Pos.INT_ONE].charAt(backPosition);
-        if (!wordsForest.containsKey(charPositionAtFixWord) || !(S_Maps.zhuCi
-            .containsKey(charPositionAtFixWord) || S_Maps.shengLueCi.containsKey(
-            charPositionAtFixWord) || S_Maps.fuCi.containsKey(charPositionAtFixWord))) {
-            return S_Pos.INT_ERROR;
-        }
-        if (!wordsForest.get(fixWord[S_Pos.INT_ZERO].toString()).toString()
-            .contains(S_Pos.NLP_CI_SHENG_LUE)
-            && wordsForest.get(charPositionAtFixWord).toString().contains(S_Pos.NLP_CI_FU)) {
-            return S_Pos.INT_ERROR;
-        }
-        nestCountInputStringLength[S_Pos.INT_ZERO] = charOfThree(countLength, outputList
-            , strings, fixWord);
-        return S_Pos.INT_RIGHT;
-    }
+	// !(A(B+C+D))=!A+!(B+C+D)
+	public int loopCheckBackFix(StringBuilder[] fixWord, int backPosition,
+			int countLength, List<String> outputList, String[] strings,
+			int[] nestCountInputStringLength) {
+		String charPositionAtFixWord = S_Pos.EMPTY_STRING
+				+ fixWord[S_Pos.INT_ONE].charAt(backPosition);
+		if (!wordsForest.containsKey(charPositionAtFixWord)
+				|| !(S_Maps.zhuCi.containsKey(charPositionAtFixWord)
+						|| S_Maps.shengLueCi.containsKey(charPositionAtFixWord)
+						|| S_Maps.fuCi.containsKey(charPositionAtFixWord))) {
+			return S_Pos.INT_ERROR;
+		}
+		if (!wordsForest.get(fixWord[S_Pos.INT_ZERO].toString()).toString()
+				.contains(S_Pos.NLP_CI_SHENG_LUE)
+				&& wordsForest.get(charPositionAtFixWord).toString()
+						.contains(S_Pos.NLP_CI_FU)) {
+			return S_Pos.INT_ERROR;
+		}
+		nestCountInputStringLength[S_Pos.INT_ZERO] = charOfThree(countLength,
+				outputList, strings, fixWord);
+		return S_Pos.INT_RIGHT;
+	}
 
-    //	}
+	// }
 //	return S_Pos.INT_ERROR;
-    public void didNotFindFirstChar(List<String> outputList, String[] strings
-        , StringBuilder[] fixWord) {
-        if (!wordsForest.containsKey(strings[S_Pos.INT_TWO])) {
-            if (wordsForest.containsKey(strings[S_Pos.INT_ONE])) {
-                outputList.add(strings[S_Pos.INT_ONE]);
-                outputList.add(strings[S_Pos.INT_THREE]);
-                fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWord[S_Pos.INT_ZERO].length());
-                fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_THREE]);
-            }
-            return;
-        }
-        if (S_Maps.fuCi.containsKey(strings[S_Pos.INT_TWO])) {
-            outputList.add(strings[S_Pos.INT_ZERO]);
-            outputList.add(strings[S_Pos.INT_TWO]);
-            fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWord[S_Pos.INT_ZERO].length());
-            fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_TWO]);
-            return;
-        }
-        if (S_Maps.CiTwo.containsKey(strings[S_Pos.INT_ONE])) {
-            outputList.add(strings[S_Pos.INT_ONE]);
-            outputList.add(strings[S_Pos.INT_THREE]);
-            fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWord[S_Pos.INT_ZERO].length());
-            fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_THREE]);
-        }
-    }
+	public void didNotFindFirstChar(List<String> outputList, String[] strings,
+			StringBuilder[] fixWord) {
+		if (!wordsForest.containsKey(strings[S_Pos.INT_TWO])) {
+			if (wordsForest.containsKey(strings[S_Pos.INT_ONE])) {
+				outputList.add(strings[S_Pos.INT_ONE]);
+				outputList.add(strings[S_Pos.INT_THREE]);
+				fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+						fixWord[S_Pos.INT_ZERO].length());
+				fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_THREE]);
+			}
+			return;
+		}
+		if (S_Maps.fuCi.containsKey(strings[S_Pos.INT_TWO])) {
+			outputList.add(strings[S_Pos.INT_ZERO]);
+			outputList.add(strings[S_Pos.INT_TWO]);
+			fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+					fixWord[S_Pos.INT_ZERO].length());
+			fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_TWO]);
+			return;
+		}
+		if (S_Maps.CiTwo.containsKey(strings[S_Pos.INT_ONE])) {
+			outputList.add(strings[S_Pos.INT_ONE]);
+			outputList.add(strings[S_Pos.INT_THREE]);
+			fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+					fixWord[S_Pos.INT_ZERO].length());
+			fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_THREE]);
+		}
+	}
 
-    public int loopCheckBackFixForMap(StringBuilder[] fixWord, int backPosition, int countLength
-        , IMV_SIQ_SS outputList, String[] strings, int[] nestCountInputStringLength, App NE) {
-        String charPositionAtFixWord = S_Pos.EMPTY_STRING
-            + fixWord[S_Pos.INT_ONE].charAt(backPosition);
-        if (wordsForest.containsKey(charPositionAtFixWord)
-            && (S_Maps.zhuCi.containsKey(charPositionAtFixWord)
-            || wordsForest.get(charPositionAtFixWord).toString().contains(S_Pos.NLP_CI_SHENG_LUE))) {
-            nestCountInputStringLength[S_Pos.INT_ZERO] = charOfThreeForMap(countLength
-                , outputList, strings, fixWord, NE);
-            return S_Pos.INT_RIGHT;
-        }
-        return S_Pos.INT_ERROR;
-    }
+	public int loopCheckBackFixForMap(StringBuilder[] fixWord, int backPosition,
+			int countLength, IMV_SIQ_SS outputList, String[] strings,
+			int[] nestCountInputStringLength, App NE) {
+		String charPositionAtFixWord = S_Pos.EMPTY_STRING
+				+ fixWord[S_Pos.INT_ONE].charAt(backPosition);
+		if (wordsForest.containsKey(charPositionAtFixWord)
+				&& (S_Maps.zhuCi.containsKey(charPositionAtFixWord)
+						|| wordsForest.get(charPositionAtFixWord).toString()
+								.contains(S_Pos.NLP_CI_SHENG_LUE))) {
+			nestCountInputStringLength[S_Pos.INT_ZERO] = charOfThreeForMap(
+					countLength, outputList, strings, fixWord, NE);
+			return S_Pos.INT_RIGHT;
+		}
+		return S_Pos.INT_ERROR;
+	}
 
-    public void didNotFindFirstCharForMap(IMV_SIQ_SS outputList
-        , String[] strings, StringBuilder[] fixWord, App NE) {
-        if (!wordsForest.containsKey(strings[S_Pos.INT_TWO])) {
-            return;
-        }
-        if (S_Maps.fuCi.containsKey(strings[S_Pos.INT_TWO])) {
-            if (outputList.containsKey(strings[S_Pos.INT_ZERO])) {
-                WordFrequency wordFrequency = outputList.getW(strings[S_Pos.INT_ZERO]);
-                wordFrequency.I_frequency(wordFrequency.get_frequency() + S_Pos.INT_ONE);
-                wordFrequency.positions.add(NE._I_U.parserCharPosition);
-                outputList.put(strings[S_Pos.INT_ZERO], wordFrequency);
-            } else {
-                WordFrequency wordFrequency = new WordFrequency(1.0, strings[S_Pos.INT_ZERO]);
-                wordFrequency.positions.add(NE._I_U.parserCharPosition);
-                outputList.put(strings[S_Pos.INT_ZERO], wordFrequency);
-            }
-            if (outputList.containsKey(strings[S_Pos.INT_TWO])) {
-                WordFrequency wordFrequency = outputList.getW(strings[S_Pos.INT_TWO]);
-                wordFrequency.I_frequency(wordFrequency.get_frequency() + S_Pos.INT_ONE);
-                wordFrequency.positions.add(NE._I_U.parserCharPosition);
-                outputList.put(strings[S_Pos.INT_TWO], wordFrequency);
-            } else {
-                WordFrequency wordFrequency = new WordFrequency(1.0, strings[S_Pos.INT_TWO]);
-                wordFrequency.positions.add(NE._I_U.parserCharPosition);
-                outputList.put(strings[S_Pos.INT_TWO], wordFrequency);
-            }
-            fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWord[S_Pos.INT_ZERO].length());
-            fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_TWO]);
-        }
-    }
+	public void didNotFindFirstCharForMap(IMV_SIQ_SS outputList,
+			String[] strings, StringBuilder[] fixWord, App NE) {
+		if (!wordsForest.containsKey(strings[S_Pos.INT_TWO])) {
+			return;
+		}
+		if (S_Maps.fuCi.containsKey(strings[S_Pos.INT_TWO])) {
+			if (outputList.containsKey(strings[S_Pos.INT_ZERO])) {
+				WordFrequency wordFrequency = outputList
+						.getW(strings[S_Pos.INT_ZERO]);
+				wordFrequency.I_frequency(
+						wordFrequency.get_frequency() + S_Pos.INT_ONE);
+				wordFrequency.positions.add(NE._I_U.parserCharPosition);
+				outputList.put(strings[S_Pos.INT_ZERO], wordFrequency);
+			} else {
+				WordFrequency wordFrequency = new WordFrequency(1.0,
+						strings[S_Pos.INT_ZERO]);
+				wordFrequency.positions.add(NE._I_U.parserCharPosition);
+				outputList.put(strings[S_Pos.INT_ZERO], wordFrequency);
+			}
+			if (outputList.containsKey(strings[S_Pos.INT_TWO])) {
+				WordFrequency wordFrequency = outputList
+						.getW(strings[S_Pos.INT_TWO]);
+				wordFrequency.I_frequency(
+						wordFrequency.get_frequency() + S_Pos.INT_ONE);
+				wordFrequency.positions.add(NE._I_U.parserCharPosition);
+				outputList.put(strings[S_Pos.INT_TWO], wordFrequency);
+			} else {
+				WordFrequency wordFrequency = new WordFrequency(1.0,
+						strings[S_Pos.INT_TWO]);
+				wordFrequency.positions.add(NE._I_U.parserCharPosition);
+				outputList.put(strings[S_Pos.INT_TWO], wordFrequency);
+			}
+			fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+					fixWord[S_Pos.INT_ZERO].length());
+			fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_TWO]);
+		}
+	}
 }
 //112 //				WordFrequency wordFrequency= new WordFrequency();
 ////				wordFrequency.I_frequency(1.0);

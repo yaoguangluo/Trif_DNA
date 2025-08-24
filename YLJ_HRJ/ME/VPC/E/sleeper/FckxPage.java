@@ -30,126 +30,128 @@ import java.util.List;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class FckxPage extends FckxPage_X_S_sListeners {
-    
-    public FckxPage(JTextPane text, App NE) {
-        initPage(text, NE);
-        this.setLayout(null);
-        this.setBounds(0, 0, WindowsUI.makeContainerWidth
-            , WindowsUI.makeContainerHeight);
-        this.jTabbedpane = jTabbedpane;
-        JScrollPane jsp_name = new JScrollPane(this.name());
-        jsp_name.setBounds(100, 15, 680, 50);
-        JScrollPane jsp_data = new JScrollPane(this.data(NE));
-        JScrollPane jsp_statistic = new JScrollPane(this.statistic());
-        JScrollPane jsp = new JScrollPane(this.jTable(NE));
-        JLabel jlabel = new JLabel("主要词汇 \\ 操作选项");
-        PageUtil.initPageTail(jsp_statistic, jsp_data, jsp, jlabel);
-        this.add(jsp);
-        this.add(jlabel);
-        this.add(jsp_data);
-        this.add(jsp_statistic);
-    }
 
-    public JTextPane data(App NE) {
-        PageButtons._I(this, NE);
-        DetaButton buttonADD = new DetaButton("添加到编辑页");
-        buttonADD.setBounds(868, 0, 115, 30);
-        buttonADD.addActionListener(e -> {
-            if (sets == null) {
-                return;
-            }
-            if (text.getText().length() > 5000) {
-                return;
-            }
-            StringBuilder page = new StringBuilder();
-            List<String> setsForGet = sets.subList(currentPage * 2000
-                , (currentPage + 1) * 2000 < sets.size()
-                    ? (currentPage + 1) * 2000 : sets.size());
-            Iterator<String> iterator = setsForGet.iterator();
-            while (iterator.hasNext()) {
-                String setOfi = iterator.next();
-                page.append(setOfi);
-            }
-            if (!text.getText().isEmpty()) {
-                text.setText(text.getText() + "\r\n\r\n" + page.toString());
-            } else {
-                text.setText(page.toString());
-            }
-            text.validate();
-        });
-        DetaButton buttonKSLJ = new DetaButton("中药DNN");
-        buttonKSLJ.setBounds(990, 0, 115, 30);
-        buttonKSLJ.addActionListener(e -> {
-            if (null == sets) {
-                return;
-            }
-            if (text.getText().length() > 5000) {
-                return;
-            }
-            StringBuilder page = new StringBuilder().append("");
-            AppButtonUtil_X_DNN_Page.pageDNN(page, sets, currentPage, app_S
-                , table, row, key, buttonSum, buttonCrt, data, statistic
-                , "中药", NE);
-        });
-        DetaButton buttonKSLJB = new DetaButton("西药DNN");
-        buttonKSLJB.setBounds(990 + 115 + 7, 0, 115, 30);
-        buttonKSLJB.addActionListener(e -> {
-            if (null == sets) {
-                return;
-            }
-            if (text.getText().length() > 5000) {
-                return;
-            }
-            StringBuilder page = new StringBuilder().append("");
-            AppButtonUtil_X_DNN_Page.pageDNN(page, sets, currentPage, app_S, table
-                , row, key, buttonSum, buttonCrt, data, statistic, "西药", NE);
-        });
-        //dnn游标
-        JSlider sliderDNN = new JSlider(0, 25);
-        sliderDNN.setSnapToTicks(true);
-        sliderDNN.setPaintTicks(true);
-        sliderDNN.setMajorTickSpacing(5);
-        sliderDNN.setMinorTickSpacing(1);
-        sliderDNN.addChangeListener(event -> {
-            JSlider source = (JSlider) event.getSource();
-            app_S.jsliderDNNRatio = Double.valueOf(source.getValue());
-            if (null == sets) {
-                return;
-            }
-            if (text.getText().length() > 5000) {
-                return;
-            }
-            StringBuilder page = new StringBuilder().append("");
-            AppButtonUtil_X_DNN_Classify.classifyDNN(page, sets, currentPage
-                , table, row, key, buttonSum, buttonCrt, data, statistic
-                , "西药", NE);
-        });
-        buttonCTV = Page_X_S_sButtonsreading.data_X_reading(this, app_S, NE);
-        Box buttonBox = new Box(BoxLayout.X_AXIS);
-        buttonBox.add(buttonPrev);
-        buttonBox.add(buttonNext);
-        buttonBox.add(buttonSum);
-        buttonBox.add(buttonCrt);
-        buttonBox.add(buttonCTE);
-        buttonBox.add(buttonFRS);
-        buttonBox.add(buttonETC);
-        buttonBox.add(buttonCTV);
-        buttonBox.add(buttonADD);
-        buttonBox.add(buttonKSLJ);
-        //buttonBox.add(buttonKSLJB);
-        buttonBox.add(buttonKSLJB);
-        buttonBox.add(sliderDNN);
-        buttonBox.setBounds(155, 370, 950 + 220, 20);
-        this.add(buttonBox);
-        return data;
-    }
+	public FckxPage(JTextPane text, App NE) {
+		initPage(text, NE);
+		this.setLayout(null);
+		this.setBounds(0, 0, WindowsUI.makeContainerWidth,
+				WindowsUI.makeContainerHeight);
+		this.jTabbedpane = jTabbedpane;
+		JScrollPane jsp_name = new JScrollPane(this.name());
+		jsp_name.setBounds(100, 15, 680, 50);
+		JScrollPane jsp_data = new JScrollPane(this.data(NE));
+		JScrollPane jsp_statistic = new JScrollPane(this.statistic());
+		JScrollPane jsp = new JScrollPane(this.jTable(NE));
+		JLabel jlabel = new JLabel("主要词汇 \\ 操作选项");
+		PageUtil.initPageTail(jsp_statistic, jsp_data, jsp, jlabel);
+		this.add(jsp);
+		this.add(jlabel);
+		this.add(jsp_data);
+		this.add(jsp_statistic);
+	}
 
-    public JTextPane statistic() {
-        statistic = new JTextPane();
-        statistic.setBackground(new Color(210, 210, 210));
-        statistic.setBounds(850, 150, WindowsUI.basicWidth - 840, 800);
-        return statistic;
-    }
+	public JTextPane data(App NE) {
+		PageButtons._I(this, NE);
+		DetaButton buttonADD = new DetaButton("添加到编辑页");
+		buttonADD.setBounds(868, 0, 115, 30);
+		buttonADD.addActionListener(e -> {
+			if (sets == null) {
+				return;
+			}
+			if (text.getText().length() > 5000) {
+				return;
+			}
+			StringBuilder page = new StringBuilder();
+			List<String> setsForGet = sets.subList(currentPage * 2000,
+					(currentPage + 1) * 2000 < sets.size()
+							? (currentPage + 1) * 2000
+							: sets.size());
+			Iterator<String> iterator = setsForGet.iterator();
+			while (iterator.hasNext()) {
+				String setOfi = iterator.next();
+				page.append(setOfi);
+			}
+			if (!text.getText().isEmpty()) {
+				text.setText(text.getText() + "\r\n\r\n" + page.toString());
+			} else {
+				text.setText(page.toString());
+			}
+			text.validate();
+		});
+		DetaButton buttonKSLJ = new DetaButton("中药DNN");
+		buttonKSLJ.setBounds(990, 0, 115, 30);
+		buttonKSLJ.addActionListener(e -> {
+			if (null == sets) {
+				return;
+			}
+			if (text.getText().length() > 5000) {
+				return;
+			}
+			StringBuilder page = new StringBuilder().append("");
+			AppButtonUtil_X_DNN_Page.pageDNN(page, sets, currentPage, app_S,
+					table, row, key, buttonSum, buttonCrt, data, statistic,
+					"中药", NE);
+		});
+		DetaButton buttonKSLJB = new DetaButton("西药DNN");
+		buttonKSLJB.setBounds(990 + 115 + 7, 0, 115, 30);
+		buttonKSLJB.addActionListener(e -> {
+			if (null == sets) {
+				return;
+			}
+			if (text.getText().length() > 5000) {
+				return;
+			}
+			StringBuilder page = new StringBuilder().append("");
+			AppButtonUtil_X_DNN_Page.pageDNN(page, sets, currentPage, app_S,
+					table, row, key, buttonSum, buttonCrt, data, statistic,
+					"西药", NE);
+		});
+		// dnn游标
+		JSlider sliderDNN = new JSlider(0, 25);
+		sliderDNN.setSnapToTicks(true);
+		sliderDNN.setPaintTicks(true);
+		sliderDNN.setMajorTickSpacing(5);
+		sliderDNN.setMinorTickSpacing(1);
+		sliderDNN.addChangeListener(event -> {
+			JSlider source = (JSlider) event.getSource();
+			app_S.jsliderDNNRatio = Double.valueOf(source.getValue());
+			if (null == sets) {
+				return;
+			}
+			if (text.getText().length() > 5000) {
+				return;
+			}
+			StringBuilder page = new StringBuilder().append("");
+			AppButtonUtil_X_DNN_Classify.classifyDNN(page, sets, currentPage,
+					table, row, key, buttonSum, buttonCrt, data, statistic,
+					"西药", NE);
+		});
+		buttonCTV = Page_X_S_sButtonsreading.data_X_reading(this, app_S, NE);
+		Box buttonBox = new Box(BoxLayout.X_AXIS);
+		buttonBox.add(buttonPrev);
+		buttonBox.add(buttonNext);
+		buttonBox.add(buttonSum);
+		buttonBox.add(buttonCrt);
+		buttonBox.add(buttonCTE);
+		buttonBox.add(buttonFRS);
+		buttonBox.add(buttonETC);
+		buttonBox.add(buttonCTV);
+		buttonBox.add(buttonADD);
+		buttonBox.add(buttonKSLJ);
+		// buttonBox.add(buttonKSLJB);
+		buttonBox.add(buttonKSLJB);
+		buttonBox.add(sliderDNN);
+		buttonBox.setBounds(155, 370, 950 + 220, 20);
+		this.add(buttonBox);
+		return data;
+	}
+
+	public JTextPane statistic() {
+		statistic = new JTextPane();
+		statistic.setBackground(new Color(210, 210, 210));
+		statistic.setBounds(850, 150, WindowsUI.basicWidth - 840, 800);
+		return statistic;
+	}
 }
 
 //62 //        data = new JTextPane();

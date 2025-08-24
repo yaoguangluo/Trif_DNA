@@ -25,369 +25,359 @@ import java.util.regex.Pattern;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class WkxDictionary extends TxtDictionary {
-    public List<String> txtToList() {
-        temp_list = new ArrayList<>();
-        InputStream in = new BookIndex().getClass().getResourceAsStream(S_File.wkxPage_txt);
-        InputStreamReader inputStreamReader = DetaInputStreamReader.E(in, "UTF-8");
-        DetaBufferedReader cReader = new DetaBufferedReader(inputStreamReader);
-        String ctempString = null;
-        while ((ctempString = cReader.readDetaLine()) != null) {
-            if (!ctempString.replace(" ", "").equals("")) {
-                if (ctempString.contains("〔") && ctempString.contains("〕")) {
-                    ctempString = "〔〔" + ctempString;
-                }
-                temp_list.add(ctempString);
-            }
-        }
-        cReader.closeDeta();
-        return temp_list;
-    }
+	public List<String> txtToList() {
+		temp_list = new ArrayList<>();
+		InputStream in = new BookIndex().getClass()
+				.getResourceAsStream(S_File.wkxPage_txt);
+		InputStreamReader inputStreamReader = DetaInputStreamReader.E(in,
+				"UTF-8");
+		DetaBufferedReader cReader = new DetaBufferedReader(inputStreamReader);
+		String ctempString = null;
+		while ((ctempString = cReader.readDetaLine()) != null) {
+			if (!ctempString.replace(" ", "").equals("")) {
+				if (ctempString.contains("〔") && ctempString.contains("〕")) {
+					ctempString = "〔〔" + ctempString;
+				}
+				temp_list.add(ctempString);
+			}
+		}
+		cReader.closeDeta();
+		return temp_list;
+	}
 
-    public IMV_SIQ_ listToMap(List<String> dic_list) {
-        dic_map = new IMV_SIQ_();
-        for (int i = 0; i < dic_list.size(); i++) {
-            if (dic_list.get(i).contains("病症段落")) {
-                String med_name = dic_list.get(i).replace("病症段落"
-                    , "") + dic_list.get(i + 1) + dic_list.get(i + 2);
-                String med_text = "" + med_name;
-                int j = i;
-                while (++j < dic_list.size() && !(dic_list.get(j).contains("病症段落"))) {
-                    med_text += dic_list.get(j);
-                }
-                dic_map.put(med_name.replaceAll("\\s*", "")
-                        .replace("〔", "")
-                        .replace("〕", ":")
-                    , (med_text + "〔〔").replace("\\s+", " "));
-            }
-        }
-        return dic_map;
-    }
+	public IMV_SIQ_ listToMap(List<String> dic_list) {
+		dic_map = new IMV_SIQ_();
+		for (int i = 0; i < dic_list.size(); i++) {
+			if (dic_list.get(i).contains("病症段落")) {
+				String med_name = dic_list.get(i).replace("病症段落", "")
+						+ dic_list.get(i + 1) + dic_list.get(i + 2);
+				String med_text = "" + med_name;
+				int j = i;
+				while (++j < dic_list.size()
+						&& !(dic_list.get(j).contains("病症段落"))) {
+					med_text += dic_list.get(j);
+				}
+				dic_map.put(
+						med_name.replaceAll("\\s*", "").replace("〔", "")
+								.replace("〕", ":"),
+						(med_text + "〔〔").replace("\\s+", " "));
+			}
+		}
+		return dic_map;
+	}
 
-    public IMV_SIQ mapToMap_xj(IMV_SIQ dic_map) {
-        iter = dic_map.keySet().iterator();
-        copy = new ArrayList<String>();
-        while (iter.hasNext())
-            copy.add(iter.next());
+	public IMV_SIQ mapToMap_xj(IMV_SIQ dic_map) {
+		iter = dic_map.keySet().iterator();
+		copy = new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
 
-        dic_xj = new IMV_SIQ();
-        for (int i = 0; i < copy.size(); i++) {
-            String med_name = copy.get(i);
-            String med_text = dic_map.get(med_name).toString()
-                .replace("\n", "");
-            Pattern p = Pattern.compile("病症小节(.*?)〔〔");
-            Matcher m = p.matcher(med_text);
-            int j = 0;
-            while (m.find()) {
-                String temp = m.group().replace("\\s+", " ")
-                    .replace("病症小节", "")
-                    .replace("〔", "")
-                    .replace("(", "")
-                    .replace(" ", "");
-                if (!temp.equals("")) {
-                    dic_xj.put((med_name.split("病症小节")[0] + j)
-                            .replaceAll("\\s*", "")
-                            .replace("〔", "")
-                            .replace("〕", ":")
-                        , temp.replaceAll("\\s*", "")
-                            .replace("〔", "")
-                            .replace("〕", ":"));
-                    j++;
-                }
-            }
-        }
-        return dic_xj;
-    }
+		dic_xj = new IMV_SIQ();
+		for (int i = 0; i < copy.size(); i++) {
+			String med_name = copy.get(i);
+			String med_text = dic_map.get(med_name).toString().replace("\n",
+					"");
+			Pattern p = Pattern.compile("病症小节(.*?)〔〔");
+			Matcher m = p.matcher(med_text);
+			int j = 0;
+			while (m.find()) {
+				String temp = m.group().replace("\\s+", " ").replace("病症小节", "")
+						.replace("〔", "").replace("(", "").replace(" ", "");
+				if (!temp.equals("")) {
+					dic_xj.put(
+							(med_name.split("病症小节")[0] + j)
+									.replaceAll("\\s*", "").replace("〔", "")
+									.replace("〕", ":"),
+							temp.replaceAll("\\s*", "").replace("〔", "")
+									.replace("〕", ":"));
+					j++;
+				}
+			}
+		}
+		return dic_xj;
+	}
 
+	public IMV_SIQ mapToMap_zl(IMV_SIQ dic_map) {
+		IMV_SIQ dic_zl = new IMV_SIQ();
+		Iterator<String> iter = dic_map.keySet().iterator();
+		List<String> copy = new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for (int i = 0; i < copy.size(); i++) {
+			String med_name = copy.get(i);
+			String med_text = dic_map.get(med_name).toString().replace("\n",
+					"");
+			Pattern p = Pattern.compile("〔治疗(.*?)〔〔");
+			Matcher m = p.matcher(med_text);
+			Pattern p1 = Pattern.compile("治疗〕(.*?)〔〔");
+			Matcher m1 = p1.matcher(med_text);
+			Pattern p2 = Pattern.compile("处理〕(.*?)〔〔");
+			Matcher m2 = p2.matcher(med_text);
+			Pattern p3 = Pattern.compile("〔救治(.*?)〔〔");
+			Matcher m3 = p3.matcher(med_text);
+			String temp = "";
+			if (m.find()) {
+				temp = m.group(0);
+			} else if (m1.find()) {
+				temp = m1.group(0);
+			} else if (m2.find()) {
+				temp = m2.group(0);
+			} else if (m3.find()) {
+				temp = m3.group(0);
+			}
+			dic_zl.put(
+					med_name.replaceAll("\\s*", "").replace("〔", "")
+							.replace("〕", ":"),
+					temp.replaceAll("\\s*", "").replace("〔", "").replace("〕",
+							":"));
+		}
+		return dic_zl;
+	}
 
-    public IMV_SIQ mapToMap_zl(IMV_SIQ dic_map) {
-        IMV_SIQ dic_zl = new IMV_SIQ();
-        Iterator<String> iter = dic_map.keySet().iterator();
-        List<String> copy = new ArrayList<String>();
-        while (iter.hasNext())
-            copy.add(iter.next());
-        for (int i = 0; i < copy.size(); i++) {
-            String med_name = copy.get(i);
-            String med_text = dic_map.get(med_name).toString()
-                .replace("\n", "");
-            Pattern p = Pattern.compile("〔治疗(.*?)〔〔");
-            Matcher m = p.matcher(med_text);
-            Pattern p1 = Pattern.compile("治疗〕(.*?)〔〔");
-            Matcher m1 = p1.matcher(med_text);
-            Pattern p2 = Pattern.compile("处理〕(.*?)〔〔");
-            Matcher m2 = p2.matcher(med_text);
-            Pattern p3 = Pattern.compile("〔救治(.*?)〔〔");
-            Matcher m3 = p3.matcher(med_text);
-            String temp = "";
-            if (m.find()) {
-                temp = m.group(0);
-            } else if (m1.find()) {
-                temp = m1.group(0);
-            } else if (m2.find()) {
-                temp = m2.group(0);
-            } else if (m3.find()) {
-                temp = m3.group(0);
-            }
-            dic_zl.put(med_name.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":")
-                , temp.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":"));
-        }
-        return dic_zl;
-    }
+	public IMV_SIQ mapToMap_zd(IMV_SIQ dic_map) {
+		IMV_SIQ dic_zd = new IMV_SIQ();
+		Iterator<String> iter = dic_map.keySet().iterator();
+		List<String> copy = new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for (int i = 0; i < copy.size(); i++) {
+			String med_name = copy.get(i);
+			String med_text = dic_map.get(med_name).toString().replace("\n",
+					"");
+			Pattern p = Pattern.compile("〔诊断(.*?)〔〔");
+			Matcher m = p.matcher(med_text);
+			Pattern p1 = Pattern.compile("诊断〕(.*?)〔〔");
+			Matcher m1 = p1.matcher(med_text);
+			Pattern p2 = Pattern.compile("方法〕(.*?)〔〔");
+			Matcher m2 = p2.matcher(med_text);
+			Pattern p3 = Pattern.compile("〔诊查(.*?)〔〔");
+			Matcher m3 = p3.matcher(med_text);
+			String temp = "";
+			if (m.find()) {
+				temp = m.group(0);
+			} else if (m1.find()) {
+				temp = m1.group(0);
+			} else if (m2.find()) {
+				temp = m2.group(0);
+			} else if (m3.find()) {
+				temp = m3.group(0);
+			}
+			dic_zd.put(
+					med_name.replaceAll("\\s*", "").replace("〔", "")
+							.replace("〕", ":"),
+					temp.replaceAll("\\s*", "").replace("〔", "").replace("〕",
+							":"));
+		}
+		return dic_zd;
+	}
 
-    public IMV_SIQ mapToMap_zd(IMV_SIQ dic_map) {
-        IMV_SIQ dic_zd = new IMV_SIQ();
-        Iterator<String> iter = dic_map.keySet().iterator();
-        List<String> copy = new ArrayList<String>();
-        while (iter.hasNext())
-            copy.add(iter.next());
-        for (int i = 0; i < copy.size(); i++) {
-            String med_name = copy.get(i);
-            String med_text = dic_map.get(med_name).toString()
-                .replace("\n", "");
-            Pattern p = Pattern.compile("〔诊断(.*?)〔〔");
-            Matcher m = p.matcher(med_text);
-            Pattern p1 = Pattern.compile("诊断〕(.*?)〔〔");
-            Matcher m1 = p1.matcher(med_text);
-            Pattern p2 = Pattern.compile("方法〕(.*?)〔〔");
-            Matcher m2 = p2.matcher(med_text);
-            Pattern p3 = Pattern.compile("〔诊查(.*?)〔〔");
-            Matcher m3 = p3.matcher(med_text);
-            String temp = "";
-            if (m.find()) {
-                temp = m.group(0);
-            } else if (m1.find()) {
-                temp = m1.group(0);
-            } else if (m2.find()) {
-                temp = m2.group(0);
-            } else if (m3.find()) {
-                temp = m3.group(0);
-            }
-            dic_zd.put(med_name.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":")
-                , temp.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":"));
-        }
-        return dic_zd;
-    }
+	public IMV_SIQ mapToMap_bf(IMV_SIQ dic_map) {
+		IMV_SIQ dic_bf = new IMV_SIQ();
+		Iterator<String> iter = dic_map.keySet().iterator();
+		List<String> copy = new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for (int i = 0; i < copy.size(); i++) {
+			String med_name = copy.get(i);
+			String med_text = dic_map.get(med_name).toString().replace("\n",
+					"");
+			Pattern p = Pattern.compile("〔并发(.*?)〔〔");
+			Matcher m = p.matcher(med_text);
+			Pattern p1 = Pattern.compile("并发症〕(.*?)〔〔");
+			Matcher m1 = p1.matcher(med_text);
+			String temp = "";
+			if (m.find()) {
+				temp = m.group(0);
+			} else if (m1.find()) {
+				temp = m1.group(0);
+			}
+			dic_bf.put(
+					med_name.replaceAll("\\s*", "").replace("〔", "")
+							.replace("〕", ":"),
+					temp.replaceAll("\\s*", "").replace("〔", "").replace("〕",
+							":"));
+		}
+		return dic_bf;
+	}
 
-    public IMV_SIQ mapToMap_bf(IMV_SIQ dic_map) {
-        IMV_SIQ dic_bf = new IMV_SIQ();
-        Iterator<String> iter = dic_map.keySet().iterator();
-        List<String> copy = new ArrayList<String>();
-        while (iter.hasNext())
-            copy.add(iter.next());
-        for (int i = 0; i < copy.size(); i++) {
-            String med_name = copy.get(i);
-            String med_text = dic_map.get(med_name).toString()
-                .replace("\n", "");
-            Pattern p = Pattern.compile("〔并发(.*?)〔〔");
-            Matcher m = p.matcher(med_text);
-            Pattern p1 = Pattern.compile("并发症〕(.*?)〔〔");
-            Matcher m1 = p1.matcher(med_text);
-            String temp = "";
-            if (m.find()) {
-                temp = m.group(0);
-            } else if (m1.find()) {
-                temp = m1.group(0);
-            }
-            dic_bf.put(med_name.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":")
-                , temp.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":"));
-        }
-        return dic_bf;
-    }
+	public IMV_SIQ mapToMap_jy(IMV_SIQ dic_map) {
+		IMV_SIQ dic_jy = new IMV_SIQ();
+		Iterator<String> iter = dic_map.keySet().iterator();
+		List<String> copy = new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for (int i = 0; i < copy.size(); i++) {
+			String med_name = copy.get(i);
+			String med_text = dic_map.get(med_name).toString().replace("\n",
+					"");
+			Pattern p = Pattern.compile("〔教育(.*?)〔〔");
+			Matcher m = p.matcher(med_text);
+			Pattern p1 = Pattern.compile("〔处置(.*?)〔〔");
+			Matcher m1 = p1.matcher(med_text);
+			String temp = "";
+			if (m.find()) {
+				temp = m.group(0);
+			} else if (m1.find()) {
+				temp = m1.group(0);
+			}
+			dic_jy.put(
+					med_name.replaceAll("\\s*", "").replace("〔", "")
+							.replace("〕", ":"),
+					temp.replaceAll("\\s*", "").replace("〔", "").replace("〕",
+							":"));
+		}
+		return dic_jy;
+	}
 
-    public IMV_SIQ mapToMap_jy(IMV_SIQ dic_map) {
-        IMV_SIQ dic_jy = new IMV_SIQ();
-        Iterator<String> iter = dic_map.keySet().iterator();
-        List<String> copy = new ArrayList<String>();
-        while (iter.hasNext())
-            copy.add(iter.next());
-        for (int i = 0; i < copy.size(); i++) {
-            String med_name = copy.get(i);
-            String med_text = dic_map.get(med_name).toString()
-                .replace("\n", "");
-            Pattern p = Pattern.compile("〔教育(.*?)〔〔");
-            Matcher m = p.matcher(med_text);
-            Pattern p1 = Pattern.compile("〔处置(.*?)〔〔");
-            Matcher m1 = p1.matcher(med_text);
-            String temp = "";
-            if (m.find()) {
-                temp = m.group(0);
-            } else if (m1.find()) {
-                temp = m1.group(0);
-            }
-            dic_jy.put(med_name.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":")
-                , temp.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":"));
-        }
-        return dic_jy;
-    }
+	public IMV_SIQ mapToMap_yh(IMV_SIQ dic_map) {
+		IMV_SIQ dic_yh = new IMV_SIQ();
+		Iterator<String> iter = dic_map.keySet().iterator();
+		List<String> copy = new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for (int i = 0; i < copy.size(); i++) {
+			String med_name = copy.get(i);
+			String med_text = dic_map.get(med_name).toString().replace("\n",
+					"");
+			Pattern p = Pattern.compile("〔预后(.*?)〔〔");
+			Matcher m = p.matcher(med_text);
+			Pattern p1 = Pattern.compile("预后〕(.*?)〔〔");
+			Matcher m1 = p1.matcher(med_text);
+			String temp = "";
+			if (m.find()) {
+				temp = m.group(0);
+			} else if (m1.find()) {
+				temp = m1.group(0);
+			}
+			dic_yh.put(
+					med_name.replaceAll("\\s*", "").replace("〔", "")
+							.replace("〕", ":"),
+					temp.replaceAll("\\s*", "").replace("〔", "").replace("〕",
+							":"));
+		}
+		return dic_yh;
+	}
 
-    public IMV_SIQ mapToMap_yh(IMV_SIQ dic_map) {
-        IMV_SIQ dic_yh = new IMV_SIQ();
-        Iterator<String> iter = dic_map.keySet().iterator();
-        List<String> copy = new ArrayList<String>();
-        while (iter.hasNext())
-            copy.add(iter.next());
-        for (int i = 0; i < copy.size(); i++) {
-            String med_name = copy.get(i);
-            String med_text = dic_map.get(med_name).toString()
-                .replace("\n", "");
-            Pattern p = Pattern.compile("〔预后(.*?)〔〔");
-            Matcher m = p.matcher(med_text);
-            Pattern p1 = Pattern.compile("预后〕(.*?)〔〔");
-            Matcher m1 = p1.matcher(med_text);
-            String temp = "";
-            if (m.find()) {
-                temp = m.group(0);
-            } else if (m1.find()) {
-                temp = m1.group(0);
-            }
-            dic_yh.put(med_name.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":")
-                , temp.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":"));
-        }
-        return dic_yh;
-    }
+	public IMV_SIQ mapToMap_bl(IMV_SIQ dic_map) {
+		IMV_SIQ dic_bl = new IMV_SIQ();
+		Iterator<String> iter = dic_map.keySet().iterator();
+		List<String> copy = new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for (int i = 0; i < copy.size(); i++) {
+			String med_name = copy.get(i);
+			String med_text = dic_map.get(med_name).toString().replace("\n",
+					"");
+			Pattern p = Pattern.compile("〔病理(.*?)〔〔");
+			Matcher m = p.matcher(med_text);
+			Pattern p1 = Pattern.compile("病理〕(.*?)〔〔");
+			Matcher m1 = p1.matcher(med_text);
+			Pattern p2 = Pattern.compile("分类〕(.*?)〔〔");
+			Matcher m2 = p2.matcher(med_text);
+			Pattern p3 = Pattern.compile("类型〕(.*?)〔〔");
+			Matcher m3 = p3.matcher(med_text);
+			Pattern p4 = Pattern.compile("生理〕(.*?)〔〔");
+			Matcher m4 = p4.matcher(med_text);
+			Pattern p5 = Pattern.compile("种类〕(.*?)〔〔");
+			Matcher m5 = p5.matcher(med_text);
+			String temp = "";
+			if (m.find()) {
+				temp = m.group(0);
+			} else if (m1.find()) {
+				temp = m1.group(0);
+			} else if (m2.find()) {
+				temp = m2.group(0);
+			} else if (m3.find()) {
+				temp = m3.group(0);
+			} else if (m4.find()) {
+				temp = m4.group(0);
+			} else if (m5.find()) {
+				temp = m5.group(0);
+			}
+			dic_bl.put(
+					med_name.replaceAll("\\s*", "").replace("〔", "")
+							.replace("〕", ":"),
+					temp.replaceAll("\\s*", "").replace("〔", "").replace("〕",
+							":"));
+		}
+		return dic_bl;
+	}
 
-    public IMV_SIQ mapToMap_bl(IMV_SIQ dic_map) {
-        IMV_SIQ dic_bl = new IMV_SIQ();
-        Iterator<String> iter = dic_map.keySet().iterator();
-        List<String> copy = new ArrayList<String>();
-        while (iter.hasNext())
-            copy.add(iter.next());
-        for (int i = 0; i < copy.size(); i++) {
-            String med_name = copy.get(i);
-            String med_text = dic_map.get(med_name).toString()
-                .replace("\n", "");
-            Pattern p = Pattern.compile("〔病理(.*?)〔〔");
-            Matcher m = p.matcher(med_text);
-            Pattern p1 = Pattern.compile("病理〕(.*?)〔〔");
-            Matcher m1 = p1.matcher(med_text);
-            Pattern p2 = Pattern.compile("分类〕(.*?)〔〔");
-            Matcher m2 = p2.matcher(med_text);
-            Pattern p3 = Pattern.compile("类型〕(.*?)〔〔");
-            Matcher m3 = p3.matcher(med_text);
-            Pattern p4 = Pattern.compile("生理〕(.*?)〔〔");
-            Matcher m4 = p4.matcher(med_text);
-            Pattern p5 = Pattern.compile("种类〕(.*?)〔〔");
-            Matcher m5 = p5.matcher(med_text);
-            String temp = "";
-            if (m.find()) {
-                temp = m.group(0);
-            } else if (m1.find()) {
-                temp = m1.group(0);
-            } else if (m2.find()) {
-                temp = m2.group(0);
-            } else if (m3.find()) {
-                temp = m3.group(0);
-            } else if (m4.find()) {
-                temp = m4.group(0);
-            } else if (m5.find()) {
-                temp = m5.group(0);
-            }
-            dic_bl.put(med_name.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":")
-                , temp.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":"));
-        }
-        return dic_bl;
-    }
+	public IMV_SIQ mapToMap_wx(IMV_SIQ dic_map) {
+		IMV_SIQ dic_wx = new IMV_SIQ();
+		Iterator<String> iter = dic_map.keySet().iterator();
+		List<String> copy = new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for (int i = 0; i < copy.size(); i++) {
+			String med_name = copy.get(i);
+			String med_text = dic_map.get(med_name).toString().replace("\n",
+					"");
+			Pattern p = Pattern.compile("〔危险(.*?)〔〔");
+			Matcher m = p.matcher(med_text);
+			Pattern p1 = Pattern.compile("因素〕(.*?)〔〔");
+			Matcher m1 = p1.matcher(med_text);
+			Pattern p2 = Pattern.compile("反应〕(.*?)〔〔");
+			Matcher m2 = p2.matcher(med_text);
+			Pattern p3 = Pattern.compile("〔注意(.*?)〔〔");
+			Matcher m3 = p3.matcher(med_text);
+			String temp = "";
+			if (m.find()) {
+				temp = m.group(0);
+			} else if (m1.find()) {
+				temp = m1.group(0);
+			} else if (m2.find()) {
+				temp = m2.group(0);
+			} else if (m3.find()) {
+				temp = m3.group(0);
+			}
+			dic_wx.put(
+					med_name.replaceAll("\\s*", "").replace("〔", "")
+							.replace("〕", ":"),
+					temp.replaceAll("\\s*", "").replace("〔", "").replace("〕",
+							":"));
+		}
+		return dic_wx;
+	}
 
-    public IMV_SIQ mapToMap_wx(IMV_SIQ dic_map) {
-        IMV_SIQ dic_wx = new IMV_SIQ();
-        Iterator<String> iter = dic_map.keySet().iterator();
-        List<String> copy = new ArrayList<String>();
-        while (iter.hasNext())
-            copy.add(iter.next());
-        for (int i = 0; i < copy.size(); i++) {
-            String med_name = copy.get(i);
-            String med_text = dic_map.get(med_name).toString()
-                .replace("\n", "");
-            Pattern p = Pattern.compile("〔危险(.*?)〔〔");
-            Matcher m = p.matcher(med_text);
-            Pattern p1 = Pattern.compile("因素〕(.*?)〔〔");
-            Matcher m1 = p1.matcher(med_text);
-            Pattern p2 = Pattern.compile("反应〕(.*?)〔〔");
-            Matcher m2 = p2.matcher(med_text);
-            Pattern p3 = Pattern.compile("〔注意(.*?)〔〔");
-            Matcher m3 = p3.matcher(med_text);
-            String temp = "";
-            if (m.find()) {
-                temp = m.group(0);
-            } else if (m1.find()) {
-                temp = m1.group(0);
-            } else if (m2.find()) {
-                temp = m2.group(0);
-            } else if (m3.find()) {
-                temp = m3.group(0);
-            }
-            dic_wx.put(med_name.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":")
-                , temp.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":"));
-        }
-        return dic_wx;
-    }
-
-    public IMV_SIQ mapToMap_gn(IMV_SIQ dic_map) {
-        IMV_SIQ dic_gn = new IMV_SIQ();
-        Iterator<String> iter = dic_map.keySet().iterator();
-        List<String> copy = new ArrayList<String>();
-        while (iter.hasNext())
-            copy.add(iter.next());
-        for (int i = 0; i < copy.size(); i++) {
-            String med_name = copy.get(i);
-            String med_text = dic_map.get(med_name).toString()
-                .replace("\n", "");
-            Pattern p = Pattern.compile("〔概念(.*?)〔〔");
-            Pattern p1 = Pattern.compile("概念〕(.*?)〔〔");
-            Pattern p2 = Pattern.compile("解剖〕(.*?)〔〔");
-            Pattern p3 = Pattern.compile("〔概述(.*?)〔〔");
-            Pattern p4 = Pattern.compile("概述〕(.*?)〔〔");
-            Matcher m = p.matcher(med_text);
-            Matcher m1 = p1.matcher(med_text);
-            Matcher m2 = p2.matcher(med_text);
-            Matcher m3 = p3.matcher(med_text);
-            Matcher m4 = p4.matcher(med_text);
-            String temp = "";
-            if (m.find()) {
-                temp = m.group(0);
-            } else if (m1.find()) {
-                temp = m1.group(0);
-            } else if (m2.find()) {
-                temp = m2.group(0);
-            } else if (m3.find()) {
-                temp = m3.group(0);
-            } else if (m4.find()) {
-                temp = m4.group(0);
-            }
-            dic_gn.put(med_name.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":")
-                , temp.replaceAll("\\s*", "")
-                    .replace("〔", "")
-                    .replace("〕", ":"));
-        }
-        return dic_gn;
-    }
+	public IMV_SIQ mapToMap_gn(IMV_SIQ dic_map) {
+		IMV_SIQ dic_gn = new IMV_SIQ();
+		Iterator<String> iter = dic_map.keySet().iterator();
+		List<String> copy = new ArrayList<String>();
+		while (iter.hasNext())
+			copy.add(iter.next());
+		for (int i = 0; i < copy.size(); i++) {
+			String med_name = copy.get(i);
+			String med_text = dic_map.get(med_name).toString().replace("\n",
+					"");
+			Pattern p = Pattern.compile("〔概念(.*?)〔〔");
+			Pattern p1 = Pattern.compile("概念〕(.*?)〔〔");
+			Pattern p2 = Pattern.compile("解剖〕(.*?)〔〔");
+			Pattern p3 = Pattern.compile("〔概述(.*?)〔〔");
+			Pattern p4 = Pattern.compile("概述〕(.*?)〔〔");
+			Matcher m = p.matcher(med_text);
+			Matcher m1 = p1.matcher(med_text);
+			Matcher m2 = p2.matcher(med_text);
+			Matcher m3 = p3.matcher(med_text);
+			Matcher m4 = p4.matcher(med_text);
+			String temp = "";
+			if (m.find()) {
+				temp = m.group(0);
+			} else if (m1.find()) {
+				temp = m1.group(0);
+			} else if (m2.find()) {
+				temp = m2.group(0);
+			} else if (m3.find()) {
+				temp = m3.group(0);
+			} else if (m4.find()) {
+				temp = m4.group(0);
+			}
+			dic_gn.put(
+					med_name.replaceAll("\\s*", "").replace("〔", "")
+							.replace("〕", ":"),
+					temp.replaceAll("\\s*", "").replace("〔", "").replace("〕",
+							":"));
+		}
+		return dic_gn;
+	}
 }

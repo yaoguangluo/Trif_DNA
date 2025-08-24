@@ -17,27 +17,26 @@ import javax.swing.ImageIcon;
  * */
 public class App_S_X_Statics extends I_U {
 
-    //
-    public ImageIndex imageIndex = new ImageIndex();
-    public YaoCaiIndex yaoCaiIndex = new YaoCaiIndex();
-    public ImageIcon pngy_2_1 = yaoCaiIndex.pngy_2_1;
-    public ImageIcon shoushaoyang = imageIndex.shoushaoyang;
-    public ImageIcon shoushaoyin = imageIndex.shoushaoyin;
-    public ImageIcon shoutaiyang = imageIndex.shoutaiyang;
-    public ImageIcon shoutaiyin = imageIndex.shoutaiyin;
-    public ImageIcon shouyangmin = imageIndex.shouyangmin;
-    public ImageIcon zujueyin = imageIndex.zujueyin;
-    public ImageIcon zushaoyang = imageIndex.zushaoyang;
-    public ImageIcon zushaoyin = imageIndex.zushaoyin;
-    public ImageIcon zutaiyang = imageIndex.zutaiyang;
-    public ImageIcon zutaiyin = imageIndex.zutaiyin;
-    public ImageIcon zuyangmin = imageIndex.zuyangmin;
-    public ImageIcon ziwuxiang = imageIndex.ziwuxiang;
-    public ImageIcon shoujueyin = imageIndex.shoujueyin;
+	//
+	public ImageIndex imageIndex = new ImageIndex();
+	public YaoCaiIndex yaoCaiIndex = new YaoCaiIndex();
+	public ImageIcon pngy_2_1 = yaoCaiIndex.pngy_2_1;
+	public ImageIcon shoushaoyang = imageIndex.shoushaoyang;
+	public ImageIcon shoushaoyin = imageIndex.shoushaoyin;
+	public ImageIcon shoutaiyang = imageIndex.shoutaiyang;
+	public ImageIcon shoutaiyin = imageIndex.shoutaiyin;
+	public ImageIcon shouyangmin = imageIndex.shouyangmin;
+	public ImageIcon zujueyin = imageIndex.zujueyin;
+	public ImageIcon zushaoyang = imageIndex.zushaoyang;
+	public ImageIcon zushaoyin = imageIndex.zushaoyin;
+	public ImageIcon zutaiyang = imageIndex.zutaiyang;
+	public ImageIcon zutaiyin = imageIndex.zutaiyin;
+	public ImageIcon zuyangmin = imageIndex.zuyangmin;
+	public ImageIcon ziwuxiang = imageIndex.ziwuxiang;
+	public ImageIcon shoujueyin = imageIndex.shoujueyin;
 
-    public ImageIcon logo = imageIndex.logo;
+	public ImageIcon logo = imageIndex.logo;
 
-
-    public App_S_X_Statics() {
-    }
+	public App_S_X_Statics() {
+	}
 }

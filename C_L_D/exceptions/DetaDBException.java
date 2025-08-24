@@ -11,7 +11,7 @@ package exceptions;
  * */
 @SuppressWarnings("serial")
 public class DetaDBException extends RuntimeException {
-	
+
 	private String errorId;
 	private String errorMessage;
 
@@ -20,7 +20,7 @@ public class DetaDBException extends RuntimeException {
 	}
 
 	public void I_ErrorId(String errorId) {
-		this.errorId= errorId;
+		this.errorId = errorId;
 	}
 
 	public String getErrorMessage() {
@@ -28,7 +28,7 @@ public class DetaDBException extends RuntimeException {
 	}
 
 	public void I_ErrorMessage(String errorMessage) {
-		this.errorMessage= errorMessage;
+		this.errorMessage = errorMessage;
 	}
 
 	public DetaDBException() {
@@ -37,7 +37,7 @@ public class DetaDBException extends RuntimeException {
 
 	public DetaDBException(String errorId, String errorMessage) {
 		super(errorMessage);
-		this.errorId= errorId;
-		this.errorMessage= errorMessage;
+		this.errorId = errorId;
+		this.errorMessage = errorMessage;
 	}
 }

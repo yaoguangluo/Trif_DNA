@@ -10,20 +10,19 @@ package exceptions;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public enum ErrorCodeEnum {
-	ER1001("error."),
-	ER1002("invalid key.");
+	ER1001("error."), ER1002("invalid key.");
 
 	private String msg;
 
 	private ErrorCodeEnum(String msg) {
-		this.msg= msg;
+		this.msg = msg;
 	}
-	
+
 	public String getMsg() {
 		return msg;
 	}
 
 	public void I_Msg(String msg) {
-		this.msg= msg;
+		this.msg = msg;
 	}
 }

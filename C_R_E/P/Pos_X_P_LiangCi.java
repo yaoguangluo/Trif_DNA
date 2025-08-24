@@ -24,70 +24,82 @@ import java.util.List;
  * */
 
 public class Pos_X_P_LiangCi extends Pos_X_P_LianCi implements X_P_LiangCi {
-    public int P_LiangCiOfThree(List<String> outputList, int countLength
-        , String[] strings, StringBuilder[] fixWord) {
-        if (wordsForest.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
-            if (S_Maps.mingCi.containsKey(fixWord[S_Pos.INT_ZERO].toString())
-                || S_Maps.daiCi.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
-                countLength = charOfThree(countLength, outputList, strings, fixWord);
-                return countLength;
-            }
-            if (S_Maps.liangCi.containsKey(strings[S_Pos.INT_ONE])) {
-                outputList.add(strings[S_Pos.INT_ONE]);
-                fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWord[S_Pos.INT_ZERO].length());
-                fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ONE]);
-                return S_Pos.INT_TWO;
-            }
-            if ((S_Maps.xingWeiCi.containsKey(fixWord[S_Pos.INT_ZERO].toString())
-                || S_Maps.xingRongCi.containsKey(fixWord[S_Pos.INT_ZERO].toString()))
-                && S_Maps.mingCi.containsKey(strings[S_Pos.INT_ONE])) {
-                outputList.add(strings[S_Pos.INT_ONE]);
-                fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWord[S_Pos.INT_ZERO].length());
-                fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ONE]);
-                return S_Pos.INT_TWO;
-            }
-        }
-        fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWord[S_Pos.INT_ZERO].length());
-        fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ZERO]);
-        outputList.add(strings[S_Pos.INT_ZERO]);
-        if (S_Maps.CiTwo.containsKey(strings[S_Pos.INT_TWO])) {
-            outputList.add(strings[S_Pos.INT_TWO]);
-            fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWord[S_Pos.INT_ZERO].length());
-            fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_TWO]);
-            return S_Pos.INT_THREE;
-        }
-        return S_Pos.INT_ONE;
-    }
+	public int P_LiangCiOfThree(List<String> outputList, int countLength,
+			String[] strings, StringBuilder[] fixWord) {
+		if (wordsForest.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
+			if (S_Maps.mingCi.containsKey(fixWord[S_Pos.INT_ZERO].toString())
+					|| S_Maps.daiCi
+							.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
+				countLength = charOfThree(countLength, outputList, strings,
+						fixWord);
+				return countLength;
+			}
+			if (S_Maps.liangCi.containsKey(strings[S_Pos.INT_ONE])) {
+				outputList.add(strings[S_Pos.INT_ONE]);
+				fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+						fixWord[S_Pos.INT_ZERO].length());
+				fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ONE]);
+				return S_Pos.INT_TWO;
+			}
+			if ((S_Maps.xingWeiCi
+					.containsKey(fixWord[S_Pos.INT_ZERO].toString())
+					|| S_Maps.xingRongCi
+							.containsKey(fixWord[S_Pos.INT_ZERO].toString()))
+					&& S_Maps.mingCi.containsKey(strings[S_Pos.INT_ONE])) {
+				outputList.add(strings[S_Pos.INT_ONE]);
+				fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+						fixWord[S_Pos.INT_ZERO].length());
+				fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ONE]);
+				return S_Pos.INT_TWO;
+			}
+		}
+		fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+				fixWord[S_Pos.INT_ZERO].length());
+		fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ZERO]);
+		outputList.add(strings[S_Pos.INT_ZERO]);
+		if (S_Maps.CiTwo.containsKey(strings[S_Pos.INT_TWO])) {
+			outputList.add(strings[S_Pos.INT_TWO]);
+			fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+					fixWord[S_Pos.INT_ZERO].length());
+			fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_TWO]);
+			return S_Pos.INT_THREE;
+		}
+		return S_Pos.INT_ONE;
+	}
 
-    //离散结合率优化 流水阀门
-    public int P_LiangCiOfThreeForMap(IMV_SIQ_SS outputList
-        , int countLength, String[] strings, StringBuilder[] fixWord, App NE) {
-        if (!wordsForest.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
-            return countLength;
-        }
-        if (S_Maps.mingCi.containsKey(fixWord[S_Pos.INT_ZERO].toString())
-            || S_Maps.daiCi.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
-            countLength = charOfThreeForMap(countLength, outputList, strings, fixWord, NE);
-            return countLength;
-        }
-        countLength -= S_Pos.INT_THREE;
-        if (!wordsForest.containsKey(strings[S_Pos.INT_ONE])) {
-            return countLength;
-        }
-        WordFrequency wordFrequency;
-        if (outputList.containsKey(strings[S_Pos.INT_ONE])) {
-            wordFrequency = outputList.getW(strings[S_Pos.INT_ONE]);
-            wordFrequency.I_frequency(wordFrequency.get_frequency() + S_Pos.INT_ONE);
-        } else {
-            wordFrequency = new WordFrequency(1.0, strings[S_Pos.INT_ONE]);
-        }
-        wordFrequency.positions.add(NE._I_U.parserCharPosition);
-        outputList.put(strings[S_Pos.INT_ONE], wordFrequency);
-        fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWord[S_Pos.INT_ZERO].length());
-        fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ONE]);
-        countLength += S_Pos.INT_TWO;
-        return countLength;
-    }
+	// 离散结合率优化 流水阀门
+	public int P_LiangCiOfThreeForMap(IMV_SIQ_SS outputList, int countLength,
+			String[] strings, StringBuilder[] fixWord, App NE) {
+		if (!wordsForest.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
+			return countLength;
+		}
+		if (S_Maps.mingCi.containsKey(fixWord[S_Pos.INT_ZERO].toString())
+				|| S_Maps.daiCi
+						.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
+			countLength = charOfThreeForMap(countLength, outputList, strings,
+					fixWord, NE);
+			return countLength;
+		}
+		countLength -= S_Pos.INT_THREE;
+		if (!wordsForest.containsKey(strings[S_Pos.INT_ONE])) {
+			return countLength;
+		}
+		WordFrequency wordFrequency;
+		if (outputList.containsKey(strings[S_Pos.INT_ONE])) {
+			wordFrequency = outputList.getW(strings[S_Pos.INT_ONE]);
+			wordFrequency
+					.I_frequency(wordFrequency.get_frequency() + S_Pos.INT_ONE);
+		} else {
+			wordFrequency = new WordFrequency(1.0, strings[S_Pos.INT_ONE]);
+		}
+		wordFrequency.positions.add(NE._I_U.parserCharPosition);
+		outputList.put(strings[S_Pos.INT_ONE], wordFrequency);
+		fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+				fixWord[S_Pos.INT_ZERO].length());
+		fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ONE]);
+		countLength += S_Pos.INT_TWO;
+		return countLength;
+	}
 }
 //	}
 //return countLength;

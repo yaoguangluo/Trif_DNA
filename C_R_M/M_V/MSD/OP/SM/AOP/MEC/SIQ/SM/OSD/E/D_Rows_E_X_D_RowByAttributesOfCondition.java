@@ -19,29 +19,31 @@ import java.util.Objects;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class D_Rows_E_X_D_RowByAttributesOfCondition {
-    @SuppressWarnings({"unchecked"})
-    public static void _E(IMV_SIQ object, boolean mod) {
-        if (!object.containsKey("baseName") || !object.containsKey("tableName")) {
-            return;
-        }
-        //get base
-        String DBPath = Objects.requireNonNull(Cache_M.getCacheInfo("DBPath")).getValue().toString()
-            + "/" + object.get("baseName").toString();
-        File DBPathFile = new File(DBPath);
-        if (!DBPathFile.isDirectory()) {
-            return;
-        }
-        //make table dir
-        String tablePath = DBPath + "/" + object.get("tableName").toString();
-        List<IMV_SIQ> obj
-            = (List<IMV_SIQ>) Q_Rows_E_X_selectRowsByAttributesOfCondition._E(object);
-        for (IMV_SIQ row : obj) {
-            IMV_SIQ rowValue = (IMV_SIQ) row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-            IMV_SIQ indexCell = (IMV_SIQ) rowValue.get("Index");
-            String indexValue = indexCell.get("culumnValue").toString();
-            D_Rows_E_X_D_RowByTablePathAndIndex._E(tablePath, indexValue, mod);
-        }
-    }
+	@SuppressWarnings({ "unchecked" })
+	public static void _E(IMV_SIQ object, boolean mod) {
+		if (!object.containsKey("baseName")
+				|| !object.containsKey("tableName")) {
+			return;
+		}
+		// get base
+		String DBPath = Objects.requireNonNull(Cache_M.getCacheInfo("DBPath"))
+				.getValue().toString() + "/"
+				+ object.get("baseName").toString();
+		File DBPathFile = new File(DBPath);
+		if (!DBPathFile.isDirectory()) {
+			return;
+		}
+		// make table dir
+		String tablePath = DBPath + "/" + object.get("tableName").toString();
+		List<IMV_SIQ> obj = (List<IMV_SIQ>) Q_Rows_E_X_selectRowsByAttributesOfCondition
+				._E(object);
+		for (IMV_SIQ row : obj) {
+			IMV_SIQ rowValue = (IMV_SIQ) row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
+			IMV_SIQ indexCell = (IMV_SIQ) rowValue.get("Index");
+			String indexValue = indexCell.get("culumnValue").toString();
+			D_Rows_E_X_D_RowByTablePathAndIndex._E(tablePath, indexValue, mod);
+		}
+	}
 }
 //41
 //delete buffer also

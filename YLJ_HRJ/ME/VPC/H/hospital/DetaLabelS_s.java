@@ -11,21 +11,21 @@ package ME.VPC.H.hospital;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class DetaLabelS_s {
-    public boolean target = false;
-    public boolean isIndexed = false;
-    public String indexString = "";
-    public static DetaLabelS_s stableImages;//later static
+	public boolean target = false;
+	public boolean isIndexed = false;
+	public String indexString = "";
+	public static DetaLabelS_s stableImages;// later static
 
-    public void setS_Images() {
-        DetaLabelS_s.stableImages = new DetaLabelS_s();
-    }
+	public void setS_Images() {
+		DetaLabelS_s.stableImages = new DetaLabelS_s();
+	}
 
-    public void setTarget(boolean target) {
-        DetaLabelS_s.stableImages.target = target;//
-    }
+	public void setTarget(boolean target) {
+		DetaLabelS_s.stableImages.target = target;//
+	}
 
-    public void setIndexString(String string) {
-        DetaLabelS_s.stableImages.indexString = string;
-        DetaLabelS_s.stableImages.isIndexed = true;
-    }
+	public void setIndexString(String string) {
+		DetaLabelS_s.stableImages.indexString = string;
+		DetaLabelS_s.stableImages.isIndexed = true;
+	}
 }

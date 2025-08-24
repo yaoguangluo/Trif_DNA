@@ -20,29 +20,29 @@ import javax.swing.JTextPane;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class ShellJPanel_X_S extends JPanel {
-    /**
-     * 稍后进行优化成 申请版权的格式。
-     * 罗瑶光
-     */
-    
-    public LinkNode thisNodeInfo;
-    public JCheckBox jlabel_box[];
-    public boolean[] tabNamesHook = new boolean[30];
-    public boolean isConfig = true;
-    public JTextPane jTextPane;
-    public StringBuilder stringBuilder = new StringBuilder();
+	/**
+	 * 稍后进行优化成 申请版权的格式。 罗瑶光
+	 */
 
-    public String getStringFromStringBuilder() {
-        if (stringBuilder.length() > 0) {
-            return this.stringBuilder.toString();
-        }
-        return "";
-    }
+	public LinkNode thisNodeInfo;
+	public JCheckBox jlabel_box[];
+	public boolean[] tabNamesHook = new boolean[30];
+	public boolean isConfig = true;
+	public JTextPane jTextPane;
+	public StringBuilder stringBuilder = new StringBuilder();
 
-    public JTextPane outputjTextPane;
-    public String plsearch;
-    public TinMap output;//准备做文章流计算的内存 罗瑶光20211008
-    public M_V.MVQ.button.DetaButton jlabel_button_clear, jlabel_button, jlabel_init_button, jlabel_debug_button, jlabel_flush_button;
-    public App NE;
-    public JCheckBox jlabel_peizhi_di2515;
+	public String getStringFromStringBuilder() {
+		if (stringBuilder.length() > 0) {
+			return this.stringBuilder.toString();
+		}
+		return "";
+	}
+
+	public JTextPane outputjTextPane;
+	public String plsearch;
+	public TinMap output;// 准备做文章流计算的内存 罗瑶光20211008
+	public M_V.MVQ.button.DetaButton jlabel_button_clear, jlabel_button,
+			jlabel_init_button, jlabel_debug_button, jlabel_flush_button;
+	public App NE;
+	public JCheckBox jlabel_peizhi_di2515;
 }

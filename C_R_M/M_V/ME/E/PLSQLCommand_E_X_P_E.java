@@ -14,20 +14,27 @@ import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
  * */
 
 public class PLSQLCommand_E_X_P_E {
-    public static void _E(String[] acknowledge, TinMap object
-            , boolean mod) {
-        if (object.getCompareV("start", "1")) {
-            if (!acknowledge[0].equalsIgnoreCase(object.get("lastCommand").toString())
-                    && (object.get("lastCommand").toString().contains("修改列名")//later
-                    || object.get("lastCommand").toString().contains("culumnValue")
-                    || object.get("lastCommand").toString().contains(S_ShellETL.SHELL_ETL_CONDITION)
-                    || object.get("lastCommand").toString().contains("relation")
-                    || object.get("lastCommand").toString().contains("aggregation")
-                    || object.get("lastCommand").toString().contains("getCulumns")
-                    || object.get("lastCommand").toString().contains(S_ShellETL.SHELL_ETL_CULUMNNAME)
-                    || object.get("lastCommand").toString().contains("relation"))) {
-                PLSQLCommand_E_X_P_E_Kernel._E(object, mod);
-            }
-        }
-    }
+	public static void _E(String[] acknowledge, TinMap object, boolean mod) {
+		if (object.getCompareV("start", "1")) {
+			if (!acknowledge[0]
+					.equalsIgnoreCase(object.get("lastCommand").toString())
+					&& (object.get("lastCommand").toString().contains("修改列名")// later
+							|| object.get("lastCommand").toString()
+									.contains("culumnValue")
+							|| object.get("lastCommand").toString()
+									.contains(S_ShellETL.SHELL_ETL_CONDITION)
+							|| object.get("lastCommand").toString()
+									.contains("relation")
+							|| object.get("lastCommand").toString()
+									.contains("aggregation")
+							|| object.get("lastCommand").toString()
+									.contains("getCulumns")
+							|| object.get("lastCommand").toString()
+									.contains(S_ShellETL.SHELL_ETL_CULUMNNAME)
+							|| object.get("lastCommand").toString()
+									.contains("relation"))) {
+				PLSQLCommand_E_X_P_E_Kernel._E(object, mod);
+			}
+		}
+	}
 }

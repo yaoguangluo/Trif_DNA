@@ -14,5 +14,5 @@ import ME.XCE_XAS;
  * */
 
 public class XCE_XAS_U extends XCE_XAS {
-    public Pos_X_P pos_X_P;
+	public Pos_X_P pos_X_P;
 }

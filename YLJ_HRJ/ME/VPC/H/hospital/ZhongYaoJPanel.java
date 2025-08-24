@@ -19,35 +19,35 @@ import java.awt.ScrollPane;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class ZhongYaoJPanel extends JPanel {
-    
-    public ZhongYaoJPanel(JTextField name) {
-        this.setLayout(null);
-        this.setBounds(0, 0, 1180, 610);
-        this.setBackground(Color.BLACK);
-        name.setBounds(0, 0, WindowsUI.makeContainerWidth
-            , WindowsUI.makeContainerHeight);
-        //推荐的话\
-        this.removeAll();
-        ScrollPane scrollPane = new ScrollPane();
-        scrollPane.setBounds(0, 0, 1180, 610);
-        scrollPane.add(name);
-        this.add(scrollPane);
-        //	this.add(name);
-        //加处方
-    }
 
-    public ZhongYaoJPanel(JTextPane name) {
-        this.setLayout(null);
-        this.setBounds(0, 0, 1180, 610);
-        this.setBackground(Color.BLACK);
-        name.setBounds(0, 0, 1180, 1480);
-        //推荐的话\
-        this.removeAll();
-        //	this.add(name);
-        //加处方
-        ScrollPane scrollPane = new ScrollPane();
-        scrollPane.setBounds(0, 0, 1130, 580);
-        scrollPane.add(name);
-        this.add(scrollPane);
-    }
+	public ZhongYaoJPanel(JTextField name) {
+		this.setLayout(null);
+		this.setBounds(0, 0, 1180, 610);
+		this.setBackground(Color.BLACK);
+		name.setBounds(0, 0, WindowsUI.makeContainerWidth,
+				WindowsUI.makeContainerHeight);
+		// 推荐的话\
+		this.removeAll();
+		ScrollPane scrollPane = new ScrollPane();
+		scrollPane.setBounds(0, 0, 1180, 610);
+		scrollPane.add(name);
+		this.add(scrollPane);
+		// this.add(name);
+		// 加处方
+	}
+
+	public ZhongYaoJPanel(JTextPane name) {
+		this.setLayout(null);
+		this.setBounds(0, 0, 1180, 610);
+		this.setBackground(Color.BLACK);
+		name.setBounds(0, 0, 1180, 1480);
+		// 推荐的话\
+		this.removeAll();
+		// this.add(name);
+		// 加处方
+		ScrollPane scrollPane = new ScrollPane();
+		scrollPane.setBounds(0, 0, 1130, 580);
+		scrollPane.add(name);
+		this.add(scrollPane);
+	}
 }

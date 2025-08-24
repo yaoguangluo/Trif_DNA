@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import org.json.JSONObject;
 
 import java.lang.reflect.Type;
+
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -15,16 +16,17 @@ import java.lang.reflect.Type;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
-public class VtoV{
-	public static IMV_SIQ JsonObjectToMap(JSONObject response){
-		Gson gson= new Gson();
-		Type type= new TypeToken<IMV_SIQ>(){}.getType();
-		IMV_SIQ responseMap= gson.fromJson(response.toString(), type);
+public class VtoV {
+	public static IMV_SIQ JsonObjectToMap(JSONObject response) {
+		Gson gson = new Gson();
+		Type type = new TypeToken<IMV_SIQ>() {
+		}.getType();
+		IMV_SIQ responseMap = gson.fromJson(response.toString(), type);
 		return responseMap;
 	}
 
-	public static String ObjectToJsonString(Object response ){
-		Gson gson= new Gson();
+	public static String ObjectToJsonString(Object response) {
+		Gson gson = new Gson();
 		return gson.toJson(response);
 	}
 }

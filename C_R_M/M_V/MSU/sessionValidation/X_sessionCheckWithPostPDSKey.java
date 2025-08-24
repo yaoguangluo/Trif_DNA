@@ -19,29 +19,34 @@ import U_A.PEU.P.dna.TokenCerts;
  * */
 public class X_sessionCheckWithPostPDSKey {
 
+	// 序列 反序密文检查
+	public static boolean _E(Token token, TokenCerts tokenCerts) {
+		// //20230106-System.out.println("====================================================");
+		// //20230106-System.out.println("开始后序验证：");
+		TokenPDI pDE_RNA_Formular2 = new TokenPDI();
+		pDE_RNA_Formular2.pdeieKey = token.getUpdsde().toString();
+		pDE_RNA_Formular2.pdeisKey = token.getUpdsds().toString();
+		pDE_RNA_Formular2.pdedeKey = token.getUpdsie().toString();
+		pDE_RNA_Formular2.pdedsKey = token.getUpdsis().toString();
+		// //20230106-System.out.println("准备计算元基DNA序列："+
+		// token.getmPassword());
+		pDE_RNA_Formular2.doSessionKeyUnPress(token.getmPassword(),
+				pDE_RNA_Formular2, true);
+		// //20230106-System.out.println("得到原续降元元基DNA序列："+
+		// tokenCerts.getPds());
+		// //20230106-System.out.println("得到后续降元元基DNA序列："+
+		// pDE_RNA_Formular2.pds);
+		// //20230106-System.out.println("验证正确？");
+		// 20230106-System.out.println(tokenCerts.getPds().equals(pDE_RNA_Formular2.pds)?
+		// "正确": "失败");
+		return tokenCerts.getPds().equals(pDE_RNA_Formular2.pds) ? true : false;
+	}
 
-    //序列 反序密文检查
-    public static boolean _E(Token token, TokenCerts tokenCerts) {
-        //		//20230106-System.out.println("====================================================");
-        //		//20230106-System.out.println("开始后序验证：");
-        TokenPDI pDE_RNA_Formular2 = new TokenPDI();
-        pDE_RNA_Formular2.pdeieKey = token.getUpdsde().toString();
-        pDE_RNA_Formular2.pdeisKey = token.getUpdsds().toString();
-        pDE_RNA_Formular2.pdedeKey = token.getUpdsie().toString();
-        pDE_RNA_Formular2.pdedsKey = token.getUpdsis().toString();
-        //		//20230106-System.out.println("准备计算元基DNA序列："+ token.getmPassword());
-        pDE_RNA_Formular2.doSessionKeyUnPress(token.getmPassword(), pDE_RNA_Formular2, true);
-        //		//20230106-System.out.println("得到原续降元元基DNA序列："+ tokenCerts.getPds());
-        //		//20230106-System.out.println("得到后续降元元基DNA序列："+ pDE_RNA_Formular2.pds);
-        //		//20230106-System.out.println("验证正确？");
-        //20230106-System.out.println(tokenCerts.getPds().equals(pDE_RNA_Formular2.pds)? "正确": "失败");
-        return tokenCerts.getPds().equals(pDE_RNA_Formular2.pds) ? true : false;
-    }
-
-    //写个main函数测试下
-    public static void main(String[] argv) {
-        TokenCerts tokenCerts = X_sessionTokenCertsInitWithHumanWordsByDNA._E("控制吸收", false, null);
-        Token token = X_sessionInitByTokenPDICertsDNA._E(tokenCerts);
-        X_sessionCheck._E(token, tokenCerts);
-    }
+	// 写个main函数测试下
+	public static void main(String[] argv) {
+		TokenCerts tokenCerts = X_sessionTokenCertsInitWithHumanWordsByDNA
+				._E("控制吸收", false, null);
+		Token token = X_sessionInitByTokenPDICertsDNA._E(tokenCerts);
+		X_sessionCheck._E(token, tokenCerts);
+	}
 }

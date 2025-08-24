@@ -41,37 +41,37 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * */
 public class App_S extends App_S_Systems {
 
-    //
-    public XynkPage xynkPage;
-    public ZynkxPage zynkxPage;
-    public ZyzdxPage zyzdxPage;
-    public ImageIndex imageIndex;
-    public AppHospital appHospital;
-    public AppConfig appConfig;
-    public FyydPage fyydPage;
-    public FqzPage fqzPage;
-    public FckxPage fckxPage;
-    public JzkxPage jzkxPage;
-    public WkxPage wkxPage;
-    public WskxPage wskxPage;
-    public CecilPage cecil;
-    public EditPane editPane;
-    public XyscPage xyscPage;
-    public App_XCDX app_XCDX;
-    public App_X_getBox app_X_getBox;
-    public AppSearch appSearch;
-    public AppFilter_X_IV_ appFilter;
-    public MakeContainer_ZHONG_YAO makeContainer_ZHONG_YAO;
-    public IMV_SIQ tempPages = new IMV_SIQ();
-    public List<MakeContainerXLS> makeContainerXLSList = new CopyOnWriteArrayList<>();
-    public JFrame frame;
-    public AppInit_XCDX appInit;
+	//
+	public XynkPage xynkPage;
+	public ZynkxPage zynkxPage;
+	public ZyzdxPage zyzdxPage;
+	public ImageIndex imageIndex;
+	public AppHospital appHospital;
+	public AppConfig appConfig;
+	public FyydPage fyydPage;
+	public FqzPage fqzPage;
+	public FckxPage fckxPage;
+	public JzkxPage jzkxPage;
+	public WkxPage wkxPage;
+	public WskxPage wskxPage;
+	public CecilPage cecil;
+	public EditPane editPane;
+	public XyscPage xyscPage;
+	public App_XCDX app_XCDX;
+	public App_X_getBox app_X_getBox;
+	public AppSearch appSearch;
+	public AppFilter_X_IV_ appFilter;
+	public MakeContainer_ZHONG_YAO makeContainer_ZHONG_YAO;
+	public IMV_SIQ tempPages = new IMV_SIQ();
+	public List<MakeContainerXLS> makeContainerXLSList = new CopyOnWriteArrayList<>();
+	public JFrame frame;
+	public AppInit_XCDX appInit;
 
-    public App_S() {
-        super();
-        if (imageIndex == null) {//shaohou main init
-            imageIndex = new ImageIndex();
-        }
-    }
+	public App_S() {
+		super();
+		if (imageIndex == null) {// shaohou main init
+			imageIndex = new ImageIndex();
+		}
+	}
 }
 //page- obj-stand-vet-vstay-base

@@ -14,9 +14,9 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class X_S_I {
-    public Map<String, String> posFullec;
+	public Map<String, String> posFullec;
 
-    public void get_posFullec(App NE) {
-        posFullec = NE.app_S.fMHMMListOneTime_E_X_S.fullEnToCn;
-    }
+	public void get_posFullec(App NE) {
+		posFullec = NE.app_S.fMHMMListOneTime_E_X_S.fullEnToCn;
+	}
 }

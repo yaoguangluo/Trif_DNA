@@ -26,83 +26,102 @@ import java.util.List;
  * */
 //shaohou tongyi gai
 public class Page_X_S_sButtonsrollafter {
-    public static DetaButton data_X_rollafter(Page_X_S_sVSQ page_X_S_s, int maxInPage, App NE) {
-        DetaButton buttonNext = new DetaButton("->");
-        //buttonNext.setBounds(410, 0, 100, 30);
-        buttonNext.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                IMV_SIQ_SS map = new IMV_SIQ_SS();
-                try {
-                    page_X_S_s.currentPage += 1;
-                    if (page_X_S_s.currentPage * maxInPage >= page_X_S_s.sets.size()) {
-                        page_X_S_s.currentPage -= 1;
-                        return;
-                    }
-                    page_X_S_s.currentPage = (page_X_S_s.currentPage > (page_X_S_s.sets
-                        == null ? 0 : page_X_S_s.sets.size()) / maxInPage + 1 ? page_X_S_s
-                        .currentPage - 1 : page_X_S_s.currentPage);
-                    StringBuilder page = new StringBuilder().append("");
-                    List<String> setsForGet = page_X_S_s.sets.subList(page_X_S_s
-                        .currentPage * maxInPage, (page_X_S_s.currentPage + 1) * maxInPage
-                        < page_X_S_s.sets.size() ? (page_X_S_s.currentPage + 1) * maxInPage
-                        : page_X_S_s.sets.size());
-                    PageWords.renderWordLoopPOS(page, setsForGet, map
-                        , page_X_S_s.key, true, NE);
-                    page_X_S_s.buttonCrt.setText("当前页面：" + (page_X_S_s.currentPage + 1));
-                    page_X_S_s.data.setText(page.toString());
-                    page_X_S_s.data.setSelectionStart(0);
-                    page_X_S_s.data.setSelectionEnd(0);
-                    page_X_S_s.data.validate();
-                } catch (Exception e1) {
-                    page_X_S_s.data.validate();
-                    page_X_S_s.jTabbedpane.validate();
-                }
-                try {
-                    page_X_S_s.statistic.setSize(500, 800);
-                    IMV_SIQ_S_ fwa
-                        = page_X_S_s._A.sortWordFrequencyMapToSortMap(map);
-                    page_X_S_s.statistic.setContentType("text/html");
-                    StringBuilder page = new StringBuilder();
-                    Here:
-                    for (int i = fwa.size() - 1; i >= 0; i--) {
-                        if (fwa.get(i) != null) {
-                            if (page_X_S_s.pos.get(fwa.getW(i).get_word()) == null) {
-                                page.append("<div style=\"background:white\">"
-                                    + "<font color=\"black\">" + fwa.getW(i).get_word()
-                                    + "" + fwa.getW(i).get_frequency() + "</font></div>");
-                                continue Here;
-                            }
-                            if (S_Maps.mingCi.containsKey(fwa.getW(i).get_word())) {
-                                page.append("<div style=\"background:#FF44FF\">"
-                                    + "<font color=\"white\">" + fwa.getW(i).get_word()
-                                    + "" + fwa.getW(i).get_frequency() + "</font></div>");
-                                continue Here;
-                            }
-                            if (S_Maps.dongCi.containsKey(fwa.getW(i).get_word())) {
-                                page.append("<div style=\"background:#8CEA00\">"
-                                    + "<font color=\"black\"" + " size=\"" +
-                                    NE.app_S.size_font_rot + "\">" + fwa.getW(i).get_word()
-                                    + "" + fwa.getW(i).get_frequency() + "</font></div>");
-                                continue Here;
-                            }
-                            if (S_Maps.xingRongCi.containsKey(fwa.getW(i).get_word())) {
-                                page.append("<div style=\"background:#FF9224\">"
-                                    + "<font color=\"black\"" + " size=\"" +
-                                    NE.app_S.size_font_rot + "\">" + fwa.getW(i).get_word()
-                                    + "" + fwa.getW(i).get_frequency() + "</font></div>");
-                            }
-                        }
-                    }
-                    page_X_S_s.statistic.setText(page.toString());
-                    page_X_S_s.statistic.setSelectionStart(0);
-                    page_X_S_s.statistic.setSelectionEnd(0);
-                    page_X_S_s.statistic.validate();
-                } catch (Exception e1) {
-                    page_X_S_s.statistic.validate();
-                    page_X_S_s.jTabbedpane.validate();
-                }
-            }
-        });
-        return buttonNext;
-    }
+	public static DetaButton data_X_rollafter(Page_X_S_sVSQ page_X_S_s,
+			int maxInPage, App NE) {
+		DetaButton buttonNext = new DetaButton("->");
+		// buttonNext.setBounds(410, 0, 100, 30);
+		buttonNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				IMV_SIQ_SS map = new IMV_SIQ_SS();
+				try {
+					page_X_S_s.currentPage += 1;
+					if (page_X_S_s.currentPage * maxInPage >= page_X_S_s.sets
+							.size()) {
+						page_X_S_s.currentPage -= 1;
+						return;
+					}
+					page_X_S_s.currentPage = (page_X_S_s.currentPage > (page_X_S_s.sets == null
+							? 0
+							: page_X_S_s.sets.size()) / maxInPage + 1
+									? page_X_S_s.currentPage - 1
+									: page_X_S_s.currentPage);
+					StringBuilder page = new StringBuilder().append("");
+					List<String> setsForGet = page_X_S_s.sets.subList(
+							page_X_S_s.currentPage * maxInPage,
+							(page_X_S_s.currentPage + 1)
+									* maxInPage < page_X_S_s.sets.size()
+											? (page_X_S_s.currentPage + 1)
+													* maxInPage
+											: page_X_S_s.sets.size());
+					PageWords.renderWordLoopPOS(page, setsForGet, map,
+							page_X_S_s.key, true, NE);
+					page_X_S_s.buttonCrt
+							.setText("当前页面：" + (page_X_S_s.currentPage + 1));
+					page_X_S_s.data.setText(page.toString());
+					page_X_S_s.data.setSelectionStart(0);
+					page_X_S_s.data.setSelectionEnd(0);
+					page_X_S_s.data.validate();
+				} catch (Exception e1) {
+					page_X_S_s.data.validate();
+					page_X_S_s.jTabbedpane.validate();
+				}
+				try {
+					page_X_S_s.statistic.setSize(500, 800);
+					IMV_SIQ_S_ fwa = page_X_S_s._A
+							.sortWordFrequencyMapToSortMap(map);
+					page_X_S_s.statistic.setContentType("text/html");
+					StringBuilder page = new StringBuilder();
+					Here: for (int i = fwa.size() - 1; i >= 0; i--) {
+						if (fwa.get(i) != null) {
+							if (page_X_S_s.pos
+									.get(fwa.getW(i).get_word()) == null) {
+								page.append("<div style=\"background:white\">"
+										+ "<font color=\"black\">"
+										+ fwa.getW(i).get_word() + ""
+										+ fwa.getW(i).get_frequency()
+										+ "</font></div>");
+								continue Here;
+							}
+							if (S_Maps.mingCi
+									.containsKey(fwa.getW(i).get_word())) {
+								page.append("<div style=\"background:#FF44FF\">"
+										+ "<font color=\"white\">"
+										+ fwa.getW(i).get_word() + ""
+										+ fwa.getW(i).get_frequency()
+										+ "</font></div>");
+								continue Here;
+							}
+							if (S_Maps.dongCi
+									.containsKey(fwa.getW(i).get_word())) {
+								page.append("<div style=\"background:#8CEA00\">"
+										+ "<font color=\"black\"" + " size=\""
+										+ NE.app_S.size_font_rot + "\">"
+										+ fwa.getW(i).get_word() + ""
+										+ fwa.getW(i).get_frequency()
+										+ "</font></div>");
+								continue Here;
+							}
+							if (S_Maps.xingRongCi
+									.containsKey(fwa.getW(i).get_word())) {
+								page.append("<div style=\"background:#FF9224\">"
+										+ "<font color=\"black\"" + " size=\""
+										+ NE.app_S.size_font_rot + "\">"
+										+ fwa.getW(i).get_word() + ""
+										+ fwa.getW(i).get_frequency()
+										+ "</font></div>");
+							}
+						}
+					}
+					page_X_S_s.statistic.setText(page.toString());
+					page_X_S_s.statistic.setSelectionStart(0);
+					page_X_S_s.statistic.setSelectionEnd(0);
+					page_X_S_s.statistic.validate();
+				} catch (Exception e1) {
+					page_X_S_s.statistic.validate();
+					page_X_S_s.jTabbedpane.validate();
+				}
+			}
+		});
+		return buttonNext;
+	}
 }

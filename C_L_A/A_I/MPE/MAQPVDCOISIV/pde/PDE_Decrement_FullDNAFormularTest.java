@@ -1,4 +1,5 @@
 package A_I.MPE.MAQPVDCOISIV.pde;
+
 /*
  * 著作权人 ，作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
@@ -11,43 +12,43 @@ package A_I.MPE.MAQPVDCOISIV.pde;
 //一旦用上这东西，又是一个烦躁的时代开始。。
 class PDE_Decrement_FullDNAFormularTest {
 
-    @org.junit.jupiter.api.BeforeEach
-    void setUp() {
-    }
+	@org.junit.jupiter.api.BeforeEach
+	void setUp() {
+	}
 
-    @org.junit.jupiter.api.AfterEach
-    void tearDown() {
-    }
+	@org.junit.jupiter.api.AfterEach
+	void tearDown() {
+	}
 
-    @org.junit.jupiter.api.Test
-    void PDE_DecrementA() {
-    }
+	@org.junit.jupiter.api.Test
+	void PDE_DecrementA() {
+	}
 
-    @org.junit.jupiter.api.Test
-    void PDE_DecrementO() {
-    }
+	@org.junit.jupiter.api.Test
+	void PDE_DecrementO() {
+	}
 
-    @org.junit.jupiter.api.Test
-    void PDE_DecrementP() {
-    }
+	@org.junit.jupiter.api.Test
+	void PDE_DecrementP() {
+	}
 
-    @org.junit.jupiter.api.Test
-    void PDE_DecrementM() {
-    }
+	@org.junit.jupiter.api.Test
+	void PDE_DecrementM() {
+	}
 
-    @org.junit.jupiter.api.Test
-    void PDE_DecrementV() {
-    }
+	@org.junit.jupiter.api.Test
+	void PDE_DecrementV() {
+	}
 
-    @org.junit.jupiter.api.Test
-    void PDE_DecrementE_DU() {
-    }
+	@org.junit.jupiter.api.Test
+	void PDE_DecrementE_DU() {
+	}
 
-    @org.junit.jupiter.api.Test
-    void PDE_DecrementC() {
-    }
+	@org.junit.jupiter.api.Test
+	void PDE_DecrementC() {
+	}
 
-    @org.junit.jupiter.api.Test
-    void PDE_DecrementS_IQ() {
-    }
+	@org.junit.jupiter.api.Test
+	void PDE_DecrementS_IQ() {
+	}
 }

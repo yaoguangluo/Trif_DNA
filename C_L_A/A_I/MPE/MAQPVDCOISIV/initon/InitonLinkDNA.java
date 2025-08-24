@@ -13,24 +13,24 @@ import java.util.List;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class InitonLinkDNA {
-    private Initon initonLink;
-    private List<Initon> initonList;
+	private Initon initonLink;
+	private List<Initon> initonList;
 
-    public void I_NextIniton(Initon initon) {
-        initonLink = initonLink.addNextInitons(initon);
-        initonList.add(initon);
-    }
+	public void I_NextIniton(Initon initon) {
+		initonLink = initonLink.addNextInitons(initon);
+		initonList.add(initon);
+	}
 
-    public void I_PrevIniton(Initon initon) {
-        initonLink = initonLink.addPrevInitons(initon);
-        initonList.add(0, initon);
-    }
+	public void I_PrevIniton(Initon initon) {
+		initonLink = initonLink.addPrevInitons(initon);
+		initonList.add(0, initon);
+	}
 
-    public Initon getInitonLink() {
-        return initonLink;
-    }
+	public Initon getInitonLink() {
+		return initonLink;
+	}
 
-    public void I_InitonLink(Initon initons) {
-        initonLink = initons;
-    }
+	public void I_InitonLink(Initon initons) {
+		initonLink = initons;
+	}
 }

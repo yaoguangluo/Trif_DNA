@@ -20,21 +20,20 @@ import java.awt.Color;
  * */
 public class MakeContainerZYWS extends MakeContainer_X_S_s {
 
-    public MakeContainerZYWS(App app_NE) {
-        super(app_NE);
-        NE = app_NE;
-    }
+	public MakeContainerZYWS(App app_NE) {
+		super(app_NE);
+		NE = app_NE;
+	}
 
-    public void run() {
-        jTabbedpane.validate();
-        DetaThread.sleepDeta(1000);
-        app_S.wskxPage = new WskxPage(app_S.text, NE);
-        app_S.wskxPage.setName("中医外伤科学");
-        jTabbedpane.addTab("中医外伤科学", new ImageIcon()
-            , app_S.wskxPage, "中医外伤科学");// 加入第一个页面
-        Color[] colors = TableRender.getTableCellRender();
-        jTabbedpane.setBackgroundAt(jTabbedpane.getTabCount() - 1
-            , colors[jTabbedpane.getTabCount() % 3]);
-        jTabbedpane.validate();
-    }
+	public void run() {
+		jTabbedpane.validate();
+		DetaThread.sleepDeta(1000);
+		app_S.wskxPage = new WskxPage(app_S.text, NE);
+		app_S.wskxPage.setName("中医外伤科学");
+		jTabbedpane.addTab("中医外伤科学", new ImageIcon(), app_S.wskxPage, "中医外伤科学");// 加入第一个页面
+		Color[] colors = TableRender.getTableCellRender();
+		jTabbedpane.setBackgroundAt(jTabbedpane.getTabCount() - 1,
+				colors[jTabbedpane.getTabCount() % 3]);
+		jTabbedpane.validate();
+	}
 }

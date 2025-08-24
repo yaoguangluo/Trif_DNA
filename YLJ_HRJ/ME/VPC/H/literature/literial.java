@@ -16,7 +16,7 @@ import java.util.List;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 //20211028
-public class literial{
+public class literial {
 	public static List<String> literialVerbalBase;
 	public static IMV_SIQ literialVerbalBaseMap;
 }

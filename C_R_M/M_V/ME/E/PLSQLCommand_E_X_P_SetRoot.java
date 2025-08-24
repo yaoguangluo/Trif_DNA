@@ -16,29 +16,29 @@ import java.io.File;
  * */
 
 public class PLSQLCommand_E_X_P_SetRoot {
-    public static void _E(String[] acknowledge) {
-        String dbPath = acknowledge[1];
-        for (int i = 2; i < acknowledge.length; i++) {
-            dbPath += ":" + acknowledge[i];
-        }
-        if (null != Cache_M.getCacheInfo("DBPath")) {
-            File file = new File(dbPath);
-            if (!file.exists()) {
-                file.mkdirs();
-                Cache c = new Cache();
-                c.I_Value(dbPath);
-                Cache_M.putCache("DBPath", c);
-            } else if (file.isFile()) {
-                try {
-                    throw new Exception();
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-            } else if (file.isDirectory()) {
-                Cache c = new Cache();
-                c.I_Value(dbPath);
-                Cache_M.putCache("DBPath", c);
-            }
-        }
-    }
+	public static void _E(String[] acknowledge) {
+		String dbPath = acknowledge[1];
+		for (int i = 2; i < acknowledge.length; i++) {
+			dbPath += ":" + acknowledge[i];
+		}
+		if (null != Cache_M.getCacheInfo("DBPath")) {
+			File file = new File(dbPath);
+			if (!file.exists()) {
+				file.mkdirs();
+				Cache c = new Cache();
+				c.I_Value(dbPath);
+				Cache_M.putCache("DBPath", c);
+			} else if (file.isFile()) {
+				try {
+					throw new Exception();
+				} catch (Exception e) {
+					throw new RuntimeException(e);
+				}
+			} else if (file.isDirectory()) {
+				Cache c = new Cache();
+				c.I_Value(dbPath);
+				Cache_M.putCache("DBPath", c);
+			}
+		}
+	}
 }

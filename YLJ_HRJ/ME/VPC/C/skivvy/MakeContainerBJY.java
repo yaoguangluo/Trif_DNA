@@ -19,49 +19,49 @@ import java.awt.Color;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class MakeContainerBJY extends MakeContainer_X_S_s {
-    public MakeContainerBJY(App app_NE) {
-        super(app_NE);
-        NE = app_NE;
-        if (null == NE.app_S) {
-            return;//mock trif
-        }
-        this._A = NE.app_S._A;
-        this.ctj = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToJp;
-        this.ctk = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToAb;
-        this.ctt = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToTt;
-        this.ctr = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToRs;
+	public MakeContainerBJY(App app_NE) {
+		super(app_NE);
+		NE = app_NE;
+		if (null == NE.app_S) {
+			return;// mock trif
+		}
+		this._A = NE.app_S._A;
+		this.ctj = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToJp;
+		this.ctk = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToAb;
+		this.ctt = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToTt;
+		this.ctr = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToRs;
 
-        this.cko = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToKo;
-        this.cfn = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToFn;
-        this.csp = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToSp;
-        this.cgm = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToGm;
+		this.cko = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToKo;
+		this.cfn = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToFn;
+		this.csp = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToSp;
+		this.cgm = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToGm;
 
-        this.environmentInit = NE.app_S.environmentInit;
-        this.emotionMap_E = NE.app_S.emotionMap_E;
-        this.ratioMap_E = NE.app_S.ratioMap_E;
-        this.ratioMap = this.ratioMap_E;
-        this.lenovoInit = NE.app_S.lenovoInit;
-        this.emotionSample = NE.app_S.emotionSample;
-        this.sensingTest = NE.app_S.sensingTest;
-        this.sensingMap_E = NE.app_S.sensingMap_E;
-        this.pinyin = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToPy;
-    }
+		this.environmentInit = NE.app_S.environmentInit;
+		this.emotionMap_E = NE.app_S.emotionMap_E;
+		this.ratioMap_E = NE.app_S.ratioMap_E;
+		this.ratioMap = this.ratioMap_E;
+		this.lenovoInit = NE.app_S.lenovoInit;
+		this.emotionSample = NE.app_S.emotionSample;
+		this.sensingTest = NE.app_S.sensingTest;
+		this.sensingMap_E = NE.app_S.sensingMap_E;
+		this.pinyin = NE.app_S.fMHMMListOneTime_E_X_S.fullCnToPy;
+	}
 
-    public void run() {
-        if (null == jTabbedpane) {
-            return;//fatal trif
-        }
-        jTabbedpane.validate();
-        DetaThread.sleepDeta(1000);
-        app_S.editPane = new EditPane(app_S.text, NE);
-        app_S.editPane.setName("编辑页");
-        jTabbedpane.addTab(app_S.editPane.getName(), new ImageIcon()
-            , app_S.editPane, app_S.editPane.getName());// 加入第一个页面
-        Color[] colors = TableRender.getTableCellRender();
-        jTabbedpane.setBackgroundAt(jTabbedpane.getTabCount() - 1
-            , colors[jTabbedpane.getTabCount() % 3]);
-        jTabbedpane.validate();
-    }
+	public void run() {
+		if (null == jTabbedpane) {
+			return;// fatal trif
+		}
+		jTabbedpane.validate();
+		DetaThread.sleepDeta(1000);
+		app_S.editPane = new EditPane(app_S.text, NE);
+		app_S.editPane.setName("编辑页");
+		jTabbedpane.addTab(app_S.editPane.getName(), new ImageIcon(),
+				app_S.editPane, app_S.editPane.getName());// 加入第一个页面
+		Color[] colors = TableRender.getTableCellRender();
+		jTabbedpane.setBackgroundAt(jTabbedpane.getTabCount() - 1,
+				colors[jTabbedpane.getTabCount() % 3]);
+		jTabbedpane.validate();
+	}
 }
 
 //            , null, pos, pose, etc, cte, emotionSample

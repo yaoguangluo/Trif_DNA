@@ -13,11 +13,11 @@ import java.awt.Color;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class TableRender {
-    public static Color[] getTableCellRender() {
-        Color[] colors = new Color[3];
-        colors[0] = new Color(253, 233, 254);
-        colors[1] = new Color(233, 254, 234);
-        colors[2] = new Color(255, 251, 232);
-        return colors;
-    }
+	public static Color[] getTableCellRender() {
+		Color[] colors = new Color[3];
+		colors[0] = new Color(253, 233, 254);
+		colors[1] = new Color(233, 254, 234);
+		colors[2] = new Color(255, 251, 232);
+		return colors;
+	}
 }

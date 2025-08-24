@@ -17,30 +17,31 @@ import java.net.URL;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class RestCall_X_searchLinkWord {
-    public static String _E(String request) {
-        ////20230106-System.out.println("http://localhost:8000" + request);
-        URL url;
-        String out;
-        try {
-            url = new URL("http://localhost:8000" + request);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            conn.setRequestProperty("Accept", "application/json");
-            if (conn.getResponseCode() != 200) {
-                throw new RuntimeException("Failed : HTTP error code : "
-						+ conn.getResponseCode());
-            }
-            DetaBufferedReader br = new DetaBufferedReader(
+	public static String _E(String request) {
+		//// 20230106-System.out.println("http://localhost:8000" +
+		//// request);
+		URL url;
+		String out;
+		try {
+			url = new URL("http://localhost:8000" + request);
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Accept", "application/json");
+			if (conn.getResponseCode() != 200) {
+				throw new RuntimeException(
+						"Failed : HTTP error code : " + conn.getResponseCode());
+			}
+			DetaBufferedReader br = new DetaBufferedReader(
 					DetaInputStreamReader.E((conn.getInputStream()), "UTF8"));
-            out = "";
-            String out1;
-            while ((out1 = br.readDetaLine()) != null) {
-                out += out1;
-            }
-            conn.disconnect();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return out;
-    }
+			out = "";
+			String out1;
+			while ((out1 = br.readDetaLine()) != null) {
+				out += out1;
+			}
+			conn.disconnect();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		return out;
+	}
 }

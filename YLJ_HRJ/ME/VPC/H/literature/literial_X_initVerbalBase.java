@@ -20,37 +20,39 @@ import java.util.ArrayList;
  * */
 //20211028
 public class literial_X_initVerbalBase extends literial {
-    public static void initVerbalBase() {
-        if (null == literialVerbalBase) {
-            literialVerbalBase = new ArrayList<>();
-            InputStream in = new literial_X_initVerbalBase()
-                .getClass().getResourceAsStream("BToW.lyg");
-            DetaBufferedReader cReader = new DetaBufferedReader(DetaInputStreamReader.E(in));
-            String ctempString = null;
-            while ((ctempString = cReader.readDetaLine()) != null) {
-                if (!ctempString.replace(" ", "").equals("")) {
-                    literialVerbalBase.add(ctempString);
-                }
-            }
-            cReader.closeDeta();
-        }
+	public static void initVerbalBase() {
+		if (null == literialVerbalBase) {
+			literialVerbalBase = new ArrayList<>();
+			InputStream in = new literial_X_initVerbalBase().getClass()
+					.getResourceAsStream("BToW.lyg");
+			DetaBufferedReader cReader = new DetaBufferedReader(
+					DetaInputStreamReader.E(in));
+			String ctempString = null;
+			while ((ctempString = cReader.readDetaLine()) != null) {
+				if (!ctempString.replace(" ", "").equals("")) {
+					literialVerbalBase.add(ctempString);
+				}
+			}
+			cReader.closeDeta();
+		}
 
-        if (null == literialVerbalBaseMap) {
-            literialVerbalBaseMap = new IMV_SIQ();
-            InputStream in = new literial_X_initVerbalBase()
-                .getClass().getResourceAsStream("WToB.lyg");
-            DetaBufferedReader cReader = new DetaBufferedReader(DetaInputStreamReader.E(in));
-            String ctempString = null;
-            while ((ctempString = cReader.readDetaLine()) != null) {
-                if (!ctempString.replace(" ", "").equals("")) {
-                    if (ctempString.contains("/")) {
-                        String[] strings = ctempString.split("/");
-                        literialVerbalBaseMap.put(strings[0], strings[1]);
-                    }
-                }
-            }
-            cReader.closeDeta();
-        }
-    }
+		if (null == literialVerbalBaseMap) {
+			literialVerbalBaseMap = new IMV_SIQ();
+			InputStream in = new literial_X_initVerbalBase().getClass()
+					.getResourceAsStream("WToB.lyg");
+			DetaBufferedReader cReader = new DetaBufferedReader(
+					DetaInputStreamReader.E(in));
+			String ctempString = null;
+			while ((ctempString = cReader.readDetaLine()) != null) {
+				if (!ctempString.replace(" ", "").equals("")) {
+					if (ctempString.contains("/")) {
+						String[] strings = ctempString.split("/");
+						literialVerbalBaseMap.put(strings[0], strings[1]);
+					}
+				}
+			}
+			cReader.closeDeta();
+		}
+	}
 }
 //速度一般, 精度一般}

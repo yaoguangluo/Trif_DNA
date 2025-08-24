@@ -17,12 +17,13 @@ import U_A.PEU.P.dna.TokenCerts;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class X_sessionCheck {
-    //序列检查, 用于并发条件下又没有缓存服务器额情况下.
-    //用户注意, FullDNATokenPDI 是我目的用来做DNA搜索的, 在dna加密这里也可以用, 但是, 如果要用
-    //, 请谨慎修改.
-    public static boolean _E(Token token, TokenCerts tokenCerts) {
-        boolean infix = X_sessionCheckWithOrderPDSKey._E(token, tokenCerts);
-        boolean postfix = X_sessionCheckWithPostPDSKey._E(token, tokenCerts);
-        return infix && postfix;
-    }
+	// 序列检查, 用于并发条件下又没有缓存服务器额情况下.
+	// 用户注意, FullDNATokenPDI 是我目的用来做DNA搜索的, 在dna加密这里也可以用, 但是,
+	// 如果要用
+	// , 请谨慎修改.
+	public static boolean _E(Token token, TokenCerts tokenCerts) {
+		boolean infix = X_sessionCheckWithOrderPDSKey._E(token, tokenCerts);
+		boolean postfix = X_sessionCheckWithPostPDSKey._E(token, tokenCerts);
+		return infix && postfix;
+	}
 }

@@ -18,27 +18,26 @@ import java.util.List;
  * */
 //20211028
 public class literial_X_words_P extends literial {
-    public String words_P(App app, String input) {
-        List<String> list = app.app_S._A.parserMixedString(input);
-        Iterator<String> iteratorList = list.iterator();
-        StringBuilder stringBuilder = new StringBuilder();
-        Here:
-        while (iteratorList.hasNext()) {
-            String stringIteratorList = iteratorList.next();
-            if (1 < stringIteratorList.length()) {
-                if (null == literialVerbalBase) {//局部调试, 稍后进行合并, 罗瑶光
-                    literial_X_initVerbalBase.initVerbalBase();
-                }
-                for (String string : literialVerbalBase) {
-                    if (string.contains(stringIteratorList)) {
-                        stringBuilder.append(string);
-                        continue Here;
-                    }
-                }
-            }
-            stringBuilder.append(stringIteratorList);
-        }
-        return stringBuilder.toString();
-    }
-    //速度慢, 精度高, 适用于文章短篇
+	public String words_P(App app, String input) {
+		List<String> list = app.app_S._A.parserMixedString(input);
+		Iterator<String> iteratorList = list.iterator();
+		StringBuilder stringBuilder = new StringBuilder();
+		Here: while (iteratorList.hasNext()) {
+			String stringIteratorList = iteratorList.next();
+			if (1 < stringIteratorList.length()) {
+				if (null == literialVerbalBase) {// 局部调试, 稍后进行合并, 罗瑶光
+					literial_X_initVerbalBase.initVerbalBase();
+				}
+				for (String string : literialVerbalBase) {
+					if (string.contains(stringIteratorList)) {
+						stringBuilder.append(string);
+						continue Here;
+					}
+				}
+			}
+			stringBuilder.append(stringIteratorList);
+		}
+		return stringBuilder.toString();
+	}
+	// 速度慢, 精度高, 适用于文章短篇
 }

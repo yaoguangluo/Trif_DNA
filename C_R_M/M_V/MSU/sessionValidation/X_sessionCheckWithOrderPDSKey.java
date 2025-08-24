@@ -19,25 +19,34 @@ import U_A.PEU.P.dna.TokenCerts;
  * */
 public class X_sessionCheckWithOrderPDSKey {
 
-    //序列 正序密文检查
-    public static boolean _E(Token token, TokenCerts tokenCerts) {
-        TokenPDI pDE_RNA_Formular = new TokenPDI();
-        //		//20230106-System.out.println("Session: "+ token.getmPassword());
-        //		//20230106-System.out.println("===============================================");
-        //		//20230106-System.out.println("开始前序验证：");
-        //		//20230106-System.out.println("开始Session解析："+ token.getmPassword());
-        //		//20230106-System.out.println("开始概率钥匙解析："+ token.getUpdsde()
-        //+ token.getUpdsds()+ token.getUpdsie()+ token.getUpdsis());
-        TokenPDI pDE_RNA_Formular1 = new TokenPDI();
-        pDE_RNA_Formular1.pdedeKey = token.getUpdsde();
-        pDE_RNA_Formular1.pdedsKey = token.getUpdsds();
-        pDE_RNA_Formular1.pdeieKey = token.getUpdsie();
-        pDE_RNA_Formular1.pdeisKey = token.getUpdsis();
-        pDE_RNA_Formular.doKeyUnPress(tokenCerts.getPdnPassword(), pDE_RNA_Formular1, true);
-        //		//20230106-System.out.println("得到原降元元基DNA序列："+ pDE_RNA_Formular.pds);
-        //		//20230106-System.out.println("得到新降元元基DNA序列："+ pDE_RNA_Formular1.pds);
-        //		//20230106-System.out.println("得到原元基DNA序列："+ pDE_RNA_Formular.pde);
-        //		//20230106-System.out.println("得到新元基DNA序列："+ pDE_RNA_Formular1.pde);
-        return pDE_RNA_Formular1.pde.equalsIgnoreCase(token.getmPassword());
-    }
+	// 序列 正序密文检查
+	public static boolean _E(Token token, TokenCerts tokenCerts) {
+		TokenPDI pDE_RNA_Formular = new TokenPDI();
+		// //20230106-System.out.println("Session: "+
+		// token.getmPassword());
+		// //20230106-System.out.println("===============================================");
+		// //20230106-System.out.println("开始前序验证：");
+		// //20230106-System.out.println("开始Session解析："+
+		// token.getmPassword());
+		// //20230106-System.out.println("开始概率钥匙解析："+
+		// token.getUpdsde()
+		// + token.getUpdsds()+ token.getUpdsie()+
+		// token.getUpdsis());
+		TokenPDI pDE_RNA_Formular1 = new TokenPDI();
+		pDE_RNA_Formular1.pdedeKey = token.getUpdsde();
+		pDE_RNA_Formular1.pdedsKey = token.getUpdsds();
+		pDE_RNA_Formular1.pdeieKey = token.getUpdsie();
+		pDE_RNA_Formular1.pdeisKey = token.getUpdsis();
+		pDE_RNA_Formular.doKeyUnPress(tokenCerts.getPdnPassword(),
+				pDE_RNA_Formular1, true);
+		// //20230106-System.out.println("得到原降元元基DNA序列："+
+		// pDE_RNA_Formular.pds);
+		// //20230106-System.out.println("得到新降元元基DNA序列："+
+		// pDE_RNA_Formular1.pds);
+		// //20230106-System.out.println("得到原元基DNA序列："+
+		// pDE_RNA_Formular.pde);
+		// //20230106-System.out.println("得到新元基DNA序列："+
+		// pDE_RNA_Formular1.pde);
+		return pDE_RNA_Formular1.pde.equalsIgnoreCase(token.getmPassword());
+	}
 }

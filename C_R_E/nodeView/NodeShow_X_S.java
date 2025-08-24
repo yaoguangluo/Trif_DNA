@@ -25,19 +25,19 @@ import java.awt.PopupMenu;
  * */
 
 public class NodeShow_X_S extends JScrollPane {
-    public JTree tree;
-    public NodeOSGI first;
-    public LinkOSGI link;
-    public GUISample gUISample;
-    public DefaultTreeModel treeModel;
-    public DefaultMutableTreeNode root;
-    public ImageIcon test;
-    public JTextPane text;
-    public Object[][] tableData_old;
-    public PopupMenu popupMenu;
-    public App_S u;
-    public A _A;
-    public IMV_SIQ pos;
+	public JTree tree;
+	public NodeOSGI first;
+	public LinkOSGI link;
+	public GUISample gUISample;
+	public DefaultTreeModel treeModel;
+	public DefaultMutableTreeNode root;
+	public ImageIcon test;
+	public JTextPane text;
+	public Object[][] tableData_old;
+	public PopupMenu popupMenu;
+	public App_S u;
+	public A _A;
+	public IMV_SIQ pos;
 }
 //	public String labelname;
 //

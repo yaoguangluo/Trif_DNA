@@ -3,6 +3,7 @@ package ME.VPC.E.sleeper;
 import ME.VPC.S.ne.Page_X_S_VSE;
 import M_V.MVQ.button.DetaButton;
 import S_A.pheromone.IMV_SIQ;
+
 //import OCI.ME.analysis.C.A;
 //import OSV.VCQ.standard.DictionaryStandardDB;
 /*
@@ -16,8 +17,8 @@ import S_A.pheromone.IMV_SIQ;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class FyydPage_X_S_s extends Page_X_S_VSE {
-	
+
 	public DetaButton buttonGJJD;
-	public Object[] columnTitle= {"ID", "打分", "书名", "段落"};
+	public Object[] columnTitle = { "ID", "打分", "书名", "段落" };
 	public IMV_SIQ dic_map;
 }

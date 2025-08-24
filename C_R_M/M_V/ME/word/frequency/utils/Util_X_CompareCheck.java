@@ -15,20 +15,21 @@ import S_A.pheromone.IMV_SIQ_SS;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class Util_X_CompareCheck {
-    public static void _E(IMV_SIQ_SS outputList
-        , StringBuilder[] fixWords, String countWordNode, App NE) {
-        if (outputList.containsKey(countWordNode)) {
-            WordFrequency wordFrequency = outputList.getW(countWordNode);
-            wordFrequency.I_frequency(wordFrequency.get_frequency() + S_Pos.INT_ONE);
-            wordFrequency.positions.add(NE._I_U.parserCharPosition);
-            outputList.put(countWordNode, wordFrequency);
-            return;
-        }
-        WordFrequency wordFrequency = new WordFrequency(1.0
-            , fixWords[S_Pos.INT_ZERO].toString());
-        wordFrequency.positions.add(NE._I_U.parserCharPosition);
-        outputList.put(countWordNode, wordFrequency);
-    }
+	public static void _E(IMV_SIQ_SS outputList, StringBuilder[] fixWords,
+			String countWordNode, App NE) {
+		if (outputList.containsKey(countWordNode)) {
+			WordFrequency wordFrequency = outputList.getW(countWordNode);
+			wordFrequency
+					.I_frequency(wordFrequency.get_frequency() + S_Pos.INT_ONE);
+			wordFrequency.positions.add(NE._I_U.parserCharPosition);
+			outputList.put(countWordNode, wordFrequency);
+			return;
+		}
+		WordFrequency wordFrequency = new WordFrequency(1.0,
+				fixWords[S_Pos.INT_ZERO].toString());
+		wordFrequency.positions.add(NE._I_U.parserCharPosition);
+		outputList.put(countWordNode, wordFrequency);
+	}
 }
 //25 //		WordFrequency wordFrequency=new WordFrequency();
 ////		wordFrequency.I_frequency(1.0);

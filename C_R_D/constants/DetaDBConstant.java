@@ -11,45 +11,45 @@ package constants;
  * */
 
 public interface DetaDBConstant {
-	//common
-	int DIGIT_ONE= 1;
-	int DIGIT_60000= 60000;
-	//Token expired.
-	String ERRORCODE_ER1001= "ER1001";
+	// common
+	int DIGIT_ONE = 1;
+	int DIGIT_60000 = 60000;
+	// Token expired.
+	String ERRORCODE_ER1001 = "ER1001";
 
-	//rest tire
-	String REST_JSON_CONFIG= "application/json;charset=utf-8";
-	String REST_LOGIN_LOGIN= "/login";
-	String REST_LOGIN_LOGOUT= "/logout";
-	String REST_LOGIN_REGISTER= "/register";
-	String REST_LOGIN_FIND= "/find";
-	String REST_LOGIN_CHANGE= "/change";
+	// rest tire
+	String REST_JSON_CONFIG = "application/json;charset=utf-8";
+	String REST_LOGIN_LOGIN = "/login";
+	String REST_LOGIN_LOGOUT = "/logout";
+	String REST_LOGIN_REGISTER = "/register";
+	String REST_LOGIN_FIND = "/find";
+	String REST_LOGIN_CHANGE = "/change";
 
-	String DB_LOGIN_U_NAME= "uName";
-	String DB_LOGIN_U_CHANGE= "uChange";
-	String DB_LOGIN_U_CHANGE_ENSURE= "uChangeEnsure";
-	String DB_LOGIN_U_AGE= "uAge";
-	String DB_LOGIN_U_EMAIL= "uEmail";
-	String DB_LOGIN_U_EMAIL_ENSURE= "uEmailEnsure";
-	String DB_LOGIN_U_ID= "uId";
-	String DB_LOGIN_U_SEX= "uSex";
-	String DB_LOGIN_U_PHONE= "uPhone";
-	String DB_LOGIN_U_ADDRESS= "uAddress";
-	String DB_LOGIN_U_WECHAT= "uWeChat";
-	String DB_LOGIN_U_PSWD= "uPassword";
-	String DB_LOGIN_U_PSWD_ENSURE= "uPasswordEnsure";
-	String DB_LOGIN_U_PSTOKEN= "uToken";
-	String DB_LOGIN_U_CLASS= "uClass";
-	String DB_LOGIN_U_QQ= "uQq";
+	String DB_LOGIN_U_NAME = "uName";
+	String DB_LOGIN_U_CHANGE = "uChange";
+	String DB_LOGIN_U_CHANGE_ENSURE = "uChangeEnsure";
+	String DB_LOGIN_U_AGE = "uAge";
+	String DB_LOGIN_U_EMAIL = "uEmail";
+	String DB_LOGIN_U_EMAIL_ENSURE = "uEmailEnsure";
+	String DB_LOGIN_U_ID = "uId";
+	String DB_LOGIN_U_SEX = "uSex";
+	String DB_LOGIN_U_PHONE = "uPhone";
+	String DB_LOGIN_U_ADDRESS = "uAddress";
+	String DB_LOGIN_U_WECHAT = "uWeChat";
+	String DB_LOGIN_U_PSWD = "uPassword";
+	String DB_LOGIN_U_PSWD_ENSURE = "uPasswordEnsure";
+	String DB_LOGIN_U_PSTOKEN = "uToken";
+	String DB_LOGIN_U_CLASS = "uClass";
+	String DB_LOGIN_U_QQ = "uQq";
 
-	//service tire
+	// service tire
 
-	//schedular tire
+	// schedular tire
 
-	//dao tire
+	// dao tire
 
-	//database tire
+	// database tire
 
-	//condition tire
+	// condition tire
 
 }

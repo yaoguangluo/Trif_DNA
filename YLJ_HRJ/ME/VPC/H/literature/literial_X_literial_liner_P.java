@@ -1,4 +1,5 @@
 package ME.VPC.H.literature;
+
 import ME.VPC.S.ne.App_S;
 import java.util.List;
 
@@ -15,26 +16,26 @@ import java.util.List;
  * */
 //20211028
 public class literial_X_literial_liner_P extends literial {
-    //速度慢, 精度高, 适用于文章短篇
-    //速度快, 精度一般, 适用于专业白话文。
-    public static String literial_liner_P(App_S app, String input) {
-        StringBuilder stringBuilder = new StringBuilder();
-        try {
-            List<String> list = app._A.parserMixedString(input);
-            for (String string : list) {
-                if (null == literialVerbalBaseMap) {//局部调试, 稍后进行合并, 罗瑶光
-                    literial_X_initVerbalBase.initVerbalBase();
-                }
-                if (literialVerbalBaseMap.containsKey(string)) {
-                    stringBuilder.append(literialVerbalBaseMap.get(string));
-                } else {
-                    stringBuilder.append(string);
-                }
-            }
-        } catch (Exception e) {
-            app.hook.hookFrequentException("literial_liner_P异常."
-                , System.currentTimeMillis(), e);
-        }
-        return stringBuilder.toString();
-    }
+	// 速度慢, 精度高, 适用于文章短篇
+	// 速度快, 精度一般, 适用于专业白话文。
+	public static String literial_liner_P(App_S app, String input) {
+		StringBuilder stringBuilder = new StringBuilder();
+		try {
+			List<String> list = app._A.parserMixedString(input);
+			for (String string : list) {
+				if (null == literialVerbalBaseMap) {// 局部调试, 稍后进行合并, 罗瑶光
+					literial_X_initVerbalBase.initVerbalBase();
+				}
+				if (literialVerbalBaseMap.containsKey(string)) {
+					stringBuilder.append(literialVerbalBaseMap.get(string));
+				} else {
+					stringBuilder.append(string);
+				}
+			}
+		} catch (Exception e) {
+			app.hook.hookFrequentException("literial_liner_P异常.",
+					System.currentTimeMillis(), e);
+		}
+		return stringBuilder.toString();
+	}
 }

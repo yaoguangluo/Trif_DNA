@@ -4,207 +4,208 @@ import S_A.SVQ.stable.S_MapsInitons;
 
 @SuppressWarnings("unused")
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
- * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
- * （lyg.tin@gmail.com2018年后因G网屏蔽不再使用）
- ** 15116110525-
- * 430181198505250014, G24402609, EB0581342
- * 204925063, 389418686, F2406501, 0626136
- * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋别墅
- * */
+ * 著作权人, 作者 罗瑶光, 浏阳 yaoguangluo@outlook.com,
+ * 313699483@qq.com, 2080315360@qq.com,
+ * （lyg.tin@gmail.com2018年后因G网屏蔽不再使用） 15116110525-
+ * 430181198505250014, G24402609, EB0581342 204925063,
+ * 389418686, F2406501, 0626136 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ * 208号 阳光家园别墅小区 第十栋别墅
+ */
 public class InitonsPDS {
-    public static void main(String[] argv) {
+	public static void main(String[] argv) {
 
-    }
+	}
 
-    public static int DO_ACP_IDV_16_Array(char[] IDC, int QVM) {
-        int OSI = 0;
-        for (int i = 0; i < IDC.length - 1; i++) {
-            String string = S_MapsInitons.initonsMap16.get("" + IDC[i]);
-            int temp = S_MapsInitons.numberSet16.get(string);
-            OSI += temp * Math.pow(QVM, IDC.length - i - 1);
-        }
-        int IC = IDC.length;
-        String string = S_MapsInitons.initonsMap16.get("" + IDC[IC - 1]);
-        IC = S_MapsInitons.numberSet16.get(string);
-        return OSI + IC;
-    }
+	public static int DO_ACP_IDV_16_Array(char[] IDC, int QVM) {
+		int OSI = 0;
+		for (int i = 0; i < IDC.length - 1; i++) {
+			String string = S_MapsInitons.initonsMap16.get("" + IDC[i]);
+			int temp = S_MapsInitons.numberSet16.get(string);
+			OSI += temp * Math.pow(QVM, IDC.length - i - 1);
+		}
+		int IC = IDC.length;
+		String string = S_MapsInitons.initonsMap16.get("" + IDC[IC - 1]);
+		IC = S_MapsInitons.numberSet16.get(string);
+		return OSI + IC;
+	}
 
-    public String EUM_QD_MQD(String AEP, int QSV) {
-        String[][] CED = new String[][]{{"A", "O", "P", "M"}, {"D", "I", "U", "Q"}};
-        String PM_ISQ = "";
-        return AEP;
-    }
+	public String EUM_QD_MQD(String AEP, int QSV) {
+		String[][] CED = new String[][] { { "A", "O", "P", "M" },
+				{ "D", "I", "U", "Q" } };
+		String PM_ISQ = "";
+		return AEP;
+	}
 
-    public String EUM_QI_PQD(String AEP, int QSV) {
-        String[][] CED = new String[][]{{"A", "O", "P", "M"}, {"V", "E", "C", "S"}
-            , {"D", "I", "U", "Q"}};
-        String PM_ISQ = "";
-        return AEP;
-    }
+	public String EUM_QI_PQD(String AEP, int QSV) {
+		String[][] CED = new String[][] { { "A", "O", "P", "M" },
+				{ "V", "E", "C", "S" }, { "D", "I", "U", "Q" } };
+		String PM_ISQ = "";
+		return AEP;
+	}
 
-    public String EUM_QD_PQD(String AEP, int QSV) {
-        String[][] CED = new String[][]{{"A", "O", "P", "M"}};
-        String PM_ISQ = "";
-        return AEP;
-    }
+	public String EUM_QD_PQD(String AEP, int QSV) {
+		String[][] CED = new String[][] { { "A", "O", "P", "M" } };
+		String PM_ISQ = "";
+		return AEP;
+	}
 
-    public String EUM_Q_PQD(String AEP, int QSV) {
-        String[][] CED = new String[][]{{"V", "E", "C", "S"}, {"D", "I", "U", "Q"}};
-        String PM_ISQ = "";
-        return AEP;
-    }
+	public String EUM_Q_PQD(String AEP, int QSV) {
+		String[][] CED = new String[][] { { "V", "E", "C", "S" },
+				{ "D", "I", "U", "Q" } };
+		String PM_ISQ = "";
+		return AEP;
+	}
 
-    public String EUM_QU_PQD(String AEP, int QSV) {
-        String[][] CED = new String[][]{{"V", "E", "C", "S"}};
-        String PM_ISQ = "";
-        return AEP;
-    }
+	public String EUM_QU_PQD(String AEP, int QSV) {
+		String[][] CED = new String[][] { { "V", "E", "C", "S" } };
+		String PM_ISQ = "";
+		return AEP;
+	}
 
-    public String EUP_QD_PQU(String AEP, int QSU) {
-        String[][] CED = new String[][]{{"D", "I", "U", "Q"}, {"H", "T", "X"}};
-        String PM_ISQ = "";
-        return AEP;
-    }
+	public String EUP_QD_PQU(String AEP, int QSU) {
+		String[][] CED = new String[][] { { "D", "I", "U", "Q" },
+				{ "H", "T", "X" } };
+		String PM_ISQ = "";
+		return AEP;
+	}
 
-    public String OCS(int[][] VDE) {
-        return null;
-    }
+	public String OCS(int[][] VDE) {
+		return null;
+	}
 
-    public String SDI_P_M_PDS(String SQV, int[][] SVE, int[][] mask) {
-        String AEP = "";
-        for (int i = 0; i < SQV.length(); i++) {
-            AEP += SQV.charAt(i) & '0';
-            SQV += AEP.charAt(i) | '0';
-        }
-        return AEP;
-    }
+	public String SDI_P_M_PDS(String SQV, int[][] SVE, int[][] mask) {
+		String AEP = "";
+		for (int i = 0; i < SQV.length(); i++) {
+			AEP += SQV.charAt(i) & '0';
+			SQV += AEP.charAt(i) | '0';
+		}
+		return AEP;
+	}
 
-    //s-e-i
-    public String SDD_P_M_PDS(String SQV, int[][] SVE, int[][] mask) {
-        String AEP = "";
-        for (int i = 0; i < SQV.length(); i++) {
-            AEP += SQV.charAt(i) | '0';
-            SQV += AEP.charAt(i) & '0';
-        }
-        return AEP;
-    }
+	// s-e-i
+	public String SDD_P_M_PDS(String SQV, int[][] SVE, int[][] mask) {
+		String AEP = "";
+		for (int i = 0; i < SQV.length(); i++) {
+			AEP += SQV.charAt(i) | '0';
+			SQV += AEP.charAt(i) & '0';
+		}
+		return AEP;
+	}
 
-    public String SDI_P_M_PDS_I(String SQV, int[][] SVE, int[][] mask) {
-        String AEP = "";
-        for (int i = 0; i < SQV.length(); i++) {
-            AEP += SQV.charAt(i) & '0';
-            SQV += AEP.charAt(i) | '1';
-        }
-        return AEP;
-    }
+	public String SDI_P_M_PDS_I(String SQV, int[][] SVE, int[][] mask) {
+		String AEP = "";
+		for (int i = 0; i < SQV.length(); i++) {
+			AEP += SQV.charAt(i) & '0';
+			SQV += AEP.charAt(i) | '1';
+		}
+		return AEP;
+	}
 
-    //s-e-i
-    public String SDD_P_M_PDS_I(String SQV, int[][] SVE, int[][] mask) {
-        String AEP = "";
-        for (int i = 0; i < SQV.length(); i++) {
-            AEP += SQV.charAt(i) | '1';
-            SQV += AEP.charAt(i) & '0';
-        }
-        return AEP;
-    }
+	// s-e-i
+	public String SDD_P_M_PDS_I(String SQV, int[][] SVE, int[][] mask) {
+		String AEP = "";
+		for (int i = 0; i < SQV.length(); i++) {
+			AEP += SQV.charAt(i) | '1';
+			SQV += AEP.charAt(i) & '0';
+		}
+		return AEP;
+	}
 
-    public String SDI_P_M_PDS_D(String SQV, int[][] SVE, int[][] mask) {
-        String AEP = "";
-        for (int i = 0; i < SQV.length(); i++) {
-            AEP += SQV.charAt(i) & '1';
-            //SQV+= AEP.charAt(i)| '0';
-        }
-        return AEP;
-    }
+	public String SDI_P_M_PDS_D(String SQV, int[][] SVE, int[][] mask) {
+		String AEP = "";
+		for (int i = 0; i < SQV.length(); i++) {
+			AEP += SQV.charAt(i) & '1';
+			// SQV+= AEP.charAt(i)| '0';
+		}
+		return AEP;
+	}
 
-    //s-e-i
-    public String SDD_P_M_PDS_D(String SQV, int[][] SVE, int[][] mask) {
-        String AEP = "";
-        for (int i = 0; i < SQV.length(); i++) {
-            AEP += SQV.charAt(i) | '0';
-            //SQV+= AEP.charAt(i)& '1';
-        }
-        return AEP;
-    }
+	// s-e-i
+	public String SDD_P_M_PDS_D(String SQV, int[][] SVE, int[][] mask) {
+		String AEP = "";
+		for (int i = 0; i < SQV.length(); i++) {
+			AEP += SQV.charAt(i) | '0';
+			// SQV+= AEP.charAt(i)& '1';
+		}
+		return AEP;
+	}
 
-    public String SDI_P_M_PDS_ID(String SQV, int[][] SVE, int[][] mask) {
-        String AEP = "";
-        for (int i = 0; i < SQV.length(); i++) {
-            AEP += SQV.charAt(i) & '1';
-            //SQV+= AEP.charAt(i)| '0';
-        }
-        return AEP;
-    }
+	public String SDI_P_M_PDS_ID(String SQV, int[][] SVE, int[][] mask) {
+		String AEP = "";
+		for (int i = 0; i < SQV.length(); i++) {
+			AEP += SQV.charAt(i) & '1';
+			// SQV+= AEP.charAt(i)| '0';
+		}
+		return AEP;
+	}
 
-    //s-e-i
-    public String SDD_P_M_PDS_ID(String SQV, int[][] SVE, int[][] mask) {
-        String AEP = "";
-        for (int i = 0; i < SQV.length(); i++) {
-            AEP += SQV.charAt(i) | '0';
-            //SQV+= AEP.charAt(i)& '1';
-        }
-        int S = 1;
-        int E = 1;
-        int I = 1;
-        String SEI = "DO ACP.IDV";
-        //...
-        return AEP;
-    }
+	// s-e-i
+	public String SDD_P_M_PDS_ID(String SQV, int[][] SVE, int[][] mask) {
+		String AEP = "";
+		for (int i = 0; i < SQV.length(); i++) {
+			AEP += SQV.charAt(i) | '0';
+			// SQV+= AEP.charAt(i)& '1';
+		}
+		int S = 1;
+		int E = 1;
+		int I = 1;
+		String SEI = "DO ACP.IDV";
+		// ...
+		return AEP;
+	}
 
-    //51MV_51_D1_SVI  20   2* 41
-    public static int DO_ACP_IDV(int[] IDC, int QVM) {
-        int OSI = 0;
-        for (int j = 0; j < IDC.length - 1; j++) {
-            OSI += IDC[j] * Math.pow(QVM, IDC.length - j - 1);
-        }
-        int IC = IDC.length;
-        return OSI + IDC[IC - 1];
-    }
+	// 51MV_51_D1_SVI 20 2* 41
+	public static int DO_ACP_IDV(int[] IDC, int QVM) {
+		int OSI = 0;
+		for (int j = 0; j < IDC.length - 1; j++) {
+			OSI += IDC[j] * Math.pow(QVM, IDC.length - j - 1);
+		}
+		int IC = IDC.length;
+		return OSI + IDC[IC - 1];
+	}
 
-    //稍后会把map并到stable文件去。
-    public static int DO_ACP_IDV_17(char[] IDC, int QVM) {
-        int OSI = 0;
-        for (int j = 0; j < IDC.length - 1; j++) {
-            int temp = S_MapsInitons.numberSet.get(S_MapsInitons.initonsMap.get(""
-                + IDC[j]));
-            OSI += temp * Math.pow(QVM, IDC.length - j - 1);
-        }
-        int IC = IDC.length;
-        IC = S_MapsInitons.numberSet.get(S_MapsInitons.initonsMap.get(""
-            + IDC[IC - 1]));
-        return OSI + IC;
-    }
+	// 稍后会把map并到stable文件去。
+	public static int DO_ACP_IDV_17(char[] IDC, int QVM) {
+		int OSI = 0;
+		for (int j = 0; j < IDC.length - 1; j++) {
+			int temp = S_MapsInitons.numberSet
+					.get(S_MapsInitons.initonsMap.get("" + IDC[j]));
+			OSI += temp * Math.pow(QVM, IDC.length - j - 1);
+		}
+		int IC = IDC.length;
+		IC = S_MapsInitons.numberSet
+				.get(S_MapsInitons.initonsMap.get("" + IDC[IC - 1]));
+		return OSI + IC;
+	}
 
-    public int DO_ACP_IDV_17_S_(char[][] IDC, int QVM) {
-        int OSI = 0;
-        for (int i = 0; i < IDC.length; i++) {
-            for (int j = 0; j < IDC[0].length - 1; j++) {
-                int temp = S_MapsInitons.numberSet.get(S_MapsInitons.initonsMap.get(""
-                    + IDC[i][j]));
-                OSI += temp * Math.pow(QVM, IDC[0].length - j - 1);
-            }
-        }
-        int IC = IDC[0].length;
-        IC = S_MapsInitons.numberSet.get(S_MapsInitons.initonsMap.get(""
-            + IDC[0][IC - 1]));
-        return OSI + IC;
-    }
+	public int DO_ACP_IDV_17_S_(char[][] IDC, int QVM) {
+		int OSI = 0;
+		for (int i = 0; i < IDC.length; i++) {
+			for (int j = 0; j < IDC[0].length - 1; j++) {
+				int temp = S_MapsInitons.numberSet
+						.get(S_MapsInitons.initonsMap.get("" + IDC[i][j]));
+				OSI += temp * Math.pow(QVM, IDC[0].length - j - 1);
+			}
+		}
+		int IC = IDC[0].length;
+		IC = S_MapsInitons.numberSet
+				.get(S_MapsInitons.initonsMap.get("" + IDC[0][IC - 1]));
+		return OSI + IC;
+	}
 
-    public static int DO_ACP_IDV_16(char[] IDC, int QVM) {
-        int OSI = 0;
-        for (int j = 0; j < IDC.length - 1; j++) {
-            int temp = S_MapsInitons.numberSet.get(S_MapsInitons.initonsMap.get(""
-                + IDC[j]));
-            OSI += temp * Math.pow(QVM, IDC.length - j - 1);
-        }
-        int IC = IDC.length;
-        IC = S_MapsInitons.numberSet.get(S_MapsInitons.initonsMap.get(""
-            + IDC[IC - 1]));
-        return OSI + IC;
-    }
-    //later in new file.
+	public static int DO_ACP_IDV_16(char[] IDC, int QVM) {
+		int OSI = 0;
+		for (int j = 0; j < IDC.length - 1; j++) {
+			int temp = S_MapsInitons.numberSet
+					.get(S_MapsInitons.initonsMap.get("" + IDC[j]));
+			OSI += temp * Math.pow(QVM, IDC.length - j - 1);
+		}
+		int IC = IDC.length;
+		IC = S_MapsInitons.numberSet
+				.get(S_MapsInitons.initonsMap.get("" + IDC[IC - 1]));
+		return OSI + IC;
+	}
+	// later in new file.
 }
 ////        IMV_SIQ initonsMap = new IMV_SIQ();
 ////        initonsMap.put("A", "7");

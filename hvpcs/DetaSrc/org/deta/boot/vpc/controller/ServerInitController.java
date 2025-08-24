@@ -53,7 +53,7 @@ public class ServerInitController {
 	}
 
 	public void initServer(App app) throws IOException, InterruptedException {
-		appReg= app;
+		appReg = app;
 		System.out.flush();
 		System.out.println("----DETA HVPCS--1.9070");
 		System.out.flush();

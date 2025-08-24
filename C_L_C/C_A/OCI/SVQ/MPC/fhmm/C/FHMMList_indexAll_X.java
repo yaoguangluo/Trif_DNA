@@ -11,13 +11,16 @@ package C_A.OCI.SVQ.MPC.fhmm.C;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public interface FHMMList_indexAll_X {
-    void loadLanguage(String cInputString, String cInputStringKorea
-        , String cInputStringJapan, String cInputStringTrandition
-        , String cInputStringEnglish, String cInputStringRs, String cInputStringAb
-        , String cInputStringFn, String cInputStringGm, String cInputStringSp);
-    void loagPOS(String cInputString, String cInputStringKorea
-        , String cInputStringJapan, String cInputStringTrandition
-        , String cInputStringEnglish, String cInputStringRs, String cInputStringAb
-        , String cInputStringFn, String cInputStringGm, String cInputStringSp);
+	void loadLanguage(String cInputString, String cInputStringKorea,
+			String cInputStringJapan, String cInputStringTrandition,
+			String cInputStringEnglish, String cInputStringRs,
+			String cInputStringAb, String cInputStringFn, String cInputStringGm,
+			String cInputStringSp);
+
+	void loagPOS(String cInputString, String cInputStringKorea,
+			String cInputStringJapan, String cInputStringTrandition,
+			String cInputStringEnglish, String cInputStringRs,
+			String cInputStringAb, String cInputStringFn, String cInputStringGm,
+			String cInputStringSp);
 }
 //public void indexAll() ;

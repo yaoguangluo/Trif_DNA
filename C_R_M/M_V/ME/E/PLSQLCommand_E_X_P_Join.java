@@ -15,15 +15,15 @@ import S_A.pheromone.IMV_SIQ;
 
 public class PLSQLCommand_E_X_P_Join {
 
-    public static void _E(String[] acknowledge, IMV_SIQ object) {
-        if (object.getCompareV("countJoins", "1")) {
-            object.putString("countJoins", "n");
-        }
-        if (object.getCompareV("countJoins", "0")) {
-            object.putString("countJoins", "1");
-        }
-        object.put(S_ShellETL.SHELL_ETL_JOIN_BASE_NAME, acknowledge[1]);
-        object.putString("joinTableName", acknowledge[2]);
-    }
+	public static void _E(String[] acknowledge, IMV_SIQ object) {
+		if (object.getCompareV("countJoins", "1")) {
+			object.putString("countJoins", "n");
+		}
+		if (object.getCompareV("countJoins", "0")) {
+			object.putString("countJoins", "1");
+		}
+		object.put(S_ShellETL.SHELL_ETL_JOIN_BASE_NAME, acknowledge[1]);
+		object.putString("joinTableName", acknowledge[2]);
+	}
 
 }

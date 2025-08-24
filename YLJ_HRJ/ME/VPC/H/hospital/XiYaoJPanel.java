@@ -16,19 +16,19 @@ import java.awt.ScrollPane;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class XiYaoJPanel extends JPanel {
-    
-    public XiYaoJPanel(JTextPane name) {
-        this.setLayout(null);
-        this.setBounds(0, 0, 1180, 610);
-        this.setBackground(Color.BLACK);
-        name.setBounds(0, 0, 1100, 1680);
-        //推荐的话\
-        this.removeAll();
-        //	this.add(name);
-        //加处方
-        ScrollPane scrollPane = new ScrollPane();
-        scrollPane.setBounds(0, 0, 1130, 580);
-        scrollPane.add(name);
-        this.add(scrollPane);
-    }
+
+	public XiYaoJPanel(JTextPane name) {
+		this.setLayout(null);
+		this.setBounds(0, 0, 1180, 610);
+		this.setBackground(Color.BLACK);
+		name.setBounds(0, 0, 1100, 1680);
+		// 推荐的话\
+		this.removeAll();
+		// this.add(name);
+		// 加处方
+		ScrollPane scrollPane = new ScrollPane();
+		scrollPane.setBounds(0, 0, 1130, 580);
+		scrollPane.add(name);
+		this.add(scrollPane);
+	}
 }

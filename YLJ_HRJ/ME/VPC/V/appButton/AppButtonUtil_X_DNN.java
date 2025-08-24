@@ -22,117 +22,114 @@ import java.util.Map;
  * */
 //20230805
 public class AppButtonUtil_X_DNN {
-    public static boolean doResponseContainsSetofI(StringBuilder page
-        , String setOfi, Map<String, Double> dNNrank, App NE) {
-        App_S u = NE.app_S;
-        IMV_SIQ pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
-        //System.out.println("root:"+ u.jsliderDNNRatio);
-        u.appConfig.SectionJPanel.jTextPane.setText("root:" + u.jsliderDNNRatio);
-        double rank = dNNrank.containsKey(setOfi) ? dNNrank.get(setOfi) : 0;
+	public static boolean doResponseContainsSetofI(StringBuilder page,
+			String setOfi, Map<String, Double> dNNrank, App NE) {
+		App_S u = NE.app_S;
+		IMV_SIQ pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
+		// System.out.println("root:"+ u.jsliderDNNRatio);
+		u.appConfig.SectionJPanel.jTextPane
+				.setText("root:" + u.jsliderDNNRatio);
+		double rank = dNNrank.containsKey(setOfi) ? dNNrank.get(setOfi) : 0;
 //        if (null == u.jsliderDNNRatio) {
 //            u.jsliderDNNRatio = 0.0;
 //        }
-        double peak = dNNrank.size() * (u.jsliderDNNRatio / 20.1);
-        if (S_Maps.mingCi.containsKey(setOfi)) {
-            if (setOfi.length() > 2 || rank > peak) {
-                page.append("<span style=\"background:"
-                    + Color_P.P(255, 90, 255)
-                    + "\"><font color=\"black\""
-                    + " size=\"" + NE.app_S.size_font_rot + "\">"
-                    + setOfi + "</font></span>");
-                return true;
-            }
-            page.append("<span style=\"background:"
-                + Color_P.P(255, 210, 255)
-                + "\"><font color=\"black\""
-                + " size=\"" + NE.app_S.size_font_rot + "\">"
-                + setOfi + "</font></span>");
-            return true;
-        }
-        if (S_Maps.dongCi.containsKey(setOfi)) {
-            if (setOfi.length() > 2 || rank > peak) {
-                page.append("<span style=\"background:"
-                    + Color_P.P(90, 255, 90)
-                    + "\"><font color=\"black\""
-                    + " size=\"" + NE.app_S.size_font_rot + "\">"
-                    + setOfi + "</font></span>");
-                return true;
-            }
-            page.append("<span style=\"background:"
-                + Color_P.P(210, 255, 210)
-                + "\"><font color=\"black\""
-                + " size=\"" + NE.app_S.size_font_rot + "\">"
-                + setOfi + "</font></span>");
-            return true;
-        }
-        if (S_Maps.xingRongCi.containsKey(setOfi)) {
-            if (setOfi.length() > 2 || rank > peak) {
-                page.append("<span style=\"background:"
-                    + Color_P.P(255, 255, 90)
-                    + "\"><font color=\"black\""
-                    + " size=\"" + NE.app_S.size_font_rot + "\">"
-                    + setOfi + "</font></span>");
-                return true;
-            }
-            page.append("<span style=\"background:"
-                + Color_P.P(255, 255, 210)
-                + "\"><font color=\"black\""
-                + " size=\"" + NE.app_S.size_font_rot + "\">"
-                + setOfi + "</font></span>");
-            return true;
-        }
-        return false;
-    }
+		double peak = dNNrank.size() * (u.jsliderDNNRatio / 20.1);
+		if (S_Maps.mingCi.containsKey(setOfi)) {
+			if (setOfi.length() > 2 || rank > peak) {
+				page.append("<span style=\"background:"
+						+ Color_P.P(255, 90, 255) + "\"><font color=\"black\""
+						+ " size=\"" + NE.app_S.size_font_rot + "\">" + setOfi
+						+ "</font></span>");
+				return true;
+			}
+			page.append("<span style=\"background:" + Color_P.P(255, 210, 255)
+					+ "\"><font color=\"black\"" + " size=\""
+					+ NE.app_S.size_font_rot + "\">" + setOfi
+					+ "</font></span>");
+			return true;
+		}
+		if (S_Maps.dongCi.containsKey(setOfi)) {
+			if (setOfi.length() > 2 || rank > peak) {
+				page.append("<span style=\"background:" + Color_P.P(90, 255, 90)
+						+ "\"><font color=\"black\"" + " size=\""
+						+ NE.app_S.size_font_rot + "\">" + setOfi
+						+ "</font></span>");
+				return true;
+			}
+			page.append("<span style=\"background:" + Color_P.P(210, 255, 210)
+					+ "\"><font color=\"black\"" + " size=\""
+					+ NE.app_S.size_font_rot + "\">" + setOfi
+					+ "</font></span>");
+			return true;
+		}
+		if (S_Maps.xingRongCi.containsKey(setOfi)) {
+			if (setOfi.length() > 2 || rank > peak) {
+				page.append("<span style=\"background:"
+						+ Color_P.P(255, 255, 90) + "\"><font color=\"black\""
+						+ " size=\"" + NE.app_S.size_font_rot + "\">" + setOfi
+						+ "</font></span>");
+				return true;
+			}
+			page.append("<span style=\"background:" + Color_P.P(255, 255, 210)
+					+ "\"><font color=\"black\"" + " size=\""
+					+ NE.app_S.size_font_rot + "\">" + setOfi
+					+ "</font></span>");
+			return true;
+		}
+		return false;
+	}
 
-    public static void doRankDNN(JTextPane statistic, String response
-        , IMV_SIQ pos, Map<String, Double> dNNrank, App NE) {
-        try {
-            statistic.setSize(500, 800);
-            //Map<Integer, WordFrequency> fwa= _A.sortWordFrequencyMapToSortMap(map);
-            statistic.setContentType("text/html");
-            StringBuilder stringBuilder = new StringBuilder();
-            String[] fwa = response.replace("\r\n"
-                , "<br/>").split("<br/>");
-            Here:
-            for (int i = fwa.length - 1; i > 0; i--) {
-                if (fwa[i] != null) {
-                    String[] strings = fwa[i].split(":");
-                    //DNNrank.put(strings[0], Double.valueOf(strings[1]));
-                    // 不需要怎么复杂
-                    dNNrank.put(strings[0], 0.0 + i);
-                    if (pos.get(strings[0]) == null) {
-                        stringBuilder.append("<div style=\"background:white\">"
-                            + "<font color=\"black\">"
-                            + fwa[i] + "</font></div>");
-                        continue Here;
-                    }
-                    if (pos.getString(strings[0]).contains("名")) {
-                        stringBuilder.append("<div style=\"background:#FF44FF\">"
-                            + "<font color=\"white\">"
-                            + fwa[i] + "</font></div>");
-                        continue Here;
-                    }
-                    if (pos.getString(strings[0]).contains("动")) {
-                        stringBuilder.append("<div style=\"background:#8CEA00\">"
-                            + "<font color=\"black\""
-                            + " size=\"" + NE.app_S.size_font_rot + "\">"
-                            + fwa[i] + "</font></div>");
-                        continue Here;
-                    }
-                    if (pos.getString(strings[0]).contains("形")) {
-                        stringBuilder.append("<div style=\"background:#FF9224\">"
-                            + "<font color=\"black\""
-                            + " size=\"" + NE.app_S.size_font_rot + "\">"
-                            + fwa[i] + "</font></div>");
-                    }
-                }
-            }
-            statistic.setText(stringBuilder.toString());
-            statistic.setSelectionStart(0);
-            statistic.setSelectionEnd(0);
-            statistic.validate();
-        } catch (Exception e1) {
-            statistic.validate();
-        }
-    }
+	public static void doRankDNN(JTextPane statistic, String response,
+			IMV_SIQ pos, Map<String, Double> dNNrank, App NE) {
+		try {
+			statistic.setSize(500, 800);
+			// Map<Integer, WordFrequency> fwa=
+			// _A.sortWordFrequencyMapToSortMap(map);
+			statistic.setContentType("text/html");
+			StringBuilder stringBuilder = new StringBuilder();
+			String[] fwa = response.replace("\r\n", "<br/>").split("<br/>");
+			Here: for (int i = fwa.length - 1; i > 0; i--) {
+				if (fwa[i] != null) {
+					String[] strings = fwa[i].split(":");
+					// DNNrank.put(strings[0], Double.valueOf(strings[1]));
+					// 不需要怎么复杂
+					dNNrank.put(strings[0], 0.0 + i);
+					if (pos.get(strings[0]) == null) {
+						stringBuilder.append("<div style=\"background:white\">"
+								+ "<font color=\"black\">" + fwa[i]
+								+ "</font></div>");
+						continue Here;
+					}
+					if (pos.getString(strings[0]).contains("名")) {
+						stringBuilder
+								.append("<div style=\"background:#FF44FF\">"
+										+ "<font color=\"white\">" + fwa[i]
+										+ "</font></div>");
+						continue Here;
+					}
+					if (pos.getString(strings[0]).contains("动")) {
+						stringBuilder
+								.append("<div style=\"background:#8CEA00\">"
+										+ "<font color=\"black\"" + " size=\""
+										+ NE.app_S.size_font_rot + "\">"
+										+ fwa[i] + "</font></div>");
+						continue Here;
+					}
+					if (pos.getString(strings[0]).contains("形")) {
+						stringBuilder
+								.append("<div style=\"background:#FF9224\">"
+										+ "<font color=\"black\"" + " size=\""
+										+ NE.app_S.size_font_rot + "\">"
+										+ fwa[i] + "</font></div>");
+					}
+				}
+			}
+			statistic.setText(stringBuilder.toString());
+			statistic.setSelectionStart(0);
+			statistic.setSelectionEnd(0);
+			statistic.validate();
+		} catch (Exception e1) {
+			statistic.validate();
+		}
+	}
 }

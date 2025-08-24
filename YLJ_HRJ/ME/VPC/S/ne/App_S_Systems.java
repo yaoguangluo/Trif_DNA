@@ -32,35 +32,35 @@ import VSQ.parser.FMHMMListOneTime_E_X_S;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class App_S_Systems extends App_S_Guies {
-    public PageP_M pageP_M;
-    //
-    //systems*/
-    //20230212之后包含emmflist 函数即可下面的罗瑶光*/
-    public Hook_E hook = new Hook_E();
-    public EmotionInit emotionInit;
-    public RatioMap_E ratioMap_E;
-    public SensingMap_E sensingMap_E;
-    public CogsBinaryForest_AE _A;
-    public AE _AE = _A;
-    public FMHMMListOneTime_E_X_S fMHMMListOneTime_E_X_S;
-    public ReadChinese readChinese;
-    public Monitor_X_ monitor;
-    public TagSearch tagSearch;
-    public RatioMap ratioMap;
-    public Translator translator;
-    public SuccessICATest successICATest;
-    public EmotionSample emotionSample;
-    public CoAuthorForWord coAuthorForWord;
-    //*/
-    public javax.swing.JTable table;
-    public EnvironmentInit environmentInit;
-    //cnn*/
-    public DNNTest dNNTest;
-    public ANNTest aNNTest;
+	public PageP_M pageP_M;
+	//
+	// systems*/
+	// 20230212之后包含emmflist 函数即可下面的罗瑶光*/
+	public Hook_E hook = new Hook_E();
+	public EmotionInit emotionInit;
+	public RatioMap_E ratioMap_E;
+	public SensingMap_E sensingMap_E;
+	public CogsBinaryForest_AE _A;
+	public AE _AE = _A;
+	public FMHMMListOneTime_E_X_S fMHMMListOneTime_E_X_S;
+	public ReadChinese readChinese;
+	public Monitor_X_ monitor;
+	public TagSearch tagSearch;
+	public RatioMap ratioMap;
+	public Translator translator;
+	public SuccessICATest successICATest;
+	public EmotionSample emotionSample;
+	public CoAuthorForWord coAuthorForWord;
+	// */
+	public javax.swing.JTable table;
+	public EnvironmentInit environmentInit;
+	// cnn*/
+	public DNNTest dNNTest;
+	public ANNTest aNNTest;
 
-    public App_S_Systems() {
-        super();
-    }
+	public App_S_Systems() {
+		super();
+	}
 }
 //public Map<String, String> pos;
 //public Map<String, String> posec;

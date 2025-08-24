@@ -20,24 +20,23 @@ import java.awt.Color;
  * */
 public class MakeContainerXYNK extends MakeContainer_X_S_s {
 
-    public MakeContainerXYNK(App app_NE) {
-        super(app_NE);
-        NE = app_NE;
-    }
+	public MakeContainerXYNK(App app_NE) {
+		super(app_NE);
+		NE = app_NE;
+	}
 
-    public void run() {
-        if (null == jTabbedpane) {
-            return;//fatal trif
-        }
-        jTabbedpane.validate();
-        DetaThread.sleepDeta(1000 * 4);
-        app_S.xynkPage = new XynkPage(app_S.text, NE);
-        app_S.xynkPage.setName("西医内科学");
-        jTabbedpane.addTab("西医内科学", new ImageIcon()
-            , app_S.xynkPage, "西医内科学");// 加入第一个页面
-        Color[] colors = TableRender.getTableCellRender();
-        jTabbedpane.setBackgroundAt(jTabbedpane.getTabCount() - 1
-            , colors[jTabbedpane.getTabCount() % 3]);
-        jTabbedpane.validate();
-    }
+	public void run() {
+		if (null == jTabbedpane) {
+			return;// fatal trif
+		}
+		jTabbedpane.validate();
+		DetaThread.sleepDeta(1000 * 4);
+		app_S.xynkPage = new XynkPage(app_S.text, NE);
+		app_S.xynkPage.setName("西医内科学");
+		jTabbedpane.addTab("西医内科学", new ImageIcon(), app_S.xynkPage, "西医内科学");// 加入第一个页面
+		Color[] colors = TableRender.getTableCellRender();
+		jTabbedpane.setBackgroundAt(jTabbedpane.getTabCount() - 1,
+				colors[jTabbedpane.getTabCount() % 3]);
+		jTabbedpane.validate();
+	}
 }

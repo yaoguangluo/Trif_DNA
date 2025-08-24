@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Objects;
 
-
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -25,78 +24,89 @@ import java.util.Objects;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class IU_Rows_E_X_IU_RowByBaseName {
-    public static IMV_SIQ insertRowByBaseName(String baseName, String tableName
-        , JSONObject jsobj, boolean mod) {
-        IMV_SIQ output = new IMV_SIQ();
-        String tablePath = Objects.requireNonNull(Cache_M.getCacheInfo("DBPath")).getValue().toString();
-        tablePath += "/" + baseName + "/" + tableName;
-        File fileDBTable = new File(tablePath);
-        if (fileDBTable.isDirectory()) {
-            String DBTableRowsPath = tablePath + "/rows";
-            Row row = new Row();
-            IMV_SIQ cells = new IMV_SIQ();
-            row.I_Cells(cells);
-            File fileDBTableRowsPath = new File(DBTableRowsPath);
-            if (fileDBTableRowsPath.isDirectory()) {
-                int rowInsertIndex = Objects.requireNonNull(fileDBTableRowsPath.list()).length;
-                output.put("totalPages", rowInsertIndex);
-                String DBTableRowIndexPath = DBTableRowsPath + "/row" + rowInsertIndex;
-                File readDBTableRowIndexFile = new File(DBTableRowIndexPath);
-                if (!readDBTableRowIndexFile.exists()) {
-                    readDBTableRowIndexFile.mkdir();
-                    Iterator<String> it = jsobj.keys();
-                    while (it.hasNext()) {
-                        String culumnName = it.next();
-                        String culumnValue = jsobj.get(culumnName).toString();
-                        if (culumnValue.equalsIgnoreCase("random")) {
-                            culumnValue = "" + rowInsertIndex;
-                        }
-                        String needCreatCulumnPath = DBTableRowIndexPath + "/" + culumnName;
-                        File needCreatCulumn = new File(needCreatCulumnPath);
-                        if (!needCreatCulumn.exists()) {
-                            if (mod) {
-                                needCreatCulumn.mkdir();
-                            }
-                        }
-                        File needCreatCulumnPathFile = new File(needCreatCulumnPath + "/value.lyg");
-                        if (needCreatCulumnPathFile.exists() && !needCreatCulumnPathFile.canWrite()) {
-                            try {
-                                throw new Exception();
-                            } catch (Exception e) {
-                                throw new RuntimeException(e);
-                            }
-                        }
-                        if (mod) {
-                            FileWriter fileWriter;
-                            try {
-                                fileWriter = new FileWriter(needCreatCulumnPath + "/value.lyg", true);
-                                fileWriter.write(culumnValue);
-                                fileWriter.close();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        //add buffer
-                        Cell cell = new Cell();
-                        cell.I_CellValue(culumnValue);
-                        if (mod) {
-                            row.putCell(culumnName, cell);
-                        }
-                    }
-                    String needCreatCulumnPath = DBTableRowIndexPath + "/is_delete_0";
-                    File needCreatCulumn = new File(needCreatCulumnPath);
-                    if (!needCreatCulumn.exists()) {
-                        if (mod) {
-                            needCreatCulumn.mkdir();
-                        }
-                    }
-                }
-                Table table = DetaDBBufferCache_M.db.getBase(baseName).getTable(tableName);
-                if (mod) {
-                    table.putRow("row" + rowInsertIndex, row);
-                }
-            }
-        }
-        return output;
-    }
+	public static IMV_SIQ insertRowByBaseName(String baseName, String tableName,
+			JSONObject jsobj, boolean mod) {
+		IMV_SIQ output = new IMV_SIQ();
+		String tablePath = Objects
+				.requireNonNull(Cache_M.getCacheInfo("DBPath")).getValue()
+				.toString();
+		tablePath += "/" + baseName + "/" + tableName;
+		File fileDBTable = new File(tablePath);
+		if (fileDBTable.isDirectory()) {
+			String DBTableRowsPath = tablePath + "/rows";
+			Row row = new Row();
+			IMV_SIQ cells = new IMV_SIQ();
+			row.I_Cells(cells);
+			File fileDBTableRowsPath = new File(DBTableRowsPath);
+			if (fileDBTableRowsPath.isDirectory()) {
+				int rowInsertIndex = Objects
+						.requireNonNull(fileDBTableRowsPath.list()).length;
+				output.put("totalPages", rowInsertIndex);
+				String DBTableRowIndexPath = DBTableRowsPath + "/row"
+						+ rowInsertIndex;
+				File readDBTableRowIndexFile = new File(DBTableRowIndexPath);
+				if (!readDBTableRowIndexFile.exists()) {
+					readDBTableRowIndexFile.mkdir();
+					Iterator<String> it = jsobj.keys();
+					while (it.hasNext()) {
+						String culumnName = it.next();
+						String culumnValue = jsobj.get(culumnName).toString();
+						if (culumnValue.equalsIgnoreCase("random")) {
+							culumnValue = "" + rowInsertIndex;
+						}
+						String needCreatCulumnPath = DBTableRowIndexPath + "/"
+								+ culumnName;
+						File needCreatCulumn = new File(needCreatCulumnPath);
+						if (!needCreatCulumn.exists()) {
+							if (mod) {
+								needCreatCulumn.mkdir();
+							}
+						}
+						File needCreatCulumnPathFile = new File(
+								needCreatCulumnPath + "/value.lyg");
+						if (needCreatCulumnPathFile.exists()
+								&& !needCreatCulumnPathFile.canWrite()) {
+							try {
+								throw new Exception();
+							} catch (Exception e) {
+								throw new RuntimeException(e);
+							}
+						}
+						if (mod) {
+							FileWriter fileWriter;
+							try {
+								fileWriter = new FileWriter(
+										needCreatCulumnPath + "/value.lyg",
+										true);
+								fileWriter.write(culumnValue);
+								fileWriter.close();
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+						// add buffer
+						Cell cell = new Cell();
+						cell.I_CellValue(culumnValue);
+						if (mod) {
+							row.putCell(culumnName, cell);
+						}
+					}
+					String needCreatCulumnPath = DBTableRowIndexPath
+							+ "/is_delete_0";
+					File needCreatCulumn = new File(needCreatCulumnPath);
+					if (!needCreatCulumn.exists()) {
+						if (mod) {
+							needCreatCulumn.mkdir();
+						}
+					}
+				}
+				Table table = DetaDBBufferCache_M.db.getBase(baseName)
+						.getTable(tableName);
+				if (mod) {
+					table.putRow("row" + rowInsertIndex, row);
+				}
+			}
+		}
+		return output;
+	}
 }

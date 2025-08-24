@@ -30,27 +30,27 @@ import java.util.List;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class FyydPage extends FyydPage_X_S_sListeners {
-    //
+	//
 
-    public FyydPage(JTextPane text, App NE) {
-        initPage(text, NE);
-        this.setLayout(null);
-        this.setBounds(0, 0, WindowsUI.makeContainerWidth
-            , WindowsUI.makeContainerHeight);
-        JScrollPane jsp_name = new JScrollPane(this.name());
-        jsp_name.setBounds(100, 15, 680, 50);
-        JScrollPane jsp_data = new JScrollPane(this.data(NE));
-        JScrollPane jsp_statistic = new JScrollPane(this.statistic());
-        JScrollPane jsp = new JScrollPane(this.jTable(NE));
-        JLabel jlabel = new JLabel("主要词汇 \\ 操作选项");
-        PageUtil.initPageTail(jsp_statistic, jsp_data, jsp, jlabel);
-        this.add(jsp);
-        this.add(jlabel);
-        this.add(jsp_data);
-        this.add(jsp_statistic);
-    }
+	public FyydPage(JTextPane text, App NE) {
+		initPage(text, NE);
+		this.setLayout(null);
+		this.setBounds(0, 0, WindowsUI.makeContainerWidth,
+				WindowsUI.makeContainerHeight);
+		JScrollPane jsp_name = new JScrollPane(this.name());
+		jsp_name.setBounds(100, 15, 680, 50);
+		JScrollPane jsp_data = new JScrollPane(this.data(NE));
+		JScrollPane jsp_statistic = new JScrollPane(this.statistic());
+		JScrollPane jsp = new JScrollPane(this.jTable(NE));
+		JLabel jlabel = new JLabel("主要词汇 \\ 操作选项");
+		PageUtil.initPageTail(jsp_statistic, jsp_data, jsp, jlabel);
+		this.add(jsp);
+		this.add(jlabel);
+		this.add(jsp_data);
+		this.add(jsp_statistic);
+	}
 
-    public JTextPane data(App NE) {
+	public JTextPane data(App NE) {
 //        data = new JTextPane();
 //        data.setBounds(850, 150, WindowsUI.basicWidth - 600, 800 - 70);
 //        data.setBackground(new Color(210, 210, 210));
@@ -75,62 +75,64 @@ public class FyydPage extends FyydPage_X_S_sListeners {
 //                , 520, 0, 100, 30, 2000);
 //        buttonETC = Page_X_S_sButtonssymnorine.data_X_symnorine(this
 //                , 740, 0, 100, 30, 2000);
-        PageButtons._I(this, NE);
-        DetaButton buttonKSLJ = Page_X_S_sButtons_zhong_yao_DNN.data_X_zhong_yao_DNN(this
-            , 990, 0, 115, 30, 2000, 5000, NE);
+		PageButtons._I(this, NE);
+		DetaButton buttonKSLJ = Page_X_S_sButtons_zhong_yao_DNN
+				.data_X_zhong_yao_DNN(this, 990, 0, 115, 30, 2000, 5000, NE);
 
-        DetaButton buttonADD = new DetaButton("添加到编辑页");
-        buttonADD.setBounds(868, 0, 115, 30);
-        buttonADD.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if (sets == null) {
-                    return;
-                }
-                if (text.getText().length() > 5000) {
-                    return;
-                }
-                StringBuilder page = new StringBuilder();
-                List<String> setsForGet = sets.subList(currentPage * 2000, (currentPage + 1)
-                    * 2000 < sets.size() ? (currentPage + 1) * 2000 : sets.size());
-                Iterator<String> iterator = setsForGet.iterator();
-                while (iterator.hasNext()) {
-                    String setOfi = iterator.next();
-                    page.append(setOfi);
-                }
-                if (!text.getText().isEmpty()) {
-                    text.setText(text.getText() + "\r\n\r\n" + page.toString());
-                } else {
-                    text.setText(page.toString());
-                }
-                text.validate();
-            }
-        });
-        //readChinese= new ReadChinese(app_S, _A);
-        buttonCTV = Page_X_S_sButtonsreading.data_X_reading(this, app_S, NE);
-        Box buttonBox = new Box(BoxLayout.X_AXIS);
-        buttonBox.add(buttonPrev);
-        buttonBox.add(buttonNext);
-        buttonBox.add(buttonSum);
-        buttonBox.add(buttonCrt);
-        buttonBox.add(buttonCTE);
-        buttonBox.add(buttonFRS);
-        buttonBox.add(buttonETC);
-        buttonBox.add(buttonADD);
-        buttonBox.add(buttonKSLJ);
-        buttonBox.add(buttonCTV);
-        //buttonBox.add(buttonGJJD);
-        buttonBox.setBounds(5 + 800 - 650, 290 + 100 - 80 + 200 - 260 + 120
-            , 1050, 20);
-        this.add(buttonBox);
-        return data;
-    }
+		DetaButton buttonADD = new DetaButton("添加到编辑页");
+		buttonADD.setBounds(868, 0, 115, 30);
+		buttonADD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (sets == null) {
+					return;
+				}
+				if (text.getText().length() > 5000) {
+					return;
+				}
+				StringBuilder page = new StringBuilder();
+				List<String> setsForGet = sets.subList(currentPage * 2000,
+						(currentPage + 1) * 2000 < sets.size()
+								? (currentPage + 1) * 2000
+								: sets.size());
+				Iterator<String> iterator = setsForGet.iterator();
+				while (iterator.hasNext()) {
+					String setOfi = iterator.next();
+					page.append(setOfi);
+				}
+				if (!text.getText().isEmpty()) {
+					text.setText(text.getText() + "\r\n\r\n" + page.toString());
+				} else {
+					text.setText(page.toString());
+				}
+				text.validate();
+			}
+		});
+		// readChinese= new ReadChinese(app_S, _A);
+		buttonCTV = Page_X_S_sButtonsreading.data_X_reading(this, app_S, NE);
+		Box buttonBox = new Box(BoxLayout.X_AXIS);
+		buttonBox.add(buttonPrev);
+		buttonBox.add(buttonNext);
+		buttonBox.add(buttonSum);
+		buttonBox.add(buttonCrt);
+		buttonBox.add(buttonCTE);
+		buttonBox.add(buttonFRS);
+		buttonBox.add(buttonETC);
+		buttonBox.add(buttonADD);
+		buttonBox.add(buttonKSLJ);
+		buttonBox.add(buttonCTV);
+		// buttonBox.add(buttonGJJD);
+		buttonBox.setBounds(5 + 800 - 650, 290 + 100 - 80 + 200 - 260 + 120,
+				1050, 20);
+		this.add(buttonBox);
+		return data;
+	}
 
-    public JTextPane statistic() {
-        statistic = new JTextPane();
-        statistic.setBackground(new Color(210, 210, 210));
-        statistic.setBounds(850, 150, WindowsUI.basicWidth - 840, 800);
-        return statistic;
-    }
+	public JTextPane statistic() {
+		statistic = new JTextPane();
+		statistic.setBackground(new Color(210, 210, 210));
+		statistic.setBounds(850, 150, WindowsUI.basicWidth - 840, 800);
+		return statistic;
+	}
 
 }
 //buttonCTV= new DetaButton("reading��");

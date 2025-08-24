@@ -15,13 +15,17 @@ import java.util.Map;
  * */
 
 public interface NERO_C_OneTime {
-	StringBuilder getBinaryForestRecurWords(StringBuilder inputStringWordNode
-			, StringBuilder inputString, int charPosition, int inputLength
-			, Map<Long, FMHMMNode> forestRoots, int forestDepth, int charPositionNext);
-	StringBuilder getBinaryForestsRecurWords(StringBuilder inputStringWordNode
-			, String inputString, int charPosition, int inputLength
-			, Map<Long, FMHMMNode>[] forestsRoots, int forestDepth, int charPositionNext);
-	StringBuilder getQuickForestRecurWord(StringBuilder inputStringWordNode
-			, String inputString, int charPosition, int inputLength
-			, int forestDepth, int charPositionNext, App NE);
+	StringBuilder getBinaryForestRecurWords(StringBuilder inputStringWordNode,
+			StringBuilder inputString, int charPosition, int inputLength,
+			Map<Long, FMHMMNode> forestRoots, int forestDepth,
+			int charPositionNext);
+
+	StringBuilder getBinaryForestsRecurWords(StringBuilder inputStringWordNode,
+			String inputString, int charPosition, int inputLength,
+			Map<Long, FMHMMNode>[] forestsRoots, int forestDepth,
+			int charPositionNext);
+
+	StringBuilder getQuickForestRecurWord(StringBuilder inputStringWordNode,
+			String inputString, int charPosition, int inputLength,
+			int forestDepth, int charPositionNext, App NE);
 }

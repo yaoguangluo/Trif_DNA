@@ -25,59 +25,59 @@ import java.util.concurrent.ConcurrentHashMap;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class DetaCache_M {
-    private static final ConcurrentHashMap<String, DetaCache> cacheMap = new IMV_SIQ();
-    private static final ConcurrentHashMap<String, List<byte[]>> bytesMap = new IMV_SIQ();
-    private static final IMV_SIQ stringMap = new IMV_SIQ();
+	private static final ConcurrentHashMap<String, DetaCache> cacheMap = new IMV_SIQ();
+	private static final ConcurrentHashMap<String, List<byte[]>> bytesMap = new IMV_SIQ();
+	private static final IMV_SIQ stringMap = new IMV_SIQ();
 
-    private DetaCache_M() {
-        super();
-    }
+	private DetaCache_M() {
+		super();
+	}
 
-    public static String putCache(String key, String value, long timeOut) {
-        DetaCache c = new DetaCache();
-        c.I_Value(value);
-        c.I_TimeOut(timeOut);
-        cacheMap.put(key, c);
-        return "success";
-    }
+	public static String putCache(String key, String value, long timeOut) {
+		DetaCache c = new DetaCache();
+		c.I_Value(value);
+		c.I_TimeOut(timeOut);
+		cacheMap.put(key, c);
+		return "success";
+	}
 
-    public static String getCache(String key) {
-        DetaCache c = cacheMap.get(key);
-        if (null == c) {
-            return "unsuccess nofind cache";
-        }
-        long now = System.currentTimeMillis();
-        if (c.getTimeOut() < now) {
-            cacheMap.remove(key);
-            return "unsuccess timeout";
-        }
-        return c.getValue();
-    }
+	public static String getCache(String key) {
+		DetaCache c = cacheMap.get(key);
+		if (null == c) {
+			return "unsuccess nofind cache";
+		}
+		long now = System.currentTimeMillis();
+		if (c.getTimeOut() < now) {
+			cacheMap.remove(key);
+			return "unsuccess timeout";
+		}
+		return c.getValue();
+	}
 
-    @SuppressWarnings("rawtypes")
-    public static Iterator getCacheIterator() {
-        return cacheMap.entrySet().iterator();
-    }
+	@SuppressWarnings("rawtypes")
+	public static Iterator getCacheIterator() {
+		return cacheMap.entrySet().iterator();
+	}
 
-    public static void putCacheOfBytesList(String filePath, List<byte[]> list) {
-        bytesMap.put(filePath, list);
-    }
+	public static void putCacheOfBytesList(String filePath, List<byte[]> list) {
+		bytesMap.put(filePath, list);
+	}
 
-    public static List<byte[]> getCacheOfBytesList(String filePath) {
-        if (bytesMap.containsKey(filePath)) {
-            return bytesMap.get(filePath);
-        }
-        return null;
-    }
+	public static List<byte[]> getCacheOfBytesList(String filePath) {
+		if (bytesMap.containsKey(filePath)) {
+			return bytesMap.get(filePath);
+		}
+		return null;
+	}
 
-    public static String getCacheOfString(String filePath) {
-        if (stringMap.containsKey(filePath)) {
-            return stringMap.getString(filePath);
-        }
-        return null;
-    }
+	public static String getCacheOfString(String filePath) {
+		if (stringMap.containsKey(filePath)) {
+			return stringMap.getString(filePath);
+		}
+		return null;
+	}
 
-    public static void putCacheOfString(String filePath, String stringBuilder) {
-        stringMap.putString(filePath, stringBuilder);
-    }
-} 
+	public static void putCacheOfString(String filePath, String stringBuilder) {
+		stringMap.putString(filePath, stringBuilder);
+	}
+}

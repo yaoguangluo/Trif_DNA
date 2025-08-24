@@ -15,7 +15,8 @@ import java.util.Map;
 
 public interface NERO_C {
 	@SuppressWarnings(S_Pos.RAW_TYPES)
-	StringBuilder getBinaryForestRecurWord(StringBuilder inputStringWordNode
-			, String inputString, int charPosition, int inputLength
-		, Map<Integer, Map> forestRoots, int forestDepth, int charPositionNext);
+	StringBuilder getBinaryForestRecurWord(StringBuilder inputStringWordNode,
+			String inputString, int charPosition, int inputLength,
+			Map<Integer, Map> forestRoots, int forestDepth,
+			int charPositionNext);
 }

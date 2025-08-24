@@ -19,16 +19,19 @@ import java.util.List;
  * */
 //20211022 
 public class AppButtonUtil_X_pageflipflops {
-    //	StringBuilder page= new StringBuilder().append("");
-    //	AppPageUtil.pageSIMILAR(page, etc, cte, key, pos, sets, currentPage);
+	// StringBuilder page= new StringBuilder().append("");
+	// AppPageUtil.pageSIMILAR(page, etc, cte, key, pos, sets,
+	// currentPage);
 
-    //	StringBuilder page= new StringBuilder().append("");
-    //	AppPageUtil.pageflipPages(page, map, key, pos, sets, currentPage);
-    public static void pageflipPages(StringBuilder page, IMV_SIQ_SS map
-            , String key, List<String> sets, int currentPage, App NE) {
-        List<String> setsForGet = sets.subList(currentPage * 2000
-                , (currentPage + 1) * 2000 < sets.size()
-                        ? (currentPage + 1) * 2000 : sets.size());
-        PageWords.renderWordLoopPOS(page, setsForGet, map, key, true, NE);
-    }
+	// StringBuilder page= new StringBuilder().append("");
+	// AppPageUtil.pageflipPages(page, map, key, pos, sets,
+	// currentPage);
+	public static void pageflipPages(StringBuilder page, IMV_SIQ_SS map,
+			String key, List<String> sets, int currentPage, App NE) {
+		List<String> setsForGet = sets.subList(currentPage * 2000,
+				(currentPage + 1) * 2000 < sets.size()
+						? (currentPage + 1) * 2000
+						: sets.size());
+		PageWords.renderWordLoopPOS(page, setsForGet, map, key, true, NE);
+	}
 }

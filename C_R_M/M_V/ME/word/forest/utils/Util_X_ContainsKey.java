@@ -17,41 +17,44 @@ import S_A.pheromone.IMV_SIQ_SS;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class Util_X_ContainsKey {
-    public static void not_E(IMV_SIQ_SS outputList, String countWordNode
-        , StringBuilder[] prefixWord, App NE) {
-        String string = String.valueOf(countWordNode.charAt(S_Pos.INT_ZERO));
-        if (outputList.containsKey(string)) {
-            WordFrequency wordFrequency = outputList.getW(string);
-            wordFrequency.I_frequency(wordFrequency.get_frequency() + S_Pos.INT_ONE);
-            wordFrequency.positions.add(NE._I_U.parserCharPosition);
-            outputList.put(string, wordFrequency);
-            prefixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO
-                , prefixWord[S_Pos.INT_ZERO].length());
-            prefixWord[S_Pos.INT_ZERO].append(countWordNode.charAt(S_Pos.INT_ZERO));
-            return;
-        }
-        WordFrequency wordFrequency = new WordFrequency(1.0, string);
-        wordFrequency.positions.add(NE._I_U.parserCharPosition);
-        outputList.put(string, wordFrequency);
-        prefixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO
-            , prefixWord[S_Pos.INT_ZERO].length());
-        prefixWord[S_Pos.INT_ZERO].append(countWordNode.charAt(S_Pos.INT_ZERO));
-    }
+	public static void not_E(IMV_SIQ_SS outputList, String countWordNode,
+			StringBuilder[] prefixWord, App NE) {
+		String string = String.valueOf(countWordNode.charAt(S_Pos.INT_ZERO));
+		if (outputList.containsKey(string)) {
+			WordFrequency wordFrequency = outputList.getW(string);
+			wordFrequency
+					.I_frequency(wordFrequency.get_frequency() + S_Pos.INT_ONE);
+			wordFrequency.positions.add(NE._I_U.parserCharPosition);
+			outputList.put(string, wordFrequency);
+			prefixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+					prefixWord[S_Pos.INT_ZERO].length());
+			prefixWord[S_Pos.INT_ZERO]
+					.append(countWordNode.charAt(S_Pos.INT_ZERO));
+			return;
+		}
+		WordFrequency wordFrequency = new WordFrequency(1.0, string);
+		wordFrequency.positions.add(NE._I_U.parserCharPosition);
+		outputList.put(string, wordFrequency);
+		prefixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+				prefixWord[S_Pos.INT_ZERO].length());
+		prefixWord[S_Pos.INT_ZERO].append(countWordNode.charAt(S_Pos.INT_ZERO));
+	}
 
-    public static void _E(IMV_SIQ_SS outputList, String countWordNode
-        , StringBuilder[] prefixWord, App NE) {
-        prefixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO
-            , prefixWord[S_Pos.INT_ZERO].length());
-        prefixWord[S_Pos.INT_ZERO].append(countWordNode);
-        if (outputList.containsKey(countWordNode)) {
-            WordFrequency wordFrequency = outputList.getW(countWordNode);
-            wordFrequency.I_frequency(wordFrequency.get_frequency() + S_Pos.INT_ONE);
-            wordFrequency.positions.add(NE._I_U.parserCharPosition);
-            outputList.put(countWordNode, wordFrequency);
-            return;
-        }
-        WordFrequency wordFrequency = new WordFrequency(1.0, countWordNode);
-        wordFrequency.positions.add(NE._I_U.parserCharPosition);
-        outputList.put(countWordNode, wordFrequency);
-    }
+	public static void _E(IMV_SIQ_SS outputList, String countWordNode,
+			StringBuilder[] prefixWord, App NE) {
+		prefixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+				prefixWord[S_Pos.INT_ZERO].length());
+		prefixWord[S_Pos.INT_ZERO].append(countWordNode);
+		if (outputList.containsKey(countWordNode)) {
+			WordFrequency wordFrequency = outputList.getW(countWordNode);
+			wordFrequency
+					.I_frequency(wordFrequency.get_frequency() + S_Pos.INT_ONE);
+			wordFrequency.positions.add(NE._I_U.parserCharPosition);
+			outputList.put(countWordNode, wordFrequency);
+			return;
+		}
+		WordFrequency wordFrequency = new WordFrequency(1.0, countWordNode);
+		wordFrequency.positions.add(NE._I_U.parserCharPosition);
+		outputList.put(countWordNode, wordFrequency);
+	}
 }

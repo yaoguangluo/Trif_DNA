@@ -19,49 +19,51 @@ import U_A.PEU.P.dna.TokenCerts;
  * */
 public class X_sessionTokenCertsInitWithHumanWordsByDNA_ETL {
 
-    //区别上面非etl, 稍后去重 罗瑶光20211107 用到initonETLSect;
-    public static TokenCerts _E(String humanWordsPassword
-        , boolean bys, String lockBys) {
-        FullDNATokenPDI pDE_RNA_FullFormular = new FullDNATokenPDI();
-        pDE_RNA_FullFormular.key[0] = 0.6;
-        pDE_RNA_FullFormular.key[1] = 0.3;
-        pDE_RNA_FullFormular.key[2] = 0.5;
-        pDE_RNA_FullFormular.key[3] = 0.632;
-        pDE_RNA_FullFormular.text = humanWordsPassword;
-        pDE_RNA_FullFormular.pdw = new PDI_X_().initonETLSect(pDE_RNA_FullFormular.text);
-        if (bys) {
-            pDE_RNA_FullFormular.lock = lockBys;
-        } else {
-            String[] lock = new String[12];
-            lock[0] = "A";
-            lock[3] = "O";
-            lock[6] = "P";
-            lock[9] = "M";
-            lock[1] = "V";
-            lock[4] = "E";
-            lock[7] = "C";
-            lock[10] = "S";
-            lock[2] = "I";
-            lock[5] = "D";
-            lock[8] = "U";
-            lock[11] = "Q";
-            int i = (int) (Math.random() * 12) % 12;
-            pDE_RNA_FullFormular.lock += lock[i];
-            i = (int) (Math.random() * 12) % 12;
-            pDE_RNA_FullFormular.lock += lock[i];
-            i = (int) (Math.random() * 12) % 12;
-            pDE_RNA_FullFormular.lock += lock[i];
-            i = (int) (Math.random() * 12) % 12;
-            pDE_RNA_FullFormular.lock += lock[i];
-        }
-        for (int i = 0; i < pDE_RNA_FullFormular.pdw.length(); i++) {
-            pDE_RNA_FullFormular.code += pDE_RNA_FullFormular.lock + pDE_RNA_FullFormular.pdw.charAt(i);
-        }
-        TokenCerts tokenCerts = new TokenCerts();
-        tokenCerts.I_PdnKey(pDE_RNA_FullFormular.pdw);
-        tokenCerts.I_PdnLock(pDE_RNA_FullFormular.lock);
-        tokenCerts.I_Password(humanWordsPassword);
-        tokenCerts.I_PdnPassword(pDE_RNA_FullFormular.code);
-        return tokenCerts;
-    }
+	// 区别上面非etl, 稍后去重 罗瑶光20211107 用到initonETLSect;
+	public static TokenCerts _E(String humanWordsPassword, boolean bys,
+			String lockBys) {
+		FullDNATokenPDI pDE_RNA_FullFormular = new FullDNATokenPDI();
+		pDE_RNA_FullFormular.key[0] = 0.6;
+		pDE_RNA_FullFormular.key[1] = 0.3;
+		pDE_RNA_FullFormular.key[2] = 0.5;
+		pDE_RNA_FullFormular.key[3] = 0.632;
+		pDE_RNA_FullFormular.text = humanWordsPassword;
+		pDE_RNA_FullFormular.pdw = new PDI_X_()
+				.initonETLSect(pDE_RNA_FullFormular.text);
+		if (bys) {
+			pDE_RNA_FullFormular.lock = lockBys;
+		} else {
+			String[] lock = new String[12];
+			lock[0] = "A";
+			lock[3] = "O";
+			lock[6] = "P";
+			lock[9] = "M";
+			lock[1] = "V";
+			lock[4] = "E";
+			lock[7] = "C";
+			lock[10] = "S";
+			lock[2] = "I";
+			lock[5] = "D";
+			lock[8] = "U";
+			lock[11] = "Q";
+			int i = (int) (Math.random() * 12) % 12;
+			pDE_RNA_FullFormular.lock += lock[i];
+			i = (int) (Math.random() * 12) % 12;
+			pDE_RNA_FullFormular.lock += lock[i];
+			i = (int) (Math.random() * 12) % 12;
+			pDE_RNA_FullFormular.lock += lock[i];
+			i = (int) (Math.random() * 12) % 12;
+			pDE_RNA_FullFormular.lock += lock[i];
+		}
+		for (int i = 0; i < pDE_RNA_FullFormular.pdw.length(); i++) {
+			pDE_RNA_FullFormular.code += pDE_RNA_FullFormular.lock
+					+ pDE_RNA_FullFormular.pdw.charAt(i);
+		}
+		TokenCerts tokenCerts = new TokenCerts();
+		tokenCerts.I_PdnKey(pDE_RNA_FullFormular.pdw);
+		tokenCerts.I_PdnLock(pDE_RNA_FullFormular.lock);
+		tokenCerts.I_Password(humanWordsPassword);
+		tokenCerts.I_PdnPassword(pDE_RNA_FullFormular.code);
+		return tokenCerts;
+	}
 }

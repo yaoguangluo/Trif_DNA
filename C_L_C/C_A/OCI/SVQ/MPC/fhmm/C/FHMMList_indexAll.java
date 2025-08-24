@@ -13,9 +13,9 @@ import ME.VPC.M.app.App;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public interface FHMMList_indexAll extends FHMMList {
-    //void index() ;
-    public void indexMixed(App NE);
+	// void index() ;
+	public void indexMixed(App NE);
 
-    public void flushRedundant();
+	public void flushRedundant();
 }
 //public void indexAll() ;

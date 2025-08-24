@@ -18,13 +18,12 @@ import U_A.PEU.P.dna.TokenCerts;
  * */
 public class X_sessionTokenUpdateByDNA {
 
-    //序列使用一次便更新重置
-    public static Token _E(String password) {
-        TokenCerts tokenCerts = X_sessionTokenCertsInitWithHumanWordsByDNA._E(password
-            , false, null);
-        Token token = X_sessionInitByTokenPDICertsDNA._E(tokenCerts);
-        return token;
-    }
-
+	// 序列使用一次便更新重置
+	public static Token _E(String password) {
+		TokenCerts tokenCerts = X_sessionTokenCertsInitWithHumanWordsByDNA
+				._E(password, false, null);
+		Token token = X_sessionInitByTokenPDICertsDNA._E(tokenCerts);
+		return token;
+	}
 
 }

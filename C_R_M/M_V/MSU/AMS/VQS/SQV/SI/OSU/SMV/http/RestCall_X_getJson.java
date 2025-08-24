@@ -21,75 +21,81 @@ import java.nio.charset.StandardCharsets;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class RestCall_X_getJson {
-    public static String _E(String urlString, String jsonString) {
-        String code = S_.STRING_EMPTY;
-        URL url;
-        StringBuilder stringBuilder;
-        try {
-            url = new URL(urlString);
+	public static String _E(String urlString, String jsonString) {
+		String code = S_.STRING_EMPTY;
+		URL url;
+		StringBuilder stringBuilder;
+		try {
+			url = new URL(urlString);
 
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod(S_.HTTP_GET);
-            connection.setRequestProperty(S_.CONTENT_TYPE, S_.APPLICATION_JSON_UTF8);
-            connection.setDoOutput(true);
-            connection.setInstanceFollowRedirects(false);
-            OutputStream os = connection.getOutputStream();
-            os.write(jsonString.getBytes());
-            os.flush();
-            stringBuilder = new StringBuilder();
-            DetaBufferedReader DetaBufferedReader = null;
-            try {
-                InputStream inputStream = connection.getInputStream();
-                int caherset_size = connection.getHeaderFields().size();
-                for (int i = 0; i < caherset_size; i++) {
-                    String temp = connection.getHeaderField(i);
-                    if (temp.contains(S_.CHARSET)) {
-                        if (temp.toUpperCase().contains(S_.CHARSET_UTF8)) {
-                            code = S_.CHARSET_UTF8;
-                        }
-                        if (temp.toUpperCase().contains(S_.CHARSET_UTF_8)
-                                || temp.toUpperCase().contains(S_.CHARSET_UTF8)) {
-                            code = S_.CHARSET_UTF_8;
-                        }
-                        if (temp.toUpperCase().contains(S_.CHARSET_GB2312)) {
-                            code = S_.CHARSET_GB2312;
-                        }
-                        if (temp.toUpperCase().contains(S_.CHARSET_ASCII)) {
-                            code = S_.CHARSET_ASCII;
-                        }
-                        if (temp.toUpperCase().contains(S_.CHARSET_UNICODE)) {
-                            code = S_.CHARSET_UNICODE;
-                        }
-                        if (temp.toUpperCase().contains(S_.CHARSET_ISO_8859_1)) {
-                            code = S_.CHARSET_ISO_8859_1;
-                        }
-                    }
-                }
-                if (null != inputStream) {
-                    DetaBufferedReader
-                            = new DetaBufferedReader(DetaInputStreamReader.E(inputStream, code));
-                    String lines;
-                    while ((lines = DetaBufferedReader.readDetaLine()) != null) {
-                        stringBuilder.append(lines);
-                    }
-                } else {
-                    stringBuilder.append(S_.STRING_EMPTY);
-                }
-            } catch (IOException ex) {
-                //throw ex;
-            } finally {
-                if (null != DetaBufferedReader) {
-                    try {
-                        DetaBufferedReader.close();
-                    } catch (IOException ex) {
-                        //throw ex;
-                    }
-                }
-            }
-            return new String(stringBuilder.toString().getBytes(), StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+			HttpURLConnection connection = (HttpURLConnection) url
+					.openConnection();
+			connection.setRequestMethod(S_.HTTP_GET);
+			connection.setRequestProperty(S_.CONTENT_TYPE,
+					S_.APPLICATION_JSON_UTF8);
+			connection.setDoOutput(true);
+			connection.setInstanceFollowRedirects(false);
+			OutputStream os = connection.getOutputStream();
+			os.write(jsonString.getBytes());
+			os.flush();
+			stringBuilder = new StringBuilder();
+			DetaBufferedReader DetaBufferedReader = null;
+			try {
+				InputStream inputStream = connection.getInputStream();
+				int caherset_size = connection.getHeaderFields().size();
+				for (int i = 0; i < caherset_size; i++) {
+					String temp = connection.getHeaderField(i);
+					if (temp.contains(S_.CHARSET)) {
+						if (temp.toUpperCase().contains(S_.CHARSET_UTF8)) {
+							code = S_.CHARSET_UTF8;
+						}
+						if (temp.toUpperCase().contains(S_.CHARSET_UTF_8)
+								|| temp.toUpperCase()
+										.contains(S_.CHARSET_UTF8)) {
+							code = S_.CHARSET_UTF_8;
+						}
+						if (temp.toUpperCase().contains(S_.CHARSET_GB2312)) {
+							code = S_.CHARSET_GB2312;
+						}
+						if (temp.toUpperCase().contains(S_.CHARSET_ASCII)) {
+							code = S_.CHARSET_ASCII;
+						}
+						if (temp.toUpperCase().contains(S_.CHARSET_UNICODE)) {
+							code = S_.CHARSET_UNICODE;
+						}
+						if (temp.toUpperCase()
+								.contains(S_.CHARSET_ISO_8859_1)) {
+							code = S_.CHARSET_ISO_8859_1;
+						}
+					}
+				}
+				if (null != inputStream) {
+					DetaBufferedReader = new DetaBufferedReader(
+							DetaInputStreamReader.E(inputStream, code));
+					String lines;
+					while ((lines = DetaBufferedReader
+							.readDetaLine()) != null) {
+						stringBuilder.append(lines);
+					}
+				} else {
+					stringBuilder.append(S_.STRING_EMPTY);
+				}
+			} catch (IOException ex) {
+				// throw ex;
+			} finally {
+				if (null != DetaBufferedReader) {
+					try {
+						DetaBufferedReader.close();
+					} catch (IOException ex) {
+						// throw ex;
+					}
+				}
+			}
+			return new String(stringBuilder.toString().getBytes(),
+					StandardCharsets.UTF_8);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 
-    }
+	}
 }

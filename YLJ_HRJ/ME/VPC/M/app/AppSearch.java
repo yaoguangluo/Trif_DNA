@@ -41,13 +41,12 @@ import java.awt.ScrollPane;
 @SuppressWarnings("serial")
 public class AppSearch extends ScrollPane {
 
-
-    //把德塔jingDuSouSuo的函数进行函数片段化去重,
-    //罗瑶光 202110121
-    @SuppressWarnings("unchecked")
+	// 把德塔jingDuSouSuo的函数进行函数片段化去重,
+	// 罗瑶光 202110121
+	@SuppressWarnings("unchecked")
 	public void IV_(JTextField name, JTextField xing_wei, JTextField gui_jing) {
-        S_File.DNA_PDN.put(this.getClass().getCanonicalName(), true);
-        DetabbedPane jTabbedpane = new DetabbedPane();
+		S_File.DNA_PDN.put(this.getClass().getCanonicalName(), true);
+		DetabbedPane jTabbedpane = new DetabbedPane();
 
 //        Container xin_zengContainer = new Container();
 //        TongueJPanel xin_zengJPanel = new TongueJPanel(name, xing_wei, gui_jing); //以后归纳
@@ -171,10 +170,10 @@ public class AppSearch extends ScrollPane {
 //        qitaContainer.add(qitaJPanel);
 //        jTabbedpane.addTab("其他", new ImageIcon(), qitaContainer, "其他");
 
-        this.setPreferredSize(new Dimension(800, 600));//later do
-        this.add(jTabbedpane);
-        this.setBounds(0, 0, 805, 605);
-        this.setVisible(true);
-        this.validate();
-    }
+		this.setPreferredSize(new Dimension(800, 600));// later do
+		this.add(jTabbedpane);
+		this.setBounds(0, 0, 805, 605);
+		this.setVisible(true);
+		this.validate();
+	}
 }

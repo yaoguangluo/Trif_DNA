@@ -29,138 +29,164 @@ import java.util.List;
  * */
 //rollback= later~
 public class Page_X_S_sButtonsrollback {
-    public static DetaButton data_X_rollback(Page_X_S_sVSQ page_X_S_s, int maxInPage, App NE) {
-        DetaButton buttonPrev = new DetaButton("<-");
-        //buttonPrev.setBounds(290, 0, 100, 30);
-        buttonPrev.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {//later short chars.
-                IMV_SIQ_SS map = new IMV_SIQ_SS();
-                page_X_S_s.currentPage -= 1;
-                page_X_S_s.currentPage = (page_X_S_s.currentPage < 0 ? 0
-                    : page_X_S_s.currentPage);
-                StringBuilder page = new StringBuilder().append("");
-                List<String> setsForGet = page_X_S_s.sets.subList(page_X_S_s.currentPage
-                    * maxInPage, (page_X_S_s.currentPage + 1) * maxInPage < page_X_S_s
-                    .sets.size() ? (page_X_S_s.currentPage + 1) * maxInPage : page_X_S_s
-                    .sets.size());
-                Iterator<String> iterator = setsForGet.iterator();
-                NE.app_S.listCharPosition = 0;
-                Here:
-                while (iterator.hasNext()) {
-                    NE.app_S.listCharPosition++;
-                    String setOfi = iterator.next();
-                    if (page_X_S_s.pos.get(setOfi) == null) {
-                        page.append("<span style=\"background:#ffffff\">"
-                            + "<font color=\"black\"" + " size=\"" + NE.app_S
-                            .size_font_rot + "\">" + setOfi + "</font></span>");
-                        continue Here;
-                    }
-                    if (S_Maps.mingCi.containsKey(setOfi)
-                        || S_Maps.dongCi.containsKey(setOfi)
-                        || S_Maps.xingRongCi.containsKey(setOfi)) {
-                        if (map.containsKey(setOfi)) {
-                            WordFrequency wordFrequency = map.getW(setOfi);
-                            wordFrequency.I_frequency(wordFrequency.get_frequency()
-                                + S_Pos.INT_ONE);
-                            wordFrequency.positions.add(NE.app_S.listCharPosition);
-                            map.put(setOfi, wordFrequency);
-                        } else {
-                            WordFrequency wordFrequency = new WordFrequency(1.0
-                                , setOfi);
-                            wordFrequency.positions.add(NE.app_S.listCharPosition);
-                            map.put(setOfi, wordFrequency);
-                        }
-                    }
-                    if (!setOfi.equals("")) {
-                        if (page_X_S_s.key.contains(setOfi) && (S_Maps.mingCi.containsKey(setOfi)
-                            || S_Maps.dongCi.containsKey(setOfi)
-                            || S_Maps.xingRongCi.containsKey(setOfi))) {
-                            page.append("<span style=\"background:red\">"
-                                + "<font color=\"white\">" + setOfi + "</font></span>");
-                            continue Here;
-                        }
-                        if (S_Maps.mingCi.containsKey(setOfi)) {
-                            page.append("<span style=\"background:" + Color_P.P(245, 205 - page_X_S_s.app_S.raterot << 3
-                                , 245) + "\"><font color=" + Color_P.P(0, 0, 0) + " size=\"" + NE
-                                .app_S.size_font_rot + "\">" + setOfi + "</font></span>");
-                            continue Here;
-                        }
-                        if (S_Maps.dongCi.containsKey(setOfi)) {
-                            page.append("<span style=\"background:" + Color_P.P(245 - page_X_S_s.app_S.raterot << 3, 245
-                                , 205 - page_X_S_s.app_S.raterot << 3)
-                                + "\"><font color=" + Color_P.P(0
-                                , 0, 0) + " size=\"" + NE.app_S
-                                .size_font_rot + "\">" + setOfi + "</font></span>");
-                            continue Here;
-                        }
-                        if (S_Maps.xingRongCi.containsKey(setOfi)) {
-                            page.append("<span style=\"background:" + Color_P.P(245, 245, 245 - 40 - page_X_S_s.app_S
-                                .raterot << 3) + "\"><font color=" + Color_P.P(0, 0, 0) + " size=\"" + NE
-                                .app_S.size_font_rot + "\">" + setOfi + "</font></span>");
-                            continue Here;
-                        }
-                        if (S_Maps.fuCi.containsKey(setOfi)) {
-                            page.append("<span style=\"background:#f1ffff\">"
-                                + "<font color=\"black\"" + " size=\""
-                                + NE.app_S.size_font_rot + "\">"
-                                + setOfi + "</font></span>");
-                            continue Here;
-                        }
-                        page.append("<span style=\"background:white\">"
-                            + "<font color=\"black\"" + " size=\"" + NE.app_S
-                            .size_font_rot + "\">" + setOfi + "</font></span>");
-                    }
-                }
-                page_X_S_s.buttonCrt.setText("当前页面："
-                    + (page_X_S_s.currentPage + 1));
-                page_X_S_s.data.setText(page.toString());
-                page_X_S_s.data.setSelectionStart(0);
-                page_X_S_s.data.setSelectionEnd(0);
-                page_X_S_s.data.validate();
-                page_X_S_s.statistic.setSize(500, 800);
-                IMV_SIQ_S_ fwa = page_X_S_s._A.sortWordFrequencyMapToSortMap(map);
-                page_X_S_s.statistic.setContentType("text/html");
-                page.delete(0, page.length());// = new StringBuilder();
-                Here:
-                for (int i = fwa.size() - 1; i >= 0; i--) {
-                    if (fwa.get(i) != null) {
-                        if (page_X_S_s.pos.get(fwa.getW(i).get_word()) == null) {
-                            page.append("<div style=\"background:white\">"
-                                + "<font color=\"black\">"
-                                + fwa.getW(i).get_word() + ""
-                                + fwa.getW(i).get_frequency() + "</font></div>");
-                            continue Here;
-                        }
-                        if (S_Maps.mingCi.containsKey(fwa.getW(i).get_word())) {
-                            page.append("<div style=\"background:#FF44FF\">"
-                                + "<font color=\"white\">"
-                                + fwa.getW(i).get_word() + ""
-                                + fwa.getW(i).get_frequency() + "</font></div>");
-                            continue Here;
-                        }
-                        if (S_Maps.dongCi.containsKey(fwa.getW(i).get_word())) {
-                            page.append("<div style=\"background:#8CEA00\">"
-                                + "<font color=\"black\"" + " size=\"" + NE
-                                .app_S.size_font_rot + "\">" + fwa.getW(i).get_word() + ""
-                                + fwa.getW(i).get_frequency() + "</font></div>");
-                            continue Here;
-                        }
-                        if (S_Maps.xingRongCi.containsKey(fwa.getW(i).get_word())) {
-                            page.append("<div style=\"background:#FF9224\">"
-                                + "<font color=\"black\"" + " size=\"" + NE
-                                .app_S.size_font_rot + "\">" + fwa.getW(i).get_word() + ""
-                                + fwa.getW(i).get_frequency() + "</font></div>");
-                        }
-                    }
-                }
-                page_X_S_s.statistic.setText(page.toString());
-                page_X_S_s.statistic.setSelectionStart(0);
-                page_X_S_s.statistic.setSelectionEnd(0);
-                page_X_S_s.statistic.validate();
-            }
-        });
-        return buttonPrev;
-    }
+	public static DetaButton data_X_rollback(Page_X_S_sVSQ page_X_S_s,
+			int maxInPage, App NE) {
+		DetaButton buttonPrev = new DetaButton("<-");
+		// buttonPrev.setBounds(290, 0, 100, 30);
+		buttonPrev.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {// later short chars.
+				IMV_SIQ_SS map = new IMV_SIQ_SS();
+				page_X_S_s.currentPage -= 1;
+				page_X_S_s.currentPage = (page_X_S_s.currentPage < 0 ? 0
+						: page_X_S_s.currentPage);
+				StringBuilder page = new StringBuilder().append("");
+				List<String> setsForGet = page_X_S_s.sets.subList(
+						page_X_S_s.currentPage * maxInPage,
+						(page_X_S_s.currentPage + 1)
+								* maxInPage < page_X_S_s.sets.size()
+										? (page_X_S_s.currentPage + 1)
+												* maxInPage
+										: page_X_S_s.sets.size());
+				Iterator<String> iterator = setsForGet.iterator();
+				NE.app_S.listCharPosition = 0;
+				Here: while (iterator.hasNext()) {
+					NE.app_S.listCharPosition++;
+					String setOfi = iterator.next();
+					if (page_X_S_s.pos.get(setOfi) == null) {
+						page.append("<span style=\"background:#ffffff\">"
+								+ "<font color=\"black\"" + " size=\""
+								+ NE.app_S.size_font_rot + "\">" + setOfi
+								+ "</font></span>");
+						continue Here;
+					}
+					if (S_Maps.mingCi.containsKey(setOfi)
+							|| S_Maps.dongCi.containsKey(setOfi)
+							|| S_Maps.xingRongCi.containsKey(setOfi)) {
+						if (map.containsKey(setOfi)) {
+							WordFrequency wordFrequency = map.getW(setOfi);
+							wordFrequency
+									.I_frequency(wordFrequency.get_frequency()
+											+ S_Pos.INT_ONE);
+							wordFrequency.positions
+									.add(NE.app_S.listCharPosition);
+							map.put(setOfi, wordFrequency);
+						} else {
+							WordFrequency wordFrequency = new WordFrequency(1.0,
+									setOfi);
+							wordFrequency.positions
+									.add(NE.app_S.listCharPosition);
+							map.put(setOfi, wordFrequency);
+						}
+					}
+					if (!setOfi.equals("")) {
+						if (page_X_S_s.key.contains(setOfi) && (S_Maps.mingCi
+								.containsKey(setOfi)
+								|| S_Maps.dongCi.containsKey(setOfi)
+								|| S_Maps.xingRongCi.containsKey(setOfi))) {
+							page.append("<span style=\"background:red\">"
+									+ "<font color=\"white\">" + setOfi
+									+ "</font></span>");
+							continue Here;
+						}
+						if (S_Maps.mingCi.containsKey(setOfi)) {
+							page.append("<span style=\"background:"
+									+ Color_P.P(245,
+											205 - page_X_S_s.app_S.raterot << 3,
+											245)
+									+ "\"><font color=" + Color_P.P(0, 0, 0)
+									+ " size=\"" + NE.app_S.size_font_rot
+									+ "\">" + setOfi + "</font></span>");
+							continue Here;
+						}
+						if (S_Maps.dongCi.containsKey(setOfi)) {
+							page.append("<span style=\"background:" + Color_P.P(
+									245 - page_X_S_s.app_S.raterot << 3, 245,
+									205 - page_X_S_s.app_S.raterot << 3)
+									+ "\"><font color=" + Color_P.P(0, 0, 0)
+									+ " size=\"" + NE.app_S.size_font_rot
+									+ "\">" + setOfi + "</font></span>");
+							continue Here;
+						}
+						if (S_Maps.xingRongCi.containsKey(setOfi)) {
+							page.append("<span style=\"background:"
+									+ Color_P.P(245, 245, 245 - 40
+											- page_X_S_s.app_S.raterot << 3)
+									+ "\"><font color=" + Color_P.P(0, 0, 0)
+									+ " size=\"" + NE.app_S.size_font_rot
+									+ "\">" + setOfi + "</font></span>");
+							continue Here;
+						}
+						if (S_Maps.fuCi.containsKey(setOfi)) {
+							page.append("<span style=\"background:#f1ffff\">"
+									+ "<font color=\"black\"" + " size=\""
+									+ NE.app_S.size_font_rot + "\">" + setOfi
+									+ "</font></span>");
+							continue Here;
+						}
+						page.append("<span style=\"background:white\">"
+								+ "<font color=\"black\"" + " size=\""
+								+ NE.app_S.size_font_rot + "\">" + setOfi
+								+ "</font></span>");
+					}
+				}
+				page_X_S_s.buttonCrt
+						.setText("当前页面：" + (page_X_S_s.currentPage + 1));
+				page_X_S_s.data.setText(page.toString());
+				page_X_S_s.data.setSelectionStart(0);
+				page_X_S_s.data.setSelectionEnd(0);
+				page_X_S_s.data.validate();
+				page_X_S_s.statistic.setSize(500, 800);
+				IMV_SIQ_S_ fwa = page_X_S_s._A
+						.sortWordFrequencyMapToSortMap(map);
+				page_X_S_s.statistic.setContentType("text/html");
+				page.delete(0, page.length());// = new StringBuilder();
+				Here: for (int i = fwa.size() - 1; i >= 0; i--) {
+					if (fwa.get(i) != null) {
+						if (page_X_S_s.pos
+								.get(fwa.getW(i).get_word()) == null) {
+							page.append("<div style=\"background:white\">"
+									+ "<font color=\"black\">"
+									+ fwa.getW(i).get_word() + ""
+									+ fwa.getW(i).get_frequency()
+									+ "</font></div>");
+							continue Here;
+						}
+						if (S_Maps.mingCi.containsKey(fwa.getW(i).get_word())) {
+							page.append("<div style=\"background:#FF44FF\">"
+									+ "<font color=\"white\">"
+									+ fwa.getW(i).get_word() + ""
+									+ fwa.getW(i).get_frequency()
+									+ "</font></div>");
+							continue Here;
+						}
+						if (S_Maps.dongCi.containsKey(fwa.getW(i).get_word())) {
+							page.append("<div style=\"background:#8CEA00\">"
+									+ "<font color=\"black\"" + " size=\""
+									+ NE.app_S.size_font_rot + "\">"
+									+ fwa.getW(i).get_word() + ""
+									+ fwa.getW(i).get_frequency()
+									+ "</font></div>");
+							continue Here;
+						}
+						if (S_Maps.xingRongCi
+								.containsKey(fwa.getW(i).get_word())) {
+							page.append("<div style=\"background:#FF9224\">"
+									+ "<font color=\"black\"" + " size=\""
+									+ NE.app_S.size_font_rot + "\">"
+									+ fwa.getW(i).get_word() + ""
+									+ fwa.getW(i).get_frequency()
+									+ "</font></div>");
+						}
+					}
+				}
+				page_X_S_s.statistic.setText(page.toString());
+				page_X_S_s.statistic.setSelectionStart(0);
+				page_X_S_s.statistic.setSelectionEnd(0);
+				page_X_S_s.statistic.validate();
+			}
+		});
+		return buttonPrev;
+	}
 }
 //67 //                            WordFrequency wordFrequency = new WordFrequency();
 ////                            wordFrequency.I_frequency(1.0);
