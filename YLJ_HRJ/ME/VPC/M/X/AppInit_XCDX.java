@@ -154,7 +154,7 @@ public class AppInit_XCDX {
 				.setText(NE.app_S.appConfig.SectionJPanel.jTextPane.getText()
 						+ "trap inject zhongyao");
 		//// p1 trif
-		// AppInit_XCDX_frame.creatYLJUtils(NE, jpanelFirst);
+		AppInit_XCDX_engine.creatYLJUtilsZYBC(NE, jpanelFirst);
 		DetaThread.sleepDeta(300);
 		System.out.println("启动400编码调试开始-00000049");
 		NE.mouseClicked(null);

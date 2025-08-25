@@ -16,7 +16,7 @@ DNA十六元基索引PDE工程
 &nbsp;
 # --当前进展-测试文档--
 &nbsp;
-###### --标记---华瑞集R-api-商业化逻辑测试-实践应用描述版本-V0.067-
+###### --标记---华瑞集R-api-商业化逻辑测试-实践应用描述版本-V0.067-02
 ###### --任务--先把华瑞集R-api的所有可test文件进行综合功能测试归纳, 统一打包 SRC下面的test/java/InterfaceTest区。
 ###### --字符--UTF8-!!!特别注意不支持UTF8编码的一切操作系统 请先文件解压转码 或者 下载UTF8插件。不然后果自负!!! 任何出现文件字符 encoding的地方，都要设置成UTF8，免得夜长梦多。
 ###### --方法--通过一种在真实的环境下, 用极简源码, 详细描述, 直观逻辑, 具体对象并含有输入输出参数实例的测试DEMO, 进行丰富地论证API的商业前景和使用价值。
@@ -349,7 +349,7 @@ DNA十六元基索引PDE工程
 ######     --用于德塔快速排序5代进行左右比对分词优化的算法对object矩阵变换的double数组排序demo
 ######     --文件位置-package test.java.InterfaceTest.sort.objectSort.listSort;
 ######     --文件名-List_ESU_X_listToArrayTest
-######     --输入-数组,  Object[][]
+######     --输入-数组,  Object 二维数组
 ######     --输出-数组
 &nbsp;
 #### <font color=red>3 分词类计算 逻辑接口商业测试 </font>
@@ -616,8 +616,8 @@ DNA十六元基索引PDE工程
 ######     --文件位置-package test.java.InterfaceTest.computingPDE.matrixPage;
 ######     --可应用于图片进行数字矩阵变换后产生的团进行坐标化, 然后用轨迹分析来确定团的内积和运动趋势的切裂与融聚计算算法计算。
 ######     --如工控, 内积, 地理, 航海, 农业, 蜂群, 虫群, 鸟群, 各类数据分析。
-######     --输入-int[][]
-######     --输出-int[][]
+######     --输入-int 二维数组
+######     --输出-int 二维数组
 &nbsp;
 #### <font color=red>7 ETL计算类 逻辑接口商业测试</font>
 ###### --可商业化探索-- 办公自动化, 操作自动化, 操作系统优化, 等支持序列化生产线的职业, 工业场景, 如工商管理, 工厂办公应用等。
@@ -727,21 +727,21 @@ DNA十六元基索引PDE工程
 ######     --算法思想--算法编码-算法设计-算法作者著作权人-罗瑶光
 ######     --这是一个 用于文本的pos频率词汇比重ANN计算文本价值的德塔图灵分词个人著作权中的权重内核的核心模块计算
 ######     --输入-String
-######     --输出-String[][]
+######     --输出-String 二维数组
 &nbsp;
 #####  9.2 CNN --文件位置-package test.java.InterfaceTest.TextDNN; --基础
 #####  9.3 DNN --文件位置-package test.java.InterfaceTest.tinShell; --文件名-DNNTestTest
 ######     --算法思想--算法编码-算法设计-算法作者著作权人-罗瑶光
 ######     --这是一个 用于文本的深度词汇比重计算文本重心的德塔图灵分词个人著作权中的权重内核的核心模块计算
 ######     --输入-String
-######     --输出-String[][]
+######     --输出-String 二维数组
 &nbsp;
 #####  9.4 推荐 --文件位置-package test.java.InterfaceTest.TextDNN; --太多略
 #####  9.5 RNN --文件位置-package test.java.InterfaceTest.TextDNN; --文件名-RNN_IDETestTest
 ######     --算法思想--算法编码-算法设计-算法作者著作权人-罗瑶光
 ######     --这是一个 德塔罗氏深度计算个人著作权中的RNN距离中心权重内核模块计算 测试main函数demo的test版本
 ######     --输入-String
-######     --输出-String[][]
+######     --输出-String 二维数组
 &nbsp;
 #####  9.6 教育水平 --文件位置-package test.java.InterfaceTest.TextDNN; --文件名-EducationLevelTestTest
 ######     --算法思想--算法编码-算法设计-算法作者著作权人-罗瑶光
@@ -767,7 +767,7 @@ DNA十六元基索引PDE工程
 ######     --文件名-SuccessICATestTest
 ######     --这是一个 情绪执行成功率, 用于执行力 决策力测试 测试main函数demo的test版本
 ######     --输入-String
-######     --输出-double 类 Object[][]
+######     --输出-double 类 Object 二维数组
 &nbsp;
 #####  9.10 写作习惯 --文件位置-package test.java.InterfaceTest.TextDNN;
 ######      --算法思想--算法编码-算法设计-算法作者著作权人-罗瑶光
@@ -926,37 +926,37 @@ DNA十六元基索引PDE工程
 #####  13.1 Sobel索贝尔梯度计算边缘和立体填充
 ######      --授课RenHart,  教材computerVision绿皮书,  编码作者罗瑶光。
 ######      --文件名-SobelTest
-######      --输入-int[][]
-######      --输出-int[][]
+######      --输入-int 二维数组
+######      --输出-int 二维数组
 &nbsp;
 #####  13.2 Emboss因博士浮雕分层计算
 ######      --授课RenHart,  教材computerVision绿皮书,  编码作者罗瑶光。
 ######      --文件名-EmbossTest
-######      --输入-int[][]
-######      --输出-int[][]
+######      --输入-int 二维数组
+######      --输出-int 二维数组
 &nbsp;
 #####  13.3 Guassian高斯模糊滤波计算
 ######      --授课RenHart,  教材computerVision绿皮书,  编码作者罗瑶光。
 ######      --文件名-GuassianTest
-######      --输入-int[][]
-######      --输出-int[][]
+######      --输入-int 二维数组
+######      --输出-int 二维数组
 &nbsp;
 #####  13.4 Strech尺度拉扯颜色鲜艳度计算
 ######      --授课RenHart,  教材computerVision绿皮书,  编码作者罗瑶光。
 ######      --文件名-StrechTest
-######      --输入-int[][]
-######      --输出-int[][]
+######      --输入-int 二维数组
+######      --输出-int 二维数组
 &nbsp;
 #####  13.5 Closing像素腐蚀融聚图片修复保真类计算
 ######      --授课RenHart,  教材computerVision绿皮书,  编码作者罗瑶光。
 ######      --文件名-ClosingTest
-######      --输入-int[][]
-######      --输出-int[][]
+######      --输入-int 二维数组
+######      --输出-int 二维数组
 &nbsp;
 #####  13.6 其他太过简单。略
 ######      --授课RenHart,  教材computerVision绿皮书,  编码作者罗瑶光。
-######      --输入-int[][]
-######      --输出-int[][]
+######      --输入-int 二维数组
+######      --输出-int 二维数组
 &nbsp;
 #####  13.7 Convolutional PDE Trif --严重超出民用商业级别, 略。
 &nbsp;

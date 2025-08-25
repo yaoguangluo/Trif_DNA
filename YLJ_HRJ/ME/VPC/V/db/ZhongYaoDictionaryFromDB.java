@@ -180,6 +180,7 @@ public class ZhongYaoDictionaryFromDB {
 		return dic_map;
 	}
 
+	@SuppressWarnings("unchecked")
 	public IMV_SIQ_ mapToIndex(IMV_SIQ_ dic_map) {
 		// Map<String, String> pinyin = new IMV_SIQ();
 		IMV_SIQ_ pinyin = ReadPinYinBihua.pinYin;

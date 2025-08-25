@@ -10,6 +10,7 @@ package S_A.pheromone;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋
  * */
+@SuppressWarnings("serial")
 public class IMV_SIQ_ extends IMV_SIQ{
     public String getTrimString(String key){
         if(this.containsKey(key)) {

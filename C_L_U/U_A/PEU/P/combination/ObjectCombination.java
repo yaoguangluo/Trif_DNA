@@ -1,6 +1,7 @@
 package U_A.PEU.P.combination;
 
 import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SIQ_;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -17,6 +18,7 @@ import java.util.Vector;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋
  * */
+@SuppressWarnings("unchecked")
 public class ObjectCombination {
     public static IMV_SIQ mapCombination(IMV_SIQ output
         , IMV_SIQ destination) {
@@ -33,7 +35,7 @@ public class ObjectCombination {
         return output;
     }
 
-    public static IMV_SIQ mapCombinationTrif(IMV_SIQ output
+	public static IMV_SIQ mapCombinationTrif(IMV_SIQ output
         , IMV_SIQ destination, IMV_SIQ refernation) {
         if (null == output) {
             output = new IMV_SIQ();

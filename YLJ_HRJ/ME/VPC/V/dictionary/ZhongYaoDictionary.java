@@ -2,7 +2,7 @@ package ME.VPC.V.dictionary;
 
 import E_A.OEI.SVQ.MPC.fhmm.E.FastReadProjectFile;
 import ME.VPC.M.app.App;
-import S_A.SVQ.stable.S_Pos;
+import ME.VPC.S.ne.App_S;
 import exception.file.O.DetaBufferedReader;
 import S_A.SVQ.stable.S_File;
 import S_A.pheromone.IMV_SIQ;
@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("unchecked")
 public class ZhongYaoDictionary extends Dictionary_S {
 	public List<String> txtToList() {
 		dic_list = new ArrayList<>();
@@ -73,47 +74,6 @@ public class ZhongYaoDictionary extends Dictionary_S {
 		return dic_map;
 	}
 
-	public IMV_SIQ mapToIndex(IMV_SIQ dic_map, App NE) {
-		pinyin = new IMV_SIQ();
-
-//InputStream inputStreamp= new VerbalSource().getClass().getResourceAsStream(S_File.PinYinCN_lyg);
-//DetaBufferedReader cReaderp= new DetaBufferedReader(DetaInputStreamReader.E(inputStreamp, "UTF8"));
-
-		DetaBufferedReader cReaderp = FastReadProjectFile.getDetaBufferedReader(
-				S_File.PinYinCN_lyg, NE.resourceTail + "lygs/",
-				S_Pos.UTF8_STRING);
-		try {
-			// index
-			String cInputStringp;
-			while ((cInputStringp = cReaderp.readDetaLine()) != null) {
-				String[] words = cInputStringp.split("->");
-				if (words.length > 1) {
-					pinyin.put(words[0], words[1]);
-				}
-			}
-			cReaderp.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		dic_index = new IMV_SIQ();
-		iter = dic_map.keySet().iterator();
-		while (iter.hasNext()) {
-			String index = iter.next().replaceAll(" ", "").replace("〔", "")
-					.replace("〕", ":");
-			StringBuilder stringBuilder = new StringBuilder();
-			for (int l = 0; l < index.length(); l++) {
-				if (pinyin.containsKey("" + index.charAt(l))) {
-					stringBuilder
-							.append("" + pinyin.getString("" + index.charAt(l))
-									.toUpperCase().charAt(0));
-				}
-			}
-			// med_name= stringBuilder.toString()+ ":"+ index;
-			dic_index.put(index, stringBuilder.toString());
-		}
-		return dic_index;
-	}
-
 	public IMV_SIQ mapToMap_yw(IMV_SIQ dic_map) {
 		dic_yw = new IMV_SIQ();
 		iter = dic_map.keySet().iterator();
@@ -147,7 +107,7 @@ public class ZhongYaoDictionary extends Dictionary_S {
 	}
 
 	public IMV_SIQ mapToMap_li(IMV_SIQ dic_map) {
-		dic_li = new IMV_SIQ();
+		dic_li = new IMV_SIQ_();// later trif constant problem
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -175,7 +135,7 @@ public class ZhongYaoDictionary extends Dictionary_S {
 										.replace("〕", ":"));
 			}
 		}
-		return dic_li;
+		return dic_li;// later trif
 	}
 
 	public IMV_SIQ mapToMap_hai(IMV_SIQ dic_map) {
@@ -453,12 +413,12 @@ public class ZhongYaoDictionary extends Dictionary_S {
 			String med_name = copy.get(i);
 			String med_text = dic_map.get(med_name).toString().replace("\n",
 					"");
-			Pattern p = Pattern.compile("用量/克, 别名, 其他, 备注(.*?)\\[");
+			Pattern p = Pattern.compile("用量-克-别名-其他-备注(.*?)\\[");
 			Matcher m = p.matcher(med_text);
 			String temp = "";
 			if (m.find()) {
 				temp = m.group(0);
-				temp = temp.replace("用量/克, 别名, 其他, 备注]", "").replace("[", "");
+				temp = temp.replace("用量/克-别名-其他-备注]", "").replace("[", "");
 			}
 //			if(!dic_yl.containsKey(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"))) {
 //				dic_yl.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")
@@ -479,3 +439,45 @@ public class ZhongYaoDictionary extends Dictionary_S {
 		return dic_yl;
 	}
 }
+
+//77
+//public IMV_SIQ mapToIndex(IMV_SIQ dic_map, App NE) {
+//pinyin = new IMV_SIQ();
+//
+////InputStream inputStreamp= new VerbalSource().getClass().getResourceAsStream(S_File.PinYinCN_lyg);
+////DetaBufferedReader cReaderp= new DetaBufferedReader(DetaInputStreamReader.E(inputStreamp, "UTF8"));
+//
+//DetaBufferedReader cReaderp = FastReadProjectFile.getDetaBufferedReader(
+//		S_File.PinYinCN_lyg, NE.resourceTail + "lygs/",
+//		S_Pos.UTF8_STRING);
+//try {
+//	// index
+//	String cInputStringp;
+//	while ((cInputStringp = cReaderp.readDetaLine()) != null) {
+//		String[] words = cInputStringp.split("->");
+//		if (words.length > 1) {
+//			pinyin.put(words[0], words[1]);
+//		}
+//	}
+//	cReaderp.close();
+//} catch (Exception e) {
+//	e.printStackTrace();
+//}
+//dic_index = new IMV_SIQ();
+//iter = dic_map.keySet().iterator();
+//while (iter.hasNext()) {
+//	String index = iter.next().replaceAll(" ", "").replace("〔", "")
+//			.replace("〕", ":");
+//	StringBuilder stringBuilder = new StringBuilder();
+//	for (int l = 0; l < index.length(); l++) {
+//		if (pinyin.containsKey("" + index.charAt(l))) {
+//			stringBuilder
+//					.append("" + pinyin.getString("" + index.charAt(l))
+//							.toUpperCase().charAt(0));
+//		}
+//	}
+//	// med_name= stringBuilder.toString()+ ":"+ index;
+//	dic_index.put(index, stringBuilder.toString());
+//}
+//return dic_index;
+//}

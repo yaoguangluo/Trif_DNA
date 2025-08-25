@@ -12,7 +12,6 @@ import U_A.PEU.P.table.TableSorterZYNK;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextPane;
@@ -40,7 +39,7 @@ public class ZhongYaoTableSimple implements MouseListener {
 	private App_S app;
 	public App NE;
 
-	@SuppressWarnings({ "serial" })
+	@SuppressWarnings({ "serial", "unchecked" })
 	public javax.swing.JTable jTable(App_S app, App app_NE) {
 		this.app = app;
 		NE = app_NE;
