@@ -1,0 +1,16 @@
+我eclipse是dmg文件，不能ini vm，所以只能ide里面写参数。建议大家装sudo intall 。。
+因为是dmg文件，所以我声卡显卡权限都没有。也不能自动添加，手动改mac注册表，我担心隐患。所以不纠结先。
+------------------------
+-Xms3000m
+-Xmx3000m
+-Xmn512m
+-Xss512m //这句太大
+-XX:MetaspaceSize=256m
+-XX:MaxMetaspaceSize=512m 
+-XX:SoftRefLRUPolicyMSPerMB=0 
+-XX:+UnlockExperimentalVMOptions
+-XX:+UseG1GC //这句需要版本兼容
+-XX:+UseStringDeduplication
+-XX:MaxGCPauseMillis=400 
+-XX:ReservedCodeCacheSize=128m //--这句不起作用
+

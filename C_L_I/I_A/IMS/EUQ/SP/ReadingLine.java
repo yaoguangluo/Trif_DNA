@@ -3,13 +3,14 @@ package I_A.IMS.EUQ.SP;
 import ME.VPC.M.app.App;
 import exception.thread.DetaThread;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.List;
+
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine;
 import javax.sound.sampled.TargetDataLine;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.List;
 
 /*
  * 著作权人 ，作者 罗瑶光, 浏阳
@@ -65,7 +66,9 @@ public class ReadingLine extends Thread implements Runnable {
                     channels, (sampleSize / 8) * channels, NE.app_S.rateWave, bigEndian);
                 DetaThread.sleepDeta(1);
                 DataLine.Info info = new DataLine.Info(TargetDataLine.class, soundWave.format);
-                if (!AudioSystem.isLineSupported(info)) {//return;
+                if (!AudioSystem.isLineSupported(info)) {
+                	System.out.println("-----------Line-Unsupported------------");
+                	return;
                 }
                 line = (TargetDataLine) AudioSystem.getLine(info);
                 line.open(soundWave.format, line.getBufferSize());
