@@ -87,7 +87,7 @@
 ######     --元基改变概率用于观测变化度不是DNASession中概率钥匙用于解密, 应区分开。
 ######     --适用于肽计算中 数据元基编码 后的 密码变换, 词汇隐藏信息挖掘, 长篇语言联想, 深度文本分类。
 ######     --文件位置-package test.java.InterfaceTest.computingPDE.pdi;
-######     --文件名-RangePDITest
+######     --文件名-RangePDITest，RangeImagePDITest
 ######     --输入-String
 ######     --输出-String
 &nbsp;

@@ -177,7 +177,6 @@ public class CommonTestInition {
 		app_S._AE = app_S._A;// 注意接口注册关系
 	}
 
-	@SuppressWarnings("deprecation")
 	public void endEnvironment() {
 		if (null == NE) {
 			return;
