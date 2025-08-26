@@ -43,26 +43,29 @@ class EducationLevelTestTest {
 		double[][] kernel = new double[3][];
 		kernel[0] = new EducationRatio().getEducationKernel(S_String.text1,
 				commonTestInition.NE.app_S._A, commonTestInition.NE);
-		System.out.println("kernel0->" + kernel[0][0] + "--" + kernel[0][1] + "--"
-				+ kernel[0][2]);
+		System.out.println("kernel0->" + kernel[0][0] + "--" + kernel[0][1]
+				+ "--" + kernel[0][2]);
 		kernel[1] = new EducationRatio().getEducationKernel(S_String.text2,
 				commonTestInition.NE.app_S._A, commonTestInition.NE);
-		System.out.println("kernel1->" + kernel[1][0] + "--" + kernel[1][1] + "--"
-				+ kernel[1][2]);
+		System.out.println("kernel1->" + kernel[1][0] + "--" + kernel[1][1]
+				+ "--" + kernel[1][2]);
 		kernel[2] = new EducationRatio().getEducationKernel(S_String.text3,
 				commonTestInition.NE.app_S._A, commonTestInition.NE);
-		System.out.println("kernel2->" + kernel[2][0] + "--" + kernel[2][1] + "--"
-				+ kernel[2][2]);
+		System.out.println("kernel2->" + kernel[2][0] + "--" + kernel[2][1]
+				+ "--" + kernel[2][2]);
 
 		// ANN kernel
 		double[][] kernelRatio = new double[3][];
-		kernelRatio[0] = new EducationRatio().getEducationRatioKernel(kernel[0]);
+		kernelRatio[0] = new EducationRatio()
+				.getEducationRatioKernel(kernel[0]);
 		System.out.println("kernelRatio0->" + kernelRatio[0][0] + "--"
 				+ kernelRatio[0][1] + "--" + kernelRatio[0][2]);
-		kernelRatio[1] = new EducationRatio().getEducationRatioKernel(kernel[1]);
+		kernelRatio[1] = new EducationRatio()
+				.getEducationRatioKernel(kernel[1]);
 		System.out.println("kernelRatio1->" + kernelRatio[1][0] + "--"
 				+ kernelRatio[1][1] + "--" + kernelRatio[1][2]);
-		kernelRatio[2] = new EducationRatio().getEducationRatioKernel(kernel[2]);
+		kernelRatio[2] = new EducationRatio()
+				.getEducationRatioKernel(kernel[2]);
 		System.out.println("kernelRatio2->" + kernelRatio[2][0] + "--"
 				+ kernelRatio[2][1] + "--" + kernelRatio[2][2]);
 		EducationLevelTest educationLevelTest = new EducationLevelTest();

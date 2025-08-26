@@ -1,17 +1,15 @@
 package ME.VPC.V.dictionary;
 
 import exception.file.O.DetaBufferedReader;
-import exception.file.O.DetaInputStreamReader;
 import S_A.SVQ.stable.S_File;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_;
-import YLJ_HRJ.ME.VPC.S.books.BookIndex;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import E_A.OEI.SVQ.MPC.fhmm.E.FastReadProjectFile;
 
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
@@ -23,16 +21,21 @@ import java.util.regex.Pattern;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class XyscDictionary extends Dictionary_S {
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked" })
 	public void txtToMap(IMV_SIQ dic_yao_ming, IMV_SIQ dic_chengfen_danwei,
 			IMV_SIQ dic_yong_fa, IMV_SIQ dic_yao_li, IMV_SIQ dic_zhu_yi,
 			IMV_SIQ dic_shi_ying, IMV_SIQ dic_bu_liang_fan_ying,
 			IMV_SIQ dic_yao_wu_xiang_hu_zuo_yong, IMV_SIQ dic_qi_ta,
 			IMV_SIQ dic_yong_liang, IMV_SIQ dic_jie_shao) {
-		InputStream in = new BookIndex().getClass().getResourceAsStream(
-				S_File._127xiYiChangYongYaoPinGongNengZhuZhi_txt);
-		DetaBufferedReader cReader = new DetaBufferedReader(
-				DetaInputStreamReader.E(in, "UTF-8"));
+		System.out.println("启动400编码调试开始-00000065-01");
+		DetaBufferedReader cReader = FastReadProjectFile.getDetaBufferedReader(
+				S_File._127xiYiChangYongYaoPinGongNengZhuZhi_txt, "DetaResources/books/", "UTF8");
+		
+//		FileInputStream in = new BookIndex().getClass().getResourceAsStream(
+//				S_File._127xiYiChangYongYaoPinGongNengZhuZhi_txt);
+//		DetaBufferedReader cReader = new DetaBufferedReader(
+//				DetaInputStreamReader.E(in, "UTF-8"));
+		System.out.println("启动400编码调试开始-00000065-02");
 		String ctempString = null;
 		while ((ctempString = cReader.readDetaLine()) != null) {
 			if (!ctempString.replace(" ", "").equals("")) {
@@ -51,14 +54,14 @@ public class XyscDictionary extends Dictionary_S {
 			}
 		}
 		cReader.closeDeta();
-		try {
-			in.close();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		in = new BookIndex().getClass()
-				.getResourceAsStream(S_File.xiYiChangYongYao_txt);
-		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF-8"));
+		System.out.println("启动400编码调试开始-00000065-03");
+	
+//		in = new BookIndex().getClass()
+//				.getResourceAsStream(S_File.xiYiChangYongYao_txt);
+//		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF-8"));
+		cReader = FastReadProjectFile.getDetaBufferedReader(
+				S_File.xiYiChangYongYao_txt, "DetaResources/books/", "UTF8");
+		System.out.println("启动400编码调试开始-00000065-04");
 		ctempString = null;
 		String yaoming = "";
 		while ((ctempString = cReader.readDetaLine()) != null) {
@@ -163,9 +166,12 @@ public class XyscDictionary extends Dictionary_S {
 			}
 		}
 		cReader.closeDeta();
-		in = new BookIndex().getClass()
-				.getResourceAsStream(S_File.yaoLiXue_DiQiBan_txt);
-		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF8"));
+//		in = new BookIndex().getClass()
+//				.getResourceAsStream(S_File.yaoLiXue_DiQiBan_txt);
+//		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF8"));
+		cReader = FastReadProjectFile.getDetaBufferedReader(
+				S_File.yaoLiXue_DiQiBan_txt, "DetaResources/books/", "UTF8");
+		System.out.println("启动400编码调试开始-00000065-05");
 		ctempString = null;
 		yaoming = "";
 		String temps = "";
@@ -211,9 +217,12 @@ public class XyscDictionary extends Dictionary_S {
 		}
 		cReader.closeDeta();
 		temp_list = new ArrayList<>();
-		in = new BookIndex().getClass()
-				.getResourceAsStream(S_File.linChuangYaoWuShouCe_txt);
-		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF8"));
+//		in = new BookIndex().getClass()
+//				.getResourceAsStream(S_File.linChuangYaoWuShouCe_txt);
+//		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF8"));
+		cReader = FastReadProjectFile.getDetaBufferedReader(
+				S_File.linChuangYaoWuShouCe_txt, "DetaResources/books/", "UTF8");
+		System.out.println("启动400编码调试开始-00000065-06");
 		ctempString = null;
 		while ((ctempString = cReader.readDetaLine()) != null) {
 			if (!ctempString.replace(" ", "").equals("")) {
@@ -283,6 +292,7 @@ public class XyscDictionary extends Dictionary_S {
 				}
 			}
 		}
+		System.out.println("启动400编码调试开始-00000065-07");
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<>();
 		while (iter.hasNext())

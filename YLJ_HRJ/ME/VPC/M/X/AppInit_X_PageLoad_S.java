@@ -134,14 +134,14 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 	}
 
 	protected void bootDetaXYCF(App NE) {
-//		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
-//			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();
-//			text = "\r\n" + "----正在载入 西医处方 页面！" + text;
-//			text = "\r\n" + "..." + text;
-//			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
-//		}
-//		MakeContainerXYCF makeContainerXYCF = new MakeContainerXYCF(NE);
-//		makeContainerXYCF.start();
+		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
+			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();
+			text = "\r\n" + "----正在载入 西医处方 页面！" + text;
+			text = "\r\n" + "..." + text;
+			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
+		}
+		MakeContainerXYCF makeContainerXYCF = new MakeContainerXYCF(NE);
+		makeContainerXYCF.start();
 	}
 
 	protected void bootDetaLSYM(App NE) {
@@ -202,14 +202,14 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 	}
 
 	protected void bootDetaZYFJ(App NE) {
-//		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
-//			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();
-//			text = "\r\n" + "----正在载入中医方剂页面！" + text;
-//			text = "\r\n" + "..." + text;
-//			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
-//		}
-//		MakeContainerZYNKFJ makeContainerZYNKFJ = new MakeContainerZYNKFJ(NE);
-//		makeContainerZYNKFJ.start();
+		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
+			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();
+			text = "\r\n" + "----正在载入中医方剂页面！" + text;
+			text = "\r\n" + "..." + text;
+			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
+		}
+		MakeContainerZYNKFJ makeContainerZYNKFJ = new MakeContainerZYNKFJ(NE);
+		makeContainerZYNKFJ.start();
 	}
 }
 //		System.out.println("启动400编码调试开始-00000061");

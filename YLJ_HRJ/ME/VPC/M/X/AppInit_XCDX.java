@@ -35,7 +35,7 @@ import java.io.IOException;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class AppInit_XCDX {
-	@SuppressWarnings({ "deprecation", "unchecked" })
+	@SuppressWarnings({ "unchecked" })
 	public void IV_(App NE) throws IOException, InterruptedException {
 		// Register Medicine Report
 		DetaLabelConjunction.detaLabelConjunction = new DetaLabelConjunction();

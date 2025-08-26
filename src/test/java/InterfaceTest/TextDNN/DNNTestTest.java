@@ -29,7 +29,7 @@ class DNNTestTest {
      * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，
      * 方便商业化落地。--罗瑶光
      * */
-    @SuppressWarnings({ "unused", "deprecation" })
+    @SuppressWarnings({ "unused" })
 	@Test
     void main() {
         //环境初始化。

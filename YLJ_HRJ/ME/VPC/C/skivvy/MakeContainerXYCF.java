@@ -33,8 +33,10 @@ public class MakeContainerXYCF extends MakeContainer_X_S_s {
         DetaThread.sleepDeta(1000 * 3);
         app_S.xyscPage = new XyscPage(app_S.text, NE);
         app_S.xyscPage.setName("西医处方药");
+        System.out.println("启动400编码调试开始-00000065-08");
         jTabbedpane.addTab("西医处方药", new ImageIcon()
             , app_S.xyscPage, "西医处方药");// 加入第一个页面
+        System.out.println("启动400编码调试开始-00000065-09");
         Color[] colors = TableRender.getTableCellRender();
         jTabbedpane.setBackgroundAt(jTabbedpane.getTabCount() - 1
             , colors[jTabbedpane.getTabCount() % 3]);

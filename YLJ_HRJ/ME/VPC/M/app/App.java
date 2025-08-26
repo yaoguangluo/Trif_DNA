@@ -32,7 +32,7 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
-@SuppressWarnings({ "deprecation", "serial" })
+@SuppressWarnings({ "serial" })
 public class App extends JApplet implements KeyListener, ActionListener {
 
 	public App_S app_S = new App_S();

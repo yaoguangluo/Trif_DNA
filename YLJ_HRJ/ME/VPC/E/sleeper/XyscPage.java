@@ -28,6 +28,7 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("serial")
 public class XyscPage extends XyscPage_X_S_sListeners {
 
 	public XyscPage(JTextPane text, App NE) {
@@ -44,10 +45,12 @@ public class XyscPage extends XyscPage_X_S_sListeners {
 		JScrollPane jsp_name = new JScrollPane(this.name());
 		jsp_name.setBounds(100, 15, 680, 50);
 		JScrollPane jsp_data = new JScrollPane(this.data(NE));
+		System.out.println("启动400编码调试开始-00000065-010");
 		JScrollPane jsp_statistic = new JScrollPane(this.statistic());
 		JScrollPane jsp = new JScrollPane(this.jTable(NE));
 		JLabel jlabel = new JLabel("主要词汇 \\ 操作选项");
 		PageUtil.initPageTail(jsp_statistic, jsp_data, jsp, jlabel);
+		System.out.println("启动400编码调试开始-00000065-011");
 		this.add(jsp);
 		this.add(jlabel);
 		this.add(jsp_data);

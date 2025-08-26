@@ -1,17 +1,16 @@
 package ME.VPC.V.dictionary;
 
 import exception.file.O.DetaBufferedReader;
-import exception.file.O.DetaInputStreamReader;
 import S_A.SVQ.stable.S_File;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_;
-import YLJ_HRJ.ME.VPC.S.books.BookIndex;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import E_A.OEI.SVQ.MPC.fhmm.E.FastReadProjectFile;
 
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
@@ -22,13 +21,16 @@ import java.util.regex.Pattern;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("unchecked")
 public class ZynkxDictionary extends Dictionary_S {
 	public List<String> txtToList() {
 		temp_list = new ArrayList<>();
-		InputStream in = new BookIndex().getClass()
-				.getResourceAsStream(S_File.n_txt);
-		DetaBufferedReader cReader = new DetaBufferedReader(
-				DetaInputStreamReader.E(in));
+//		InputStream in = new BookIndex().getClass()
+//				.getResourceAsStream(S_File.n_txt);
+//		DetaBufferedReader cReader = new DetaBufferedReader(
+//				DetaInputStreamReader.E(in));
+		DetaBufferedReader cReader = FastReadProjectFile.getDetaBufferedReader(
+				S_File.n_txt, "DetaResources/books/", "UTF8");
 		String ctempString = null;
 		while ((ctempString = cReader.readDetaLine()) != null) {
 			if (!ctempString.replace(" ", "").equals(""))
@@ -36,8 +38,10 @@ public class ZynkxDictionary extends Dictionary_S {
 		}
 		cReader.closeDeta();
 
-		in = new BookIndex().getClass().getResourceAsStream(S_File.wbx142f_txt);
-		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF8"));
+//		in = new BookIndex().getClass().getResourceAsStream(S_File.wbx142f_txt);
+//		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF8"));
+		cReader = FastReadProjectFile.getDetaBufferedReader(
+				S_File.wbx142f_txt, "DetaResources/books/", "UTF8");
 		ctempString = null;
 		while ((ctempString = cReader.readDetaLine()) != null) {
 			if (!ctempString.replace(" ", "").equals(""))
@@ -45,9 +49,11 @@ public class ZynkxDictionary extends Dictionary_S {
 		}
 		cReader.closeDeta();
 
-		in = new BookIndex().getClass()
-				.getResourceAsStream(S_File.zhongYiFangJiXue_txt);
-		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF8"));
+//		in = new BookIndex().getClass()
+//				.getResourceAsStream(S_File.zhongYiFangJiXue_txt);
+//		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF8"));
+		cReader = FastReadProjectFile.getDetaBufferedReader(
+				S_File.zhongYiFangJiXue_txt, "DetaResources/books/", "UTF8");
 		ctempString = null;
 		while ((ctempString = cReader.readDetaLine()) != null) {
 			if (!ctempString.replace(" ", "").equals(""))
@@ -55,8 +61,10 @@ public class ZynkxDictionary extends Dictionary_S {
 		}
 		cReader.closeDeta();
 
-		in = new BookIndex().getClass().getResourceAsStream(S_File.zydcd_txt);
-		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF8"));
+//		in = new BookIndex().getClass().getResourceAsStream(S_File.zydcd_txt);
+//		cReader = new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF8"));
+		cReader = FastReadProjectFile.getDetaBufferedReader(
+				S_File.zydcd_txt, "DetaResources/books/", "UTF8");
 		ctempString = null;
 		while ((ctempString = cReader.readDetaLine()) != null) {
 			if (!ctempString.replace(" ", "").equals(""))

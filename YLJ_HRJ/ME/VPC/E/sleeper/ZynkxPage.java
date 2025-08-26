@@ -27,6 +27,7 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("serial")
 public class ZynkxPage extends ZynkxPage_X_S_sListeners {
 
 	public ZynkxPage(JTextPane text, App NE) {
