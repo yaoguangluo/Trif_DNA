@@ -17,92 +17,99 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 public class AE extends AE_M implements AC {
-    public List<String> parserMixedString(String inputString) {
-        mixedString = new StringBuilder(inputString);
-        return parserMixedString(mixedString);
-    }
-    public List<String> parserMixedString(StringBuilder inputString) {
-        mixedString = new StringBuilder(inputString);
-        mixedString.append(S_Pos.SPACE_STRING_DISTINCTION);
-        inputLength = mixedString.length();
-        outputList = new LinkedList<>();
-        forestDepth = S_Pos.INT_ZERO;
-        fixWords = new StringBuilder[S_Pos.INT_TWO];
-        fixWords[S_Pos.INT_ZERO] = new StringBuilder();
-        fixWords[S_Pos.INT_ONE] = new StringBuilder();
-        stringBuilder = new StringBuilder();
-        find = S_Pos.INT_ZERO;
-        Here:
-        for (charPosition = S_Pos.INT_ZERO; charPosition < inputLength
-            ; charPosition += (countLength != S_Pos.INT_ZERO ? countLength: S_Pos.INT_ONE)) {
-            if (charPosition < inputLength - S_Pos.INT_ONE
-                && mixedString.charAt(charPosition) < S_Pos.INT_TEN_SOUTHANDS) {
-                if (find == S_Pos.INT_ZERO) {
-                    fixWords[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWords[S_Pos.INT_ZERO].length());
-                }
-                fixWords[S_Pos.INT_ZERO].append(mixedString.charAt(charPosition));
-                countLength = S_Pos.INT_ONE;
-                find = S_Pos.INT_ONE;
-                continue Here;
-            }
-            if (S_Pos.INT_ONE == find) {
-                if (S_Pos.INT_ONE == find) {
-                    find = S_Pos.INT_ZERO;
-                    Iterator<String> it = fHMMList.englishStringToWordsList(
-                            fixWords[S_Pos.INT_ZERO].toString()).iterator();
-                    StringBuilder number = new StringBuilder();
-                    while (it.hasNext()) {
-                        String temp = it.next();
-                        if (S_Pos.NUMBERS.contains(temp)) {
-                            number.append(temp);
-                        } else {
-                            if (number.length() > 0) {
-                                outputList.add(number.toString());
-                                number.delete(0, number.length());
-                            }
-                            outputList.add(temp);
-                        }
-                    }
-                    if (number.length() > 0) {
-                        outputList.add(number.toString());
-                        number.delete(0, number.length());
-                    }
-                    fixWords[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO
-                            , fixWords[S_Pos.INT_ZERO].length());
-                }
-            }
-            stringBuilder.delete(S_Pos.INT_ZERO, stringBuilder.length());
-            stringBuilder.append(mixedString.charAt(charPosition));
-            stringBuilder = nero_C.getBinaryForestRecurWords(stringBuilder
-                , mixedString, charPosition, inputLength, forestRoots, forestDepth
-                , charPosition + S_Pos.INT_ONE);
-            String countWordNode = stringBuilder.toString();
-            int compare = countLength = countWordNode.length();
-            if (S_Pos.INT_ONE == compare) {
-                outputList.add(countWordNode);
-                fixWords[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO, fixWords[S_Pos.INT_ZERO].length());
-                fixWords[S_Pos.INT_ZERO].append(countWordNode);
-                continue Here;
-            }
-            if (S_Pos.INT_TWO == compare) {
-                countLength = nlp_C.forTwoChar(countLength, outputList, stringBuilder
-                    , fixWords, charPosition, mixedString);
-                continue Here;
-            }
-            if (S_Pos.INT_THREE == compare) {
-                I_FixWords(charPosition, mixedString, fixWords);
-                countLength = nlp_C.ofThree(countLength, outputList, stringBuilder
-                    , fixWords, charPosition, mixedString);
-                continue Here;
-            }
-            if (S_Pos.INT_FOUR == compare) {
-                I_FixWords(charPosition, mixedString, fixWords);
-                countLength = nlp_C._E(countLength, outputList, stringBuilder, fixWords
-                    , charPosition, mixedString);
-            }
-        }
-        return outputList;
-    }
+	public List<String> parserMixedString(String inputString) {
+		mixedString = new StringBuilder(inputString);
+		return parserMixedString(mixedString);
+	}
+
+	public List<String> parserMixedString(StringBuilder inputString) {
+		mixedString = new StringBuilder(inputString);
+		mixedString.append(S_Pos.SPACE_STRING_DISTINCTION);
+		inputLength = mixedString.length();
+		outputList = new LinkedList<>();
+		forestDepth = S_Pos.INT_ZERO;
+		fixWords = new StringBuilder[S_Pos.INT_TWO];
+		fixWords[S_Pos.INT_ZERO] = new StringBuilder();
+		fixWords[S_Pos.INT_ONE] = new StringBuilder();
+		stringBuilder = new StringBuilder();
+		find = S_Pos.INT_ZERO;
+		Here: // countLength比较 是可以在子迭代层进行分解掉的，分词速度可以提升5%
+		for (charPosition = S_Pos.INT_ZERO; charPosition < inputLength; 
+				charPosition += (countLength != S_Pos.INT_ZERO
+				? countLength: S_Pos.INT_ONE)) {
+			if (charPosition < inputLength - S_Pos.INT_ONE && mixedString
+					.charAt(charPosition) < S_Pos.INT_TEN_SOUTHANDS) {
+				if (find == S_Pos.INT_ZERO) {
+					fixWords[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+							fixWords[S_Pos.INT_ZERO].length());
+				}
+				fixWords[S_Pos.INT_ZERO]
+						.append(mixedString.charAt(charPosition));
+				countLength = S_Pos.INT_ONE;
+				find = S_Pos.INT_ONE;
+				continue Here;
+			}
+			if (S_Pos.INT_ONE == find) {
+				if (S_Pos.INT_ONE == find) {
+					find = S_Pos.INT_ZERO;
+					Iterator<String> it = fHMMList
+							.englishStringToWordsList(
+									fixWords[S_Pos.INT_ZERO].toString())
+							.iterator();
+					StringBuilder number = new StringBuilder();
+					while (it.hasNext()) {
+						String temp = it.next();
+						if (S_Pos.NUMBERS.contains(temp)) {
+							number.append(temp);
+						} else {
+							if (number.length() > 0) {
+								outputList.add(number.toString());
+								number.delete(0, number.length());
+							}
+							outputList.add(temp);
+						}
+					}
+					if (number.length() > 0) {
+						outputList.add(number.toString());
+						number.delete(0, number.length());
+					}
+					fixWords[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+							fixWords[S_Pos.INT_ZERO].length());
+				}
+			}
+			stringBuilder.delete(S_Pos.INT_ZERO, stringBuilder.length());
+			stringBuilder.append(mixedString.charAt(charPosition));
+			stringBuilder = nero_C.getBinaryForestRecurWords(stringBuilder,
+					mixedString, charPosition, inputLength, forestRoots,
+					forestDepth, charPosition + S_Pos.INT_ONE);
+			String countWordNode = stringBuilder.toString();
+			int compare = countLength = countWordNode.length();
+			if (S_Pos.INT_ONE == compare) {
+				outputList.add(countWordNode);
+				fixWords[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+						fixWords[S_Pos.INT_ZERO].length());
+				fixWords[S_Pos.INT_ZERO].append(countWordNode);
+				continue Here;
+			}
+			if (S_Pos.INT_TWO == compare) {
+				countLength = nlp_C.forTwoChar(countLength, outputList,
+						stringBuilder, fixWords, charPosition, mixedString);
+				continue Here;
+			}
+			if (S_Pos.INT_THREE == compare) {
+				I_FixWords(charPosition, mixedString, fixWords);
+				countLength = nlp_C.ofThree(countLength, outputList,
+						stringBuilder, fixWords, charPosition, mixedString);
+				continue Here;
+			}
+			if (S_Pos.INT_FOUR == compare) {
+				I_FixWords(charPosition, mixedString, fixWords);
+				countLength = nlp_C._E(countLength, outputList, stringBuilder,
+						fixWords, charPosition, mixedString);
+			}
+		}
+		return outputList;
+	}
 }
 //24
 //if(null==mixedString){
