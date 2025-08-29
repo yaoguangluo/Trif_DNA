@@ -62,7 +62,7 @@ public class Pos_X_P_LianCi extends Pos_X_P_JieCi implements X_P_LianCi {
 						|| S_Maps.weiCi.containsKey(
 								fixWord[S_Pos.INT_ZERO].toString()))) {
 			countLength = charOfThree(countLength, outputList, strings,
-					fixWord);
+					fixWord);//trif-countLength
 			return countLength;
 		}
 		if (wordsForest.containsKey(fixWord[S_Pos.INT_ZERO].toString())
@@ -70,7 +70,7 @@ public class Pos_X_P_LianCi extends Pos_X_P_JieCi implements X_P_LianCi {
 						|| S_Maps.shengLueCi.containsKey(
 								fixWord[S_Pos.INT_ZERO].toString()))) {
 			for (int BackPosition = S_Pos.INT_ZERO; BackPosition < fixWord[S_Pos.INT_ONE]
-					.length(); BackPosition++) {
+					.length(); BackPosition++) {//trif-countLength
 				int[] nestCountInputStringLength = new int[S_Pos.INT_ONE];
 				int result = loopCheckBackFix(fixWord, BackPosition,
 						countLength, outputList, strings,
@@ -85,8 +85,9 @@ public class Pos_X_P_LianCi extends Pos_X_P_JieCi implements X_P_LianCi {
 						fixWord[S_Pos.INT_ZERO].length());
 				fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ONE]);
 				return countLength - S_Pos.INT_ONE;
-			}
-			return countLength - S_Pos.INT_THREE;
+			}//trif-countLength
+			//return countLength - S_Pos.INT_THREE;
+			return countLength - S_Pos.INT_TWO;
 		}
 		if (S_Maps.CiTwo.containsKey(strings[S_Pos.INT_ONE])) {
 			outputList.add(strings[S_Pos.INT_ONE]);
@@ -98,7 +99,9 @@ public class Pos_X_P_LianCi extends Pos_X_P_JieCi implements X_P_LianCi {
 		fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
 				fixWord[S_Pos.INT_ZERO].length());
 		fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ZERO]);
-		return countLength - S_Pos.INT_THREE;
+		//trif-countLength
+		//return countLength - S_Pos.INT_THREE;
+		return countLength - S_Pos.INT_TWO;
 	}
 
 //奇怪没做为什么要减去？

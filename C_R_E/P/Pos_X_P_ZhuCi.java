@@ -51,7 +51,7 @@ public class Pos_X_P_ZhuCi extends Pos_X_P_MingCi implements X_P_ZhuCi {
 			if (S_Maps.dongCi.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
 				if (wordsForest.containsKey(strings[S_Pos.INT_TWO])) {
 					countLength = charOfThree(countLength, outputList, strings,
-							fixWord);
+							fixWord);//trif-countLength
 					return countLength;
 				}
 				outputList.add(strings[S_Pos.INT_ZERO]);

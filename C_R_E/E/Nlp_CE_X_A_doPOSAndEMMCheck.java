@@ -50,45 +50,45 @@ public class Nlp_CE_X_A_doPOSAndEMMCheck
 				prefixWord[S_Pos.INT_ZERO].append(inputString);
 				outputList.add(inputString);
 				return countLength;
-			}
+			}//trif-countLength
 			StringBuilder stringsBuilder = new StringBuilder();
 			countLength = forTwoChar(--countLength, outputList,
 					stringsBuilder.append(strings[S_Pos.INT_ONE]), prefixWord,
 					charPosition, textInputString);
 			return countLength;
-		}
+		}//trif-countLength
 		if (!S_Maps.CiOne.containsKey(strings[S_Pos.INT_ZERO])) {
 			StringBuilder stringsBuilder = new StringBuilder();
 			stringsBuilder.append(strings[S_Pos.INT_ONE]);
 			countLength = forTwoChar(--countLength, outputList, stringsBuilder,
 					prefixWord, charPosition, textInputString);
 			return countLength;
-		}
+		}//trif-countLength
 		if (S_Maps.lianCi.containsKey(strings[S_Pos.INT_THREE])) {
 			countLength = pos_X_P.P_LianCiPostFixOfThree(outputList,
 					countLength, strings, prefixWord);
 			return countLength;
-		}
+		}//trif-countLength
 		if (S_Maps.lianCi.containsKey(strings[S_Pos.INT_ZERO])) {
 			countLength = pos_X_P.P_LianCiOfThree(outputList, countLength,
 					strings, prefixWord);
 			return countLength;
-		}
+		}//trif-countLength
 		if (S_Maps.jieCi.containsKey(strings[S_Pos.INT_ZERO])) {
 			countLength = pos_X_P.P_JieCiOfThree(outputList, countLength,
 					strings, prefixWord);
 			return countLength;
-		}
+		}//trif-countLength
 		if (S_Maps.zhuCi.containsKey(strings[S_Pos.INT_ZERO])) {
 			countLength = pos_X_P.P_ZhuCiOfThree(outputList, countLength,
 					strings, prefixWord);
 			return countLength;
-		}
+		}//trif-countLength
 		if (S_Maps.liangCi.containsKey(strings[S_Pos.INT_ZERO])) {
 			countLength = pos_X_P.P_LiangCiOfThree(outputList, countLength,
 					strings, prefixWord);
 			return countLength;
-		}
+		}//trif-countLength
 		if (S_Maps.mingCi.containsKey(strings[S_Pos.INT_ZERO])) {
 			countLength = pos_X_P.P_MingCiOfThree(outputList, countLength,
 					strings, prefixWord);

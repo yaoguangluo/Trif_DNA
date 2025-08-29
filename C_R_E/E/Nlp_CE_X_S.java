@@ -50,7 +50,7 @@ public class Nlp_CE_X_S extends Nlp_CE_X_A_doPOSAndEMMCheck
 			countLength = ofThree(--countLength, output,
 					stringBuilder.delete(S_Pos.INT_THREE, S_Pos.INT_FOUR),
 					prefixWord, charPosition, textInputString);
-			return countLength;
+			return countLength;//trif-countLength
 		}
 		boolean A = S_Maps.CiTwo.containsKey(preRegister);
 		if (A) {

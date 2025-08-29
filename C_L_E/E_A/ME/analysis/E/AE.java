@@ -16,6 +16,8 @@ import java.util.List;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+//最近2年没人挑战我，我不能老闲着，那就继续自己挑战自己的模式，定个目标优化下。trif-
+//countLength比较 是可以在子迭代层进行分解掉的，分词速度可以提升5%，既然提了，于是刚刚我就干脆分解掉了。
 public class AE extends AE_M implements AC {
 	public List<String> parserMixedString(String inputString) {
 		mixedString = new StringBuilder(inputString);
@@ -33,10 +35,13 @@ public class AE extends AE_M implements AC {
 		fixWords[S_Pos.INT_ONE] = new StringBuilder();
 		stringBuilder = new StringBuilder();
 		find = S_Pos.INT_ZERO;
-		Here: // countLength比较 是可以在子迭代层进行分解掉的，分词速度可以提升5%
-		for (charPosition = S_Pos.INT_ZERO; charPosition < inputLength; 
-				charPosition += (countLength != S_Pos.INT_ZERO
-				? countLength: S_Pos.INT_ONE)) {
+		// for (charPosition = S_Pos.INT_ZERO; charPosition <
+		// inputLength
+		// ; charPosition += (countLength != S_Pos.INT_ZERO
+		// ? countLength: S_Pos.INT_ONE)) {//trif-
+		// countLength比较 是可以在子迭代层进行分解掉的，分词速度可以提升5%
+		Here: for (charPosition = S_Pos.INT_ZERO; charPosition < inputLength; 
+				charPosition += countLength) {// trif-countLength
 			if (charPosition < inputLength - S_Pos.INT_ONE && mixedString
 					.charAt(charPosition) < S_Pos.INT_TEN_SOUTHANDS) {
 				if (find == S_Pos.INT_ZERO) {
@@ -49,33 +54,29 @@ public class AE extends AE_M implements AC {
 				find = S_Pos.INT_ONE;
 				continue Here;
 			}
-			if (S_Pos.INT_ONE == find) {
-				if (S_Pos.INT_ONE == find) {
-					find = S_Pos.INT_ZERO;
-					Iterator<String> it = fHMMList
-							.englishStringToWordsList(
-									fixWords[S_Pos.INT_ZERO].toString())
-							.iterator();
-					StringBuilder number = new StringBuilder();
-					while (it.hasNext()) {
-						String temp = it.next();
-						if (S_Pos.NUMBERS.contains(temp)) {
-							number.append(temp);
-						} else {
-							if (number.length() > 0) {
-								outputList.add(number.toString());
-								number.delete(0, number.length());
-							}
-							outputList.add(temp);
+			if (S_Pos.INT_ONE == find) {//奇怪了怎么2个重复
+				find = S_Pos.INT_ZERO;
+				Iterator<String> it = fHMMList.englishStringToWordsList(
+						fixWords[S_Pos.INT_ZERO].toString()).iterator();
+				StringBuilder number = new StringBuilder();
+				while (it.hasNext()) {
+					String temp = it.next();
+					if (S_Pos.NUMBERS.contains(temp)) {
+						number.append(temp);
+					} else {
+						if (number.length() > 0) {
+							outputList.add(number.toString());
+							number.delete(0, number.length());
 						}
+						outputList.add(temp);
 					}
-					if (number.length() > 0) {
-						outputList.add(number.toString());
-						number.delete(0, number.length());
-					}
-					fixWords[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
-							fixWords[S_Pos.INT_ZERO].length());
 				}
+				if (number.length() > 0) {
+					outputList.add(number.toString());
+					number.delete(0, number.length());
+				}
+				fixWords[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
+						fixWords[S_Pos.INT_ZERO].length());
 			}
 			stringBuilder.delete(S_Pos.INT_ZERO, stringBuilder.length());
 			stringBuilder.append(mixedString.charAt(charPosition));
@@ -91,18 +92,18 @@ public class AE extends AE_M implements AC {
 				fixWords[S_Pos.INT_ZERO].append(countWordNode);
 				continue Here;
 			}
-			if (S_Pos.INT_TWO == compare) {
+			if (S_Pos.INT_TWO == compare) {// trif-countLength
 				countLength = nlp_C.forTwoChar(countLength, outputList,
 						stringBuilder, fixWords, charPosition, mixedString);
 				continue Here;
 			}
-			if (S_Pos.INT_THREE == compare) {
+			if (S_Pos.INT_THREE == compare) {// trif-countLength
 				I_FixWords(charPosition, mixedString, fixWords);
 				countLength = nlp_C.ofThree(countLength, outputList,
 						stringBuilder, fixWords, charPosition, mixedString);
 				continue Here;
 			}
-			if (S_Pos.INT_FOUR == compare) {
+			if (S_Pos.INT_FOUR == compare) {// trif-countLength
 				I_FixWords(charPosition, mixedString, fixWords);
 				countLength = nlp_C._E(countLength, outputList, stringBuilder,
 						fixWords, charPosition, mixedString);

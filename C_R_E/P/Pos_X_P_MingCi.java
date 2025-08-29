@@ -25,35 +25,35 @@ public class Pos_X_P_MingCi extends Pos_X_P_LiangCi implements X_P_MingCi {
 			StringBuilder inputString) {
 		String reg = fixWord[S_Pos.INT_ZERO].toString();
 		if (wordsForest.containsKey(reg)) {
-			if (S_Maps.liangCi.containsKey(reg)) {
+			if (S_Maps.liangCi.containsKey(reg)) {//trif-countLength
 				countLength = charOfTwo(countLength, outputList, strings,
 						fixWord);
 				return countLength;
 			}
-			if (S_Maps.dongCi.containsKey(reg)) {
+			if (S_Maps.dongCi.containsKey(reg)) {//trif-countLength
 				return doP_MingCiOfTwoFinds(fixWord, strings, outputList,
 						countLength);
 			}
-			if (S_Maps.xingRongCi.containsKey(reg)) {
+			if (S_Maps.xingRongCi.containsKey(reg)) {//trif-countLength
 				return doP_MingCiOfTwoFinds(fixWord, strings, outputList,
 						countLength);
 			}
-			if (S_Maps.mingCi.containsKey(reg)) {
+			if (S_Maps.mingCi.containsKey(reg)) {//trif-countLength
 				return doP_MingCiOfTwoFinds(fixWord, strings, outputList,
 						countLength);
 			}
-			if (S_Maps.zhuCi.containsKey(reg)) {
+			if (S_Maps.zhuCi.containsKey(reg)) {//trif-countLength
 				return doP_MingCiOfTwoFinds(fixWord, strings, outputList,
 						countLength);
 			}
-			if (S_Maps.liangCi.containsKey(reg)) {
+			if (S_Maps.liangCi.containsKey(reg)) {//trif-countLength
 				return doP_MingCiOfTwoFinds(fixWord, strings, outputList,
 						countLength);
 			}
 			I_FixWordsOfTwo(charPosition, inputString, fixWord);
 			if (S_Pos.INT_ZERO < fixWord[S_Pos.INT_ONE].length() && S_Maps.fuCi
 					.containsKey(S_Pos.EMPTY_STRING + fixWord[S_Pos.INT_ONE]
-							.toString().charAt(S_Pos.INT_ZERO))) {
+							.toString().charAt(S_Pos.INT_ZERO))) {//trif-countLength
 				countLength = charOfTwo(countLength, outputList, strings,
 						fixWord);
 				return countLength;
@@ -64,7 +64,7 @@ public class Pos_X_P_MingCi extends Pos_X_P_LiangCi implements X_P_MingCi {
 						fixWord[S_Pos.INT_ZERO].length());
 				fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ONE]);
 				return countLength;
-			}
+			}//trif-countLength
 			countLength = charOfTwo(countLength, outputList, strings, fixWord);
 			return countLength;
 		}
@@ -79,7 +79,7 @@ public class Pos_X_P_MingCi extends Pos_X_P_LiangCi implements X_P_MingCi {
 			fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ONE]);
 			outputList.add(strings[S_Pos.INT_ONE]);
 			return countLength;
-		}
+		}//trif-countLength
 		countLength = charOfTwo(countLength, outputList, strings, fixWord);
 		return countLength;
 	}
@@ -91,7 +91,7 @@ public class Pos_X_P_MingCi extends Pos_X_P_LiangCi implements X_P_MingCi {
 						.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
 			if (S_Maps.dongCi.containsKey(strings[S_Pos.INT_TWO])) {
 				countLength = charOfThree(countLength, outputList, strings,
-						fixWord);
+						fixWord);//trif-countLength
 				return countLength;
 			}
 			if (S_Maps.dongCi.containsKey(strings[S_Pos.INT_THREE])) {

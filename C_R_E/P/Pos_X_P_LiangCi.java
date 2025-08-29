@@ -31,7 +31,7 @@ public class Pos_X_P_LiangCi extends Pos_X_P_LianCi implements X_P_LiangCi {
 					|| S_Maps.daiCi
 							.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
 				countLength = charOfThree(countLength, outputList, strings,
-						fixWord);
+						fixWord);//trif-countLength
 				return countLength;
 			}
 			if (S_Maps.liangCi.containsKey(strings[S_Pos.INT_ONE])) {

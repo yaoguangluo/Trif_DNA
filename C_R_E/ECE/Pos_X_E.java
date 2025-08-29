@@ -51,7 +51,7 @@ public class Pos_X_E extends Pos_X_O implements X_E {
 				&& wordsForest.get(charPositionAtFixWord).toString()
 						.contains(S_Pos.NLP_CI_FU)) {
 			return S_Pos.INT_ERROR;
-		}
+		}//trif-countLength
 		nestCountInputStringLength[S_Pos.INT_ZERO] = charOfThree(countLength,
 				outputList, strings, fixWord);
 		return S_Pos.INT_RIGHT;

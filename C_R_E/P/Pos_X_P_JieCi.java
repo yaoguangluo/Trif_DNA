@@ -42,7 +42,7 @@ public class Pos_X_P_JieCi extends Pos_X_E implements X_P_JieCi {
 					|| S_Maps.lianCi
 							.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
 				countLength = charOfThree(countLength, outputList, strings,
-						fixWord);
+						fixWord);//trif-countLength
 				return countLength;
 			} else {
 				if (S_Maps.dongCi
@@ -51,7 +51,7 @@ public class Pos_X_P_JieCi extends Pos_X_E implements X_P_JieCi {
 							|| S_Maps.xingRongCi
 									.containsKey(strings[S_Pos.INT_ONE])) {
 						countLength = twoCharOfThree(countLength, outputList,
-								strings, fixWord);
+								strings, fixWord);//trif-countLength
 						return countLength;
 					}
 				}
@@ -65,7 +65,7 @@ public class Pos_X_P_JieCi extends Pos_X_E implements X_P_JieCi {
 				} else if (S_Maps.CiTwo.containsKey(strings[S_Pos.INT_ONE])) {
 					if (S_Maps.jieCi.containsKey(strings[S_Pos.INT_ONE])) {
 						countLength = twoCharOfThree(countLength, outputList,
-								strings, fixWord);
+								strings, fixWord);//trif-countLength
 						return countLength;
 					}
 					outputList.add(strings[S_Pos.INT_ONE]);
@@ -86,7 +86,7 @@ public class Pos_X_P_JieCi extends Pos_X_E implements X_P_JieCi {
 		}
 		if (S_Maps.jieCi.containsKey(strings[S_Pos.INT_ONE])) {
 			countLength = twoCharOfThree(countLength, outputList, strings,
-					fixWord);
+					fixWord);//trif-countLength
 			return countLength;
 		}
 		outputList.add(strings[S_Pos.INT_ZERO]);

@@ -43,7 +43,7 @@ public class Pos_X_O extends XCE_XAS implements X_O_parserFirst {
 		fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
 				fixWord[S_Pos.INT_ZERO].length());
 		fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_TWO]);
-		return countLength;
+		return countLength;//trif-countLength
 	}
 
 	public int twoCharOfThree(int countLength, List<String> outputList,
@@ -53,7 +53,7 @@ public class Pos_X_O extends XCE_XAS implements X_O_parserFirst {
 		fixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
 				fixWord[S_Pos.INT_ZERO].length());
 		fixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_THREE]);
-		return countLength;
+		return countLength;//trif-countLength
 	}
 
 	public int charOfTwoForMap(int countLength, IMV_SIQ_SS outputList,

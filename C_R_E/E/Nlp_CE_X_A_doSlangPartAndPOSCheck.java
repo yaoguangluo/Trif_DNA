@@ -25,8 +25,6 @@ public class Nlp_CE_X_A_doSlangPartAndPOSCheck extends XCE_XAS_U
 	public int forTwoChar(int countLength, List<String> outputList,
 			StringBuilder stringBuilder, StringBuilder[] prefixWord,
 			int charPosition, StringBuilder textInputString) {
-		// Pos_C_X_P_chuLiMingCi Pos_C_X_P=
-		// (Pos_C_X_P_chuLiMingCi)posUtils;
 		String countWordNode = stringBuilder.toString();
 		int temp = prefixWord[S_Pos.INT_ZERO].length();// trif checking book
 		if (temp == S_Pos.INT_ZERO) {
@@ -47,19 +45,18 @@ public class Nlp_CE_X_A_doSlangPartAndPOSCheck extends XCE_XAS_U
 		strings[S_Pos.INT_ZERO] = String
 				.valueOf(countWordNode.charAt(S_Pos.INT_ZERO));
 		strings[S_Pos.INT_ONE] = countWordNode;
-		if (S_Maps.mingCi.containsKey(strings[S_Pos.INT_ZERO])) {
+		if (S_Maps.mingCi.containsKey(strings[S_Pos.INT_ZERO])) {//trif-countLength
 			countLength = pos_X_P.P_MingCiOfTwo(outputList, countLength,
 					strings, prefixWord, charPosition, textInputString);
 			return countLength;
 		}
-		if (S_Maps.baDongCi.containsKey(strings[S_Pos.INT_ZERO])) {
+		if (S_Maps.baDongCi.containsKey(strings[S_Pos.INT_ZERO])) {//trif-countLength
 			countLength = pos_X_P.P_BaDongCiOfTwo(outputList, countLength,
 					strings, prefixWord);
 			return countLength;
 		}
-		if (S_Maps.jieCi.containsKey(strings[S_Pos.INT_ZERO])) {
-			if (S_Maps.dongCi
-					.containsKey(prefixWord[S_Pos.INT_ZERO].toString())) {
+		if (S_Maps.jieCi.containsKey(strings[S_Pos.INT_ZERO])) {//trif-countLength
+			if (S_Maps.dongCi.containsKey(prefixWord[S_Pos.INT_ZERO].toString())) {
 				if (!S_Maps.jieCi.containsKey(countWordNode)) {
 					countLength = pos_X_P.charOfTwo(countLength, outputList,
 							strings, prefixWord);
@@ -73,7 +70,7 @@ public class Nlp_CE_X_A_doSlangPartAndPOSCheck extends XCE_XAS_U
 			prefixWord[S_Pos.INT_ZERO].append(countWordNode);
 			outputList.add(countWordNode);
 			return countLength;
-		}
+		}//trif-countLength
 		countLength = pos_X_P.charOfTwo(countLength, outputList, strings,
 				prefixWord);
 		return countLength;

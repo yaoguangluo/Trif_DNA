@@ -23,8 +23,8 @@ public class Pos_X_P extends Pos_X_P_ZhuCi implements X_P {
 			return countLength;
 		}
 		if (S_Maps.daiCi.containsKey(prefixWord[S_Pos.INT_ZERO].toString())
-				|| S_Maps.fuCi
-						.containsKey(prefixWord[S_Pos.INT_ZERO].toString())) {
+				|| S_Maps.fuCi.containsKey(prefixWord[S_Pos.INT_ZERO]
+						.toString())) {//trif-countLength
 			countLength = charOfTwo(countLength, outputList, strings,
 					prefixWord);
 			return countLength;
@@ -35,8 +35,9 @@ public class Pos_X_P extends Pos_X_P_ZhuCi implements X_P {
 					prefixWord[S_Pos.INT_ZERO].length());
 			prefixWord[S_Pos.INT_ZERO].append(strings[S_Pos.INT_ONE]);
 			return countLength;
-		}
-		return countLength - S_Pos.INT_TWO;
+		}//trif-countLength
+		//return countLength - S_Pos.INT_TWO;
+		return countLength - S_Pos.INT_ONE;
 	}
 
 	// 离散思维 走 离散代数
