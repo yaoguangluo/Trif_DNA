@@ -42,10 +42,10 @@ import jnisort.LYGSortESU9D;
  * 这是一个 功能测试的环境函数提出项，用于测试源码去重。 测试main函数demo的test版本。
  * --罗瑶光
  * */
+@SuppressWarnings({ "unchecked" })
 public class CommonTestInition {
 	public App NE;
 
-	@SuppressWarnings("unchecked")
 	public void initEnvironment(String stringConfigUI) {
 		if (null != NE) {
 			return;

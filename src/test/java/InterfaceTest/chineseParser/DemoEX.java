@@ -42,7 +42,8 @@ public class DemoEX {
 		List<String> sets = new ArrayList<>();
 		TimeCheck t = new TimeCheck();
 		// 等待分词的语句
-		String ss = new String("罗瑶光先生从2018年10月开始，所有个人著作权作品，"
+		String ss = new String("commonTestInition NE app_S _A.getPosCnToCn"
+				+ "罗瑶光先生从2018年10月开始，所有个人著作权作品，"
 				+ "全部开源，到现在，和无数群体，技术社团正面交锋7年，一直0纠纷，罗"
 				+ "瑶光先生认为，一件作品，一个事物，如果有价值，就应该像教材一样在"
 				+ "真实的环境中实践测试和论证，能经得起所有人长年累月不断地挑剔的东"

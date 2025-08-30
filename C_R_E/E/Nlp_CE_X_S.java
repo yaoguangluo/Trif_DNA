@@ -23,6 +23,7 @@ import java.util.List;
 
 public class Nlp_CE_X_S extends Nlp_CE_X_A_doPOSAndEMMCheck
 		implements Nlp_C_X_S_doSlangCheck {
+	// 2018年做3-3分词时候，因为中间的2字会重复计算迭代，于是我分解为2-2-2，如下。
 	public int _E(int countLength, List<String> output,
 			StringBuilder stringBuilder, StringBuilder[] prefixWord,
 			int charPosition, StringBuilder textInputString) {
@@ -50,7 +51,7 @@ public class Nlp_CE_X_S extends Nlp_CE_X_A_doPOSAndEMMCheck
 			countLength = ofThree(--countLength, output,
 					stringBuilder.delete(S_Pos.INT_THREE, S_Pos.INT_FOUR),
 					prefixWord, charPosition, textInputString);
-			return countLength;//trif-countLength
+			return countLength;// trif-countLength
 		}
 		boolean A = S_Maps.CiTwo.containsKey(preRegister);
 		if (A) {
@@ -88,10 +89,10 @@ public class Nlp_CE_X_S extends Nlp_CE_X_A_doPOSAndEMMCheck
 				prefixWord[S_Pos.INT_ZERO].append(preRegister);
 				return countLength - S_Pos.INT_TWO;
 			}
-		}
-		if (S_Maps.CiThree
-				.containsKey(preRegister + inputString.charAt(S_Pos.INT_TWO))
-				&& !S_Maps.CiTwo.containsKey(postRegister)) {
+		}//逻辑分层会降低计算效率，同时也提高阅读质量。工业和民用请谨慎选择。
+		String temp = preRegister + inputString.charAt(S_Pos.INT_TWO);
+		boolean B = S_Maps.CiThree.containsKey(temp);
+		if (B && !S_Maps.CiTwo.containsKey(postRegister)) {
 			prefixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
 					prefixWord[S_Pos.INT_ZERO].length());
 			prefixWord[S_Pos.INT_ZERO].append(preRegister)

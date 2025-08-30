@@ -62,8 +62,8 @@ class DemoEXTest {
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 词性初始化
-//		IMV_SIQ pos = commonTestInition.NE.app_S._A
-//				.getPosCnToCn();
+		// IMV_SIQ pos = commonTestInition.NE.app_S._A
+		// .getPosCnToCn();
 		List<String> sets = new ArrayList<>();
 		// IMV_SIQ_SS seta = new IMV_SIQ_SS();
 		// loop测试---------------------------------------------------------

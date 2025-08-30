@@ -18,8 +18,7 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 
-public class Nlp_CE_X_A_doPOSAndEMMCheck
-		extends Nlp_CE_X_A_doSlangPartAndPOSCheck
+public class Nlp_CE_X_A_doPOSAndEMMCheck extends Nlp_CE_X_A_doSlangPartAndPOSCheck
 		implements Nlp_C_X_A_doPOSAndEMMCheck {
 	public int ofThree(int countLength, List<String> outputList,
 			StringBuilder stringBuilder, StringBuilder[] prefixWord,

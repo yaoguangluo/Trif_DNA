@@ -54,22 +54,23 @@ public class AE extends AE_M implements AC {
 				find = S_Pos.INT_ONE;
 				continue Here;
 			}
-			if (S_Pos.INT_ONE == find) {//奇怪了怎么2个重复
+			if (S_Pos.INT_ONE == find) {// 奇怪了怎么2个重复
 				find = S_Pos.INT_ZERO;
 				Iterator<String> it = fHMMList.englishStringToWordsList(
 						fixWords[S_Pos.INT_ZERO].toString()).iterator();
 				StringBuilder number = new StringBuilder();
-				while (it.hasNext()) {
+				Has: while (it.hasNext()) {//trif 紧凑缩进
 					String temp = it.next();
 					if (S_Pos.NUMBERS.contains(temp)) {
 						number.append(temp);
-					} else {
-						if (number.length() > 0) {
-							outputList.add(number.toString());
-							number.delete(0, number.length());
-						}
-						outputList.add(temp);
+						continue Has;
 					}
+					if (number.length() > 0) {
+						outputList.add(number.toString());
+						number.delete(0, number.length());
+					}
+					outputList.add(temp);
+
 				}
 				if (number.length() > 0) {
 					outputList.add(number.toString());
@@ -103,11 +104,12 @@ public class AE extends AE_M implements AC {
 						stringBuilder, fixWords, charPosition, mixedString);
 				continue Here;
 			}
-			if (S_Pos.INT_FOUR == compare) {// trif-countLength
-				I_FixWords(charPosition, mixedString, fixWords);
-				countLength = nlp_C._E(countLength, outputList, stringBuilder,
-						fixWords, charPosition, mixedString);
-			}
+			// if (S_Pos.INT_FOUR == compare) {// trif-countLength
+			// 我引擎最长只有4
+			I_FixWords(charPosition, mixedString, fixWords);
+			countLength = nlp_C._E(countLength, outputList, stringBuilder,
+					fixWords, charPosition, mixedString);
+			// }
 		}
 		return outputList;
 	}
