@@ -16,36 +16,36 @@ import org.junit.jupiter.api.Test;
 //重要的本人常用排序接口的测试main移到test单元文件中。--拼音笔画 list排序
 class LYG10D13D_X_CASTest {
 	public static void main(String[] argv) {
-		LYG10D13D_X_CASTest lYG10D13D_X_CASTest=new LYG10D13D_X_CASTest();
+		LYG10D13D_X_CASTest lYG10D13D_X_CASTest = new LYG10D13D_X_CASTest();
 		lYG10D13D_X_CASTest.quick4DChineseStringArray1D();
 	}
 
-    @Test
-    void quick4DChineseStringArray1D() {
-        /*
-         * 这是一个 用于德塔快速排序4代进行左右比对分词优化的算法对中文数组进行拼音笔画排序demo
-         * 测试main函数demo的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑
-         * 进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后
-         * 获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
-         * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程
-         * ，方便商业化落地。--罗瑶光
-         * */
-        SortStringDemo.main(null);
-    }
+	@Test
+	void quick4DChineseStringArray1D() {
+		/*
+		 * 这是一个 用于德塔快速排序4代进行左右比对分词优化的算法对中文数组进行拼音笔画排序demo
+		 * 测试main函数demo的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑
+		 * 进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后
+		 * 获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。
+		 * 系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程
+		 * ，方便商业化落地。--罗瑶光
+		 */
+		SortStringDemo.main(null);
+	}
 
-    @Test
-    void quick4DChineseStringArrayWithSmallInTwoChar() {
-    }
+	@Test
+	void quick4DChineseStringArrayWithSmallInTwoChar() {
+	}
 
-    @Test
-    void quick4DChineseStringArrayWithSmallInTwoChar3Returns() {
-    }
+	@Test
+	void quick4DChineseStringArrayWithSmallInTwoChar3Returns() {
+	}
 
-    @Test
-    void quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns() {
-    }
+	@Test
+	void quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns() {
+	}
 
-    @Test
-    void findSmallWithTwoCharWithpinyin() {
-    }
+	@Test
+	void findSmallWithTwoCharWithpinyin() {
+	}
 }

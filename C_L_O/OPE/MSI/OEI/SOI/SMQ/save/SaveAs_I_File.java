@@ -32,7 +32,8 @@ import java.io.FileWriter;
 //作者 +著作权人： 罗瑶光, 浏阳
 public class SaveAs_I_File {
     //准备开始应用测试下。//稍后hook 进行 异常修整 20230218
-    public static IMV_SIQ getRandomDNAkey(String password) {
+    @SuppressWarnings("unchecked")
+	public static IMV_SIQ getRandomDNAkey(String password) {
         String[] string = new String[4];
         IMV_SIQ map = new IMV_SIQ();
         //生成lock

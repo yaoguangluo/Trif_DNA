@@ -73,6 +73,7 @@ import src.java.org.lyg.common.maps.VtoV;
 		}
 	}
 
+	@SuppressWarnings("resource")
 	public static void processForm(InputStream inputStream, byte[] bytesIn,
 			String type, VPCSRequest vPCSRequest, VPCSResponse vPCSResponse) {
 		try {

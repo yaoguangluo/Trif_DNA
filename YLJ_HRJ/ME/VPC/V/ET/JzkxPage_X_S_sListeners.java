@@ -37,8 +37,8 @@ public class JzkxPage_X_S_sListeners extends JzkxPage_X_S_s
 		name.addKeyListener(this);
 		return name;
 	}
-
-	@SuppressWarnings({ "serial" })
+	
+	@SuppressWarnings("unchecked")
 	public javax.swing.JTable jTable(App app_NE) {
 		NE = app_NE;
 		JzkxDictionary d = new JzkxDictionary();

@@ -25,142 +25,145 @@ import java.util.List;
  * */
 class FlowerTalkEncodingTest {
 	public static void main(String[] argv) throws InterruptedException {
-		FlowerTalkEncodingTest flowerTalkEncodingTest=new FlowerTalkEncodingTest();
+		FlowerTalkEncodingTest flowerTalkEncodingTest = new FlowerTalkEncodingTest();
 		flowerTalkEncodingTest.main();
 	}
-    @Test
-    void searchFromTable() {
-    }
 
-    @Test
-    void searchFromTablewithScale() {
-    }
+	@Test
+	void searchFromTable() {
+	}
 
-    /*
-     * 这是一个 DNN分词进行POS核心词汇搭配来加速语义命令分析 逻辑，测试main函数demo的test版本，
-     * 在真实的场景下将人类语言和文字tin shell脚本进行-动名--名动-按德塔分词后词汇搭配模型之间的距离来
-     * 德塔排序生成笛卡尔命令组输出，方便最快最优 的笛卡尔遍历加速。主要用于花语TVM指令集有效快速构建
-     * 可以设计精度下限来DNN处理巨大的文字文本来做函数匹配加速。
-     * --罗瑶光
-     * */
-    @Test
-    void main() throws InterruptedException {
-        //启动测试开始
-        //配置系统支持
-        CommonTestInition commonTestInition = new CommonTestInition();
-        commonTestInition.initEnvironment("去弹窗组件流测试");
-        //词性初始化
-        IMV_SIQ pos = commonTestInition.NE.app_S._A.getPosCnToCn();
-        //init test
-        //输入一句话 如tinshell这个String变量
-        String tinshell = ("首先获取一个表，名字是" + "怎么也捂不热哟～"
-            + "，如果有这个表，准备下一步选择;\r\n" +
-            // "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n" +
-            // "条件为:和:中药名称|包含|菜谱;\r\n" +
-            // "条件为:和:风险规避|不包含|孕;\r\n" +
-            // "条件为:和:性味|不包含|凉;\r\n" +
-            // "条件为:和:性味|不包含|咸;\r\n" +
-            // "获取列名:中药名称:打分:功效;\r\n" +
-            // "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" +
-            // "操作:0|行至|30;\r\n" +
-            // "操作:中药名称|颜色标记为|红色;"
-            "");
-        //1.1 分词
-        StringBuilder sb = new StringBuilder(tinshell);
-        List<String> listVerbal = commonTestInition.NE.app_S._A.parserMixedString(sb);
-        //1.2 分词后词性标注
-        DemoPOSTest demoPOSTest = new DemoPOSTest();
-        demoPOSTest.testPOS(listVerbal, pos);
-        //1.3 可取出各类词汇map
-        IMV_SIQ_SS _IMV_SIQ_SS_noun = demoPOSTest.noun;
-        IMV_SIQ_SS _IMV_SIQ_SS_verb = demoPOSTest.verb;
-        IMV_SIQ_SS _IMV_SIQ_SS_adv = demoPOSTest.adv;
-        IMV_SIQ_SS _IMV_SIQ_SS_adj = demoPOSTest.adj;
-        //1.4 组合词汇距离权重
-        HashMap<String, Double> connectionRNN = new HashMap<>();
-        //名动组合
-        Iterator<String> iteratorN = _IMV_SIQ_SS_noun.keySet().iterator();
-        Iterator<String> iteratorV = _IMV_SIQ_SS_verb.keySet().iterator();
-        while (iteratorN.hasNext()) {
-            WordFrequency WordFrequencyN = _IMV_SIQ_SS_noun.get(iteratorN.next());
-            String stringN = WordFrequencyN.get_word();
-            double positionN = WordFrequencyN.getAveragePosition();
-            while (iteratorV.hasNext()) {
-                WordFrequency WordFrequencyV = _IMV_SIQ_SS_verb.get(iteratorV.next());
-                String stringV = WordFrequencyV.get_word();
-                double positionV = WordFrequencyV.getAveragePosition();
-                double meanOfPositions = (positionN + positionV) / 2;
-                connectionRNN.put(stringN + "+" + stringV, meanOfPositions);
-                connectionRNN.put(stringV + "+" + stringN, meanOfPositions);
-                //可精度过滤meanOfPositions见末尾注释的老接口函数
-            }
-        }
-        // 名名，单字，等各类组合，见末尾注释的老接口函数
-        //
-        //2.1 罗氏DNN 价值词汇 真实应用方式
-        DNNTest dNNTest = new DNNTest();
-        ANNTest aNNTest = new ANNTest();
-        String[][] ann = aNNTest.getANNMatrix(tinshell, commonTestInition.NE);
-        String[][] dnn = dNNTest.getDNNMatrix(ann, tinshell, commonTestInition.NE);
-        List<String> listDNN = new ArrayList<>();
-        for (int i = 0; i < dnn.length; i++) {
-            listDNN.add(dnn[i][0]);
-        }
-        //输出
-        System.out.println("--程度 词汇一览");
-        Iterator<String> iteratorsAdj = _IMV_SIQ_SS_adj.keySet().iterator();
-        while (iteratorsAdj.hasNext()) {
-            System.out.print(" " + iteratorsAdj.next());
-        }
-        System.out.println();
-        Iterator<String> iteratorsAdv = _IMV_SIQ_SS_adv.keySet().iterator();
-        while (iteratorsAdv.hasNext()) {
-            System.out.print(" " + iteratorsAdv.next());
-        }
-        System.out.println();
-        System.out.println();
-        System.out.println("--DNN 词汇一览");
-        for (int i = 0; i < dnn.length; i++) {
-            System.out.print(" " + listDNN.get(i));
-        }
-        System.out.println();
-        System.out.println();
-        System.out.println("--名词 词汇一览");
-        Iterator<String> iteratorsNoun = _IMV_SIQ_SS_noun.keySet().iterator();
-        while (iteratorsNoun.hasNext()) {
-            System.out.print(" " + iteratorsNoun.next());
-        }
-        System.out.println();
-        System.out.println();
-        System.out.println("--动词 词汇一览");
-        Iterator<String> iteratorsVerb = _IMV_SIQ_SS_verb.keySet().iterator();
-        while (iteratorsVerb.hasNext()) {
-            System.out.print(" " + iteratorsVerb.next());
-        }
-        System.out.println();
-        System.out.println();
-        System.out.println("--组合 词汇 距离一览");
-        //
-        Iterator<String> iteratorsRNN = connectionRNN.keySet().iterator();
-        while (iteratorsRNN.hasNext()) {
-            String string = iteratorsRNN.next();
-            double temp = connectionRNN.get(string);
-            System.out.println(string + "-" + temp);
-        }
-        //
-        System.out.println();
-        System.out.println();
-        //价值
-        //根据2 的罗氏DNN价值词汇打分排序去写各类触发函数 优先来 寻找1 的德塔分词POS词汇组合根据RNN距离
-        //权重打分进行罗瑶光极速排序5代来笛卡尔匹配十六元基花索引函数组最优先决策 执行。这种强大的模型可
-        // 构建数千种花语基础底层建筑，我就不多说了。
-        //todo。。
-        //举例一旦出现 -获取-， -表名- 这类词汇，可直接触发 硬盘里，资源下，内存中等已经有的某类表名集合
-        // 比如（怎么也捂不热哟 等）进行对应的输入文匹配，一旦输入文也有该表名（怎么也捂不热哟）一旦有就
-        // 确定了，比如 怎么也捂不热哟 这个表，直接锁定该表或者相似的表名， 方便优先跟进操作。
-        //设置输入待搜索列表，
-        commonTestInition.endEnvironment();
-    }
+	@Test
+	void searchFromTablewithScale() {
+	}
+
+	/*
+	 * 这是一个 DNN分词进行POS核心词汇搭配来加速语义命令分析 逻辑，测试main函数demo的test版本，
+	 * 在真实的场景下将人类语言和文字tin shell脚本进行-动名--名动-按德塔分词后词汇搭配模型之间的距离来
+	 * 德塔排序生成笛卡尔命令组输出，方便最快最优 的笛卡尔遍历加速。主要用于花语TVM指令集有效快速构建
+	 * 可以设计精度下限来DNN处理巨大的文字文本来做函数匹配加速。 --罗瑶光
+	 */
+	@Test
+	void main() throws InterruptedException {
+		// 启动测试开始
+		// 配置系统支持
+		CommonTestInition commonTestInition = new CommonTestInition();
+		commonTestInition.initEnvironment("去弹窗组件流测试");
+		// 词性初始化
+		IMV_SIQ pos = commonTestInition.NE.app_S._A.getPosCnToCn();
+		// init test
+		// 输入一句话 如tinshell这个String变量
+		String tinshell = ("首先获取一个表，名字是" + "怎么也捂不热哟～" + "，如果有这个表，准备下一步选择;\r\n" +
+		// "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n" +
+		// "条件为:和:中药名称|包含|菜谱;\r\n" +
+		// "条件为:和:风险规避|不包含|孕;\r\n" +
+		// "条件为:和:性味|不包含|凉;\r\n" +
+		// "条件为:和:性味|不包含|咸;\r\n" +
+		// "获取列名:中药名称:打分:功效;\r\n" +
+		// "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" +
+		// "操作:0|行至|30;\r\n" +
+		// "操作:中药名称|颜色标记为|红色;"
+				"");
+		// 1.1 分词
+		StringBuilder sb = new StringBuilder(tinshell);
+		List<String> listVerbal = commonTestInition.NE.app_S._A
+				.parserMixedString(sb);
+		// 1.2 分词后词性标注
+		DemoPOSTest demoPOSTest = new DemoPOSTest();
+		demoPOSTest.testPOS(listVerbal, pos);
+		// 1.3 可取出各类词汇map
+		IMV_SIQ_SS _IMV_SIQ_SS_noun = demoPOSTest.noun;
+		IMV_SIQ_SS _IMV_SIQ_SS_verb = demoPOSTest.verb;
+		IMV_SIQ_SS _IMV_SIQ_SS_adv = demoPOSTest.adv;
+		IMV_SIQ_SS _IMV_SIQ_SS_adj = demoPOSTest.adj;
+		// 1.4 组合词汇距离权重
+		HashMap<String, Double> connectionRNN = new HashMap<>();
+		// 名动组合
+		Iterator<String> iteratorN = _IMV_SIQ_SS_noun.keySet().iterator();
+		Iterator<String> iteratorV = _IMV_SIQ_SS_verb.keySet().iterator();
+		while (iteratorN.hasNext()) {
+			WordFrequency WordFrequencyN = _IMV_SIQ_SS_noun
+					.get(iteratorN.next());
+			String stringN = WordFrequencyN.get_word();
+			double positionN = WordFrequencyN.getAveragePosition();
+			while (iteratorV.hasNext()) {
+				WordFrequency WordFrequencyV = _IMV_SIQ_SS_verb
+						.get(iteratorV.next());
+				String stringV = WordFrequencyV.get_word();
+				double positionV = WordFrequencyV.getAveragePosition();
+				double meanOfPositions = (positionN + positionV) / 2;
+				connectionRNN.put(stringN + "+" + stringV, meanOfPositions);
+				connectionRNN.put(stringV + "+" + stringN, meanOfPositions);
+				// 可精度过滤meanOfPositions见末尾注释的老接口函数
+			}
+		}
+		// 名名，单字，等各类组合，见末尾注释的老接口函数
+		//
+		// 2.1 罗氏DNN 价值词汇 真实应用方式
+		DNNTest dNNTest = new DNNTest();
+		ANNTest aNNTest = new ANNTest();
+		String[][] ann = aNNTest.getANNMatrix(tinshell, commonTestInition.NE);
+		String[][] dnn = dNNTest.getDNNMatrix(ann, tinshell,
+				commonTestInition.NE);
+		List<String> listDNN = new ArrayList<>();
+		for (int i = 0; i < dnn.length; i++) {
+			listDNN.add(dnn[i][0]);
+		}
+		// 输出
+		System.out.println("--程度 词汇一览");
+		Iterator<String> iteratorsAdj = _IMV_SIQ_SS_adj.keySet().iterator();
+		while (iteratorsAdj.hasNext()) {
+			System.out.print(" " + iteratorsAdj.next());
+		}
+		System.out.println();
+		Iterator<String> iteratorsAdv = _IMV_SIQ_SS_adv.keySet().iterator();
+		while (iteratorsAdv.hasNext()) {
+			System.out.print(" " + iteratorsAdv.next());
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println("--DNN 词汇一览");
+		for (int i = 0; i < dnn.length; i++) {
+			System.out.print(" " + listDNN.get(i));
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println("--名词 词汇一览");
+		Iterator<String> iteratorsNoun = _IMV_SIQ_SS_noun.keySet().iterator();
+		while (iteratorsNoun.hasNext()) {
+			System.out.print(" " + iteratorsNoun.next());
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println("--动词 词汇一览");
+		Iterator<String> iteratorsVerb = _IMV_SIQ_SS_verb.keySet().iterator();
+		while (iteratorsVerb.hasNext()) {
+			System.out.print(" " + iteratorsVerb.next());
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println("--组合 词汇 距离一览");
+		//
+		Iterator<String> iteratorsRNN = connectionRNN.keySet().iterator();
+		while (iteratorsRNN.hasNext()) {
+			String string = iteratorsRNN.next();
+			double temp = connectionRNN.get(string);
+			System.out.println(string + "-" + temp);
+		}
+		//
+		System.out.println();
+		System.out.println();
+		// 价值
+		// 根据2 的罗氏DNN价值词汇打分排序去写各类触发函数 优先来 寻找1 的德塔分词POS词汇组合根据RNN距离
+		// 权重打分进行罗瑶光极速排序5代来笛卡尔匹配十六元基花索引函数组最优先决策 执行。这种强大的模型可
+		// 构建数千种花语基础底层建筑，我就不多说了。
+		// todo。。
+		// 举例一旦出现 -获取-， -表名- 这类词汇，可直接触发 硬盘里，资源下，内存中等已经有的某类表名集合
+		// 比如（怎么也捂不热哟 等）进行对应的输入文匹配，一旦输入文也有该表名（怎么也捂不热哟）一旦有就
+		// 确定了，比如 怎么也捂不热哟 这个表，直接锁定该表或者相似的表名， 方便优先跟进操作。
+		// 设置输入待搜索列表，
+		commonTestInition.endEnvironment();
+	}
 }
 //下面是可参考我可运行的老接口
 //NE.app_S.workVerbaMap.setHumanTalk(tinshell, NE);
@@ -234,4 +237,3 @@ class FlowerTalkEncodingTest {
 //Disconnected from the target VM, address: '127.0.0.1:62597', transport: 'socket'
 //
 //Process finished with exit code 0
-

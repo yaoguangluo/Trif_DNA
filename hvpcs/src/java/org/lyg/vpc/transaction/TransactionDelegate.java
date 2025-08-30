@@ -29,7 +29,7 @@ public class TransactionDelegate {
 		return out;
 	}
 
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "deprecation", "unchecked" })
 	public static Map<String, Object> transactionRegisterFE(String uEmail,
 			String uEmailEnsure, String uName, String uPassword,
 			String uPassWDEnsure, String uAddress, String uPhone,

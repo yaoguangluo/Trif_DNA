@@ -20,11 +20,13 @@ import java.awt.event.KeyEvent;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("serial")
 public class DetaBuy extends ScrollPane {
 	//
 	public boolean isConfig = true;
 	public DetaJPanel SectionJPanel;
 
+	@SuppressWarnings("unchecked")
 	public void IV_(App app) {
 		S_File.DNA_PDN.put(this.getClass().getCanonicalName(), true);
 		DetabbedPane jTabbedpane = new DetabbedPane();

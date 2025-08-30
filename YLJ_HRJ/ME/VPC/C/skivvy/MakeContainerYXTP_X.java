@@ -43,7 +43,9 @@ public class MakeContainerYXTP_X extends Thread implements Runnable {
 	// buff spee cacu
 	// string xiao kuai gao
 	// button da man di
+	@SuppressWarnings("unchecked")
 	public Map<String, LinkedList<String>> listMap = new IMV_SIQ();
+	@SuppressWarnings("unchecked")
 	public Map<String, LinkedList<String>> showMap = new IMV_SIQ();
 	public Map<String, BufferedImage> cacuMap = new LinkedHashMap<>();
 	public List<String> cacuPip = new LinkedList<>();
@@ -96,6 +98,7 @@ public class MakeContainerYXTP_X extends Thread implements Runnable {
 		leftButton.doClick();
 	}
 
+	@SuppressWarnings("unchecked")
 	public void AOP_VEC_SQ_PDE(List<String> pathRankList) {
 		// listMap;
 		Map<String, Boolean> map = new IMV_SIQ();

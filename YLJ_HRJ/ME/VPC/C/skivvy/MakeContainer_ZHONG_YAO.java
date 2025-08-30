@@ -86,7 +86,6 @@ public class MakeContainer_ZHONG_YAO extends MakeContainer_X_S_s
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		if (null == arg0) {
@@ -108,6 +107,7 @@ public class MakeContainer_ZHONG_YAO extends MakeContainer_X_S_s
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	public void doJump(Component component, String name) {
 		if (name == null || name.contains("本草")) {
 			return;

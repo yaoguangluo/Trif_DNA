@@ -96,7 +96,8 @@ public class PageWords {
         }
     }
 
-    public static void MapProcedureWordLoopPOS(IMV_SIQ_SS map
+    @SuppressWarnings("unused")
+	public static void MapProcedureWordLoopPOS(IMV_SIQ_SS map
         , String setOfi, App NE) {
         IMV_SIQ pos = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
         if (S_Maps.mingCi.containsKey(setOfi) || S_Maps.dongCi.containsKey(setOfi)

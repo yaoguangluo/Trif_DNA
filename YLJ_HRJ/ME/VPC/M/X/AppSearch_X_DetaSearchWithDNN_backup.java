@@ -1,4 +1,5 @@
 package ME.VPC.M.X;
+
 import ME.VPC.S.ne.App_S;
 import ME.VPC.M.app.App;
 import P_V.PEQ.AMV.ECS.test.ANNTest;
@@ -29,208 +30,226 @@ import java.util.Map;
  * */
 @SuppressWarnings("serial")
 public class AppSearch_X_DetaSearchWithDNN_backup extends ScrollPane {
-    
 
-    @SuppressWarnings("unused")
-    public int detaSimpleSearch(int[] score_code, String[] score
-        , DefaultTableModel newTableModel, Object[][] tableData_old, String key
-        , boolean keyIsPCA, int[] identifyColumns, Map<String, int[][]> subASCmap
-        , String fileNamePrefix, String[] scoreOutput, App NE) {//later zou zhege yinqing */
-        int count = 0;
-        App_S u = NE.app_S;
-        IMV_SIQ pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
-        try {
-            SensingTest sensingTest = null;
-            DNNTest dNNTest = null;
-            ANNTest aNNTest = null;
-            if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122.isSelected()) {
-                //DNN初始
-                sensingTest = u._A.getSensingTest();
-                dNNTest = new DNNTest();
-                aNNTest = new ANNTest();
-            }
-            boolean nullCheck = false;//今天优化下这个jingDuSouSuo函数。//nullcheck一遍
-            if (null == key) {//把null key check提前, 搜索加快
-                nullCheck = true;
-            } else if (key.isEmpty()) {
-                nullCheck = true;
-            }
-            if (nullCheck) {
-                newTableModel.getDataVector().clear();
-                for (int i = 0; i < tableData_old.length; i++) {
-                    newTableModel.insertRow(i, tableData_old[i]);
-                }
-                newTableModel.fireTableDataChanged();
-                return -1;
-            }
-            int[] reg = new int[tableData_old.length];
-            String trimKey = key.replace(" ", "").trim();
-            int keyLength = key.length();
-            IMV_SIQ_SS mapSearchWithoutSort = null;
-            mapSearchWithoutSort = u._A.parserMixStringByReturnFrequencyMap(key, NE);
-            int copyCount = 0;
-            Iterator<String> iterator = mapSearchWithoutSort.keySet().iterator();
-            List<String> list = Iterator_ESU_X_iteratorToList._E(iterator);
-            String[] string = List_ESU_X_listToArray._E(list);
-            StringBuilder[] stringReg = new StringBuilder[keyLength / 3];
-            for (int i = 0; i < stringReg.length; i++) {
-                stringReg[i] = new StringBuilder();
-                stringReg[i].append(key.substring(i * 3, (i * 3 + 3) < keyLength
-                    ? (i * 3 + 3) : keyLength - 1));
-            }
-            for (int line = 0; line < tableData_old.length; line++) {
-                StringBuilder stringTempOut = new StringBuilder();
-                //String stringTemp= new String();
-                String identify = fileNamePrefix + "_" + line;
-                for (int j = 0; j < tableData_old[0].length; j++) {
-                    if (null != tableData_old[line][j]) {
-                        stringTempOut.append("_-_" + tableData_old[line][j]);
-                    } else {
-                        stringTempOut.append("_-_ ");
-                    }
-                }
-                String identifyString = "";
-                for (int i = 0; i < identifyColumns.length; i++) {
-                    identifyString += tableData_old[i];
-                }
-                String iteratorForCopyString = stringTempOut.toString();
-                scoreOutput[copyCount] = stringTempOut.toString();
-                Map<String, Double> dnnSet = new IMV_SIQ();
-                double perRatio = 0.0;
-                if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122.isSelected()) {//DNN分析
-                    if (u.DNNmap.containsKey(identifyString)) {
-                        dnnSet = u.DNNmap.get(identifyString);
-                        double zongfen = dnnSet.get("总分");
-                        perRatio = zongfen;//.isInfinite() ? 1 : zongfen; //later inif check
-                    }
-                }
-                Iterator<String> iteratorWordFrequency = mapSearchWithoutSort.keySet().iterator();
-                Map<String, Double> DNNcountBonus = new IMV_SIQ();
-                double BonusFullRatio = 0.0;
-                Here:
-                while (iteratorWordFrequency.hasNext()) {
-                    String mapSearchaAtII = iteratorWordFrequency.next();
-                    WordFrequency wordFrequencySearch = mapSearchWithoutSort.getW(mapSearchaAtII);
-                    String posString = wordFrequencySearch.get_pos();
-                    if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122.isSelected()) {//DNN计算
-                        if (dnnSet.containsKey(mapSearchaAtII)) {
-                            double BonusRatio = dnnSet.get(mapSearchaAtII).doubleValue();
-                            double BonusPerRatio = BonusRatio / perRatio;
-                            if (BonusPerRatio > 0.1 - (u.lookrot * 0.003)) {
-                                BonusPerRatio = 2.0;
-                            }
-                            if (!DNNcountBonus.containsKey(mapSearchaAtII)) {
-                                BonusFullRatio += BonusPerRatio;
-                            }
-                            DNNcountBonus.put(mapSearchaAtII, BonusPerRatio);
-                        }
-                    }
-                    boolean temp = iteratorForCopyString.contains(mapSearchaAtII);
-                    if (temp) {
-                        if (reg[copyCount] == 0) {
-                            count += 1;
-                        }
-                        score[copyCount] = iteratorForCopyString;
-                        if (keyIsPCA) {
-                            if (iteratorForCopyString.contains(trimKey)) {
-                                reg[copyCount] += 500;
-                            }
-                            if (key.contains(score[copyCount])) {
-                                reg[copyCount] += 500;
-                            }
-                        }
-                        int wfs = (int)wordFrequencySearch.get_frequency();
-                        wfs = wfs > 5 ? 5 : wfs;
-                        if (!pos.containsKey(mapSearchaAtII)) {
-                            reg[copyCount] += 1;
-                            score_code[copyCount] += 1 << mapSearchaAtII.length() << wfs;
-                            continue Here;
-                        }
-                        if (S_Maps.mingCi.containsKey(mapSearchaAtII)
-                            || S_Maps.dongCi.containsKey(mapSearchaAtII)
-                            || S_Maps.xingRongCi.containsKey(mapSearchaAtII)
-                            || S_Maps.weiCi.containsKey(mapSearchaAtII)) {
-                            reg[copyCount] += 2;
-                        }
-                        reg[copyCount] += 1;
-                        score_code[copyCount] += (temp ? 2 : 1)
-                            * (!S_Maps.mingCi.containsKey(mapSearchaAtII)
-                            ? S_Maps.dongCi.containsKey(mapSearchaAtII) ? 45 : 1 : 50)
-                            << mapSearchaAtII.length() + wfs;
-                        continue Here;
-                    }
-                    if (mapSearchaAtII.length() > 1) {
-                        for (int j = 0; j < mapSearchaAtII.length(); j++) {
-                            String tempReg = "" + mapSearchaAtII.charAt(j);
-                            if (iteratorForCopyString.contains("" + tempReg)) {
-                                if (reg[copyCount] == 0) {
-                                    count += 1;
-                                }
-                                score[copyCount] = iteratorForCopyString;
-                                scoreOutput[copyCount] = stringTempOut.toString();
-                                score_code[copyCount] += 1;
-                                reg[copyCount] += 1;
-                                if (S_Maps.CiOne.containsKey(tempReg) && (//later all in 1*/
-                                    S_Maps.mingCi.containsKey(tempReg)//later..
-                                        || S_Maps.dongCi.containsKey(tempReg)
-                                        || S_Maps.xingRongCi.containsKey(tempReg)
-                                        || S_Maps.weiCi.containsKey(tempReg)
-                                )) {
-                                    reg[copyCount] += 2;
-                                }
-                                continue Here;
-                            }
-                        }
-                    }
-                }
-                if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122.isSelected()) {//DNN计算
-                    if (!DNNcountBonus.isEmpty()) {
-                        score_code[copyCount] *= (1 + DNNcountBonus.size());
-                        score_code[copyCount] *= BonusFullRatio;
-                    }
-                }
-                score_code[copyCount] = score_code[copyCount] * reg[copyCount];
-                //词距
-                int code = 100;
-                int jing_du_sou_suo_suan_zi = 0;
-                int zhi_hui_sou_suo_suan_zi = score_code[copyCount];
-                boolean jing_du_sou_suo = false;
-                if (keyLength > 4) {//全词
-                    for (int i = 0; i < string.length; i++) {
-                        if (iteratorForCopyString.contains(string[i])) {
-                            jing_du_sou_suo_suan_zi += (int)(mapSearchWithoutSort
-                                .getW(string[i]).get_frequency()) << 7;
-                        }
-                    }
-                    for (int i = 0; i < stringReg.length; i++) {//断句
-                        if (iteratorForCopyString.contains(stringReg[i].toString())) {
-                            jing_du_sou_suo_suan_zi += code;
-                        }
-                    }
-                    jing_du_sou_suo = true;
-                }
-                if (trimKey.length() > 1 && trimKey.length() < 5) {
-                    if (iteratorForCopyString.contains(trimKey)) {
-                        jing_du_sou_suo_suan_zi += code << 7;
-                    }
-                    jing_du_sou_suo = true;
-                }
-                if (jing_du_sou_suo) {
-                    double valuea = zhi_hui_sou_suo_suan_zi / Math.pow(u.lookrot + 1, 4);
-                    double valueb = jing_du_sou_suo_suan_zi * Math.pow(u.lookrot + 1, 2);
-                    valuea = valuea + valueb;
-                    score_code[copyCount] = (int)valuea;
+	@SuppressWarnings({ "unused", "unchecked" })
+	public int detaSimpleSearch(int[] score_code, String[] score,
+			DefaultTableModel newTableModel, Object[][] tableData_old,
+			String key, boolean keyIsPCA, int[] identifyColumns,
+			Map<String, int[][]> subASCmap, String fileNamePrefix,
+			String[] scoreOutput, App NE) {// later zou zhege yinqing */
+		int count = 0;
+		App_S u = NE.app_S;
+		IMV_SIQ pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
+		try {
+			SensingTest sensingTest = null;
+			DNNTest dNNTest = null;
+			ANNTest aNNTest = null;
+			if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122.isSelected()) {
+				// DNN初始
+				sensingTest = u._A.getSensingTest();
+				dNNTest = new DNNTest();
+				aNNTest = new ANNTest();
+			}
+			boolean nullCheck = false;// 今天优化下这个jingDuSouSuo函数。//nullcheck一遍
+			if (null == key) {// 把null key check提前, 搜索加快
+				nullCheck = true;
+			} else if (key.isEmpty()) {
+				nullCheck = true;
+			}
+			if (nullCheck) {
+				newTableModel.getDataVector().clear();
+				for (int i = 0; i < tableData_old.length; i++) {
+					newTableModel.insertRow(i, tableData_old[i]);
+				}
+				newTableModel.fireTableDataChanged();
+				return -1;
+			}
+			int[] reg = new int[tableData_old.length];
+			String trimKey = key.replace(" ", "").trim();
+			int keyLength = key.length();
+			IMV_SIQ_SS mapSearchWithoutSort = null;
+			mapSearchWithoutSort = u._A.parserMixStringByReturnFrequencyMap(key,
+					NE);
+			int copyCount = 0;
+			Iterator<String> iterator = mapSearchWithoutSort.keySet()
+					.iterator();
+			List<String> list = Iterator_ESU_X_iteratorToList._E(iterator);
+			String[] string = List_ESU_X_listToArray._E(list);
+			StringBuilder[] stringReg = new StringBuilder[keyLength / 3];
+			for (int i = 0; i < stringReg.length; i++) {
+				stringReg[i] = new StringBuilder();
+				stringReg[i].append(key.substring(i * 3,
+						(i * 3 + 3) < keyLength ? (i * 3 + 3) : keyLength - 1));
+			}
+			for (int line = 0; line < tableData_old.length; line++) {
+				StringBuilder stringTempOut = new StringBuilder();
+				// String stringTemp= new String();
+				String identify = fileNamePrefix + "_" + line;
+				for (int j = 0; j < tableData_old[0].length; j++) {
+					if (null != tableData_old[line][j]) {
+						stringTempOut.append("_-_" + tableData_old[line][j]);
+					} else {
+						stringTempOut.append("_-_ ");
+					}
+				}
+				String identifyString = "";
+				for (int i = 0; i < identifyColumns.length; i++) {
+					identifyString += tableData_old[i];
+				}
+				String iteratorForCopyString = stringTempOut.toString();
+				scoreOutput[copyCount] = stringTempOut.toString();
+				Map<String, Double> dnnSet = new IMV_SIQ();
+				double perRatio = 0.0;
+				if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122
+						.isSelected()) {// DNN分析
+					if (u.DNNmap.containsKey(identifyString)) {
+						dnnSet = u.DNNmap.get(identifyString);
+						double zongfen = dnnSet.get("总分");
+						perRatio = zongfen;// .isInfinite() ? 1 : zongfen;
+										   // //later inif check
+					}
+				}
+				Iterator<String> iteratorWordFrequency = mapSearchWithoutSort
+						.keySet().iterator();
+				Map<String, Double> DNNcountBonus = new IMV_SIQ();
+				double BonusFullRatio = 0.0;
+				Here: while (iteratorWordFrequency.hasNext()) {
+					String mapSearchaAtII = iteratorWordFrequency.next();
+					WordFrequency wordFrequencySearch = mapSearchWithoutSort
+							.getW(mapSearchaAtII);
+					String posString = wordFrequencySearch.get_pos();
+					if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122
+							.isSelected()) {// DNN计算
+						if (dnnSet.containsKey(mapSearchaAtII)) {
+							double BonusRatio = dnnSet.get(mapSearchaAtII)
+									.doubleValue();
+							double BonusPerRatio = BonusRatio / perRatio;
+							if (BonusPerRatio > 0.1 - (u.lookrot * 0.003)) {
+								BonusPerRatio = 2.0;
+							}
+							if (!DNNcountBonus.containsKey(mapSearchaAtII)) {
+								BonusFullRatio += BonusPerRatio;
+							}
+							DNNcountBonus.put(mapSearchaAtII, BonusPerRatio);
+						}
+					}
+					boolean temp = iteratorForCopyString
+							.contains(mapSearchaAtII);
+					if (temp) {
+						if (reg[copyCount] == 0) {
+							count += 1;
+						}
+						score[copyCount] = iteratorForCopyString;
+						if (keyIsPCA) {
+							if (iteratorForCopyString.contains(trimKey)) {
+								reg[copyCount] += 500;
+							}
+							if (key.contains(score[copyCount])) {
+								reg[copyCount] += 500;
+							}
+						}
+						int wfs = (int) wordFrequencySearch.get_frequency();
+						wfs = wfs > 5 ? 5 : wfs;
+						if (!pos.containsKey(mapSearchaAtII)) {
+							reg[copyCount] += 1;
+							score_code[copyCount] += 1 << mapSearchaAtII
+									.length() << wfs;
+							continue Here;
+						}
+						if (S_Maps.mingCi.containsKey(mapSearchaAtII)
+								|| S_Maps.dongCi.containsKey(mapSearchaAtII)
+								|| S_Maps.xingRongCi.containsKey(mapSearchaAtII)
+								|| S_Maps.weiCi.containsKey(mapSearchaAtII)) {
+							reg[copyCount] += 2;
+						}
+						reg[copyCount] += 1;
+						score_code[copyCount] += (temp ? 2 : 1)
+								* (!S_Maps.mingCi.containsKey(mapSearchaAtII)
+										? S_Maps.dongCi.containsKey(
+												mapSearchaAtII) ? 45 : 1
+										: 50) << mapSearchaAtII.length() + wfs;
+						continue Here;
+					}
+					if (mapSearchaAtII.length() > 1) {
+						for (int j = 0; j < mapSearchaAtII.length(); j++) {
+							String tempReg = "" + mapSearchaAtII.charAt(j);
+							if (iteratorForCopyString.contains("" + tempReg)) {
+								if (reg[copyCount] == 0) {
+									count += 1;
+								}
+								score[copyCount] = iteratorForCopyString;
+								scoreOutput[copyCount] = stringTempOut
+										.toString();
+								score_code[copyCount] += 1;
+								reg[copyCount] += 1;
+								if (S_Maps.CiOne.containsKey(tempReg) && (// later
+																		  // all
+																		  // in
+																		  // 1*/
+								S_Maps.mingCi.containsKey(tempReg)// later..
+										|| S_Maps.dongCi.containsKey(tempReg)
+										|| S_Maps.xingRongCi
+												.containsKey(tempReg)
+										|| S_Maps.weiCi.containsKey(tempReg))) {
+									reg[copyCount] += 2;
+								}
+								continue Here;
+							}
+						}
+					}
+				}
+				if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122
+						.isSelected()) {// DNN计算
+					if (!DNNcountBonus.isEmpty()) {
+						score_code[copyCount] *= (1 + DNNcountBonus.size());
+						score_code[copyCount] *= BonusFullRatio;
+					}
+				}
+				score_code[copyCount] = score_code[copyCount] * reg[copyCount];
+				// 词距
+				int code = 100;
+				int jing_du_sou_suo_suan_zi = 0;
+				int zhi_hui_sou_suo_suan_zi = score_code[copyCount];
+				boolean jing_du_sou_suo = false;
+				if (keyLength > 4) {// 全词
+					for (int i = 0; i < string.length; i++) {
+						if (iteratorForCopyString.contains(string[i])) {
+							jing_du_sou_suo_suan_zi += (int) (mapSearchWithoutSort
+									.getW(string[i]).get_frequency()) << 7;
+						}
+					}
+					for (int i = 0; i < stringReg.length; i++) {// 断句
+						if (iteratorForCopyString
+								.contains(stringReg[i].toString())) {
+							jing_du_sou_suo_suan_zi += code;
+						}
+					}
+					jing_du_sou_suo = true;
+				}
+				if (trimKey.length() > 1 && trimKey.length() < 5) {
+					if (iteratorForCopyString.contains(trimKey)) {
+						jing_du_sou_suo_suan_zi += code << 7;
+					}
+					jing_du_sou_suo = true;
+				}
+				if (jing_du_sou_suo) {
+					double valuea = zhi_hui_sou_suo_suan_zi
+							/ Math.pow(u.lookrot + 1, 4);
+					double valueb = jing_du_sou_suo_suan_zi
+							* Math.pow(u.lookrot + 1, 2);
+					valuea = valuea + valueb;
+					score_code[copyCount] = (int) valuea;
 //                    score_code[copyCount] = (int) (zhi_hui_sou_suo_suan_zi / Math.pow(u.lookrot + 1, 4)
 //                            + jing_du_sou_suo_suan_zi * Math.pow(u.lookrot + 1, 2));
-                }
-                copyCount++;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            u.hook.hookFrequentException("搜索问题", System.currentTimeMillis(), e);
-        }
-        return count;
-    }
+				}
+				copyCount++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			u.hook.hookFrequentException("搜索问题", System.currentTimeMillis(), e);
+		}
+		return count;
+	}
 }
 //
 //@SuppressWarnings("unused")

@@ -1,5 +1,6 @@
 package U_V.OEU.xqpx.wcms.sort;
 //import java.io.BufferedReader;
+
 //import java.io.InputStream;
 //import java.io.InputStreamReader;
 //import java.util.HashMap;
@@ -23,8 +24,7 @@ package U_V.OEU.xqpx.wcms.sort;
  * */
 
 public interface LYG10D13D_X_SC {
-    boolean findSmallWithTwoChar(String x1, String x2
-            , int scale, int point);
+	boolean findSmallWithTwoChar(String x1, String x2, int scale, int point);
 
-    boolean processSortpinyin(String[] kernel, int scale);
+	boolean processSortpinyin(String[] kernel, int scale);
 }

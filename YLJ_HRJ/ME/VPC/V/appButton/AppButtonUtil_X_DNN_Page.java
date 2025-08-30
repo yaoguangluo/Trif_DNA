@@ -42,6 +42,7 @@ public class AppButtonUtil_X_DNN_Page extends AppButtonUtil_X_DNN {
 	// AppPageUtil.pageflipPages(page, map, key, pos, sets,
 	// currentPage);
 	// 中药DNN
+	@SuppressWarnings({ "unchecked", "unused" })
 	public static void pageDNN(StringBuilder page, List<String> sets,
 			int currentPage, App_S u, JTable table, int row, String key,
 			DetaButton buttonSum, DetaButton buttonCrt, JTextPane data,

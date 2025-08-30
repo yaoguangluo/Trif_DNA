@@ -25,31 +25,33 @@ import org.junit.jupiter.api.Test;
  * */
 class LYG9DWithDoubleTopSort4DTest {
 	public static void main(String[] argv) {
-		LYG9DWithDoubleTopSort4DTest lYG9DWithDoubleTopSort4DTest=new LYG9DWithDoubleTopSort4DTest();
+		LYG9DWithDoubleTopSort4DTest lYG9DWithDoubleTopSort4DTest 
+		= new LYG9DWithDoubleTopSort4DTest();
 		lYG9DWithDoubleTopSort4DTest.main();
 	}
-    @Test
-    void sort() {
-    }
 
-    @Test
-    void main() {
-        double[] doubles = new double[9999999];
-        for (int i = 0; i < doubles.length; i++) {
-            doubles[i] = Math.random();
-        }
-        LYG9DWithDoubleTopSort4D lYG9DWithDoubleTopSort2D
-            = new LYG9DWithDoubleTopSort4D();
-        TimeCheck timecheck = new TimeCheck();
-        timecheck.begin();
-        lYG9DWithDoubleTopSort2D.sort(doubles, 7, 70);
-        timecheck.end();
-        timecheck.duration();
-        for (int i = 0; i < doubles.length - 1; i++) {
-            if (doubles[i] > doubles[i + 1]) {
-                System.out.println(i + "->" + doubles[i]);
-            }
-        }
-        //20230106-System.out.println("end");
-    }
+	@Test
+	void sort() {
+	}
+
+	@Test
+	void main() {
+		double[] doubles = new double[9999999];
+		for (int i = 0; i < doubles.length; i++) {
+			doubles[i] = Math.random();
+		}
+		LYG9DWithDoubleTopSort4D lYG9DWithDoubleTopSort2D 
+		= new LYG9DWithDoubleTopSort4D();
+		TimeCheck timecheck = new TimeCheck();
+		timecheck.begin();
+		lYG9DWithDoubleTopSort2D.sort(doubles, 7, 70);
+		timecheck.end();
+		timecheck.duration();
+		for (int i = 0; i < doubles.length - 1; i++) {
+			if (doubles[i] > doubles[i + 1]) {
+				System.out.println(i + "->" + doubles[i]);
+			}
+		}
+		// 20230106-System.out.println("end");
+	}
 }

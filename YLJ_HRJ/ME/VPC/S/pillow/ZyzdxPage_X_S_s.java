@@ -13,6 +13,7 @@ import ME.VPC.S.ne.Page_X_S_VSE;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("serial")
 public class ZyzdxPage_X_S_s extends Page_X_S_VSE {
     //
 

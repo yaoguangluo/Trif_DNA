@@ -23,6 +23,7 @@ import java.io.IOException;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class MakeContainerZNXZ_X_ButtonsMedicalOEV {
+	@SuppressWarnings("deprecation")
 	public static void createButtons(App NE) throws InterruptedException {
 		App_S app_S = NE.app_S;
 		app_S.monitor.monitor_X_S.bt51 = new DetaButton("皮脂层透显", 100, 50,

@@ -20,7 +20,8 @@ import java.awt.Color;
  * */
 public class MakeContainerXXFC extends MakeContainer_X_S_s {
 
-    public MakeContainerXXFC(App app_NE) {
+    @SuppressWarnings("unused")
+	public MakeContainerXXFC(App app_NE) {
         super(app_NE);
         App NE = app_NE;
     }

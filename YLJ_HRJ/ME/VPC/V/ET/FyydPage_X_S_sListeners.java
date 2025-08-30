@@ -20,6 +20,7 @@ import java.util.List;
 //import OCI.ME.analysis.C.A;
 //import OSV.VCQ.standard.DictionaryStandardDB;
 //著作权人+作者 罗瑶光, 浏阳
+@SuppressWarnings("serial")
 public class FyydPage_X_S_sListeners extends FyydPage_X_S_s
 		implements MouseListener, KeyListener {
 
@@ -30,7 +31,7 @@ public class FyydPage_X_S_sListeners extends FyydPage_X_S_s
 		return name;
 	}
 
-	@SuppressWarnings({ "serial" })
+	@SuppressWarnings("unchecked")
 	public javax.swing.JTable jTable(App app_NE) {
 		NE = app_NE;
 		FyydDictionary d = new FyydDictionary();

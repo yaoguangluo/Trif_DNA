@@ -1,5 +1,6 @@
 package U_V.OEU.xqpx.wcms.sort;
 //import java.io.BufferedReader;
+
 //import java.io.InputStream;
 //import java.io.InputStreamReader;
 //import java.util.HashMap;
@@ -24,41 +25,40 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 
-public class LYG10D13D_X_CAS extends LYG10D15D_X_CUA
-        implements LYG10D13D_X_CAS_C {
+public class LYG10D13D_X_CAS extends LYG10D15D_X_CUA implements LYG10D13D_X_CAS_C {
 
-    public int quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(String[] strings
-            , int leftPosition
-            , int rightPosition, int scale, Map<String, String> map
-            , Map<String, Integer> bihua, int range, int deeps) {
-        this.pinyin = map;
-        this.range = range;
-        this.deeps = deeps;
-        this.bihua = bihua;
-        String oldValue = strings[0].toString();
-        processKernel(strings, leftPosition, rightPosition, scale, 0);
+	public int quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(
+			String[] strings, int leftPosition, int rightPosition, int scale,
+			Map<String, String> map, Map<String, Integer> bihua, int range,
+			int deeps) {
+		this.pinyin = map;
+		this.range = range;
+		this.deeps = deeps;
+		this.bihua = bihua;
+		String oldValue = strings[0].toString();
+		processKernel(strings, leftPosition, rightPosition, scale, 0);
 
-        //先1 等 后1    先 1等 后2
-        //先1 等 后1    先 1 不等 后2
-        //先1 不等 后1    先 1等 后2
-        //先1 不等 后1    先 1不等 后2
-        if (strings[0].equals(strings[1])) {
-            return 0;
-        }
-        if (oldValue.equalsIgnoreCase(strings[0])) {
-            return 1;
-        }
-        if (!oldValue.equalsIgnoreCase(strings[0])) {
-            return -1;
-        }
-        if (oldValue.equalsIgnoreCase(strings[1])) {
-            return -1;
-        }
-        if (!oldValue.equalsIgnoreCase(strings[1])) {
-            return 1;
-        }
-        return 0;
-    }
+		// 先1 等 后1 先 1等 后2
+		// 先1 等 后1 先 1 不等 后2
+		// 先1 不等 后1 先 1等 后2
+		// 先1 不等 后1 先 1不等 后2
+		if (strings[0].equals(strings[1])) {
+			return 0;
+		}
+		if (oldValue.equalsIgnoreCase(strings[0])) {
+			return 1;
+		}
+		if (!oldValue.equalsIgnoreCase(strings[0])) {
+			return -1;
+		}
+		if (oldValue.equalsIgnoreCase(strings[1])) {
+			return -1;
+		}
+		if (!oldValue.equalsIgnoreCase(strings[1])) {
+			return 1;
+		}
+		return 0;
+	}
 }
 //
 //public boolean findSmallWithTwoCharWithpinyin(Map<String, String> pinyinMap

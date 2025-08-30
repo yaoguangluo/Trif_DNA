@@ -25,6 +25,7 @@ import java.util.Iterator;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("serial")
 public class XynkPage_X_S_sListeners extends XynkPage_X_S_s
 		implements MouseListener, KeyListener {
 
@@ -35,7 +36,7 @@ public class XynkPage_X_S_sListeners extends XynkPage_X_S_s
 		return name;
 	}
 
-	@SuppressWarnings({ "serial" })
+	@SuppressWarnings("unchecked")
 	public javax.swing.JTable jTable(App app_NE) {
 		NE = app_NE;
 		XynkDictionary d = new XynkDictionary();

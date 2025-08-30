@@ -16,7 +16,6 @@ import OPE.MSI.OEI.SOI.SMQ.save.SaveAnd_U_File;
 import OPE.MSI.OEI.SOI.SMQ.save.SaveAs_I_File;
 import OPE.PSQ.OEU.SOI.SMQ.neroCell.BootNeroCell;
 import S_A.SVQ.stable.S_Annotation;
-import OSI.OPE.OVU.PQE.flash.GUISample;
 import ME.VPC.M.app.App;
 import OSI.OPE.OVU.PQE.flash.ThisCanvas;
 
@@ -502,7 +501,6 @@ public class Sample_X_I_Map {
 			DetaBuy detaBuy;
 			JFrame jFrame;
 
-			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (null == jFrame) {

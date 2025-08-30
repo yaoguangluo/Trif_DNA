@@ -66,7 +66,7 @@ public class SortStringDemo {
         }
     }
 
-    @SuppressWarnings("unused")
+    @SuppressWarnings({ "unused", "unchecked" })
     public static void main(String[] argv) {
         App NE= new App();
         ReadPinYinBihua.getPinYinBihuaMap(NE);

@@ -30,6 +30,7 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("serial")
 public class FqzPage extends FqzPage_X_S_sListeners {
 
 	public FqzPage(JTextPane text, App NE) {
@@ -50,6 +51,7 @@ public class FqzPage extends FqzPage_X_S_sListeners {
 		this.add(jsp_statistic);
 	}
 
+	@SuppressWarnings("deprecation")
 	public JTextPane data(App NE) {
 		PageButtons._I(this, NE);
 //        data = new JTextPane();

@@ -19,6 +19,7 @@ import javax.swing.JTextPane;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("serial")
 public class ShellJPanel_X_S extends JPanel {
 	/**
 	 * 稍后进行优化成 申请版权的格式。 罗瑶光

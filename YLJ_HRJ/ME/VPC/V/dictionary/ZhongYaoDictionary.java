@@ -2,7 +2,6 @@ package ME.VPC.V.dictionary;
 
 import E_A.OEI.SVQ.MPC.fhmm.E.FastReadProjectFile;
 import ME.VPC.M.app.App;
-import ME.VPC.S.ne.App_S;
 import exception.file.O.DetaBufferedReader;
 import S_A.SVQ.stable.S_File;
 import S_A.pheromone.IMV_SIQ;
@@ -413,12 +412,12 @@ public class ZhongYaoDictionary extends Dictionary_S {
 			String med_name = copy.get(i);
 			String med_text = dic_map.get(med_name).toString().replace("\n",
 					"");
-			Pattern p = Pattern.compile("用量-克-别名-其他-备注(.*?)\\[");
+			Pattern p = Pattern.compile("用量-克重-别名-其他-备注(.*?)\\[");
 			Matcher m = p.matcher(med_text);
 			String temp = "";
 			if (m.find()) {
 				temp = m.group(0);
-				temp = temp.replace("用量/克-别名-其他-备注]", "").replace("[", "");
+				temp = temp.replace("用量-克重-别名-其他-备注]", "").replace("[", "");
 			}
 //			if(!dic_yl.containsKey(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":"))) {
 //				dic_yl.put(med_name.replaceAll("\\s*", "").replace("〔", "").replace("〕", ":")

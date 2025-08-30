@@ -15,6 +15,7 @@ import java.awt.image.BufferedImage;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("serial")
 public class JingMai extends Panel {
 	//
 	// mock trif 稍后单例化工厂。
@@ -35,6 +36,7 @@ public class JingMai extends Panel {
 			.getGraphics();
 	private Image backgroundImage;
 
+	@SuppressWarnings("unchecked")
 	public JingMai() {
 		if (null == getClass()) {
 			return;// fatal trif

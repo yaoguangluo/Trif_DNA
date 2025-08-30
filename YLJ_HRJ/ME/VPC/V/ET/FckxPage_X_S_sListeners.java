@@ -25,6 +25,7 @@ import java.util.Iterator;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("serial")
 public class FckxPage_X_S_sListeners extends FckxPage_X_S_s
 		implements MouseListener, KeyListener {
 	public JTextField name() {
@@ -34,7 +35,7 @@ public class FckxPage_X_S_sListeners extends FckxPage_X_S_s
 		return name;
 	}
 
-	@SuppressWarnings({ "serial" })
+	@SuppressWarnings("unchecked")
 	public javax.swing.JTable jTable(App app_NE) {
 		NE = app_NE;
 		FckxDictionary d = new FckxDictionary();

@@ -38,7 +38,7 @@ public class ZhongYaoTable implements MouseListener {
 	private App_S app;
 	public App NE;
 
-	@SuppressWarnings({ "serial" })
+	@SuppressWarnings({ "serial", "unchecked" })
 	public javax.swing.JTable jTable(App_S app, App app_NE) {
 		NE = app_NE;
 		this.app = app;

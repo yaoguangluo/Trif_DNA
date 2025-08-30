@@ -1,5 +1,6 @@
 package U_V.OEU.xqpx.wcms.sort;
 //import java.io.BufferedReader;
+
 //import java.io.InputStream;
 //import java.io.InputStreamReader;
 //import java.util.HashMap;
@@ -22,50 +23,49 @@ package U_V.OEU.xqpx.wcms.sort;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 
-public class LYG10D13D_X_CA extends LYG10D13D_X_S
-    implements LYG10D13D_X_CAC {
-    public boolean findSmall(String[] kernel, int scale, int point
-        , int i, int j, int rightPosition) {
-        if (kernel[i].length() <= point || kernel[j].length() <= point) {
-            if (kernel[i].length() < kernel[j].length()) {
-                for (int p = 0; p < scale; p++) {
-                    if (!(kernel[i].length() <= p || kernel[j].length() <= p)) {
-                        if (kernel[i].charAt(p) != kernel[j].charAt(p)) {
-                            return false;
-                        }
-                    }
-                }
-                return true;
-            }
-            return false;
-        } else {
-            boolean hasXi = pinyin.containsKey("" + kernel[i].charAt(point));
-            boolean hasXj = pinyin.containsKey("" + kernel[j].charAt(point));
-            if (!(!hasXi || !hasXj)) {
-                String[] js = new String[2];
-                js[0] = this.pinyin.get("" + kernel[i].charAt(point));
-                js[1] = this.pinyin.get("" + kernel[j].charAt(point));
-                boolean change = processSortpinyin(js, 3);
-                return !(!change || i >= j);
-            } else if (!(hasXi || hasXj)) {
-                if (kernel[i].toLowerCase().charAt(point)
-                    > kernel[j].toLowerCase().charAt(point)) {
-                    return i < j;
-                } else if (kernel[i].toLowerCase().charAt(point)
-                    == kernel[j].toLowerCase().charAt(point)) {
-                    if (kernel[i].charAt(point) > kernel[j].charAt(point)) {
-                        return i < j;
-                    }
-                    return false;
-                }
-                return false;
-            } else if (!hasXi) {
-                if (i < j) {
-                    return !(i == rightPosition || j == rightPosition);
-                }
-                return false;
-            }
-        }
-        return false;
-    }
+public class LYG10D13D_X_CA extends LYG10D13D_X_S implements LYG10D13D_X_CAC {
+	public boolean findSmall(String[] kernel, int scale, int point, int i,
+			int j, int rightPosition) {
+		if (kernel[i].length() <= point || kernel[j].length() <= point) {
+			if (kernel[i].length() < kernel[j].length()) {
+				for (int p = 0; p < scale; p++) {
+					if (!(kernel[i].length() <= p || kernel[j].length() <= p)) {
+						if (kernel[i].charAt(p) != kernel[j].charAt(p)) {
+							return false;
+						}
+					}
+				}
+				return true;
+			}
+			return false;
+		} else {
+			boolean hasXi = pinyin.containsKey("" + kernel[i].charAt(point));
+			boolean hasXj = pinyin.containsKey("" + kernel[j].charAt(point));
+			if (!(!hasXi || !hasXj)) {
+				String[] js = new String[2];
+				js[0] = this.pinyin.get("" + kernel[i].charAt(point));
+				js[1] = this.pinyin.get("" + kernel[j].charAt(point));
+				boolean change = processSortpinyin(js, 3);
+				return !(!change || i >= j);
+			} else if (!(hasXi || hasXj)) {
+				if (kernel[i].toLowerCase().charAt(point) > kernel[j]
+						.toLowerCase().charAt(point)) {
+					return i < j;
+				} else if (kernel[i].toLowerCase().charAt(point) == kernel[j]
+						.toLowerCase().charAt(point)) {
+					if (kernel[i].charAt(point) > kernel[j].charAt(point)) {
+						return i < j;
+					}
+					return false;
+				}
+				return false;
+			} else if (!hasXi) {
+				if (i < j) {
+					return !(i == rightPosition || j == rightPosition);
+				}
+				return false;
+			}
+		}
+		return false;
+	}
 }

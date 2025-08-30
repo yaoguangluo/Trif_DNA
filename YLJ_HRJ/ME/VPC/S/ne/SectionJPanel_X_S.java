@@ -17,6 +17,7 @@ import javax.swing.JTextPane;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("serial")
 public class SectionJPanel_X_S extends JPanel {
 
 	public String[] tabNames = { "中药本草", "数据分析", "智能相诊", "图片搜索", "位术数", "西医内科",
@@ -38,9 +39,9 @@ public class SectionJPanel_X_S extends JPanel {
 	@SuppressWarnings("unused")
 	private JCheckBox jlabel_peizhi_di2512;
 	public JCheckBox jlabel_peizhi_di2513;
-	// private JComponent jlabelpeizhi2255;
-//	private JComponent jlabelpeizhi2256;
-//	private JComponent jlabelpeizhi2257;
+	//private JComponent jlabelpeizhi2255;
+	//private JComponent jlabelpeizhi2256;
+	//private JComponent jlabelpeizhi2257;
 	public JCheckBox jlabel_peizhi_di2515;
 	public JCheckBox jlabel_end_boxs31;
 	public JCheckBox jlabel_peizhi_di2233;// 专家

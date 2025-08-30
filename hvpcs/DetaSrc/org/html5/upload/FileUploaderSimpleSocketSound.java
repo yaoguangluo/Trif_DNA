@@ -25,7 +25,7 @@ import src.java.org.lyg.common.maps.VtoV;
 //import PEU.P.movie.LYGFileIO;
 //import PEU.P.sound.SoundWaveVector;
 //import PEU.P.wave.DFT;
-import U_A.PEU.P.image.ReadWritePng;
+//import U_A.PEU.P.image.ReadWritePng;
 import U_A.PEU.P.movie.AdataFrame;
 import U_A.PEU.P.movie.Header;
 import U_A.PEU.P.movie.LYGFileIO;

@@ -22,6 +22,7 @@ import java.util.Map;
  * */
 //20230805
 public class AppButtonUtil_X_DNN {
+	@SuppressWarnings("unused")
 	public static boolean doResponseContainsSetofI(StringBuilder page,
 			String setOfi, Map<String, Double> dNNrank, App NE) {
 		App_S u = NE.app_S;

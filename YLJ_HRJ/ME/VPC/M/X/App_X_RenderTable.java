@@ -16,34 +16,34 @@ import java.awt.Component;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 //reder sample 来自谷歌搜索 jdk demo, sun tech, 修改
+@SuppressWarnings("serial")
 public class App_X_RenderTable extends DefaultTableCellRenderer {
-    
 
-    public App_X_RenderTable() {
-        super();
-    }
+	public App_X_RenderTable() {
+		super();
+	}
 
-    public Component getTableCellRendererComponent(JTable table, Object value
-        , boolean isSelected, boolean hasFocus, int row, int column) {
-        if (isSelected && hasFocus && row == table.getSelectedRow() && column
-            == table.getSelectedColumn()) {
-            //2.设置当前Cell的颜色
-            Component c = super.getTableCellRendererComponent(table, value, isSelected
-                , hasFocus, row, column);
-            c.setBackground(Color.CYAN);//设置背景色
-            c.setForeground(new Color(0, 0, 0));//设置前景色
-            return c;
-        } else {
-            //3.设置单数行, 偶数行的颜色
-            if (row % 3 == 0) {//偶数行时的颜色
-                setBackground(new Color(253, 223, 254));
-            } else if (row % 3 == 1) {//设置单数行的颜色
-                setBackground(new Color(223, 254, 224));
-            } else if (row % 3 == 2) {//设置单数行的颜色
-                setBackground(new Color(255, 251, 222));
-            }
-            return super.getTableCellRendererComponent(table, value,
-                isSelected, hasFocus, row, column);
-        }
-    }
+	public Component getTableCellRendererComponent(JTable table, Object value,
+			boolean isSelected, boolean hasFocus, int row, int column) {
+		if (isSelected && hasFocus && row == table.getSelectedRow()
+				&& column == table.getSelectedColumn()) {
+			// 2.设置当前Cell的颜色
+			Component c = super.getTableCellRendererComponent(table, value,
+					isSelected, hasFocus, row, column);
+			c.setBackground(Color.CYAN);// 设置背景色
+			c.setForeground(new Color(0, 0, 0));// 设置前景色
+			return c;
+		} else {
+			// 3.设置单数行, 偶数行的颜色
+			if (row % 3 == 0) {// 偶数行时的颜色
+				setBackground(new Color(253, 223, 254));
+			} else if (row % 3 == 1) {// 设置单数行的颜色
+				setBackground(new Color(223, 254, 224));
+			} else if (row % 3 == 2) {// 设置单数行的颜色
+				setBackground(new Color(255, 251, 222));
+			}
+			return super.getTableCellRendererComponent(table, value, isSelected,
+					hasFocus, row, column);
+		}
+	}
 }

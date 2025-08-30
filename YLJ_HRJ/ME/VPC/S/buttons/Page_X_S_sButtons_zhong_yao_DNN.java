@@ -38,6 +38,7 @@ public class Page_X_S_sButtons_zhong_yao_DNN {
 		DetaButton buttonKSLJ = new DetaButton("中药DNN");
 		// buttonKSLJ.setBounds(990, 0, 115, 30);
 		buttonKSLJ.addActionListener(new ActionListener() {
+			@SuppressWarnings("unchecked")
 			public void actionPerformed(ActionEvent e) {
 				if (null == page_X_S_s.sets) {
 					return;

@@ -7,6 +7,7 @@ import ME.VPC.S.ne.App_S;
 //20211028
 public class literial_X_literial_P extends literial {
 	// 速度慢, 精度高, 适用于文章短篇
+	@SuppressWarnings("unchecked")
 	public static String literial_P(App_S app, String input) {
 		String output = input.toString();
 		try {

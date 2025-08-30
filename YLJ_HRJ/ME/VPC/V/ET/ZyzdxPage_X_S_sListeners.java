@@ -35,7 +35,7 @@ public class ZyzdxPage_X_S_sListeners extends ZyzdxPage_X_S_s
 		return name;
 	}
 
-	@SuppressWarnings({ "serial" })
+	@SuppressWarnings({"unchecked" })
 	public javax.swing.JTable jTable(App app_NE) {
 		NE = app_NE;
 		ZyzdxDictionary d = new ZyzdxDictionary();

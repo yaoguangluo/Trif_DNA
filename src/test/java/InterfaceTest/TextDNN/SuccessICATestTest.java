@@ -17,52 +17,52 @@ import test.java.InterfaceTest.CommonTestInition;
  * */
 class SuccessICATestTest {
 	public static void main(String[] argv) {
-		SuccessICATestTest successICATestTest=new SuccessICATestTest();
+		SuccessICATestTest successICATestTest = new SuccessICATestTest();
 		successICATestTest.main();
 	}
 
-    @Test
-    void IQ_KernelCNN() {
-    }
+	@Test
+	void IQ_KernelCNN() {
+	}
 
-    /*
-     * 这是一个 情绪执行成功率，用于执行力 决策力测试 测试main函数demo的test版本，在导入了api之后
-     * 进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码
-     * 的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用
-     * println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输
-     * 入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。--罗瑶光
-     * */
-    @Test
-    void main() {
-        //环境初始化。
-        CommonTestInition commonTestInition = new CommonTestInition();
-        commonTestInition.initEnvironment("去弹窗组件流测试");
-        //exec
-        //ICA kernel
-        double[][] kernel = new double[3][];
-        kernel[0] = new InitBehaviorICAKernel().getBehaviorICAKernel(S_String.text1
-            , commonTestInition.NE);
-        kernel[1] = new InitBehaviorICAKernel().getBehaviorICAKernel(S_String.text2
-            , commonTestInition.NE);
-        kernel[2] = new InitBehaviorICAKernel().getBehaviorICAKernel(S_String.text3
-            , commonTestInition.NE);
-        SuccessICATest successICATest = new SuccessICATest();
-        successICATest.IQ_KernelCNN(kernel);
-        for (int i = 0; i < successICATest.kernelCNN.length; i++) {
-            for (int j = 0; j < successICATest.kernelCNN[0].length; j++) {
-                System.out.print(successICATest.kernelCNN[i][j] + " ");
-            }
-            System.out.println();
-        }
-        //do ICA normalization
-        //do ROBUST ICA
-        //do map
-        //do reduce sets
-        //sets Turing
-        //output
-        //end
-        commonTestInition.endEnvironment();
-    }
+	/*
+	 * 这是一个 情绪执行成功率，用于执行力 决策力测试 测试main函数demo的test版本，在导入了api之后
+	 * 进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码
+	 * 的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用
+	 * println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输
+	 * 入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。--罗瑶光
+	 */
+	@Test
+	void main() {
+		// 环境初始化。
+		CommonTestInition commonTestInition = new CommonTestInition();
+		commonTestInition.initEnvironment("去弹窗组件流测试");
+		// exec
+		// ICA kernel
+		double[][] kernel = new double[3][];
+		kernel[0] = new InitBehaviorICAKernel()
+				.getBehaviorICAKernel(S_String.text1, commonTestInition.NE);
+		kernel[1] = new InitBehaviorICAKernel()
+				.getBehaviorICAKernel(S_String.text2, commonTestInition.NE);
+		kernel[2] = new InitBehaviorICAKernel()
+				.getBehaviorICAKernel(S_String.text3, commonTestInition.NE);
+		SuccessICATest successICATest = new SuccessICATest();
+		successICATest.IQ_KernelCNN(kernel);
+		for (int i = 0; i < successICATest.kernelCNN.length; i++) {
+			for (int j = 0; j < successICATest.kernelCNN[0].length; j++) {
+				System.out.print(successICATest.kernelCNN[i][j] + " ");
+			}
+			System.out.println();
+		}
+		// do ICA normalization
+		// do ROBUST ICA
+		// do map
+		// do reduce sets
+		// sets Turing
+		// output
+		// end
+		commonTestInition.endEnvironment();
+	}
 }
 //输出
 //Connected to the target VM, address: '127.0.0.1:54853', transport: 'socket'

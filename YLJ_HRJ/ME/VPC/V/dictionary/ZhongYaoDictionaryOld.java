@@ -20,7 +20,9 @@ import java.util.regex.Pattern;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("unchecked")
 public class ZhongYaoDictionaryOld extends Dictionary_S {
+	@SuppressWarnings("resource")
 	public List<String> txtToList() {
 		dic_list = new ArrayList<>();
 		InputStream in = getClass().getResourceAsStream("c.txt");
@@ -53,7 +55,6 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_list;
 	}
 
-	@SuppressWarnings("unused")
 	public IMV_SIQ_ listToMap(List<String> dic_list) {
 		dic_map = new IMV_SIQ_();
 		for (int i = 0; i < dic_list.size(); i++) {
@@ -571,6 +572,7 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_xw;
 	}
 
+	@SuppressWarnings("resource")
 	public IMV_SIQ mapToMap_yl(IMV_SIQ dic_map, IMV_SIQ dic_xw, IMV_SIQ dic_li,
 			IMV_SIQ dic_xz, IMV_SIQ dic_jm) {
 		dic_yl = new IMV_SIQ();

@@ -42,6 +42,7 @@ public class CecilDictionary extends Dictionary_S {
 		return temp_list;
 	}
 
+	@SuppressWarnings({ "resource", "unchecked" })
 	public IMV_SIQ_ listNameToMap(List<String> dic_list) {
 		dic_map = new IMV_SIQ_();
 		for (int i = 0; i < dic_list.size(); i++) {

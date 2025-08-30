@@ -21,7 +21,8 @@ import java.util.Map;
  * */
 class List_ESU_X_listToArrayTest {
 	public static void main(String[] argv) {
-		List_ESU_X_listToArrayTest list_ESU_X_listToArrayTest = new List_ESU_X_listToArrayTest();
+		List_ESU_X_listToArrayTest list_ESU_X_listToArrayTest 
+		= new List_ESU_X_listToArrayTest();
 		list_ESU_X_listToArrayTest._E();
 	}
 

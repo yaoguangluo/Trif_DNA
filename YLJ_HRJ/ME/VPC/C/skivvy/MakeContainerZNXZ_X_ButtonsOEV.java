@@ -31,9 +31,11 @@ import java.util.Map;
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋别墅
+ *  208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("deprecation")
 public class MakeContainerZNXZ_X_ButtonsOEV {
+	@SuppressWarnings("unchecked")
 	public static void createButtons(App NE) throws InterruptedException {
 		App_S app_S = NE.app_S;
 		app_S.monitor.monitor_X_S.bt00 = new DetaButton("初始重置", 100, 50,
@@ -85,7 +87,6 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 		app_S.monitor.monitor_X_S.bt02 = new DetaButton("绿色光谱", 100, 50,
 				Color.green);
 		app_S.monitor.monitor_X_S.bt02.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (app_S.monitor.monitor_X_S.isGreenButton == false) {
 					app_S.monitor.monitor_X_S.isGreenButton = true;
@@ -100,7 +101,6 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 		app_S.monitor.monitor_X_S.bt03 = new DetaButton("蓝色光谱", 100, 50,
 				Color.blue);
 		app_S.monitor.monitor_X_S.bt03.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (app_S.monitor.monitor_X_S.isBlueButton == false) {
 					app_S.monitor.monitor_X_S.isBlueButton = true;
@@ -115,7 +115,6 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 		app_S.monitor.monitor_X_S.bt10 = new DetaButton("锐化项关", 100, 50,
 				Color.magenta);
 		app_S.monitor.monitor_X_S.bt10.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (app_S.monitor.monitor_X_S.isStreButton == false) {
 					app_S.monitor.monitor_X_S.isStreButton = true;
@@ -130,7 +129,6 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 		app_S.monitor.monitor_X_S.bt11 = new DetaButton("纹理检关", 100, 50,
 				Color.pink);
 		app_S.monitor.monitor_X_S.bt11.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (app_S.monitor.monitor_X_S.isSblButton == false) {
 					app_S.monitor.monitor_X_S.isSblButton = true;
@@ -145,7 +143,6 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 		app_S.monitor.monitor_X_S.bt12 = new DetaButton("熵增滤关", 100, 50,
 				Color.pink);
 		app_S.monitor.monitor_X_S.bt12.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (app_S.monitor.monitor_X_S.isRcaButton == false) {
 					app_S.monitor.monitor_X_S.isRcaButton = true;
@@ -160,7 +157,6 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 		app_S.monitor.monitor_X_S.bt13 = new DetaButton("成份分析", 100, 50,
 				Color.pink);
 		app_S.monitor.monitor_X_S.bt13.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (app_S.monitor.monitor_X_S.isPcaButton == false) {
 					app_S.monitor.monitor_X_S.isPcaButton = true;
@@ -175,7 +171,6 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 		app_S.monitor.monitor_X_S.bt20 = new DetaButton("成份滤关", 100, 50,
 				Color.pink);
 		app_S.monitor.monitor_X_S.bt20.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (app_S.monitor.monitor_X_S.isPcfButton == false) {
 					app_S.monitor.monitor_X_S.isPcfButton = true;
@@ -197,7 +192,6 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 		app_S.monitor.monitor_X_S.bt22 = new DetaButton("暂停视屏", 100, 50,
 				Color.pink);
 		app_S.monitor.monitor_X_S.bt22.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (app_S.monitor.monitor_X_S.isStop == false) {
 					app_S.monitor.monitor_X_S.isStop = true;
@@ -251,7 +245,6 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 		app_S.monitor.monitor_X_S.bt31 = new DetaButton("开始录制", 100, 50,
 				Color.pink);
 		app_S.monitor.monitor_X_S.bt31.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (app_S.monitor.monitor_X_S.recordStop == true) {
 					app_S.monitor.monitor_X_S.recordStop = false;
@@ -464,7 +457,6 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 		app_S.monitor.monitor_X_S.bt43 = new DetaButton("高斯分析", 100, 50,
 				Color.pink);
 		app_S.monitor.monitor_X_S.bt43.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				if (app_S.monitor.monitor_X_S.isbt43Stop == false) {
 					app_S.monitor.monitor_X_S.isbt43Stop = true;

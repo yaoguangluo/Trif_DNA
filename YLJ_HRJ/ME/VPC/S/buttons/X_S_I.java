@@ -16,6 +16,7 @@ import java.util.Map;
 public class X_S_I {
 	public Map<String, String> posFullec;
 
+	@SuppressWarnings("unchecked")
 	public void get_posFullec(App NE) {
 		posFullec = NE.app_S.fMHMMListOneTime_E_X_S.fullEnToCn;
 	}

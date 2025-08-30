@@ -33,6 +33,7 @@ import java.util.Map;
  * */
 //20211022 
 public class AppButtonUtil_X_DNN_Classify extends AppButtonUtil_X_DNN {
+	@SuppressWarnings("unchecked")
 	public static void classifyDNN(StringBuilder page, List<String> sets,
 			int currentPage, JTable table, int row, String key,
 			DetaButton buttonSum, DetaButton buttonCrt, JTextPane data,

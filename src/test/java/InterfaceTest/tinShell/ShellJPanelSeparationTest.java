@@ -74,7 +74,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 class ShellJPanelSeparationTest {
 	public static void main(String[] argv)
 			throws InterruptedException, IOException {
-		ShellJPanelSeparationTest shellJPanelSeparationTest = new ShellJPanelSeparationTest();
+		ShellJPanelSeparationTest shellJPanelSeparationTest 
+		= new ShellJPanelSeparationTest();
 		shellJPanelSeparationTest.testTinshell();
 	}
 

@@ -15,6 +15,7 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段 208号 阳光家园别墅小区 第十栋别墅
  * */
 //这个算法纪念罗瑶光先生逝去的青春。
+@SuppressWarnings("unused")
 public class LYGAFDCTDFFT_F {
 	// double k[] = new float[1024];
 	public float[] jniLYGAFDCTDFT(float[] input) {
@@ -869,6 +870,7 @@ public class LYGAFDCTDFFT_F {
 
 	public float kc[][] = new float[11][512];
 	public float ks[][] = new float[11][512];
+	@SuppressWarnings("unchecked")
 	public Map<Integer, Integer> ki = new IMV_SIQ();
 
 	// 0 1 2 3 4 5 6 7 8 9

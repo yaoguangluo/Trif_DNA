@@ -20,6 +20,7 @@ import java.util.ArrayList;
  * */
 //20211028
 public class literial_X_initVerbalBase extends literial {
+	@SuppressWarnings({ "resource", "unchecked" })
 	public static void initVerbalBase() {
 		if (null == literialVerbalBase) {
 			literialVerbalBase = new ArrayList<>();
