@@ -21,7 +21,8 @@ import S_A.pheromone.IMV_SIQ;
 public class CreativeVerbaMap {
     public IMV_SIQ flowerActionMap = new IMV_SIQ();
 
-    public static void initInitonActions() {
+    @SuppressWarnings("unchecked")
+	public static void initInitonActions() {
         //非OSGI模式注册花语言，其他见我著作权的CrabInterfaceClass。
         FlowerAction.FlowerSixDomainActions.put("I-表", "findTableInMemory");
         //注册花函数

@@ -31,6 +31,7 @@ public class FlowerAction {
 
 	public static IMV_SIQ FlowerChromosomeActions = new IMV_SIQ();
 
+	@SuppressWarnings("unchecked")
 	public static void initFlowerP_E_KernelActions() {
 		FlowerP_E_KernelActions.put("条件为", "selectRowsByAttributesOfCondition");
 		FlowerP_E_KernelActions.put("操作",
@@ -56,6 +57,7 @@ public class FlowerAction {
 	}
 
 //现在是static，以后如果有相关进化算法来增加函数，记得改成dynamic，罗瑶光。
+	@SuppressWarnings("unchecked")
 	public static void initFlowerSixDomainActions() {
 		FlowerSixDomainActions.put("获取表名", "P_TableName");
 		FlowerSixDomainActions.put("setRoot", "P_SetRoot");
@@ -78,6 +80,7 @@ public class FlowerAction {
 		FlowerSixDomainActions.put("PLTCP", "P_ListNeedStart");
 	}
 
+	@SuppressWarnings("unchecked")
 	public static void doAction(String callFunctionKey, String[] temp,
 			TinMap output, App NE) throws InterruptedException, IOException {
 		// 花语初始
@@ -106,8 +109,8 @@ public class FlowerAction {
 				+ " 接口, 参数是 传参因子";
 		// 孢子插件执行
 		if (StaticRootMap.chromosomeNode.containsKey(callFunctionKey)) {
-			CrabInterface crabInterface = (OSI.OSU.crab.CrabInterface) StaticRootMap.chromosomeNode
-					.get(callFunctionKey);
+			CrabInterface crabInterface = (OSI.OSU.crab.CrabInterface) 
+					StaticRootMap.chromosomeNode.get(callFunctionKey);
 			crabInterface.logic(inputValue, 传参因子, 0, NE);
 		} else {
 			// 下面是老的花函数执行

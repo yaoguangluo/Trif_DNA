@@ -23,6 +23,7 @@ import java.util.List;
 *  208号 阳光家园别墅小区 第十栋别墅
  * */
 public class E_pl_XA_E {
+	@SuppressWarnings("unchecked")
 	public static TinMap E_pl_XA(String plSearch, boolean mod, TinMap output,
 			App NE) throws InterruptedException, IOException {
 		// working for here
@@ -44,23 +45,22 @@ public class E_pl_XA_E {
 		String[] acknowledgeSwap = null;
 		for (String command : commands) {
 			NE._I_U.commandAcknowledge = command;
-			// */
+			// -1 计算逻辑关系根据不同的环境会有不同的组合，最优关系是频率出来的，不是关键字分析出来的。
+			//    所以动态化计算是趋势。
 			String commandSwap = doHumanTalkSwap(command, NE);
-			List<String> commandLists = DoSplit.splitRegex(command, ":", "\\",
-					"\\");
-			NE._I_U.acknowledge = List_ESU_X_stringlistToStringArray
-					._E(commandLists);
-			if (null != commandSwap) {
+			List<String> commandLists = DoSplit.splitRegex(command, ":", "\\","\\");
+			//ESU_X swap系列 稍后并到测试文件中 -trif
+			NE._I_U.acknowledge = List_ESU_X_stringlistToStringArray._E(commandLists);
+			if (null != commandSwap) {//splitRegex稍后并到测试文件中 -trif
 				commandLists = DoSplit.splitRegex(commandSwap, ":", "\\", "\\");
-				acknowledgeSwap = List_ESU_X_stringlistToStringArray
-						._E(commandLists);
+				acknowledgeSwap = List_ESU_X_stringlistToStringArray._E(commandLists);
 				System.out.println(commandSwap);
-				doAcknowledgeSwap(acknowledgeSwap, command, NE);// later
-																// duplications
+				doAcknowledgeSwap(acknowledgeSwap, command, NE);
+				// later // duplications
 				// return null;
 			}
+			// -2
 			String[] temp = NE._I_U.acknowledge.clone();
-			// */
 			Iterator<String> iterators = NE.app_S.workVerbaMap.cartesianWorkActionsRights
 					.keySet().iterator();
 			while (iterators.hasNext()) {
@@ -74,6 +74,7 @@ public class E_pl_XA_E {
 																		 // pdn
 				}
 			}
+			// -3
 			NE.app_S.workVerbaMap.cartesianWorkActionsRights.clear();
 			NE.app_S.workVerbaMap.cartesianWorkActionsPositions.clear();
 			NE.app_S.workVerbaMap.normalizationalWorkActionsRights.clear();
@@ -151,6 +152,7 @@ public class E_pl_XA_E {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private static void doHuoQuBiaoMingSwap(String command, App NE) {
 		Iterator<String> iterator = NE.app_S.tableNameMap.keySet().iterator();
 		while (iterator.hasNext()) {
@@ -165,6 +167,7 @@ public class E_pl_XA_E {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private static void doTinshellTalk() {
 	}
 

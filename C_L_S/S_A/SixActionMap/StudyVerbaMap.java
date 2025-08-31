@@ -21,8 +21,9 @@ public class StudyVerbaMap {
     public IMV_SIQ _SMI = new IMV_SIQ();
     public static IMV_SIQ initonDelegate = new IMV_SIQ();
 
-    //先归纳汉语
-    public static void initInitonDelegate() {
+    //先归纳汉语 归纳方式 DNA十六元基语义解码规范。 AOPM VECS IDUQ TXHF
+    @SuppressWarnings("unchecked")
+	public static void initInitonDelegate() {
         // A
         initonDelegate.put("分析", "A");
         initonDelegate.put("细化", "A");
@@ -334,7 +335,8 @@ public class StudyVerbaMap {
         initonDelegate.put("替代", "F");
     }
 
-    public void init_SMV(App NE) throws NoSuchFieldException
+    @SuppressWarnings("unchecked")
+	public void init_SMV(App NE) throws NoSuchFieldException
         , InstantiationException, IllegalAccessException, ClassNotFoundException {
         Field[] fields = NE.app_S.getClass().getFields();
         for (int i = 0; i < fields.length; i++) {
@@ -356,7 +358,8 @@ public class StudyVerbaMap {
         return null;
     }
 
-    public void putObject(String key, Object object) {
+    @SuppressWarnings("unchecked")
+	public void putObject(String key, Object object) {
         _SMV.put(key, object);
     }
     //later

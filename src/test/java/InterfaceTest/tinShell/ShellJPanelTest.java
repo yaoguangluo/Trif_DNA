@@ -70,11 +70,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
+ * 第3层，(2层父母住)
  * */
 // mock api 和test me api 注释：Generated with love by TestMe :)
 // Please report issues and submit feature
 // requests at: http://weirddev.com/forum#!/testme
-@SuppressWarnings({ "unchecked", "unused", "deprecation" })
+@SuppressWarnings({ "unchecked", "unused" })
 class ShellJPanelTest {
 	public static void main(String[] argv)
 			throws InterruptedException, IOException {
