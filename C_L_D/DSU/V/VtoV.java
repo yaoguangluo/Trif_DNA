@@ -34,7 +34,7 @@ public class VtoV {
 //逐步剔除著作权范围代码, 大家可以看到, 这些注释掉的函数已经说明了我的整个工程 就
 //没有任何XML的应用. 具体见Deta 的 data swap包.
 //除了两个 JsonObjectToMap 和 ObjectToJsonString(用到 谷歌 的Guson 官方开源
-//DEMO 原函数) 就没有用到过走四方 时候的VToV(保留着词汇是因为VtoV是我罗瑶光命名的。)函数,
+//DEMO 原函数) 就没有用到过-去小广告- 时候的VToV(保留着词汇是因为VtoV是我罗瑶光命名的。)函数,
 //2019~2020 data swap 著作权申请文档很清晰了.
 //罗瑶光
 //	public JSONObject XmlToJsonObject(String response ){

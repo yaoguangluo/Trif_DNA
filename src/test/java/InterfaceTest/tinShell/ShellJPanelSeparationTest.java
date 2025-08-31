@@ -3,13 +3,11 @@ package test.java.InterfaceTest.tinShell;
 import ME.VPC.M.app.App;
 import ME.VPC.M.app.App_X;
 import ME.VPC.V.config.ShellJPanel;
-import M_V.MPI.xls.commonXLS.MakeContainerXLS;
 import M_V.MVQ.button.DetaButton;
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_OVQ_OSQ_VSQ;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 import O_V.OSM.shell.E_pl_XA_E;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
-import exception.thread.DetaThread;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -283,137 +281,58 @@ class ShellJPanelSeparationTest {
 	 * 方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释
 	 * 在这个文件里。及其傻瓜化的流程，方便商业化落地。 --罗瑶光
 	 */
-	@SuppressWarnings("deprecation")
 	@Test
 	void testTinshell() throws InterruptedException, IOException {
 		// test without mock api
 		System.out.println("test without mock api -- tinshell 批处理测试 执行复杂"
 				+ "条件搜索逻辑--我本地苹果mac上已经调通可运行。方便我之后的各类型测试");
+		ShellJPanelTest shellJPanelTest = new ShellJPanelTest();
+		// -1
 		// 启动测试开始
 		// 配置系统支持
-		App_X NE = new App_X();
 		// 临时设置用，之后结构优化后进行去除。
-		NE.tempString = "去弹窗组件流测试";
 		// 配置组件支持
-		NE.init(NE);
-		DetaThread.sleepDeta(100);
-		NE.start();
 		// 配置环境支持
-		while (null == NE.app_S.studyVerbaMap) {
-			Thread.sleep(500);
-		}
+		App_X NE = shellJPanelTest.initTinshellEnvironment();
+		// -2
 		// 配置读XLS的表头配置
-		NE.app_S.appConfig.SectionJPanel.xlsWithSpec.setSelected(true);
 		// 开始模拟读xls的函数逻辑测试
-		try {
-			if (null == NE.app_S._A) {
-				return;
-			} // later normalization
-			MakeContainerXLS makeContainerXLS = new MakeContainerXLS(
-					NE.app_S._A, NE.app_S, NE.app_S.jTabbedpane,
-					NE.app_S.tabNames,
-					NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn,
-					NE.app_S.fMHMMListOneTime_E_X_S.posEnToEn,
-					NE.app_S.fMHMMListOneTime_E_X_S.enToCn,
-					NE.app_S.fMHMMListOneTime_E_X_S.fullCnToEn, "xls",
-					NE.app_S.emotionSample, NE.app_S.ratioMap_E,
-					NE.app_S.sensingTest, NE);
-			// 临时设置用，之后结构优化后进行去除。
-			// 确定测试文件名为药食同源的表文件，tinshell函数执行这个表的操作计算。
-			NE._I_U.tempString = "/Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/"
-					+ "project/TinOS/DetaResources/books/xlsx/zybgPage.xlsx";
-			makeContainerXLS.start();
-			while (null == makeContainerXLS.jpanelSecond) {
-				Thread.sleep(100);
-			}
-			while (null == makeContainerXLS.jpanelSecond.pageName) {
-				Thread.sleep(100);
-			}
-			NE.app_S.makeContainerXLSList.add(makeContainerXLS);
-			if (makeContainerXLS.tabNames.size() < 1) {
-				System.out.println("error read table");
-				NE.stop();
-				return;
-			}
-			String XLSTableName = makeContainerXLS.jpanelSecond.pageName;
-			String XLSTableNamePath = makeContainerXLS.jpanelSecond.xlsFilePath;
-			System.out.println("path table:" + XLSTableName);
-			System.out.println("name table:" + XLSTableNamePath);
-			// init test
-			// 准备测试命令，sonar覆盖率30%，提高覆盖率方式，我的DNA元基催化与肽计算中所有的
-			// 命令都按下面方式模拟一遍就可以100%。我做的是模拟loader runner 批处理，
-			// 不是sonar体系逻辑。我写测试是满足我罗瑶光的欲望，我的欲望不会告诉大家。大家要sonar，
-			// 去100%填满mock所有单元函数即可。
-			String tinshell = ("首先获取一个表，名字是" + XLSTableName
-					+ "，如果有这个表，准备下一步选择;\r\n" + "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n"
-					+ "条件为:和:中药名称|包含|菜谱;\r\n" + "条件为:和:风险规避|不包含|孕;\r\n"
-					+ "条件为:和:性味|不包含|凉;\r\n" + "条件为:和:性味|不包含|咸;\r\n"
-					+ "获取列名:中药名称:打分:功效;\r\n");
-			TinMap tinMap = execTest(tinshell, NE, null);
-			// 输出
-//line-->:XLS1753903322644
-//line-->:获取列名
-//line-->:success
-//line-->:0
-//line-->:进行选择
-//line-->:[ID, 打分, 中药名称, 笔记原文, 功效, 风险规避, 用法, 性味, 脉络, 中医馆药理, 经解, 崇源, 愚按, 搭配, 序号]
-//line-->:XLS1753903322644
-//line-->:true
-//line-->:获取列名
-//line-->:0
-//line-->:[{rowValue={功效={culumnValue=功专托痘疮。下乳汁。吐风痰。中风证以虾半斤。入葱姜酱料水煮
-// 。先吃虾。次吃汁。以鹅翎探引吐出痰涎即愈。能壮阳道。动风发呛。...., culumnName=功效}, 中药名称=
-// {culumnValue=虾菜谱, culumnName=中药名称},打分={culumnValue=0, culumnName=打分}}},
-// {rowValue={功效={culumnValue=功专温中益气。多食热中发渴。发疮疥。一名。鱼。....,
-// culumnName=功效}, 中药名称={culumnValue=鲢鱼菜谱, culumnName=中药名称}, 打分=
-// {culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=功专补五脏。除风湿。
-// 尾血疗口眼。斜。少和麝。左涂右。右。涂左。正则洗去。滴耳治耳痛。滴鼻治鼻衄。点目治痘后生翳。头治百
-// 虫入耳。...., culumnName=功效}, 中药名称={culumnValue=鳝鱼菜谱, culumnName=中药名称},
-//打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=功专调胃气。....,
-// culumnName=功效}, 中药名称={culumnValue=鲂鱼菜谱, culumnName=中药名称}, 打分=
-// {culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=马铃薯生长肌肉,
-// 健骨, 抗癌。., culumnName=功效}, 中药名称={culumnValue=马铃薯菜谱, culumnName=中药名称}
-// ,打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=山羊蹄子增强
-// 免疫, 健骨, 补元气。., culumnName=功效}, 中药名称={culumnValue=山羊蹄菜谱, culumnName
-// =中药名称}, 打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue
-// =功专暖中益气。醒酒解渴。同米粉煮羹食。调中收痔。煮食疗阳事不起。俗名泥鳅。...., culumnName=功效},
-//中药名称={culumnValue=鳅鱼菜谱, culumnName=中药名称}, 打分={culumnValue=0, culumnName
-// =打分}}}, {rowValue={功效={culumnValue=咖喱去腥开胃生津防腐杀虫提神充饥抗癌。., culumnName
-// =功效}, 中药名称={culumnValue=食物咖喱菜谱, culumnName=中药名称}, 打分={culumnValue=0
-// , culumnName=打分}}}, {rowValue={功效={culumnValue=常用于润肺护肤抗癌。.,culumnName=功效}
-// , 中药名称={culumnValue=西红柿菜谱, culumnName=中药名称}, 打分={culumnValue=0
-// , culumnName=打分}}},{rowValue={功效={culumnValue=蛋有消炎解毒, 壮阳, 补元气, 提神,
-// 预防感冒。., culumnName=功效}, 中药名称={culumnValue=鸡鸭鸽子鹌鹑蛋菜谱, culumnName=中药名称
-// }, 打分={culumnValue=0, culumnName=打分}}}]
-//line-->:10
-//line-->:success
-//line-->:0
-//line-->:10
-//Action-->:selectRowsByAttributesOfGetCulumns
-//Action-->:P_ListNeedStart
-//Action-->:P_TableName
-//Action-->:selectRowsByAttributesOfCondition
-
-//拆分----
-			String tinshell2 = ("在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
-					+ "操作:0|行至|30;\r\n" + "操作:中药名称|颜色标记为|红色;");
-			execTest(tinshell2, NE, tinMap);
-			// 关闭
-			NE.stop();
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
+		// 临时设置用，之后结构优化后进行去除。
+		// 确定测试文件名为药食同源的表文件，tinshell函数执行这个表的操作计算。
+		String filePathXLSX = "/Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/"
+				+ "project/TinOS/DetaResources/books/xlsx/zybgPage.xlsx";
+		String XLSTableName = shellJPanelTest.initSourceXLSEnvironment(NE,
+				filePathXLSX);
+		// init test
+		// 准备测试命令，sonar覆盖率30%，提高覆盖率方式，我的DNA元基催化与肽计算中所有的
+		// 命令都按下面方式模拟一遍就可以100%。我做的是模拟loader runner 批处理，
+		// 不是sonar体系逻辑。我写测试是满足我罗瑶光的欲望，我的欲望不会告诉大家。大家要sonar，
+		// 去100%填满mock所有单元函数即可。我的欲望是减少计算能消耗量。是不是很简单。说得好轻松一样。
+		String tinshell = ("首先获取一个表，名字是" + XLSTableName + "，如果有这个表，准备下一步选择;\r\n"
+				+ "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n" + "条件为:和:中药名称|包含|菜谱;\r\n"
+				+ "条件为:和:风险规避|不包含|孕;\r\n" + "条件为:和:性味|不包含|凉;\r\n"
+				+ "条件为:和:性味|不包含|咸;\r\n" + "获取列名:中药名称:打分:功效;\r\n");
+		TinMap tinMap = execTest(tinshell, NE, null);
+		// 输出 见末尾 第一段
+		// 拆分----
+		String tinshell2 = ("在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
+				+ "操作:0|行至|30;\r\n" + "操作:中药名称|颜色标记为|红色;");
+		execTest(tinshell2, NE, tinMap);
+		// 输出见末尾 第二段
+		// 关闭
+		NE.stop();
 	}
 
+	// 可以是其他的语言。initon talk， plorm， deta db etc。。
+	// osgi view init
+	// 命令需要的表格生成
+	// later//Object object =
+	// _SQ__OVQ_OSQ_VSQ.outputOut.get(S_ShellETL.SHELL_ETL_TIN_SHELL_ETL);
 	@SuppressWarnings({ "unchecked", "unused" })
 	private TinMap execTest(String tinshell, App NE, TinMap tinMap)
 			throws InterruptedException, IOException {
-		String plSearch = tinshell;// 可以是其他的语言。initon talk， plorm， deta db etc。。
-		// osgi view init
+		String plSearch = tinshell;
 		OSU_OVQ_OSQ_VSQ _SQ__OVQ_OSQ_VSQ = new OSU_OVQ_OSQ_VSQ();
-		// 命令需要的表格生成
-		// later//Object object =
-		// _SQ__OVQ_OSQ_VSQ.outputOut.get(S_ShellETL.SHELL_ETL_TIN_SHELL_ETL);
 		Object object = new TinMap();
 		// do test
 		if (null == tinMap) {
@@ -448,7 +367,52 @@ class ShellJPanelSeparationTest {
 	}
 
 }
+//第一段
+//line-->:XLS1753903322644
+//line-->:获取列名
+//line-->:success
+//line-->:0
+//line-->:进行选择
+//line-->:[ID, 打分, 中药名称, 笔记原文, 功效, 风险规避, 用法, 性味, 脉络, 中医馆药理, 
+//			经解, 崇源, 愚按, 搭配, 序号]
+//line-->:XLS1753903322644
+//line-->:true
+//line-->:获取列名
+//line-->:0
+//line-->:[{rowValue={功效={culumnValue=功专托痘疮。下乳汁。吐风痰。中风证以虾半斤。入葱姜酱料水煮
+//。先吃虾。次吃汁。以鹅翎探引吐出痰涎即愈。能壮阳道。动风发呛。...., culumnName=功效}, 中药名称=
+//{culumnValue=虾菜谱, culumnName=中药名称},打分={culumnValue=0, culumnName=打分}}},
+//{rowValue={功效={culumnValue=功专温中益气。多食热中发渴。发疮疥。一名。鱼。....,
+//culumnName=功效}, 中药名称={culumnValue=鲢鱼菜谱, culumnName=中药名称}, 打分=
+//{culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=功专补五脏。除风湿。
+//尾血疗口眼。斜。少和麝。左涂右。右。涂左。正则洗去。滴耳治耳痛。滴鼻治鼻衄。点目治痘后生翳。头治百
+//虫入耳。...., culumnName=功效}, 中药名称={culumnValue=鳝鱼菜谱, culumnName=中药名称},
+//打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=功专调胃气。....,
+//culumnName=功效}, 中药名称={culumnValue=鲂鱼菜谱, culumnName=中药名称}, 打分=
+//{culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=马铃薯生长肌肉,
+//健骨, 抗癌。., culumnName=功效}, 中药名称={culumnValue=马铃薯菜谱, culumnName=中药名称}
+//,打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=山羊蹄子增强
+//免疫, 健骨, 补元气。., culumnName=功效}, 中药名称={culumnValue=山羊蹄菜谱, culumnName
+//=中药名称}, 打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue
+//=功专暖中益气。醒酒解渴。同米粉煮羹食。调中收痔。煮食疗阳事不起。俗名泥鳅。...., culumnName=功效},
+//中药名称={culumnValue=鳅鱼菜谱, culumnName=中药名称}, 打分={culumnValue=0, culumnName
+//=打分}}}, {rowValue={功效={culumnValue=咖喱去腥开胃生津防腐杀虫提神充饥抗癌。., culumnName
+//=功效}, 中药名称={culumnValue=食物咖喱菜谱, culumnName=中药名称}, 打分={culumnValue=0
+//, culumnName=打分}}}, {rowValue={功效={culumnValue=常用于润肺护肤抗癌。.,culumnName=功效}
+//, 中药名称={culumnValue=西红柿菜谱, culumnName=中药名称}, 打分={culumnValue=0
+//, culumnName=打分}}},{rowValue={功效={culumnValue=蛋有消炎解毒, 壮阳, 补元气, 提神,
+//预防感冒。., culumnName=功效}, 中药名称={culumnValue=鸡鸭鸽子鹌鹑蛋菜谱, culumnName=中药名称
+//}, 打分={culumnValue=0, culumnName=打分}}}]
+//line-->:10
+//line-->:success
+//line-->:0
+//line-->:10
+//Action-->:selectRowsByAttributesOfGetCulumns
+//Action-->:P_ListNeedStart
+//Action-->:P_TableName
+//Action-->:selectRowsByAttributesOfCondition
 
+//第2段
 //Generated with love by TestMe :) Please report issues and submit feature
 // requests at: http://weirddev.com/forum#!/testme
 //380

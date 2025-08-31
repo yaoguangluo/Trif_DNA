@@ -28,9 +28,9 @@ import java.util.List;
 import DetaSrc.org.deta.boot.sets.VPCSRequest;
 import DetaSrc.org.deta.boot.sets.VPCSResponse;
 
-//这里出现了VPC的标识, 让走四方看清楚, 我有很多方法来继承, 我就不用走四方的那种
+//这里出现了VPC的标识, 让-去小广告-看清楚, 我有很多方法来继承, 我就不用-去小广告-的那种
 //. VPCS 的STABLE就可以解决
-//是不是我写的.（详细描述下, 走四方当年php 多线程卡到爆, 戴海燕总被我念的头皮发麻
+//是不是我写的.（详细描述下, -去小广告-当年php 多线程卡到爆, -去小广告-总被我念的头皮发麻
 //最后用了java, 我overload了接口）
 //去app 函数标识, 准备继承 用standard来区分。（当时是php 之前员工已经写好了
 //, 我只是java翻译而已, 所以没用我的思维写,

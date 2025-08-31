@@ -74,312 +74,362 @@ import java.util.concurrent.atomic.AtomicBoolean;
 // mock api 和test me api 注释：Generated with love by TestMe :)
 // Please report issues and submit feature
 // requests at: http://weirddev.com/forum#!/testme
+@SuppressWarnings({ "unchecked", "unused", "deprecation" })
 class ShellJPanelTest {
-	public static void main(String[] argv) throws InterruptedException, IOException {
-		ShellJPanelTest shellJPanelTest=new ShellJPanelTest();
+	public static void main(String[] argv)
+			throws InterruptedException, IOException {
+		ShellJPanelTest shellJPanelTest = new ShellJPanelTest();
 		shellJPanelTest.testTinshell();
 	}
-    //    @Mock
+
+	// @Mock
 //    App NE;
-    @Mock
-    LinkNode thisNodeInfo;
-    //Field jlabel_box of type JCheckBox[]
-    // - was not mocked since Mockito doesn't mock arrays
-    //Field tabNamesHook of type boolean[]
-    // - was not mocked since Mockito doesn't mock arrays
-    @Mock
-    JTextPane jTextPane;
-    //Field stringBuilder of type StringBuilder
-    // - was not mocked since Mockito doesn't mock a
-    // Final class when 'mock-maker-inline' option is not set
-    @Mock
-    JTextPane outputjTextPane;
-    @Mock
-    TinMap output;
-    @Mock
-    DetaButton jlabel_button_clear;
-    @Mock
-    DetaButton jlabel_button;
-    @Mock
-    DetaButton jlabel_init_button;
-    @Mock
-    DetaButton jlabel_debug_button;
-    @Mock
-    DetaButton jlabel_flush_button;
-    @Mock
-    App appInThisClass;
-    @Mock
-    JCheckBox jlabel_peizhi_di2515;
-    @Mock
-    Set<KeyStroke> managingFocusForwardTraversalKeys;
-    @Mock
-    Set<KeyStroke> managingFocusBackwardTraversalKeys;
-    @Mock
-    Object INPUT_VERIFIER_SOURCE_KEY;
-    @Mock
-    ComponentUI ui;
-    @Mock
-    EventListenerList listenerList;
-    @Mock
-    VetoableChangeSupport vetoableChangeSupport;
-    @Mock
-    Border border;
-    @Mock
-    InputVerifier inputVerifier;
-    @Mock
-    Component paintingChild;
-    @Mock
-    JPopupMenu popupMenu;
-    @Mock
-    AtomicBoolean revalidateRunnableScheduled;
-    @Mock
-    List<Rectangle> tempRectangles;
-    @Mock
-    InputMap focusInputMap;
-    @Mock
-    InputMap ancestorInputMap;
-    @Mock
-    ComponentInputMap windowInputMap;
-    @Mock
-    ActionMap actionMap;
-    @Mock
-    Component componentObtainingGraphicsFrom;
-    @Mock
-    Object componentObtainingGraphicsFromLock;
-    @Mock
-    Object aaHint;
-    @Mock
-    Object lcdRenderingHint;
+	@Mock
+	LinkNode thisNodeInfo;
+	// Field jlabel_box of type JCheckBox[]
+	// - was not mocked since Mockito doesn't mock arrays
+	// Field tabNamesHook of type boolean[]
+	// - was not mocked since Mockito doesn't mock arrays
+	@Mock
+	JTextPane jTextPane;
+	// Field stringBuilder of type StringBuilder
+	// - was not mocked since Mockito doesn't mock a
+	// Final class when 'mock-maker-inline' option is not set
+	@Mock
+	JTextPane outputjTextPane;
+	@Mock
+	TinMap output;
+	@Mock
+	DetaButton jlabel_button_clear;
+	@Mock
+	DetaButton jlabel_button;
+	@Mock
+	DetaButton jlabel_init_button;
+	@Mock
+	DetaButton jlabel_debug_button;
+	@Mock
+	DetaButton jlabel_flush_button;
+	@Mock
+	App appInThisClass;
+	@Mock
+	JCheckBox jlabel_peizhi_di2515;
+	@Mock
+	Set<KeyStroke> managingFocusForwardTraversalKeys;
+	@Mock
+	Set<KeyStroke> managingFocusBackwardTraversalKeys;
+	@Mock
+	Object INPUT_VERIFIER_SOURCE_KEY;
+	@Mock
+	ComponentUI ui;
+	@Mock
+	EventListenerList listenerList;
+	@Mock
+	VetoableChangeSupport vetoableChangeSupport;
+	@Mock
+	Border border;
+	@Mock
+	InputVerifier inputVerifier;
+	@Mock
+	Component paintingChild;
+	@Mock
+	JPopupMenu popupMenu;
+	@Mock
+	AtomicBoolean revalidateRunnableScheduled;
+	@Mock
+	List<Rectangle> tempRectangles;
+	@Mock
+	InputMap focusInputMap;
+	@Mock
+	InputMap ancestorInputMap;
+	@Mock
+	ComponentInputMap windowInputMap;
+	@Mock
+	ActionMap actionMap;
+	@Mock
+	Component componentObtainingGraphicsFrom;
+	@Mock
+	Object componentObtainingGraphicsFromLock;
+	@Mock
+	Object aaHint;
+	@Mock
+	Object lcdRenderingHint;
 
-    @Mock
-    List<Component> component;
-    @Mock
-    LayoutManager layoutMgr;
-    @Mock
-    FocusTraversalPolicy focusTraversalPolicy;
-    @Mock
-    Set<Thread> printingThreads;
-    @Mock
-    ContainerListener containerListener;
-    @Mock
-    Color preserveBackgroundColor;
+	@Mock
+	List<Component> component;
+	@Mock
+	LayoutManager layoutMgr;
+	@Mock
+	FocusTraversalPolicy focusTraversalPolicy;
+	@Mock
+	Set<Thread> printingThreads;
+	@Mock
+	ContainerListener containerListener;
+	@Mock
+	Color preserveBackgroundColor;
 
-    @Mock
-    Component modalComp;
-    //Field modalAppContext of type AppContext - was not mocked since Mockito
-    // doesn't mock a Final class when 'mock-maker-inline' option is not set
+	@Mock
+	Component modalComp;
+	// Field modalAppContext of type AppContext - was not mocked
+	// since Mockito
+	// doesn't mock a Final class when 'mock-maker-inline'
+	// option is not set
 
+	@Mock
+	Container parent;
+	// Field appContext of type AppContext - was not mocked
+	// since Mockito doesn't
+	// mock a Final class when 'mock-maker-inline' option is not
+	// set
+	@Mock
+	Color foreground;
+	@Mock
+	Color background;
+	@Mock
+	Font font;
+	@Mock
+	Font peerFont;
+	@Mock
+	Cursor cursor;
+	// Field locale of type Locale - was not mocked since
+	// Mockito doesn't
+	// mock a Final class when 'mock-maker-inline' option is not
+	// set
+	@Mock
+	GraphicsConfiguration graphicsConfig;
+	@Mock
+	BufferStrategy bufferStrategy;
+	@Mock
+	DropTarget dropTarget;
+	@Mock
+	Vector<PopupMenu> popups;
+	// Field focusTraversalKeys of type Set[] - was not mocked
+	// since
+	// Mockito doesn't mock arrays
+	@Mock
+	Object LOCK;
+	// Field acc of type AccessControlContext - was not mocked
+	// since
+	// Mockito doesn't mock a
+	// Final class when 'mock-maker-inline' option is not set
+	@Mock
+	Dimension minSize;
+	@Mock
+	Dimension prefSize;
+	@Mock
+	Dimension maxSize;
+	// Field componentOrientation of type ComponentOrientation -
+	// was not mocked since Mockito
+	// doesn't mock a Final class when 'mock-maker-inline'
+	// option is not set
+	@Mock
+	ComponentListener componentListener;
+	@Mock
+	FocusListener focusListener;
+	@Mock
+	HierarchyListener hierarchyListener;
+	@Mock
+	HierarchyBoundsListener hierarchyBoundsListener;
+	@Mock
+	KeyListener keyListener;
+	@Mock
+	MouseListener mouseListener;
+	@Mock
+	MouseMotionListener mouseMotionListener;
+	@Mock
+	MouseWheelListener mouseWheelListener;
+	@Mock
+	InputMethodListener inputMethodListener;
+	@Mock
+	PropertyChangeSupport changeSupport;
+	@Mock
+	Object objectLock;
+	// Field compoundShape of type Region - was not mocked since
+	// Mockito doesn't mock a
+	// Final class when 'mock-maker-inline' option is not set
+	// Field mixingCutoutRegion of type Region - was not mocked
+	// since Mockito doesn't mock
+	// a Final class when 'mock-maker-inline' option is not set
+	// Field eventCache of type EventQueueItem[] - was not
+	// mocked
+	// since Mockito doesn't mock arrays
+	@Mock
+	Map<Class<?>, Boolean> coalesceMap;
 
-    @Mock
-    Container parent;
-    //Field appContext of type AppContext - was not mocked since Mockito doesn't
-    // mock a Final class when 'mock-maker-inline' option is not set
-    @Mock
-    Color foreground;
-    @Mock
-    Color background;
-    @Mock
-    Font font;
-    @Mock
-    Font peerFont;
-    @Mock
-    Cursor cursor;
-    //Field locale of type Locale - was not mocked since Mockito doesn't
-    // mock a Final class when 'mock-maker-inline' option is not set
-    @Mock
-    GraphicsConfiguration graphicsConfig;
-    @Mock
-    BufferStrategy bufferStrategy;
-    @Mock
-    DropTarget dropTarget;
-    @Mock
-    Vector<PopupMenu> popups;
-    //Field focusTraversalKeys of type Set[] - was not mocked since
-    // Mockito doesn't mock arrays
-    @Mock
-    Object LOCK;
-    //Field acc of type AccessControlContext - was not mocked since
-    // Mockito doesn't mock a
-    // Final class when 'mock-maker-inline' option is not set
-    @Mock
-    Dimension minSize;
-    @Mock
-    Dimension prefSize;
-    @Mock
-    Dimension maxSize;
-    //Field componentOrientation of type ComponentOrientation -
-    // was not mocked since Mockito
-    // doesn't mock a Final class when 'mock-maker-inline' option is not set
-    @Mock
-    ComponentListener componentListener;
-    @Mock
-    FocusListener focusListener;
-    @Mock
-    HierarchyListener hierarchyListener;
-    @Mock
-    HierarchyBoundsListener hierarchyBoundsListener;
-    @Mock
-    KeyListener keyListener;
-    @Mock
-    MouseListener mouseListener;
-    @Mock
-    MouseMotionListener mouseMotionListener;
-    @Mock
-    MouseWheelListener mouseWheelListener;
-    @Mock
-    InputMethodListener inputMethodListener;
-    @Mock
-    PropertyChangeSupport changeSupport;
-    @Mock
-    Object objectLock;
-    //Field compoundShape of type Region - was not mocked since
-    // Mockito doesn't mock a
-    // Final class when 'mock-maker-inline' option is not set
-    //Field mixingCutoutRegion of type Region - was not mocked
-    // since Mockito doesn't mock
-    // a Final class when 'mock-maker-inline' option is not set
-    //Field eventCache of type EventQueueItem[] - was not mocked
-    // since Mockito doesn't mock arrays
-    @Mock
-    Map<Class<?>, Boolean> coalesceMap;
+	@Mock
+	AccessibleContext accessibleContext;
+	@InjectMocks
+	ShellJPanel shellJPanel;
 
-    @Mock
-    AccessibleContext accessibleContext;
-    @InjectMocks
-    ShellJPanel shellJPanel;
+	@BeforeEach
+	void setUp() {
+		MockitoAnnotations.initMocks(this);
+	}
 
-    @BeforeEach
-    void setUp() {
-        MockitoAnnotations.initMocks(this);
-    }
-
-    @SuppressWarnings("unused")
+	@SuppressWarnings("unused")
 	@Test
-    void testGetStringFromStringBuilder() {
-        String result = shellJPanel.getStringFromStringBuilder();
-        //mock trif Assertions.assertEquals("replaceMeWithExpectedResult", result);
-    }
+	void testGetStringFromStringBuilder() {
+		String result = shellJPanel.getStringFromStringBuilder();
+		// mock trif
+		// Assertions.assertEquals("replaceMeWithExpectedResult",
+		// result);
+	}
 
-    /*
-     * 这是一个 tinshell 批处理测试 执行复杂条件搜索逻辑， 测试main函数demo的test版本，在导入
-     * 了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可
-     * 出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看
-     * 数据，也可以用println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，
-     * 本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
-     * --罗瑶光
-     * */
-    @SuppressWarnings({ "deprecation", "unchecked", "unused" })
+	/*
+	 * 这是一个 tinshell 批处理测试 执行复杂条件搜索逻辑， 测试main函数demo的test版本，在导入
+	 * 了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可
+	 * 出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看
+	 * 数据，也可以用println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，
+	 * 本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。 --罗瑶光
+	 */
+	// -1
+	// 启动测试开始
+	// 配置系统支持
+	// 临时设置用，之后结构优化后进行去除。
+	// 配置组件支持
+	// 配置环境支持
+	App_X initTinshellEnvironment() throws IOException, InterruptedException {
+		App_X NE = new App_X();
+		NE.tempString = "去弹窗组件流测试";
+		NE.init(NE);
+		DetaThread.sleepDeta(100);
+		NE.start();
+		while (null == NE.app_S.studyVerbaMap) {
+			Thread.sleep(500);
+		}
+		return NE;
+	}
+
+	// -2
+	// 配置读XLS的表头配置
+	// 开始模拟读xls的函数逻辑测试
+	// 临时设置用，之后结构优化后进行去除。
+	// 确定测试文件名为药食同源的表文件，tinshell函数执行这个表的操作计算。
+	String initSourceXLSEnvironment(App_X NE, String filePathXLSX)
+			throws InterruptedException {
+		NE.app_S.appConfig.SectionJPanel.xlsWithSpec.setSelected(true);
+		if (null == NE.app_S._A) {
+			return "NULL";
+		} // later normalization
+		MakeContainerXLS makeContainerXLS = new MakeContainerXLS(NE.app_S._A,
+				NE.app_S, NE.app_S.jTabbedpane, NE.app_S.tabNames,
+				NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn,
+				NE.app_S.fMHMMListOneTime_E_X_S.posEnToEn,
+				NE.app_S.fMHMMListOneTime_E_X_S.enToCn,
+				NE.app_S.fMHMMListOneTime_E_X_S.fullCnToEn, "xls",
+				NE.app_S.emotionSample, NE.app_S.ratioMap_E,
+				NE.app_S.sensingTest, NE);
+		NE._I_U.tempString = filePathXLSX;
+		makeContainerXLS.start();
+		while (null == makeContainerXLS.jpanelSecond) {
+			Thread.sleep(100);
+		}
+		while (null == makeContainerXLS.jpanelSecond.pageName) {
+			Thread.sleep(100);
+		}
+		NE.app_S.makeContainerXLSList.add(makeContainerXLS);
+		if (makeContainerXLS.tabNames.size() < 1) {
+			System.out.println("error read table");
+			NE.stop();
+			return "NULL";
+		}
+		String XLSTableName = makeContainerXLS.jpanelSecond.pageName;
+		String XLSTableNamePath = makeContainerXLS.jpanelSecond.xlsFilePath;
+		System.out.println("path table:" + XLSTableName);
+		System.out.println("name table:" + XLSTableNamePath);
+		return XLSTableName;
+	}
+
+	// -3
+	// init test
+	// 准备测试命令，sonar覆盖率30%，提高覆盖率方式，我的DNA元基催化与肽计算中
+	// 所有的命令都按下面方式模拟一遍就可以100%。
+	// 我做的是模拟loader runner 批处理，不是sonar体系逻辑。我写测试是满足我
+	// 罗瑶光的欲望，我的欲望不会告诉大家。大家要sonar，
+	// 去100%填满mock所有单元函数即可。
+	// 可以是其他的语言。initon talk， plorm， deta db
+	TinMap execShell(App_X NE, String tinshellInput)
+			throws InterruptedException, IOException {
+		String plSearch = tinshellInput;
+		// etc。。
+		// osgi view init
+		OSU_OVQ_OSQ_VSQ _SQ__OVQ_OSQ_VSQ = new OSU_OVQ_OSQ_VSQ();
+		// 命令需要的表格生成
+		// later//Object object = _SQ__OVQ_OSQ_VSQ.outputOut.get(
+		// S_ShellETL.SHELL_ETL_TIN_SHELL_ETL);
+		Object object = new TinMap();
+		// do test
+		TinMap tinMap = (TinMap) object;
+		output = E_pl_XA_E.E_pl_XA(plSearch.replace("\r\n", ""), false, tinMap,
+				NE);// later
+		return output;
+
+	}
+
 	@Test
-    void testTinshell() throws InterruptedException, IOException {
-        //test without mock api
-        System.out.println("test without mock api -- tinshell 批处理测试 执行复杂条件搜索逻辑" +
-            "--我本地苹果mac上已经调通可运行。" + "方便我之后的各类型测试");
-        //启动测试开始
-        //配置系统支持
-        App_X NE = new App_X();
-        //临时设置用，之后结构优化后进行去除。
-        NE.tempString = "去弹窗组件流测试";
-        //配置组件支持
-        NE.init(NE);
-        DetaThread.sleepDeta(100);
-        NE.start();
-        //配置环境支持
-        while (null == NE.app_S.studyVerbaMap) {
-            Thread.sleep(500);
-        }
-        //配置读XLS的表头配置
-        NE.app_S.appConfig.SectionJPanel.xlsWithSpec.setSelected(true);
-        //开始模拟读xls的函数逻辑测试
-        try {
-            if (null == NE.app_S._A) {
-                return;
-            }//later normalization
-            MakeContainerXLS makeContainerXLS = new MakeContainerXLS(NE.app_S._A
-                , NE.app_S, NE.app_S.jTabbedpane, NE.app_S.tabNames
-                , NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn
-                , NE.app_S.fMHMMListOneTime_E_X_S.posEnToEn
-                , NE.app_S.fMHMMListOneTime_E_X_S.enToCn
-                , NE.app_S.fMHMMListOneTime_E_X_S.fullCnToEn, "xls"
-                , NE.app_S.emotionSample, NE.app_S.ratioMap_E, NE.app_S.sensingTest, NE
-            );
-            //临时设置用，之后结构优化后进行去除。
-            //确定测试文件名为药食同源的表文件，tinshell函数执行这个表的操作计算。
-            NE._I_U.tempString
-                = "/Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/" +
-                "project/TinOS/DetaResources/books/xlsx/zybgPage.xlsx";
-            makeContainerXLS.start();
-            while (null == makeContainerXLS.jpanelSecond) {
-                Thread.sleep(100);
-            }
-            while (null == makeContainerXLS.jpanelSecond.pageName) {
-                Thread.sleep(100);
-            }
-            NE.app_S.makeContainerXLSList.add(makeContainerXLS);
-            if (makeContainerXLS.tabNames.size() < 1) {
-                System.out.println("error read table");
-                NE.stop();
-                return;
-            }
-            String XLSTableName = makeContainerXLS.jpanelSecond.pageName;
-            String XLSTableNamePath = makeContainerXLS.jpanelSecond.xlsFilePath;
-            System.out.println("path table:" + XLSTableName);
-            System.out.println("name table:" + XLSTableNamePath);
-            //init test
-            //准备测试命令，sonar覆盖率30%，提高覆盖率方式，我的DNA元基催化与肽计算中
-            // 所有的命令都按下面方式模拟一遍就可以100%。
-            //我做的是模拟loader runner 批处理，不是sonar体系逻辑。我写测试是满足我
-            // 罗瑶光的欲望，我的欲望不会告诉大家。大家要sonar，
-            // 去100%填满mock所有单元函数即可。
-            String tinshell = ("首先获取一个表，名字是" + XLSTableName
-                + "，如果有这个表，准备下一步选择;\r\n" +
-                "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n" +
-                "条件为:和:中药名称|包含|菜谱;\r\n" +
-                "条件为:和:风险规避|不包含|孕;\r\n" +
-                "条件为:和:性味|不包含|凉;\r\n" +
-                "条件为:和:性味|不包含|咸;\r\n" +
-                "获取列名:中药名称:打分:功效;\r\n" +
-                "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" +
-                "操作:0|行至|30;\r\n" +
-                "操作:中药名称|颜色标记为|红色;");
-            String plSearch = tinshell;//可以是其他的语言。initon talk， plorm， deta db etc。。
-            //osgi view init
-            OSU_OVQ_OSQ_VSQ _SQ__OVQ_OSQ_VSQ = new OSU_OVQ_OSQ_VSQ();
-            //命令需要的表格生成
-            //later//Object object = _SQ__OVQ_OSQ_VSQ.outputOut.get(
-            // S_ShellETL.SHELL_ETL_TIN_SHELL_ETL);
-            Object object = new TinMap();
-            //do test
-            TinMap tinMap = (TinMap) object;
-            output = E_pl_XA_E.E_pl_XA(plSearch.replace("\r\n", ""), false
-                , tinMap, NE);//later
-            //print answer
-            //打印执行后的输出表格
-            if (null == output) {
-                return;
-            }
-            Iterator<String> iterator = output.keySet().iterator();
-            //输出
-            while (iterator.hasNext()) {
-                String string = iterator.next();
-                NE.app_S.appConfig.SectionJPanel.jTextPane
-                    .setText(output.get(string).toString());
-                System.out.println("line-->:" + output.get(string).toString());
-                //stringBuilder.append("/r/n" + output.get(string).toString());
-            }
-            //DNA序列记忆标注
-            if (null != NE.app_S.helpVerbaMap.didJustNow) {
-                Iterator<String> iterators = NE.app_S.helpVerbaMap
-                    .didJustNow.keySet().iterator();
-                while (iterators.hasNext()) {
-                    System.out.println("Action-->:" + iterators.next());
-                }
-            }
-            //关闭
-            NE.stop();
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        }
-    }
+	void testTinshell() throws InterruptedException, IOException {
+		try {
+			// test without mock api
+			System.out.println(
+					"test without mock api -- tinshell 批处理测试 执行复杂条件搜索逻辑"
+							+ "--我本地苹果mac上已经调通可运行。" + "方便我之后的各类型测试");
+			// -1
+			// 启动测试开始
+			// 配置系统支持
+			// 临时设置用，之后结构优化后进行去除。
+			// 配置组件支持
+			// 配置环境支持
+			App_X NE = initTinshellEnvironment();
+			// -2
+			// 配置读XLS的表头配置
+			// 开始模拟读xls的函数逻辑测试
+			// 临时设置用，之后结构优化后进行去除。
+			// 确定测试文件名为药食同源的表文件，tinshell函数执行这个表的操作计算。
+			String filePathXLSX = "/Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/"
+					+ "project/TinOS/DetaResources/books/xlsx/zybgPage.xlsx";
+			String XLSTableName = initSourceXLSEnvironment(NE, filePathXLSX);
+			// -3
+			// init test
+			// 准备测试命令，sonar覆盖率30%，提高覆盖率方式，我的DNA元基催化与肽计算中
+			// 所有的命令都按下面方式模拟一遍就可以100%。
+			// 我做的是模拟loader runner 批处理，不是sonar体系逻辑。我写测试是满足我
+			// 罗瑶光的欲望，我的欲望不会告诉大家。大家要sonar，
+			// 去100%填满mock所有单元函数即可。
+			// 可以是其他的语言。initon talk， plorm， deta db
+			String tinshellInput = ("首先获取一个表，名字是" + XLSTableName
+					+ "，如果有这个表，准备下一步选择;\r\n" + "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n"
+					+ "条件为:和:中药名称|包含|菜谱;\r\n" + "条件为:和:风险规避|不包含|孕;\r\n"
+					+ "条件为:和:性味|不包含|凉;\r\n" + "条件为:和:性味|不包含|咸;\r\n"
+					+ "获取列名:中药名称:打分:功效;\r\n"
+					+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" 
+					+ "操作:0|行至|30;\r\n"+ "操作:中药名称|颜色标记为|红色;");
+			output = execShell(NE, tinshellInput);
+			// print answer
+			// 打印执行后的输出表格
+			if (null == output) {
+				return;
+			}
+			Iterator<String> iterator = output.keySet().iterator();
+			// 输出
+			while (iterator.hasNext()) {
+				String string = iterator.next();
+				NE.app_S.appConfig.SectionJPanel.jTextPane
+						.setText(output.get(string).toString());
+				System.out.println("line-->:" + output.get(string).toString());
+			}
+			// DNA序列记忆标注
+			if (null != NE.app_S.helpVerbaMap.didJustNow) {
+				Iterator<String> iterators = NE.app_S.helpVerbaMap.didJustNow
+						.keySet().iterator();
+				while (iterators.hasNext()) {
+					System.out.println("Action-->:" + iterators.next());
+				}
+			}
+			// 关闭
+			NE.stop();
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+	}
 
 }
 

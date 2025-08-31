@@ -44,9 +44,9 @@ public class AppFilter_X_IV_ extends ScrollPane {
 	// 把德塔jingDuSouSuo的函数进行函数片段化去重,
 	// 罗瑶光 202110121
 	// 当年离开英特尔天天被人盯着 大家很想知道我在英特尔见了什么本事, 惊讶了我
-	// 我只想说, 米尔其实除了给我展示最简单的IDEA 写java外, 仅做了一件事就是要我把temp改成别的词语。
-	// 叫我单词写长点, 和纠正我一次英语口语发音。仅此而已, 好比少林寺也是 大企业,
-	// 里面40年的扫地僧不也就扫个地, 罗汉堂首席也就敲50年木鱼, 世人轻狂, 总以为有绝学。。不愿坚持, 所以平庸。
+	// 我只想说, -去小广告-其实除了给我展示最简单的IDEA 写java外, 仅做了一件事就是要我把temp改成别的词语。
+	// 叫我单词写长点, 和纠正我一次英语口语发音。仅此而已, 好比-去小广告-也是 大企业,
+	// 里面40年的-去小广告-不也就扫个地, -去小广告-首席也就敲50年-去小广告-, 世人轻狂, 总以为有绝学。。不愿坚持, 所以平庸。
 	@SuppressWarnings("unchecked")
 	public void IV_(JTextField name, JTextField 性味, JTextField 归经) {
 		S_File.DNA_PDN.put(this.getClass().getCanonicalName(), true);
