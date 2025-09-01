@@ -55,8 +55,7 @@ public class DemoPOSTest {
 				+ "，一个事物，如果有价值，就应该像教材一样在真实的环境中不断地实践测试和"
 				+ "论证，能经得起所有人长年累月地不断地挑剔的东西，才是货真价实的，罗瑶光"
 				+ "的个人著作权作品都是互联网，大数据产业领域基础作品，2018年后，在60余互"
-				+ "联网app上发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同" 
-				+ "时对垄断的产业有约束性。";
+				+ "联网app上发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同" + "时对垄断的产业有约束性。";
 		// DemoEX demoEX=new DemoEX();
 		StringBuilder sb = new StringBuilder(ss);
 		// 分词
@@ -110,6 +109,8 @@ public class DemoPOSTest {
 									wordPOS = "形谓词作副词";
 								} else if (wordNextPOS.contains("名词")) {
 									wordPOS = "形谓词作形容词";
+								} else {
+									wordPOS = "形谓词通用";// -trif later
 								}
 							}
 						}
@@ -134,8 +135,8 @@ public class DemoPOSTest {
 						if (verb.containsKey(word)) {
 							wordFrequency = verb.get(word);
 							double f = wordFrequency.get_frequency();
-							wordFrequency.I_frequency(f + 1);// 2
-															 // 词频归纳
+							wordFrequency.I_frequency(f + 1);
+							// 2 // 词频归纳
 						} else {
 							wordFrequency = new WordFrequency(1, word);
 						}
@@ -174,6 +175,9 @@ public class DemoPOSTest {
 									wordFrequency.I_pos("形谓词作副词");
 								} else if (wordNextPOS.contains("名词")) {
 									wordFrequency.I_pos("形谓词作形容词");
+								} else {
+									wordPOS = "形谓词通用";// -trif later
+									wordFrequency.I_pos(wordPOS);
 								}
 							} else {
 								wordFrequency.I_pos("形谓词作形容词");
@@ -217,6 +221,9 @@ public class DemoPOSTest {
 									wordFrequency.I_pos("形谓词作副词");
 								} else if (wordNextPOS.contains("名词")) {
 									wordFrequency.I_pos("形谓词作形容词");
+								} else {
+									wordPOS = "形谓词通用";// -trif later
+									wordFrequency.I_pos(wordPOS);
 								}
 							} else {
 								wordFrequency.I_pos("形谓词作副词");

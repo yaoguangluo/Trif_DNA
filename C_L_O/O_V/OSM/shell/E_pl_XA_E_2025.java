@@ -386,7 +386,8 @@ public class E_pl_XA_E_2025 {
 		// （表 表格-单-库，矩阵，文-档-件，对象）
 		// （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
 		// work domain out later.*/
-		NE.app_S.workVerbaMap.setHumanTalk(command, NE);
+		//NE.app_S.workVerbaMap.setHumanTalk(command, NE);
+		NE.app_S.workVerbaMap.setHumanTalkAfterNewBusinessTest(command, NE);
 		Boolean findSubject = NE.app_S.workVerbaMap.findSubject(NE);
 		return NE.app_S.workVerbaMap.returnBestTypeOfCommands(findSubject);
 	}

@@ -8,6 +8,7 @@ import S_A.SixActionMap.FlowerAction;
 import U_V.ESU.list.List_ESU_X_stringlistToStringArray;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -44,16 +45,20 @@ public class E_pl_XA_E {
 		NE._I_U.acknowledge = null;
 		String[] acknowledgeSwap = null;
 		for (String command : commands) {
+			HashMap<String, Integer> scores = new HashMap<>();
 			NE._I_U.commandAcknowledge = command;
 			// -1 计算逻辑关系根据不同的环境会有不同的组合，最优关系是频率出来的，不是关键字分析出来的。
-			//    所以动态化计算是趋势。
+			// 所以动态化计算是趋势。
 			String commandSwap = doHumanTalkSwap(command, NE);
-			List<String> commandLists = DoSplit.splitRegex(command, ":", "\\","\\");
-			//ESU_X swap系列 稍后并到测试文件中 -trif
-			NE._I_U.acknowledge = List_ESU_X_stringlistToStringArray._E(commandLists);
-			if (null != commandSwap) {//splitRegex稍后并到测试文件中 -trif
+			List<String> commandLists = DoSplit.splitRegex(command, ":", "\\",
+					"\\");
+			// ESU_X swap系列 稍后并到测试文件中 -trif
+			NE._I_U.acknowledge = List_ESU_X_stringlistToStringArray
+					._E(commandLists);
+			if (null != commandSwap) {// splitRegex稍后并到测试文件中 -trif
 				commandLists = DoSplit.splitRegex(commandSwap, ":", "\\", "\\");
-				acknowledgeSwap = List_ESU_X_stringlistToStringArray._E(commandLists);
+				acknowledgeSwap = List_ESU_X_stringlistToStringArray
+						._E(commandLists);
 				System.out.println(commandSwap);
 				doAcknowledgeSwap(acknowledgeSwap, command, NE);
 				// later // duplications
@@ -68,10 +73,9 @@ public class E_pl_XA_E {
 				String[] strings = string.split("_");
 				if (null != strings[0]) {
 					/* loop s later */
-					FlowerAction.FlowerSixDomainActions
-							.couldDoThenDo(strings[0], temp, output, NE);// later
-																		 // in
-																		 // pdn
+					FlowerAction.FlowerSixDomainActions.couldDoThenDo(
+							strings[0], temp, output, NE, scores);
+					// later // in // pdn
 				}
 			}
 			// -3
@@ -83,7 +87,7 @@ public class E_pl_XA_E {
 			NE.app_S.workVerbaMap.unknown_map.clear();
 			/* loop s later */
 			FlowerAction.FlowerSixDomainActions.couldDoThenDo(temp[0], temp,
-					output, NE);// later in pdn
+					output, NE, scores);// later in pdn
 			// */
 			if (temp[0].equals("获取临时表名")) {
 				// 稍后写入 元基花
@@ -134,6 +138,18 @@ public class E_pl_XA_E {
 		return false;
 	}
 
+	/*
+	 * 现在出现了一个问题，我的PLSEARCH系统是针对我的已经有的函数进行语言驱动，
+	 * 这种驱动计算方式是更好的辅助我已经有的函数进行序列可控操作。如果不断地增加
+	 * 新的函数，和扩展系统的使用方式，那么遇到的问题根据这种逻辑便会指数增加，于是我
+	 * 停止了下脚步，我在思考，一种不需要辅助也能计算出有用结果的通用类逻辑，在最恶劣
+	 * 的环境里，只需要加入某种精度组合就能覆盖所有条件搭配的逻辑，目前我找到了很多 方法，1 -
+	 * 明确动词的指令集，因为人类的动词不但数量少还有限，又精确。非常方便 第一步索引先。2 -
+	 * 单句分解指令集，因为单句是一个完整逻辑句，方便以后各类歧义 句型 复句句型 首先转换为单句再执行即可。3 -
+	 * 最大的价值在 1 和 2 可以直接元基 索引 IDUQ 分类即可。方便我的花语系统加速。 如 六元 -
+	 * StudyVerbaMap
+	 * 
+	 */
 	private static void doAcknowledgeSwap(String[] acknowledgeSwap,
 			String command, App NE) {
 		// null 将 授权 选择 进行 执行 数据 智慧 逻辑 操作 :null数据 矩阵 对象 表格 表
@@ -178,7 +194,8 @@ public class E_pl_XA_E {
 		// （表 表格-单-库，矩阵，文-档-件，对象）
 		// （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
 		// work domain out later.*/
-		NE.app_S.workVerbaMap.setHumanTalk(command, NE);
+		// NE.app_S.workVerbaMap.setHumanTalk(command, NE);
+		NE.app_S.workVerbaMap.setHumanTalkAfterNewBusinessTest(command, NE);
 		Boolean findSubject = NE.app_S.workVerbaMap.findSubject(NE);
 		return NE.app_S.workVerbaMap.returnBestTypeOfCommands(findSubject);
 	}

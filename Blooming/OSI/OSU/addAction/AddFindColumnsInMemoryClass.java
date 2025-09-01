@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
+ * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
  * （lyg.tin@gmail.com2018年后因G网屏蔽不再使用）
  ** 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋别墅
+ *  208号 阳光家园别墅小区 第十栋别墅
  * */
 //稍后封装成一个统一的傻瓜接口。
 public class AddFindColumnsInMemoryClass implements CrabInterface {
@@ -92,9 +92,7 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	// StaticRootMap.chromosomeNode.put("crab", null);
 	// StaticRootMap.chromosomePDE.put("crab", null);
 	public void neroCells() {
-	}
-
-	;
+	};
 
 	/*
 	 * 用于表达执行主体
@@ -105,10 +103,15 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	// System.out.println("Hello Word!");
 	// return null;
 	@SuppressWarnings({ "unchecked", "rawtypes" })
+	/*
+	 * 因为之后的map会进行精度打分来确定是否要走这个函数，所以下面这种不断细化添加判断条件的这种
+	 * 逻辑片段会全部剔除。也因为下面这类片段的条件精确度非常高，以后下面这种逻辑只会出现在特殊情
+	 * 况下。 以后 + -的精确词性搭配语法不会出现 -N 和 N- 类型，这种思维可以将错误锁定在词汇的
+	 * 词性的校准逻辑层面，保持算法的BPM结构模块相对稳定性。 --罗瑶光
+	 */
 	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
-		if (NE.app_S.workVerbaMap.cartesianWorkActionsRights.containsKey("名为-列")
-				|| NE.app_S.workVerbaMap.cartesianWorkActionsRights
-						.containsKey("列-名为")) {
+		if (NE.app_S.workVerbaMap.cartesianWorkActionsRights
+				.containsKey("名为-")) {
 			System.out.printf("highly fit"); // later in mapping iterator.*/
 		}
 		System.out.println("Hello Word!");

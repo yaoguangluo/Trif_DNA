@@ -13,6 +13,7 @@ import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -146,6 +147,7 @@ public class IMV_SIQ extends ConcurrentHashMap {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	public void couldSQLThenSQL(String key, String[] strings, TinMap output,
 			App NE) throws InterruptedException, IOException {// 7代花再缩减 flex
 		for (String actionKey : (Iterable<String>) FlowerAction.FlowerP_E_KernelActions
@@ -175,19 +177,80 @@ public class IMV_SIQ extends ConcurrentHashMap {
 		}
 		return new IMV_SIQ();// avoid null;
 	}
-	// later for char
 
 	// later for char
+	@SuppressWarnings("unchecked")
 	public void couldDoThenDo(String key, String[] strings, TinMap output,
-			App NE) throws InterruptedException, IOException {// 7代花再缩减 flex
+			App NE, HashMap<String, Integer> scores)
+			throws InterruptedException, IOException {// 7代花再缩减 flex
 		Iterator<String> iterators = FlowerAction.FlowerSixDomainActions
 				.keySet().iterator();
 		while (iterators.hasNext()) {
 			String actionKey = iterators.next();
+			/*
+			 * 思考，stringsKey因为被加工处理，单字被过滤了，那么需要中条件算法来辅助判断
+			 * 判断的方法有很多，通用的方法打分匹配来确定相似度。然后多个相似度 词组进行
+			 * 累积总分触发因为我要挑战我自己，所以不能用普通的逻辑来优化。 地球一直很美好
+			 * ，大家更应该要学会长大。 --罗瑶光
+			 */
 			if (key.contains(actionKey)) {// later separate.
+				/* 精确匹配就直接触发 */
 				String temp = FlowerAction.FlowerSixDomainActions
 						.getString(actionKey);
 				FlowerAction.doAction(temp, strings, output, NE);
+			} else {
+				// -1 名动逻辑
+				String[] stringsKey = key.split("-");
+				String[] stringsAction = actionKey.split("-");
+				/* 相似匹配就直接累积触发 */
+				marchScore(stringsKey, stringsAction, actionKey, scores,
+						strings, output, NE);
+				// -2 动名逻辑
+				stringsKey = key.split("\\+");
+				stringsAction = actionKey.split("\\+");
+				marchScore(stringsKey, stringsAction, actionKey, scores,
+						strings, output, NE);
+
+				// todo 。。
+			}
+		}
+	}
+
+	public void marchScore(String[] stringsKey, String[] stringsAction,
+			String actionKey, HashMap<String, Integer> scores, String[] strings,
+			TinMap output, App NE) throws InterruptedException, IOException {
+		if (stringsKey.length > 1 && stringsAction.length > 1) {
+			if (stringsKey[0].contains(stringsAction[0])
+					&& stringsKey[1].contains(stringsAction[1])) {
+				String temp = FlowerAction.FlowerSixDomainActions
+						.getString(actionKey);
+				if (scores.containsKey(temp)) {
+					int score = scores.get(temp);
+					if (0 == score) {
+						return;
+					}
+					score++;
+					/*
+					 * //- trif 谨慎使用这种逻辑，罗瑶光个人建议进行意识维度分层。
+					 * 避免混淆结果。之后提取出去成为入参精度。可自主调节。
+					 */
+					int scale = 1;
+					if (score > scale) {
+						FlowerAction.doAction(temp, strings, output, NE);
+						scores.put(temp, 0);
+					}
+					scores.put(temp, score);
+				} else {
+					scores.put(temp, 1);
+					/*
+					 * 有些只做一次的驱动可以另外分类进行算法描述 最简单的实例是map
+					 * 对不同的action + 触发精度分数规则，
+					 * later -trif
+					 */
+					FlowerAction.doAction(temp, strings, output, NE);
+					// Todo -trif
+				}
+
 			}
 		}
 	}

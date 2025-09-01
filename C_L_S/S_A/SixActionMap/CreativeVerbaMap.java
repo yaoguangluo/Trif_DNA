@@ -24,7 +24,7 @@ public class CreativeVerbaMap {
     @SuppressWarnings("unchecked")
 	public static void initInitonActions() {
         //非OSGI模式注册花语言，其他见我著作权的CrabInterfaceClass。
-        FlowerAction.FlowerSixDomainActions.put("I-表", "findTableInMemory");
+        FlowerAction.FlowerSixDomainActions.put("I+表", "findTableInMemory");
         //注册花函数
         AddActionInterfaceClass addActionInterfaceClass = new AddActionInterfaceClass();
         String callFunctionKey = "findTableInMemory";
@@ -71,7 +71,7 @@ public class CreativeVerbaMap {
         StaticRootMap.chromosomeBlooming.put(callFunctionKeyAddParserMixedStringToListClass, addParserMixedStringToListClass);
 
         //VI-列 later
-        FlowerAction.FlowerSixDomainActions.put("展示-列", "addFindColumnsInMemoryClass");
+        FlowerAction.FlowerSixDomainActions.put("展示+列", "addFindColumnsInMemoryClass");
         //注册花函数
         AddFindColumnsInMemoryClass addFindColumnsInMemoryClass = new AddFindColumnsInMemoryClass();
         String callFunctionKeyAddFindColumnsInMemoryClass = "addFindColumnsInMemoryClass";

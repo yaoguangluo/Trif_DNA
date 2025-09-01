@@ -69,6 +69,12 @@ public class WorkVerbaMap_X_S {
 
 	// 为什么现在不设计成implements接口，因为目前没有明确六元函数定义域规范，
 	// 以后批量计算模型会CE按XCDX分解来做计算加速。
+	/*
+	 * 之前做了商业测试文件，里面有优化校准副词的函数逻辑，那么既然测试写了就要用到，
+	 * 于是我的思维是那就直接用阿，于是就把测试函数 new出来然后将Noun和VERB取代 
+	 * 这里的nounInText和verbInText，准确率就提高了很多，并不代表结果会更精确，
+	 * 所以替代后要将所有流程都校准一遍。 --罗瑶光
+	 */
 	void initEnvironment() {
 		subjectName = null;
 		doName = null;

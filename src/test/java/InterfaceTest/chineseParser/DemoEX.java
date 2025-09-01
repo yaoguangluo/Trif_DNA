@@ -66,7 +66,8 @@ public class DemoEX {
 		}
 		System.out.println("-展示词性-注意副词库表问题，形容词副词表里面的词汇"
 				+ "不是罗瑶光研发设计的--具体见DemoPOSTest函数的修正方法");
-		new DemoPOSTest().testPOS(sets, pos);
+		DemoPOSTest demoPOSTest = new DemoPOSTest();
+		demoPOSTest.testPOS(sets, pos);
 		//
 		System.out.println("-展示词频统计-");
 		IMV_SIQ_S_ fwa = commonTestInition.NE.app_S._A
