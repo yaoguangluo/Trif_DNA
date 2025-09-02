@@ -42,7 +42,7 @@ public interface S_Annotation {
 	public static final String DOC_CREATE= "在当前文件夹下创建一个档案名";
 	public static final String DOC_EXIST= "文档已经存在。";
 	public static final String MARK_QUESTION= "？";
-	public static final String hot= "红赤汗烧闷倦";
+	public static final String hot= "红赤汗烧闷倦"; //refer 下面七情五味辩证80字来自罗荣武先生口述。
 	public static final String feng= "眩麻愁绪瘙痒震颤";
 	public static final String han= "白冷清卷缩";
 	public static final String shi= "困倦粘滞肿澨泄重";

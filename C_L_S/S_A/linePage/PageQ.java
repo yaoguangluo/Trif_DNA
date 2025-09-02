@@ -53,7 +53,8 @@ public class PageQ extends PageQ_E {
         max = input;
     }
 
-    public void addDataToTail(float[] inputs, App NE) {
+    @SuppressWarnings("unused")
+	public void addDataToTail(float[] inputs, App NE) {
         if (!NE.app_S.isRecoding) {
             return;
         }

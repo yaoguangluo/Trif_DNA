@@ -41,7 +41,8 @@ public class TransactionDelegate {
 						+ URLEncoder.encode(uPassword));
 		// 锟皆猴拷写锟饺讹拷锟竭硷拷锟斤拷锟斤拷锟斤拷uPassWDEnsure锟斤拷
 		// "&uEmailEnsure=" + URLEncoder.encode(uEmailEnsure)
-		// 锟斤拷锟斤拷锟斤拷业锟斤拷耍锟斤拷锟斤拷撕锟絜clipse锟侥坑ｏ拷锟斤拷锟斤拷锟侥硷拷锟斤拷筒锟斤拷锟斤拷远锟絩efresh锟斤拷要锟街讹拷锟斤拷锟斤拷锟斤拷锟斤拷锟絝ront
+		// 锟斤拷锟斤拷锟斤拷业锟斤拷耍锟斤拷锟斤拷撕锟絜clipse锟侥坑ｏ拷锟斤拷锟斤拷锟侥
+		//硷拷锟斤拷筒锟斤拷锟斤拷远锟絩efresh锟斤拷要锟街讹拷锟斤拷锟斤拷锟斤拷锟斤拷锟絝ront
 		// end锟斤拷前锟斤拷锟斤拷目锟斤拷锟叫很讹拷锟斤拷站锟斤拷图片锟斤拷
 		// + "&uPassWDEnsure=" + URLEncoder.encode(uPassWDEnsure)
 		// + "&uAddress=" + URLEncoder.encode(uAddress)

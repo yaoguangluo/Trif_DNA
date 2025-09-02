@@ -41,6 +41,7 @@ import java.util.Map;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("unchecked")
 public interface S_MapsInitons{
 	public static final Map<String, String> initonsMap= new IMV_SIQ();
 	public static final Map<String, Integer> numberSet= new IMV_SIQ();

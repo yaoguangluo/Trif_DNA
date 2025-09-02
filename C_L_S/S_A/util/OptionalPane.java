@@ -42,6 +42,7 @@ import java.util.ArrayList;
 /*
  * 4 在录制音频的函数里添加1024的横幅数据， 每100个数据组一页，存入100页限长list。
  * */
+@SuppressWarnings("serial")
 public class OptionalPane extends JPanel {
     //这个；逻辑无争议。
     public ArrayList<int[]> stackDataX = new ArrayList<>();
@@ -51,19 +52,19 @@ public class OptionalPane extends JPanel {
     public void paintNews(Graphics g, int[] inputs, int lastV) {
         //添加录音数据
         stackDataX.add(inputs);
-//        //draw in tail panel
-//        /*
-//         * 图片帧画图
-//         * 数据帧校准
-//         * 横幅滑动观测模式
-//         * 读取数据帧，计算图片帧，
-//         * */
+        ////draw in tail panel
+        ///*
+        //* 图片帧画图
+        //* 数据帧校准
+        //* 横幅滑动观测模式
+        //* 读取数据帧，计算图片帧，
+        //* */
         g.setColor(new Color(110, 110, 110));
         int inputsLength = inputs.length;
         int x = locationX;
         //draw connect
         g.drawLine(x, lastV, x + 1, inputs[0]);
-//        //draw loop
+        ////draw loop
         int y = 0;
         for (x = locationX + 1, y = 0; y < inputsLength - 1; x++, y++) {
             g.drawLine(x, inputs[y], x + 1, inputs[y + 1]);

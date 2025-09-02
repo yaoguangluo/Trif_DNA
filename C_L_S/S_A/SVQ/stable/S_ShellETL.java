@@ -56,5 +56,6 @@ public class S_ShellETL{
 	public static final String SHELL_ETL_COMDOT= ", ";
 	public static final String SHELL_ETL_NOT_IN= "!in";
 	
+	@SuppressWarnings("unchecked")
 	public static Map<String, String> storeValue= new IMV_SIQ();
 }

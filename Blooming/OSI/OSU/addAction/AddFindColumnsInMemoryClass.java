@@ -105,8 +105,8 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	/*
 	 * 因为之后的map会进行精度打分来确定是否要走这个函数，所以下面这种不断细化添加判断条件的这种
-	 * 逻辑片段会全部剔除。也因为下面这类片段的条件精确度非常高，以后下面这种逻辑只会出现在特殊情
-	 * 况下。 以后 + -的精确词性搭配语法不会出现 -N 和 N- 类型，这种思维可以将错误锁定在词汇的
+	 * 逻辑片段会全部剔除。也因为下面这类片段的条件精确度非常高，以后下面这种逻辑只会出现在特殊情 况下。 以后 +
+	 * -的精确词性搭配语法不会出现 -N 和 N- 类型，这种思维可以将错误锁定在词汇的
 	 * 词性的校准逻辑层面，保持算法的BPM结构模块相对稳定性。 --罗瑶光
 	 */
 	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {

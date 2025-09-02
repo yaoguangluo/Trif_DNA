@@ -27,6 +27,7 @@ import java.util.ArrayList;
  * 5 显示比例波形的记录时的最大与最小值
  * 6 支持记录波形的切换波特率
  * */
+@SuppressWarnings("serial")
 public class MovingPane extends JScrollPane implements MouseMotionListener
     , MouseListener {
     public ArrayList<int[]> stackDataX = new ArrayList<>();

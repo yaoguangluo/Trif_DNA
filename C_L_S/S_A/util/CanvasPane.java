@@ -43,54 +43,48 @@ import java.util.ArrayList;
  * 4 在录制音频的函数里添加1024的横幅数据， 每100个数据组一页，存入100页限长list。
  * 直接增加游标，点关闭刷新游标，操作游标展示1024片段即可。
  * */
+@SuppressWarnings("serial")
 public class CanvasPane extends Panel {
-    //这个；逻辑无争议。
-    public ArrayList<int[]> stackDataX = new ArrayList<>();
-    public long stackX = 0;//数据页帧1024max
-    public int locationX = 0;//图片帧1024 00 00
-    //仅仅计算比例波inputs
-    public void paintNews(Graphics g, int[] inputs, int lastV) {
-        //添加录音数据
-        stackDataX.add(inputs);
-//        //draw in tail panel
-//        /*
-//         * 图片帧画图
-//         * 数据帧校准
-//         * 横幅滑动观测模式
-//         * 读取数据帧，计算图片帧，
-//         * */
-        g.setColor(new Color(110, 110, 110));
-        int inputsLength = inputs.length;
-        int x = locationX;
-        //draw connect
-        g.drawLine(x, lastV, x + 1, inputs[0]);
-//        //draw loop
-        int y = 0;
-        for (x = locationX + 1, y = 0; y < inputsLength - 1; x++, y++) {
-            g.drawLine(x, inputs[y], x + 1, inputs[y + 1]);
-        }
-        //tail op
-        locationX += inputsLength;
-    }
+	// 这个；逻辑无争议。
+	public ArrayList<int[]> stackDataX = new ArrayList<>();
+	public long stackX = 0;// 数据页帧1024max
+	public int locationX = 0;// 图片帧1024 00 00
+	// 仅仅计算比例波inputs
 
-    /*
-     * 1 整体去data vectors
-     * 2 区分图片帧 和 数据帧
-     * 3
-     * 4
-     * */
+	public void paintNews(Graphics g, int[] inputs, int lastV) {
+		// 添加录音数据
+		stackDataX.add(inputs);
+		//// draw in tail panel
+		/// *
+		// * 图片帧画图
+		// * 数据帧校准
+		// * 横幅滑动观测模式
+		// * 读取数据帧，计算图片帧，
+		// * */
+		g.setColor(new Color(110, 110, 110));
+		int inputsLength = inputs.length;
+		int x = locationX;
+		// draw connect
+		g.drawLine(x, lastV, x + 1, inputs[0]);
+		//// draw loop
+		int y = 0;
+		for (x = locationX + 1, y = 0; y < inputsLength - 1; x++, y++) {
+			g.drawLine(x, inputs[y], x + 1, inputs[y + 1]);
+		}
+		// tail op
+		locationX += inputsLength;
+	}
 
+	/*
+	 * 1 整体去data vectors 2 区分图片帧 和 数据帧 3 4
+	 */
 
-    public void paintTail(double[] mlines) {
+	public void paintTail(double[] mlines) {
 
-    }
+	}
 
-    /*
-     * 1 设计可左右滑动的画布
-     * 2 画布记录完整的声音波形
-     * 3 支持颜色切换
-     * 4 支持精确与比例波形记录变换
-     * 5 显示比例波形的记录时的最大与最小值
-     * 6 支持记录波形的切换波特率
-     * */
+	/*
+	 * 1 设计可左右滑动的画布 2 画布记录完整的声音波形 3 支持颜色切换 4 支持精确与比例波形记录变换 5
+	 * 显示比例波形的记录时的最大与最小值 6 支持记录波形的切换波特率
+	 */
 }

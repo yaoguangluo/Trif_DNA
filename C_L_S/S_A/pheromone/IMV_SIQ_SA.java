@@ -15,6 +15,7 @@ package S_A.pheromone;
 //这几年全世界黑客都围着我转，有这个精力，不如不断地及时地完善和优化法律，减少地域文明的之间差距性接触导致的各类文化冲突。
 //AES_QMS_XSD_TIH
 //遇到了问题， 修改jdk, 发布会 触犯甲骨文权利，不方便我公开， 不修改 又及其繁琐，
+@SuppressWarnings("serial")
 public class IMV_SIQ_SA extends IMV_SIQ_X_ {
 //    //later check digital types。
 //    public EmotionSample getW(int value){//later override..

@@ -28,7 +28,8 @@ public class IU_CellStandard {
         return dic_list;
     }
 
-    public static IMV_SIQ InsertCellORM(String rootPath, String baseName
+    @SuppressWarnings("unchecked")
+	public static IMV_SIQ InsertCellORM(String rootPath, String baseName
         , String tabKey, IMV_SIQ rowCells, Boolean initonEncrypt) {
         Iterator<String> iterators = rowCells.keySet().iterator();
         IMV_SIQ map = null;
@@ -62,7 +63,8 @@ public class IU_CellStandard {
         return map;
     }
 
-    public static IMV_SIQ InsertCellPLSQL(String rootPath, String baseName
+    @SuppressWarnings("unchecked")
+	public static IMV_SIQ InsertCellPLSQL(String rootPath, String baseName
         , String tabKey
         , IMV_SIQ rowCells, Boolean initonEncrypt) {
         Iterator<String> iterators = rowCells.keySet().iterator();

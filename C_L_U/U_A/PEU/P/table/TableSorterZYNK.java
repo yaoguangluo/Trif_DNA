@@ -91,6 +91,7 @@ import java.util.concurrent.ConcurrentHashMap;
 *  208号 阳光家园别墅小区 第十栋
  * */
 
+@SuppressWarnings("serial")
 public class TableSorterZYNK extends AbstractTableModel {
     
     public TableModel tableModel;
@@ -129,7 +130,8 @@ public class TableSorterZYNK extends AbstractTableModel {
         tableName = thisTableName;
     }
     //以后分到stable文件中。
-    public TableSorterZYNK(App NE) {
+    @SuppressWarnings("unchecked")
+	public TableSorterZYNK(App NE) {
         if (null == ReadPinYinBihua.biHua || null == ReadPinYinBihua.pinYin) {
             ReadPinYinBihua.getPinYinBihuaMap(NE);
         }

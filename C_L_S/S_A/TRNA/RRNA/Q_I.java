@@ -2,10 +2,11 @@ package S_A.TRNA.RRNA;
 
 import S_A.pheromone.AES_QMS_XSD_TIH;
 
-//这个函数将染色体中所有 new 出来大型对象进行单例化 注册，模拟核糖体。简化 stable_S在主体程序中的占用，
-// 动机缩小可计算内存。下一步明年应该感谢 灵感 来自-医学蛋白酶丝化 -- Valentina Perissi, -- 莫名心 猝感，
-// 不会是因为去个nature 每人15页ppt，要跟我做文章吧。。。606 , 下一步明年也可以感谢（Xuetao Cao
-// , Koji Okamoto, Hanming Shen, Richard Youle）-本来这是我2025年的进度，但是太无聊了，。。。
+//这个函数将染色体中所有 new 出来大型对象进行单例化 注册，模拟核糖体。简化 stable_S
+//在主体程序中的占用，动机缩小可计算内存。下一步明年应该感谢 灵感 来自-医学蛋白酶丝化 
+//-- Valentina Perissi, -- 莫名心 猝感，不会是因为去个nature 每人15页ppt，要跟我
+//做文章吧。。。606下一步明年也可以感谢（Xuetao Cao, Koji Okamoto, Hanming Shen
+//, Richard Youle）-本来这是我2025年的进度，但是太无聊了，。。。nume-forma-stru-sets
 // nume-forma-stru-sets , 作者, 著作权人： 罗瑶光, 浏阳
 /*
  * 著作权人 ，作者 罗瑶光, 浏阳
