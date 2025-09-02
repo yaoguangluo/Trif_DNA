@@ -55,6 +55,8 @@ public class WorkVerbaMap_X_S {
 	public IMV_SIQ cartesianWorkActionsPositions;
 	public IMV_SIQ normalizationalWorkActionsRights;
 	public IMV_SIQ normalizationalWorkActionsPositions;
+	public IMV_SIQ complementedWorkActionsRights;
+	public IMV_SIQ complementedWorkActionsPositions;
 	public IMV_SIQ ActionsObject;
 	public IMV_SIQ nounInTextFull;// later
 	public IMV_SIQ verbInTextFull;// later
@@ -184,6 +186,8 @@ public class WorkVerbaMap_X_S {
 		cartesianWorkActions_pos = new IMV_SIQ();
 		normalizationalWorkActionsRights = new IMV_SIQ();
 		normalizationalWorkActionsPositions = new IMV_SIQ();
+		complementedWorkActionsRights = new IMV_SIQ();
+		complementedWorkActionsPositions = new IMV_SIQ();
 		// （将，获-取-得，授权，选择，确-定-保，认-准-定，标-记-出，拿-出-到-来，把，）
 		data2DSubjectMap = new IMV_SIQ();
 		data2DSubjectMap.put("表", true);

@@ -28,6 +28,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋
  * */
+@SuppressWarnings({ "unchecked", "serial", "rawtypes" })
 public class IMV_SIQ extends ConcurrentHashMap {
 	public boolean containsKeyChar(char input) {
 		if (this.containsKey("" + input)) {
@@ -147,7 +148,6 @@ public class IMV_SIQ extends ConcurrentHashMap {
 		return null;
 	}
 
-	@SuppressWarnings("unchecked")
 	public void couldSQLThenSQL(String key, String[] strings, TinMap output,
 			App NE) throws InterruptedException, IOException {// 7代花再缩减 flex
 		for (String actionKey : (Iterable<String>) FlowerAction.FlowerP_E_KernelActions
@@ -179,7 +179,6 @@ public class IMV_SIQ extends ConcurrentHashMap {
 	}
 
 	// later for char
-	@SuppressWarnings("unchecked")
 	public void couldDoThenDo(String key, String[] strings, TinMap output,
 			App NE, HashMap<String, Integer> scores)
 			throws InterruptedException, IOException {// 7代花再缩减 flex
@@ -215,13 +214,20 @@ public class IMV_SIQ extends ConcurrentHashMap {
 			}
 		}
 	}
-
+	/*
+	 * 进行逻辑化简没必要这么复杂。既然我用累积和笛卡尔全部关系，那就用equals代替contains
+	 * ，增加精确度。大幅减少内存容量。这种计算逻辑适用于在非完整匹配的元基编码变量条件下，
+	 * 可以寻找计算关系相似计算，而不是寻找计算成分相似计算。避免误差快速放大。
+	 * 我认为计算关系相似是一种拓扑类的计算寻址，真好吃 和 好真吃，区别明显，但也可以歧义理解。
+	 * 而计算成分相似，输入变量都不一样，输出误差就大了，真好吃 和 真不好吃， 4字25%的区别，
+	 * 截然不同。
+	 * */
 	public void marchScore(String[] stringsKey, String[] stringsAction,
 			String actionKey, HashMap<String, Integer> scores, String[] strings,
 			TinMap output, App NE) throws InterruptedException, IOException {
 		if (stringsKey.length > 1 && stringsAction.length > 1) {
-			if (stringsKey[0].contains(stringsAction[0])
-					&& stringsKey[1].contains(stringsAction[1])) {
+			if (stringsKey[0].equals(stringsAction[0])
+					&& stringsKey[1].equals(stringsAction[1])) {
 				String temp = FlowerAction.FlowerSixDomainActions
 						.getString(actionKey);
 				if (scores.containsKey(temp)) {
@@ -244,7 +250,8 @@ public class IMV_SIQ extends ConcurrentHashMap {
 					scores.put(temp, 1);
 					/*
 					 * 有些只做一次的驱动可以另外分类进行算法描述 最简单的实例是map
-					 * 对不同的action + 触发精度分数规则，
+					 * 对不同的action + 触发精度分数规则， 既然是equals，那么这里
+					 * 属于必须做的操作。
 					 * later -trif
 					 */
 					FlowerAction.doAction(temp, strings, output, NE);

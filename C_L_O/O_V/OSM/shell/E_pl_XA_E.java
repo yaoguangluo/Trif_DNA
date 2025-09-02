@@ -65,8 +65,18 @@ public class E_pl_XA_E {
 				// return null;
 			}
 			// -2
+			/*
+			 * 既然用到了normalization的修正，那么这里也替换下进行性能测试将之前的简单
+			 * cartesianWorkActionsRights替换成normalizationalWorkActionsRights
+			 * 看下输出结果，结果正确，之后在不断地增加函数时候会逐步的修正这个map的分类计算结构。
+			 * 我归纳这种计算逻辑概念为计算哲学中的 -逻辑意识因果表达结构分层- -罗瑶光
+			 *
+			 */
 			String[] temp = NE._I_U.acknowledge.clone();
-			Iterator<String> iterators = NE.app_S.workVerbaMap.cartesianWorkActionsRights
+			// Iterator<String> iterators =
+			// NE.app_S.workVerbaMap.cartesianWorkActionsRights
+			// .keySet().iterator();
+			Iterator<String> iterators = NE.app_S.workVerbaMap.normalizationalWorkActionsRights
 					.keySet().iterator();
 			while (iterators.hasNext()) {
 				String string = iterators.next();
@@ -83,6 +93,8 @@ public class E_pl_XA_E {
 			NE.app_S.workVerbaMap.cartesianWorkActionsPositions.clear();
 			NE.app_S.workVerbaMap.normalizationalWorkActionsRights.clear();
 			NE.app_S.workVerbaMap.normalizationalWorkActionsPositions.clear();
+			NE.app_S.workVerbaMap.complementedWorkActionsRights.clear();
+			NE.app_S.workVerbaMap.complementedWorkActionsPositions.clear();
 			NE.app_S.workVerbaMap.cartesianWorkActions_pos.clear();
 			NE.app_S.workVerbaMap.unknown_map.clear();
 			/* loop s later */
@@ -140,7 +152,7 @@ public class E_pl_XA_E {
 
 	/*
 	 * 现在出现了一个问题，我的PLSEARCH系统是针对我的已经有的函数进行语言驱动，
-	 * 这种驱动计算方式是更好的辅助我已经有的函数进行序列可控操作。如果不断地增加
+	 * 这种驱动计算方式是更好地辅助我已经有的函数进行序列可控操作。如果不断地增加
 	 * 新的函数，和扩展系统的使用方式，那么遇到的问题根据这种逻辑便会指数增加，于是我
 	 * 停止了下脚步，我在思考，一种不需要辅助也能计算出有用结果的通用类逻辑，在最恶劣
 	 * 的环境里，只需要加入某种精度组合就能覆盖所有条件搭配的逻辑，目前我找到了很多 方法，1 -

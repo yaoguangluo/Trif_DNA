@@ -23,7 +23,7 @@ import java.util.Iterator;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋
  * */
-@SuppressWarnings("unchecked") //稍后优化新陈代谢 逻辑
+@SuppressWarnings("unchecked") // 稍后优化新陈代谢 逻辑
 public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 	// 稍后去重 -trif
 	void relationshipsCombinationWithNounAndVerb() {
@@ -181,7 +181,11 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 			}
 		}
 	}
-
+	
+    /* 关于复杂RNN关系 我引擎这里会逐渐用不到，因为DNN的重心分析加上语言的单句分解，是我
+     * 的花语计算逻辑趋势，以后复杂的句子首先走短句分解而不是走全局关系，那么这个复杂关系
+     * 价值将体现在修正和补充环境里面, 之后根据算法优化的BPM结构不断校正补充函数 -罗瑶光
+     * */
 	public void actionsNormalization(App NE) {
 		Iterator<String> iterators = cartesianWorkActionsPositions.keySet()
 				.iterator();
@@ -229,21 +233,33 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 					if (!leftsP[0].equalsIgnoreCase(rightsR[1])
 							&& !leftsR[1].equalsIgnoreCase(rightsP[0])) {
 						// later..
-						normalizationalWorkActionsRights.put(
+						complementedWorkActionsRights.put(
 								root_right_name + "--" + root_position_name,
 								average_rights);
-						normalizationalWorkActionsPositions.put(
+						complementedWorkActionsPositions.put(
 								root_right_name + "++" + root_position_name,
 								average_position);
-						System.out.println(root_right_name + "--"
-								+ root_position_name + ":" + average_rights
-								+ ":" + average_position + ":" + least_rights);
+						if (root_right_name.contains("列")
+								|| root_right_name.contains("展示")) {
+							// System.out.println(root_right_name + "--"
+							// + root_position_name + ":" + average_rights
+							// + ":" + average_position + ":" + least_rights);
+						}
 					}
 				}
 			}
 		}
 	}
 
+	/*
+	 * 思考，这里的 + - 符号 + 是position，-是connetion ，在词性组合中 +是动名， -是
+	 * 名动，形成原因是我不断的优化引擎，用最简添加法方便迅捷编码，为了区别混淆，于是又 +
+	 * 上改为++，-改为--来区分。那么在函数map中也应该进行区分，于是优化下最终结构 一个DP
+	 * 代表双字+— POS组合后的+-RNN组合 。 输出格式为 DP(+-) DP(++ --) DP(+-) 复杂笛
+	 * 卡尔完整关系模型，那么在normalizationalWorkActionsRights.put的函数中就可以在
+	 * 排序后进行精度筛选即可以避免过多的内存资源堆栈浪费，之后指令集按照累积打分来驱动计算
+	 * ，精度筛选所造成的误差缺陷也能 得到最大限度的弥补 -罗瑶光
+	 */
 	// tree sort 比quick top快，但耗费大量stack，于是不考虑。
 	public void sortCartesianWorkActionsDistance(App NE) {
 		actionsDistanceV = new int[cartesianWorkActionsRights.size()];
@@ -260,9 +276,11 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 		// loop
 		for (i = 0; i < actionsDistance.length; i++) {
 			System.out.println(actionsDistance[i] + "-" + actionsDistanceV[i]);
+			normalizationalWorkActionsRights
+					.put(actionsDistance[i] + "-" + actionsDistanceV[i], "");
 		}
 	}
-
+	
 	public void sortCartesianWorkActionsPosition(App NE) {
 		actionsPositionV = new int[cartesianWorkActionsPositions.size()];
 		actionsPosition = new String[cartesianWorkActionsPositions.size()];
@@ -279,8 +297,10 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 		// loop
 		for (i = 0; i < actionsPositionV.length; i++) {
 			System.out.println(actionsPosition[i] + "+" + actionsPositionV[i]);
+			normalizationalWorkActionsPositions
+					.put(actionsPosition[i] + "+" + actionsPositionV[i], "");
 		}
 		// ------------
 	}
-	
+
 }
