@@ -334,7 +334,15 @@ public class StudyVerbaMap {
         initonDelegate.put("全面", "F");
         initonDelegate.put("替代", "F");
     }
-
+    /*
+     * 关于SMV的使用方式，首先我的主要动机是用于做缓存使用。因为NE不够灵动。我想把NE作为数据库使用，
+     * 每次结束工作，会txt文件记录NE，系统工作的过程是NE在map中的计算，读取NE的txt文件。这个txt文件
+     * 可以方便我每次的优化变量中的数据，了解NE变量集合在计算中的波动过程，为下一步做铺垫。 --罗瑶光
+     * 因为用java，我也产生了很多疑惑，首先是我不能清楚地得到变量出现的地方所对应的函数所在的具体的包名。
+     * getPackage是当前的class对应的函数所在的具体的包名。缺了一个级，所以我在思考当年我在印度学C语言的
+     * 时候为什么会买本java来看，因为2008年不碰java，我就会一直搞C和汇编。这十年的出现的问题等于0. 所以
+     * 当初是什么动机让我买java，因为我印度基督大学当时没有java课程。
+     * */
     @SuppressWarnings("unchecked")
 	public void init_SMV(App NE) throws NoSuchFieldException
         , InstantiationException, IllegalAccessException, ClassNotFoundException {
@@ -344,7 +352,8 @@ public class StudyVerbaMap {
                 String string = fields[i].getName();
                 System.out.println(string);
                 Class<?> type = fields[i].getType();
-                String typeNanme = type.getName();
+                String typeNanme = type.getClass().getPackage().getName();
+                System.out.println(typeNanme);
                 _SMV.put(string, new Object());
                 _SMQ.put(string, typeNanme);
             }
