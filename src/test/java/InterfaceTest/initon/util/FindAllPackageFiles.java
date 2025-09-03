@@ -31,6 +31,8 @@ import test.java.InterfaceTest.CommonTestInition;
  * 只要将这个反射field函数写成double list 模型进行pre->，不就解决了吗，底层.o文件不改，上层
  * 这么复杂弥补对策。
  * 
+ * --跟进思考，反射field函数写成double list 模型进行pre->，隐患是，-trif later
+ * 
  * 于是更进思考，通过输出结果可以看出method输出的是jdk原生类名，不是定义类名，根本就没用，说明
  * java.lang.reflect.Method 和 java.awt.Event这种method结果对field即使变量名一致也没有
  * 有价值的交集。
@@ -45,6 +47,11 @@ import test.java.InterfaceTest.CommonTestInition;
  * 跟进思考，那这种逻辑进行map不就是元基花组件嘛，callFunctionKey 和 annotationMap，看来我的
  * 早年路径是正确的，我现在要做是扩展这个，包含所有 NE的field的 annotation 即可
  * 元基花我已经申请了个人著作权。庆幸下，又省了 2200 RMB = 110只蒜香小烧鸡。
+ * 
+ * 跟进思考， annotation索引花的是 method，对于field索引来说，索引的是类和变量，一个是逻辑关系
+ * 一个是计算关系。仅仅做缓存使用即可，之前我说否定论做精度匹配，看样子已经创造了完整的条件了。
+ * StudyVerbaMap 的 _SMV 之后会大有用途。
+ * 
  * 
  * --罗瑶光 十六元基索引 教父--
  * 

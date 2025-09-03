@@ -17,6 +17,7 @@ import java.util.Iterator;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticRegisterA_IDUQ_C {
+	@SuppressWarnings("unchecked")
 	public static void load(StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_E) {
 		//稍后封装
 		StaticFunctionMapA_IDUQ_C.annotationMap.put("getPDW", "string");
