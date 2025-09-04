@@ -179,6 +179,13 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 				String string = iterators.next();
 				/*
 				 * 注意否定句型的不 非 等字，那么红色将是错误的用法，应该增加校准类指令集辅助。
+				 * 于是开始思考，这是一种指令集分解逻辑，这个逻辑的关系和硬件的与 或 非相似。
+				 * 说明指令集的构造在某种观测上可以理解为离散关系，在这种关系的维度里，指令集可以
+				 * 进行迪摩根定律变化，这种变化依赖的关系为DNN 关系，DNN提供计算精度，离散提供
+				 * 计算方法，笛卡尔提供计算对象，为之后的TVM计算关系优化铺好了道路。
+				 * 
+				 * --罗瑶光
+				 * 。
 				 * later -trif
 				 * */
 				if(string.contains("+红色")) {
