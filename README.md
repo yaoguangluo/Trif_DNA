@@ -1,4 +1,4 @@
-# Trif_DNA
+# Trif_DNA_软件计算哲学探索
 DNA十六元基索引PDE工程
 &nbsp;
 # --华瑞集R-插件API--
