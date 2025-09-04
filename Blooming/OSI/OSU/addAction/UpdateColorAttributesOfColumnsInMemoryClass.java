@@ -6,6 +6,7 @@ import O_V.OSA.shell.XA_ShellTable;
 import O_V.OSA.shell.XA_ShellTables;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
 import S_A.SEM.bloom.StaticRootMap;
+import S_A.SixActionMap.FlowerAction;
 import S_A.pheromone.IMV_SIQ;
 
 import java.util.ArrayList;
@@ -184,6 +185,14 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 				 * 进行迪摩根定律变化，这种变化依赖的关系为DNN 关系，DNN提供计算精度，离散提供
 				 * 计算方法，笛卡尔提供计算对象，为之后的TVM计算关系优化铺好了道路。
 				 * 
+				 * 跟进思考，当替换成做一个操作将列名为中药名称的子集 --不能-- 用红色来标记为输出的颜色;
+				 *  得到关系
+				 *  不能+颜色-6
+				 *	不能-颜色-6
+				 *  不能-标记-4
+				 *  不能-红色-2
+				 *  那么这个2 ，4 和 6的精确度能迫使指令集不添加红色。如//negative 关系测试
+				 *  
 				 * --罗瑶光
 				 * 。
 				 * later -trif
@@ -192,6 +201,39 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 					shellType += "红色";
 					System.out.println("---find---");
 					find = true;
+				}
+			}
+			//negative 关系测试
+			iterators= NE.app_S.workVerbaMap.cartesianWorkActionsRights.keySet().iterator();
+			while(iterators.hasNext()) {
+				String string = iterators.next();
+				System.out.println("400-10000004" + string);
+				/*
+				 * 注意否定句型的不 非 等字，那么红色将是错误的用法，应该增加校准类指令集辅助。
+				 * 于是开始思考，这是一种指令集分解逻辑，这个逻辑的关系和硬件的与 或 非相似。
+				 * 说明指令集的构造在某种观测上可以理解为离散关系，在这种关系的维度里，指令集可以
+				 * 进行迪摩根定律变化，这种变化依赖的关系为DNN 关系，DNN提供计算精度，离散提供
+				 * 计算方法，笛卡尔提供计算对象，为之后的TVM计算关系优化铺好了道路。
+				 * 
+				 * 跟进思考，当替换成做一个操作将列名为中药名称的子集 --不能-- 用红色来标记为输出的颜色;
+				 * 输出也正确，之后可以不断地修正和完善离散类指令集。
+				 *  得到关系
+				 *  不能+颜色-6
+				 *	不能-颜色-6
+				 *  不能-标记-4
+				 *  不能-红色-2
+				 *  那么这个2 ，4 和 6的精确度能迫使指令集不添加红色。如//negative 关系测试
+				 *  因为400-10000001 处已经精度 12 筛选了条件，那么这里可以适当的根据去求做筛选操作。
+				 *  
+				 * --罗瑶光
+				 * 。
+				 * later -trif
+				 * */
+				if(string.contains("红色")){
+					System.out.println("400-10000005" + string);
+					if(string.contains("不")) {
+						return null;
+					}
 				}
 			}
 			System.out.println("400---00007---");

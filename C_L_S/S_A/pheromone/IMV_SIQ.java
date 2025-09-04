@@ -189,7 +189,7 @@ public class IMV_SIQ extends ConcurrentHashMap {
 			/*
 			 * 思考，stringsKey因为被加工处理，单字被过滤了，那么需要中条件算法来辅助判断
 			 * 判断的方法有很多，通用的方法打分匹配来确定相似度。然后多个相似度 词组进行
-			 * 累积总分触发因为我要挑战我自己，所以不能用普通的逻辑来优化。 地球一直很美好
+			 * 累积总分触发因为我要挑战我自己，所以不能用普通的逻辑来优化。 地球一直很美好 
 			 * ，大家更应该要学会长大。 --罗瑶光
 			 */
 			if (key.contains(actionKey)) {// later separate.
@@ -197,7 +197,9 @@ public class IMV_SIQ extends ConcurrentHashMap {
 				String temp = FlowerAction.FlowerSixDomainActions
 						.getString(actionKey);
 				FlowerAction.doAction(temp, strings, output, NE);
+				System.out.println("400-10000002" + actionKey);
 			} else {
+				System.out.println("400-10000003" + key);
 				// -1 名动逻辑
 				String[] stringsKey = key.split("-");
 				String[] stringsAction = actionKey.split("-");
@@ -214,14 +216,14 @@ public class IMV_SIQ extends ConcurrentHashMap {
 			}
 		}
 	}
+
 	/*
 	 * 进行逻辑化简没必要这么复杂。既然我用累积和笛卡尔全部关系，那就用equals代替contains
 	 * ，增加精确度。大幅减少内存容量。这种计算逻辑适用于在非完整匹配的元基编码变量条件下，
 	 * 可以寻找计算关系相似计算，而不是寻找计算成分相似计算。避免误差快速放大。
 	 * 我认为计算关系相似是一种拓扑类的计算寻址，真好吃 和 好真吃，区别明显，但也可以歧义理解。
-	 * 而计算成分相似，输入变量都不一样，输出误差就大了，真好吃 和 真不好吃， 4字25%的区别，
-	 * 截然不同。
-	 * */
+	 * 而计算成分相似，输入变量都不一样，输出误差就大了，真好吃 和 真不好吃， 4字25%的区别， 截然不同。
+	 */
 	public void marchScore(String[] stringsKey, String[] stringsAction,
 			String actionKey, HashMap<String, Integer> scores, String[] strings,
 			TinMap output, App NE) throws InterruptedException, IOException {
@@ -249,10 +251,8 @@ public class IMV_SIQ extends ConcurrentHashMap {
 				} else {
 					scores.put(temp, 1);
 					/*
-					 * 有些只做一次的驱动可以另外分类进行算法描述 最简单的实例是map
-					 * 对不同的action + 触发精度分数规则， 既然是equals，那么这里
-					 * 属于必须做的操作。
-					 * later -trif
+					 * 有些只做一次的驱动可以另外分类进行算法描述 最简单的实例是map 对不同的action + 触发精度分数规则，
+					 * 既然是equals，那么这里 属于必须做的操作。 later -trif
 					 */
 					FlowerAction.doAction(temp, strings, output, NE);
 					// Todo -trif

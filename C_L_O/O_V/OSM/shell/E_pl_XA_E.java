@@ -76,15 +76,23 @@ public class E_pl_XA_E {
 			// Iterator<String> iterators =
 			// NE.app_S.workVerbaMap.cartesianWorkActionsRights
 			// .keySet().iterator();
-			Iterator<String> iterators = NE.app_S.workVerbaMap
-					.normalizationalWorkActionsRights.keySet().iterator();
+			Iterator<String> iterators = NE.app_S.workVerbaMap.normalizationalWorkActionsRights
+					.keySet().iterator();
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				String[] strings = string.split("_");
+				System.out.println("400-10000001" + string);
 				if (null != strings[0]) {
 					/* loop s later */
-					FlowerAction.FlowerSixDomainActions.couldDoThenDo(
-							strings[0], temp, output, NE, scores);
+					String[] stringSets= strings[0].split("-");
+					int scaleRights = Integer
+							.valueOf(stringSets[stringSets.length - 1]);
+					// 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
+					// 过滤和缩减了海量关系计算集合。
+					if (scaleRights < 12) {
+						FlowerAction.FlowerSixDomainActions.couldDoThenDo(
+								strings[0], temp, output, NE, scores);
+					}
 					// later // in // pdn
 				}
 			}
@@ -96,15 +104,15 @@ public class E_pl_XA_E {
 			 * 个逻辑能得到和接近某类想要的结果。构造一个智慧结构于是开始思考，计算辩证学说内因
 			 * 量变，是一种方法，否定论也是一种方法，采样计算也符合这个观点，我就随便选一个练手
 			 * 既然主流天天夸赞采样，打分等方法论多厉害，我就走下否定论思维，反正挑战我自己。怎么
-			 * 难怎么上。首先我否定我自己，我是菜鸟，远离那些高大上先，方便新的开始。  --罗瑶光
+			 * 难怎么上。首先我否定我自己，我是菜鸟，远离那些高大上先，方便新的开始。 --罗瑶光
 			 * 既然是新的开始，于是开始构造否定思维框架，第一个框架是否定打分和量变的函数价值，
 			 * 我就不打分，做精确匹配怎么做？元基索引，固定的十六元基进行分类明确包含关系标识
 			 * 进行匹配计算，那就开始了，每个函数都依次进行元基索引标识。怎么做？在商业测试文件
 			 * 中进行统计所有的工程函数，每个函数的对应文件夹地址作为KEY，精确搜索Key执行。
-			 * 高频优先，低频下放。那就开干了。见package test.java.InterfaceTest.initon.util;
-			 * --罗瑶光 
+			 * 高频优先，低频下放。那就开干了。见package
+			 * test.java.InterfaceTest.initon.util; --罗瑶光
 			 * 
-			 * */
+			 */
 			NE.app_S.workVerbaMap.cartesianWorkActionsRights.clear();
 			NE.app_S.workVerbaMap.cartesianWorkActionsPositions.clear();
 			NE.app_S.workVerbaMap.normalizationalWorkActionsRights.clear();
