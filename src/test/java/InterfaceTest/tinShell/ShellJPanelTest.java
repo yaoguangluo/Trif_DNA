@@ -84,7 +84,7 @@ class ShellJPanelTest {
 	}
 
 	// @Mock
-    // App NE;
+	// App NE;
 	@Mock
 	LinkNode thisNodeInfo;
 	// Field jlabel_box of type JCheckBox[]
@@ -402,7 +402,22 @@ class ShellJPanelTest {
 					+ "条件为:和:性味|不包含|凉;\r\n" + "条件为:和:性味|不包含|咸;\r\n"
 					// + "获取列名:中药名称:打分:功效;\r\n"
 					+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" + "操作:0|行至|30;\r\n"
-					+ "操作:中药名称|颜色标记为|红色;");
+					// + "操作:中药名称|颜色标记为|红色;");
+					+ "做一个操作将列名为中药名称的子集用红色来标记为输出的颜色;");
+			/*
+			 * 改为做一个操作将列名为中药名称的子集用红色来标记为输出的颜色; --进行计算，
+			 * //输出结果正确 序列化流标记如下。
+			 * //Action-->:updateColorAttributesOfColumnsInMemoryClass
+			 * //Action-->:selectRowsByAttributesOfGetCulumns
+			 * //Action-->:P_ListNeedStart
+			 * //Action-->:selectRowsByAttributesOfAggregation
+			 * //Action-->:P_TableName //Action-->:P_fileOperations
+			 * //Action-->:selectRowsByAttributesOfCondition
+			 * //Action-->:addFindColumnsInMemoryClass
+			 * 测试出之前一个临时关键字需要replace掉。
+			 * --计算哲学在复杂功能逻辑测试领域的应用真实实例。
+			 * --罗瑶光
+			 */
 			output = execShell(NE, tinshellInput);
 			// print answer
 			// 打印执行后的输出表格

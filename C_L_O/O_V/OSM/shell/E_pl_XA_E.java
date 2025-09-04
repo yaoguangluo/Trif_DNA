@@ -76,8 +76,8 @@ public class E_pl_XA_E {
 			// Iterator<String> iterators =
 			// NE.app_S.workVerbaMap.cartesianWorkActionsRights
 			// .keySet().iterator();
-			Iterator<String> iterators = NE.app_S.workVerbaMap.normalizationalWorkActionsRights
-					.keySet().iterator();
+			Iterator<String> iterators = NE.app_S.workVerbaMap
+					.normalizationalWorkActionsRights.keySet().iterator();
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				String[] strings = string.split("_");

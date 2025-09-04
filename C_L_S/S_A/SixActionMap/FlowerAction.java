@@ -79,7 +79,10 @@ public class FlowerAction {
 		FlowerSixDomainActions.put("获取列名", "P_ListNeedStart");
 		FlowerSixDomainActions.put("PLTCP", "P_ListNeedStart");
 	}
-
+	/**
+	 * 同一个句型已经执行过的函数指令集之后整体去重 -trif
+	 * 
+	 */
 	@SuppressWarnings("unchecked")
 	public static void doAction(String callFunctionKey, String[] temp,
 			TinMap output, App NE) throws InterruptedException, IOException {
