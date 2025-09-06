@@ -47,6 +47,19 @@ public class E_pl_XA_E {
 		for (String command : commands) {
 			HashMap<String, Integer> scores = new HashMap<>();
 			NE._I_U.commandAcknowledge = command;
+			CommandClass command_V = new CommandClass();
+			//之后整体替换下。方便command_V管理。
+			command_V.commandAcknowledge = command;
+			/*
+			 * command是一条最短的指令句，指令句变成指令的中间数据目前保留在NE.app_S.workVerbaMap
+			 * 中，我在思考，每次计算完一句指令，这些过程产物都要clear掉，这是一种C语言的free写法，
+			 * 在高级的java结构中，可以进行单例来class null掉，意思是我可以创造一个command class，
+			 * 这个类专门负责command的数据碎片，这个class可以list形式进入tinmap，也可以每次执行完
+			 * 被G1GC来null掉，想到这里，于是先命名个command Class先。
+			 * --地址在package O_V.OSM.shell; --函数名CommandClass
+			 * 
+			 * */
+			
 			// -1 计算逻辑关系根据不同的环境会有不同的组合，最优关系是频率出来的，不是关键字分析出来的。
 			// 所以动态化计算是趋势。
 			String commandSwap = doHumanTalkSwap(command, NE);
