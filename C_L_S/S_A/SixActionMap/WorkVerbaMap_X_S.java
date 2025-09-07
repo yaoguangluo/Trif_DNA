@@ -5,12 +5,11 @@ import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_SS;
 import S_A.pheromone.IMV_SIQ_S_;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 
 import ME.VPC.M.app.App;
+import O_V.OSM.shell.CommandClass;
 
 //1 6元SDLC
 //2 sdlc obss
@@ -33,14 +32,13 @@ import ME.VPC.M.app.App;
  * */
 @SuppressWarnings("unchecked")
 public class WorkVerbaMap_X_S {
-	public IMV_SIQ unknown_map;
 	public String doName;
 	public String subjectName;
 	public String objectName;
 	public String humanTalk;
-	public IMV_SIQ_SS _IMV_SIQ_SS;
-	public IMV_SIQ_S_ _IMV_SIQ_S_;
-	public List<String> _IMV_SIQ_SS_ = new ArrayList<>();
+//	public IMV_SIQ_SS _IMV_SIQ_SS;
+//	public IMV_SIQ_S_ _IMV_SIQ_S_;
+//	public List<String> _IMV_SIQ_SS_ = new ArrayList<>();
 	public IMV_SIQ fixMap;
 	public IMV_SIQ doMap;
 	public IMV_SIQ objectMap;
@@ -50,13 +48,15 @@ public class WorkVerbaMap_X_S {
 	public IMV_SIQ positionMap;
 	public IMV_SIQ nounInText;
 	public IMV_SIQ verbInText;
-	public IMV_SIQ cartesianWorkActions_pos;
-	public IMV_SIQ cartesianWorkActionsRights;
-	public IMV_SIQ cartesianWorkActionsPositions;
-	public IMV_SIQ normalizationalWorkActionsRights;
-	public IMV_SIQ normalizationalWorkActionsPositions;
-	public IMV_SIQ complementedWorkActionsRights;
-	public IMV_SIQ complementedWorkActionsPositions;
+	public CommandClass command_V;
+	// public IMV_SIQ unknown_map;
+	// public IMV_SIQ cartesianWorkActions_pos;
+	// public IMV_SIQ cartesianWorkActionsRights;
+	// public IMV_SIQ cartesianWorkActionsPositions;
+	// public IMV_SIQ normalizationalWorkActionsRights;
+	// public IMV_SIQ normalizationalWorkActionsPositions;
+	// public IMV_SIQ complementedWorkActionsRights;
+	// public IMV_SIQ complementedWorkActionsPositions;
 	public IMV_SIQ ActionsObject;
 	public IMV_SIQ nounInTextFull;// later
 	public IMV_SIQ verbInTextFull;// later
@@ -73,7 +73,7 @@ public class WorkVerbaMap_X_S {
 	// 以后批量计算模型会CE按XCDX分解来做计算加速。
 	/*
 	 * 之前做了商业测试文件，里面有优化校准副词的函数逻辑，那么既然测试写了就要用到，
-	 * 于是我的思维是那就直接用阿，于是就把测试函数 new出来然后将Noun和VERB取代 
+	 * 于是我的思维是那就直接用阿，于是就把测试函数 new出来然后将Noun和VERB取代
 	 * 这里的nounInText和verbInText，准确率就提高了很多，并不代表结果会更精确，
 	 * 所以替代后要将所有流程都校准一遍。 --罗瑶光
 	 */
@@ -86,7 +86,7 @@ public class WorkVerbaMap_X_S {
 		babeiMap.clear();
 		nounInText.clear();// small calculus , later do full
 		verbInText.clear();
-		Iterator<String> iterator = _IMV_SIQ_SS.keySet().iterator();
+		Iterator<String> iterator = command_V._IMV_SIQ_SS.keySet().iterator();
 		while (iterator.hasNext()) {
 			String string = iterator.next();
 			if (data2DSubjectMap.containsKey(string)) {
@@ -100,7 +100,7 @@ public class WorkVerbaMap_X_S {
 				babeiMap.put(string, i++);
 			}
 			// pos load
-			WordFrequency wordFrequency = _IMV_SIQ_SS.getW(string);
+			WordFrequency wordFrequency = command_V._IMV_SIQ_SS.getW(string);
 			// if (wordFrequency.get_pos().contains("名")) {
 			// 一切数据首先都应该名词化*/
 			nounInText.put(string, wordFrequency);
@@ -113,14 +113,15 @@ public class WorkVerbaMap_X_S {
 		}
 	}
 
-	void initCartesianActions(App NE) {
+	void initCartesianActions(App NE, CommandClass command_V) {
 		Iterator<String> iteratorNoun = nounInText.keySet().iterator();
 		NextNoun: while (iteratorNoun.hasNext()) {
 			String stringNoun = iteratorNoun.next();
 			if (stringNoun.isEmpty()) {
 				continue NextNoun;
 			}
-			WordFrequency wordFrequencyNoun = _IMV_SIQ_SS.getW(stringNoun);
+			WordFrequency wordFrequencyNoun = command_V._IMV_SIQ_SS
+					.getW(stringNoun);
 			int averagePositionNoun = wordFrequencyNoun.getAveragePosition();
 			Iterator<String> iteratorVerb = verbInText.keySet().iterator();
 			NextVerb: while (iteratorVerb.hasNext()) {
@@ -128,7 +129,8 @@ public class WorkVerbaMap_X_S {
 				if (stringVerb.isEmpty()) {
 					continue NextVerb;
 				}
-				WordFrequency wordFrequencyVerb = _IMV_SIQ_SS.getW(stringVerb);
+				WordFrequency wordFrequencyVerb = command_V._IMV_SIQ_SS
+						.getW(stringVerb);
 				int averagePositionVerb = wordFrequencyVerb
 						.getAveragePosition();
 				// noun-verb
@@ -153,14 +155,18 @@ public class WorkVerbaMap_X_S {
 				}
 				int right = Math.abs(averagePositionNoun - averagePositionVerb);
 				int position = (averagePositionNoun + averagePositionVerb) >> 1;
-				if (!cartesianWorkActionsRights.containsKey(root)
-						&& !cartesianWorkActionsPositions.containsKey(root)
+				if (!command_V.cartesianWorkActionsRights.containsKey(root)
+						&& !command_V.cartesianWorkActionsPositions
+								.containsKey(root)
 						&& right > 0) {
 					if (right < NE.app_S.initonsDistanceRelationship) {
 						if (!root.contains(" ")) {
-							cartesianWorkActions_pos.put(root, root_pos);
-							cartesianWorkActionsRights.put(root, right);
-							cartesianWorkActionsPositions.put(root, position);
+							command_V.cartesianWorkActions_pos.put(root,
+									root_pos);
+							command_V.cartesianWorkActionsRights.put(root,
+									right);
+							command_V.cartesianWorkActionsPositions.put(root,
+									position);
 							System.out.println(root + ":" + right + ":"
 									+ position + ":" + root_pos);
 						}
@@ -170,24 +176,15 @@ public class WorkVerbaMap_X_S {
 		}
 	}
 
-	public void initActionMap() {
-		// （首-先，一，开始，于是，顺其自然，）
-		_IMV_SIQ_SS = new IMV_SIQ_SS();
-		_IMV_SIQ_S_ = new IMV_SIQ_S_();
+	public void initActionMap(CommandClass command_V) {
+		// 计算关机分层
 		objectMap = new IMV_SIQ();
 		babeiMap = new IMV_SIQ();
 		verbMap = new IMV_SIQ();
 		fixMap = new IMV_SIQ();
 		nounInText = new IMV_SIQ();
 		verbInText = new IMV_SIQ();
-		unknown_map = new IMV_SIQ();
-		cartesianWorkActionsRights = new IMV_SIQ();
-		cartesianWorkActionsPositions = new IMV_SIQ();
-		cartesianWorkActions_pos = new IMV_SIQ();
-		normalizationalWorkActionsRights = new IMV_SIQ();
-		normalizationalWorkActionsPositions = new IMV_SIQ();
-		complementedWorkActionsRights = new IMV_SIQ();
-		complementedWorkActionsPositions = new IMV_SIQ();
+		// （首-先，一，开始，于是，顺其自然，）
 		// （将，获-取-得，授权，选择，确-定-保，认-准-定，标-记-出，拿-出-到-来，把，）
 		data2DSubjectMap = new IMV_SIQ();
 		data2DSubjectMap.put("表", true);

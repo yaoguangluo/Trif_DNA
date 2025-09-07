@@ -214,7 +214,8 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 				stringBuilder.append("省略词");
 			} else {
 				stringBuilder.append("未知");
-				NE.app_S.workVerbaMap.unknown_map.put(string, true);
+				//关联studyMap later -trif
+				NE.app_S.workVerbaMap.command_V.unknown_map.put(string, true);
 			}
 			wordFrequency.I_pos(stringBuilder.toString());
 			mapSearchWithoutSort.put(string, wordFrequency);

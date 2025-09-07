@@ -6,7 +6,6 @@ import O_V.OSA.shell.XA_ShellTable;
 import O_V.OSA.shell.XA_ShellTables;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
 import S_A.SEM.bloom.StaticRootMap;
-import S_A.SixActionMap.FlowerAction;
 import S_A.pheromone.IMV_SIQ;
 
 import java.util.ArrayList;
@@ -172,7 +171,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 			}
 			System.out.println("400---00005---");
 			shellType += "颜色标记为|";
-			Iterator<String> iterators= NE.app_S.workVerbaMap
+			Iterator<String> iterators= NE.app_S.workVerbaMap.command_V
 					.cartesianWorkActionsRights.keySet().iterator();
 			boolean find = false;
 			System.out.println("400---00006---");
@@ -204,7 +203,8 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 				}
 			}
 			//negative 关系测试
-			iterators= NE.app_S.workVerbaMap.cartesianWorkActionsRights.keySet().iterator();
+			iterators= NE.app_S.workVerbaMap.command_V
+					.cartesianWorkActionsRights.keySet().iterator();
 			while(iterators.hasNext()) {
 				String string = iterators.next();
 				System.out.println("400-10000004" + string);

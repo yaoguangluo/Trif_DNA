@@ -13,6 +13,7 @@ import E_A.OEI.AVC.SUQ.SVQ.MPC.fhmm.E.EmotionMap_E;
 import E_A.OEI.SVQ.MPC.fhmm.E.FMHMMListOneTime_E;
 import ME.VPC.M.app.App;
 import ME.VPC.S.ne.App_S;
+import O_V.OSM.shell.CommandClass;
 import P.Pos_X_P;
 import P_V.PEQ.AMV.ECS.test.ANNTest;
 import P_V.PEQ.AMV.ECS.test.DNNTest;
@@ -130,7 +131,8 @@ public class CommonTestInition {
 		System.out.println("*六元催化 map*");
 		app_S.workVerbaMap = new WorkVerbaMap();
 		app_S.studyVerbaMap.putObject("workVerbaMap", app_S.workVerbaMap);
-		app_S.workVerbaMap.initActionMap();
+		CommandClass command_V = new CommandClass();
+		app_S.workVerbaMap.initActionMap(command_V);
 		app_S.studyVerbaMap.putObject("workVerbaMap", app_S.workVerbaMap);
 	}
 

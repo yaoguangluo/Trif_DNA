@@ -48,30 +48,55 @@ public class E_pl_XA_E {
 			HashMap<String, Integer> scores = new HashMap<>();
 			NE._I_U.commandAcknowledge = command;
 			CommandClass command_V = new CommandClass();
-			//之后整体替换下。方便command_V管理。
+			/*
+			 * 思考关于关系分类的价值，表面的含义我就不介绍了，如果我要输出我的思维方式要优秀于传统的
+			 * 认知方式，就要有明显的论证和论据来强调我的HVPCS关系要优秀于普通的模型，显而易见，今天的
+			 * 逻辑分层和关系分类最大的价值是我挖掘到了一个中间层map unknowMap ，这个隐匿在我的workmap中
+			 * 又要的表达在command的逻辑中，于是出现了一行逻辑错误，文件地址package E_A.ME.analysis.E; 
+			 * 函数名 CogsBinaryForest_AE的 218行 //关联studyMap later -trif ，这个unknow关系不应该
+			 * 被包含在workmap中，我扔在网上完整的华瑞集源码和开发文档，
+			 * 
+			 * 我要严谨的提醒的是 这些年一些大佬看了后，模仿窥伺我，改我的思维方式和函数名，搞点名堂，然后
+			 * 更进写，就莫名成了别人的作品，我呢的确没有功夫来管这些科技人才的屁事。到时候出了问题，别怪我没
+			 * 提醒，六脉神剑逆着练，也能射出剑气来，那是你们的本事。出问题也自然被人嘲笑，别赖上我就是了。
+			 * 我的逻辑是 HVPCS + 元基编码 + 时函数 + 计算哲学。大佬们既然要模仿我的风格，就要深入接触这
+			 * 4个领域。我的动机是当然希望人才辈出，早点超越我，不然我才不会这样样细致的文字描述。2018 分词
+			 * 如果lucene 每秒当时能够上 2000万，估计这几年我可以天天玩。就是看业界不争气，我没办法才have to
+			 *  编码。做人可以飞到天上去，但做事一定要脚踏实地。
+			 * 
+			 * --罗瑶光
+			 * */
+			// 函数注册
+			NE.app_S.workVerbaMap.command_V = command_V;
+			// 之后整体替换下。方便command_V管理。
 			command_V.commandAcknowledge = command;
+			command_V.command = command;
 			/*
 			 * command是一条最短的指令句，指令句变成指令的中间数据目前保留在NE.app_S.workVerbaMap
 			 * 中，我在思考，每次计算完一句指令，这些过程产物都要clear掉，这是一种C语言的free写法，
 			 * 在高级的java结构中，可以进行单例来class null掉，意思是我可以创造一个command class，
 			 * 这个类专门负责command的数据碎片，这个class可以list形式进入tinmap，也可以每次执行完
-			 * 被G1GC来null掉，想到这里，于是先命名个command Class先。
-			 * --地址在package O_V.OSM.shell; --函数名CommandClass
+			 * 被G1GC来null掉，想到这里，于是先命名个command Class先。 --地址在package
+			 * O_V.OSM.shell; --函数名CommandClass
 			 * 
-			 * */
-			
+			 */
+
 			// -1 计算逻辑关系根据不同的环境会有不同的组合，最优关系是频率出来的，不是关键字分析出来的。
 			// 所以动态化计算是趋势。
-			String commandSwap = doHumanTalkSwap(command, NE);
+			String commandSwap = doHumanTalkSwap(NE, command_V);
+			command_V.commandSwap = commandSwap;
 			List<String> commandLists = DoSplit.splitRegex(command, ":", "\\",
 					"\\");
+			command_V.commandLists = commandLists;
 			// ESU_X swap系列 稍后并到测试文件中 -trif
 			NE._I_U.acknowledge = List_ESU_X_stringlistToStringArray
 					._E(commandLists);
+			command_V.acknowledge = NE._I_U.acknowledge;
 			if (null != commandSwap) {// splitRegex稍后并到测试文件中 -trif
 				commandLists = DoSplit.splitRegex(commandSwap, ":", "\\", "\\");
 				acknowledgeSwap = List_ESU_X_stringlistToStringArray
 						._E(commandLists);
+				command_V.acknowledgeSwap = acknowledgeSwap;
 				System.out.println(commandSwap);
 				doAcknowledgeSwap(acknowledgeSwap, command, NE);
 				// later // duplications
@@ -89,7 +114,7 @@ public class E_pl_XA_E {
 			// Iterator<String> iterators =
 			// NE.app_S.workVerbaMap.cartesianWorkActionsRights
 			// .keySet().iterator();
-			Iterator<String> iterators = NE.app_S.workVerbaMap.normalizationalWorkActionsRights
+			Iterator<String> iterators = command_V.normalizationalWorkActionsRights
 					.keySet().iterator();
 			while (iterators.hasNext()) {
 				String string = iterators.next();
@@ -97,7 +122,13 @@ public class E_pl_XA_E {
 				System.out.println("400-10000001" + string);
 				if (null != strings[0]) {
 					/* loop s later */
-					String[] stringSets= strings[0].split("-");
+					String[] stringSets = strings[0].split("-");
+					command_V.stringSets = stringSets;// 增加利用率。
+					command_V.stringSetsMap.put(string, stringSets);
+					/*
+					 * 在进行构造关系的分析过程中，发现split的操作是一种流程逻辑错误的弥补。
+					 * 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高笛卡尔的计算 性能 -trif --罗瑶光
+					 */
 					int scaleRights = Integer
 							.valueOf(stringSets[stringSets.length - 1]);
 					// 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
@@ -126,14 +157,17 @@ public class E_pl_XA_E {
 			 * test.java.InterfaceTest.initon.util; --罗瑶光
 			 * 
 			 */
-			NE.app_S.workVerbaMap.cartesianWorkActionsRights.clear();
-			NE.app_S.workVerbaMap.cartesianWorkActionsPositions.clear();
-			NE.app_S.workVerbaMap.normalizationalWorkActionsRights.clear();
-			NE.app_S.workVerbaMap.normalizationalWorkActionsPositions.clear();
-			NE.app_S.workVerbaMap.complementedWorkActionsRights.clear();
-			NE.app_S.workVerbaMap.complementedWorkActionsPositions.clear();
-			NE.app_S.workVerbaMap.cartesianWorkActions_pos.clear();
-			NE.app_S.workVerbaMap.unknown_map.clear();
+			command_V.cartesianWorkActionsRights.clear();
+			command_V.cartesianWorkActionsPositions.clear();
+			command_V.normalizationalWorkActionsRights.clear();
+			command_V.normalizationalWorkActionsPositions.clear();
+			command_V.complementedWorkActionsRights.clear();
+			command_V.complementedWorkActionsPositions.clear();
+			command_V.cartesianWorkActions_pos.clear();
+			command_V.unknown_map.clear();
+			/*
+			 * 这样command_V的价值就出来了，clear之后再GC，双重清理，在垃圾器的优化环境里会内存 更加稳定。
+			 */
 			/* loop s later */
 			FlowerAction.FlowerSixDomainActions.couldDoThenDo(temp[0], temp,
 					output, NE, scores);// later in pdn
@@ -237,15 +271,15 @@ public class E_pl_XA_E {
 	}
 
 	// later out to data swap api
-	private static String doHumanTalkSwap(String command, App NE) {
+	private static String doHumanTalkSwap(App NE, CommandClass command_V) {
 		// （首-先，一，开始，于是，顺其自然，）
 		// （将，获-取-得，授权，选择，确-定-保，认-准-定，标-记-出，拿-出-到-来，把，）
 		// （表 表格-单-库，矩阵，文-档-件，对象）
 		// （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
 		// work domain out later.*/
 		// NE.app_S.workVerbaMap.setHumanTalk(command, NE);
-		NE.app_S.workVerbaMap.setHumanTalkAfterNewBusinessTest(command, NE);
-		Boolean findSubject = NE.app_S.workVerbaMap.findSubject(NE);
+		NE.app_S.workVerbaMap.setHumanTalkAfterNewBusinessTest(command_V, NE);
+		Boolean findSubject = NE.app_S.workVerbaMap.findSubject(NE, command_V);
 		return NE.app_S.workVerbaMap.returnBestTypeOfCommands(findSubject);
 	}
 

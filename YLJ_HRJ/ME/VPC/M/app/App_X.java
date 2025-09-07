@@ -16,6 +16,7 @@ import E_A.OEI.SVQ.MPC.fhmm.E.FMHMMListOneTime_E;
 import ME.VPC.M.X.AppInit_XCDX;
 import ME.VPC.M.X.App_XCDX;
 import ME.VPC.M.X.App_X_getBox;
+import O_V.OSM.shell.CommandClass;
 import V_A.SQ.ReadPinYinBihua;
 import E.Nlp_CE_X_S;
 import P.Pos_X_P;
@@ -137,7 +138,8 @@ public class App_X extends App {
 		System.out.println("启动400编码调试开始-00000017");
 		app_S.workVerbaMap = new WorkVerbaMap();
 		app_S.studyVerbaMap.putObject("workVerbaMap", app_S.workVerbaMap);
-		app_S.workVerbaMap.initActionMap();
+		CommandClass command_V = new CommandClass();
+		app_S.workVerbaMap.initActionMap(command_V);
 		app_S.studyVerbaMap.putObject("workVerbaMap", app_S.workVerbaMap);
 		// bloosm init*/
 		System.out.println("启动400编码调试开始-00000018");
