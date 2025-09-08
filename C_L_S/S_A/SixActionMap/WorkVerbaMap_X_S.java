@@ -2,8 +2,6 @@ package S_A.SixActionMap;
 
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -36,9 +34,6 @@ public class WorkVerbaMap_X_S {
 	public String subjectName;
 	public String objectName;
 	public String humanTalk;
-//	public IMV_SIQ_SS _IMV_SIQ_SS;
-//	public IMV_SIQ_S_ _IMV_SIQ_S_;
-//	public List<String> _IMV_SIQ_SS_ = new ArrayList<>();
 	public IMV_SIQ fixMap;
 	public IMV_SIQ doMap;
 	public IMV_SIQ objectMap;
@@ -49,14 +44,7 @@ public class WorkVerbaMap_X_S {
 	public IMV_SIQ nounInText;
 	public IMV_SIQ verbInText;
 	public CommandClass command_V;
-	// public IMV_SIQ unknown_map;
-	// public IMV_SIQ cartesianWorkActions_pos;
-	// public IMV_SIQ cartesianWorkActionsRights;
-	// public IMV_SIQ cartesianWorkActionsPositions;
-	// public IMV_SIQ normalizationalWorkActionsRights;
-	// public IMV_SIQ normalizationalWorkActionsPositions;
-	// public IMV_SIQ complementedWorkActionsRights;
-	// public IMV_SIQ complementedWorkActionsPositions;
+
 	public IMV_SIQ ActionsObject;
 	public IMV_SIQ nounInTextFull;// later
 	public IMV_SIQ verbInTextFull;// later
@@ -252,3 +240,14 @@ public class WorkVerbaMap_X_S {
 		// （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
 	}
 }
+//public IMV_SIQ_SS _IMV_SIQ_SS;
+//public IMV_SIQ_S_ _IMV_SIQ_S_;
+//public List<String> _IMV_SIQ_SS_ = new ArrayList<>();
+// public IMV_SIQ unknown_map;
+// public IMV_SIQ cartesianWorkActions_pos;
+// public IMV_SIQ cartesianWorkActionsRights;
+// public IMV_SIQ cartesianWorkActionsPositions;
+// public IMV_SIQ normalizationalWorkActionsRights;
+// public IMV_SIQ normalizationalWorkActionsPositions;
+// public IMV_SIQ complementedWorkActionsRights;
+// public IMV_SIQ complementedWorkActionsPositions;

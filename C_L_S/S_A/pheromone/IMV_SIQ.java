@@ -28,6 +28,11 @@ import java.util.concurrent.ConcurrentHashMap;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋
  * */
+/*
+ * IMV_SIQ随着持续地优化，变得越来越复杂，于是之后有必要进行HVPCS关系分析。
+ * --trif
+ * 
+ * */
 @SuppressWarnings({ "unchecked", "serial", "rawtypes" })
 public class IMV_SIQ extends ConcurrentHashMap {
 	public boolean containsKeyChar(char input) {
@@ -189,8 +194,7 @@ public class IMV_SIQ extends ConcurrentHashMap {
 			/*
 			 * 思考，stringsKey因为被加工处理，单字被过滤了，那么需要中条件算法来辅助判断
 			 * 判断的方法有很多，通用的方法打分匹配来确定相似度。然后多个相似度 词组进行
-			 * 累积总分触发因为我要挑战我自己，所以不能用普通的逻辑来优化。 地球一直很美好 
-			 * ，大家更应该要学会长大。 --罗瑶光
+			 * 累积总分触发因为我要挑战我自己，所以不能用普通的逻辑来优化。 地球一直很美好 ，大家更应该要学会长大。 --罗瑶光
 			 */
 			if (key.contains(actionKey)) {// later separate.
 				/* 精确匹配就直接触发 */
@@ -198,20 +202,28 @@ public class IMV_SIQ extends ConcurrentHashMap {
 						.getString(actionKey);
 				FlowerAction.doAction(temp, strings, output, NE);
 				System.out.println("400-10000002" + actionKey);
+				System.out.println("400-10000003" + temp);
 			} else {
-				System.out.println("400-10000003" + key);
+				System.out.println("400-10000004" + key);
+				/*
+				 * 这里也一样加一个条件，可以有效的去重+的逻辑, 提高计算关系的依赖。
+				 * 
+				 * --罗瑶光
+				 */
+				if (key.contains("\\+")) {
+					// -2 动名逻辑
+					String[] stringsKey = key.split("\\+");
+					String[] stringsAction = actionKey.split("\\+");
+					marchScore(stringsKey, stringsAction, actionKey, scores,
+							strings, output, NE);
+					continue;
+				}
 				// -1 名动逻辑
 				String[] stringsKey = key.split("-");
 				String[] stringsAction = actionKey.split("-");
 				/* 相似匹配就直接累积触发 */
 				marchScore(stringsKey, stringsAction, actionKey, scores,
 						strings, output, NE);
-				// -2 动名逻辑
-				stringsKey = key.split("\\+");
-				stringsAction = actionKey.split("\\+");
-				marchScore(stringsKey, stringsAction, actionKey, scores,
-						strings, output, NE);
-
 				// todo 。。
 			}
 		}

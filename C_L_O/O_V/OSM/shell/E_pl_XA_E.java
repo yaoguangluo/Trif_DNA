@@ -114,28 +114,53 @@ public class E_pl_XA_E {
 			// Iterator<String> iterators =
 			// NE.app_S.workVerbaMap.cartesianWorkActionsRights
 			// .keySet().iterator();
-			Iterator<String> iterators = command_V.normalizationalWorkActionsRights
+			Iterator<String> iterators = command_V.cartesianWorkActionsRights
 					.keySet().iterator();
+			/*
+			 * 准备把心态摆正一下。降低自己的思维跳跃活性，用于保证持续的思绪稳定。
+			 * 思考，关于 normalizationalWorkActionsRights 的形态是 
+			 * actionsDistance[i] + "-" + actionsDistanceV[i]
+			 * 其中 actionsDistance[i]的形态是cartesianWorkActionsRights的key
+			 * 而 cartesianWorkActionsRights的key构造来自于WorkVerbaMap_X_S的166行的初始root
+			 * 于是我开始思考，在计算关系分层的时候缺少了一些中间过程的碎片记录，这个记录关系导致了
+			 * 我之后要花双倍时间来重复计算曾经已有的却未保留的结果，论证在计算哲学中，计算关系可以
+			 * 外因计算逻辑。于是开始优化准备将root的组合因子进行map化。从而顾虑掉下面的重复逻辑。
+			 * 于是在CommandClass中定义rootMap来封装root，rootRelation来封装root的关系。
+			 * 这里root不包含pos后戳，不包含 _ 无效, 去掉此逻辑。于是可以化简如下。
+			 * 
+			 * --罗瑶光
+			 * 
+			 * */
 			while (iterators.hasNext()) {
 				String string = iterators.next();
-				String[] strings = string.split("_");
+				//String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
 				System.out.println("400-10000001" + string);
-				if (null != strings[0]) {
+				if (null != string) {
 					/* loop s later */
-					String[] stringSets = strings[0].split("-");
-					command_V.stringSets = stringSets;// 增加利用率。
-					command_V.stringSetsMap.put(string, stringSets);
+					/*
+					 * 因为是取精度，所以-号关于stringSets最末一位即可获取答案。
+					 * 我在思考-stringSets也是一种重复逻辑，于是有必要将之间的DNN精度也保留在map中。
+					 * command_V.cartesianWorkActionsRights 通过500字的思绪描述，最终优化的逻辑。
+					 * 大幅减少冗余的变量和堆栈关系。
+					 * 
+					 * */
+					
+					//String[] stringSets = string.split("-");
+					//command_V.stringSets = stringSets;// 增加利用率。
+					//command_V.stringSetsMap.put(string, stringSets);
+					//int scaleRights = Integer
+					//.valueOf(stringSets[stringSets.length - 1]);
+					
 					/*
 					 * 在进行构造关系的分析过程中，发现split的操作是一种流程逻辑错误的弥补。
 					 * 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高笛卡尔的计算 性能 -trif --罗瑶光
 					 */
-					int scaleRights = Integer
-							.valueOf(stringSets[stringSets.length - 1]);
+					int scaleRights = command_V.cartesianWorkActionsRights.getInt(string);
 					// 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
 					// 过滤和缩减了海量关系计算集合。
 					if (scaleRights < 12) {
 						FlowerAction.FlowerSixDomainActions.couldDoThenDo(
-								strings[0], temp, output, NE, scores);
+								string, temp, output, NE, scores);
 					}
 					// later // in // pdn
 				}

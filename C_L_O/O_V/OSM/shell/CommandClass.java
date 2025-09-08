@@ -52,7 +52,7 @@ public class CommandClass {
 	// 单句的延伸
 	public String commandAcknowledge;
 
-	// 单句的多种延伸
+	// 单句的多种延伸 
 	public String[] acknowledge;
 	public String[] acknowledgeSwap;
 	// 单句的变换延伸
@@ -68,6 +68,7 @@ public class CommandClass {
 	 * 稍后这些关于当前的命令句对应的workVerbaMap中需要clear的对象都走这个类，
 	 * 免得以后修改或者增加条件，不谨慎漏了几个clear。我认为这是一种计算关系的优 化方式，属于聚类优化计算逻辑。
 	 * 
+	 * 随着条件越来越多，之后会统一组合优化这个map关系，然后剔除掉一些成员变量。
 	 * --trif later
 	 * 
 	 * --罗瑶光
@@ -75,6 +76,9 @@ public class CommandClass {
 	 */
 	public IMV_SIQ_SS _IMV_SIQ_SS = new IMV_SIQ_SS();
 	public IMV_SIQ_S_ _IMV_SIQ_S_ = new IMV_SIQ_S_();
+	public IMV_SIQ cartesianRootMap = new IMV_SIQ();
+	public IMV_SIQ cartesianRootWithScaleMap = new IMV_SIQ();
+	public IMV_SIQ cartesianRootRelationMap = new IMV_SIQ();
 	public IMV_SIQ cartesianWorkActionsRights = new IMV_SIQ();
 	public IMV_SIQ cartesianWorkActionsPositions = new IMV_SIQ();
 	public IMV_SIQ cartesianWorkActions_pos = new IMV_SIQ();

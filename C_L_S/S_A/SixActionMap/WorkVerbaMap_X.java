@@ -284,8 +284,10 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 		// loop
 		for (i = 0; i < actionsDistance.length; i++) {
 			System.out.println(actionsDistance[i] + "-" + actionsDistanceV[i]);
-			command_V.normalizationalWorkActionsRights
-					.put(actionsDistance[i] + "-" + actionsDistanceV[i], "");
+			command_V.normalizationalWorkActionsRights.put(
+					actionsDistance[i] + "-" + actionsDistanceV[i],
+					actionsDistanceV[i]);
+
 		}
 	}
 
