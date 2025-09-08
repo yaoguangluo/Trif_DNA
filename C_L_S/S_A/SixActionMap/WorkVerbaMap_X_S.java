@@ -51,10 +51,16 @@ public class WorkVerbaMap_X_S {
 	public IMV_SIQ cartesianWorkActionsFull;// later
 
 	public LinkedList<String> shortString = new LinkedList<>();
-	public int[] actionsPositionV;
-	public String[] actionsPosition;
-	public int[] actionsDistanceV;
-	public String[] actionsDistance;
+	public int[] actionsPositionV_SV;
+	public String[] actionsPosition_SV;
+	public int[] actionsDistanceV_SV;
+	public String[] actionsDistance_SV;
+	
+	public int[] actionsPositionV_VO;
+	public String[] actionsPosition_VO;
+	public int[] actionsDistanceV_VO;
+	public String[] actionsDistance_VO;
+	
 	public int i = 0;
 
 	// 为什么现在不设计成implements接口，因为目前没有明确六元函数定义域规范，
@@ -134,29 +140,48 @@ public class WorkVerbaMap_X_S {
 					root += stringVerb;
 					root_pos += "_stringNoun" + averagePositionNoun;
 					root_pos += "_stringVerb" + averagePositionVerb;
+					int right = Math.abs(averagePositionNoun - averagePositionVerb);
+					int position = (averagePositionNoun + averagePositionVerb) >> 1;
+					if (!command_V.cartesianWorkActionsRightsSV.containsKey(root)
+							&& !command_V.cartesianWorkActionsPositionsSV
+									.containsKey(root)
+							&& right > 0) {
+						if (right < NE.app_S.initonsDistanceRelationship) {
+							if (!root.contains(" ")) {
+								command_V.cartesianWorkActions_posSV.put(root,
+										root_pos);
+								command_V.cartesianWorkActionsRightsSV.put(root,
+										right);
+								command_V.cartesianWorkActionsPositionsSV.put(root,
+										position);
+								System.out.println(root + ":" + right + ":"
+										+ position + ":" + root_pos);
+							}
+						}
+					}
 				} else {
 					root += stringVerb;
 					root += "-";
 					root += stringNoun;
 					root_pos += "_stringVerb" + averagePositionVerb;
 					root_pos += "_stringNoun" + averagePositionNoun;
-				}
-				int right = Math.abs(averagePositionNoun - averagePositionVerb);
-				int position = (averagePositionNoun + averagePositionVerb) >> 1;
-				if (!command_V.cartesianWorkActionsRights.containsKey(root)
-						&& !command_V.cartesianWorkActionsPositions
-								.containsKey(root)
-						&& right > 0) {
-					if (right < NE.app_S.initonsDistanceRelationship) {
-						if (!root.contains(" ")) {
-							command_V.cartesianWorkActions_pos.put(root,
-									root_pos);
-							command_V.cartesianWorkActionsRights.put(root,
-									right);
-							command_V.cartesianWorkActionsPositions.put(root,
-									position);
-							System.out.println(root + ":" + right + ":"
-									+ position + ":" + root_pos);
+					int right = Math.abs(averagePositionNoun - averagePositionVerb);
+					int position = (averagePositionNoun + averagePositionVerb) >> 1;
+					if (!command_V.cartesianWorkActionsRightsVO.containsKey(root)
+							&& !command_V.cartesianWorkActionsPositionsVO
+									.containsKey(root)
+							&& right > 0) {
+						if (right < NE.app_S.initonsDistanceRelationship) {
+							if (!root.contains(" ")) {
+								command_V.cartesianWorkActions_posVO.put(root,
+										root_pos);
+								command_V.cartesianWorkActionsRightsVO.put(root,
+										right);
+								command_V.cartesianWorkActionsPositionsVO.put(root,
+										position);
+								System.out.println(root + ":" + right + ":"
+										+ position + ":" + root_pos);
+							}
 						}
 					}
 				}

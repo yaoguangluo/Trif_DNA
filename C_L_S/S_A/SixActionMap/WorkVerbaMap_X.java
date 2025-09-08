@@ -192,68 +192,68 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 	 * 价值将体现在修正和补充环境里面, 之后根据算法优化的BPM结构不断校正补充函数 -罗瑶光
 	 */
 	public void actionsNormalization(App NE, CommandClass command_V) {
-		Iterator<String> iterators = command_V.cartesianWorkActionsPositions
-				.keySet().iterator();
-		LEFT: while (iterators.hasNext()) {
-			String root_position_name = iterators.next();
-			int root_position_left = command_V.cartesianWorkActionsPositions
-					.getInt(root_position_name);
-			int root_rights_left = command_V.cartesianWorkActionsRights
-					.getInt(root_position_name);
-			Iterator<String> root_right_names = command_V.cartesianWorkActionsRights
-					.keySet().iterator();
-			RIGHT: while (root_right_names.hasNext()) {
-				String root_right_name = root_right_names.next();
-				int root_position_right = command_V.cartesianWorkActionsPositions
-						.getInt(root_position_name);
-				int root_rights_right = command_V.cartesianWorkActionsRights
-						.getInt(root_position_name);
-				int least_rights = root_rights_left + root_rights_right;
-				int average_rights = Math
-						.abs(root_position_left - root_position_right);
-				int average_position = (root_position_left
-						+ root_position_right) / 2;
-				if (least_rights < NE.app_S.initonsDistanceRelationship
-						&& !root_right_name.equalsIgnoreCase(root_position_name)
-						&& average_rights < NE.app_S.initonsDistanceRelationship) {
-					String[] leftsP = new String[2];
-					// = // root_right_name.split("+");
-					String[] leftsR = new String[2];
-					String[] rightsP = new String[2];
-					String[] rightsR = new String[2];
-					if (root_right_name.contains("+")) {
-						continue RIGHT;
-					}
-					if (root_right_name.contains("-")) {
-						leftsR = root_right_name.split("-");
-						leftsP = leftsR;
-					}
-					if (root_position_name.contains("+")) {
-						continue LEFT;
-					}
-					if (root_position_name.contains("-")) {
-						rightsR = root_position_name.split("-");
-						rightsP = rightsR;
-					}
-					if (!leftsP[0].equalsIgnoreCase(rightsR[1])
-							&& !leftsR[1].equalsIgnoreCase(rightsP[0])) {
-						// later..
-						command_V.complementedWorkActionsRights.put(
-								root_right_name + "--" + root_position_name,
-								average_rights);
-						command_V.complementedWorkActionsPositions.put(
-								root_right_name + "++" + root_position_name,
-								average_position);
-						if (root_right_name.contains("列")
-								|| root_right_name.contains("展示")) {
-							// System.out.println(root_right_name + "--"
-							// + root_position_name + ":" + average_rights
-							// + ":" + average_position + ":" + least_rights);
-						}
-					}
-				}
-			}
-		}
+//		Iterator<String> iterators = command_V.cartesianWorkActionsPositions
+//				.keySet().iterator();
+//		LEFT: while (iterators.hasNext()) {
+//			String root_position_name = iterators.next();
+//			int root_position_left = command_V.cartesianWorkActionsPositions
+//					.getInt(root_position_name);
+//			int root_rights_left = command_V.cartesianWorkActionsRights
+//					.getInt(root_position_name);
+//			Iterator<String> root_right_names = command_V.cartesianWorkActionsRights
+//					.keySet().iterator();
+//			RIGHT: while (root_right_names.hasNext()) {
+//				String root_right_name = root_right_names.next();
+//				int root_position_right = command_V.cartesianWorkActionsPositions
+//						.getInt(root_position_name);
+//				int root_rights_right = command_V.cartesianWorkActionsRights
+//						.getInt(root_position_name);
+//				int least_rights = root_rights_left + root_rights_right;
+//				int average_rights = Math
+//						.abs(root_position_left - root_position_right);
+//				int average_position = (root_position_left
+//						+ root_position_right) / 2;
+//				if (least_rights < NE.app_S.initonsDistanceRelationship
+//						&& !root_right_name.equalsIgnoreCase(root_position_name)
+//						&& average_rights < NE.app_S.initonsDistanceRelationship) {
+//					String[] leftsP = new String[2];
+//					// = // root_right_name.split("+");
+//					String[] leftsR = new String[2];
+//					String[] rightsP = new String[2];
+//					String[] rightsR = new String[2];
+//					if (root_right_name.contains("+")) {
+//						continue RIGHT;
+//					}
+//					if (root_right_name.contains("-")) {
+//						leftsR = root_right_name.split("-");
+//						leftsP = leftsR;
+//					}
+//					if (root_position_name.contains("+")) {
+//						continue LEFT;
+//					}
+//					if (root_position_name.contains("-")) {
+//						rightsR = root_position_name.split("-");
+//						rightsP = rightsR;
+//					}
+//					if (!leftsP[0].equalsIgnoreCase(rightsR[1])
+//							&& !leftsR[1].equalsIgnoreCase(rightsP[0])) {
+//						//later..
+//						//command_V.complementedWorkActionsRights.put(
+//						//		root_right_name + "--" + root_position_name,
+//						//		average_rights);
+//						//command_V.complementedWorkActionsPositions.put(
+//						//		root_right_name + "++" + root_position_name,
+//						//		average_position);
+//						if (root_right_name.contains("列")
+//								|| root_right_name.contains("展示")) {
+//							// System.out.println(root_right_name + "--"
+//							// + root_position_name + ":" + average_rights
+//							// + ":" + average_position + ":" + least_rights);
+//						}
+//					}
+//				}
+//			}
+//		}
 	}
 
 	/*
@@ -266,54 +266,103 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 	 * ，精度筛选所造成的误差缺陷也能 得到最大限度的弥补 -罗瑶光
 	 */
 	// tree sort 比quick top快，但耗费大量stack，于是不考虑。
-	public void sortCartesianWorkActionsDistance(App NE,
+	public void sortCartesianWorkActionsDistanceSV(App NE,
 			CommandClass command_V) {
-		actionsDistanceV = new int[command_V.cartesianWorkActionsRights.size()];
-		actionsDistance = new String[command_V.cartesianWorkActionsRights
+		actionsDistanceV_SV = new int[command_V.cartesianWorkActionsRightsSV.size()];
+		actionsDistance_SV = new String[command_V.cartesianWorkActionsRightsSV
 				.size()];
-		Iterator<String> iterator = command_V.cartesianWorkActionsRights
+		Iterator<String> iterator = command_V.cartesianWorkActionsRightsSV
 				.keySet().iterator();
 		int i = 0;
 		while (iterator.hasNext()) {
 			String string = iterator.next();
-			actionsDistance[i] = string;
-			actionsDistanceV[i++] = command_V.cartesianWorkActionsRights
+			actionsDistance_SV[i] = string;
+			actionsDistanceV_SV[i++] = command_V.cartesianWorkActionsRightsSV
 					.getInt(string);
 		}
-		NE.app_S.lYGSortESU9D.javaSort(actionsDistanceV, actionsDistance);
+		NE.app_S.lYGSortESU9D.javaSort(actionsDistanceV_SV, actionsDistance_SV);
 		// loop
-		for (i = 0; i < actionsDistance.length; i++) {
-			System.out.println(actionsDistance[i] + "-" + actionsDistanceV[i]);
-			command_V.normalizationalWorkActionsRights.put(
-					actionsDistance[i] + "-" + actionsDistanceV[i],
-					actionsDistanceV[i]);
+		for (i = 0; i < actionsDistance_SV.length; i++) {
+			System.out.println(actionsDistance_SV[i] + "-" + actionsDistanceV_SV[i]);
+			//command_V.normalizationalWorkActionsRights.put(
+			//		actionsDistance[i] + "-" + actionsDistanceV[i],
+			//		actionsDistanceV[i]);
 
 		}
 	}
 
-	public void sortCartesianWorkActionsPosition(App NE,
-			CommandClass command_V) {
-		actionsPositionV = new int[command_V.cartesianWorkActionsPositions
+	public void sortCartesianWorkActionsDistanceVO(App NE, CommandClass command_V) {
+		actionsDistanceV_VO = new int[command_V.cartesianWorkActionsRightsVO.size()];
+		actionsDistance_VO = new String[command_V.cartesianWorkActionsRightsVO
 				.size()];
-		actionsPosition = new String[command_V.cartesianWorkActionsPositions
-				.size()];
-		Iterator<String> iterator = command_V.cartesianWorkActionsPositions
+		Iterator<String> iterator = command_V.cartesianWorkActionsRightsVO
 				.keySet().iterator();
 		int i = 0;
 		while (iterator.hasNext()) {
 			String string = iterator.next();
-			actionsPosition[i] = string;
-			actionsPositionV[i++] = command_V.cartesianWorkActionsPositions
+			actionsDistance_VO[i] = string;
+			actionsDistanceV_VO[i++] = command_V.cartesianWorkActionsRightsVO
 					.getInt(string);
 		}
-		NE.app_S.lYGSortESU9D.javaSort(actionsPositionV, actionsPosition);
+		NE.app_S.lYGSortESU9D.javaSort(actionsDistanceV_VO, actionsDistance_VO);
 		// loop
-		for (i = 0; i < actionsPositionV.length; i++) {
-			System.out.println(actionsPosition[i] + "+" + actionsPositionV[i]);
-			command_V.normalizationalWorkActionsPositions
-					.put(actionsPosition[i] + "+" + actionsPositionV[i], "");
+		for (i = 0; i < actionsDistance_VO.length; i++) {
+			System.out.println(actionsDistance_VO[i] + "-" + actionsDistanceV_VO[i]);
+			//command_V.normalizationalWorkActionsRights.put(
+			//		actionsDistance[i] + "-" + actionsDistanceV[i],
+			//		actionsDistanceV[i]);
+
+		}
+	}
+	
+	public void sortCartesianWorkActionsPositionSV(App NE,
+			CommandClass command_V) {
+		actionsPositionV_SV = new int[command_V.cartesianWorkActionsPositionsSV
+				.size()];
+		actionsPosition_SV = new String[command_V.cartesianWorkActionsPositionsSV
+				.size()];
+		Iterator<String> iterator = command_V.cartesianWorkActionsPositionsSV
+				.keySet().iterator();
+		int i = 0;
+		while (iterator.hasNext()) {
+			String string = iterator.next();
+			actionsPosition_SV[i] = string;
+			actionsPositionV_SV[i++] = command_V.cartesianWorkActionsPositionsSV
+					.getInt(string);
+		}
+		NE.app_S.lYGSortESU9D.javaSort(actionsPositionV_SV, actionsPosition_SV);
+		// loop
+		for (i = 0; i < actionsPositionV_SV.length; i++) {
+			System.out.println(actionsPosition_SV[i] + "+" + actionsPositionV_SV[i]);
+			//command_V.normalizationalWorkActionsPositions
+			//		.put(actionsPosition[i] + "+" + actionsPositionV[i], "");
 		}
 		// ------------
 	}
 
+	public void sortCartesianWorkActionsPositionVO(App NE,
+			CommandClass command_V) {
+		actionsPositionV_VO = new int[command_V.cartesianWorkActionsPositionsVO
+				.size()];
+		actionsPosition_VO = new String[command_V.cartesianWorkActionsPositionsVO
+				.size()];
+		Iterator<String> iterator = command_V.cartesianWorkActionsPositionsVO
+				.keySet().iterator();
+		int i = 0;
+		while (iterator.hasNext()) {
+			String string = iterator.next();
+			actionsPosition_VO[i] = string;
+			actionsPositionV_VO[i++] = command_V.cartesianWorkActionsPositionsVO
+					.getInt(string);
+		}
+		NE.app_S.lYGSortESU9D.javaSort(actionsPositionV_VO, actionsPosition_VO);
+		// loop
+		for (i = 0; i < actionsPositionV_VO.length; i++) {
+			System.out.println(actionsPosition_VO[i] + "+" + actionsPositionV_VO[i]);
+			//command_V.normalizationalWorkActionsPositions
+			//		.put(actionsPosition[i] + "+" + actionsPositionV[i], "");
+		}
+		// ------------
+	}
+	
 }

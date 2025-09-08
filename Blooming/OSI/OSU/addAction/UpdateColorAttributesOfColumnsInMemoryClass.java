@@ -172,7 +172,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 			System.out.println("400---00005---");
 			shellType += "颜色标记为|";
 			Iterator<String> iterators= NE.app_S.workVerbaMap.command_V
-					.cartesianWorkActionsRights.keySet().iterator();
+					.cartesianWorkActionsRightsSV.keySet().iterator();
 			boolean find = false;
 			System.out.println("400---00006---");
 			while(iterators.hasNext()&&!find) {
@@ -204,7 +204,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 			}
 			//negative 关系测试
 			iterators= NE.app_S.workVerbaMap.command_V
-					.cartesianWorkActionsRights.keySet().iterator();
+					.cartesianWorkActionsRightsSV.keySet().iterator();
 			while(iterators.hasNext()) {
 				String string = iterators.next();
 				System.out.println("400-10000004" + string);
@@ -229,6 +229,18 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 				 * 。
 				 * later -trif
 				 * */
+				if(string.contains("红色")){
+					System.out.println("400-10000005" + string);
+					if(string.contains("不")) {
+						return null;
+					}
+				}
+			}
+			iterators= NE.app_S.workVerbaMap.command_V
+					.cartesianWorkActionsRightsVO.keySet().iterator();
+			while(iterators.hasNext()) {
+				String string = iterators.next();
+				System.out.println("400-10000004" + string);
 				if(string.contains("红色")){
 					System.out.println("400-10000005" + string);
 					if(string.contains("不")) {

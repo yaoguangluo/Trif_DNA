@@ -52,7 +52,7 @@ public class CommandClass {
 	// 单句的延伸
 	public String commandAcknowledge;
 
-	// 单句的多种延伸 
+	// 单句的多种延伸
 	public String[] acknowledge;
 	public String[] acknowledgeSwap;
 	// 单句的变换延伸
@@ -66,9 +66,10 @@ public class CommandClass {
 	public List<String> _IMV_SIQ_SS_ = new ArrayList<>();
 	/*
 	 * 稍后这些关于当前的命令句对应的workVerbaMap中需要clear的对象都走这个类，
-	 * 免得以后修改或者增加条件，不谨慎漏了几个clear。我认为这是一种计算关系的优 化方式，属于聚类优化计算逻辑。
+	 * 免得以后修改或者增加条件，不谨慎漏了几个clear。我认为这是一种计算关系的优 
+	 * 化方式，属于聚类优化计算逻辑。
 	 * 
-	 * 随着条件越来越多，之后会统一组合优化这个map关系，然后剔除掉一些成员变量。
+	 * 随着条件越来越多，之后会统一组合优化这个map关系，然后剔除掉一些成员变量。 
 	 * --trif later
 	 * 
 	 * --罗瑶光
@@ -76,16 +77,54 @@ public class CommandClass {
 	 */
 	public IMV_SIQ_SS _IMV_SIQ_SS = new IMV_SIQ_SS();
 	public IMV_SIQ_S_ _IMV_SIQ_S_ = new IMV_SIQ_S_();
-	public IMV_SIQ cartesianRootMap = new IMV_SIQ();
-	public IMV_SIQ cartesianRootWithScaleMap = new IMV_SIQ();
-	public IMV_SIQ cartesianRootRelationMap = new IMV_SIQ();
-	public IMV_SIQ cartesianWorkActionsRights = new IMV_SIQ();
-	public IMV_SIQ cartesianWorkActionsPositions = new IMV_SIQ();
-	public IMV_SIQ cartesianWorkActions_pos = new IMV_SIQ();
-	public IMV_SIQ normalizationalWorkActionsRights = new IMV_SIQ();
-	public IMV_SIQ normalizationalWorkActionsPositions = new IMV_SIQ();
-	public IMV_SIQ complementedWorkActionsRights = new IMV_SIQ();
-	public IMV_SIQ complementedWorkActionsPositions = new IMV_SIQ();
+	// core
+//	public IMV_SIQ cartesianWorkActionsRights = new IMV_SIQ();//
+//	public IMV_SIQ cartesianWorkActionsPositions = new IMV_SIQ();//
+//	public IMV_SIQ cartesianWorkActions_pos = new IMV_SIQ();//
+	//关系大幅减少。
+	//public IMV_SIQ cartesianRootMap = new IMV_SIQ();
+	//public IMV_SIQ cartesianRootWithScaleMap = new IMV_SIQ();
+	//public IMV_SIQ cartesianRootRelationMap = new IMV_SIQ();
+	//public IMV_SIQ normalizationalWorkActionsRights = new IMV_SIQ();
+	//public IMV_SIQ normalizationalWorkActionsPositions = new IMV_SIQ();
+	//public IMV_SIQ complementedWorkActionsRights = new IMV_SIQ();
+	//public IMV_SIQ complementedWorkActionsPositions = new IMV_SIQ();
 	public IMV_SIQ unknown_map = new IMV_SIQ();
+	/*
+	 * 关系大幅减少仅仅代表计算关系的优化比较通畅，并不代表计算属性的优化是完美的，
+	 * 于是开始细化计算关系，确定计算属性的重心价值。于是开始拆解 +- SVO关系。
+	 * 这里分解后，所有涉及这个逻辑的都要分解。于是跟进优化。 --罗瑶光
+	 * */
+	public IMV_SIQ cartesianWorkActionsRightsSV = new IMV_SIQ();//
+	public IMV_SIQ cartesianWorkActionsPositionsSV = new IMV_SIQ();//
+	public IMV_SIQ cartesianWorkActions_posSV = new IMV_SIQ();//
+	
+	public IMV_SIQ cartesianWorkActionsRightsVO = new IMV_SIQ();//
+	public IMV_SIQ cartesianWorkActionsPositionsVO = new IMV_SIQ();//
+	public IMV_SIQ cartesianWorkActions_posVO = new IMV_SIQ();//
+	
+	public IMV_SIQ getNumericsFromUnknownMap() {
+		/*
+		 * 在一切关系明了的环境中开始思考-未知的字符集大体有4类，第一类是数字，第二类是
+		 * 字母，第三类是常见符号，第四类是特殊符号。所以在这里就要有4个识别函数来work。 
+		 * --later to do。
+		 * --罗瑶光
+		 */
+		return null;
+	}
 
+	public IMV_SIQ getAlfabeticsFromUnknownMap() {
+
+		return null;
+	}
+
+	public IMV_SIQ getSymbolicsFromUnknownMap() {
+
+		return null;
+	}
+
+	public IMV_SIQ getUnicodesFromUnknownMap() {
+
+		return null;
+	}
 }

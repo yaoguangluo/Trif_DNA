@@ -46,10 +46,14 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 		relationshipsCombinationWithNounAndVerb();
 		// init cartesianActions
 		initCartesianActions(NE, command_V);
+		//SVO的关系细化分解后，逻辑操作会更加地精确。
+		sortCartesianWorkActionsPositionSV(NE, command_V);
 		//
-		sortCartesianWorkActionsPosition(NE, command_V);
+		sortCartesianWorkActionsDistanceSV(NE, command_V);
+		
+		sortCartesianWorkActionsPositionVO(NE, command_V);
 		//
-		sortCartesianWorkActionsDistance(NE, command_V);
+		sortCartesianWorkActionsDistanceVO(NE, command_V);
 		//
 		actionsNormalization(NE, command_V);
 		if (!objectMap.isEmpty() && !verbMap.isEmpty()) {

@@ -194,7 +194,7 @@ public class IMV_SIQ extends ConcurrentHashMap {
 			/*
 			 * 思考，stringsKey因为被加工处理，单字被过滤了，那么需要中条件算法来辅助判断
 			 * 判断的方法有很多，通用的方法打分匹配来确定相似度。然后多个相似度 词组进行
-			 * 累积总分触发因为我要挑战我自己，所以不能用普通的逻辑来优化。 地球一直很美好 ，大家更应该要学会长大。 --罗瑶光
+			 * 累积总分触发因为我要挑战我自己，所以不能用普通的逻辑来优化。 --罗瑶光
 			 */
 			if (key.contains(actionKey)) {// later separate.
 				/* 精确匹配就直接触发 */
@@ -263,7 +263,8 @@ public class IMV_SIQ extends ConcurrentHashMap {
 				} else {
 					scores.put(temp, 1);
 					/*
-					 * 有些只做一次的驱动可以另外分类进行算法描述 最简单的实例是map 对不同的action + 触发精度分数规则，
+					 * 有些只做一次的驱动可以另外分类进行算法描述 最简单的实例是map 
+					 * 对不同的action + 触发精度分数规则，
 					 * 既然是equals，那么这里 属于必须做的操作。 later -trif
 					 */
 					FlowerAction.doAction(temp, strings, output, NE);

@@ -52,20 +52,21 @@ public class E_pl_XA_E {
 			 * 思考关于关系分类的价值，表面的含义我就不介绍了，如果我要输出我的思维方式要优秀于传统的
 			 * 认知方式，就要有明显的论证和论据来强调我的HVPCS关系要优秀于普通的模型，显而易见，今天的
 			 * 逻辑分层和关系分类最大的价值是我挖掘到了一个中间层map unknowMap ，这个隐匿在我的workmap中
-			 * 又要的表达在command的逻辑中，于是出现了一行逻辑错误，文件地址package E_A.ME.analysis.E; 
-			 * 函数名 CogsBinaryForest_AE的 218行 //关联studyMap later -trif ，这个unknow关系不应该
+			 * 又要的表达在command的逻辑中，于是出现了一行逻辑错误，文件地址package
+			 * E_A.ME.analysis.E; 函数名 CogsBinaryForest_AE的 218行
+			 * //关联studyMap later -trif ，这个unknow关系不应该
 			 * 被包含在workmap中，我扔在网上完整的华瑞集源码和开发文档，
 			 * 
 			 * 我要严谨的提醒的是 这些年一些大佬看了后，模仿窥伺我，改我的思维方式和函数名，搞点名堂，然后
 			 * 更进写，就莫名成了别人的作品，我呢的确没有功夫来管这些科技人才的屁事。到时候出了问题，别怪我没
-			 * 提醒，六脉神剑逆着练，也能射出剑气来，那是你们的本事。出问题也自然被人嘲笑，别赖上我就是了。
-			 * 我的逻辑是 HVPCS + 元基编码 + 时函数 + 计算哲学。大佬们既然要模仿我的风格，就要深入接触这
+			 * 提醒，六脉神剑逆着练，也能射出剑气来，那是你们的本事。出问题也自然被人嘲笑，别赖上我就是了。 我的逻辑是
+			 * HVPCS + 元基编码 + 时函数 + 计算哲学。大佬们既然要模仿我的风格，就要深入接触这
 			 * 4个领域。我的动机是当然希望人才辈出，早点超越我，不然我才不会这样样细致的文字描述。2018 分词
 			 * 如果lucene 每秒当时能够上 2000万，估计这几年我可以天天玩。就是看业界不争气，我没办法才have to
-			 *  编码。做人可以飞到天上去，但做事一定要脚踏实地。
+			 * 编码。做人可以飞到天上去，但做事一定要脚踏实地。
 			 * 
 			 * --罗瑶光
-			 * */
+			 */
 			// 函数注册
 			NE.app_S.workVerbaMap.command_V = command_V;
 			// 之后整体替换下。方便command_V管理。
@@ -114,14 +115,14 @@ public class E_pl_XA_E {
 			// Iterator<String> iterators =
 			// NE.app_S.workVerbaMap.cartesianWorkActionsRights
 			// .keySet().iterator();
-			Iterator<String> iterators = command_V.cartesianWorkActionsRights
+			Iterator<String> iterators = command_V.cartesianWorkActionsRightsSV
 					.keySet().iterator();
 			/*
-			 * 准备把心态摆正一下。降低自己的思维跳跃活性，用于保证持续的思绪稳定。
-			 * 思考，关于 normalizationalWorkActionsRights 的形态是 
-			 * actionsDistance[i] + "-" + actionsDistanceV[i]
-			 * 其中 actionsDistance[i]的形态是cartesianWorkActionsRights的key
-			 * 而 cartesianWorkActionsRights的key构造来自于WorkVerbaMap_X_S的166行的初始root
+			 * 准备把心态摆正一下。降低自己的思维跳跃活性，用于保证持续的思绪稳定。 思考，关于
+			 * normalizationalWorkActionsRights 的形态是 actionsDistance[i]
+			 * + "-" + actionsDistanceV[i] 其中
+			 * actionsDistance[i]的形态是cartesianWorkActionsRights的key 而
+			 * cartesianWorkActionsRights的key构造来自于WorkVerbaMap_X_S的166行的初始root
 			 * 于是我开始思考，在计算关系分层的时候缺少了一些中间过程的碎片记录，这个记录关系导致了
 			 * 我之后要花双倍时间来重复计算曾经已有的却未保留的结果，论证在计算哲学中，计算关系可以
 			 * 外因计算逻辑。于是开始优化准备将root的组合因子进行map化。从而顾虑掉下面的重复逻辑。
@@ -130,10 +131,10 @@ public class E_pl_XA_E {
 			 * 
 			 * --罗瑶光
 			 * 
-			 * */
+			 */
 			while (iterators.hasNext()) {
 				String string = iterators.next();
-				//String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
+				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
 				System.out.println("400-10000001" + string);
 				if (null != string) {
 					/* loop s later */
@@ -143,19 +144,31 @@ public class E_pl_XA_E {
 					 * command_V.cartesianWorkActionsRights 通过500字的思绪描述，最终优化的逻辑。
 					 * 大幅减少冗余的变量和堆栈关系。
 					 * 
-					 * */
-					
-					//String[] stringSets = string.split("-");
-					//command_V.stringSets = stringSets;// 增加利用率。
-					//command_V.stringSetsMap.put(string, stringSets);
-					//int scaleRights = Integer
-					//.valueOf(stringSets[stringSets.length - 1]);
-					
+					 */
+
+					// String[] stringSets = string.split("-");
+					// command_V.stringSets = stringSets;// 增加利用率。
+					// command_V.stringSetsMap.put(string, stringSets);
+					// int scaleRights = Integer
+					// .valueOf(stringSets[stringSets.length - 1]);
+
 					/*
 					 * 在进行构造关系的分析过程中，发现split的操作是一种流程逻辑错误的弥补。
-					 * 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高笛卡尔的计算 性能 -trif --罗瑶光
+					 * 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高
+					 * 笛卡尔的计算 性能 -trif --罗瑶光
 					 */
-					int scaleRights = command_V.cartesianWorkActionsRights.getInt(string);
+					int scaleRights;
+					if (command_V.cartesianWorkActionsRightsSV
+							.containsKey(string)) {
+						scaleRights = command_V.cartesianWorkActionsRightsSV
+								.getInt(string);
+					} else {
+						scaleRights = 9999;
+					}
+					/*
+					 * map细化分解的好处显而易见，如我的早期的德塔分词，map全部分解。这是一种
+					 * 计算关系催化过程。之后这个map也可以元基来索引加速遍历。 --罗瑶光
+					 * */
 					// 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
 					// 过滤和缩减了海量关系计算集合。
 					if (scaleRights < 12) {
@@ -163,6 +176,27 @@ public class E_pl_XA_E {
 								string, temp, output, NE, scores);
 					}
 					// later // in // pdn
+				}
+			}
+			//SVO主谓宾的中文缩写。cartesianWorkActionsRights分解后SV和VO可以以后形成严谨的指令句匹配规范
+			iterators = command_V.cartesianWorkActionsRightsVO.keySet().iterator();
+			while (iterators.hasNext()) {
+				String string = iterators.next();
+				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
+				System.out.println("400-10000001" + string);
+				if (null != string) {
+					int scaleRights;
+					if (command_V.cartesianWorkActionsRightsVO
+							.containsKey(string)) {
+						scaleRights = command_V.cartesianWorkActionsRightsVO
+								.getInt(string);
+					} else {
+						scaleRights = 9999;
+					}
+					if (scaleRights < 12) {
+						FlowerAction.FlowerSixDomainActions.couldDoThenDo(
+								string, temp, output, NE, scores);
+					}
 				}
 			}
 			// -3
@@ -182,13 +216,17 @@ public class E_pl_XA_E {
 			 * test.java.InterfaceTest.initon.util; --罗瑶光
 			 * 
 			 */
-			command_V.cartesianWorkActionsRights.clear();
-			command_V.cartesianWorkActionsPositions.clear();
-			command_V.normalizationalWorkActionsRights.clear();
-			command_V.normalizationalWorkActionsPositions.clear();
-			command_V.complementedWorkActionsRights.clear();
-			command_V.complementedWorkActionsPositions.clear();
-			command_V.cartesianWorkActions_pos.clear();
+//			command_V.normalizationalWorkActionsRights.clear();
+//			command_V.normalizationalWorkActionsPositions.clear();
+//			command_V.complementedWorkActionsRights.clear();
+//			command_V.complementedWorkActionsPositions.clear();
+			command_V.cartesianWorkActionsRightsSV.clear();
+			command_V.cartesianWorkActionsPositionsSV.clear();
+			command_V.cartesianWorkActions_posSV.clear();
+
+			command_V.cartesianWorkActionsRightsVO.clear();
+			command_V.cartesianWorkActionsPositionsVO.clear();
+			command_V.cartesianWorkActions_posVO.clear();
 			command_V.unknown_map.clear();
 			/*
 			 * 这样command_V的价值就出来了，clear之后再GC，双重清理，在垃圾器的优化环境里会内存 更加稳定。

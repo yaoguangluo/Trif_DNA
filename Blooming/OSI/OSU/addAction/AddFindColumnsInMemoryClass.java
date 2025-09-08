@@ -110,7 +110,7 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	 * 词性的校准逻辑层面，保持算法的BPM结构模块相对稳定性。 --罗瑶光
 	 */
 	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
-		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRights
+		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsVO
 				.containsKey("名为-")) {
 			System.out.printf("highly fit"); // later in mapping iterator.*/
 		}
