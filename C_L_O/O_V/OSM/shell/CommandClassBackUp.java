@@ -43,7 +43,7 @@ import S_A.pheromone.IMV_SIQ_S_;
  * --罗瑶光
  * 
  * */
-public class CommandClass {
+public class CommandClassBackUp {
 	// 工作机
 	public WorkVerbaMap workVerbaMap;
 	// 单句的命令
@@ -193,8 +193,197 @@ public class CommandClass {
 	 * 在loop的最末端进行标记。确定乘法标记，只有在loop区间中没有操作条件时候才做乘积
 	 * 在50字描述后，问题就找到了。 --罗瑶光
 	 */
+	@SuppressWarnings("unused")
+	public String fasterChineseNumberSwap1(String chineseNumber) {
+		System.out.println(chineseNumber);
+		// 输入分析，开始思考，中文有3套系统，非语义，简体，大写，所以非常混杂，
+		// 有一点好，我们国家至少小数点后的数字不会用中文大写，省了一把函数。如3.一四壹五玖二六。
+		/*
+		 * 缩写--- 一零零零 1000 二零贰五 2025
+		 * 
+		 * 非缩写--- 单位---个 万 亿 兆 。。。。 / 一 壹 量级---拾 佰 千 组合--- 拾 一一 一十
+		 * 一十一 壹拾一 佰一零零 一百 一佰一十 一佰一拾一 千一零零零 一千 一千一佰一十
+		 */
+		long liangCidanyuanCi = -1;
+		long liangCiFix = -1;
+		long connectCi = -1;
+		long connectCiFix = -1;
+		long total = 0;
+		String totalParser = "";
+		long fix = -1;
+		for (int i = 0; i < chineseNumber.length(); i++) {
+			long liangCi = -1;//
+			long danyuanCi = -1;
+			boolean danyuanCiOperations = false;
+			if (chineseNumber.charAt(i) == '零') {
+				liangCi = 0;
+				liangCidanyuanCi = 0;
+			}
+			if (chineseNumber.charAt(i) == '一'
+					|| chineseNumber.charAt(i) == '壹') {
+				liangCi = 1;
+				liangCidanyuanCi = 1;
+			}
+			if (chineseNumber.charAt(i) == '二' || chineseNumber.charAt(i) == '贰'
+					|| chineseNumber.charAt(i) == '两') {
+				liangCi = 2;
+				liangCidanyuanCi = 2;
+			}
+			if (chineseNumber.charAt(i) == '三'
+					|| chineseNumber.charAt(i) == '叁') {
+				liangCi = 3;
+				liangCidanyuanCi = 3;
+			}
+			if (chineseNumber.charAt(i) == '四'
+					|| chineseNumber.charAt(i) == '肆') {
+				liangCi = 4;
+				liangCidanyuanCi = 4;
+			}
+			if (chineseNumber.charAt(i) == '五'
+					|| chineseNumber.charAt(i) == '伍') {
+				liangCi = 5;
+				liangCidanyuanCi = 5;
+			}
+			if (chineseNumber.charAt(i) == '六'
+					|| chineseNumber.charAt(i) == '陆') {
+				liangCi = 6;
+				liangCidanyuanCi = 6;
+			}
+			if (chineseNumber.charAt(i) == '七'
+					|| chineseNumber.charAt(i) == '柒') {
+				liangCi = 7;
+				liangCidanyuanCi = 7;
+			}
+			if (chineseNumber.charAt(i) == '八'
+					|| chineseNumber.charAt(i) == '捌') {
+				liangCi = 8;
+				liangCidanyuanCi = 8;
+			}
+			if (chineseNumber.charAt(i) == '九'
+					|| chineseNumber.charAt(i) == '玖') {
+				liangCi = 9;
+				liangCidanyuanCi = 9;
+			}
+			//
+			if (chineseNumber.charAt(i) == '拾'
+					|| chineseNumber.charAt(i) == '十') {
+				// 新手别按我的逻辑写，别出错，
+				liangCidanyuanCi = 10;
+				danyuanCi = 10;
+				danyuanCiOperations = true;
+			}
+			if (chineseNumber.charAt(i) == '佰'
+					|| chineseNumber.charAt(i) == '百') {
+				liangCidanyuanCi = 100;
+				danyuanCi = 100;
+				danyuanCiOperations = true;
+			}
+			if (chineseNumber.charAt(i) == '仟'
+					|| chineseNumber.charAt(i) == '千') {
+				liangCidanyuanCi = 1000;
+				danyuanCi = 1000;
+				danyuanCiOperations = true;
+			}
+			if (chineseNumber.charAt(i) == '万') {// 我电脑没有繁体万字 sorry
+				liangCidanyuanCi = 10000;
+				danyuanCi = 10000;
+				danyuanCiOperations = true;
+			}
+			if (chineseNumber.charAt(i) == '亿') {// 我电脑没有繁体万字 sorry
+				liangCidanyuanCi = 100000000;
+				danyuanCi = 100000000;
+				danyuanCiOperations = true;
+			}
+//			if (chineseNumber.charAt(i) == '兆') {//我电脑没有繁体万字 sorry
+//			}
+//			if (chineseNumber.charAt(i) == '京') {//我电脑没有繁体万字 sorry
+//			}
+			long totalCurrent = 0;
+			if (true == danyuanCiOperations) {
+				/*
+				 * 有单元词，说明当前区间量词为-1，量词戳是之前的区间量词， 例如九十 = 九乘十 = 90 =
+				 * totalCurrent；
+				 * 
+				 */
+				// if (-1 != liangCiFix && -1 != danyuanCi) {
+				System.out.println(
+						"danyuanCiOperations---->" + danyuanCiOperations);
+				System.out.println("liangCi-------------->" + liangCi);
+				System.out.println("liangCiFix----------->" + liangCiFix);
+				System.out.println("danyuanCi------------>" + danyuanCi);
+				System.out.println("totalCurrent--------->" + totalCurrent);
+				System.out.println("total---------------->" + total);
+				System.out.println("connectCi------------>" + connectCi);
+				System.out.println("connectCiFix------------>" + connectCiFix);
+				if (-1 == liangCiFix) {
+					totalCurrent = 1 * danyuanCi;
+				} else {
+					totalCurrent = liangCiFix * danyuanCi;
+				}
+				System.out.println(
+						"danyuanCiOperations---->" + danyuanCiOperations);
+				System.out.println("liangCi-------------->" + liangCi);
+				System.out.println("liangCiFix----------->" + liangCiFix);
+				System.out.println("danyuanCi------------>" + danyuanCi);
+				System.out.println("totalCurrent--------->" + totalCurrent);
+				System.out.println("total---------------->" + total);
+				System.out.println("connectCi------------>" + connectCi);
+				System.out.println("connectCiFix------------>" + connectCiFix);
+				// }
+//					liangCidanyuanCi = 10;
+//					danyuanCi = 10;
+//					danyuanCiOperations = true;
+
+			}
+			// 计算逻辑分层。
+			if (false == danyuanCiOperations) {
+				System.out.println(
+						"danyuanCiOperations---->" + danyuanCiOperations);
+				System.out.println("liangCi-------------->" + liangCi);
+				System.out.println("liangCiFix----------->" + liangCiFix);
+				System.out.println("danyuanCi------------>" + danyuanCi);
+				System.out.println("totalCurrent--------->" + totalCurrent);
+				System.out.println("total---------------->" + total);
+				System.out.println("connectCi------------>" + connectCi);
+				System.out.println("connectCiFix------------>" + connectCiFix);
+				/*
+				 * connect词汇的逻辑是 前字和当前字都不是单元字，确定connectCi大于0即可
+				 */
+				if (-1 == connectCiFix) {
+					connectCi = liangCi * liangCiFix;
+				} else {
+					connectCi = liangCi * connectCiFix;
+				}
+//				if (-1 != liangCiFix) {
+//					if (0 == connectCi) {
+//						connectCi = liangCiFix * liangCi;
+//					} else {
+//						connectCi = connectCi * liangCi;
+//					}
+//					totalCurrent += liangCi;
+//				}
+				totalCurrent += liangCi;
+				// totalCurrent = liangCiFix;
+				System.out.println(
+						"danyuanCiOperations---->" + danyuanCiOperations);
+				System.out.println("liangCi-------------->" + liangCi);
+				System.out.println("liangCiFix----------->" + liangCiFix);
+				System.out.println("danyuanCi------------>" + danyuanCi);
+				System.out.println("totalCurrent--------->" + totalCurrent);
+				System.out.println("total---------------->" + total);
+				System.out.println("connectCi------------>" + connectCi);
+				System.out.println("connectCiFix------------>" + connectCiFix);
+			}
+			total = total + totalCurrent;
+			liangCiFix = liangCi;
+			connectCiFix = connectCi;
+		}
+		System.out.println(total);
+		return "";
+	}
+
 	public static void main(String[] argv) {
-		CommandClass commandClass = new CommandClass();
+		CommandClassBackUp commandClass = new CommandClassBackUp();
 		String string = "*&^$^&&567 678&^%Royal!% @123&&@tin yo&&@@luo yaoguang";
 		commandClass.getNumericsFromUnknownMap(string);
 		commandClass.getAlfabeticsFromUnknownMap(string);
@@ -222,7 +411,7 @@ public class CommandClass {
 		// ----------------
 		// 0--0
 		// 30--1
-		System.out.println("--------中文数字机-V00001---------");
+		System.out.println("----------------------");
 		String number = "一";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "拾";
@@ -291,6 +480,7 @@ public class CommandClass {
 		System.out.println("十万万");
 		System.out.println("-学好语文，这叫十亿-先不处理歧义句");
 		System.out.println("-先不处理超亿句，我框架都写好了，直接split 加函数即可。");
+		//commandClass.fasterChineseNumberSwap(number);
 		number = "十二万";
 		commandClass.fasterChineseNumberSwap(number);
 	}
@@ -371,11 +561,11 @@ public class CommandClass {
 						System.out.println("total-->" + outputWan);
 					}
 				} else {
-					// wan to do
+					// wan
 				}
 			}
 		} else {
-			// yi to do
+			// yi
 		}
 		return "";
 	}
@@ -449,104 +639,3 @@ public class CommandClass {
 		return total;
 	}
 }
-//输出
-//567--0
-//678--1
-//123--2
-//Royal--0
-//tin--1
-//yo--2
-//luo--3
-//0--0
-//30--1
-//----------------------
-//输入-->一
-//简体-->一
-//total-->1
-//输入-->拾
-//简体-->十
-//total-->10
-//输入-->零拾
-//简体-->零十
-//total-->0
-//输入-->一拾贰
-//简体-->一十二
-//total-->12
-//输入-->拾陆
-//简体-->十六
-//total-->16
-//输入-->零拾三
-//简体-->零十三
-//total-->3
-//输入-->捌拾玖
-//简体-->八十九
-//total-->89
-//输入-->零佰
-//简体-->零百
-//total-->0
-//输入-->壹百
-//简体-->一百
-//total-->100
-//输入-->两佰二十
-//简体-->二百二十
-//total-->220
-//输入-->两佰零二
-//简体-->二百零二
-//total-->202
-//输入-->两佰贰十二
-//简体-->二百二十二
-//total-->222
-//输入-->两千两佰贰十二
-//简体-->二千二百二十二
-//total-->2222
-//输入-->两千两佰零二
-//简体-->二千二百零二
-//total-->2202
-//输入-->两千零二
-//简体-->二千零二
-//total-->2002
-//输入-->两千零二十
-//简体-->二千零二十
-//total-->2020
-//输入-->两千零二十二
-//简体-->二千零二十二
-//total-->2022
-//输入-->两千零二十二万
-//简体-->二千零二十二万
-//total-->2022
-//total-->20220000
-//输入-->两千零二十二万零二
-//简体-->二千零二十二万零二
-//total-->2022
-//total-->20220002
-//输入-->两千零二十二万两千零二十二
-//简体-->二千零二十二万二千零二十二
-//total-->2022
-//total-->20222022
-//输入-->玖千玖百九拾九万九千九佰九十玖
-//简体-->九千九百九十九万九千九百九十九
-//total-->9999
-//total-->99999999
-//输入-->零万
-//简体-->零万
-//total-->0
-//total-->00000
-//输入-->万二十
-//简体-->万二十
-//total-->1
-//total-->10020
-//输入-->二万二佰零二
-//简体-->二万二百零二
-//total-->2
-//total-->20202
-//输入-->十万
-//简体-->十万
-//total-->10
-//total-->100000
-//十万万
-//-学好语文，这叫十亿-先不处理歧义句
-//-先不处理超亿句，我框架都写好了，直接split 加函数即可。
-//输入-->十二万
-//简体-->十二万
-//total-->12
-//total-->120000
