@@ -137,6 +137,13 @@ public class CommandClass {
 			}
 			string += inputString.charAt(i);
 		}
+		if (!string.isEmpty()) {
+			System.out.println(string + "--" + fixOrder);
+			// println函数走图形打印机，并发工程记得注释掉或者用其他的classic观测API
+			numericsFromUnknownString.put(string.toString(),
+					fixOrder++);
+			string = "";
+		}
 		// 2 其他语义，如中文
 		// to do later。。
 	}
@@ -160,6 +167,12 @@ public class CommandClass {
 				}
 				continue;
 			}
+		}
+		if (!string.isEmpty()) {
+			System.out.println(string + "--" + fixOrder);
+			alfabeticsFromUnknownString.put(string.toString(),
+					fixOrder++);
+			string = "";
 		}
 	}
 
@@ -540,6 +553,7 @@ public class CommandClass {
 //tin--1
 //yo--2
 //luo--3
+//yaoguang--4
 //0--0
 //30--1
 //----------------------
