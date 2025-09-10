@@ -293,6 +293,28 @@ public class CommandClass {
 		System.out.println("-先不处理超亿句，我框架都写好了，直接split 加函数即可。");
 		number = "十二万";
 		commandClass.fasterChineseNumberSwap(number);
+		number = "万";
+		commandClass.fasterChineseNumberSwap(number);
+		number = "亿";
+		commandClass.fasterChineseNumberSwap(number);
+		number = "十亿";
+		commandClass.fasterChineseNumberSwap(number);
+		// 大数运算构造机 later
+		number = "万亿";
+		commandClass.fasterChineseNumberSwap(number);
+		number = "九千万亿";
+		commandClass.fasterChineseNumberSwap(number);
+		number = "九千万亿零九";
+		commandClass.fasterChineseNumberSwap(number);
+		number = "九千万亿零九十";
+		commandClass.fasterChineseNumberSwap(number);
+		number = "九千零九十万零九十亿零九十";
+		//9090 0090 0000 0090
+		commandClass.fasterChineseNumberSwap(number);
+		number = "九千零九十万零九百零九亿零九十万零九百零九";
+		commandClass.fasterChineseNumberSwap(number);
+		//我的系统没有16位大数计算业务，有就按这个逻辑+兆+京条件去解决。
+		//框架都搞好了，直接加函数即可 --罗瑶光
 	}
 
 	@SuppressWarnings("unused")
@@ -322,16 +344,22 @@ public class CommandClass {
 		 * 然后处理京为最大处理量级。关于亿的逻辑意识组合 有 万亿，一万亿， 一万一千零二亿， 乘积是100 000 000
 		 * 8个零。
 		 */
+		String regWan = "";
+		String regYi = "";
+		String reg = "";
 		String outputYi = "";
 		String[] stringsYi = stringSwap.split("亿");
-		//System.out.println(stringsYi.length);
+		//System.out.println("stringsYi.length-->" + stringsYi.length);
 		if (stringsYi.length > 0) {
+			int j = 0;
 			for (String stringYi : stringsYi) {
+				j++;
+				//System.out.println("stringYi-->" + stringYi);
 				/*
 				 * 简化后文字开始进行精确分析，然后拆分最大逻辑集合确定万为最大计算量级， 有 千万，一百万， 一千零二十万，
 				 * 乘积是10 000 4个零。
 				 */
-				//System.out.println(stringYi);
+				// System.out.println(stringYi);
 				String[] stringsWan = stringYi.split("万");
 				//System.out.println("stringsWan.length-->" + stringsWan.length);
 				String outputWan = "";
@@ -339,19 +367,22 @@ public class CommandClass {
 					int i = 0;
 					for (String stringWan : stringsWan) {
 						i++;
+						//System.out.println("stringWan-->" + stringWan);
 						/*
 						 * 逻辑分层后，这里只要处理一万以内的组合，大幅减少条件分析。
 						 */
-						//System.out.println("longWan-->" + stringWan);
+						// System.out.println("longWan-->" + stringWan);
 						if (stringWan.isEmpty()) {
 							outputWan += "" + 1;
+							reg = outputWan;
 							System.out.println("total-->" + outputWan);
 							continue;
 						}
 						long longWan = processWan(stringWan);
-						//System.out.println("longWan-->" + longWan);
+						// System.out.println("longWan-->" + longWan);
 						if (outputWan.isEmpty()) {
 							outputWan += "" + longWan;
+							reg = outputWan;
 							System.out.println("total-->" + outputWan);
 							continue;
 						}
@@ -364,18 +395,70 @@ public class CommandClass {
 						} else {
 							outputWan += "" + longWan;
 						}
+						reg = outputWan;
 						System.out.println("total-->" + outputWan);
 					}
 					if (stringYi.contains("万") && stringsWan.length < 2) {
 						outputWan += "0000";
+						reg = outputWan;
 						System.out.println("total-->" + outputWan);
 					}
 				} else {
 					// wan to do
+					outputWan = "10000";
+					reg = outputWan;
+					System.out.println("total-->" + outputWan);
+				}
+				if (1 == j) {
+					regYi = reg;
+				}
+				if (2 == j) {
+					regWan = reg;
 				}
 			}
+			if (stringSwap.contains("亿") && stringsYi.length < 2) {
+				outputYi += reg + "00000000";
+				System.out.println("total-->" + outputYi);
+			}
+			if (stringSwap.contains("亿") && stringsYi.length > 1) {
+				if (regWan.length() < 2) {
+					regYi += "0000000" + regWan;
+					//System.out.println("regWan1-->" + regWan);
+					//System.out.println("regYi1-->" + regYi);
+				}else if (regWan.length() < 3) {
+					regYi += "000000" + regWan;
+					//System.out.println("regWan2-->" + regWan);
+					//System.out.println("regYi2-->" + regYi);
+				}else if (regWan.length() < 4) {
+					regYi += "00000" + regWan;
+					//System.out.println("regWan3-->" + regWan);
+					//System.out.println("regYi3-->" + regYi);
+				}else if (regWan.length() < 5) {
+					regYi += "0000" + regWan;
+					//System.out.println("regWan4-->" + regWan);
+					//System.out.println("regYi4-->" + regYi);
+				}else if (regWan.length() < 6) {
+					regYi += "000" + regWan;
+					//System.out.println("regWan5-->" + regWan);
+					//System.out.println("regYi5-->" + regYi);
+				}else if (regWan.length() < 7) {
+					regYi += "00" + regWan;
+					//System.out.println("regWan6-->" + regWan);
+					//System.out.println("regYi6-->" + regYi);
+				}else if (regWan.length() < 8) {
+					regYi += "0" + regWan;
+					//System.out.println("regWan7-->" + regWan);
+					//System.out.println("regYi7-->" + regYi);
+				}
+				outputYi += regYi;
+				System.out.println("total-->" + outputYi);
+			}
+
 		} else {
 			// yi to do
+			outputYi = "100000000";
+			System.out.println("total-->" + outputYi);
+
 		}
 		return "";
 	}
@@ -441,7 +524,7 @@ public class CommandClass {
 			 * 文件末尾呀，然后注释标注格式化，让注释好看呀，这个删除的操作意识有问题。涉嫌
 			 * 毁灭证据的思维。这几年特别写核心源码的时候，想删除的动机意识特别强烈。这是我的 一个严重的错误习惯，以后要改正。
 			 */
-			//System.out.println("loop-->" + total);
+			// System.out.println("loop-->" + total);
 		}
 		if (-1 != value) {
 			total += value;
@@ -550,3 +633,47 @@ public class CommandClass {
 //简体-->十二万
 //total-->12
 //total-->120000
+//输入-->万
+//简体-->万
+//total-->10000
+//输入-->亿
+//简体-->亿
+//total-->100000000
+//输入-->十亿
+//简体-->十亿
+//total-->10
+//total-->1000000000
+//输入-->万亿
+//简体-->万亿
+//total-->10000
+//total-->1000000000000
+//输入-->九千万亿
+//简体-->九千万亿
+//total-->9000
+//total-->90000000
+//total-->9000000000000000
+//输入-->九千万亿零九
+//简体-->九千万亿零九
+//total-->9000
+//total-->90000000
+//total-->9
+//total-->9000000000000009
+//输入-->九千万亿零九十
+//简体-->九千万亿零九十
+//total-->9000
+//total-->90000000
+//total-->90
+//total-->9000000000000090
+//输入-->九千零九十万零九十亿零九十
+//简体-->九千零九十万零九十亿零九十
+//total-->9090
+//total-->90900090
+//total-->90
+//total-->9090009000000090
+//输入-->九千零九十万零九百零九亿零九十万零九百零九
+//简体-->九千零九十万零九百零九亿零九十万零九百零九
+//total-->9090
+//total-->90900909
+//total-->90
+//total-->900909
+//total-->9090090900900909
