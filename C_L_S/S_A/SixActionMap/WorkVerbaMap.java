@@ -72,10 +72,14 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 //		_IMV_SIQ_SS.clear();
 //		_IMV_SIQ_SS_.clear();
 //		_IMV_SIQ_S_.clear();
-		command_V._IMV_SIQ_SS = new IMV_SIQ_SS();
-		command_V._IMV_SIQ_SS_ = new ArrayList<>();
-		command_V._IMV_SIQ_S_ = new IMV_SIQ_S_();
-
+//		
+/*
+ * 在进行分词前进行数字提取过滤，得到数字类nums和序次的map然后过滤掉这些数字的string进行
+ * 下一步的操作，如果有alfs的提取任务，就alfs也用这个逻辑处理。 --罗瑶光
+ * 
+ * */
+		int res = new StudyVerbaMap().extractNumberfromString(command_V);
+		
 		this.humanTalk = command_V.command;
 		// command_V._IMV_SIQ_SS;
 		// command_V._IMV_SIQ_SS_;

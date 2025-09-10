@@ -50,6 +50,8 @@ public class CommandClass {
 	public String command;
 	// 单句的延伸
 	public String commandAcknowledge;
+	// 单句的延伸
+	public String commandWithNumFilters;
 
 	// 单句的多种延伸
 	public String[] acknowledge;
@@ -140,8 +142,7 @@ public class CommandClass {
 		if (!string.isEmpty()) {
 			System.out.println(string + "--" + fixOrder);
 			// println函数走图形打印机，并发工程记得注释掉或者用其他的classic观测API
-			numericsFromUnknownString.put(string.toString(),
-					fixOrder++);
+			numericsFromUnknownString.put(string.toString(), fixOrder++);
 			string = "";
 		}
 		// 2 其他语义，如中文
@@ -170,8 +171,7 @@ public class CommandClass {
 		}
 		if (!string.isEmpty()) {
 			System.out.println(string + "--" + fixOrder);
-			alfabeticsFromUnknownString.put(string.toString(),
-					fixOrder++);
+			alfabeticsFromUnknownString.put(string.toString(), fixOrder++);
 			string = "";
 		}
 	}
@@ -286,18 +286,6 @@ public class CommandClass {
 		commandClass.fasterChineseNumberSwap(number);
 		number = "二万二佰零二";
 		commandClass.fasterChineseNumberSwap(number);
-//		/*
-//		 * 
-//		 * */
-//		number = "两万";
-//		commandClass.fasterChineseNumberSwap(number);
-//		/*
-//		 * 两万是一个万单位乘以2，set的逻辑是value*10000，所以是20000，这是的十万，十是10，
-//		 * 万是10000，十万组合是10乘以10000，而我的逻辑中total的逻辑是+10000，所以缺少了算子。
-//		 * 
-//		 * 
-//		 * 
-//		 */
 		number = "十万";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "十万万";
@@ -322,21 +310,15 @@ public class CommandClass {
 		number = "九千万亿零九十";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "九千零九十万零九十亿零九十";
-		//9090 0090 0000 0090
+		// 9090 0090 0000 0090
 		commandClass.fasterChineseNumberSwap(number);
 		number = "九千零九十万零九百零九亿零九十万零九百零九";
 		commandClass.fasterChineseNumberSwap(number);
-		//我的系统没有16位大数计算业务，有就按这个逻辑+兆+京条件去解决。
-		//框架都搞好了，直接加函数即可 --罗瑶光
+		// 我的系统没有16位大数计算业务，有就按这个逻辑+兆+京条件去解决。
+		// 框架都搞好了，直接加函数即可 --罗瑶光
 	}
 
-	@SuppressWarnings("unused")
-	public String fasterChineseNumberSwap(String chineseNumber) {
-		System.out.println("输入-->" + chineseNumber);
-		/*
-		 * 上面是计算哲学和计算关系和计算逻辑的分析方法，需要巨大的采样，不符合我的思维认知方式
-		 * 于是按照罗瑶光的思绪分析，开始编码。首先我要进行数据预处理，将文字中所有繁体全部简化
-		 */
+	public String simpleChineseNumberSwap(String chineseNumber) {
 		String stringSwap = chineseNumber.replace("壹", "一");
 		stringSwap = stringSwap.replace("贰", "二");
 		stringSwap = stringSwap.replace("两", "二");
@@ -352,6 +334,17 @@ public class CommandClass {
 		stringSwap = stringSwap.replace("仟", "千");
 		stringSwap = stringSwap.replace("万", "万");
 		System.out.println("简体-->" + stringSwap);
+		return stringSwap;
+	}
+
+	@SuppressWarnings("unused")
+	public String fasterChineseNumberSwap(String chineseNumber) {
+		System.out.println("输入-->" + chineseNumber);
+		/*
+		 * 上面是计算哲学和计算关系和计算逻辑的分析方法，需要巨大的采样，不符合我的思维认知方式
+		 * 于是按照罗瑶光的思绪分析，开始编码。首先我要进行数据预处理，将文字中所有繁体全部简化
+		 */
+		String stringSwap = simpleChineseNumberSwap(chineseNumber);
 		/*
 		 * 简化后文字开始进行精确分析，首先拆分最大逻辑集合确定亿为最大计算量级， 因为单机的long最大只有亿。
 		 * 然后处理京为最大处理量级。关于亿的逻辑意识组合 有 万亿，一万亿， 一万一千零二亿， 乘积是100 000 000
@@ -362,25 +355,27 @@ public class CommandClass {
 		String reg = "";
 		String outputYi = "";
 		String[] stringsYi = stringSwap.split("亿");
-		//System.out.println("stringsYi.length-->" + stringsYi.length);
+		// System.out.println("stringsYi.length-->" +
+		// stringsYi.length);
 		if (stringsYi.length > 0) {
 			int j = 0;
 			for (String stringYi : stringsYi) {
 				j++;
-				//System.out.println("stringYi-->" + stringYi);
+				// System.out.println("stringYi-->" + stringYi);
 				/*
 				 * 简化后文字开始进行精确分析，然后拆分最大逻辑集合确定万为最大计算量级， 有 千万，一百万， 一千零二十万，
 				 * 乘积是10 000 4个零。
 				 */
 				// System.out.println(stringYi);
 				String[] stringsWan = stringYi.split("万");
-				//System.out.println("stringsWan.length-->" + stringsWan.length);
+				// System.out.println("stringsWan.length-->" +
+				// stringsWan.length);
 				String outputWan = "";
 				if (stringsWan.length > 0) {
 					int i = 0;
 					for (String stringWan : stringsWan) {
 						i++;
-						//System.out.println("stringWan-->" + stringWan);
+						// System.out.println("stringWan-->" + stringWan);
 						/*
 						 * 逻辑分层后，这里只要处理一万以内的组合，大幅减少条件分析。
 						 */
@@ -436,32 +431,32 @@ public class CommandClass {
 			if (stringSwap.contains("亿") && stringsYi.length > 1) {
 				if (regWan.length() < 2) {
 					regYi += "0000000" + regWan;
-					//System.out.println("regWan1-->" + regWan);
-					//System.out.println("regYi1-->" + regYi);
-				}else if (regWan.length() < 3) {
+					// System.out.println("regWan1-->" + regWan);
+					// System.out.println("regYi1-->" + regYi);
+				} else if (regWan.length() < 3) {
 					regYi += "000000" + regWan;
-					//System.out.println("regWan2-->" + regWan);
-					//System.out.println("regYi2-->" + regYi);
-				}else if (regWan.length() < 4) {
+					// System.out.println("regWan2-->" + regWan);
+					// System.out.println("regYi2-->" + regYi);
+				} else if (regWan.length() < 4) {
 					regYi += "00000" + regWan;
-					//System.out.println("regWan3-->" + regWan);
-					//System.out.println("regYi3-->" + regYi);
-				}else if (regWan.length() < 5) {
+					// System.out.println("regWan3-->" + regWan);
+					// System.out.println("regYi3-->" + regYi);
+				} else if (regWan.length() < 5) {
 					regYi += "0000" + regWan;
-					//System.out.println("regWan4-->" + regWan);
-					//System.out.println("regYi4-->" + regYi);
-				}else if (regWan.length() < 6) {
+					// System.out.println("regWan4-->" + regWan);
+					// System.out.println("regYi4-->" + regYi);
+				} else if (regWan.length() < 6) {
 					regYi += "000" + regWan;
-					//System.out.println("regWan5-->" + regWan);
-					//System.out.println("regYi5-->" + regYi);
-				}else if (regWan.length() < 7) {
+					// System.out.println("regWan5-->" + regWan);
+					// System.out.println("regYi5-->" + regYi);
+				} else if (regWan.length() < 7) {
 					regYi += "00" + regWan;
-					//System.out.println("regWan6-->" + regWan);
-					//System.out.println("regYi6-->" + regYi);
-				}else if (regWan.length() < 8) {
+					// System.out.println("regWan6-->" + regWan);
+					// System.out.println("regYi6-->" + regYi);
+				} else if (regWan.length() < 8) {
 					regYi += "0" + regWan;
-					//System.out.println("regWan7-->" + regWan);
-					//System.out.println("regYi7-->" + regYi);
+					// System.out.println("regWan7-->" + regWan);
+					// System.out.println("regYi7-->" + regYi);
 				}
 				outputYi += regYi;
 				System.out.println("total-->" + outputYi);
@@ -691,3 +686,16 @@ public class CommandClass {
 //total-->90
 //total-->900909
 //total-->9090090900900909
+
+///*
+//* 
+//* */
+//number = "两万";
+//commandClass.fasterChineseNumberSwap(number);
+///*
+//* 两万是一个万单位乘以2，set的逻辑是value*10000，所以是20000，这是的十万，十是10，
+//* 万是10000，十万组合是10乘以10000，而我的逻辑中total的逻辑是+10000，所以缺少了算子。
+//* 
+//* 
+//* 
+//*/
