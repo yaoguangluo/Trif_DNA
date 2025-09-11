@@ -1,5 +1,7 @@
 package S_A.SixActionMap;
 
+import O_V.OSM.shell.CommandClass;
+
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com
@@ -131,7 +133,7 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 			}
 		}
 		System.out.println("output-->" + output);
-		return number;
+		return output;
 	}
 
 	/*
@@ -233,136 +235,263 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 	}
 
 	public static void main(String[] argv) {
+		CommandClass commandClass=new CommandClass();
 		StudyVerbaMap_Q studyVerbaMap_Q = new StudyVerbaMap_Q();
 		String number = "9992980400000088";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "8082940800808033";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "8888888888888888";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "8888888888888888";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "8888000008888888";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "8080800800800088";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "8000000000000000";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "800800000000080";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "800080000000080";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "000800000080000";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "8000000000000";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "008000080";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "8080808";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "808080";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "8080";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "808";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "80";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "0080";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "88";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		System.out.println("-------------------");
 		number = "8";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
+		System.out.println("-------------------");
 		number = "0";
-		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+		commandClass.fasterChineseNumberSwap(number);
 		// 不断加不断修正细化即可
 		//
 
 	}
 }
 //不断加测试函数不断修正细化即可
-//
 //输出
 //9992980400000088
 //output-->九千九百九十二万九千八百零四亿零八十八
+//输入-->九千九百九十二万九千八百零四亿零八十八
+//简体-->九千九百九十二万九千八百零四亿零八十八
+//total2-->9992
+//total3-->99929804
+//total2-->88
+//total7-->9992980400000088
 //-------------------
 //8082940800808033
 //output-->八千零八十二万九千四百零八亿零八十万八千零三十三
+//输入-->八千零八十二万九千四百零八亿零八十万八千零三十三
+//简体-->八千零八十二万九千四百零八亿零八十万八千零三十三
+//total2-->8082
+//total3-->80829408
+//total2-->80
+//total3-->808033
+//total7-->8082940800808033
 //-------------------
 //8888888888888888
 //output-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
+//输入-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
+//简体-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
+//total2-->8888
+//total3-->88888888
+//total2-->8888
+//total3-->88888888
+//total7-->8888888888888888
 //-------------------
 //8888888888888888
 //output-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
+//输入-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
+//简体-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
+//total2-->8888
+//total3-->88888888
+//total2-->8888
+//total3-->88888888
+//total7-->8888888888888888
 //-------------------
 //8888000008888888
 //output-->八千八百八十八万亿零八百八十八万八千八百八十八
+//输入-->八千八百八十八万亿零八百八十八万八千八百八十八
+//简体-->八千八百八十八万亿零八百八十八万八千八百八十八
+//total2-->8888
+//total4-->88880000
+//total2-->888
+//total3-->8888888
+//total7-->8888000008888888
 //-------------------
 //8080800800800088
 //output-->八千零八十万八千零八亿零八十万零八十八
+//输入-->八千零八十万八千零八亿零八十万零八十八
+//简体-->八千零八十万八千零八亿零八十万零八十八
+//total2-->8080
+//total3-->80808008
+//total2-->80
+//total3-->800088
+//total7-->8080800800800088
 //-------------------
 //8000000000000000
 //output-->八千万亿
+//输入-->八千万亿
+//简体-->八千万亿
+//total2-->8000
+//total4-->80000000
+//亿1-->八千万亿
+//total6-->8000000000000000
 //-------------------
 //800800000000080
 //output-->八百万八千亿零八十
+//输入-->八百万八千亿零八十
+//简体-->八百万八千亿零八十
+//total2-->800
+//total3-->8008000
+//total2-->80
+//total7-->800800000000080
 //-------------------
 //800080000000080
 //output-->八百万零八百亿零八十
+//输入-->八百万零八百亿零八十
+//简体-->八百万零八百亿零八十
+//total2-->800
+//total3-->8000800
+//total2-->80
+//total7-->800080000000080
 //-------------------
 //000800000080000
 //output-->八千亿零八万
+//输入-->八千亿零八万
+//简体-->八千亿零八万
+//total2-->8000
+//total2-->8
+//total4-->80000
+//total7-->800000080000
 //-------------------
 //8000000000000
 //output-->八万亿
+//输入-->八万亿
+//简体-->八万亿
+//total2-->8
+//total4-->80000
+//亿1-->八万亿
+//total6-->8000000000000
 //-------------------
 //008000080
 //output-->八百万零八十
+//输入-->八百万零八十
+//简体-->八百万零八十
+//total2-->800
+//total3-->8000080
 //-------------------
 //8080808
 //output-->八百零八万零八百零八
+//输入-->八百零八万零八百零八
+//简体-->八百零八万零八百零八
+//total2-->808
+//total3-->8080808
 //-------------------
 //808080
 //output-->八十万八千零八十
+//输入-->八十万八千零八十
+//简体-->八十万八千零八十
+//total2-->80
+//total3-->808080
 //-------------------
 //8080
 //output-->八千零八十
+//输入-->八千零八十
+//简体-->八千零八十
+//total2-->8080
 //-------------------
 //808
 //output-->八百零八
+//输入-->八百零八
+//简体-->八百零八
+//total2-->808
 //-------------------
 //80
 //output-->八十
+//输入-->八十
+//简体-->八十
+//total2-->80
 //-------------------
 //0080
 //output-->八十
+//输入-->八十
+//简体-->八十
+//total2-->80
 //-------------------
 //88
 //output-->八十八
+//输入-->八十八
+//简体-->八十八
+//total2-->88
 //-------------------
 //8
 //output-->八
+//输入-->八
+//简体-->八
+//total2-->8
+//-------------------
 //0
 //output-->零
+//输入-->零
+//简体-->零
+//total2-->0
 
 

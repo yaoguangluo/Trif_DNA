@@ -314,6 +314,9 @@ public class CommandClass {
 		commandClass.fasterChineseNumberSwap(number);
 		number = "九千零九十万零九百零九亿零九十万零九百零九";
 		commandClass.fasterChineseNumberSwap(number);
+		number = "八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八";
+		commandClass.fasterChineseNumberSwap(number);
+		
 		// 我的系统没有16位大数计算业务，有就按这个逻辑+兆+京条件去解决。
 		// 框架都搞好了，直接加函数即可 --罗瑶光
 	}
@@ -383,7 +386,7 @@ public class CommandClass {
 						if (stringWan.isEmpty()) {
 							outputWan += "" + 1;
 							reg = outputWan;
-							System.out.println("total-->" + outputWan);
+							System.out.println("total1-->" + outputWan);
 							continue;
 						}
 						long longWan = processWan(stringWan);
@@ -391,7 +394,7 @@ public class CommandClass {
 						if (outputWan.isEmpty()) {
 							outputWan += "" + longWan;
 							reg = outputWan;
-							System.out.println("total-->" + outputWan);
+							System.out.println("total2-->" + outputWan);
 							continue;
 						}
 						if (longWan < 10) {
@@ -404,18 +407,18 @@ public class CommandClass {
 							outputWan += "" + longWan;
 						}
 						reg = outputWan;
-						System.out.println("total-->" + outputWan);
+						System.out.println("total3-->" + outputWan);
 					}
 					if (stringYi.contains("万") && stringsWan.length < 2) {
 						outputWan += "0000";
 						reg = outputWan;
-						System.out.println("total-->" + outputWan);
+						System.out.println("total4-->" + outputWan);
 					}
 				} else {
 					// wan to do
 					outputWan = "10000";
 					reg = outputWan;
-					System.out.println("total-->" + outputWan);
+					System.out.println("total5-->" + outputWan);
 				}
 				if (1 == j) {
 					regYi = reg;
@@ -425,47 +428,56 @@ public class CommandClass {
 				}
 			}
 			if (stringSwap.contains("亿") && stringsYi.length < 2) {
+				System.out.println("亿1-->" + stringSwap);
 				outputYi += reg + "00000000";
-				System.out.println("total-->" + outputYi);
+				System.out.println("total6-->" + outputYi);
 			}
 			if (stringSwap.contains("亿") && stringsYi.length > 1) {
+				//System.out.println("regYi2-->" + regYi);
+				//System.out.println("亿2-->" + stringSwap);
+				//System.out.println("regWan2-->" + regWan);
+				//System.out.println("stringsYi.length-->" + stringsYi.length);
 				if (regWan.length() < 2) {
 					regYi += "0000000" + regWan;
-					// System.out.println("regWan1-->" + regWan);
-					// System.out.println("regYi1-->" + regYi);
+					//System.out.println("regWan1-->" + regWan);
+					//System.out.println("regYi1-->" + regYi);
 				} else if (regWan.length() < 3) {
 					regYi += "000000" + regWan;
-					// System.out.println("regWan2-->" + regWan);
-					// System.out.println("regYi2-->" + regYi);
+					//System.out.println("regWan2-->" + regWan);
+					//System.out.println("regYi2-->" + regYi);
 				} else if (regWan.length() < 4) {
 					regYi += "00000" + regWan;
-					// System.out.println("regWan3-->" + regWan);
-					// System.out.println("regYi3-->" + regYi);
+					//System.out.println("regWan3-->" + regWan);
+					//System.out.println("regYi3-->" + regYi);
 				} else if (regWan.length() < 5) {
 					regYi += "0000" + regWan;
-					// System.out.println("regWan4-->" + regWan);
-					// System.out.println("regYi4-->" + regYi);
+					//System.out.println("regWan4-->" + regWan);
+					//System.out.println("regYi4-->" + regYi);
 				} else if (regWan.length() < 6) {
 					regYi += "000" + regWan;
-					// System.out.println("regWan5-->" + regWan);
-					// System.out.println("regYi5-->" + regYi);
+					//System.out.println("regWan5-->" + regWan);
+					//System.out.println("regYi5-->" + regYi);
 				} else if (regWan.length() < 7) {
 					regYi += "00" + regWan;
-					// System.out.println("regWan6-->" + regWan);
-					// System.out.println("regYi6-->" + regYi);
+					//System.out.println("regWan6-->" + regWan);
+					//System.out.println("regYi6-->" + regYi);
 				} else if (regWan.length() < 8) {
 					regYi += "0" + regWan;
-					// System.out.println("regWan7-->" + regWan);
-					// System.out.println("regYi7-->" + regYi);
+					//System.out.println("regWan7-->" + regWan);
+					//System.out.println("regYi7-->" + regYi);
+				}else if (regWan.length() < 9) {
+					regYi += "" + regWan;
+					//System.out.println("regWan7-->" + regWan);
+					//System.out.println("regYi7-->" + regYi);
 				}
 				outputYi += regYi;
-				System.out.println("total-->" + outputYi);
+				System.out.println("total7-->" + outputYi);
 			}
 
 		} else {
 			// yi to do
 			outputYi = "100000000";
-			System.out.println("total-->" + outputYi);
+			System.out.println("total8-->" + outputYi);
 
 		}
 		return "";
