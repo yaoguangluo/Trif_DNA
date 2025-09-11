@@ -22,6 +22,7 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 	 * 首先构造一个getChineseFromNumerics，我设置最大数为16位，因为之前的
 	 * getNumericsFromChinese也是16位，我电脑最大也就8位。大数运算我不cover。
 	 */
+	@SuppressWarnings("unused")
 	public String getChineseFromNumerics(String number) {
 		System.out.println(number);
 		/*
@@ -119,23 +120,50 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 		 * 开头与结尾零过滤,因为正则在不同的系统中有不同的语法格式如PCRE 
 		 * 所以java系统我手写一份。 --罗瑶光
 		 */
-		String outputFinal = "";
-		if (!output.isEmpty()) {
-			while (output.charAt(0) == '零' && output.length() > 1) {
-				output = output.substring(1, output.length());
-			}
-		}
+		//String outputFinal = "";
+		output = prefixOptimization(output);
 		// oder-fix
-		if (!output.isEmpty()) {
-			while (output.charAt(output.length() - 1) == '零'
-					&& output.length() > 1) {
-				output = output.substring(0, output.length() - 1);
-			}
-		}
+		output = orderfixOptimization(output);
+		
+//		if (!output.isEmpty()) {
+//			while (output.charAt(0) == '零' && output.length() > 1) {
+//				output = output.substring(1, output.length());
+//			}
+//		}
+//		// oder-fix
+//		if (!output.isEmpty()) {
+//			while (output.charAt(output.length() - 1) == '零'
+//					&& output.length() > 1) {
+//				output = output.substring(0, output.length() - 1);
+//			}
+//		}
 		System.out.println("output-->" + output);
 		return output;
 	}
 
+	/*
+	 * fix filter 和 oder-fix稍后提取成函数，避免重复，然后command class
+	 * 继承这些中间变量， 处理好哲学关系 保持简洁计算性能。。 --罗瑶光
+	 */
+	public String prefixOptimization(String input) {
+		if (!input.isEmpty()) {
+			while (input.charAt(0) == '零' && input.length() > 1) {
+				input = input.substring(1, input.length());
+			}
+		}
+		return input;
+	}
+
+	public String orderfixOptimization(String input) {
+		if (!input.isEmpty()) {
+			while (input.charAt(input.length() - 1) == '零'
+					&& input.length() > 1) {
+				input = input.substring(0, input.length() - 1);
+			}
+		}
+		return input;
+	}
+	
 	/*
 	 * 这个逻辑开始思考千位变换， 1- 首先string 进行 swap to chars 2- 4位的 char 对应
 	 * 个十百千 这是单位， 3- char是0-9 需要量词翻译。 4-
@@ -143,6 +171,7 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 	 * 5- 所以开头是0，也要保留零，
 	 * 6- 末尾是零需要过滤，
 	 */
+	@SuppressWarnings("unused")
 	public String doSwapUnderTenThousands(String string) {
 		String stringChinese = "";
 		String stringChineseUnits = "";
@@ -222,15 +251,15 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 		// stringChineseUnitsFix);
 		// pre-fix
 		// oder-fix
-		if (!stringChineseUnitsFix.isEmpty()) {
-			while (stringChineseUnitsFix
-					.charAt(stringChineseUnitsFix.length() - 1) == '零'
-					&& stringChineseUnitsFix.length() > 1) {
-				stringChineseUnitsFix = stringChineseUnitsFix.substring(0,
-						stringChineseUnitsFix.length() - 1);
-			}
-		}
-
+//		if (!stringChineseUnitsFix.isEmpty()) {
+//			while (stringChineseUnitsFix
+//					.charAt(stringChineseUnitsFix.length() - 1) == '零'
+//					&& stringChineseUnitsFix.length() > 1) {
+//				stringChineseUnitsFix = stringChineseUnitsFix.substring(0,
+//						stringChineseUnitsFix.length() - 1);
+//			}
+//		}
+		stringChineseUnitsFix = orderfixOptimization(stringChineseUnitsFix);
 		return stringChineseUnitsFix;
 	}
 

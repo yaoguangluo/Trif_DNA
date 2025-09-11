@@ -103,21 +103,6 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 		// english extra later
 	}
 
-	public static void main(String[] argv) {
-		String input = "123在输出的数据表中仅展示从第零行到第3拾行的数据";
-		CommandClass command_V = new CommandClass();
-		command_V.command = input;
-		StudyVerbaMap studyVerbaMap = new StudyVerbaMap();
-		studyVerbaMap.extractNumberfromString(command_V);
-		System.out.println("1-->" + command_V.numericsFromUnknownString.size());
-		System.out.println("2-->" + command_V.commandWithNumFilters);
-		System.out.println("3-->" + studyVerbaMap.filterString);
-		/*
-		 * 稍后可以设计处理混合字符的数字格式化机，关于 3十 这种描述进行格式化。 --罗瑶光
-		 */
-		studyVerbaMap.formatNumericMap(command_V);
-	}
-
 	@SuppressWarnings("unchecked")
 	public void formatNumericMap(CommandClass command_V) {
 		Iterator<String> iterators = command_V.numericsFromUnknownString
@@ -151,19 +136,211 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 				 * 所以我在这个if里面之后还要设计个阿拉伯数字转汉字的数字翻译机。 逻辑是先拆分数汉，
 				 * 再翻译数变汉，最后组合全汉输出即可。 --罗瑶光
 				 */
+				/*
+				 * loop 找出阿拉伯数字，然后翻译拼接
+				 */
+				String chineseNumber = "";
+				String arabicNumber = "";
+				for (int i = 0; i < string.length(); i++) {
+					if (string.charAt(i) > 47 && string.charAt(i) < 58) {
+						arabicNumber += string.charAt(i);
+					} else {
+						if (!arabicNumber.isEmpty()) {
+							String chineseNumberPars = getChineseFromNumerics(
+									arabicNumber);
+							String fix = "";
+							System.out.println(
+									"chineseNumber-->" + chineseNumber);
+							System.out.println("chineseNumberPars length-->"
+									+ chineseNumberPars.length());
+							if (!chineseNumber.isEmpty()
+									&& arabicNumber.length() < 4) {
+								fix = "零";
+							}
+							chineseNumber += fix + chineseNumberPars;
+							arabicNumber = "";
+						}
+						chineseNumber += string.charAt(i);
+					}
+				}
+				if (!arabicNumber.isEmpty()) {
+					String chineseNumberPars = getChineseFromNumerics(
+							arabicNumber);
+					String fix = "";
+					System.out.println("chineseNumber-->" + chineseNumber);
+					System.out.println("chineseNumberPars length-->"
+							+ chineseNumberPars.length());
+					if (!chineseNumber.isEmpty() && arabicNumber.length() < 4) {
+						fix = "零";
+					}
+					chineseNumber += fix + chineseNumberPars;
+					arabicNumber = "";
+				}
+				// fix filter
+				chineseNumber = prefixOptimization(chineseNumber);
+//				if (!chineseNumber.isEmpty()) {
+//					while (chineseNumber.charAt(0) == '零'
+//							&& chineseNumber.length() > 1) {
+//						chineseNumber = chineseNumber.substring(1,
+//								chineseNumber.length());
+//					}
+//				}
+				// oder-fix
+				chineseNumber = orderfixOptimization(chineseNumber);
+//				if (!chineseNumber.isEmpty()) {
+//					while (chineseNumber
+//							.charAt(chineseNumber.length() - 1) == '零'
+//							&& chineseNumber.length() > 1) {
+//						chineseNumber = chineseNumber.substring(0,
+//								chineseNumber.length() - 1);
+//					}
+//				}
+				System.out.println("混合数字字符预处理结果-->" + chineseNumber);
 			}
 		}
 	}
+
+	
+
+	public static void main(String[] argv) {
+		String input = "123万200亿000在输出的123万亿200数据表中123万200亿202万2000仅"
+				+ "展示123万亿200020从第123万200亿123万106行到2仟6拾第102万2000行的数据";
+		CommandClass commandClass = new CommandClass();
+		commandClass.command = input;
+		StudyVerbaMap studyVerbaMap = new StudyVerbaMap();
+		studyVerbaMap.extractNumberfromString(commandClass);
+//		System.out.println(
+//				"1-->" + commandClass.numericsFromUnknownString.size());
+//		System.out.println("2-->" + commandClass.commandWithNumFilters);
+//		System.out.println("3-->" + studyVerbaMap.filterString);
+		/*
+		 * 稍后可以设计处理混合字符的数字格式化机，关于 3十 这种描述进行格式化。 --罗瑶光
+		 */
+		studyVerbaMap.formatNumericMap(commandClass);
+
+//		StudyVerbaMap_Q studyVerbaMap_Q = new StudyVerbaMap_Q();
+//		String number = "9992980400000088";
+//		number = studyVerbaMap_Q.getChineseFromNumerics(number);
+//		commandClass.fasterChineseNumberSwap(number);
+
+		// 不断加不断修正细化即可
+		//
+
+	}
 }
 //输出
-//简体-->123在输出的数据表中仅展示从第零行到第3十行的数据
-//123--3
-//零--17
-//3十--22
-//1-->3
-//2-->null
-//3-->在输出的数据表中仅展示从第行到第行的数据
-//混合数字字符探索-->123
-//混合数字字符探索-->零
-//混合数字字符探索-->3十
-//混合数字字符预处理锁定-->3十
+//简体-->123万200亿000在输出的123万亿200数据表中123万200亿202万2000仅
+//展示123万亿200020从第123万200亿123万106行到2千6十第102万2000行的数据
+//123万200亿000--11
+//123万亿200--23
+//123万200亿202万2000--43
+//123万亿200020--57
+//123万200亿123万106--74
+//2千6十--80
+//102万2000--89
+//混合数字字符探索-->123万亿200020
+//混合数字字符预处理锁定-->123万亿200020
+//123
+//output-->一百二十三
+//chineseNumber-->
+//chineseNumberPars length-->5
+//200020
+//output-->二十万零二十
+//chineseNumber-->一百二十三万亿
+//chineseNumberPars length-->6
+//混合数字字符预处理结果-->一百二十三万亿二十万零二十
+//混合数字字符探索-->2千6十
+//混合数字字符预处理锁定-->2千6十
+//2
+//output-->二
+//chineseNumber-->
+//chineseNumberPars length-->1
+//6
+//output-->六
+//chineseNumber-->二千
+//chineseNumberPars length-->1
+//混合数字字符预处理结果-->二千零六十
+//混合数字字符探索-->123万200亿123万106
+//混合数字字符预处理锁定-->123万200亿123万106
+//123
+//output-->一百二十三
+//chineseNumber-->
+//chineseNumberPars length-->5
+//200
+//output-->二百
+//chineseNumber-->一百二十三万
+//chineseNumberPars length-->2
+//123
+//output-->一百二十三
+//chineseNumber-->一百二十三万零二百亿
+//chineseNumberPars length-->5
+//106
+//output-->一百零六
+//chineseNumber-->一百二十三万零二百亿零一百二十三万
+//chineseNumberPars length-->4
+//混合数字字符预处理结果-->一百二十三万零二百亿零一百二十三万零一百零六
+//混合数字字符探索-->123万亿200
+//混合数字字符预处理锁定-->123万亿200
+//123
+//output-->一百二十三
+//chineseNumber-->
+//chineseNumberPars length-->5
+//200
+//output-->二百
+//chineseNumber-->一百二十三万亿
+//chineseNumberPars length-->2
+//混合数字字符预处理结果-->一百二十三万亿零二百
+//混合数字字符探索-->123万200亿202万2000
+//混合数字字符预处理锁定-->123万200亿202万2000
+//123
+//output-->一百二十三
+//chineseNumber-->
+//chineseNumberPars length-->5
+//200
+//output-->二百
+//chineseNumber-->一百二十三万
+//chineseNumberPars length-->2
+//202
+//output-->二百零二
+//chineseNumber-->一百二十三万零二百亿
+//chineseNumberPars length-->4
+//2000
+//output-->二千
+//chineseNumber-->一百二十三万零二百亿零二百零二万
+//chineseNumberPars length-->2
+//混合数字字符预处理结果-->一百二十三万零二百亿零二百零二万二千
+//混合数字字符探索-->102万2000
+//混合数字字符预处理锁定-->102万2000
+//102
+//output-->一百零二
+//chineseNumber-->
+//chineseNumberPars length-->4
+//2000
+//output-->二千
+//chineseNumber-->一百零二万
+//chineseNumberPars length-->2
+//混合数字字符预处理结果-->一百零二万二千
+//混合数字字符探索-->123万200亿000
+//混合数字字符预处理锁定-->123万200亿000
+//123
+//output-->一百二十三
+//chineseNumber-->
+//chineseNumberPars length-->5
+//200
+//output-->二百
+//chineseNumber-->一百二十三万
+//chineseNumberPars length-->2
+//000
+//output-->零
+//chineseNumber-->一百二十三万零二百亿
+//chineseNumberPars length-->1
+//混合数字字符预处理结果-->一百二十三万零二百亿
+/*
+ * 病句歧义分析123万200亿000 也可以理解为一百二十三万零二百亿仟，但是这里出了一个问题， 如果后面接123，
+ * 如123万200亿123，那么这里有两个意思，1是一百二十三万零二百亿 个 123，
+ * 要做乘积，乘123，在这种计算逻辑环境中，数字提取的将不是稳定的数字提取逻辑，而是数字乘法
+ * 函数的提取，提取的是一个要计算乘法的逻辑。可以理解为 病句歧义分析含有算法逻辑的数字函数。
+ * 所以不考虑，按完整数字逻辑来获取。按拼接法 123万200亿000 需要改为 123万200亿， 再举
+ * 个例子123万200亿2000则保留末尾2000，因为2字有数字拼接逻辑意义。 --罗瑶光
+ * 
+ */
