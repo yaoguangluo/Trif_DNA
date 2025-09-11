@@ -258,6 +258,9 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 		number = "800800000000080";
 		studyVerbaMap_Q.getChineseFromNumerics(number);
 		System.out.println("-------------------");
+		number = "800080000000080";
+		studyVerbaMap_Q.getChineseFromNumerics(number);
+		System.out.println("-------------------");
 		number = "000800000080000";
 		studyVerbaMap_Q.getChineseFromNumerics(number);
 		System.out.println("-------------------");
@@ -267,10 +270,30 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 		number = "008000080";
 		studyVerbaMap_Q.getChineseFromNumerics(number);
 		System.out.println("-------------------");
+		number = "8080808";
+		studyVerbaMap_Q.getChineseFromNumerics(number);
+		System.out.println("-------------------");
+		number = "808080";
+		studyVerbaMap_Q.getChineseFromNumerics(number);
+		System.out.println("-------------------");
+		number = "8080";
+		studyVerbaMap_Q.getChineseFromNumerics(number);
+		System.out.println("-------------------");
+		number = "808";
+		studyVerbaMap_Q.getChineseFromNumerics(number);
+		System.out.println("-------------------");
 		number = "80";
 		studyVerbaMap_Q.getChineseFromNumerics(number);
 		System.out.println("-------------------");
 		number = "0080";
+		studyVerbaMap_Q.getChineseFromNumerics(number);
+		System.out.println("-------------------");
+		number = "88";
+		studyVerbaMap_Q.getChineseFromNumerics(number);
+		System.out.println("-------------------");
+		number = "8";
+		studyVerbaMap_Q.getChineseFromNumerics(number);
+		number = "0";
 		studyVerbaMap_Q.getChineseFromNumerics(number);
 		// 不断加不断修正细化即可
 		//
@@ -304,6 +327,9 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 //800800000000080
 //output-->八百万八千亿零八十
 //-------------------
+//800080000000080
+//output-->八百万零八百亿零八十
+//-------------------
 //000800000080000
 //output-->八千亿零八万
 //-------------------
@@ -313,8 +339,30 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 //008000080
 //output-->八百万零八十
 //-------------------
+//8080808
+//output-->八百零八万零八百零八
+//-------------------
+//808080
+//output-->八十万八千零八十
+//-------------------
+//8080
+//output-->八千零八十
+//-------------------
+//808
+//output-->八百零八
+//-------------------
 //80
 //output-->八十
 //-------------------
 //0080
 //output-->八十
+//-------------------
+//88
+//output-->八十八
+//-------------------
+//8
+//output-->八
+//0
+//output-->零
+
+
