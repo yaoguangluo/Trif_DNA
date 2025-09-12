@@ -204,7 +204,7 @@ public class IMV_SIQ extends ConcurrentHashMap {
 				System.out.println("400-10000002" + actionKey);
 				System.out.println("400-10000003" + temp);
 			} else {
-				System.out.println("400-10000004" + key);
+				//System.out.println("400-10000004" + key);
 				/*
 				 * 这里也一样加一个条件，可以有效的去重+的逻辑, 提高计算关系的依赖。
 				 * 
@@ -242,6 +242,7 @@ public class IMV_SIQ extends ConcurrentHashMap {
 		if (stringsKey.length > 1 && stringsAction.length > 1) {
 			if (stringsKey[0].equals(stringsAction[0])
 					&& stringsKey[1].equals(stringsAction[1])) {
+				System.out.println("400-10000004-1-" + actionKey);
 				String temp = FlowerAction.FlowerSixDomainActions
 						.getString(actionKey);
 				if (scores.containsKey(temp)) {

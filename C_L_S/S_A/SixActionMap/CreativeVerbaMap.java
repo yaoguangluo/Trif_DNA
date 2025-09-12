@@ -4,6 +4,7 @@ import OSI.OSU.addAction.AddActionInterfaceClass;
 import OSI.OSU.addAction.AddFindColumnsInMemoryClass;
 import OSI.OSU.addAction.AddParserMixedStringClass;
 import OSI.OSU.addAction.AddParserMixedStringToListClass;
+import OSI.OSU.addAction.LimitedRowAttributesOfColumnsInMemoryClass;
 import OSI.OSU.addAction.UpdateColorAttributesOfColumnsInMemoryClass;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
 import S_A.SEM.bloom.StaticRootMap;
@@ -162,6 +163,44 @@ public class CreativeVerbaMap {
 		StaticRootMap.chromosomeBlooming.put(
 				callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
 				updateColorAttributesOfColumnsInMemoryClass);
+		/*
+		 * 开始构造数字行数提取指令 从- 组合 到-
+		 *  然后分析 从- 组合 到- 展示+行 仅+展示
+		 * */
+		FlowerAction.FlowerSixDomainActions.put("仅+展示",
+				"limitedRowAttributesOfColumnsInMemoryClass");
+		// 注册花函数
+		LimitedRowAttributesOfColumnsInMemoryClass limitedRowAttributesOfColumnsInMemoryClass 
+		= new LimitedRowAttributesOfColumnsInMemoryClass();
+		String callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass 
+		= "limitedRowAttributesOfColumnsInMemoryClass";
+		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
+		// chromosomes
+		/*
+		 * 之后走_SMV 这里的变量中入参将全部省略，避免内存占用浪费。之后可以设计个temp区间当作类脑存储容器
+		 * 专门用于计算失效的 和 临时的变量，关于这类格式-- trif binlog，map，DB，json
+		 * 等。我会首先采用map 不累。。
+		 */
+		StaticRootMap.staticBloomingTimes.put(
+				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+				(long) 0);
+		StaticRootMap.staticBloomingTime.put(
+				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+				System.currentTimeMillis());// 增加记忆时间。20241013
+		StaticRootMap.staticClass_XE_Map.put(
+				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+				"S_AOPM");
+		StaticRootMap.chromosomeNode.put(
+				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+				limitedRowAttributesOfColumnsInMemoryClass);// 20241001准备把这行移出去。
+		StaticFunctionMapS_AOPM_C.annotationMap.put(
+				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+				"inputValues:传参因子:因子");
+		// booming
+		StaticRootMap.chromosomeBlooming.put(
+				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+				limitedRowAttributesOfColumnsInMemoryClass);
+		
 
 	}
 }

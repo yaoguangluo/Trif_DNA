@@ -25,7 +25,9 @@ import java.util.Map;
  * */
 public class CogsBinaryForest_AE extends BinaryForest_AE
 		implements CogsBinaryForest_A {
-
+	/*
+	 * positionStackPoint改为char的position 位置。
+	 * */
 	public IMV_SIQ_SS getWordFrequencyMap(List<String> sets, App NE) {
 		IMV_SIQ_SS map = new IMV_SIQ_SS();
 		Iterator<String> iterator = sets.iterator();
@@ -43,7 +45,7 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 			WordFrequency wordFrequency = new WordFrequency(1.0, setOfi);
 			wordFrequency.positions.add(positionStackPoint);
 			map.put(setOfi, wordFrequency);
-			positionStackPoint++;
+			positionStackPoint += setOfi.length();
 		}
 		return map;
 	}

@@ -52,8 +52,7 @@ public class DemoAfterPOSTest {
 				+ "个事物，如果有价值，就应该像教材一样在真实的环境中不断地实践测试和论证，"
 				+ "能经得起所有人长年累月地不断地挑剔的东西，才是货真价实的，罗瑶光的个人著"
 				+ "作权作品都是互联网，大数据产业领域基础作品，2018年后，在60余互联网app上"
-				+ "发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同时对垄断的" 
-				+ "产业有约束性。";
+				+ "发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同时对垄断的" + "产业有约束性。";
 		// String ss = "在，和无数群体，";
 		// DemoEX demoEX = new DemoEX();
 		StringBuilder sb = new StringBuilder(ss);
@@ -140,6 +139,7 @@ public class DemoAfterPOSTest {
 
 	public List<String> testPOS(List<String> sets, IMV_SIQ pos) {
 		List<String> setsOutput = new ArrayList<>();
+		int charPosition = 0;
 		// 结果归纳
 		// 1 名词 动词 形容词归纳
 		System.out.println("-展示词性-");
@@ -186,6 +186,7 @@ public class DemoAfterPOSTest {
 					}
 					setsOutput.add(word + "/" + wordPOS);
 				}
+				charPosition += string.length();
 			}
 		}
 		return setsOutput;

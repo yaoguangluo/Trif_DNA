@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import ME.VPC.M.app.App;
 import S_A.SixActionMap.WorkVerbaMap;
 import S_A.pheromone.IMV_SIQ;
 /*
@@ -44,8 +45,10 @@ import S_A.pheromone.IMV_SIQ_S_;
  * 
  * */
 public class CommandClass {
+	//用了NE， 六元分析机可以略去。
+	public App regNE;
 	// 工作机
-	public WorkVerbaMap workVerbaMap;
+	//public WorkVerbaMap workVerbaMap;
 	// 单句的命令
 	public String command;
 	// 单句的延伸
@@ -349,13 +352,19 @@ public class CommandClass {
 		 */
 		String stringSwap = simpleChineseNumberSwap(chineseNumber);
 		/*
-		 * 简化后文字开始进行精确分析，首先拆分最大逻辑集合确定亿为最大计算量级， 因为单机的long最大只有亿。
-		 * 然后处理京为最大处理量级。关于亿的逻辑意识组合 有 万亿，一万亿， 一万一千零二亿， 乘积是100 000 000
-		 * 8个零。
+		 * 简化后文字开始进行精确分析，首先拆分最大逻辑集合确定亿为最大计算量级， 
+		 * 因为单机的long最大只有亿。然后处理京为最大处理量级。关于亿的逻辑意识组合 
+		 * 有 万亿，一万亿， 一万一千零二亿， 乘积是100 000 000 ，8个零。
 		 */
 		String regWan = "";
 		String regYi = "";
 		String reg = "";
+		String total1 = "";
+		String total2 = "";
+		String total3 = "";
+		String total4 = "";
+		String total5 = "";
+		String total6 = "";
 		String outputYi = "";
 		String[] stringsYi = stringSwap.split("亿");
 		// System.out.println("stringsYi.length-->" +
@@ -387,6 +396,7 @@ public class CommandClass {
 							outputWan += "" + 1;
 							reg = outputWan;
 							System.out.println("total1-->" + outputWan);
+							total1 = outputWan.toString();
 							continue;
 						}
 						long longWan = processWan(stringWan);
@@ -395,6 +405,7 @@ public class CommandClass {
 							outputWan += "" + longWan;
 							reg = outputWan;
 							System.out.println("total2-->" + outputWan);
+							total2 = outputWan.toString();
 							continue;
 						}
 						if (longWan < 10) {
@@ -407,17 +418,20 @@ public class CommandClass {
 							outputWan += "" + longWan;
 						}
 						reg = outputWan;
+						total3= outputWan.toString();
 						System.out.println("total3-->" + outputWan);
 					}
 					if (stringYi.contains("万") && stringsWan.length < 2) {
 						outputWan += "0000";
 						reg = outputWan;
+						total4 = outputWan.toString();
 						System.out.println("total4-->" + outputWan);
 					}
 				} else {
 					// wan to do
 					outputWan = "10000";
 					reg = outputWan;
+					total5 = outputWan.toString();
 					System.out.println("total5-->" + outputWan);
 				}
 				if (1 == j) {
@@ -430,6 +444,7 @@ public class CommandClass {
 			if (stringSwap.contains("亿") && stringsYi.length < 2) {
 				System.out.println("亿1-->" + stringSwap);
 				outputYi += reg + "00000000";
+				total6 = outputYi.toString();
 				System.out.println("total6-->" + outputYi);
 			}
 			if (stringSwap.contains("亿") && stringsYi.length > 1) {
@@ -480,7 +495,28 @@ public class CommandClass {
 			System.out.println("total8-->" + outputYi);
 
 		}
-		return "";
+		if(!outputYi.isEmpty()) {
+			return outputYi;
+		}
+		if(!total6.isEmpty()) {
+			return total6;
+		}
+		if(!total5.isEmpty()) {
+			return total5;
+		}
+		if(!total4.isEmpty()) {
+			return total4;
+		}
+		if(!total3.isEmpty()) {
+			return total3;
+		}
+		if(!total2.isEmpty()) {
+			return total2;
+		}
+		if(!total1.isEmpty()) {
+			return total1;
+		}
+		return outputYi;
 	}
 
 	private long processWan(String stringWan) {
@@ -542,7 +578,8 @@ public class CommandClass {
 			 * 不然拜拜浪费几个小时。发现一个问题，我每次在修改后的注释后的函数，我莫名有种强烈
 			 * 要删除掉的意识，为什么要删掉这个注释逻辑呢？动机是源码不好看，不好看可以移出到
 			 * 文件末尾呀，然后注释标注格式化，让注释好看呀，这个删除的操作意识有问题。涉嫌
-			 * 毁灭证据的思维。这几年特别写核心源码的时候，想删除的动机意识特别强烈。这是我的 一个严重的错误习惯，以后要改正。
+			 * 毁灭证据的思维。这几年特别写核心源码的时候，想删除的动机意识特别强烈。这是我的 
+			 * 一个严重的错误习惯，以后要改正。
 			 */
 			// System.out.println("loop-->" + total);
 		}
@@ -550,6 +587,50 @@ public class CommandClass {
 			total += value;
 		}
 		return total;
+	}
+	/*
+	 * 
+	 * */
+	public  IMV_SIQ_SS _IMV_SIQ_SS_Q = new IMV_SIQ_SS();
+	public  String commandWithoutNumerics = "";
+	public  String chineseSimpleCommandWithoutNumerics = "";
+	/*
+	 * 保证相等长度替换，symbolSwapNumerics只能包含一个位的char符号。
+	 * */
+	public  String symbolSwapNumerics = "*";
+	public void initArabicNumber() {
+		/*
+		 * 开始填写这几天的逻辑。
+		 * */
+		/*1 取变量，拿出所有混合数字，标注position，剔除掉原句中的这些变量。这里会遇到一个问题
+		    就是 commandClass 的command 要分解出一个 commandWithoutNumerics，用于分词。
+		    那么剔除掉的地方需要一个标识，不然序次会打乱，于是用symbolSwap 替换代入到函数中，
+		    我先设计个*看看效果，以后跟进测试。 
+		    
+		    studyVerbaMap 六个元 可以注册到 commandClass
+		    
+		    --2022年后靠近电磁音频传感器产生的奇怪意识，
+		    --罗瑶光
+		*/
+		regNE.app_S.studyVerbaMap.extractNumberfromString(this);
+		regNE.app_S.studyVerbaMap.formatNumericMap(this);
+		
+		//2 取变量，拿出所有混合数字，标注position，剔除掉原句中的这些变量。
+		//3
+		//4
+		System.out.println("chineseSimpleCommandWithoutNumerics-->" + this.chineseSimpleCommandWithoutNumerics);
+		//
+	}
+	//400局部输出正确
+	//chineseSimpleCommandWithoutNumerics-->在输出的数据表中仅展示从第*行到第*行的数据
+	public void fussionOfArabicNumber() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void initSixActions(App NE) {
+		// TODO Auto-generated method stub
+		this.regNE= NE;
 	}
 }
 //输出

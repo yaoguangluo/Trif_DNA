@@ -85,8 +85,10 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 		// command_V._IMV_SIQ_SS_;
 		// command_V._IMV_SIQ_S_;
 		// 分词 提取 英文段和数字段形成变量。比如dnn 12345等
+		System.out.println("chineseSimpleCommandWithoutNumerics400-->" 
+		+ command_V.chineseSimpleCommandWithoutNumerics);
 		command_V._IMV_SIQ_SS_ = NE.app_S._A
-				.parserMixedString(command_V.command);
+				.parserMixedString(command_V.chineseSimpleCommandWithoutNumerics);
 
 		// -1 词频 归纳
 		// -2 词性 归纳

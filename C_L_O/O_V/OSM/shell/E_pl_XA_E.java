@@ -4,6 +4,7 @@ import ME.VPC.M.app.App;
 import O_V.OSA.shell.PL_XA_E;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 import S_I.OSI.PSO.regex.DoSplit;
+import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SixActionMap.FlowerAction;
 import U_V.ESU.list.List_ESU_X_stringlistToStringArray;
 
@@ -48,6 +49,30 @@ public class E_pl_XA_E {
 			HashMap<String, Integer> scores = new HashMap<>();
 			NE._I_U.commandAcknowledge = command;
 			CommandClass command_V = new CommandClass();
+			// 函数注册 价值降低
+			NE.app_S.workVerbaMap.command_V = command_V;
+			// 之后整体替换下。方便command_V管理。
+			command_V.commandWithoutNumerics = command.toString();
+			command_V.commandAcknowledge = command.toString();
+			command_V.command = command.toString();
+			;
+			/*
+			 * command是一条最短的指令句，指令句变成指令的中间数据目前保留在NE.app_S.workVerbaMap
+			 * 中，我在思考，每次计算完一句指令，这些过程产物都要clear掉，这是一种C语言的free写法，
+			 * 在高级的java结构中，可以进行单例来class null掉，意思是我可以创造一个command class，
+			 * 这个类专门负责command的数据碎片，这个class可以list形式进入tinmap，也可以每次执行完
+			 * 被G1GC来null掉，想到这里，于是先命名个command Class先。 --地址在package
+			 * O_V.OSM.shell; --函数名CommandClass
+			 * 
+			 */
+			command_V.initSixActions(NE);
+			/*
+			 * 开始构造混合歧义语义数字构造机，在这里要构造2个函数，一个是initArabicNumber
+			 * 用于提取混合数字变量到command_V._IMV_SIQ_SS中，我定义为_IMV_SIQ_SS_Q
+			 * 另外一个函数是fussionOfArabicNumber，用于原函数进行组合_IMV_SIQ_SS_Q的内容。
+			 * 注意initArabicNumber提取数字要提取position，避免序次问题出错。 --罗瑶光
+			 */
+			command_V.initArabicNumber();
 			/*
 			 * 思考关于关系分类的价值，表面的含义我就不介绍了，如果我要输出我的思维方式要优秀于传统的
 			 * 认知方式，就要有明显的论证和论据来强调我的HVPCS关系要优秀于普通的模型，显而易见，今天的
@@ -64,22 +89,10 @@ public class E_pl_XA_E {
 			 * 4个领域。我的动机是当然希望人才辈出，早点超越我，不然我才不会这样样细致的文字描述。2018 分词
 			 * 如果lucene 每秒当时能够上 2000万，估计这几年我可以天天玩。就是看业界不争气，我没办法才have to
 			 * 编码。做人可以飞到天上去，但做事一定要脚踏实地。
+			 * 我写文字的动机1 是著作权在先权分析，文字分解后就可以进行相似度匹配。找出科技界的南郭先生批评教育。
+			 * 2 是方便教材方式方向文字描述，制造各类深度思考问题，授人之渔。
 			 * 
 			 * --罗瑶光
-			 */
-			// 函数注册
-			NE.app_S.workVerbaMap.command_V = command_V;
-			// 之后整体替换下。方便command_V管理。
-			command_V.commandAcknowledge = command;
-			command_V.command = command;
-			/*
-			 * command是一条最短的指令句，指令句变成指令的中间数据目前保留在NE.app_S.workVerbaMap
-			 * 中，我在思考，每次计算完一句指令，这些过程产物都要clear掉，这是一种C语言的free写法，
-			 * 在高级的java结构中，可以进行单例来class null掉，意思是我可以创造一个command class，
-			 * 这个类专门负责command的数据碎片，这个class可以list形式进入tinmap，也可以每次执行完
-			 * 被G1GC来null掉，想到这里，于是先命名个command Class先。 --地址在package
-			 * O_V.OSM.shell; --函数名CommandClass
-			 * 
 			 */
 
 			// -1 计算逻辑关系根据不同的环境会有不同的组合，最优关系是频率出来的，不是关键字分析出来的。
@@ -125,7 +138,7 @@ public class E_pl_XA_E {
 			 * cartesianWorkActionsRights的key构造来自于WorkVerbaMap_X_S的166行的初始root
 			 * 于是我开始思考，在计算关系分层的时候缺少了一些中间过程的碎片记录，这个记录关系导致了
 			 * 我之后要花双倍时间来重复计算曾经已有的却未保留的结果，论证在计算哲学中，计算关系可以
-			 * 外因计算逻辑。于是开始优化准备将root的组合因子进行map化。从而顾虑掉下面的重复逻辑。
+			 * 外因计算逻辑。于是开始优化准备将root的组合因子进行map化。从而过滤掉下面的重复逻辑。
 			 * 于是在CommandClass中定义rootMap来封装root，rootRelation来封装root的关系。
 			 * 这里root不包含pos后戳，不包含 _ 无效, 去掉此逻辑。于是可以化简如下。
 			 * 
@@ -154,8 +167,7 @@ public class E_pl_XA_E {
 
 					/*
 					 * 在进行构造关系的分析过程中，发现split的操作是一种流程逻辑错误的弥补。
-					 * 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高
-					 * 笛卡尔的计算 性能 -trif --罗瑶光
+					 * 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高 笛卡尔的计算 性能 -trif --罗瑶光
 					 */
 					int scaleRights;
 					if (command_V.cartesianWorkActionsRightsSV
@@ -168,7 +180,7 @@ public class E_pl_XA_E {
 					/*
 					 * map细化分解的好处显而易见，如我的早期的德塔分词，map全部分解。这是一种
 					 * 计算关系催化过程。之后这个map也可以元基来索引加速遍历。 --罗瑶光
-					 * */
+					 */
 					// 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
 					// 过滤和缩减了海量关系计算集合。
 					if (scaleRights < 12) {
@@ -178,8 +190,9 @@ public class E_pl_XA_E {
 					// later // in // pdn
 				}
 			}
-			//SVO主谓宾的中文缩写。cartesianWorkActionsRights分解后SV和VO可以以后形成严谨的指令句匹配规范
-			iterators = command_V.cartesianWorkActionsRightsVO.keySet().iterator();
+			// SVO主谓宾的中文缩写。cartesianWorkActionsRights分解后SV和VO可以以后形成严谨的指令句匹配规范
+			iterators = command_V.cartesianWorkActionsRightsVO.keySet()
+					.iterator();
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
@@ -291,9 +304,9 @@ public class E_pl_XA_E {
 	 * 停止了下脚步，我在思考，一种不需要辅助也能计算出有用结果的通用类逻辑，在最恶劣
 	 * 的环境里，只需要加入某种精度组合就能覆盖所有条件搭配的逻辑，目前我找到了很多 方法，1 -
 	 * 明确动词的指令集，因为人类的动词不但数量少还有限，又精确。非常方便 第一步索引先。2 -
-	 * 单句分解指令集，因为单句是一个完整逻辑句，方便以后各类歧义 句型 复句句型 首先转换为单句再执行即可。3 -
-	 * 最大的价值在 1 和 2 可以直接元基 索引 IDUQ 分类即可。方便我的花语系统加速。 如 六元 -
-	 * StudyVerbaMap
+	 * 单句分解指令集，因为单句是一个完整逻辑句，方便以后各类歧义 句型 复句句型 首先转换
+	 * 为单句再执行即可。3 -最大的价值在 1 和 2 可以直接元基 索引 IDUQ 分类即可。方便
+	 * 我的花语系统加速。 如 六元 -StudyVerbaMap
 	 * 
 	 */
 	private static void doAcknowledgeSwap(String[] acknowledgeSwap,
@@ -342,6 +355,26 @@ public class E_pl_XA_E {
 		// work domain out later.*/
 		// NE.app_S.workVerbaMap.setHumanTalk(command, NE);
 		NE.app_S.workVerbaMap.setHumanTalkAfterNewBusinessTest(command_V, NE);
+		/*
+		 * 思考1 - 当构造混合中文数字提取转换匹配后，进行归纳格式化成map，这个map则需要在
+		 * 这一层进行和分词结果整合。这种逻辑属于ETL类型逻辑， command_V._IMV_SIQ_SS
+		 * command_V._IMV_SIQ_SS_Q
+		 * 
+		 * 思考2 - 所以这种逻辑以后可以更进分解swap成用tinshell OSGI ETL节点来中文节点分层
+		 * ，以后人工智能的基础思考模型就稳定了。然后元基索引 使用频率统计排序归纳，创造一个 
+		 * 自然选择的计算模拟环境。
+		 */
+		Iterator<String> iterators = command_V._IMV_SIQ_SS_Q.keySet()
+				.iterator();
+		while (iterators.hasNext()) {
+			String string = iterators.next();
+			WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q.getW(string);
+			command_V._IMV_SIQ_SS.put(string, WordFrequency);
+			/*
+			 * 分词的position要统计char位置，不是word位置，不然会不准确 later --trif一下
+			 */
+		}
+
 		Boolean findSubject = NE.app_S.workVerbaMap.findSubject(NE, command_V);
 		return NE.app_S.workVerbaMap.returnBestTypeOfCommands(findSubject);
 	}

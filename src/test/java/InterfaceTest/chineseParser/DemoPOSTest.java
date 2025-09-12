@@ -72,6 +72,10 @@ public class DemoPOSTest {
 	public void testPOS(List<String> sets, IMV_SIQ pos) {
 		// 结果归纳
 		// 1 名词 动词 形容词归纳
+		int charPosition = 0;
+		/*
+		 * 因为混合中文数字是charPosition 所以分词的sets也要charPosition变换增加精确度。
+		 * */
 		System.out.println("-展示词性-");
 		for (int j = 0; j < 1; j++) {
 			for (int i = 0; i < sets.size(); i++) {
@@ -81,6 +85,7 @@ public class DemoPOSTest {
 					Object wordObjectPOS = pos.get(string);
 					if (null == wordObjectPOS) {
 						System.out.print(word + "/" + "NULL" + "----");
+						charPosition += string.length();
 						continue;
 					}
 					String wordPOS = wordObjectPOS.toString();
@@ -126,7 +131,7 @@ public class DemoPOSTest {
 						} else {
 							wordFrequency = new WordFrequency(1, word);
 						}
-						wordFrequency.positions.add(i);
+						wordFrequency.positions.add(charPosition);
 						wordFrequency.I_pos("名词");
 						noun.put(word, wordFrequency);
 					}
@@ -140,7 +145,7 @@ public class DemoPOSTest {
 						} else {
 							wordFrequency = new WordFrequency(1, word);
 						}
-						wordFrequency.positions.add(i);
+						wordFrequency.positions.add(charPosition);
 						wordFrequency.I_pos("动词");
 						verb.put(word, wordFrequency);
 					}
@@ -153,7 +158,7 @@ public class DemoPOSTest {
 						} else {
 							wordFrequency = new WordFrequency(1, word);
 						}
-						wordFrequency.positions.add(i);
+						wordFrequency.positions.add(charPosition);
 						// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，
 						// 里面副词出现了整体性问题，到现在2025年，这7年没有一个人告知我
 						// 这个问题，我的自己工程又从来没有用过这副词的逻辑，所以一直没碰
@@ -196,7 +201,7 @@ public class DemoPOSTest {
 						} else {
 							wordFrequency = new WordFrequency(1, word);
 						}
-						wordFrequency.positions.add(i);
+						wordFrequency.positions.add(charPosition);
 						// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，
 						// 里面副词出现了整体性问题，到现在2025年，这7年没有一个人告知
 						// 我这个问题，我的自己工程又从来没有用过这副词的逻辑，所以一直
@@ -234,6 +239,7 @@ public class DemoPOSTest {
 						adv.put(word, wordFrequency);
 					}
 				}
+				charPosition += string.length();
 			}
 		}
 

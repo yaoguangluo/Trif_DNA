@@ -3,6 +3,7 @@ package S_A.SixActionMap;
 import java.util.Iterator;
 
 import O_V.OSM.shell.CommandClass;
+import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
@@ -30,7 +31,6 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 		}
 		// command_V.getNumericsFromUnknownMap(command_V.command);
 		getNumericsFromUnknownMapAndFiltCommand(command_V);
-
 		return 0;
 	}
 
@@ -47,6 +47,13 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 		String string = "";
 		String inputString = command_V.command;
 		inputString = command_V.simpleChineseNumberSwap(inputString);
+		/*
+		 * 思考--涉及拆嵌套的逻辑如何分关系。
+		 * */
+		if(command_V.chineseSimpleCommandWithoutNumerics.isEmpty()) {
+			command_V.chineseSimpleCommandWithoutNumerics = inputString.toString();	
+		}
+		System.out.println("chineseSimpleCommandWithoutNumerics400-1-->" + command_V.chineseSimpleCommandWithoutNumerics);
 		int fixOrder = 0;
 		for (fixOrder = 0; fixOrder < inputString.length(); fixOrder++) {
 			if ((inputString.charAt(fixOrder) > 47
@@ -100,6 +107,9 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 			string = "";
 		}
 		// chinese number extra
+		/*
+		 * 之后这类输出统一归纳为频率 和时间统计函数集，方便高频优先意识。 --罗瑶光
+		 * */
 		// english extra later
 	}
 
@@ -109,6 +119,16 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 				.keySet().iterator();
 		while (iterators.hasNext()) {
 			String string = iterators.next();
+			String symbolsSwapNumericsByLength = "";
+			for(int i = 0; i < string.length(); i++) {
+				symbolsSwapNumericsByLength += command_V.symbolSwapNumerics;
+			}
+			/*
+			 * symbolsSwapNumericsByLength 与string的 长度一致 增加分词的char position
+			 * 准确度，因果增加笛卡尔关系的精确度。
+			 * --罗瑶光
+			 * */
+			
 			System.out.println("混合数字字符探索-->" + string);
 			boolean hasNumerics = false;
 			boolean hasChars = false;
@@ -128,6 +148,55 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 					|| string.contains("百") || string.contains("千")
 					|| string.contains("万") || string.contains("亿")) {
 				hasChars = true;
+			}
+			if (hasNumerics && !hasChars) {
+				/*
+				 * 翻译阿拉伯数字 逻辑是 
+				 * number = studyVerbaMap_Q.getChineseFromNumerics(number);
+				 * */
+				String stringSwaped = getChineseFromNumerics(string);
+				System.out.println("stringSwaped-400-1->" + stringSwaped);
+				stringSwaped = command_V.fasterChineseNumberSwap(stringSwaped);
+				System.out.println("stringSwaped-400-2->" + stringSwaped);
+				//String stringSwaped = command_V.fasterChineseNumberSwap(string);
+				WordFrequency wordFrequency = new WordFrequency(1, stringSwaped);
+				String temp = command_V.numericsFromUnknownString.getString(string);
+				int tempInt = Integer.valueOf(temp);
+				System.out.println("position-->" + tempInt);
+				wordFrequency.positions.add(tempInt);
+				//wordFrequency.I_frequency(1);
+				wordFrequency.I_pos("变换数字字符串代词名词");
+				command_V._IMV_SIQ_SS_Q.put(stringSwaped, wordFrequency);
+				command_V.chineseSimpleCommandWithoutNumerics 
+				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
+						, symbolsSwapNumericsByLength);
+				//command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
+				//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
+			}
+			if (!hasNumerics && hasChars) {
+				/*
+				 * 翻译汉字数字 逻辑是
+				 * commandClass.fasterChineseNumberSwap(number);
+				 * 之后要归纳下，避免重含，如果有逆向递归操作容易死循环。
+				 * */
+				String stringSwaped = command_V.fasterChineseNumberSwap(string);
+				System.out.println("stringSwaped-400-2->" + stringSwaped);
+				WordFrequency wordFrequency = new WordFrequency(1, stringSwaped);
+				String temp = command_V.numericsFromUnknownString.getString(string);
+				int tempInt = Integer.valueOf(temp);
+				System.out.println("position-->" + tempInt);
+				wordFrequency.positions.add(tempInt);
+				//wordFrequency.I_frequency(1);
+				wordFrequency.I_pos("变换数字字符串代词名词");
+				command_V._IMV_SIQ_SS_Q.put(stringSwaped, wordFrequency);
+				command_V.chineseSimpleCommandWithoutNumerics 
+				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
+						, symbolsSwapNumericsByLength);
+				/*
+				 * 下面注释的逻辑需要按照字符串的长短排序后按照长优先进行replace，不然会字符串断层错误。
+				 * */
+				//command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
+				//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
 			}
 			if (hasNumerics && hasChars) {
 				System.out.println("混合数字字符预处理锁定-->" + string);
@@ -178,28 +247,49 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 				}
 				// fix filter
 				chineseNumber = prefixOptimization(chineseNumber);
-//				if (!chineseNumber.isEmpty()) {
-//					while (chineseNumber.charAt(0) == '零'
-//							&& chineseNumber.length() > 1) {
-//						chineseNumber = chineseNumber.substring(1,
-//								chineseNumber.length());
-//					}
-//				}
 				// oder-fix
 				chineseNumber = orderfixOptimization(chineseNumber);
-//				if (!chineseNumber.isEmpty()) {
-//					while (chineseNumber
-//							.charAt(chineseNumber.length() - 1) == '零'
-//							&& chineseNumber.length() > 1) {
-//						chineseNumber = chineseNumber.substring(0,
-//								chineseNumber.length() - 1);
-//					}
-//				}
 				System.out.println("混合数字字符预处理结果-->" + chineseNumber);
+				//稍后去重
+				/*
+				 * 思考关于position的位置添加方式，是字符串的头字所取位置，那么之后分词的
+				 * 位置也要符合这个规范，不然有误差。或导致精度过滤的条件类计算不准确。
+				 * later -trif。 罗瑶光
+				 * */
+				
+				String regArabicNumber = command_V.fasterChineseNumberSwap(chineseNumber);
+				System.out.println("stringSwaped-400-2->" + regArabicNumber);
+				WordFrequency wordFrequency = new WordFrequency(1, regArabicNumber);
+				String temp = command_V.numericsFromUnknownString.getString(string);
+				int tempInt = Integer.valueOf(temp);
+				System.out.println("position-->" + tempInt);
+				wordFrequency.positions.add(tempInt);
+				//wordFrequency.I_frequency(1);
+				wordFrequency.I_pos("变换数字字符串代词名词");
+				command_V._IMV_SIQ_SS_Q.put(regArabicNumber, wordFrequency);
+				command_V.chineseSimpleCommandWithoutNumerics 
+				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
+						, symbolsSwapNumericsByLength);
+				//command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
+				//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
 			}
 		}
 	}
-
+//	if (!chineseNumber.isEmpty()) {
+//	while (chineseNumber.charAt(0) == '零'
+//			&& chineseNumber.length() > 1) {
+//		chineseNumber = chineseNumber.substring(1,
+//				chineseNumber.length());
+//	}
+//}
+//	if (!chineseNumber.isEmpty()) {
+//	while (chineseNumber
+//			.charAt(chineseNumber.length() - 1) == '零'
+//			&& chineseNumber.length() > 1) {
+//		chineseNumber = chineseNumber.substring(0,
+//				chineseNumber.length() - 1);
+//	}
+//}
 	
 
 	public static void main(String[] argv) {

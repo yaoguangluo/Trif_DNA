@@ -124,23 +124,23 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 		output = prefixOptimization(output);
 		// oder-fix
 		output = orderfixOptimization(output);
-		
-//		if (!output.isEmpty()) {
-//			while (output.charAt(0) == '零' && output.length() > 1) {
-//				output = output.substring(1, output.length());
-//			}
-//		}
-//		// oder-fix
-//		if (!output.isEmpty()) {
-//			while (output.charAt(output.length() - 1) == '零'
-//					&& output.length() > 1) {
-//				output = output.substring(0, output.length() - 1);
-//			}
-//		}
 		System.out.println("output-->" + output);
 		return output;
 	}
-
+	
+//	if (!output.isEmpty()) {
+//		while (output.charAt(0) == '零' && output.length() > 1) {
+//			output = output.substring(1, output.length());
+//		}
+//	}
+//	// oder-fix
+//	if (!output.isEmpty()) {
+//		while (output.charAt(output.length() - 1) == '零'
+//				&& output.length() > 1) {
+//			output = output.substring(0, output.length() - 1);
+//		}
+//	}
+	
 	/*
 	 * fix filter 和 oder-fix稍后提取成函数，避免重复，然后command class
 	 * 继承这些中间变量， 处理好哲学关系 保持简洁计算性能。。 --罗瑶光

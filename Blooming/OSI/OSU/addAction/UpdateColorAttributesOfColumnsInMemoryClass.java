@@ -207,7 +207,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 					.cartesianWorkActionsRightsSV.keySet().iterator();
 			while(iterators.hasNext()) {
 				String string = iterators.next();
-				System.out.println("400-10000004" + string);
+				//System.out.println("400-10000004" + string);
 				/*
 				 * 注意否定句型的不 非 等字，那么红色将是错误的用法，应该增加校准类指令集辅助。
 				 * 于是开始思考，这是一种指令集分解逻辑，这个逻辑的关系和硬件的与 或 非相似。
@@ -240,7 +240,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 					.cartesianWorkActionsRightsVO.keySet().iterator();
 			while(iterators.hasNext()) {
 				String string = iterators.next();
-				System.out.println("400-10000004" + string);
+				//System.out.println("400-10000004" + string);
 				if(string.contains("红色")){
 					System.out.println("400-10000005" + string);
 					if(string.contains("不")) {

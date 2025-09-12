@@ -1,5 +1,9 @@
 package OSI.OSU.addAction;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
@@ -124,11 +128,11 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 	 * --罗瑶光
 	 * 
 	 */
-	
-	 /* 
-	  * 很多科学家思考人工智能会不会危害人类，我的观点是，人工智能没有享受的实际思维，因为
+
+	/*
+	 * 很多科学家思考人工智能会不会危害人类，我的观点是，人工智能没有享受的实际思维，因为
 	 * 人工智能没有应激性，所以不往武器上去设计，人工智能就是一台会自我设计复制优化的电脑
-	 * 而已。即使有了人的仿生形态，一个复制分身，几百万个实体就出来了，电脑根本就不需要  
+	 * 而已。即使有了人的仿生形态，一个复制分身，几百万个实体就出来了，电脑根本就不需要
 	 * 求生欲这类应激表达。所以个人建议-禁止和限制-人工智能往武器上去研发。
 	 * 
 	 * 还有一种思维是非武器的人工智能当面临适应环境的问题时候，需要伤害人为代价来适应环境
@@ -136,21 +140,21 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 	 * 欲望的实体如何会去伤害人呢？所以个人建议-禁止和限制-人工智能往武器上去研发。
 	 * 
 	 * 于是归纳-应激生物机器人100%会概率危害人。非应激类非武器构造的钢铁机器人相对安全，
-	 * 但也会概率被各种外因(比如短路触电)侵蚀危害人，同理武器类钢铁机器人有概率被各种外因
-	 * 侵蚀不危害人。
+	 * 但也会概率被各种外因(比如短路触电)侵蚀危害人，同理武器类钢铁机器人有概率被各种外因 侵蚀不危害人。
 	 * 
 	 * 所以硬件公司的生产车间引用机器人作业要谨慎。后果不是开玩笑的。
 	 * 
 	 * --罗瑶光
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
 		// 1 识别 数字 信息
 		/*
 		 * 德塔图灵分词--德塔图灵分词和图灵先生没关系，我2018当时只是好玩，2019结果还申请了著作权，
 		 * 搞得都改不了了。-- 能够将数字提取出来标明词性未知和null，可以通过numeric函数来探索数字。
 		 * 
-		 * 再通过数字和 词组的笛卡尔关系得到精度距离内的指令关系结构，--我已经有了这些函数了，直接 
-		 * 用即可--再通过 2的 关系结构进行精确筛选来swap成输出指令数据即可。
+		 * 再通过数字和 词组的笛卡尔关系得到精度距离内的指令关系结构，--我已经有了这些函数了，直接 用即可--再通过
+		 * 2的关系结构进行精确筛选来swap成输出指令数据即可。
 		 * 
 		 * 这些年，很多大佬拿了我的代码然后模仿我，想窥伺我的思维方式，不惜消费巨大的物资最后得不偿失
 		 * 膜拜变成憎恨，我思考了下这是我的问题，好比倩女幽魂，大白天背着个大菩萨在外走，难免别人不认
@@ -161,14 +165,98 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		 */
 
 		// 2 识别 行至 属性的指令集 信息
-
+		/*
+		 * 开始构造数字行数提取指令 从- 组合 到- 然后分析 从- 组合 到- 展示+行 仅+展示
+		 * 
+		 * "操作:0|行至|30;\r\n" 终于到了这一步了，
+		 */
+		if(!NE.app_S.workVerbaMap.command_V.command.contains("行")) {
+			return "";
+		}
+		System.out.println("LimitedRow-string-400-00-->\n");
+		Iterator<String> iterators = NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsSV
+				.keySet().iterator();
+		String fromValue = "";
+		String toValue = "";
+		// 逻辑分解增加精度
+		boolean needFind = false;
+		while (iterators.hasNext()) {
+			String string = iterators.next();
+			System.out.println("LimitedRow-string-400-01-->"+ string);
+			if (string.contains("展示+行")) {
+				needFind = true;
+				break;
+			}
+		}
+		System.out.println("LimitedRow-string-400-01-01->"+ needFind);
+		if (needFind) {
+			iterators = NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsVO
+					.keySet().iterator();
+			while (iterators.hasNext()) {
+				String string = iterators.next();
+				System.out.println("LimitedRow-string-400-02-->"+ string);
+				if (string.contains("从-")) {
+					System.out.println(
+							"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
+									+ string);
+					// 1
+					String[] strings = string.split("-");
+					// 2
+					if (strings.length > 1) {
+						boolean isNumeric = true;
+						for (int i = 0; i < strings[1].length(); i++) {
+							if (strings[1].charAt(i) < 48
+									|| strings[1].charAt(i) > 57) {
+								isNumeric = false;
+							}
+						}
+						// 3
+						if (isNumeric) {
+							fromValue = strings[1];
+						}
+					}
+					// 4
+				}
+				if (string.contains("到-")) {
+					System.out.println(
+							"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
+									+ string);
+					// 1
+					String[] strings = string.split("-");
+					// 2
+					if (strings.length > 1) {
+						boolean isNumeric = true;
+						for (int i = 0; i < strings[1].length(); i++) {
+							if (strings[1].charAt(i) < 48
+									|| strings[1].charAt(i) > 57) {
+								isNumeric = false;
+							}
+						}
+						// 3
+						if (isNumeric) {
+							toValue = strings[1];
+						}
+					}
+				}
+			}
+		}
 		// 3 信息组合 成指令集术语
+		String shellType = "操作:" + fromValue + "|行至|" + toValue + "";
 		// 4 输出
+		System.out.println("400---00007---");
+		System.out.println(shellType);
+		String[] strings = shellType.split(":");
+		List<String[]> list = new ArrayList();
+		list.add(strings);
+		System.out.println("400---00008---");
+		NE._I_U.outputMap.put("操作", list);// 集成到老的接口模式先，避免bug*/
+		NE._I_U.outputMap.put("type", "进行选择");
+		System.out.println("400---00009---");
 		/*
 		 * 以后指令集的编码风格也可以进行系统的流程归纳比如这里的 1 和 2 //1 识别 数字 信息 //2
 		 * 识别行至属性的指令集 信息，通过计算哲学来进行思考，--识别 数字 信息，数字--是特指
-		 * 信息，那么数字来自于内存，和输入条件或者是特指的某个储存位置，这里的计算关系是搜索和 寻找 --2 识别
-		 * 行至属性的指令集 信息--是关键字信息，那么需要匹配，搜索，和RNN距离来
+		 * 信息，那么数字来自于内存，和输入条件或者是特指的某个储存位置，这里的计算关系是搜索和 寻找 --2
+		 * 识别行至属性的指令集 信息--是关键字信息，那么需要匹配，搜索，和RNN距离来
 		 * 确定权重，序次和频率，这个1和2都能解释编译为稳定的计算机函数，适用于各种环境状态下的
 		 * 搜索与计算。说明这个1和2是基础指令集逻辑。那稍后就有必要设计下这两个函数。
 		 * 

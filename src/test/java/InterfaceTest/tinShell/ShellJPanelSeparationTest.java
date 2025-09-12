@@ -315,16 +315,34 @@ class ShellJPanelSeparationTest {
 		TinMap tinMap = execTest(tinshell, NE, null);
 		// 输出 见末尾 第一段
 		// 拆分----
+		//+ "操作:0|行至|30;\r\n" 
+		//+ "操作:中药名称|颜色标记为|红色;");
 		String tinshell2 = ("在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
-				+ "操作:0|行至|30;\r\n" 
+				+ "在输出的数据表中仅展示从第零行到第3拾行的数据;"
 				+ "做一个操作将列名为中药名称的子集用红色来标记为输出的颜色;");
-				//+ "操作:中药名称|颜色标记为|红色;");
 		execTest(tinshell2, NE, tinMap);
 		// 输出见末尾 第二段
 		// 关闭
 		NE.stop();
 	}
+//输出正确
+//	line-->:10
+//	line-->:success
+//	line-->:0
+//	line-->:10
+//	Action-->:updateColorAttributesOfColumnsInMemoryClass
+//	Action-->:selectRowsByAttributesOfGetCulumns
+//	Action-->:P_ListNeedStart
+//	Action-->:limitedRowAttributesOfColumnsInMemoryClass
+//	Action-->:selectRowsByAttributesOfAggregation
+//	Action-->:P_TableName
+//	Action-->:P_fileOperations
+//	Action-->:selectRowsByAttributesOfCondition
+//	Action-->:addFindColumnsInMemoryClass
 
+	
+//	
+	
 	// 可以是其他的语言。initon talk， plorm， deta db etc。。
 	// osgi view init
 	// 命令需要的表格生成
