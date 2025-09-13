@@ -50,7 +50,7 @@ public class IMV_SIQ_utils {
 		while (iterators.hasNext()) {
 			String actionKey = iterators.next();
 			/*
-			 * 思考，stringsKey因为被加工处理，单字被过滤了，那么需要中条件算法来辅助判断
+			 * 思考，stringsKey因为被加工处理，单字被过滤了，那么需要一种条件算法来辅助判断
 			 * 判断的方法有很多，通用的方法打分匹配来确定相似度。然后多个相似度 词组进行
 			 * 累积总分触发因为我要挑战我自己，所以不能用普通的逻辑来优化。 --罗瑶光
 			 */
