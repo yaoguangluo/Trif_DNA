@@ -187,76 +187,6 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 	}
 
 	/*
-	 * 关于复杂RNN关系 我引擎这里会逐渐用不到，因为DNN的重心分析加上语言的单句分解，是我
-	 * 的花语计算逻辑趋势，以后复杂的句子首先走短句分解而不是走全局关系，那么这个复杂关系
-	 * 价值将体现在修正和补充环境里面, 之后根据算法优化的BPM结构不断校正补充函数 -罗瑶光
-	 */
-	public void actionsNormalization(App NE, CommandClass command_V) {
-//		Iterator<String> iterators = command_V.cartesianWorkActionsPositions
-//				.keySet().iterator();
-//		LEFT: while (iterators.hasNext()) {
-//			String root_position_name = iterators.next();
-//			int root_position_left = command_V.cartesianWorkActionsPositions
-//					.getInt(root_position_name);
-//			int root_rights_left = command_V.cartesianWorkActionsRights
-//					.getInt(root_position_name);
-//			Iterator<String> root_right_names = command_V.cartesianWorkActionsRights
-//					.keySet().iterator();
-//			RIGHT: while (root_right_names.hasNext()) {
-//				String root_right_name = root_right_names.next();
-//				int root_position_right = command_V.cartesianWorkActionsPositions
-//						.getInt(root_position_name);
-//				int root_rights_right = command_V.cartesianWorkActionsRights
-//						.getInt(root_position_name);
-//				int least_rights = root_rights_left + root_rights_right;
-//				int average_rights = Math
-//						.abs(root_position_left - root_position_right);
-//				int average_position = (root_position_left
-//						+ root_position_right) / 2;
-//				if (least_rights < NE.app_S.initonsDistanceRelationship
-//						&& !root_right_name.equalsIgnoreCase(root_position_name)
-//						&& average_rights < NE.app_S.initonsDistanceRelationship) {
-//					String[] leftsP = new String[2];
-//					// = // root_right_name.split("+");
-//					String[] leftsR = new String[2];
-//					String[] rightsP = new String[2];
-//					String[] rightsR = new String[2];
-//					if (root_right_name.contains("+")) {
-//						continue RIGHT;
-//					}
-//					if (root_right_name.contains("-")) {
-//						leftsR = root_right_name.split("-");
-//						leftsP = leftsR;
-//					}
-//					if (root_position_name.contains("+")) {
-//						continue LEFT;
-//					}
-//					if (root_position_name.contains("-")) {
-//						rightsR = root_position_name.split("-");
-//						rightsP = rightsR;
-//					}
-//					if (!leftsP[0].equalsIgnoreCase(rightsR[1])
-//							&& !leftsR[1].equalsIgnoreCase(rightsP[0])) {
-//						//later..
-//						//command_V.complementedWorkActionsRights.put(
-//						//		root_right_name + "--" + root_position_name,
-//						//		average_rights);
-//						//command_V.complementedWorkActionsPositions.put(
-//						//		root_right_name + "++" + root_position_name,
-//						//		average_position);
-//						if (root_right_name.contains("列")
-//								|| root_right_name.contains("展示")) {
-//							// System.out.println(root_right_name + "--"
-//							// + root_position_name + ":" + average_rights
-//							// + ":" + average_position + ":" + least_rights);
-//						}
-//					}
-//				}
-//			}
-//		}
-	}
-
-	/*
 	 * 思考，这里的 + - 符号 + 是position，-是connetion ，在词性组合中 +是动名， -是
 	 * 名动，形成原因是我不断的优化引擎，用最简添加法方便迅捷编码，为了区别混淆，于是又 +
 	 * 上改为++，-改为--来区分。那么在函数map中也应该进行区分，于是优化下最终结构 一个DP 代表双字+—
@@ -365,4 +295,73 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 		// ------------
 	}
 	
+	/*
+	 * 关于复杂RNN关系 我引擎这里会逐渐用不到，因为DNN的重心分析加上语言的单句分解，是我
+	 * 的花语计算逻辑趋势，以后复杂的句子首先走短句分解而不是走全局关系，那么这个复杂关系
+	 * 价值将体现在修正和补充环境里面, 之后根据算法优化的BPM结构不断校正补充函数 -罗瑶光
+	 */
+	public void actionsNormalization(App NE, CommandClass command_V) {
+//		Iterator<String> iterators = command_V.cartesianWorkActionsPositions
+//				.keySet().iterator();
+//		LEFT: while (iterators.hasNext()) {
+//			String root_position_name = iterators.next();
+//			int root_position_left = command_V.cartesianWorkActionsPositions
+//					.getInt(root_position_name);
+//			int root_rights_left = command_V.cartesianWorkActionsRights
+//					.getInt(root_position_name);
+//			Iterator<String> root_right_names = command_V.cartesianWorkActionsRights
+//					.keySet().iterator();
+//			RIGHT: while (root_right_names.hasNext()) {
+//				String root_right_name = root_right_names.next();
+//				int root_position_right = command_V.cartesianWorkActionsPositions
+//						.getInt(root_position_name);
+//				int root_rights_right = command_V.cartesianWorkActionsRights
+//						.getInt(root_position_name);
+//				int least_rights = root_rights_left + root_rights_right;
+//				int average_rights = Math
+//						.abs(root_position_left - root_position_right);
+//				int average_position = (root_position_left
+//						+ root_position_right) / 2;
+//				if (least_rights < NE.app_S.initonsDistanceRelationship
+//						&& !root_right_name.equalsIgnoreCase(root_position_name)
+//						&& average_rights < NE.app_S.initonsDistanceRelationship) {
+//					String[] leftsP = new String[2];
+//					// = // root_right_name.split("+");
+//					String[] leftsR = new String[2];
+//					String[] rightsP = new String[2];
+//					String[] rightsR = new String[2];
+//					if (root_right_name.contains("+")) {
+//						continue RIGHT;
+//					}
+//					if (root_right_name.contains("-")) {
+//						leftsR = root_right_name.split("-");
+//						leftsP = leftsR;
+//					}
+//					if (root_position_name.contains("+")) {
+//						continue LEFT;
+//					}
+//					if (root_position_name.contains("-")) {
+//						rightsR = root_position_name.split("-");
+//						rightsP = rightsR;
+//					}
+//					if (!leftsP[0].equalsIgnoreCase(rightsR[1])
+//							&& !leftsR[1].equalsIgnoreCase(rightsP[0])) {
+//						//later..
+//						//command_V.complementedWorkActionsRights.put(
+//						//		root_right_name + "--" + root_position_name,
+//						//		average_rights);
+//						//command_V.complementedWorkActionsPositions.put(
+//						//		root_right_name + "++" + root_position_name,
+//						//		average_position);
+//						if (root_right_name.contains("列")
+//								|| root_right_name.contains("展示")) {
+//							// System.out.println(root_right_name + "--"
+//							// + root_position_name + ":" + average_rights
+//							// + ":" + average_position + ":" + least_rights);
+//						}
+//					}
+//				}
+//			}
+//		}
+	}
 }

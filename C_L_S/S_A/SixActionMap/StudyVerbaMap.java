@@ -170,8 +170,6 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 				command_V.chineseSimpleCommandWithoutNumerics 
 				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
 						, symbolsSwapNumericsByLength);
-				//command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
-				//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
 			}
 			if (!hasNumerics && hasChars) {
 				/*
@@ -195,8 +193,6 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 				/*
 				 * 下面注释的逻辑需要按照字符串的长短排序后按照长优先进行replace，不然会字符串断层错误。
 				 * */
-				//command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
-				//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
 			}
 			if (hasNumerics && hasChars) {
 				System.out.println("混合数字字符预处理锁定-->" + string);
@@ -270,27 +266,9 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 				command_V.chineseSimpleCommandWithoutNumerics 
 				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
 						, symbolsSwapNumericsByLength);
-				//command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
-				//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
 			}
 		}
 	}
-//	if (!chineseNumber.isEmpty()) {
-//	while (chineseNumber.charAt(0) == '零'
-//			&& chineseNumber.length() > 1) {
-//		chineseNumber = chineseNumber.substring(1,
-//				chineseNumber.length());
-//	}
-//}
-//	if (!chineseNumber.isEmpty()) {
-//	while (chineseNumber
-//			.charAt(chineseNumber.length() - 1) == '零'
-//			&& chineseNumber.length() > 1) {
-//		chineseNumber = chineseNumber.substring(0,
-//				chineseNumber.length() - 1);
-//	}
-//}
-	
 
 	public static void main(String[] argv) {
 		String input = "123万200亿000在输出的123万亿200数据表中123万200亿202万2000仅"
@@ -299,19 +277,10 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 		commandClass.command = input;
 		StudyVerbaMap studyVerbaMap = new StudyVerbaMap();
 		studyVerbaMap.extractNumberfromString(commandClass);
-//		System.out.println(
-//				"1-->" + commandClass.numericsFromUnknownString.size());
-//		System.out.println("2-->" + commandClass.commandWithNumFilters);
-//		System.out.println("3-->" + studyVerbaMap.filterString);
 		/*
 		 * 稍后可以设计处理混合字符的数字格式化机，关于 3十 这种描述进行格式化。 --罗瑶光
 		 */
 		studyVerbaMap.formatNumericMap(commandClass);
-
-//		StudyVerbaMap_Q studyVerbaMap_Q = new StudyVerbaMap_Q();
-//		String number = "9992980400000088";
-//		number = studyVerbaMap_Q.getChineseFromNumerics(number);
-//		commandClass.fasterChineseNumberSwap(number);
 
 		// 不断加不断修正细化即可
 		//
@@ -434,3 +403,39 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
  * 个例子123万200亿2000则保留末尾2000，因为2字有数字拼接逻辑意义。 --罗瑶光
  * 
  */
+
+
+//command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
+//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
+
+//command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
+//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
+
+//command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
+//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
+
+//if (!chineseNumber.isEmpty()) {
+//while (chineseNumber.charAt(0) == '零'
+//	&& chineseNumber.length() > 1) {
+//chineseNumber = chineseNumber.substring(1,
+//		chineseNumber.length());
+//}
+//}
+//if (!chineseNumber.isEmpty()) {
+//while (chineseNumber
+//	.charAt(chineseNumber.length() - 1) == '零'
+//	&& chineseNumber.length() > 1) {
+//chineseNumber = chineseNumber.substring(0,
+//		chineseNumber.length() - 1);
+//}
+//}
+
+//System.out.println(
+//"1-->" + commandClass.numericsFromUnknownString.size());
+//System.out.println("2-->" + commandClass.commandWithNumFilters);
+//System.out.println("3-->" + studyVerbaMap.filterString);
+
+//StudyVerbaMap_Q studyVerbaMap_Q = new StudyVerbaMap_Q();
+//String number = "9992980400000088";
+//number = studyVerbaMap_Q.getChineseFromNumerics(number);
+//commandClass.fasterChineseNumberSwap(number);

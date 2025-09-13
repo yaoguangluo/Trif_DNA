@@ -126,8 +126,9 @@ public class CreativeVerbaMap {
 
 		// O+\\?+\\+颜色 等正则类指令 later 这是未来的趋势
 		/*
-		 * 在这种逻辑下，红色的计算关系是颜色属性分支，早年的map关于 红色->颜色 这类关系就可以用上了
-		 * 人类语言-词汇组-关系组-关系归纳-归纳组匹配-匹配计算， 目前我就得到了这类计算逻辑。既然得到了就开始用。
+		 * 在这种逻辑下，红色的计算关系是颜色属性分支，早年的map关于 红色->颜色 这类关系就
+		 * 可以用上了人类语言-词汇组-关系组-关系归纳-归纳组匹配-匹配计算， 目前我就得到了
+		 * 这类计算逻辑。既然得到了就开始用。
 		 * 
 		 * --罗瑶光
 		 */
@@ -140,8 +141,9 @@ public class CreativeVerbaMap {
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
 		/*
-		 * 之后走_SMV 这里的变量中入参将全部省略，避免内存占用浪费。之后可以设计个temp区间当作类脑存储容器
-		 * 专门用于计算失效的 和 临时的变量，关于这类格式-- trif binlog，map，DB，json
+		 * 之后走_SMV 这里的变量中入参将全部省略，避免内存占用浪费。之后可以设计个temp区间
+		 * 当作类脑存储容器 专门用于计算失效的 和 临时的变量，关于这类格式
+		 * -- trif binlog，map，DB，json
 		 * 等。我会首先采用map 不累。。
 		 */
 		StaticRootMap.staticBloomingTimes.put(
@@ -200,7 +202,9 @@ public class CreativeVerbaMap {
 		StaticRootMap.chromosomeBlooming.put(
 				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
 				limitedRowAttributesOfColumnsInMemoryClass);
-		
+		/*
+		 * 函数注册越来越多，以后可以OSGI插件化，也可以函数分层。
+		 * */
 
 	}
 }

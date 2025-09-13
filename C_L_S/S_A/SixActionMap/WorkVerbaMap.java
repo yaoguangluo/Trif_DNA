@@ -33,8 +33,8 @@ import java.util.Iterator;
 @SuppressWarnings("unchecked")
 public class WorkVerbaMap extends WorkVerbaMap_X {
 
-	// 一些逻辑不应该出现在电脑上，只能文字出现在书本上。就因为电脑内置蓝牙wifi声卡接口，我就不爽。
-	// 不管了我就当写书一样就是了。--罗瑶光 trif
+	// 一些逻辑不应该出现在电脑上，只能文字出现在书本上。就因为电脑内置蓝牙wifi声卡接口
+	//，我就不爽。不管了我就当写书一样就是了。--罗瑶光 trif
 	public boolean findSubject(App NE, CommandClass command_V) {
 		initEnvironment();
 		// small talk calculus
@@ -68,22 +68,16 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 	 * 被业界打倒了，我就退休。好多东西等我玩。写代码只是我的兴趣爱好。别抽象我。我只是个凡人。
 	 */
 	public void setHumanTalkAfterNewBusinessTest(CommandClass command_V,
-			App NE) {
-//		_IMV_SIQ_SS.clear();
-//		_IMV_SIQ_SS_.clear();
-//		_IMV_SIQ_S_.clear();
-//		
-/*
- * 在进行分词前进行数字提取过滤，得到数字类nums和序次的map然后过滤掉这些数字的string进行
- * 下一步的操作，如果有alfs的提取任务，就alfs也用这个逻辑处理。 --罗瑶光
- * 
- * */
+			App NE) {		
+		/*
+		 * 在进行分词前进行数字提取过滤，得到数字类nums和序次的map然后过滤掉这些数字
+		 * 的string进行下一步的操作，如果有alfs的提取任务，就alfs也用这个逻辑处理。 
+		 * --罗瑶光
+		 * 
+		 * */
 		int res = new StudyVerbaMap().extractNumberfromString(command_V);
 		
 		this.humanTalk = command_V.command;
-		// command_V._IMV_SIQ_SS;
-		// command_V._IMV_SIQ_SS_;
-		// command_V._IMV_SIQ_S_;
 		// 分词 提取 英文段和数字段形成变量。比如dnn 12345等
 		System.out.println("chineseSimpleCommandWithoutNumerics400-->" 
 		+ command_V.chineseSimpleCommandWithoutNumerics);
@@ -96,13 +90,7 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 		// -未知 词汇 入 NE.app_S.workVerbaMap.unknown_map.put(string,
 		// true);
 		// 其他 入 mapSearchWithoutSort.put(string, wordFrequency);
-
 		// 测试逻辑是 名 动 形 副 修正归纳 map-string-wordFrequency
-		// public IMV_SIQ_SS noun = new IMV_SIQ_SS();
-		// public IMV_SIQ_SS verb = new IMV_SIQ_SS();
-		// public IMV_SIQ_SS adj = new IMV_SIQ_SS();
-		// public IMV_SIQ_SS adv = new IMV_SIQ_SS();
-
 		// 缺少逻辑是
 		// 增加其他词性 map 同时统一入 mapSearchWithoutSort 即可逻辑有很多种，
 		// 我选择 都做一遍，然后loop 替换即可我的动机是确保包含所有形式的 完整计算关系。
@@ -185,9 +173,6 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 		// 4 精确词汇的mapping肽指令集
 		// 5 局部替换即可，价值可识别12345和英文abcde 方便人类语言中入参识别。
 		// */
-		// this._IMV_SIQ_SS =
-		// NE.app_S._A.parserMixStringByReturnFrequencyMap(command,
-		// NE);
 		NE.app_S._A.initPCAWordPOS(command_V._IMV_SIQ_SS, NE);
 	}
 
@@ -238,3 +223,20 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 		return null;
 	}
 }
+//计算辩证意识大幅减少大量算子。
+
+// this._IMV_SIQ_SS =
+// NE.app_S._A.parserMixStringByReturnFrequencyMap(command,
+// NE);
+
+//_IMV_SIQ_SS.clear();
+//_IMV_SIQ_SS_.clear();
+//_IMV_SIQ_S_.clear();
+//
+// command_V._IMV_SIQ_SS;
+// command_V._IMV_SIQ_SS_;
+// command_V._IMV_SIQ_S_;
+// public IMV_SIQ_SS noun = new IMV_SIQ_SS();
+// public IMV_SIQ_SS verb = new IMV_SIQ_SS();
+// public IMV_SIQ_SS adj = new IMV_SIQ_SS();
+// public IMV_SIQ_SS adv = new IMV_SIQ_SS();

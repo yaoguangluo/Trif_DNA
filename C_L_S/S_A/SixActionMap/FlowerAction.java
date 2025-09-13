@@ -21,14 +21,9 @@ import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class FlowerAction {
-	public static IMV_SIQ FlowerSixDomainActions = new IMV_SIQ();// later will
-																 // do in
-																 // dynamic
-
-	public static IMV_SIQ FlowerP_E_KernelActions = new IMV_SIQ();// later will
-																  // do in
-																  // dynamic
-
+	public static IMV_SIQ FlowerSixDomainActions = new IMV_SIQ();
+	// later will// do in // dynamic
+	public static IMV_SIQ FlowerP_E_KernelActions = new IMV_SIQ();
 	public static IMV_SIQ FlowerChromosomeActions = new IMV_SIQ();
 
 	@SuppressWarnings("unchecked")

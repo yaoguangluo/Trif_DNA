@@ -26,8 +26,8 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 	public String getChineseFromNumerics(String number) {
 		System.out.println(number);
 		/*
-		 * 首先开始思考，假定这个number是一个标准的整数，因为小数逻辑简单，只要直接翻译char即可。
-		 * 负数只要前面价格符号即可。
+		 * 首先开始思考，假定这个number是一个标准的整数，因为小数逻辑简单，
+		 * 只要直接翻译char即可。负数只要前面价格符号即可。
 		 * 
 		 * 于是开始分解，4位的千万位一个区间，那么是4个区间，符合普通人理解。 
 		 * numberParser[0]=0~9999
@@ -127,19 +127,6 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 		System.out.println("output-->" + output);
 		return output;
 	}
-	
-//	if (!output.isEmpty()) {
-//		while (output.charAt(0) == '零' && output.length() > 1) {
-//			output = output.substring(1, output.length());
-//		}
-//	}
-//	// oder-fix
-//	if (!output.isEmpty()) {
-//		while (output.charAt(output.length() - 1) == '零'
-//				&& output.length() > 1) {
-//			output = output.substring(0, output.length() - 1);
-//		}
-//	}
 	
 	/*
 	 * fix filter 和 oder-fix稍后提取成函数，避免重复，然后command class
@@ -251,14 +238,6 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 		// stringChineseUnitsFix);
 		// pre-fix
 		// oder-fix
-//		if (!stringChineseUnitsFix.isEmpty()) {
-//			while (stringChineseUnitsFix
-//					.charAt(stringChineseUnitsFix.length() - 1) == '零'
-//					&& stringChineseUnitsFix.length() > 1) {
-//				stringChineseUnitsFix = stringChineseUnitsFix.substring(0,
-//						stringChineseUnitsFix.length() - 1);
-//			}
-//		}
 		stringChineseUnitsFix = orderfixOptimization(stringChineseUnitsFix);
 		return stringChineseUnitsFix;
 	}
@@ -523,4 +502,27 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 //简体-->零
 //total2-->0
 
+
+
+//if (!output.isEmpty()) {
+//	while (output.charAt(0) == '零' && output.length() > 1) {
+//		output = output.substring(1, output.length());
+//	}
+//}
+//// oder-fix
+//if (!output.isEmpty()) {
+//	while (output.charAt(output.length() - 1) == '零'
+//			&& output.length() > 1) {
+//		output = output.substring(0, output.length() - 1);
+//	}
+//}
+
+//if (!stringChineseUnitsFix.isEmpty()) {
+//while (stringChineseUnitsFix
+//		.charAt(stringChineseUnitsFix.length() - 1) == '零'
+//		&& stringChineseUnitsFix.length() > 1) {
+//	stringChineseUnitsFix = stringChineseUnitsFix.substring(0,
+//			stringChineseUnitsFix.length() - 1);
+//}
+//}
 

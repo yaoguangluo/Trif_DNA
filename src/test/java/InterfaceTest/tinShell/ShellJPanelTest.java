@@ -417,37 +417,26 @@ class ShellJPanelTest {
 					+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" 
 					+ "在输出的数据表中仅展示从第零行到第3拾行的数据;"
 					+ "做一个操作将列名为中药名称的子集不能用红色来标记为输出的颜色;");
-			//输出正确
-			//400---00007---
-			//操作:0|行至|30
-			//400---00008---
-			//。。
-			//line-->:10
-			//。。
-//			Action-->:updateColorAttributesOfColumnsInMemoryClass
-//			Action-->:selectRowsByAttributesOfGetCulumns
-//			Action-->:P_ListNeedStart
-//			Action-->:limitedRowAttributesOfColumnsInMemoryClass
-//			Action-->:selectRowsByAttributesOfAggregation
-//			Action-->:P_TableName
-//			Action-->:P_fileOperations
-//			Action-->:selectRowsByAttributesOfCondition
-//			Action-->:addFindColumnsInMemoryClass
-
-//			String tinshellInput = (
-//					"首先获取一个表，名字是" + XLSTableName
-//					+ "，如果有这个表，准备下一步选择;\r\n" + "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n"
-//					+ "条件为:和:中药名称|包含|菜谱;\r\n" + "条件为:和:风险规避|不包含|孕;\r\n"
-//					+ "条件为:和:性味|不包含|凉;\r\n" + "条件为:和:性味|不包含|咸;\r\n"
-//					+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" 
-					//+ "操作:0|行至|30;\r\n"
-					//+ 
-//					"在输出的数据表中仅展示从第0行到第3拾行的数据;"
+					//输出正确
+					//400---00007---
+					//操作:0|行至|30
+					//400---00008---
+					//。。
+					//line-->:10
+					//。。
+                    //Action-->:updateColorAttributesOfColumnsInMemoryClass
+                    //Action-->:selectRowsByAttributesOfGetCulumns
+                    //Action-->:P_ListNeedStart
+                    //Action-->:limitedRowAttributesOfColumnsInMemoryClass
+                    //Action-->:selectRowsByAttributesOfAggregation
+                    //Action-->:P_TableName
+                    //Action-->:P_fileOperations
+                    //Action-->:selectRowsByAttributesOfCondition
+                    //Action-->:addFindColumnsInMemoryClass
 					/*
 					 * 花了三天时间做了一个最简的六元 -爱 学习 工作 创新 安全 帮助-
-					 * 分析混合中文数字提取机，在简单的功能测试了下
-					 * ok后，那么就准备应用下，
-					 * 逻辑是，
+					 * 分析混合歧义中文数字提取机，在简单的功能测试了下ok后，那么就准备
+					 * 应用下，逻辑是，
 					 * --1-- 首先识别出中文混合数字，进入到wordFrequency
 					 * map中	 如 command_V._IMV_SIQ_SS = NE.app_S._A
 					 *	.getWordFrequencyMap(command_V._IMV_SIQ_SS_, NE);
@@ -463,22 +452,7 @@ class ShellJPanelTest {
 					 * 然后分析 从- 组合 到- 展示+行 仅+展示
 					 * --罗瑶光
 					 * */
-					//+ "做一个操作将列名为中药名称的子集不能用红色来标记为输出的颜色;"
-//					);
-			/*
-			 * 改为做一个操作将列名为中药名称的子集用红色来标记为输出的颜色; --进行计算，
-			 * //输出结果正确 序列化流标记如下。
-			 * //Action-->:updateColorAttributesOfColumnsInMemoryClass
-			 * //Action-->:selectRowsByAttributesOfGetCulumns
-			 * //Action-->:P_ListNeedStart
-			 * //Action-->:selectRowsByAttributesOfAggregation
-			 * //Action-->:P_TableName //Action-->:P_fileOperations
-			 * //Action-->:selectRowsByAttributesOfCondition
-			 * //Action-->:addFindColumnsInMemoryClass
-			 * 测试出之前一个临时关键字需要replace掉。
-			 * --计算哲学在复杂功能逻辑测试领域的应用真实实例。
-			 * --罗瑶光
-			 */
+
 			output = execShell(NE, tinshellInput);
 			// print answer
 			// 打印执行后的输出表格
@@ -509,6 +483,33 @@ class ShellJPanelTest {
 	}
 
 }
+
+
+//String tinshellInput = (
+//		"首先获取一个表，名字是" + XLSTableName
+//		+ "，如果有这个表，准备下一步选择;\r\n" + "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n"
+//		+ "条件为:和:中药名称|包含|菜谱;\r\n" + "条件为:和:风险规避|不包含|孕;\r\n"
+//		+ "条件为:和:性味|不包含|凉;\r\n" + "条件为:和:性味|不包含|咸;\r\n"
+//		+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" 
+		//+ "操作:0|行至|30;\r\n"
+		//+ 
+//		"在输出的数据表中仅展示从第0行到第3拾行的数据;"
+
+/*
+ * 改为做一个操作将列名为中药名称的子集用红色来标记为输出的颜色; --进行计算，
+ * //输出结果正确 序列化流标记如下。
+ * //Action-->:updateColorAttributesOfColumnsInMemoryClass
+ * //Action-->:selectRowsByAttributesOfGetCulumns
+ * //Action-->:P_ListNeedStart
+ * //Action-->:selectRowsByAttributesOfAggregation
+ * //Action-->:P_TableName //Action-->:P_fileOperations
+ * //Action-->:selectRowsByAttributesOfCondition
+ * //Action-->:addFindColumnsInMemoryClass
+ * 测试出之前一个临时关键字需要replace掉。
+ * --计算哲学在复杂功能逻辑测试领域的应用真实实例。
+ * --罗瑶光
+ */
+
 
 //line-->:临时XLS1753902276957
 //    line-->:操作

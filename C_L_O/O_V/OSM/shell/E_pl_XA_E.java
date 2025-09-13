@@ -28,9 +28,7 @@ public class E_pl_XA_E {
 	@SuppressWarnings("unchecked")
 	public static TinMap E_pl_XA(String plSearch, boolean mod, TinMap output,
 			App NE) throws InterruptedException, IOException {
-		// working for here
-		// IMV_SIQ output= new IMV_SIQ();
-		// 1make container
+
 		if (null == output) {
 			output = NE._I_U.outputMap;// later all in 1 and contans objectmap
 		}
@@ -41,8 +39,6 @@ public class E_pl_XA_E {
 		List<String> lists = DoSplit.splitRegex(
 				plSearch.replace(" ", "").replace("\n", ""), ";", "\\", "\\");
 		String[] commands = List_ESU_X_stringlistToStringArray._E(lists);
-		// String[] commands= plSearch.replace(" ",
-		// "").replace("\n", "").split(";");
 		NE._I_U.acknowledge = null;
 		String[] acknowledgeSwap = null;
 		for (String command : commands) {
@@ -84,13 +80,13 @@ public class E_pl_XA_E {
 			 * 
 			 * 我要严谨的提醒的是 这些年一些大佬看了后，模仿窥伺我，改我的思维方式和函数名，搞点名堂，然后
 			 * 更进写，就莫名成了别人的作品，我呢的确没有功夫来管这些科技人才的屁事。到时候出了问题，别怪我没
-			 * 提醒，六脉神剑逆着练，也能射出剑气来，那是你们的本事。出问题也自然被人嘲笑，别赖上我就是了。 我的逻辑是
-			 * HVPCS + 元基编码 + 时函数 + 计算哲学。大佬们既然要模仿我的风格，就要深入接触这
+			 * 提醒，六脉神剑逆着练，也能射出剑气来，那是你们的本事。出问题也自然被人嘲笑，别赖上我就是了。 
+			 * 我的逻辑是HVPCS + 元基编码 + 时函数 + 计算哲学。大佬们既然要模仿我的风格，就要深入接触这
 			 * 4个领域。我的动机是当然希望人才辈出，早点超越我，不然我才不会这样样细致的文字描述。2018 分词
-			 * 如果lucene 每秒当时能够上 2000万，估计这几年我可以天天玩。就是看业界不争气，我没办法才have to
-			 * 编码。做人可以飞到天上去，但做事一定要脚踏实地。
-			 * 我写文字的动机1 是著作权在先权分析，文字分解后就可以进行相似度匹配。找出科技界的南郭先生批评教育。
-			 * 2 是方便教材方式方向文字描述，制造各类深度思考问题，授人之渔。
+			 * 如果lucene 每秒当时能够上 2000万，估计这几年我可以天天玩。就是看业界不争气，我没办法才
+			 * have to编码。做人可以飞到天上去，但做事一定要脚踏实地。 我写文字的动机1
+			 * 是著作权在先权分析，文字分解后就可以进行相似度匹配。找出科技界的南郭先生批评教育。 2
+			 * 是方便教材方式方向文字描述，制造各类深度思考问题，授人之渔。
 			 * 
 			 * --罗瑶光
 			 */
@@ -158,16 +154,10 @@ public class E_pl_XA_E {
 					 * 大幅减少冗余的变量和堆栈关系。
 					 * 
 					 */
-
-					// String[] stringSets = string.split("-");
-					// command_V.stringSets = stringSets;// 增加利用率。
-					// command_V.stringSetsMap.put(string, stringSets);
-					// int scaleRights = Integer
-					// .valueOf(stringSets[stringSets.length - 1]);
-
 					/*
 					 * 在进行构造关系的分析过程中，发现split的操作是一种流程逻辑错误的弥补。
-					 * 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高 笛卡尔的计算 性能 -trif --罗瑶光
+					 * 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高 
+					 * 笛卡尔的计算 性能 -trif --罗瑶光
 					 */
 					int scaleRights;
 					if (command_V.cartesianWorkActionsRightsSV
@@ -190,7 +180,8 @@ public class E_pl_XA_E {
 					// later // in // pdn
 				}
 			}
-			// SVO主谓宾的中文缩写。cartesianWorkActionsRights分解后SV和VO可以以后形成严谨的指令句匹配规范
+			// SVO主谓宾的中文缩写。cartesianWorkActionsRights分解后SV和VO可以以后形成
+			//严谨的指令句匹配规范
 			iterators = command_V.cartesianWorkActionsRightsVO.keySet()
 					.iterator();
 			while (iterators.hasNext()) {
@@ -229,10 +220,6 @@ public class E_pl_XA_E {
 			 * test.java.InterfaceTest.initon.util; --罗瑶光
 			 * 
 			 */
-//			command_V.normalizationalWorkActionsRights.clear();
-//			command_V.normalizationalWorkActionsPositions.clear();
-//			command_V.complementedWorkActionsRights.clear();
-//			command_V.complementedWorkActionsPositions.clear();
 			command_V.cartesianWorkActionsRightsSV.clear();
 			command_V.cartesianWorkActionsPositionsSV.clear();
 			command_V.cartesianWorkActions_posSV.clear();
@@ -267,6 +254,18 @@ public class E_pl_XA_E {
 		return output;
 	}
 
+
+	// String[] stringSets = string.split("-");
+	// command_V.stringSets = stringSets;// 增加利用率。
+	// command_V.stringSetsMap.put(string, stringSets);
+	// int scaleRights = Integer
+	// .valueOf(stringSets[stringSets.length - 1]);
+
+	
+//	command_V.normalizationalWorkActionsRights.clear();
+//	command_V.normalizationalWorkActionsPositions.clear();
+//	command_V.complementedWorkActionsRights.clear();
+//	command_V.complementedWorkActionsPositions.clear();
 	// 哲学 辩证学 辩论
 	private static boolean hasVerb(String[] acknowledgeSwap, int position,
 			App NE) {
@@ -304,9 +303,9 @@ public class E_pl_XA_E {
 	 * 停止了下脚步，我在思考，一种不需要辅助也能计算出有用结果的通用类逻辑，在最恶劣
 	 * 的环境里，只需要加入某种精度组合就能覆盖所有条件搭配的逻辑，目前我找到了很多 方法，1 -
 	 * 明确动词的指令集，因为人类的动词不但数量少还有限，又精确。非常方便 第一步索引先。2 -
-	 * 单句分解指令集，因为单句是一个完整逻辑句，方便以后各类歧义 句型 复句句型 首先转换
-	 * 为单句再执行即可。3 -最大的价值在 1 和 2 可以直接元基 索引 IDUQ 分类即可。方便
-	 * 我的花语系统加速。 如 六元 -StudyVerbaMap
+	 * 单句分解指令集，因为单句是一个完整逻辑句，方便以后各类歧义 句型 复句句型 首先转换 为单句再执行即可。3
+	 * -最大的价值在 1 和 2 可以直接元基 索引 IDUQ 分类即可。方便 我的花语系统加速。 如 六元
+	 * -StudyVerbaMap
 	 * 
 	 */
 	private static void doAcknowledgeSwap(String[] acknowledgeSwap,
@@ -361,8 +360,7 @@ public class E_pl_XA_E {
 		 * command_V._IMV_SIQ_SS_Q
 		 * 
 		 * 思考2 - 所以这种逻辑以后可以更进分解swap成用tinshell OSGI ETL节点来中文节点分层
-		 * ，以后人工智能的基础思考模型就稳定了。然后元基索引 使用频率统计排序归纳，创造一个 
-		 * 自然选择的计算模拟环境。
+		 * ，以后人工智能的基础思考模型就稳定了。然后元基索引 使用频率统计排序归纳，创造一个 自然选择的计算模拟环境。
 		 */
 		Iterator<String> iterators = command_V._IMV_SIQ_SS_Q.keySet()
 				.iterator();
@@ -384,6 +382,13 @@ public class E_pl_XA_E {
 		return E_pl_XA(orm.getPLSearch(), true, output, NE);
 	}
 }
+
+// working for here
+// IMV_SIQ output= new IMV_SIQ();
+// 1make container
+// String[] commands= plSearch.replace(" ",
+// "").replace("\n", "").split(";");
+
 //405
 //boolean hasVerbBoolean = (string.contains("进行") || string.contains("执行")
 //    || string.contains("跟进") || string.contains("更近") || string.contains("更进")
