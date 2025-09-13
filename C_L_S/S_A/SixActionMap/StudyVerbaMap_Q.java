@@ -33,8 +33,8 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 		 * numberParser[0]=0~9999
 		 * numberParser[1]=0 0000~9999 0000 
 		 * numberParser[2]=0 0000 0000~9999 9999 9999 
-		 * numberParser[3]=0 0000 0000 0000~9999
-		 * 9999 9999 9999 这就简单了，直接加个戳组合即可. 
+		 * numberParser[3]=0 0000 0000 0000~9999 9999 9999 9999 
+		 * 这就简单了，直接加个戳组合即可. 
 		 * --论证了 计算哲学 适合 所有定义类逻辑的描述。
 		 * --罗瑶光
 		 */
@@ -152,9 +152,9 @@ public class StudyVerbaMap_Q extends StudyVerbaMap_X {
 	}
 	
 	/*
-	 * 这个逻辑开始思考千位变换， 1- 首先string 进行 swap to chars 2- 4位的 char 对应
-	 * 个十百千 这是单位， 3- char是0-9 需要量词翻译。 4-
-	 * 翻译后加单位进行组合，量词是零需要过滤所在的单位，因为一开始是高位满足法拆分， 
+	 * 这个逻辑开始思考千位变换， 1- 首先string 进行 swap to chars 
+	 * 2- 4位的 char 对应个十百千 这是单位， 3- char是0-9 需要量词翻译。 
+	 * 4- 翻译后加单位进行组合，量词是零需要过滤所在的单位，因为一开始是高位满足法拆分， 
 	 * 5- 所以开头是0，也要保留零，
 	 * 6- 末尾是零需要过滤，
 	 */

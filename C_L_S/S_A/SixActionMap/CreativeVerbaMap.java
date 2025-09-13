@@ -20,15 +20,30 @@ import S_A.pheromone.IMV_SIQ;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋
  * */
+@SuppressWarnings("unchecked")
 public class CreativeVerbaMap {
 	public IMV_SIQ flowerActionMap = new IMV_SIQ();
 
-	@SuppressWarnings("unchecked")
 	public static void initInitonActions() {
+		regAddActionInterfaceClass();
+		regAddParserMixedStringClass();
+		regAddParserMixedStringToListClass();
+		regAddFindColumnsInMemoryClass();
+		regUpdateColorAttributesOfColumnsInMemoryClass();
+		regLimitedRowAttributesOfColumnsInMemoryClass();
+		/*
+		 * 函数注册越来越多，以后可以OSGI插件化，也可以函数分层。
+		 */
+
+	}
+
+	static void regAddActionInterfaceClass() {
+		// TODO Auto-generated method stub
 		// 非OSGI模式注册花语言，其他见我著作权的CrabInterfaceClass。
 		FlowerAction.FlowerSixDomainActions.put("I+表", "findTableInMemory");
 		// 注册花函数
-		AddActionInterfaceClass addActionInterfaceClass = new AddActionInterfaceClass();
+		AddActionInterfaceClass addActionInterfaceClass 
+		= new AddActionInterfaceClass();
 		String callFunctionKey = "findTableInMemory";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
@@ -43,9 +58,12 @@ public class CreativeVerbaMap {
 		// booming
 		StaticRootMap.chromosomeBlooming.put(callFunctionKey,
 				addActionInterfaceClass);
+	}
 
+	static void regAddParserMixedStringClass() {
 		// 注册花函数
-		AddParserMixedStringClass addParserMixedStringClass = new AddParserMixedStringClass();
+		AddParserMixedStringClass addParserMixedStringClass 
+		= new AddParserMixedStringClass();
 		String callFunctionKeyaddParserMixedStringClass = "parserMixedString";
 		//
 		FlowerAction.FlowerChromosomeActions.put(
@@ -71,9 +89,14 @@ public class CreativeVerbaMap {
 				callFunctionKeyaddParserMixedStringClass,
 				addParserMixedStringClass);
 
+	}
+
+	static void regAddParserMixedStringToListClass() {
 		// 注册花函数
-		AddParserMixedStringToListClass addParserMixedStringToListClass = new AddParserMixedStringToListClass();
-		String callFunctionKeyAddParserMixedStringToListClass = "parserMixedStringToList";
+		AddParserMixedStringToListClass addParserMixedStringToListClass 
+		= new AddParserMixedStringToListClass();
+		String callFunctionKeyAddParserMixedStringToListClass 
+		= "parserMixedStringToList";
 		//
 		FlowerAction.FlowerChromosomeActions.put(
 				callFunctionKeyAddParserMixedStringToListClass,
@@ -97,13 +120,17 @@ public class CreativeVerbaMap {
 		StaticRootMap.chromosomeBlooming.put(
 				callFunctionKeyAddParserMixedStringToListClass,
 				addParserMixedStringToListClass);
+	}
 
+	static void regAddFindColumnsInMemoryClass() {
 		// VI+列 later
 		FlowerAction.FlowerSixDomainActions.put("展示+列",
 				"addFindColumnsInMemoryClass");
 		// 注册花函数
-		AddFindColumnsInMemoryClass addFindColumnsInMemoryClass = new AddFindColumnsInMemoryClass();
-		String callFunctionKeyAddFindColumnsInMemoryClass = "addFindColumnsInMemoryClass";
+		AddFindColumnsInMemoryClass addFindColumnsInMemoryClass 
+		= new AddFindColumnsInMemoryClass();
+		String callFunctionKeyAddFindColumnsInMemoryClass 
+		= "addFindColumnsInMemoryClass";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
 		StaticRootMap.staticBloomingTimes
@@ -124,6 +151,9 @@ public class CreativeVerbaMap {
 				callFunctionKeyAddFindColumnsInMemoryClass,
 				addFindColumnsInMemoryClass);
 
+	}
+
+	static void regUpdateColorAttributesOfColumnsInMemoryClass() {
 		// O+\\?+\\+颜色 等正则类指令 later 这是未来的趋势
 		/*
 		 * 在这种逻辑下，红色的计算关系是颜色属性分支，早年的map关于 红色->颜色 这类关系就
@@ -136,13 +166,15 @@ public class CreativeVerbaMap {
 		FlowerAction.FlowerSixDomainActions.put("标记+颜色",
 				"updateColorAttributesOfColumnsInMemoryClass");
 		// 注册花函数
-		UpdateColorAttributesOfColumnsInMemoryClass updateColorAttributesOfColumnsInMemoryClass = new UpdateColorAttributesOfColumnsInMemoryClass();
-		String callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass = "updateColorAttributesOfColumnsInMemoryClass";
+		UpdateColorAttributesOfColumnsInMemoryClass updateColorAttributesOfColumnsInMemoryClass 
+		= new UpdateColorAttributesOfColumnsInMemoryClass();
+		String callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass
+		= "updateColorAttributesOfColumnsInMemoryClass";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
 		/*
-		 * 之后走_SMV 这里的变量中入参将全部省略，避免内存占用浪费。之后可以设计个temp区间
-		 * 当作类脑存储容器 专门用于计算失效的 和 临时的变量，关于这类格式
+		 * 之后走_SMV 这里的变量中入参将全部省略，避免内存占用浪费。之后可以设计个temp区间 
+		 * 当作类脑存储容器专门用于计算失效的 和 临时的变量，关于这类格式
 		 * -- trif binlog，map，DB，json
 		 * 等。我会首先采用map 不累。。
 		 */
@@ -165,10 +197,13 @@ public class CreativeVerbaMap {
 		StaticRootMap.chromosomeBlooming.put(
 				callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
 				updateColorAttributesOfColumnsInMemoryClass);
+
+	}
+
+	static void regLimitedRowAttributesOfColumnsInMemoryClass() {
 		/*
-		 * 开始构造数字行数提取指令 从- 组合 到-
-		 *  然后分析 从- 组合 到- 展示+行 仅+展示
-		 * */
+		 * 开始构造数字行数提取指令 从- 组合 到- 然后分析 从- 组合 到- 展示+行 仅+展示
+		 */
 		FlowerAction.FlowerSixDomainActions.put("仅+展示",
 				"limitedRowAttributesOfColumnsInMemoryClass");
 		// 注册花函数
@@ -179,8 +214,9 @@ public class CreativeVerbaMap {
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
 		/*
-		 * 之后走_SMV 这里的变量中入参将全部省略，避免内存占用浪费。之后可以设计个temp区间当作类脑存储容器
-		 * 专门用于计算失效的 和 临时的变量，关于这类格式-- trif binlog，map，DB，json
+		 * 之后走_SMV 这里的变量中入参将全部省略，避免内存占用浪费。之后可以设计个
+		 * temp区间当作类脑存储容器专门用于计算失效的 和 临时的变量，关于这类格式
+		 * -- trif binlog，map，DB，json
 		 * 等。我会首先采用map 不累。。
 		 */
 		StaticRootMap.staticBloomingTimes.put(
@@ -202,9 +238,6 @@ public class CreativeVerbaMap {
 		StaticRootMap.chromosomeBlooming.put(
 				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
 				limitedRowAttributesOfColumnsInMemoryClass);
-		/*
-		 * 函数注册越来越多，以后可以OSGI插件化，也可以函数分层。
-		 * */
-
 	}
+
 }

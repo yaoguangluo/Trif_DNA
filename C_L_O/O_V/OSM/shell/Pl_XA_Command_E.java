@@ -5,8 +5,8 @@ import O_V.OSA.shell.XA_ShellTable;
 import O_V.OSA.shell.XA_ShellTables;
 import S_A.SVQ.stable.S_ShellETL;
 import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SIQ_utils;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
-import S_A.SixActionMap.FlowerAction;
 import U_A.PEU.P.cache.Cache;
 import U_A.PEU.P.cache.Cache_M;
 
@@ -138,24 +138,19 @@ public class Pl_XA_Command_E {
 						|| (object.getCompareV("countJoins", "1")
 								&& object.getCompareV("newCommand", "join")))) {
 			if (object.containsKey("条件为")) {
-				FlowerAction.FlowerSixDomainActions.couldSQLThenSQL("条件为",
-						NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("条件为",NE.app_S.acknowledge, object, NE);
 			}
 			if (object.containsKey("操作")) {
-				FlowerAction.FlowerSixDomainActions.couldSQLThenSQL("操作",
-						NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("操作",NE.app_S.acknowledge, object, NE);
 			}
 			if (object.containsKey("获取列名")) {
-				FlowerAction.FlowerSixDomainActions.couldSQLThenSQL("获取列名",
-						NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("获取列名", NE.app_S.acknowledge, object, NE);
 			}
 			if (object.containsKey("PLETL")) {
-				FlowerAction.FlowerSixDomainActions.couldSQLThenSQL("PLETL",
-						NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("PLETL", NE.app_S.acknowledge, object, NE);
 			}
 			if (object.containsKey("PLTCP")) {
-				FlowerAction.FlowerSixDomainActions.couldSQLThenSQL("PLTCP",
-						NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("PLTCP", NE.app_S.acknowledge, object, NE);
 			}
 			object.remove("recordRows");
 		}
@@ -164,13 +159,12 @@ public class Pl_XA_Command_E {
 				|| (object.getCompareV("countJoins", "1")
 						&& !object.getCompareV("newCommand", "join")))) {
 			if (object.containsKey(S_ShellETL.SHELL_ETL_CONDITION)) {
-				FlowerAction.FlowerSixDomainActions.couldSQLThenSQL(
-						S_ShellETL.SHELL_ETL_CONDITION, NE.app_S.acknowledge,
-						object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL(S_ShellETL.SHELL_ETL_CONDITION
+						, NE.app_S.acknowledge,object, NE);
 			}
 			if (object.containsKey("relation")) {
-				FlowerAction.FlowerSixDomainActions.couldSQLThenSQL("relation",
-						NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("relation",NE.app_S.acknowledge
+						, object, NE);
 			}
 			if (object.containsKey("aggregation")) {
 				// object.put("obj"
@@ -178,8 +172,8 @@ public class Pl_XA_Command_E {
 				// SearchShellQ_JoinRows_E.selectRowsByAttributesOfJoinAggregation(object));
 			}
 			if (object.containsKey("getCulumns")) {
-				FlowerAction.FlowerSixDomainActions.couldSQLThenSQL(
-						"getCulumns", NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("getCulumns", NE.app_S.acknowledge
+						, object, NE);
 			}
 			if (object.containsKey("PLETL")) {
 				// object.put("obj",

@@ -51,6 +51,7 @@ public class CommandClass {
 	//public WorkVerbaMap workVerbaMap;
 	// 单句的命令
 	public String command;
+	public int countReject = 0;
 	// 单句的延伸
 	public String commandAcknowledge;
 	// 单句的延伸
@@ -79,23 +80,9 @@ public class CommandClass {
 	 */
 	public IMV_SIQ_SS _IMV_SIQ_SS = new IMV_SIQ_SS();
 	public IMV_SIQ_S_ _IMV_SIQ_S_ = new IMV_SIQ_S_();
-	// core
-//	public IMV_SIQ cartesianWorkActionsRights = new IMV_SIQ();//
-//	public IMV_SIQ cartesianWorkActionsPositions = new IMV_SIQ();//
-//	public IMV_SIQ cartesianWorkActions_pos = new IMV_SIQ();//
-	// 关系大幅减少。
-	// public IMV_SIQ cartesianRootMap = new IMV_SIQ();
-	// public IMV_SIQ cartesianRootWithScaleMap = new IMV_SIQ();
-	// public IMV_SIQ cartesianRootRelationMap = new IMV_SIQ();
-	// public IMV_SIQ normalizationalWorkActionsRights = new
-	// IMV_SIQ();
-	// public IMV_SIQ normalizationalWorkActionsPositions = new
-	// IMV_SIQ();
-	// public IMV_SIQ complementedWorkActionsRights = new
-	// IMV_SIQ();
-	// public IMV_SIQ complementedWorkActionsPositions = new
-	// IMV_SIQ();
+	
 	public IMV_SIQ unknown_map = new IMV_SIQ();
+	public IMV_SIQ cartesianLooped = new IMV_SIQ();
 	/*
 	 * 关系大幅减少仅仅代表计算关系的优化比较通畅，并不代表计算属性的优化是完美的，
 	 * 于是开始细化计算关系，确定计算属性的重心价值。于是开始拆解 +- SVO关系。
@@ -798,6 +785,21 @@ public class CommandClass {
 //* 两万是一个万单位乘以2，set的逻辑是value*10000，所以是20000，这是的十万，十是10，
 //* 万是10000，十万组合是10乘以10000，而我的逻辑中total的逻辑是+10000，所以缺少了算子。
 //* 
-//* 
-//* 
 //*/
+
+//core
+//	public IMV_SIQ cartesianWorkActionsRights = new IMV_SIQ();//
+//	public IMV_SIQ cartesianWorkActionsPositions = new IMV_SIQ();//
+//	public IMV_SIQ cartesianWorkActions_pos = new IMV_SIQ();//
+	// 关系大幅减少。
+	// public IMV_SIQ cartesianRootMap = new IMV_SIQ();
+	// public IMV_SIQ cartesianRootWithScaleMap = new IMV_SIQ();
+	// public IMV_SIQ cartesianRootRelationMap = new IMV_SIQ();
+	// public IMV_SIQ normalizationalWorkActionsRights = new
+	// IMV_SIQ();
+	// public IMV_SIQ normalizationalWorkActionsPositions = new
+	// IMV_SIQ();
+	// public IMV_SIQ complementedWorkActionsRights = new
+	// IMV_SIQ();
+	// public IMV_SIQ complementedWorkActionsPositions = new
+	// IMV_SIQ();

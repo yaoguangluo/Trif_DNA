@@ -6,6 +6,7 @@ import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 import S_I.OSI.PSO.regex.DoSplit;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SixActionMap.FlowerAction;
+import S_A.pheromone.IMV_SIQ_utils;
 import U_V.ESU.list.List_ESU_X_stringlistToStringArray;
 
 import java.io.IOException;
@@ -153,15 +154,12 @@ public class E_pl_XA_E {
 					 * command_V.cartesianWorkActionsRights 通过500字的思绪描述，最终优化的逻辑。
 					 * 大幅减少冗余的变量和堆栈关系。
 					 * 
-					 */
-					/*
 					 * 在进行构造关系的分析过程中，发现split的操作是一种流程逻辑错误的弥补。
 					 * 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高 
 					 * 笛卡尔的计算 性能 -trif --罗瑶光
 					 */
 					int scaleRights;
-					if (command_V.cartesianWorkActionsRightsSV
-							.containsKey(string)) {
+					if (command_V.cartesianWorkActionsRightsSV.containsKey(string)) {
 						scaleRights = command_V.cartesianWorkActionsRightsSV
 								.getInt(string);
 					} else {
@@ -174,8 +172,7 @@ public class E_pl_XA_E {
 					// 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
 					// 过滤和缩减了海量关系计算集合。
 					if (scaleRights < 12) {
-						FlowerAction.FlowerSixDomainActions.couldDoThenDo(
-								string, temp, output, NE, scores);
+						IMV_SIQ_utils.couldDoThenDo(string, temp, output, NE, scores);
 					}
 					// later // in // pdn
 				}
@@ -198,8 +195,7 @@ public class E_pl_XA_E {
 						scaleRights = 9999;
 					}
 					if (scaleRights < 12) {
-						FlowerAction.FlowerSixDomainActions.couldDoThenDo(
-								string, temp, output, NE, scores);
+						IMV_SIQ_utils.couldDoThenDo(string, temp, output, NE, scores);
 					}
 				}
 			}
@@ -232,8 +228,7 @@ public class E_pl_XA_E {
 			 * 这样command_V的价值就出来了，clear之后再GC，双重清理，在垃圾器的优化环境里会内存 更加稳定。
 			 */
 			/* loop s later */
-			FlowerAction.FlowerSixDomainActions.couldDoThenDo(temp[0], temp,
-					output, NE, scores);// later in pdn
+			IMV_SIQ_utils.couldDoThenDo(temp[0], temp, output, NE, scores);// later in pdn
 			// */
 			if (temp[0].equals("获取临时表名")) {
 				// 稍后写入 元基花
@@ -254,18 +249,6 @@ public class E_pl_XA_E {
 		return output;
 	}
 
-
-	// String[] stringSets = string.split("-");
-	// command_V.stringSets = stringSets;// 增加利用率。
-	// command_V.stringSetsMap.put(string, stringSets);
-	// int scaleRights = Integer
-	// .valueOf(stringSets[stringSets.length - 1]);
-
-	
-//	command_V.normalizationalWorkActionsRights.clear();
-//	command_V.normalizationalWorkActionsPositions.clear();
-//	command_V.complementedWorkActionsRights.clear();
-//	command_V.complementedWorkActionsPositions.clear();
 	// 哲学 辩证学 辩论
 	private static boolean hasVerb(String[] acknowledgeSwap, int position,
 			App NE) {
@@ -600,3 +583,17 @@ public class E_pl_XA_E {
 //    if (temp[0].equals("PLTCP")) {
 //    FlowerAction.doAction("P_ListNeedStart", temp, output);
 //    }
+
+
+
+// String[] stringSets = string.split("-");
+// command_V.stringSets = stringSets;// 增加利用率。
+// command_V.stringSetsMap.put(string, stringSets);
+// int scaleRights = Integer
+// .valueOf(stringSets[stringSets.length - 1]);
+
+//command_V.normalizationalWorkActionsRights.clear();
+//command_V.normalizationalWorkActionsPositions.clear();
+//command_V.complementedWorkActionsRights.clear();
+//command_V.complementedWorkActionsPositions.clear();
+

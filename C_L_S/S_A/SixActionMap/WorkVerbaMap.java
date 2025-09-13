@@ -4,11 +4,8 @@ import ME.VPC.M.app.App;
 import O_V.OSM.shell.CommandClass;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
 import test.java.InterfaceTest.chineseParser.DemoPOSTest;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 
 //1 6元SDLC
@@ -35,6 +32,44 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 
 	// 一些逻辑不应该出现在电脑上，只能文字出现在书本上。就因为电脑内置蓝牙wifi声卡接口
 	//，我就不爽。不管了我就当写书一样就是了。--罗瑶光 trif
+	/*
+	 * 1 华瑞集的所有函数通过元基花进行注册登记，注册登记的函数进行24组十六元基编码索引分类
+	 * 模拟染色体 可以序列化索引和编码所有函数。AOPMVECSIDUQ 稍后就能用上了。
+	 * 
+	 * 2 函数调用接口通过元基枝进行归纳分类，归纳分类的接口通过功能测试进行功能分类成六元分析机
+	 * 模拟生活领域的生存技能。六元分析机 -爱-学习-帮助-创新-安全-工作-
+	 * 
+	 * 3 通过笛卡尔关系计算将六元功能分析机 与 24组十六元基编码索引分类函数 进行指令集熵化结果。
+	 * 构造一个内存大脑tin map 保存这个熵化状态。
+	 * 
+	 * 4 增加面向对象继承孢子形态 OSGI形态 花语形态 手工编码形态 测试函数融合 4中形态扩种插件
+	 * 指令集和VPCS业务逻辑。
+	 * 
+	 * 5 通过一次新陈代谢逻辑和二次新陈代谢逻辑来缩进函数名，文件名，标题名，变量名，宏名，类名
+	 * 增加计算效率，肽展公式进行优化关系。
+	 * 
+	 * 这上述5点的-DNA元基催化与肽计算-过程保证了以后华瑞集函数指令系统进行仿生拟态杂交仅仅融合
+	 * 测试文件和测试文件的统计自然选择确定那些函数和指令在杂交后保留，优先，剔除，等操作逻辑即可。
+	 * 
+	 * 目前这个框架越来越规范和完善。离不开详细的文字描述。这是哲学的分支。慢慢开始意识到，
+	 * 人类的进化过程中一个明显的导向是对时间事物的具体描述能力。这个能力也是认知能力。所以年轻
+	 * 人一定要学好语文，特别是其中的散文 叙述文和议论文。
+	 * 
+	 * 写到这我开始思考笛卡尔关系的去重逻辑，笛卡尔关系属于全耦合关系，不符合量子计算的规范。
+	 * 关于笛卡尔关系优化，我想到了很多点，
+	 * 1 首先便是去重，可以构造一个临时map来辨别当前子关系是否被重复计算。定义cartesianLooped
+	 * 2 局部微分化，将段落句拆分为单句集，子单句拆分为 DNN词汇句。DNN词汇句做分词笛卡尔关系计算。
+	 * 3 多层笛卡尔关系做sigma熵化，关系的过程变量进行微积分优化求导，结果作加法累积。
+	 * 4 稳定功能测试后进行 -DNA元基催化与肽计算- 上述5点算法融合。
+	 * 5 AOPM VECS IDUQ 指令集索引 稍后就能用上了。
+	 * 
+	 * 于是跟进这个5点小目标。
+	 * 关于DNN的词汇归纳思考- 仅仅在子单句的长度超过30字-精度30可设成变量可自由设计-的条件下
+	 * 触发DNN替代原句分析。避免繁琐计算，达到有效计算加速的目的。
+	 * 
+	 * --罗瑶光
+	 * 
+	 * */
 	public boolean findSubject(App NE, CommandClass command_V) {
 		initEnvironment();
 		// small talk calculus
@@ -44,6 +79,10 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 		relationshipsCombinationWithVerb();
 		// md
 		relationshipsCombinationWithNounAndVerb();
+		/*
+		 * 发现很多变量在逻辑意识优化后，关系也变化了，一些计算产物之后都没有用到了
+		 * 于是先保留，方便之后的逻辑更近。
+		 * */
 		// init cartesianActions
 		initCartesianActions(NE, command_V);
 		//SVO的关系细化分解后，逻辑操作会更加地精确。
@@ -67,6 +106,7 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 	 * 挑战我自己和期待对手挑战我，2 改变我自己对以往事物的评价， 给自己传道授业解惑。什么时候
 	 * 被业界打倒了，我就退休。好多东西等我玩。写代码只是我的兴趣爱好。别抽象我。我只是个凡人。
 	 */
+	@SuppressWarnings("unused")
 	public void setHumanTalkAfterNewBusinessTest(CommandClass command_V,
 			App NE) {		
 		/*
@@ -178,6 +218,9 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 
 	// 先处理仅一个主谓宾的简单长句，以后处理复杂带连词的多主宾复句子。
 	// 在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可
+	/*
+	 * 这个把被逻辑以后用指令集的形式分出去。--later
+	 * */
 	public String returnBestTypeOfCommands(Boolean findSubject) {
 		// init shortChineseActions
 		Iterator<String> iterator = objectMap.keySet().iterator();

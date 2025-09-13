@@ -189,8 +189,8 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 	/*
 	 * 思考，这里的 + - 符号 + 是position，-是connetion ，在词性组合中 +是动名， -是
 	 * 名动，形成原因是我不断的优化引擎，用最简添加法方便迅捷编码，为了区别混淆，于是又 +
-	 * 上改为++，-改为--来区分。那么在函数map中也应该进行区分，于是优化下最终结构 一个DP 代表双字+—
-	 * POS组合后的+-RNN组合 。 输出格式为 DP(+-) DP(++ --) DP(+-) 复杂笛
+	 * 上改为++，-改为--来区分。那么在函数map中也应该进行区分，于是优化下最终结构 一个DP 
+	 * 代表双字+—POS组合后的+-RNN组合 。 输出格式为 DP(+-) DP(++ --) DP(+-) 复杂笛
 	 * 卡尔完整关系模型，那么在normalizationalWorkActionsRights.put的函数中就可以在
 	 * 排序后进行精度筛选即可以避免过多的内存资源堆栈浪费，之后指令集按照累积打分来驱动计算
 	 * ，精度筛选所造成的误差缺陷也能 得到最大限度的弥补 -罗瑶光
@@ -220,7 +220,7 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 
 		}
 	}
-
+	//NE.app_S.lYGSortESU9D.javaSort关于RNN精度排序之后做联想扩展功能时候会用到，先保留。
 	public void sortCartesianWorkActionsDistanceVO(App NE, CommandClass command_V) {
 		actionsDistanceV_VO = new int[command_V.cartesianWorkActionsRightsVO.size()];
 		actionsDistance_VO = new String[command_V.cartesianWorkActionsRightsVO
