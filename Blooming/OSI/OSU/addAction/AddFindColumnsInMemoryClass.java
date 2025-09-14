@@ -167,7 +167,7 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	 * ...etc
 	 * and here scorePass belongs to -3, and the scale of combinationIncreased the tail
 	 * is not an associated assessment, means it is a human made value, so question, 
-	 * how to swap this man-made scale value '< 2' into a commonly AI identical value. 
+	 * how to swap this man-made scale value '< 2' into a common AI identical value. 
 	 * -HVPCS- later.. 
 	 * --August.Rose.Tin.God.Royal.Yaoguang.Luo/罗瑶光 
 	 * */
