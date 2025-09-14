@@ -479,7 +479,7 @@ class ShellJPanelTest {
 			 * organized a lot of proofs to make an observation of topology between 
 			 * relationships and logics, then he found the lack of tinshell's TVM, means 
 			 * the less conditions of Cartesian in this system will COZ a lot of problems 
-			 * in ratio of accurate. Then he did a TVM extension logics and prepare to fix
+			 * in ratio of accurate. Then he did more TVM extension logics and prepare to fix
 			 * this domains at the next proving steps. 
 			 * 
 			 * --罗瑶光

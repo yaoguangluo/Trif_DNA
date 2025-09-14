@@ -111,48 +111,10 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	 * 词性的校准逻辑层面，保持算法的BPM结构模块相对稳定性。 --罗瑶光
 	 */
 	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
-		
 		/*
-		 * important key = '输出-内容'  '仅含-'  '+列', those three keys could increase to a 
-		 * combination key ,and '+列' is a fit rights key, and '输出-内容' '仅含-' are 
-		 * complement keys.
-		 * let's ..
-		 * 
-		 * in the future logic function here will one more classify a sub logic list.
-		 * before println hello world. 
-		 * 
+		 * TVM extension
 		 * */
-		int combinationIncreased = 0;
-		Iterator<String> iterator= NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO.keySet().iterator();
-		while(iterator.hasNext()) {
-			System.out.println("400-iterator-01-" + iterator.next());
-		}
-		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
-				.containsKey("仅含-")) {
-			combinationIncreased += 1;
-			System.out.printf("highly fit"); // later in mapping iterator.*/
-		}
-		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
-				.containsKey("输出-")) {
-			combinationIncreased += 1;
-			System.out.printf("highly fit"); // later in mapping iterator.*/
-		}
-		iterator= NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
-		while(iterator.hasNext()) {
-			System.out.println("400-iterator-02-" + iterator.next());
-		}
-		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserSV
-				.containsKey("展示+")) {
-			combinationIncreased += 1;
-			System.out.printf("highly fit"); // later in mapping iterator.*/
-		}
-		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
-				.containsKey("名为-")) {
-			combinationIncreased += 1;
-			System.out.printf("highly fit"); // later in mapping iterator.*/
-		}
-		if(combinationIncreased < 2) {
-			System.out.println("-E-small-" + combinationIncreased);
+		if(false == scorePass(NE)) {
 			return null;
 		}
 		System.out.println("Hello Word!");
@@ -194,6 +156,69 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 		}
 		return null;
 	}
+	/*
+	 * Thinking, at this logic, the Cartesian application could separate into steps
+	 * -1 Cartesian TVM commands
+	 * -2 Cartesian TVM relationships
+	 * -3 Cartesian TVM conditions
+	 * -4 Cartesian TVM attributes
+	 * -5 Cartesian TVM models
+	 * -6 Cartesian TVM reversions
+	 * ...etc
+	 * and here scorePass belongs to -3, and the scale of combinationIncreased the tail
+	 * is not an associated assessment, means it is a human made value, so question, 
+	 * how to swap this man-made scale value '< 2' into a commonly AI identical value. 
+	 * -HVPCS- later.. 
+	 * --August.Rose.Tin.God.Royal.Yaoguang.Luo/罗瑶光 
+	 * */
+	@SuppressWarnings("unchecked")
+	public boolean scorePass(App NE) {
+		/*
+		 * important key = '输出-内容'  '仅含-'  '+列', those three keys could increase to a 
+		 * combination key ,and '+列' is a fit rights key, and '输出-内容' '仅含-' are 
+		 * complement keys.
+		 * let's ..
+		 * 
+		 * in the future logic function here will one more classify a sub logic list.
+		 * before println hello world. 
+		 * 
+		 * */
+		int combinationIncreased = 0;
+		Iterator<String> iterator= NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO.keySet().iterator();
+		while(iterator.hasNext()) {
+			System.out.println("400-iterator-01-" + iterator.next());
+		}
+		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
+				.containsKey("仅含-")) {
+			combinationIncreased += 1;
+			System.out.printf("highly fit"); // later in mapping iterator.*/
+		}
+		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
+				.containsKey("输出-")) {
+			combinationIncreased += 1;
+			System.out.printf("highly fit"); // later in mapping iterator.*/
+		}
+		iterator= NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
+		while(iterator.hasNext()) {
+			System.out.println("400-iterator-02-" + iterator.next());
+		}
+		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserSV
+				.containsKey("展示+")) {
+			combinationIncreased += 1;
+			System.out.printf("highly fit"); // later in mapping iterator.*/
+		}
+		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
+				.containsKey("名为-")) {
+			combinationIncreased += 1;
+			System.out.printf("highly fit"); // later in mapping iterator.*/
+		}
+		if(combinationIncreased < 2) {
+			System.out.println("-E-small-" + combinationIncreased);
+			return false;
+		}
+		return true;
+	}
+	
 }
 //127
 //获取表的对象
