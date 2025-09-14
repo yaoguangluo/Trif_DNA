@@ -25,7 +25,7 @@ import java.util.List;
 //稍后封装成一个统一的傻瓜接口。
 public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterface {
 	String callFunctionKey;
-
+	String className = "UpdateColorAttributesOfColumnsInMemoryClass";
 	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
 	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
 	// public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
@@ -140,7 +140,17 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 //			//为-红色
 //			System.out.printf("highly fit"); // later in mapping iterator.*/
 //		}
-//		System.out.println("Hello Word!");
+		System.out.println("Hello Word!");
+		if (NE.app_S.workVerbaMap.command_V.cartesianLooped
+				.contains(className)) {
+			System.out.println("400-size-01-"
+					+ NE.app_S.workVerbaMap.command_V.countReject++);
+			return null;
+		}
+		NE.app_S.workVerbaMap.command_V.cartesianLooped.put(className, "");
+		System.out.println("400-size-02-"
+				+ NE.app_S.workVerbaMap.command_V.cartesianLooped.size());
+
 		// 获取表
 		System.out.println("400---00001---");
 		if (!NE._I_U.outputMap.containsKey("获取表名")) {

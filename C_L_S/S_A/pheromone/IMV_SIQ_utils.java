@@ -86,7 +86,6 @@ public class IMV_SIQ_utils {
 			}
 		}
 	}
-
 	/*
 	 * 进行逻辑化简没必要这么复杂。既然我用累积和笛卡尔全部关系，那就用equals代替contains
 	 * ，增加精确度。大幅减少内存容量。这种计算逻辑适用于在非完整匹配的元基编码变量条件下，
@@ -98,8 +97,11 @@ public class IMV_SIQ_utils {
 			String actionKey, HashMap<String, Integer> scores, String[] strings,
 			TinMap output, App NE) throws InterruptedException, IOException {
 		if (stringsKey.length > 1 && stringsAction.length > 1) {
+			/*
+			 * 如果底层缓存精确执行，这里上层可以松耦合执行。
+			 * */
 			if (stringsKey[0].equals(stringsAction[0])
-					&& stringsKey[1].equals(stringsAction[1])) {
+					|| stringsKey[1].equals(stringsAction[1])) {
 				System.out.println("400-10000004-1-" + actionKey);
 				String temp = FlowerAction.FlowerSixDomainActions
 						.getString(actionKey);

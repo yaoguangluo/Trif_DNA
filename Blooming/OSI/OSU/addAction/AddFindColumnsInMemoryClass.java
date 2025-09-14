@@ -9,6 +9,7 @@ import S_A.SEM.bloom.StaticRootMap;
 import S_A.pheromone.IMV_SIQ;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /*
@@ -24,7 +25,7 @@ import java.util.List;
 //稍后封装成一个统一的傻瓜接口。
 public class AddFindColumnsInMemoryClass implements CrabInterface {
 	String callFunctionKey;
-
+	String className = "AddFindColumnsInMemoryClass";
 	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
 	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
 	// public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
@@ -110,11 +111,62 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	 * 词性的校准逻辑层面，保持算法的BPM结构模块相对稳定性。 --罗瑶光
 	 */
 	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
-		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsVO
-				.containsKey("名为-")) {
+		
+		/*
+		 * important key = '输出-内容'  '仅含-'  '+列', those three keys could increase to a 
+		 * combination key ,and '+列' is a fit rights key, and '输出-内容' '仅含-' are 
+		 * complement keys.
+		 * let's ..
+		 * 
+		 * in the future logic function here will one more classify a sub logic list.
+		 * before println hello world. 
+		 * 
+		 * */
+		int combinationIncreased = 0;
+		Iterator<String> iterator= NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO.keySet().iterator();
+		while(iterator.hasNext()) {
+			System.out.println("400-iterator-01-" + iterator.next());
+		}
+		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
+				.containsKey("仅含-")) {
+			combinationIncreased += 1;
 			System.out.printf("highly fit"); // later in mapping iterator.*/
 		}
+		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
+				.containsKey("输出-")) {
+			combinationIncreased += 1;
+			System.out.printf("highly fit"); // later in mapping iterator.*/
+		}
+		iterator= NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
+		while(iterator.hasNext()) {
+			System.out.println("400-iterator-02-" + iterator.next());
+		}
+		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserSV
+				.containsKey("展示+")) {
+			combinationIncreased += 1;
+			System.out.printf("highly fit"); // later in mapping iterator.*/
+		}
+		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
+				.containsKey("名为-")) {
+			combinationIncreased += 1;
+			System.out.printf("highly fit"); // later in mapping iterator.*/
+		}
+		if(combinationIncreased < 2) {
+			System.out.println("-E-small-" + combinationIncreased);
+			return null;
+		}
 		System.out.println("Hello Word!");
+		/*
+		 * 笛卡尔关系计算大幅缩减。此处有效。
+		 */
+		if (NE.app_S.workVerbaMap.command_V.cartesianLooped.contains(className)) {
+					System.out.println("400-size-01-" 
+				+ NE.app_S.workVerbaMap.command_V.countReject++);
+			return null;
+		}
+		NE.app_S.workVerbaMap.command_V.cartesianLooped.put(className, "");
+				System.out.println("400-size-02-"
+				+ NE.app_S.workVerbaMap.command_V.cartesianLooped.size());
 		// 获取表
 		if (!NE._I_U.outputMap.containsKey("获取表名")) {
 			return null;

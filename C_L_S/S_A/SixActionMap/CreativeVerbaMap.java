@@ -122,9 +122,15 @@ public class CreativeVerbaMap {
 				addParserMixedStringToListClass);
 	}
 
+	/*
+	 * important key = '输出-内容'  '仅含-'  '+列', those three keys could increase to a 
+	 * combination key ,and '+列' is a fit rights key, and '输出-内容' '仅含-' are complement
+	 * keys.
+	 * let's ..
+	 * */
 	static void regAddFindColumnsInMemoryClass() {
 		// VI+列 later
-		FlowerAction.FlowerSixDomainActions.put("展示+列",
+		FlowerAction.FlowerSixDomainActions.put("+列",
 				"addFindColumnsInMemoryClass");
 		// 注册花函数
 		AddFindColumnsInMemoryClass addFindColumnsInMemoryClass 

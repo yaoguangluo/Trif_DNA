@@ -24,7 +24,7 @@ import S_A.pheromone.IMV_SIQ;
 public class LimitedRowAttributesOfColumnsInMemoryClass
 		implements CrabInterface {
 	String callFunctionKey;
-
+	String className = "LimitedRowAttributesOfColumnsInMemoryClass";
 	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
 	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
 	// public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
@@ -148,6 +148,16 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
+		if (NE.app_S.workVerbaMap.command_V.cartesianLooped
+				.contains(className)) {
+			System.out.println("400-size-01-"
+					+ NE.app_S.workVerbaMap.command_V.countReject++);
+			return null;
+		}
+		NE.app_S.workVerbaMap.command_V.cartesianLooped.put(className, "");
+		System.out.println("400-size-02-"
+				+ NE.app_S.workVerbaMap.command_V.cartesianLooped.size());
+
 		// 1 识别 数字 信息
 		/*
 		 * 德塔图灵分词--德塔图灵分词和图灵先生没关系，我2018当时只是好玩，2019结果还申请了著作权，

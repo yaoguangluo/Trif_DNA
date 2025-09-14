@@ -81,18 +81,6 @@ public class FlowerAction {
 	@SuppressWarnings("unchecked")
 	public static void doAction(String callFunctionKey, String[] temp,
 			TinMap output, App NE) throws InterruptedException, IOException {
-		/*
-		 * 笛卡尔关系计算大幅缩减。无效
-		 */
-		if (NE.app_S.workVerbaMap.command_V.cartesianLooped.contains(callFunctionKey)) {
-					System.out.println("400-size-01-" 
-				+ NE.app_S.workVerbaMap.command_V.countReject++);
-			return;
-		}
-		NE.app_S.workVerbaMap.command_V.cartesianLooped.put(callFunctionKey, "");
-				System.out.println("400-size-02-"
-				+ NE.app_S.workVerbaMap.command_V.cartesianLooped.size());
-		
 		// 花语初始
 		String[] strings = new String[1];
 		IMV_SIQ outputReg = new IMV_SIQ();

@@ -20,7 +20,7 @@ import S_A.pheromone.IMV_SIQ;
 //稍后封装成一个统一的傻瓜接口。
 public class AddParserMixedStringClass implements CrabInterface {
     String callFunctionKey;
-
+    String className = "AddParserMixedStringClass";
     //public IMV_SIQ chromosomeRoot= new IMV_SIQ();
     //public IMV_SIQ chromosomeFlower= new IMV_SIQ();
     //public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
@@ -91,8 +91,20 @@ public class AddParserMixedStringClass implements CrabInterface {
     //StaticRootMap.chromosomeRNA.put("crab", null);
     //System.out.println("Hello Word!");
     //return null;
-    public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
+    @SuppressWarnings("unchecked")
+	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
         System.out.println("Hello Word!");
+        if (NE.app_S.workVerbaMap.command_V.cartesianLooped
+				.contains(className)) {
+			System.out.println("400-size-01-"
+					+ NE.app_S.workVerbaMap.command_V.countReject++);
+			return null;
+		}
+		NE.app_S.workVerbaMap.command_V.cartesianLooped.put(className, "");
+		System.out.println("400-size-02-"
+				+ NE.app_S.workVerbaMap.command_V.cartesianLooped.size());
+
+        
         inputValues = StaticFunctionMap.preValues(NE.app_S.outputMap, 传参因子);
         Object map = null;
         if (inputValues.getBoolean("find")) {

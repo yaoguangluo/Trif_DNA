@@ -412,14 +412,80 @@ class ShellJPanelTest {
 			 * --罗瑶光
 			 * */
 			/*
-			String tinshellInput = ("首先获取一个表，名叫" + XLSTableName
+			String tinshellInput = (
+					  "首先获取一个表，名叫" + XLSTableName
 					+ "，如果有就下一步;\r\n" + "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n"
 					+ "条件为:和:中药名称|包含|菜谱;\r\n" + "条件为:和:风险规避|不包含|孕;\r\n"
 					+ "条件为:和:性味|不包含|凉;\r\n" + "条件为:和:性味|不包含|咸;\r\n"
-					+ "输出内容中仅含中药名称，打分和功效这三个列;\r\n" 
+					+ "输出内容仅含中药名称，打分和功效这三个列;\r\n" 
 					+ "内容也仅筛选从第零行到第3拾行;"
 					+ "其中的中药名称列不用红色标记;");
 			*/
+			/*
+			 * Question - relationships between TVM and Human Talk Languages HTL.
+			 * 1- a TVM command could be a HTL sentence, the relationship is a type of 
+			 * affiliation by HTL. 2- and a HTL may contains a structure of TVM, 
+			 * continue analyzing those conditions will know HTL's could be a TVM's 
+			 * but TVM's. Hens we need create a logic to connect TVM and HTL. let the 
+			 * TVM's be a type of HTL's. The name of logic is -TVM Extension-.
+			 * 
+			 * Continuing mind -  -TVM Extension-. At first step could swap TVM's to 
+			 * the output. Then the second step could swap similar-TVM's to TVM's. and 
+			 * finally could swap HTL's to similar-TVM's, let's do the second's now.
+			 * 
+			 * --Yaoguang Luo 
+			 * --Trif in English
+			 * */
+			tinshellInput = ("首先获取一个表，名叫" + XLSTableName
+					+ "，如果有就下一步;\r\n" + "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n"
+					+ "条件为:和:中药名称|包含|菜谱;\r\n" + "条件为:和:风险规避|不包含|孕;\r\n"
+					+ "条件为:和:性味|不包含|凉;\r\n" + "条件为:和:性味|不包含|咸;\r\n"
+					+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" 
+					//here now.
+					+ "在输出的数据表中仅展示从第零行到第3拾行的数据;"
+					+ "做一个操作将列名为中药名称的子集不能用红色来标记为输出的颜色;");
+			/*
+			 * from the output maps, "首先获取一个表，名叫" + XLSTableName
+					+ "，如果有就下一步;\r\n" + is ok for similar-TVM's extension,
+					let's continue.
+			 * */
+			tinshellInput = (""
+					+ "首先获取一个表，名叫" + XLSTableName
+					+ "，如果有就下一步;\r\n" + "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n"
+					+ "条件为:和:中药名称|包含|菜谱;\r\n" + "条件为:和:风险规避|不包含|孕;\r\n"
+					+ "条件为:和:性味|不包含|凉;\r\n" + "条件为:和:性味|不包含|咸;\r\n"
+					//+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" 
+					+ "输出内容仅含中药名称，打分和功效这三个列;\r\n" 
+					//ok for both.
+					//--here now.
+					+ "在输出的数据表中仅展示从第零行到第3拾行的数据;"
+					+ "做一个操作将列名为中药名称的子集不能用红色来标记为输出的颜色;"
+					);
+			/*
+			 * important key = 输出-内容  仅含-  +列, those three keys increase to a 
+			 * combination key
+			 * let's ..
+			 * 
+			 * CN
+			 * 通过严谨的计算哲学文字描述，通过充要条件细化归纳关于 tinshell TVM指令集与人类语言的
+			 * 关系拓扑和逻辑拓扑，我找到了一个当前 tinshell 的明显缺陷，是笛卡尔条件匹配不够细腻，
+			 * 具体表现在匹配的map不够多样化，这时候终于可以采用哲学的叠加打分评估逻辑了，否定论的
+			 * 铺垫性建设宣告一个段落。下一步TVM extension 叠加条件函数规划。具体归纳类似
+			 * AddFindColumnsInMemoryClass 的 logic 函数中 before println-hello world 的
+			 * 代码逻辑。
+			 * 
+			 * EN
+			 * After a philosophy-implementation with computing-literacies, Mr.Yaoguang.luo
+			 * organized a lot of proofs to make an observation of topology between 
+			 * relationships and logics, then he found the lack of tinshell's TVM, means 
+			 * the less conditions of Cartesian in this system will COZ a lot of problems 
+			 * in ratio of accurate. Then he did a TVM extension logics and prepare to fix
+			 * this domains at the next proving steps. 
+			 * 
+			 * --罗瑶光
+			 * 
+			 * */
+			
 			output = execShell(NE, tinshellInput);
 			// print answer
 			// 打印执行后的输出表格
