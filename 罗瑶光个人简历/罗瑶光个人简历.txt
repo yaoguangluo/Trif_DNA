@@ -191,6 +191,9 @@
   --国际计算机协会 -终身科学家-Since 2011- ACM Pro Member. 编号-0626136
   --世界四大会计事物所- Parser: 2019 四会插件排名世界第二位, Deloitte - 联想拯救者2代 单机每秒分词2200万中文字java插件
   --中国首次世界计算大会--长沙-徽章-会章 -- MIIT: Medal 2019  
+  --意大利电信公司 tiscali.it S2 PENGU rewards -305850 Pengu约合当前人民币6万元奖励 from-zaradavies57@tiscali.it 本人表示感谢这份荣誉，所有的资金请原单位妥善处理用于给予所有世界开源程序员福利。-20250831
+  --胖企鹅 意大利电信公司 Pudgy Penguins Season 2 Developer Award -78850 Pengu约合当前人民币1万元奖励 from-audreysnyder96@tiscali.it 本人表示感谢这份荣誉，所有的资金请原单位妥善处理用于给予世界所有开源程序员福利。-20250825
+  
   
 
 
