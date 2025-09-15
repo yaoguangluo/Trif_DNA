@@ -45,8 +45,8 @@ class DemoEXTest {
 	 * EN
 	 * Because the higher quality of definition and acquisition the segmentation needs,
 	 * and the higher quantity of sampling and disciplining the proving needs. 
-	 * the author will make 10 times data training sets more than ordinary's.
-	 * the motivation is continuing fix the TinShell TVM's.
+	 * The author will make 10 times data training sets more than ordinary's.
+	 * The motivation is continuing fix the TinShell TVM's.
 	 * 
 	 * Yaoguang.Luo
 	 * 
