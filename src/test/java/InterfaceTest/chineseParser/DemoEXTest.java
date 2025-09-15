@@ -36,25 +36,53 @@ class DemoEXTest {
 		DemoEXTest demoEXTest = new DemoEXTest();
 		demoEXTest.main();
 	}
-
+	/*
+	 * CN
+	 * 因为tinshell的HTL变换为TVM extension 对词汇的精度要求非常的细腻，于是不断扩充
+	 * 分词的实例，我会在网上搜索更多的歧义病句类的句子用来测试。扩大已有的测试面，再翻个10倍的量。
+	 * 多提高几个精度的数量级。修正分词质量。
+	 * 
+	 * EN
+	 * Because the higher quality of definition and acquisition the segmentation needs,
+	 * and the higher quantity of sampling and disciplining the proving needs. 
+	 * the author will make 10 times data training sets more than ordinary's.
+	 * the motivation is continuing fix the TinShell TVM's.
+	 * 
+	 * Yaoguang.Luo
+	 * 
+	 * */
 	@Test
 	void main() {
 		// 初始化测试数据
 		double totalVerbals = 0;
 		double totalSegbals = 0;
-		String[] ss = new String[52];
-		String[] ss1 = new String[52];
-		double[] score = new double[52];
+		String[] ss = new String[157];
+		String[] ss1 = new String[157];
+		double[] score = new double[157];
 		@SuppressWarnings("unchecked")
-		Map<String, String>[] verbal = new HashMap[52];
+		Map<String, String>[] verbal = new HashMap[157];
 		// 初始化待分词数据
 		new LoadVerbalInputMap().exec(verbal, ss, ss1);
 		new LoadVerbalInputMap1().exec(verbal, ss, ss1);
 		new LoadVerbalInputMap2().exec(verbal, ss, ss1);
+		new LoadVerbalInputMap3().exec(verbal, ss, ss1);
+		new LoadVerbalInputMap4().exec(verbal, ss, ss1);
+		new LoadVerbalInputMap5().exec(verbal, ss, ss1);
+		new LoadVerbalInputMap6().exec(verbal, ss, ss1);
+		new LoadVerbalInputMap7().exec(verbal, ss, ss1);
+		new LoadVerbalInputMap8().exec(verbal, ss, ss1);
+		new LoadVerbalInputMap9().exec(verbal, ss, ss1);
 		// 初始化待比较数据
 		new LoadVerbalOutputMap().exec(verbal, ss, ss1);
 		new LoadVerbalOutputMap1().exec(verbal, ss, ss1);
 		new LoadVerbalOutputMap2().exec(verbal, ss, ss1);
+		new LoadVerbalOutputMap3().exec(verbal, ss, ss1);
+		new LoadVerbalOutputMap4().exec(verbal, ss, ss1);
+		new LoadVerbalOutputMap5().exec(verbal, ss, ss1);
+		new LoadVerbalOutputMap6().exec(verbal, ss, ss1);
+		new LoadVerbalOutputMap7().exec(verbal, ss, ss1);
+		new LoadVerbalOutputMap8().exec(verbal, ss, ss1);
+		new LoadVerbalOutputMap9().exec(verbal, ss, ss1);
 		// ss ss1导入字符--见DemoEXTest_input.txt DemoEXTest_input1.txt
 		// DemoEXTest_input2.txt
 		// 文件初始化------------------------------------
