@@ -1,5 +1,7 @@
 package A_V.IVDTIXQCTIV;
 
+import java.util.List;
+
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_String;
 import VSQ.parser.EnvironmentInit_X_S;
@@ -41,7 +43,43 @@ public class EnvironmentInit extends EnvironmentInit_X_S {
         rationMap.IQ_Prediction(emotionSampleMap, prediction);
         rationMap.IQ_Distinction(emotionSampleMap, distinction);
     }
-
+    
+    public void IV_SetsExclude_A(List<String> set, App NE) {
+        emotionMap = NE.app_S.emotionMap_E;
+        _A = NE.app_S._A;
+        motivation = emotionMap.getMotivationMap();//later
+        trending = emotionMap.getTrendingMap();
+        prediction = emotionMap.getPredictionMap();
+        distinction = emotionMap.getDistinctionMap();
+        sets = set;
+        //System.out.println("400-8-0001-004-" + sets.size());
+        wordFrequencyMap = _A.getWordFrequencyByReturnSortMap(sets, NE);
+        //if(wordFrequencyMap.containsKey("街")) {
+      	//  System.out.println("400-8-0001-007-03-" + wordFrequencyMap.size());
+        //}
+        //System.out.println("400-8-0001-005-" + wordFrequencyMap.size());
+        rationMap = NE.app_S.ratioMap_E;
+        emotionSampleMap = rationMap.getEnvironmentSampleMap(wordFrequencyMap);  
+        //if(emotionSampleMap.containsKey("街")) {
+        //	  System.out.println("400-8-0001-007-04-" + emotionSampleMap.size());
+        // }
+        //System.out.println("400-8-0001-006-" + emotionSampleMap.size());
+        rationMap.IQ_Motivation(emotionSampleMap, motivation);
+        rationMap.IQ_Trending(emotionSampleMap, trending);
+        rationMap.IQ_Prediction(emotionSampleMap, prediction);
+        //System.out.println("400-8-0001-007-" + distinction.size());
+        //if(distinction.containsKey("街")) {
+        //	  System.out.println("400-8-0001-007-01-" + distinction.getString("街"));
+        //}
+        //if(distinction.containsKey("餐饮")) {
+      	//  System.out.println("400-8-0001-007-01-" + distinction.getString("餐饮"));
+        //}
+        rationMap.IQ_Distinction(emotionSampleMap, distinction);
+        //System.out.println("400-8-0001-008-" + emotionSampleMap.size());
+    }
+    /*
+     * 说明我的函数还可以细化切割成更小的块。
+     * */
     public void IV_Exclude_A(String text, App NE) {
         emotionMap = NE.app_S.emotionMap_E;
         _A = NE.app_S._A;

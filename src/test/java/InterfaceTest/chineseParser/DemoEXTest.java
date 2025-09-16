@@ -89,10 +89,13 @@ class DemoEXTest {
 		// 环境初始化。以后接口优化做junit系统化测试下面的环境配置可以写在test before()里面。
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
+		//组字匹配定制map逻辑init
+		ParserCharsFix parserCharsFix = new ParserCharsFix();
+		parserCharsFix.initenvironmentIndex();
 		// 词性初始化
 		// IMV_SIQ pos = commonTestInition.NE.app_S._A
 		// .getPosCnToCn();
-		List<String> sets = new ArrayList<>();
+		List<String> setsB = new ArrayList<>();
 		// IMV_SIQ_SS seta = new IMV_SIQ_SS();
 		// loop测试---------------------------------------------------------
 		for (int i = 0; i < ss.length; i++) {
@@ -100,9 +103,11 @@ class DemoEXTest {
 			// 执行分词-输出 list格式 的 sets变量
 			TimeCheck t = new TimeCheck();
 			t.begin();
-			sets = commonTestInition.NE.app_S._A.parserMixedString(sb);
+			setsB = commonTestInition.NE.app_S._A.parserMixedString(sb);
 			t.end();
 			t.duration();
+			//定制环境类map校正
+			List<String> sets= parserCharsFix.charFix(commonTestInition.NE, setsB);
 			// 输入
 			System.out.println("array->" + i);
 			System.out.println("输入->" + ss[i]);

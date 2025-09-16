@@ -1,5 +1,7 @@
 package A_V.IVDTIXQCTIV;
 
+import java.util.List;
+
 import A_V.E.RatioMap_E;
 import C_A.OCI.AMV.ECS.SVQ.MPC.fhmm.C.SensingMap;
 import E_A.OEI.AMV.ECS.SVQ.MPC.SOQ.OEM.E.SensingMap_E;
@@ -64,6 +66,13 @@ public class LenovoInit {
 
 	public void IV_Exclude_A(String text, App NE) {
 		NE.app_S.environmentInit.IV_Exclude_A(text, NE);
+		this.environmentInit = NE.app_S.environmentInit;
+		sensingMap = NE.app_S.sensingMap_E;
+		sensingMap.IV_LenovoMap(((BinaryForest_AE) environmentInit.get_A()));
+	}
+	
+	public void IV_SetsExclude_A(List<String> set , App NE) {
+		NE.app_S.environmentInit.IV_SetsExclude_A(set, NE);
 		this.environmentInit = NE.app_S.environmentInit;
 		sensingMap = NE.app_S.sensingMap_E;
 		sensingMap.IV_LenovoMap(((BinaryForest_AE) environmentInit.get_A()));

@@ -268,13 +268,19 @@ public class RatioMap_E implements RatioMap {
 			emotionSampleMap.put(word, emotionSample);
 		}
 	}
-
+	/*
+	 * 开始思考单字的索引价值，以后换成元基索引，会出现更多的单字母。那么之后的distinct表就要
+	 * 进行map reduce，添加字词要谨慎。 终于和 业界 的 map reduce 接轨了。同行要争气。
+	 * 
+	 * --罗瑶光
+	 * */
 	@Override
 	public IMV_SIQ_X_ getEnvironmentSampleMap(IMV_SIQ_S_ wordFrequencyMap) {
 		IMV_SIQ_X_ output = new IMV_SIQ_X_();
 		for (int i = wordFrequencyMap.size()
 				- S_Pos.INT_ONE; i >= S_Pos.INT_ZERO; i--) {
-			if (wordFrequencyMap.getW(i).get_word().length() > S_Pos.INT_ONE) {
+			if (wordFrequencyMap.getW(i).get_word().length() > S_Pos.INT_ZERO) {
+			//if (wordFrequencyMap.getW(i).get_word().length() > S_Pos.INT_ONE) {
 				EmotionSample emotionSample = new EmotionSample();
 				if (!output.containsKey(wordFrequencyMap.getW(i).get_word())) {
 					output.put(wordFrequencyMap.getW(i).get_word(),
