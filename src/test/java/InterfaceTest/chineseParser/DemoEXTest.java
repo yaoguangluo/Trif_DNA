@@ -68,15 +68,15 @@ import java.util.Map;
  * input array and matrix values . 
  * 
  * Prefix Nero-network indexing PNNI is a model mapping of discrete-relationship-sets. The motivation
- * makes big and messy fungus-set-groups to a small classed, clustered and similarity set-map-trees
- * , to let the big data comput's become more quickly, simplify and directly. Prefix means start at
+ * makes big and messy fungus-set-groups to a small classed and clustered similarity of set-map-trees
+ * , to let the big data comput's become more quickly, simply and directly. Prefix means start at
  *  first char of input sentence.
  *  
  * So that the inputs, types, logics, conditions and sets of object kernels etc are totally different
  *  between above two nouns CNN and PNNI.
  *  
- * But only the same is start from zero, first, left and prefix value to the end right tail and over... 
- * means only the same with René Descartes relationships and Queuing Theory.
+ * But only the same of both are start from zero, first, left and prefix value to the end right tail 
+ * and over... means only the same with René Descartes relationships and Queuing Theory.
  * 
  * --罗瑶光。这年头我不写点英文解释下，中文AI就各种乱搞 求阴影面积。。。
  * 稍后纠正语法。
