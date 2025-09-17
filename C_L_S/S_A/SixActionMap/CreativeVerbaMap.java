@@ -169,7 +169,11 @@ public class CreativeVerbaMap {
 		 * --罗瑶光
 		 */
 		// later 指令集多了，O+颜色 就统一索引 -trif
-		FlowerAction.FlowerSixDomainActions.put("标记+颜色",
+		/*
+		 * 用上元基索引TVM指令后，一定要注意函数调用已经更加离散化，所以一定要控制好过滤 筛选和精度，避免计算浪费。
+		 * --罗瑶光
+		 * */
+		FlowerAction.FlowerSixDomainActions.put("E+颜色",
 				"updateColorAttributesOfColumnsInMemoryClass");
 		// 注册花函数
 		UpdateColorAttributesOfColumnsInMemoryClass updateColorAttributesOfColumnsInMemoryClass 
@@ -210,7 +214,7 @@ public class CreativeVerbaMap {
 		/*
 		 * 开始构造数字行数提取指令 从- 组合 到- 然后分析 从- 组合 到- 展示+行 仅+展示
 		 */
-		FlowerAction.FlowerSixDomainActions.put("仅+展示",
+		FlowerAction.FlowerSixDomainActions.put("仅+V",
 				"limitedRowAttributesOfColumnsInMemoryClass");
 		// 注册花函数
 		LimitedRowAttributesOfColumnsInMemoryClass limitedRowAttributesOfColumnsInMemoryClass 

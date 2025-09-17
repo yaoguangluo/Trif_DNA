@@ -193,7 +193,7 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		while (iterators.hasNext()) {
 			String string = iterators.next();
 			System.out.println("LimitedRow-string-400-01-->"+ string);
-			if (string.contains("展示+行")) {
+			if (string.contains("V+行")) {
 				needFind = true;
 				break;
 			}

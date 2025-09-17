@@ -203,7 +203,7 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 			System.out.println("400-iterator-02-" + iterator.next());
 		}
 		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserSV
-				.containsKey("展示+")) {
+				.containsKey("V+")) {
 			combinationIncreased += 1;
 			System.out.printf("highly fit"); // later in mapping iterator.*/
 		}

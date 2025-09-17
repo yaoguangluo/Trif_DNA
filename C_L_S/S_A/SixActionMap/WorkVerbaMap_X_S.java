@@ -135,9 +135,35 @@ public class WorkVerbaMap_X_S {
 							.getString(stringVerb);
 				}
 				if (averagePositionNoun < averagePositionVerb) {
+//                  later do noun's domains. 					
+					if(StudyVerbaMap_X.initonDelegate.containsKey(stringNoun)) {
+						stringNoun = StudyVerbaMap_X.initonDelegate.getString(stringNoun);
+					}
+					if(StudyVerbaMap_X.initonDelegate.containsKey(stringVerb)) {
+						stringVerb = StudyVerbaMap_X.initonDelegate.getString(stringVerb);
+					}
 					root += stringNoun;
 					root += "+";
 					root += stringVerb;
+					/* 
+					 * CN
+					 * --十六元基索引逻辑
+					 * 1 名词索引价值用于古拉丁英文索引元基编码加速特征片段识别。
+					 * 2 动词索引价值用于TVM指令集快速降维面化 进行 触发计算识别。
+					 * 
+					 * EN
+					 * 16 Initon indexing
+					 * 1 Latin noun's verbal exchange could make cluster with short
+					 * 	 , less and same sections of DNA initons.
+					 *   better for observation. 
+					 *   
+					 * 2 Latin verb's verbal exchange could make trigger with short
+					 *   , less and same sections of DNA initons.
+					 *   better for computation.
+					 *   
+					 * --罗瑶光
+					 * 
+					 * */
 					root_pos += "_stringNoun" + averagePositionNoun;
 					root_pos += "_stringVerb" + averagePositionVerb;
 					int right = Math.abs(averagePositionNoun - averagePositionVerb);
@@ -164,6 +190,12 @@ public class WorkVerbaMap_X_S {
 						}
 					}
 				} else {
+					if(StudyVerbaMap_X.initonDelegate.containsKey(stringNoun)) {
+						stringNoun = StudyVerbaMap_X.initonDelegate.getString(stringNoun);
+					}
+					if(StudyVerbaMap_X.initonDelegate.containsKey(stringVerb)) {
+						stringVerb = StudyVerbaMap_X.initonDelegate.getString(stringVerb);
+					}
 					root += stringVerb;
 					root += "-";
 					root += stringNoun;

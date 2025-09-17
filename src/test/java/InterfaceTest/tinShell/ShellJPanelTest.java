@@ -75,6 +75,23 @@ import java.util.concurrent.atomic.AtomicBoolean;
 // mock api 和test me api 注释：Generated with love by TestMe :)
 // Please report issues and submit feature
 // requests at: http://weirddev.com/forum#!/testme
+
+/*
+ * -十六元基索引的应用方式
+ * 当Tinshell的框架开始逐渐细化稳定，目前出现了7个肽TVM指令集和3000个花语TVM 指令集，
+ * 于是有机会开始用 肽TVM指令集进行元基缩写索引化来增加指令识别灵活度。于是稍后开始这个
+ * 逻辑编码。为什么用肽TVM的crab来测试，因为函数少，方便修改。误差少，方便观测，局部改
+ * 方便快速修复。理清思绪。从局部扩大到整体。
+ * 
+ * -具体流程
+ * 1 在实现笛卡尔关系计算之前，将名词和动词进行元基识别索引转代码，之后改动指令集的文字
+ * 对应元基码。
+ * 
+ * 2 不断修正因为转码带来的细微变化，保证原逻辑的畅通。
+ * 
+ * --罗瑶光
+ * */
+
 @SuppressWarnings({ "unchecked", "unused" })
 class ShellJPanelTest {
 	public static void main(String[] argv)

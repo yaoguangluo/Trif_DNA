@@ -59,7 +59,6 @@ public class StudyVerbaMap_X {
         initonDelegate.put("触碰", "O");
         initonDelegate.put("练习", "O");
         initonDelegate.put("操练", "O");
-        initonDelegate.put("标记", "O");
         /*
          * 人类的动词单字不多，但是词组很多，于是更近思考，是否有必要进行单字化。
          * 否定论的思维，我就否定单字的价值，让多字词用contains条件来熵化单字计算结果。
@@ -116,6 +115,7 @@ public class StudyVerbaMap_X {
         initonDelegate.put("保养", "M");
         initonDelegate.put("协调", "M");
         // V
+        initonDelegate.put("展示", "V");
         initonDelegate.put("感知", "V");
         initonDelegate.put("感觉", "V");
         initonDelegate.put("感应", "V");
