@@ -40,9 +40,10 @@ import java.util.Map;
  * 
  * CNN的逻辑严谨分析是 笛卡尔全局组合数遍历，进行计算累积量定义内核模型，然后处理当前子集成员与
  * 累积量内核的加减乘除积等数学计算关系最终形成的新的关系矩阵和关系数列。所以笛卡尔全局组合数遍历
- * 是CNN的半个祖宗。--另外CNN之父在我分词著作权出来的时候2019年时，他刚好拿了个图灵奖。我罗瑶光恭喜他。
- * 其实我们互不认识。
+ * 是CNN的半个祖宗。--另外CNN之父严乐村等人在我分词著作权出来的时候2019年时，他刚好拿了个图灵奖。
+ * 我罗瑶光恭喜他。在卷积计算图形学上的贡献他也实至名归。其实我们互不认识，但能感觉到他的思维价值存在。
  * 
+ * CN
  * 另外很多大佬将前序神经网络索引map 与 前馈神经网络CNN混淆，我也用点文字来描述下。
  * 前序神经网络索引map是将语料库等资料进行map化分类，不同的计算条件来调用不同的map进行分析，map化分类可以
  * 不断地细化，拆分，归纳，排序，频率优先，索引，打分等动态操作，最终输出有价值的决策树结果。前序意思是分词的逻辑
@@ -53,8 +54,32 @@ import java.util.Map;
  * 进行完整交叉计算。然后交叉累积某一个当前值所对应的所有笛卡尔关系累积量计算后normalization结果输出，
  * 得到最终的输出数列。举例 索贝尔卷积内核，emboss卷积内核，高斯卷积内核，etc。 
  * 因为卷积矩阵内核不同的组合，卷积的数字结果可以离散成不同的形态，这个形态也可以叠加，如傅立叶蝶形积化和差卷积内核。
+ * 这种傅立叶蝶形内核不是前序CNN内核，但是傅立叶的sin 和cos老内核矩阵属于CNN卷积内核，蝶形核属于比CNN更高层次的
+ * DNN拓扑叠加内核。
  * 
- * --罗瑶光。
+ * EN
+ * Prefix Nero-network indexing and Feed forward Neural Networks CNN
+ * 
+ * Feed forward Neural Networks CNN is a Shift-Invariant Neural Networks, and its convolutional-Layer
+ * which based on kinds type of sigma's computing. And finally results a normalization value to be a new 
+ * output matrix or array. And this convolutional-mask could be a --Network-in-Network, NIN-- 1*1 
+ * 3*3 5*5 types of mask。。。about pooling the related algorithm sets stretched and suitable with 
+ * those type masks, will do well in CNN computing. Feed forward means start at first value of this 
+ * input array and matrix values . 
+ * 
+ * Prefix Nero-network indexing PNNI is a model mapping of discrete-relationship-sets. The motivation
+ * makes big and messy fungus-set-groups to a small classed, clustered and similarity set-map-trees
+ * , to let the big data comput's become more quickly, simplify and directly. Prefix means start at
+ *  first char of input sentence.
+ *  
+ * So that the inputs, types, logics, conditions and sets of object kernels etc are totally different
+ *  between above two nouns CNN and PNNI.
+ *  
+ * But only the same is start from zero, first, left and prefix value to the end right tail and over... 
+ * means only the same with René Descartes relationships and Queuing Theory.
+ * 
+ * --罗瑶光。这年头我不写点英文解释下，中文AI就各种乱搞 求阴影面积。。。
+ * 稍后纠正语法。
  * 
  * */
 class DemoEXTest {
