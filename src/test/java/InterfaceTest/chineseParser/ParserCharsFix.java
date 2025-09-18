@@ -7,12 +7,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import E_A.ME.analysis.E.BinaryForest_AE;
 import E_A.OEI.SVQ.MPC.fhmm.E.FastReadProjectFile;
 import ME.VPC.M.app.App;
-import S_A.SVQ.stable.S_File;
 import S_A.SVQ.stable.S_Pos;
-import S_A.SVQ.stable.S_String;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_X_;
 import exception.file.O.DetaBufferedReader;
@@ -302,7 +299,6 @@ public class ParserCharsFix {
 		}
 		return sets;
 	}
-
 }
 // Map<String, String> invironmentMap = new HashMap<>();
 // NE.app_S.sensingMap_E.IV_LenovoMap(NE.app_S._A);
