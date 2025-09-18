@@ -9,28 +9,33 @@
 
 
 --第一部分关于Tinshell的TVM extension指令设计流程
-----注册添加TVM extension指令
-	1 在 package S_A.SixActionMap; 的 CreativeVerbaMap 函数中，进行添加指令。可以仿照已有的逻辑
-  	  例子进行修改。
-    2 因为FlowerAction 和 StaticRootMap 都是稳定类 static 函数，所以也可以自由的调用操作。如果是
-      工程应用，有必要可以去static 改为 new。
-    3 当然也可以进行OSGI写在plugin 里面 去做class loader，非常灵活。
-----编辑设计TVM extension指令
-    4 语言的TVM指令设计class 可以放在Blooming的OSI.OSU.addAction下。可以仿照同包下已有的逻辑例子
-      进行修改。
-    5 指令太多需要十六元基索引 可以在package S_A.SixActionMap; 的 StudyVerbaMap_X 文件中添加动词
-      索引。切记不要重名。
-----测试调试TVM extension指令
-    6 可以参考package test.java.InterfaceTest.tinShell;下的 ShellJPanelTest 文件中的中文输入，
+----测试选择TVM extension指令
+    1 可以参考package test.java.InterfaceTest.tinShell;下的 ShellJPanelTest 文件中的中文输入，
       去理解笛卡尔关系指令
-    7 然后选择有价值的笛卡尔关系指令去对应TVM extension指令 进行编码和测试，让 tinshell 二次开发发挥
+    2 然后选择有价值的笛卡尔关系指令去对应TVM extension指令 进行编码和测试，让 tinshell 二次开发发挥
       巨大的工业价值。
-
+----注册添加TVM extension指令
+	3 在 package S_A.SixActionMap; 的 CreativeVerbaMap 函数中，进行添加指令。可以仿照已有的逻辑
+  	  例子进行修改。
+    4 因为FlowerAction 和 StaticRootMap 都是稳定类 static 函数，所以也可以自由的调用操作。如果是
+      工程应用，有必要可以去static 改为 new。
+    5 当然也可以进行OSGI写在plugin 里面 去做class loader，非常灵活。
+----编辑设计TVM extension指令
+    6 语言的TVM指令设计class 可以放在Blooming的OSI.OSU.addAction下。可以仿照同包下已有的逻辑例子
+      进行修改。
+    7 指令太多需要十六元基索引 可以在package S_A.SixActionMap; 的 StudyVerbaMap_X 文件中添加动词
+      索引。切记不要重名。
 
 --第二部分关于Tinshell的TVM 指令设计流程
-  1 全局搜索PLsearch， PLShell，在相似的TVM 对应的指令部分加功能即可。如在package O_V.OSM.shell;
-    文件包下的Pl_XA_Command_E函数。
-  2 注意好备份，出了错好 roll back。
+  8 如果TVM extension指令 逻辑内容包含 新的 TVM 逻辑指令 则需要添加新的 TVM 指令。
+  9 添加新的 TVM 指令 可 全局搜索PLsearch， PLShell，在相似的TVM 对应的指令部分加功能即可。如在
+    package O_V.OSM.shell; 文件包下的Pl_XA_Command_E函数。仿照相似逻辑区添加条件。
+  10 注意好备份，出了错好 roll back。
+
+--第三部分 运维测试
+----测试调试TVM extension指令
+    11 尝试输入人类的话语去测试是否有正确的输出。
+    12 注意指令命名方式，便于归纳，避免误差。
 
 
 -refer
