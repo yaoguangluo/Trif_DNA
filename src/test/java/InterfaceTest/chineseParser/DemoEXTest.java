@@ -46,13 +46,13 @@ import java.util.Map;
  * CN
  * 另外很多大佬将前序神经网络索引map 与 前馈神经网络CNN混淆，我也用点文字来描述下。
  * 前序神经网络索引map是将语料库等资料进行map化分类，不同的计算条件来调用不同的map进行分析，map化分类可以
- * 不断地细化，拆分，归纳，排序，频率优先，索引，打分等动态操作，最终输出有价值的决策树结果。前序意思是分词的逻辑
- * 从中文文字数列的第一个字开始。举例德塔分词的名词 动词 形容词，。。。词长1，词长2，词长3，词长4 等map。
- * 因为map越小，越精确，组字匹配词语速度就越快越严谨。
+ * 不断地细化，拆分，归纳，排序，频率优先，索引，打分等动态操作，最终输出有价值的决策树逻辑判断后的结果。前序
+ * 意思是分词的逻辑从中文文字数列的第一个字开始。举例德塔分词的名词 动词 形容词，。。。词长1，词长2，词长3，
+ * 词长4 等map。因为map越小，越精确，组字匹配词语速度就越快越严谨。
  * 
  * 前馈神经网络CNN是将一组计算数列 通过排队论的有序遍历方式（如从前到后），在各种笛卡尔关系模型下的mask内核
  * 进行完整交叉计算。然后交叉累积某一个当前值所对应的所有笛卡尔关系累积量计算后normalization结果输出，
- * 得到最终的输出数列。举例 索贝尔卷积内核，emboss卷积内核，高斯卷积内核，etc。 
+ * 这些输出的子数据组合成一个最终的输出数列。举例 索贝尔卷积内核，emboss卷积内核，高斯卷积内核，etc。 
  * 因为卷积矩阵内核不同的组合，卷积的数字结果可以离散成不同的形态，这个形态也可以叠加，如傅立叶蝶形积化和差卷积内核。
  * 这种傅立叶蝶形内核不是前序CNN内核，但是傅立叶的sin 和cos老内核矩阵属于CNN卷积内核，蝶形核属于比CNN更高层次的
  * DNN拓扑叠加内核。
@@ -61,7 +61,7 @@ import java.util.Map;
  * Prefix Nero-network indexing and Feed forward Neural Networks CNN
  * 
  * Feed forward Neural Networks CNN is a Shift-Invariant Neural Networks, and its convolutional-Layer
- * which based on kinds type of sigma's computing. And finally results a normalization value to be a new 
+ * which based on kinds type of sigma's computing. And finally results a normalization-value to be a new 
  * output matrix or array. And this convolutional-mask could be a --Network-in-Network, NIN-- 1*1 
  * 3*3 5*5 types of mask。。。about pooling the related algorithm sets stretched and suitable with 
  * those type masks, will do well in CNN computing. Feed forward means start at first value of this 
@@ -77,6 +77,9 @@ import java.util.Map;
  *  
  * But only the same of both are start from zero, first, left and prefix value to the end right tail 
  * and over... means only the same with René Descartes relationships and Queuing Theory.
+ * 
+ * 同样含有这个笛卡尔关系和排队论的思想的技术有 数据库原理的join， map reduce ，我很疑惑这么重要的笛卡尔应用知识为什么
+ * 业界没有人进行专门描述。
  * 
  * --罗瑶光。这年头我不写点英文解释下，中文AI就各种乱搞 求阴影面积。。。
  * 稍后纠正语法。
