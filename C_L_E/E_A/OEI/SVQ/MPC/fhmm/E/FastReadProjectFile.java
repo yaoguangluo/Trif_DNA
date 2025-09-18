@@ -52,8 +52,9 @@ public class FastReadProjectFile {
         File file = new File(string);
         InputStream inputStream = null;
         try {
-            inputStream = new FileInputStream(file.getCanonicalPath().replace(
-                file.getPath(), afterProjectMiddlePath + file.getPath()));
+            inputStream = new FileInputStream(
+            		file.getCanonicalPath().replace(
+            				file.getPath(), afterProjectMiddlePath + file.getPath()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

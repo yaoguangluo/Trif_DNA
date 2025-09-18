@@ -98,9 +98,9 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 		fixWords[S_Pos.INT_ONE] = new StringBuilder();
 		StringBuilder stringBuilder = new StringBuilder();
 		int find = S_Pos.INT_ZERO;
-		Here: for (int charPosition = S_Pos.INT_ZERO; charPosition < inputLength; charPosition += (countLength == S_Pos.INT_ZERO
-				? S_Pos.INT_ONE
-				: countLength)) {// luan ma
+		Here: for (int charPosition = S_Pos.INT_ZERO; charPosition < inputLength; 
+				charPosition += (countLength == S_Pos.INT_ZERO
+				? S_Pos.INT_ONE: countLength)) {// luan ma
 			NE._I_U.parserCharPosition = charPosition;
 			if (mixedString.charAt(charPosition) < S_Pos.INT_ONE_TWO_EIGHT
 					&& charPosition < mixedString.length() - S_Pos.INT_ONE) {

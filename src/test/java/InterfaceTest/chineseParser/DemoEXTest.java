@@ -6,6 +6,7 @@ import A_V.ASQ.PSU.test.TimeCheck;
 import org.junit.jupiter.api.Test;
 import test.java.InterfaceTest.CommonTestInition;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -88,7 +89,7 @@ import java.util.Map;
 class DemoEXTest {
 	Map<String, String>[] verbal;
 
-	public static void main(String[] argv) {
+	public static void main(String[] argv) throws IOException {
 		DemoEXTest demoEXTest = new DemoEXTest();
 		demoEXTest.main();
 	}
@@ -108,7 +109,7 @@ class DemoEXTest {
 	 * 
 	 * */
 	@Test
-	void main() {
+	void main() throws IOException {
 		// 初始化测试数据
 		double totalVerbals = 0;
 		double totalSegbals = 0;
@@ -147,7 +148,7 @@ class DemoEXTest {
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		//组字匹配定制map逻辑init
 		ParserCharsFix parserCharsFix = new ParserCharsFix();
-		parserCharsFix.initenvironmentIndex();
+		parserCharsFix.initenvironmentIndex(commonTestInition.NE);
 		// 词性初始化
 		// IMV_SIQ pos = commonTestInition.NE.app_S._A
 		// .getPosCnToCn();
