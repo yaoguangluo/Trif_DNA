@@ -34,15 +34,15 @@ public class FastCartesianIdentifyTest {
 	 * EN 2- Type of observation, to raise and make an ability
 	 * of computation more ratios of concentration. Assumption a
 	 * format of An ability of computation could be a detailed
-	 * human's literacy-languages. The languages have been
-	 * extracting the purity of cognition every times since were
+	 * human's literacy-language. The language has been
+	 * extracting the purity of cognition every times since was
 	 * used, the ability of computation has been mining well in
-	 * production's efficiency-domain, mean a same time. And
-	 * recently one of the effect way of making a promotion of
-	 * exporting out the Cartesian's relationship-logic and
-	 * build an especially test model, to better for continuing
-	 * sub-designs. Thus model could do well in self-adapted and
-	 * initialed as valuable sections of TVM's derive-construction.
+	 * production's efficiency-domain simultaneously. And
+	 * recently one of the effect way about making a promotion of
+	 * exporting out the Cartesian's relationship-logic with
+	 * specially test models, to better for continuing sub-designs. 
+	 * Thus models could do well in self-adapted and initialed 
+	 * as valuable sections of TVM's derive-construction.
 	 * 
 	 * Could start a few sections work below.
 	 *  
