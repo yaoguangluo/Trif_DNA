@@ -8,6 +8,7 @@ import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SixActionMap.FlowerAction;
 import S_A.pheromone.IMV_SIQ_utils;
 import U_V.ESU.list.List_ESU_X_stringlistToStringArray;
+import test.java.InterfaceTest.tinShell.FastCartesianIdentifyTest;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -355,7 +356,8 @@ public class E_pl_XA_E {
 			 * 分词的position要统计char位置，不是word位置，不然会不准确 later --trif一下
 			 */
 		}
-
+		FastCartesianIdentifyTest fastCartesianIdentifyTest = new FastCartesianIdentifyTest();
+		fastCartesianIdentifyTest.getCartesianRelationShipFromHumanTalk(NE.app_S.workVerbaMap);
 		Boolean findSubject = NE.app_S.workVerbaMap.findSubject(NE, command_V);
 		return NE.app_S.workVerbaMap.returnBestTypeOfCommands(findSubject);
 	}

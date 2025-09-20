@@ -34,6 +34,10 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 			if (stringNounMd.isEmpty()) {
 				continue NextNounMd;
 			}
+			if (!command_V._IMV_SIQ_SS.containsKey(stringNounMd)) {
+				/*稍后精简条件优化变量*/
+				continue NextNounMd;
+			}
 			WordFrequency wordFrequencyNounMd = command_V._IMV_SIQ_SS
 					.getW(stringNounMd);
 			int averagePositionNounMd = wordFrequencyNounMd
@@ -43,6 +47,10 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 			NextVerbNd: while (iteratorVerbNd.hasNext()) {
 				String stringVerbNd = iteratorVerbNd.next();
 				if (stringVerbNd.isEmpty()) {
+					continue NextVerbNd;
+				}
+				if (!command_V._IMV_SIQ_SS.containsKey(stringVerbNd)) {
+					/*稍后精简条件优化变量*/
 					continue NextVerbNd;
 				}
 				WordFrequency wordFrequencyVerbNd = command_V._IMV_SIQ_SS
@@ -90,6 +98,10 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 			if (stringVerbM.isEmpty()) {
 				continue NextVerbM;
 			}
+			if (!command_V._IMV_SIQ_SS.containsKey(stringVerbM)) {
+				/*稍后精简条件优化变量*/
+				continue NextVerbM;
+			}
 			WordFrequency wordFrequencyVerbM = command_V._IMV_SIQ_SS
 					.getW(stringVerbM);
 			int averagePositionVerbM = wordFrequencyVerbM.getAveragePosition();
@@ -97,6 +109,10 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 			NextVerbN: while (iteratorVerbN.hasNext()) {
 				String stringVerbN = iteratorVerbN.next();
 				if (stringVerbN.isEmpty()) {
+					continue NextVerbN;
+				}
+				if (!command_V._IMV_SIQ_SS.containsKey(stringVerbN)) {
+					/*稍后精简条件优化变量*/
 					continue NextVerbN;
 				}
 				WordFrequency wordFrequencyVerbN = command_V._IMV_SIQ_SS
@@ -143,6 +159,9 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 			if (stringNounM.isEmpty()) {
 				continue NextNounM;
 			}
+			if (!command_V._IMV_SIQ_SS.containsKey(stringNounM)) {
+				continue NextNounM;
+			}
 			WordFrequency wordFrequencyNounM = command_V._IMV_SIQ_SS
 					.getW(stringNounM);
 			int averagePositionNounM = wordFrequencyNounM.getAveragePosition();
@@ -150,6 +169,9 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 			NextNounN: while (iteratorNounN.hasNext()) {
 				String stringNounN = iteratorNounN.next();
 				if (stringNounN.isEmpty()) {
+					continue NextNounN;
+				}
+				if (!command_V._IMV_SIQ_SS.containsKey(stringNounN)) {
 					continue NextNounN;
 				}
 				WordFrequency wordFrequencyNounN = command_V._IMV_SIQ_SS

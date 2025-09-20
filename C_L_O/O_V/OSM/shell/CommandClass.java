@@ -82,6 +82,11 @@ public class CommandClass {
 	 * 
 	 */
 	public IMV_SIQ_SS _IMV_SIQ_SS = new IMV_SIQ_SS();
+	public IMV_SIQ_SS _IMV_SIQ_SS_temp = new IMV_SIQ_SS();
+	public IMV_SIQ_SS relationsASCII = new IMV_SIQ_SS();
+	public IMV_SIQ_SS relationsGrammar = new IMV_SIQ_SS();
+	public IMV_SIQ_SS relationsEnglish = new IMV_SIQ_SS();
+	
 	public IMV_SIQ_S_ _IMV_SIQ_S_ = new IMV_SIQ_S_();
 	
 	public IMV_SIQ unknown_map = new IMV_SIQ();

@@ -114,6 +114,9 @@ public class WorkVerbaMap_X_S {
 			if (stringNoun.isEmpty()) {
 				continue NextNoun;
 			}
+			if (!command_V._IMV_SIQ_SS.containsKey(stringNoun)) {
+				continue NextNoun;
+			}
 			WordFrequency wordFrequencyNoun = command_V._IMV_SIQ_SS
 					.getW(stringNoun);
 			int averagePositionNoun = wordFrequencyNoun.getAveragePosition();
@@ -121,6 +124,9 @@ public class WorkVerbaMap_X_S {
 			NextVerb: while (iteratorVerb.hasNext()) {
 				String stringVerb = iteratorVerb.next();
 				if (stringVerb.isEmpty()) {
+					continue NextVerb;
+				}
+				if (!command_V._IMV_SIQ_SS.containsKey(stringVerb)) {
 					continue NextVerb;
 				}
 				WordFrequency wordFrequencyVerb = command_V._IMV_SIQ_SS
