@@ -27,7 +27,7 @@ import java.util.Iterator;
 @SuppressWarnings("unchecked") // 稍后优化新陈代谢 逻辑
 public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 	// 稍后去重 -trif
-	void relationshipsCombinationWithNounAndVerb() {
+	public void relationshipsCombinationWithNounAndVerb() {
 		Iterator<String> iteratorNounMd = nounInText.keySet().iterator();
 		NextNounMd: while (iteratorNounMd.hasNext()) {
 			String stringNounMd = iteratorNounMd.next();
@@ -83,7 +83,7 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 		}
 	}
 
-	void relationshipsCombinationWithVerb() {
+	public void relationshipsCombinationWithVerb() {
 		Iterator<String> iteratorVerbM = verbInText.keySet().iterator();
 		NextVerbM: while (iteratorVerbM.hasNext()) {
 			String stringVerbM = iteratorVerbM.next();
@@ -136,7 +136,7 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 	// 在计算哲学和语文意识中，非动词类词性组合可以算法省略，因为不构成指令集核心成分。我先不管，
 	// 在计算意识中，单字的价值不打，但是在歧义处理中，单字是普遍存在的，如果下面函数执行，那么
 	// 需要有精确的语法做铺垫，如果没有，那么就要进行概率累积评估，累积打分算法逻辑来灵活驱动。
-	void relationshipsCombinationWithNoun() {
+	public void relationshipsCombinationWithNoun() {
 		Iterator<String> iteratorNounM = nounInText.keySet().iterator();
 		NextNounM: while (iteratorNounM.hasNext()) {
 			String stringNounM = iteratorNounM.next();

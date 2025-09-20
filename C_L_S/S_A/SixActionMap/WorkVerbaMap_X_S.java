@@ -71,7 +71,7 @@ public class WorkVerbaMap_X_S {
 	 * 这里的nounInText和verbInText，准确率就提高了很多，并不代表结果会更精确，
 	 * 所以替代后要将所有流程都校准一遍。 --罗瑶光
 	 */
-	void initEnvironment() {
+	public void initEnvironment() {
 		subjectName = null;
 		doName = null;
 		objectName = null;
@@ -107,7 +107,7 @@ public class WorkVerbaMap_X_S {
 		}
 	}
 
-	void initCartesianActions(App NE, CommandClass command_V) {
+	public void initCartesianActions(App NE, CommandClass command_V) {
 		Iterator<String> iteratorNoun = nounInText.keySet().iterator();
 		NextNoun: while (iteratorNoun.hasNext()) {
 			String stringNoun = iteratorNoun.next();
