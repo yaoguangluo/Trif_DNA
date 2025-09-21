@@ -38,6 +38,7 @@ public class P_AO_pl_XA {
 	public static void P_AggregationLimitMap(String[] sets,
 			List<IMV_SIQ> output, EmotionSample emotionSample,
 			RatioMap_E ratioMap, App NE) {
+		
 		List<IMV_SIQ> outputTemp = new ArrayList<>();
 		if (sets[1].equalsIgnoreCase("sortNumber")) {
 			// outputTemp 是一个arraylist, 已经具备了 排序的 模子。
@@ -140,12 +141,11 @@ public class P_AO_pl_XA {
 			return;
 		}
 		//need fix later -
-		if (sets[1].equalsIgnoreCase("行至") && !sets[0].isEmpty()
-				&& !sets[2].isEmpty()) {
+		if (sets[1].equalsIgnoreCase("行至")) {
 			System.out.println("sets[0]-"+sets[0]);
 			System.out.println("sets[1]-"+sets[1]);
 			System.out.println("sets[2]-"+sets[2]);
-			if (!sets[0].contains(";") && !sets[2].contains(";")) {
+			//if (!sets[0].contains(";") && !sets[2].contains(";")) {
 				Iterator<IMV_SIQ> iterator = output.iterator();
 				int count = 0;
 				while (iterator.hasNext()) {
@@ -163,7 +163,7 @@ public class P_AO_pl_XA {
 				output.clear();
 				output.addAll(outputTemp);
 				return;
-			}
+			//}
 		}
 		// 稍后我会把这里 改成 contains 德塔DNN词汇, 这样语言就自适应了。
 		// 罗瑶光 20211003

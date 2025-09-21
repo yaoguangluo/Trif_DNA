@@ -279,7 +279,7 @@ public class MakeContainerZNSZ extends MakeContainerZNSZ_X_S {
 		JLabel timeLabel = new JLabel("时间:");
 		Box timeLabelBox = new Box(BoxLayout.X_AXIS);
 		NE.app_S.pageQ.timeLabelV = new JLabel();
-		app_S.studyVerbaMap.putObject("pageQ.timeLabelV",
+		app_S.studyVerbalMap.putObject("pageQ.timeLabelV",
 				NE.app_S.pageQ.timeLabelV);
 		NE.app_S.pageQ.timeLabelV.setSize(120, 50);
 		timeLabelBox.add(timeLabel);
@@ -288,7 +288,7 @@ public class MakeContainerZNSZ extends MakeContainerZNSZ_X_S {
 		JLabel idLabel = new JLabel("序号:");
 		Box idLabelBox = new Box(BoxLayout.X_AXIS);
 		NE.app_S.pageQ.idLabelV = new JLabel();
-		app_S.studyVerbaMap.putObject("pageQ.idLabelV",
+		app_S.studyVerbalMap.putObject("pageQ.idLabelV",
 				NE.app_S.pageQ.idLabelV);
 		NE.app_S.pageQ.idLabelV.setSize(120, 50);
 		idLabelBox.add(idLabel);
@@ -297,7 +297,7 @@ public class MakeContainerZNSZ extends MakeContainerZNSZ_X_S {
 		JLabel ratioLabel = new JLabel("比域:");
 		Box ratioLabelBox = new Box(BoxLayout.X_AXIS);
 		NE.app_S.pageQ.ratioLabelV = new JLabel();
-		app_S.studyVerbaMap.putObject("pageQ.ratioLabelV",
+		app_S.studyVerbalMap.putObject("pageQ.ratioLabelV",
 				NE.app_S.pageQ.ratioLabelV);
 		NE.app_S.pageQ.ratioLabelV.setSize(120, 50);
 		ratioLabelBox.add(ratioLabel);
@@ -345,7 +345,7 @@ public class MakeContainerZNSZ extends MakeContainerZNSZ_X_S {
 		DetaButton saveButton = new DetaButton("保存");
 		DetaButton loadButton = new DetaButton("读取");
 		NE.app_S.clearButton = new DetaButton("清空");
-		app_S.studyVerbaMap.putObject("clearButton", NE.app_S.clearButton);
+		app_S.studyVerbalMap.putObject("clearButton", NE.app_S.clearButton);
 		NE.app_S.clearButton.addActionListener(e -> {
 			NE.app_S.pageQ.doClear();
 			if (null != NE.app_S.pageQ.mainPaint) {
@@ -447,7 +447,7 @@ public class MakeContainerZNSZ extends MakeContainerZNSZ_X_S {
 		NE.app_S.pageQ.mainPaint.pageP_M = new PageP_M();
 		NE.app_S.pageP_M = NE.app_S.pageQ.mainPaint.pageP_M;//
 		NE.app_S.pageQ.pageP_M = NE.app_S.pageP_M;//
-		app_S.studyVerbaMap.putObject("pageP_M",
+		app_S.studyVerbalMap.putObject("pageP_M",
 				NE.app_S.pageQ.mainPaint.pageP_M);
 
 		containerPanel.add(app_S.line2025);

@@ -43,6 +43,15 @@ public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
 		// 创建一个table
 		XA_ShellTable table = null;
 		List<IMV_SIQ> outputTemp = new ArrayList<>(output);// later trif
+		/*
+		 * 这里明显逻辑出错了，怎么输出会正确呢？
+		 * 首先为空就是取原表，如果是或，那么就是加表，
+		 * 如果是和就是上层结果进行跟进，
+		 * 奇怪了，怎么好几年都输出正确？特别是输出正确，家附近社会人还咳嗽卡我的点。。
+		 * 这po bi电脑牛。为什么业界要这样黑。
+		 * 
+		 * 罗瑶光
+		 * */
 		if (outputTemp.isEmpty() || condition.equals("或")
 				|| condition.equals("和")) {
 			// 因为改成了or map, 所以只有原表重新load
@@ -236,7 +245,7 @@ public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
 			IMV_SIQ pos = NE.app_S._A.getPosCnToCn();
 			IMV_SIQ_SS mapSearchWithoutSort;
 			mapSearchWithoutSort = NE.app_S._A
-					.parserMixStringByReturnFrequencyMap(key, NE);
+					.parserMixStringByReturnFrequencyMap(key, NE);//这种函数之后淘汰，因为对应的切词都优化好几个版本了。
 			// Iterator<String> iteratorForCopy= copy.iterator();
 			int copyCount = 0;
 			List<String> list = NE.app_S._A.parserMixedString(key);
@@ -417,9 +426,12 @@ public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
 			return;
 		}
 		int max = 50;
+		Row[] rows = table.huaRuiJiJtableRows;
+		if(object.contains("obj")) {
+			
+		}
 		// 获取table的row
-		for (int i = 0; i < Objects
-				.requireNonNull(table).huaRuiJiJtableRows.length; i++) {
+		for (int i = 0; i < rows.length; i++) {
 			// if(i> max) {
 			// continue Here;
 			// }
@@ -715,6 +727,12 @@ public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
 		}
 	}
 }
+
+//之后这里的这些TVM对应的指令句执行逻辑全部重写，太不顺眼了。为什么会发生这些不顺眼问题。
+//因为我一开始就不是搞这个。慢慢集成了语言功能，在2019的原本不同的PLORM 逻辑里强行改造成2021的PLSHELL，
+//
+
+//
 //222
 /*
  * 获取表名:中药同源:进行选择; 条件为:和:中药名称|DNN搜索|功效|风寒咳嗽|1;//中药名称稍后去掉优化下。

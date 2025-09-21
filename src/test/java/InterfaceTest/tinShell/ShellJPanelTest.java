@@ -311,7 +311,7 @@ class ShellJPanelTest {
 		NE.init(NE);
 		DetaThread.sleepDeta(100);
 		NE.start();
-		while (null == NE.app_S.studyVerbaMap) {
+		while (null == NE.app_S.studyVerbalMap) {
 			Thread.sleep(500);
 		}
 		return NE;
@@ -539,8 +539,8 @@ class ShellJPanelTest {
 				System.out.println("line-->:" + output.get(string).toString());
 			}
 			// DNA序列记忆标注
-			if (null != NE.app_S.helpVerbaMap.didJustNow) {
-				Iterator<String> iterators = NE.app_S.helpVerbaMap.didJustNow
+			if (null != NE.app_S.helpVerbalMap.didJustNow) {
+				Iterator<String> iterators = NE.app_S.helpVerbalMap.didJustNow
 						.keySet().iterator();
 				while (iterators.hasNext()) {
 					System.out.println("Action-->:" + iterators.next());

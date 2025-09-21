@@ -46,16 +46,18 @@ public class E_pl_XA_E {
 		for (String command : commands) {
 			HashMap<String, Integer> scores = new HashMap<>();
 			NE._I_U.commandAcknowledge = command;
+			System.out.println("command" + command);
 			CommandClass command_V = new CommandClass();
 			// 函数注册 价值降低
-			NE.app_S.workVerbaMap.command_V = command_V;
+			NE.app_S.workVerbalMap.command_V = command_V;
+			NE.app_S.currentTinmap = output;
 			// 之后整体替换下。方便command_V管理。
 			command_V.commandWithoutNumerics = command.toString();
 			command_V.commandAcknowledge = command.toString();
 			command_V.command = command.toString();
 			;
 			/*
-			 * command是一条最短的指令句，指令句变成指令的中间数据目前保留在NE.app_S.workVerbaMap
+			 * command是一条最短的指令句，指令句变成指令的中间数据目前保留在NE.app_S.workVerbalMap
 			 * 中，我在思考，每次计算完一句指令，这些过程产物都要clear掉，这是一种C语言的free写法，
 			 * 在高级的java结构中，可以进行单例来class null掉，意思是我可以创造一个command class，
 			 * 这个类专门负责command的数据碎片，这个class可以list形式进入tinmap，也可以每次执行完
@@ -124,7 +126,7 @@ public class E_pl_XA_E {
 			 */
 			String[] temp = NE._I_U.acknowledge.clone();
 			// Iterator<String> iterators =
-			// NE.app_S.workVerbaMap.cartesianWorkActionsRights
+			// NE.app_S.workVerbalMap.cartesianWorkActionsRights
 			// .keySet().iterator();
 			Iterator<String> iterators = command_V.cartesianWorkActionsRightsSV
 					.keySet().iterator();
@@ -133,7 +135,7 @@ public class E_pl_XA_E {
 			 * normalizationalWorkActionsRights 的形态是 actionsDistance[i]
 			 * + "-" + actionsDistanceV[i] 其中
 			 * actionsDistance[i]的形态是cartesianWorkActionsRights的key 而
-			 * cartesianWorkActionsRights的key构造来自于WorkVerbaMap_X_S的166行的初始root
+			 * cartesianWorkActionsRights的key构造来自于WorkVerbalMap_X_S的166行的初始root
 			 * 于是我开始思考，在计算关系分层的时候缺少了一些中间过程的碎片记录，这个记录关系导致了
 			 * 我之后要花双倍时间来重复计算曾经已有的却未保留的结果，论证在计算哲学中，计算关系可以
 			 * 外因计算逻辑。于是开始优化准备将root的组合因子进行map化。从而过滤掉下面的重复逻辑。
@@ -146,7 +148,7 @@ public class E_pl_XA_E {
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
-				System.out.println("400-10000001" + string);
+				//System.out.println("400-10000001" + string);
 				if (null != string) {
 					/* loop s later */
 					/*
@@ -168,6 +170,7 @@ public class E_pl_XA_E {
 					// 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
 					// 过滤和缩减了海量关系计算集合。
 					if (scaleRights < 12) {
+						System.out.println("couldDoThenDo-1-" + string);
 						IMV_SIQ_utils.couldDoThenDo(string, temp, output, NE, scores);
 					}
 					// later // in // pdn
@@ -180,7 +183,7 @@ public class E_pl_XA_E {
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
-				System.out.println("400-10000001" + string);
+				//System.out.println("400-10000001" + string);
 				if (null != string) {
 					int scaleRights;
 					if (command_V.cartesianWorkActionsRightsVO
@@ -191,6 +194,7 @@ public class E_pl_XA_E {
 						scaleRights = 9999;
 					}
 					if (scaleRights < 12) {
+						System.out.println("couldDoThenDo-2-" + string);
 						IMV_SIQ_utils.couldDoThenDo(string, temp, output, NE,
 								scores);
 					}
@@ -226,6 +230,7 @@ public class E_pl_XA_E {
 			 *  更加稳定。
 			 */
 			/* loop s later */
+			System.out.println("couldDoThenDo-3-" + temp[0]);
 			IMV_SIQ_utils.couldDoThenDo(temp[0], temp, output, NE, scores);// later
 																		   // in
 																		   // pdn
@@ -257,7 +262,7 @@ public class E_pl_XA_E {
 		Iterator<String> iterator = list.iterator();
 		while (iterator.hasNext()) {
 			String stringIterator = iterator.next();
-			if (NE.app_S.workVerbaMap.doMap.containsKey(stringIterator)) {
+			if (NE.app_S.workVerbalMap.doMap.containsKey(stringIterator)) {
 				return true;
 			}
 		}
@@ -271,7 +276,7 @@ public class E_pl_XA_E {
 		Iterator<String> iterator = list.iterator();
 		while (iterator.hasNext()) {
 			String stringIterator = iterator.next();
-			if (NE.app_S.workVerbaMap.data2DSubjectMap
+			if (NE.app_S.workVerbalMap.data2DSubjectMap
 					.containsKey(stringIterator)) {
 				return true;
 			}
@@ -288,7 +293,7 @@ public class E_pl_XA_E {
 	 * 明确动词的指令集，因为人类的动词不但数量少还有限，又精确。非常方便 第一步索引先。2 -
 	 * 单句分解指令集，因为单句是一个完整逻辑句，方便以后各类歧义 句型 复句句型 首先转换 
 	 * 为单句再执行即可。3-最大的价值在 1 和 2 可以直接元基 索引 IDUQ 分类即可。方便 
-	 * 我的花语系统加速。 如 六元-StudyVerbaMap
+	 * 我的花语系统加速。 如 六元-StudyVerbalMap
 	 * 
 	 */
 	private static void doAcknowledgeSwap(String[] acknowledgeSwap,
@@ -335,8 +340,8 @@ public class E_pl_XA_E {
 		// （表 表格-单-库，矩阵，文-档-件，对象）
 		// （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
 		// work domain out later.*/
-		// NE.app_S.workVerbaMap.setHumanTalk(command, NE);
-		NE.app_S.workVerbaMap.setHumanTalkAfterNewBusinessTest(command_V, NE);
+		// NE.app_S.workVerbalMap.setHumanTalk(command, NE);
+		NE.app_S.workVerbalMap.setHumanTalkAfterNewBusinessTest(command_V, NE);
 		/*
 		 * 思考1 - 当构造混合中文数字提取转换匹配后，进行归纳格式化成map，这个map则需要在
 		 * 这一层进行和分词结果整合。这种逻辑属于ETL类型逻辑， command_V._IMV_SIQ_SS
@@ -357,9 +362,9 @@ public class E_pl_XA_E {
 			 */
 		}
 		FastCartesianIdentifyTest fastCartesianIdentifyTest = new FastCartesianIdentifyTest();
-		fastCartesianIdentifyTest.getCartesianRelationShipFromHumanTalk(NE.app_S.workVerbaMap);
-		Boolean findSubject = NE.app_S.workVerbaMap.findSubject(NE, command_V);
-		return NE.app_S.workVerbaMap.returnBestTypeOfCommands(findSubject);
+		fastCartesianIdentifyTest.getCartesianRelationShipFromHumanTalk(NE.app_S.workVerbalMap);
+		Boolean findSubject = NE.app_S.workVerbalMap.findSubject(NE, command_V);
+		return NE.app_S.workVerbalMap.returnBestTypeOfCommands(findSubject);
 	}
 
 	public static TinMap E_pl_XA(PL_XA_E orm, boolean b, TinMap output, App NE)

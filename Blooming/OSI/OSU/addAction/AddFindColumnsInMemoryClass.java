@@ -110,28 +110,28 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	 * -的精确词性搭配语法不会出现 -N 和 N- 类型，这种思维可以将错误锁定在词汇的
 	 * 词性的校准逻辑层面，保持算法的BPM结构模块相对稳定性。 --罗瑶光
 	 */
-	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
+	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg) {
 		/*
 		 * TVM extension
 		 * */
 		if(false == scorePass(NE)) {
-			return null;
+			return false;
 		}
 		System.out.println("Hello Word!");
 		/*
 		 * 笛卡尔关系计算大幅缩减。此处有效。
 		 */
-		if (NE.app_S.workVerbaMap.command_V.cartesianLooped.contains(className)) {
-					System.out.println("400-size-01-" 
-				+ NE.app_S.workVerbaMap.command_V.countReject++);
-			return null;
+		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(className)) {
+				//	System.out.println("400-size-01-" 
+				//+ NE.app_S.workVerbalMap.command_V.countReject++);
+			return false;
 		}
-		NE.app_S.workVerbaMap.command_V.cartesianLooped.put(className, "");
-				System.out.println("400-size-02-"
-				+ NE.app_S.workVerbaMap.command_V.cartesianLooped.size());
+		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");
+				//System.out.println("400-size-02-"
+				//+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 		// 获取表
 		if (!NE._I_U.outputMap.containsKey("获取表名")) {
-			return null;
+			return false;
 		}
 		// later will loop join table;
 		String huoqubiaoming = NE._I_U.outputMap.getString("获取表名").replace("临时", "");
@@ -154,7 +154,7 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 			NE._I_U.outputMap.put("获取列名", list);// 集成到老的接口模式先，避免bug*/
 			NE._I_U.outputMap.put("type", "进行选择");
 		}
-		return null;
+		return true;
 	}
 	/*
 	 * Thinking, at this logic, the Cartesian application could separate into steps
@@ -184,30 +184,30 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 		 * 
 		 * */
 		int combinationIncreased = 0;
-		Iterator<String> iterator= NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO.keySet().iterator();
-		while(iterator.hasNext()) {
-			System.out.println("400-iterator-01-" + iterator.next());
-		}
-		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
+//		Iterator<String> iterator= NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO.keySet().iterator();
+//		while(iterator.hasNext()) {
+//			System.out.println("400-iterator-01-" + iterator.next());
+//		}
+		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 				.containsKey("仅含-")) {
 			combinationIncreased += 1;
 			System.out.printf("highly fit"); // later in mapping iterator.*/
 		}
-		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
+		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 				.containsKey("输出-")) {
 			combinationIncreased += 1;
 			System.out.printf("highly fit"); // later in mapping iterator.*/
 		}
-		iterator= NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
-		while(iterator.hasNext()) {
-			System.out.println("400-iterator-02-" + iterator.next());
-		}
-		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserSV
+//		iterator= NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
+//		while(iterator.hasNext()) {
+//			//System.out.println("400-iterator-02-" + iterator.next());
+//		}
+		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
 				.containsKey("V+")) {
 			combinationIncreased += 1;
 			System.out.printf("highly fit"); // later in mapping iterator.*/
 		}
-		if (NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsParserVO
+		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 				.containsKey("名为-")) {
 			combinationIncreased += 1;
 			System.out.printf("highly fit"); // later in mapping iterator.*/

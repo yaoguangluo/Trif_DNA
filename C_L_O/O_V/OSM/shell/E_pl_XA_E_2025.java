@@ -322,7 +322,7 @@
 //		Iterator<String> iterator = list.iterator();
 //		while (iterator.hasNext()) {
 //			String stringIterator = iterator.next();
-//			if (NE.app_S.workVerbaMap.doMap.containsKey(stringIterator)) {
+//			if (NE.app_S.workVerbalMap.doMap.containsKey(stringIterator)) {
 //				return true;
 //			}
 //		}
@@ -336,7 +336,7 @@
 //		Iterator<String> iterator = list.iterator();
 //		while (iterator.hasNext()) {
 //			String stringIterator = iterator.next();
-//			if (NE.app_S.workVerbaMap.data2DSubjectMap
+//			if (NE.app_S.workVerbalMap.data2DSubjectMap
 //					.containsKey(stringIterator)) {
 //				return true;
 //			}
@@ -386,10 +386,10 @@
 //		// （表 表格-单-库，矩阵，文-档-件，对象）
 //		// （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
 //		// work domain out later.*/
-//		//NE.app_S.workVerbaMap.setHumanTalk(command, NE);
-//		NE.app_S.workVerbaMap.setHumanTalkAfterNewBusinessTest(command_V, NE);
-//		Boolean findSubject = NE.app_S.workVerbaMap.findSubject(NE,command_V);
-//		return NE.app_S.workVerbaMap.returnBestTypeOfCommands(findSubject);
+//		//NE.app_S.workVerbalMap.setHumanTalk(command, NE);
+//		NE.app_S.workVerbalMap.setHumanTalkAfterNewBusinessTest(command_V, NE);
+//		Boolean findSubject = NE.app_S.workVerbalMap.findSubject(NE,command_V);
+//		return NE.app_S.workVerbalMap.returnBestTypeOfCommands(findSubject);
 //	}
 //
 //	public static TinMap E_pl_XA(PL_XA_E orm, boolean b, TinMap output,

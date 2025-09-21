@@ -9,5 +9,5 @@ package S_A.SixActionMap;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋
  * */
-public class LoveVerbaMap{
+public class SafeVerbalMap{
 }

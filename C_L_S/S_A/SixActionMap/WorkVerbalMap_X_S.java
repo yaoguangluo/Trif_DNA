@@ -29,7 +29,7 @@ import O_V.OSM.shell.CommandClass;
 *  208号 阳光家园别墅小区 第十栋
  * */
 @SuppressWarnings("unchecked")
-public class WorkVerbaMap_X_S {
+public class WorkVerbalMap_X_S {
 	public String doName;
 	public String subjectName;
 	public String objectName;
@@ -136,17 +136,17 @@ public class WorkVerbaMap_X_S {
 				// noun-verb
 				String root = "";
 				String root_pos = "";
-				if (StudyVerbaMap.initonDelegate.containsKey(stringVerb)) {
-					stringVerb = StudyVerbaMap.initonDelegate
+				if (StudyVerbalMap.initonDelegate.containsKey(stringVerb)) {
+					stringVerb = StudyVerbalMap.initonDelegate
 							.getString(stringVerb);
 				}
 				if (averagePositionNoun < averagePositionVerb) {
 //                  later do noun's domains. 					
-					if(StudyVerbaMap_X.initonDelegate.containsKey(stringNoun)) {
-						stringNoun = StudyVerbaMap_X.initonDelegate.getString(stringNoun);
+					if(StudyVerbalMap_X.initonDelegate.containsKey(stringNoun)) {
+						stringNoun = StudyVerbalMap_X.initonDelegate.getString(stringNoun);
 					}
-					if(StudyVerbaMap_X.initonDelegate.containsKey(stringVerb)) {
-						stringVerb = StudyVerbaMap_X.initonDelegate.getString(stringVerb);
+					if(StudyVerbalMap_X.initonDelegate.containsKey(stringVerb)) {
+						stringVerb = StudyVerbalMap_X.initonDelegate.getString(stringVerb);
 					}
 					root += stringNoun;
 					root += "+";
@@ -190,17 +190,17 @@ public class WorkVerbaMap_X_S {
 										right);
 								command_V.cartesianWorkActionsPositionsSV.put(root,
 										position);
-								System.out.println(root + ":" + right + ":"
-										+ position + ":" + root_pos);
+//								System.out.println(root + ":" + right + ":"
+//										+ position + ":" + root_pos);
 							}
 						}
 					}
 				} else {
-					if(StudyVerbaMap_X.initonDelegate.containsKey(stringNoun)) {
-						stringNoun = StudyVerbaMap_X.initonDelegate.getString(stringNoun);
+					if(StudyVerbalMap_X.initonDelegate.containsKey(stringNoun)) {
+						stringNoun = StudyVerbalMap_X.initonDelegate.getString(stringNoun);
 					}
-					if(StudyVerbaMap_X.initonDelegate.containsKey(stringVerb)) {
-						stringVerb = StudyVerbaMap_X.initonDelegate.getString(stringVerb);
+					if(StudyVerbalMap_X.initonDelegate.containsKey(stringVerb)) {
+						stringVerb = StudyVerbalMap_X.initonDelegate.getString(stringVerb);
 					}
 					root += stringVerb;
 					root += "-";
@@ -225,8 +225,8 @@ public class WorkVerbaMap_X_S {
 										right);
 								command_V.cartesianWorkActionsPositionsVO.put(root,
 										position);
-								System.out.println(root + ":" + right + ":"
-										+ position + ":" + root_pos);
+//								System.out.println(root + ":" + right + ":"
+//										+ position + ":" + root_pos);
 							}
 						}
 					}

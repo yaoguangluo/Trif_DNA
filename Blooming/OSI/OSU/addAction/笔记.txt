@@ -1,0 +1,75 @@
+关于函数 行至 的筛选问题解决 整个流程过程 uml
+1 为什么设计这个笔记因为UML是第三方软件。含有监控接口,我被迫用语文来描述UML，顺便提高我的语言哲学辩证能力。
+2 IDE没有高级功能，自己设计IDE 已经上了套，我18岁时候不知道40岁今天的样子。不然我18岁就会先设计IDE再编码。
+
+
+3 问题变量的关系归纳。
+	-1
+	package M_V.ME.E;
+	PLSQLCommand_E_X_P_E
+	PLSQLCommand_E_X_P_E_Kernel
+
+	-2
+	package M_V.ME.E;
+	PLSQLCommand_E_X_P_E_Kernel
+	Q_Rows_E_X_selectRowsByAttributesOfAggregation
+
+	-3
+	package M_V.MSQ.OP.SM.AOP.MEC.SIQ.SM.OSQ.E.rows;
+	Q_Rows_E_X_selectRowsByAttributesOfAggregation
+	P_AggregationPLSQL.P_AggregationLimitMap
+
+	-4
+	package M_V.ME.SM.OP.SM.AOP.MEC.SIQ.E;
+	P_AggregationPLSQL
+	P_AggregationLimitMap
+
+	-5
+	--OVECS
+	P_AO_pl_XA.P_AggregationLimitMap(sets, output, emotionSample, ratioMap,
+				NE);
+				
+	--MVECS
+	P_AggregationPLSQL.P_AggregationLimitMap(sets, output);
+
+
+	//重名逻辑tinshell
+	-6
+	package O_V.OSA.shell;
+	selectRowsByAttributesOfAggregation
+
+	-7
+	package O_V.OSM.shell;
+	P_AO_pl_XA 
+
+4 --实现行至TVM指令句拼接构造逻辑--
+package OSI.OSU.addAction;
+LimitedRowAttributesOfColumnsInMemoryClass
+
+
+5 干脆把java ide的坑一次全部踩完。
+	1 整合PLSQL 和 Tinshell当时是分开的项目，后来合并到华瑞集工程，出现重名，我统一变量的时候IDE 自动修复 link，估计这个自动指错了路径，又是自动。，。
+	2 别急看除了编码自动，打字自动，word自动，string里正则自动，还好几个版本如PCRE, 语法自动，复制校准自动，肯定还有其他自动。自动连招连招。
+	3 缺少高级功能，比如条件化打印，还要我自己去组织逻辑。
+	4 热调试产生的问题不能及时描述，不然会错乱行标识。
+	5 我一开始是做一个中药搜索，后来逐渐加功能，加到了今天，不是一开始做语言处理机，所以集成人类语言分析的过程产生了一个致命的错，就是一开始就用
+		极其复杂的特大文件集去测试，而不是一开始先一个测试，一行数据，一个类，一个条件开始。所以为什么会出现这个问题
+		我的项目都是一开始我就没有自己的目标，是不断地无聊就不断地加功能不断地优化到今天。没有一个任务和目标
+		全靠自己无聊打发时间在搞。就是好玩而已
+	6 eclipse的class not found 出了问题，我没有打断点它还自动停，搞得我要不停按鼠标。进行手动next
+	7 DNN搜索逻辑搜索菜谱输出0 稍后断点看看。
+	8 P_CO_XA_X_Cache 文件太大了，稍后裁剪分类。
+	9 这几年我的源码都是每一次修改都会进行调试，通过后为什么过了几年再去看竟然出错了？那就每个星期都看看这-原-码。
+	10 通过指令集搜索构造，我的搜索方式还是全局搜索，不是根据语言的上下段来跟进搜索。这里得改，因为语言搜索与数据库搜索完全不一样的逻辑了。
+	11 -略
+	12 ide的热调试也出问题了，修改后不能自动rollback到修改前的函数头继续，要重新调试。要不这样吧，每次出问题修改后就重新安装一次ide，
+	13 这个问题不是eclipse引起的，是ideaj的问题，要删除out，而不是rebuild，因为我eclipse最近按了几次 clean后最近几天才出现的，说明错误存在了1年半，
+   		错误的东西竟然能跑通1年半，不容易啊。 
+	14 不断地测试发现时间消耗在 整体功能的靠近末段的逻辑中，需要设计一个局部的tinmap来记录局部的结果文件读写，方便下次调试直接从存档处开始。减少大量调试时间。 
+	15 P_fileOperations 重载多次说明指令句关系 标识需要更严谨。  
+
+
+6 commandSwap 垃圾语句之后剔除
+
+7 temp- 存储指令集的拆开模型 NE._I_U.acknowledge split by :
+

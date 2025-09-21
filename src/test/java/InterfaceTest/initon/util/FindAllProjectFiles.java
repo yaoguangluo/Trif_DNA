@@ -36,10 +36,10 @@ public class FindAllProjectFiles {
 				commonTestInition.NE);
 		//
 		System.out.println("---------初始注册函数SMI");
-		commonTestInition.NE.app_S.studyVerbaMap.init_SMV(commonTestInition.NE);
-		Iterator<String> iterators = commonTestInition.NE.app_S.studyVerbaMap._SMI
+		commonTestInition.NE.app_S.studyVerbalMap.init_SMV(commonTestInition.NE);
+		Iterator<String> iterators = commonTestInition.NE.app_S.studyVerbalMap._SMI
 				.keySet().iterator();
-		String[] _SMI_ = new String[commonTestInition.NE.app_S.studyVerbaMap._SMI
+		String[] _SMI_ = new String[commonTestInition.NE.app_S.studyVerbalMap._SMI
 				.size()];
 		int i = 0;
 		while (iterators.hasNext()) {
@@ -48,9 +48,9 @@ public class FindAllProjectFiles {
 			_SMI_[i++] = temp;
 		}
 		System.out.println("---------初始注册函数SMV");
-		iterators = commonTestInition.NE.app_S.studyVerbaMap._SMV.keySet()
+		iterators = commonTestInition.NE.app_S.studyVerbalMap._SMV.keySet()
 				.iterator();
-		String[] _SMV_ = new String[commonTestInition.NE.app_S.studyVerbaMap._SMV
+		String[] _SMV_ = new String[commonTestInition.NE.app_S.studyVerbalMap._SMV
 				.size()];
 		i = 0;
 		while (iterators.hasNext()) {
@@ -60,9 +60,9 @@ public class FindAllProjectFiles {
 		}
 
 		System.out.println("---------初始注册函数SMQ");
-		iterators = commonTestInition.NE.app_S.studyVerbaMap._SMQ.keySet()
+		iterators = commonTestInition.NE.app_S.studyVerbalMap._SMQ.keySet()
 				.iterator();
-		String[] _SMQ_ = new String[commonTestInition.NE.app_S.studyVerbaMap._SMQ
+		String[] _SMQ_ = new String[commonTestInition.NE.app_S.studyVerbalMap._SMQ
 				.size()];
 		i = 0;
 		while (iterators.hasNext()) {
@@ -378,7 +378,7 @@ public class FindAllProjectFiles {
 //hearts3D
 //height
 //heightRange
-//helpVerbaMap
+//helpVerbalMap
 //hight
 //hint
 //hook
@@ -735,7 +735,7 @@ public class FindAllProjectFiles {
 //stringBuilder
 //stringTypes
 //strV
-//studyVerbaMap
+//studyVerbalMap
 //subASCmap
 //successICATest
 //Td
@@ -801,7 +801,7 @@ public class FindAllProjectFiles {
 //widthRange
 //widthDouble
 //wkxPage
-//workVerbaMap
+//workVerbalMap
 //wskxPage
 //x
 //xingwei_filter

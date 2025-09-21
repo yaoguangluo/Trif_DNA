@@ -260,11 +260,11 @@ public class IMV_SIQ extends ConcurrentHashMap {
 //		/*
 //		 * 笛卡尔关系计算大幅缩减。
 //		 * */
-//		if(NE.app_S.workVerbaMap.command_V.cartesianLooped.contains(key)) {
+//		if(NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(key)) {
 //			return;
 //		}
-//		NE.app_S.workVerbaMap.command_V.cartesianLooped.put(key, "");
-//		System.out.println("400-size-01" + NE.app_S.workVerbaMap.command_V.cartesianLooped.size());
+//		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(key, "");
+//		System.out.println("400-size-01" + NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 //		Iterator<String> iterators = FlowerAction.FlowerSixDomainActions
 //				.keySet().iterator();
 //		while (iterators.hasNext()) {

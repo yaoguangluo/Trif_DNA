@@ -6,6 +6,7 @@ import OSI.OSU.addAction.AddParserMixedStringClass;
 import OSI.OSU.addAction.AddParserMixedStringToListClass;
 import OSI.OSU.addAction.LimitedRowAttributesOfColumnsInMemoryClass;
 import OSI.OSU.addAction.UpdateColorAttributesOfColumnsInMemoryClass;
+import S_A.SEM.bloom.StaticFunctionMapO_VECS_C;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
 import S_A.SEM.bloom.StaticRootMap;
 import S_A.pheromone.IMV_SIQ;
@@ -21,7 +22,7 @@ import S_A.pheromone.IMV_SIQ;
 *  208号 阳光家园别墅小区 第十栋
  * */
 @SuppressWarnings("unchecked")
-public class CreativeVerbaMap {
+public class CreativeVerbalMap {
 	public IMV_SIQ flowerActionMap = new IMV_SIQ();
 
 	public static void initInitonActions() {
@@ -210,17 +211,34 @@ public class CreativeVerbaMap {
 
 	}
 
+	
+	/*
+	 *思考 chromosomeNode 里面添加 key limitedRowAttributesOfColumnsInMemoryClass 
+	 *目的是将crab 执行，TVM extension
+	 *
+	 *FlowerSixDomainActions 里面加 key P_AggregationLimitMap 防止没有识别 指令句
+	 *走PLSearh老命令驱动花语。
+	 *
+	 *现在二和一出现了多个问题，首先是老工程合并出现了多个花语段，
+	 *然后花肽合并出现了if else 逻辑问题。
+	 *
+	 *因为 if else的价值就是 新函数不走花语 所以花语就不用再管了，以后新的函数直接走肽语调用花函数即可
+	 *
+	 * */
 	static void regLimitedRowAttributesOfColumnsInMemoryClass() {
 		/*
 		 * 开始构造数字行数提取指令 从- 组合 到- 然后分析 从- 组合 到- 展示+行 仅+展示
 		 */
+//		FlowerAction.FlowerSixDomainActions.put("仅+V",
+//				"limitedRowAttributesOfColumnsInMemoryClass");
 		FlowerAction.FlowerSixDomainActions.put("仅+V",
-				"limitedRowAttributesOfColumnsInMemoryClass");
+				"P_AggregationLimitMap");
+		
 		// 注册花函数
 		LimitedRowAttributesOfColumnsInMemoryClass limitedRowAttributesOfColumnsInMemoryClass 
 		= new LimitedRowAttributesOfColumnsInMemoryClass();
 		String callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass 
-		= "limitedRowAttributesOfColumnsInMemoryClass";
+		= "P_AggregationLimitMap";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
 		/*
@@ -237,11 +255,15 @@ public class CreativeVerbaMap {
 				System.currentTimeMillis());// 增加记忆时间。20241013
 		StaticRootMap.staticClass_XE_Map.put(
 				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
-				"S_AOPM");
+				"O_VECS");
 		StaticRootMap.chromosomeNode.put(
 				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
 				limitedRowAttributesOfColumnsInMemoryClass);// 20241001准备把这行移出去。
-		StaticFunctionMapS_AOPM_C.annotationMap.put(
+//		StaticFunctionMapS_AOPM_C.annotationMap.put(
+//				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+//				"inputValues:传参因子:因子");
+		
+		StaticFunctionMapO_VECS_C.annotationMap.put(
 				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
 				"inputValues:传参因子:因子");
 		// booming

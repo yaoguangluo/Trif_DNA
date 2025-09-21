@@ -92,17 +92,17 @@ public class AddParserMixedStringClass implements CrabInterface {
     //System.out.println("Hello Word!");
     //return null;
     @SuppressWarnings("unchecked")
-	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
+	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg) {
         System.out.println("Hello Word!");
-        if (NE.app_S.workVerbaMap.command_V.cartesianLooped
+        if (NE.app_S.workVerbalMap.command_V.cartesianLooped
 				.contains(className)) {
-			System.out.println("400-size-01-"
-					+ NE.app_S.workVerbaMap.command_V.countReject++);
-			return null;
+			//System.out.println("400-size-01-"
+			//		+ NE.app_S.workVerbalMap.command_V.countReject++);
+			return false;
 		}
-		NE.app_S.workVerbaMap.command_V.cartesianLooped.put(className, "");
-		System.out.println("400-size-02-"
-				+ NE.app_S.workVerbaMap.command_V.cartesianLooped.size());
+		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");
+		//System.out.println("400-size-02-"
+		//		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 
         
         inputValues = StaticFunctionMap.preValues(NE.app_S.outputMap, 传参因子);
@@ -112,6 +112,6 @@ public class AddParserMixedStringClass implements CrabInterface {
         }
         StaticFunctionMap.postValues(NE.app_S.outputMap, inputValues.getBoolean("find"), map
             , "parserMixedString");
-        return null;
+        return true;
     }
 }

@@ -108,7 +108,7 @@ public class ShellJPanel extends ShellJPanel_X_S {
                 if (null != app) {
                     //
                     try {
-                        NE.app_S.studyVerbaMap.init_SMV(NE);
+                        NE.app_S.studyVerbalMap.init_SMV(NE);
                     } catch (NoSuchFieldException ex) {
                         throw new RuntimeException(ex);
                     } catch (InstantiationException ex) {

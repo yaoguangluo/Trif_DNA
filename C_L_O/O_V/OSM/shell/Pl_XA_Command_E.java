@@ -103,30 +103,40 @@ public class Pl_XA_Command_E {
 
 	public static void P_E(String[] acknowledge, TinMap object, boolean mod,
 			App NE) throws InterruptedException, IOException {
-		if (object.get("start").toString().equals("1")) {
-			if (!acknowledge[0]
-					.equalsIgnoreCase(object.get("lastCommand").toString())
-					&& (object.get("lastCommand").toString().contains("修改列名")
-							|| object.get("lastCommand").toString()
-									.contains("culumnValue")
-							|| object.get("lastCommand").toString()
-									.contains("条件为")
-							|| object.get("lastCommand").toString()
-									.contains("relation")
-							|| object.get("lastCommand").toString()
-									.contains("操作")
-							|| object.get("lastCommand").toString()
-									.contains("PLETL")
-							|| object.get("lastCommand").toString()
-									.contains("PLTCP")
-							|| object.get("lastCommand").toString()
-									.contains("获取列名")
-							|| object.get("lastCommand").toString()
-									.contains(S_ShellETL.SHELL_ETL_CULUMNNAME)
-							|| object.get("lastCommand").toString()
-									.contains("relation"))) {
-				P_E_Kernel(object, mod, NE);
-			}
+		boolean objectGetStartEquals1 = object.get("start").toString()
+				.equals("1");
+		String objectGetLastCommand = "";
+		String objectGetNewCommand = "";
+		boolean acknowledge0EqualsIgnoreCaseObjectGetLastCommand = true;
+		if(object.containsKey("lastCommand")) {
+			objectGetLastCommand = object.get("lastCommand").toString();
+			acknowledge0EqualsIgnoreCaseObjectGetLastCommand = acknowledge[0]
+					.equalsIgnoreCase(objectGetLastCommand);
+		}
+		 
+		if(object.containsKey("newCommand")) {
+			objectGetNewCommand = object.get("newCommand").toString();
+		}
+		//条件分解。
+		if (objectGetStartEquals1) {
+			/*
+			 * acknowledge0EqualsIgnoreCaseObjectGetLastCommand 相不相同 命令都能做，
+			 * */
+			//if (!acknowledge0EqualsIgnoreCaseObjectGetLastCommand) { //多个条件为会筛掉逻辑
+				if (objectGetNewCommand.contains("修改列名")
+						|| objectGetNewCommand.contains("culumnValue")
+						|| objectGetNewCommand.contains("条件为")
+						|| objectGetNewCommand.contains("relation")
+						|| objectGetNewCommand.contains("操作")
+						|| objectGetNewCommand.contains("PLETL")
+						|| objectGetNewCommand.contains("PLTCP")
+						|| objectGetNewCommand.contains("获取列名")
+						|| objectGetNewCommand
+								.contains(S_ShellETL.SHELL_ETL_CULUMNNAME)
+						|| objectGetNewCommand.contains("relation")) {
+					P_E_Kernel(object, mod, NE);
+				}
+			//}
 		}
 	}
 
@@ -138,19 +148,24 @@ public class Pl_XA_Command_E {
 						|| (object.getCompareV("countJoins", "1")
 								&& object.getCompareV("newCommand", "join")))) {
 			if (object.containsKey("条件为")) {
-				IMV_SIQ_utils.couldSQLThenSQL("条件为",NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("条件为", NE.app_S.acknowledge,
+						object, NE);
 			}
 			if (object.containsKey("操作")) {
-				IMV_SIQ_utils.couldSQLThenSQL("操作",NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("操作", NE.app_S.acknowledge,
+						object, NE);
 			}
 			if (object.containsKey("获取列名")) {
-				IMV_SIQ_utils.couldSQLThenSQL("获取列名", NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("获取列名", NE.app_S.acknowledge,
+						object, NE);
 			}
 			if (object.containsKey("PLETL")) {
-				IMV_SIQ_utils.couldSQLThenSQL("PLETL", NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("PLETL", NE.app_S.acknowledge,
+						object, NE);
 			}
 			if (object.containsKey("PLTCP")) {
-				IMV_SIQ_utils.couldSQLThenSQL("PLTCP", NE.app_S.acknowledge, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("PLTCP", NE.app_S.acknowledge,
+						object, NE);
 			}
 			object.remove("recordRows");
 		}
@@ -159,12 +174,12 @@ public class Pl_XA_Command_E {
 				|| (object.getCompareV("countJoins", "1")
 						&& !object.getCompareV("newCommand", "join")))) {
 			if (object.containsKey(S_ShellETL.SHELL_ETL_CONDITION)) {
-				IMV_SIQ_utils.couldSQLThenSQL(S_ShellETL.SHELL_ETL_CONDITION
-						, NE.app_S.acknowledge,object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL(S_ShellETL.SHELL_ETL_CONDITION,
+						NE.app_S.acknowledge, object, NE);
 			}
 			if (object.containsKey("relation")) {
-				IMV_SIQ_utils.couldSQLThenSQL("relation",NE.app_S.acknowledge
-						, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("relation", NE.app_S.acknowledge,
+						object, NE);
 			}
 			if (object.containsKey("aggregation")) {
 				// object.put("obj"
@@ -172,8 +187,8 @@ public class Pl_XA_Command_E {
 				// SearchShellQ_JoinRows_E.selectRowsByAttributesOfJoinAggregation(object));
 			}
 			if (object.containsKey("getCulumns")) {
-				IMV_SIQ_utils.couldSQLThenSQL("getCulumns", NE.app_S.acknowledge
-						, object, NE);
+				IMV_SIQ_utils.couldSQLThenSQL("getCulumns",
+						NE.app_S.acknowledge, object, NE);
 			}
 			if (object.containsKey("PLETL")) {
 				// object.put("obj",

@@ -231,7 +231,7 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 			} else {
 				stringBuilder.append("未知");
 				// 关联studyMap later -trif
-				NE.app_S.workVerbaMap.command_V.unknown_map.put(string, true);
+				NE.app_S.workVerbalMap.command_V.unknown_map.put(string, true);
 			}
 			wordFrequency.I_pos(stringBuilder.toString());
 			mapSearchWithoutSort.put(string, wordFrequency);

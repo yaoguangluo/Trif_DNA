@@ -53,7 +53,7 @@ class Sample_X_I_MapAddPluginTest {
 		DetaThread.sleepDeta(100);
 		NE.start();
 		// 配置环境支持
-		while (null == NE.app_S.studyVerbaMap) {
+		while (null == NE.app_S.studyVerbalMap) {
 			Thread.sleep(500);
 		}
 		// 读需要测试的表

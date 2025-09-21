@@ -13,6 +13,7 @@ import S_A.SEM.bloom.StaticRootMap;
 	 * */
 	public class S_V_AOPM {
 		//稍后合并
+		@SuppressWarnings("unchecked")
 		public static void load(StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_E) {
 			//写法
 			StaticRootMap.chromosomeBlooming.put("PdeSwapPdcToPde", "V_A.VPC.transaction.PdeSwap");

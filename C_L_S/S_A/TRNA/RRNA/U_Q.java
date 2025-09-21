@@ -4,9 +4,9 @@ import M_V.MVQ.label.DetaLabel;
 import P_V.PCI.ASQ.basic.RatioMatrix;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
-import S_A.SixActionMap.HelpVerbaMap;
-import S_A.SixActionMap.StudyVerbaMap;
-import S_A.SixActionMap.WorkVerbaMap;
+import S_A.SixActionMap.HelpVerbalMap;
+import S_A.SixActionMap.StudyVerbalMap;
+import S_A.SixActionMap.WorkVerbalMap;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_SS;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
@@ -39,8 +39,9 @@ import java.util.Vector;
 //S_objectIdentify
 public class U_Q extends Q_I {
 
-    public StudyVerbaMap studyVerbaMap;
-    public WorkVerbaMap workVerbaMap;
+    public StudyVerbalMap studyVerbalMap;
+    public WorkVerbalMap workVerbalMap;
+    public TinMap currentTinmap;
     public List<IMV_SIQ> outputMapList;
     public List<IMV_SIQ> joinObj;
     public List<IMV_SIQ> newObj;
@@ -94,7 +95,7 @@ public class U_Q extends Q_I {
     public IMV_SIQ map;
     public IMV_SIQ nlp;
 
-    public HelpVerbaMap helpVerbaMap;
+    public HelpVerbalMap helpVerbalMap;
     public IMV_SIQ inputMap;
     public IMV_SIQ rowCells;
     public IMV_SIQ textContent;

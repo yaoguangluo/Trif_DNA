@@ -320,15 +320,41 @@ class ShellJPanelSeparationTest {
 		String tinshell2 = (""
 				/* TVM Extension 初步测试两种输出都正确 */
 				+ "输出内容仅含中药名称，打分和功效这三个列;\r\n" 
+				/*
+				 * 在优化笛卡尔关系的时候这句失效了于是开始排查，说明一个新的问题，
+				 * 我的函数没有问题排查类的系统功能测试集合。这个集合以后要有。
+				 * 文字已经有正确输出，于是调通下 TVM extension 输出的 操作:6|行至|9
+				 * 逻辑句的TVM转接执行。
+				 * 
+				 * --罗瑶光
+				 * 
+				 * */
+				//+ "操作:0|行至|3;\r\n" 
 				//+"在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
-				+ "在输出的数据表中仅展示从第零行到第3拾行的数据;"
+				+ "在输出的数据表中仅展示从第陆行到第"
+				//+ "3拾"
+				+ "九"
+				+ "行的数据;"
 				+ "做一个操作将列名为中药名称的子集用红色来标记为输出的颜色;");
 		execTest(tinshell2, NE, tinMap);
 		// 输出见末尾 第二段
 		// 关闭
 		NE.stop();
 	}
-//输出正确
+//输出正确 20250921
+//	line-->:4
+//	Action-->:updateColorAttributesOfColumnsInMemoryClass
+//	Action-->:selectRowsByAttributesOfGetCulumns
+//	Action-->:P_AggregationLimitMap
+//	Action-->:findTableInMemory
+//	Action-->:P_ListNeedStart
+//	Action-->:selectRowsByAttributesOfAggregation
+//	Action-->:P_TableName
+//	Action-->:P_fileOperations
+//	Action-->:selectRowsByAttributesOfCondition
+//	Action-->:addFindColumnsInMemoryClass	
+	
+//之前的	
 //	line-->:10
 //	line-->:success
 //	line-->:0
@@ -352,7 +378,7 @@ class ShellJPanelSeparationTest {
 	// later//Object object =
 	// _SQ__OVQ_OSQ_VSQ.outputOut.get(S_ShellETL.SHELL_ETL_TIN_SHELL_ETL);
 	@SuppressWarnings({ "unchecked", "unused" })
-	private TinMap execTest(String tinshell, App NE, TinMap tinMap)
+	public TinMap execTest(String tinshell, App NE, TinMap tinMap)
 			throws InterruptedException, IOException {
 		String plSearch = tinshell;
 		OSU_OVQ_OSQ_VSQ _SQ__OVQ_OSQ_VSQ = new OSU_OVQ_OSQ_VSQ();
@@ -379,8 +405,8 @@ class ShellJPanelSeparationTest {
 			// output.get(string).toString());
 		}
 		// DNA序列记忆标注
-		if (null != NE.app_S.helpVerbaMap.didJustNow) {
-			Iterator<String> iterators = NE.app_S.helpVerbaMap.didJustNow
+		if (null != NE.app_S.helpVerbalMap.didJustNow) {
+			Iterator<String> iterators = NE.app_S.helpVerbalMap.didJustNow
 					.keySet().iterator();
 			while (iterators.hasNext()) {
 				System.out.println("Action-->:" + iterators.next());

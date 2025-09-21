@@ -15,7 +15,7 @@ import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋
  * */
-public class StudyVerbaMap extends StudyVerbaMap_Q {
+public class StudyVerbalMap extends StudyVerbalMap_Q {
 	public String filterString = "";
 
 	/*
@@ -152,7 +152,7 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 			if (hasNumerics && !hasChars) {
 				/*
 				 * 翻译阿拉伯数字 逻辑是 
-				 * number = studyVerbaMap_Q.getChineseFromNumerics(number);
+				 * number = studyVerbalMap_Q.getChineseFromNumerics(number);
 				 * */
 				String stringSwaped = getChineseFromNumerics(string);
 				System.out.println("stringSwaped-400-1->" + stringSwaped);
@@ -275,12 +275,12 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 				+ "展示123万亿200020从第123万200亿123万106行到2仟6拾第102万2000行的数据";
 		CommandClass commandClass = new CommandClass();
 		commandClass.command = input;
-		StudyVerbaMap studyVerbaMap = new StudyVerbaMap();
-		studyVerbaMap.extractNumberfromString(commandClass);
+		StudyVerbalMap studyVerbalMap = new StudyVerbalMap();
+		studyVerbalMap.extractNumberfromString(commandClass);
 		/*
 		 * 稍后可以设计处理混合字符的数字格式化机，关于 3十 这种描述进行格式化。 --罗瑶光
 		 */
-		studyVerbaMap.formatNumericMap(commandClass);
+		studyVerbalMap.formatNumericMap(commandClass);
 
 		// 不断加不断修正细化即可
 		//
@@ -433,9 +433,9 @@ public class StudyVerbaMap extends StudyVerbaMap_Q {
 //System.out.println(
 //"1-->" + commandClass.numericsFromUnknownString.size());
 //System.out.println("2-->" + commandClass.commandWithNumFilters);
-//System.out.println("3-->" + studyVerbaMap.filterString);
+//System.out.println("3-->" + studyVerbalMap.filterString);
 
-//StudyVerbaMap_Q studyVerbaMap_Q = new StudyVerbaMap_Q();
+//StudyVerbalMap_Q studyVerbalMap_Q = new StudyVerbalMap_Q();
 //String number = "9992980400000088";
-//number = studyVerbaMap_Q.getChineseFromNumerics(number);
+//number = studyVerbalMap_Q.getChineseFromNumerics(number);
 //commandClass.fasterChineseNumberSwap(number);

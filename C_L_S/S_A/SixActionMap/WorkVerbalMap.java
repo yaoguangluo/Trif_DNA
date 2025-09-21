@@ -28,7 +28,7 @@ import java.util.Iterator;
 *  208号 阳光家园别墅小区 第十栋
  * */
 @SuppressWarnings("unchecked")
-public class WorkVerbaMap extends WorkVerbaMap_X {
+public class WorkVerbalMap extends WorkVerbalMap_X {
 
 	// 一些逻辑不应该出现在电脑上，只能文字出现在书本上。就因为电脑内置蓝牙wifi声卡接口
 	//，我就不爽。不管了我就当写书一样就是了。--罗瑶光 trif
@@ -115,7 +115,7 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 		 * --罗瑶光
 		 * 
 		 * */
-		int res = new StudyVerbaMap().extractNumberfromString(command_V);
+		int res = new StudyVerbalMap().extractNumberfromString(command_V);
 		
 		this.humanTalk = command_V.command;
 		// 分词 提取 英文段和数字段形成变量。比如dnn 12345等
@@ -127,7 +127,7 @@ public class WorkVerbaMap extends WorkVerbaMap_X {
 		// -1 词频 归纳
 		// -2 词性 归纳
 		// 之前逻辑是 所有词性词汇 搜索 归纳
-		// -未知 词汇 入 NE.app_S.workVerbaMap.unknown_map.put(string,
+		// -未知 词汇 入 NE.app_S.workVerbalMap.unknown_map.put(string,
 		// true);
 		// 其他 入 mapSearchWithoutSort.put(string, wordFrequency);
 		// 测试逻辑是 名 动 形 副 修正归纳 map-string-wordFrequency

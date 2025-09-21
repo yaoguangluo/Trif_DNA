@@ -25,7 +25,7 @@ import java.util.Iterator;
 *  208号 阳光家园别墅小区 第十栋
  * */
 @SuppressWarnings("unchecked") // 稍后优化新陈代谢 逻辑
-public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
+public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 	// 稍后去重 -trif
 	public void relationshipsCombinationWithNounAndVerb() {
 		Iterator<String> iteratorNounMd = nounInText.keySet().iterator();
@@ -235,7 +235,7 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 		NE.app_S.lYGSortESU9D.javaSort(actionsDistanceV_SV, actionsDistance_SV);
 		// loop
 		for (i = 0; i < actionsDistance_SV.length; i++) {
-			System.out.println(actionsDistance_SV[i] + "-" + actionsDistanceV_SV[i]);
+			//System.out.println(actionsDistance_SV[i] + "-" + actionsDistanceV_SV[i]);
 			//command_V.normalizationalWorkActionsRights.put(
 			//		actionsDistance[i] + "-" + actionsDistanceV[i],
 			//		actionsDistanceV[i]);
@@ -259,7 +259,7 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 		NE.app_S.lYGSortESU9D.javaSort(actionsDistanceV_VO, actionsDistance_VO);
 		// loop
 		for (i = 0; i < actionsDistance_VO.length; i++) {
-			System.out.println(actionsDistance_VO[i] + "-" + actionsDistanceV_VO[i]);
+			//System.out.println(actionsDistance_VO[i] + "-" + actionsDistanceV_VO[i]);
 			//command_V.normalizationalWorkActionsRights.put(
 			//		actionsDistance[i] + "-" + actionsDistanceV[i],
 			//		actionsDistanceV[i]);
@@ -285,7 +285,7 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 		NE.app_S.lYGSortESU9D.javaSort(actionsPositionV_SV, actionsPosition_SV);
 		// loop
 		for (i = 0; i < actionsPositionV_SV.length; i++) {
-			System.out.println(actionsPosition_SV[i] + "+" + actionsPositionV_SV[i]);
+			//System.out.println(actionsPosition_SV[i] + "+" + actionsPositionV_SV[i]);
 			//command_V.normalizationalWorkActionsPositions
 			//		.put(actionsPosition[i] + "+" + actionsPositionV[i], "");
 		}
@@ -310,7 +310,7 @@ public class WorkVerbaMap_X extends WorkVerbaMap_X_S {
 		NE.app_S.lYGSortESU9D.javaSort(actionsPositionV_VO, actionsPosition_VO);
 		// loop
 		for (i = 0; i < actionsPositionV_VO.length; i++) {
-			System.out.println(actionsPosition_VO[i] + "+" + actionsPositionV_VO[i]);
+			//System.out.println(actionsPosition_VO[i] + "+" + actionsPositionV_VO[i]);
 			//command_V.normalizationalWorkActionsPositions
 			//		.put(actionsPosition[i] + "+" + actionsPositionV[i], "");
 		}

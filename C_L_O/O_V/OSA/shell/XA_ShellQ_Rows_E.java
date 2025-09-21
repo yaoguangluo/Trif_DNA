@@ -131,6 +131,9 @@ public class XA_ShellQ_Rows_E {
             object.put("recordRows", recordRows);
         }
         List<IMV_SIQ> output = new ArrayList<>();
+        if(object.containsKey("obj")) {
+        	output= (List<IMV_SIQ>)object.get("obj");
+        }
         //SearchShellTable table= SearchShellTables.searchShellTables.get(object.get("tableName").toString());
         List<String[]> conditionValues = (List<String[]>) object.get("条件为");//条件计算
         Iterator<String[]> iterator = conditionValues.iterator();
@@ -144,10 +147,14 @@ public class XA_ShellQ_Rows_E {
                     , "\\|", "\\", "\\");
                 String[] sets = List_ESU_X_stringlistToStringArray._E(lists);
                 //1 先检查是否有record row
+                //这里output恒为0，是怎么出问题了？知道怎么回事了 IMVSIQ变换，这里的函数2023年后部分就出了问题，
+                //out的注册信息没有clean，一直保存在内存文件中，在错误的逻辑下跑正确的内存编译部分通过，后就以为是正确的环境下删掉了一些注释。
+                //这IDE的buffer编译逻辑 牛。估计这些年坑死一堆人。那些家周围冲我鬼笑+咳嗽3年的陌生人就清楚了，一伙的。
                 boolean hasOutputMap = output.size() == 0 ? false : true;
                 ConcurrentHashMap<Integer, Object> map = (ConcurrentHashMap<Integer
                     , Object>) object.get("recordRows");
                 boolean hasRecordMap = map.isEmpty() ? false : true;
+                //稍后整合
                 if ((hasOutputMap || hasRecordMap) && andMap) {
                     //再增加一个条件 是不是第一次 执行条件为*/
                     //罗瑶光 20211015*/

@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import S_A.SixActionMap.WorkVerbaMap;
+import S_A.SixActionMap.WorkVerbalMap;
 import S_A.pheromone.IMV_SIQ;
 /*
  * Thinking， should I make a English version about this presentation？
@@ -34,7 +34,7 @@ import S_A.pheromone.IMV_SIQ_S_;
 
 /*
  * 看到这些变量在增加，我在思考，计算数据的关系很多思绪可以从关系方式数据库的范式定义
- * 中寻找答案，所以年轻人一定要把数据库原理这门课学好。WorkVerbaMap在华瑞集中的逻辑
+ * 中寻找答案，所以年轻人一定要把数据库原理这门课学好。WorkVerbalMap在华瑞集中的逻辑
  * 决策是1:1的关系，而命令句和map的关系是 M:1 的关系。而里面的单句延伸是1:M的关系，
  * 延伸的属性和指令集是 M:N 关系。指令集的计算逻辑是sigma范式，指令集的推导笛卡尔关系。
  * 关于这六层关系要进行计算优化，自然要用到梯度微积分。所以年轻人高等数学和计算机统计
@@ -45,7 +45,7 @@ import S_A.pheromone.IMV_SIQ_S_;
  * */
 public class CommandClassBackUp {
 	// 工作机
-	public WorkVerbaMap workVerbaMap;
+	public WorkVerbalMap workVerbalMap;
 	// 单句的命令
 	public String command;
 	// 单句的延伸
@@ -64,7 +64,7 @@ public class CommandClassBackUp {
 	// 单句的预处理
 	public List<String> _IMV_SIQ_SS_ = new ArrayList<>();
 	/*
-	 * 稍后这些关于当前的命令句对应的workVerbaMap中需要clear的对象都走这个类，
+	 * 稍后这些关于当前的命令句对应的workVerbalMap中需要clear的对象都走这个类，
 	 * 免得以后修改或者增加条件，不谨慎漏了几个clear。我认为这是一种计算关系的优 化方式，属于聚类优化计算逻辑。
 	 * 
 	 * 随着条件越来越多，之后会统一组合优化这个map关系，然后剔除掉一些成员变量。 --trif later

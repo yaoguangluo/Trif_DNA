@@ -166,9 +166,9 @@ class FlowerTalkEncodingTest {
 	}
 }
 //下面是可参考我可运行的老接口
-//NE.app_S.workVerbaMap.setHumanTalk(tinshell, NE);
-//Boolean findSubject = NE.app_S.workVerbaMap.findSubject(NE);
-//String string = NE.app_S.workVerbaMap.returnBestTypeOfCommands(findSubject);
+//NE.app_S.workVerbalMap.setHumanTalk(tinshell, NE);
+//Boolean findSubject = NE.app_S.workVerbalMap.findSubject(NE);
+//String string = NE.app_S.workVerbalMap.returnBestTypeOfCommands(findSubject);
 
 //输出结果 ，花语指令集搜索排序， 有效
 //Connected to the target VM, address: '127.0.0.1:62597', transport: 'socket'

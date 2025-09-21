@@ -42,25 +42,25 @@ public class MakeContainerXLS extends MakeContainerTemp {
             return;//fatal trif
         }
         this._A = NE.app_S._A;//later..
-        app_S.studyVerbaMap.putObject("_A", NE.app_S.pageQ.mainPaint.pageP_M);
+        app_S.studyVerbalMap.putObject("_A", NE.app_S.pageQ.mainPaint.pageP_M);
         this.pos = NE.app_S.fMHMMListOneTime_E.posCnToCn;
-        app_S.studyVerbaMap.putObject("fMHMMListOneTime_E.posCnToCn"
+        app_S.studyVerbalMap.putObject("fMHMMListOneTime_E.posCnToCn"
             , NE.app_S.fMHMMListOneTime_E.posCnToCn);
         this.pose = NE.app_S.fMHMMListOneTime_E.posEnToEn;
-        app_S.studyVerbaMap.putObject("fMHMMListOneTime_E.posEnToEn"
+        app_S.studyVerbalMap.putObject("fMHMMListOneTime_E.posEnToEn"
             , NE.app_S.fMHMMListOneTime_E.posEnToEn);
         this.etc = NE.app_S.fMHMMListOneTime_E.fullEnToCn;
-        app_S.studyVerbaMap.putObject("fMHMMListOneTime_E.fullEnToCn"
+        app_S.studyVerbalMap.putObject("fMHMMListOneTime_E.fullEnToCn"
             , NE.app_S.fMHMMListOneTime_E.fullEnToCn);
         this.cte = NE.app_S.fMHMMListOneTime_E.fullCnToEn;
-        app_S.studyVerbaMap.putObject("fMHMMListOneTime_E.fullCnToEn"
+        app_S.studyVerbalMap.putObject("fMHMMListOneTime_E.fullCnToEn"
             , NE.app_S.fMHMMListOneTime_E.fullCnToEn);
         this.emotionSample = NE.app_S.emotionSample;
-        app_S.studyVerbaMap.putObject("emotionSample", NE.app_S.emotionSample);
+        app_S.studyVerbalMap.putObject("emotionSample", NE.app_S.emotionSample);
         this.ratioMap = NE.app_S.ratioMap;
-        app_S.studyVerbaMap.putObject("ratioMap", NE.app_S.ratioMap);
+        app_S.studyVerbalMap.putObject("ratioMap", NE.app_S.ratioMap);
         this.sensingTest = NE.app_S.sensingTest;
-        app_S.studyVerbaMap.putObject("sensingTest", NE.app_S.sensingTest);
+        app_S.studyVerbalMap.putObject("sensingTest", NE.app_S.sensingTest);
         this.fileType = fileType.toString();
     }
 

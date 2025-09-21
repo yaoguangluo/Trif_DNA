@@ -522,11 +522,14 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		TinMap output = NE._I_U.outputMap;
 		return E_pl_XA_E.E_pl_XA(orm, b, output, NE);
 	}
-
+	/*
+	 * 思考 同一个变量在不同的状态下如何有效地最简单地观测和协同计算。
+	 * */
 	// P_AO_pl_XA {
+	@SuppressWarnings("unchecked")
 	public void P_AggregationLimitMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
+		List<IMV_SIQ> output = (List<IMV_SIQ>) NE.app_S.currentTinmap.get("obj");
 		EmotionSample emotionSample = NE._I_U.emotionSample;
 		RatioMap_E ratioMap = NE._I_U.ratioMap_E;
 		P_AO_pl_XA.P_AggregationLimitMap(sets, output, emotionSample, ratioMap,

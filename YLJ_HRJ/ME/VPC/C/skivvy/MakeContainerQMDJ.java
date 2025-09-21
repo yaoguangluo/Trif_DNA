@@ -43,7 +43,7 @@ public class MakeContainerQMDJ extends MakeContainer_X_S_s
 		if (null == NE.app_S) {
 			return;// mock trif
 		}
-		this._A = (AE) NE.app_S.studyVerbaMap.getObject("_A");
+		this._A = (AE) NE.app_S.studyVerbalMap.getObject("_A");
 		// this._A = NE.app_S._A;
 	}
 

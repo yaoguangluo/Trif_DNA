@@ -81,11 +81,13 @@ public class FlowerAction {
 	@SuppressWarnings("unchecked")
 	public static void doAction(String callFunctionKey, String[] temp,
 			TinMap output, App NE) throws InterruptedException, IOException {
+		/*400 越来越多，准备设计逻辑层快速索引文档指南*/
+		System.out.println("pre-doAction-400-00005-" + callFunctionKey);
 		// 花语初始
 		String[] strings = new String[1];
 		IMV_SIQ outputReg = new IMV_SIQ();
 		IMV_SIQ inputValue = new IMV_SIQ();
-		NE.app_S.helpVerbaMap.didJustNow.put(callFunctionKey, new Object());// later*/
+		NE.app_S.helpVerbalMap.didJustNow.put(callFunctionKey, new Object());// later*/
 		String chromosome = StaticRootMap.staticClass_XE_Map
 				.getString(callFunctionKey);
 		String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome,
@@ -106,10 +108,16 @@ public class FlowerAction {
 		strings[0] = "执行 " + chromosome + " 下 " + callFunctionKey
 				+ " 接口, 参数是 传参因子";
 		// 孢子插件执行
+		//一旦走了孢子，那么花语就不会再执行了，可以将花语直接整合进肽语，
+		//那么这里的TVM extension 将会加强对 chromosomeNode的调用。，
 		if (StaticRootMap.chromosomeNode.containsKey(callFunctionKey)) {
 			CrabInterface crabInterface = (OSI.OSU.crab.CrabInterface) 
 					StaticRootMap.chromosomeNode.get(callFunctionKey);
-			crabInterface.logic(inputValue, 传参因子, 0, NE);
+			boolean done = crabInterface.logic(inputValue, 传参因子, 0, NE, outputReg);
+			//不断地修改过程中，变量轻微的变化导致的意识对变量函数速记缺陷。
+			if(done) {
+				StaticRootMap.tinShellV005(strings, outputReg, NE);	
+			}
 		} else {
 			// 下面是老的花函数执行
 			StaticRootMap.tinShellV005(strings, outputReg, NE);

@@ -135,26 +135,26 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 	 * 
 	 * 
 	 * */
-	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
-//		if (NE.app_S.workVerbaMap.cartesianWorkActionsRights.containsKey("-红色")) {
+	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg) {
+//		if (NE.app_S.workVerbalMap.cartesianWorkActionsRights.containsKey("-红色")) {
 //			//为-红色
 //			System.out.printf("highly fit"); // later in mapping iterator.*/
 //		}
 		System.out.println("Hello Word!");
-		if (NE.app_S.workVerbaMap.command_V.cartesianLooped
+		if (NE.app_S.workVerbalMap.command_V.cartesianLooped
 				.contains(className)) {
-			System.out.println("400-size-01-"
-					+ NE.app_S.workVerbaMap.command_V.countReject++);
-			return null;
+			//System.out.println("400-size-01-"
+			//		+ NE.app_S.workVerbalMap.command_V.countReject++);
+			return false;
 		}
-		NE.app_S.workVerbaMap.command_V.cartesianLooped.put(className, "");
-		System.out.println("400-size-02-"
-				+ NE.app_S.workVerbaMap.command_V.cartesianLooped.size());
+		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");
+		//System.out.println("400-size-02-"
+		//		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 
 		// 获取表
 		System.out.println("400---00001---");
 		if (!NE._I_U.outputMap.containsKey("获取表名")) {
-			return null;
+			return false;
 		}
 		System.out.println("400---00002---");
 		// later will loop join table;
@@ -181,7 +181,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 			}
 			System.out.println("400---00005---");
 			shellType += "颜色标记为|";
-			Iterator<String> iterators= NE.app_S.workVerbaMap.command_V
+			Iterator<String> iterators= NE.app_S.workVerbalMap.command_V
 					.cartesianWorkActionsRightsSV.keySet().iterator();
 			boolean find = false;
 			System.out.println("400---00006---");
@@ -213,7 +213,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 				}
 			}
 			//negative 关系测试
-			iterators= NE.app_S.workVerbaMap.command_V
+			iterators= NE.app_S.workVerbalMap.command_V
 					.cartesianWorkActionsRightsSV.keySet().iterator();
 			while(iterators.hasNext()) {
 				String string = iterators.next();
@@ -240,21 +240,21 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 				 * later -trif
 				 * */
 				if(string.contains("红色")){
-					System.out.println("400-10000005" + string);
+					//System.out.println("400-10000005" + string);
 					if(string.contains("不")) {
-						return null;
+						return false;
 					}
 				}
 			}
-			iterators= NE.app_S.workVerbaMap.command_V
+			iterators= NE.app_S.workVerbalMap.command_V
 					.cartesianWorkActionsRightsVO.keySet().iterator();
 			while(iterators.hasNext()) {
 				String string = iterators.next();
 				//System.out.println("400-10000004" + string);
 				if(string.contains("红色")){
-					System.out.println("400-10000005" + string);
+					//System.out.println("400-10000005" + string);
 					if(string.contains("不")) {
-						return null;
+						return false;
 					}
 				}
 			}
@@ -268,7 +268,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 			NE._I_U.outputMap.put("type", "进行选择");
 			System.out.println("400---00009---");
 		}
-		return null;
+		return true;
 	}
 }
 

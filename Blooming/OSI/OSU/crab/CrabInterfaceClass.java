@@ -99,9 +99,9 @@ public class CrabInterfaceClass implements CrabInterface {
 	// StaticRootMap.chromosomeRNA.put("crab", null);
 	// System.out.println("Hello Word!");
 	// return null;
-	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
+	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg) {
 		System.out.println("Hello Word!");
-		return null;
+		return true;
 	}
 
 	;
@@ -133,7 +133,7 @@ public class CrabInterfaceClass implements CrabInterface {
 		if (StaticRootMap.chromosomeNode.containsKey(callFunctionKey)) {
 			CrabInterface crabInterface = (OSI.OSU.crab.CrabInterface) StaticRootMap.chromosomeNode
 					.get(callFunctionKey);
-			crabInterface.logic(inputValue, 传参因子, 0, new App());
+			crabInterface.logic(inputValue, 传参因子, 0, new App(), outputReg);
 		}
 //		strings[0]= "执行 "+ chromosome+ " 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
 //		StaticRootMap.tinShellV005(strings, outputReg);

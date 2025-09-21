@@ -68,7 +68,7 @@ public interface CrabInterface {
 	// StaticRootMap.chromosomeRNA.put("crab", null);
 	// System.out.println("Hello Word!");
 	// return null;
-	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE);
+	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg);
 
 	// public void main(String[] arg) {
 	// CrabInterface crabInterface= CrabInterface.logic(null,

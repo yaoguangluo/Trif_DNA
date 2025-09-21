@@ -2,7 +2,7 @@ package S_A.SixActionMap;
 
 import org.junit.jupiter.api.Test;
 
-class CreativeVerbaMapTest {
+class CreativeVerbalMapTest {
 
     @Test
     void initInitonActions() {

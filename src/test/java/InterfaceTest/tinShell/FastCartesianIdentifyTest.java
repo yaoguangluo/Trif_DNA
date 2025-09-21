@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 import O_V.OSM.shell.CommandClass;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import S_A.SixActionMap.WorkVerbaMap;
+import S_A.SixActionMap.WorkVerbalMap;
 import test.java.InterfaceTest.CommonTestInition;
 
 /*
@@ -54,21 +54,21 @@ public class FastCartesianIdentifyTest {
 	 * Could start a few sections work below.
 	 * 
 	 * package name-- package S_A.SixActionMap; file name--
-	 * WorkVerbaMap function name-- findSubject
+	 * WorkVerbalMap function name-- findSubject
 	 * 
 	 * Yaoguang.Luo/罗瑶光
 	 */
 	// to do a swap..
 	/*
 	 * 首先提取已经有的函数通过 getCartesianRelationShipFromHumanTalk
-	 * 计算细腻的处理好 WorkVerbaMap 和他的 SVO 对象，笛卡尔的关系可以通过
+	 * 计算细腻的处理好 WorkVerbalMap 和他的 SVO 对象，笛卡尔的关系可以通过
 	 * 对象进行PCA，之前的排序就用上了，排序后选择。选择一些有代表性的，没有
 	 * 特殊符号的，明确动词的关系组，然后在这些关系组中通过
 	 * getCartesianPromotionTVMFromRelationShips进行跟进筛选归纳有价值的逻辑。
 	 */
 	@SuppressWarnings("unused")
 	public HashMap<String, String> getCartesianRelationShipFromHumanTalk(
-			WorkVerbaMap workVerbaMap) {
+			WorkVerbalMap workVerbalMap) {
 		/*
 		 * 这个函数用于 filter 笛卡尔map 中的 大量无用的成员，每减少一名成员，
 		 * 之后的 计算就增加一分速度和性能。
@@ -114,7 +114,7 @@ public class FastCartesianIdentifyTest {
 		 * 这些符号没有严谨的词性意义，在SVO中的POS作用表达不强，于是采用先提取再计算的逻辑。
 		 * 很多时候在非应激表达的劳动中，说服我做决策的从来不是我的主观爱好，而是客观辩证思维。
 		 */
-		Iterator<String> iterators = workVerbaMap.command_V._IMV_SIQ_SS.keySet()
+		Iterator<String> iterators = workVerbalMap.command_V._IMV_SIQ_SS.keySet()
 				.iterator();
 		while (iterators.hasNext()) {
 
@@ -125,28 +125,42 @@ public class FastCartesianIdentifyTest {
 			 * 找出不含有特殊符号的条件拆分，方便垃圾分类。 1 不含有与或非的string 2 3
 			 */
 			if (string.contains("&") || string.contains("|")
-					|| string.contains("!") || string.contains(";")
-					|| string.contains(":") || string.contains(" ")) {
+					|| string.contains("!") || string.contains(";") 
+					|| string.contains("*") || string.contains(":") || string.contains(" ")) {
 				/*
 				 * 关于这种逻辑的写法逐char匹配，应该在更前分词的时候就过滤掉，因为考虑到分词时候
 				 * 万一有符号+String的代号的组合转码条件，将造成更多断开的碎片。
 				 */
-				WordFrequency wordFrequency = workVerbaMap.command_V._IMV_SIQ_SS
+				WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SIQ_SS
 						.getW(string);
-				workVerbaMap.command_V.relationsGrammar.put(string,
+				workVerbalMap.command_V.relationsGrammar.put(string,
 						wordFrequency);
-				// workVerbaMap.command_V._IMV_SIQ_SS.remove(string);
+				// workVerbalMap.command_V._IMV_SIQ_SS.remove(string);
 				continue;
 			}
 			if (string.contains("*")) {
 				/*
-				 * 歧义数字变量关系
+				 * 歧义数字变量关系 
+				 * 思考 *号代表输入的文字中有变量，于是分析这个* 和处理后的变量是否需要同时存在与关系中。
+				 * 首先早期没有处理变量的时候，变量字符都是断开的，增加了大量的笛卡尔关系。
+				 * 增加了变量处理后，有了*，但是变量的position是char的位置来计算的，不是切词的list位置计算的。
+				 * 那么position也是规范准确的可用于计算的变量。* 在笛卡尔关系中的意义代表变量与词汇的关系。
+				 * 如果筛掉*，用原数字来表达，那么还要增加一层关系，数字是不是变量，再思考变量和词汇的关系。
+				 * 但是通常数字和词汇本就是变量的意思。
+				 * 那么这里可以先筛掉*，加个slash，以后要参考*的笛卡尔条件，去掉slash。
+				 * 目前我的CreativeVerbalMap 十六元基索引 TVM extension 和 blooming Action 都没有*的
+				 * 参照条件，可以注释下先筛掉。另外为了一个 * 增加一把笛卡尔关系词汇组其实也是不值得提倡的
+				 * 编码逻辑，可以采用含*的boolean标识，做条件编码，更规范的管理含有变量的逻辑句。
+				 * 于是思路就清晰了 * 属于语法 构造关系。先并入relationsGrammar关系中
+				 * 
+				 * --罗瑶光
+				 * 
 				 */
-				WordFrequency wordFrequency = workVerbaMap.command_V._IMV_SIQ_SS
-						.getW(string);
-				workVerbaMap.command_V._IMV_SIQ_SS_temp.put(string,
-						wordFrequency);
-				continue;
+				//WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SIQ_SS
+				//		.getW(string);
+				//workVerbalMap.command_V._IMV_SIQ_SS_temp.put(string,
+				//		wordFrequency);
+				//continue;
 			}
 			/*
 			 * ASCII关系 字母关系 65～90 97～122 思考如果是其他语言呢？毫无价值。先不管。
@@ -154,9 +168,9 @@ public class FastCartesianIdentifyTest {
 			boolean findEnglish = false;
 			findEnglish = findEnglishFromString(string);
 			if (true == findEnglish) {
-				WordFrequency wordFrequency = workVerbaMap.command_V._IMV_SIQ_SS
+				WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SIQ_SS
 						.getW(string);
-				workVerbaMap.command_V.relationsEnglish.put(string,
+				workVerbalMap.command_V.relationsEnglish.put(string,
 						wordFrequency);
 				continue;
 			}
@@ -164,15 +178,15 @@ public class FastCartesianIdentifyTest {
 			 * ASCII关系 特殊符号关系 这个最难处理，各种语言符号，各种特殊符号，各种。。later
 			 */
 			// to do
-			WordFrequency wordFrequency = workVerbaMap.command_V._IMV_SIQ_SS
+			WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SIQ_SS
 					.getW(string);
-			workVerbaMap.command_V._IMV_SIQ_SS_temp.put(string, wordFrequency);
+			workVerbalMap.command_V._IMV_SIQ_SS_temp.put(string, wordFrequency);
 		}
 		System.out.println(
-				"筛选前主要关系数-->" + workVerbaMap.command_V._IMV_SIQ_SS.size());
+				"筛选前主要关系数-->" + workVerbalMap.command_V._IMV_SIQ_SS.size());
 		System.out.println(
-				"筛选后主要关系数-->" + workVerbaMap.command_V._IMV_SIQ_SS_temp.size());
-		workVerbaMap.command_V._IMV_SIQ_SS = workVerbaMap.command_V._IMV_SIQ_SS_temp;
+				"筛选后主要关系数-->" + workVerbalMap.command_V._IMV_SIQ_SS_temp.size());
+		workVerbalMap.command_V._IMV_SIQ_SS = workVerbalMap.command_V._IMV_SIQ_SS_temp;
 		return null;
 	}
 
@@ -208,7 +222,7 @@ public class FastCartesianIdentifyTest {
 	 * 在这个逻辑思维中，我一直在思考--碎片记忆与段落记忆的方式不同 则对 函数的计算影响也不同。
 	 * 如何有效地区分和管理这些不同所带来的问题集合。 这是一个非常抽象的难以描述的逻辑和概念
 	 * ，如果不经过反复地推敲和细腻的文字描述，很难发现这些点。可这些点偏偏价值巨大。 在科学
-	 * 上，任何名词的定义是没有好似，好像，类似这了词汇的，如果有，那便是对基础认知
+	 * 上，任何名词的定义是没有好似，好像，类似这种词汇思维的，如果有，那便是对基础认知
 	 * 不足，或者是当前的思维无法分辨某一类现象，又或者是这类现象还没有被严谨地归纳和定义。
 	 * 
 	 * 1 有效地规避函数级别的死循环 和 类级别的死递归。 
@@ -226,7 +240,7 @@ public class FastCartesianIdentifyTest {
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		CommandClass command_V = new CommandClass();
-		commonTestInition.NE.app_S.workVerbaMap.command_V = command_V;
+		commonTestInition.NE.app_S.workVerbalMap.command_V = command_V;
 		// 输入
 		String command = "条件为:和:功效|DNN搜索|功效|菜谱|4;";
 		command_V.commandWithoutNumerics = command.toString();
@@ -235,7 +249,7 @@ public class FastCartesianIdentifyTest {
 		command_V.initSixActions(commonTestInition.NE);
 		command_V.initArabicNumber();
 		// 计算
-		commonTestInition.NE.app_S.workVerbaMap
+		commonTestInition.NE.app_S.workVerbalMap
 				.setHumanTalkAfterNewBusinessTest(command_V,
 						commonTestInition.NE);
 		Iterator<String> iterators = command_V._IMV_SIQ_SS_Q.keySet()
@@ -245,40 +259,40 @@ public class FastCartesianIdentifyTest {
 			WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q.getW(string);
 			command_V._IMV_SIQ_SS.put(string, WordFrequency);
 		}
-		commonTestInition.NE.app_S.workVerbaMap.initEnvironment();
+		commonTestInition.NE.app_S.workVerbalMap.initEnvironment();
 
 		// 统计筛选归纳
 		/*
 		 * 这里效果就出来，去掉之前繁杂的调试逻辑。观测速度翻好几番。 later。。
 		 */
 		fastCartesianIdentifyTest.getCartesianRelationShipFromHumanTalk(
-				commonTestInition.NE.app_S.workVerbaMap);
+				commonTestInition.NE.app_S.workVerbalMap);
 
 		/*
 		 * 函数稳定后我会专门花时间分配 public private protected sync 函数方法。
 		 * 目前在没有冲突的情况下 整体先 public -- 罗瑶光
 		 */
-		commonTestInition.NE.app_S.workVerbaMap
+		commonTestInition.NE.app_S.workVerbalMap
 				.relationshipsCombinationWithNoun();
-		commonTestInition.NE.app_S.workVerbaMap
+		commonTestInition.NE.app_S.workVerbalMap
 				.relationshipsCombinationWithVerb();
-		commonTestInition.NE.app_S.workVerbaMap
+		commonTestInition.NE.app_S.workVerbalMap
 				.relationshipsCombinationWithNounAndVerb();
-		commonTestInition.NE.app_S.workVerbaMap
+		commonTestInition.NE.app_S.workVerbalMap
 				.initCartesianActions(commonTestInition.NE, command_V);
-		commonTestInition.NE.app_S.workVerbaMap
+		commonTestInition.NE.app_S.workVerbalMap
 				.sortCartesianWorkActionsPositionSV(commonTestInition.NE,
 						command_V);
-		commonTestInition.NE.app_S.workVerbaMap
+		commonTestInition.NE.app_S.workVerbalMap
 				.sortCartesianWorkActionsDistanceSV(commonTestInition.NE,
 						command_V);
-		commonTestInition.NE.app_S.workVerbaMap
+		commonTestInition.NE.app_S.workVerbalMap
 				.sortCartesianWorkActionsPositionVO(commonTestInition.NE,
 						command_V);
-		commonTestInition.NE.app_S.workVerbaMap
+		commonTestInition.NE.app_S.workVerbalMap
 				.sortCartesianWorkActionsDistanceVO(commonTestInition.NE,
 						command_V);
-		commonTestInition.NE.app_S.workVerbaMap
+		commonTestInition.NE.app_S.workVerbalMap
 				.actionsNormalization(commonTestInition.NE, command_V);
 
 		// 输出

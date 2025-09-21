@@ -39,7 +39,7 @@ import test.java.InterfaceTest.CommonTestInition;
  * 
  * 于是跟进思考如何解决这个问题。 1 在NE创造变量的时候就put map，这就对了嘛。这个计划我可以立即
  * 执行 2 在NE创造函数的时候就put map，这就对了嘛。这个计划我也可以立即执行 3 。。later trif
- * 那就准备干干 1. 目前我用的是app_S.studyVerbaMap.putObject这种方式进行索引，这里有个问题，
+ * 那就准备干干 1. 目前我用的是app_S.studyVerbalMap.putObject这种方式进行索引，这里有个问题，
  * 这种方式不是全局化索引，全局索引其实也可以，只是NE的变量都是没有赋值的参数，都是null，这种问题
  * 也好解决。解决办法是我当缓存来写即可，map有就取值，没有就添加，我要做的是将时间过滤属性改为
  * 频率过滤属性即可。 
@@ -50,7 +50,7 @@ import test.java.InterfaceTest.CommonTestInition;
  * 
  * 跟进思考， annotation索引花的是 method，对于field索引来说，索引的是类和变量，一个是逻辑关系
  * 一个是计算关系。仅仅做缓存使用即可，之前我说否定论做精度匹配，看样子已经创造了完整的条件了。
- * StudyVerbaMap 的 _SMV 之后会大有用途。
+ * StudyVerbalMap 的 _SMV 之后会大有用途。
  * 
  * 
  * --罗瑶光 十六元基索引 教父--
@@ -109,7 +109,7 @@ public class FindAllPackageFiles {
 		 * 内因是我有责任和义务完美元基花语。 --罗瑶光
 		 */
 
-		commonTestInition.NE.app_S.studyVerbaMap.init_SMV(commonTestInition.NE);
+		commonTestInition.NE.app_S.studyVerbalMap.init_SMV(commonTestInition.NE);
 		// 关闭
 		commonTestInition.endEnvironment();
 	}

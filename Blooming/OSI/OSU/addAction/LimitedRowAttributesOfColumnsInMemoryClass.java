@@ -4,11 +4,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import A_V.E.RatioMap_E;
 import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
+import O_V.OSA.shell.XA_ShellQ_Rows_E;
+import O_V.OSM.shell.P_AO_pl_XA;
+import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
 import S_A.SEM.bloom.StaticRootMap;
+import S_A.VSQ.parser.EmotionSample;
 import S_A.pheromone.IMV_SIQ;
+import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
+import jnisort.LYGSortESU9D;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -25,6 +32,7 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		implements CrabInterface {
 	String callFunctionKey;
 	String className = "LimitedRowAttributesOfColumnsInMemoryClass";
+
 	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
 	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
 	// public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
@@ -147,16 +155,16 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 	 * --罗瑶光
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public Object logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE) {
-		if (NE.app_S.workVerbaMap.command_V.cartesianLooped
+	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg) {
+		if (NE.app_S.workVerbalMap.command_V.cartesianLooped
 				.contains(className)) {
-			System.out.println("400-size-01-"
-					+ NE.app_S.workVerbaMap.command_V.countReject++);
-			return null;
+			//System.out.println("400-size-01-"
+			//		+ NE.app_S.workVerbalMap.command_V.countReject++);
+			return false;
 		}
-		NE.app_S.workVerbaMap.command_V.cartesianLooped.put(className, "");
-		System.out.println("400-size-02-"
-				+ NE.app_S.workVerbaMap.command_V.cartesianLooped.size());
+		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");
+		//System.out.println("400-size-02-"
+		//		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 
 		// 1 识别 数字 信息
 		/*
@@ -180,11 +188,11 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		 * 
 		 * "操作:0|行至|30;\r\n" 终于到了这一步了，
 		 */
-		if(!NE.app_S.workVerbaMap.command_V.command.contains("行")) {
-			return "";
+		if (!NE.app_S.workVerbalMap.command_V.command.contains("行")) {
+			return false;
 		}
 		System.out.println("LimitedRow-string-400-00-->\n");
-		Iterator<String> iterators = NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsSV
+		Iterator<String> iterators = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
 				.keySet().iterator();
 		String fromValue = "";
 		String toValue = "";
@@ -192,19 +200,21 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		boolean needFind = false;
 		while (iterators.hasNext()) {
 			String string = iterators.next();
-			System.out.println("LimitedRow-string-400-01-->"+ string);
+			System.out.println("LimitedRow-string-400-01-->" + string);
 			if (string.contains("V+行")) {
 				needFind = true;
 				break;
 			}
 		}
-		System.out.println("LimitedRow-string-400-01-01->"+ needFind);
+		System.out.println("LimitedRow-string-400-01-01->" + needFind);
+		List<String> fromValues = new ArrayList<>();
+		List<String> toValues = new ArrayList<>();
 		if (needFind) {
-			iterators = NE.app_S.workVerbaMap.command_V.cartesianWorkActionsRightsVO
+			iterators = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
 					.keySet().iterator();
 			while (iterators.hasNext()) {
 				String string = iterators.next();
-				System.out.println("LimitedRow-string-400-02-->"+ string);
+				//System.out.println("LimitedRow-string-400-02-->" + string);
 				if (string.contains("从-")) {
 					System.out.println(
 							"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
@@ -223,6 +233,10 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 						// 3
 						if (isNumeric) {
 							fromValue = strings[1];
+							fromValues.add(string);
+							/*
+							 * 相同数多的情况下，需要将fromValue +精度变成一个list，选择最短的条件进行输出。
+							 */
 						}
 					}
 					// 4
@@ -245,13 +259,45 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 						// 3
 						if (isNumeric) {
 							toValue = strings[1];
+							/*
+							 * 同理 相同数多的情况下，需要将fromValue +精度变成一个list，选择最短的条件进行输出。
+							 * 关于源码的循序渐进设计思维方式，价值思考 --later
+							 */
+							toValues.add(string);
 						}
 					}
 				}
 			}
 		}
+		// 排序逻辑
+		if (fromValues.isEmpty() || toValues.isEmpty()) {
+			return false;
+		}
+		String[] fromValueStrings = new String[fromValues.size()];
+		int[] fromValueStringRights = new int[fromValues.size()];
+		String[] toValueStrings = new String[toValues.size()];
+		int[] toValueStringRights = new int[toValues.size()];
+		/*
+		 * size大就用iterator，自己去探索为什么。
+		 * */
+		for (int i = 0; i < fromValues.size(); i++) {
+			fromValueStrings[i] = fromValues.get(i);
+			String temp = NE.app_S.workVerbalMap.command_V
+					.cartesianWorkActionsRightsVO.getString(fromValueStrings[i]);
+			fromValueStringRights[i] = Integer.valueOf(temp);
+		}
+		for (int i = 0; i < toValues.size(); i++) {
+			toValueStrings[i] = toValues.get(i);
+			String temp = NE.app_S.workVerbalMap.command_V
+					.cartesianWorkActionsRightsVO.getString(toValueStrings[i]);
+			toValueStringRights[i] = Integer.valueOf(temp);
+		}
+		// sort
+		new LYGSortESU9D().javaSort(fromValueStringRights, fromValueStrings);
+		new LYGSortESU9D().javaSort(toValueStringRights, toValueStrings);
 		// 3 信息组合 成指令集术语
-		String shellType = "操作:" + fromValue + "|行至|" + toValue + "";
+		String shellType = "操作:" + fromValueStrings[0].split("-")[1]+ "|行至|" 
+		+ toValueStrings[0].split("-")[1] + "";
 		// 4 输出
 		System.out.println("400---00007---");
 		System.out.println(shellType);
@@ -262,6 +308,9 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		NE._I_U.outputMap.put("操作", list);// 集成到老的接口模式先，避免bug*/
 		NE._I_U.outputMap.put("type", "进行选择");
 		System.out.println("400---00009---");
+		//register
+		NE._I_U.sets = strings[1].split("\\|");
+		
 		/*
 		 * 以后指令集的编码风格也可以进行系统的流程归纳比如这里的 1 和 2 //1 识别 数字 信息 //2
 		 * 识别行至属性的指令集 信息，通过计算哲学来进行思考，--识别 数字 信息，数字--是特指
@@ -280,8 +329,10 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		 * 
 		 * --罗瑶光
 		 */
-
-		return null;
+		//当年我犯了个错误，合并了多个工程调通后的程序没有及时的注释掉，导致莫名乱码UTF8乱码问题后import出错选择了没有注释掉的源码。
+		//我当时不注释的原因是将来用得到加上通过入参不同来确定函数唯一。
+		
+		return true;
 	}
 }
 

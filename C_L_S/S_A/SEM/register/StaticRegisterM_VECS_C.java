@@ -17,6 +17,7 @@ import java.util.Iterator;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticRegisterM_VECS_C {
+	@SuppressWarnings("unchecked")
 	public static void load(StaticFunctionMapM_VECS_E staticFunctionMapM_VECS_E) {
 		
 		//稍后封装
@@ -53,7 +54,10 @@ public class StaticRegisterM_VECS_C {
 		StaticFunctionMapM_VECS_C.annotationMap.put("updateRowsByAttributesOfGetCulumns", "object");
 		StaticFunctionMapM_VECS_C.annotationMap.put("E_PLSQL", "plslq:mod");
 		StaticFunctionMapM_VECS_C.annotationMap.put("E_PLORM", "orm:b");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_AggregationLimitMap", "sets:output");
+		/*
+		 * 早期多工程的tinshell花函数 合并会造成duplication问题，需要剔除。
+		 * */
+		//StaticFunctionMapM_VECS_C.annotationMap.put("P_AggregationLimitMap", "sets:output");
 		StaticFunctionMapM_VECS_C.annotationMap.put("P_Cache"
 				, "sets:output:tableName:baseName:object");
 		StaticFunctionMapM_VECS_C.annotationMap.put("P_kernel"

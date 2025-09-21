@@ -2,9 +2,9 @@ package test.java.InterfaceTest.tinShell;
 
 import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import S_A.SEM.bloom.StaticFunctionMapQ_VECS_E;
-import S_A.SixActionMap.CreativeVerbaMap;
+import S_A.SixActionMap.CreativeVerbalMap;
 import S_A.SixActionMap.FlowerAction;
-import S_A.SixActionMap.StudyVerbaMap;
+import S_A.SixActionMap.StudyVerbalMap;
 import S_A.pheromone.AES_QMS_XSD_TIH;
 import S_A.pheromone.IMV_SIQ;
 import org.junit.jupiter.api.Test;
@@ -61,10 +61,10 @@ class SortFlowerTalkTest {
 		// 初始化 花语函数表
 		// initon plugin types without OSGI
 		System.out.println("FlowerSixDomainActions 元基花自主添加六元催化函数注册");
-		CreativeVerbaMap.initInitonActions();
+		CreativeVerbalMap.initInitonActions();
 		//
 		System.out.println("initonDelegate 元基花触发词汇添加");
-		StudyVerbaMap.initInitonDelegate();
+		StudyVerbalMap.initInitonDelegate();
 		//
 		System.out.println("FlowerP_E_KernelActions 元基花脚本函数注册");
 		FlowerAction.initFlowerP_E_KernelActions();

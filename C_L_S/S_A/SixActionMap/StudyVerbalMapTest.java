@@ -2,7 +2,7 @@ package S_A.SixActionMap;
 
 import org.junit.jupiter.api.Test;
 
-class StudyVerbaMapTest {
+class StudyVerbalMapTest {
 
     @Test
     void initInitonDelegate() {

@@ -22,8 +22,8 @@ import P_V.PEQ.AMV.ECS.test.SensingTest;
 import P_V.PEQ.OPM.VEC.test.SuccessICATest;
 import S_A.SVQ.stable.S_Colors;
 import S_A.SVQ.stable.S_MapsInitons;
-import S_A.SixActionMap.StudyVerbaMap;
-import S_A.SixActionMap.WorkVerbaMap;
+import S_A.SixActionMap.StudyVerbalMap;
+import S_A.SixActionMap.WorkVerbalMap;
 import S_A.VSQ.parser.EmotionSample;
 import S_A.linePage.PageQ;
 import VSQ.parser.FMHMMListOneTime_E_X_S;
@@ -53,7 +53,7 @@ public class CommonTestInition {
 		NE.tempString = stringConfigUI.toString();// 注意哦，这行别乱用
 		NE.app_S = new App_S();
 		App_S app_S = NE.app_S;
-		app_S.studyVerbaMap = new StudyVerbaMap();
+		app_S.studyVerbalMap = new StudyVerbalMap();
 		return app_S;
 	}
 
@@ -61,7 +61,7 @@ public class CommonTestInition {
 		System.out.println("*卷积环境 init*");
 		U_A.PEU.P.wave.Guassian.initKernel(5, 1.7);// later in golbal
 		app_S.pageQ = new PageQ();
-		app_S.studyVerbaMap.putObject("pageQ", app_S.pageQ);
+		app_S.studyVerbalMap.putObject("pageQ", app_S.pageQ);
 	}
 
 	public void initPDE(App_S app_S) {
@@ -73,76 +73,76 @@ public class CommonTestInition {
 	public void initSort(App_S app_S) {
 		System.out.println("*排序环境 init*");
 		app_S.quick6DLuoYaoguangSort3DMap_E = new Quick6DLuoYaoguangSort3DMap_E();
-		app_S.studyVerbaMap.putObject("quick6DLuoYaoguangSort3DMap_E",
+		app_S.studyVerbalMap.putObject("quick6DLuoYaoguangSort3DMap_E",
 				app_S.quick6DLuoYaoguangSort3DMap_E);
 		app_S.lYGSortESU9D = new LYGSortESU9D();
-		app_S.studyVerbaMap.putObject("lYGSortESU9D", app_S.lYGSortESU9D);
+		app_S.studyVerbalMap.putObject("lYGSortESU9D", app_S.lYGSortESU9D);
 	}
 
 	public void initOrtho(App_S app_S) {
 		System.out.println("*语料库表环境 init*");
 		ReadPinYinBihua.getPinYinBihuaMap(NE);
 		app_S.lenovoInit = new LenovoInit();
-		app_S.studyVerbaMap.putObject("lenovoInit", app_S.lenovoInit);
+		app_S.studyVerbalMap.putObject("lenovoInit", app_S.lenovoInit);
 		app_S.environmentInit = new EnvironmentInit();
-		app_S.studyVerbaMap.putObject("environmentInit", app_S.environmentInit);
+		app_S.studyVerbalMap.putObject("environmentInit", app_S.environmentInit);
 		app_S.emotionInit = new EmotionInit();
-		app_S.studyVerbaMap.putObject("emotionInit", app_S.emotionInit);
+		app_S.studyVerbalMap.putObject("emotionInit", app_S.emotionInit);
 		app_S.ratioMap_E = new RatioMap_E();// 350m 70m*/
-		app_S.studyVerbaMap.putObject("ratioMap_E", app_S.ratioMap_E);
+		app_S.studyVerbalMap.putObject("ratioMap_E", app_S.ratioMap_E);
 		app_S.ratioMap = app_S.ratioMap_E;
-		app_S.studyVerbaMap.putObject("ratioMap", app_S.ratioMap);
+		app_S.studyVerbalMap.putObject("ratioMap", app_S.ratioMap);
 		app_S.emotionSample = new EmotionSample();// later..*/
-		app_S.studyVerbaMap.putObject("emotionSample", app_S.emotionSample);
+		app_S.studyVerbalMap.putObject("emotionSample", app_S.emotionSample);
 		app_S.sensingTest = new SensingTest();
-		app_S.studyVerbaMap.putObject("sensingTest", app_S.sensingTest);
+		app_S.studyVerbalMap.putObject("sensingTest", app_S.sensingTest);
 		app_S.successICATest = new SuccessICATest();
-		app_S.studyVerbaMap.putObject("successICATest", app_S.successICATest);
+		app_S.studyVerbalMap.putObject("successICATest", app_S.successICATest);
 		app_S.sensingMap_E = new SensingMap_E();
-		app_S.studyVerbaMap.putObject("sensingMap_E", app_S.sensingMap_E);
+		app_S.studyVerbalMap.putObject("sensingMap_E", app_S.sensingMap_E);
 		app_S.emotionMap_E = new EmotionMap_E();
-		app_S.studyVerbaMap.putObject("emotionMap_E", app_S.emotionMap_E);
+		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
 		app_S.emotionMap_E.IV_MotivationMap(NE);
-		app_S.studyVerbaMap.putObject("emotionMap_E", app_S.emotionMap_E);
+		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
 		app_S.emotionMap_E.IV_TrendingMap(NE);
-		app_S.studyVerbaMap.putObject("emotionMap_E", app_S.emotionMap_E);
+		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
 		app_S.emotionMap_E.IV_PredictionMap(NE);
-		app_S.studyVerbaMap.putObject("emotionMap_E", app_S.emotionMap_E);
+		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
 		app_S.emotionMap_E.IV_DistinctionMap(NE);
-		app_S.studyVerbaMap.putObject("emotionMap_E", app_S.emotionMap_E);
+		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
 		app_S.emotionMap_E.IV_NegativeMap(NE);
-		app_S.studyVerbaMap.putObject("emotionMap_E", app_S.emotionMap_E);
+		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
 		app_S.emotionMap_E.IV_PositiveMap(NE);
-		app_S.studyVerbaMap.putObject("emotionMap_E", app_S.emotionMap_E);
+		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
 	}
 
 	public void initCNN(App_S app_S) {
 		System.out.println("*CNN type init*");
 		System.out.println("*ANN RNN DNN init*");
 		app_S.dNNTest = new DNNTest();
-		app_S.studyVerbaMap.putObject("dNNTest", app_S.dNNTest);
+		app_S.studyVerbalMap.putObject("dNNTest", app_S.dNNTest);
 		app_S.aNNTest = new ANNTest();
-		app_S.studyVerbaMap.putObject("aNNTest", app_S.aNNTest);
+		app_S.studyVerbalMap.putObject("aNNTest", app_S.aNNTest);
 		app_S.rNN_IDETest = new RNN_IDETest();
-		app_S.studyVerbaMap.putObject("rNN_IDETest", app_S.rNN_IDETest);
+		app_S.studyVerbalMap.putObject("rNN_IDETest", app_S.rNN_IDETest);
 	}
 
 	public void initCatalytic(App_S app_S) {
 		System.out.println("*六元催化 map*");
-		app_S.workVerbaMap = new WorkVerbaMap();
-		app_S.studyVerbaMap.putObject("workVerbaMap", app_S.workVerbaMap);
+		app_S.workVerbalMap = new WorkVerbalMap();
+		app_S.studyVerbalMap.putObject("workVerbalMap", app_S.workVerbalMap);
 		CommandClass command_V = new CommandClass();
-		app_S.workVerbaMap.initActionMap(command_V);
-		app_S.studyVerbaMap.putObject("workVerbaMap", app_S.workVerbaMap);
+		app_S.workVerbalMap.initActionMap(command_V);
+		app_S.studyVerbalMap.putObject("workVerbalMap", app_S.workVerbalMap);
 	}
 
 	public void initPOS(App_S app_S) {
 		System.out.println("*词性环境 init*");
 		app_S.nERO_C_OneTime_E = new NERO_C_OneTime_E();
-		app_S.studyVerbaMap.putObject("nERO_C_OneTime_E",
+		app_S.studyVerbalMap.putObject("nERO_C_OneTime_E",
 				app_S.nERO_C_OneTime_E);
 		app_S.fMHMMListOneTime_E = new FMHMMListOneTime_E();
-		app_S.studyVerbaMap.putObject("fMHMMListOneTime_E",
+		app_S.studyVerbalMap.putObject("fMHMMListOneTime_E",
 				app_S.fMHMMListOneTime_E);
 	}
 
@@ -162,33 +162,33 @@ public class CommonTestInition {
 		System.out.println("*自然语言环境 init*");
 		app_S._A.IV_Mixed(NE);
 		app_S.fMHMMListOneTime_E_X_S = (FMHMMListOneTime_E_X_S) app_S._A.fHMMList;
-		app_S.studyVerbaMap.putObject("fMHMMListOneTime_E_X_S",
+		app_S.studyVerbalMap.putObject("fMHMMListOneTime_E_X_S",
 				app_S.fMHMMListOneTime_E_X_S);
 		app_S._A.forestRoots = app_S._A.fHMMList.getMap();
-		app_S.studyVerbaMap.putObject("_A.forestRoots ", app_S._A.forestRoots);
+		app_S.studyVerbalMap.putObject("_A.forestRoots ", app_S._A.forestRoots);
 		app_S.pos_X_P = new Pos_X_P();
-		app_S.studyVerbaMap.putObject("pos_X_P", app_S.pos_X_P);
+		app_S.studyVerbalMap.putObject("pos_X_P", app_S.pos_X_P);
 		app_S.nlp_CE_X_S = new Nlp_CE_X_S();
-		app_S.studyVerbaMap.putObject("nlp_CE_X_S", app_S.nlp_CE_X_S);
+		app_S.studyVerbalMap.putObject("nlp_CE_X_S", app_S.nlp_CE_X_S);
 	}
 
 	public void initInitonRoots(App_S app_S) {
 		System.out.println("*其他枝叶 register*");
 		app_S.pos_X_P.wordsForest = app_S.fMHMMListOneTime_E_X_S.posCnToCn;
-		app_S.studyVerbaMap.putObject("pos_X_P.wordsForest",
+		app_S.studyVerbalMap.putObject("pos_X_P.wordsForest",
 				app_S.pos_X_P.wordsForest);
 		app_S.nlp_CE_X_S.wordsForest = app_S.fMHMMListOneTime_E_X_S.posCnToCn;
-		app_S.studyVerbaMap.putObject("nlp_CE_X_S.wordsForest",
+		app_S.studyVerbalMap.putObject("nlp_CE_X_S.wordsForest",
 				app_S.nlp_CE_X_S.wordsForest);
 		app_S._A.wordsForest = app_S.fMHMMListOneTime_E_X_S.posCnToCn;
-		app_S.studyVerbaMap.putObject("_A.wordsForest", app_S._A.wordsForest);
+		app_S.studyVerbalMap.putObject("_A.wordsForest", app_S._A.wordsForest);
 		app_S._A.nlp_C = app_S.nlp_CE_X_S;// later..*/
-		app_S.studyVerbaMap.putObject("_A.nlp_C", app_S._A.nlp_C);
+		app_S.studyVerbalMap.putObject("_A.nlp_C", app_S._A.nlp_C);
 		app_S._A.nlp_C.pos_X_P = app_S.pos_X_P;// 注意不要出现嵌套计算环境。*/
-		app_S.studyVerbaMap.putObject("_A.nlp_C.pos_X_P",
+		app_S.studyVerbalMap.putObject("_A.nlp_C.pos_X_P",
 				app_S._A.nlp_C.pos_X_P);
 		app_S._A.pos_C = app_S.pos_X_P;
-		app_S.studyVerbaMap.putObject("_A.pos_C", app_S._A.pos_C);
+		app_S.studyVerbalMap.putObject("_A.pos_C", app_S._A.pos_C);
 		NE._I_U = app_S;
 		app_S._AE = app_S._A;// 注意接口注册关系
 	}
