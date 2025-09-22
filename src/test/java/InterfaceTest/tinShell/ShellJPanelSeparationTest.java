@@ -462,164 +462,37 @@ class ShellJPanelSeparationTest {
 //Action-->:selectRowsByAttributesOfCondition
 
 //第2段
-//Generated with love by TestMe :) Please report issues and submit feature
-// requests at: http://weirddev.com/forum#!/testme
-//380
-//输出
-//line-->:XLS1753903322644
-//line-->:操作
-//line-->:success
-//line-->:0
-//line-->:进行选择
-//line-->:[ID, 打分, 中药名称, 笔记原文, 功效, 风险规避, 用法, 性味, 脉络, 中医馆药理
-// , 经解, 崇源, 愚按, 搭配, 序号]
-//line-->:XLS1753903322644
-//line-->:true
-//line-->:操作
-//line-->:0
-//line-->:[{rowValue={功效={culumnValue=功专托痘疮。下乳汁。吐风痰。中风证以虾半斤
-// 。入葱姜酱料水煮。先吃虾。次吃汁。以鹅翎探引吐出痰涎即愈。
-//能壮阳道。动风发呛。...., culumnName=功效}, 中药名称={culumnValue=<div style=
-// "background:black"><font color="red"><div style="
-//background:black"><font color="red"><div style="background:black"><font
-// color="red"><div style="background:black"><font
-//color="red"><div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red"><div style
-//="background:black"><font color="red"><div style="background:black">
-// <font color="red"><div style="background:black"><font
-//color="red"><div style="background:black"><font color="red">虾菜谱</font>
-// </div></font></div></font></div></font></div><
-///font></div></font></div></font></div></font></div></font></div></font>
-// </div>, culumnName=中药名称}, 打分={culumnValue=0,
-//culumnName=打分}}}, {rowValue={功效={culumnValue=功专温中益气。多食热中发渴
-// 。发疮疥。一名。鱼。...., culumnName=功效}, 中药名称={cu
-//lumnValue=<div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red"><div style="
-//background:black"><font color="red"><div style="background:black">
-// <font color="red"><div style="background:black"><font
-//color="red"><div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red"><div style=
-//"background:black"><font color="red"><div style="background:black">
-// <font color="red"><div style="background:black"><font
-//color="red">鲢鱼菜谱</font></div></font></div></font></div></font></div>
-// </font></div></font></div></font></div></font></d
-//iv></font></div></font></div>, culumnName=中药名称}, 打分={culumnValue=0
-// , culumnName=打分}}}, {rowValue={功效={culumnValue=
-//功专补五脏。除风湿。尾血疗口眼。斜。少和麝。左涂右。右。涂左。正则洗去。滴耳治耳痛。
-// 滴鼻治鼻衄。点目治痘后生翳。头治百虫入耳。...., culumnName=
-//功效}, 中药名称={culumnValue=<div style="background:black"><font color=
-// "red"><div style="background:black"><font color="re
-//d"><div style="background:black"><font color="red"><div style="background
-// :black"><font color="red"><div style="background
-//:black"><font color="red"><div style="background:black"><font color="red">
-// <div style="background:black"><font color="red"
-//><div style="background:black"><font color="red"><div style="background
-// :black"><font color="red"><div style="background:
-//black"><font color="red">鳝鱼菜谱</font></div></font></div></font></div>
-// </font></div></font></div></font></div></font></di
-//v></font></div></font></div></font></div>, culumnName=中药名称}, 打分
-// ={culumnValue=0, culumnName=打分}}}, {rowValue={功效={cu
-//lumnValue=功专调胃气。...., culumnName=功效}, 中药名称={culumnValue=<div style
-// ="background:black"><font color="red"><div sty
-//le="background:black"><font color="red"><div style="background:black">
-// <font color="red"><div style="background:black"><fo
-//nt color="red"><div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red"><div styl
-//e="background:black"><font color="red"><div style="background:black">
-// <font color="red"><div style="background:black"><fon
-//t color="red"><div style="background:black"><font color="red">鲂鱼菜谱</font>
-// </div></font></div></font></div></font></div>
-//</font></div></font></div></font></div></font></div></font></div></font>
-// </div>, culumnName=中药名称}, 打分={culumnValue=0,
-//culumnName=打分}}}, {rowValue={功效={culumnValue=马铃薯生长肌肉, 健骨, 抗癌。.,
-// culumnName=功效}, 中药名称={culumnValue=<div style
-//="background:black"><font color="red"><div style="background:black"><font color
-// ="red"><div style="background:black"><font
-//color="red"><div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red"><div style=
-//"background:black"><font color="red"><div style="background:black"><font color
-// ="red"><div style="background:black"><font
-//color="red"><div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red">马铃薯菜谱</fon
-//t></div></font></div></font></div></font></div></font></div></font></div></font>
-// </div></font></div></font></div></font>
-//</div>, culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}}, {rowValue
-// ={功效={culumnValue=山羊蹄子增强免疫, 健骨, 补元气
-//。., culumnName=功效}, 中药名称={culumnValue=<div style="background:black">
-// <font color="red"><div style="background:black">
-//<font color="red"><div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red"><div
-//style="background:black"><font color="red"><div style="background:black">
-// <font color="red"><div style="background:black"
-//><font color="red"><div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red"><div
-//style="background:black"><font color="red">山羊蹄菜谱</font></div></font></div>
-// </font></div></font></div></font></div></
-//font></div></font></div></font></div></font></div></font></div>, culumnName
-// =中药名称}, 打分={culumnValue=0, culumnName=打分}
-//}}, {rowValue={功效={culumnValue=功专暖中益气。醒酒解渴。同米粉煮羹食。调中收痔
-// 。煮食疗阳事不起。俗名泥鳅。...., culumnName=功效}, 中药名称
-//={culumnValue=<div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red"><div style
-//="background:black"><font color="red"><div style="background:black"><font color
-// ="red"><div style="background:black"><fo
-//nt color="red"><div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red"><div styl
-//e="background:black"><font color="red"><div style="background:black"><font color
-// ="red"><div style="background:black"><f
-//ont color="red">鳅鱼菜谱</font></div></font></div></font></div></font></div>
-// </font></div></font></div></font></div></font><
-///div></font></div></font></div>, culumnName=中药名称}, 打分={culumnValue=0
-// , culumnName=打分}}}, {rowValue={功效={culumnValu
-//e=咖喱去腥开胃生津防腐杀虫提神充饥抗癌。., culumnName=功效}, 中药名称={culumnValue
-// =<div style="background:black"><font color="red">
-//<div style="background:black"><font color="red"><div style="background:black">
-// <font color="red"><div style="background:bl
-//ack"><font color="red"><div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red">
-//<div style="background:black"><font color="red"><div style="background:black">
-// <font color="red"><div style="background:b
-//lack"><font color="red"><div style="background:black"><font color="red">
-// 食物咖喱菜谱</font></div></font></div></font></div>
-//</font></div></font></div></font></div></font></div></font></div></font>
-// </div></font></div>, culumnName=中药名称}, 打分={cu
-//lumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=常用于润肺护肤抗癌。
-// ., culumnName=功效}, 中药名称={culumnValue=<div
-//style="background:black"><font color="red"><div style="background:black">
-// <font color="red"><div style="background:black">
-//<font color="red"><div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red"><div
-//style="background:black"><font color="red"><div style="background:black">
-// <font color="red"><div style="background:black">
-//<font color="red"><div style="background:black"><font color="red"><div style
-// ="background:black"><font color="red">西红柿菜谱
-//</font></div></font></div></font></div></font></div></font></div></font>
-// </div></font></div></font></div></font></div></font>
-//</div>, culumnName=中药名称}, 打分={culumnValue=0, culumnName=打分}}}, {rowValue
-// ={功效={culumnValue=蛋有消炎解毒, 壮阳, 补元气, 提神
-//, 预防感冒。., culumnName=功效}, 中药名称={culumnValue=<div style="background:
-// black"><font color="red"><div style="backgrou
-//nd:black"><font color="red"><div style="background:black"><font color="red">
-// <div style="background:black"><font color="re
-//d"><div style="background:black"><font color="red"><div style="background:
-// black"><font color="red"><div style="backgroun
-//d:black"><font color="red"><div style="background:black"><font color="red">
-// <div style="background:black"><font color="re
-//d"><div style="background:black"><font color="red">鸡鸭鸽子鹌鹑蛋菜谱</font>
-// </div></font></div></font></div></font></div></fo
-//nt></div></font></div></font></div></font></div></font></div></font></div>,
-// culumnName=中药名称}, 打分={culumnValue=0, culum
-//nName=打分}}}]
-//line-->:10
-//line-->:success
-//line-->:0
-//line-->:10
-//Action-->:selectRowsByAttributesOfGetCulumns
-//Action-->:P_ListNeedStart
-//Action-->:selectRowsByAttributesOfAggregation
-//Action-->:P_TableName
-//Action-->:selectRowsByAttributesOfCondition
-//Action-->:addFindColumnsInMemoryClass
-//Disconnected from the target VM, address: '127.0.0.1:52739', transport: 'socket'
-//
+/*
+ * 
+ * line-->:[{rowValue={功效={culumnValue=功专暖中益气。醒酒解渴。同米粉煮羹食。调中收痔。煮食疗阳事不起。俗名泥鳅。...., culumnName=功效}, 
+ * 中药名称={culumnValue=<div style="background:black"><font color="red">鳅鱼菜谱</font></div>, culumnName=中药名称}, 
+ * 打分={culumnValue=0, culumnName=打分}}},
+ 
+ *  {rowValue={功效={culumnValue=咖喱去腥开胃生津防腐杀虫提神充饥抗癌。., culumnName=功效}, 
+ *  中药名称={culumnValue=<div style="background:black"><font color="red">食物咖喱菜谱</font></div>, culumnName=中药名称}, 
+ *  打分={culumnValue=0, culumnName=打分}}},
+ 
+ *   {rowValue={功效={culumnValue=常用于润肺护肤抗癌。., culumnName=功效}, 
+ *   中药名称={culumnValue=<div style="background:black"><font color="red">西红柿菜谱</font></div>, culumnName=中药名称}, 
+ *   打分={culumnValue=0, culumnName=打分}}}, 
+ 
+ *   {rowValue={功效={culumnValue=蛋有消炎解毒,壮阳,补元气,提神,预防感冒。., culumnName=功效}, 
+ *   中药名称={culumnValue=<div style="background:black"><font color="red">鸡鸭鸽子鹌鹑蛋菜谱</font></div>, culumnName=中药名称}, 
+ *   打分={culumnValue=0, culumnName=打分}}}]
+line-->:10
+line-->:success
+line-->:0
+line-->:4
+Action-->:updateColorAttributesOfColumnsInMemoryClass
+Action-->:selectRowsByAttributesOfGetCulumns
+Action-->:P_AggregationLimitMap
+Action-->:findTableInMemory
+Action-->:P_ListNeedStart
+Action-->:selectRowsByAttributesOfAggregation
+Action-->:P_TableName
+Action-->:P_fileOperations
+Action-->:selectRowsByAttributesOfCondition
+Action-->:addFindColumnsInMemoryClass
+ * 
+ * */
 //Process finished with exit code 0

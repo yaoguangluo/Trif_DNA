@@ -41,6 +41,6 @@
 	<classpathentry kind="src" path="YLJ_HRJ"/>
 	<classpathentry kind="src" path="hvpcs"/>
 	<classpathentry kind="src" path="unitTest"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/myLib"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/mylibMac"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
