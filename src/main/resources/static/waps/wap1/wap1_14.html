@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第一章_德塔自然语言图灵系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/> 基础应用: 元基催化与肽计算 编译机的语言分析机
+    <br/>
+    DNN 关联应用扩展
+    <br/>
+    DNN 关联应用扩展 具体方式有很多, 作者可以举出一些比较有价值的搭配实例, 如将红色分为 小红
+    , 浅红, 中红, 深红, 按255色阶分出4个程度阶. 然后根据DNN的词汇计算打分进行将词汇分类
+    用这4种颜色代替, 举例 香蕉和苹果都是水果, 进行DNN计算, 如果香蕉是30分, 苹果是40分,
+    水果是50分 那么进行色阶表达即可用 水果 深红, 苹果 中红, 香蕉 浅红 来色阶表达, 这是名词
+    的, 当然, 如果有形容词用紫色标识, 就 深紫, 中紫, 浅紫. 有 动词用黄色就 深黄, 中黄,
+    浅黄, 绿色就.. . 等等等, 这样德塔DNN的应用价值就灵活体现了. 应为属于工业应用,
+    作者在这里略先. 定义人 罗瑶光
+    <br/>
+    Expanding an associational DNN applications
+    <br/>
+    The author listed a demonstrational sample of DNN ranks to classify as
+    where their listed four colors of Red, Purple, Green and Yellow. Then
+    also made four levels ranged from these colors where such as
+    comparative degree of dark, little, median and deep. The max levels
+    scale was 255 on each pix. Assumed the input was '香蕉 和 苹果 都 是 水果', then
+    scored the DNN value of '香蕉' was 30, '苹果' was 40, and '水果' was 50.
+    Firstly, their values all were Noun of POS, means only mark as red
+    color which was enough. Secondly the DNN value of '水果' was the highest
+    of all, so was rendered a deep-red. The DNN value of '苹果' was higher
+    than '香蕉', therefore the '苹果' was rendered a median-red, and the '香蕉'
+    was rendered a little-red, made a distinction of other Nouns where
+    rendered a dark-red. Similarly, to other speeches classify. Purple for
+    adjectives, and yellow for vebs etc. <br/>
+    <br/>
+    2. 1 深度计算 (ANN sum核 -> RNN PCE) refer page 18 <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/1/1_10.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    为了方便大家的工程应用, 我组织下简单的文字来进行描述下. 从上图. 如果有一定经验的数据算法工程师
+    是很容易理解的. 如果是新手也不要着急, 因为真正问题只是概念描述 的问题. <br/>
+    <br/>
+    Deta 的DNN 是一个前序比对累增积分过程的内核算法. 需要做这个算法, 必要条件是 ANN 的最终运算
+    集合以及 RNN 的卷积内核参照. ANN 是比较基础的东西, 基础归基础, 应用领域非常强势,
+    2 维的数据永远离不开他. 通过 ANN 的计算, 我们在处理文章的词汇计算中可以得到一些通用的
+    信息集合, 比如文章的敏感度, 意识, 作者的精神状态, 动机, 作者当时的多语言环境因素等等,
+    为什么 可以得到？原因是比较通俗易懂的, 因为褒义, 贬义统计, 文章的不同的词性的比例, 和词汇
+    的转义猜测, 和名词的分类引申, 这些基础都是非常简单的信息进行普通处理. <br/>
+    <br/>
+    RNN 的内核矩阵就麻烦点了. Deta 的 RNN 内核矩阵主要是三个维度: 词性的统计值,
+    相同词汇的频率已经在文章中出现的欧几里得距离重心, 斜率关联等等, 这里需要严谨的算法
+    公式来推到出内核. <br/>
+    有了 ANN 的最终数据集合 和 RNN 的卷积核, 我们就可以做 CNN 轮询了 Deta 的 DNN 计算
+    定义就是基于德塔的Ann 矩阵数据得到最终1 维数列比, 然后进行德塔的RNN 内核做 卷积处理
+    的3 层深度前序累增积分概率比CNN 轮循运算. (为了追求更高的质量和精度, 小伙伴可以自由
+    改写我的作品思想源码, 增加更多的维度皆可. 永久开源, 别担心著作权问题, 以后赠予对象如
+    有进行出版社出版, 相关文字和内容的引用就要注意了. 当前采用开源协议为GPL2.0协议,
+    之前为APACHE2.0协议--APACHE容易引诱一些社会人钻空子滋扰，于是统一GPL来避嫌)
+    <br/>
+    上面介绍的是 ANN, RNN, CNN 关于公式, 环境, 原理和初始过程, 关于 Deta DNN 的计算算法
+    在图片中已经列出来了. <br/>这个算法的相关实现代码的核心部分地址如下: <br/>
+    <br/>
+    https://github.
+    com/yaoguangluo/Data_Processor/blob/master/DP/NLPProcessor/DETA_DNN.
+    java <br/>
+    Deta DNN (ANN summing kernel -> RNN PCE) <br/>
+    Above picture is a topic of foundation, a pre-sequence marching of
+    incremental differentiations, where based on the ANN-summing and
+    RNN-convolutional kernel computing. The kernel of ANN-summing and
+    RNN-computing, is belong to the domain of CNN convolutional kernel. The
+    definition of Deta ANN and RNN please see the original pages. The
+    author refers 'Yann.Lecun' here about an inventory of CNN. <br/>
+    The author YaoguangLuo 稍后优化语法. <br/>
+    <br/>
+</div>
+</body>

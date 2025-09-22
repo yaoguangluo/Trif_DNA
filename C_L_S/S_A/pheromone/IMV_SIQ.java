@@ -1,0 +1,367 @@
+package S_A.pheromone;
+
+import M_V.ME.APM.VSQ.xlx.CommonRotClass;
+import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
+import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
+import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
+import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
+import P_V.PCI.ASQ.demension.Line2D;
+import P_V.PCI.ASQ.demension.Line3D;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+
+/*
+ * 著作权人, 作者 罗瑶光, 浏阳
+ * * 作者的家庭是父亲 罗荣武，母亲 刘瑞珍，女儿 christina.yaja.luo/罗雅佳, 前妻ringli/李妙环。
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+*  208号 阳光家园别墅小区 第十栋
+ * */
+/*
+ * IMV_SIQ随着持续地优化，变得越来越复杂，于是之后有必要进行HVPCS关系分析。
+ * --trif
+ * 
+ * */
+@SuppressWarnings({ "unchecked", "serial", "rawtypes" })
+public class IMV_SIQ extends ConcurrentHashMap {
+	public boolean containsKeyChar(char input) {
+		if (this.containsKey("" + input)) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean getCompareV(String key, String compare) {
+		if (this.containsKey(key)) {
+			return this.get(key).toString().equalsIgnoreCase(compare);
+		}
+		return false;
+	}
+
+	public CommonRotClass getCommonRotClass(String string) {
+		if (this.containsKey(string)) {
+			return (CommonRotClass) this.get(string);
+		}
+		return null;
+	}
+
+	public ArrayList<AMV_MVS_VSQ_3D> getArrayList_AMV_MVS_VSQ_3D(
+			double shortestDoubleScale) {
+		Double _shortestDoubleScale = Double.valueOf(shortestDoubleScale);
+		if (this.containsKey(_shortestDoubleScale)) {
+			return (ArrayList<AMV_MVS_VSQ_3D>) this.get(_shortestDoubleScale);
+		}
+		return null;
+	}
+
+	public int getInt(String subject) {
+		if (this.containsKey(subject)) {
+			return (int) this.get(subject);
+		}
+		return -1;
+	}
+
+	public void putBoolean(String string, boolean value) {
+		this.put(string, value);
+	}
+
+	public AMV_MVS_VSQ_3D get_AMV_MVS_VSQ_3D(double doubleScale) {
+		Double _doubleScale = Double.valueOf(doubleScale);
+		if (this.containsKey(_doubleScale)) {
+			return (AMV_MVS_VSQ_3D) this.get(_doubleScale);
+		}
+		return null;
+	}
+
+	public ArrayList<AMV_MVS_VSQ_2D> get_List_AMV_MVS_VSQ_2D(
+			double doubleScale) {
+		Double _doubleScale = Double.valueOf(doubleScale);
+		if (this.containsKey(_doubleScale)) {
+			return (ArrayList<AMV_MVS_VSQ_2D>) this.get(_doubleScale);
+		}
+		return null;
+	}
+
+	public AMV_MVS_VSQ_2D get_AMV_MVS_VSQ_2D(Double shortestDoubleScale) {
+		if (this.containsKey(shortestDoubleScale)) {
+			return (AMV_MVS_VSQ_2D) this.get(shortestDoubleScale);
+		}
+		return null;
+	}
+
+	public IMV_SIQ getStringMap(String tag) {
+		if (this.containsKey(tag)) {
+			return (IMV_SIQ) this.get(tag);
+		}
+		return null;
+	}
+
+	public List<Line2D> getListLine2D(double distanceDouble) {
+		Double _distanceDouble = Double.valueOf(distanceDouble);
+		if (this.containsKey(_distanceDouble)) {
+			return (List<Line2D>) this.get(_distanceDouble);
+		}
+		return null;
+	}
+
+	public List<Line3D> getListLine3D(double distanceDouble) {
+		Double _distanceDouble = Double.valueOf(distanceDouble);
+		if (this.containsKey(_distanceDouble)) {
+			return (List<Line3D>) this.get(_distanceDouble);
+		}
+		return null;
+	}
+
+	public void putObject(String string, Object value) {
+		this.put(string, value);
+	}
+
+	public void putString(String string, String value) {
+		this.put(string, value);
+	}
+
+	public LinkNode getLinkNode(String string) {
+		if (this.containsKey(string)) {
+			return (LinkNode) this.get(string);
+		}
+		return null;// later null inst;
+	}
+
+	// java的一个失败点，类似构造体因为mutable寻址不同不能互相继承，不灵活。
+	public StringBuilder getStringBuilder(String subject) {
+		if (this.containsKey(subject)) {
+			Object object = this.get(subject);
+			if (object instanceof String) {
+				return new StringBuilder().append(object);
+			}
+			if (object instanceof StringBuilder) {
+				return (StringBuilder) object;
+			}
+
+		}
+		return null;
+	}
+
+	// later in SVO parts
+	public double getDouble(String string) {
+		if (this.containsKey(string)) {
+			Object doub = this.get(string);
+			if (null != doub) {
+				return (Double) doub;
+			}
+		}
+		return 0.0;
+	}
+
+	public IMV_SIQ QSV_IMV_SIQ(String key) {
+		if (this.containsKey(key)) {
+			return (IMV_SIQ) this.get(key);
+		}
+		return new IMV_SIQ();// avoid null;
+	}
+
+	public boolean getBoolean(String string) {
+		return (boolean) this.get(string);
+	}
+
+	public String getString(String key) {
+		if (this.containsKey(key)) {
+			return this.get(key).toString();
+		}
+		return "";
+	}
+
+	public String getString(char key) {
+		String string = String.valueOf(key);
+		if (this.containsKey(string)) {
+			return this.get(string).toString();
+		}
+		return "";
+	}
+
+	public void putLinkNode(String primaryKey, LinkNode node) {
+		this.put(primaryKey, node);
+	}
+
+	public List<Integer> getList(int color) {
+		if (this.containsKey(color)) {
+			return (List<Integer>) this.get(color);
+		}
+		return null;
+	}
+
+	public List<String> getListString(double key) {
+		Double _key = Double.valueOf(key);
+		if (this.containsKey(_key)) {
+			return (List<String>) this.get(_key);
+		}
+		return null;
+	}
+
+	public void putList(int color, List<Integer> pointRange) {
+		this.put(color, pointRange);
+	}
+
+	public Row getRow(String string) {
+		if (this.contains(string)) {
+			return (Row) this.get(string);
+		}
+		return null;
+	}
+
+	public void putRow(String s, Row huaRuiJiJtableRow) {
+		this.put(s, huaRuiJiJtableRow);
+	}
+
+	public void put_IMV_SIQ(String cellName, IMV_SIQ culumnMap) {
+		this.put(cellName, culumnMap);
+	}
+
+	public void putDouble(String mapSearchaAtII, double bonusPerRatio) {
+		this.put(mapSearchaAtII, bonusPerRatio);
+	}
+
+	public void putObjectMatrix(Object huaRuiJiJtableCulumn, Object o) {
+		this.put(huaRuiJiJtableCulumn, o);
+	}
+
+	public void putList2D(double mapKey, List<AMV_MVS_VSQ_2D> positions) {
+		this.put(mapKey, positions);
+	}
+}
+//    public double getDouble(String key){
+//        if(this.containsKey(key)){
+//            return (Double)(this.get(key));
+//        }
+//        return 0.0;
+//    }
+
+//    public String getTrimString(String key){
+//        if(this.containsKey(key)) {
+//            return this.get(key).toString().replaceAll("\\s*", "");
+//        }
+//        return "";
+//    }
+//    public boolean getCompareV(String key, String compare){
+//        if(this.containsKey(key)){
+//            return this.get(key).toString().equalsIgnoreCase(compare);
+//        }
+//       return false;
+//    }
+
+//later for char
+//	public void couldDoThenDo(String key, String[] strings, TinMap output,
+//			App NE, HashMap<String, Integer> scores)
+//			throws InterruptedException, IOException {// 7代花再缩减 flex
+//		/*
+//		 * 笛卡尔关系计算大幅缩减。
+//		 * */
+//		if(NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(key)) {
+//			return;
+//		}
+//		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(key, "");
+//		System.out.println("400-size-01" + NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
+//		Iterator<String> iterators = FlowerAction.FlowerSixDomainActions
+//				.keySet().iterator();
+//		while (iterators.hasNext()) {
+//			String actionKey = iterators.next();
+//			/*
+//			 * 思考，stringsKey因为被加工处理，单字被过滤了，那么需要中条件算法来辅助判断
+//			 * 判断的方法有很多，通用的方法打分匹配来确定相似度。然后多个相似度 词组进行
+//			 * 累积总分触发因为我要挑战我自己，所以不能用普通的逻辑来优化。 --罗瑶光
+//			 */
+//			if (key.contains(actionKey)) {// later separate.
+//				/* 精确匹配就直接触发 */
+//				String temp = FlowerAction.FlowerSixDomainActions
+//						.getString(actionKey);
+//				FlowerAction.doAction(temp, strings, output, NE);
+//				System.out.println("400-10000002" + actionKey);
+//				System.out.println("400-10000003" + temp);
+//			} else {
+//				//System.out.println("400-10000004" + key);
+//				/*
+//				 * 这里也一样加一个条件，可以有效的去重+的逻辑, 提高计算关系的依赖。
+//				 * 
+//				 * --罗瑶光
+//				 */
+//				if (key.contains("\\+")) {
+//					// -2 动名逻辑
+//					String[] stringsKey = key.split("\\+");
+//					String[] stringsAction = actionKey.split("\\+");
+//					marchScore(stringsKey, stringsAction, actionKey, scores,
+//							strings, output, NE);
+//					continue;
+//				}
+//				// -1 名动逻辑
+//				String[] stringsKey = key.split("-");
+//				String[] stringsAction = actionKey.split("-");
+//				/* 相似匹配就直接累积触发 */
+//				marchScore(stringsKey, stringsAction, actionKey, scores,
+//						strings, output, NE);
+//				// todo 。。
+//			}
+//		}
+//	}
+//	
+//	/*
+//	 * 进行逻辑化简没必要这么复杂。既然我用累积和笛卡尔全部关系，那就用equals代替contains
+//	 * ，增加精确度。大幅减少内存容量。这种计算逻辑适用于在非完整匹配的元基编码变量条件下，
+//	 * 可以寻找计算关系相似计算，而不是寻找计算成分相似计算。避免误差快速放大。
+//	 * 我认为计算关系相似是一种拓扑类的计算寻址，真好吃 和 好真吃，区别明显，但也可以歧义理解。
+//	 * 而计算成分相似，输入变量都不一样，输出误差就大了，真好吃 和 真不好吃， 4字25%的区别， 截然不同。
+//	 */
+//	public void marchScore(String[] stringsKey, String[] stringsAction,
+//			String actionKey, HashMap<String, Integer> scores, String[] strings,
+//			TinMap output, App NE) throws InterruptedException, IOException {
+//		if (stringsKey.length > 1 && stringsAction.length > 1) {
+//			if (stringsKey[0].equals(stringsAction[0])
+//					&& stringsKey[1].equals(stringsAction[1])) {
+//				System.out.println("400-10000004-1-" + actionKey);
+//				String temp = FlowerAction.FlowerSixDomainActions
+//						.getString(actionKey);
+//				if (scores.containsKey(temp)) {
+//					int score = scores.get(temp);
+//					if (0 == score) {
+//						return;
+//					}
+//					score++;
+//					/*
+//					 * //- trif 谨慎使用这种逻辑，罗瑶光个人建议进行意识维度分层。
+//					 * 避免混淆结果。之后提取出去成为入参精度。可自主调节。
+//					 */
+//					int scale = 1;
+//					if (score > scale) {
+//						FlowerAction.doAction(temp, strings, output, NE);
+//						scores.put(temp, 0);
+//					}
+//					scores.put(temp, score);
+//				} else {
+//					scores.put(temp, 1);
+//					/*
+//					 * 有些只做一次的驱动可以另外分类进行算法描述 最简单的实例是map 
+//					 * 对不同的action + 触发精度分数规则，
+//					 * 既然是equals，那么这里 属于必须做的操作。 later -trif
+//					 */
+//					FlowerAction.doAction(temp, strings, output, NE);
+//					// Todo -trif
+//				}
+//
+//			}
+//		}
+//	}
+//	
+//	public void couldSQLThenSQL(String key, String[] strings, TinMap output,
+//			App NE) throws InterruptedException, IOException {// 7代花再缩减 flex
+//		for (String actionKey : (Iterable<String>) FlowerAction.FlowerP_E_KernelActions
+//				.keySet()) {
+//			if (key.contains(actionKey)) {// later separate.
+//				String temp = FlowerAction.FlowerP_E_KernelActions
+//						.getString(actionKey);
+//				FlowerAction.doAction(temp, strings, output, NE);
+//			}
+//		}
+//	}

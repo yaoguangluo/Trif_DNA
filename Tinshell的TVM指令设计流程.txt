@@ -1,0 +1,65 @@
+我还是习惯用txt文件，这个txt文件不会自动提示修改我的文字。
+
+首先介绍下TINShell 系统，一个用人类语言去驱动机器作业的系统。
+--TINShell 逻辑是人类的语言和命令转换为格式化的序列化的指令集，然后时序操纵机器作业。
+--TVM extension 是 TINShell 中让人类语言命令 精准地 变换为 格式化的 序列化的指令集 的逻辑部分。
+  早期固定编码形式出现在元基花语中。如StaticRootMap
+--TVM 是 TINShell 中让指令集时序化精准的操纵数据的逻辑部分。
+--TVM extension 指令 对应 TVM 指令的前提是 TVM指令 shell逻辑 要存在。不然 TVM extension 指令无用。
+
+
+--第一部分关于Tinshell的TVM extension指令设计流程
+----测试选择TVM extension指令
+    1 可以参考package test.java.InterfaceTest.tinShell;下的 ShellJPanelTest 文件中的中文输入，
+      去理解笛卡尔关系指令
+    2 然后选择有价值的笛卡尔关系指令去对应TVM extension指令 进行编码和测试，让 tinshell 二次开发发挥
+      巨大的工业价值。
+----注册添加TVM extension指令
+	3 在 package S_A.SixActionMap; 的 CreativeVerbaMap 函数中，进行添加指令。可以仿照已有的逻辑
+  	  例子进行修改。
+    4 因为FlowerAction 和 StaticRootMap 都是稳定类 static 函数，所以也可以自由的调用操作。如果是
+      工程应用，有必要可以去static 改为 new。
+    5 当然也可以进行OSGI写在plugin 里面 去做class loader，非常灵活。
+----编辑设计TVM extension指令
+    6 语言的TVM指令设计class 可以放在Blooming的OSI.OSU.addAction下。可以仿照同包下已有的逻辑例子
+      进行修改。
+    7 指令太多需要十六元基索引 可以在package S_A.SixActionMap; 的 StudyVerbaMap_X 文件中添加动词
+      索引。切记不要重名。
+
+--第二部分关于Tinshell的TVM 指令设计流程
+  8 如果TVM extension指令 逻辑内容包含 新的 TVM 逻辑指令 则需要添加新的 TVM 指令。
+  9 添加新的 TVM 指令 可 全局搜索PLsearch， PLShell，在相似的TVM 对应的指令部分加功能即可。如在
+    package O_V.OSM.shell; 文件包下的Pl_XA_Command_E函数。仿照相似逻辑区添加条件。
+  10 注意好备份，出了错好 roll back。
+
+--第三部分 运维测试
+----测试调试TVM extension指令
+    11 尝试输入人类的话语去测试是否有正确的输出。
+    12 注意指令命名方式，便于归纳，避免误差。
+
+
+-refer
+--做个申明，之前我的学识比较少，以为像命令一样进行数据库编程就叫PLSQL，设计德塔VPCS数据库的时候我莫名refer了
+甲骨文公司，这里表示道歉。Tinshell的TVM采用指令集驱动德塔VPCS数据库引擎，通过二次开发修改德塔VPCS数据库引擎
+让其适应Tinshell的指令集操纵内存矩阵数据，这里可编程是tinshell和我的数据库这个-指令句集-可编程可扩展，举例
+"条件为:和:功效|DNN搜索|功效|菜谱|4;". 不是-数据库操纵语言-DML DDL DCL-执行begin end declare select 
+from where 逻辑可编程。关于这个逻辑是怎么来的，我其实可以refer ，比如linux，和windows的操作系统的shell， 
+都是这个模子，一个标识加个参数 加个路径，只不过linux 和windows的shell 用的是空格隔开，比较简单，而我加了:|;
+来复杂化。其实他们也不简单可以直接加C shell，集成C+汇编语言。只是平常用的几个命令很简单。我一直在思考为什么当年
+写代码脑海里为什么总是几个 甲骨文 隐马科夫 CNN 关键词意识，每次设计新东西进行命名总要跟这几个关键词扯关系。我想
+应该是我的知识太过缺乏，几十年编码只接触了这几个词汇。 
+
+
+为了满足大家的应用舒适度，我会不断地调优这个系统，让观测更快，启动更快，执行更快，流程更简洁。
+--罗瑶光
+
+/*
+ * 著作权人, 作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
+ * (lyg.tin@gmail.com2018年回国后因国内G网屏蔽不再使用）
+ * 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
+ * 第3层，(2层父母住)
+ * */

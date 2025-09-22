@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第四章 德塔 Socket 流可编程数据库语言引擎系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/>
+    <br/>基础应用: 元基催化与肽计算 编译机的计算存储机
+    <br/>
+    <br/>PLSQL语言
+    <br/>
+    <br/>Gitee 20190820 感想: 设计plsql的编译机,. 做这个项目发现2012年接触的对象化序列化
+    编译技术, 非常有价值. 2016年我搞了2个月jvm的 native虚拟机当时想弄懂jvm openjdk的native
+    函数编译原理, 我之后用go模拟了下, 我用386asm做plan9 贝尔的 go函数swap 做了3个月实验,
+    发现编译好的函数名其实 只是一串字节码, 这个字符串仅仅需要一个call 就可以在指令中调用了, 我
+    得到一个灵感, 就是传统的编译 过程我认为是: 程序 -> 指令 ->机器码 -> 执行. 在编译原理中,
+    我总结了下其实是: 程序 -> 序列化 功能对象 -> 编译机器 -> 调度-> 机器码 ->执行. 有了这些
+    基础, 我开始尝试将我的 plsql 代码 转换 成函数先, 然后这些函数进行编译机调度, 然后再进行功能
+    增删改查执行.
+    <br/>
+    <br/>另外我还要感谢印度基督大学 的 操作系统 和微机原理 这两门课, (2008)***去主观情绪***.
+    <br/>
+    <br/>Implements of PLSQL compiler, notes on Gitee, 2019-08-20.
+    <br/>
+    <br/>The author did well fundament of MCU of 89C51 after 2006 (NAA),
+    an Adv MCU of 8085 and Operating system at 2008~2009 (Christ
+    University), MCU of 485 and Propeller (TYCO, 2009) MCU of 28XX at 2010
+    (Shanghai Electric), and MCU of Stamps (Javelin, Basic and Propeller,
+    Cal Lutheran) at 2012~2013. Seem cool about this domain, the author then
+    did experience in 386ASM and Plan9 by using Go, Jvm natives read
+    images, and call jumps simulation of compile-stacks. He considered the
+    traditional compile map of Program-> Structs-> Binary code-> Execution
+    (PSBE), which could be in fact the map of Program-> Sequenced list of
+    functional classes-> Classes translation-> Schedule plans-> Binary
+    code-> Execution (PSCSBE). After a truly proved of Deta PLSQL, he
+    considered PSCSBE could be used in the Creative Languages. Author
+    YaoguangLuo 稍后优化语法
+    <br/>
+</div>
+</body>

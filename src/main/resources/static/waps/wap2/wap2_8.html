@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第二章 Java 数据分析算法引擎系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/>
+    <br/>基础应用: 元基催化与肽计算 编译机的仿生分析机
+    <br/>
+
+
+    <br/>维度
+    <br/>
+    <br/>1 德塔的数据分析包 包含1维 语音数组计算实例 refer page 见智能声诊
+    <br/>
+    <br/>2 德塔的数据分析包 包含2维 图片卷积计算实例 refer page 见智能相诊
+    <br/>
+    <br/>3 德塔的数据分析包 包含3维 数据循环阶计算实例 refer page 见噪音识别, 三阶傅里叶应用,
+    animation等
+    <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/2/2_11.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+    <br/>德塔三阶傅里叶计算定义: 一般指将线性的时序语音波进行傅里叶变换, 此时的波为 频率域波,
+    通过简单的噪声频率过滤后, 让后再进行第二次傅里叶变换. 于是输出的时序波结果会非常的均匀和
+    格式化, 产生优美的平滑间隔峰区间, 于是将此时序波第三次傅里叶变换, 再次得到的频率波输出具
+    有明确的间隔峰区间生物特征标记. 用于德塔语音识别.
+    <br/>
+    <br/>定义人 罗瑶光
+    <br/>
+    <br/>Deta three times FFT/DFT of higher-order, means a wavelet which
+    makes a transformation from the timer sequence waves to frequency wave,
+    a then makes a noise frequency filter first. At this time, does again a
+    wavelet which makes a transformation where from frequency wave to timer
+    sequence wave. An observation of sequence wave is more harmoniously and
+    uniformly. Also, can do more valuable filters here, therefore, finally
+    does the third wavelet which makes a transformation where from the
+    timer sequence wave to frequency wave again, the output can be a raw
+    data collection of voice recognizing and Bio-target.
+    <br/>
+    <br/>Author YaoguangLuo 稍后优化语法
+    <br/>
+    <br/>具体描述: 智能声诊断视频描述
+    <br/>
+    <br/>关于声音噪声处理的描述: 作者通过java sound的jdk开源语音包api 进行声卡录音处理,
+    通过麦克风物理设备来进行 data read line 函数 record 自然界声音, 这时候声音是一串串的1维
+    double 和 float (具体看api的版本配置)线性数据, 于是作者将这些线性的 数据进行每 1024
+    个数据循环进行一小段小段的提取进行
+    <br/>
+    <br/>第一次离散傅里叶DFT变换(快速傅里叶FFT也可以, 只是在处理偶数和对称数列比较好),
+    这时候第一次 时序波变频率域波的 波形变出来了, 于是作者进行更进截取低频的主要区间频率,
+    依次进行了拉伸, 和高斯平滑处理, 然后把处理过的频率波进行波峰线提取, 然后将波峰线进行极值化,
+    更进向左平移对齐(方便格式化取值), 进行
+    <br/>
+    <br/>第二次离散傅里叶DFT变换, 于是一个稳定的平滑的时序波就出现了. 作者将这个稳定的时序波进行
+    单个的间隔峰裁剪, 因为只要一个震荡周期区间即可标识特定周期循环出现声音, (不需要多个
+    时序的震荡周期, 当然多个可以统计增加精准), 于是开始将这个裁剪拉伸的单个间隔峰时序波 进行
+    <br/>
+    <br/>第三次离散傅里叶DFT变换, 这时候频率就比较稳定了. 这个3次傅里叶声音计算过程,
+    可以用来做声音标记等, 广泛应用于声音类的工业场景. 作者的测试实例主要来自作者(罗瑶光)自己的AOEIU
+    元音发音记录实例.
+    <br/>
+    <br/>描述人 罗瑶光
+    <br/>
+</div>
+</body>

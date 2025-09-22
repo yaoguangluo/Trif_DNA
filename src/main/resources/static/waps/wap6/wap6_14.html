@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="icon" href="../images/logo/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/logo.png"
+          type="image/x-icon">
+    <title>浏阳德塔软件开发有限公司 女娲计划</title>
+</head>
+<body style="Max-width: 700px; text-align:center; margin:auto;">
+<div style="text-align:left; Max-width: 680px; margin-left:15px;">
+    <a href="../">上一页</a>
+    <br/>
+    <br/>
+    <br/>第六章_数据预测引擎系统
+    <br/> 作者: 罗瑶光, Author:Yaoguang.Luo<br/>
+    <br/>
+    <br/>基础应用: 元基催化与肽计算 编译机的进制仿生计算机
+    <br/>
+
+    像素团处理 <br/>
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/6/6_18.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+
+    <br/>
+    这个算法 动机很明显, 为了满足我的图片模式识别的工程应用. <br/>
+    <br/>
+    问题: 之前做眼睛识别的算法时候, 我遇到了一个问题, 就是高斯噪. 比如我先做一层粗卷积匹配,
+    再做精度筛选匹配(为什么要这样设计, 因为速度. 如果直接1024x 768的视频处理做50x 50的卷积,
+    这速度让我痛苦因为循环次数是1024x 768x 50x 50次, 我迫切需要加速, 于是先通过5x5粗卷积
+    识别眼珠, 再10x 10细卷积识别眼白, 再25x 25.. . 识别眼眶), 发现眼睛的识别是准了, 速度
+    快到爆炸(循环词次数是 1024x 768x 5x 5x(条件概率事件), 最大比值是2500/ 25, 100倍的差值)
+    , 但是总有那么几个噪声同样被识别出来, 我需要 把这些东西给过滤了, 迫切需要一种模式识别算法.
+    <br/>
+    <br/>
+    解决: 常规的算法和高斯模糊算法我都组合尝试遍了, 结果还是没有令我满意, 我觉得有必要基于燥的
+    小分子团的大小 观测面上进行过滤这些噪声成份, 这是最早的动机. <br/>
+    <br/>
+    论证: 算法设计完后, 的确可有效删除某特定像素的 分子团, 因为一些卷积特征相同的 区域就很好的
+    被过滤了. <br/>
+    <br/>
+    不足: 因为是基于scale距离来划分分子团的, 所有一些环形的同色分子团因为重心距仍很长,
+    不能有效 的过滤. 之后会专门讨论这种情况. 另外计算过程观测时 发现卷积计算之前就用该算法过滤,
+    动态视频 处理速度无影响, 如果在粗卷积匹配后再做这个算法过滤, 速度无法保障, 这是缺陷, 我会进
+    一步完善 , 或者研发更有效的分子团过滤算法. <br/>
+    <br/>
+    算法搜索的NLP匹配打分
+    <img class="banner_img" style="width: 100%" src="../images/5_7108/6/6_19.jpg"
+         alt="浏阳德塔软件开发有限公司,罗瑶光"/>
+</div>
+</body>
