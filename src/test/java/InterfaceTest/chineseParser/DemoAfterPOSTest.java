@@ -129,8 +129,10 @@ public class DemoAfterPOSTest {
 			if (0 == reg) {
 				// 没有关联就加原变量
 				setsOutput.add(string);
+				System.out.print(string+ "----");
 			} else {
 				setsOutput.add(strings[0] + connect + "/" + strings[1]);
+				System.out.print(strings[0] + connect + "/" + strings[1] + "----");
 				i += reg;
 			}
 		}

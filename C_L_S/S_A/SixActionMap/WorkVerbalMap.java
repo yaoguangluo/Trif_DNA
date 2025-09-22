@@ -4,9 +4,11 @@ import ME.VPC.M.app.App;
 import O_V.OSM.shell.CommandClass;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.pheromone.IMV_SIQ;
+import test.java.InterfaceTest.chineseParser.DemoAfterPOSTest;
 import test.java.InterfaceTest.chineseParser.DemoPOSTest;
 
 import java.util.Iterator;
+import java.util.List;
 
 //1 6元SDLC
 //2 sdlc obss
@@ -123,7 +125,6 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		+ command_V.chineseSimpleCommandWithoutNumerics);
 		command_V._IMV_SIQ_SS_ = NE.app_S._A
 				.parserMixedString(command_V.chineseSimpleCommandWithoutNumerics);
-
 		// -1 词频 归纳
 		// -2 词性 归纳
 		// 之前逻辑是 所有词性词汇 搜索 归纳
@@ -141,14 +142,34 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		//
 		IMV_SIQ pos = NE.app_S._A.getPosCnToCn();
 		DemoPOSTest demoPOSTest = new DemoPOSTest();
-		demoPOSTest.testPOS(command_V._IMV_SIQ_SS_, pos);
+		//demoPOSTest.testPOS(command_V._IMV_SIQ_SS_, pos);
+		//--解决方法 首先分解
+		List<String> setsInput = demoPOSTest.testPOSOnlyGetList(command_V._IMV_SIQ_SS_, pos);
 		/*
 		 * 思考，当一个原来的词汇关系系统计算中，纠正了副词的准确性，那么原来的函数中形容词的词数
 		 * 就会大幅地减少，如果之后的跟进计算用到了形容词，而没有用到副词，那么条件的精度会增加，
 		 * 而过滤数也会增加。这样的计算强调语法包含，质量提高，但性能降低。提高性能的方式是增加
 		 * 副词逻辑的计算函数集。--罗瑶光
 		 */
-
+		//DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
+		//List<String> setsInput = demoAfterPOSTest.testPOS(command_V._IMV_SIQ_SS_, pos);
+		//List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(setsInput, pos);
+		/*
+		 * 在测试文档中已经设计了更为精准的 DemoAfterPOSTest 服务，于是这里进行替换下函数，看效果如何。
+		 * testAfterPOS 的逻辑是 出现单字的 同词性相联的进行合并， 但是这个格式在当前的tinshell逻辑中
+		 * 不能采纳，于是需要稍微的变形。编程可采纳的格式。
+		 * 
+		 * 问题1 demoPOSTest.testPOS 已经将改变的词性修正 到wordFrequency 类中还注册了
+		 * char position 直接变形比较麻烦，于是开始梳理思路。
+		 * --解决方法 首先分解 demoPOSTest.testPOS 为两个逻辑，先修正pos 变成 含有/的 list
+		 * --再list组合修正。--最终将修正的list 处理成 wordFrequency 格式list。
+		 * 
+		 * */
+		//--再list组合修正
+		DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
+		List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(setsInput, pos);
+		//--最终将修正的list 处理成 wordFrequency 格式list。
+		demoPOSTest.testPOStoWordFrequencyList(setsAfterInput, pos);
 		// loop update and insect
 		Iterator<String> iterators = demoPOSTest.noun.keySet().iterator();
 		while (iterators.hasNext()) {
