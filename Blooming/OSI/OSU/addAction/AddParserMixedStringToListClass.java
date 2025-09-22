@@ -116,7 +116,6 @@ public class AddParserMixedStringToListClass implements CrabInterface {
 			//		+ NE.app_S.workVerbalMap.command_V.countReject++);
 			return false;
 		}
-		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");
 		//System.out.println("400-size-02-"
 		//		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 
@@ -141,6 +140,7 @@ public class AddParserMixedStringToListClass implements CrabInterface {
 		}
 		StaticFunctionMap.postValues(NE.app_S.outputMap,
 				inputValues.getBoolean("find"), map, "parserMixedStringToList");
+		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");
 		return true;
 	}
 }

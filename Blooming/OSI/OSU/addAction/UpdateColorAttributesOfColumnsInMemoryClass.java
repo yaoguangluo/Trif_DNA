@@ -147,7 +147,6 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 			//		+ NE.app_S.workVerbalMap.command_V.countReject++);
 			return false;
 		}
-		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");
 		//System.out.println("400-size-02-"
 		//		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 
@@ -268,6 +267,8 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 			NE._I_U.outputMap.put("type", "进行选择");
 			System.out.println("400---00009---");
 		}
+		//避免一个指令句含有多次触发。
+		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");
 		return true;
 	}
 }
