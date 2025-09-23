@@ -95,14 +95,14 @@ public class WorkVerbalMap_X_S {
 			}
 			// pos load
 			WordFrequency wordFrequency = command_V._IMV_SIQ_SS.getW(string);
-			// if (wordFrequency.get_pos().contains("名")) {
+			 //if (wordFrequency.get_pos().contains("名")) {
 			// 一切数据首先都应该名词化*/
-			nounInText.put(string, wordFrequency);
-			// }
+				 nounInText.put(string, wordFrequency);
+			 //}
 			// 动 pca map替换成cartsian map先 因为英语会出现had had 有且仅有这类语法。
-			// if (wordFrequency.get_pos().contains("动")) {
-			verbInText.put(string, wordFrequency);
-			// }
+			//if (wordFrequency.get_pos().contains("动")) {
+				verbInText.put(string, wordFrequency);
+			//}
 			System.out.println(wordFrequency.positions);
 		}
 	}
@@ -135,7 +135,9 @@ public class WorkVerbalMap_X_S {
 						.getAveragePosition();
 				// noun-verb
 				String root = "";
+				//String root_v = "";
 				String root_pos = "";
+				//String root_pos_v = "";
 				if (StudyVerbalMap.initonDelegate.containsKey(stringVerb)) {
 					stringVerb = StudyVerbalMap.initonDelegate
 							.getString(stringVerb);
@@ -151,6 +153,10 @@ public class WorkVerbalMap_X_S {
 					root += stringNoun;
 					root += "+";
 					root += stringVerb;
+					
+//					root_v += stringVerb;
+//					root_v += "-";
+//					root_v += stringNoun;
 					/* 
 					 * CN
 					 * --十六元基索引逻辑
@@ -172,6 +178,9 @@ public class WorkVerbalMap_X_S {
 					 * */
 					root_pos += "_stringNoun" + averagePositionNoun;
 					root_pos += "_stringVerb" + averagePositionVerb;
+					
+					//root_pos_v += "_stringVerb" + averagePositionVerb;
+					//root_pos_v += "_stringNoun" + averagePositionNoun;
 					int right = Math.abs(averagePositionNoun - averagePositionVerb);
 					int position = (averagePositionNoun + averagePositionVerb) >> 1;
 					if (!command_V.cartesianWorkActionsRightsSV.containsKey(root)
@@ -180,22 +189,23 @@ public class WorkVerbalMap_X_S {
 							&& right > 0) {
 						if (right < NE.app_S.initonsDistanceRelationship) {
 							if (!root.contains(" ")) {
-								command_V.cartesianWorkActions_posSV.put(root,
-										root_pos);
+								//command_V.cartesianWorkActions_posSV.put(root,
+								//		root_pos);
 								command_V.cartesianWorkActionsRightsSV.put(root,
 										right);
-								command_V.cartesianWorkActionsRightsParserSV.put(stringNoun + "+",
-										right);
-								command_V.cartesianWorkActionsRightsParserSV.put("+" + stringVerb,
-										right);
-								command_V.cartesianWorkActionsPositionsSV.put(root,
-										position);
+								//command_V.cartesianWorkActionsRightsParserSV.put(stringNoun + "+",
+								//		right);
+								//command_V.cartesianWorkActionsRightsParserSV.put("+" + stringVerb,
+								//		right);
+								//command_V.cartesianWorkActionsPositionsSV.put(root,
+								//		position);
 //								System.out.println(root + ":" + right + ":"
 //										+ position + ":" + root_pos);
 							}
 						}
 					}
-				} else {
+				} 
+				else {
 					if(StudyVerbalMap_X.initonDelegate.containsKey(stringNoun)) {
 						stringNoun = StudyVerbalMap_X.initonDelegate.getString(stringNoun);
 					}
@@ -215,16 +225,16 @@ public class WorkVerbalMap_X_S {
 							&& right > 0) {
 						if (right < NE.app_S.initonsDistanceRelationship) {
 							if (!root.contains(" ")) {
-								command_V.cartesianWorkActions_posVO.put(root,
-										root_pos);
+								//command_V.cartesianWorkActions_posVO.put(root,
+								//		root_pos);
 								command_V.cartesianWorkActionsRightsVO.put(root,
 										right);
-								command_V.cartesianWorkActionsRightsParserVO.put(stringVerb + "-",
-										right);
-								command_V.cartesianWorkActionsRightsParserVO.put("-" + stringNoun,
-										right);
-								command_V.cartesianWorkActionsPositionsVO.put(root,
-										position);
+								//command_V.cartesianWorkActionsRightsParserVO.put(stringVerb + "-",
+								//		right);
+								//command_V.cartesianWorkActionsRightsParserVO.put("-" + stringNoun,
+								//		right);
+								//command_V.cartesianWorkActionsPositionsVO.put(root,
+								//		position);
 //								System.out.println(root + ":" + right + ":"
 //										+ position + ":" + root_pos);
 							}

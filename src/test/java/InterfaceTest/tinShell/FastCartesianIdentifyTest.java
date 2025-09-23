@@ -9,13 +9,13 @@ import S_A.SixActionMap.WorkVerbalMap;
 import test.java.InterfaceTest.CommonTestInition;
 
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
+ * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
  * (lyg.tin@gmail.com2018年回国后因国内G网屏蔽不再使用）
  * 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
- * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class FastCartesianIdentifyTest {
 	/*
@@ -242,7 +242,13 @@ public class FastCartesianIdentifyTest {
 		CommandClass command_V = new CommandClass();
 		commonTestInition.NE.app_S.workVerbalMap.command_V = command_V;
 		// 输入
-		String command = "条件为:和:功效|DNN搜索|功效|菜谱|4;";
+		//String command = "条件为:和:功效|DNN搜索|功效|菜谱|4;";
+		
+		String command = ""
+		+ "在输出的数据表中仅展示从第陆行到第"
+		//+ "3拾"
+		+ "九"
+		+ "行的数据;";
 		command_V.commandWithoutNumerics = command.toString();
 		command_V.commandAcknowledge = command.toString();
 		command_V.command = command.toString();
@@ -272,30 +278,141 @@ public class FastCartesianIdentifyTest {
 		 * 函数稳定后我会专门花时间分配 public private protected sync 函数方法。
 		 * 目前在没有冲突的情况下 整体先 public -- 罗瑶光
 		 */
-		commonTestInition.NE.app_S.workVerbalMap
-				.relationshipsCombinationWithNoun();
-		commonTestInition.NE.app_S.workVerbalMap
-				.relationshipsCombinationWithVerb();
-		commonTestInition.NE.app_S.workVerbalMap
-				.relationshipsCombinationWithNounAndVerb();
-		commonTestInition.NE.app_S.workVerbalMap
-				.initCartesianActions(commonTestInition.NE, command_V);
-		commonTestInition.NE.app_S.workVerbalMap
-				.sortCartesianWorkActionsPositionSV(commonTestInition.NE,
+		commonTestInition.NE.app_S.workVerbalMap.relationshipsCombinationWithNoun();
+		commonTestInition.NE.app_S.workVerbalMap.relationshipsCombinationWithVerb();
+		commonTestInition.NE.app_S.workVerbalMap.relationshipsCombinationWithNounAndVerb();
+		commonTestInition.NE.app_S.workVerbalMap.initCartesianActions(commonTestInition.NE, command_V);
+		commonTestInition.NE.app_S.workVerbalMap.sortCartesianWorkActionsPositionSV(commonTestInition.NE,
 						command_V);
-		commonTestInition.NE.app_S.workVerbalMap
-				.sortCartesianWorkActionsDistanceSV(commonTestInition.NE,
+		commonTestInition.NE.app_S.workVerbalMap.sortCartesianWorkActionsDistanceSV(commonTestInition.NE,
 						command_V);
-		commonTestInition.NE.app_S.workVerbalMap
-				.sortCartesianWorkActionsPositionVO(commonTestInition.NE,
+		commonTestInition.NE.app_S.workVerbalMap.sortCartesianWorkActionsPositionVO(commonTestInition.NE,
 						command_V);
-		commonTestInition.NE.app_S.workVerbalMap
-				.sortCartesianWorkActionsDistanceVO(commonTestInition.NE,
-						command_V);
-		commonTestInition.NE.app_S.workVerbalMap
-				.actionsNormalization(commonTestInition.NE, command_V);
-
+		commonTestInition.NE.app_S.workVerbalMap.sortCartesianWorkActionsDistanceVO(commonTestInition.NE, command_V);
+		commonTestInition.NE.app_S.workVerbalMap.actionsNormalization(commonTestInition.NE, command_V);
+		//
+		System.out.println("-----笛卡尔词汇观测-----");
+		System.out.println("1-cartesianWorkA-" + commonTestInition.NE.app_S.workVerbalMap.verbInText.size());
+		Iterator<String> iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.verbInText.keySet().iterator();
+		while(iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">" + "");
+		}	
+		System.out.println("1-cartesianWorkB-" + commonTestInition.NE.app_S.workVerbalMap.nounInText.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.nounInText.keySet().iterator();
+		while(iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">" + "");
+		}
+		
 		// 输出
+		System.out.println("-----笛卡尔关系推荐逻辑观测-----");
+		System.out.println("1-cartesianWorkActionsPositionsSV-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV.size());
+		iteratorStrings =
+		commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV.keySet().iterator();
+		while(iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
+					.command_V.cartesianWorkActionsPositionsSV.getString(string) );
+		}
+		
+		System.out.println("2-cartesianWorkActionsPositionsVO-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO.size());
+		iteratorStrings =
+				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO.keySet().iterator();
+		while(iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
+					.command_V.cartesianWorkActionsPositionsVO.getString(string) );
+		}
+		
+		System.out.println("3-cartesianWorkActionsRightsSV-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV.size());
+		iteratorStrings =
+				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV.keySet().iterator();
+		while(iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
+					.command_V.cartesianWorkActionsRightsSV.getString(string) );
+		}
+		
+		System.out.println("4-cartesianWorkActionsRightsVO-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO.size());
+		iteratorStrings =
+				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO.keySet().iterator();
+		while(iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
+					.command_V.cartesianWorkActionsRightsVO.getString(string) );
+		}	
+				
+		System.out.println("5-cartesianWorkActions_posSV-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV.size());
+		iteratorStrings =
+				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV.keySet().iterator();
+		while(iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
+					.command_V.cartesianWorkActions_posSV.getString(string) );
+		}	
+				
+		System.out.println("6-cartesianWorkActions_posVO-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO.size());
+		iteratorStrings =
+				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO.keySet().iterator();
+		while(iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
+					.command_V.cartesianWorkActions_posVO.getString(string) );
+		}	
+				
+		System.out.println("7-cartesianWorkActionsRightsParserSV-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV.size());
+		iteratorStrings =
+				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
+		while(iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
+					.command_V.cartesianWorkActionsRightsParserSV.getString(string) );
+		}
+						
+		System.out.println("8-cartesianWorkActionsRightsParserVO-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO.size());
+		iteratorStrings =
+				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO.keySet().iterator();
+		while(iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
+					.command_V.cartesianWorkActionsRightsParserVO.getString(string) );
+		}	
+		/*
+		 * 准备定义笛卡尔的符号规范
+		 * 1 因为一开始采用 全局的去动名词的全局笛卡尔关系，所以四个
+		 * cartesianWorkActionsRightsVO
+		 * cartesianWorkActionsRightsSV
+		 * cartesianWorkActionsPositionsVO
+		 * cartesianWorkActionsPositionsSV
+		 * 里面的结果是一致的，所以可以剔除减少75%的计算量。
+		 * averagePositionNoun 比较不再有价值需要进行全补充关系
+		 * 
+		 * 剔除并不是删除这些计算量 而是重新利用。原来的+和-是动和名的组合，因为是全局关系，
+		 * 不再有这个逻辑了，因为人类语法动名词可以变换。动词本就是名词的一种弱属性。
+		 * 那么+和-可以重新定义为 文中的词汇关系 先后为+，后先为-。这个价值可以用来观测词汇
+		 * 的因果发生现象。那么这里出现第二个问题便是 当一个指令句出现多个相同的字，就+-无效了
+		 * 如果做平均数来计算，那么平均数仅仅是代表距离的分布关系，而不是前后关系。
+		 * 
+		 * 在哲学计算的层面上，上面思考的内容属于新的关系更近分析，所以进行归纳，关系分层，
+		 * 这里仅用+做笛卡尔全局计算先，新的关系和新的条件，用新的决策树函数逻辑来处理。
+		 * 
+		 * //那第一层决策关系函数处理的逻辑 就没有了- 和动名词之分。
+		 * //VO map全部省略，SVO逻辑区 先 减少75%的内存占用。
+		 * //这种操作先保留，因为动名词的全局笛卡尔逻辑全省略有风险，
+		 * 
+		 * 主要成分价值map
+		 * cartesianWorkActionsRightsVO
+		 * cartesianWorkActionsRightsSV
+		 * 仅保留PCA，VO map全部省略，SVO逻辑区 ，减少80%的内存占用。
+		 * 当前main功能测试通过。Tinshell测试通过。华瑞集admin界面测试通过。
+		 * WorkVerbalMap_X_S 195行处PCA过滤，以后用到条件再解开slash。
+		 * --罗瑶光
+		 * */	
+				
+				
+				
+				
 		// 筛选前主要关系数-->13
 		// 筛选后主要关系数-->8
 		// 在含有各类特殊字符的输入中 主要成分计算量减少40% 价值巨大。
@@ -316,7 +433,8 @@ public class FastCartesianIdentifyTest {
 		/*
 		 * 思考-条件和逻辑的分层筛选，对特殊的问题会产生一些盲区。可以叫bug。
 		 * 稍后在处理逻辑内容时，要考虑这些盲区，写FIX管理关系函数。
-		 * 并不是现在输出正确就是一直准确。环境是变化的，所以逻辑也应该遵循这个变化中的长期稳定类规律去自适应。
+		 * 并不是现在输出正确就是一直准确。环境是变化的，所以逻辑也应该遵循这个
+		 * 变化中的长期稳定类规律去自适应。
 		 * 
 		 * --罗瑶光
 		 * 
@@ -324,10 +442,9 @@ public class FastCartesianIdentifyTest {
 		commonTestInition.endEnvironment();
 
 	}
-
 }
-
-//环境初始化*
+//输出
+//*环境初始化*
 //*卷积环境 init*
 //*PDE环境 init*
 //*排序环境 init*
@@ -341,225 +458,293 @@ public class FastCartesianIdentifyTest {
 //*分词引擎 init*
 //*自然语言环境 init*
 //*其他枝叶 register*
-//简体-->条件为:和:功效|DNN搜索|功效|菜谱|4;
-//chineseSimpleCommandWithoutNumerics400-1-->条件为:和:功效|DNN搜索|功效|菜谱|4;
-//4--22
-//混合数字字符探索-->4
-//4
-//output-->四
-//stringSwaped-400-1->四
-//输入-->四
-//简体-->四
-//total2-->4
-//stringSwaped-400-2->4
-//position-->22
-//chineseSimpleCommandWithoutNumerics-->条件为:和:功效|DNN搜索|功效|菜谱|*;
-//简体-->条件为:和:功效|DNN搜索|功效|菜谱|4;
-//chineseSimpleCommandWithoutNumerics400-1-->条件为:和:功效|DNN搜索|功效|菜谱|*;
-//4--22
-//chineseSimpleCommandWithoutNumerics400-->条件为:和:功效|DNN搜索|功效|菜谱|*;
+//简体-->在输出的数据表中仅展示从第六行到第九行的数据;
+//chineseSimpleCommandWithoutNumerics400-1-->在输出的数据表中仅展示从第六行到第九行的数据;
+//六--14
+//九--18
+//混合数字字符探索-->六
+//输入-->六
+//简体-->六
+//total2-->6
+//stringSwaped-400-2->6
+//position-->14
+//混合数字字符探索-->九
+//输入-->九
+//简体-->九
+//total2-->9
+//stringSwaped-400-2->9
+//position-->18
+//chineseSimpleCommandWithoutNumerics-->在输出的数据表中仅展示从第*行到第*行的数据;
+//简体-->在输出的数据表中仅展示从第六行到第九行的数据;
+//chineseSimpleCommandWithoutNumerics400-1-->在输出的数据表中仅展示从第*行到第*行的数据;
+//六--14
+//九--18
+//chineseSimpleCommandWithoutNumerics400-->在输出的数据表中仅展示从第*行到第*行的数据;
 //-展示词性-
-//条件/名词----为/动词----:/标点----和/并列连词----:/标点----功效/名词----|dnn/NULL
-//----搜索/名词----|/标点----功效/名词----|/标点----菜谱/形谓词通用----|/标点----*/名词----;/标点----
-//--词汇->条件-词性->名词-平均距离->0-出现频率->1.0
-//--词汇->功效-词性->名词-平均距离->10-出现频率->2.0
-//--词汇->搜索-词性->名词-平均距离->12-出现频率->1.0
-//--词汇->*-词性->名词-平均距离->21-出现频率->1.0
-//--词汇->为-词性->动词-平均距离->2-出现频率->1.0
-//--词汇->菜谱-词性->形谓词通用-平均距离->18-出现频率->1.0[1]
-//[3]
-//[4, 6]
-//[5]
-//[6, 15]
+//在/介词----输出/名词----的/结构助词----数据/名词----表/动词----中/定名词----仅/形谓词作副词----展示/动词----从/介词----第/名词----*/名词----行/名词----到/动词----第/名词----*/名词----行/名词----的/结构助词----数据/名词----;/标点----在/介词----输出/名词----的/结构助词----数据/名词----表/动词----中/定名词----仅/形谓词作副词----展示/动词----从/介词----第*/名词----行/名词----到/动词----第*/名词----行/名词----的/结构助词----数据/名词----;/标点-----展示词性-
+//在/介词----输出/名词----的/结构助词----数据/名词----表/动词----中/定名词----仅/形谓词作副词----展示/动词----从/介词----第*/名词----行/名词----到/动词----第*/名词----行/名词----的/结构助词----数据/名词----;/标点----
+//--词汇->输出-词性->名词-平均距离->4-出现频率->1.0
+//--词汇->数据-词性->名词-平均距离->44-出现频率->2.0
+//--词汇->中-词性->名词-平均距离->24-出现频率->1.0
+//--词汇->第*-词性->名词-平均距离->52-出现频率->2.0
+//--词汇->行-词性->名词-平均距离->57-出现频率->2.0
+//--词汇->表-词性->动词-平均距离->20-出现频率->1.0
+//--词汇->展示-词性->动词-平均距离->37-出现频率->1.0
+//--词汇->到-词性->动词-平均距离->55-出现频率->1.0
+//--词汇->仅-词性->形谓词作形容词-平均距离->29-出现频率->1.0
+//--词汇->仅-词性->形谓词作副词-平均距离->29-出现频率->1.0[1]
+//[2]
+//[4, 17]
+//[5, 17]
+//[7]
 //[8]
+//[9]
+//[10]
 //[12]
-//[14, 15, 17]
-//[15]
+//[13, 17]
+//[14, 17]
+//[15, 17]
+//[16]
 //[17]
+//[18, 19]
+//[14]
 //[18]
-//[19, 20]
-//[22]
-//条件
-//为
-//:
-//和
-//功效
-//|dnn
-//搜索
-//|
-//菜谱
+//在
+//输出
+//的
+//数据
+//表
+//中
+//仅
+//展示
+//从
+//第
 //*
+//行
+//到
 //;
 // 
-//4
-//筛选前主要关系数-->13
-//筛选后主要关系数-->8
-//功效+菜谱:5:12:_stringNoun10_stringVerb15
-//功效+搜索:2:11:_stringNoun10_stringVerb12
-//功效+*:7:13:_stringNoun10_stringVerb17
-//和-功效:5:7:_stringVerb5_stringNoun10
-//功效+4:12:16:_stringNoun10_stringVerb22
-//条件-功效:9:5:_stringVerb1_stringNoun10
-//为-功效:7:6:_stringVerb3_stringNoun10
-//功效-菜谱:5:12:_stringVerb10_stringNoun15
-//搜索-菜谱:3:13:_stringVerb12_stringNoun15
-//菜谱+*:2:16:_stringNoun15_stringVerb17
-//和-菜谱:10:10:_stringVerb5_stringNoun15
-//菜谱+4:7:18:_stringNoun15_stringVerb22
-//条件-菜谱:14:8:_stringVerb1_stringNoun15
-//为-菜谱:12:9:_stringVerb3_stringNoun15
-//功效-搜索:2:11:_stringVerb10_stringNoun12
-//搜索+菜谱:3:13:_stringNoun12_stringVerb15
-//搜索+*:5:14:_stringNoun12_stringVerb17
-//和-搜索:7:8:_stringVerb5_stringNoun12
-//搜索+4:10:17:_stringNoun12_stringVerb22
-//条件-搜索:11:6:_stringVerb1_stringNoun12
-//为-搜索:9:7:_stringVerb3_stringNoun12
-//功效-*:7:13:_stringVerb10_stringNoun17
-//菜谱-*:2:16:_stringVerb15_stringNoun17
-//搜索-*:5:14:_stringVerb12_stringNoun17
-//和-*:12:11:_stringVerb5_stringNoun17
-//*+4:5:19:_stringNoun17_stringVerb22
-//条件-*:16:9:_stringVerb1_stringNoun17
-//为-*:14:10:_stringVerb3_stringNoun17
-//和+功效:5:7:_stringNoun5_stringVerb10
-//和+菜谱:10:10:_stringNoun5_stringVerb15
-//和+搜索:7:8:_stringNoun5_stringVerb12
-//和+*:12:11:_stringNoun5_stringVerb17
-//和+4:17:13:_stringNoun5_stringVerb22
-//条件-和:4:3:_stringVerb1_stringNoun5
-//为-和:2:4:_stringVerb3_stringNoun5
-//功效-4:12:16:_stringVerb10_stringNoun22
-//菜谱-4:7:18:_stringVerb15_stringNoun22
-//搜索-4:10:17:_stringVerb12_stringNoun22
-//*-4:5:19:_stringVerb17_stringNoun22
-//和-4:17:13:_stringVerb5_stringNoun22
-//条件-4:21:11:_stringVerb1_stringNoun22
-//为-4:19:12:_stringVerb3_stringNoun22
-//条件+功效:9:5:_stringNoun1_stringVerb10
-//条件+菜谱:14:8:_stringNoun1_stringVerb15
-//条件+搜索:11:6:_stringNoun1_stringVerb12
-//条件+*:16:9:_stringNoun1_stringVerb17
-//条件+和:4:3:_stringNoun1_stringVerb5
-//条件+4:21:11:_stringNoun1_stringVerb22
-//条件+为:2:2:_stringNoun1_stringVerb3
-//为+功效:7:6:_stringNoun3_stringVerb10
-//为+菜谱:12:9:_stringNoun3_stringVerb15
-//为+搜索:9:7:_stringNoun3_stringVerb12
-//为+*:14:10:_stringNoun3_stringVerb17
-//为+和:2:4:_stringNoun3_stringVerb5
-//为+4:19:12:_stringNoun3_stringVerb22
-//条件-为:2:2:_stringVerb1_stringNoun3
-//条件+为+2
-//条件+和+3
-//为+和+4
-//条件+功效+5
-//为+功效+6
-//条件+搜索+6
-//和+功效+7
-//为+搜索+7
-//条件+菜谱+8
-//和+搜索+8
-//条件+*+9
-//为+菜谱+9
-//和+菜谱+10
-//为+*+10
-//条件+4+11
-//和+*+11
-//功效+搜索+11
-//为+4+12
-//功效+菜谱+12
-//搜索+菜谱+13
-//和+4+13
-//功效+*+13
-//搜索+*+14
-//菜谱+*+16
-//功效+4+16
-//搜索+4+17
-//菜谱+4+18
-//*+4+19
-//菜谱+*-2
-//条件+为-2
-//功效+搜索-2
-//为+和-2
-//搜索+菜谱-3
-//条件+和-4
-//*+4-5
-//功效+菜谱-5
-//和+功效-5
-//搜索+*-5
-//为+功效-7
-//功效+*-7
-//和+搜索-7
-//菜谱+4-7
-//条件+功效-9
-//为+搜索-9
-//和+菜谱-10
-//搜索+4-10
-//条件+搜索-11
-//为+菜谱-12
-//功效+4-12
-//和+*-12
-//条件+菜谱-14
-//为+*-14
-//条件+*-16
-//和+4-17
-//为+4-19
-//条件+4-21
-//条件-为+2
-//条件-和+3
-//为-和+4
-//条件-功效+5
-//为-功效+6
-//条件-搜索+6
-//和-功效+7
-//为-搜索+7
-//和-搜索+8
-//条件-菜谱+8
-//条件-*+9
-//为-菜谱+9
-//为-*+10
-//和-菜谱+10
-//功效-搜索+11
-//和-*+11
-//条件-4+11
-//为-4+12
-//功效-菜谱+12
-//功效-*+13
-//和-4+13
-//搜索-菜谱+13
-//搜索-*+14
-//菜谱-*+16
-//功效-4+16
-//搜索-4+17
-//菜谱-4+18
-//*-4+19
-//菜谱-*-2
-//功效-搜索-2
-//条件-为-2
-//为-和-2
-//搜索-菜谱-3
-//条件-和-4
-//功效-菜谱-5
-//*-4-5
-//和-功效-5
-//搜索-*-5
-//为-功效-7
-//功效-*-7
-//和-搜索-7
-//菜谱-4-7
-//为-搜索-9
-//条件-功效-9
-//和-菜谱-10
-//搜索-4-10
-//条件-搜索-11
-//功效-4-12
-//为-菜谱-12
-//和-*-12
-//条件-菜谱-14
-//为-*-14
-//条件-*-16
-//和-4-17
-//为-4-19
-//条件-4-21
+//6
+//9
+//筛选前主要关系数-->17
+//筛选后主要关系数-->14
+//-----笛卡尔词汇观测-----
+//1-cartesianWorkA-20
+// >
+//仅中>
+//的>
+//在>
+//*>
+//第到>
+//展示>
+//从>
+//到>
+//中仅>
+//数据>
+//中表>
+//行到>
+//表中>
+//输出>
+//6>
+//到第>
+//到行>
+//9>
+//;>
+//1-cartesianWorkB-14
+// >
+//的>
+//仅>
+//在>
+//*>
+//展示>
+//从>
+//第行>
+//行第>
+//数据>
+//输出>
+//6>
+//9>
+//;>
+//-----笛卡尔关系推荐逻辑观测-----
+//1-cartesianWorkActionsPositionsSV-0
+//2-cartesianWorkActionsPositionsVO-0
+//3-cartesianWorkActionsRightsSV-89
+//展示+第到>5
+//输出+9>16
+//从+第到>3
+//数据+第到>4
+//的+第到>5
+//展示+到第>5
+//从+到第>3
+//数据+到第>4
+//输出+表中>5
+//输出+6>12
+//行第+到>1
+//的+数据>1
+//在+行到>15
+//展示+从>2
+//的+到第>5
+//展示+数据>1
+//展示+9>8
+//行第+9>3
+//展示+6>4
+//数据+从>1
+//第行+行到>1
+//行第+到行>1
+//仅+的>1
+//在+到第>14
+//输出+中表>5
+//6+到>2
+//从+到>4
+//从+9>6
+//输出+到>14
+//从+6>2
+//仅+从>3
+//展示+到行>6
+//从+到行>4
+//6+9>4
+//从+行到>4
+//数据+行到>5
+//输出+行到>14
+//在+的>9
+//在+表中>6
+//6+到行>2
+//仅+行到>7
+//在+中表>6
+//输出+的>8
+//的+从>2
+//的+行到>6
+//在+输出>1
+//输出+展示>8
+//仅+到>7
+//输出+第到>13
+//输出+到第>13
+//在+到>15
+//输出+仅中>6
+//输出+数据>9
+//的+9>8
+//第行+到行>1
+//仅+展示>1
+//在+9>17
+//6+第到>1
+//6+到第>1
+//的+6>4
+//在+中仅>7
+//的+到>6
+//仅+第到>6
+//仅+9>9
+//在+6>13
+//行第+行到>1
+//仅+6>5
+//仅+到第>6
+//仅+数据>2
+//在+展示>9
+//在+仅中>7
+//展示+行到>6
+//数据+到行>5
+//输出+到行>14
+//的+到行>6
+//在+第到>14
+//在+数据>10
+//展示+到>6
+//在+从>11
+//数据+到>5
+//第行+9>3
+//6+行到>2
+//在+到行>15
+//第行+到>1
+//数据+6>3
+//输出+中仅>6
+//仅+到行>7
+//数据+9>7
+//输出+从>10
+//4-cartesianWorkActionsRightsVO-84
+//中表-数据>4
+//第到-9>3
+//到第-9>3
+//中表-展示>3
+//输出-的>8
+//表中-6>7
+//的-数据>1
+//仅中-的>2
+//的-9>8
+//展示-数据>1
+//的-6>4
+//在-9>17
+//到行-9>2
+//在-行第>14
+//中仅-行第>7
+//在-6>13
+//表中-9>11
+//表中-仅>2
+//中表-的>3
+//从-第行>3
+//中仅-的>2
+//仅中-第行>7
+//展示-第行>5
+//中表-行第>8
+//在-仅>8
+//输出-行第>13
+//在-从>11
+//数据-从>1
+//仅中-仅>1
+//数据-6>3
+//的-行第>5
+//表中-行第>8
+//行到-9>2
+//数据-行第>4
+//数据-9>7
+//在-输出>1
+//仅中-从>4
+//输出-从>10
+//6-第行>1
+//中仅-仅>1
+//仅中-6>6
+//输出-展示>8
+//中仅-展示>2
+//输出-9>16
+//表中-展示>3
+//展示-从>2
+//输出-6>12
+//仅中-9>10
+//输出-仅>7
+//中仅-从>4
+//表中-数据>4
+//在-第行>14
+//中仅-数据>3
+//输出-数据>9
+//中表-6>7
+//展示-9>8
+//中表-9>11
+//从-6>2
+//中仅-6>6
+//展示-6>4
+//中表-从>5
+//中仅-9>10
+//中仅-第行>7
+//在-的>9
+//仅中-行第>7
+//中表-仅>2
+//表中-的>3
+//从-行第>3
+//从-9>6
+//在-展示>9
+//表中-从>5
+//6-9>4
+//展示-行第>5
+//的-第行>5
+//中表-第行>8
+//表中-第行>8
+//在-数据>10
+//到-9>2
+//输出-第行>13
+//的-从>2
+//仅中-数据>3
+//数据-第行>4
+//仅中-展示>2
+//6-行第>1
+//5-cartesianWorkActions_posSV-0
+//6-cartesianWorkActions_posVO-0
+//7-cartesianWorkActionsRightsParserSV-0
+//8-cartesianWorkActionsRightsParserVO-0
 

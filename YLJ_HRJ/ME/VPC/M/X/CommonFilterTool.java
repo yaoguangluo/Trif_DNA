@@ -158,7 +158,7 @@ public class CommonFilterTool {
             biao_ye_xuan_ze.updateUI();
         });
 
-        JButton qing_kong = new DetaButton("qing_kong");
+        JButton qing_kong = new DetaButton("清空");
         qing_kong.setBounds(x + 20, y + 0, 60, 20);
         qing_kong.addActionListener(arg0 -> {
             NE.app_S.newFilterLine.removeAllItems();
