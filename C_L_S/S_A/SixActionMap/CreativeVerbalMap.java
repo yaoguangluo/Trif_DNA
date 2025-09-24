@@ -12,19 +12,18 @@ import S_A.SEM.bloom.StaticRootMap;
 import S_A.pheromone.IMV_SIQ;
 
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
+ * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com
  * , -
  ** 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 @SuppressWarnings("unchecked")
 public class CreativeVerbalMap {
 	public IMV_SIQ flowerActionMap = new IMV_SIQ();
-
 	public static void initInitonActions() {
 		regAddActionInterfaceClass();
 		regAddParserMixedStringClass();
@@ -38,6 +37,32 @@ public class CreativeVerbalMap {
 
 	}
 
+	/*
+	 * CN
+	 * 关于元基花的函数注册方式我思考了很久，早期的24朵花瓣模拟染色体进行函数注册，后来干脆
+	 * 把StaticRootMap 这类map拿出来直接进行单例化一个新类添加模块注册，让其越来越动态，
+	 * 但是遇到了一个问题 StaticFunctionMapS_AOPM_C 这类成员还是不够灵活，我有必要之后
+	 * 有时间会全部进行new 来去static。即使这些函数是非常稳定的类，new有一个好处是支持一个
+	 * 平台系统上多个华瑞集API，同时 StaticFunctionMapS_AOPM_C这类函数可以进行object
+	 * 态下稍微改造，因为继承关系，我有必要以后StaticFunctionMapS_AOPM_C 会变成
+	 * StaticFunctionMap，S_AOPM_C 以后只是一个key，方便扩展归纳。这样做的价值是，元基花
+	 * 能有效适应和抵抗程序员的编码风格。生存能力直接提高一个档次，像极了亚马逊的王莲，其实在
+	 * 某种观测态下，编码规范这种思维也是可以优化进化的。
+	 * 
+	 * EN
+	 * Mr.YaoguangLuo has been thinking about an optimization of coding-norms since
+	 *  the method of initons-flower created at 2021. In early times, StaticRootMap
+	 *   as a static attribute which was ranged in 24 chromosome-nodes in HRJ-YLJ 
+	 *   system. He extracted it out from S-AOPM package and built a 
+	 *   new singleton class to let the TVM-registrations became more simpler and 
+	 *   faster. The name of class-file is CreativeVerbalMap. Continuing this method, 
+	 *   while thus classes were 2's-developed by problem-consumers, how does to 
+	 *   raise the survive ability itself? Finally Mr.YaoguangLuo determinated out
+	 *   that is necessary to change the key words of 'static' into 'new', ASAP. 
+	 *  
+	 * --罗瑶光/YaoguangLuo
+	 * --稍后纠正语法。
+	 * */
 	static void regAddActionInterfaceClass() {
 		// TODO Auto-generated method stub
 		// 非OSGI模式注册花语言，其他见我著作权的CrabInterfaceClass。
