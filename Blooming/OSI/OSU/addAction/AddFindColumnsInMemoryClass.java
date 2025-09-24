@@ -5,12 +5,10 @@ import OSI.OSU.crab.CrabInterface;
 import O_V.OSA.shell.XA_ShellTable;
 import O_V.OSA.shell.XA_ShellTables;
 import S_A.SEM.bloom.StaticFunctionMapO_VECS_C;
-import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
 import S_A.SEM.bloom.StaticRootMap;
 import S_A.pheromone.IMV_SIQ;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /*

@@ -4,17 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import A_V.E.RatioMap_E;
 import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
-import O_V.OSA.shell.XA_ShellQ_Rows_E;
-import O_V.OSM.shell.P_AO_pl_XA;
-import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
 import S_A.SEM.bloom.StaticRootMap;
-import S_A.VSQ.parser.EmotionSample;
 import S_A.pheromone.IMV_SIQ;
-import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 import jnisort.LYGSortESU9D;
 
 /*
