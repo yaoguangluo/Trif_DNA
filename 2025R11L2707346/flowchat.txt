@@ -86,11 +86,18 @@ PLtinshell，最终成为用来处理人话的tinshell节点。德塔分词POS�
 簇系法-- 将分解的笛卡尔成员进行搭配的序次合并，减少成员数。
 作品中应用举例
 --在处理tinshell的行数提取命令时 设计歧义混合中文数字提取和变换，将中文+数字的前后次序多个碎片提取来处理变成一个阿拉伯数字碎片。
---具体应用
+--具体实现
 --包名----package S_A.SixActionMap;
 --文件名--StudyVerbalMap
 --函数名--formatNumericMap
 --256行--String regArabicNumber = command_V.fasterChineseNumberSwap(chineseNumber);
+--
+--应用于 
+--包名----package O_V.OSM.shell;
+--文件名--E_pl_XA_E
+--函数名--E_pl_XA
+--75行---command_V.initArabicNumber();
+
 --论证价值--有效地减少笛卡尔计算时碎片，增加有效计算成员数。
 --其他应用--可增加复杂指令中需要POS搭配的序次组合，如连词处理---我和他一起吃饭，他和你一起读书----，
 组合后能识别我和他 是吃饭指令， 而不是 他和你是读书指令。如果 条件是我他，那么他和你可以有效过滤。
