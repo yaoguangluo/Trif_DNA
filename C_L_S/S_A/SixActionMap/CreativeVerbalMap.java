@@ -58,7 +58,7 @@ public class CreativeVerbalMap {
 	 *   faster. The name of class-file is CreativeVerbalMap. Continuing this method, 
 	 *   while thus classes were 2's-developed by problem-consumers, how does to 
 	 *   raise the survive ability itself? Finally Mr.YaoguangLuo determinated out
-	 *   that is necessary to change the key words of 'static' into 'new', ASAP. 
+	 *   that is necessary to change the key word of 'static' into 'new', ASAP. 
 	 *  
 	 * --罗瑶光/YaoguangLuo
 	 * --稍后纠正语法。
