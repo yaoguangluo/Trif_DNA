@@ -68,7 +68,7 @@ PLtinshell，最终成为用来处理人话的tinshell节点。德塔分词POS�
 两个比较新颖的逻辑价值，便是笛卡尔逻辑分解意识。
 
 CN
-渡系法和簇系法--在处理笛卡尔关系的时候为了进行有效的进行剔除和过滤来减少关系组合，于是产生了2种价值意识。
+渡系法和簇系法--在处理笛卡尔关系的时候为了进行有效地剔除和过滤来减少关系组合，于是产生了2种价值意识。
 
 EN
 Mr.YaoguangLuo found 2 ways of duplication in definition of Cartesian's-relationship.
