@@ -57,7 +57,7 @@ public class CreativeVerbalMap {
 	 *   new singleton class to let the TVM-registrations became more simpler and 
 	 *   faster. The name of class-file is CreativeVerbalMap. Continuing this method, 
 	 *   while thus classes were 2's-developed by problem-consumers, how does to 
-	 *   raise the survive ability itself? Finally Mr.YaoguangLuo determinated out
+	 *   raise the survive ability itself? Finally Mr.YaoguangLuo determined out
 	 *   that is necessary to change the key word of 'static' into 'new', ASAP. 
 	 *  
 	 * --罗瑶光/YaoguangLuo
