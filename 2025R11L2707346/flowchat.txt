@@ -70,7 +70,16 @@ PLtinshell，最终成为用来处理人话的tinshell节点。德塔分词POS�
 渡系法和簇系法--在处理笛卡尔关系的时候为了进行有效的进行剔除和过滤来减少关系组合，于是产生了2种价值意识。
 渡系法-- 将分解的笛卡尔成员进行逻辑的因果意识合并，减少成员数。
 作品中应用举例
---
+--在我的分词后的笛卡尔关系成员观测中，我发现前后的单字成员，他们的词性都是名词或者动词，介词等，
+于是合并这些单字成为2字词和3字词，原来的成员便大幅减少。
+--具体应用
+--包名---package S_A.SixActionMap;
+--文件名-WorkVerbalMap
+--函数名-setHumanTalkAfterNewBusinessTest
+--147行-List<String> setsInput = demoPOSTest.testPOSOnlyGetList(command_V._IMV_SIQ_SS_, pos);
+--170行-List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(setsInput, pos);
+有效地减少笛卡尔计算时的成员数。
+
 
 簇系法-- 将分解的笛卡尔成员进行搭配的序次合并，减少成员数。
 作品中应用举例
