@@ -78,14 +78,23 @@ PLtinshell，最终成为用来处理人话的tinshell节点。德塔分词POS�
 --函数名-setHumanTalkAfterNewBusinessTest
 --147行-List<String> setsInput = demoPOSTest.testPOSOnlyGetList(command_V._IMV_SIQ_SS_, pos);
 --170行-List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(setsInput, pos);
-有效地减少笛卡尔计算时的成员数。
+--论证价值--有效地减少笛卡尔计算时的成员数。
+--其他应用--可增加复杂指令中需要POS分类的组合，如处理---我叫他一起吃饭，回来时下了雨，我和书本都湿透了----，
+组合后能识别强调我叫他 是人同类 属于吃饭触发指令， 而不是 我和书本 这任人和物类需要过滤的关系指令。
 
 
 簇系法-- 将分解的笛卡尔成员进行搭配的序次合并，减少成员数。
 作品中应用举例
---
+--在处理tinshell的行数提取命令时 设计歧义混合中文数字提取和变换，将中文+数字的前后次序多个碎片提取来处理变成一个阿拉伯数字碎片。
+--具体应用
+--包名----package S_A.SixActionMap;
+--文件名--StudyVerbalMap
+--函数名--formatNumericMap
+--256行--String regArabicNumber = command_V.fasterChineseNumberSwap(chineseNumber);
+--论证价值--有效地减少笛卡尔计算时碎片，增加有效计算成员数。
+--其他应用--可增加复杂指令中需要POS搭配的序次组合，如连词处理---我和他一起吃饭，他和你一起读书----，
+组合后能识别我和他 是吃饭指令， 而不是 他和你是读书指令。如果 条件是我他，那么他和你可以有效过滤。
 
- 
 
 4 歧义混合中文识别阿拉伯数字
 tinshell的指令句中含有阿拉伯数字，在设计笛卡尔人话逻辑时候，人话是中文，指令句中的数字可能也会有中文大写
