@@ -99,7 +99,7 @@ class FlowerTalkEncodingTest {
 		}
 		// 名名，单字，等各类组合，见末尾注释的老接口函数
 		//
-		// 2.1 罗氏DNN 价值词汇 真实应用方式
+		// 2.1 罗瑶光DNN 价值词汇 真实应用方式
 		DNNTest dNNTest = new DNNTest();
 		ANNTest aNNTest = new ANNTest();
 		String[][] ann = aNNTest.getANNMatrix(tinshell, commonTestInition.NE);
@@ -154,7 +154,7 @@ class FlowerTalkEncodingTest {
 		System.out.println();
 		System.out.println();
 		// 价值
-		// 根据2 的罗氏DNN价值词汇打分排序去写各类触发函数 优先来 寻找1 的德塔分词POS词汇组合根据RNN距离
+		// 根据2 的罗瑶光DNN价值词汇打分排序去写各类触发函数 优先来 寻找1 的德塔分词POS词汇组合根据RNN距离
 		// 权重打分进行罗瑶光极速排序5代来笛卡尔匹配十六元基花索引函数组最优先决策 执行。这种强大的模型可
 		// 构建数千种花语基础底层建筑，我就不多说了。
 		// todo。。
