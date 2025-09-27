@@ -33,7 +33,7 @@ public interface CrabInterface {
 	// StaticRootMap.chromosomeRoot.put("crab", null);
 	// StaticRootMap.chromosomeLeaf.put("crab", null);
 	// StaticRootMap.chromosomeDNA.put("crab", null);
-	public void chromosomes();
+	public void chromosomes(App NE);
 
 	/*
 	 * 用于表达花语的链接
@@ -45,7 +45,7 @@ public interface CrabInterface {
 	// StaticRootMap.chromosomeFlower.put("crab", null);
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeMetabolism.put("crab", null);
-	public void bloomings();
+	public void bloomings(App NE);
 
 	/*
 	 * 用于表达执行方式和函数内容

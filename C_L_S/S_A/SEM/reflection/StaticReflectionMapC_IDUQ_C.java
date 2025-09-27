@@ -18,11 +18,13 @@ import java.util.Map;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticReflectionMapC_IDUQ_C {
-	public static Map<String, String> annotationMap= new IMV_SIQ();
-	public static void callFunction(CallFunctionKey callFunctionKey
-			, StaticFunctionMapC_IDUQ_E staticFunctionMapC_IDUQ_C, IMV_SIQ output, App NE) {
-		
-		
+	@SuppressWarnings("unchecked")
+	public static Map<String, String> annotationMap = new IMV_SIQ();
+
+	public static void callFunction(CallFunctionKey callFunctionKey,
+		StaticFunctionMapC_IDUQ_E staticFunctionMapC_IDUQ_C,
+		IMV_SIQ output, App NE) {
+
 	}
-	
+
 }

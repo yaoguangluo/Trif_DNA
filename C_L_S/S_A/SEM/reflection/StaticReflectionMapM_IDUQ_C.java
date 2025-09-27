@@ -19,66 +19,73 @@ import java.util.Map;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticReflectionMapM_IDUQ_C {
-    public static Map<String, String> annotationMap = new IMV_SIQ();
+	@SuppressWarnings("unchecked")
+	public static Map<String, String> annotationMap = new IMV_SIQ();
 
-    public static void callFunction(CallFunctionKey callFunctionKey
-        , StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C
-        , IMV_SIQ output, App NE) {
-        String[] 传参因子 = (String[]) output.get("传参因子");
-        Object map = null;
-        if (callFunctionKey.contains("getQ_OulerRing", NE)) {
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                map = staticFunctionMapM_IDUQ_C.getQ_OulerRing();
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , "getQ_OulerRing");
-        }
-        ;
-        if (callFunctionKey.contains("getQ_OulerRing16", NE)) {
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                map = staticFunctionMapM_IDUQ_C.getQ_OulerRing16();
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , "getQ_OulerRing16");
-        }
-        ;
-        if (callFunctionKey.contains("getDecadeToPDS", NE)) {
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                map = staticFunctionMapM_IDUQ_C.getDecadeToPDS();
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , "getDecadeToPDS");
-        }
-        ;
-        if (callFunctionKey.contains("getDecadeToPDS16", NE)) {
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                map = staticFunctionMapM_IDUQ_C.getDecadeToPDS16();
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , "getDecadeToPDS16");
-        }
-        ;
-        if (callFunctionKey.contains("getPDE_PDS_DL", NE)) {
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                map = staticFunctionMapM_IDUQ_C.getPDE_PDS_DL();
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , "getPDE_PDS_DL");
-        }
-        ;
-        if (callFunctionKey.contains("getPDE_PDS_DL16", NE)) {
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                map = staticFunctionMapM_IDUQ_C.getPDE_PDS_DL16();
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , "getPDE_PDS_DL16");
-        }
-        ;
-    }
+	public static void callFunction(CallFunctionKey callFunctionKey,
+		StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C,
+		IMV_SIQ output, App NE) {
+		String[] 传参因子 = (String[]) output.get("传参因子");
+		Object map = null;
+		if (callFunctionKey.contains("getQ_OulerRing", NE)) {
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				map = staticFunctionMapM_IDUQ_C.getQ_OulerRing();
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, "getQ_OulerRing");
+		}
+		;
+		if (callFunctionKey.contains("getQ_OulerRing16", NE)) {
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				map = staticFunctionMapM_IDUQ_C.getQ_OulerRing16();
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, "getQ_OulerRing16");
+		}
+		;
+		if (callFunctionKey.contains("getDecadeToPDS", NE)) {
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				map = staticFunctionMapM_IDUQ_C.getDecadeToPDS();
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, "getDecadeToPDS");
+		}
+		;
+		if (callFunctionKey.contains("getDecadeToPDS16", NE)) {
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				map = staticFunctionMapM_IDUQ_C.getDecadeToPDS16();
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, "getDecadeToPDS16");
+		}
+		;
+		if (callFunctionKey.contains("getPDE_PDS_DL", NE)) {
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				map = staticFunctionMapM_IDUQ_C.getPDE_PDS_DL();
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, "getPDE_PDS_DL");
+		}
+		;
+		if (callFunctionKey.contains("getPDE_PDS_DL16", NE)) {
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				map = staticFunctionMapM_IDUQ_C.getPDE_PDS_DL16();
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, "getPDE_PDS_DL16");
+		}
+		;
+	}
 }

@@ -50,7 +50,8 @@ public class StaticFunctionMapS_AOPM_E implements StaticFunctionMapS_AOPM_C {
         return D_Standard.DropCellORM(rootPath._S_, baseName._S_, tabKey._S_);
     }
 
-    public IMV_SIQ DropCellPLSQL(App NE) {
+    @SuppressWarnings("unused")
+	public IMV_SIQ DropCellPLSQL(App NE) {
         AES_QMS_XSD_TIH rootPath = NE._I_U.rootPath;
         AES_QMS_XSD_TIH baseName = NE._I_U.baseName;
         AES_QMS_XSD_TIH tabKey = NE._I_U.tabKey;
@@ -163,6 +164,6 @@ public class StaticFunctionMapS_AOPM_E implements StaticFunctionMapS_AOPM_C {
 
     //S 接口的应用
     public void creatMap(App NE) {
-        StaticRootMap.initMap();
+        NE.app_S.staticRootMap.initMap(NE);
     }
 }

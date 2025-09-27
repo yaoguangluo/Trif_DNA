@@ -3,7 +3,6 @@ package OSI.OSU.addAction;
 import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
-import S_A.SEM.bloom.StaticRootMap;
 import S_A.pheromone.IMV_SIQ;
 
 /*
@@ -40,18 +39,20 @@ public class AddActionInterfaceClass implements CrabInterface {
 	// StaticRootMap.chromosomeLeaf.put("crab", null);
 	// StaticRootMap.chromosomeDNA.put("crab", null);
 	@SuppressWarnings("unchecked")
-	public void chromosomes() {
-		StaticRootMap.initMap();
+	public void chromosomes(App NE) {
+		NE.app_S.staticRootMap.initMap(NE);
 		callFunctionKey = "callFunctionKey";
 		// 20230207 走统计新陈代谢
-		StaticRootMap.staticBloomingTimes.put(callFunctionKey, (long) 0);
-		StaticRootMap.staticBloomingTime.put(callFunctionKey,
-				System.currentTimeMillis());// 增加记忆时间。20241013
-		StaticRootMap.staticClass_XE_Map.put(callFunctionKey, "S_AOPM");
-		StaticRootMap.chromosomeNode.put(callFunctionKey,
-				new AddActionInterfaceClass());// 20241001准备把这行移出去。
+		NE.app_S.staticRootMap.staticBloomingTimes.put(
+			callFunctionKey, (long) 0);
+		NE.app_S.staticRootMap.staticBloomingTime.put(callFunctionKey,
+			System.currentTimeMillis());// 增加记忆时间。20241013
+		NE.app_S.staticRootMap.staticClass_XE_Map.put(callFunctionKey,
+			"S_AOPM");
+		NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey,
+			new AddActionInterfaceClass());// 20241001准备把这行移出去。
 		StaticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey,
-				"inputValues:传参因子:因子");
+			"inputValues:传参因子:因子");
 		// String callFunctionKey= "callFunctionKey";
 		// StaticRootMap.initMap();
 	};
@@ -67,8 +68,9 @@ public class AddActionInterfaceClass implements CrabInterface {
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeMetabolism.put("crab", null);
 	@SuppressWarnings("unchecked")
-	public void bloomings() {
-		StaticRootMap.chromosomeBlooming.put(callFunctionKey, this.getClass());
+	public void bloomings(App NE) {
+		NE.app_S.staticRootMap.chromosomeBlooming.put(callFunctionKey,
+			this.getClass());
 	}
 
 	;
@@ -98,15 +100,17 @@ public class AddActionInterfaceClass implements CrabInterface {
 	// System.out.println("Hello Word!");
 	// return null;
 	@SuppressWarnings("unchecked")
-	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg) {
+	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子,
+		App NE, IMV_SIQ outputReg) {
 		System.out.println("Hello Word!");
-		if (NE.app_S.workVerbalMap.command_V.cartesianLooped
-				.contains(className)) {
+		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(
+			className)) {
 			//System.out.println("400-size-01-"
 			//		+ NE.app_S.workVerbalMap.command_V.countReject++);
 			return false;
 		}
-		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");
+		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(
+			className, "");
 		//System.out.println("400-size-02-"
 		//		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 

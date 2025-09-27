@@ -2,9 +2,10 @@ package S_A.SEM.register;
 
 import S_A.SEM.bloom.StaticFunctionMapM_IDUQ_C;
 import S_A.SEM.bloom.StaticFunctionMapM_IDUQ_E;
-import S_A.SEM.bloom.StaticRootMap;
 
 import java.util.Iterator;
+
+import ME.VPC.M.app.App;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -17,21 +18,32 @@ import java.util.Iterator;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticRegisterM_IDUQ_C {
-	public static void load(StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_E) {
-		
+	@SuppressWarnings("unchecked")
+	public static void load(
+		StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_E, App NE) {
+
 		//稍后封装
-		StaticFunctionMapM_IDUQ_C.annotationMap.put("getQ_OulerRing", "void");
-		StaticFunctionMapM_IDUQ_C.annotationMap.put("getQ_OulerRing16", "void");
-		StaticFunctionMapM_IDUQ_C.annotationMap.put("getDecadeToPDS", "void");
-		StaticFunctionMapM_IDUQ_C.annotationMap.put("getDecadeToPDS16", "void");
-		StaticFunctionMapM_IDUQ_C.annotationMap.put("getPDE_PDS_DL", "void");
-		StaticFunctionMapM_IDUQ_C.annotationMap.put("getPDE_PDS_DL16", "void");
-		
-		Iterator<String> iterators= StaticFunctionMapM_IDUQ_C.annotationMap.keySet().iterator();
-		while(iterators.hasNext()) {
-			String temp= iterators.next().toString();
-			StaticRootMap.staticBloomingTimes.put(temp, (long) 0);
-			StaticRootMap.staticClass_XE_Map.put(temp, "M_IDUQ");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put("getQ_OulerRing",
+			"void");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put(
+			"getQ_OulerRing16", "void");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put("getDecadeToPDS",
+			"void");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put(
+			"getDecadeToPDS16", "void");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put("getPDE_PDS_DL",
+			"void");
+		StaticFunctionMapM_IDUQ_C.annotationMap.put("getPDE_PDS_DL16",
+			"void");
+
+		Iterator<String> iterators = StaticFunctionMapM_IDUQ_C.annotationMap
+			.keySet().iterator();
+		while (iterators.hasNext()) {
+			String temp = iterators.next().toString();
+			NE.app_S.staticRootMap.staticBloomingTimes.put(temp,
+				(long) 0);
+			NE.app_S.staticRootMap.staticClass_XE_Map.put(temp,
+				"M_IDUQ");
 		}
 	}
 }

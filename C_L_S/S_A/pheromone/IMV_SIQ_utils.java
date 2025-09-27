@@ -31,14 +31,14 @@ public class IMV_SIQ_utils {
 	public static void couldSQLThenSQL(String key, String[] strings,
 			TinMap output, App NE) throws InterruptedException, IOException {
 		// 7代花再缩减 // flex
-		for (String actionKey : (Iterable<String>) FlowerAction.FlowerP_E_KernelActions
+		for (String actionKey : (Iterable<String>) NE.app_S.flowerAction.FlowerP_E_KernelActions
 				.keySet()) {
 			System.out.println("400-00001001-" + key);
 			System.out.println("400-00001002-" + actionKey);
 			if (key.contains(actionKey)) {// later separate.
-				String temp = FlowerAction.FlowerP_E_KernelActions
+				String temp = NE.app_S.flowerAction.FlowerP_E_KernelActions
 						.getString(actionKey);
-				FlowerAction.doAction(temp, strings, output, NE);
+				NE.app_S.flowerAction.doAction(temp, strings, output, NE);
 			}
 		}
 	}
@@ -47,7 +47,7 @@ public class IMV_SIQ_utils {
 	public static void couldDoThenDo(String key, String[] strings,
 			TinMap output, App NE, HashMap<String, Integer> scores)
 			throws InterruptedException, IOException {// 7代花再缩减 flex
-		Iterator<String> iterators = FlowerAction.FlowerSixDomainActions
+		Iterator<String> iterators = NE.app_S.flowerAction.FlowerSixDomainActions
 				.keySet().iterator();
 		while (iterators.hasNext()) {
 			String actionKey = iterators.next();
@@ -58,9 +58,9 @@ public class IMV_SIQ_utils {
 			 */
 			if (key.contains(actionKey)) {// later separate.
 				/* 精确匹配就直接触发 */
-				String temp = FlowerAction.FlowerSixDomainActions
+				String temp = NE.app_S.flowerAction.FlowerSixDomainActions
 						.getString(actionKey);
-				FlowerAction.doAction(temp, strings, output, NE);
+				NE.app_S.flowerAction.doAction(temp, strings, output, NE);
 				System.out.println("400-10000002" + actionKey);
 				System.out.println("400-10000003-" + temp);
 			} else {
@@ -105,7 +105,7 @@ public class IMV_SIQ_utils {
 			if (stringsKey[0].equals(stringsAction[0])
 					|| stringsKey[1].equals(stringsAction[1])) {
 				System.out.println("400-10000004-1-" + actionKey);
-				String temp = FlowerAction.FlowerSixDomainActions
+				String temp = NE.app_S.flowerAction.FlowerSixDomainActions
 						.getString(actionKey);
 				if (scores.containsKey(temp)) {
 					int score = scores.get(temp);
@@ -119,7 +119,7 @@ public class IMV_SIQ_utils {
 					 */
 					int scale = 1;
 					if (score > scale) {
-						FlowerAction.doAction(temp, strings, output, NE);
+						NE.app_S.flowerAction.doAction(temp, strings, output, NE);
 						scores.put(temp, 0);
 					}
 					scores.put(temp, score);
@@ -129,7 +129,7 @@ public class IMV_SIQ_utils {
 					 * 有些只做一次的驱动可以另外分类进行算法描述 最简单的实例是map 对不同的action + 触发精度分数规则，
 					 * 既然是equals，那么这里 属于必须做的操作。 later -trif
 					 */
-					FlowerAction.doAction(temp, strings, output, NE);
+					NE.app_S.flowerAction.doAction(temp, strings, output, NE);
 					// Todo -trif
 				}
 

@@ -12,7 +12,6 @@ import OSI.OSU.crab.CrabInterface;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
-import S_A.SEM.bloom.StaticRootMap;
 import S_A.pheromone.AES_QMS_XSD_TIH;
 import S_A.pheromone.IMV_SIQ;
 
@@ -54,15 +53,15 @@ public class AddParserMixedStringToListClass implements CrabInterface {
 	// StaticRootMap.chromosomeLeaf.put("crab", null);
 	// StaticRootMap.chromosomeDNA.put("crab", null);
 	@SuppressWarnings("unchecked")
-	public void chromosomes() {
-		StaticRootMap.initMap();
+	public void chromosomes(App NE) {
+		NE.app_S.staticRootMap.initMap(NE);
 		callFunctionKey = "callFunctionKey";
 		// 20230207 走统计新陈代谢
-		StaticRootMap.staticBloomingTimes.put(callFunctionKey, (long) 0);
-		StaticRootMap.staticBloomingTime.put(callFunctionKey,
+		NE.app_S.staticRootMap.staticBloomingTimes.put(callFunctionKey, (long) 0);
+		NE.app_S.staticRootMap.staticBloomingTime.put(callFunctionKey,
 				System.currentTimeMillis());// 增加记忆时间。20241013
-		StaticRootMap.staticClass_XE_Map.put(callFunctionKey, "S_AOPM");
-		StaticRootMap.chromosomeNode.put(callFunctionKey,
+		NE.app_S.staticRootMap.staticClass_XE_Map.put(callFunctionKey, "S_AOPM");
+		NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey,
 				new AddParserMixedStringToListClass());// 20241001准备把这行移出去。
 		StaticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey,
 				"inputValues:传参因子:因子");
@@ -81,8 +80,8 @@ public class AddParserMixedStringToListClass implements CrabInterface {
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeMetabolism.put("crab", null);
 	@SuppressWarnings("unchecked")
-	public void bloomings() {
-		StaticRootMap.chromosomeBlooming.put(callFunctionKey, this.getClass());
+	public void bloomings(App NE) {
+		NE.app_S.staticRootMap.chromosomeBlooming.put(callFunctionKey, this.getClass());
 	}
 
 	/*

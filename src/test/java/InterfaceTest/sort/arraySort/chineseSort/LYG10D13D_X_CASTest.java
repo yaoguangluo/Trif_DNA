@@ -49,3 +49,14 @@ class LYG10D13D_X_CASTest {
 	void findSmallWithTwoCharWithpinyin() {
 	}
 }
+//输出
+//罗瑶
+//罗瑶光
+//瑶光
+//luoy罗瑶光uang
+//xy瑶光guang
+//y瑶光g
+//ya罗瑶光ang
+//yaog瑶光ng
+//yaoguang
+//yaoguang

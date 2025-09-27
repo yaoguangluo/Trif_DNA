@@ -10,7 +10,6 @@ import ME.VPC.S.ne.WindowsUI;
 import ME.VPC.V.ET.CecilPage_X_S_sListeners;
 import M_V.MVQ.button.DetaButton;
 import S_A.SEM.bloom.StaticFunctionMapM_VECS_C;
-import S_A.SEM.bloom.StaticRootMap;
 import S_A.pheromone.IMV_SIQ;
 
 import javax.swing.Box;
@@ -83,7 +82,7 @@ public class CecilPage extends CecilPage_X_S_sListeners {
 		// strings[0]= "执行 元基花 下 "+ callFunctionKey+ " 接口, 参数是
 		// 传参因子";
 		strings[0] = "执行 M_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
-		StaticRootMap.tinShellV005(strings, output, NE);
+		NE.app_S.staticRootMap.tinShellV005(strings, output, NE);
 		IMV_SIQ map = (IMV_SIQ) output.get(callFunctionKey);
 		buttonSum = (DetaButton) map.get("interfaceReturn");
 		// buttonSum= new DetaButton("共有 " + (sets==null?0:(1 +
@@ -92,7 +91,7 @@ public class CecilPage extends CecilPage_X_S_sListeners {
 
 		inputValue.put(传参因子[0], "当前页面：" + (currentPage + 1));
 		output.put("inputValues", inputValue);
-		StaticRootMap.tinShellV005(strings, output, NE);
+		NE.app_S.staticRootMap.tinShellV005(strings, output, NE);
 		map = (IMV_SIQ) output.get(callFunctionKey);
 		buttonCrt = (DetaButton) map.get("interfaceReturn");
 		// buttonCrt= new DetaButton("当前页面：" + (currentPage + 1));

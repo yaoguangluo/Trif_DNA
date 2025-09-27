@@ -21,7 +21,6 @@ import P_V.PEQ.AMV.ECS.test.RNN_IDETest;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import P_V.PEQ.OPM.VEC.test.SuccessICATest;
 import S_A.SVQ.stable.S_Colors;
-import S_A.SVQ.stable.S_MapsInitons;
 import S_A.SixActionMap.StudyVerbalMap;
 import S_A.SixActionMap.WorkVerbalMap;
 import S_A.VSQ.parser.EmotionSample;
@@ -66,7 +65,7 @@ public class CommonTestInition {
 
 	public void initPDE(App_S app_S) {
 		System.out.println("*PDE环境 init*");
-		S_MapsInitons.init();
+		app_S._S_MapsInitons.init();
 		S_Colors.initFlowers3D();
 	}
 

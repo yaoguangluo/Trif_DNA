@@ -2,9 +2,9 @@ package S_A.SEM.register;
 
 import java.util.Iterator;
 
+import ME.VPC.M.app.App;
 import S_A.SEM.bloom.StaticFunctionMapV_IDUQ_C;
 import S_A.SEM.bloom.StaticFunctionMapV_IDUQ_E;
-import S_A.SEM.bloom.StaticRootMap;
 import S_A.Stable.bloom.S_V_IDUQ;
 
 //著作权人+ 作者= 罗瑶光
@@ -18,25 +18,36 @@ import S_A.Stable.bloom.S_V_IDUQ;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticRegisterV_IDUQ_C {
-	public static void load(StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_E) {
+	@SuppressWarnings("unchecked")
+	public static void load(
+		StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_E, App NE) {
 		//稍后封装
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("初始ETL", "app:jpanelSecond");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("仅仅初始ETL", "tableData_old:text:app:_A:pos");
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("初始ETL",
+			"app:jpanelSecond");
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("仅仅初始ETL",
+			"tableData_old:text:app:_A:pos");
 		StaticFunctionMapV_IDUQ_C.annotationMap.put("展示ETL", "void");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档读取", "void");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档执行", "void");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档保存", "void");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("getOrigianlTextByLock"
-				, "inputString:lockString");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("Load", "first:nodeView:file:thislist");
-		
-		Iterator<String> iterators= StaticFunctionMapV_IDUQ_C.annotationMap.keySet().iterator();
-		while(iterators.hasNext()) {
-			String temp= iterators.next().toString();
-			StaticRootMap.staticBloomingTimes.put(temp, (long) 0);
-			StaticRootMap.staticClass_XE_Map.put(temp, "V_IDUQ");
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档读取",
+			"void");
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档执行",
+			"void");
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档保存",
+			"void");
+		StaticFunctionMapV_IDUQ_C.annotationMap.put(
+			"getOrigianlTextByLock", "inputString:lockString");
+		StaticFunctionMapV_IDUQ_C.annotationMap.put("Load",
+			"first:nodeView:file:thislist");
+
+		Iterator<String> iterators = StaticFunctionMapV_IDUQ_C.annotationMap
+			.keySet().iterator();
+		while (iterators.hasNext()) {
+			String temp = iterators.next().toString();
+			NE.app_S.staticRootMap.staticBloomingTimes.put(temp,
+				(long) 0);
+			NE.app_S.staticRootMap.staticClass_XE_Map.put(temp,
+				"V_IDUQ");
 		}
-		S_V_IDUQ.load(staticFunctionMapV_IDUQ_E);
+		S_V_IDUQ.load(staticFunctionMapV_IDUQ_E, NE);
 		//
 		//..
 	}

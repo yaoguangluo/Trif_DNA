@@ -1,6 +1,7 @@
 package DVIAQVIMIV;
 
 import A_I.MPE.MAQPVDCOISIV.pdi.RangePDI;
+import ME.VPC.M.app.App;
 
 //准备用肽展公式来设计个 皮肤病检测程序.
 //罗瑶光 20210710
@@ -57,24 +58,24 @@ public class DoPDEofSkin {
         return output;
     }
 
-    public int[][][] doPDEofSkin_AOPM_VECS_IDUQ_TXH(int[][][] rgb, int ratio) {
+    public int[][][] doPDEofSkin_AOPM_VECS_IDUQ_TXH(int[][][] rgb, int ratio, App NE) {
         int[][][] output = new int[3][][];
         //int ratio= 50;
-        int[][] rp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH(rgb[0], ratio);
-        int[][] gp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH(rgb[1], ratio);
-        int[][] bp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH(rgb[2], ratio);
+        int[][] rp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH(rgb[0], ratio, NE);
+        int[][] gp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH(rgb[1], ratio, NE);
+        int[][] bp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH(rgb[2], ratio, NE);
         output[0] = rp;
         output[1] = gp;
         output[2] = bp;
         return output;
     }
 
-    public int[][][] doPDEofSkin_AOPM_VECS_IDUQ_TXH_AC(int[][][] rgb, int ratio) {
+    public int[][][] doPDEofSkin_AOPM_VECS_IDUQ_TXH_AC(int[][][] rgb, int ratio, App NE) {
         int[][][] output = new int[3][][];
         //int ratio= 50;
-        int[][] rp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(rgb[0], ratio);
-        int[][] gp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(rgb[1], ratio);
-        int[][] bp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(rgb[2], ratio);
+        int[][] rp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(rgb[0], ratio, NE);
+        int[][] gp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(rgb[1], ratio, NE);
+        int[][] bp = RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(rgb[2], ratio, NE);
         output[0] = rp;
         output[1] = gp;
         output[2] = bp;

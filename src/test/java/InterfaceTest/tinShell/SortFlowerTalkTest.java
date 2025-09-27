@@ -3,7 +3,6 @@ package test.java.InterfaceTest.tinShell;
 import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import S_A.SEM.bloom.StaticFunctionMapQ_VECS_E;
 import S_A.SixActionMap.CreativeVerbalMap;
-import S_A.SixActionMap.FlowerAction;
 import S_A.SixActionMap.StudyVerbalMap;
 import S_A.pheromone.AES_QMS_XSD_TIH;
 import S_A.pheromone.IMV_SIQ;
@@ -61,18 +60,18 @@ class SortFlowerTalkTest {
 		// 初始化 花语函数表
 		// initon plugin types without OSGI
 		System.out.println("FlowerSixDomainActions 元基花自主添加六元催化函数注册");
-		CreativeVerbalMap.initInitonActions();
+		CreativeVerbalMap.initInitonActions(commonTestInition.NE);
 		//
 		System.out.println("initonDelegate 元基花触发词汇添加");
 		StudyVerbalMap.initInitonDelegate();
 		//
 		System.out.println("FlowerP_E_KernelActions 元基花脚本函数注册");
-		FlowerAction.initFlowerP_E_KernelActions();
+		commonTestInition.NE.app_S.flowerAction.initFlowerP_E_KernelActions();
 		//
 		System.out.println("FlowerSixDomainActions 德塔PLSQL数据库ORM函数注册");
-		FlowerAction.initFlowerSixDomainActions();
+		commonTestInition.NE.app_S.flowerAction.initFlowerSixDomainActions();
 		// 输出 linkedHashMap
-		IMV_SIQ textContent = FlowerAction.FlowerSixDomainActions;
+		IMV_SIQ textContent = commonTestInition.NE.app_S.flowerAction.FlowerSixDomainActions;
 
 		// 设置输入待搜索列表，
 		Iterator<String> iterators = textContent.keySet().iterator();

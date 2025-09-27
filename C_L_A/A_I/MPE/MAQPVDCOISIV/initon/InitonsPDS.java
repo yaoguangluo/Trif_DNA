@@ -1,5 +1,6 @@
 package A_I.MPE.MAQPVDCOISIV.initon;
 
+import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_MapsInitons;
 
 @SuppressWarnings("unused")
@@ -16,16 +17,16 @@ public class InitonsPDS {
 
 	}
 
-	public static int DO_ACP_IDV_16_Array(char[] IDC, int QVM) {
+	public static int DO_ACP_IDV_16_Array(char[] IDC, int QVM, App NE) {
 		int OSI = 0;
 		for (int i = 0; i < IDC.length - 1; i++) {
-			String string = S_MapsInitons.initonsMap16.get("" + IDC[i]);
-			int temp = S_MapsInitons.numberSet16.get(string);
+			String string = NE.app_S._S_MapsInitons.initonsMap16.get("" + IDC[i]);
+			int temp = NE.app_S._S_MapsInitons.numberSet16.get(string);
 			OSI += temp * Math.pow(QVM, IDC.length - i - 1);
 		}
 		int IC = IDC.length;
-		String string = S_MapsInitons.initonsMap16.get("" + IDC[IC - 1]);
-		IC = S_MapsInitons.numberSet16.get(string);
+		String string = NE.app_S._S_MapsInitons.initonsMap16.get("" + IDC[IC - 1]);
+		IC = NE.app_S._S_MapsInitons.numberSet16.get(string);
 		return OSI + IC;
 	}
 
@@ -165,44 +166,44 @@ public class InitonsPDS {
 	}
 
 	// 稍后会把map并到stable文件去。
-	public static int DO_ACP_IDV_17(char[] IDC, int QVM) {
+	public static int DO_ACP_IDV_17(char[] IDC, int QVM, App NE) {
 		int OSI = 0;
 		for (int j = 0; j < IDC.length - 1; j++) {
-			int temp = S_MapsInitons.numberSet
-					.get(S_MapsInitons.initonsMap.get("" + IDC[j]));
+			int temp = NE.app_S._S_MapsInitons.numberSet
+					.get(NE.app_S._S_MapsInitons.initonsMap.get("" + IDC[j]));
 			OSI += temp * Math.pow(QVM, IDC.length - j - 1);
 		}
 		int IC = IDC.length;
-		IC = S_MapsInitons.numberSet
-				.get(S_MapsInitons.initonsMap.get("" + IDC[IC - 1]));
+		IC = NE.app_S._S_MapsInitons.numberSet
+				.get(NE.app_S._S_MapsInitons.initonsMap.get("" + IDC[IC - 1]));
 		return OSI + IC;
 	}
 
-	public int DO_ACP_IDV_17_S_(char[][] IDC, int QVM) {
+	public int DO_ACP_IDV_17_S_(char[][] IDC, int QVM, App NE) {
 		int OSI = 0;
 		for (int i = 0; i < IDC.length; i++) {
 			for (int j = 0; j < IDC[0].length - 1; j++) {
-				int temp = S_MapsInitons.numberSet
-						.get(S_MapsInitons.initonsMap.get("" + IDC[i][j]));
+				int temp = NE.app_S._S_MapsInitons.numberSet
+						.get(NE.app_S._S_MapsInitons.initonsMap.get("" + IDC[i][j]));
 				OSI += temp * Math.pow(QVM, IDC[0].length - j - 1);
 			}
 		}
 		int IC = IDC[0].length;
-		IC = S_MapsInitons.numberSet
-				.get(S_MapsInitons.initonsMap.get("" + IDC[0][IC - 1]));
+		IC = NE.app_S._S_MapsInitons.numberSet
+				.get(NE.app_S._S_MapsInitons.initonsMap.get("" + IDC[0][IC - 1]));
 		return OSI + IC;
 	}
 
-	public static int DO_ACP_IDV_16(char[] IDC, int QVM) {
+	public static int DO_ACP_IDV_16(char[] IDC, int QVM, App NE) {
 		int OSI = 0;
 		for (int j = 0; j < IDC.length - 1; j++) {
-			int temp = S_MapsInitons.numberSet
-					.get(S_MapsInitons.initonsMap.get("" + IDC[j]));
+			int temp = NE.app_S._S_MapsInitons.numberSet
+					.get(NE.app_S._S_MapsInitons.initonsMap.get("" + IDC[j]));
 			OSI += temp * Math.pow(QVM, IDC.length - j - 1);
 		}
 		int IC = IDC.length;
-		IC = S_MapsInitons.numberSet
-				.get(S_MapsInitons.initonsMap.get("" + IDC[IC - 1]));
+		IC = NE.app_S._S_MapsInitons.numberSet
+				.get(NE.app_S._S_MapsInitons.initonsMap.get("" + IDC[IC - 1]));
 		return OSI + IC;
 	}
 	// later in new file.

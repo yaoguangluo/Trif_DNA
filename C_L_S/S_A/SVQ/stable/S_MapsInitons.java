@@ -42,17 +42,17 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 @SuppressWarnings("unchecked")
-public interface S_MapsInitons{
-	public static final Map<String, String> initonsMap= new IMV_SIQ();
-	public static final Map<String, Integer> numberSet= new IMV_SIQ();
-	public static final Map<String, String> initonsSet= new IMV_SIQ();
-	public static final Map<String, String> initonsCode= new IMV_SIQ();
-	public static final Map<String, String> initonsMap16= new IMV_SIQ();
-	public static final Map<String, Integer> numberSet16= new IMV_SIQ();
-	public static final Map<String, String> initonsSet16= new IMV_SIQ();
-	public static final Map<String, String> initonsCode16= new IMV_SIQ();
+public class S_MapsInitons{
+	public final Map<String, String> initonsMap= new IMV_SIQ();
+	public final Map<String, Integer> numberSet= new IMV_SIQ();
+	public final Map<String, String> initonsSet= new IMV_SIQ();
+	public final Map<String, String> initonsCode= new IMV_SIQ();
+	public final Map<String, String> initonsMap16= new IMV_SIQ();
+	public final Map<String, Integer> numberSet16= new IMV_SIQ();
+	public final Map<String, String> initonsSet16= new IMV_SIQ();
+	public final Map<String, String> initonsCode16= new IMV_SIQ();
 
-	public static void init() {
+	public void init() {
  		initonsMap.put("A", "7");
  		initonsMap.put("O", "A");
  		initonsMap.put("P", "2");

@@ -61,9 +61,9 @@ class RangeImagePDITest {
 		int[][] outputg = Guassian.P_1D(gp, 15, 15, 1.7);
 		int[][] outputb = Guassian.P_1D(bp, 15, 15, 1.7);
 		// 执行非卷积肽变换滤 255峰值 波测试
-		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputr, facy);
-		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputg, facy);
-		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputb, facy);
+		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputr, facy, commonTestInition.NE);
+		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputg, facy, commonTestInition.NE);
+		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputb, facy, commonTestInition.NE);
 		// 输出
 		// 输出图片
 		//Image_ESU_X_imageToFile 稍后 单元测试 会挨个覆盖率测试

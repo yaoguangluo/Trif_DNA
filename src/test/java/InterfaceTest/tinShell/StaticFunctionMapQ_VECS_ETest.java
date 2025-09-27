@@ -21,9 +21,9 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 class StaticFunctionMapQ_VECS_ETest {
-	public static void main(String[] argv) throws InterruptedException {
-		StaticFunctionMapQ_VECS_ETest staticFunctionMapQ_VECS_ETest 
-		= new StaticFunctionMapQ_VECS_ETest();
+	public static void main(String[] argv)
+		throws InterruptedException {
+		StaticFunctionMapQ_VECS_ETest staticFunctionMapQ_VECS_ETest = new StaticFunctionMapQ_VECS_ETest();
 		staticFunctionMapQ_VECS_ETest.main();
 	}
 
@@ -79,7 +79,7 @@ class StaticFunctionMapQ_VECS_ETest {
 		commonTestInition.NE._I_U.lookrot = lookrot;
 		commonTestInition.NE._I_U._AE = _AE;
 		List<Object[]> outputList = new StaticFunctionMapQ_VECS_E()
-				.searchFromTablewithScale(commonTestInition.NE, 0, false);
+			.searchFromTablewithScale(commonTestInition.NE, 0, false);
 		Iterator<Object[]> iterator = outputList.iterator();
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();
@@ -96,7 +96,7 @@ class StaticFunctionMapQ_VECS_ETest {
 		commonTestInition.NE._I_U._AE = _AE;
 
 		outputList = new StaticFunctionMapQ_VECS_E()
-				.searchFromTablewithScale(commonTestInition.NE, 0, false);
+			.searchFromTablewithScale(commonTestInition.NE, 0, false);
 		iterator = outputList.iterator();
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();
@@ -113,7 +113,7 @@ class StaticFunctionMapQ_VECS_ETest {
 		commonTestInition.NE._I_U.lookrot = lookrot;
 		commonTestInition.NE._I_U._AE = _AE;
 		outputList = new StaticFunctionMapQ_VECS_E()
-				.searchFromTablewithScale(commonTestInition.NE, 0, false);
+			.searchFromTablewithScale(commonTestInition.NE, 0, false);
 		iterator = outputList.iterator();
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();

@@ -5,7 +5,6 @@ import java.io.IOException;
 import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
 import S_A.SEM.bloom.StaticFunctionMap;
-import S_A.SEM.bloom.StaticRootMap;
 import S_A.SVQ.stable.S_ShellETL;
 import S_A.pheromone.IMV_SIQ;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
@@ -21,13 +20,22 @@ import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class FlowerAction {
-	public static IMV_SIQ FlowerSixDomainActions = new IMV_SIQ();
+	/*
+	 * 花语的注册函数是非常稳定的结构，之前一直用static无妨，我在思考，如果我越来越优化，导致
+	 * 项目越来越轻巧，当一个平台出现多个华瑞集的时代来临，那么static便不再胜任单机华瑞集线程
+	 * 协作模式，那就去static， 在仿生学中类似-雌雄同株-意识，为这种意识计算构造做个铺垫先。。
+	 * 
+	 * --罗瑶光
+	 * 
+	 * */
+	
+	public IMV_SIQ FlowerSixDomainActions = new IMV_SIQ();
 	// later will// do in // dynamic
-	public static IMV_SIQ FlowerP_E_KernelActions = new IMV_SIQ();
-	public static IMV_SIQ FlowerChromosomeActions = new IMV_SIQ();
+	public IMV_SIQ FlowerP_E_KernelActions = new IMV_SIQ();
+	public IMV_SIQ FlowerChromosomeActions = new IMV_SIQ();
 
 	@SuppressWarnings("unchecked")
-	public static void initFlowerP_E_KernelActions() {
+	public void initFlowerP_E_KernelActions() {
 		FlowerP_E_KernelActions.put("条件为", "selectRowsByAttributesOfCondition");
 		FlowerP_E_KernelActions.put("操作",
 				"selectRowsByAttributesOfAggregation");
@@ -53,7 +61,7 @@ public class FlowerAction {
 
 //现在是static，以后如果有相关进化算法来增加函数，记得改成dynamic，罗瑶光。
 	@SuppressWarnings("unchecked")
-	public static void initFlowerSixDomainActions() {
+	public void initFlowerSixDomainActions() {
 		FlowerSixDomainActions.put("获取表名", "P_TableName");
 		FlowerSixDomainActions.put("setRoot", "P_SetRoot");
 		FlowerSixDomainActions.put("baseName", "P_BaseName");
@@ -79,7 +87,7 @@ public class FlowerAction {
 	 * 
 	 */
 	@SuppressWarnings("unchecked")
-	public static void doAction(String callFunctionKey, String[] temp,
+	public void doAction(String callFunctionKey, String[] temp,
 			TinMap output, App NE) throws InterruptedException, IOException {
 		/*400 越来越多，准备设计逻辑层快速索引文档指南*/
 		System.out.println("pre-doAction-400-00005-" + callFunctionKey);
@@ -88,7 +96,7 @@ public class FlowerAction {
 		IMV_SIQ outputReg = new IMV_SIQ();
 		IMV_SIQ inputValue = new IMV_SIQ();
 		NE.app_S.helpVerbalMap.didJustNow.put(callFunctionKey, new Object());// later*/
-		String chromosome = StaticRootMap.staticClass_XE_Map
+		String chromosome = NE.app_S.staticRootMap.staticClass_XE_Map
 				.getString(callFunctionKey);
 		String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome,
 				callFunctionKey); // 我是神！ tin神！
@@ -110,17 +118,17 @@ public class FlowerAction {
 		// 孢子插件执行
 		//一旦走了孢子，那么花语就不会再执行了，可以将花语直接整合进肽语，
 		//那么这里的TVM extension 将会加强对 chromosomeNode的调用。，
-		if (StaticRootMap.chromosomeNode.containsKey(callFunctionKey)) {
+		if (NE.app_S.staticRootMap.chromosomeNode.containsKey(callFunctionKey)) {
 			CrabInterface crabInterface = (OSI.OSU.crab.CrabInterface) 
-					StaticRootMap.chromosomeNode.get(callFunctionKey);
+				NE.app_S.staticRootMap.chromosomeNode.get(callFunctionKey);
 			boolean done = crabInterface.logic(inputValue, 传参因子, 0, NE, outputReg);
 			//不断地修改过程中，变量轻微的变化导致的意识对变量函数速记缺陷。
 			if(done) {
-				StaticRootMap.tinShellV005(strings, outputReg, NE);	
+				NE.app_S.staticRootMap.tinShellV005(strings, outputReg, NE);	
 			}
 		} else {
 			// 下面是老的花函数执行
-			StaticRootMap.tinShellV005(strings, outputReg, NE);
+			NE.app_S.staticRootMap.tinShellV005(strings, outputReg, NE);
 		}
 		// need VPCS sections later
 		IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);

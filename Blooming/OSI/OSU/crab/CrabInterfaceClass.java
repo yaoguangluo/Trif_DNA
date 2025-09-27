@@ -3,8 +3,8 @@ package OSI.OSU.crab;
 import ME.VPC.M.app.App;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
-import S_A.SEM.bloom.StaticRootMap;
 import S_A.pheromone.IMV_SIQ;
+import test.java.InterfaceTest.CommonTestInition;
 
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
@@ -40,18 +40,20 @@ public class CrabInterfaceClass implements CrabInterface {
 	// StaticRootMap.chromosomeLeaf.put("crab", null);
 	// StaticRootMap.chromosomeDNA.put("crab", null);
 	@SuppressWarnings("unchecked")
-	public void chromosomes() {
-		StaticRootMap.initMap();
+	public void chromosomes(App NE) {
+		NE.app_S.staticRootMap.initMap(NE);
 		callFunctionKey = "callFunctionKey";
 		// 20230207 走统计新陈代谢
-		StaticRootMap.staticBloomingTimes.put(callFunctionKey, (long) 0);
-		StaticRootMap.staticBloomingTime.put(callFunctionKey,
-				System.currentTimeMillis());// 增加记忆时间。20241013
-		StaticRootMap.staticClass_XE_Map.put(callFunctionKey, "S_AOPM");
-		StaticRootMap.chromosomeNode.put(callFunctionKey,
-				new CrabInterfaceClass());// 20241001准备把这行移出去。
+		NE.app_S.staticRootMap.staticBloomingTimes.put(
+			callFunctionKey, (long) 0);
+		NE.app_S.staticRootMap.staticBloomingTime.put(callFunctionKey,
+			System.currentTimeMillis());// 增加记忆时间。20241013
+		NE.app_S.staticRootMap.staticClass_XE_Map.put(callFunctionKey,
+			"S_AOPM");
+		NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey,
+			new CrabInterfaceClass());// 20241001准备把这行移出去。
 		StaticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey,
-				"inputValues:传参因子:因子");
+			"inputValues:传参因子:因子");
 		// String callFunctionKey= "callFunctionKey";
 		// StaticRootMap.initMap();
 	}
@@ -69,8 +71,9 @@ public class CrabInterfaceClass implements CrabInterface {
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeMetabolism.put("crab", null);
 	@SuppressWarnings("unchecked")
-	public void bloomings() {
-		StaticRootMap.chromosomeBlooming.put(callFunctionKey, this.getClass());
+	public void bloomings(App NE) {
+		NE.app_S.staticRootMap.chromosomeBlooming.put(callFunctionKey,
+			this.getClass());
 	}
 
 	;
@@ -99,7 +102,8 @@ public class CrabInterfaceClass implements CrabInterface {
 	// StaticRootMap.chromosomeRNA.put("crab", null);
 	// System.out.println("Hello Word!");
 	// return null;
-	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg) {
+	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子,
+		App NE, IMV_SIQ outputReg) {
 		System.out.println("Hello Word!");
 		return true;
 	}
@@ -109,18 +113,20 @@ public class CrabInterfaceClass implements CrabInterface {
 	// 一个简单osgi扩展例子的被元基花注册调用方法
 	@SuppressWarnings("unchecked")
 	public void main(String[] arg) {
+		CommonTestInition commonTestInition = new CommonTestInition();
+		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// init
 		CrabInterfaceClass crabInterfaceClass = new CrabInterfaceClass();
-		crabInterfaceClass.chromosomes();
-		crabInterfaceClass.bloomings();
+		crabInterfaceClass.chromosomes(commonTestInition.NE);
+		crabInterfaceClass.bloomings(commonTestInition.NE);
 		//
 		String callFunctionKey = ("callFunctionKey");
 		IMV_SIQ outputReg = new IMV_SIQ();
 		IMV_SIQ inputValue = new IMV_SIQ();
-		String chromosome = StaticRootMap.staticClass_XE_Map
-				.getString(callFunctionKey);
-		String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome,
-				callFunctionKey); // 我是神！ tin神！
+		String chromosome = commonTestInition.NE.app_S.staticRootMap.staticClass_XE_Map
+			.getString(callFunctionKey);
+		String[] 传参因子 = StaticFunctionMap.callAnnotationMap(
+			chromosome, callFunctionKey); // 我是神！ tin神！
 		inputValue.put(传参因子[0], "");
 		inputValue.put(传参因子[1], "");
 
@@ -130,12 +136,16 @@ public class CrabInterfaceClass implements CrabInterface {
 		// strings[0]= "执行 元基花 下 "+ callFunctionKey+ " 接口, 参数是
 		// 传参因子";
 		// 稍后移动到 SAOPM花瓣下，逐渐完善即可。20230221
-		if (StaticRootMap.chromosomeNode.containsKey(callFunctionKey)) {
-			CrabInterface crabInterface = (OSI.OSU.crab.CrabInterface) StaticRootMap.chromosomeNode
-					.get(callFunctionKey);
-			crabInterface.logic(inputValue, 传参因子, 0, new App(), outputReg);
+		if (commonTestInition.NE.app_S.staticRootMap.chromosomeNode
+			.containsKey(callFunctionKey)) {
+			CrabInterface crabInterface = (OSI.OSU.crab.CrabInterface) 
+				commonTestInition.NE.app_S.staticRootMap.chromosomeNode
+				.get(callFunctionKey);
+			crabInterface.logic(inputValue, 传参因子, 0, new App(),
+				outputReg);
 		}
-//		strings[0]= "执行 "+ chromosome+ " 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
-//		StaticRootMap.tinShellV005(strings, outputReg);
+		//		strings[0]= "执行 "+ chromosome+ " 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
+		//		StaticRootMap.tinShellV005(strings, outputReg);
+		commonTestInition.endEnvironment();
 	}
 }

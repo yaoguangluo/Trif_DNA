@@ -20,7 +20,7 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C {
     @Override
     public List<String> doTestWithImageAPP(App NE) {
         App app = NE._I_U.app;
-        return SkinPathDoubleDetectTripFix2D_E.doTestWithImageAPP(app.app_S);
+        return SkinPathDoubleDetectTripFix2D_E.doTestWithImageAPP(app);
     }
 
     ;
@@ -71,7 +71,7 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C {
         BufferedImage bufferedImage = NE._I_U.bufferedImage;
         return new SkinPathDoubleDetectTripFix2D_E().doEightSuanPDErosion(erosion, pixGate
             , pixRatioScale, pixDistinctScale,
-            pcaScale, upcaScale, icaScale, ecaScale, bufferedImage);
+            pcaScale, upcaScale, icaScale, ecaScale, bufferedImage, NE);
     }
 
     ;
@@ -88,7 +88,7 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C {
         BufferedImage bufferedImage = NE._I_U.bufferedImage;
         return new SkinPathDoubleDetectTripFix2D_E().doEightJianPDErosion(erosion, pixGate
             , pixRatioScale, pixDistinctScale, pcaScale, upcaScale, icaScale, ecaScale
-            , bufferedImage);
+            , bufferedImage, NE);
     }
 
     ;
@@ -102,7 +102,7 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C {
         int top = NE._I_U.top;
         BufferedImage bufferedImage = NE._I_U.bufferedImage;
         new SkinPathDoubleDetectTripFix2D_E().doFirstPDErosionWithTop(fourJian
-            , fourSuan, eightJian, eightSuan, scoreMatrix, top, bufferedImage);
+            , fourSuan, eightJian, eightSuan, scoreMatrix, top, bufferedImage, NE);
     }
 
     ;
@@ -118,7 +118,7 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C {
         int times = NE._I_U.times;
         BufferedImage bufferedImage = NE._I_U.bufferedImage;
         new SkinPathDoubleDetectTripFix2D_E().doSecondPDErosionWithTop(fourJian
-            , fourSuan, eightJian, eightSuan, scoreMatrix, top, times, bufferedImage);
+            , fourSuan, eightJian, eightSuan, scoreMatrix, top, times, bufferedImage, NE);
     }
 
     ;
@@ -135,7 +135,7 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C {
         BufferedImage bufferedImage = NE._I_U.bufferedImage;
         new SkinPathDoubleDetectTripFix2D_E().doThirdPDErosionWithTop(fourJian
             , fourSuan, eightJian, eightSuan, scoreMatrix
-            , top, times, output, bufferedImage);
+            , top, times, output, bufferedImage, NE);
     }
 
     ;
@@ -151,21 +151,21 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C {
     //SkinPathDetectTrip_E{
     public void doTestWithFilePath(App NE) {
         AES_QMS_XSD_TIH testImagePathString = NE._I_U.testImagePathString;
-        SkinPathDetectTrip_E.doTestWithFilePath(testImagePathString._S_);
+        SkinPathDetectTrip_E.doTestWithFilePath(testImagePathString._S_, NE);
     }
 
     ;
 
     public List<String> doTestWithImage(App NE) {
         Image testImagePath = NE._I_U.testImagePath;
-        return SkinPathDetectTrip_E.doTestWithImage(testImagePath);
+        return SkinPathDetectTrip_E.doTestWithImage(testImagePath, NE);
     }
 
     ;
 
     public void doTestWithBufferedImage(App NE) {
         BufferedImage testBufferedImagePath = NE._I_U.testBufferedImagePath;
-        SkinPathDetectTrip_E.doTestWithBufferedImage(testBufferedImagePath);
+        SkinPathDetectTrip_E.doTestWithBufferedImage(testBufferedImagePath, NE);
     }
 
     ;
@@ -208,19 +208,19 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C {
         //第一次叠加
         for (int i = 0; i < 10; i++) {
             skinPathDoubleDetectTrip.doFirstPDErosionWithTop(1.0
-                , 1.0, 1.0, 1.0, score, 30);
+                , 1.0, 1.0, 1.0, score, 30, NE);
             //叠加前50。
         }
         //可以写mask
         //筛选
         //第二次筛选, 没有出现3次的一律过滤;
         skinPathDoubleDetectTrip.doSecondPDErosionWithTop(1.0
-            , 1.0, 1.0, 1.0, score, 50, 4);
+            , 1.0, 1.0, 1.0, score, 50, 4, NE);
         //叠加筛选 前50 次数50%进行。
         //可以写mask
         //细准焦 碱筛选 精度5
         skinPathDoubleDetectTrip.doThirdPDErosionWithTop(1.0
-            , 1.0, 1.0, 1.0, score, 500, 4);
+            , 1.0, 1.0, 1.0, score, 500, 4, NE);
         //前500的 叠加筛选次数50%进行
     }
 
@@ -229,6 +229,6 @@ public class StaticFunctionMapI_VECS_E implements StaticFunctionMapI_VECS_C {
     public int[][] doPDERangePDI16(App NE) {
         int[][] input = NE._I_U.input;
         int oicd_scale = NE._I_U.oicd_scale;
-        return RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(input, oicd_scale);
+        return RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(input, oicd_scale, NE);
     }
 }

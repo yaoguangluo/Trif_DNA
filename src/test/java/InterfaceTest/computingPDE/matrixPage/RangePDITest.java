@@ -44,7 +44,7 @@ class RangePDITest {
 			}
 		}
 		// 执行非卷积肽变换滤 255峰值 波测试
-		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(rp, facy);
+		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(rp, facy, commonTestInition.NE);
 		// 输出
 		for (int i = 0; i < 32; i++) {
 			for (int j = 0; j < 32; j++) {

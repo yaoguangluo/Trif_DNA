@@ -42,13 +42,13 @@ public class RangePDI {
 			}
 			temp = Math.abs(temp);
 			temp = temp > 255 ? 255 : temp;
-			String IDUQ = RangePDI.PDS_P_USQ_ECP_I_16(temp, 16);
+			String IDUQ = RangePDI.PDS_P_USQ_ECP_I_16(temp, 16, NE);
 			char[] OIQ = new char[IDUQ.length()];
 			for (int k = 0; k < IDUQ.length(); k++) {
 				double tempRandom = Math.random() * 100;
 				OIQ[k] = doACAK(IDUQ, k, tempRandom, VECS);
 			}
-			ps[i] = InitonsPDS.DO_ACP_IDV_16_Array(OIQ, 16);
+			ps[i] = InitonsPDS.DO_ACP_IDV_16_Array(OIQ, 16, NE);
 			if (isNeg) {
 				ps[i] = -ps[i];
 			}
@@ -66,13 +66,13 @@ public class RangePDI {
 			}
 			temp = Math.abs(temp);
 			temp = temp > 255 ? 255 : temp;
-			String IDUQ = RangePDI.PDS_P_USQ_ECP_I_16(temp, 16);
+			String IDUQ = RangePDI.PDS_P_USQ_ECP_I_16(temp, 16, NE);
 			char[] OIQ = new char[IDUQ.length()];
 			for (int k = 0; k < IDUQ.length(); k++) {
 				double tempRandom = Math.random() * 100;
 				OIQ[k] = doACAK(IDUQ, k, tempRandom, VECS);
 			}
-			ps[i] = InitonsPDS.DO_ACP_IDV_16_Array(OIQ, 16);
+			ps[i] = InitonsPDS.DO_ACP_IDV_16_Array(OIQ, 16, NE);
 			if (isNeg) {
 				ps[i] = -ps[i];
 			}
@@ -81,15 +81,15 @@ public class RangePDI {
 	}
 
 	// P_VSQ;
-	public static String PDS_P_USQ_ECP_I_16(int P_VSQ, int MSP) {
+	public static String PDS_P_USQ_ECP_I_16(int P_VSQ, int MSP, App NE) {
 		StringBuilder ISQ = new StringBuilder();
 		while (P_VSQ >= MSP) {
-			String string = S_MapsInitons.initonsSet16.get("" + P_VSQ / MSP);
-			ISQ.append(S_MapsInitons.initonsCode16.get(string));
+			String string = NE.app_S._S_MapsInitons.initonsSet16.get("" + P_VSQ / MSP);
+			ISQ.append(NE.app_S._S_MapsInitons.initonsCode16.get(string));
 			P_VSQ %= MSP;
 		}
-		String string = S_MapsInitons.initonsSet16.get("" + P_VSQ);
-		ISQ.append(S_MapsInitons.initonsCode16.get(string));
+		String string = NE.app_S._S_MapsInitons.initonsSet16.get("" + P_VSQ);
+		ISQ.append(NE.app_S._S_MapsInitons.initonsCode16.get(string));
 		return ISQ.toString();
 	}
 	// 新增 T = V + HE; --page204
@@ -241,10 +241,10 @@ public class RangePDI {
 	// UQIUDU, UQDUIU, UQDUDU
 	// , UQDIIU, UQDIDU) OR (UQIUDIIU, UQIUDIDU, UQDUDIIU,
 	// UQDUDIDU)
-	public static int[][] IPE_AOPM_VECS_IDUQ_TXH(int[][] ps, int VECS) {
+	public static int[][] IPE_AOPM_VECS_IDUQ_TXH(int[][] ps, int VECS, App NE) {
 		for (int i = 0; i < ps.length; i++) {
 			for (int j = 0; j < ps[0].length; j++) {
-				String IDUQ = RangePDI.PDS_P_USQ_ECP_I_17(ps[i][j], 17);
+				String IDUQ = RangePDI.PDS_P_USQ_ECP_I_17(ps[i][j], 17, NE);
 				char[] OIQ = new char[IDUQ.length()];
 				for (int k = 0; k < IDUQ.length(); k++) {
 					if (IDUQ.charAt(k) == 'U') {// g //DIUQ
@@ -301,17 +301,17 @@ public class RangePDI {
 						OIQ[k] = IDUQ.charAt(k);
 					}
 				}
-				ps[i][j] = InitonsPDS.DO_ACP_IDV_17(OIQ, 17);
+				ps[i][j] = InitonsPDS.DO_ACP_IDV_17(OIQ, 17, NE);
 			}
 		}
 		return ps;
 	}
 
 	// 上面似乎又被猫腻了两个符号, 统一 VECS 小数是碱 大数是酸。 按标准肽展公式模拟下计算机视觉
-	public static int[][] IPE_AOPM_VECS_IDUQ_TXH_AC(int[][] ps, int VECS) {
+	public static int[][] IPE_AOPM_VECS_IDUQ_TXH_AC(int[][] ps, int VECS, App NE) {
 		for (int i = 0; i < ps.length; i++) {
 			for (int j = 0; j < ps[0].length; j++) {
-				String IDUQ = RangePDI.PDS_P_USQ_ECP_I_16(ps[i][j], 16);
+				String IDUQ = RangePDI.PDS_P_USQ_ECP_I_16(ps[i][j], 16, NE);
 				char[] OIQ = new char[IDUQ.length()];
 				for (int k = 0; k < IDUQ.length(); k++) {
 					if (IDUQ.charAt(k) == 'U') {// g
@@ -401,7 +401,7 @@ public class RangePDI {
 						OIQ[k] = IDUQ.charAt(k);
 					}
 				}
-				ps[i][j] = InitonsPDS.DO_ACP_IDV_16(OIQ, 16);
+				ps[i][j] = InitonsPDS.DO_ACP_IDV_16(OIQ, 16, NE);
 			}
 		}
 		return ps;
@@ -513,27 +513,27 @@ public class RangePDI {
 	}
 
 	// 现在PDS函数太大了, 不想new, 之后会用DecadeToPDS函数
-	public static String PDS_P_USQ_ECP_I_17(int P_VSQ, int MSP) {
+	public static String PDS_P_USQ_ECP_I_17(int P_VSQ, int MSP, App NE) {
 		String ISQ = "";
 		while (P_VSQ >= MSP) {
-			ISQ += S_MapsInitons.initonsCode
-					.get(S_MapsInitons.initonsSet.get("" + P_VSQ / MSP));// P_VSQ;
+			ISQ += NE.app_S._S_MapsInitons.initonsCode
+					.get(NE.app_S._S_MapsInitons.initonsSet.get("" + P_VSQ / MSP));// P_VSQ;
 			P_VSQ %= MSP;
 		}
-		ISQ += S_MapsInitons.initonsCode
-				.get(S_MapsInitons.initonsSet.get("" + P_VSQ));// P_VSQ;
+		ISQ += NE.app_S._S_MapsInitons.initonsCode
+				.get(NE.app_S._S_MapsInitons.initonsSet.get("" + P_VSQ));// P_VSQ;
 		return ISQ;
 	}
 
-	public String PDS_P_USQ_ECP_I_17_S_(int P_VSQ, int MSP) {
+	public String PDS_P_USQ_ECP_I_17_S_(int P_VSQ, int MSP, App NE) {
 		String ISQ = "";
 		while (P_VSQ >= MSP) {
-			ISQ += S_MapsInitons.initonsCode
-					.get(S_MapsInitons.initonsSet.get("" + P_VSQ / MSP));// P_VSQ;
+			ISQ += NE.app_S._S_MapsInitons.initonsCode
+					.get(NE.app_S._S_MapsInitons.initonsSet.get("" + P_VSQ / MSP));// P_VSQ;
 			P_VSQ %= MSP;
 		}
-		ISQ += S_MapsInitons.initonsCode
-				.get(S_MapsInitons.initonsSet.get("" + P_VSQ));// P_VSQ;
+		ISQ += NE.app_S._S_MapsInitons.initonsCode
+				.get(NE.app_S._S_MapsInitons.initonsSet.get("" + P_VSQ));// P_VSQ;
 		return ISQ;
 	}
 

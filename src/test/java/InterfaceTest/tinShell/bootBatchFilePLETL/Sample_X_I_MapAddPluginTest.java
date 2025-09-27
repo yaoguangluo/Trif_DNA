@@ -26,7 +26,8 @@ import java.util.ArrayList;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 class Sample_X_I_MapAddPluginTest {
-	public static void main(String[] argv) throws InterruptedException, IOException {
+	public static void main(String[] argv)
+		throws InterruptedException, IOException {
 		Sample_X_I_MapAddPluginTest sample_X_I_MapAddPluginTest = new Sample_X_I_MapAddPluginTest();
 		sample_X_I_MapAddPluginTest._E();
 	}
@@ -38,7 +39,7 @@ class Sample_X_I_MapAddPluginTest {
 	 * 可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的
 	 * java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。 --罗瑶光
 	 */
-	@SuppressWarnings({ "deprecation", "rawtypes" })
+	@SuppressWarnings({ "rawtypes" })
 	@Test
 	void _E() throws InterruptedException, IOException {
 		// 初始化
@@ -58,26 +59,27 @@ class Sample_X_I_MapAddPluginTest {
 		}
 		// 读需要测试的表
 		// 配置读XLS的表头配置
-		NE.app_S.appConfig.SectionJPanel.xlsWithSpec.setSelected(true);
+		NE.app_S.appConfig.SectionJPanel.xlsWithSpec.setSelected(
+			true);
 		// 开始模拟读xls的函数逻辑测试
 		try {
 			if (null == NE.app_S._A) {
 				return;
 			} // later normalization
 			MakeContainerXLS makeContainerXLS = new MakeContainerXLS(
-					NE.app_S._A, NE.app_S, NE.app_S.jTabbedpane,
-					NE.app_S.tabNames,
-					NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn,
-					NE.app_S.fMHMMListOneTime_E_X_S.posEnToEn,
-					NE.app_S.fMHMMListOneTime_E_X_S.enToCn,
-					NE.app_S.fMHMMListOneTime_E_X_S.fullCnToEn, "xls",
-					NE.app_S.emotionSample, NE.app_S.ratioMap_E,
-					NE.app_S.sensingTest, NE);
+				NE.app_S._A, NE.app_S, NE.app_S.jTabbedpane,
+				NE.app_S.tabNames,
+				NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn,
+				NE.app_S.fMHMMListOneTime_E_X_S.posEnToEn,
+				NE.app_S.fMHMMListOneTime_E_X_S.enToCn,
+				NE.app_S.fMHMMListOneTime_E_X_S.fullCnToEn, "xls",
+				NE.app_S.emotionSample, NE.app_S.ratioMap_E,
+				NE.app_S.sensingTest, NE);
 			// 临时设置用，之后结构优化后进行去除。
 			// 确定测试文件名为药食同源的表文件，tinshell函数执行这个表的操作计算。
 			NE._I_U.tempString = "/Users/luoyaoguang430181198505250014/Desktop"
-					+ "/YLJHRJ/project/TinOS/DetaResources/books/xlsx/zybgPage"
-					+ ".xlsx";
+				+ "/YLJHRJ/project/TinOS/DetaResources/books/xlsx/zybgPage"
+				+ ".xlsx";
 			makeContainerXLS.start();
 			while (null == makeContainerXLS.jpanelSecond) {
 				Thread.sleep(100);
@@ -107,8 +109,8 @@ class Sample_X_I_MapAddPluginTest {
 			// --加密方式-普通物理加密方式。
 			// --package OSI.OPE.gui; --line page 151
 			NE._I_U.gUISample.fileCurrentpath = "/Users/luoyaoguang430181198505250014"
-					+ "/eclipse-workspace/TRIF_DNA/src/test/java/InterfaceTest"
-					+ "/tinShell/bootBatchFilePLETL/tinshellExample.etl";
+				+ "/eclipse-workspace/TRIF_DNA/src/test/java/InterfaceTest"
+				+ "/tinShell/bootBatchFilePLETL/tinshellExample.etl";
 			File file = new File(NE._I_U.gUISample.fileCurrentpath);
 			if (!file.isFile()) {
 				System.out.println(S_Annotation.ATTENSION_RECHOICE);
@@ -117,36 +119,38 @@ class Sample_X_I_MapAddPluginTest {
 			LinkNode needDeleteNode = NE._I_U.gUISample.first.first;
 			while (needDeleteNode != null) {
 				NE._I_U.gUISample.first.first = NE._I_U.gUISample.first
-						.deletNode(NE._I_U.gUISample.first.first,
-								needDeleteNode.name, needDeleteNode.ID,
-								needDeleteNode.primaryKey);
+					.deletNode(NE._I_U.gUISample.first.first,
+						needDeleteNode.name, needDeleteNode.ID,
+						needDeleteNode.primaryKey);
 				if (null == needDeleteNode.next) {
 					break;
 				}
 				needDeleteNode = needDeleteNode.next;
 			}
-//			if(null==NE._I_U.gUISample.canvas) {
-//				NE._I_U.gUISample.canvas = new ThisCanvas();
-//			}
+			//			if(null==NE._I_U.gUISample.canvas) {
+			//				NE._I_U.gUISample.canvas = new ThisCanvas();
+			//			}
 			// NE._I_U.gUISample.canvas.repaint(); // 稍后hook 进行 异常修整
 			// 20230218
 			NE._I_U.gUISample.first.first = File_X_Load._E(
-					NE._I_U.gUISample.first.first, NE._I_U.gUISample.nodeView,
-					file, NE._I_U.gUISample.first, NE);
+				NE._I_U.gUISample.first.first,
+				NE._I_U.gUISample.nodeView, file,
+				NE._I_U.gUISample.first, NE);
 			NE._I_U.gUISample.canvas.repaint();
 			NE._I_U.gUISample.righttopScrollPane.validate();
 			// 替换 ETL 例子文件中的XLS String
 			// 问题-文件名是临时的，我导表后是新的，etl文件中又加了密，所以需要如下解密再replace掉。
 			NE.tempString += "去弹窗组件流测试--" + XLSTableName;
 			String string = NE._I_U.gUISample.first.first.thisFace.nodeConfiguration;
-			string = string.replaceAll("临时XLS1753745165960", XLSTableName);
+			string = string.replaceAll("临时XLS1753745165960",
+				XLSTableName);
 			NE._I_U.gUISample.first.first.thisFace.nodeConfiguration = string;
 			// 一键执行文件
 			BootNeroCell.bootCell(NE._I_U.gUISample.first.first,
-					NE._I_U.gUISample.rightBotJTextPane,
-					NE._I_U.gUISample.canvas, NE);
-			NE._I_U.gUISample.rightBotJTextPane
-					.setText(S_Annotation.NODE_EXEC_SUCCESS);
+				NE._I_U.gUISample.rightBotJTextPane,
+				NE._I_U.gUISample.canvas, NE);
+			NE._I_U.gUISample.rightBotJTextPane.setText(
+				S_Annotation.NODE_EXEC_SUCCESS);
 			NE._I_U.gUISample.rightBotJTextPane.validate();
 			// 输出, 高级用法注意循环哟，罗瑶光只举出简单例子。
 			LinkNode linkNode = NE._I_U.gUISample.first.first.clone();
@@ -156,8 +160,8 @@ class Sample_X_I_MapAddPluginTest {
 				// 上海马吉路88号产地的货，浏阳天虹苹果店买的金色笔记本。自从我2010年后就再没去
 				// 过上海了。--罗瑶光2010年后任何上海同事我都没有再见过面，我以后会浏阳出门时候
 				// 会注意下各类橡胶头套装扮的社会人尾随卡点猫腻。
-				System.out
-						.println("执行->" + linkNode.thisFace.nodeConfiguration);
+				System.out.println("执行->"
+					+ linkNode.thisFace.nodeConfiguration);
 				TinMap tinMap = linkNode.thisFace._SQ__OVQ_OSQ_VSQ.outputOut;
 				TinMap tinShell = (TinMap) tinMap.get("TinShellETL");
 				ArrayList arrayList = (ArrayList) tinShell.get("obj");

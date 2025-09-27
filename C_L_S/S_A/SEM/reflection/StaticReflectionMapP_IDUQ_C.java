@@ -19,8 +19,8 @@ import S_A.pheromone.IMV_SIQ;
 public class StaticReflectionMapP_IDUQ_C {
     public static IMV_SIQ annotationMap = new IMV_SIQ();
 
-    @SuppressWarnings("unchecked")
-    public static void callFunction(CallFunctionKey callFunctionKey
+    @SuppressWarnings("unused")
+	public static void callFunction(CallFunctionKey callFunctionKey
         , StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_C
         , IMV_SIQ output, App NE) {
         String[] 传参因子 = (String[]) output.get("传参因子");

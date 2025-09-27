@@ -1,6 +1,7 @@
 package A_V.cap;
 
 import A_I.MPE.MAQPVDCOISIV.pdi.RangePDI;
+import ME.VPC.M.app.App;
 import O_V.OSI.AOP.freetts.thread.read.ReadEnglish;
 import P.image.Emboss;
 import P.image.Guassian;
@@ -28,7 +29,7 @@ import java.util.Date;
 public class Monitor_X_Animation_Pde {
     @SuppressWarnings("deprecation")
     public static void X_paint_pde(Monitor_X_S monitor, Monitor_X_ monitor_XCDX
-        , Graphics g, BufferedImage image) {
+        , Graphics g, BufferedImage image, App NE) {
         if (monitor.isbt62Stop) {
             monitor.rp = Emboss.P(monitor.rp);
             monitor.gp = Emboss.P(monitor.gp);
@@ -65,14 +66,14 @@ public class Monitor_X_Animation_Pde {
             RangePDI.IPE(monitor.bp, monitor.facy);
         }
         if (monitor.isbt124Stop) {
-            RangePDI.IPE_AOPM_VECS_IDUQ_TXH(monitor.rp, monitor.facy);
-            RangePDI.IPE_AOPM_VECS_IDUQ_TXH(monitor.gp, monitor.facy);
-            RangePDI.IPE_AOPM_VECS_IDUQ_TXH(monitor.bp, monitor.facy);
+            RangePDI.IPE_AOPM_VECS_IDUQ_TXH(monitor.rp, monitor.facy, NE);
+            RangePDI.IPE_AOPM_VECS_IDUQ_TXH(monitor.gp, monitor.facy, NE);
+            RangePDI.IPE_AOPM_VECS_IDUQ_TXH(monitor.bp, monitor.facy, NE);
         }
         if (monitor.isbt132Stop) {
-            RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(monitor.rp, monitor.facy);
-            RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(monitor.gp, monitor.facy);
-            RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(monitor.bp, monitor.facy);
+            RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(monitor.rp, monitor.facy, NE);
+            RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(monitor.gp, monitor.facy, NE);
+            RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(monitor.bp, monitor.facy, NE);
         }
         if (monitor.isbt122Stop) {
             RangePDI.QPE(monitor.rp, monitor.facx);

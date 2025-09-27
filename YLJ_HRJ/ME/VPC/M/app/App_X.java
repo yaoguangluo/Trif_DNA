@@ -63,8 +63,8 @@ public class App_X extends App {
 		app_S.lYGAFDCTDFFT_F.initk();
 		// */
 		System.out.println("启动400编码调试开始-00000007");
-		FlowerAction.initFlowerSixDomainActions();
-		FlowerAction.initFlowerP_E_KernelActions();
+		app_S.flowerAction.initFlowerSixDomainActions();
+		app_S.flowerAction.initFlowerP_E_KernelActions();
 		// */
 		U_A.PEU.P.wave.Guassian.initKernel(5, 1.7);// later in golbal
 		U_A.PEU.P.wave.Guassian_F.initKernel(5, 1.7);// later in golbal
@@ -75,11 +75,11 @@ public class App_X extends App {
 		app_S.studyVerbalMap.putObject("pageQ", app_S.pageQ);
 		/* basic init */
 		System.out.println("启动400编码调试开始-00000009");
-		S_MapsInitons.init();
+		app_S._S_MapsInitons.init();
 		S_Colors.initFlowers3D();
 		// initon plugin types without OSGI
 		System.out.println("启动400编码调试开始-00000010");
-		CreativeVerbalMap.initInitonActions();
+		CreativeVerbalMap.initInitonActions(NE);
 		StudyVerbalMap.initInitonDelegate();
 		/* sort init */
 		System.out.println("启动400编码调试开始-00000011");

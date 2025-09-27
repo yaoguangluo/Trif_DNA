@@ -40,7 +40,7 @@ public class MakeContainerZNXZ extends MakeContainer_X_S_s {
                 , WindowsUI.makeContainerHeight);
             app_S.monitor = new Monitor_X_();
             app_S.monitor.setVisible(true);
-            app_S.monitor.init();
+            app_S.monitor.init(NE);
             app_S.monitor.monitor_X_S.sliderx = new JSlider(0, 360);
             app_S.monitor.monitor_X_S.sliderx.setSnapToTicks(true);
             app_S.monitor.monitor_X_S.sliderx.setPaintTicks(true);

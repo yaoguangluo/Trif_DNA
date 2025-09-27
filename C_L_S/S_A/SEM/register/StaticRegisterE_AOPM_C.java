@@ -2,9 +2,10 @@ package S_A.SEM.register;
 
 import S_A.SEM.bloom.StaticFunctionMapE_AOPM_C;
 import S_A.SEM.bloom.StaticFunctionMapE_AOPM_E;
-import S_A.SEM.bloom.StaticRootMap;
 
 import java.util.Iterator;
+
+import ME.VPC.M.app.App;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -17,33 +18,55 @@ import java.util.Iterator;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticRegisterE_AOPM_C {
-	public static void load(StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_E) {
-		
+	@SuppressWarnings("unchecked")
+	public static void load(
+		StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_E, App NE) {
+
 		//稍后封装
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getSensingMap", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getEmotionMap", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getCogsBinaryForest_A", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getEuclid_C", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getQuick6DLuoYaoguangSort", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getNERO_C_OneTime", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getNERO_C", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getNLP_C", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getBehaviorMap", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getFMHMMList", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_X_P", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_X_E", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_X_O", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getNlp_C_X_S", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getNlp_C_X_A", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getA_X_Map", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getSensingMap",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getEmotionMap",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put(
+			"getCogsBinaryForest_A", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getEuclid_C",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put(
+			"getQuick6DLuoYaoguangSort", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put(
+			"getNERO_C_OneTime", "void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getNERO_C",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getNLP_C",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getBehaviorMap",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getFMHMMList",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_X_P",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_X_E",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_X_O",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getNlp_C_X_S",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getNlp_C_X_A",
+			"void");
+		StaticFunctionMapE_AOPM_C.annotationMap.put("getA_X_Map",
+			"void");
 		StaticFunctionMapE_AOPM_C.annotationMap.put("getA", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getBinaryForest_A", "void");
-		
-		Iterator<String> iterators= StaticFunctionMapE_AOPM_C.annotationMap.keySet().iterator();
-		while(iterators.hasNext()) {
-			String temp= iterators.next().toString();
-			StaticRootMap.staticBloomingTimes.put(temp, (long) 0);
-			StaticRootMap.staticClass_XE_Map.put(temp, "E_AOPM");
+		StaticFunctionMapE_AOPM_C.annotationMap.put(
+			"getBinaryForest_A", "void");
+
+		Iterator<String> iterators = StaticFunctionMapE_AOPM_C.annotationMap
+			.keySet().iterator();
+		while (iterators.hasNext()) {
+			String temp = iterators.next().toString();
+			NE.app_S.staticRootMap.staticBloomingTimes.put(temp,
+				(long) 0);
+			NE.app_S.staticRootMap.staticClass_XE_Map.put(temp,
+				"E_AOPM");
 		}
 	}
 }

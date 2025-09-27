@@ -5,7 +5,6 @@ import OSI.OSU.crab.CrabInterface;
 import O_V.OSA.shell.XA_ShellTable;
 import O_V.OSA.shell.XA_ShellTables;
 import S_A.SEM.bloom.StaticFunctionMapO_VECS_C;
-import S_A.SEM.bloom.StaticRootMap;
 import S_A.pheromone.IMV_SIQ;
 
 import java.util.ArrayList;
@@ -25,6 +24,7 @@ import java.util.List;
 public class AddFindColumnsInMemoryClass implements CrabInterface {
 	String callFunctionKey;
 	String className = "AddFindColumnsInMemoryClass";
+
 	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
 	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
 	// public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
@@ -45,18 +45,20 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	// StaticRootMap.chromosomeLeaf.put("crab", null);
 	// StaticRootMap.chromosomeDNA.put("crab", null);
 	@SuppressWarnings("unchecked")
-	public void chromosomes() {
-		StaticRootMap.initMap();
+	public void chromosomes(App NE) {
+		NE.app_S.staticRootMap.initMap(NE);
 		callFunctionKey = "selectRowsByAttributesOfGetCulumns";
 		// 20230207 走统计新陈代谢
-		StaticRootMap.staticBloomingTimes.put(callFunctionKey, (long) 0);
-		StaticRootMap.staticBloomingTime.put(callFunctionKey,
-				System.currentTimeMillis());// 增加记忆时间。20241013
-		StaticRootMap.staticClass_XE_Map.put(callFunctionKey, "O_VECS");
-		StaticRootMap.chromosomeNode.put(callFunctionKey,
-				new AddFindColumnsInMemoryClass());// 20241001准备把这行移出去。
+		NE.app_S.staticRootMap.staticBloomingTimes.put(
+			callFunctionKey, (long) 0);
+		NE.app_S.staticRootMap.staticBloomingTime.put(callFunctionKey,
+			System.currentTimeMillis());// 增加记忆时间。20241013
+		NE.app_S.staticRootMap.staticClass_XE_Map.put(callFunctionKey,
+			"O_VECS");
+		NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey,
+			new AddFindColumnsInMemoryClass());// 20241001准备把这行移出去。
 		StaticFunctionMapO_VECS_C.annotationMap.put(callFunctionKey,
-				"inputValues:传参因子:因子");
+			"inputValues:传参因子:因子");
 		// String callFunctionKey= "callFunctionKey";
 		// StaticRootMap.initMap();
 	}
@@ -74,8 +76,9 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeMetabolism.put("crab", null);
 	@SuppressWarnings("unchecked")
-	public void bloomings() {
-		StaticRootMap.chromosomeBlooming.put(callFunctionKey, this.getClass());
+	public void bloomings(App NE) {
+		NE.app_S.staticRootMap.chromosomeBlooming.put(callFunctionKey,
+			this.getClass());
 	}
 
 	;
@@ -105,48 +108,53 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	/*
 	 * 因为之后的map会进行精度打分来确定是否要走这个函数，所以下面这种不断细化添加判断条件的这种
-	 * 逻辑片段会全部剔除。也因为下面这类片段的条件精确度非常高，以后下面这种逻辑只会出现在特殊情 况下。 以后 +
-	 * -的精确词性搭配语法不会出现 -N 和 N- 类型，这种思维可以将错误锁定在词汇的
+	 * 逻辑片段会全部剔除。也因为下面这类片段的条件精确度非常高，以后下面这种逻辑只会出现在特殊情 
+	 * 况下。 以后 +-的精确词性搭配语法不会出现 -N 和 N- 类型，这种思维可以将错误锁定在词汇的
 	 * 词性的校准逻辑层面，保持算法的BPM结构模块相对稳定性。 --罗瑶光
 	 */
-	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg) {
+	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子,
+		App NE, IMV_SIQ outputReg) {
 		/*
 		 * TVM extension
 		 * */
-		if(false == scorePass(NE)) {
+		if (false == scorePass(NE)) {
 			return false;
 		}
 		System.out.println("Hello Word!");
 		/*
 		 * 笛卡尔关系计算大幅缩减。此处有效。
 		 */
-		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(className)) {
-				//	System.out.println("400-size-01-" 
-				//+ NE.app_S.workVerbalMap.command_V.countReject++);
+		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(
+			className)) {
+			//	System.out.println("400-size-01-" 
+			//+ NE.app_S.workVerbalMap.command_V.countReject++);
 			return false;
 		}
-				//System.out.println("400-size-02-"
-				//+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
+		//System.out.println("400-size-02-"
+		//+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 		// 获取表
 		if (!NE._I_U.outputMap.containsKey("获取表名")) {
 			return false;
 		}
 		// later will loop join table;
-		String huoqubiaoming = NE._I_U.outputMap.getString("获取表名").replace("临时", "");
-		if (XA_ShellTables.searchShellTables.containsKey(huoqubiaoming)) {
+		String huoqubiaoming = NE._I_U.outputMap.getString("获取表名")
+			.replace("临时", "");
+		if (XA_ShellTables.searchShellTables.containsKey(
+			huoqubiaoming)) {
 			XA_ShellTable _XA_ShellTable = XA_ShellTables.searchShellTables
-					.get(huoqubiaoming);
+				.get(huoqubiaoming);
 			Object[] columns = _XA_ShellTable.huaRuiJiJtableCulumns;
 			String shellType = "获取列名:";
 			for (int i = 0; i < columns.length; i++) {
-				if (NE._I_U.commandAcknowledge
-						.contains(columns[i].toString())) {
+				if (NE._I_U.commandAcknowledge.contains(columns[i]
+					.toString())) {
 					shellType += columns[i].toString();
 					shellType += ":";
 				}
 			}
 			//去掉末尾多余的:
-			shellType = shellType.substring(0, shellType.length() - 1);
+			shellType = shellType.substring(0, shellType.length()
+				- 1);
 			System.out.println("400-01010101-" + shellType);
 			String[] strings = shellType.split(":");
 			System.out.println("400-01010102-" + strings[1]);
@@ -156,9 +164,11 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 			NE._I_U.outputMap.put("type", "进行选择");
 		}
 		//执行成功后才能过滤掉
-		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");
+		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(
+			className, "");
 		return true;
 	}
+
 	/*
 	 * Thinking, at this logic, the Cartesian application could separate into steps
 	 * -1 Cartesian TVM commands
@@ -174,7 +184,6 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	 * -HVPCS- later.. 
 	 * --August.Rose.Tin.God.Royal.Yaoguang.Luo/罗瑶光 
 	 * */
-	@SuppressWarnings("unchecked")
 	public boolean scorePass(App NE) {
 		/*
 		 * important key = '输出-内容'  '仅含-'  '+列', those three keys could increase to a 
@@ -187,41 +196,42 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 		 * 
 		 * */
 		int combinationIncreased = 0;
-//		Iterator<String> iterator= NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO.keySet().iterator();
-//		while(iterator.hasNext()) {
-//			System.out.println("400-iterator-01-" + iterator.next());
-//		}
+		//		Iterator<String> iterator= NE.app_S.workVerbalMap.command_V
+		//.cartesianWorkActionsRightsParserVO.keySet().iterator();
+		//		while(iterator.hasNext()) {
+		//			System.out.println("400-iterator-01-" + iterator.next());
+		//		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
-				.containsKey("仅含-")) {
+			.containsKey("仅含-")) {
 			combinationIncreased += 1;
 			System.out.printf("highly fit"); // later in mapping iterator.*/
 		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
-				.containsKey("输出-")) {
+			.containsKey("输出-")) {
 			combinationIncreased += 1;
 			System.out.printf("highly fit"); // later in mapping iterator.*/
 		}
-//		iterator= NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
-//		while(iterator.hasNext()) {
-//			//System.out.println("400-iterator-02-" + iterator.next());
-//		}
+		//		iterator= NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
+		//		while(iterator.hasNext()) {
+		//			//System.out.println("400-iterator-02-" + iterator.next());
+		//		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
-				.containsKey("V+")) {
+			.containsKey("V+")) {
 			combinationIncreased += 1;
 			System.out.printf("highly fit"); // later in mapping iterator.*/
 		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
-				.containsKey("名为-")) {
+			.containsKey("名为-")) {
 			combinationIncreased += 1;
 			System.out.printf("highly fit"); // later in mapping iterator.*/
 		}
-		if(combinationIncreased < 2) {
+		if (combinationIncreased < 2) {
 			System.out.println("-E-small-" + combinationIncreased);
 			return false;
 		}
 		return true;
 	}
-	
+
 }
 //127
 //获取表的对象

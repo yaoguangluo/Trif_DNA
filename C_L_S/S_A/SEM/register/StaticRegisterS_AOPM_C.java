@@ -2,9 +2,10 @@ package S_A.SEM.register;
 
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_E;
-import S_A.SEM.bloom.StaticRootMap;
 
 import java.util.Iterator;
+
+import ME.VPC.M.app.App;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -17,7 +18,8 @@ import java.util.Iterator;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticRegisterS_AOPM_C {
-	public static void load(StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_E) {
+	@SuppressWarnings("unchecked")
+	public static void load(StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_E, App NE) {
 		
 		//稍后封装
 		StaticFunctionMapS_AOPM_C.annotationMap.put("DeleteCellORM"
@@ -45,8 +47,8 @@ public class StaticRegisterS_AOPM_C {
 		Iterator<String> iterators= StaticFunctionMapS_AOPM_C.annotationMap.keySet().iterator();
 		while(iterators.hasNext()) {
 			String temp= iterators.next().toString();
-			StaticRootMap.staticBloomingTimes.put(temp, (long) 0);
-			StaticRootMap.staticClass_XE_Map.put(temp, "S_AOPM");
+			NE.app_S.staticRootMap.staticBloomingTimes.put(temp, (long) 0);
+			NE.app_S.staticRootMap.staticClass_XE_Map.put(temp, "S_AOPM");
 		}
 	}
 }

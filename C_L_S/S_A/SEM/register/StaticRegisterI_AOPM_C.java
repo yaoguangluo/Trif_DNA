@@ -2,9 +2,10 @@ package S_A.SEM.register;
 
 import S_A.SEM.bloom.StaticFunctionMapI_AOPM_C;
 import S_A.SEM.bloom.StaticFunctionMapI_AOPM_E;
-import S_A.SEM.bloom.StaticRootMap;
 
 import java.util.Iterator;
+
+import ME.VPC.M.app.App;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -17,27 +18,42 @@ import java.util.Iterator;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticRegisterI_AOPM_C {
-	public static void load(StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_E) {
-		
+	@SuppressWarnings("unchecked")
+	public static void load(
+		StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_E, App NE) {
+
 		//稍后封装
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getBigWord", "void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getClassify", "void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoAuthor", "dic_li:_A:pos");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoAuthorForWord", "app:_A:pos");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getBigWord",
+			"void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getClassify",
+			"void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoAuthor",
+			"dic_li:_A:pos");
+		StaticFunctionMapI_AOPM_C.annotationMap.put(
+			"getCoAuthorForWord", "app:_A:pos");
 		//稍后优化传参变量名的 传参因子格式。
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoDNAAuthorForWord", "app:_A:pos");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getHistogram", "void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getLineMed", "void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put(
+			"getCoDNAAuthorForWord", "app:_A:pos");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getHistogram",
+			"void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getLineMed",
+			"void");
 		StaticFunctionMapI_AOPM_C.annotationMap.put("getJpv", "void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getRecoder", "void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getVoicejPanel", "void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getLYGFileIO", "void");
-		
-		Iterator<String> iterators= StaticFunctionMapI_AOPM_C.annotationMap.keySet().iterator();
-		while(iterators.hasNext()) {
-			String temp= iterators.next().toString();
-			StaticRootMap.staticBloomingTimes.put(temp, (long) 0);
-			StaticRootMap.staticClass_XE_Map.put(temp, "I_AOPM");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getRecoder",
+			"void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getVoicejPanel",
+			"void");
+		StaticFunctionMapI_AOPM_C.annotationMap.put("getLYGFileIO",
+			"void");
+
+		Iterator<String> iterators = StaticFunctionMapI_AOPM_C.annotationMap
+			.keySet().iterator();
+		while (iterators.hasNext()) {
+			String temp = iterators.next().toString();
+			NE.app_S.staticRootMap.staticBloomingTimes.put(temp,
+				(long) 0);
+			NE.app_S.staticRootMap.staticClass_XE_Map.put(temp,
+				"I_AOPM");
 		}
 	}
 }

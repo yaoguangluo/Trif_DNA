@@ -2,9 +2,10 @@ package S_A.SEM.register;
 
 import S_A.SEM.bloom.StaticFunctionMapP_IDUQ_C;
 import S_A.SEM.bloom.StaticFunctionMapP_IDUQ_E;
-import S_A.SEM.bloom.StaticRootMap;
 
 import java.util.Iterator;
+
+import ME.VPC.M.app.App;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -17,28 +18,42 @@ import java.util.Iterator;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticRegisterP_IDUQ_C {
-	public static void load(StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_E) {
-		
+	@SuppressWarnings("unchecked")
+	public static void load(
+		StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_E, App NE) {
+
 		//稍后封装
 
 		StaticFunctionMapP_IDUQ_C.annotationMap.put("copy", "dna");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("copyMap", "functionLineDeque");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("mask", "originDeque:newDeque:maskOutput");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("copy", "maskLineDeque");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("copyMap",
+			"functionLineDeque");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("mask",
+			"originDeque:newDeque:maskOutput");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("copy",
+			"maskLineDeque");
 
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("mutationCopy", "dna");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("dating", "father:mother");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("inheritance", "father:mother");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("mutationCopy",
+			"dna");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("dating",
+			"father:mother");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("inheritance",
+			"father:mother");
 		StaticFunctionMapP_IDUQ_C.annotationMap.put("born", "void");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("mutation", "father:mother");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("separater", "original");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("swap", "original");
-		
-		Iterator<String> iterators= StaticFunctionMapP_IDUQ_C.annotationMap.keySet().iterator();
-		while(iterators.hasNext()) {
-			String temp= iterators.next().toString();
-			StaticRootMap.staticBloomingTimes.put(temp, (long) 0);
-			StaticRootMap.staticClass_XE_Map.put(temp, "P_IDUQ");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("mutation",
+			"father:mother");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("separater",
+			"original");
+		StaticFunctionMapP_IDUQ_C.annotationMap.put("swap",
+			"original");
+
+		Iterator<String> iterators = StaticFunctionMapP_IDUQ_C.annotationMap
+			.keySet().iterator();
+		while (iterators.hasNext()) {
+			String temp = iterators.next().toString();
+			NE.app_S.staticRootMap.staticBloomingTimes.put(temp,
+				(long) 0);
+			NE.app_S.staticRootMap.staticClass_XE_Map.put(temp,
+				"P_IDUQ");
 		}
 	}
 }

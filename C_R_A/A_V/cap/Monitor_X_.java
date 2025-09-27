@@ -7,6 +7,8 @@ import org.bytedeco.javacv.Java2DFrameConverter;
 import org.bytedeco.javacv.OpenCVFrameConverter;
 import org.bytedeco.javacv.OpenCVFrameGrabber;
 
+import ME.VPC.M.app.App;
+
 import javax.swing.JApplet;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -23,16 +25,18 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 
+@SuppressWarnings("serial")
 public class Monitor_X_ extends JApplet {
+	public App regNE;
     ////
     public Monitor_X_S monitor_X_S = new Monitor_X_S();
 
     public static void main(String[] argv) {
     }
 
-    @Override
-    public void init() {
-        monitor_X_S.decadeToPDS.IV_(monitor_X_S.decadeToPDS);
+    public void init(App NE) {
+    	regNE= NE;
+    	monitor_X_S.decadeToPDS.IV_(monitor_X_S.decadeToPDS);
         monitor_X_S.readEnglish = new ReadEnglish();
 
         monitor_X_S.grabber = new OpenCVFrameGrabber(0);
@@ -93,7 +97,7 @@ public class Monitor_X_ extends JApplet {
             //进行速度调节, 看了下cpu占用15%, 想控制在5%
             if (!this.monitor_X_S.isStop) {
                 DetaThread.sleepDeta(16);
-                Monitor_X_Animation.X_paint(this.monitor_X_S, this, g);
+                Monitor_X_Animation.X_paint(this.monitor_X_S, this, g, regNE);
             }
         } catch (Exception e) {
             //To do

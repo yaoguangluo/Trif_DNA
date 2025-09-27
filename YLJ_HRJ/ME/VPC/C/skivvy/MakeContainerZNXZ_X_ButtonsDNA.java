@@ -95,7 +95,7 @@ public class MakeContainerZNXZ_X_ButtonsDNA {
 				// SkinPathDetectTrip_E.doTestWithImage(
 				// app_S.monitor.monitor_X_S.img);
 				List<String> pathRankList = SkinPathDetectTrip_E
-						.doTestWithImageAPP(app_S);
+						.doTestWithImageAPP(NE);
 				if (null != app_S.text && null != pathRankList) {
 					StringBuilder page = new StringBuilder();
 					Iterator<String> iterator = pathRankList.iterator();
@@ -147,7 +147,7 @@ public class MakeContainerZNXZ_X_ButtonsDNA {
 				// SkinPathDetectTrip_E.doTestWithImage(
 				// app_S.monitor.monitor_X_S.img);
 				List<String> pathRankList = SkinPathDoubleDetectTripFix2D_E
-						.doTestWithImageAPP(app_S);
+						.doTestWithImageAPP(NE);
 				// List<String> pathRankList=
 				// SkinPathDetectTrip_E.doTestWithImageAPP(u);
 				if (null != app_S.text && null != pathRankList) {

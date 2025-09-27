@@ -2,9 +2,10 @@ package S_A.SEM.register;
 
 import S_A.SEM.bloom.StaticFunctionMapP_VECS_C;
 import S_A.SEM.bloom.StaticFunctionMapP_VECS_E;
-import S_A.SEM.bloom.StaticRootMap;
 
 import java.util.Iterator;
+
+import ME.VPC.M.app.App;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -17,7 +18,8 @@ import java.util.Iterator;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticRegisterP_VECS_C {
-	public static void load(StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_E) {
+	@SuppressWarnings("unchecked")
+	public static void load(StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_E, App NE) {
 		
 		//稍后封装
 		StaticFunctionMapP_VECS_C.annotationMap.put("aNNTest", "string");
@@ -187,8 +189,8 @@ public class StaticRegisterP_VECS_C {
 		Iterator<String> iterators= StaticFunctionMapP_VECS_C.annotationMap.keySet().iterator();
 		while(iterators.hasNext()) {
 			String temp= iterators.next().toString();
-			StaticRootMap.staticBloomingTimes.put(temp, (long) 0);
-			StaticRootMap.staticClass_XE_Map.put(temp, "P_VECS");
+			NE.app_S.staticRootMap.staticBloomingTimes.put(temp, (long) 0);
+			NE.app_S.staticRootMap.staticClass_XE_Map.put(temp, "P_VECS");
 		}
 	}	
 }

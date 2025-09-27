@@ -68,7 +68,7 @@ public class FastCartesianIdentifyTest {
 	 */
 	@SuppressWarnings("unused")
 	public HashMap<String, String> getCartesianRelationShipFromHumanTalk(
-			WorkVerbalMap workVerbalMap) {
+		WorkVerbalMap workVerbalMap) {
 		/*
 		 * 这个函数用于 filter 笛卡尔map 中的 大量无用的成员，每减少一名成员，
 		 * 之后的 计算就增加一分速度和性能。
@@ -114,8 +114,8 @@ public class FastCartesianIdentifyTest {
 		 * 这些符号没有严谨的词性意义，在SVO中的POS作用表达不强，于是采用先提取再计算的逻辑。
 		 * 很多时候在非应激表达的劳动中，说服我做决策的从来不是我的主观爱好，而是客观辩证思维。
 		 */
-		Iterator<String> iterators = workVerbalMap.command_V._IMV_SIQ_SS.keySet()
-				.iterator();
+		Iterator<String> iterators = workVerbalMap.command_V._IMV_SIQ_SS
+			.keySet().iterator();
 		while (iterators.hasNext()) {
 
 			Object object = iterators.next();
@@ -124,17 +124,18 @@ public class FastCartesianIdentifyTest {
 			/*
 			 * 找出不含有特殊符号的条件拆分，方便垃圾分类。 1 不含有与或非的string 2 3
 			 */
-			if (string.contains("&") || string.contains("|")
-					|| string.contains("!") || string.contains(";") 
-					|| string.contains("*") || string.contains(":") || string.contains(" ")) {
+			if (string.contains("&") || string.contains("|") || string
+				.contains("!") || string.contains(";") || string
+					.contains("*") || string.contains(":") || string
+						.contains(" ")) {
 				/*
 				 * 关于这种逻辑的写法逐char匹配，应该在更前分词的时候就过滤掉，因为考虑到分词时候
 				 * 万一有符号+String的代号的组合转码条件，将造成更多断开的碎片。
 				 */
 				WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SIQ_SS
-						.getW(string);
+					.getW(string);
 				workVerbalMap.command_V.relationsGrammar.put(string,
-						wordFrequency);
+					wordFrequency);
 				// workVerbalMap.command_V._IMV_SIQ_SS.remove(string);
 				continue;
 			}
@@ -169,9 +170,9 @@ public class FastCartesianIdentifyTest {
 			findEnglish = findEnglishFromString(string);
 			if (true == findEnglish) {
 				WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SIQ_SS
-						.getW(string);
+					.getW(string);
 				workVerbalMap.command_V.relationsEnglish.put(string,
-						wordFrequency);
+					wordFrequency);
 				continue;
 			}
 			/*
@@ -179,13 +180,14 @@ public class FastCartesianIdentifyTest {
 			 */
 			// to do
 			WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SIQ_SS
-					.getW(string);
-			workVerbalMap.command_V._IMV_SIQ_SS_temp.put(string, wordFrequency);
+				.getW(string);
+			workVerbalMap.command_V._IMV_SIQ_SS_temp.put(string,
+				wordFrequency);
 		}
-		System.out.println(
-				"筛选前主要关系数-->" + workVerbalMap.command_V._IMV_SIQ_SS.size());
-		System.out.println(
-				"筛选后主要关系数-->" + workVerbalMap.command_V._IMV_SIQ_SS_temp.size());
+		System.out.println("筛选前主要关系数-->"
+			+ workVerbalMap.command_V._IMV_SIQ_SS.size());
+		System.out.println("筛选后主要关系数-->"
+			+ workVerbalMap.command_V._IMV_SIQ_SS_temp.size());
 		workVerbalMap.command_V._IMV_SIQ_SS = workVerbalMap.command_V._IMV_SIQ_SS_temp;
 		return null;
 	}
@@ -203,17 +205,17 @@ public class FastCartesianIdentifyTest {
 	}
 
 	public HashMap<String, String> getCartesianRelationShipFromHumanTalks(
-			String[] sentences) {
+		String[] sentences) {
 		return null;
 	}
 
 	public HashMap<String, String> getCartesianPromotionTVMFromRelationShips(
-			HashMap<String, String> relationShips) {
+		HashMap<String, String> relationShips) {
 		return null;
 	}
 
 	public HashMap<String, String> getUtilsOfCartesianPromotionTVM(
-			HashMap<String, String> cartesianPromotion) {
+		HashMap<String, String> cartesianPromotion) {
 		return null;
 	}
 
@@ -233,6 +235,7 @@ public class FastCartesianIdentifyTest {
 	 * --罗瑶光
 	 * 
 	 */
+	@SuppressWarnings("unchecked")
 	public static void main(String[] argv) {
 		// 初始
 		FastCartesianIdentifyTest fastCartesianIdentifyTest = new FastCartesianIdentifyTest();
@@ -243,12 +246,10 @@ public class FastCartesianIdentifyTest {
 		commonTestInition.NE.app_S.workVerbalMap.command_V = command_V;
 		// 输入
 		//String command = "条件为:和:功效|DNN搜索|功效|菜谱|4;";
-		
-		String command = ""
-		+ "在输出的数据表中仅展示从第陆行到第"
+
+		String command = "" + "在输出的数据表中仅展示从第陆行到第"
 		//+ "3拾"
-		+ "九"
-		+ "行的数据;";
+			+ "九" + "行的数据;";
 		command_V.commandWithoutNumerics = command.toString();
 		command_V.commandAcknowledge = command.toString();
 		command_V.command = command.toString();
@@ -256,13 +257,14 @@ public class FastCartesianIdentifyTest {
 		command_V.initArabicNumber();
 		// 计算
 		commonTestInition.NE.app_S.workVerbalMap
-				.setHumanTalkAfterNewBusinessTest(command_V,
-						commonTestInition.NE);
+			.setHumanTalkAfterNewBusinessTest(command_V,
+				commonTestInition.NE);
 		Iterator<String> iterators = command_V._IMV_SIQ_SS_Q.keySet()
-				.iterator();
+			.iterator();
 		while (iterators.hasNext()) {
 			String string = iterators.next();
-			WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q.getW(string);
+			WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q
+				.getW(string);
 			command_V._IMV_SIQ_SS.put(string, WordFrequency);
 		}
 		commonTestInition.NE.app_S.workVerbalMap.initEnvironment();
@@ -271,113 +273,154 @@ public class FastCartesianIdentifyTest {
 		/*
 		 * 这里效果就出来，去掉之前繁杂的调试逻辑。观测速度翻好几番。 later。。
 		 */
-		fastCartesianIdentifyTest.getCartesianRelationShipFromHumanTalk(
+		fastCartesianIdentifyTest
+			.getCartesianRelationShipFromHumanTalk(
 				commonTestInition.NE.app_S.workVerbalMap);
 
 		/*
 		 * 函数稳定后我会专门花时间分配 public private protected sync 函数方法。
 		 * 目前在没有冲突的情况下 整体先 public -- 罗瑶光
 		 */
-		commonTestInition.NE.app_S.workVerbalMap.relationshipsCombinationWithNoun();
-		commonTestInition.NE.app_S.workVerbalMap.relationshipsCombinationWithVerb();
-		commonTestInition.NE.app_S.workVerbalMap.relationshipsCombinationWithNounAndVerb();
-		commonTestInition.NE.app_S.workVerbalMap.initCartesianActions(commonTestInition.NE, command_V);
-		commonTestInition.NE.app_S.workVerbalMap.sortCartesianWorkActionsPositionSV(commonTestInition.NE,
-						command_V);
-		commonTestInition.NE.app_S.workVerbalMap.sortCartesianWorkActionsDistanceSV(commonTestInition.NE,
-						command_V);
-		commonTestInition.NE.app_S.workVerbalMap.sortCartesianWorkActionsPositionVO(commonTestInition.NE,
-						command_V);
-		commonTestInition.NE.app_S.workVerbalMap.sortCartesianWorkActionsDistanceVO(commonTestInition.NE, command_V);
-		commonTestInition.NE.app_S.workVerbalMap.actionsNormalization(commonTestInition.NE, command_V);
+		commonTestInition.NE.app_S.workVerbalMap
+			.relationshipsCombinationWithNoun();
+		commonTestInition.NE.app_S.workVerbalMap
+			.relationshipsCombinationWithVerb();
+		commonTestInition.NE.app_S.workVerbalMap
+			.relationshipsCombinationWithNounAndVerb();
+		commonTestInition.NE.app_S.workVerbalMap.initCartesianActions(
+			commonTestInition.NE, command_V);
+		commonTestInition.NE.app_S.workVerbalMap
+			.sortCartesianWorkActionsPositionSV(commonTestInition.NE,
+				command_V);
+		commonTestInition.NE.app_S.workVerbalMap
+			.sortCartesianWorkActionsDistanceSV(commonTestInition.NE,
+				command_V);
+		commonTestInition.NE.app_S.workVerbalMap
+			.sortCartesianWorkActionsPositionVO(commonTestInition.NE,
+				command_V);
+		commonTestInition.NE.app_S.workVerbalMap
+			.sortCartesianWorkActionsDistanceVO(commonTestInition.NE,
+				command_V);
+		commonTestInition.NE.app_S.workVerbalMap.actionsNormalization(
+			commonTestInition.NE, command_V);
 		//
 		System.out.println("-----笛卡尔词汇观测-----");
-		System.out.println("1-cartesianWorkA-" + commonTestInition.NE.app_S.workVerbalMap.verbInText.size());
-		Iterator<String> iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.verbInText.keySet().iterator();
-		while(iteratorStrings.hasNext()) {
-			String string = iteratorStrings.next();
-			System.out.println(string + ">" + "");
-		}	
-		System.out.println("1-cartesianWorkB-" + commonTestInition.NE.app_S.workVerbalMap.nounInText.size());
-		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.nounInText.keySet().iterator();
-		while(iteratorStrings.hasNext()) {
+		System.out.println("1-cartesianWorkA-"
+			+ commonTestInition.NE.app_S.workVerbalMap.verbInText
+				.size());
+		Iterator<String> iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.verbInText
+			.keySet().iterator();
+		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
 			System.out.println(string + ">" + "");
 		}
-		
+		System.out.println("1-cartesianWorkB-"
+			+ commonTestInition.NE.app_S.workVerbalMap.nounInText
+				.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.nounInText
+			.keySet().iterator();
+		while (iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">" + "");
+		}
+
 		// 输出
 		System.out.println("-----笛卡尔关系推荐逻辑观测-----");
-		System.out.println("1-cartesianWorkActionsPositionsSV-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV.size());
-		iteratorStrings =
-		commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV.keySet().iterator();
-		while(iteratorStrings.hasNext()) {
+		System.out.println("1-cartesianWorkActionsPositionsSV-"
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV
+				.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV
+			.keySet().iterator();
+		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
-					.command_V.cartesianWorkActionsPositionsSV.getString(string) );
+			System.out.println(string + ">"
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV
+					.getString(string));
 		}
-		
-		System.out.println("2-cartesianWorkActionsPositionsVO-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO.size());
-		iteratorStrings =
-				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO.keySet().iterator();
-		while(iteratorStrings.hasNext()) {
+
+		System.out.println("2-cartesianWorkActionsPositionsVO-"
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO
+				.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO
+			.keySet().iterator();
+		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
-					.command_V.cartesianWorkActionsPositionsVO.getString(string) );
+			System.out.println(string + ">"
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO
+					.getString(string));
 		}
-		
-		System.out.println("3-cartesianWorkActionsRightsSV-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV.size());
-		iteratorStrings =
-				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV.keySet().iterator();
-		while(iteratorStrings.hasNext()) {
+
+		System.out.println("3-cartesianWorkActionsRightsSV-"
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
+				.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
+			.keySet().iterator();
+		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
-					.command_V.cartesianWorkActionsRightsSV.getString(string) );
+			System.out.println(string + ">"
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
+					.getString(string));
 		}
-		
-		System.out.println("4-cartesianWorkActionsRightsVO-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO.size());
-		iteratorStrings =
-				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO.keySet().iterator();
-		while(iteratorStrings.hasNext()) {
+
+		System.out.println("4-cartesianWorkActionsRightsVO-"
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
+				.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
+			.keySet().iterator();
+		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
-					.command_V.cartesianWorkActionsRightsVO.getString(string) );
-		}	
-				
-		System.out.println("5-cartesianWorkActions_posSV-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV.size());
-		iteratorStrings =
-				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV.keySet().iterator();
-		while(iteratorStrings.hasNext()) {
-			String string = iteratorStrings.next();
-			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
-					.command_V.cartesianWorkActions_posSV.getString(string) );
-		}	
-				
-		System.out.println("6-cartesianWorkActions_posVO-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO.size());
-		iteratorStrings =
-				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO.keySet().iterator();
-		while(iteratorStrings.hasNext()) {
-			String string = iteratorStrings.next();
-			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
-					.command_V.cartesianWorkActions_posVO.getString(string) );
-		}	
-				
-		System.out.println("7-cartesianWorkActionsRightsParserSV-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV.size());
-		iteratorStrings =
-				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
-		while(iteratorStrings.hasNext()) {
-			String string = iteratorStrings.next();
-			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
-					.command_V.cartesianWorkActionsRightsParserSV.getString(string) );
+			System.out.println(string + ">"
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
+					.getString(string));
 		}
-						
-		System.out.println("8-cartesianWorkActionsRightsParserVO-" + commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO.size());
-		iteratorStrings =
-				commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO.keySet().iterator();
-		while(iteratorStrings.hasNext()) {
+
+		System.out.println("5-cartesianWorkActions_posSV-"
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV
+				.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV
+			.keySet().iterator();
+		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">" + commonTestInition.NE.app_S.workVerbalMap
-					.command_V.cartesianWorkActionsRightsParserVO.getString(string) );
-		}	
+			System.out.println(string + ">"
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV
+					.getString(string));
+		}
+
+		System.out.println("6-cartesianWorkActions_posVO-"
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO
+				.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO
+			.keySet().iterator();
+		while (iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">"
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO
+					.getString(string));
+		}
+
+		System.out.println("7-cartesianWorkActionsRightsParserSV-"
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
+				.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
+			.keySet().iterator();
+		while (iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">"
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
+					.getString(string));
+		}
+
+		System.out.println("8-cartesianWorkActionsRightsParserVO-"
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
+				.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
+			.keySet().iterator();
+		while (iteratorStrings.hasNext()) {
+			String string = iteratorStrings.next();
+			System.out.println(string + ">"
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
+					.getString(string));
+		}
 		/*
 		 * 准备定义笛卡尔的符号规范
 		 * 1 因为一开始采用 全局的去动名词的全局笛卡尔关系，所以四个
@@ -408,11 +451,8 @@ public class FastCartesianIdentifyTest {
 		 * 当前main功能测试通过。Tinshell测试通过。华瑞集admin界面测试通过。
 		 * WorkVerbalMap_X_S 195行处PCA过滤，以后用到条件再解开slash。
 		 * --罗瑶光
-		 * */	
-				
-				
-				
-				
+		 * */
+
 		// 筛选前主要关系数-->13
 		// 筛选后主要关系数-->8
 		// 在含有各类特殊字符的输入中 主要成分计算量减少40% 价值巨大。
@@ -747,4 +787,3 @@ public class FastCartesianIdentifyTest {
 //6-cartesianWorkActions_posVO-0
 //7-cartesianWorkActionsRightsParserSV-0
 //8-cartesianWorkActionsRightsParserVO-0
-

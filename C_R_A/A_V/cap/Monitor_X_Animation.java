@@ -4,6 +4,8 @@ import VSQ.ICAQDTVMQVM.Monitor_X_S;
 import U_V.ESU.toolkitImageToBufferImage.U_X_toolkitImageToBufferImage;
 import org.bytedeco.javacv.FrameGrabber;
 
+import ME.VPC.M.app.App;
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -20,7 +22,8 @@ import java.awt.image.BufferedImage;
 
 public class Monitor_X_Animation {//later do
 
-    public static void X_paint(Monitor_X_S monitor, Monitor_X_ monitor_XCDX, Graphics g) {
+    public static void X_paint(Monitor_X_S monitor, Monitor_X_ monitor_XCDX
+    	, Graphics g, App NE) {
         //图片进来，如果是关联的那么就不读图片，如果不是关联的就grabber
         if (monitor.isStop) {
             return;
@@ -58,7 +61,7 @@ public class Monitor_X_Animation {//later do
         Monitor_X_Animation_PcfButton.X_paint_PcfButton(monitor
             , monitor_XCDX, g, bufferedImage);
         Monitor_X_Animation_Pde.X_paint_pde(monitor, monitor_XCDX
-            , g, bufferedImage);
+            , g, bufferedImage, NE);
         monitor.q += 1;
         if (monitor.q >= monitor.encry_c) {
             monitor.q = 0;

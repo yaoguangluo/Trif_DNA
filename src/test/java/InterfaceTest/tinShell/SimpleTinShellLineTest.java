@@ -23,22 +23,24 @@ public class SimpleTinShellLineTest {
 	 * VO中含有错误关系，于是设计这个 函数来加速观测完善 这个TVM extension 指令句。
 	 * 
 	 * 价值论证， 快速观测立马发现了笛卡尔关系相同数需要归纳，按精度归纳。于是fix
-	 * 
 	 * 另外我的电脑拼音输入法 竟然就没有这个 -关闭词汇提示靠前的功能- 的选项，真够坑爹
 	 * ，稍微一打快点文字，就会出错。。想起初中语法错误。神操作。
 	 */
 	public static void main(String[] argv)
-			throws InterruptedException, IOException {
+		throws InterruptedException, IOException {
 		ShellJPanelSeparationTest shellJPanelSeparationTest = new ShellJPanelSeparationTest();
 		SimpleTinShellLineTest simpleTinShellLineTest = new SimpleTinShellLineTest();
-		simpleTinShellLineTest.testTinshell(shellJPanelSeparationTest);
+		simpleTinShellLineTest.testTinshell(
+			shellJPanelSeparationTest);
 	}
 
+	@SuppressWarnings("unused")
 	public void testTinshell(
-			ShellJPanelSeparationTest shellJPanelSeparationTest)
-			throws IOException, InterruptedException {
+		ShellJPanelSeparationTest shellJPanelSeparationTest)
+		throws IOException, InterruptedException {
 		// test without mock api
-		System.out.println("test without mock api -- tinshell 批处理测试 执行复杂"
+		System.out.println(
+			"test without mock api -- tinshell 批处理测试 执行复杂"
 				+ "条件搜索逻辑--我本地苹果mac上已经调通可运行。方便我之后的各类型测试");
 		ShellJPanelTest shellJPanelTest = new ShellJPanelTest();
 		// -1
@@ -50,9 +52,9 @@ public class SimpleTinShellLineTest {
 		App_X NE = shellJPanelTest.initTinshellEnvironment();
 		// -2
 		String filePathXLSX = "/Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/"
-				+ "project/TinOS/DetaResources/books/xlsx/zybgPage.xlsx";
-		String XLSTableName = shellJPanelTest.initSourceXLSEnvironment(NE,
-				filePathXLSX);
+			+ "project/TinOS/DetaResources/books/xlsx/zybgPage.xlsx";
+		String XLSTableName = shellJPanelTest
+			.initSourceXLSEnvironment(NE, filePathXLSX);
 		/*
 		 * 稍后准备对"条件为:和:笔记原文|DNN搜索|功效|菜谱|4;\r\n"  进行TVM 执行前 语言指令句翻译。
 		 * 这句的逻辑翻译处理笛卡尔关系是比较简单的，因为出现了 -DNN搜索- 这种明确的关键字标识，
@@ -68,18 +70,18 @@ public class SimpleTinShellLineTest {
 		 * --罗瑶光
 		 * */
 		String tinshell = (""
-				//// +"在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
-				//+ "在输出的数据表中仅展示从第陆行到第"
-				//// + "3拾"
-				//+ "九" + "行的数据;"
+			//// +"在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
+			//+ "在输出的数据表中仅展示从第陆行到第"
+			//// + "3拾"
+			//+ "九" + "行的数据;"
 
-				+ "首先获取一个表，名叫" + XLSTableName + "，如果有就下一步;\r\n"
-				+ "条件为:和:笔记原文|DNN搜索|功效|菜谱|4;\r\n" 
-				+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" 
-				+ "在输出的数据表中仅展示从第零行到第壹行的数据;"
-				);
+			+ "首先获取一个表，名叫" + XLSTableName + "，如果有就下一步;\r\n"
+			+ "条件为:和:笔记原文|DNN搜索|功效|菜谱|4;\r\n"
+			+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
+			+ "在输出的数据表中仅展示从第零行到第壹行的数据;");
 
-		TinMap tinMap = shellJPanelSeparationTest.execTest(tinshell, NE, null);
+		TinMap tinMap = shellJPanelSeparationTest.execTest(tinshell,
+			NE, null);
 		// 输出见末尾 第二段
 		// 关闭
 		NE.stop();
@@ -95,11 +97,13 @@ public class SimpleTinShellLineTest {
  * 
 添加指令集 二次开发 一定要注意四层 注册校准机制 和 反射机制。
 -1
-line-->:[{rowValue={功效={culumnValue=肉煎饼充饥,补元气,生肉。., culumnName=功效}, 中药名称={culumnValue=食物肉煎饼菜谱, culumnName=中药名称}, 
+line-->:[{rowValue={功效={culumnValue=肉煎饼充饥,补元气,生肉。., culumnName=功效}, 
+中药名称={culumnValue=食物肉煎饼菜谱, culumnName=中药名称}, 
 打分={culumnValue=320000, culumnName=打分}}}, 
 
 -2
-{rowValue={功效={culumnValue=烤全羊大补筋骨补元气。., culumnName=功效}, 中药名称={culumnValue=烤全羊菜谱, culumnName=中药名称}, 
+{rowValue={功效={culumnValue=烤全羊大补筋骨补元气。., culumnName=功效}, 
+中药名称={culumnValue=烤全羊菜谱, culumnName=中药名称}, 
 打分={culumnValue=320000, culumnName=打分}}}]
 
 

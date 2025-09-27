@@ -1,5 +1,6 @@
 package S_A.Stable.bloom;
 
+import ME.VPC.M.app.App;
 import S_A.SEM.bloom.StaticFunctionMapV_AOPM_E;
 import S_A.SEM.bloom.StaticRootMap;
 	/*
@@ -14,30 +15,30 @@ import S_A.SEM.bloom.StaticRootMap;
 	public class S_V_AOPM {
 		//稍后合并
 		@SuppressWarnings("unchecked")
-		public static void load(StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_E) {
+		public static void load(StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_E, App NE) {
 			//写法
-			StaticRootMap.chromosomeBlooming.put("PdeSwapPdcToPde", "V_A.VPC.transaction.PdeSwap");
-			StaticRootMap.chromosomeBlooming.put("PdeSwapPdcToPds", "V_A.VPC.transaction.PdeSwap");
-			StaticRootMap.chromosomeBlooming.put("PdeSwapPdeToPds", "V_A.VPC.transaction.PdeSwap");
-			StaticRootMap.chromosomeBlooming.put("PdeSwapPdsToPde", "V_A.VPC.transaction.PdeSwap");
-			StaticRootMap.chromosomeBlooming.put("PdeSwapFixpdcToPde", "V_A.VPC.transaction.PdeSwapFix");
-			StaticRootMap.chromosomeBlooming.put("PdeSwapFixpdcToPds", "V_A.VPC.transaction.PdeSwapFix");
-			StaticRootMap.chromosomeBlooming.put("PdeSwapFixpdeToPds", "V_A.VPC.transaction.PdeSwapFix");
-			StaticRootMap.chromosomeBlooming.put("PdeSwapFixpdsToPde", "V_A.VPC.transaction.PdeSwapFix");
-			StaticRootMap.chromosomeBlooming.put("PdeSwapFixtextToPdw", "V_A.VPC.transaction.PdeSwapFix");
-			StaticRootMap.chromosomeBlooming.put("PdeSwapFixpdwToPdc", "V_A.VPC.transaction.PdeSwapFix"
+			NE.app_S.staticRootMap.chromosomeBlooming.put("PdeSwapPdcToPde", "V_A.VPC.transaction.PdeSwap");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("PdeSwapPdcToPds", "V_A.VPC.transaction.PdeSwap");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("PdeSwapPdeToPds", "V_A.VPC.transaction.PdeSwap");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("PdeSwapPdsToPde", "V_A.VPC.transaction.PdeSwap");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("PdeSwapFixpdcToPde", "V_A.VPC.transaction.PdeSwapFix");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("PdeSwapFixpdcToPds", "V_A.VPC.transaction.PdeSwapFix");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("PdeSwapFixpdeToPds", "V_A.VPC.transaction.PdeSwapFix");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("PdeSwapFixpdsToPde", "V_A.VPC.transaction.PdeSwapFix");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("PdeSwapFixtextToPdw", "V_A.VPC.transaction.PdeSwapFix");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("PdeSwapFixpdwToPdc", "V_A.VPC.transaction.PdeSwapFix"
 					+ ";A_I.OPE.ASQ.ASU.MPE.procedure.pde.full.FullDNATokenPDI");//可拆分到leaf
-			StaticRootMap.chromosomeBlooming.put("DetaDBUtilDBRequest", "V_A.VPC.VQS.DSU.utils.DetaDB");
-			StaticRootMap.chromosomeBlooming.put("DetaDBUtilbackEndRequest", "V_A.VPC.VQS.DSU.utils.DetaDB");
-			StaticRootMap.chromosomeBlooming.put("DetaDBUtilcacheRequest", "V_A.VPC.VQS.DSU.utils.DetaDB");
-			StaticRootMap.chromosomeBlooming.put("IV_CulumnNameType", "V_A.VPC.VQS.DSU.utils.DetaDB");
-			StaticRootMap.chromosomeBlooming.put("withoutCulumnNameType", "V_A.VPC.VQS.DSU.utils.DetaDB");
-			StaticRootMap.chromosomeBlooming.put("DetaFrontEndUtilbackEndRequest", "V_A.VPC.VQS.DSU.utils.DetaFrontEnd");
-			StaticRootMap.chromosomeBlooming.put("DetaFrontEndUtilhuaRuiJiRequest", "V_A.VPC.VQS.DSU.utils.DetaFrontEnd");
-			StaticRootMap.chromosomeBlooming.put("DetaFrontEndUtilcacheRequest", "V_A.VPC.VQS.DSU.utils.DetaFrontEnd");
-			StaticRootMap.chromosomeBlooming.put("IV_DB", "V_A.VPC.VQS.DSU.utils");
-			StaticRootMap.chromosomeBlooming.put("compress", "U_A.PEU.P.zip");
-			StaticRootMap.chromosomeBlooming.put("uncompress", "U_A.PEU.P.zip");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("DetaDBUtilDBRequest", "V_A.VPC.VQS.DSU.utils.DetaDB");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("DetaDBUtilbackEndRequest", "V_A.VPC.VQS.DSU.utils.DetaDB");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("DetaDBUtilcacheRequest", "V_A.VPC.VQS.DSU.utils.DetaDB");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("IV_CulumnNameType", "V_A.VPC.VQS.DSU.utils.DetaDB");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("withoutCulumnNameType", "V_A.VPC.VQS.DSU.utils.DetaDB");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("DetaFrontEndUtilbackEndRequest", "V_A.VPC.VQS.DSU.utils.DetaFrontEnd");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("DetaFrontEndUtilhuaRuiJiRequest", "V_A.VPC.VQS.DSU.utils.DetaFrontEnd");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("DetaFrontEndUtilcacheRequest", "V_A.VPC.VQS.DSU.utils.DetaFrontEnd");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("IV_DB", "V_A.VPC.VQS.DSU.utils");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("compress", "U_A.PEU.P.zip");
+			NE.app_S.staticRootMap.chromosomeBlooming.put("uncompress", "U_A.PEU.P.zip");
 			//
 		}
 	}

@@ -37,13 +37,14 @@ public class InitonTalk {
 	}
 
 	// 指令结构语句
+	@SuppressWarnings("unchecked")
 	public static IMV_SIQ listenFlower(String initonsLanguage,
 			String functionIdentify, String calyxChromosome, App NE)
 			throws InterruptedException, IOException {
 		String callFunctionKey = functionIdentify;//
-		StaticRootMap.staticBloomingTime.put(callFunctionKey,
+		NE.app_S.staticRootMap.staticBloomingTime.put(callFunctionKey,
 				System.currentTimeMillis());
-		StaticRootMap.initMap();
+		NE.app_S.staticRootMap.initMap(NE);
 		String[] strings = new String[1];
 		IMV_SIQ output = new IMV_SIQ();
 		IMV_SIQ inputValue = new IMV_SIQ();
@@ -145,12 +146,12 @@ public class InitonTalk {
 					.getString(callFunctionKey).split(":");//
 		}
 		for (int i = 0; i < 传参因子.length; i++) {// 降低入参权限。只做记忆分析。
-			StaticRootMap.staticBloomingTime.put(传参因子[i],
+			NE.app_S.staticRootMap.staticBloomingTime.put(传参因子[i],
 					System.currentTimeMillis());
-			if (StaticRootMap.staticBloomingTimes.containsKey(传参因子[i])) {
-				Long times = StaticRootMap.staticBloomingTimes.get(传参因子[i]);
+			if (NE.app_S.staticRootMap.staticBloomingTimes.containsKey(传参因子[i])) {
+				Long times = NE.app_S.staticRootMap.staticBloomingTimes.get(传参因子[i]);
 				times++;// 方便统计用来删除淘汰函数。例子
-				StaticRootMap.staticBloomingTimes.put(传参因子[i], times);
+				NE.app_S.staticRootMap.staticBloomingTimes.put(传参因子[i], times);
 			} // 每一次出现的时间list稍后。避免内存增量。
 			inputValue.put(传参因子[i], "");// 安全机制。
 		}
@@ -158,12 +159,12 @@ public class InitonTalk {
 		output.put("传参因子", 传参因子);
 		output.put("inputValues", inputValue);
 		strings[0] = initonsLanguage;
-		StaticRootMap.tinShellV005(strings, output, NE);
-		Long bootedTimeMillis = StaticRootMap.staticBloomingTime
+		NE.app_S.staticRootMap.tinShellV005(strings, output, NE);
+		Long bootedTimeMillis = NE.app_S.staticRootMap.staticBloomingTime
 				.get(callFunctionKey);
 		Long durationalTimeMillis = System.currentTimeMillis()
 				- bootedTimeMillis;
-		StaticRootMap.staticBloomingDuration.put(callFunctionKey,
+		NE.app_S.staticRootMap.staticBloomingDuration.put(callFunctionKey,
 				durationalTimeMillis);
 		IMV_SIQ map = (IMV_SIQ) output.get(callFunctionKey);
 		return map;// map里面需要一些固定的标准参数。

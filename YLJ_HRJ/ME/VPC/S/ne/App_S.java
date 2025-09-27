@@ -21,6 +21,9 @@ import ME.VPC.M.X.App_XCDX;
 import ME.VPC.M.X.App_X_getBox;
 import M_V.ME.APM.VSQ.editPane.EditPane;
 import M_V.MPI.xls.commonXLS.MakeContainerXLS;
+import S_A.SEM.bloom.StaticRootMap;
+import S_A.SVQ.stable.S_MapsInitons;
+import S_A.SixActionMap.FlowerAction;
 import S_A.pheromone.IMV_SIQ;
 import YLJ_HRJ.ME.VPC.S.images.ImageIndex;
 
@@ -66,6 +69,10 @@ public class App_S extends App_S_Systems {
 	public List<MakeContainerXLS> makeContainerXLSList = new CopyOnWriteArrayList<>();
 	public JFrame frame;
 	public AppInit_XCDX appInit;
+	//去static，稍后HVPCS分解
+	public StaticRootMap staticRootMap = new StaticRootMap();
+	public FlowerAction flowerAction = new FlowerAction();
+	public S_MapsInitons _S_MapsInitons = new S_MapsInitons();
 
 	public App_S() {
 		super();

@@ -17,85 +17,97 @@ import S_A.pheromone.IMV_SIQ;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticReflectionMapV_IDUQ_C {
-    public static IMV_SIQ annotationMap = new IMV_SIQ();
+	public static IMV_SIQ annotationMap = new IMV_SIQ();
 
-    public static void callFunction(CallFunctionKey callFunctionKey
-        , StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C
-        , IMV_SIQ output, App NE) {//shao hou xiuzheng
-        String[] 传参因子 = (String[]) output.get("传参因子");
-        int 因子 = 0;
-        Object map = null;
-        if (callFunctionKey.contains("initETL", NE)) {
-            String trif = "initETL";
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                map = staticFunctionMapV_IDUQ_C.initETLWithInitons(NE);
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , trif);
-        }
-        if (callFunctionKey.contains("onlyInitETL", NE)) {
-            String trif = "onlyInitETL";
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                map = staticFunctionMapV_IDUQ_C.onlyInitETLWithInitons(NE);
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , trif);
-        }
-        if (callFunctionKey.contains("demoETL", NE)) {
-            String trif = "demoETL";
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                staticFunctionMapV_IDUQ_C.demoETLWithInitons(NE);
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , trif);
-        }
-        if (callFunctionKey.contains("ETLDocLoader", NE)) {
-            String trif = "ETLDocLoader";
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                staticFunctionMapV_IDUQ_C.ETLDocLoaderWithInitons(NE);
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , trif);
-        }
-        if (callFunctionKey.contains("ETLDocExec", NE)) {
-            String trif = "ETLDocExec";
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                staticFunctionMapV_IDUQ_C.ETLDocExecWithInitons(NE);
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , trif);
-        }
-        if (callFunctionKey.contains("ETLDocSave", NE)) {
-            String trif = "ETLDocSave";
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                staticFunctionMapV_IDUQ_C.ETLDocSaveWithInitons(NE);
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , trif);
-        }
-        if (callFunctionKey.contains("getOrigianlTextByLock", NE)) {
-            String trif = "getOrigianlTextByLock";
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                map = staticFunctionMapV_IDUQ_C.getOrigianlTextByLockWithInitons(NE);
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , trif);
-        }
-        if (callFunctionKey.contains("Load", NE)) {
-            String trif = "Load";
-            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-            if (inputValues.getBoolean("find")) {
-                map = staticFunctionMapV_IDUQ_C.LoadWithInitons(NE);
-            }
-            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-                , trif);
-        }
-    }
+	@SuppressWarnings("unused")
+	public static void callFunction(CallFunctionKey callFunctionKey,
+		StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C,
+		IMV_SIQ output, App NE) {//shao hou xiuzheng
+		String[] 传参因子 = (String[]) output.get("传参因子");
+		int 因子 = 0;
+		Object map = null;
+		if (callFunctionKey.contains("initETL", NE)) {
+			String trif = "initETL";
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				map = staticFunctionMapV_IDUQ_C.initETLWithInitons(
+					NE);
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, trif);
+		}
+		if (callFunctionKey.contains("onlyInitETL", NE)) {
+			String trif = "onlyInitETL";
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				map = staticFunctionMapV_IDUQ_C
+					.onlyInitETLWithInitons(NE);
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, trif);
+		}
+		if (callFunctionKey.contains("demoETL", NE)) {
+			String trif = "demoETL";
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				staticFunctionMapV_IDUQ_C.demoETLWithInitons(NE);
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, trif);
+		}
+		if (callFunctionKey.contains("ETLDocLoader", NE)) {
+			String trif = "ETLDocLoader";
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				staticFunctionMapV_IDUQ_C.ETLDocLoaderWithInitons(NE);
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, trif);
+		}
+		if (callFunctionKey.contains("ETLDocExec", NE)) {
+			String trif = "ETLDocExec";
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				staticFunctionMapV_IDUQ_C.ETLDocExecWithInitons(NE);
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, trif);
+		}
+		if (callFunctionKey.contains("ETLDocSave", NE)) {
+			String trif = "ETLDocSave";
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				staticFunctionMapV_IDUQ_C.ETLDocSaveWithInitons(NE);
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, trif);
+		}
+		if (callFunctionKey.contains("getOrigianlTextByLock", NE)) {
+			String trif = "getOrigianlTextByLock";
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				map = staticFunctionMapV_IDUQ_C
+					.getOrigianlTextByLockWithInitons(NE);
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, trif);
+		}
+		if (callFunctionKey.contains("Load", NE)) {
+			String trif = "Load";
+			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+				传参因子);
+			if (inputValues.getBoolean("find")) {
+				map = staticFunctionMapV_IDUQ_C.LoadWithInitons(NE);
+			}
+			StaticFunctionMap.postValues(output, inputValues
+				.getBoolean("find"), map, trif);
+		}
+	}
 }

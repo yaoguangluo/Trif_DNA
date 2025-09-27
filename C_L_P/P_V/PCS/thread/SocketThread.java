@@ -40,11 +40,12 @@ import java.util.List;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
+@SuppressWarnings("unused")
 public class SocketThread extends Thread implements Runnable {
     private Socket socket;
     private CogsBinaryForest_AE _A;
     private EmotionMap emotionMap;
-    private RatioMap_E ratioMap_E;
+	private RatioMap_E ratioMap_E;
     private EmotionInit emotionInit;
     private EnvironmentInit environmentInit;
     private SensingMap_E sensingMap_E;
@@ -55,17 +56,17 @@ public class SocketThread extends Thread implements Runnable {
     private RNN_IDETest rNN_IDETest;
     private String sid;
     private SocketThreadPool socketThreadPool;
-    App NE;
+    private App regNE;
 
     public SocketThread(SocketThreadPool socketThreadPool, Socket socket, String id, App app_NE) {
-        NE = app_NE;
+    	regNE = app_NE;
         this.socket = socket;
         this.sid = id;
-        this._A = NE.app_S._A;
-        this.emotionMap = NE.app_S.emotionMap_E;
-        this.ratioMap_E = NE.app_S.ratioMap_E;
-        this.environmentInit = NE.app_S.environmentInit;
-        this.sensingMap_E = NE.app_S.sensingMap_E;
+        this._A = regNE.app_S._A;
+        this.emotionMap = regNE.app_S.emotionMap_E;
+        this.ratioMap_E = regNE.app_S.ratioMap_E;
+        this.environmentInit = regNE.app_S.environmentInit;
+        this.sensingMap_E = regNE.app_S.sensingMap_E;
         this.socketThreadPool = socketThreadPool;
     }
 
@@ -109,31 +110,31 @@ public class SocketThread extends Thread implements Runnable {
                 //if(null!= HRJFrame.NE.monitor.img) {
                 // 编辑页
                 List<String> pathRankList = SkinPathDetectTrip_E.doInnerTest(getSkinBy
-                    , NE.app_S);
-                if (null != NE.app_S.text && null != pathRankList) {
+                    , regNE);
+                if (null != regNE.app_S.text && null != pathRankList) {
                     page = new StringBuilder();
                     Iterator<String> iterator = pathRankList.iterator();
                     while (iterator.hasNext()) {
                         String setOfi = iterator.next();
                         page.append("\r\n\r\n" + setOfi);
                     }
-                    if (!NE.app_S.text.getText().isEmpty()) {
-                        if (NE.app_S.text.getText().length() < 3000) {
-                            NE.app_S.text.setText(NE.app_S.text.getText()
+                    if (!regNE.app_S.text.getText().isEmpty()) {
+                        if (regNE.app_S.text.getText().length() < 3000) {
+                        	regNE.app_S.text.setText(regNE.app_S.text.getText()
                                 + "\r\n\r\n" + page.toString());
                         } else {
-                            NE.app_S.text.setText(page.toString());
+                        	regNE.app_S.text.setText(page.toString());
                         }
                     } else {
-                        NE.app_S.text.setText(page.toString());
+                    	regNE.app_S.text.setText(page.toString());
                     }
-                    NE.app_S.text.validate();
+                    regNE.app_S.text.validate();
                 }
                 //图片搜索页
-                if (null != NE.app_S.searchList) {
-                    for (int i = 0; i < NE.app_S.searchList.size(); i++) {
+                if (null != regNE.app_S.searchList) {
+                    for (int i = 0; i < regNE.app_S.searchList.size(); i++) {
                         OSU_MCI_MCU_MSI _OSU_MCI_MCU_MSI
-                            = NE.app_S.searchList.get(i);
+                            = regNE.app_S.searchList.get(i);
                         if (_OSU_MCI_MCU_MSI.pageName.equals("图片搜索")) {
                             _OSU_MCI_MCU_MSI.AOP_VEC_SQ_PDE(null
                                 , pathRankList);
@@ -181,7 +182,7 @@ public class SocketThread extends Thread implements Runnable {
             if (content[1] == null) {
                 error500();
             }
-            RestMap.P(content, socket, NE);
+            RestMap.P(content, socket, regNE);
             socket.close();
         } catch (Exception e) {
             error500();

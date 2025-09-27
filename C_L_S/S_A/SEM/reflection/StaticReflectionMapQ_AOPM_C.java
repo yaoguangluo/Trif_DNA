@@ -18,8 +18,11 @@ import java.util.Map;
 *  208号 阳光家园别墅小区 第十栋
  * */
 public class StaticReflectionMapQ_AOPM_C {
-	public static Map<String, String> annotationMap= new IMV_SIQ();
-	public static void callFunction(CallFunctionKey callFunctionKey
-			, StaticFunctionMapQ_AOPM_E staticFunctionMapQ_AOPM_C, IMV_SIQ output, App NE) {
+	@SuppressWarnings("unchecked")
+	public static Map<String, String> annotationMap = new IMV_SIQ();
+
+	public static void callFunction(CallFunctionKey callFunctionKey,
+		StaticFunctionMapQ_AOPM_E staticFunctionMapQ_AOPM_C,
+		IMV_SIQ output, App NE) {
 	}
 }

@@ -7,7 +7,6 @@ import java.util.List;
 import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
 import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
-import S_A.SEM.bloom.StaticRootMap;
 import S_A.pheromone.IMV_SIQ;
 import jnisort.LYGSortESU9D;
 
@@ -22,8 +21,8 @@ import jnisort.LYGSortESU9D;
  *  208号 阳光家园别墅小区 第十栋别墅
  * */
 //稍后封装成一个统一的傻瓜接口。
-public class LimitedRowAttributesOfColumnsInMemoryClass
-		implements CrabInterface {
+public class LimitedRowAttributesOfColumnsInMemoryClass implements
+	CrabInterface {
 	String callFunctionKey;
 	String className = "LimitedRowAttributesOfColumnsInMemoryClass";
 
@@ -47,18 +46,20 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 	// StaticRootMap.chromosomeLeaf.put("crab", null);
 	// StaticRootMap.chromosomeDNA.put("crab", null);
 	@SuppressWarnings("unchecked")
-	public void chromosomes() {
-		StaticRootMap.initMap();
+	public void chromosomes(App NE) {
+		NE.app_S.staticRootMap.initMap(NE);
 		callFunctionKey = "callFunctionKey";
 		// 20230207 走统计新陈代谢
-		StaticRootMap.staticBloomingTimes.put(callFunctionKey, (long) 0);
-		StaticRootMap.staticBloomingTime.put(callFunctionKey,
-				System.currentTimeMillis());// 增加记忆时间。20241013
-		StaticRootMap.staticClass_XE_Map.put(callFunctionKey, "S_AOPM");
-		StaticRootMap.chromosomeNode.put(callFunctionKey,
-				new LimitedRowAttributesOfColumnsInMemoryClass());// 20241001准备把这行移出去。
+		NE.app_S.staticRootMap.staticBloomingTimes.put(
+			callFunctionKey, (long) 0);
+		NE.app_S.staticRootMap.staticBloomingTime.put(callFunctionKey,
+			System.currentTimeMillis());// 增加记忆时间。20241013
+		NE.app_S.staticRootMap.staticClass_XE_Map.put(callFunctionKey,
+			"S_AOPM");
+		NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey,
+			new LimitedRowAttributesOfColumnsInMemoryClass());// 20241001准备把这行移出去。
 		StaticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey,
-				"inputValues:传参因子:因子");
+			"inputValues:传参因子:因子");
 		// String callFunctionKey= "callFunctionKey";
 		// StaticRootMap.initMap();
 	};
@@ -74,8 +75,9 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeMetabolism.put("crab", null);
 	@SuppressWarnings("unchecked")
-	public void bloomings() {
-		StaticRootMap.chromosomeBlooming.put(callFunctionKey, this.getClass());
+	public void bloomings(App NE) {
+		NE.app_S.staticRootMap.chromosomeBlooming.put(callFunctionKey,
+			this.getClass());
 	}
 
 	;
@@ -148,12 +150,13 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 	 * 
 	 * --罗瑶光
 	 */
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg) {
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
+	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子,
+		App NE, IMV_SIQ outputReg) {
 		//System.out.println("400-size-02-"
 		//		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
-		if (NE.app_S.workVerbalMap.command_V.cartesianLooped
-				.contains(className)) {
+		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(
+			className)) {
 			//System.out.println("400-size-01-"
 			//		+ NE.app_S.workVerbalMap.command_V.countReject++);
 			return false;
@@ -163,8 +166,8 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		 * 德塔图灵分词--德塔图灵分词和图灵先生没关系，我2018当时只是好玩，2019结果还申请了著作权，
 		 * 搞得都改不了了。-- 能够将数字提取出来标明词性未知和null，可以通过numeric函数来探索数字。
 		 * 
-		 * 再通过数字和 词组的笛卡尔关系得到精度距离内的指令关系结构，--我已经有了这些函数了，直接 用即可--再通过
-		 * 2的关系结构进行精确筛选来swap成输出指令数据即可。
+		 * 再通过数字和 词组的笛卡尔关系得到精度距离内的指令关系结构，--我已经有了这些函数了，直接用
+		 * 即可--再通过2的关系结构进行精确筛选来swap成输出指令数据即可。
 		 * 
 		 * 这些年，很多大佬拿了我的代码然后模仿我，想窥伺我的思维方式，不惜消费巨大的物资最后得不偿失
 		 * 膜拜变成憎恨，我思考了下这是我的问题，好比倩女幽魂，大白天背着个大菩萨在外走，难免别人不认
@@ -177,7 +180,6 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		// 2 识别 行至 属性的指令集 信息
 		/*
 		 * 开始构造数字行数提取指令 从- 组合 到- 然后分析 从- 组合 到- 展示+行 仅+展示
-		 * 
 		 * "操作:0|行至|30;\r\n" 终于到了这一步了，
 		 */
 		if (!NE.app_S.workVerbalMap.command_V.command.contains("行")) {
@@ -185,40 +187,43 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		}
 		System.out.println("LimitedRow-string-400-00-->\n");
 		Iterator<String> iterators = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
-				.keySet().iterator();
+			.keySet().iterator();
 		String fromValue = "";
 		String toValue = "";
 		// 逻辑分解增加精度
 		boolean needFind = false;
 		while (iterators.hasNext()) {
 			String string = iterators.next();
-			System.out.println("LimitedRow-string-400-01-->" + string);
+			System.out.println("LimitedRow-string-400-01-->"
+				+ string);
 			if (string.contains("V+行")) {
 				needFind = true;
 				break;
 			}
 		}
-		System.out.println("LimitedRow-string-400-01-01->" + needFind);
+		System.out.println("LimitedRow-string-400-01-01->"
+			+ needFind);
 		List<String> fromValues = new ArrayList<>();
 		List<String> toValues = new ArrayList<>();
 		if (needFind) {
 			iterators = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
-					.keySet().iterator();
+				.keySet().iterator();
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				//System.out.println("LimitedRow-string-400-02-->" + string);
 				if (string.contains("从-")) {
 					System.out.println(
-							"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
-									+ string);
+						"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
+							+ string);
 					// 1
 					String[] strings = string.split("-");
 					// 2
 					if (strings.length > 1) {
 						boolean isNumeric = true;
-						for (int i = 0; i < strings[1].length(); i++) {
+						for (int i = 0; i < strings[1]
+							.length(); i++) {
 							if (strings[1].charAt(i) < 48
-									|| strings[1].charAt(i) > 57) {
+								|| strings[1].charAt(i) > 57) {
 								isNumeric = false;
 							}
 						}
@@ -235,16 +240,17 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 				}
 				if (string.contains("到-")) {
 					System.out.println(
-							"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
-									+ string);
+						"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
+							+ string);
 					// 1
 					String[] strings = string.split("-");
 					// 2
 					if (strings.length > 1) {
 						boolean isNumeric = true;
-						for (int i = 0; i < strings[1].length(); i++) {
+						for (int i = 0; i < strings[1]
+							.length(); i++) {
 							if (strings[1].charAt(i) < 48
-									|| strings[1].charAt(i) > 57) {
+								|| strings[1].charAt(i) > 57) {
 								isNumeric = false;
 							}
 						}
@@ -274,22 +280,24 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		 * */
 		for (int i = 0; i < fromValues.size(); i++) {
 			fromValueStrings[i] = fromValues.get(i);
-			String temp = NE.app_S.workVerbalMap.command_V
-					.cartesianWorkActionsRightsVO.getString(fromValueStrings[i]);
+			String temp = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
+				.getString(fromValueStrings[i]);
 			fromValueStringRights[i] = Integer.valueOf(temp);
 		}
 		for (int i = 0; i < toValues.size(); i++) {
 			toValueStrings[i] = toValues.get(i);
-			String temp = NE.app_S.workVerbalMap.command_V
-					.cartesianWorkActionsRightsVO.getString(toValueStrings[i]);
+			String temp = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
+				.getString(toValueStrings[i]);
 			toValueStringRights[i] = Integer.valueOf(temp);
 		}
 		// sort
-		new LYGSortESU9D().javaSort(fromValueStringRights, fromValueStrings);
-		new LYGSortESU9D().javaSort(toValueStringRights, toValueStrings);
+		new LYGSortESU9D().javaSort(fromValueStringRights,
+			fromValueStrings);
+		new LYGSortESU9D().javaSort(toValueStringRights,
+			toValueStrings);
 		// 3 信息组合 成指令集术语
-		String shellType = "操作:" + fromValueStrings[0].split("-")[1]+ "|行至|" 
-		+ toValueStrings[0].split("-")[1] + "";
+		String shellType = "操作:" + fromValueStrings[0].split("-")[1]
+			+ "|行至|" + toValueStrings[0].split("-")[1] + "";
 		// 4 输出
 		System.out.println("400---00007---");
 		System.out.println(shellType);
@@ -302,7 +310,7 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		System.out.println("400---00009---");
 		//register
 		NE._I_U.sets = strings[1].split("\\|");
-		
+
 		/*
 		 * 以后指令集的编码风格也可以进行系统的流程归纳比如这里的 1 和 2 //1 识别 数字 信息 //2
 		 * 识别行至属性的指令集 信息，通过计算哲学来进行思考，--识别 数字 信息，数字--是特指
@@ -321,11 +329,13 @@ public class LimitedRowAttributesOfColumnsInMemoryClass
 		 * 
 		 * --罗瑶光
 		 */
-		//当年我犯了个错误，合并了多个工程调通后的程序没有及时的注释掉，导致莫名乱码UTF8乱码问题后import出错选择了没有注释掉的源码。
+		//当年我犯了个错误，合并了多个工程调通后的程序没有及时的注释掉，导致莫名乱码UTF8乱码问题
+		//后import出错选择了没有注释掉的源码。
 		//我当时不注释的原因是将来用得到加上通过入参不同来确定函数唯一。
 
-		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");
-		
+		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(
+			className, "");
+
 		return true;
 	}
 }
