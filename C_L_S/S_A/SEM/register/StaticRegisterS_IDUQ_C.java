@@ -22,12 +22,12 @@ public class StaticRegisterS_IDUQ_C {
 	public static void load(
 		StaticFunctionMapS_IDUQ_E staticFunctionMapS_IDUQ_E, App NE) {
 		//稍后封装
-		StaticFunctionMapS_IDUQ_C.annotationMap.put("clone",
+		staticFunctionMapS_IDUQ_E.annotationMap.put("clone",
 			"tinMap");
-		StaticFunctionMapS_IDUQ_C.annotationMap.put("splitRegex",
+		staticFunctionMapS_IDUQ_E.annotationMap.put("splitRegex",
 			"input:split:unSplit");
 
-		Iterator<String> iterators = StaticFunctionMapS_IDUQ_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapS_IDUQ_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

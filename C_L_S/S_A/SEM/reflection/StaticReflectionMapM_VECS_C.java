@@ -8,19 +8,19 @@ import S_A.pheromone.IMV_SIQ;
 
 //著作权人+ 作者= 罗瑶光
 /*
- * 著作权人 ，作者 罗瑶光, 浏阳
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
  ** 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋
+*  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
-public class StaticReflectionMapM_VECS_C {
-	public static IMV_SIQ annotationMap = new IMV_SIQ();
+public class StaticReflectionMapM_VECS_C extends
+	StaticReflectionMapCASE {
 
 	@SuppressWarnings({ "unchecked", "unused" })
-	public static void callFunction(CallFunctionKey callFunctionKey,
+	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapM_VECS_E staticFunctionMapM_VECS_C,
 		IMV_SIQ output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
@@ -394,14 +394,14 @@ public class StaticReflectionMapM_VECS_C {
 			StaticFunctionMap.postValues(output, inputValues
 				.getBoolean("find"), map, "P_BaseName");
 		} //, "P_BaseName");
-		//        if (callFunctionKey.contains("P_TableName", NE)) {
-		//            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
-		//            if (inputValues.getBoolean("find")) {
-		//                staticFunctionMapM_VECS_C.P_TableName(NE);
-		//            }//稍后因子 object化。
-		//            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-		//                , "P_TableName");
-		//        }//, "P_TableName");
+		  //        if (callFunctionKey.contains("P_TableName", NE)) {
+		  //            IMV_SIQ inputValues = StaticFunctionMap.preValues(output, 传参因子);
+		  //            if (inputValues.getBoolean("find")) {
+		  //                staticFunctionMapM_VECS_C.P_TableName(NE);
+		  //            }//稍后因子 object化。
+		  //            StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
+		  //                , "P_TableName");
+		  //        }//, "P_TableName");
 		if (callFunctionKey.contains("P_ListNeedStart", NE)) {
 			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
@@ -672,14 +672,14 @@ public class StaticReflectionMapM_VECS_C {
 			StaticFunctionMap.postValues(output, inputValues
 				.getBoolean("find"), map, "currentSystemTimeToUTC");
 		} //, "currentSystemTimeToUTC");
-		//		if(callFunctionKey.contains("getTranslator")){
-		//			IMV_SIQ inputValues= StaticFunctionMap.preValues(output, 传参因子);
-		//			if(inputValues.getBoolean("find")) {
-		//				map= staticFunctionMapM_VECS_C.getTranslator(NE);
-		//			}
-		//			StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
-		//					, callFunctionKey);
-		//		}//, "getTranslator");
+		  //		if(callFunctionKey.contains("getTranslator")){
+		  //			IMV_SIQ inputValues= StaticFunctionMap.preValues(output, 传参因子);
+		  //			if(inputValues.getBoolean("find")) {
+		  //				map= staticFunctionMapM_VECS_C.getTranslator(NE);
+		  //			}
+		  //			StaticFunctionMap.postValues(output, inputValues.getBoolean("find"), map
+		  //					, callFunctionKey);
+		  //		}//, "getTranslator");
 		if (callFunctionKey.contains("ListSetsCheck", NE)) {
 			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
 				传参因子);

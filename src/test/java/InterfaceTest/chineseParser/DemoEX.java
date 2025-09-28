@@ -43,18 +43,19 @@ public class DemoEX {
 		TimeCheck t = new TimeCheck();
 		// 等待分词的语句
 		String ss = new String("在输出的数据表中仅展示从第零行到第三十行的数据"
-				+ "罗瑶光先生从2018年10月开始，所有个人著作权作品，-1234 566778 900-"
-				+ "全部开源，到现在，和无数群体，技术社团正面交锋7年，一直0纠纷，罗"
-				+ "瑶光先生认为，一件作品，一个事物，如果有价值，就应该像教材一样在"
-				+ "真实的环境中实践测试和论证，能经得起所有人长年累月不断地挑剔的东"
-				+ "西，才是货真价实的，罗瑶光的个人著作权作品都是互联网，大数据产业"
-				+ "领域基础作品，2018年后，在60余互联网app上发布德塔开源的作品，罗"
-				+ "瑶光先生认为开源作品对同行呈现包容性。同时对垄断产业有约束性。");
+			+ "罗瑶光先生从2018年10月开始，所有个人著作权作品，-1234 566778 900-"
+			+ "全部开源，到现在，和无数群体，技术社团正面交锋7年，一直0纠纷，罗"
+			+ "瑶光先生认为，一件作品，一个事物，如果有价值，就应该像教材一样在"
+			+ "真实的环境中实践测试和论证，能经得起所有人长年累月不断地挑剔的东"
+			+ "西，才是货真价实的，罗瑶光的个人著作权作品都是互联网，大数据产业"
+			+ "领域基础作品，2018年后，在60余互联网app上发布德塔开源的作品，罗"
+			+ "瑶光先生认为开源作品对同行呈现包容性。同时对垄断产业有约束性。");
 		StringBuilder sb = new StringBuilder(ss);
 		t.begin();
 		for (int i = 0; i < 100000; i++) {
 			// 执行分词
-			sets = commonTestInition.NE.app_S._A.parserMixedString(sb);
+			sets = commonTestInition.NE.app_S._A.parserMixedString(
+				sb);
 		}
 		t.end();
 		t.duration();
@@ -65,17 +66,19 @@ public class DemoEX {
 			}
 		}
 		System.out.println("-展示词性-注意副词库表问题，形容词副词表里面的词汇"
-				+ "不是罗瑶光研发设计的--具体见DemoPOSTest函数的修正方法");
+			+ "不是罗瑶光研发设计的--具体见DemoPOSTest函数的修正方法");
 		DemoPOSTest demoPOSTest = new DemoPOSTest();
 		demoPOSTest.testPOS(sets, pos);
 		//
 		System.out.println("-展示词频统计-");
 		IMV_SIQ_S_ fwa = commonTestInition.NE.app_S._A
-				.getWordFrequencyByReturnSortMap(sets, commonTestInition.NE);
+			.getWordFrequencyByReturnSortMap(sets,
+				commonTestInition.NE);
 		// t.end();
 		for (int i = fwa.size() - 1; i >= 0; i--) {
-			System.out.print(fwa.get(i).get_word() + S_Common.STRING_SYMBOL_PER
-					+ fwa.get(i).get_frequency() + "----");
+			System.out.print(fwa.get(i).get_word()
+				+ S_Common.STRING_SYMBOL_PER + fwa.get(i)
+					.get_frequency() + "----");
 		}
 		// 关闭
 		commonTestInition.endEnvironment();

@@ -8,14 +8,21 @@ import U_A.PEU.P.table.TableSorterZYNK;
 import U_A.PEU.P.time.TimeCheck;
 
 import java.awt.image.BufferedImage;
-import java.security.NoSuchAlgorithmException;
+//import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
+/*
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * */
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapU_AOPM_C {
-	public static IMV_SIQ annotationMap= new IMV_SIQ();
-	 
 	//Cache_M 入选jdk, 略
 	//ObjectClassification
 	public Map<String, IMV_SIQ>mapClassification(App NE);
@@ -47,7 +54,7 @@ public interface StaticFunctionMapU_AOPM_C {
 	//StringUtil {
 	public String encode(App NE);
 	public String decode(App NE);
-	public String EncoderByMd5(App NE) throws NoSuchAlgorithmException;
+	//public String EncoderByMd5(App NE) throws NoSuchAlgorithmException;
 	public String EncoderByDNA(App NE);
 
 	//TokenUtil {

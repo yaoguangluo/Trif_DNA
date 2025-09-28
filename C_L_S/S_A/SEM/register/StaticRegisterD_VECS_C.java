@@ -23,7 +23,7 @@ public class StaticRegisterD_VECS_C {
 		StaticFunctionMapD_VECS_E staticFunctionMapD_VECS_E, App NE) {
 
 		//稍后封装
-		Iterator<String> iterators = StaticFunctionMapD_VECS_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapD_VECS_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

@@ -3,7 +3,6 @@ package S_A.SEM.register;
 import java.util.Iterator;
 
 import ME.VPC.M.app.App;
-import S_A.SEM.bloom.StaticFunctionMapQ_AOPM_C;
 import S_A.SEM.bloom.StaticFunctionMapQ_AOPM_E;
 
 //著作权人+ 作者= 罗瑶光
@@ -21,7 +20,7 @@ public class StaticRegisterQ_AOPM_C {
 	public static void load(StaticFunctionMapQ_AOPM_E staticFunctionMapQ_AOPM_E, App NE) {
 		
 		//稍后封装
-		Iterator<String> iterators= StaticFunctionMapQ_AOPM_C.annotationMap.keySet().iterator();
+		Iterator<String> iterators= staticFunctionMapQ_AOPM_E.annotationMap.keySet().iterator();
 		while(iterators.hasNext()) {
 			String temp= iterators.next().toString();
 			NE.app_S.staticRootMap.staticBloomingTimes.put(temp, (long) 0);

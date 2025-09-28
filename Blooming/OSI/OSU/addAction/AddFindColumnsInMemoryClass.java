@@ -57,7 +57,7 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 			"O_VECS");
 		NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey,
 			new AddFindColumnsInMemoryClass());// 20241001准备把这行移出去。
-		StaticFunctionMapO_VECS_C.annotationMap.put(callFunctionKey,
+		NE.app_S.staticFunctionMapO_VECS_C.annotationMap.put(callFunctionKey,
 			"inputValues:传参因子:因子");
 		// String callFunctionKey= "callFunctionKey";
 		// StaticRootMap.initMap();

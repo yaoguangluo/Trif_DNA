@@ -18,7 +18,8 @@ import java.util.Map;
  * --罗瑶光
  * */
 class LoadVerbalInputMap5 {
-	void exec(Map<String, String>[] verbal, String[] ss, String[] ss1) {
+	void exec(Map<String, String>[] verbal, String[] ss,
+		String[] ss1) {
 		ss[82] = "";
 		ss[83] = "";
 		ss[84] = "";

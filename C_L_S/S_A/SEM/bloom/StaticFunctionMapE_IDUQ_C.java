@@ -32,80 +32,86 @@ import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.U_RelatedLineVPS;
 import OPE.SI.MCI.OEI.OVU.PQE.extOSGI.OSGI_chansfer;
 import OPE.SI.MCI.OEI.OVU.PQE.extOSGI.OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register;
-import S_A.pheromone.IMV_SIQ;
-
+/*
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * */
 //著作权人+ 作者= 罗瑶光
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
 public interface StaticFunctionMapE_IDUQ_C {
-    public static IMV_SIQ annotationMap = new IMV_SIQ();
 
-    //etl engine
-    public NodeInfo getNodeInfo(App NE);
+	//etl engine
+	public NodeInfo getNodeInfo(App NE);
 
-    public NodeProject getNodeProject(App NE);
+	public NodeProject getNodeProject(App NE);
 
-    public CheckRange getCheckRange(App NE);
+	public CheckRange getCheckRange(App NE);
 
-    public ChooseCheck getChooseCheck(App NE);
+	public ChooseCheck getChooseCheck(App NE);
 
-    public DrawArrow getDrawArrow(App NE);
+	public DrawArrow getDrawArrow(App NE);
 
-    public DynamicLine_U getDynamicLine_U(App NE);
+	public DynamicLine_U getDynamicLine_U(App NE);
 
-    public U_RelatedLine getU_RelatedLine(App NE);
+	public U_RelatedLine getU_RelatedLine(App NE);
 
-    public LinkOSGI getLinkOSGI(App NE);
+	public LinkOSGI getLinkOSGI(App NE);
 
-    public NodeOSGI getNodeOSGI(App NE);
+	public NodeOSGI getNodeOSGI(App NE);
 
-    //	public OSU_AVQ_ASQ_AOI_AOD_AOU_AOQ_VES _OSU_AVQ_ASQ_AOI_AOD_AOU_AOQ_VES(App NE);// protected
-    public OSU_MCI_MCU_MSI _OSU_MCI_MCU_MSI(App NE);
+	//	public OSU_AVQ_ASQ_AOI_AOD_AOU_AOQ_VES _OSU_AVQ_ASQ_AOI_AOD_AOU_AOQ_VES(App NE);// protected
+	public OSU_MCI_MCU_MSI _OSU_MCI_MCU_MSI(App NE);
 
-    public OSU_OVQ_OSQ_VSQ _OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ(App NE);
+	public OSU_OVQ_OSQ_VSQ _OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ(App NE);
 
-    public OSU_OPE_OPC_ECI _OSU_AVQ_ASQ_OPE_OPC_ECI(App NE);
-    //DrawArrowHead
-    //DrawNeroCellMask31
-    //DrawNeroCellMask32
-    //DrawNeroCellMask33
+	public OSU_OPE_OPC_ECI _OSU_AVQ_ASQ_OPE_OPC_ECI(App NE);
+	//DrawArrowHead
+	//DrawNeroCellMask31
+	//DrawNeroCellMask32
+	//DrawNeroCellMask33
 
-    public UnicornJSplitPane getUnicornJSplitPane(App NE);
+	public UnicornJSplitPane getUnicornJSplitPane(App NE);
 
-    public UnicornScrollBarUI getUnicornScrollBarUI(App NE);
+	public UnicornScrollBarUI getUnicornScrollBarUI(App NE);
 
-    public UnicornSplitPaneUI getUnicornSplitPaneUI(App NE);
+	public UnicornSplitPaneUI getUnicornSplitPaneUI(App NE);
 
-    public UnicornTreeCellRenderer getUnicornTreeCellRenderer(App NE);
+	public UnicornTreeCellRenderer getUnicornTreeCellRenderer(App NE);
 
-    public UnicornTreeUI getUnicornTreeUI(App NE);
+	public UnicornTreeUI getUnicornTreeUI(App NE);
 
-    public CacuString getCacuString(App NE);
+	public CacuString getCacuString(App NE);
 
-    public NodeShow getNodeShow(App NE);
+	public NodeShow getNodeShow(App NE);
 
-    public CheckRangeVPS getCheckRangeVPS(App NE);
+	public CheckRangeVPS getCheckRangeVPS(App NE);
 
-    public ChooseQ_VPS getChooseQ_VPS(App NE);
+	public ChooseQ_VPS getChooseQ_VPS(App NE);
 
-    public DrawArrowVPS getDrawArrowVPS(App NE);
+	public DrawArrowVPS getDrawArrowVPS(App NE);
 
-    public DrawFlashSide getDrawFlashSide(App NE);
+	public DrawFlashSide getDrawFlashSide(App NE);
 
-    public DrawSinLineVPS getDrawSinLineVPS(App NE);
+	public DrawSinLineVPS getDrawSinLineVPS(App NE);
 
-    public DynamicLineU_VPS getDynamicLineU_VPS(App NE);
+	public DynamicLineU_VPS getDynamicLineU_VPS(App NE);
 
-    public LinkList getLinkList(App NE);
+	public LinkList getLinkList(App NE);
 
-    public LinkNode getLinkNode(App NE);
+	public LinkNode getLinkNode(App NE);
 
-    public Sort getSort(App NE);
+	public Sort getSort(App NE);
 
-    public U_RelatedLineVPS getU_RelatedLineVPS(App NE);
+	public U_RelatedLineVPS getU_RelatedLineVPS(App NE);
 
-    public OSGI_chansfer getOSGI_chansfer(App NE);
+	public OSGI_chansfer getOSGI_chansfer(App NE);
 
-    public OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register
-    _OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(App NE);
+	public OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register _OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(
+		App NE);
 }

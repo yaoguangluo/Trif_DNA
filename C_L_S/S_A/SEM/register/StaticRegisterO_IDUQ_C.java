@@ -1,6 +1,5 @@
 package S_A.SEM.register;
 
-import S_A.SEM.bloom.StaticFunctionMapO_IDUQ_C;
 import S_A.SEM.bloom.StaticFunctionMapO_IDUQ_E;
 
 import java.util.Iterator;
@@ -23,21 +22,21 @@ public class StaticRegisterO_IDUQ_C {
 		StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_E, App NE) {
 
 		//稍后封装
-		StaticFunctionMapO_IDUQ_C.annotationMap.put("U_",
+		staticFunctionMapO_IDUQ_E.annotationMap.put("U_",
 			"fileCurrentpath:first");
-		StaticFunctionMapO_IDUQ_C.annotationMap.put("getRandomDNAkey",
+		staticFunctionMapO_IDUQ_E.annotationMap.put("getRandomDNAkey",
 			"sessionValidation:password");
-		StaticFunctionMapO_IDUQ_C.annotationMap.put("Save", "first");
-		StaticFunctionMapO_IDUQ_C.annotationMap.put("bootCell",
+		staticFunctionMapO_IDUQ_E.annotationMap.put("Save", "first");
+		staticFunctionMapO_IDUQ_E.annotationMap.put("bootCell",
 			"linkNode:rightBotJTextPane:canvas");
-		StaticFunctionMapO_IDUQ_C.annotationMap.put("BootNeroDoc",
+		staticFunctionMapO_IDUQ_E.annotationMap.put("BootNeroDoc",
 			"first:fileCurrentpath:nodeView:rightBotJTextPane:canvas");
-		StaticFunctionMapO_IDUQ_C.annotationMap.put("vpcsRegister",
+		staticFunctionMapO_IDUQ_E.annotationMap.put("vpcsRegister",
 			"first:fileCurrentpath:nodeView:rightBotJTextPane:canvas");
-		StaticFunctionMapO_IDUQ_C.annotationMap.put("register",
+		staticFunctionMapO_IDUQ_E.annotationMap.put("register",
 			"bootNeroDoc");
 
-		Iterator<String> iterators = StaticFunctionMapO_IDUQ_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapO_IDUQ_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

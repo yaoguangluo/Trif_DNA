@@ -63,41 +63,43 @@ public class DemoCoords7Test {
 		position2D4.I_Y(5);
 		input.add(position2D4);
 
-//
+		//
 		// 处理fusion 先 fissile 采样
 		Map<Double, List<AMV_MVS_VSQ_2D>> output = Fissile_X_fissilePosition2D
-				._E(input, 13);
+			._E(input, 13);
 		Iterator<Double> iterator = output.keySet().iterator();
 		while (iterator.hasNext()) {
 			double temp = iterator.next();
 			System.out.println();
 			System.out.println(temp);
-			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp).iterator();
+			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp)
+				.iterator();
 			while (iterator1.hasNext()) {
 				AMV_MVS_VSQ_2D temp1 = iterator1.next();
 				System.out.println(temp1.getX() + ":" + temp1.getY());
 			}
 		}
-//然后fusion 1 观测heart
+		//然后fusion 1 观测heart
 		Map<Double, AMV_MVS_VSQ_2D> groupsHeart = new HashMap<>();
 		Iterator<Double> iterator2 = output.keySet().iterator();
 		while (iterator2.hasNext()) {
 			double temp = iterator2.next();
 			AMV_MVS_VSQ_2D heartTemp = Euclid_X_findHeartPosition2D
-					._E(output.get(temp));
-			System.out.println(
-					"hearts->" + heartTemp.getX() + ":" + heartTemp.getY());
+				._E(output.get(temp));
+			System.out.println("hearts->" + heartTemp.getX() + ":"
+				+ heartTemp.getY());
 			groupsHeart.put(temp, heartTemp);
 		}
-//2观测结果 用10 和11分别带入可测试。
+		//2观测结果 用10 和11分别带入可测试。
 		Map<Double, List<AMV_MVS_VSQ_2D>> fusion = Fusion_X_fusionPosition2DwithHeart
-				._E(output, groupsHeart, 11);
+			._E(output, groupsHeart, 11);
 		Iterator<Double> iterator3 = fusion.keySet().iterator();
 		while (iterator3.hasNext()) {
 			double temp = iterator3.next();
 			System.out.println();
 			System.out.println(temp);
-			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp).iterator();
+			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp)
+				.iterator();
 			while (iterator1.hasNext()) {
 				AMV_MVS_VSQ_2D temp1 = iterator1.next();
 				System.out.println(temp1.getX() + ":" + temp1.getY());
@@ -113,7 +115,7 @@ public class DemoCoords7Test {
 		// 5, 4);
 		// System.out.println(v);
 		double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D
-				._E(input, 3, 4);
+			._E(input, 3, 4);
 		for (int i = 0; i < v.length; i++) {
 			System.out.println(v[i]);
 		}
@@ -123,54 +125,56 @@ public class DemoCoords7Test {
 	public static void _E(List<AMV_MVS_VSQ_2D> inputs) {
 		// 处理fusion 先 fissile 采样
 		Map<Double, List<AMV_MVS_VSQ_2D>> output = Fissile_X_fissilePosition2D
-				._E(inputs, 13);
+			._E(inputs, 13);
 		Iterator<Double> iterator = output.keySet().iterator();
 		while (iterator.hasNext()) {
 			double temp = iterator.next();
 			System.out.println();
 			System.out.println(temp);
-			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp).iterator();
+			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp)
+				.iterator();
 			while (iterator1.hasNext()) {
 				AMV_MVS_VSQ_2D temp1 = iterator1.next();
 				System.out.println(temp1.getX() + ":" + temp1.getY());
 			}
 		}
-//然后fusion 1 观测heart
+		//然后fusion 1 观测heart
 		Map<Double, AMV_MVS_VSQ_2D> groupsHeart = new HashMap<>();
 		Iterator<Double> iterator2 = output.keySet().iterator();
 		while (iterator2.hasNext()) {
 			double temp = iterator2.next();
 			AMV_MVS_VSQ_2D heartTemp = Euclid_X_findHeartPosition2D
-					._E(output.get(temp));
-			System.out.println(
-					"hearts->" + heartTemp.getX() + ":" + heartTemp.getY());
+				._E(output.get(temp));
+			System.out.println("hearts->" + heartTemp.getX() + ":"
+				+ heartTemp.getY());
 			groupsHeart.put(temp, heartTemp);
 		}
-//2观测结果 用10 和11分别带入可测试。
+		//2观测结果 用10 和11分别带入可测试。
 		Map<Double, List<AMV_MVS_VSQ_2D>> fusion = Fusion_X_fusionPosition2DwithHeart
-				._E(output, groupsHeart, 11);
+			._E(output, groupsHeart, 11);
 		Iterator<Double> iterator3 = fusion.keySet().iterator();
 		while (iterator3.hasNext()) {
 			double temp = iterator3.next();
 			System.out.println();
 			System.out.println(temp);
-			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp).iterator();
+			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp)
+				.iterator();
 			while (iterator1.hasNext()) {
 				AMV_MVS_VSQ_2D temp1 = iterator1.next();
 				System.out.println(temp1.getX() + ":" + temp1.getY());
 			}
 		}
 		//
-//AMV_MVS_VSQ_2D position2D5 = new AMV_MVS_VSQ_2D();
-//position2D5.I_X(15);
-//position2D5.I_Y(25);
-//inputs.add(position2D5);
+		//AMV_MVS_VSQ_2D position2D5 = new AMV_MVS_VSQ_2D();
+		//position2D5.I_X(15);
+		//position2D5.I_Y(25);
+		//inputs.add(position2D5);
 		// double v=
 		// FindPCAMeanDistance.findMeanDistanceFromPositions2D(input,
 		// 5, 4);
 		// System.out.println(v);
 		double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D
-				._E(inputs, 3, 4);
+			._E(inputs, 3, 4);
 		for (int i = 0; i < v.length; i++) {
 			System.out.println(v[i]);
 		}

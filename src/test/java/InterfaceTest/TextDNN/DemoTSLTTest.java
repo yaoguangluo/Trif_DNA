@@ -54,7 +54,8 @@ class DemoTSLTTest {
 		ts.IV_(commonTestInition.NE.app_S._A);
 		// TimeCheck t= new TimeCheck();
 		// t.begin();
-		List<Verbal> verbals = ts.index(commonTestInition.NE.app_S._A, v);
+		List<Verbal> verbals = ts.index(commonTestInition.NE.app_S._A,
+			v);
 		String ch = ts.getChineseSentenseFromVerbalList(verbals);
 		// t.end();
 		System.out.println("中文");
@@ -67,7 +68,8 @@ class DemoTSLTTest {
 			System.out.println(verbals.get(i).getPartOfSpeech());
 		}
 		List<Verbal> verbalsFix = ts.fixPos(verbals);
-		String en = ts.getEnglishSentenseFromVerbalFixList(verbalsFix);
+		String en = ts.getEnglishSentenseFromVerbalFixList(
+			verbalsFix);
 		System.out.println("");
 		System.out.println("英文");
 		System.out.println(en);
@@ -83,8 +85,8 @@ class DemoTSLTTest {
 		System.out.println("中文解释");
 		for (int i = 0; i < verbals.size(); i++) {
 			System.out.print(verbals.get(i).getExplain() == null
-					? verbals.get(i).getChinese()
-					: verbals.get(i).getExplain());
+				? verbals.get(i).getChinese()
+				: verbals.get(i).getExplain());
 		}
 		// t.duration();
 		// ReadEnglish readEnglish= new ReadEnglish();

@@ -48,11 +48,11 @@ public class DemoAfterPOSTest {
 		TimeCheck t = new TimeCheck();
 		// 等待分词的语句
 		String ss = "罗瑶光先生从2018年10月开始，所有个人著作权作品，全部开源，到现在，和"
-				+ "无数群体，技术社团正面地交锋7年，一直0纠纷，罗瑶光先生认为，一件作品，一"
-				+ "个事物，如果有价值，就应该像教材一样在真实的环境中不断地实践测试和论证，"
-				+ "能经得起所有人长年累月地不断地挑剔的东西，才是货真价实的，罗瑶光的个人著"
-				+ "作权作品都是互联网，大数据产业领域基础作品，2018年后，在60余互联网app上"
-				+ "发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同时对垄断的" + "产业有约束性。";
+			+ "无数群体，技术社团正面地交锋7年，一直0纠纷，罗瑶光先生认为，一件作品，一"
+			+ "个事物，如果有价值，就应该像教材一样在真实的环境中不断地实践测试和论证，"
+			+ "能经得起所有人长年累月地不断地挑剔的东西，才是货真价实的，罗瑶光的个人著"
+			+ "作权作品都是互联网，大数据产业领域基础作品，2018年后，在60余互联网app上"
+			+ "发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同时对垄断的" + "产业有约束性。";
 		// String ss = "在，和无数群体，";
 		// DemoEX demoEX = new DemoEX();
 		StringBuilder sb = new StringBuilder(ss);
@@ -106,7 +106,7 @@ public class DemoAfterPOSTest {
 					String stringNext = sets.get(i + j);
 					String[] stringsNext = stringNext.split("/");
 					if (strings.length > 1 && stringsNext.length > 1
-							&& strings[1].equals(stringsNext[1])) {
+						&& strings[1].equals(stringsNext[1])) {
 						// 关于名词做副词的用法，如 -正面-地-，这种组合，因为地字有明确标
 						// 识副词性结构助词，所以在跟进语言处理仅仅需要一个检查-正面-前面
 						// 是否有副词名词或者主语，和地字后面是不是副词或者动词，就能比较
@@ -114,7 +114,7 @@ public class DemoAfterPOSTest {
 						// ，POS逻辑可以进行拓扑分解细化分层计算。我这里保持严谨，仅组合2
 						// 字词先。
 						if (3 > strings[0].length() + connect.length()
-								+ stringsNext[0].length()) {
+							+ stringsNext[0].length()) {
 							connect += stringsNext[0];// 仅组合单字且不超过4位
 							reg += 1;
 						} else {
@@ -129,10 +129,12 @@ public class DemoAfterPOSTest {
 			if (0 == reg) {
 				// 没有关联就加原变量
 				setsOutput.add(string);
-				System.out.print(string+ "----");
+				System.out.print(string + "----");
 			} else {
-				setsOutput.add(strings[0] + connect + "/" + strings[1]);
-				System.out.print(strings[0] + connect + "/" + strings[1] + "----");
+				setsOutput.add(strings[0] + connect + "/"
+					+ strings[1]);
+				System.out.print(strings[0] + connect + "/"
+					+ strings[1] + "----");
 				i += reg;
 			}
 		}
@@ -152,7 +154,8 @@ public class DemoAfterPOSTest {
 					String word = sets.get(i);
 					Object wordObjectPOS = pos.get(string);
 					if (null == wordObjectPOS) {
-						System.out.print(word + "/" + "NULL" + "----");
+						System.out.print(word + "/" + "NULL"
+							+ "----");
 						setsOutput.add(word + "/" + "NULL");
 						continue;
 					}
@@ -166,21 +169,24 @@ public class DemoAfterPOSTest {
 					if (word.equals("不断")) {
 						System.out.println();
 					}
-					if (wordPOS.contains("未知") || wordPOS.contains("形")
-							|| wordPOS.contains("副")) {
+					if (wordPOS.contains("未知") || wordPOS.contains(
+						"形") || wordPOS.contains("副")) {
 						if (i + 1 < sets.size()) {
 							String wordNext = sets.get(i + 1);
-							Object wordNextObjectPOS = pos.get(wordNext);
+							Object wordNextObjectPOS = pos.get(
+								wordNext);
 							if (null != wordNextObjectPOS) {
 								String wordNextPOS = wordNextObjectPOS
-										.toString();
+									.toString();
 								if (wordNext.equals("地")) {
 									wordPOS = "形谓词作副词";
 								} else if (wordNext.equals("的")) {
 									wordPOS = "形谓词作形容词";
-								} else if (wordNextPOS.contains("动词")) {
+								} else if (wordNextPOS.contains(
+									"动词")) {
 									wordPOS = "形谓词作副词";
-								} else if (wordNextPOS.contains("名词")) {
+								} else if (wordNextPOS.contains(
+									"名词")) {
 									wordPOS = "形谓词作形容词";
 								}
 							}

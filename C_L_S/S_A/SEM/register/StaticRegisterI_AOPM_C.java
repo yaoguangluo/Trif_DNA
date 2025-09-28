@@ -1,6 +1,5 @@
 package S_A.SEM.register;
 
-import S_A.SEM.bloom.StaticFunctionMapI_AOPM_C;
 import S_A.SEM.bloom.StaticFunctionMapI_AOPM_E;
 
 import java.util.Iterator;
@@ -23,30 +22,30 @@ public class StaticRegisterI_AOPM_C {
 		StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_E, App NE) {
 
 		//稍后封装
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getBigWord",
+		staticFunctionMapI_AOPM_E.annotationMap.put("getBigWord",
 			"void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getClassify",
+		staticFunctionMapI_AOPM_E.annotationMap.put("getClassify",
 			"void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getCoAuthor",
+		staticFunctionMapI_AOPM_E.annotationMap.put("getCoAuthor",
 			"dic_li:_A:pos");
-		StaticFunctionMapI_AOPM_C.annotationMap.put(
+		staticFunctionMapI_AOPM_E.annotationMap.put(
 			"getCoAuthorForWord", "app:_A:pos");
 		//稍后优化传参变量名的 传参因子格式。
-		StaticFunctionMapI_AOPM_C.annotationMap.put(
+		staticFunctionMapI_AOPM_E.annotationMap.put(
 			"getCoDNAAuthorForWord", "app:_A:pos");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getHistogram",
+		staticFunctionMapI_AOPM_E.annotationMap.put("getHistogram",
 			"void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getLineMed",
+		staticFunctionMapI_AOPM_E.annotationMap.put("getLineMed",
 			"void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getJpv", "void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getRecoder",
+		staticFunctionMapI_AOPM_E.annotationMap.put("getJpv", "void");
+		staticFunctionMapI_AOPM_E.annotationMap.put("getRecoder",
 			"void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getVoicejPanel",
+		staticFunctionMapI_AOPM_E.annotationMap.put("getVoicejPanel",
 			"void");
-		StaticFunctionMapI_AOPM_C.annotationMap.put("getLYGFileIO",
+		staticFunctionMapI_AOPM_E.annotationMap.put("getLYGFileIO",
 			"void");
 
-		Iterator<String> iterators = StaticFunctionMapI_AOPM_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapI_AOPM_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

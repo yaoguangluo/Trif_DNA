@@ -30,78 +30,78 @@ import java.util.Map;
  * */
 @SuppressWarnings("unused")
 public class DemoCoords8Test {
-    @Test
-    public static void main(String[] argv) {
-        //初始10个坐标
-        List<AMV_MVS_VSQ_2D> input = new ArrayList<>();
-        AMV_MVS_VSQ_2D position2D = new AMV_MVS_VSQ_2D();
-        position2D.I_X(0);
-        position2D.I_Y(0);
-        input.add(position2D);
+	@Test
+	public static void main(String[] argv) {
+		//初始10个坐标
+		List<AMV_MVS_VSQ_2D> input = new ArrayList<>();
+		AMV_MVS_VSQ_2D position2D = new AMV_MVS_VSQ_2D();
+		position2D.I_X(0);
+		position2D.I_Y(0);
+		input.add(position2D);
 
-        AMV_MVS_VSQ_2D position2D1 = new AMV_MVS_VSQ_2D();
-        position2D1.I_X(12);
-        position2D1.I_Y(12);
-        input.add(position2D1);
+		AMV_MVS_VSQ_2D position2D1 = new AMV_MVS_VSQ_2D();
+		position2D1.I_X(12);
+		position2D1.I_Y(12);
+		input.add(position2D1);
 
-        AMV_MVS_VSQ_2D position2D2 = new AMV_MVS_VSQ_2D();
-        position2D2.I_X(0);
-        position2D2.I_Y(12);
-        input.add(position2D2);
+		AMV_MVS_VSQ_2D position2D2 = new AMV_MVS_VSQ_2D();
+		position2D2.I_X(0);
+		position2D2.I_Y(12);
+		input.add(position2D2);
 
-        AMV_MVS_VSQ_2D position2D3 = new AMV_MVS_VSQ_2D();
-        position2D3.I_X(12);
-        position2D3.I_Y(0);
-        input.add(position2D3);
+		AMV_MVS_VSQ_2D position2D3 = new AMV_MVS_VSQ_2D();
+		position2D3.I_X(12);
+		position2D3.I_Y(0);
+		input.add(position2D3);
 
-        AMV_MVS_VSQ_2D position2D4 = new AMV_MVS_VSQ_2D();
-        position2D4.I_X(5);
-        position2D4.I_Y(5);
-        input.add(position2D4);
-        //
-        AMV_MVS_VSQ_2D position2D5 = new AMV_MVS_VSQ_2D();
-        position2D5.I_X(15);
-        position2D5.I_Y(25);
+		AMV_MVS_VSQ_2D position2D4 = new AMV_MVS_VSQ_2D();
+		position2D4.I_X(5);
+		position2D4.I_Y(5);
+		input.add(position2D4);
+		//
+		AMV_MVS_VSQ_2D position2D5 = new AMV_MVS_VSQ_2D();
+		position2D5.I_X(15);
+		position2D5.I_Y(25);
 
-        Map<Double, List<AMV_MVS_VSQ_2D>> inputMap = new HashMap<>();
-        inputMap.put(0.0, input);
-        Map<Double, List<AMV_MVS_VSQ_2D>> output
-            = Classification_X_addNewPositionWithoutHeart._E(inputMap
-            , position2D5, 29);//采样距离28.4
+		Map<Double, List<AMV_MVS_VSQ_2D>> inputMap = new HashMap<>();
+		inputMap.put(0.0, input);
+		Map<Double, List<AMV_MVS_VSQ_2D>> output = Classification_X_addNewPositionWithoutHeart
+			._E(inputMap, position2D5, 29);//采样距离28.4
 
-        Iterator<Double> iterator = output.keySet().iterator();
-        while (iterator.hasNext()) {
-            double temp = iterator.next();
-            System.out.println();
-            System.out.println(temp);
-            Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp).iterator();
-            while (iterator1.hasNext()) {
-                AMV_MVS_VSQ_2D temp1 = iterator1.next();
-                System.out.println(temp1.getX() + ":" + temp1.getY());
-            }
-        }
-    }
+		Iterator<Double> iterator = output.keySet().iterator();
+		while (iterator.hasNext()) {
+			double temp = iterator.next();
+			System.out.println();
+			System.out.println(temp);
+			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp)
+				.iterator();
+			while (iterator1.hasNext()) {
+				AMV_MVS_VSQ_2D temp1 = iterator1.next();
+				System.out.println(temp1.getX() + ":" + temp1.getY());
+			}
+		}
+	}
 
-    public static void _E(List<AMV_MVS_VSQ_2D> inputs) {
-        AMV_MVS_VSQ_2D position2D5 = new AMV_MVS_VSQ_2D();
-        position2D5.I_X(15);
-        position2D5.I_Y(25);
-        Map<Double, List<AMV_MVS_VSQ_2D>> inputMap = new HashMap<>();
-        inputMap.put(0.0, inputs);
-        Map<Double, List<AMV_MVS_VSQ_2D>> output
-            = Classification_X_addNewPositionWithoutHeart._E(inputMap
-            , position2D5, 29);//采样距离28.4
+	public static void _E(List<AMV_MVS_VSQ_2D> inputs) {
+		AMV_MVS_VSQ_2D position2D5 = new AMV_MVS_VSQ_2D();
+		position2D5.I_X(15);
+		position2D5.I_Y(25);
+		Map<Double, List<AMV_MVS_VSQ_2D>> inputMap = new HashMap<>();
+		inputMap.put(0.0, inputs);
+		Map<Double, List<AMV_MVS_VSQ_2D>> output = Classification_X_addNewPositionWithoutHeart
+			._E(inputMap, position2D5, 29);//采样距离28.4
 
-        Iterator<Double> iterator = output.keySet().iterator();
-        while (iterator.hasNext()) {
-            double temp = iterator.next();
-            System.out.println();
-            System.out.println(temp);
-            Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp).iterator();
-            while (iterator1.hasNext()) {
-                AMV_MVS_VSQ_2D temp1 = iterator1.next();
-                System.out.println(temp1.getX() + ":" + temp1.getY());
-            }
-        }
-    }
+		Iterator<Double> iterator = output.keySet().iterator();
+		while (iterator.hasNext()) {
+			double temp = iterator.next();
+			System.out.println();
+			System.out.println(temp);
+			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp)
+				.iterator();
+			while (iterator1.hasNext()) {
+				AMV_MVS_VSQ_2D temp1 = iterator1.next();
+				System.out.println(temp1.getX() + ":" + temp1.getY());
+			}
+		}
+	}
 }

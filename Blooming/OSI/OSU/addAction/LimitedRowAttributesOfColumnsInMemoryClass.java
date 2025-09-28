@@ -58,7 +58,7 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 			"S_AOPM");
 		NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey,
 			new LimitedRowAttributesOfColumnsInMemoryClass());// 20241001准备把这行移出去。
-		StaticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey,
+		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey,
 			"inputValues:传参因子:因子");
 		// String callFunctionKey= "callFunctionKey";
 		// StaticRootMap.initMap();

@@ -1,6 +1,5 @@
 package S_A.SEM.register;
 
-import S_A.SEM.bloom.StaticFunctionMapP_IDUQ_C;
 import S_A.SEM.bloom.StaticFunctionMapP_IDUQ_E;
 
 import java.util.Iterator;
@@ -24,29 +23,29 @@ public class StaticRegisterP_IDUQ_C {
 
 		//稍后封装
 
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("copy", "dna");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("copyMap",
+		staticFunctionMapP_IDUQ_E.annotationMap.put("copy", "dna");
+		staticFunctionMapP_IDUQ_E.annotationMap.put("copyMap",
 			"functionLineDeque");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("mask",
+		staticFunctionMapP_IDUQ_E.annotationMap.put("mask",
 			"originDeque:newDeque:maskOutput");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("copy",
+		staticFunctionMapP_IDUQ_E.annotationMap.put("copy",
 			"maskLineDeque");
 
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("mutationCopy",
+		staticFunctionMapP_IDUQ_E.annotationMap.put("mutationCopy",
 			"dna");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("dating",
+		staticFunctionMapP_IDUQ_E.annotationMap.put("dating",
 			"father:mother");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("inheritance",
+		staticFunctionMapP_IDUQ_E.annotationMap.put("inheritance",
 			"father:mother");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("born", "void");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("mutation",
+		staticFunctionMapP_IDUQ_E.annotationMap.put("born", "void");
+		staticFunctionMapP_IDUQ_E.annotationMap.put("mutation",
 			"father:mother");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("separater",
+		staticFunctionMapP_IDUQ_E.annotationMap.put("separater",
 			"original");
-		StaticFunctionMapP_IDUQ_C.annotationMap.put("swap",
+		staticFunctionMapP_IDUQ_E.annotationMap.put("swap",
 			"original");
 
-		Iterator<String> iterators = StaticFunctionMapP_IDUQ_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapP_IDUQ_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

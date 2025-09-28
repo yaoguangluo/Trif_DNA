@@ -23,43 +23,43 @@ public class StaticRegisterE_AOPM_C {
 		StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_E, App NE) {
 
 		//稍后封装
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getSensingMap",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getSensingMap",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getEmotionMap",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getEmotionMap",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put(
+		staticFunctionMapE_AOPM_E.annotationMap.put(
 			"getCogsBinaryForest_A", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getEuclid_C",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getEuclid_C",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put(
+		staticFunctionMapE_AOPM_E.annotationMap.put(
 			"getQuick6DLuoYaoguangSort", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put(
+		staticFunctionMapE_AOPM_E.annotationMap.put(
 			"getNERO_C_OneTime", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getNERO_C",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getNERO_C",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getNLP_C",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getNLP_C",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getBehaviorMap",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getBehaviorMap",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getFMHMMList",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getFMHMMList",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_X_P",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getPos_C_X_P",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_X_E",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getPos_C_X_E",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getPos_C_X_O",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getPos_C_X_O",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getNlp_C_X_S",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getNlp_C_X_S",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getNlp_C_X_A",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getNlp_C_X_A",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getA_X_Map",
+		staticFunctionMapE_AOPM_E.annotationMap.put("getA_X_Map",
 			"void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put("getA", "void");
-		StaticFunctionMapE_AOPM_C.annotationMap.put(
+		staticFunctionMapE_AOPM_E.annotationMap.put("getA", "void");
+		staticFunctionMapE_AOPM_E.annotationMap.put(
 			"getBinaryForest_A", "void");
 
-		Iterator<String> iterators = StaticFunctionMapE_AOPM_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapE_AOPM_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

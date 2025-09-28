@@ -40,9 +40,9 @@ class DNNTestTest {
 		DNNTest dNNTest = new DNNTest();
 		ANNTest aNNTest = new ANNTest();
 		String[][] ann = aNNTest.getANNMatrix(S_String.text1,
-				commonTestInition.NE);
+			commonTestInition.NE);
 		String[][] dnn = dNNTest.getDNNMatrix(ann, S_String.text1,
-				commonTestInition.NE);
+			commonTestInition.NE);
 		for (int i = 0; i < dnn.length; i++) {
 			double dnn_lwa = DetaDouble.parseDouble(dnn[i][3]);
 			System.out.print(ann[i][0] + ":");

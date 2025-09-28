@@ -21,8 +21,7 @@ import java.util.Map;
  * */
 class List_ESU_X_listToArrayTest {
 	public static void main(String[] argv) {
-		List_ESU_X_listToArrayTest list_ESU_X_listToArrayTest 
-		= new List_ESU_X_listToArrayTest();
+		List_ESU_X_listToArrayTest list_ESU_X_listToArrayTest = new List_ESU_X_listToArrayTest();
 		list_ESU_X_listToArrayTest._E();
 	}
 
@@ -91,7 +90,8 @@ class List_ESU_X_listToArrayTest {
 			// 输出
 			System.out.print(needKeySort[j] + "-->");
 			for (Object object : lists) {
-				System.out.println(needKeySort[j] + "-" + object.toString());
+				System.out.println(needKeySort[j] + "-" + object
+					.toString());
 				outputArray[count][0] = needKeySort[j];
 				outputArray[count++][1] = object;
 			}

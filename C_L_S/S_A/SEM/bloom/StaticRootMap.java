@@ -14,13 +14,13 @@ import java.util.Map;
 //2 稍后将接口统一用 function, class, 元基组 3层map
 //3 function 统一走 interface接口。
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
- * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
- * (lyg.tin@gmail.com2018年回国后因国内G网屏蔽不再使用）
- * 15116110525-
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
- * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 @SuppressWarnings("unchecked")
 public class StaticRootMap {
@@ -359,7 +359,7 @@ public class StaticRootMap {
 		StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_C = (StaticFunctionMapA_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("A_VECS");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapA_VECS_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapA_VECS_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -383,7 +383,7 @@ public class StaticRootMap {
 		StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_C = (StaticFunctionMapP_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("P_VECS");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapP_VECS_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapP_VECS_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -407,7 +407,7 @@ public class StaticRootMap {
 		StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_C = (StaticFunctionMapO_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("O_IDUQ");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapO_IDUQ_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapO_IDUQ_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -433,7 +433,7 @@ public class StaticRootMap {
 		StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_C = (StaticFunctionMapO_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("O_VECS");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapO_VECS_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapO_VECS_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -457,7 +457,7 @@ public class StaticRootMap {
 		StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_C = (StaticFunctionMapA_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("A_IDUQ");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapA_IDUQ_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapA_IDUQ_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -481,7 +481,7 @@ public class StaticRootMap {
 		StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C = (StaticFunctionMapU_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("U_VECS");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapU_VECS_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapU_VECS_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -505,7 +505,7 @@ public class StaticRootMap {
 		StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_C = (StaticFunctionMapP_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("P_IDUQ");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapP_IDUQ_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapP_IDUQ_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -529,7 +529,7 @@ public class StaticRootMap {
 		StaticFunctionMapM_VECS_E staticFunctionMapM_VECS_C = (StaticFunctionMapM_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("M_VECS");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapM_VECS_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapM_VECS_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -554,7 +554,7 @@ public class StaticRootMap {
 		StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C = (StaticFunctionMapM_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("M_IDUQ");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapM_IDUQ_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapM_IDUQ_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -578,7 +578,7 @@ public class StaticRootMap {
 		StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_C = (StaticFunctionMapV_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("V_AOPM");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapV_AOPM_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapV_AOPM_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -602,7 +602,7 @@ public class StaticRootMap {
 		StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C = (StaticFunctionMapV_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("V_IDUQ");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapV_IDUQ_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapV_IDUQ_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -626,7 +626,7 @@ public class StaticRootMap {
 		StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_C = (StaticFunctionMapE_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("E_AOPM");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapE_AOPM_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapE_AOPM_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -650,7 +650,7 @@ public class StaticRootMap {
 		StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_C = (StaticFunctionMapE_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("E_IDUQ");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapE_IDUQ_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapE_IDUQ_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -676,7 +676,7 @@ public class StaticRootMap {
 		StaticFunctionMapC_AOPM_E staticFunctionMapC_AOPM_C = (StaticFunctionMapC_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("C_AOPM");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapC_AOPM_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapC_AOPM_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -697,10 +697,14 @@ public class StaticRootMap {
 	private static void doC_IDUQ_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
 		IMV_SIQ output, App NE) {
+		/*
+		 * 以后剔除。
+		 * --罗瑶光
+		 * */
 		StaticFunctionMapC_IDUQ_E staticFunctionMapC_IDUQ_C = (StaticFunctionMapC_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("C_IDUQ");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapC_IDUQ_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapC_IDUQ_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -724,7 +728,7 @@ public class StaticRootMap {
 		StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_C = (StaticFunctionMapS_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("S_AOPM");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapS_AOPM_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapS_AOPM_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -748,7 +752,7 @@ public class StaticRootMap {
 		StaticFunctionMapS_IDUQ_E staticFunctionMapS_IDUQ_C = (StaticFunctionMapS_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("S_IDUQ");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapS_IDUQ_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapS_IDUQ_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -772,7 +776,7 @@ public class StaticRootMap {
 		StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_C = (StaticFunctionMapI_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("I_AOPM");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapI_AOPM_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapI_AOPM_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -796,7 +800,7 @@ public class StaticRootMap {
 		StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_C = (StaticFunctionMapI_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("I_VECS");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapI_VECS_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapI_VECS_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -820,7 +824,7 @@ public class StaticRootMap {
 		StaticFunctionMapD_AOPM_E staticFunctionMapD_AOPM_C = (StaticFunctionMapD_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("D_AOPM");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapD_AOPM_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapD_AOPM_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -844,7 +848,7 @@ public class StaticRootMap {
 		StaticFunctionMapD_VECS_E staticFunctionMapD_VECS_C = (StaticFunctionMapD_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("D_VECS");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapD_VECS_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapD_VECS_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -868,7 +872,7 @@ public class StaticRootMap {
 		StaticFunctionMapQ_AOPM_E staticFunctionMapQ_AOPM_C = (StaticFunctionMapQ_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("Q_AOPM");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapQ_AOPM_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapQ_AOPM_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -892,7 +896,7 @@ public class StaticRootMap {
 		StaticFunctionMapQ_VECS_E staticFunctionMapQ_VECS_C = (StaticFunctionMapQ_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("Q_VECS");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapQ_VECS_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapQ_VECS_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -916,7 +920,7 @@ public class StaticRootMap {
 		StaticFunctionMapU_AOPM_E staticFunctionMapU_AOPM_C = (StaticFunctionMapU_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("U_AOPM");
 		// case 函数名接口
-		Iterator<String> callFunction = StaticFunctionMapU_AOPM_C.annotationMap
+		Iterator<String> callFunction = NE.app_S.staticFunctionMapU_AOPM_C.annotationMap
 			.keySet().iterator();
 		while (callFunction.hasNext()) {
 			String callFunctionKey = callFunction.next();
@@ -926,6 +930,51 @@ public class StaticRootMap {
 				StaticFunctionMap.doU_AOPM_CaseFunction(
 					new CallFunctionKey(callFunctionKey), string,
 					staticFunctionMapU_AOPM_C, output, NE);
+				NE.app_S.staticRootMap.staticBloomingTimes.put(
+					callFunctionKey,
+					NE.app_S.staticRootMap.staticBloomingTimes.get(
+						callFunctionKey) + 1);
+			}
+		}
+	}
+
+	/*
+	 * 一开始分为12个static是因为拟态人类的进化方式，人类基因组是数百万年的自然残酷自然选择筛选出来
+	 * 的现实组，在这染色体组里含有非常稳定的生存关系。现在函数越来越稳定，就主线变成继承关系来设计，
+	 * 为之后的全局走变量map进行做铺垫设计。
+	 * 
+	 * --罗瑶光
+	 * 
+	 * */
+	@SuppressWarnings("unused")
+	private static void do_CaseUtil(String chromosomeParName,
+		Map<String, StaticClassMap> staticRootMap, String string,
+		IMV_SIQ output, App NE) {
+		/*
+		 * 将StaticFunctionMapU_AOPM_E 改为 StaticFunctionMapCASE map存储，
+		 * 方便函数去重。关于去重，可以refer下sonar lint。之后我的工程有15%的源码
+		 * 根据去重，会剔除掉。大家可以去下载sonar lint插件，会自动提示，按去重提示
+		 * 去修改即可。
+		 * 
+		 * --罗瑶光
+		 * 
+		 * */
+		StaticFunctionMapCASE staticFunctionMapCASE = (StaticFunctionMapCASE) NE.app_S.staticRootMap.staticClassMap
+			.get(chromosomeParName);
+		/*
+		StaticFunctionMapCASE在这里相当于StaticFunctionMapU_AOPM_C
+		*/
+		// case 函数名接口
+		Iterator<String> callFunction = staticFunctionMapCASE.annotationMap
+			.keySet().iterator();
+		while (callFunction.hasNext()) {
+			String callFunctionKey = callFunction.next();
+			String[] strings = string.split(" ");// 精确冗余20230218 罗瑶光
+												 // 稍后涉及成exception打分 模式匹配
+			if (strings[3].equalsIgnoreCase(callFunctionKey)) {
+				StaticFunctionMap.doCaseFunction(new CallFunctionKey(
+					callFunctionKey), string, staticFunctionMapCASE,
+					output, NE, chromosomeParName);
 				NE.app_S.staticRootMap.staticBloomingTimes.put(
 					callFunctionKey,
 					NE.app_S.staticRootMap.staticBloomingTimes.get(

@@ -41,20 +41,20 @@ class LiterarinessLevelTestTest {
 		// exec
 		// ICA kernel
 		double[][] kernel = new double[3][];
-		kernel[0] = new InitBehaviorICAKernel()
-				.getBehaviorICAKernel(S_String.text1, commonTestInition.NE);
-		System.out.println("kernel0->" + kernel[0][0] + "--" + kernel[0][1]
-				+ "--" + kernel[0][2]);
+		kernel[0] = new InitBehaviorICAKernel().getBehaviorICAKernel(
+			S_String.text1, commonTestInition.NE);
+		System.out.println("kernel0->" + kernel[0][0] + "--"
+			+ kernel[0][1] + "--" + kernel[0][2]);
 
-		kernel[1] = new InitBehaviorICAKernel()
-				.getBehaviorICAKernel(S_String.text2, commonTestInition.NE);
-		System.out.println("kernel0->" + kernel[1][0] + "--" + kernel[1][1]
-				+ "--" + kernel[1][2]);
+		kernel[1] = new InitBehaviorICAKernel().getBehaviorICAKernel(
+			S_String.text2, commonTestInition.NE);
+		System.out.println("kernel0->" + kernel[1][0] + "--"
+			+ kernel[1][1] + "--" + kernel[1][2]);
 
-		kernel[2] = new InitBehaviorICAKernel()
-				.getBehaviorICAKernel(S_String.text3, commonTestInition.NE);
-		System.out.println("kernel0->" + kernel[2][0] + "--" + kernel[2][1]
-				+ "--" + kernel[2][2]);
+		kernel[2] = new InitBehaviorICAKernel().getBehaviorICAKernel(
+			S_String.text3, commonTestInition.NE);
+		System.out.println("kernel0->" + kernel[2][0] + "--"
+			+ kernel[2][1] + "--" + kernel[2][2]);
 		// 下面高级用法商业自适应去开发。
 		LiterarinessLevelTest educationLevelTest = new LiterarinessLevelTest();
 		educationLevelTest.IQ_EducationLevel(kernel);
@@ -62,7 +62,7 @@ class LiterarinessLevelTestTest {
 		// 建议用public getter，别被我的测试文件进行偷懒操作。
 		for (int i = 0; i < educationLevelTest.literarinessLevel.length; i++) {
 			System.out.println("EducationLevel" + i + "->"
-					+ educationLevelTest.literarinessLevel[i]);
+				+ educationLevelTest.literarinessLevel[i]);
 		}
 		System.out.println(educationLevelTest.literarinessDuration);
 		// end

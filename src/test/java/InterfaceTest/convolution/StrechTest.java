@@ -2,6 +2,7 @@ package test.java.InterfaceTest.convolution;
 
 import P.image.Strech;
 import org.junit.jupiter.api.Test;
+
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -23,40 +24,41 @@ class StrechTest {
 	public static void main(String[] argv) {
 		StrechTest strechTest = new StrechTest();
 		strechTest.testP();
-    }
-    @Test
-    void p() {
-    }
+	}
 
-    @Test
-    void testP() {
-        //init
-        int[][] input = new int[16][16];
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                double temp = Math.random() * 10000;
-                int tempInt = (int) temp;
-                input[i][j] = tempInt % 255;
-            }
-        }
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                System.out.print("-" + input[i][j]);
-            }
-            System.out.println();
-        }
-        System.out.println("------------");
-        //exe Strech，商业价值用于数值特征在指定区间中的比例拉扯提高特征鲜艳度，如图片渲染。
-        // refer思想：ComputerVision 绿皮书
-        int[][] output = Strech.P(input, 0.05, 0.95);
-        //output
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                System.out.print("-" + output[i][j]);
-            }
-            System.out.println();
-        }
-    }
+	@Test
+	void p() {
+	}
+
+	@Test
+	void testP() {
+		//init
+		int[][] input = new int[16][16];
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+				double temp = Math.random() * 10000;
+				int tempInt = (int) temp;
+				input[i][j] = tempInt % 255;
+			}
+		}
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+				System.out.print("-" + input[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println("------------");
+		//exe Strech，商业价值用于数值特征在指定区间中的比例拉扯提高特征鲜艳度，如图片渲染。
+		// refer思想：ComputerVision 绿皮书
+		int[][] output = Strech.P(input, 0.05, 0.95);
+		//output
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+				System.out.print("-" + output[i][j]);
+			}
+			System.out.println();
+		}
+	}
 }
 //输入
 //Connected to the target VM, address: '127.0.0.1:55695', transport: 'socket'

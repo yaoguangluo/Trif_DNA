@@ -1,7 +1,6 @@
 package S_A.pheromone;
 
 import ME.VPC.M.app.App;
-import S_A.SixActionMap.FlowerAction;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 
 import java.io.IOException;
@@ -9,15 +8,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
- * * 作者的家庭是父亲 罗荣武，母亲 刘瑞珍，女儿 christina.yaja.luo/罗雅佳
- * , 前妻ringli/李妙环。
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
  ** 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 /*
  * IMV_SIQ随着持续地优化，变得越来越复杂，于是之后有必要进行HVPCS关系分析。
@@ -29,26 +26,28 @@ import java.util.Iterator;
 public class IMV_SIQ_utils {
 
 	public static void couldSQLThenSQL(String key, String[] strings,
-			TinMap output, App NE) throws InterruptedException, IOException {
+		TinMap output, App NE) throws InterruptedException,
+		IOException {
 		// 7代花再缩减 // flex
 		for (String actionKey : (Iterable<String>) NE.app_S.flowerAction.FlowerP_E_KernelActions
-				.keySet()) {
+			.keySet()) {
 			System.out.println("400-00001001-" + key);
 			System.out.println("400-00001002-" + actionKey);
 			if (key.contains(actionKey)) {// later separate.
 				String temp = NE.app_S.flowerAction.FlowerP_E_KernelActions
-						.getString(actionKey);
-				NE.app_S.flowerAction.doAction(temp, strings, output, NE);
+					.getString(actionKey);
+				NE.app_S.flowerAction.doAction(temp, strings, output,
+					NE);
 			}
 		}
 	}
 
 	// later for char
 	public static void couldDoThenDo(String key, String[] strings,
-			TinMap output, App NE, HashMap<String, Integer> scores)
-			throws InterruptedException, IOException {// 7代花再缩减 flex
+		TinMap output, App NE, HashMap<String, Integer> scores)
+		throws InterruptedException, IOException {// 7代花再缩减 flex
 		Iterator<String> iterators = NE.app_S.flowerAction.FlowerSixDomainActions
-				.keySet().iterator();
+			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String actionKey = iterators.next();
 			/*
@@ -59,8 +58,9 @@ public class IMV_SIQ_utils {
 			if (key.contains(actionKey)) {// later separate.
 				/* 精确匹配就直接触发 */
 				String temp = NE.app_S.flowerAction.FlowerSixDomainActions
-						.getString(actionKey);
-				NE.app_S.flowerAction.doAction(temp, strings, output, NE);
+					.getString(actionKey);
+				NE.app_S.flowerAction.doAction(temp, strings, output,
+					NE);
 				System.out.println("400-10000002" + actionKey);
 				System.out.println("400-10000003-" + temp);
 			} else {
@@ -74,20 +74,21 @@ public class IMV_SIQ_utils {
 					// -2 动名逻辑
 					String[] stringsKey = key.split("\\+");
 					String[] stringsAction = actionKey.split("\\+");
-					marchScore(stringsKey, stringsAction, actionKey, scores,
-							strings, output, NE);
+					marchScore(stringsKey, stringsAction, actionKey,
+						scores, strings, output, NE);
 					continue;
 				}
 				// -1 名动逻辑
 				String[] stringsKey = key.split("-");
 				String[] stringsAction = actionKey.split("-");
 				/* 相似匹配就直接累积触发 */
-				marchScore(stringsKey, stringsAction, actionKey, scores,
-						strings, output, NE);
+				marchScore(stringsKey, stringsAction, actionKey,
+					scores, strings, output, NE);
 				// todo 。。
 			}
 		}
 	}
+
 	/*
 	 * 进行逻辑化简没必要这么复杂。既然我用累积和笛卡尔全部关系，那就用equals代替contains
 	 * ，增加精确度。大幅减少内存容量。这种计算逻辑适用于在非完整匹配的元基编码变量条件下，
@@ -95,18 +96,20 @@ public class IMV_SIQ_utils {
 	 * 我认为计算关系相似是一种拓扑类的计算寻址，真好吃 和 好真吃，区别明显，但也可以歧义理解。
 	 * 而计算成分相似，输入变量都不一样，输出误差就大了，真好吃 和 真不好吃， 4字25%的区别， 截然不同。
 	 */
-	public static void marchScore(String[] stringsKey, String[] stringsAction,
-			String actionKey, HashMap<String, Integer> scores, String[] strings,
-			TinMap output, App NE) throws InterruptedException, IOException {
+	public static void marchScore(String[] stringsKey,
+		String[] stringsAction, String actionKey,
+		HashMap<String, Integer> scores, String[] strings,
+		TinMap output, App NE) throws InterruptedException,
+		IOException {
 		if (stringsKey.length > 1 && stringsAction.length > 1) {
 			/*
 			 * 如果底层缓存精确执行，这里上层可以松耦合执行。
 			 * */
 			if (stringsKey[0].equals(stringsAction[0])
-					|| stringsKey[1].equals(stringsAction[1])) {
+				|| stringsKey[1].equals(stringsAction[1])) {
 				System.out.println("400-10000004-1-" + actionKey);
 				String temp = NE.app_S.flowerAction.FlowerSixDomainActions
-						.getString(actionKey);
+					.getString(actionKey);
 				if (scores.containsKey(temp)) {
 					int score = scores.get(temp);
 					if (0 == score) {
@@ -119,17 +122,20 @@ public class IMV_SIQ_utils {
 					 */
 					int scale = 1;
 					if (score > scale) {
-						NE.app_S.flowerAction.doAction(temp, strings, output, NE);
+						NE.app_S.flowerAction.doAction(temp, strings,
+							output, NE);
 						scores.put(temp, 0);
 					}
 					scores.put(temp, score);
 				} else {
 					scores.put(temp, 1);
 					/*
-					 * 有些只做一次的驱动可以另外分类进行算法描述 最简单的实例是map 对不同的action + 触发精度分数规则，
+					 * 有些只做一次的驱动可以另外分类进行算法描述 最简单的实例是map 
+					 * 对不同的action + 触发精度分数规则，
 					 * 既然是equals，那么这里 属于必须做的操作。 later -trif
 					 */
-					NE.app_S.flowerAction.doAction(temp, strings, output, NE);
+					NE.app_S.flowerAction.doAction(temp, strings,
+						output, NE);
 					// Todo -trif
 				}
 

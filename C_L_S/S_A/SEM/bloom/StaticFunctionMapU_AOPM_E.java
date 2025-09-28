@@ -77,42 +77,50 @@ import U_A.PEU.P.zip.UnZip;
 import U_A.PVU.P.image.Filter;
 
 import java.awt.image.BufferedImage;
-import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
-// 著作权人+ 作者= 罗瑶光
+/*
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * */
 //小函数思想与来源, 见详细refer , 和函数的描述文字注释。
 // 稍后一一把接口函数主体 实例化。
-public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
-	// Cache_M 入选jdk, 略
-	public IMV_SIQ annotationMap = new IMV_SIQ();
-
+public class StaticFunctionMapU_AOPM_E extends StaticFunctionMapCASE
+	implements StaticFunctionMapU_AOPM_C {
 	// ObjectClassification
 	public Map<String, IMV_SIQ> mapClassification(App NE) {
 		IMV_SIQ input = NE._I_U.inputMap;
 		String[] keywords = NE._I_U.keywords;
-		return ObjectClassification.mapClassification(input, keywords);
+		return ObjectClassification.mapClassification(input,
+			keywords);
 	};
 
 	public Map<String, IMV_SIQ> mapClassification2D(App NE) {
 		IMV_SIQ input = NE._I_U.inputMap;
 		String[] keywords = NE._I_U.keywords;
-		return ObjectClassification.mapClassification2D(input, keywords);
+		return ObjectClassification.mapClassification2D(input,
+			keywords);
 	};// 稍后一一把接口函数主体 实例化。
 
 	public Map<String, String[]> stringClassification2D(App NE) {
 		String[] input = NE._I_U.inputStringA;
 		String[] keywords = NE._I_U.keywords;
-		return ObjectClassification.stringClassification2D(input, keywords);
+		return ObjectClassification.stringClassification2D(input,
+			keywords);
 	};// 稍后一一把接口函数主体 实例化。
 
 	public Map<String, List<String>> listClassification2D(App NE) {
 		List<String> input = NE._I_U.listString;
 		String[] keywords = NE._I_U.keywords;
-		return ObjectClassification.listClassification2D(input, keywords);
+		return ObjectClassification.listClassification2D(input,
+			keywords);
 	};// 稍后一一把接口函数主体 实例化。。。。。。。。下面所有的。
 	  // ObjectCombination {
 
@@ -131,49 +139,57 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
 	public int[] intArrayCombination(App NE) {
 		int[] output = NE._I_U.outputIntA;
 		int[] destination = NE._I_U.destinationA;
-		return ObjectCombination.intArrayCombination(output, destination);
+		return ObjectCombination.intArrayCombination(output,
+			destination);
 	};
 
 	public double[] doubleArrayCombination(App NE) {
 		double[] output = NE._I_U.outputA;
 		double[] destination = NE._I_U.destinationDoubleA;
-		return ObjectCombination.doubleArrayCombination(output, destination);
+		return ObjectCombination.doubleArrayCombination(output,
+			destination);
 	};
 
 	public long[] longArrayCombination(App NE) {
 		long[] output = NE._I_U.outputLongA;
 		long[] destination = NE._I_U.destinationLongA;
-		return ObjectCombination.longArrayCombination(output, destination);
+		return ObjectCombination.longArrayCombination(output,
+			destination);
 	};
 
 	public float[] floatArrayCombination(App NE) {
 		float[] output = NE._I_U.outputFloatA;
 		float[] destination = NE._I_U.destinationF;
-		return ObjectCombination.floatArrayCombination(output, destination);
+		return ObjectCombination.floatArrayCombination(output,
+			destination);
 	};
 
 	public String[] StringArrayCombination(App NE) {
 		String[] output = NE._I_U.outputStringA;
 		String[] destination = NE._I_U.destinationStringA;
-		return ObjectCombination.StringArrayCombination(output, destination);
+		return ObjectCombination.StringArrayCombination(output,
+			destination);
 	};
 
 	public char[] charArrayCombination(App NE) {
 		char[] output = NE._I_U.outputCharA;
 		char[] destination = NE._I_U.destinationCharA;
-		return ObjectCombination.charArrayCombination(output, destination);
+		return ObjectCombination.charArrayCombination(output,
+			destination);
 	};
 
 	public byte[] byteArrayCombination(App NE) {
 		byte[] output = NE._I_U.outputBytes;
 		byte[] destination = NE._I_U.destinationBytes;
-		return ObjectCombination.byteArrayCombination(output, destination);
+		return ObjectCombination.byteArrayCombination(output,
+			destination);
 	};
 
 	public Vector<Object> vectorCombination(App NE) {
 		Vector<Object> output = NE._I_U.outputV;
 		Vector<Object> destination = NE._I_U.destinationV;
-		return ObjectCombination.vectorCombination(output, destination);
+		return ObjectCombination.vectorCombination(output,
+			destination);
 	};
 
 	// DNAAuth {
@@ -181,7 +197,8 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
 		IMV_SIQ data = NE._I_U.dataMap;
-		return DNAAuth.DNAAuthStatusCheckEmailAndPds(app, string._S_, data);
+		return DNAAuth.DNAAuthStatusCheckEmailAndPds(app, string._S_,
+			data);
 	}
 
 	;
@@ -190,7 +207,8 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
 		IMV_SIQ data = NE._I_U.dataMap;
-		return DNAAuth.DNAAuthStatusCheckEmailAndPde(app, string._S_, data);
+		return DNAAuth.DNAAuthStatusCheckEmailAndPde(app, string._S_,
+			data);
 	}
 
 	;
@@ -199,8 +217,8 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
 		IMV_SIQ data = NE._I_U.dataMap;
-		return DNAAuth.DNAAuthStatusCheckEmailAndPassword(app.app_S, string._S_,
-				data);
+		return DNAAuth.DNAAuthStatusCheckEmailAndPassword(app.app_S,
+			string._S_, data);
 	}
 
 	;
@@ -230,16 +248,13 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
 
 	;
 
-	public String EncoderByMd5(App NE) {
-		AES_QMS_XSD_TIH salt = NE._I_U.salt;
-		AES_QMS_XSD_TIH pwd = NE._I_U.pwd;
-		int enctimes = NE._I_U.enctimes;
-		try {
-			return StringUtil.EncoderByMd5(salt._S_, pwd._S_, enctimes);
-		} catch (UnsupportedEncodingException | NoSuchAlgorithmException e) {
-			throw new RuntimeException(e);
-		}
-	}
+	//	public String EncoderByMd5(App NE) {
+	//		AES_QMS_XSD_TIH salt = NE._I_U.salt;
+	//		AES_QMS_XSD_TIH pwd = NE._I_U.pwd;
+	//		int enctimes = NE._I_U.enctimes;
+	//		return StringUtil.EncoderByMd5(salt._S_, pwd._S_, enctimes);
+	//
+	//	}
 
 	public String EncoderByDNA(App NE) {
 		AES_QMS_XSD_TIH key = NE._I_U.key;
@@ -270,13 +285,15 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
 		AES_QMS_XSD_TIH key = NE._I_U.key;
 		AES_QMS_XSD_TIH uPassword = NE._I_U.uPassword;
 		Token token = NE._I_U.token;
-		return TokenUtil.getFirstDNAPassword(key._S_, uPassword._S_, token);
+		return TokenUtil.getFirstDNAPassword(key._S_, uPassword._S_,
+			token);
 	};
 
 	public Token getNewTokenFromUsrAndUsrTokenByDNA(App NE) {
 		Usr usr = NE._I_U.usr;
 		UsrToken usrToken = NE._I_U.usrToken;
-		return TokenUtil.getNewTokenFromUsrAndUsrTokenByDNA(usr, usrToken);
+		return TokenUtil.getNewTokenFromUsrAndUsrTokenByDNA(usr,
+			usrToken);
 	};
 
 	// image
@@ -838,7 +855,7 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
 	// Median{
 	public double[] median1d(App NE) {
 		return U_A.PEU.P.wave.Median.median1d(NE._I_U.inputsA,
-				NE._I_U.scaleDouble);
+			NE._I_U.scaleDouble);
 	}
 
 	;
@@ -915,15 +932,16 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
 	public double[] newYwithoutBound(App NE) {
 		double[] input = NE._I_U.inputsA;
 		double hight = NE._I_U.hight;
-		return Proportion_X_newYwithoutBound.newYwithoutBound(input, hight);
+		return Proportion_X_newYwithoutBound.newYwithoutBound(input,
+			hight);
 	};
 
 	public double[] newXYYwithoutBound(App NE) {
 		double[] input = NE._I_U.inputsA;
 		double width = NE._I_U.widthDouble;
 		double hight = NE._I_U.hight;
-		return Proportion_X_newXYYwithoutBound.newXYYwithoutBound(input, width,
-				hight);
+		return Proportion_X_newXYYwithoutBound.newXYYwithoutBound(
+			input, width, hight);
 	}
 
 	;
@@ -932,8 +950,8 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
 	public double[] liangHuaDengChaAdd(App NE) {
 		double[] input = NE._I_U.inputsA;
 		double scale = NE._I_U.scaleDouble;
-		return Quantification_X_liangHuaDengChaAdd.liangHuaDengChaAdd(input,
-				scale);
+		return Quantification_X_liangHuaDengChaAdd.liangHuaDengChaAdd(
+			input, scale);
 	}
 
 	;
@@ -941,7 +959,8 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
 	public double[] liangHuaXiHua(App NE) {
 		double[] input = NE._I_U.inputsA;
 		double scale = NE._I_U.scaleDouble;
-		return Quantification_X_liangHuaXiHua.liangHuaXiHua(input, scale);
+		return Quantification_X_liangHuaXiHua.liangHuaXiHua(input,
+			scale);
 	}
 
 	;
@@ -949,21 +968,22 @@ public class StaticFunctionMapU_AOPM_E implements StaticFunctionMapU_AOPM_C {
 	public double[] liangHuaDengChaMines(App NE) {
 		double[] input = NE._I_U.inputsA;
 		int scale = NE._I_U.scale;
-		return Quantification_X_liangHuaDengChaMines.liangHuaDengChaMines(input,
-				scale);
+		return Quantification_X_liangHuaDengChaMines
+			.liangHuaDengChaMines(input, scale);
 	}
 
 	;
 
 	public double[] liangHuaEqualDelete(App NE) {
 		double[] input = NE._I_U.inputsA;
-		return Quantification_X_liangHuaEqualDelete.liangHuaEqualDelete(input);
+		return Quantification_X_liangHuaEqualDelete
+			.liangHuaEqualDelete(input);
 	};
 
 	public double[] liangHuaXiHuaHalfSide(App NE) {
 		double[] input = NE._I_U.inputsA;
 		return Quantification_X_liangHuaXiHuaHalfSide
-				.liangHuaXiHuaHalfSide(input);
+			.liangHuaXiHuaHalfSide(input);
 	};
 
 	// Shehold{

@@ -22,22 +22,22 @@ public class StaticRegisterA_IDUQ_C {
 	public static void load(
 		StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_E, App NE) {
 		//稍后封装
-		StaticFunctionMapA_IDUQ_C.annotationMap.put("getPDW",
+		staticFunctionMapA_IDUQ_E.annotationMap.put("getPDW",
 			"string");
-		StaticFunctionMapA_IDUQ_C.annotationMap.put("getLock",
+		staticFunctionMapA_IDUQ_E.annotationMap.put("getLock",
 			"void");
-		StaticFunctionMapA_IDUQ_C.annotationMap.put("getCode",
+		staticFunctionMapA_IDUQ_E.annotationMap.put("getCode",
 			"lock:pdw");
-		StaticFunctionMapA_IDUQ_C.annotationMap.put("doPDE",
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doPDE",
 			"pDE_RNA_FullFormular");
-		StaticFunctionMapA_IDUQ_C.annotationMap.put("doPrefixPDE",
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doPrefixPDE",
 			"pDE_RNA_FullFormular");
-		StaticFunctionMapA_IDUQ_C.annotationMap.put("doPostfixPDE",
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doPostfixPDE",
 			"pDE_RNA_FullFormular:pDE_RNA_FullFormularNew");
-		StaticFunctionMapA_IDUQ_C.annotationMap.put("doSurffixPDE",
+		staticFunctionMapA_IDUQ_E.annotationMap.put("doSurffixPDE",
 			"pDE_RNA_FullFormular:pDE_RNA_FullFormularNew"); //之后这些123 我都会重新命名。
 
-		Iterator<String> iterators = StaticFunctionMapA_IDUQ_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapA_IDUQ_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

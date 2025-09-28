@@ -2,6 +2,7 @@ package test.java.InterfaceTest.convolution;
 
 import P.image.Guassian;
 import org.junit.jupiter.api.Test;
+
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -22,33 +23,33 @@ class GuassianTest {
 	public static void main(String[] argv) {
 		GuassianTest guassianTest = new GuassianTest();
 		guassianTest.p();
-    }
+	}
 
-    @Test
-    void p_2D() {
-    }
+	@Test
+	void p_2D() {
+	}
 
-    @Test
-    void p_1D() {
-    }
+	@Test
+	void p_1D() {
+	}
 
-    @Test
-    void p() {
-        //init
-        int[][] input = new int[16][16];
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                input[i][j] = ((int) (Math.random() * 10000)) % 255;
-            }
-        }
-        //exe 1D 2D 用于精度模糊种类。 refer思想：路德大学RenHart， ComputerVision 绿皮书
-        int[][] output = Guassian.P_1D(input, 3, 3, 1.7);
-        //output
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                System.out.print("-" + output[i][j]);
-            }
-            System.out.println();
-        }
-    }
+	@Test
+	void p() {
+		//init
+		int[][] input = new int[16][16];
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+				input[i][j] = ((int) (Math.random() * 10000)) % 255;
+			}
+		}
+		//exe 1D 2D 用于精度模糊种类。 refer思想：路德大学RenHart， ComputerVision 绿皮书
+		int[][] output = Guassian.P_1D(input, 3, 3, 1.7);
+		//output
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+				System.out.print("-" + output[i][j]);
+			}
+			System.out.println();
+		}
+	}
 }

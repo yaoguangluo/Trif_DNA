@@ -21,11 +21,12 @@ class RNN_IDETestTest {
 	}
 
 	/*
-	 * 这是一个 德塔罗瑶光深度计算个人著作权中的RNN距离中心权重内核模块计算 测试main函数demo的test版本，
-	 * 在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，
-	 * 即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来
-	 * 查看数据，也可以用println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境
-	 * ，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。 --罗瑶光
+	 * 这是一个 德塔罗瑶光深度计算个人著作权中的RNN距离中心权重内核模块计算 测试main
+	 * 函数demo的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数中源码
+	 * 逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数
+	 * ，然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显示
+	 * 输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输
+	 * 入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。 --罗瑶光
 	 */
 	@Test
 	void main() {
@@ -35,7 +36,7 @@ class RNN_IDETestTest {
 		// exec
 		RNN_IDETest rNN_IDETest = new RNN_IDETest();
 		String[][] strings = rNN_IDETest.getIDEMatrix(S_String.text1,
-				commonTestInition.NE);
+			commonTestInition.NE);
 		// output
 		for (int i = 0; i < strings.length; i++) {
 			for (int j = 0; j < strings[0].length; j++) {

@@ -16,64 +16,73 @@ import OSI.OPE.OVU.PQE.flash.ThisCanvas;
 
 import javax.swing.JTextPane;
 
-//著作权人+ 作者= 罗瑶光
+/*
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * */
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
-public class StaticFunctionMapO_IDUQ_E implements StaticFunctionMapO_IDUQ_C {
-    public IMV_SIQ annotationMap = new IMV_SIQ();
+public class StaticFunctionMapO_IDUQ_E extends StaticFunctionMapCASE
+	implements StaticFunctionMapO_IDUQ_C {
 
-    //SaveAnd_U_File{
-    public void U_(App NE) {
-        AES_QMS_XSD_TIH fileCurrentpath = NE._I_U.fileCurrentpath;
-        LinkNode first = NE._I_U.first;
-        SaveAnd_U_File.U_(fileCurrentpath._S_, first);
-    }
+	//SaveAnd_U_File{
+	public void U_(App NE) {
+		AES_QMS_XSD_TIH fileCurrentpath = NE._I_U.fileCurrentpath;
+		LinkNode first = NE._I_U.first;
+		SaveAnd_U_File.U_(fileCurrentpath._S_, first);
+	}
 
-    // SaveAs_I_File{
-    //准备开始应用测试下。
-    public IMV_SIQ getRandomDNAkey(App NE) {
-        AES_QMS_XSD_TIH password = NE._I_U.password;
-        return SaveAs_I_File.getRandomDNAkey(password._S_);
-    }
+	// SaveAs_I_File{
+	//准备开始应用测试下。
+	public IMV_SIQ getRandomDNAkey(App NE) {
+		AES_QMS_XSD_TIH password = NE._I_U.password;
+		return SaveAs_I_File.getRandomDNAkey(password._S_);
+	}
 
-    public void Save(App NE) {
-        LinkNode first = NE._I_U.first;
-        SaveAs_I_File.Save(first);
-    }
+	public void Save(App NE) {
+		LinkNode first = NE._I_U.first;
+		SaveAs_I_File.Save(first);
+	}
 
-    // BootNeroCell{
-    public void bootCell(App NE) {
-        LinkNode linkNode = NE._I_U.linkNode;
-        JTextPane rightBotJTextPane = NE._I_U.rightBotJTextPane;
-        ThisCanvas canvas = NE._I_U.canvas;
-        BootNeroCell.bootCell(linkNode, rightBotJTextPane, canvas, NE);
-    }
+	// BootNeroCell{
+	public void bootCell(App NE) {
+		LinkNode linkNode = NE._I_U.linkNode;
+		JTextPane rightBotJTextPane = NE._I_U.rightBotJTextPane;
+		ThisCanvas canvas = NE._I_U.canvas;
+		BootNeroCell.bootCell(linkNode, rightBotJTextPane, canvas,
+			NE);
+	}
 
-    //BootNeroDoc extends Thread implements Runnable{
-    public BootNeroDoc BootNeroDoc(App NE) {
-        LinkList firstLinkList = NE._I_U.firstLinkList;
-        AES_QMS_XSD_TIH fileCurrentpath = NE._I_U.fileCurrentpath;
-        NodeShow nodeView = NE._I_U.nodeView;
-        JTextPane rightBotJTextPane = NE._I_U.rightBotJTextPane;
-        ThisCanvas canvas = NE._I_U.canvas;
-        return new BootNeroDoc(firstLinkList, fileCurrentpath._S_
-            , nodeView, rightBotJTextPane, canvas, NE);
-    }
+	//BootNeroDoc extends Thread implements Runnable{
+	public BootNeroDoc BootNeroDoc(App NE) {
+		LinkList firstLinkList = NE._I_U.firstLinkList;
+		AES_QMS_XSD_TIH fileCurrentpath = NE._I_U.fileCurrentpath;
+		NodeShow nodeView = NE._I_U.nodeView;
+		JTextPane rightBotJTextPane = NE._I_U.rightBotJTextPane;
+		ThisCanvas canvas = NE._I_U.canvas;
+		return new BootNeroDoc(firstLinkList, fileCurrentpath._S_,
+			nodeView, rightBotJTextPane, canvas, NE);
+	}
 
-    // H_Keeper{
-    public void vpcsRegister(App NE) {
-        LinkList firstLinkList = NE._I_U.firstLinkList;
-        AES_QMS_XSD_TIH fileCurrentpath = NE._I_U.fileCurrentpath;
-        NodeShow nodeView = NE._I_U.nodeView;
-        JTextPane rightBotJTextPane = NE._I_U.rightBotJTextPane;
-        ThisCanvas canvas = NE._I_U.canvas;
-        H_Keeper.vpcsRegister(firstLinkList, fileCurrentpath._S_
-            , nodeView, rightBotJTextPane, canvas, NE);
-    }
+	// H_Keeper{
+	public void vpcsRegister(App NE) {
+		LinkList firstLinkList = NE._I_U.firstLinkList;
+		AES_QMS_XSD_TIH fileCurrentpath = NE._I_U.fileCurrentpath;
+		NodeShow nodeView = NE._I_U.nodeView;
+		JTextPane rightBotJTextPane = NE._I_U.rightBotJTextPane;
+		ThisCanvas canvas = NE._I_U.canvas;
+		H_Keeper.vpcsRegister(firstLinkList, fileCurrentpath._S_,
+			nodeView, rightBotJTextPane, canvas, NE);
+	}
 
-    // Pillow{
-    public void register(App NE) {
-        BootNeroDoc bootNeroDoc = NE._I_U.bootNeroDoc;
-        Pillow.register(bootNeroDoc);
-    }
+	// Pillow{
+	public void register(App NE) {
+		BootNeroDoc bootNeroDoc = NE._I_U.bootNeroDoc;
+		Pillow.register(bootNeroDoc);
+	}
 }

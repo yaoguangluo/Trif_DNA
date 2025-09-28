@@ -79,7 +79,7 @@ public class CreativeVerbalMap {
 		NE.app_S.staticRootMap.staticClass_XE_Map.put(callFunctionKey, "S_AOPM");
 		NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey,
 				addActionInterfaceClass);// 20241001准备把这行移出去。
-		StaticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey,
+		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey,
 				"inputValues:传参因子:因子");
 		// booming
 		NE.app_S.staticRootMap.chromosomeBlooming.put(callFunctionKey,
@@ -107,7 +107,7 @@ public class CreativeVerbalMap {
 		NE.app_S.staticRootMap.chromosomeNode.put(
 				callFunctionKeyaddParserMixedStringClass,
 				addParserMixedStringClass);// 20241001准备把这行移出去。
-		StaticFunctionMapS_AOPM_C.annotationMap.put(
+		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(
 				callFunctionKeyaddParserMixedStringClass,
 				"inputValues:传参因子:因子");
 		// booming
@@ -139,7 +139,7 @@ public class CreativeVerbalMap {
 		NE.app_S.staticRootMap.chromosomeNode.put(
 				callFunctionKeyAddParserMixedStringToListClass,
 				addParserMixedStringToListClass);// 20241001准备把这行移出去。
-		StaticFunctionMapS_AOPM_C.annotationMap.put(
+		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(
 				callFunctionKeyAddParserMixedStringToListClass,
 				"inputValues:传参因子:因子");
 		// booming
@@ -175,7 +175,7 @@ public class CreativeVerbalMap {
 		NE.app_S.staticRootMap.chromosomeNode.put(
 				callFunctionKeyAddFindColumnsInMemoryClass,
 				addFindColumnsInMemoryClass);// 20241001准备把这行移出去。
-		StaticFunctionMapS_AOPM_C.annotationMap.put(
+		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(
 				callFunctionKeyAddFindColumnsInMemoryClass,
 				"inputValues:传参因子:因子");
 		// booming
@@ -226,7 +226,7 @@ public class CreativeVerbalMap {
 		NE.app_S.staticRootMap.chromosomeNode.put(
 				callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
 				updateColorAttributesOfColumnsInMemoryClass);// 20241001准备把这行移出去。
-		StaticFunctionMapS_AOPM_C.annotationMap.put(
+		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(
 				callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
 				"inputValues:传参因子:因子");
 		// booming
@@ -288,7 +288,7 @@ public class CreativeVerbalMap {
 //				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
 //				"inputValues:传参因子:因子");
 		
-		StaticFunctionMapO_VECS_C.annotationMap.put(
+		NE.app_S.staticFunctionMapO_VECS_C.annotationMap.put(
 				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
 				"inputValues:传参因子:因子");
 		// booming

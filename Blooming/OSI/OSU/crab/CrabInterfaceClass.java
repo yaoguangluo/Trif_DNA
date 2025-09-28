@@ -52,8 +52,8 @@ public class CrabInterfaceClass implements CrabInterface {
 			"S_AOPM");
 		NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey,
 			new CrabInterfaceClass());// 20241001准备把这行移出去。
-		StaticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey,
-			"inputValues:传参因子:因子");
+		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(
+			callFunctionKey, "inputValues:传参因子:因子");
 		// String callFunctionKey= "callFunctionKey";
 		// StaticRootMap.initMap();
 	}
@@ -126,7 +126,7 @@ public class CrabInterfaceClass implements CrabInterface {
 		String chromosome = commonTestInition.NE.app_S.staticRootMap.staticClass_XE_Map
 			.getString(callFunctionKey);
 		String[] 传参因子 = StaticFunctionMap.callAnnotationMap(
-			chromosome, callFunctionKey); // 我是神！ tin神！
+			chromosome, callFunctionKey, commonTestInition.NE); // 我是神！ tin神！
 		inputValue.put(传参因子[0], "");
 		inputValue.put(传参因子[1], "");
 
@@ -138,8 +138,7 @@ public class CrabInterfaceClass implements CrabInterface {
 		// 稍后移动到 SAOPM花瓣下，逐渐完善即可。20230221
 		if (commonTestInition.NE.app_S.staticRootMap.chromosomeNode
 			.containsKey(callFunctionKey)) {
-			CrabInterface crabInterface = (OSI.OSU.crab.CrabInterface) 
-				commonTestInition.NE.app_S.staticRootMap.chromosomeNode
+			CrabInterface crabInterface = (OSI.OSU.crab.CrabInterface) commonTestInition.NE.app_S.staticRootMap.chromosomeNode
 				.get(callFunctionKey);
 			crabInterface.logic(inputValue, 传参因子, 0, new App(),
 				outputReg);

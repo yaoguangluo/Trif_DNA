@@ -33,18 +33,19 @@ import java.net.Socket;
 //著作权人+ 作者= 罗瑶光
 //vpcs 服务器的 STANDARD 标准示例
 /*
- * 著作权人 ，作者 罗瑶光, 浏阳
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
  ** 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
-public class StaticFunctionMapC_AOPM_E implements StaticFunctionMapC_AOPM_C {
-	public IMV_SIQ annotationMap = new IMV_SIQ();
+public class StaticFunctionMapC_AOPM_E extends StaticFunctionMapCASE
+	implements StaticFunctionMapC_AOPM_C {
 
 	// BootVPCSBackEnd extends Thread
+	@SuppressWarnings("unused")
 	public void BootVPCSBackEndWithValues(App NE) {
 		App app = NE._I_U.app;
 		EmotionMap_E emotionMap_E = NE._I_U.emotionMap_E;// later..
@@ -148,13 +149,15 @@ public class StaticFunctionMapC_AOPM_E implements StaticFunctionMapC_AOPM_C {
 	public void IQ_ForwardTypeVPCS(App NE) {
 		DetaSrc.org.deta.boot.sets.VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
-		ServerForward_Standard.IQ_ForwardType(vPCSRequest, vPCSResponse);
+		ServerForward_Standard.IQ_ForwardType(vPCSRequest,
+			vPCSResponse);
 	}
 
 	public void forwardToRestMapVPCS(App NE) {
 		VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
-		ServerForward_Standard.forwardToRestMap(vPCSRequest, vPCSResponse);
+		ServerForward_Standard.forwardToRestMap(vPCSRequest,
+			vPCSResponse);
 	}
 
 	// ServerInit_C_VPCSFrontEnd {// 稍后命名区分下 改成 return
@@ -175,7 +178,7 @@ public class StaticFunctionMapC_AOPM_E implements StaticFunctionMapC_AOPM_C {
 	}
 
 	public void IV_ServerServerInit_C(App NE)
-			throws InterruptedException, IOException {
+		throws InterruptedException, IOException {
 		App app = NE._I_U.app;
 		new ServerInit_C().IV_Server(app);
 	}
@@ -184,13 +187,15 @@ public class StaticFunctionMapC_AOPM_E implements StaticFunctionMapC_AOPM_C {
 	public void IV_Service(App NE) {
 		AES_QMS_XSD_TIH serverName = NE._I_U.serverName;
 		AES_QMS_XSD_TIH frontendTxt = NE._I_U.frontendTxt;
-		new ServerInit_Standard().IV_Service(frontendTxt._S_, serverName._S_);
+		new ServerInit_Standard().IV_Service(frontendTxt._S_,
+			serverName._S_);
 	}
 
 	public void IV_Server(App NE) {
 		AES_QMS_XSD_TIH serverName = NE._I_U.serverName;
 		AES_QMS_XSD_TIH frontendTxt = NE._I_U.frontendTxt;
-		new ServerInit_Standard().IV_Server(frontendTxt._S_, serverName._S_);
+		new ServerInit_Standard().IV_Server(frontendTxt._S_,
+			serverName._S_);
 	}
 
 	// ServerRestMap_Standard {
@@ -213,7 +218,8 @@ public class StaticFunctionMapC_AOPM_E implements StaticFunctionMapC_AOPM_C {
 	public void returnResponseVPCS(App NE) {
 		VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
-		ServerRestMap_Standard.returnResponse(vPCSRequest, vPCSResponse);
+		ServerRestMap_Standard.returnResponse(vPCSRequest,
+			vPCSResponse);
 	}
 
 	public void P_Rest(App NE) {
@@ -243,13 +249,15 @@ public class StaticFunctionMapC_AOPM_E implements StaticFunctionMapC_AOPM_C {
 	public void P_BufferBytes(App NE) {
 		VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
-		ServerRestMap_Standard.P_BufferBytes(vPCSRequest, vPCSResponse);
+		ServerRestMap_Standard.P_BufferBytes(vPCSRequest,
+			vPCSResponse);
 	}
 
 	public void P_BytesWithoutZip(App NE) {
 		VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
-		ServerRestMap_Standard.P_BytesWithoutZip(vPCSRequest, vPCSResponse);
+		ServerRestMap_Standard.P_BytesWithoutZip(vPCSRequest,
+			vPCSResponse);
 	}
 
 	// ServerSleeper_Standard extends Thread implements
@@ -261,7 +269,7 @@ public class StaticFunctionMapC_AOPM_E implements StaticFunctionMapC_AOPM_C {
 		VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
 		new ServerSleeper_Standard(vPCSRequest, vPCSResponse)
-				.hugPillow(sleeper_H, accept, hashCode);
+			.hugPillow(sleeper_H, accept, hashCode);
 	}
 
 	// ServerVPC_Standard {

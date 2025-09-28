@@ -1,6 +1,5 @@
 package S_A.SEM.register;
 
-import S_A.SEM.bloom.StaticFunctionMapM_VECS_C;
 import S_A.SEM.bloom.StaticFunctionMapM_VECS_E;
 
 import java.util.Iterator;
@@ -23,191 +22,191 @@ public class StaticRegisterM_VECS_C {
 		StaticFunctionMapM_VECS_E staticFunctionMapM_VECS_E, App NE) {
 
 		//稍后封装
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"updateRowsByAttributesOfJoinCondition", "object:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"updateRowsByAttributesOfJoinAggregation", "object:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"updateRowsByAttributesOfJoinGetCulumns", "object");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"updateRowsByAttributesOfJoinRelation", "object:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"selectRowsByAttributesOfJoinCondition", "object");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"selectRowsByAttributesOfJoinAggregation", "object");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"selectRowsByAttributesOfJoinGetCulumns", "object");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"selectRowsByAttributesOfJoinRelation", "object");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"insertRowByTablePathAndIndex",
 			"tablePath:pageIndex:culumnOfNewRow");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"insertRowByBaseName", "baseName:tableName:jsobj:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"IU_RowByAttributes", "object:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put("I_Table",
+		staticFunctionMapM_VECS_E.annotationMap.put("I_Table",
 			"object:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"deleteRowByTablePathAndIndex",
 			"tablePath:pageIndex:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"D_RowByAttributesOfCondition", "object:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"updateRowByTablePathAndIndex",
 			"tablePath:pageIndex:jaculumnOfUpdateRow");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"updateRowByTablePathAndAttribute",
 			"tablePath:culumnName:culumnValue:jobj");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"updateRowsByRecordConditions", "object:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"updateRowsByAttributesOfCondition", "object:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"updateRowsByAttributesOfAggregation", "object:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"updateRowsByAttributesOfGetCulumns", "object");
-		StaticFunctionMapM_VECS_C.annotationMap.put("E_PLSQL",
+		staticFunctionMapM_VECS_E.annotationMap.put("E_PLSQL",
 			"plslq:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put("E_PLORM",
+		staticFunctionMapM_VECS_E.annotationMap.put("E_PLORM",
 			"orm:b");
 		/*
 		 * 早期多工程的tinshell花函数 合并会造成duplication问题，需要剔除。
 		 * */
-		//StaticFunctionMapM_VECS_C.annotationMap.put("P_AggregationLimitMap", "sets:output");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_Cache",
+		//staticFunctionMapM_VECS_E.annotationMap.put("P_AggregationLimitMap", "sets:output");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Cache",
 			"sets:output:tableName:baseName:object");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_kernel",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_kernel",
 			"temp:readDBTableRowIndexCulumnFile:readDBTableRowIndexFile:reader:DBTableRowIndexPath:output:bufferRow:rowMap");
-		StaticFunctionMapM_VECS_C.annotationMap.put("rowToRowMap",
+		staticFunctionMapM_VECS_E.annotationMap.put("rowToRowMap",
 			"row");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_Map",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Map",
 			"sets:output:dBTablePath");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_Table",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Table",
 			"sets:output:DBTablePath:object");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"getCulumnsMapWithAs", "sets:row");
-		StaticFunctionMapM_VECS_C.annotationMap.put("getCulumnsMap",
+		staticFunctionMapM_VECS_E.annotationMap.put("getCulumnsMap",
 			"sets:row");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_GetCulumnsMap",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_GetCulumnsMap",
 			"obj:getCulumnsValueArray");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_AndMap",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_AndMap",
 			"sets:obj:joinObj:object:newObj");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_OrMap",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_OrMap",
 			"sets:obj:joinObj:object:newObj:findinNewObj");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_SetRoot",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_SetRoot",
 			"acknowledge:output");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_BaseName",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_BaseName",
 			"acknowledge:output");
-		//StaticFunctionMapM_VECS_C.annotationMap.put("P_TableName", "acknowledge:output");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_ListNeedStart",
+		//staticFunctionMapM_VECS_E.annotationMap.put("P_TableName", "acknowledge:output");
+		staticFunctionMapM_VECS_E.annotationMap.put("P_ListNeedStart",
 			"acknowledge:output");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_Join",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Join",
 			"acknowledge:output");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_E",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_E",
 			"acknowledge:output:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_Check",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Check",
 			"acknowledge:output:mod");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"wordsForestNotContainsKey",
 			"outputList:countWordNode:prefixWord");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"prefixWordEqualZero",
 			"outputList:countWordNode:prefixWord");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"wordsForestContainsKey",
 			"outputList:countWordNode:prefixWord");
 
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"WordFrequencyFindCheck", "outputList:fixWords");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"WordFrequencyCompareCheck",
 			"outputList:fixWords:countWordNode");
-		StaticFunctionMapM_VECS_C.annotationMap.put("sessionCheck",
+		staticFunctionMapM_VECS_E.annotationMap.put("sessionCheck",
 			"token:tokenCerts");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"sessionTokenUpdateByDNA", "password");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"sessionTokenCertsInitWithHumanWordsByDNA",
 			"humanWordsPassword:bys:lockBys");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"sessionTokenCertsInitWithHumanWordsByDNA_ETL",
 			"humanWordsPassword:bys:lockBys");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"sessionInitByTokenPDICertsDNA", "tokenCerts");
 
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"sessionInitByTokenCertsDNA", "tokenCerts");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"sessionCheckWithOrderPDSKey", "token:tokenCerts");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"sessionCheckWithPostPDSKey", "token:tokenCerts");
-		StaticFunctionMapM_VECS_C.annotationMap.put("arrayIntCheck",
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayIntCheck",
 			"array:min:max");
-		StaticFunctionMapM_VECS_C.annotationMap.put("arrayIntFix",
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayIntFix",
 			"array:min:max");
-		StaticFunctionMapM_VECS_C.annotationMap.put("arrayLongCheck",
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayLongCheck",
 			"array:min:max");
-		StaticFunctionMapM_VECS_C.annotationMap.put("arrayLongFix",
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayLongFix",
 			"array:min:max");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"arrayDoubleCheck", "array:min:max");
-		StaticFunctionMapM_VECS_C.annotationMap.put("arrayDoubleFix",
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayDoubleFix",
 			"array:min:max");
-		StaticFunctionMapM_VECS_C.annotationMap.put("arrayFloatCheck",
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayFloatCheck",
 			"array:min:max");
-		StaticFunctionMapM_VECS_C.annotationMap.put("arrayFloatFix",
+		staticFunctionMapM_VECS_E.annotationMap.put("arrayFloatFix",
 			"array:min:max");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"currentSystemTimeCheck",
 			"offsetUTC8:miliSecondsDistinction");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"currentSystemTimeToUTC", "offsetUTC8");
-		StaticFunctionMapM_VECS_C.annotationMap.put("getTranslator",
+		staticFunctionMapM_VECS_E.annotationMap.put("getTranslator",
 			"void");
-		StaticFunctionMapM_VECS_C.annotationMap.put("ListSetsCheck",
+		staticFunctionMapM_VECS_E.annotationMap.put("ListSetsCheck",
 			"list:setsType");
-		StaticFunctionMapM_VECS_C.annotationMap.put("ListSetsFix",
+		staticFunctionMapM_VECS_E.annotationMap.put("ListSetsFix",
 			"list:setsType");
-		StaticFunctionMapM_VECS_C.annotationMap.put("matrixCheck",
+		staticFunctionMapM_VECS_E.annotationMap.put("matrixCheck",
 			"objects:attribute");
-		StaticFunctionMapM_VECS_C.annotationMap.put("matrixFix",
+		staticFunctionMapM_VECS_E.annotationMap.put("matrixFix",
 			"objects:attribute");
-		StaticFunctionMapM_VECS_C.annotationMap.put("checkNULL",
+		staticFunctionMapM_VECS_E.annotationMap.put("checkNULL",
 			"object");
-		StaticFunctionMapM_VECS_C.annotationMap.put("getCfxButton",
+		staticFunctionMapM_VECS_E.annotationMap.put("getCfxButton",
 			"string:x:y:c");
-		StaticFunctionMapM_VECS_C.annotationMap.put("DetaButton",
+		staticFunctionMapM_VECS_E.annotationMap.put("DetaButton",
 			"string:x:y:c");
-		StaticFunctionMapM_VECS_C.annotationMap.put("YLJShowButton",
+		staticFunctionMapM_VECS_E.annotationMap.put("YLJShowButton",
 			"string:x:y:c");
-		StaticFunctionMapM_VECS_C.annotationMap.put("DetaIndexLabel",
+		staticFunctionMapM_VECS_E.annotationMap.put("DetaIndexLabel",
 			"name:jFrameList");
-		StaticFunctionMapM_VECS_C.annotationMap.put("DetaLabel",
+		staticFunctionMapM_VECS_E.annotationMap.put("DetaLabel",
 			"name");
-		StaticFunctionMapM_VECS_C.annotationMap.put("DetaSlider",
+		staticFunctionMapM_VECS_E.annotationMap.put("DetaSlider",
 			"x:y");
-		StaticFunctionMapM_VECS_C.annotationMap.put("DetabbedPane",
+		staticFunctionMapM_VECS_E.annotationMap.put("DetabbedPane",
 			"x:y:c");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"getColorTableRender", "void");
-		StaticFunctionMapM_VECS_C.annotationMap.put("CfxTextArea",
+		staticFunctionMapM_VECS_E.annotationMap.put("CfxTextArea",
 			"string:x:y:c");
-		StaticFunctionMapM_VECS_C.annotationMap.put("CfxTextField",
+		staticFunctionMapM_VECS_E.annotationMap.put("CfxTextField",
 			"string:x:y:c");
-		StaticFunctionMapM_VECS_C.annotationMap.put("CfxTextPane",
+		staticFunctionMapM_VECS_E.annotationMap.put("CfxTextPane",
 			"string:x:y:c");
-		StaticFunctionMapM_VECS_C.annotationMap.put(
+		staticFunctionMapM_VECS_E.annotationMap.put(
 			"forwardToRestMap", "app:vPCSRequest:vPCSResponse");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_Rest",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_Rest",
 			"app:vPCSRequest:vPCSResponse");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_RestDB",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_RestDB",
 			"app:vPCSRequest:vPCSResponse");
-		StaticFunctionMapM_VECS_C.annotationMap.put("P_",
+		staticFunctionMapM_VECS_E.annotationMap.put("P_",
 			"type:socket:_A:emotionMap:ratioMap_E:emotionInit:environmentInit"
 				+ ":emotionMap_E:lenovoInit");
 
-		Iterator<String> iterators = StaticFunctionMapM_VECS_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapM_VECS_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

@@ -23,20 +23,20 @@ public class StaticRegisterA_VECS_C {
 		//扫描接口
 		//扫描继承
 		//稍后封装
-		StaticFunctionMapA_VECS_C.annotationMap.put("parserMixedString", "inputString");
-		StaticFunctionMapA_VECS_C.annotationMap.put("parserMixedStringToList", "inputString");
-		StaticFunctionMapA_VECS_C.annotationMap.put("posReader", "inputString");
-		StaticFunctionMapA_VECS_C.annotationMap.put("dnnReader", "inputString");
-		StaticFunctionMapA_VECS_C.annotationMap.put("mindReader", "inputString");
-		StaticFunctionMapA_VECS_C.annotationMap.put("emotionReader", "inputString");
-		StaticFunctionMapA_VECS_C.annotationMap.put("educationReader", "inputString");
-		StaticFunctionMapA_VECS_C.annotationMap.put("environmentReader"
+		staticFunctionMapA_VECS_E.annotationMap.put("parserMixedString", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("parserMixedStringToList", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("posReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("dnnReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("mindReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("emotionReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("educationReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("environmentReader"
 				, "inputString:environmentInit:emotionMap_E:ratioMap_E:_AE");
-		StaticFunctionMapA_VECS_C.annotationMap.put("lenovoReader"
+		staticFunctionMapA_VECS_E.annotationMap.put("lenovoReader"
 				, "inputString:environmentInit:emotionMap_E:ratioMap_E:_AE");
-		StaticFunctionMapA_VECS_C.annotationMap.put("frequencyReader", "inputString");
+		staticFunctionMapA_VECS_E.annotationMap.put("frequencyReader", "inputString");
 		
-		Iterator<String> iterators= StaticFunctionMapA_VECS_C.annotationMap.keySet().iterator();
+		Iterator<String> iterators= staticFunctionMapA_VECS_E.annotationMap.keySet().iterator();
 		while(iterators.hasNext()) {
 			String temp= iterators.next().toString();
 			NE.app_S.staticRootMap.staticBloomingTimes.put(temp, (long) 0);

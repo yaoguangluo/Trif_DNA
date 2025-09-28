@@ -40,17 +40,18 @@ class SuccessICATestTest {
 		// exec
 		// ICA kernel
 		double[][] kernel = new double[3][];
-		kernel[0] = new InitBehaviorICAKernel()
-				.getBehaviorICAKernel(S_String.text1, commonTestInition.NE);
-		kernel[1] = new InitBehaviorICAKernel()
-				.getBehaviorICAKernel(S_String.text2, commonTestInition.NE);
-		kernel[2] = new InitBehaviorICAKernel()
-				.getBehaviorICAKernel(S_String.text3, commonTestInition.NE);
+		kernel[0] = new InitBehaviorICAKernel().getBehaviorICAKernel(
+			S_String.text1, commonTestInition.NE);
+		kernel[1] = new InitBehaviorICAKernel().getBehaviorICAKernel(
+			S_String.text2, commonTestInition.NE);
+		kernel[2] = new InitBehaviorICAKernel().getBehaviorICAKernel(
+			S_String.text3, commonTestInition.NE);
 		SuccessICATest successICATest = new SuccessICATest();
 		successICATest.IQ_KernelCNN(kernel);
 		for (int i = 0; i < successICATest.kernelCNN.length; i++) {
 			for (int j = 0; j < successICATest.kernelCNN[0].length; j++) {
-				System.out.print(successICATest.kernelCNN[i][j] + " ");
+				System.out.print(successICATest.kernelCNN[i][j]
+					+ " ");
 			}
 			System.out.println();
 		}

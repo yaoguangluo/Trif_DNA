@@ -45,7 +45,7 @@ class PageQ_ETest {
 		}
 		// 执行非卷积肽变换滤 255峰值 波测试
 		bili0 = RangePDI.Double_IPE_AOPM_VECS_IDUQ_TXH_AC(bili0,
-				commonTestInition.NE);
+			commonTestInition.NE);
 		// 输出
 		for (int i = 0; i < 32; i++) {
 			System.out.println(bili0[i]);

@@ -48,7 +48,7 @@ public class AddParserMixedStringClass implements CrabInterface {
         NE.app_S.staticRootMap.staticBloomingTime.put(callFunctionKey, System.currentTimeMillis());//增加记忆时间。20241013
         NE.app_S.staticRootMap.staticClass_XE_Map.put(callFunctionKey, "S_AOPM");
         NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey, new AddParserMixedStringClass());//20241001准备把这行移出去。
-        StaticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey, "inputValues:传参因子:因子");
+        NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey, "inputValues:传参因子:因子");
         //String callFunctionKey= "callFunctionKey";
         //StaticRootMap.initMap();
     }

@@ -50,99 +50,99 @@ public class InitonTalk {
 		IMV_SIQ inputValue = new IMV_SIQ();
 		String[] 传参因子 = new String[0];// LATER USE SWICH
 		if (calyxChromosome.equalsIgnoreCase("M_VECS")) {
-			传参因子 = StaticFunctionMapM_VECS_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapM_VECS_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("M_IDUQ")) {
-			传参因子 = StaticFunctionMapM_IDUQ_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapM_IDUQ_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("A_VECS")) {
-			传参因子 = StaticFunctionMapA_VECS_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapA_VECS_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("A_IDUQ")) {
-			传参因子 = StaticFunctionMapA_IDUQ_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapA_IDUQ_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("O_VECS")) {
-			传参因子 = StaticFunctionMapO_VECS_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapO_VECS_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("O_IDUQ")) {
-			传参因子 = StaticFunctionMapO_IDUQ_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapO_IDUQ_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("P_VECS")) {
-			传参因子 = StaticFunctionMapP_VECS_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapP_VECS_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("P_IDUQ")) {
-			传参因子 = StaticFunctionMapP_IDUQ_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapP_IDUQ_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("V_AOPM")) {
-			传参因子 = StaticFunctionMapV_AOPM_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapV_AOPM_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("V_IDUQ")) {
-			传参因子 = StaticFunctionMapV_IDUQ_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapV_IDUQ_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("E_AOPM")) {
-			传参因子 = StaticFunctionMapE_AOPM_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapE_AOPM_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("E_IDUQ")) {
-			传参因子 = StaticFunctionMapE_IDUQ_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapE_IDUQ_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("C_AOPM")) {
-			传参因子 = StaticFunctionMapC_AOPM_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapC_AOPM_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("C_IDUQ")) {
-			传参因子 = StaticFunctionMapC_IDUQ_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapC_IDUQ_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("S_AOPM")) {
-			传参因子 = StaticFunctionMapS_AOPM_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapS_AOPM_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("S_IDUQ")) {
-			传参因子 = StaticFunctionMapS_IDUQ_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapS_IDUQ_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("I_AOPM")) {
-			传参因子 = StaticFunctionMapI_AOPM_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapI_AOPM_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("I_VECS")) {
-			传参因子 = StaticFunctionMapI_VECS_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapI_VECS_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("D_AOPM")) {
-			传参因子 = StaticFunctionMapD_AOPM_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapD_AOPM_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("D_VECS")) {
-			传参因子 = StaticFunctionMapD_VECS_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapD_VECS_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("U_AOPM")) {
-			传参因子 = StaticFunctionMapU_AOPM_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapU_AOPM_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("U_VECS")) {
-			传参因子 = StaticFunctionMapU_VECS_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapU_VECS_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("Q_AOPM")) {
-			传参因子 = StaticFunctionMapQ_AOPM_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapQ_AOPM_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		if (calyxChromosome.equalsIgnoreCase("Q_VECS")) {
-			传参因子 = StaticFunctionMapQ_VECS_C.annotationMap
+			传参因子 = NE.app_S.staticFunctionMapQ_VECS_C.annotationMap
 					.getString(callFunctionKey).split(":");//
 		}
 		for (int i = 0; i < 传参因子.length; i++) {// 降低入参权限。只做记忆分析。

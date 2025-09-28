@@ -50,27 +50,30 @@ class LenovoInitTest {
 		// 计算
 		String text = S_String.text1;
 		commonTestInition.NE.app_S.lenovoInit.IV_Exclude_A(text,
-				commonTestInition.NE);
+			commonTestInition.NE);
 		IMV_SIQ_X_ environmentSampleMap = commonTestInition.NE.app_S.lenovoInit
-				.getEnvironmentInit().getEmotionSampleMap();
-		IMV_SIQ lenovo = commonTestInition.NE.app_S.lenovoInit.getSensingMap()
-				.getLenovoMap();
+			.getEnvironmentInit().getEmotionSampleMap();
+		IMV_SIQ lenovo = commonTestInition.NE.app_S.lenovoInit
+			.getSensingMap().getLenovoMap();
 		// reduce
 		System.out.println("环    境：");
-		Iterator<String> Iterator = environmentSampleMap.keySet().iterator();
+		Iterator<String> Iterator = environmentSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
 			commonTestInition.NE.app_S.emotionSample = environmentSampleMap
-					.get_S(word);
+				.get_S(word);
 			if (null != commonTestInition.NE.app_S.emotionSample
-					.getDistinction()) {
-				if (lenovo.containsKey(commonTestInition.NE.app_S.emotionSample
+				.getDistinction()) {
+				if (lenovo.containsKey(
+					commonTestInition.NE.app_S.emotionSample
 						.getDistinction())) {
-					System.out.print(
-							lenovo.get(commonTestInition.NE.app_S.emotionSample
-									.getDistinction()).toString() + " ");
+					System.out.print(lenovo.get(
+						commonTestInition.NE.app_S.emotionSample
+							.getDistinction()).toString() + " ");
 				} else {
-					System.out.print(commonTestInition.NE.app_S.emotionSample
+					System.out.print(
+						commonTestInition.NE.app_S.emotionSample
 							.getDistinction() + " ");
 				}
 			}
@@ -81,20 +84,22 @@ class LenovoInitTest {
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
 			commonTestInition.NE.app_S.emotionSample = environmentSampleMap
-					.get_S(word);
+				.get_S(word);
 			if (null != commonTestInition.NE.app_S.emotionSample
-					.getMotivation()) {
-				if (commonTestInition.NE.app_S.emotionSample.getMotivation()
-						.contains("语料库空")) {
+				.getMotivation()) {
+				if (commonTestInition.NE.app_S.emotionSample
+					.getMotivation().contains("语料库空")) {
 					continue;
 				}
-				if (lenovo.containsKey(commonTestInition.NE.app_S.emotionSample
+				if (lenovo.containsKey(
+					commonTestInition.NE.app_S.emotionSample
 						.getMotivation())) {
-					System.out.print(
-							lenovo.get(commonTestInition.NE.app_S.emotionSample
-									.getMotivation()).toString() + " ");
+					System.out.print(lenovo.get(
+						commonTestInition.NE.app_S.emotionSample
+							.getMotivation()).toString() + " ");
 				} else {
-					System.out.print(commonTestInition.NE.app_S.emotionSample
+					System.out.print(
+						commonTestInition.NE.app_S.emotionSample
 							.getMotivation() + " ");
 				}
 			}
@@ -105,20 +110,22 @@ class LenovoInitTest {
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
 			commonTestInition.NE.app_S.emotionSample = environmentSampleMap
-					.get_S(word);
+				.get_S(word);
 			if (null != commonTestInition.NE.app_S.emotionSample
-					.getTrending()) {
-				if (commonTestInition.NE.app_S.emotionSample.getTrending()
-						.contains("语料库空")) {
+				.getTrending()) {
+				if (commonTestInition.NE.app_S.emotionSample
+					.getTrending().contains("语料库空")) {
 					continue;
 				}
-				if (lenovo.containsKey(commonTestInition.NE.app_S.emotionSample
+				if (lenovo.containsKey(
+					commonTestInition.NE.app_S.emotionSample
 						.getTrending())) {
-					System.out.print(
-							lenovo.get(commonTestInition.NE.app_S.emotionSample
-									.getTrending()).toString() + " ");
+					System.out.print(lenovo.get(
+						commonTestInition.NE.app_S.emotionSample
+							.getTrending()).toString() + " ");
 				} else {
-					System.out.print(commonTestInition.NE.app_S.emotionSample
+					System.out.print(
+						commonTestInition.NE.app_S.emotionSample
 							.getTrending() + " ");
 				}
 			}
@@ -131,20 +138,22 @@ class LenovoInitTest {
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
 			commonTestInition.NE.app_S.emotionSample = environmentSampleMap
-					.get_S(word);
+				.get_S(word);
 			if (null != commonTestInition.NE.app_S.emotionSample
-					.getPrediction()) {
-				if (commonTestInition.NE.app_S.emotionSample.getPrediction()
-						.contains("语料库空")) {
+				.getPrediction()) {
+				if (commonTestInition.NE.app_S.emotionSample
+					.getPrediction().contains("语料库空")) {
 					continue;
 				}
-				if (lenovo.containsKey(commonTestInition.NE.app_S.emotionSample
+				if (lenovo.containsKey(
+					commonTestInition.NE.app_S.emotionSample
 						.getPrediction())) {
-					System.out.print(
-							lenovo.get(commonTestInition.NE.app_S.emotionSample
-									.getPrediction()).toString() + " ");
+					System.out.print(lenovo.get(
+						commonTestInition.NE.app_S.emotionSample
+							.getPrediction()).toString() + " ");
 				} else {
-					System.out.print(commonTestInition.NE.app_S.emotionSample
+					System.out.print(
+						commonTestInition.NE.app_S.emotionSample
 							.getPrediction() + " ");
 				}
 			}

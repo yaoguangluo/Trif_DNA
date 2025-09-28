@@ -23,7 +23,7 @@ public class StaticRegisterC_IDUQ_C {
 		StaticFunctionMapC_IDUQ_E staticFunctionMapC_IDUQ_E, App NE) {
 
 		//稍后封装
-		Iterator<String> iterators = StaticFunctionMapC_IDUQ_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapC_IDUQ_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

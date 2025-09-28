@@ -37,7 +37,7 @@ class ANNTestTest {
 		ANNTest aNNTest = new ANNTest();
 		// exec
 		String[][] annMatrix = aNNTest.getANNMatrix(S_String.text1,
-				commonTestInition.NE);
+			commonTestInition.NE);
 		// 小心jdk版本不同导致各种double nan问题，矩阵的xy对应长和宽问题，
 		for (int j = 0; j < annMatrix.length; j++) {
 			double sum = 0.0;
@@ -48,8 +48,9 @@ class ANNTestTest {
 				}
 				sum += temp.doubleValue();
 			}
-			System.out.println(annMatrix[j][0] + "-" + annMatrix[j][1] + "-"
-					+ annMatrix[j][2] + "-" + annMatrix[j][3] + "-ANN:" + sum);
+			System.out.println(annMatrix[j][0] + "-" + annMatrix[j][1]
+				+ "-" + annMatrix[j][2] + "-" + annMatrix[j][3]
+				+ "-ANN:" + sum);
 		}
 		// output
 

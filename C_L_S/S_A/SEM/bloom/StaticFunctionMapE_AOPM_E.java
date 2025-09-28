@@ -39,117 +39,128 @@ import E_A.OEI.SVQ.MPC.fhmm.E.FMHMMList_E;
 import ME.VPC.M.app.App;
 import S_A.pheromone.IMV_SIQ;
 
-//著作权人+ 作者= 罗瑶光
+/*
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * */
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
-public class StaticFunctionMapE_AOPM_E implements StaticFunctionMapE_AOPM_C {
-    public IMV_SIQ annotationMap = new IMV_SIQ();
+public class StaticFunctionMapE_AOPM_E extends StaticFunctionMapCASE
+	implements StaticFunctionMapE_AOPM_C {
 
-    @Override
-    public SensingMap getSensingMap(App NE){
-        return new SensingMap_E();
-    }
+	@Override
+	public SensingMap getSensingMap(App NE) {
+		return new SensingMap_E();
+	}
 
-    @Override
-    public EmotionMap getEmotionMap(App NE){
-        return new EmotionMap_E();
-    }
+	@Override
+	public EmotionMap getEmotionMap(App NE) {
+		return new EmotionMap_E();
+	}
 
-    @Override
-    public CogsBinaryForest_A getCogsBinaryForest_A(App NE){
-        return new CogsBinaryForest_AE();
-    }
+	@Override
+	public CogsBinaryForest_A getCogsBinaryForest_A(App NE) {
+		return new CogsBinaryForest_AE();
+	}
 
-    @Override
-    public Euclid_C getEuclid_C(App NE){
-        return new Euclid_CE();
-    }
+	@Override
+	public Euclid_C getEuclid_C(App NE) {
+		return new Euclid_CE();
+	}
 
-    @Override
-    public Quick6DLuoYaoguangSort getQuick6DLuoYaoguangSort(App NE){
-        return new Quick6DLuoYaoguangSort_E();
-    }
+	@Override
+	public Quick6DLuoYaoguangSort getQuick6DLuoYaoguangSort(App NE) {
+		return new Quick6DLuoYaoguangSort_E();
+	}
 
-    @Override
-    public NERO_C_OneTime getNERO_C_OneTime(App NE){
-        return new NERO_C_OneTime_E();
-    }
+	@Override
+	public NERO_C_OneTime getNERO_C_OneTime(App NE) {
+		return new NERO_C_OneTime_E();
+	}
 
-    @Override
-    public NERO_C getNERO_C(App NE){
-        return new NERO_CE();
-    }
+	@Override
+	public NERO_C getNERO_C(App NE) {
+		return new NERO_CE();
+	}
 
-//	@Override 退化掉
-//	public NLP_C getNLP_C(App NE){
-//		return new Nlp_CE_X_();
-//	}
+	//	@Override 退化掉
+	//	public NLP_C getNLP_C(App NE){
+	//		return new Nlp_CE_X_();
+	//	}
 
-    @Override
-    public BehaviorMap getBehaviorMap(App NE){
-        return new BehaviorMap_E();
-    }
+	@Override
+	public BehaviorMap getBehaviorMap(App NE) {
+		return new BehaviorMap_E();
+	}
 
-    @Override
-    public FMHMMList getFMHMMList(App NE){
-        return new FMHMMList_E();
-    }
+	@Override
+	public FMHMMList getFMHMMList(App NE) {
+		return new FMHMMList_E();
+	}
 
-    @Override
-    public X_P getPos_C_X_P(App NE){
-        return new Pos_X_P();
-    }
+	@Override
+	public X_P getPos_C_X_P(App NE) {
+		return new Pos_X_P();
+	}
 
-    @Override
-    public X_E getPos_C_X_E(App NE){
-        return new Pos_X_E();
-    }
+	@Override
+	public X_E getPos_C_X_E(App NE) {
+		return new Pos_X_E();
+	}
 
-    @Override
-    public X_O_parserFirst getPos_C_X_O(App NE){
-        return new Pos_X_O();
-    }
+	@Override
+	public X_O_parserFirst getPos_C_X_O(App NE) {
+		return new Pos_X_O();
+	}
 
-    @Override
-    public Nlp_C_X_S_doSlangCheck getNlp_C_X_S(App NE){
-        return new Nlp_CE_X_S();
-    }
+	@Override
+	public Nlp_C_X_S_doSlangCheck getNlp_C_X_S(App NE) {
+		return new Nlp_CE_X_S();
+	}
 
-    @Override
-    public Nlp_C_X_A_doPOSAndEMMCheck getNlp_C_X_A_doPOSAndEMMCheck(App NE){
-        return new Nlp_CE_X_A_doPOSAndEMMCheck();
-    }
+	@Override
+	public Nlp_C_X_A_doPOSAndEMMCheck getNlp_C_X_A_doPOSAndEMMCheck(
+		App NE) {
+		return new Nlp_CE_X_A_doPOSAndEMMCheck();
+	}
 
-    @Override
-    public Nlp_C_X_A_doSlangPartAndPOSCheck getNlp_C_X_A_doSlangPartAndPOSCheck(App NE){
-        return new Nlp_CE_X_A_doSlangPartAndPOSCheck();
-    }
+	@Override
+	public Nlp_C_X_A_doSlangPartAndPOSCheck getNlp_C_X_A_doSlangPartAndPOSCheck(
+		App NE) {
+		return new Nlp_CE_X_A_doSlangPartAndPOSCheck();
+	}
 
-    @Override
-    public A_X_Map getA_X_Map(App NE){
-        return new X_Map();
-    }
+	@Override
+	public A_X_Map getA_X_Map(App NE) {
+		return new X_Map();
+	}
 
-    @Override
-    public A getA(App NE){
-        return new AE();
-    }
+	@Override
+	public A getA(App NE) {
+		return new AE();
+	}
 
-    @Override
-    public BinaryForest_A getBinaryForest_A(App NE){
-        return new BinaryForest_AE();
-    }
+	@Override
+	public BinaryForest_A getBinaryForest_A(App NE) {
+		return new BinaryForest_AE();
+	}
 
-    public static void main(String[] argv) {
-        App NE = new App();
-//        CogsBinaryForest_AE _A = new CogsBinaryForest_AE();//获取分词引擎
-//        _A.IV_All(NE);
-//        List<String> sets = new ArrayList<>();
-//        sets = _A.parserMixedString("你好, 世界！請在這輸入廣告詞優化");//分词
-//        Iterator<String> iterator = sets.iterator(); //得到分词的Iterator数列
-//        while (iterator.hasNext()) {
-//            iterator.next();
-//            //20230106-//20230106-System.out.println(iterator.next());
-//        }
-    }
+	@SuppressWarnings("unused")
+	public static void main(String[] argv) {
+		App NE = new App();
+		//        CogsBinaryForest_AE _A = new CogsBinaryForest_AE();//获取分词引擎
+		//        _A.IV_All(NE);
+		//        List<String> sets = new ArrayList<>();
+		//        sets = _A.parserMixedString("你好, 世界！請在這輸入廣告詞優化");//分词
+		//        Iterator<String> iterator = sets.iterator(); //得到分词的Iterator数列
+		//        while (iterator.hasNext()) {
+		//            iterator.next();
+		//            //20230106-//20230106-System.out.println(iterator.next());
+		//        }
+	}
 }

@@ -3,6 +3,7 @@ package test.java.InterfaceTest.convolution;
 import P.image.Closing;
 
 import org.junit.jupiter.api.Test;
+
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -22,34 +23,34 @@ import org.junit.jupiter.api.Test;
  * */
 class ClosingTest {
 	public static void main(String[] argv) {
-		ClosingTest closingTest=new ClosingTest();
+		ClosingTest closingTest = new ClosingTest();
 		closingTest.p();
-    }
+	}
 
-    @Test
-    void p() {
-        //init
-        int[][] input = new int[16][16];
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                input[i][j] = ((int) (Math.random() * 10000)) % 255;
-            }
-        }
-        //exe Closing，商业价值用于数值特征在区间中的腐蚀缩减。 refer思想：ComputerVision 绿皮书
-        //exe Opening，商业价值用于数值特征在区间中的蔓延扩展。 refer思想：ComputerVision 绿皮书
-        //dia和ero序列化在Closing和Opening中同时做可以平均化离散精度。 refer思想：RenHart
-        int[][] kernel = new int[3][3];
-        kernel[0][1] = 1;
-        kernel[1][0] = 1;
-        kernel[1][2] = 1;
-        kernel[2][1] = 1;
-        int[][] output = Closing.P(input, kernel);
-        //output
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                System.out.print("-" + output[i][j]);
-            }
-            System.out.println();
-        }
-    }
+	@Test
+	void p() {
+		//init
+		int[][] input = new int[16][16];
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+				input[i][j] = ((int) (Math.random() * 10000)) % 255;
+			}
+		}
+		//exe Closing，商业价值用于数值特征在区间中的腐蚀缩减。 refer思想：ComputerVision 绿皮书
+		//exe Opening，商业价值用于数值特征在区间中的蔓延扩展。 refer思想：ComputerVision 绿皮书
+		//dia和ero序列化在Closing和Opening中同时做可以平均化离散精度。 refer思想：RenHart
+		int[][] kernel = new int[3][3];
+		kernel[0][1] = 1;
+		kernel[1][0] = 1;
+		kernel[1][2] = 1;
+		kernel[2][1] = 1;
+		int[][] output = Closing.P(input, kernel);
+		//output
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+				System.out.print("-" + output[i][j]);
+			}
+			System.out.println();
+		}
+	}
 }

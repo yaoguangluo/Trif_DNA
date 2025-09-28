@@ -3,7 +3,6 @@ package S_A.SEM.register;
 import java.util.Iterator;
 
 import ME.VPC.M.app.App;
-import S_A.SEM.bloom.StaticFunctionMapI_VECS_C;
 import S_A.SEM.bloom.StaticFunctionMapI_VECS_E;
 
 //著作权人+ 作者= 罗瑶光
@@ -21,30 +20,30 @@ public class StaticRegisterI_VECS_C {
 	public static void load(StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_E, App NE) {
 		
 		//稍后封装
-		StaticFunctionMapI_VECS_C.annotationMap.put("main", "main");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doTestWithImageAPP", "app");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doFourJianPDErosion"
+		staticFunctionMapI_VECS_E.annotationMap.put("main", "main");
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithImageAPP", "app");
+		staticFunctionMapI_VECS_E.annotationMap.put("doFourJianPDErosion"
 				, "erosion:pixGate:pixRatioScale:pixDistinctScale:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doFourSuanPDErosion"
+		staticFunctionMapI_VECS_E.annotationMap.put("doFourSuanPDErosion"
 				, "erosion:pixGate:pixRatioScale:pixDistinctScale:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doEightSuanPDErosion"
+		staticFunctionMapI_VECS_E.annotationMap.put("doEightSuanPDErosion"
 				, "erosion:pixGate:pixRatioScale:pixDistinctScale:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doEightJianPDErosion"
+		staticFunctionMapI_VECS_E.annotationMap.put("doEightJianPDErosion"
 				, "erosion:pixGate:pixRatioScale:pixDistinctScale:pcaScale:upcaScale:icaScale:ecaScale:bufferedImage");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doFirstPDErosionWithTop"
+		staticFunctionMapI_VECS_E.annotationMap.put("doFirstPDErosionWithTop"
 				, "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:bufferedImage");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doSecondPDErosionWithTop"
+		staticFunctionMapI_VECS_E.annotationMap.put("doSecondPDErosionWithTop"
 				, "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:times:bufferedImage");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doThirdPDErosionWithTop"
+		staticFunctionMapI_VECS_E.annotationMap.put("doThirdPDErosionWithTop"
 				, "fourJian:fourSuan:eightJian:eightSuan:scoreMatrix:top:times:output:bufferedImage");
-		StaticFunctionMapI_VECS_C.annotationMap.put("initDeciphring", "string, type");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doTestWithFilePath", "testImagePath");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doTestWithImage", "testImagePath");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doTestWithBufferedImage", "testImagePath");
-		StaticFunctionMapI_VECS_C.annotationMap.put("staticMain", "string");
-		StaticFunctionMapI_VECS_C.annotationMap.put("doPDERangePDI16", "input:酸碱scale");
+		staticFunctionMapI_VECS_E.annotationMap.put("initDeciphring", "string, type");
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithFilePath", "testImagePath");
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithImage", "testImagePath");
+		staticFunctionMapI_VECS_E.annotationMap.put("doTestWithBufferedImage", "testImagePath");
+		staticFunctionMapI_VECS_E.annotationMap.put("staticMain", "string");
+		staticFunctionMapI_VECS_E.annotationMap.put("doPDERangePDI16", "input:酸碱scale");
 		
-		Iterator<String> iterators= StaticFunctionMapI_VECS_C.annotationMap.keySet().iterator();
+		Iterator<String> iterators= staticFunctionMapI_VECS_E.annotationMap.keySet().iterator();
 		while(iterators.hasNext()) {
 			String temp= iterators.next().toString();
 			NE.app_S.staticRootMap.staticBloomingTimes.put(temp, (long) 0);

@@ -19,51 +19,77 @@ import C_A.OCI.ME.pos.CP.X_P;
 import C_A.OCI.OPM.VEC.SVQ.MPC.fhmm.C.BehaviorMap;
 import C_A.OCI.SVQ.MPC.fhmm.C.FMHMMList;
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+
 //今天看见 大量的原函数新陈代谢化和 碎片化继承, 于是将函数设为类函数class接口
 //著作权人+ 作者= 罗瑶光
+/*
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * */
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
-public interface StaticFunctionMapE_AOPM_C {
-	public static IMV_SIQ annotationMap= new IMV_SIQ();
+public interface StaticFunctionMapE_AOPM_C  {
 
 	//SensingMap,
 	public SensingMap getSensingMap(App NE);
+
 	//EmotionMap,
 	public EmotionMap getEmotionMap(App NE);
+
 	//CogsBinaryForest_A,
 	public CogsBinaryForest_A getCogsBinaryForest_A(App NE);
+
 	//Euclid_C,
 	public Euclid_C getEuclid_C(App NE);
+
 	//Quick6DLuoYaoguangSort,
 	public Quick6DLuoYaoguangSort getQuick6DLuoYaoguangSort(App NE);
+
 	//NERO_C_OneTime,
 	public NERO_C_OneTime getNERO_C_OneTime(App NE);
+
 	//NERO_C
 	public NERO_C getNERO_C(App NE);
-//	//NLP_C,
-//	public Nlp_C_X_ getNLP_C(App NE);退化掉
+
+	//	//NLP_C,
+	//	public Nlp_C_X_ getNLP_C(App NE);退化掉
 	//BehaviorMap,
 	public BehaviorMap getBehaviorMap(App NE);
+
 	//FMHMMList
 	public FMHMMList getFMHMMList(App NE);
-	
+
 	//Pos_C_X_P
 	public X_P getPos_C_X_P(App NE);
+
 	//Pos_C_X_E
 	public X_E getPos_C_X_E(App NE);
+
 	//Pos_C_X_O
 	public X_O_parserFirst getPos_C_X_O(App NE);//进化
 	//Nlp_C_X_S
+
 	public Nlp_C_X_S_doSlangCheck getNlp_C_X_S(App NE);
+
 	//Nlp_C_X_A
-	public Nlp_C_X_A_doPOSAndEMMCheck getNlp_C_X_A_doPOSAndEMMCheck(App NE);
+	public Nlp_C_X_A_doPOSAndEMMCheck getNlp_C_X_A_doPOSAndEMMCheck(
+		App NE);
+
 	//Nlp_C_X_A
-	public Nlp_C_X_A_doSlangPartAndPOSCheck getNlp_C_X_A_doSlangPartAndPOSCheck(App NE);
+	public Nlp_C_X_A_doSlangPartAndPOSCheck getNlp_C_X_A_doSlangPartAndPOSCheck(
+		App NE);
+
 	//A_X_Map
 	public A_X_Map getA_X_Map(App NE);
+
 	//A
 	public A getA(App NE);
+
 	//BinaryForest_A
 	public BinaryForest_A getBinaryForest_A(App NE);
 }

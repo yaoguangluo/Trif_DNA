@@ -3,7 +3,6 @@ package S_A.SEM.register;
 import java.util.Iterator;
 
 import ME.VPC.M.app.App;
-import S_A.SEM.bloom.StaticFunctionMapV_IDUQ_C;
 import S_A.SEM.bloom.StaticFunctionMapV_IDUQ_E;
 import S_A.Stable.bloom.S_V_IDUQ;
 
@@ -22,23 +21,23 @@ public class StaticRegisterV_IDUQ_C {
 	public static void load(
 		StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_E, App NE) {
 		//稍后封装
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("初始ETL",
+		staticFunctionMapV_IDUQ_E.annotationMap.put("初始ETL",
 			"app:jpanelSecond");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("仅仅初始ETL",
+		staticFunctionMapV_IDUQ_E.annotationMap.put("仅仅初始ETL",
 			"tableData_old:text:app:_A:pos");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("展示ETL", "void");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档读取",
+		staticFunctionMapV_IDUQ_E.annotationMap.put("展示ETL", "void");
+		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档读取",
 			"void");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档执行",
+		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档执行",
 			"void");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("ETL文档保存",
+		staticFunctionMapV_IDUQ_E.annotationMap.put("ETL文档保存",
 			"void");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put(
+		staticFunctionMapV_IDUQ_E.annotationMap.put(
 			"getOrigianlTextByLock", "inputString:lockString");
-		StaticFunctionMapV_IDUQ_C.annotationMap.put("Load",
+		staticFunctionMapV_IDUQ_E.annotationMap.put("Load",
 			"first:nodeView:file:thislist");
 
-		Iterator<String> iterators = StaticFunctionMapV_IDUQ_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapV_IDUQ_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

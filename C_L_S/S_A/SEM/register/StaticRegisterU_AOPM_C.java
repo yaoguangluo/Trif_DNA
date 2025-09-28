@@ -3,7 +3,6 @@ package S_A.SEM.register;
 import java.util.Iterator;
 
 import ME.VPC.M.app.App;
-import S_A.SEM.bloom.StaticFunctionMapU_AOPM_C;
 import S_A.SEM.bloom.StaticFunctionMapU_AOPM_E;
 
 //著作权人+ 作者= 罗瑶光
@@ -22,223 +21,223 @@ public class StaticRegisterU_AOPM_C {
 		StaticFunctionMapU_AOPM_E staticFunctionMapU_AOPM_E, App NE) {
 
 		//稍后封装
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"mapClassification", "input:keywords");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"mapClassification2D", "input:keywords");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"stringClassification2D", "input:keywords");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"listClassification2D", "input:keywords");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("mapCombination",
+		staticFunctionMapU_AOPM_E.annotationMap.put("mapCombination",
 			"output:destination");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("listCombination",
+		staticFunctionMapU_AOPM_E.annotationMap.put("listCombination",
 			"output:destination");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"intArrayCombination", "output:destination");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"doubleArrayCombination", "output:destination");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"longArrayCombination", "output:destination");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"floatArrayCombination", "output:destination");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"StringArrayCombination", "output:destination");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"charArrayCombination", "output:destination");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"byteArrayCombination", "output:destination");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"vectorCombination", "output:destination");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"DNAAuthStatusCheckEmailAndPds", "app:string:data");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"DNAAuthStatusCheckEmailAndPde", "app:string:data");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"DNAAuthStatusCheckEmailAndPassword", "app:string:data");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("DNAAuthCheck",
+		staticFunctionMapU_AOPM_E.annotationMap.put("DNAAuthCheck",
 			"app:string:data");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("encode",
+		staticFunctionMapU_AOPM_E.annotationMap.put("encode",
 			"input");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("decode", "str");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("EncoderByMd5",
+		staticFunctionMapU_AOPM_E.annotationMap.put("decode", "str");
+		staticFunctionMapU_AOPM_E.annotationMap.put("EncoderByMd5",
 			"salt:pwd:enctimes");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("EncoderByDNA",
+		staticFunctionMapU_AOPM_E.annotationMap.put("EncoderByDNA",
 			"key:uPassword:token");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"getNewTokenFromUsrAndUsrToken", "usr:usrToken");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"getSecondMD5Password", "uPassword");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"getFirstMD5Password", "key:uPassword");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"getFirstDNAPassword", "key:uPassword:token");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"getNewTokenFromUsrAndUsrTokenByDNA", "usr:usrToken");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("CheckRange_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("CheckRange_P",
 			"g");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Closing_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Closing_P",
 			"g:kenel");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Color_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Color_P",
 			"r:g:b");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("convexHull",
+		staticFunctionMapU_AOPM_E.annotationMap.put("convexHull",
 			"vertices");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("compareSlope",
+		staticFunctionMapU_AOPM_E.annotationMap.put("compareSlope",
 			"dy2:dx2:dy1:dx1");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("PNGWrite",
+		staticFunctionMapU_AOPM_E.annotationMap.put("PNGWrite",
 			" g:pix:output");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("CSVWrite",
+		staticFunctionMapU_AOPM_E.annotationMap.put("CSVWrite",
 			"g:pix:outputcsv");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Dilation_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Dilation_P",
 			"g:kenel");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Emboss_P", "g");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Erosion_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Emboss_P", "g");
+		staticFunctionMapU_AOPM_E.annotationMap.put("Erosion_P",
 			"g:kenel");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("print_Mean",
+		staticFunctionMapU_AOPM_E.annotationMap.put("print_Mean",
 			"outDIR");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Guassian_P_2D",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Guassian_P_2D",
 			" g:d:e:sig");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Guassian_P_1D",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Guassian_P_1D",
 			"g:frection:kernel:sig");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Guassian_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Guassian_P",
 			"lygimage:d:e:k");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("HitAndMiss_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("HitAndMiss_P",
 			"g:pix:kenel");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"HoughTransformLoop", "g:pix:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("IV_HTMatrix",
+		staticFunctionMapU_AOPM_E.annotationMap.put("IV_HTMatrix",
 			"g");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Laplacian_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Laplacian_P",
 			"g");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Mask_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Mask_P",
 			"mag:dir");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Median_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Median_P",
 			"g:d:e");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Opening_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Opening_P",
 			"g:kenel");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("PrintCurrent",
+		staticFunctionMapU_AOPM_E.annotationMap.put("PrintCurrent",
 			"g:pix");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("writePNG",
+		staticFunctionMapU_AOPM_E.annotationMap.put("writePNG",
 			"args:outmag");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("GRNpngRead",
+		staticFunctionMapU_AOPM_E.annotationMap.put("GRNpngRead",
 			"args");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("REDpngRead",
+		staticFunctionMapU_AOPM_E.annotationMap.put("REDpngRead",
 			"args");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("BLUpngRead",
+		staticFunctionMapU_AOPM_E.annotationMap.put("BLUpngRead",
 			"args");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("sizeHW", "args");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put("sizeHW", "args");
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"createBufferImage", "r:g:b");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("smallToNormal",
+		staticFunctionMapU_AOPM_E.annotationMap.put("smallToNormal",
 			"r:s:b");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("PadImage",
+		staticFunctionMapU_AOPM_E.annotationMap.put("PadImage",
 			"_image:height:width");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("RegionGet", "g");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("buildGraph",
+		staticFunctionMapU_AOPM_E.annotationMap.put("RegionGet", "g");
+		staticFunctionMapU_AOPM_E.annotationMap.put("buildGraph",
 			"g:output");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Sobel_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Sobel_P",
 			"g:choice");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"Sobel_P_WithMask", "g:choice:mask");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Strech_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Strech_P",
 			"g:d:e");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("Threshold_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("Threshold_P",
 			"g:Td");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"Threshold_P_Section", "g:Ts:Td");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("getCnnMeansure",
+		staticFunctionMapU_AOPM_E.annotationMap.put("getCnnMeansure",
 			"inputs");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("WAVtoLYG",
+		staticFunctionMapU_AOPM_E.annotationMap.put("WAVtoLYG",
 			"WAVf:LYGf");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("summing_P",
+		staticFunctionMapU_AOPM_E.annotationMap.put("summing_P",
 			"inputNLP");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"initATableSorterZYNK", "void");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("initATimeCheck",
+		staticFunctionMapU_AOPM_E.annotationMap.put("initATimeCheck",
 			"void");
 
-		StaticFunctionMapU_AOPM_C.annotationMap.put("zhiShu",
+		staticFunctionMapU_AOPM_E.annotationMap.put("zhiShu",
 			"input:scale:shehold");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("copy2d",
+		staticFunctionMapU_AOPM_E.annotationMap.put("copy2d",
 			"input:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("copy1d",
+		staticFunctionMapU_AOPM_E.annotationMap.put("copy1d",
 			"input:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("copy1dx2",
+		staticFunctionMapU_AOPM_E.annotationMap.put("copy1dx2",
 			"input:scale");
 
-		StaticFunctionMapU_AOPM_C.annotationMap.put("initADFT",
+		staticFunctionMapU_AOPM_E.annotationMap.put("initADFT",
 			"void");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("initAFFT",
+		staticFunctionMapU_AOPM_E.annotationMap.put("initAFFT",
 			"void");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("guassian1d",
+		staticFunctionMapU_AOPM_E.annotationMap.put("guassian1d",
 			"input:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("laplasian1d",
+		staticFunctionMapU_AOPM_E.annotationMap.put("laplasian1d",
 			"input:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("max_v", "input");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("max_i", "input");
+		staticFunctionMapU_AOPM_E.annotationMap.put("max_v", "input");
+		staticFunctionMapU_AOPM_E.annotationMap.put("max_i", "input");
 
-		StaticFunctionMapU_AOPM_C.annotationMap.put("min_v",
+		staticFunctionMapU_AOPM_E.annotationMap.put("min_v",
 			"input:rank");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("min_i",
+		staticFunctionMapU_AOPM_E.annotationMap.put("min_i",
 			"input:rank");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("median1D",
+		staticFunctionMapU_AOPM_E.annotationMap.put("median1D",
 			"input:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("fengTong1D",
+		staticFunctionMapU_AOPM_E.annotationMap.put("fengTong1D",
 			"input");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("fengPaixX",
+		staticFunctionMapU_AOPM_E.annotationMap.put("fengPaixX",
 			"input");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("fengPaiyY",
+		staticFunctionMapU_AOPM_E.annotationMap.put("fengPaiyY",
 			"input");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("fengPaiXx",
+		staticFunctionMapU_AOPM_E.annotationMap.put("fengPaiXx",
 			"input");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("fengPaiYy",
+		staticFunctionMapU_AOPM_E.annotationMap.put("fengPaiYy",
 			"input");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("newX",
+		staticFunctionMapU_AOPM_E.annotationMap.put("newX",
 			"input:width");
 
-		StaticFunctionMapU_AOPM_C.annotationMap.put("newY",
+		staticFunctionMapU_AOPM_E.annotationMap.put("newY",
 			"input:hight");//height
-		StaticFunctionMapU_AOPM_C.annotationMap.put("newXY",
+		staticFunctionMapU_AOPM_E.annotationMap.put("newXY",
 			"input:width:hight");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("newXYBest",
+		staticFunctionMapU_AOPM_E.annotationMap.put("newXYBest",
 			"input:width:hight");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"newYwithoutBound", "input:hight");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"newXYYwithoutBound", "input:width:hight");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"liangHuaDengChaAdd", "input:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("liangHuaXiHua",
+		staticFunctionMapU_AOPM_E.annotationMap.put("liangHuaXiHua",
 			"input:scale");
 
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"liangHuaDengChaMines", "input:scale");
 		//稍后去掉拼音接口, 只有中文和英文
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"liangHuaEqualDelete", "input");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"liangHuaXiHuaHalfSide", "input");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("shehold1D",
+		staticFunctionMapU_AOPM_E.annotationMap.put("shehold1D",
 			"input:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("caiJian1D",
+		staticFunctionMapU_AOPM_E.annotationMap.put("caiJian1D",
 			"input:left:right");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("unZipWithPath",
+		staticFunctionMapU_AOPM_E.annotationMap.put("unZipWithPath",
 			"zipFullPath:zipCategory");
-		StaticFunctionMapU_AOPM_C.annotationMap.put(
+		staticFunctionMapU_AOPM_E.annotationMap.put(
 			"bootBackupByUsingGzip", "zipPath");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("fileToZip",
+		staticFunctionMapU_AOPM_E.annotationMap.put("fileToZip",
 			"sourceFilePath:zipFilePath:fileName");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("compress",
+		staticFunctionMapU_AOPM_E.annotationMap.put("compress",
 			"data");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("uncompress",
+		staticFunctionMapU_AOPM_E.annotationMap.put("uncompress",
 			"data");
 
-		StaticFunctionMapU_AOPM_C.annotationMap.put("P_Heart",
+		staticFunctionMapU_AOPM_E.annotationMap.put("P_Heart",
 			"zuoBiao:distance:scale");
-		StaticFunctionMapU_AOPM_C.annotationMap.put("P_Model",
+		staticFunctionMapU_AOPM_E.annotationMap.put("P_Model",
 			"zuoBiao:yanjing");
 
-		Iterator<String> iterators = StaticFunctionMapU_AOPM_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapU_AOPM_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

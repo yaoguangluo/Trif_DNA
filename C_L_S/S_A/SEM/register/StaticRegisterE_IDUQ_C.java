@@ -1,6 +1,5 @@
 package S_A.SEM.register;
 
-import S_A.SEM.bloom.StaticFunctionMapE_IDUQ_C;
 import S_A.SEM.bloom.StaticFunctionMapE_IDUQ_E;
 
 import java.util.Iterator;
@@ -23,72 +22,72 @@ public class StaticRegisterE_IDUQ_C {
 		StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_E, App NE) {
 
 		//稍后封装
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeInfo",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeInfo",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeProject",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeProject",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getCheckRange",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getCheckRange",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getChooseCheck",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getChooseCheck",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getDrawArrow",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getDrawArrow",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getDynamicLine_U", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getU_RelatedLine", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getLinkOSGI",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getLinkOSGI",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeOSGI",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeOSGI",
 			"void");
 		//之后变量名通通都会进行元基肽化
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"_OSU_MCI_MCU_MSI", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"_OSU_AVQ_ASQ_OPE_OPC_ECI", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getUnicornJSplitPane", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getUnicornScrollBarUI", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getUnicornSplitPaneUI", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getUnicornTreeCellRenderer", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getUnicornTreeUI", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getCacuString",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getCacuString",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getNodeShow",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getNodeShow",
 			"gUISample:tableData_old:text:popupMenu:app:_A:pos");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getCheckRangeVPS", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getChooseQ_VPS",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getChooseQ_VPS",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getDrawArrowVPS",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getDrawArrowVPS",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getDrawFlashSide", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getDrawSinLineVPS", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getDynamicLineU_VPS", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getLinkList",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getLinkList",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getLinkNode",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getLinkNode",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put("getSort",
+		staticFunctionMapE_IDUQ_E.annotationMap.put("getSort",
 			"void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getU_RelatedLineVPS", "void");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"getOSGI_chansfer", "node:first");
-		StaticFunctionMapE_IDUQ_C.annotationMap.put(
+		staticFunctionMapE_IDUQ_E.annotationMap.put(
 			"_OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register",
 			"tableData_old:text:app:_A:pos");
 
-		Iterator<String> iterators = StaticFunctionMapE_IDUQ_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapE_IDUQ_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

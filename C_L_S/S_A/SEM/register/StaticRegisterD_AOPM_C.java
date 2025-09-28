@@ -19,14 +19,18 @@ import ME.VPC.M.app.App;
  * */
 public class StaticRegisterD_AOPM_C {
 	@SuppressWarnings({ "unchecked" })
-	public static void load(StaticFunctionMapD_AOPM_E staticFunctionMapD_AOPM_E, App NE) {
-		
+	public static void load(
+		StaticFunctionMapD_AOPM_E staticFunctionMapD_AOPM_E, App NE) {
+
 		//稍后封装
-		Iterator<String> iterators= StaticFunctionMapD_AOPM_C.annotationMap.keySet().iterator();
-		while(iterators.hasNext()) {
-			String temp= iterators.next().toString();
-			NE.app_S.staticRootMap.staticBloomingTimes.put(temp, (long) 0);
-			NE.app_S.staticRootMap.staticClass_XE_Map.put(temp, "D_AOPM");
+		Iterator<String> iterators = staticFunctionMapD_AOPM_E.annotationMap
+			.keySet().iterator();
+		while (iterators.hasNext()) {
+			String temp = iterators.next().toString();
+			NE.app_S.staticRootMap.staticBloomingTimes.put(temp,
+				(long) 0);
+			NE.app_S.staticRootMap.staticClass_XE_Map.put(temp,
+				"D_AOPM");
 		}
 	}
 }

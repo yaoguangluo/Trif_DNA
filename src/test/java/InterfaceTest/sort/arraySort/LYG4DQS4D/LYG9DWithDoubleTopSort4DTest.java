@@ -25,8 +25,7 @@ import org.junit.jupiter.api.Test;
  * */
 class LYG9DWithDoubleTopSort4DTest {
 	public static void main(String[] argv) {
-		LYG9DWithDoubleTopSort4DTest lYG9DWithDoubleTopSort4DTest 
-		= new LYG9DWithDoubleTopSort4DTest();
+		LYG9DWithDoubleTopSort4DTest lYG9DWithDoubleTopSort4DTest = new LYG9DWithDoubleTopSort4DTest();
 		lYG9DWithDoubleTopSort4DTest.main();
 	}
 
@@ -40,8 +39,7 @@ class LYG9DWithDoubleTopSort4DTest {
 		for (int i = 0; i < doubles.length; i++) {
 			doubles[i] = Math.random();
 		}
-		LYG9DWithDoubleTopSort4D lYG9DWithDoubleTopSort2D 
-		= new LYG9DWithDoubleTopSort4D();
+		LYG9DWithDoubleTopSort4D lYG9DWithDoubleTopSort2D = new LYG9DWithDoubleTopSort4D();
 		TimeCheck timecheck = new TimeCheck();
 		timecheck.begin();
 		lYG9DWithDoubleTopSort2D.sort(doubles, 7, 70);

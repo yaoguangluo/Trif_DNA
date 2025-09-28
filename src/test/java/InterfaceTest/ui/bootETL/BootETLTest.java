@@ -21,7 +21,8 @@ import exception.thread.DetaThread;
 // Please report issues and submit feature
 // requests at: http://weirddev.com/forum#!/testme
 class BootETLTest {
-	public static void main(String[] argv) throws InterruptedException {
+	public static void main(String[] argv)
+		throws InterruptedException {
 		BootETLTest bootETLTest = new BootETLTest();
 		bootETLTest.testUIofETL();
 	}
@@ -46,20 +47,20 @@ class BootETLTest {
 		// vpcs，于是做动态app，有600文件要改动加NE。
 		// 20250308 罗瑶光
 		// 稍后进行刚染色分支的内存泄露检测。202504071633 罗瑶光
-		NE.app_S.frame = new JFrame(
-				"华瑞集 " + "花语实验版本" + "V5.01967" + "浏阳德塔软件开发有限公司 " + "湖南省浏阳市集里街道"
-						+ "-大塘冲路一段 208号" + "-阳光家园小区第10栋别墅 " + "罗瑶光* 15116110525"
-						+ "-430181198505250014");
+		NE.app_S.frame = new JFrame("华瑞集 " + "花语实验版本" + "V5.01967"
+			+ "浏阳德塔软件开发有限公司 " + "湖南省浏阳市集里街道" + "-大塘冲路一段 208号"
+			+ "-阳光家园小区第10栋别墅 " + "罗瑶光* 15116110525"
+			+ "-430181198505250014");
 		NE.app_S.frame.setIconImage(NE.app_S.logo.getImage());
 		NE.app_S.frame.setLayout(null);
 		NE.app_S.frame.setSize(WindowsUI.commonWidth,
-				WindowsUI.basicHeight - 10 + NE.app_S.rangeHigh);
+			WindowsUI.basicHeight - 10 + NE.app_S.rangeHigh);
 		NE.app_S.frame.resize(WindowsUI.commonWidth,
-				WindowsUI.basicHeight - 10 + NE.app_S.rangeHigh);
+			WindowsUI.basicHeight - 10 + NE.app_S.rangeHigh);
 		NE.app_S.frame.setResizable(false);
 		NE.app_S.frame.add(NE);
 		NE.setBounds(0, 0, WindowsUI.commonWidth + 5,
-				WindowsUI.basicHeight - 5 + NE.app_S.rangeHigh);
+			WindowsUI.basicHeight - 5 + NE.app_S.rangeHigh);
 		NE.app_S.frame.setVisible(true);
 		try {
 			System.out.println("启动400编码调试开始-00000002");

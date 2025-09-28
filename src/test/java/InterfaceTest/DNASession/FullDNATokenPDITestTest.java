@@ -66,7 +66,7 @@ class FullDNATokenPDITestTest {
 		beforeLoopInitons = beforeLoopInitons.replace("O", "ES");
 		beforeLoopInitons = beforeLoopInitons.replace("P", "EC");
 		beforeLoopInitons = beforeLoopInitons.replace("M", "CS");
-//
+		//
 		beforeLoopInitons = beforeLoopInitons.replace("T", "VE");
 		// page 168
 		beforeLoopInitons = beforeLoopInitons.replace("X", "VC");
@@ -146,20 +146,25 @@ class FullDNATokenPDITestTest {
 		int i = 0;
 		Here: for (i = 0; i < chars.length; i++) {
 			// 录入开始
-			stringBuilderOrdinary.delete(0, stringBuilderOrdinary.length());
-			stringBuilderCompare.delete(0, stringBuilderCompare.length());
-			for (int j = i; j < i + compare && j < chars.length; j++) {
+			stringBuilderOrdinary.delete(0, stringBuilderOrdinary
+				.length());
+			stringBuilderCompare.delete(0, stringBuilderCompare
+				.length());
+			for (int j = i; j < i + compare
+				&& j < chars.length; j++) {
 				stringBuilderOrdinary.append(chars[j]);
 			}
 			int l = 0;// 过滤观测。
 			int find = 0;
 			// 等差比较
-			for (int j = i + compare; j < chars.length; j += compare) {
-				for (int k = j; k < j + compare && k < chars.length; k++) {
+			for (int j = i
+				+ compare; j < chars.length; j += compare) {
+				for (int k = j; k < j + compare
+					&& k < chars.length; k++) {
 					stringBuilderCompare.append(chars[k]);
 				}
-				if (stringBuilderOrdinary.toString()
-						.equals(stringBuilderCompare.toString())) {
+				if (stringBuilderOrdinary.toString().equals(
+					stringBuilderCompare.toString())) {
 					if (l++ < 1) {// 过滤重复加。
 						stringBuilder.append(stringBuilderCompare);
 						find = 1;

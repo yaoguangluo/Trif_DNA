@@ -24,17 +24,18 @@ import org.junit.jupiter.api.Test;
 //重要的本人常用排序接口的测试main移到test单元文件中。--int对应string 的数组list排序
 class Quick9DLYGWithString_ESUTest {
 	public static void main(String[] argv) {
-		Quick9DLYGWithString_ESUTest quick9DLYGWithString_ESUTest 
-		= new Quick9DLYGWithString_ESUTest();
+		Quick9DLYGWithString_ESUTest quick9DLYGWithString_ESUTest = new Quick9DLYGWithString_ESUTest();
 		quick9DLYGWithString_ESUTest.sort();
 	}
 
 	/*
-	 * 这是一个 用于德塔快速排序4代进行左右比对分词优化的算法对应数据数组排序demo 测试main
-	 * 函数demo的test版本，在导入了api之后进行系统集成，然后 用下面的对应的函数中源码逻辑进行复制
-	 * 粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出
-	 * 需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。系统需要 jdk1.8
-	 * 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。 --罗瑶光
+	 * 这是一个 用于德塔快速排序4代进行左右比对分词优化的算法对应数据数组排序demo 
+	 * 测试main函数demo的test版本，在导入了api之后进行系统集成，然后 用下面的
+	 * 对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑
+	 * 按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看
+	 * 数据，也可以用println来显示输出，方便集成，对程序员友好。系统需要 jdk1.8
+	 * 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程
+	 * ，方便商业化落地。 --罗瑶光
 	 */
 	@Test
 	void sort() {
@@ -64,8 +65,7 @@ class Quick9DLYGWithString_ESUTest {
 			a[i] = (int) (1000000 * Math.random());
 			sa[i] = a[i];
 		}
-		Quick9DLYGWithInt_ESU quick9DLYGWithInt_ESU 
-		= new Quick9DLYGWithInt_ESU();
+		Quick9DLYGWithInt_ESU quick9DLYGWithInt_ESU = new Quick9DLYGWithInt_ESU();
 		int v[] = quick9DLYGWithInt_ESU.sort(a, sa);
 		for (int i = 0; i < 20; i++) {
 			System.out.print(a[i]);
@@ -100,8 +100,7 @@ class Quick9DLYGWithString_ESUTest {
 			a[i] = (1000000 * Math.random());
 			sa[i] = a[i];
 		}
-		Quick9DLYGWithDouble_ESU quick9DLYGWithDouble_ESU 
-		= new Quick9DLYGWithDouble_ESU();
+		Quick9DLYGWithDouble_ESU quick9DLYGWithDouble_ESU = new Quick9DLYGWithDouble_ESU();
 		double v[] = quick9DLYGWithDouble_ESU.sort(a, sa);
 		for (int i = 0; i < 20; i++) {
 			System.out.print(a[i]);
@@ -119,8 +118,7 @@ class Quick9DLYGWithString_ESUTest {
 			a[i] = (1000000 * Math.random());
 			sa[i] = "" + a[i];
 		}
-		Quick9DLYGWithDoubleString_ESU quick9DLYGWithDoubleString_ESU 
-		= new Quick9DLYGWithDoubleString_ESU();
+		Quick9DLYGWithDoubleString_ESU quick9DLYGWithDoubleString_ESU = new Quick9DLYGWithDoubleString_ESU();
 		double v[] = quick9DLYGWithDoubleString_ESU.sort(a, sa);
 		for (int i = 0; i < 20; i++) {
 			System.out.print(a[i]);
@@ -139,8 +137,7 @@ class Quick9DLYGWithString_ESUTest {
 			a[i] = (int) (1000000 * Math.random());
 			sa[i] = "" + a[i];
 		}
-		Quick9DLYGWithIntObject_ESU quick9DLYGWithIntObject_ESU 
-		= new Quick9DLYGWithIntObject_ESU();
+		Quick9DLYGWithIntObject_ESU quick9DLYGWithIntObject_ESU = new Quick9DLYGWithIntObject_ESU();
 		int v[] = quick9DLYGWithIntObject_ESU.sort(a, sa);
 		for (int i = 0; i < 20; i++) {
 			System.out.print(a[i]);
@@ -158,8 +155,7 @@ class Quick9DLYGWithString_ESUTest {
 			a[i] = (int) (1000000 * Math.random());
 			sa[i] = "" + a[i];
 		}
-		Quick9DLYGWithDoubleObject_ESU quick9DLYGWithDoubleObject_ESU 
-		= new Quick9DLYGWithDoubleObject_ESU();
+		Quick9DLYGWithDoubleObject_ESU quick9DLYGWithDoubleObject_ESU = new Quick9DLYGWithDoubleObject_ESU();
 		double v[] = quick9DLYGWithDoubleObject_ESU.sort(a, sa);
 		for (int i = 0; i < 20; i++) {
 			System.out.print(a[i]);
@@ -177,8 +173,7 @@ class Quick9DLYGWithString_ESUTest {
 			a[i] = (int) (1000000 * Math.random());
 			sa[i] = "" + a[i];
 		}
-		Quick9DLYGWithFloatObject_ESU quick9DLYGWithFloatObject_ESU 
-		= new Quick9DLYGWithFloatObject_ESU();
+		Quick9DLYGWithFloatObject_ESU quick9DLYGWithFloatObject_ESU = new Quick9DLYGWithFloatObject_ESU();
 		float v[] = quick9DLYGWithFloatObject_ESU.sort(a, sa);
 		for (int i = 0; i < 20; i++) {
 			System.out.print(a[i]);
@@ -196,8 +191,7 @@ class Quick9DLYGWithString_ESUTest {
 			a[i] = (float) Math.random();
 			sa[i] = a[i];
 		}
-		Quick9DLYGWithFloatFloat_ESU quick9DLYGWithFloatFloat_ESU 
-		= new Quick9DLYGWithFloatFloat_ESU();
+		Quick9DLYGWithFloatFloat_ESU quick9DLYGWithFloatFloat_ESU = new Quick9DLYGWithFloatFloat_ESU();
 		float v[] = quick9DLYGWithFloatFloat_ESU.sort(a, sa);
 		for (int i = 0; i < 20; i++) {
 			System.out.print(a[i]);

@@ -46,41 +46,44 @@ import java.util.Map;
  * 
  * CN
  * 另外很多大佬将前序神经网络索引map 与 前馈神经网络CNN混淆，我也用点文字来描述下。
- * 前序神经网络索引map是将语料库等资料进行map化分类，不同的计算条件来调用不同的map进行分析，map化分类可以
- * 不断地细化，拆分，归纳，排序，频率优先，索引，打分等动态操作，最终输出有价值的决策树逻辑判断后的结果。前序
- * 意思是分词的逻辑从中文文字数列的第一个字开始。举例德塔分词的名词 动词 形容词，。。。词长1，词长2，词长3，
- * 词长4 等map。因为map越小，越精确，组字匹配词语速度就越快越严谨。
+ * 前序神经网络索引map是将语料库等资料进行map化分类，不同的计算条件来调用不同的map进行分析，map
+ * 化分类可以不断地细化，拆分，归纳，排序，频率优先，索引，打分等动态操作，最终输出有价值的决策树
+ * 逻辑判断后的结果。前序意思是分词的逻辑从中文文字数列的第一个字开始。举例德塔分词的名词 动词 
+ * 形容词，。。。词长1，词长2，词长3，词长4 等map。因为map越小，越精确，组字匹配词语速度就越快
+ * 越严谨。
  * 
- * 前馈神经网络CNN是将一组计算数列 通过排队论的有序遍历方式（如从前到后），在各种笛卡尔关系模型下的mask内核
- * 进行完整交叉计算。然后交叉累积某一个当前值所对应的所有笛卡尔关系累积量计算后normalization结果输出，
- * 这些输出的子数据组合成一个最终的输出数列。举例 索贝尔卷积内核，emboss卷积内核，高斯卷积内核，etc。 
- * 因为卷积矩阵内核不同的组合，卷积的数字结果可以离散成不同的形态，这个形态也可以叠加，如傅立叶蝶形积化和差卷积内核。
- * 这种傅立叶蝶形内核不是前序CNN内核，但是傅立叶的sin 和cos老内核矩阵属于CNN卷积内核，蝶形核属于比CNN更高层次的
- * DNN拓扑叠加内核。
+ * 前馈神经网络CNN是将一组计算数列 通过排队论的有序遍历方式（如从前到后），在各种笛卡尔关系模型下
+ * 的mask内核进行完整交叉计算。然后交叉累积某一个当前值所对应的所有笛卡尔关系累积量计算后
+ * normalization结果输出，这些输出的子数据组合成一个最终的输出数列。举例 索贝尔卷积内核，emboss
+ * 卷积内核，高斯卷积内核，etc。 因为卷积矩阵内核不同的组合，卷积的数字结果可以离散成不同的形态，
+ * 这个形态也可以叠加，如傅立叶蝶形积化和差卷积内核。这种傅立叶蝶形内核不是前序CNN内核，但是傅立叶
+ * 的sin 和cos老内核矩阵属于CNN卷积内核，蝶形核属于比CNN更高层次的DNN拓扑叠加内核。
  * 
  * EN
  * Prefix Nero-network indexing and Feed forward Neural Networks CNN
  * 
- * Feed forward Neural Networks CNN is a Shift-Invariant Neural Networks, and its convolutional-Layer
- * which based on kinds type of sigma's computing. And finally results a normalization-value to be a new 
- * output matrix or array. And this convolutional-mask could be a --Network-in-Network, NIN-- 1*1 
- * 3*3 5*5 types of mask。。。about pooling the related algorithm sets stretched and suitable with 
- * those type masks, will do well in CNN computing. Feed forward means start at first value of this 
- * input array and matrix values . 
+ * Feed forward Neural Networks CNN is a Shift-Invariant Neural Networks, and its 
+ * convolutional-Layer which based on kinds type of sigma's computing. And finally
+ * results a normalization-value to be a new output matrix or array. And this 
+ * convolutional-mask could be a --Network-in-Network, NIN-- 1*1 3*3 5*5 types of
+ * mask。。。about pooling the related algorithm sets stretched and suitable with 
+ * those type masks, will do well in CNN computing. Feed forward means start at 
+ * first value of this input array and matrix values . 
  * 
- * Prefix Nero-network indexing PNNI is a model mapping of discrete-relationship-sets. The motivation
- * makes big and messy fungus-set-groups to a small classed and clustered similarity of set-map-trees
- * , to let the big data comput's become more quickly, simply and directly. Prefix means start at
- *  first char of input sentence.
+ * Prefix Nero-network indexing PNNI is a model mapping of discrete-relationship-sets. 
+ * The motivation makes big and messy fungus-set-groups to a small classed and 
+ * clustered similarity of set-map-trees, to let the big data comput's become more 
+ * quickly, simply and directly. Prefix means start at first char of input sentence.
  *  
- * So that the inputs, types, logics, conditions and sets of object kernels etc are totally different
- *  between above two nouns CNN and PNNI.
+ * So that the inputs, types, logics, conditions and sets of object kernels etc 
+ * are totally different between above two nouns CNN and PNNI.
  *  
- * But only the same of both are start from zero, first, left and prefix value to the end right tail 
- * and over... means only the same with René Descartes relationships and Queuing Theory.
+ * But only the same of both are start from zero, first, left and prefix value to 
+ * the end right tail and over... means only the same with René Descartes 
+ * relationships and Queuing Theory.
  * 
- * 同样含有这个笛卡尔关系和排队论的思想的技术有 数据库原理的join， map reduce ，我很疑惑这么重要的笛卡尔应用知识为什么
- * 业界没有人进行专门描述。
+ * 同样含有这个笛卡尔关系和排队论的思想的技术有 数据库原理的join， map reduce ，我很疑惑这么
+ * 重要的笛卡尔应用知识为什么业界没有人进行专门描述。
  * 
  * --罗瑶光。这年头我不写点英文解释下，中文AI就各种乱搞 求阴影面积。。。
  * 稍后纠正语法。
@@ -93,17 +96,18 @@ class DemoEXTest {
 		DemoEXTest demoEXTest = new DemoEXTest();
 		demoEXTest.main();
 	}
+
 	/*
 	 * CN
 	 * 因为tinshell的HTL变换为TVM extension 对词汇的精度要求非常的细腻，于是不断扩充
-	 * 分词的实例，我会在网上搜索更多的歧义病句类的句子用来测试。扩大已有的测试面，再翻个10倍的量。
-	 * 多提高几个精度的数量级。修正分词质量。
+	 * 分词的实例，我会在网上搜索更多的歧义病句类的句子用来测试。扩大已有的测试面，再翻个
+	 * 10倍的量。多提高几个精度的数量级。修正分词质量。
 	 * 
 	 * EN
-	 * Because the higher quality of definition and acquisition the segmentation needs,
-	 * and the higher quantity of sampling and disciplining the proving needs. 
-	 * The author will make 10 times data training sets more than ordinary's.
-	 * The motivation is continuing fix the TinShell TVM's.
+	 * Because the higher quality of definition and acquisition the 
+	 * segmentation needs,and the higher quantity of sampling and disciplining 
+	 * the proving needs. The author will make 10 times data training sets 
+	 * more than ordinary's. The motivation is continuing fix the TinShell TVM's.
 	 * 
 	 * Yaoguang.Luo
 	 * 
@@ -160,11 +164,13 @@ class DemoEXTest {
 			// 执行分词-输出 list格式 的 sets变量
 			TimeCheck t = new TimeCheck();
 			t.begin();
-			setsB = commonTestInition.NE.app_S._A.parserMixedString(sb);
+			setsB = commonTestInition.NE.app_S._A.parserMixedString(
+				sb);
 			t.end();
 			t.duration();
 			//定制环境类map校正
-			List<String> sets= parserCharsFix.charFix(commonTestInition.NE, setsB);
+			List<String> sets = parserCharsFix.charFix(
+				commonTestInition.NE, setsB);
 			// 输入
 			System.out.println("array->" + i);
 			System.out.println("输入->" + ss[i]);
@@ -172,8 +178,8 @@ class DemoEXTest {
 			System.out.print("输出->");
 			for (int j = 0; j < sets.size(); j++) {
 				if (sets.get(j) != null// 不为null
-						&& !sets.get(j).equals(" ")// 不为空
-						&& !sets.get(j).equals("-")// 不为测试自身的拆解符
+					&& !sets.get(j).equals(" ")// 不为空
+					&& !sets.get(j).equals("-")// 不为测试自身的拆解符
 				) {
 					if (verbal[i].containsKey(sets.get(j))) {
 						score[i] += 1;
@@ -191,7 +197,7 @@ class DemoEXTest {
 			score[i] = score[i] / sizeD;
 			System.out.println();
 			System.out.println("数据保持单字拆解条件下-分词后过滤新兴潮流代词缩写词人名"
-					+ "等行业专业名词后对比正确率为->" + (score[i] * 100) + "%");
+				+ "等行业专业名词后对比正确率为->" + (score[i] * 100) + "%");
 			System.out.println("采样数据可自适应修改。注意保持对比格式的严谨～");
 			// 对比
 			System.out.println("理想->" + ss1[i]);
@@ -201,13 +207,13 @@ class DemoEXTest {
 		double ratio = totalSegbals / totalVerbals;
 		System.out.println("总分词正确比率-->" + +(ratio * 100) + "%");
 		System.out.println("分词环境-总分词正确比率-代表数据保持单字拆解条件下-分词后过滤新兴潮流代词"
-				+ "缩写词人名等行业专业名词后的对比正确率");
+			+ "缩写词人名等行业专业名词后的对比正确率");
 		System.out.println("分词环境-总分词正确比率 含有社会10余个专业领域的-web随机短文摘录分词");
 		System.out.println("分词环境-总分词正确比率 含有罗瑶光先生以前的笔记随机长文摘录分词");
 		System.out.println("分词环境-总分词正确比率 含有当前流行的浏览器AI自动生成的随机长文摘录分词");
 		System.out.println("分词环境-总分词正确比率 属于全部去标点符号的歧义短文分词比率");
-		System.out
-				.println("分词环境-总分词正确比率 不适用太多单字词的古文，古文建议用分句api，不应该" + "用分词api。");
+		System.out.println("分词环境-总分词正确比率 不适用太多单字词的古文，古文建议用分句api，不应该"
+			+ "用分词api。");
 		// 结束
 		commonTestInition.endEnvironment();
 	}

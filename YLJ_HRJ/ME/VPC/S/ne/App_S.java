@@ -27,6 +27,9 @@ import S_A.SixActionMap.FlowerAction;
 import S_A.pheromone.IMV_SIQ;
 import YLJ_HRJ.ME.VPC.S.images.ImageIndex;
 
+import S_A.SEM.reflection.*;
+import S_A.SEM.bloom.*;
+
 import javax.swing.JFrame;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -74,6 +77,65 @@ public class App_S extends App_S_Systems {
 	public FlowerAction flowerAction = new FlowerAction();
 	public S_MapsInitons _S_MapsInitons = new S_MapsInitons();
 
+	public StaticReflectionMapA_VECS_C staticReflectionMapA_VECS_C = new StaticReflectionMapA_VECS_C();
+	public StaticReflectionMapA_IDUQ_C staticReflectionMapA_IDUQ_C = new StaticReflectionMapA_IDUQ_C();
+	public StaticReflectionMapO_VECS_C staticReflectionMapO_VECS_C = new StaticReflectionMapO_VECS_C();
+	public StaticReflectionMapO_IDUQ_C staticReflectionMapO_IDUQ_C = new StaticReflectionMapO_IDUQ_C();
+
+	public StaticReflectionMapP_VECS_C staticReflectionMapP_VECS_C = new StaticReflectionMapP_VECS_C();
+	public StaticReflectionMapP_IDUQ_C staticReflectionMapP_IDUQ_C = new StaticReflectionMapP_IDUQ_C();
+	public StaticReflectionMapM_VECS_C staticReflectionMapM_VECS_C = new StaticReflectionMapM_VECS_C();
+	public StaticReflectionMapM_IDUQ_C staticReflectionMapM_IDUQ_C = new StaticReflectionMapM_IDUQ_C();
+
+	public StaticReflectionMapV_AOPM_C staticReflectionMapV_AOPM_C = new StaticReflectionMapV_AOPM_C();
+	public StaticReflectionMapV_IDUQ_C staticReflectionMapV_IDUQ_C = new StaticReflectionMapV_IDUQ_C();
+	public StaticReflectionMapE_AOPM_C staticReflectionMapE_AOPM_C = new StaticReflectionMapE_AOPM_C();
+	public StaticReflectionMapE_IDUQ_C staticReflectionMapE_IDUQ_C = new StaticReflectionMapE_IDUQ_C();
+
+	public StaticReflectionMapC_AOPM_C staticReflectionMapC_AOPM_C = new StaticReflectionMapC_AOPM_C();
+	public StaticReflectionMapC_IDUQ_C staticReflectionMapC_IDUQ_C = new StaticReflectionMapC_IDUQ_C();
+	public StaticReflectionMapS_AOPM_C staticReflectionMapS_AOPM_C = new StaticReflectionMapS_AOPM_C();
+	public StaticReflectionMapS_IDUQ_C staticReflectionMapS_IDUQ_C = new StaticReflectionMapS_IDUQ_C();
+
+	public StaticReflectionMapI_AOPM_C staticReflectionMapI_AOPM_C = new StaticReflectionMapI_AOPM_C();
+	public StaticReflectionMapI_VECS_C staticReflectionMapI_VECS_C = new StaticReflectionMapI_VECS_C();
+	public StaticReflectionMapD_AOPM_C staticReflectionMapD_AOPM_C = new StaticReflectionMapD_AOPM_C();
+	public StaticReflectionMapD_VECS_C staticReflectionMapD_VECS_C = new StaticReflectionMapD_VECS_C();
+
+	public StaticReflectionMapU_AOPM_C staticReflectionMapU_AOPM_C = new StaticReflectionMapU_AOPM_C();
+	public StaticReflectionMapU_VECS_C staticReflectionMapU_VECS_C = new StaticReflectionMapU_VECS_C();
+	public StaticReflectionMapQ_AOPM_C staticReflectionMapQ_AOPM_C = new StaticReflectionMapQ_AOPM_C();
+	public StaticReflectionMapQ_VECS_C staticReflectionMapQ_VECS_C = new StaticReflectionMapQ_VECS_C();
+
+	public StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_C = new StaticFunctionMapA_VECS_E();
+	public StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_C = new StaticFunctionMapA_IDUQ_E();
+	public StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_C = new StaticFunctionMapO_VECS_E();
+	public StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_C = new StaticFunctionMapO_IDUQ_E();
+	public StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_C = new StaticFunctionMapP_VECS_E();
+	public StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_C = new StaticFunctionMapP_IDUQ_E();
+	public StaticFunctionMapM_VECS_E staticFunctionMapM_VECS_C = new StaticFunctionMapM_VECS_E();
+	public StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C = new StaticFunctionMapM_IDUQ_E();
+
+	public StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_C = new StaticFunctionMapV_AOPM_E();
+	public StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C = new StaticFunctionMapV_IDUQ_E();
+	public StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_C = new StaticFunctionMapE_AOPM_E();
+	public StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_C = new StaticFunctionMapE_IDUQ_E();
+	public StaticFunctionMapC_AOPM_E staticFunctionMapC_AOPM_C = new StaticFunctionMapC_AOPM_E();
+	public StaticFunctionMapC_IDUQ_E staticFunctionMapC_IDUQ_C = new StaticFunctionMapC_IDUQ_E();
+	public StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_C = new StaticFunctionMapS_AOPM_E();
+	public StaticFunctionMapS_IDUQ_E staticFunctionMapS_IDUQ_C = new StaticFunctionMapS_IDUQ_E();
+	
+	public StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_C = new StaticFunctionMapI_AOPM_E();
+	public StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_C = new StaticFunctionMapI_VECS_E();
+	public StaticFunctionMapD_AOPM_E staticFunctionMapD_AOPM_C = new StaticFunctionMapD_AOPM_E();
+	public StaticFunctionMapD_VECS_E staticFunctionMapD_VECS_C = new StaticFunctionMapD_VECS_E();
+	public StaticFunctionMapU_AOPM_E staticFunctionMapU_AOPM_C = new StaticFunctionMapU_AOPM_E();
+	public StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C = new StaticFunctionMapU_VECS_E();
+	public StaticFunctionMapQ_AOPM_E staticFunctionMapQ_AOPM_C = new StaticFunctionMapQ_AOPM_E();
+	public StaticFunctionMapQ_VECS_E staticFunctionMapQ_VECS_C = new StaticFunctionMapQ_VECS_E();
+	
+	
+	
 	public App_S() {
 		super();
 		if (imageIndex == null) {// shaohou main init

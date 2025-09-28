@@ -1,6 +1,5 @@
 package S_A.SEM.register;
 
-import S_A.SEM.bloom.StaticFunctionMapM_IDUQ_C;
 import S_A.SEM.bloom.StaticFunctionMapM_IDUQ_E;
 
 import java.util.Iterator;
@@ -23,20 +22,20 @@ public class StaticRegisterM_IDUQ_C {
 		StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_E, App NE) {
 
 		//稍后封装
-		StaticFunctionMapM_IDUQ_C.annotationMap.put("getQ_OulerRing",
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getQ_OulerRing",
 			"void");
-		StaticFunctionMapM_IDUQ_C.annotationMap.put(
+		staticFunctionMapM_IDUQ_E.annotationMap.put(
 			"getQ_OulerRing16", "void");
-		StaticFunctionMapM_IDUQ_C.annotationMap.put("getDecadeToPDS",
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getDecadeToPDS",
 			"void");
-		StaticFunctionMapM_IDUQ_C.annotationMap.put(
+		staticFunctionMapM_IDUQ_E.annotationMap.put(
 			"getDecadeToPDS16", "void");
-		StaticFunctionMapM_IDUQ_C.annotationMap.put("getPDE_PDS_DL",
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getPDE_PDS_DL",
 			"void");
-		StaticFunctionMapM_IDUQ_C.annotationMap.put("getPDE_PDS_DL16",
+		staticFunctionMapM_IDUQ_E.annotationMap.put("getPDE_PDS_DL16",
 			"void");
 
-		Iterator<String> iterators = StaticFunctionMapM_IDUQ_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapM_IDUQ_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

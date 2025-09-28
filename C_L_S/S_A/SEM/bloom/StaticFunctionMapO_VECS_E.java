@@ -53,11 +53,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-//著作权人+ 作者= 罗瑶光
+/*
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * */
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
-public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
-	public IMV_SIQ annotationMap = new IMV_SIQ();
+public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
+	implements StaticFunctionMapO_VECS_C {
 
 	@Override
 	public void SortStringDemo(App NE) {
@@ -65,6 +73,7 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 	}
 
 	// TransactionDelegate {逻辑型 应用接口略。
+	@SuppressWarnings("unused")
 	public IMV_SIQ transactionLogin(App NE) {
 		AES_QMS_XSD_TIH uEmail = NE._I_U.uEmail;
 		AES_QMS_XSD_TIH uPassword = NE._I_U.uPassword;
@@ -74,6 +83,7 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 
 	}
 
+	@SuppressWarnings("unused")
 	public IMV_SIQ transactionRegister(App NE) {
 		AES_QMS_XSD_TIH uEmail = NE._I_U.uEmail;
 		AES_QMS_XSD_TIH uEmailEnsure = NE._I_U.uEmailEnsure;
@@ -86,9 +96,9 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		AES_QMS_XSD_TIH uQq = NE._I_U.uQq;
 		AES_QMS_XSD_TIH uAge = NE._I_U.uAge;
 		AES_QMS_XSD_TIH uSex = NE._I_U.uSex;
-//		return TransactionDelegate.transactionRegister(uEmail, uEmailEnsure
-//				, uName, uPassword, uPassWDEnsure, uAddress
-//				, uPhone, uWeChat, uQq, uAge, uSex) ;
+		//		return TransactionDelegate.transactionRegister(uEmail, uEmailEnsure
+		//				, uName, uPassword, uPassWDEnsure, uAddress
+		//				, uPhone, uWeChat, uQq, uAge, uSex) ;
 		return null;
 
 	}
@@ -115,7 +125,8 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		DBReadMode.readDBInWebWay(app.app_S, NE);
 	}
 
-	public O_V.OPM.ESU.admin.PLSQLSectionPanel PLSQLSectionPanel(App NE) {
+	public O_V.OPM.ESU.admin.PLSQLSectionPanel PLSQLSectionPanel(
+		App NE) {
 		App app = NE._I_U.app;
 		return new O_V.OPM.ESU.admin.PLSQLSectionPanel(app);
 
@@ -127,7 +138,8 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 
 	}
 
-	public O_V.OPM.ESU.admin.YouBiaoSectionPanel YouBiaoSectionPanel(App NE) {
+	public O_V.OPM.ESU.admin.YouBiaoSectionPanel YouBiaoSectionPanel(
+		App NE) {
 		App app = NE._I_U.app;
 		return new O_V.OPM.ESU.admin.YouBiaoSectionPanel(app);
 
@@ -142,49 +154,55 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 	// XA_ShellQ_JoinRows_E {
 	public Object selectRowsByAttributesOfJoinCondition(App NE) {
 		return XA_ShellQ_JoinRows_E
-				.selectRowsByAttributesOfJoinCondition(NE._I_U.outputMap, NE);
+			.selectRowsByAttributesOfJoinCondition(NE._I_U.outputMap,
+				NE);
 	}
 
 	public Object selectRowsByAttributesOfJoinAggregation(App NE) {
 		IMV_SIQ object = NE._I_U.outputMap;
 		EmotionSample emotionSample = NE._I_U.emotionSample;
 		RatioMap_E ratioMap_E = NE._I_U.ratioMap_E;
-		return XA_ShellQ_JoinRows_E.selectRowsByAttributesOfJoinAggregation(
-				object, emotionSample, ratioMap_E, NE);
+		return XA_ShellQ_JoinRows_E
+			.selectRowsByAttributesOfJoinAggregation(object,
+				emotionSample, ratioMap_E, NE);
 	}
 
 	public Object selectRowsByAttributesOfJoinGetCulumns(App NE) {
 		return XA_ShellQ_JoinRows_E
-				.selectRowsByAttributesOfJoinGetCulumns(NE._I_U.outputMap);
+			.selectRowsByAttributesOfJoinGetCulumns(
+				NE._I_U.outputMap);
 	}
 
 	public Object selectRowsByAttributesOfJoinRelation(App NE) {
 		return XA_ShellQ_JoinRows_E
-				.selectRowsByAttributesOfJoinRelation(NE._I_U.outputMap);
+			.selectRowsByAttributesOfJoinRelation(NE._I_U.outputMap);
 	}
 
 	// XA_ShellQ_NestRows_E {
 	public Object selectRowsByAttributesOfNestCondition(App NE) {
 		return XA_ShellQ_NestRows_E
-				.selectRowsByAttributesOfNestCondition(NE._I_U.outputMap, NE);
+			.selectRowsByAttributesOfNestCondition(NE._I_U.outputMap,
+				NE);
 	}
 
 	public Object selectRowsByAttributesOfNestAggregation(App NE) {
 		IMV_SIQ object = NE._I_U.outputMap;
 		EmotionSample emotionSample = NE._I_U.emotionSample;
 		RatioMap_E ratioMap = NE._I_U.ratioMap_E;
-		return XA_ShellQ_NestRows_E.selectRowsByAttributesOfNestAggregation(
-				object, emotionSample, ratioMap, NE);
+		return XA_ShellQ_NestRows_E
+			.selectRowsByAttributesOfNestAggregation(object,
+				emotionSample, ratioMap, NE);
 	}
 
 	public Object selectRowsByAttributesOfNestGetCulumns(App NE) {
 		return XA_ShellQ_NestRows_E
-				.selectRowsByAttributesOfNestGetCulumns(NE._I_U.outputMap);
+			.selectRowsByAttributesOfNestGetCulumns(
+				NE._I_U.outputMap);
 	}
 
 	public Object selectRowsByAttributesOfNestRelation(App NE) {
 		return XA_ShellQ_NestRows_E
-				.selectRowsByAttributesOfNestRelation(NE._I_U.outputMap);
+			.selectRowsByAttributesOfNestRelation(NE._I_U.outputMap);
 	}
 
 	// XA_ShellQ_Rows_E {
@@ -193,11 +211,12 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		AES_QMS_XSD_TIH tableName = NE._I_U.tableName;
 		AES_QMS_XSD_TIH culmnName = NE._I_U.culmnName;
 		Object value = NE._I_U.value;
-		if (null == currentDB || null == tableName || null == culmnName) {
+		if (null == currentDB || null == tableName
+			|| null == culmnName) {
 			return new ArrayList<>();
 		}
 		return XA_ShellQ_Rows_E.selectRowsByAttribute(currentDB._S_,
-				tableName._S_, culmnName._S_, value);
+			tableName._S_, culmnName._S_, value);
 	}
 
 	public void XA_ShellQ_Rows_E_main(App NE) {
@@ -214,18 +233,18 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		AES_QMS_XSD_TIH pageEnd = NE._I_U.pageEnd;
 		AES_QMS_XSD_TIH direction = NE._I_U.direction;
 		if (null == tablePath || null == pageBegin || null == pageEnd
-				|| null == direction) {
+			|| null == direction) {
 			return new IMV_SIQ();
 		}
 		return XA_ShellQ_Rows_E.selectRowsByTablePath(tablePath._S_,
-				pageBegin._S_, pageEnd._S_, direction._S_);
+			pageBegin._S_, pageEnd._S_, direction._S_);
 
 	}
 
 	// db替换shell中 20210927
 	public Object selectRowsByAttributesOfCondition(App NE) {
-		return XA_ShellQ_Rows_E
-				.selectRowsByAttributesOfCondition(NE._I_U.outputMap, NE);
+		return XA_ShellQ_Rows_E.selectRowsByAttributesOfCondition(
+			NE._I_U.outputMap, NE);
 
 	}
 
@@ -236,28 +255,28 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		IMV_SIQ object = NE._I_U.outputMap;
 		EmotionSample emotionSample = NE._I_U.emotionSample;
 		RatioMap_E ratioMap = NE._I_U.ratioMap_E;
-		return XA_ShellQ_Rows_E.selectRowsByAttributesOfAggregation(object,
-				emotionSample, ratioMap, NE);
+		return XA_ShellQ_Rows_E.selectRowsByAttributesOfAggregation(
+			object, emotionSample, ratioMap, NE);
 
 	}
 
 	public Object selectRowsByAttributesOfGetCulumns(App NE) {
-		return XA_ShellQ_Rows_E
-				.selectRowsByAttributesOfGetCulumns(NE._I_U.outputMap);
+		return XA_ShellQ_Rows_E.selectRowsByAttributesOfGetCulumns(
+			NE._I_U.outputMap);
 
 	}
 
 	// PLETL命令一多, 之后准备分出去
 	// 罗瑶光 20211010
 	public Object selectRowsByAttributesOfPLETL(App NE) {
-		return XA_ShellQ_Rows_E
-				.selectRowsByAttributesOfPLETL(NE._I_U.outputMap);
+		return XA_ShellQ_Rows_E.selectRowsByAttributesOfPLETL(
+			NE._I_U.outputMap);
 
 	}
 
 	public Object selectRowsByAttributesOfPLTCP(App NE) {
-		return XA_ShellQ_Rows_E
-				.selectRowsByAttributesOfPLTCP(NE._I_U.outputMap);
+		return XA_ShellQ_Rows_E.selectRowsByAttributesOfPLTCP(
+			NE._I_U.outputMap);
 
 	}
 
@@ -270,32 +289,39 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		if (null == tableName) {
 			return false;
 		}
-		return XA_ShellTables.addNewSearchShellTable(tableName._S_, jtable, NE);
+		return XA_ShellTables.addNewSearchShellTable(tableName._S_,
+			jtable, NE);
 
 	}
 
 	// 按sonar方式重复函数分离
-	public Object[] getNewSearchShellTableSpecFromDefaultTableModel(App NE) {
+	public Object[] getNewSearchShellTableSpecFromDefaultTableModel(
+		App NE) {
 		DefaultTableModel defaultTableModel = NE._I_U.defaultTableModel;
-		return XA_ShellTables.getNewSearchShellTableSpecFromDefaultTableModel(
+		return XA_ShellTables
+			.getNewSearchShellTableSpecFromDefaultTableModel(
 				defaultTableModel);
 
 	}
 
 	// 按sonar方式重复函数分离
-	public Object[][] getNewSearchShellTableDataFromDefaultTableModel(App NE) {
+	public Object[][] getNewSearchShellTableDataFromDefaultTableModel(
+		App NE) {
 		DefaultTableModel defaultTableModel = NE._I_U.defaultTableModel;
-		return XA_ShellTables.getNewSearchShellTableDataFromDefaultTableModel(
+		return XA_ShellTables
+			.getNewSearchShellTableDataFromDefaultTableModel(
 				defaultTableModel);
 
 	}
 
 	// 设计个row的结合表map内存结构 用于shell的表头搜索。
-	public Row[] getNewSearchShellTableRowsFromDefaultTableModel(App NE) {
+	public Row[] getNewSearchShellTableRowsFromDefaultTableModel(
+		App NE) {
 		Object[] spec = NE._I_U.spec;
 		DefaultTableModel defaultTableModel = NE._I_U.defaultTableModel;
-		return XA_ShellTables.getNewSearchShellTableRowsFromDefaultTableModel(
-				spec, defaultTableModel);
+		return XA_ShellTables
+			.getNewSearchShellTableRowsFromDefaultTableModel(spec,
+				defaultTableModel);
 
 	}
 
@@ -303,8 +329,9 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 	public Row[] getNewSearchShellTableRowsFromObjectArray(App NE) {
 		Object[] spec = NE._I_U.spec;
 		Object[][] tableData = NE._I_U.tableData;
-		return XA_ShellTables.getNewSearchShellTableRowsFromDefaultTableModel(
-				spec, tableData);
+		return XA_ShellTables
+			.getNewSearchShellTableRowsFromDefaultTableModel(spec,
+				tableData);
 	}
 
 	// 将表映射变成shell映射, 接口VPCS 多样化, 稍后做新陈代谢用。
@@ -315,7 +342,7 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		}
 		DefaultTableModel defaultTableModel = NE._I_U.defaultTableModel;
 		return XA_ShellTables.addNewSearchShellTable(tableName._S_,
-				defaultTableModel, NE);
+			defaultTableModel, NE);
 
 	}
 
@@ -329,7 +356,7 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 			return false;
 		}
 		return XA_ShellTables.addNewSearchShellTableWithObjectData(
-				tableName._S_, defaultTableModel, defaultTableData, NE);
+			tableName._S_, defaultTableModel, defaultTableData, NE);
 
 	}
 
@@ -342,14 +369,14 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 			return false;
 		}
 		return XA_ShellTables.addNewSearchShellTable(tableName._S_,
-				defaultTableData, defaultTableDataSpec, NE);
+			defaultTableData, defaultTableDataSpec, NE);
 	}
 
 	// Reflection map 表头方式存储
 	// 将表映射变成shell映射, 接口VPCS 多样化, 稍后做新陈代谢用。 object data 稍后准备 用
 	// _S_ 元基替换。
 	public boolean addNewSearchShellTableWithObjectDataReflectionDBRows(
-			App NE) {
+		App NE) {
 		AES_QMS_XSD_TIH tableName = NE._I_U.tableName;
 		DefaultTableModel defaultTableModel = NE._I_U.defaultTableModel;
 		Object[][] defaultTableData = NE._I_U.defaultTableData;
@@ -357,8 +384,8 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 			return false;
 		}
 		return XA_ShellTables
-				.addNewSearchShellTableWithObjectDataReflectionDBRows(
-						tableName._S_, defaultTableModel, defaultTableData);
+			.addNewSearchShellTableWithObjectDataReflectionDBRows(
+				tableName._S_, defaultTableModel, defaultTableData);
 
 	}
 
@@ -372,7 +399,7 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 			return false;
 		}
 		return XA_ShellTables.addNewSearchShellTableReflectionDBRows(
-				tableName._S_, rows, defaultTableDataSpec);
+			tableName._S_, rows, defaultTableDataSpec);
 	}
 
 	// 然后所有养疗经的jtable表全部基于这个文件函数 进行shell 封装。与数据库的内存映射分离。
@@ -388,8 +415,8 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		LinkList first = NE._I_U.firstLinkList;
 		AES_QMS_XSD_TIH documentFlowAddress = NE._I_U.documentFlowAddress;
 		IMV_SIQ inputMap = NE._I_U.inputHashMap;
-		return new PLETL_E().doNeroFlow(rightBotJTextPane, nodeView, first,
-				documentFlowAddress._S_, inputMap, NE);
+		return new PLETL_E().doNeroFlow(rightBotJTextPane, nodeView,
+			first, documentFlowAddress._S_, inputMap, NE);
 	}
 
 	// ReadChinese extends Thread implements Runnable{
@@ -397,7 +424,8 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		DetaButton detaButton = NE._I_U.detaButton;
 		App app = NE._I_U.app;
 		A _A = NE._I_U._A;
-		return new O_V.OSI.AOP.neo.tts.ReadChinese(detaButton, app.app_S);
+		return new O_V.OSI.AOP.neo.tts.ReadChinese(detaButton,
+			app.app_S);
 	}
 
 	// RestMedicinePort_E {
@@ -410,40 +438,45 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 	public IMV_SIQ getMedicineBookFeedbackZY(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		return RestMedicinePort_E.getMedicineBookFeedbackZY(app, string._S_,
-				NE);
+		return RestMedicinePort_E.getMedicineBookFeedbackZY(app,
+			string._S_, NE);
 
 	}
 
 	public IMV_SIQ getMedicineBookFeedbackXY(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		return RestMedicinePort_E.getMedicineBookFeedbackXY(app, string._S_);
+		return RestMedicinePort_E.getMedicineBookFeedbackXY(app,
+			string._S_);
 
 	}
 
 	public IMV_SIQ getMedicineBookFeedbackZT(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		return RestMedicinePort_E.getMedicineBookFeedbackZT(app, string._S_);
+		return RestMedicinePort_E.getMedicineBookFeedbackZT(app,
+			string._S_);
 	}
 
 	public IMV_SIQ getMedicineBookFeedbackXT(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		return RestMedicinePort_E.getMedicineBookFeedbackXT(app, string._S_);
+		return RestMedicinePort_E.getMedicineBookFeedbackXT(app,
+			string._S_);
 	}
 
 	public IMV_SIQ getMedicineBookFeedbackYT(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		return RestMedicinePort_E.getMedicineBookFeedbackYT(app, string._S_);
+		return RestMedicinePort_E.getMedicineBookFeedbackYT(app,
+			string._S_);
 	}
 
 	public IMV_SIQ getMedicineBookFeedback(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		return RestMedicinePort_E.getMedicineBookFeedback(app, string._S_);
+		return RestMedicinePort_E.getMedicineBookFeedback(app,
+			string._S_);
 	}
 
 	public Object doSearch(App NE) {
@@ -471,6 +504,7 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 
 	// VPCBackEnd {
 	// public static RestLoginPort restLoginPort;
+	@SuppressWarnings("unused")
 	public String forwardVPCBackEnd(App NE) {
 		EmotionMap emotionMap = NE._I_U.emotionMap;
 		RatioMap_E ratioMap_E = NE._I_U.ratioMap_E;
@@ -509,19 +543,22 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 	// OSI.AOP.VPC.server 启动例子
 	// PL ETL shell
 	// E_pl_XA_E {
-	public TinMap E_pl_XA(App NE) throws InterruptedException, IOException {
+	public TinMap E_pl_XA(App NE) throws InterruptedException,
+		IOException {
 		AES_QMS_XSD_TIH plSearch = NE._I_U.plSearch;
 		boolean mod = NE._I_U.mod;
 		TinMap output = NE._I_U.outputMap;
 		return E_pl_XA_E.E_pl_XA(plSearch._S_, mod, output, NE);
 	}
 
-	public TinMap E_orm_XA(App NE) throws InterruptedException, IOException {
+	public TinMap E_orm_XA(App NE) throws InterruptedException,
+		IOException {
 		PL_XA_E orm = NE._I_U.orm_AE;
 		boolean b = NE._I_U.b;
 		TinMap output = NE._I_U.outputMap;
 		return E_pl_XA_E.E_pl_XA(orm, b, output, NE);
 	}
+
 	/*
 	 * 思考 同一个变量在不同的状态下如何有效地最简单地观测和协同计算。
 	 * */
@@ -529,11 +566,12 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 	@SuppressWarnings("unchecked")
 	public void P_AggregationLimitMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> output = (List<IMV_SIQ>) NE.app_S.currentTinmap.get("obj");
+		List<IMV_SIQ> output = (List<IMV_SIQ>) NE.app_S.currentTinmap
+			.get("obj");
 		EmotionSample emotionSample = NE._I_U.emotionSample;
 		RatioMap_E ratioMap = NE._I_U.ratioMap_E;
-		P_AO_pl_XA.P_AggregationLimitMap(sets, output, emotionSample, ratioMap,
-				NE);
+		P_AO_pl_XA.P_AggregationLimitMap(sets, output, emotionSample,
+			ratioMap, NE);
 	}
 
 	// 分出去
@@ -544,7 +582,8 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 	}
 
 	// P_AO_PLETL {
-	public void P_PletlLimitMaps(App NE) throws InstantiationException {// later
+	public void P_PletlLimitMaps(App NE)
+		throws InstantiationException {// later
 		String[] sets = NE._I_U.sets;
 		List<IMV_SIQ> output = NE._I_U.outputMapList;
 		IMV_SIQ object = NE._I_U.outputMap;
@@ -570,7 +609,7 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 			return;
 		}
 		P_CO_XA_X_Cache.P_Cache(sets, output, tableName._S_, object,
-				condition._S_, NE);
+			condition._S_, NE);
 	}
 
 	// P_CO_pl_XA_X_Kernel extends P_CO_pl_XA_XCDX {
@@ -578,6 +617,7 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 	// 这个走硬盘查询函数来标识下, 在我设计了数据缓存查询启动函数 后就没用过了,
 	// 时间点大概在2019年1月后, 我先调通下, 之后朔源.
 	// 准备验算下20210406 罗瑶光
+	@SuppressWarnings("unused")
 	public void P_kernel(App NE) {
 		AES_QMS_XSD_TIH temp = NE._I_U.temp;
 		File readDBTableRowIndexCulumnFile = NE._I_U.readDBTableRowIndexCulumnFile;
@@ -587,8 +627,8 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		List<IMV_SIQ> output = NE._I_U.outputMapList;
 		Row bufferRow = NE._I_U.bufferRow;
 		IMV_SIQ rowMap = NE._I_U.rowMap;
-		P_CO_XA_X_Kernel.P_kernel(readDBTableRowIndexFile, output, bufferRow,
-				rowMap);
+		P_CO_XA_X_Kernel.P_kernel(readDBTableRowIndexFile, output,
+			bufferRow, rowMap);
 	}
 
 	// P_kernel等比复制过来的search shell组件, 我要替换的是数据库储值,
@@ -612,7 +652,7 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		Row bufferRow = NE._I_U.bufferRow;
 		IMV_SIQ rowMap = NE._I_U.rowMap;
 		P_CO_XA_X_Kernel.P_kernel_search(rowId, huaRuiJiJtableCulumns,
-				huaRuiJiJtable, output, bufferRow, rowMap);
+			huaRuiJiJtable, output, bufferRow, rowMap);
 	}
 
 	// P_CO_pl_XA_X_Map extends P_CO_pl_XA_XCDX {
@@ -662,7 +702,8 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 	public Object P_GetCulumnsMap(App NE) {
 		List<IMV_SIQ> obj = NE._I_U.obj;
 		String[] getCulumnsValueArray = NE._I_U.getCulumnsValueArray;
-		return P_I_CulumnsPL_XA.P_GetCulumnsMap(obj, getCulumnsValueArray);
+		return P_I_CulumnsPL_XA.P_GetCulumnsMap(obj,
+			getCulumnsValueArray);
 	}
 
 	// P_RelationPL_XA {
@@ -683,33 +724,38 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		List<IMV_SIQ> newObj = NE._I_U.newObj;
 		Map<String, Boolean> findinNewObj = NE._I_U.findinNewObj;
 		P_RelationPL_XA.P_OrMap(sets, obj, joinObj, object, newObj,
-				findinNewObj);
+			findinNewObj);
 	}
 
 	// Pl_XA_Command_E {
 	public void P_SetRoot(App NE) {
-		Pl_XA_Command_E.P_SetRoot(NE._I_U.acknowledge, NE._I_U.outputMap, NE);
+		Pl_XA_Command_E.P_SetRoot(NE._I_U.acknowledge,
+			NE._I_U.outputMap, NE);
 	}
 
 	public void P_BaseName(App NE) {
-		Pl_XA_Command_E.P_BaseName(NE._I_U.acknowledge, NE._I_U.outputMap);
+		Pl_XA_Command_E.P_BaseName(NE._I_U.acknowledge,
+			NE._I_U.outputMap);
 	}
 
 	public void P_TableName(App NE) {
-		Pl_XA_Command_E.P_TableName(NE._I_U.acknowledge, NE._I_U.outputMap);
+		Pl_XA_Command_E.P_TableName(NE._I_U.acknowledge,
+			NE._I_U.outputMap);
 	}
 
 	public void P_YLJOperation(App NE) {
-		Pl_XA_Command_E.P_YLJOperation(NE._I_U.acknowledge, NE._I_U.outputMap,
-				NE);
+		Pl_XA_Command_E.P_YLJOperation(NE._I_U.acknowledge,
+			NE._I_U.outputMap, NE);
 	}
 
 	public void P_ListNeedStart(App NE) {
-		Pl_XA_Command_E.P_ListNeedStart(NE._I_U.acknowledge, NE._I_U.outputMap);
+		Pl_XA_Command_E.P_ListNeedStart(NE._I_U.acknowledge,
+			NE._I_U.outputMap);
 	}
 
 	public void P_Join(App NE) {
-		Pl_XA_Command_E.P_Join(NE._I_U.acknowledge, NE._I_U.outputMap);
+		Pl_XA_Command_E.P_Join(NE._I_U.acknowledge,
+			NE._I_U.outputMap);
 	}
 
 	public void P_E(App NE) throws InterruptedException, IOException {
@@ -721,7 +767,8 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 
 	// 处理机中心, 别急, 准备验证 罗瑶光
 	// plsql函数执行指令 正在检查中 罗瑶光 20210405
-	public void P_Check(App NE) throws InterruptedException, IOException {
+	public void P_Check(App NE) throws InterruptedException,
+		IOException {
 		AES_QMS_XSD_TIH acknowledge = NE._I_U.acknowledgeString;
 		TinMap object = NE._I_U.outputMap;
 		boolean mod = NE._I_U.mod;
@@ -729,13 +776,14 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 	}
 
 	public void P_StoreValues(App NE) {
-		Pl_XA_Command_E.P_StoreValues(NE._I_U.acknowledge, NE._I_U.outputMap);
+		Pl_XA_Command_E.P_StoreValues(NE._I_U.acknowledge,
+			NE._I_U.outputMap);
 	}
 
 	// 之后准备设计成工厂类 或者 单例类 bean
 	public void P_fileOperations(App NE) {
 		Pl_XA_Command_E.P_fileOperations(NE._I_U.acknowledge,
-				NE._I_U.outputMap);
+			NE._I_U.outputMap);
 	}
 
 	// ShellReplace {
@@ -744,7 +792,7 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		AES_QMS_XSD_TIH searchString = NE._I_U.searchString;
 		AES_QMS_XSD_TIH needReplaceString = NE._I_U.needReplaceString;
 		new ShellReplace().replaceString(fileDirectroyPath._S_,
-				searchString._S_, needReplaceString._S_);
+			searchString._S_, needReplaceString._S_);
 	}
 
 	// 稍后设计成map来存储这些String条件变量。
@@ -752,8 +800,8 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		AES_QMS_XSD_TIH fileDirectroyPath = NE._I_U.fileDirectroyPath;
 		AES_QMS_XSD_TIH searchString = NE._I_U.searchString;
 		IMV_SIQ conditions = NE._I_U.conditions;
-		new ShellReplace().replaceStringWithFileName(fileDirectroyPath._S_,
-				searchString._S_, conditions);
+		new ShellReplace().replaceStringWithFileName(
+			fileDirectroyPath._S_, searchString._S_, conditions);
 	}
 
 	// 稍后变线程
@@ -767,8 +815,9 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		AES_QMS_XSD_TIH searchString = NE._I_U.searchString;
 		AES_QMS_XSD_TIH needReplaceString = NE._I_U.needReplaceString;
 		AES_QMS_XSD_TIH fileName = NE._I_U.fileName;
-		new ShellReplace().replaceStringWithFileName(fileDirectroyPath._S_,
-				searchString._S_, needReplaceString._S_, fileName._S_);
+		new ShellReplace().replaceStringWithFileName(
+			fileDirectroyPath._S_, searchString._S_,
+			needReplaceString._S_, fileName._S_);
 	}
 
 	// 文件后缀筛选
@@ -777,8 +826,9 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		AES_QMS_XSD_TIH searchString = NE._I_U.searchString;
 		AES_QMS_XSD_TIH needReplaceString = NE._I_U.needReplaceString;
 		AES_QMS_XSD_TIH fileType = NE._I_U.fileType;
-		new ShellReplace().replaceStringWithFileType(fileDirectroyPath._S_,
-				searchString._S_, needReplaceString._S_, fileType._S_);
+		new ShellReplace().replaceStringWithFileType(
+			fileDirectroyPath._S_, searchString._S_,
+			needReplaceString._S_, fileType._S_);
 	}
 
 	// 文件大小筛选
@@ -787,8 +837,9 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		AES_QMS_XSD_TIH searchString = NE._I_U.searchString;
 		AES_QMS_XSD_TIH needReplaceString = NE._I_U.needReplaceString;
 		long filesize_KB = NE._I_U.filesize_KB;
-		new ShellReplace().replaceStringWithFileSize(fileDirectroyPath._S_,
-				searchString._S_, needReplaceString._S_, filesize_KB);
+		new ShellReplace().replaceStringWithFileSize(
+			fileDirectroyPath._S_, searchString._S_,
+			needReplaceString._S_, filesize_KB);
 	}
 
 	// 文件大小筛选
@@ -798,8 +849,9 @@ public class StaticFunctionMapO_VECS_E implements StaticFunctionMapO_VECS_C {
 		AES_QMS_XSD_TIH needReplaceString = NE._I_U.needReplaceString;
 		long beginLine = NE._I_U.beginLine;
 		long endLine = NE._I_U.endLine;
-		new ShellReplace().replaceStringWithFileLines(fileDirectroyPath._S_,
-				searchString._S_, needReplaceString._S_, beginLine, endLine);
+		new ShellReplace().replaceStringWithFileLines(
+			fileDirectroyPath._S_, searchString._S_,
+			needReplaceString._S_, beginLine, endLine);
 	}
 
 	public void mainShellReplace(App NE) {

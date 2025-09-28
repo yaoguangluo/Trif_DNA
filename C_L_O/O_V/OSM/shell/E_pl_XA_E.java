@@ -28,8 +28,9 @@ import java.util.List;
  * */
 public class E_pl_XA_E {
 	@SuppressWarnings("unchecked")
-	public static TinMap E_pl_XA(String plSearch, boolean mod, TinMap output,
-			App NE) throws InterruptedException, IOException {
+	public static TinMap E_pl_XA(String plSearch, boolean mod,
+		TinMap output, App NE) throws InterruptedException,
+		IOException {
 
 		if (null == output) {
 			output = NE._I_U.outputMap;// later all in 1 and contans objectmap
@@ -38,9 +39,10 @@ public class E_pl_XA_E {
 		output.put("start", "0");
 		output.put("countJoins", "0");
 		// 2make line
-		List<String> lists = DoSplit.splitRegex(
-				plSearch.replace(" ", "").replace("\n", ""), ";", "\\", "\\");
-		String[] commands = List_ESU_X_stringlistToStringArray._E(lists);
+		List<String> lists = DoSplit.splitRegex(plSearch.replace(" ",
+			"").replace("\n", ""), ";", "\\", "\\");
+		String[] commands = List_ESU_X_stringlistToStringArray._E(
+			lists);
 		NE._I_U.acknowledge = null;
 		String[] acknowledgeSwap = null;
 		for (String command : commands) {
@@ -99,17 +101,18 @@ public class E_pl_XA_E {
 			// 所以动态化计算是趋势。
 			String commandSwap = doHumanTalkSwap(NE, command_V);
 			command_V.commandSwap = commandSwap;
-			List<String> commandLists = DoSplit.splitRegex(command, ":", "\\",
-					"\\");
+			List<String> commandLists = DoSplit.splitRegex(command,
+				":", "\\", "\\");
 			command_V.commandLists = commandLists;
 			// ESU_X swap系列 稍后并到测试文件中 -trif
 			NE._I_U.acknowledge = List_ESU_X_stringlistToStringArray
-					._E(commandLists);
+				._E(commandLists);
 			command_V.acknowledge = NE._I_U.acknowledge;
 			if (null != commandSwap) {// splitRegex稍后并到测试文件中 -trif
-				commandLists = DoSplit.splitRegex(commandSwap, ":", "\\", "\\");
+				commandLists = DoSplit.splitRegex(commandSwap, ":",
+					"\\", "\\");
 				acknowledgeSwap = List_ESU_X_stringlistToStringArray
-						._E(commandLists);
+					._E(commandLists);
 				command_V.acknowledgeSwap = acknowledgeSwap;
 				System.out.println(commandSwap);
 				doAcknowledgeSwap(acknowledgeSwap, command, NE);
@@ -129,7 +132,7 @@ public class E_pl_XA_E {
 			// NE.app_S.workVerbalMap.cartesianWorkActionsRights
 			// .keySet().iterator();
 			Iterator<String> iterators = command_V.cartesianWorkActionsRightsSV
-					.keySet().iterator();
+				.keySet().iterator();
 			/*
 			 * 准备把心态摆正一下。降低自己的思维跳跃活性，用于保证持续的思绪稳定。 思考，关于
 			 * normalizationalWorkActionsRights 的形态是 actionsDistance[i]
@@ -162,7 +165,8 @@ public class E_pl_XA_E {
 					 * 笛卡尔的计算 性能 -trif --罗瑶光
 					 */
 					int scaleRights;
-					scaleRights = command_V.cartesianWorkActionsRightsSV.getInt(string);
+					scaleRights = command_V.cartesianWorkActionsRightsSV
+						.getInt(string);
 					/*
 					 * map细化分解的好处显而易见，如我的早期的德塔分词，map全部分解。这是一种
 					 * 计算关系催化过程。之后这个map也可以元基来索引加速遍历。 --罗瑶光
@@ -170,16 +174,18 @@ public class E_pl_XA_E {
 					// 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
 					// 过滤和缩减了海量关系计算集合。
 					if (scaleRights < 12) {
-						System.out.println("couldDoThenDo-1-" + string);
-						IMV_SIQ_utils.couldDoThenDo(string, temp, output, NE, scores);
+						System.out.println("couldDoThenDo-1-"
+							+ string);
+						IMV_SIQ_utils.couldDoThenDo(string, temp,
+							output, NE, scores);
 					}
 					// later // in // pdn
 				}
 			}
 			// SVO主谓宾的中文缩写。cartesianWorkActionsRights分解后SV和VO可以以后形成
 			// 严谨的指令句匹配规范
-			iterators = command_V.cartesianWorkActionsRightsVO.keySet()
-					.iterator();
+			iterators = command_V.cartesianWorkActionsRightsVO
+				.keySet().iterator();
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
@@ -187,16 +193,17 @@ public class E_pl_XA_E {
 				if (null != string) {
 					int scaleRights;
 					if (command_V.cartesianWorkActionsRightsVO
-							.containsKey(string)) {
+						.containsKey(string)) {
 						scaleRights = command_V.cartesianWorkActionsRightsVO
-								.getInt(string);
+							.getInt(string);
 					} else {
 						scaleRights = 9999;
 					}
 					if (scaleRights < 12) {
-						System.out.println("couldDoThenDo-2-" + string);
-						IMV_SIQ_utils.couldDoThenDo(string, temp, output, NE,
-								scores);
+						System.out.println("couldDoThenDo-2-"
+							+ string);
+						IMV_SIQ_utils.couldDoThenDo(string, temp,
+							output, NE, scores);
 					}
 				}
 			}
@@ -231,10 +238,11 @@ public class E_pl_XA_E {
 			 */
 			/* loop s later */
 			System.out.println("couldDoThenDo-3-" + temp[0]);
-			IMV_SIQ_utils.couldDoThenDo(temp[0], temp, output, NE, scores);// later
-																		   // in
-																		   // pdn
-			// */
+			IMV_SIQ_utils.couldDoThenDo(temp[0], temp, output, NE,
+				scores);// later
+																			   // in
+																			   // pdn
+																			   // */
 			if (temp[0].equals("获取临时表名")) {
 				// 稍后写入 元基花
 				output.put(temp[0], temp[1]);
@@ -246,23 +254,25 @@ public class E_pl_XA_E {
 		}
 		if (null != NE._I_U.acknowledge) {
 			if (output.get("start").toString().equals("1")) {
-				Pl_XA_Command_E.P_E(NE._I_U.acknowledge, output, mod, NE);
+				Pl_XA_Command_E.P_E(NE._I_U.acknowledge, output, mod,
+					NE);
 			}
 		}
-		Pl_XA_Command_E.P_Check(output.get("newCommand").toString(), output,
-				mod, NE);
+		Pl_XA_Command_E.P_Check(output.get("newCommand").toString(),
+			output, mod, NE);
 		return output;
 	}
 
 	// 哲学 辩证学 辩论
-	private static boolean hasVerb(String[] acknowledgeSwap, int position,
-			App NE) {
+	private static boolean hasVerb(String[] acknowledgeSwap,
+		int position, App NE) {
 		String string = acknowledgeSwap[position];
 		List<String> list = NE.app_S._A.parserMixedString(string);
 		Iterator<String> iterator = list.iterator();
 		while (iterator.hasNext()) {
 			String stringIterator = iterator.next();
-			if (NE.app_S.workVerbalMap.doMap.containsKey(stringIterator)) {
+			if (NE.app_S.workVerbalMap.doMap.containsKey(
+				stringIterator)) {
 				return true;
 			}
 		}
@@ -270,14 +280,14 @@ public class E_pl_XA_E {
 	}
 
 	private static boolean hasData2DSubject(String[] acknowledgeSwap,
-			int position, App NE) {
+		int position, App NE) {
 		String string = acknowledgeSwap[position];
 		List<String> list = NE.app_S._A.parserMixedString(string);
 		Iterator<String> iterator = list.iterator();
 		while (iterator.hasNext()) {
 			String stringIterator = iterator.next();
-			if (NE.app_S.workVerbalMap.data2DSubjectMap
-					.containsKey(stringIterator)) {
+			if (NE.app_S.workVerbalMap.data2DSubjectMap.containsKey(
+				stringIterator)) {
 				return true;
 			}
 		}
@@ -297,17 +307,17 @@ public class E_pl_XA_E {
 	 * 
 	 */
 	private static void doAcknowledgeSwap(String[] acknowledgeSwap,
-			String command, App NE) {
+		String command, App NE) {
 		// null 将 授权 选择 进行 执行 数据 智慧 逻辑 操作 :null数据 矩阵 对象 表格 表
-		boolean hasData2DSubjectBoolean = hasData2DSubject(acknowledgeSwap, 0,
-				NE);
+		boolean hasData2DSubjectBoolean = hasData2DSubject(
+			acknowledgeSwap, 0, NE);
 		boolean hasVerbBoolean = hasVerb(acknowledgeSwap, 1, NE);
 		if ((hasData2DSubjectBoolean/**/) && (hasVerbBoolean/**/)) {
 			doHuoQuBiaoMingSwap(command, NE);
 			return;
 		}
-		boolean hasData2DObjectBoolean = hasData2DSubject(acknowledgeSwap, 2,
-				NE);
+		boolean hasData2DObjectBoolean = hasData2DSubject(
+			acknowledgeSwap, 2, NE);
 		if ((hasVerbBoolean/**/) && (hasData2DObjectBoolean/**/)) {
 			doHuoQuBiaoMingSwap(command, NE);
 			return;
@@ -316,7 +326,8 @@ public class E_pl_XA_E {
 
 	@SuppressWarnings("unchecked")
 	private static void doHuoQuBiaoMingSwap(String command, App NE) {
-		Iterator<String> iterator = NE.app_S.tableNameMap.keySet().iterator();
+		Iterator<String> iterator = NE.app_S.tableNameMap.keySet()
+			.iterator();
 		while (iterator.hasNext()) {
 			String string = iterator.next();
 			if (command.contains(string)) {
@@ -334,14 +345,16 @@ public class E_pl_XA_E {
 	}
 
 	// later out to data swap api
-	private static String doHumanTalkSwap(App NE, CommandClass command_V) {
+	private static String doHumanTalkSwap(App NE,
+		CommandClass command_V) {
 		// （首-先，一，开始，于是，顺其自然，）
 		// （将，获-取-得，授权，选择，确-定-保，认-准-定，标-记-出，拿-出-到-来，把，）
 		// （表 表格-单-库，矩阵，文-档-件，对象）
 		// （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
 		// work domain out later.*/
 		// NE.app_S.workVerbalMap.setHumanTalk(command, NE);
-		NE.app_S.workVerbalMap.setHumanTalkAfterNewBusinessTest(command_V, NE);
+		NE.app_S.workVerbalMap.setHumanTalkAfterNewBusinessTest(
+			command_V, NE);
 		/*
 		 * 思考1 - 当构造混合中文数字提取转换匹配后，进行归纳格式化成map，这个map则需要在
 		 * 这一层进行和分词结果整合。这种逻辑属于ETL类型逻辑， command_V._IMV_SIQ_SS
@@ -352,23 +365,29 @@ public class E_pl_XA_E {
 		 * 自然选择的计算模拟环境。
 		 */
 		Iterator<String> iterators = command_V._IMV_SIQ_SS_Q.keySet()
-				.iterator();
+			.iterator();
 		while (iterators.hasNext()) {
 			String string = iterators.next();
-			WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q.getW(string);
+			WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q
+				.getW(string);
 			command_V._IMV_SIQ_SS.put(string, WordFrequency);
 			/*
 			 * 分词的position要统计char位置，不是word位置，不然会不准确 later --trif一下
 			 */
 		}
 		FastCartesianIdentifyTest fastCartesianIdentifyTest = new FastCartesianIdentifyTest();
-		fastCartesianIdentifyTest.getCartesianRelationShipFromHumanTalk(NE.app_S.workVerbalMap);
-		Boolean findSubject = NE.app_S.workVerbalMap.findSubject(NE, command_V);
-		return NE.app_S.workVerbalMap.returnBestTypeOfCommands(findSubject);
+		fastCartesianIdentifyTest
+			.getCartesianRelationShipFromHumanTalk(
+				NE.app_S.workVerbalMap);
+		Boolean findSubject = NE.app_S.workVerbalMap.findSubject(NE,
+			command_V);
+		return NE.app_S.workVerbalMap.returnBestTypeOfCommands(
+			findSubject);
 	}
 
-	public static TinMap E_pl_XA(PL_XA_E orm, boolean b, TinMap output, App NE)
-			throws InterruptedException, IOException {
+	public static TinMap E_pl_XA(PL_XA_E orm, boolean b,
+		TinMap output, App NE) throws InterruptedException,
+		IOException {
 		return E_pl_XA(orm.getPLSearch(), true, output, NE);
 	}
 }

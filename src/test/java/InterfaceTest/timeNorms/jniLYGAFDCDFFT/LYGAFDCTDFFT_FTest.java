@@ -20,19 +20,19 @@ class LYGAFDCTDFFT_FTest {
 	}
 
 	/*
-	 * 这是一个 时微分 时叠积 函数 在 主流滤波中 的 观测和优化 内积噪 方式 真实应用方式， 测试
-	 * main函数demo的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行
-	 * 复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取
-	 * 输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。系
-	 * 统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，
-	 * 方便商业化落地。--罗瑶光
+	 * 这是一个 时微分 时叠积 函数 在 主流滤波中 的 观测和优化 内积噪 方式 真实应用方式， 
+	 * 测试main函数demo的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数
+	 * 中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的
+	 * 参数，然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用println来显
+	 * 示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输入
+	 * 输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。--罗瑶光
 	 */
 	@Test
 	void all() {
-		System.out.println("罗瑶光时微分 时叠积 函数 在 主流滤波中 的 观测和优化 内积噪" + " 方式 真实应用方式");
+		System.out.println("罗瑶光时微分 时叠积 函数 在 主流滤波中 的 观测和优化 内积噪"
+			+ " 方式 真实应用方式");
 		// 罗瑶光个人著作权文件 时量子解析公式
-		// |tero(x)>+|tcol(x)> = (deta[t0-t1]/deta1(t0-t1)) * (m/p)
-		// = 1;
+		// |tero(x)>+|tcol(x)> = (deta[t0-t1]/deta1(t0-t1)) * (m/p)= 1;
 		// 时量子解析公式 跟进解析推导 <76页纸 时流噪公式 N = e ** (i * Pi) +-
 		// 2cosAcosB；
 		// 时量子解析公式 跟进解析推导 <10页纸 时能公式 E = f[d] * f[d] * i * di *
@@ -68,7 +68,8 @@ class LYGAFDCTDFFT_FTest {
 		// 增维观测 偏微分细化跟进计算
 		float[] fflA = new float[input.length];
 		float[] fflBI = new float[input.length];
-		float[] ffl = lYGAFDCTDFFT_F.jniLYGFET(input, fflA, fflBI, out, 4);
+		float[] ffl = lYGAFDCTDFFT_F.jniLYGFET(input, fflA, fflBI,
+			out, 4);
 		// trif later
 		// 输出
 		System.out.println("--input");

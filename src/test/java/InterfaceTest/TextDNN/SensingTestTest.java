@@ -14,9 +14,12 @@ import test.java.InterfaceTest.CommonTestInition;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 /*
- * 这是一个 关于极速罗瑶光ANN计算前的属性词库测试 测试main函数demo的test版本，这个函数主要用于在
- * 导入属性词库表的时候避免各类问题比如1 词库表中有回车空行，2 词库表的KV不对称，3 词库表的多语
- * 序列不对齐，4 词库表乱码，5词库表分隔符错误等。 --罗瑶光
+ * 这是一个 关于极速罗瑶光ANN计算前的属性词库测试 测试main函数demo的test版本，
+ * 这个函数主要用于在导入属性词库表的时候避免各类问题比如1 词库表中有回车空行，
+ * 2 词库表的KV不对称，
+ * 3 词库表的多语序列不对齐，
+ * 4 词库表乱码，
+ * 5词库表分隔符错误等。 --罗瑶光
  * */
 class SensingTestTest {
 	public static void main(String[] argv) {
@@ -32,17 +35,17 @@ class SensingTestTest {
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 1 显示当前所有词库，重要属性
 		IMV_SIQ _getDistinctionMap = commonTestInition.NE.app_S.emotionMap_E
-				.getDistinctionMap();
+			.getDistinctionMap();
 		IMV_SIQ _getMotivationMap = commonTestInition.NE.app_S.emotionMap_E
-				.getMotivationMap();
+			.getMotivationMap();
 		IMV_SIQ _getNegativeMap = commonTestInition.NE.app_S.emotionMap_E
-				.getNegativeMap();
+			.getNegativeMap();
 		IMV_SIQ _getPositiveMap = commonTestInition.NE.app_S.emotionMap_E
-				.getPositiveMap();
+			.getPositiveMap();
 		IMV_SIQ _getPredictionMap = commonTestInition.NE.app_S.emotionMap_E
-				.getPredictionMap();
+			.getPredictionMap();
 		IMV_SIQ _getTrendingMap = commonTestInition.NE.app_S.emotionMap_E
-				.getTrendingMap();
+			.getTrendingMap();
 		// --下列这些词库-代表个人思维强烈，商业应用请大佬们面向产业领域重新设计和修改。
 		System.out.println("-----词汇分类和总数测试----");
 		// 1 褒义类词库
@@ -60,18 +63,23 @@ class SensingTestTest {
 		//
 		System.out.println("-----词汇文件编码格式简单检测是否是乱码-----");
 		// 1 褒义类词库
-		System.out.println("褒义词显示-->连贯-->" + _getPositiveMap.getString("连贯"));
+		System.out.println("褒义词显示-->连贯-->" + _getPositiveMap
+			.getString("连贯"));
 		// 2 贬义类词库
-		System.out.println("贬义词显示-->破烂-->" + _getNegativeMap.getString("破烂"));
+		System.out.println("贬义词显示-->破烂-->" + _getNegativeMap
+			.getString("破烂"));
 		// 3 动机类词库
-		System.out.println("动机词显示-->严谨-->" + _getMotivationMap.getString("严谨"));
+		System.out.println("动机词显示-->严谨-->" + _getMotivationMap
+			.getString("严谨"));
 		// 4 区别类词库
-		System.out
-				.println("区别词显示-->学习-->" + _getDistinctionMap.getString("学习"));
+		System.out.println("区别词显示-->学习-->" + _getDistinctionMap
+			.getString("学习"));
 		// 5 预测类词库
-		System.out.println("预测词显示-->稳重-->" + _getPredictionMap.getString("稳重"));
+		System.out.println("预测词显示-->稳重-->" + _getPredictionMap
+			.getString("稳重"));
 		// 6 趋势类词库
-		System.out.println("趋势词显示-->微笑-->" + _getTrendingMap.getString("微笑"));
+		System.out.println("趋势词显示-->微笑-->" + _getTrendingMap
+			.getString("微笑"));
 		// 7 同义类词库--trif 涉及英文拓扑。
 		// 8 古拉丁语十六元基编码反义词自动词库，--trif -略先。
 		commonTestInition.endEnvironment();

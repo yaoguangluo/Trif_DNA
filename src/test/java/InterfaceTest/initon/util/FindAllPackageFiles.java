@@ -23,7 +23,7 @@ import test.java.InterfaceTest.CommonTestInition;
  * 思考出现了一个问题，网上的描述是JDK的文件进行官方文档描述，如一个类显示他的method。method
  * 里面包含的field，然后描述它，而我要做的是NE的class 包含的fields显示它的method包名。
  * 这里出现了巨大的问题，难道几十年没有一个同行看到这个问题？用C我直接改注册表。java因为底层封装
- * 成了.o文件我能怎么办？我又该怎么办？这把2进制文件估计一把人一直发财。
+ * 成了.o文件我能怎么办？我又该怎么办？
  * 
  * 于是我进行梳理，通过NE获取method 和 field两种属性，然后method是否被field关联，那我就得
  * 需要做很多步骤了。首先field是变量名属性，变量名对应的函数是类名，不是包名。method是类名，
@@ -60,15 +60,15 @@ import test.java.InterfaceTest.CommonTestInition;
 public class FindAllPackageFiles {
 	@SuppressWarnings({ "unused" })
 	public static void main(String[] argv)
-			throws NoSuchFieldException, InstantiationException,
-			IllegalAccessException, ClassNotFoundException {
+		throws NoSuchFieldException, InstantiationException,
+		IllegalAccessException, ClassNotFoundException {
 		// 初始化
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 初始化载体
 		ReadPinYinBihua.getPinYinBihuaMap(commonTestInition.NE);
 		TableSorterZYNK tableSorterZYNK = new TableSorterZYNK(
-				commonTestInition.NE);
+			commonTestInition.NE);
 		// ToDo
 		/*
 		 * 元基花 2代 变量补充扩展，将NE的 value所有 fields 全部in annotationMap
@@ -109,7 +109,8 @@ public class FindAllPackageFiles {
 		 * 内因是我有责任和义务完美元基花语。 --罗瑶光
 		 */
 
-		commonTestInition.NE.app_S.studyVerbalMap.init_SMV(commonTestInition.NE);
+		commonTestInition.NE.app_S.studyVerbalMap.init_SMV(
+			commonTestInition.NE);
 		// 关闭
 		commonTestInition.endEnvironment();
 	}

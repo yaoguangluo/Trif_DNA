@@ -99,7 +99,7 @@ public class FlowerAction {
 		String chromosome = NE.app_S.staticRootMap.staticClass_XE_Map
 				.getString(callFunctionKey);
 		String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome,
-				callFunctionKey); // 我是神！ tin神！
+				callFunctionKey, NE); // 我是神！ tin神！
 		NE._I_U.outputMap = output;
 		if (null == 传参因子) {// strong weak
 			传参因子 = new String[1];

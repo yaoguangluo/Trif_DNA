@@ -25,30 +25,31 @@ class SobelTest {
 	public static void main(String[] argv) {
 		SobelTest sobelTest = new SobelTest();
 		sobelTest.p();
-    }
-    @Test
-    void p() {
-        //init
-        int[][] input = new int[16][16];
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                input[i][j] = ((int) (Math.random() * 10000)) % 255;
-            }
-        }
-        //exe mag 和 dir 用于图片中极值边缘凸显和空间立体凹凸特征表达。 refer思想：路德大学
-        // RenHart，ComputerVision 绿皮书关于 for (int i = , p = ，。。; i < ，。。; ++i
-        // , ++p，。。) { ，这种多参数 for loop， Refer 罗阳。我当年也是第一次看到这种语法支持。
-        int[][] output = Sobel.P(input, 2);
-        //output
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                System.out.print("-" + output[i][j]);
-            }
-            System.out.println();
-        }
-    }
+	}
 
-    @Test
-    void p_WithMask() {
-    }
+	@Test
+	void p() {
+		//init
+		int[][] input = new int[16][16];
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+				input[i][j] = ((int) (Math.random() * 10000)) % 255;
+			}
+		}
+		//exe mag 和 dir 用于图片中极值边缘凸显和空间立体凹凸特征表达。 refer思想：路德大学
+		// RenHart，ComputerVision 绿皮书关于 for (int i = , p = ，。。; i < ，。。; ++i
+		// , ++p，。。) { ，这种多参数 for loop， Refer 罗阳。我当年也是第一次看到这种语法支持。
+		int[][] output = Sobel.P(input, 2);
+		//output
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+				System.out.print("-" + output[i][j]);
+			}
+			System.out.println();
+		}
+	}
+
+	@Test
+	void p_WithMask() {
+	}
 }

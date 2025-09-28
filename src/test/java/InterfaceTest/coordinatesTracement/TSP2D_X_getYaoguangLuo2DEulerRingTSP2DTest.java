@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -55,14 +54,14 @@ class TSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest {
 		AMV_MVS_VSQs.add(new AMV_MVS_VSQ_2D(97, 9));
 		// 执行
 		List<Line2D> lines = TSP2D_X_getYaoguangLuo2DEulerRingTSP2D
-				._E(AMV_MVS_VSQs);
+			._E(AMV_MVS_VSQs);
 		// 输出
 		for (Line2D lines2D : lines) {
 			System.out.print("x-" + lines2D.getBegin().getX() + "-y-"
-					+ lines2D.getBegin().getY());
+				+ lines2D.getBegin().getY());
 			System.out.print("----");
 			System.out.print("x-" + lines2D.getEnd().getX() + "-y-"
-					+ lines2D.getEnd().getY());
+				+ lines2D.getEnd().getY());
 			System.out.println();
 		}
 	}

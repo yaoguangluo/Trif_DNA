@@ -51,11 +51,12 @@ public class DemoPOSTest {
 		TimeCheck t = new TimeCheck();
 		// 等待分词的语句
 		String ss = "罗瑶光先生从2018年10月开始，所有个人著作权作品，全部开源，到现在，"
-				+ "和无数群体，技术社团正面地交锋7年，一直0纠纷，罗瑶光先生认为，一件作品"
-				+ "，一个事物，如果有价值，就应该像教材一样在真实的环境中不断地实践测试和"
-				+ "论证，能经得起所有人长年累月地不断地挑剔的东西，才是货真价实的，罗瑶光"
-				+ "的个人著作权作品都是互联网，大数据产业领域基础作品，2018年后，在60余互"
-				+ "联网app上发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同" + "时对垄断的产业有约束性。";
+			+ "和无数群体，技术社团正面地交锋7年，一直0纠纷，罗瑶光先生认为，一件作品"
+			+ "，一个事物，如果有价值，就应该像教材一样在真实的环境中不断地实践测试和"
+			+ "论证，能经得起所有人长年累月地不断地挑剔的东西，才是货真价实的，罗瑶光"
+			+ "的个人著作权作品都是互联网，大数据产业领域基础作品，2018年后，在60余互"
+			+ "联网app上发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同"
+			+ "时对垄断的产业有约束性。";
 		// DemoEX demoEX=new DemoEX();
 		StringBuilder sb = new StringBuilder(ss);
 		// 分词
@@ -68,8 +69,9 @@ public class DemoPOSTest {
 		// 关闭
 		commonTestInition.endEnvironment();
 	}
-	
-	public void testPOStoWordFrequencyList(List<String> sets, IMV_SIQ pos) {
+
+	public void testPOStoWordFrequencyList(List<String> sets,
+		IMV_SIQ pos) {
 		// 结果归纳
 		// 1 名词 动词 形容词归纳
 		int charPosition = 0;
@@ -94,7 +96,8 @@ public class DemoPOSTest {
 							wordFrequency.I_frequency(f + 1);// 2
 															 // 词频归纳
 						} else {
-							wordFrequency = new WordFrequency(1, word);
+							wordFrequency = new WordFrequency(1,
+								word);
 						}
 						wordFrequency.positions.add(charPosition);
 						wordFrequency.I_pos("名词");
@@ -108,20 +111,23 @@ public class DemoPOSTest {
 							wordFrequency.I_frequency(f + 1);
 							// 2 // 词频归纳
 						} else {
-							wordFrequency = new WordFrequency(1, word);
+							wordFrequency = new WordFrequency(1,
+								word);
 						}
 						wordFrequency.positions.add(charPosition);
 						wordFrequency.I_pos("动词");
 						verb.put(word, wordFrequency);
 					}
-					if (wordPOS.contains("未知") || wordPOS.contains("形")) {
+					if (wordPOS.contains("未知") || wordPOS.contains(
+						"形")) {
 						WordFrequency wordFrequency;
 						if (adj.containsKey(word)) {
 							wordFrequency = adj.get(word);
 							double f = wordFrequency.get_frequency();
 							wordFrequency.I_frequency(f + 1);// 词频归纳
 						} else {
-							wordFrequency = new WordFrequency(1, word);
+							wordFrequency = new WordFrequency(1,
+								word);
 						}
 						wordFrequency.positions.add(charPosition);
 						// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，
@@ -133,17 +139,20 @@ public class DemoPOSTest {
 						// 者。这个词性属性不影响分词引擎。
 						if (i + 1 < sets.size()) {
 							String wordNext = sets.get(i + 1);
-							Object wordNextObjectPOS = pos.get(wordNext);
+							Object wordNextObjectPOS = pos.get(
+								wordNext);
 							if (null != wordNextObjectPOS) {
 								String wordNextPOS = wordNextObjectPOS
-										.toString();
+									.toString();
 								if (wordNext.equals("地")) {
 									wordFrequency.I_pos("形谓词作副词");
 								} else if (wordNext.equals("的")) {
 									wordFrequency.I_pos("形谓词作形容词");
-								} else if (wordNextPOS.contains("动词")) {
+								} else if (wordNextPOS.contains(
+									"动词")) {
 									wordFrequency.I_pos("形谓词作副词");
-								} else if (wordNextPOS.contains("名词")) {
+								} else if (wordNextPOS.contains(
+									"名词")) {
 									wordFrequency.I_pos("形谓词作形容词");
 								} else {
 									wordPOS = "形谓词通用";// -trif later
@@ -157,14 +166,16 @@ public class DemoPOSTest {
 						}
 						adj.put(word, wordFrequency);
 					}
-					if (wordPOS.contains("未知") || wordPOS.contains("副")) {
+					if (wordPOS.contains("未知") || wordPOS.contains(
+						"副")) {
 						WordFrequency wordFrequency;
 						if (adv.containsKey(word)) {
 							wordFrequency = adv.get(word);
 							double f = wordFrequency.get_frequency();
 							wordFrequency.I_frequency(f + 1);// 2 词频归纳
 						} else {
-							wordFrequency = new WordFrequency(1, word);
+							wordFrequency = new WordFrequency(1,
+								word);
 						}
 						wordFrequency.positions.add(charPosition);
 						// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，
@@ -179,17 +190,20 @@ public class DemoPOSTest {
 						// 以一直不碰。要我优化可以，记得给我钱，--罗瑶光-送大神送到西。
 						if (i + 1 < sets.size()) {
 							String wordNext = sets.get(i + 1);
-							Object wordNextObjectPOS = pos.get(wordNext);
+							Object wordNextObjectPOS = pos.get(
+								wordNext);
 							if (null != wordNextObjectPOS) {
 								String wordNextPOS = wordNextObjectPOS
-										.toString();
+									.toString();
 								if (wordNext.equals("地")) {
 									wordFrequency.I_pos("形谓词作副词");
 								} else if (wordNext.equals("的")) {
 									wordFrequency.I_pos("形谓词作形容词");
-								} else if (wordNextPOS.contains("动词")) {
+								} else if (wordNextPOS.contains(
+									"动词")) {
 									wordFrequency.I_pos("形谓词作副词");
-								} else if (wordNextPOS.contains("名词")) {
+								} else if (wordNextPOS.contains(
+									"名词")) {
 									wordFrequency.I_pos("形谓词作形容词");
 								} else {
 									wordPOS = "形谓词通用";// -trif later
@@ -220,8 +234,10 @@ public class DemoPOSTest {
 			System.out.println();
 			System.out.print("--词汇->" + wordFrequency.get_word());
 			System.out.print("-词性->" + wordFrequency.get_pos());
-			System.out.print("-平均距离->" + wordFrequency.getAveragePosition());
-			System.out.print("-出现频率->" + wordFrequency.get_frequency());
+			System.out.print("-平均距离->" + wordFrequency
+				.getAveragePosition());
+			System.out.print("-出现频率->" + wordFrequency
+				.get_frequency());
 		}
 
 		// 动词
@@ -236,8 +252,10 @@ public class DemoPOSTest {
 			System.out.println();
 			System.out.print("--词汇->" + wordFrequency.get_word());
 			System.out.print("-词性->" + wordFrequency.get_pos());
-			System.out.print("-平均距离->" + wordFrequency.getAveragePosition());
-			System.out.print("-出现频率->" + wordFrequency.get_frequency());
+			System.out.print("-平均距离->" + wordFrequency
+				.getAveragePosition());
+			System.out.print("-出现频率->" + wordFrequency
+				.get_frequency());
 		}
 
 		// 形容词
@@ -252,8 +270,10 @@ public class DemoPOSTest {
 			System.out.println();
 			System.out.print("--词汇->" + wordFrequency.get_word());
 			System.out.print("-词性->" + wordFrequency.get_pos());
-			System.out.print("-平均距离->" + wordFrequency.getAveragePosition());
-			System.out.print("-出现频率->" + wordFrequency.get_frequency());
+			System.out.print("-平均距离->" + wordFrequency
+				.getAveragePosition());
+			System.out.print("-出现频率->" + wordFrequency
+				.get_frequency());
 		}
 
 		// 副词
@@ -268,13 +288,16 @@ public class DemoPOSTest {
 			System.out.println();
 			System.out.print("--词汇->" + wordFrequency.get_word());
 			System.out.print("-词性->" + wordFrequency.get_pos());
-			System.out.print("-平均距离->" + wordFrequency.getAveragePosition());
-			System.out.print("-出现频率->" + wordFrequency.get_frequency());
+			System.out.print("-平均距离->" + wordFrequency
+				.getAveragePosition());
+			System.out.print("-出现频率->" + wordFrequency
+				.get_frequency());
 		}
 	}
-	
+
 	// 分解
-	public List<String> testPOSOnlyGetList(List<String> sets, IMV_SIQ pos) {
+	public List<String> testPOSOnlyGetList(List<String> sets,
+		IMV_SIQ pos) {
 		List<String> output = new ArrayList<String>();
 		// 结果归纳
 		// 1 名词 动词 形容词归纳
@@ -290,7 +313,8 @@ public class DemoPOSTest {
 					String word = sets.get(i);
 					Object wordObjectPOS = pos.get(string);
 					if (null == wordObjectPOS) {
-						System.out.print(word + "/" + "NULL" + "----");
+						System.out.print(word + "/" + "NULL"
+							+ "----");
 						charPosition += string.length();
 						output.add(word + "/" + "NULL");
 						continue;
@@ -305,21 +329,24 @@ public class DemoPOSTest {
 					if (word.equals("不断")) {
 						System.out.println();
 					}
-					if (wordPOS.contains("未知") || wordPOS.contains("形")
-							|| wordPOS.contains("副")) {
+					if (wordPOS.contains("未知") || wordPOS.contains(
+						"形") || wordPOS.contains("副")) {
 						if (i + 1 < sets.size()) {
 							String wordNext = sets.get(i + 1);
-							Object wordNextObjectPOS = pos.get(wordNext);
+							Object wordNextObjectPOS = pos.get(
+								wordNext);
 							if (null != wordNextObjectPOS) {
 								String wordNextPOS = wordNextObjectPOS
-										.toString();
+									.toString();
 								if (wordNext.equals("地")) {
 									wordPOS = "形谓词作副词";
 								} else if (wordNext.equals("的")) {
 									wordPOS = "形谓词作形容词";
-								} else if (wordNextPOS.contains("动词")) {
+								} else if (wordNextPOS.contains(
+									"动词")) {
 									wordPOS = "形谓词作副词";
-								} else if (wordNextPOS.contains("名词")) {
+								} else if (wordNextPOS.contains(
+									"名词")) {
 									wordPOS = "形谓词作形容词";
 								} else {
 									wordPOS = "形谓词通用";// -trif later
@@ -335,7 +362,7 @@ public class DemoPOSTest {
 		}
 		return output;
 	}
-	
+
 	//原测试函数分解后逻辑
 	public void testPOS(List<String> sets, IMV_SIQ pos) {
 		System.out.println("----------");
@@ -344,12 +371,13 @@ public class DemoPOSTest {
 		DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
 		System.out.println("----------");
 		System.out.println("进行词性组合");
-		List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(setsInput, pos);
+		List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(
+			setsInput, pos);
 		//--最终将修正的list 处理成 wordFrequency 格式list。
 		System.out.println("----------");
 		System.out.println("进行词性封装");
 		testPOStoWordFrequencyList(setsAfterInput, pos);
-		
+
 	}
 }
 //输出观测 --发现量词含有形容词的属性，形容多少，程度等。
@@ -450,7 +478,6 @@ public class DemoPOSTest {
 //Disconnected from the target VM, address: '127.0.0.1:49981', transport: 'socket'
 //
 //Process finished with exit code 0
-
 
 //public void testPOS(List<String> sets, IMV_SIQ pos) {
 //// 结果归纳

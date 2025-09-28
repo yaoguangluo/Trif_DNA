@@ -18,8 +18,7 @@ import java.util.List;
  * */
 class InitBehaviorICAKernelTest {
 	public static void main(String[] argv) {
-		InitBehaviorICAKernelTest initBehaviorICAKernelTest 
-		= new InitBehaviorICAKernelTest();
+		InitBehaviorICAKernelTest initBehaviorICAKernelTest = new InitBehaviorICAKernelTest();
 		initBehaviorICAKernelTest.main();
 	}
 
@@ -54,7 +53,8 @@ class InitBehaviorICAKernelTest {
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// exec
 		InitBehaviorICAKernel initBehaviorICAKernel = new InitBehaviorICAKernel();
-		initBehaviorICAKernel.getBehaviorICAKernel(S_String.text1, commonTestInition.NE);
+		initBehaviorICAKernel.getBehaviorICAKernel(S_String.text1,
+			commonTestInition.NE);
 		// output
 		List<String> list = initBehaviorICAKernel.getForRestReturn();
 		for (String string : list) {
@@ -66,9 +66,13 @@ class InitBehaviorICAKernelTest {
 /*
  * 输出观测 Connected to the target VM, address: '127.0.0.1:54314', transport:
  * 'socket' trif 正面情感：30.0 负面情感：4.0 渲染比率：7.366666666666666
- * 情绪比率：0.16831683168316833 感染比率：1.2399339933993399 观测角度： 物资 逻辑 学者 化学 哲学 哲学 娱乐
- * 宇宙 地理哲学 0.2727272727272727 信任比率： 危险 警惕 利益 了解 贪婪 远离 教育 帮助 纠正 需求 英雄 疑虑 进步 思想 了解
- * 0.375 执行比率： 自闭 善良 自恋 平庸 自恋 逆商 优秀 0.5714285714285714 成功比率： 防御 合作 合作 示威 1.0
+ * 情绪比率：0.16831683168316833 感染比率：1.2399339933993399 
+ * 观测角度： 物资 逻辑 学者 化学 哲学 哲学 娱乐
+ * 宇宙 地理哲学 0.2727272727272727 
+ * 信任比率： 危险 警惕 利益 了解 贪婪 远离 教育 帮助 纠正 需求 英雄 疑虑 进步 思想 了解
+ * 0.375 
+ * 执行比率： 自闭 善良 自恋 平庸 自恋 逆商 优秀 0.5714285714285714 
+ * 成功比率： 防御 合作 合作 示威 1.0
  * Disconnected from the target VM, address: '127.0.0.1:54314', transport:
  * 'socket'
  * 

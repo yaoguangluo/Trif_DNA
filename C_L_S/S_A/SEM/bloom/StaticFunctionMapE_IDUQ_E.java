@@ -39,31 +39,39 @@ import OSI.OPE.OVU.PQE.flash.GUISample;
 import javax.swing.JTextPane;
 import java.awt.PopupMenu;
 
-//著作权人+ 作者= 罗瑶光
+/*
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * */
 //Refer的源码来自 《DNA 元基催化与肽计算 第三修订版本 V039010912》
 //证书编号：国作登字-2021-L-00268255 (中华人民共和国 国家版权登记中心)
-public class StaticFunctionMapE_IDUQ_E implements StaticFunctionMapE_IDUQ_C{
-	public IMV_SIQ annotationMap= new IMV_SIQ();
+public class StaticFunctionMapE_IDUQ_E extends StaticFunctionMapCASE
+	implements StaticFunctionMapE_IDUQ_C {
 	@Override
-	public NodeInfo getNodeInfo(App NE)  {
+	public NodeInfo getNodeInfo(App NE) {
 		return new NodeInfo();
 	}
 
 	@Override
-	public NodeProject getNodeProject(App NE)  {
-		
+	public NodeProject getNodeProject(App NE) {
+
 		return new NodeProject();
 	}
 
 	@Override
 	public CheckRange getCheckRange(App NE) {
-		
+
 		return new CheckRangeVPS();
 	}
 
 	@Override
 	public ChooseCheck getChooseCheck(App NE) {
-		
+
 		return new ChooseQ_VPS();
 	}
 
@@ -101,6 +109,7 @@ public class StaticFunctionMapE_IDUQ_E implements StaticFunctionMapE_IDUQ_C{
 	public OSU_OVQ_OSQ_VSQ _OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ(App NE) {
 		return new OSU_OVQ_OSQ_VSQ();
 	}
+
 	@Override
 	public OSU_OPE_OPC_ECI _OSU_AVQ_ASQ_OPE_OPC_ECI(App NE) {
 		return new OSU_OPE_OPC_ECI();
@@ -122,7 +131,8 @@ public class StaticFunctionMapE_IDUQ_E implements StaticFunctionMapE_IDUQ_C{
 	}
 
 	@Override
-	public UnicornTreeCellRenderer getUnicornTreeCellRenderer(App NE) {
+	public UnicornTreeCellRenderer getUnicornTreeCellRenderer(
+		App NE) {
 		return new UnicornTreeCellRenderer();
 	}
 
@@ -136,16 +146,18 @@ public class StaticFunctionMapE_IDUQ_E implements StaticFunctionMapE_IDUQ_C{
 		return new CacuString();
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	public NodeShow getNodeShow(App NE) {
-		GUISample gUISample= NE._I_U.gUISample;
-		Object[][] tableData_old= NE._I_U.tableData_old;
-		JTextPane text= NE._I_U.text;
-		PopupMenu popupMenu= NE._I_U.popupMenu;
-		App app= NE._I_U.app;
-		A _A= NE._I_U._A;
-		IMV_SIQ pos= NE._I_U.pos;
-		return new NodeShow(gUISample, tableData_old, text, popupMenu, NE);
+		GUISample gUISample = NE._I_U.gUISample;
+		Object[][] tableData_old = NE._I_U.tableData_old;
+		JTextPane text = NE._I_U.text;
+		PopupMenu popupMenu = NE._I_U.popupMenu;
+		App app = NE._I_U.app;
+		A _A = NE._I_U._A;
+		IMV_SIQ pos = NE._I_U.pos;
+		return new NodeShow(gUISample, tableData_old, text, popupMenu,
+			NE);
 	}
 
 	@Override
@@ -200,19 +212,21 @@ public class StaticFunctionMapE_IDUQ_E implements StaticFunctionMapE_IDUQ_C{
 
 	@Override
 	public OSGI_chansfer getOSGI_chansfer(App NE) {
-		LinkNode node= NE._I_U.node;
-		LinkNode first= NE._I_U.first;
+		LinkNode node = NE._I_U.node;
+		LinkNode first = NE._I_U.first;
 		return new OSGI_chansfer(node, first);
 	}
 
+	@SuppressWarnings("unused")
 	@Override
-	public OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register
-	_OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(App NE) {
+	public OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register _OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(
+		App NE) {
 		Object[][] tableData_old = NE._I_U.tableData_old;
 		JTextPane text = NE._I_U.text;
-		App app=NE._I_U.app;
-		A _A=NE._I_U._A;
-		IMV_SIQ pos=NE._I_U.pos;
-		return new OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(tableData_old, text, NE);
+		App app = NE._I_U.app;
+		A _A = NE._I_U._A;
+		IMV_SIQ pos = NE._I_U.pos;
+		return new OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(
+			tableData_old, text, NE);
 	}
 }

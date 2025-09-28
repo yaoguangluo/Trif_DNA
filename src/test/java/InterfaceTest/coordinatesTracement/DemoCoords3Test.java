@@ -64,15 +64,16 @@ public class DemoCoords3Test {
 		position2D5.I_Y(25);
 		input.add(position2D5);
 
-//		//处理商旅森林 isolation
+		//		//处理商旅森林 isolation
 		Map<Double, List<AMV_MVS_VSQ_2D>> output = Forest_X_getTSPForestIsolationGroups2D
-				._E(input, 12);
+			._E(input, 12);
 		Iterator<Double> iterator = output.keySet().iterator();
 		while (iterator.hasNext()) {
 			double temp = iterator.next();
 			System.out.println();
 			System.out.println(temp);
-			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp).iterator();
+			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp)
+				.iterator();
 			while (iterator1.hasNext()) {
 				AMV_MVS_VSQ_2D temp1 = iterator1.next();
 				System.out.println(temp1.getX() + ":" + temp1.getY());
@@ -85,7 +86,7 @@ public class DemoCoords3Test {
 		// 5, 4);
 		// System.out.println(v);
 		double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D
-				._E(input, 3, 4);
+			._E(input, 3, 4);
 		for (int i = 0; i < v.length; i++) {
 			System.out.println(v[i]);
 		}
@@ -95,13 +96,14 @@ public class DemoCoords3Test {
 	public static void _E(List<AMV_MVS_VSQ_2D> inputs) {
 		// 处理商旅森林 isolation
 		Map<Double, List<AMV_MVS_VSQ_2D>> output = Forest_X_getTSPForestIsolationGroups2D
-				._E(inputs, 12);
+			._E(inputs, 12);
 		Iterator<Double> iterator = output.keySet().iterator();
 		while (iterator.hasNext()) {
 			double temp = iterator.next();
 			System.out.println();
 			System.out.println(temp);
-			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp).iterator();
+			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp)
+				.iterator();
 			while (iterator1.hasNext()) {
 				AMV_MVS_VSQ_2D temp1 = iterator1.next();
 				System.out.println(temp1.getX() + ":" + temp1.getY());
@@ -109,7 +111,7 @@ public class DemoCoords3Test {
 		}
 		//
 		double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D
-				._E(inputs, 3, 4);
+			._E(inputs, 3, 4);
 		for (int i = 0; i < v.length; i++) {
 			System.out.println(v[i]);
 		}

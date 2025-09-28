@@ -8,9 +8,18 @@ import A_I.MPE.MSU.pds.PDE_PDS_DL;
 import A_I.MPE.MSU.pds.PDE_PDS_DL16;
 import S_A.pheromone.IMV_SIQ;
 
-//著作权人+ 作者= 罗瑶光
-public class StaticFunctionMapM_IDUQ_E implements StaticFunctionMapM_IDUQ_C{
-	public IMV_SIQ annotationMap= new IMV_SIQ();
+/*
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * */
+public class StaticFunctionMapM_IDUQ_E extends StaticFunctionMapCASE
+	implements StaticFunctionMapM_IDUQ_C {
+
 	@Override
 	public Q_OulerRing getQ_OulerRing() {
 		return new Q_OulerRing();

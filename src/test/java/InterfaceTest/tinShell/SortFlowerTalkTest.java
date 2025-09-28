@@ -23,7 +23,8 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 class SortFlowerTalkTest {
-	public static void main(String[] argv) throws InterruptedException {
+	public static void main(String[] argv)
+		throws InterruptedException {
 		SortFlowerTalkTest sortFlowerTalkTest = new SortFlowerTalkTest();
 		sortFlowerTalkTest.main();
 	}
@@ -66,10 +67,13 @@ class SortFlowerTalkTest {
 		StudyVerbalMap.initInitonDelegate();
 		//
 		System.out.println("FlowerP_E_KernelActions 元基花脚本函数注册");
-		commonTestInition.NE.app_S.flowerAction.initFlowerP_E_KernelActions();
+		commonTestInition.NE.app_S.flowerAction
+			.initFlowerP_E_KernelActions();
 		//
-		System.out.println("FlowerSixDomainActions 德塔PLSQL数据库ORM函数注册");
-		commonTestInition.NE.app_S.flowerAction.initFlowerSixDomainActions();
+		System.out.println(
+			"FlowerSixDomainActions 德塔PLSQL数据库ORM函数注册");
+		commonTestInition.NE.app_S.flowerAction
+			.initFlowerSixDomainActions();
 		// 输出 linkedHashMap
 		IMV_SIQ textContent = commonTestInition.NE.app_S.flowerAction.FlowerSixDomainActions;
 
@@ -90,7 +94,7 @@ class SortFlowerTalkTest {
 		commonTestInition.NE._I_U.lookrot = lookrot;
 		commonTestInition.NE._I_U._AE = _AE;
 		List<Object[]> outputList = new StaticFunctionMapQ_VECS_E()
-				.searchFromTablewithScale(commonTestInition.NE, 0, true);
+			.searchFromTablewithScale(commonTestInition.NE, 0, true);
 		Iterator<Object[]> iterator = outputList.iterator();
 		System.out.println("搜索后 排序指令数据行， 0 为冗余输出，true为搜索key码");
 		while (iterator.hasNext()) {

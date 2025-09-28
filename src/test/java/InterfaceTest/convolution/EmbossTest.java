@@ -22,28 +22,28 @@ import org.junit.jupiter.api.Test;
  * */
 class EmbossTest {
 	public static void main(String[] argv) {
-		EmbossTest embossTest=new EmbossTest();
+		EmbossTest embossTest = new EmbossTest();
 		embossTest.p();
-    }
+	}
 
-    @Test
-    void p() {
-        //init
-        int[][] input = new int[16][16];
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                input[i][j] = ((int) (Math.random() * 10000)) % 255;
-            }
-        }
-        //exe Emboss价值很多，商业价值用于数值特征在有效区间中的缩放，如浮雕比例。
-        // refer思想：ComputerVision 绿皮书
-        int[][] output = Emboss.P(input);
-        //output
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                System.out.print("-" + output[i][j]);
-            }
-            System.out.println();
-        }
-    }
+	@Test
+	void p() {
+		//init
+		int[][] input = new int[16][16];
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+				input[i][j] = ((int) (Math.random() * 10000)) % 255;
+			}
+		}
+		//exe Emboss价值很多，商业价值用于数值特征在有效区间中的缩放，如浮雕比例。
+		// refer思想：ComputerVision 绿皮书
+		int[][] output = Emboss.P(input);
+		//output
+		for (int i = 0; i < 16; i++) {
+			for (int j = 0; j < 16; j++) {
+				System.out.print("-" + output[i][j]);
+			}
+			System.out.println();
+		}
+	}
 }

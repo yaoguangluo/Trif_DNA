@@ -25,22 +25,23 @@ import test.java.InterfaceTest.CommonTestInition;
 public class FindAllProjectFiles {
 	@SuppressWarnings({ "unchecked", "unused" })
 	public static void main(String[] argv)
-			throws NoSuchFieldException, InstantiationException,
-			IllegalAccessException, ClassNotFoundException {
+		throws NoSuchFieldException, InstantiationException,
+		IllegalAccessException, ClassNotFoundException {
 		// 初始化
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 初始化载体
 		ReadPinYinBihua.getPinYinBihuaMap(commonTestInition.NE);
 		TableSorterZYNK tableSorterZYNK = new TableSorterZYNK(
-				commonTestInition.NE);
+			commonTestInition.NE);
 		//
 		System.out.println("---------初始注册函数SMI");
-		commonTestInition.NE.app_S.studyVerbalMap.init_SMV(commonTestInition.NE);
+		commonTestInition.NE.app_S.studyVerbalMap.init_SMV(
+			commonTestInition.NE);
 		Iterator<String> iterators = commonTestInition.NE.app_S.studyVerbalMap._SMI
-				.keySet().iterator();
+			.keySet().iterator();
 		String[] _SMI_ = new String[commonTestInition.NE.app_S.studyVerbalMap._SMI
-				.size()];
+			.size()];
 		int i = 0;
 		while (iterators.hasNext()) {
 			String temp = iterators.next();
@@ -48,10 +49,10 @@ public class FindAllProjectFiles {
 			_SMI_[i++] = temp;
 		}
 		System.out.println("---------初始注册函数SMV");
-		iterators = commonTestInition.NE.app_S.studyVerbalMap._SMV.keySet()
-				.iterator();
+		iterators = commonTestInition.NE.app_S.studyVerbalMap._SMV
+			.keySet().iterator();
 		String[] _SMV_ = new String[commonTestInition.NE.app_S.studyVerbalMap._SMV
-				.size()];
+			.size()];
 		i = 0;
 		while (iterators.hasNext()) {
 			String temp = iterators.next();
@@ -60,10 +61,10 @@ public class FindAllProjectFiles {
 		}
 
 		System.out.println("---------初始注册函数SMQ");
-		iterators = commonTestInition.NE.app_S.studyVerbalMap._SMQ.keySet()
-				.iterator();
+		iterators = commonTestInition.NE.app_S.studyVerbalMap._SMQ
+			.keySet().iterator();
 		String[] _SMQ_ = new String[commonTestInition.NE.app_S.studyVerbalMap._SMQ
-				.size()];
+			.size()];
 		i = 0;
 		while (iterators.hasNext()) {
 			String temp = iterators.next();
@@ -72,21 +73,21 @@ public class FindAllProjectFiles {
 		}
 		// sort list
 		/* 既然写了商业测试demo，那就直接用啊，写了不用不能当花瓶晾着 */
-//		int returnInt = new LYG10D13D_X_CAS()
-//				.quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(_SMI_,
-//						0, 9, 30, ReadPinYinBihua.pinYin, ReadPinYinBihua.biHua,
-//						7, 70);
-//		for (String string : _SMI_) {
-//			System.out.println(string);
-//		}
+		//		int returnInt = new LYG10D13D_X_CAS()
+		//				.quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(_SMI_,
+		//						0, 9, 30, ReadPinYinBihua.pinYin, ReadPinYinBihua.biHua,
+		//						7, 70);
+		//		for (String string : _SMI_) {
+		//			System.out.println(string);
+		//		}
 
-//		int returnInt = new LYG10D13D_X_CAS()
-//				.quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(_SMV_,
-//						0, 9, 30, ReadPinYinBihua.pinYin, ReadPinYinBihua.biHua,
-//						7, 70);
-//		for (String string : _SMV_) {
-//			System.out.println(string);
-//		}
+		//		int returnInt = new LYG10D13D_X_CAS()
+		//				.quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(_SMV_,
+		//						0, 9, 30, ReadPinYinBihua.pinYin, ReadPinYinBihua.biHua,
+		//						7, 70);
+		//		for (String string : _SMV_) {
+		//			System.out.println(string);
+		//		}
 		/*
 		 * 拼音词库表中 161行 x->x 去掉，不然会导致ascii检索比较问题 影响排序输出。
 		 */
@@ -98,26 +99,26 @@ public class FindAllProjectFiles {
 
 		}
 		int returnInt = new LYG10D13D_X_CAS()
-				.quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(
-						strings, 0, strings.length - 1, 40,
-						ReadPinYinBihua.pinYin, ReadPinYinBihua.biHua, 7, 70);
+			.quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(
+				strings, 0, strings.length - 1, 40,
+				ReadPinYinBihua.pinYin, ReadPinYinBihua.biHua, 7, 70);
 		System.out.println("---------输出注册函数SMQ");
 		for (String string : strings) {
 			System.out.println(string);
 		}
-//		
-//		// 1 java获取指定类的变量列表
-//		// java有函数结构接口, 打印华瑞集的主干变量
-//		Method[] method = commonTestInition.NE.app_S.getClass()
-//				.getDeclaredMethods();
-//		for (Method m : method) {
-//			System.out.println("-->" + m.getName());
-//			System.out.println("-->" + m.getAnnotations());
-//		}
-//		// 2 java获取工程的函数名列表
-//
-//		// 3 java获取工程的函数文件夹列表
-//		// 之前有了application24的文件，复制过来修改下即可。
+		//		
+		//		// 1 java获取指定类的变量列表
+		//		// java有函数结构接口, 打印华瑞集的主干变量
+		//		Method[] method = commonTestInition.NE.app_S.getClass()
+		//				.getDeclaredMethods();
+		//		for (Method m : method) {
+		//			System.out.println("-->" + m.getName());
+		//			System.out.println("-->" + m.getAnnotations());
+		//		}
+		//		// 2 java获取工程的函数名列表
+		//
+		//		// 3 java获取工程的函数文件夹列表
+		//		// 之前有了application24的文件，复制过来修改下即可。
 		// 关闭
 		commonTestInition.endEnvironment();
 	}

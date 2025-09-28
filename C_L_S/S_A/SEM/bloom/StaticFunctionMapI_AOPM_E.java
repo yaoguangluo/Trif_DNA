@@ -17,48 +17,74 @@ import ME.VPC.M.app.App;
 import S_A.pheromone.IMV_SIQ;
 
 import java.awt.HeadlessException;
+
+/*
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ ** 15116110525-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * */
 //著作权人+ 作者= 罗瑶光
-public class StaticFunctionMapI_AOPM_E implements StaticFunctionMapI_AOPM_C {
-	public IMV_SIQ annotationMap= new IMV_SIQ();
+public class StaticFunctionMapI_AOPM_E extends StaticFunctionMapCASE
+	implements StaticFunctionMapI_AOPM_C {
+
 	public BigWord getBigWord(App NE) {
 		return new BigWord();
 	}
+
 	public Classify getClassify(App NE) {
 		return new Classify();
 	}
+
+	@SuppressWarnings("unused")
 	public CoAuthor getCoAuthor(App NE) {
-		IMV_SIQ dic_li= NE._I_U.dic_li;
-		CogsBinaryForest_AE _AE= NE._I_U._AE;
-		IMV_SIQ pos= NE._I_U.pos;
-		return new  CoAuthor(dic_li, NE) ;
+		IMV_SIQ dic_li = NE._I_U.dic_li;
+		CogsBinaryForest_AE _AE = NE._I_U._AE;
+		IMV_SIQ pos = NE._I_U.pos;
+		return new CoAuthor(dic_li, NE);
 	}
-	public CoAuthorForWord getCoAuthorForWord(App NE) throws HeadlessException {
-		App app=NE._I_U.app;//later
-		CogsBinaryForest_AE _AE=NE._I_U._AE;
-		IMV_SIQ pos=NE._I_U.pos;
+
+	@SuppressWarnings("unused")
+	public CoAuthorForWord getCoAuthorForWord(App NE)
+		throws HeadlessException {
+		App app = NE._I_U.app;//later
+		CogsBinaryForest_AE _AE = NE._I_U._AE;
+		IMV_SIQ pos = NE._I_U.pos;
 		return new CoAuthorForWord(NE);
 	}
-	public CoDNAAuthorForWord getCoDNAAuthorForWord(App NE) throws HeadlessException {
-		App app= NE._I_U.app;//later..
-		A _A= NE._I_U._A;
-		IMV_SIQ pos= NE._I_U.pos;
+
+	@SuppressWarnings("unused")
+	public CoDNAAuthorForWord getCoDNAAuthorForWord(App NE)
+		throws HeadlessException {
+		App app = NE._I_U.app;//later..
+		A _A = NE._I_U._A;
+		IMV_SIQ pos = NE._I_U.pos;
 		return new CoDNAAuthorForWord(NE);
 	}
+
 	public Histogram getHistogram(App NE) {
 		return new Histogram();
 	}
+
 	public LineMed getLineMed(App NE) {
 		return new LineMed();
 	}
+
 	public Jpv getJpv(App NE) {
 		return new Jpv();
 	}
+
 	public Recoder getRecoder(App NE) {
 		return new Recoder();
 	}
+
 	public VoicejPanel getVoicejPanel(App NE) {
 		return new VoicejPanel();
 	}
+
 	public LYGFileIO getLYGFileIO(App NE) {
 		return new LYGFileIO();
 	}

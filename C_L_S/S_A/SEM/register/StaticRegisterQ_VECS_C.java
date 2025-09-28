@@ -23,12 +23,12 @@ public class StaticRegisterQ_VECS_C {
 		StaticFunctionMapQ_VECS_E staticFunctionMapQ_VECS_E, App NE) {
 
 		//稍后封装
-		StaticFunctionMapQ_VECS_C.annotationMap.put("searchFromTable",
+		staticFunctionMapQ_VECS_E.annotationMap.put("searchFromTable",
 			"newTableModel:tableData_old:copy_xj:dic_xj:app");
-		StaticFunctionMapQ_VECS_C.annotationMap.put(
+		staticFunctionMapQ_VECS_E.annotationMap.put(
 			"searchFromTablewithScale", "key:标题:内容:lookrot");
 
-		Iterator<String> iterators = StaticFunctionMapQ_VECS_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapQ_VECS_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();

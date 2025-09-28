@@ -1,6 +1,5 @@
 package S_A.SEM.bloom;
 
-import S_A.pheromone.IMV_SIQ;
 /*
  * 著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -11,6 +10,5 @@ import S_A.pheromone.IMV_SIQ;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
  * */
 
-public class StaticFunctionMapD_VECS_C {
-	public static IMV_SIQ annotationMap= new IMV_SIQ();
+public interface StaticFunctionMapD_VECS_C {
 }

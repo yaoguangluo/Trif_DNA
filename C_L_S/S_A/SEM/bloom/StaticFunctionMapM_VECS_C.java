@@ -22,8 +22,7 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 *  208号 阳光家园别墅小区 第十栋
  * */
-public interface StaticFunctionMapM_VECS_C {
-    public static IMV_SIQ annotationMap = new IMV_SIQ();
+public interface StaticFunctionMapM_VECS_C{
 
     //database
     //static

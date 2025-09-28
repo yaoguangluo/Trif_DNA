@@ -1,6 +1,5 @@
 package S_A.SEM.register;
 
-import S_A.SEM.bloom.StaticFunctionMapU_VECS_C;
 import S_A.SEM.bloom.StaticFunctionMapU_VECS_E;
 
 import java.util.Iterator;
@@ -22,250 +21,250 @@ public class StaticRegisterU_VECS_C {
 	public static void load(
 		StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_E, App NE) {
 
-		StaticFunctionMapU_VECS_C.annotationMap.put("main", "main");//注册一个main接口
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put("main", "main");//注册一个main接口
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"getMapFromDoubleStringArray", "score:nameScore");//注册一个main接口
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"getMapFromIntStringArray", "score:nameScore");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"getMapFromIntStringArray_ZhongYao", "score:nameScore");
-		StaticFunctionMapU_VECS_C.annotationMap.put("arrayToJson",
+		staticFunctionMapU_VECS_E.annotationMap.put("arrayToJson",
 			"gson:object");
-		StaticFunctionMapU_VECS_C.annotationMap.put("arrayToXml",
+		staticFunctionMapU_VECS_E.annotationMap.put("arrayToXml",
 			"gson:object");
-		StaticFunctionMapU_VECS_C.annotationMap.put("arrayToMap",
+		staticFunctionMapU_VECS_E.annotationMap.put("arrayToMap",
 			"gson:objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put("arrayToVector",
+		staticFunctionMapU_VECS_E.annotationMap.put("arrayToVector",
 			"gson:objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put("arrayToList",
+		staticFunctionMapU_VECS_E.annotationMap.put("arrayToList",
 			"gson:objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put("arrayToIterator",
+		staticFunctionMapU_VECS_E.annotationMap.put("arrayToIterator",
 			"objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put("arrayToSet",
+		staticFunctionMapU_VECS_E.annotationMap.put("arrayToSet",
 			"objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put("arrayToMatrix",
+		staticFunctionMapU_VECS_E.annotationMap.put("arrayToMatrix",
 			"objects:widthRange");
-		StaticFunctionMapU_VECS_C.annotationMap.put("arrayToMatrix3D",
+		staticFunctionMapU_VECS_E.annotationMap.put("arrayToMatrix3D",
 			"objects:widthRange:heightRange");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"xlsOrCsvFileToObjectMartix", "filePath:pageSheetIndex");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"xlsOrCsvFileToListObject", "filePath:pageSheetIndex");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"xlsOrCsvFileToRangedListObject",
 			"filePath:pageSheetIndex:rows:culumns");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"xlsOrCsvFileToRangedObjectMartix",
 			"filePath:pageSheetIndex:rows:culumns");
-		StaticFunctionMapU_VECS_C.annotationMap.put("dateToGMTString",
+		staticFunctionMapU_VECS_E.annotationMap.put("dateToGMTString",
 			"date");
-		StaticFunctionMapU_VECS_C.annotationMap.put("dateToYYYYMMDD",
+		staticFunctionMapU_VECS_E.annotationMap.put("dateToYYYYMMDD",
 			"date");
-		StaticFunctionMapU_VECS_C.annotationMap.put("dateToHHMMSS",
+		staticFunctionMapU_VECS_E.annotationMap.put("dateToHHMMSS",
 			"date");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"dateToMiliSeconds", "date");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"getCurrentMiliSeconds", "date");
-		StaticFunctionMapU_VECS_C.annotationMap.put("dateToTimeStamp",
+		staticFunctionMapU_VECS_E.annotationMap.put("dateToTimeStamp",
 			"date");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"timeStampToMiliSeconds", "timestamp");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"timeStampToMiliSecondsWithSize", "timestamp:size");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"dateStringToMiliSeconds", "string");
-		StaticFunctionMapU_VECS_C.annotationMap.put("hashTableToJson",
+		staticFunctionMapU_VECS_E.annotationMap.put("hashTableToJson",
 			"gson:hashtable");
-		StaticFunctionMapU_VECS_C.annotationMap.put("hashTableToXml",
+		staticFunctionMapU_VECS_E.annotationMap.put("hashTableToXml",
 			" gson:hashtable");
-		StaticFunctionMapU_VECS_C.annotationMap.put("hashTableToList",
+		staticFunctionMapU_VECS_E.annotationMap.put("hashTableToList",
 			"gson:hashtable");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"hashTableToObjectArray", "gson:hashtable");
-		StaticFunctionMapU_VECS_C.annotationMap.put("getJson",
+		staticFunctionMapU_VECS_E.annotationMap.put("getJson",
 			"urlString:jsonString");
-		StaticFunctionMapU_VECS_C.annotationMap.put("postXML",
+		staticFunctionMapU_VECS_E.annotationMap.put("postXML",
 			"urlString:XMLString");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"postJsonWithSercurity", "urlString:jsonString");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"postXMLWithSercurity", "urlString:XMLString");
-		StaticFunctionMapU_VECS_C.annotationMap.put("getHTML",
+		staticFunctionMapU_VECS_E.annotationMap.put("getHTML",
 			"urlString:object");
-		StaticFunctionMapU_VECS_C.annotationMap.put("pixTableToFile",
+		staticFunctionMapU_VECS_E.annotationMap.put("pixTableToFile",
 			"pngOutputPath:pix:fileType");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"pixRGBTableToFile",
 			"pngOutputPath:pixRed:pixGreen:pixBlue:fileType");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"bufferedImageToFile",
 			"pngOutputPath:bufferedImage:fileType");
-		StaticFunctionMapU_VECS_C.annotationMap.put("imageToFile",
+		staticFunctionMapU_VECS_E.annotationMap.put("imageToFile",
 			"pngOutputPath:image:fileType");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"bufferedImageToScaleImageFile",
 			"pngOutputPath:bufferedImage:fileType:scale");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"waveImageFileToArrayWithBlack", "FilePath");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"waveImageToArrayWithBlack", "bufferedImage");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"waveImageToArrayWithColor", "bufferedImage:colorRange");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"waveImageFileToArrayWithColor", "FilePath:colorRange");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"waveImageFileToArrayMapWithBlack", "FilePath");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"waveImageToArrayMapWithBlack", "bufferedImage");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"toolkitImageIconToBufferImage",
 			"positionX:positionY:imageIcon");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"toolkitImageToBufferImage",
 			"image:positionX:positionY:width:height:imageObserver");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"toolkitImageToBufferImageAboutIconConfig",
 			"image:positionX:positionY");
 
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"iteratorToJsonString", "gson:iterator");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringIteratorToJsonString", "gson:iterator");
-		StaticFunctionMapU_VECS_C.annotationMap.put("iteratorToXml",
+		staticFunctionMapU_VECS_E.annotationMap.put("iteratorToXml",
 			"gson:iterator");
-		StaticFunctionMapU_VECS_C.annotationMap.put("iteratorToMap",
+		staticFunctionMapU_VECS_E.annotationMap.put("iteratorToMap",
 			"gson:iterator");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"iteratorToObjectArray", "gson:iterator");
-		StaticFunctionMapU_VECS_C.annotationMap.put("iteratorToList",
+		staticFunctionMapU_VECS_E.annotationMap.put("iteratorToList",
 			"gson:iterator");
-		StaticFunctionMapU_VECS_C.annotationMap.put("jsonArrayToList",
+		staticFunctionMapU_VECS_E.annotationMap.put("jsonArrayToList",
 			"jSONArray");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"jsonObjectToString", "jSONArray");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"jsonObjectToHashtable", "gson:jSONObject");
-		StaticFunctionMapU_VECS_C.annotationMap.put("jsonObjectToXml",
+		staticFunctionMapU_VECS_E.annotationMap.put("jsonObjectToXml",
 			"jSONObject");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"listToJsonString", "gson:list");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringListToJsonString", "gson:list");
-		StaticFunctionMapU_VECS_C.annotationMap.put("listToXml",
+		staticFunctionMapU_VECS_E.annotationMap.put("listToXml",
 			"gson:list");
-		StaticFunctionMapU_VECS_C.annotationMap.put("listToMap",
+		staticFunctionMapU_VECS_E.annotationMap.put("listToMap",
 			"gson:list");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"listToObjectArray", "gson:list");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringlistToStringArray", "gson:list");
-		StaticFunctionMapU_VECS_C.annotationMap.put("listToIterator",
+		staticFunctionMapU_VECS_E.annotationMap.put("listToIterator",
 			"gson:list");
-		StaticFunctionMapU_VECS_C.annotationMap.put("listToVector",
+		staticFunctionMapU_VECS_E.annotationMap.put("listToVector",
 			"gson:list");
-		StaticFunctionMapU_VECS_C.annotationMap.put("listToSet",
+		staticFunctionMapU_VECS_E.annotationMap.put("listToSet",
 			"gson:list");
-		StaticFunctionMapU_VECS_C.annotationMap.put("listToArray",
+		staticFunctionMapU_VECS_E.annotationMap.put("listToArray",
 			"gson:list");
 
-		StaticFunctionMapU_VECS_C.annotationMap.put("mapToList",
+		staticFunctionMapU_VECS_E.annotationMap.put("mapToList",
 			"map");
-		StaticFunctionMapU_VECS_C.annotationMap.put("mapToHash",
+		staticFunctionMapU_VECS_E.annotationMap.put("mapToHash",
 			"map");
-		StaticFunctionMapU_VECS_C.annotationMap.put("jnisort",
+		staticFunctionMapU_VECS_E.annotationMap.put("jnisort",
 			"array:range:deeps");
-		StaticFunctionMapU_VECS_C.annotationMap.put("xmlToList",
+		staticFunctionMapU_VECS_E.annotationMap.put("xmlToList",
 			"string:key");
-		StaticFunctionMapU_VECS_C.annotationMap.put("xmlToVector",
+		staticFunctionMapU_VECS_E.annotationMap.put("xmlToVector",
 			"string:key");
-		StaticFunctionMapU_VECS_C.annotationMap.put("xmlToSets",
+		staticFunctionMapU_VECS_E.annotationMap.put("xmlToSets",
 			"string:key");
-		StaticFunctionMapU_VECS_C.annotationMap.put("xmlToHashtable",
+		staticFunctionMapU_VECS_E.annotationMap.put("xmlToHashtable",
 			"xmlString:gson");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"txtFileToObjectMatrix", "filePath:stopBy");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"txtFileToObjectMatrixWithRange",
 			"filePath:stopBy:rangeBegin:rangeEnd");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"txtFileToListStringWithRange",
 			"filePath:stopBy:rangeBegin:rangeEnd");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"txtFileToListString", "filePath");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"txtFileToListStringArray", "filePath, String stopBy");
-		StaticFunctionMapU_VECS_C.annotationMap.put("vectorToMap",
+		staticFunctionMapU_VECS_E.annotationMap.put("vectorToMap",
 			"vector");
-		StaticFunctionMapU_VECS_C.annotationMap.put("vectorToList",
+		staticFunctionMapU_VECS_E.annotationMap.put("vectorToList",
 			"vector");
-		StaticFunctionMapU_VECS_C.annotationMap.put("vectorToArray",
+		staticFunctionMapU_VECS_E.annotationMap.put("vectorToArray",
 			"vector");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"vectorToIterator", "vector");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"vectorToJsonString", "vector");
-		StaticFunctionMapU_VECS_C.annotationMap.put("vectorToSet",
+		staticFunctionMapU_VECS_E.annotationMap.put("vectorToSet",
 			"vector");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringBuilderToCharArray", "stringBuilder");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringBuilderToString", "stringBuilder");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringBuilderToJson", "gson:stringBuilder");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringBuilderToXml", "gson:stringBuilder");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringBuilderToSplitArray", "stopBy:stringBuilder");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringBuilderToMap", "gson:stringBuilder");
-		StaticFunctionMapU_VECS_C.annotationMap.put("stringToArray",
+		staticFunctionMapU_VECS_E.annotationMap.put("stringToArray",
 			"stopBy:string");
 
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringArrayToString", "strings");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringToURIencode", "string:encoding");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringToURIencode", "string");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"uRIencodeToURIdecode", "string");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"stringToCharASCII", "string");
-		StaticFunctionMapU_VECS_C.annotationMap.put("charsetSwap",
+		staticFunctionMapU_VECS_E.annotationMap.put("charsetSwap",
 			"string:inputCharset:outputCharset");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"objectToJsonString", "gson:object");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"matrixShiftSwapXYZ", "objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"matrixInclineSwapXY", "objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"matrixInclineSwapXZ", "objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"matrixInclineSwapYZ", "objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"matrixReverseSwap", "objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"matrixReverseSwapXY", "objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"matrixReverseSwapXZ", "objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"matrixReverseSwapYZ", "objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put("matrixToArray",
+		staticFunctionMapU_VECS_E.annotationMap.put("matrixToArray",
 			"objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"matrixInclineSwap", "objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put("matrixPostSwap",
+		staticFunctionMapU_VECS_E.annotationMap.put("matrixPostSwap",
 			"objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put("matrixInSwap",
+		staticFunctionMapU_VECS_E.annotationMap.put("matrixInSwap",
 			"objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put(
+		staticFunctionMapU_VECS_E.annotationMap.put(
 			"matrixReverseSwap", "objects");
-		StaticFunctionMapU_VECS_C.annotationMap.put("matrixToArray",
+		staticFunctionMapU_VECS_E.annotationMap.put("matrixToArray",
 			"objects");
 
-		Iterator<String> iterators = StaticFunctionMapU_VECS_C.annotationMap
+		Iterator<String> iterators = staticFunctionMapU_VECS_E.annotationMap
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next().toString();
