@@ -8,6 +8,7 @@ import S_A.pheromone.IMV_SIQ;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
@@ -22,6 +23,7 @@ import java.util.List;
 public class AddFindColumnsInMemoryClass implements CrabInterface {
 	String callFunctionKey;
 	String className = "AddFindColumnsInMemoryClass";
+	private static final Logger logger = Logger.getLogger("");
 
 	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
 	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
@@ -116,7 +118,8 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 		if (false == scorePass(NE)) {
 			return false;
 		}
-		System.out.println("Hello Word!");
+		//System.out.println("Hello Word!");
+		logger.info("Hello Word!");
 		/*
 		 * 笛卡尔关系计算大幅缩减。此处有效。
 		 */
@@ -151,9 +154,13 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 			//去掉末尾多余的:
 			shellType = shellType.substring(0, shellType.length()
 				- 1);
-			System.out.println("400-01010101-" + shellType);
+			//System.out.println("400-01010101-" + shellType);
+			String string = "400-01010101-" + shellType;
+			logger.info(string);
 			String[] strings = shellType.split(":");
-			System.out.println("400-01010102-" + strings[1]);
+			//System.out.println("400-01010102-" + strings[1]);
+			string = "400-01010102-" + strings[1];
+			logger.info(string);
 			List<String[]> list = new ArrayList();
 			list.add(strings);
 			NE._I_U.outputMap.put("获取列名", list);// 集成到老的接口模式先，避免bug*/
@@ -166,7 +173,8 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	}
 
 	/*
-	 * Thinking, at this logic, the Cartesian application could separate into steps
+	 * Thinking, at this logic, the Cartesian application could 
+	 * separate into steps
 	 * -1 Cartesian TVM commands
 	 * -2 Cartesian TVM relationships
 	 * -3 Cartesian TVM conditions
@@ -174,20 +182,28 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	 * -5 Cartesian TVM models
 	 * -6 Cartesian TVM reversions
 	 * ...etc
-	 * and here scorePass belongs to -3, and the scale of combinationIncreased the tail
-	 * is not an associated assessment, means it is a human made value, so question, 
-	 * how to swap this man-made scale value '< 2' into a common AI identical value. 
+	 * 
+	 * and here scorePass belongs to -3, and the scale of 
+	 * combinationIncreased the tail is not an associated 
+	 * assessment, means it is a human made value, so question, 
+	 * how to swap this man-made scale value '< 2' into a 
+	 * common AI identical value. 
+	 * 
 	 * -HVPCS- later.. 
 	 * --August.Rose.Tin.God.Royal.Yaoguang.Luo/罗瑶光 
 	 * */
 	public boolean scorePass(App NE) {
 		/*
-		 * important key = '输出-内容'  '仅含-'  '+列', those three keys could increase to a 
-		 * combination key ,and '+列' is a fit rights key, and '输出-内容' '仅含-' are 
-		 * complement keys.
+		 * important key = '输出-内容'  '仅含-'  '+列', those three 
+		 * keys could increase to a combination key ,and '+列' is 
+		 * a fit rights key, and '输出-内容' '仅含-' are complement 
+		 * keys.
+		 * 
 		 * let's ..
 		 * 
-		 * in the future logic function here will one more classify a sub logic list.
+		 * in the future logic function here will one more classify 
+		 * a sub logic list.
+		 * 
 		 * before println hello world. 
 		 * 
 		 * */
@@ -200,12 +216,14 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 			.containsKey("仅含-")) {
 			combinationIncreased += 1;
-			System.out.printf("highly fit"); // later in mapping iterator.*/
+			//System.out.printf("highly fit"); // later in mapping iterator.*/
+			logger.info("highly fit");
 		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 			.containsKey("输出-")) {
 			combinationIncreased += 1;
-			System.out.printf("highly fit"); // later in mapping iterator.*/
+			//System.out.printf("highly fit"); // later in mapping iterator.*/
+			logger.info("highly fit");
 		}
 		//		iterator= NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
 		//		while(iterator.hasNext()) {
@@ -214,15 +232,19 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
 			.containsKey("V+")) {
 			combinationIncreased += 1;
-			System.out.printf("highly fit"); // later in mapping iterator.*/
+			//System.out.printf("highly fit"); // later in mapping iterator.*/
+			logger.info("highly fit");
 		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 			.containsKey("名为-")) {
 			combinationIncreased += 1;
-			System.out.printf("highly fit"); // later in mapping iterator.*/
+			//System.out.printf("highly fit"); // later in mapping iterator.*/
+			logger.info("highly fit");
 		}
 		if (combinationIncreased < 2) {
-			System.out.println("-E-small-" + combinationIncreased);
+			//System.out.println("-E-small-" + combinationIncreased);
+			String string = "-E-small-" + combinationIncreased;
+			logger.info(string);
 			return false;
 		}
 		return true;

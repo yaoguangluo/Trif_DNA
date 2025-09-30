@@ -1,5 +1,7 @@
 package OSI.OSU.addAction;
 
+import java.util.logging.Logger;
+
 import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
 import S_A.pheromone.IMV_SIQ;
@@ -17,7 +19,7 @@ import S_A.pheromone.IMV_SIQ;
 public class AddActionInterfaceClass implements CrabInterface {
 	String callFunctionKey;
 	String className = "AddActionInterfaceClass";
-
+	private static final Logger logger = Logger.getLogger("");
 	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
 	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
 	// public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
@@ -101,7 +103,8 @@ public class AddActionInterfaceClass implements CrabInterface {
 	@SuppressWarnings("unchecked")
 	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子,
 		App NE, IMV_SIQ outputReg) {
-		System.out.println("Hello Word!");
+		//System.out.println("Hello Word!");
+		logger.info("Hello Word!");
 		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(
 			className)) {
 			//System.out.println("400-size-01-"
