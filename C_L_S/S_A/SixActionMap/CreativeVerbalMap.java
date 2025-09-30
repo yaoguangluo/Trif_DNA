@@ -7,23 +7,21 @@ import OSI.OSU.addAction.AddParserMixedStringClass;
 import OSI.OSU.addAction.AddParserMixedStringToListClass;
 import OSI.OSU.addAction.LimitedRowAttributesOfColumnsInMemoryClass;
 import OSI.OSU.addAction.UpdateColorAttributesOfColumnsInMemoryClass;
-import S_A.SEM.bloom.StaticFunctionMapO_VECS_C;
-import S_A.SEM.bloom.StaticFunctionMapS_AOPM_C;
 import S_A.pheromone.IMV_SIQ;
 
 /*
- * 个人著作权人, 作者 罗瑶光, 浏阳
- * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com
- * , -
- ** 15116110525-
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ * 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
- *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 @SuppressWarnings("unchecked")
 public class CreativeVerbalMap {
 	public IMV_SIQ flowerActionMap = new IMV_SIQ();
+
 	public static void initInitonActions(App NE) {
 		regAddActionInterfaceClass(NE);
 		regAddParserMixedStringClass(NE);
@@ -34,7 +32,6 @@ public class CreativeVerbalMap {
 		/*
 		 * 函数注册越来越多，以后可以OSGI插件化，也可以函数分层。
 		 */
-
 	}
 
 	/*
@@ -66,86 +63,85 @@ public class CreativeVerbalMap {
 	static void regAddActionInterfaceClass(App NE) {
 		// TODO Auto-generated method stub
 		// 非OSGI模式注册花语言，其他见我著作权的CrabInterfaceClass。
-		NE.app_S.flowerAction.FlowerSixDomainActions.put("I+表", "findTableInMemory");
+		NE.app_S.flowerAction.FlowerSixDomainActions.put("I+表",
+			"findTableInMemory");
 		// 注册花函数
-		AddActionInterfaceClass addActionInterfaceClass 
-		= new AddActionInterfaceClass();
+		AddActionInterfaceClass addActionInterfaceClass = new AddActionInterfaceClass();
 		String callFunctionKey = "findTableInMemory";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
-		NE.app_S.staticRootMap.staticBloomingTimes.put(callFunctionKey, (long) 0);
+		NE.app_S.staticRootMap.staticBloomingTimes.put(
+			callFunctionKey, (long) 0);
 		NE.app_S.staticRootMap.staticBloomingTime.put(callFunctionKey,
-				System.currentTimeMillis());// 增加记忆时间。20241013
-		NE.app_S.staticRootMap.staticClass_XE_Map.put(callFunctionKey, "S_AOPM");
+			System.currentTimeMillis());// 增加记忆时间。20241013
+		NE.app_S.staticRootMap.staticClass_XE_Map.put(callFunctionKey,
+			"S_AOPM");
 		NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey,
-				addActionInterfaceClass);// 20241001准备把这行移出去。
-		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(callFunctionKey,
-				"inputValues:传参因子:因子");
+			addActionInterfaceClass);// 20241001准备把这行移出去。
+		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(
+			callFunctionKey, "inputValues:传参因子:因子");
 		// booming
 		NE.app_S.staticRootMap.chromosomeBlooming.put(callFunctionKey,
-				addActionInterfaceClass);
+			addActionInterfaceClass);
 	}
 
 	static void regAddParserMixedStringClass(App NE) {
 		// 注册花函数
-		AddParserMixedStringClass addParserMixedStringClass 
-		= new AddParserMixedStringClass();
+		AddParserMixedStringClass addParserMixedStringClass = new AddParserMixedStringClass();
 		String callFunctionKeyaddParserMixedStringClass = "parserMixedString";
 		//
 		NE.app_S.flowerAction.FlowerChromosomeActions.put(
-				callFunctionKeyaddParserMixedStringClass,
-				addParserMixedStringClass);
+			callFunctionKeyaddParserMixedStringClass,
+			addParserMixedStringClass);
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
-		NE.app_S.staticRootMap.staticBloomingTimes
-				.put(callFunctionKeyaddParserMixedStringClass, (long) 0);
+		NE.app_S.staticRootMap.staticBloomingTimes.put(
+			callFunctionKeyaddParserMixedStringClass, (long) 0);
 		NE.app_S.staticRootMap.staticBloomingTime.put(
-				callFunctionKeyaddParserMixedStringClass,
-				System.currentTimeMillis());// 增加记忆时间。20241013
-		NE.app_S.staticRootMap.staticClass_XE_Map
-				.put(callFunctionKeyaddParserMixedStringClass, "A_VECS");
+			callFunctionKeyaddParserMixedStringClass, System
+				.currentTimeMillis());// 增加记忆时间。20241013
+		NE.app_S.staticRootMap.staticClass_XE_Map.put(
+			callFunctionKeyaddParserMixedStringClass, "A_VECS");
 		NE.app_S.staticRootMap.chromosomeNode.put(
-				callFunctionKeyaddParserMixedStringClass,
-				addParserMixedStringClass);// 20241001准备把这行移出去。
+			callFunctionKeyaddParserMixedStringClass,
+			addParserMixedStringClass);// 20241001准备把这行移出去。
 		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(
-				callFunctionKeyaddParserMixedStringClass,
-				"inputValues:传参因子:因子");
+			callFunctionKeyaddParserMixedStringClass,
+			"inputValues:传参因子:因子");
 		// booming
 		NE.app_S.staticRootMap.chromosomeBlooming.put(
-				callFunctionKeyaddParserMixedStringClass,
-				addParserMixedStringClass);
+			callFunctionKeyaddParserMixedStringClass,
+			addParserMixedStringClass);
 
 	}
 
 	static void regAddParserMixedStringToListClass(App NE) {
 		// 注册花函数
-		AddParserMixedStringToListClass addParserMixedStringToListClass 
-		= new AddParserMixedStringToListClass();
-		String callFunctionKeyAddParserMixedStringToListClass 
-		= "parserMixedStringToList";
+		AddParserMixedStringToListClass addParserMixedStringToListClass = new AddParserMixedStringToListClass();
+		String callFunctionKeyAddParserMixedStringToListClass = "parserMixedStringToList";
 		//
 		NE.app_S.flowerAction.FlowerChromosomeActions.put(
-				callFunctionKeyAddParserMixedStringToListClass,
-				addParserMixedStringToListClass);
+			callFunctionKeyAddParserMixedStringToListClass,
+			addParserMixedStringToListClass);
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
-		NE.app_S.staticRootMap.staticBloomingTimes
-				.put(callFunctionKeyAddParserMixedStringToListClass, (long) 0);
+		NE.app_S.staticRootMap.staticBloomingTimes.put(
+			callFunctionKeyAddParserMixedStringToListClass, (long) 0);
 		NE.app_S.staticRootMap.staticBloomingTime.put(
-				callFunctionKeyAddParserMixedStringToListClass,
-				System.currentTimeMillis());// 增加记忆时间。20241013
-		NE.app_S.staticRootMap.staticClass_XE_Map
-				.put(callFunctionKeyAddParserMixedStringToListClass, "A_VECS");
+			callFunctionKeyAddParserMixedStringToListClass, System
+				.currentTimeMillis());// 增加记忆时间。20241013
+		NE.app_S.staticRootMap.staticClass_XE_Map.put(
+			callFunctionKeyAddParserMixedStringToListClass, "A_VECS");
 		NE.app_S.staticRootMap.chromosomeNode.put(
-				callFunctionKeyAddParserMixedStringToListClass,
-				addParserMixedStringToListClass);// 20241001准备把这行移出去。
+			callFunctionKeyAddParserMixedStringToListClass,
+			addParserMixedStringToListClass);// 20241001准备把这行移出去。
 		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(
-				callFunctionKeyAddParserMixedStringToListClass,
-				"inputValues:传参因子:因子");
+			callFunctionKeyAddParserMixedStringToListClass,
+			"inputValues:传参因子:因子");
 		// booming
 		NE.app_S.staticRootMap.chromosomeBlooming.put(
-				callFunctionKeyAddParserMixedStringToListClass,
-				addParserMixedStringToListClass);
+			callFunctionKeyAddParserMixedStringToListClass,
+			addParserMixedStringToListClass);
 	}
 
 	/*
@@ -157,35 +153,34 @@ public class CreativeVerbalMap {
 	static void regAddFindColumnsInMemoryClass(App NE) {
 		// VI+列 later
 		NE.app_S.flowerAction.FlowerSixDomainActions.put("+列",
-				"addFindColumnsInMemoryClass");
+			"addFindColumnsInMemoryClass");
 		// 注册花函数
-		AddFindColumnsInMemoryClass addFindColumnsInMemoryClass 
-		= new AddFindColumnsInMemoryClass();
-		String callFunctionKeyAddFindColumnsInMemoryClass 
-		= "addFindColumnsInMemoryClass";
+		AddFindColumnsInMemoryClass addFindColumnsInMemoryClass = new AddFindColumnsInMemoryClass();
+		String callFunctionKeyAddFindColumnsInMemoryClass = "addFindColumnsInMemoryClass";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
-		NE.app_S.staticRootMap.staticBloomingTimes
-				.put(callFunctionKeyAddFindColumnsInMemoryClass, (long) 0);
+		NE.app_S.staticRootMap.staticBloomingTimes.put(
+			callFunctionKeyAddFindColumnsInMemoryClass, (long) 0);
 		NE.app_S.staticRootMap.staticBloomingTime.put(
-				callFunctionKeyAddFindColumnsInMemoryClass,
-				System.currentTimeMillis());// 增加记忆时间。20241013
-		NE.app_S.staticRootMap.staticClass_XE_Map
-				.put(callFunctionKeyAddFindColumnsInMemoryClass, "S_AOPM");
+			callFunctionKeyAddFindColumnsInMemoryClass, System
+				.currentTimeMillis());// 增加记忆时间。20241013
+		NE.app_S.staticRootMap.staticClass_XE_Map.put(
+			callFunctionKeyAddFindColumnsInMemoryClass, "S_AOPM");
 		NE.app_S.staticRootMap.chromosomeNode.put(
-				callFunctionKeyAddFindColumnsInMemoryClass,
-				addFindColumnsInMemoryClass);// 20241001准备把这行移出去。
+			callFunctionKeyAddFindColumnsInMemoryClass,
+			addFindColumnsInMemoryClass);// 20241001准备把这行移出去。
 		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(
-				callFunctionKeyAddFindColumnsInMemoryClass,
-				"inputValues:传参因子:因子");
+			callFunctionKeyAddFindColumnsInMemoryClass,
+			"inputValues:传参因子:因子");
 		// booming
 		NE.app_S.staticRootMap.chromosomeBlooming.put(
-				callFunctionKeyAddFindColumnsInMemoryClass,
-				addFindColumnsInMemoryClass);
+			callFunctionKeyAddFindColumnsInMemoryClass,
+			addFindColumnsInMemoryClass);
 
 	}
 
-	static void regUpdateColorAttributesOfColumnsInMemoryClass(App NE) {
+	static void regUpdateColorAttributesOfColumnsInMemoryClass(
+		App NE) {
 		// O+\\?+\\+颜色 等正则类指令 later 这是未来的趋势
 		/*
 		 * 在这种逻辑下，红色的计算关系是颜色属性分支，早年的map关于 红色->颜色 这类关系就
@@ -200,12 +195,10 @@ public class CreativeVerbalMap {
 		 * --罗瑶光
 		 * */
 		NE.app_S.flowerAction.FlowerSixDomainActions.put("E+颜色",
-				"updateColorAttributesOfColumnsInMemoryClass");
+			"updateColorAttributesOfColumnsInMemoryClass");
 		// 注册花函数
-		UpdateColorAttributesOfColumnsInMemoryClass updateColorAttributesOfColumnsInMemoryClass 
-		= new UpdateColorAttributesOfColumnsInMemoryClass();
-		String callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass
-		= "updateColorAttributesOfColumnsInMemoryClass";
+		UpdateColorAttributesOfColumnsInMemoryClass updateColorAttributesOfColumnsInMemoryClass = new UpdateColorAttributesOfColumnsInMemoryClass();
+		String callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass = "updateColorAttributesOfColumnsInMemoryClass";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
 		/*
@@ -215,28 +208,27 @@ public class CreativeVerbalMap {
 		 * 等。我会首先采用map 不累。。
 		 */
 		NE.app_S.staticRootMap.staticBloomingTimes.put(
-				callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
-				(long) 0);
+			callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
+			(long) 0);
 		NE.app_S.staticRootMap.staticBloomingTime.put(
-				callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
-				System.currentTimeMillis());// 增加记忆时间。20241013
+			callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
+			System.currentTimeMillis());// 增加记忆时间。20241013
 		NE.app_S.staticRootMap.staticClass_XE_Map.put(
-				callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
-				"S_AOPM");
+			callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
+			"S_AOPM");
 		NE.app_S.staticRootMap.chromosomeNode.put(
-				callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
-				updateColorAttributesOfColumnsInMemoryClass);// 20241001准备把这行移出去。
+			callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
+			updateColorAttributesOfColumnsInMemoryClass);// 20241001准备把这行移出去。
 		NE.app_S.staticFunctionMapS_AOPM_C.annotationMap.put(
-				callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
-				"inputValues:传参因子:因子");
+			callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
+			"inputValues:传参因子:因子");
 		// booming
 		NE.app_S.staticRootMap.chromosomeBlooming.put(
-				callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
-				updateColorAttributesOfColumnsInMemoryClass);
+			callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass,
+			updateColorAttributesOfColumnsInMemoryClass);
 
 	}
 
-	
 	/*
 	 *思考 chromosomeNode 里面添加 key limitedRowAttributesOfColumnsInMemoryClass 
 	 *目的是将crab 执行，TVM extension
@@ -250,20 +242,19 @@ public class CreativeVerbalMap {
 	 *因为 if else的价值就是 新函数不走花语 所以花语就不用再管了，以后新的函数直接走肽语调用花函数即可
 	 *
 	 * */
-	static void regLimitedRowAttributesOfColumnsInMemoryClass(App NE) {
+	static void regLimitedRowAttributesOfColumnsInMemoryClass(
+		App NE) {
 		/*
 		 * 开始构造数字行数提取指令 从- 组合 到- 然后分析 从- 组合 到- 展示+行 仅+展示
 		 */
-//		FlowerAction.FlowerSixDomainActions.put("仅+V",
-//				"limitedRowAttributesOfColumnsInMemoryClass");
+		//		FlowerAction.FlowerSixDomainActions.put("仅+V",
+		//				"limitedRowAttributesOfColumnsInMemoryClass");
 		NE.app_S.flowerAction.FlowerSixDomainActions.put("仅+V",
-				"P_AggregationLimitMap");
-		
+			"P_AggregationLimitMap");
+
 		// 注册花函数
-		LimitedRowAttributesOfColumnsInMemoryClass limitedRowAttributesOfColumnsInMemoryClass 
-		= new LimitedRowAttributesOfColumnsInMemoryClass();
-		String callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass 
-		= "P_AggregationLimitMap";
+		LimitedRowAttributesOfColumnsInMemoryClass limitedRowAttributesOfColumnsInMemoryClass = new LimitedRowAttributesOfColumnsInMemoryClass();
+		String callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass = "P_AggregationLimitMap";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
 		/*
@@ -273,28 +264,28 @@ public class CreativeVerbalMap {
 		 * 等。我会首先采用map 不累。。
 		 */
 		NE.app_S.staticRootMap.staticBloomingTimes.put(
-				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
-				(long) 0);
+			callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+			(long) 0);
 		NE.app_S.staticRootMap.staticBloomingTime.put(
-				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
-				System.currentTimeMillis());// 增加记忆时间。20241013
+			callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+			System.currentTimeMillis());// 增加记忆时间。20241013
 		NE.app_S.staticRootMap.staticClass_XE_Map.put(
-				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
-				"O_VECS");
+			callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+			"O_VECS");
 		NE.app_S.staticRootMap.chromosomeNode.put(
-				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
-				limitedRowAttributesOfColumnsInMemoryClass);// 20241001准备把这行移出去。
-//		StaticFunctionMapS_AOPM_C.annotationMap.put(
-//				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
-//				"inputValues:传参因子:因子");
-		
+			callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+			limitedRowAttributesOfColumnsInMemoryClass);// 20241001准备把这行移出去。
+		//		StaticFunctionMapS_AOPM_C.annotationMap.put(
+		//				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+		//				"inputValues:传参因子:因子");
+
 		NE.app_S.staticFunctionMapO_VECS_C.annotationMap.put(
-				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
-				"inputValues:传参因子:因子");
+			callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+			"inputValues:传参因子:因子");
 		// booming
 		NE.app_S.staticRootMap.chromosomeBlooming.put(
-				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
-				limitedRowAttributesOfColumnsInMemoryClass);
+			callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+			limitedRowAttributesOfColumnsInMemoryClass);
 	}
 
 }

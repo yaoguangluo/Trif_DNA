@@ -20,7 +20,7 @@ import S_A.SVQ.stable.S_ShellETL;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
+ * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
 * (lyg.tin@gmail.com2018年后因G网屏蔽不再使用）
  
@@ -28,10 +28,10 @@ import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋别墅
+*  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
+ * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
 * (lyg.tin@gmail.com2018年后因G网屏蔽不再使用）
  
@@ -39,7 +39,7 @@ import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋别墅
+*  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class PLSQLCommand_E_X_P_E_Kernel {
 //处理机中心, 别急, 准备验证 罗瑶光 object.getString("type")

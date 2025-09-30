@@ -4,21 +4,19 @@ import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
 import O_V.OSA.shell.XA_ShellTable;
 import O_V.OSA.shell.XA_ShellTables;
-import S_A.SEM.bloom.StaticFunctionMapO_VECS_C;
 import S_A.pheromone.IMV_SIQ;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /*
- * 个人著作权人, 作者 罗瑶光, 浏阳
- * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
- * （lyg.tin@gmail.com2018年后因G网屏蔽不再使用）
- ** 15116110525-
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ * 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
- *  208号 阳光家园别墅小区 第十栋别墅
+ * 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 //稍后封装成一个统一的傻瓜接口。
 public class AddFindColumnsInMemoryClass implements CrabInterface {
@@ -57,13 +55,11 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 			"O_VECS");
 		NE.app_S.staticRootMap.chromosomeNode.put(callFunctionKey,
 			new AddFindColumnsInMemoryClass());// 20241001准备把这行移出去。
-		NE.app_S.staticFunctionMapO_VECS_C.annotationMap.put(callFunctionKey,
-			"inputValues:传参因子:因子");
+		NE.app_S.staticFunctionMapO_VECS_C.annotationMap.put(
+			callFunctionKey, "inputValues:传参因子:因子");
 		// String callFunctionKey= "callFunctionKey";
 		// StaticRootMap.initMap();
-	}
-
-	;
+	};
 
 	/*
 	 * 用于表达花语的链接

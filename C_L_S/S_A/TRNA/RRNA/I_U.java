@@ -75,14 +75,18 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 //做文章吧。。。606下一步明年也可以感谢（Xuetao Cao, Koji Okamoto, Hanming Shen
 //, Richard Youle）-本来这是我2025年的进度，但是太无聊了，。。。nume-forma-stru-sets
 //本来这是我2025年的进度，但是太无聊了，。。。nume-forma-stru-sets
+
+//医学蛋白酶丝化拟态计算 属于碎片化线程索引 技术含量比较高，不是元基花当前主干任务， 优先级后排。 
+//因为是先有这些源码，再去的nature。仅仅说明我当时被一些我设备品牌的电子运维团队的关注了。祝好运。
+
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
- * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
- * (lyg.tin@gmail.com2018年回国后因国内G网屏蔽不再使用）
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
  * 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
- * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ * 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 //S_objectIdentify
 public class I_U extends U_Q {

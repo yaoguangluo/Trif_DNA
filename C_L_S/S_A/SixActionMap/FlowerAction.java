@@ -10,14 +10,13 @@ import S_A.pheromone.IMV_SIQ;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
- * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com
- * , -
- ** 15116110525-
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ * 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋
+ * 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class FlowerAction {
 	/*
@@ -28,7 +27,7 @@ public class FlowerAction {
 	 * --罗瑶光
 	 * 
 	 * */
-	
+
 	public IMV_SIQ FlowerSixDomainActions = new IMV_SIQ();
 	// later will// do in // dynamic
 	public IMV_SIQ FlowerP_E_KernelActions = new IMV_SIQ();
@@ -36,30 +35,33 @@ public class FlowerAction {
 
 	@SuppressWarnings("unchecked")
 	public void initFlowerP_E_KernelActions() {
-		FlowerP_E_KernelActions.put("条件为", "selectRowsByAttributesOfCondition");
+		FlowerP_E_KernelActions.put("条件为",
+			"selectRowsByAttributesOfCondition");
 		FlowerP_E_KernelActions.put("操作",
-				"selectRowsByAttributesOfAggregation");
+			"selectRowsByAttributesOfAggregation");
 		FlowerP_E_KernelActions.put("获取列名",
-				"selectRowsByAttributesOfGetCulumns");
-		FlowerP_E_KernelActions.put("PLETL", "selectRowsByAttributesOfPLETL");
-		FlowerP_E_KernelActions.put("PLTCP", "selectRowsByAttributesOfPLTCP");
+			"selectRowsByAttributesOfGetCulumns");
+		FlowerP_E_KernelActions.put("PLETL",
+			"selectRowsByAttributesOfPLETL");
+		FlowerP_E_KernelActions.put("PLTCP",
+			"selectRowsByAttributesOfPLTCP");
 		FlowerP_E_KernelActions.put(S_ShellETL.SHELL_ETL_CONDITION,
-				"selectRowsByAttributesOfJoinCondition");
+			"selectRowsByAttributesOfJoinCondition");
 		FlowerP_E_KernelActions.put("relation",
-				"selectRowsByAttributesOfJoinRelation");
+			"selectRowsByAttributesOfJoinRelation");
 		FlowerP_E_KernelActions.put("getCulumns",
-				"selectRowsByAttributesOfJoinGetCulumns");
-//       //-增删改-对系统危险，先略。
-//        FlowerP_E_KernelActions.put("", "");
-//        FlowerP_E_KernelActions.put("", "");
-//        FlowerP_E_KernelActions.put("", "");
-//        FlowerP_E_KernelActions.put("", "");
-//        FlowerP_E_KernelActions.put("", "");
-//        FlowerP_E_KernelActions.put("", "");
-//        FlowerP_E_KernelActions.put("", "");
+			"selectRowsByAttributesOfJoinGetCulumns");
+		//       //-增删改-对系统危险，先略。
+		//        FlowerP_E_KernelActions.put("", "");
+		//        FlowerP_E_KernelActions.put("", "");
+		//        FlowerP_E_KernelActions.put("", "");
+		//        FlowerP_E_KernelActions.put("", "");
+		//        FlowerP_E_KernelActions.put("", "");
+		//        FlowerP_E_KernelActions.put("", "");
+		//        FlowerP_E_KernelActions.put("", "");
 	}
 
-//现在是static，以后如果有相关进化算法来增加函数，记得改成dynamic，罗瑶光。
+	//现在是static，以后如果有相关进化算法来增加函数，记得改成dynamic，罗瑶光。
 	@SuppressWarnings("unchecked")
 	public void initFlowerSixDomainActions() {
 		FlowerSixDomainActions.put("获取表名", "P_TableName");
@@ -71,7 +73,7 @@ public class FlowerAction {
 		FlowerSixDomainActions.put("匹配条件", "P_fileOperations");
 		FlowerSixDomainActions.put("将", "P_fileOperations");
 		FlowerSixDomainActions.put(S_ShellETL.SHELL_ETL_CULUMNNAME,
-				"P_ListNeedStart");
+			"P_ListNeedStart");
 		FlowerSixDomainActions.put("修改列名", "P_ListNeedStart");
 		FlowerSixDomainActions.put("culumnValue", "P_ListNeedStart");
 		FlowerSixDomainActions.put("join", "P_Join");
@@ -82,24 +84,28 @@ public class FlowerAction {
 		FlowerSixDomainActions.put("获取列名", "P_ListNeedStart");
 		FlowerSixDomainActions.put("PLTCP", "P_ListNeedStart");
 	}
+
 	/**
 	 * 同一个句型已经执行过的函数指令集之后整体去重 -trif
 	 * 
 	 */
 	@SuppressWarnings("unchecked")
 	public void doAction(String callFunctionKey, String[] temp,
-			TinMap output, App NE) throws InterruptedException, IOException {
+		TinMap output, App NE) throws InterruptedException,
+		IOException {
 		/*400 越来越多，准备设计逻辑层快速索引文档指南*/
-		System.out.println("pre-doAction-400-00005-" + callFunctionKey);
+		System.out.println("pre-doAction-400-00005-"
+			+ callFunctionKey);
 		// 花语初始
 		String[] strings = new String[1];
 		IMV_SIQ outputReg = new IMV_SIQ();
 		IMV_SIQ inputValue = new IMV_SIQ();
-		NE.app_S.helpVerbalMap.didJustNow.put(callFunctionKey, new Object());// later*/
+		NE.app_S.helpVerbalMap.didJustNow.put(callFunctionKey,
+			new Object());// later*/
 		String chromosome = NE.app_S.staticRootMap.staticClass_XE_Map
-				.getString(callFunctionKey);
-		String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome,
-				callFunctionKey, NE); // 我是神！ tin神！
+			.getString(callFunctionKey);
+		String[] 传参因子 = StaticFunctionMap.callAnnotationMap(
+			chromosome, callFunctionKey, NE); // 我是神！ tin神！
 		NE._I_U.outputMap = output;
 		if (null == 传参因子) {// strong weak
 			传参因子 = new String[1];
@@ -114,21 +120,25 @@ public class FlowerAction {
 		outputReg.put("传参因子", 传参因子);
 		outputReg.put("inputValues", inputValue);
 		strings[0] = "执行 " + chromosome + " 下 " + callFunctionKey
-				+ " 接口, 参数是 传参因子";
+			+ " 接口, 参数是 传参因子";
 		// 孢子插件执行
 		//一旦走了孢子，那么花语就不会再执行了，可以将花语直接整合进肽语，
 		//那么这里的TVM extension 将会加强对 chromosomeNode的调用。，
-		if (NE.app_S.staticRootMap.chromosomeNode.containsKey(callFunctionKey)) {
-			CrabInterface crabInterface = (OSI.OSU.crab.CrabInterface) 
-				NE.app_S.staticRootMap.chromosomeNode.get(callFunctionKey);
-			boolean done = crabInterface.logic(inputValue, 传参因子, 0, NE, outputReg);
+		if (NE.app_S.staticRootMap.chromosomeNode.containsKey(
+			callFunctionKey)) {
+			CrabInterface crabInterface = (OSI.OSU.crab.CrabInterface) NE.app_S.staticRootMap.chromosomeNode
+				.get(callFunctionKey);
+			boolean done = crabInterface.logic(inputValue, 传参因子, 0,
+				NE, outputReg);
 			//不断地修改过程中，变量轻微的变化导致的意识对变量函数速记缺陷。
-			if(done) {
-				NE.app_S.staticRootMap.tinShellV005(strings, outputReg, NE);	
+			if (done) {
+				NE.app_S.staticRootMap.tinShellV005(strings,
+					outputReg, NE);
 			}
 		} else {
 			// 下面是老的花函数执行
-			NE.app_S.staticRootMap.tinShellV005(strings, outputReg, NE);
+			NE.app_S.staticRootMap.tinShellV005(strings, outputReg,
+				NE);
 		}
 		// need VPCS sections later
 		IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
@@ -146,7 +156,8 @@ public class FlowerAction {
 //        IMV_SIQ outputReg = new IMV_SIQ();
 //        IMV_SIQ inputValue = new IMV_SIQ();
 
-//        String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap.getString(callFunctionKey).split(":");
+//        String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
+//           .getString(callFunctionKey).split(":");
 //        NE._I_U.outputMap = output;//加了map后缀需要更新关联函数
 
 //        inputValue.put(传参因子[0], temp);
@@ -163,7 +174,8 @@ public class FlowerAction {
 //        IMV_SIQ outputReg = new IMV_SIQ();
 //        IMV_SIQ inputValue = new IMV_SIQ();
 
-//        String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap.getString(callFunctionKey).split(":");
+//        String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
+//           .getString(callFunctionKey).split(":");
 //        NE._I_U.outputMap = output;
 
 //        inputValue.put(传参因子[0], temp);
@@ -182,7 +194,8 @@ public class FlowerAction {
 //        IMV_SIQ inputValue = new IMV_SIQ();
 
 //        String chromosome = StaticRootMap.staticClass_XE_Map.getString(callFunctionKey);
-//        String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome, callFunctionKey); //我是神！ tin神！
+//        String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome
+//        , callFunctionKey); //我是神！ tin神！
 //        NE._I_U.outputMap = output;
 //        inputValue.put(传参因子[0], temp);
 //        inputValue.put(传参因子[1], output);

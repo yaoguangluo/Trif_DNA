@@ -19,14 +19,13 @@ import O_V.OSM.shell.CommandClass;
 //8 model in time norms
 //全部基于罗瑶光著作权基础堆积即可。
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
- * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com
- * , -(Facebook和-Gmail邮箱 我-2018年1月后从未使用，小心网墙欺诈)-
- ** 15116110525-
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
+ * 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋
+ * 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 @SuppressWarnings("unchecked")
 public class WorkVerbalMap_X_S {
@@ -55,12 +54,12 @@ public class WorkVerbalMap_X_S {
 	public String[] actionsPosition_SV;
 	public int[] actionsDistanceV_SV;
 	public String[] actionsDistance_SV;
-	
+
 	public int[] actionsPositionV_VO;
 	public String[] actionsPosition_VO;
 	public int[] actionsDistanceV_VO;
 	public String[] actionsDistance_VO;
-	
+
 	public int i = 0;
 
 	// 为什么现在不设计成implements接口，因为目前没有明确六元函数定义域规范，
@@ -80,7 +79,8 @@ public class WorkVerbalMap_X_S {
 		babeiMap.clear();
 		nounInText.clear();// small calculus , later do full
 		verbInText.clear();
-		Iterator<String> iterator = command_V._IMV_SIQ_SS.keySet().iterator();
+		Iterator<String> iterator = command_V._IMV_SIQ_SS.keySet()
+			.iterator();
 		while (iterator.hasNext()) {
 			String string = iterator.next();
 			if (data2DSubjectMap.containsKey(string)) {
@@ -94,21 +94,24 @@ public class WorkVerbalMap_X_S {
 				babeiMap.put(string, i++);
 			}
 			// pos load
-			WordFrequency wordFrequency = command_V._IMV_SIQ_SS.getW(string);
-			 //if (wordFrequency.get_pos().contains("名")) {
+			WordFrequency wordFrequency = command_V._IMV_SIQ_SS.getW(
+				string);
+			//if (wordFrequency.get_pos().contains("名")) {
 			// 一切数据首先都应该名词化*/
-				 nounInText.put(string, wordFrequency);
-			 //}
+			nounInText.put(string, wordFrequency);
+			//}
 			// 动 pca map替换成cartsian map先 因为英语会出现had had 有且仅有这类语法。
 			//if (wordFrequency.get_pos().contains("动")) {
-				verbInText.put(string, wordFrequency);
+			verbInText.put(string, wordFrequency);
 			//}
 			System.out.println(wordFrequency.positions);
 		}
 	}
 
+	@SuppressWarnings("unused")
 	public void initCartesianActions(App NE, CommandClass command_V) {
-		Iterator<String> iteratorNoun = nounInText.keySet().iterator();
+		Iterator<String> iteratorNoun = nounInText.keySet()
+			.iterator();
 		NextNoun: while (iteratorNoun.hasNext()) {
 			String stringNoun = iteratorNoun.next();
 			if (stringNoun.isEmpty()) {
@@ -118,9 +121,11 @@ public class WorkVerbalMap_X_S {
 				continue NextNoun;
 			}
 			WordFrequency wordFrequencyNoun = command_V._IMV_SIQ_SS
-					.getW(stringNoun);
-			int averagePositionNoun = wordFrequencyNoun.getAveragePosition();
-			Iterator<String> iteratorVerb = verbInText.keySet().iterator();
+				.getW(stringNoun);
+			int averagePositionNoun = wordFrequencyNoun
+				.getAveragePosition();
+			Iterator<String> iteratorVerb = verbInText.keySet()
+				.iterator();
 			NextVerb: while (iteratorVerb.hasNext()) {
 				String stringVerb = iteratorVerb.next();
 				if (stringVerb.isEmpty()) {
@@ -130,33 +135,38 @@ public class WorkVerbalMap_X_S {
 					continue NextVerb;
 				}
 				WordFrequency wordFrequencyVerb = command_V._IMV_SIQ_SS
-						.getW(stringVerb);
+					.getW(stringVerb);
 				int averagePositionVerb = wordFrequencyVerb
-						.getAveragePosition();
+					.getAveragePosition();
 				// noun-verb
 				String root = "";
 				//String root_v = "";
 				String root_pos = "";
 				//String root_pos_v = "";
-				if (StudyVerbalMap.initonDelegate.containsKey(stringVerb)) {
+				if (StudyVerbalMap.initonDelegate.containsKey(
+					stringVerb)) {
 					stringVerb = StudyVerbalMap.initonDelegate
-							.getString(stringVerb);
+						.getString(stringVerb);
 				}
 				if (averagePositionNoun < averagePositionVerb) {
-//                  later do noun's domains. 					
-					if(StudyVerbalMap_X.initonDelegate.containsKey(stringNoun)) {
-						stringNoun = StudyVerbalMap_X.initonDelegate.getString(stringNoun);
+					//                  later do noun's domains. 					
+					if (StudyVerbalMap_X.initonDelegate.containsKey(
+						stringNoun)) {
+						stringNoun = StudyVerbalMap_X.initonDelegate
+							.getString(stringNoun);
 					}
-					if(StudyVerbalMap_X.initonDelegate.containsKey(stringVerb)) {
-						stringVerb = StudyVerbalMap_X.initonDelegate.getString(stringVerb);
+					if (StudyVerbalMap_X.initonDelegate.containsKey(
+						stringVerb)) {
+						stringVerb = StudyVerbalMap_X.initonDelegate
+							.getString(stringVerb);
 					}
 					root += stringNoun;
 					root += "+";
 					root += stringVerb;
-					
-//					root_v += stringVerb;
-//					root_v += "-";
-//					root_v += stringNoun;
+
+					//					root_v += stringVerb;
+					//					root_v += "-";
+					//					root_v += stringNoun;
 					/* 
 					 * CN
 					 * --十六元基索引逻辑
@@ -178,65 +188,72 @@ public class WorkVerbalMap_X_S {
 					 * */
 					root_pos += "_stringNoun" + averagePositionNoun;
 					root_pos += "_stringVerb" + averagePositionVerb;
-					
+
 					//root_pos_v += "_stringVerb" + averagePositionVerb;
 					//root_pos_v += "_stringNoun" + averagePositionNoun;
-					int right = Math.abs(averagePositionNoun - averagePositionVerb);
-					int position = (averagePositionNoun + averagePositionVerb) >> 1;
-					if (!command_V.cartesianWorkActionsRightsSV.containsKey(root)
-							&& !command_V.cartesianWorkActionsPositionsSV
-									.containsKey(root)
-							&& right > 0) {
+					int right = Math.abs(averagePositionNoun
+						- averagePositionVerb);
+					int position = (averagePositionNoun
+						+ averagePositionVerb) >> 1;
+					if (!command_V.cartesianWorkActionsRightsSV
+						.containsKey(root)
+						&& !command_V.cartesianWorkActionsPositionsSV
+							.containsKey(root) && right > 0) {
 						if (right < NE.app_S.initonsDistanceRelationship) {
 							if (!root.contains(" ")) {
 								//command_V.cartesianWorkActions_posSV.put(root,
 								//		root_pos);
-								command_V.cartesianWorkActionsRightsSV.put(root,
-										right);
+								command_V.cartesianWorkActionsRightsSV
+									.put(root, right);
 								//command_V.cartesianWorkActionsRightsParserSV.put(stringNoun + "+",
 								//		right);
 								//command_V.cartesianWorkActionsRightsParserSV.put("+" + stringVerb,
 								//		right);
 								//command_V.cartesianWorkActionsPositionsSV.put(root,
 								//		position);
-//								System.out.println(root + ":" + right + ":"
-//										+ position + ":" + root_pos);
+								//System.out.println(root + ":" + right + ":"
+								//		+ position + ":" + root_pos);
 							}
 						}
 					}
-				} 
-				else {
-					if(StudyVerbalMap_X.initonDelegate.containsKey(stringNoun)) {
-						stringNoun = StudyVerbalMap_X.initonDelegate.getString(stringNoun);
+				} else {
+					if (StudyVerbalMap_X.initonDelegate.containsKey(
+						stringNoun)) {
+						stringNoun = StudyVerbalMap_X.initonDelegate
+							.getString(stringNoun);
 					}
-					if(StudyVerbalMap_X.initonDelegate.containsKey(stringVerb)) {
-						stringVerb = StudyVerbalMap_X.initonDelegate.getString(stringVerb);
+					if (StudyVerbalMap_X.initonDelegate.containsKey(
+						stringVerb)) {
+						stringVerb = StudyVerbalMap_X.initonDelegate
+							.getString(stringVerb);
 					}
 					root += stringVerb;
 					root += "-";
 					root += stringNoun;
 					root_pos += "_stringVerb" + averagePositionVerb;
 					root_pos += "_stringNoun" + averagePositionNoun;
-					int right = Math.abs(averagePositionNoun - averagePositionVerb);
-					int position = (averagePositionNoun + averagePositionVerb) >> 1;
-					if (!command_V.cartesianWorkActionsRightsVO.containsKey(root)
-							&& !command_V.cartesianWorkActionsPositionsVO
-									.containsKey(root)
-							&& right > 0) {
+					int right = Math.abs(averagePositionNoun
+						- averagePositionVerb);
+					int position = (averagePositionNoun
+						+ averagePositionVerb) >> 1;
+					if (!command_V.cartesianWorkActionsRightsVO
+						.containsKey(root)
+						&& !command_V.cartesianWorkActionsPositionsVO
+							.containsKey(root) && right > 0) {
 						if (right < NE.app_S.initonsDistanceRelationship) {
 							if (!root.contains(" ")) {
 								//command_V.cartesianWorkActions_posVO.put(root,
 								//		root_pos);
-								command_V.cartesianWorkActionsRightsVO.put(root,
-										right);
+								command_V.cartesianWorkActionsRightsVO
+									.put(root, right);
 								//command_V.cartesianWorkActionsRightsParserVO.put(stringVerb + "-",
 								//		right);
 								//command_V.cartesianWorkActionsRightsParserVO.put("-" + stringNoun,
 								//		right);
 								//command_V.cartesianWorkActionsPositionsVO.put(root,
 								//		position);
-//								System.out.println(root + ":" + right + ":"
-//										+ position + ":" + root_pos);
+								//System.out.println(root + ":" + right + ":"
+								//		+ position + ":" + root_pos);
 							}
 						}
 					}

@@ -14,7 +14,7 @@ import java.util.Vector;
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋
+*  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class ButterworthPro{
 	Vector<Line2D.Double> lines= new Vector<Line2D.Double>();

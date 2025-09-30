@@ -11,42 +11,44 @@ import S_A.pheromone.IMV_SIQ_X_;
 import java.util.Iterator;
 
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
- * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
- * （lyg.tin@gmail.com2018年后因G网屏蔽不再使用）
- ** 15116110525-
- * 430181198505250014, G24402609, EB0581342
- * 204925063, 389418686, F2406501, 0626136
- * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋别墅
- * */
+ * 个人著作权人, 作者 罗瑶光, 浏阳 yaoguangluo@outlook.com,
+ * 313699483@qq.com, 2080315360@qq.com,
+ * (lyg.tin@gmail.com2018年后因G网屏蔽不再使用）
+ * 15116110525- 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136 湖南省 浏阳市 集里街道
+ * 神仙坳社区 大塘冲路一段 208号 阳光家园别墅小区 第十栋别墅 第三层
+ */
 public class RatioMap_E implements RatioMap {
 	@Override
 	public IMV_SIQ_X_ getEmotionSampleMap(IMV_SIQ_S_ wordFrequencyMap,
-			IMV_SIQ positive, IMV_SIQ negative, App NE) {
+		IMV_SIQ positive, IMV_SIQ negative, App NE) {
 		IMV_SIQ_X_ output = new IMV_SIQ_X_();
 		for (int i = wordFrequencyMap.size()
-				- S_Pos.INT_ONE; i >= S_Pos.INT_ZERO; i--) {
-			if (wordFrequencyMap.getW(i).get_word().length() > S_Pos.INT_ONE) {
+			- S_Pos.INT_ONE; i >= S_Pos.INT_ZERO; i--) {
+			if (wordFrequencyMap.getW(i).get_word()
+				.length() > S_Pos.INT_ONE) {
 				EmotionSample emotionSample;
-				if (output.containsKey(wordFrequencyMap.getW(i).get_word())) {
-					emotionSample = output
-							.get_S(wordFrequencyMap.getW(i).get_word());
+				if (output.containsKey(wordFrequencyMap.getW(i)
+					.get_word())) {
+					emotionSample = output.get_S(wordFrequencyMap
+						.getW(i).get_word());
 				} else {
 					emotionSample = new EmotionSample();
 				}
-				if (positive.containsKey(wordFrequencyMap.getW(i).get_word())) {
-					emotionSample.I_PositiveCount(
-							wordFrequencyMap.getW(i).get_frequency());
-				} else if (negative
-						.containsKey(wordFrequencyMap.getW(i).get_word())) {
-					emotionSample.I_NegativeCount(
-							wordFrequencyMap.getW(i).get_frequency());
+				if (positive.containsKey(wordFrequencyMap.getW(i)
+					.get_word())) {
+					emotionSample.I_PositiveCount(wordFrequencyMap
+						.getW(i).get_frequency());
+				} else if (negative.containsKey(wordFrequencyMap.getW(
+					i).get_word())) {
+					emotionSample.I_NegativeCount(wordFrequencyMap
+						.getW(i).get_frequency());
 				} else {
-					emotionSample.I_MedCount(
-							wordFrequencyMap.getW(i).get_frequency());
+					emotionSample.I_MedCount(wordFrequencyMap.getW(i)
+						.get_frequency());
 				}
-				output.put(wordFrequencyMap.getW(i).get_word(), emotionSample);
+				output.put(wordFrequencyMap.getW(i).get_word(),
+					emotionSample);
 			}
 		}
 		return output;
@@ -54,66 +56,77 @@ public class RatioMap_E implements RatioMap {
 
 	@Override
 	public void IQ_MotivationRatio(IMV_SIQ_X_ emotionSampleMap,
-			double sumOfEmotion) {
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		double sumOfEmotion) {
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
-			emotionSample.I_MotivationRatio(
-					emotionSample.getEmotionRatio() / sumOfEmotion);
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
+			emotionSample.I_MotivationRatio(emotionSample
+				.getEmotionRatio() / sumOfEmotion);
 			emotionSampleMap.put(word, emotionSample);
 		}
 	}
 
 	@Override
 	public void IQ_CorrelationRatio(IMV_SIQ_X_ emotionSampleMap,
-			double sumOfEmotion) {
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		double sumOfEmotion) {
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
-			emotionSample.I_CorrelationRatio((emotionSample.getPositiveCount()
-					+ emotionSample.getNegativeCount()
-					+ emotionSample.getMedCount()) / sumOfEmotion);
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
+			emotionSample.I_CorrelationRatio((emotionSample
+				.getPositiveCount() + emotionSample.getNegativeCount()
+				+ emotionSample.getMedCount()) / sumOfEmotion);
 			emotionSampleMap.put(word, emotionSample);
 		}
 	}
 
 	@Override
 	public void IQ_ContinusRatio(IMV_SIQ_X_ emotionSampleMap,
-			double emotionRatio) {
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		double emotionRatio) {
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
-			emotionSample.I_ContinusRatio((emotionSample.getPositiveCount()
-					+ emotionSample.getNegativeCount()
-					+ emotionSample.getMedCount()) * emotionRatio);
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
+			emotionSample.I_ContinusRatio((emotionSample
+				.getPositiveCount() + emotionSample.getNegativeCount()
+				+ emotionSample.getMedCount()) * emotionRatio);
 			emotionSampleMap.put(word, emotionSample);
 		}
 	}
 
 	@Override
 	public void IQ_TrendsRatio(IMV_SIQ_X_ emotionSampleMap) {
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
-			emotionSample.I_TrendsRatio(emotionSample.getEmotionRatio()
-					* emotionSample.getContinusRatio()
-					* emotionSample.getCorrelationRatio());
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
+			emotionSample.I_TrendsRatio(emotionSample
+				.getEmotionRatio() * emotionSample.getContinusRatio()
+				* emotionSample.getCorrelationRatio());
 			emotionSampleMap.put(word, emotionSample);
 		}
 	}
 
 	@Override
 	public void IQ_PredictionRatio(IMV_SIQ_X_ emotionSampleMap) {
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
-			emotionSample.I_PredictionRatio(emotionSample.getMotivationRatio()
-					* emotionSample.getCorrelationRatio());
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
+			emotionSample.I_PredictionRatio(emotionSample
+				.getMotivationRatio() * emotionSample
+					.getCorrelationRatio());
 			emotionSampleMap.put(word, emotionSample);
 		}
 
@@ -121,51 +134,63 @@ public class RatioMap_E implements RatioMap {
 
 	@Override
 	public void IQ_GuessRatio(IMV_SIQ_X_ emotionSampleMap) {
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
-			emotionSample.I_GuessRatio(emotionSample.getPredictionRatio()
-					* emotionSample.getTrendsRatio());
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
+			emotionSample.I_GuessRatio(emotionSample
+				.getPredictionRatio() * emotionSample
+					.getTrendsRatio());
 			emotionSampleMap.put(word, emotionSample);
 		}
 	}
 
 	@Override
 	public void IQ_SensingRatio(IMV_SIQ_X_ emotionSampleMap) {
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
 			if (0 == emotionSample.getTrendsRatio()) {
 				emotionSample.I_SensingRatio(0.0);
 			} else {
-				emotionSample.I_SensingRatio(emotionSample.getPredictionRatio()
-						/ emotionSample.getTrendsRatio());
+				emotionSample.I_SensingRatio(emotionSample
+					.getPredictionRatio() / emotionSample
+						.getTrendsRatio());
 			}
 			emotionSampleMap.put(word, emotionSample);
 		}
 	}
 
 	@Override
-	public double findTotalPositiveCount(IMV_SIQ_X_ emotionSampleMap) {
+	public double findTotalPositiveCount(
+		IMV_SIQ_X_ emotionSampleMap) {
 		double output = 1.0;
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
 			output += emotionSample.getPositiveCount();
 		}
 		return output;
 	}
 
 	@Override
-	public double findTotalNegativeCount(IMV_SIQ_X_ emotionSampleMap) {
+	public double findTotalNegativeCount(
+		IMV_SIQ_X_ emotionSampleMap) {
 		double output = 1.0;
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
 			output += 0.0;
 			// if (null != emotionSample.getNegativeCount()) {
 			output += emotionSample.getNegativeCount();
@@ -176,13 +201,17 @@ public class RatioMap_E implements RatioMap {
 
 	@Override
 	public void IQ_EmotionRatio(IMV_SIQ_X_ emotionSampleMap,
-			double positiveCount, double negativeCount, double medCount) {
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		double positiveCount, double negativeCount, double medCount) {
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
-			double negRate = emotionSample.getNegativeCount() / negativeCount;
-			double posRate = emotionSample.getPositiveCount() / positiveCount;
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
+			double negRate = emotionSample.getNegativeCount()
+				/ negativeCount;
+			double posRate = emotionSample.getPositiveCount()
+				/ positiveCount;
 			double medRate = emotionSample.getMedCount() / medCount;
 			emotionSample.I_EmotionRatio(negRate + posRate + medRate);
 			emotionSampleMap.put(word, emotionSample);
@@ -192,27 +221,33 @@ public class RatioMap_E implements RatioMap {
 	@Override
 	public double findTotalKeyCount(IMV_SIQ_X_ emotionSampleMap) {
 		double output = 1.0;// LATER IN BOLD
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
-			output += emotionSample.getNegativeCount()
-					+ emotionSample.getPositiveCount()
-					+ emotionSample.getMedCount();
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
+			output += emotionSample.getNegativeCount() + emotionSample
+				.getPositiveCount() + emotionSample.getMedCount();
 		}
 		return output;
 	}
 
 	@SuppressWarnings({ "unused", "unchecked" })
 	@Override
-	public void IQ_Motivation(IMV_SIQ_X_ emotionSampleMap, IMV_SIQ motivation) {
-		Iterator<String> IteratorsMotivation = motivation.keySet().iterator();
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+	public void IQ_Motivation(IMV_SIQ_X_ emotionSampleMap,
+		IMV_SIQ motivation) {
+		Iterator<String> IteratorsMotivation = motivation.keySet()
+			.iterator();
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
 			if (motivation.containsKey(word)) {
-				emotionSample.I_Motivation(motivation.getString(word));
+				emotionSample.I_Motivation(motivation.getString(
+					word));
 			} else {
 				emotionSample.I_Motivation("语料库空");
 			}
@@ -221,11 +256,14 @@ public class RatioMap_E implements RatioMap {
 	}
 
 	@Override
-	public void IQ_Trending(IMV_SIQ_X_ emotionSampleMap, IMV_SIQ trending) {
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+	public void IQ_Trending(IMV_SIQ_X_ emotionSampleMap,
+		IMV_SIQ trending) {
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
 			if (trending.containsKey(word)) {
 				emotionSample.I_Trending(trending.getString(word));
 			} else {
@@ -237,17 +275,21 @@ public class RatioMap_E implements RatioMap {
 	}
 
 	@Override
-	public void IQ_Prediction(IMV_SIQ_X_ emotionSampleMap, IMV_SIQ prediction) {
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+	public void IQ_Prediction(IMV_SIQ_X_ emotionSampleMap,
+		IMV_SIQ prediction) {
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
 			if (prediction.containsKey(emotionSample.getTrending())) {
-				emotionSample.I_Prediction(
-						prediction.get(emotionSample.getTrending()).toString());
-			} else if (prediction.containsKey(emotionSample.getMotivation())) {
-				emotionSample.I_Prediction(prediction
-						.get(emotionSample.getMotivation()).toString());
+				emotionSample.I_Prediction(prediction.get(
+					emotionSample.getTrending()).toString());
+			} else if (prediction.containsKey(emotionSample
+				.getMotivation())) {
+				emotionSample.I_Prediction(prediction.get(
+					emotionSample.getMotivation()).toString());
 			} else {
 				emotionSample.I_Prediction("语料库空");
 			}
@@ -257,17 +299,21 @@ public class RatioMap_E implements RatioMap {
 
 	@Override
 	public void IQ_Distinction(IMV_SIQ_X_ emotionSampleMap,
-			IMV_SIQ distinction) {
-		Iterator<String> Iterator = emotionSampleMap.keySet().iterator();
+		IMV_SIQ distinction) {
+		Iterator<String> Iterator = emotionSampleMap.keySet()
+			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			EmotionSample emotionSample = emotionSampleMap.get_S(word);
+			EmotionSample emotionSample = emotionSampleMap.get_S(
+				word);
 			if (distinction.containsKey(word)) {
-				emotionSample.I_Distinction(distinction.get(word).toString());
+				emotionSample.I_Distinction(distinction.get(word)
+					.toString());
 			}
 			emotionSampleMap.put(word, emotionSample);
 		}
 	}
+
 	/*
 	 * 开始思考单字的索引价值，以后换成元基索引，会出现更多的单字母。那么之后的distinct表就要
 	 * 进行map reduce，添加字词要谨慎。 终于和 业界 的 map reduce 接轨了。同行要争气。
@@ -275,16 +321,19 @@ public class RatioMap_E implements RatioMap {
 	 * --罗瑶光
 	 * */
 	@Override
-	public IMV_SIQ_X_ getEnvironmentSampleMap(IMV_SIQ_S_ wordFrequencyMap) {
+	public IMV_SIQ_X_ getEnvironmentSampleMap(
+		IMV_SIQ_S_ wordFrequencyMap) {
 		IMV_SIQ_X_ output = new IMV_SIQ_X_();
 		for (int i = wordFrequencyMap.size()
-				- S_Pos.INT_ONE; i >= S_Pos.INT_ZERO; i--) {
-			if (wordFrequencyMap.getW(i).get_word().length() > S_Pos.INT_ZERO) {
-			//if (wordFrequencyMap.getW(i).get_word().length() > S_Pos.INT_ONE) {
+			- S_Pos.INT_ONE; i >= S_Pos.INT_ZERO; i--) {
+			if (wordFrequencyMap.getW(i).get_word()
+				.length() > S_Pos.INT_ZERO) {
+				//if (wordFrequencyMap.getW(i).get_word().length() > S_Pos.INT_ONE) {
 				EmotionSample emotionSample = new EmotionSample();
-				if (!output.containsKey(wordFrequencyMap.getW(i).get_word())) {
+				if (!output.containsKey(wordFrequencyMap.getW(i)
+					.get_word())) {
 					output.put(wordFrequencyMap.getW(i).get_word(),
-							emotionSample);
+						emotionSample);
 				}
 			}
 		}

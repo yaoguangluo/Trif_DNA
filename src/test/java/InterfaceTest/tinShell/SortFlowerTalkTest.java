@@ -14,13 +14,13 @@ import java.util.Iterator;
 import java.util.List;
 
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
+ * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
  * (lyg.tin@gmail.com2018年回国后因国内G网屏蔽不再使用）
  * 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
- * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 class SortFlowerTalkTest {
 	public static void main(String[] argv)
@@ -38,10 +38,10 @@ class SortFlowerTalkTest {
 	}
 
 	/*
-	 * 这是一个 最简线性表格 执行字符串条件搜索逻辑，测试main函数demo的test版本，在真实的场景下将
-	 * hashmap的 String，函数 形式- 通过 搜素排序 输出一个
-	 * linkedhashmap-String，函数-对象，方便 最快最优 笛卡尔遍历加速。主要用于花语
-	 * 可以设计精度下限来函数匹配加速。 --罗瑶光
+	 * 这是一个 最简线性表格 执行字符串条件搜索逻辑，测试main函数demo的test版本，
+	 * 在真实的场景下将hashmap的 String，函数 形式- 通过 搜素排序 输出一个
+	 * linkedhashmap-String，函数-对象，方便 最快最优 笛卡尔遍历加速。主要用于
+	 * 花语可以设计精度下限来函数匹配加速。 --罗瑶光
 	 */
 	@SuppressWarnings({ "unchecked", "unused" })
 	@Test

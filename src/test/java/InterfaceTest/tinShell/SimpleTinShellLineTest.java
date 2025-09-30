@@ -98,7 +98,6 @@ public class SimpleTinShellLineTest {
  * 400---00009---
  */
 /*
- * 
 添加指令集 二次开发 一定要注意四层 注册校准机制 和 反射机制。
 -1
 line-->:[{rowValue={功效={culumnValue=肉煎饼充饥,补元气,生肉。., culumnName=功效}, 

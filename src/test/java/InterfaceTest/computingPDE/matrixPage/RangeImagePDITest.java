@@ -9,13 +9,13 @@ import org.junit.jupiter.api.Test;
 import test.java.InterfaceTest.CommonTestInition;
 
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
+ * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
  * (lyg.tin@gmail.com2018年回国后因国内G网屏蔽不再使用）
  * 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
- * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 /*
  * 这是一个 ////非卷积肽数字矩阵变换 如图片 测试main函数demo的test版本，在导入了api之后
@@ -51,9 +51,9 @@ class RangeImagePDITest {
 		// 读取图片
 		//图片来自浏览器搜素 图片 关键字复制下来。
 		String pathImageIn = "/Users/luoyaoguang430181198505250014/eclipse-workspace/TRIF_DNA"
-				+ "/src/test/java/InterfaceTest/computingPDE/matrixPage/input_horri.jpg";
-		String pathImageOut= "/Users/luoyaoguang430181198505250014/eclipse-workspace/TRIF_DNA"
-				+ "/src/test/java/InterfaceTest/computingPDE/matrixPage/output_horri.jpg";
+			+ "/src/test/java/InterfaceTest/computingPDE/matrixPage/input_horri.jpg";
+		String pathImageOut = "/Users/luoyaoguang430181198505250014/eclipse-workspace/TRIF_DNA"
+			+ "/src/test/java/InterfaceTest/computingPDE/matrixPage/output_horri.jpg";
 		int[][] rp = new ReadWritePng().REDpngRead(pathImageIn);
 		int[][] gp = new ReadWritePng().GRNpngRead(pathImageIn);
 		int[][] bp = new ReadWritePng().BLUpngRead(pathImageIn);
@@ -62,14 +62,18 @@ class RangeImagePDITest {
 		int[][] outputg = Guassian.P_1D(gp, 15, 15, 1.7);
 		int[][] outputb = Guassian.P_1D(bp, 15, 15, 1.7);
 		// 执行非卷积肽变换滤 255峰值 波测试
-		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputr, facy, commonTestInition.NE);
-		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputg, facy, commonTestInition.NE);
-		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputb, facy, commonTestInition.NE);
+		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputr, facy,
+			commonTestInition.NE);
+		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputg, facy,
+			commonTestInition.NE);
+		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputb, facy,
+			commonTestInition.NE);
 		// 输出
 		// 输出图片
 		//Image_ESU_X_imageToFile 稍后 单元测试 会挨个覆盖率测试
 		//Image_ESU_X_bufferedImageToFile 稍后挨个测试
-		Image_ESU_X_pixRGBTableToFile._E(pathImageOut, outputr, outputg, outputb, "png");
+		Image_ESU_X_pixRGBTableToFile._E(pathImageOut, outputr,
+			outputg, outputb, "png");
 		/*
 		 * 从输出的结果可以清晰地看到图片的白色区域有色素波动，黑色属于纯黑，所以没有区间拉值。
 		 * 这种观测适用于海拔，皮肤，不明显特征团

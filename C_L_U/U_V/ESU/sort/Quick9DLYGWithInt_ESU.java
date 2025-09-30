@@ -8,13 +8,13 @@ import U_V.OEU.LYG4DQS4D.Quick_7D_luoyaoguang_Sort;
 //系统内存条 被欺负的杠杠的, 所以还是用map统计, 只int排序。
 //我把string 的相关操作 注视掉了, 相当于TopSort4D思想 排int。 不多解释了。 备份下
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
+ * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
  * (lyg.tin@gmail.com2018年回国后因国内G网屏蔽不再使用）
  * 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
- * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class Quick9DLYGWithInt_ESU extends Quick_7D_luoyaoguang_Sort {
     public int[] sort(int[] a, int[] sa) {

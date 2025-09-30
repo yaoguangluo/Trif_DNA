@@ -20,7 +20,7 @@ import java.awt.image.BufferedImage;
 //import S_A.AVQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
 
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
+ * 个人著作权人, 作者 罗瑶光, 浏阳
  * * 作者的家庭是父亲 罗荣武，母亲 刘瑞珍，女儿 christina.yaja.luo/罗雅佳, 前妻ringli/李妙环。
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
  * （lyg.tin@gmail.com2018年后因G网屏蔽不再使用）
@@ -28,7 +28,7 @@ import java.awt.image.BufferedImage;
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋别墅
+*  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class App_S_Guies extends App_S_Values {
 	public JPanel jPanel;

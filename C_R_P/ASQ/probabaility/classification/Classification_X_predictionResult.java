@@ -8,14 +8,14 @@ import java.util.List;
 //思想：贝叶斯 , 数据挖掘绿皮书, 任课教授 ：卡拉森。
 //实现：罗瑶光
 /*
- * 著作权人, 作者 罗瑶光, 浏阳
+ * 个人著作权人, 作者 罗瑶光, 浏阳
  * 授课 卡拉森， 书籍 pang.ningtan 数据挖掘绿皮书
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
  ** 15116110525-
  * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
-*  208号 阳光家园别墅小区 第十栋
+*  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class Classification_X_predictionResult {
     public static boolean _E(RatioMatrix input
