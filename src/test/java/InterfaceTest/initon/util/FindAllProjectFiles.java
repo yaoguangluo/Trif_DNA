@@ -5,7 +5,7 @@ import java.util.Iterator;
 import U_A.PEU.P.table.TableSorterZYNK;
 import U_V.OEU.xqpx.wcms.sort.LYG10D13D_X_CAS;
 import V_A.SQ.ReadPinYinBihua;
-import test.java.InterfaceTest.CommonTestInition;
+import test.java.interfaces.test.CommonTestInition;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳

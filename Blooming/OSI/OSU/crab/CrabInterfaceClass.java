@@ -3,7 +3,7 @@ package OSI.OSU.crab;
 import ME.VPC.M.app.App;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.pheromone.IMV_SIQ;
-import test.java.InterfaceTest.CommonTestInition;
+import test.java.interfaces.test.CommonTestInition;
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳

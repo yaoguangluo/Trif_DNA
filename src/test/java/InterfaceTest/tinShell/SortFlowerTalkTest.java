@@ -6,8 +6,9 @@ import S_A.SixActionMap.CreativeVerbalMap;
 import S_A.SixActionMap.StudyVerbalMap;
 import S_A.pheromone.AES_QMS_XSD_TIH;
 import S_A.pheromone.IMV_SIQ;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 import java.util.ArrayList;
 import java.util.Iterator;

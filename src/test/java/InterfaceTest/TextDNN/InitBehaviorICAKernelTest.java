@@ -2,8 +2,9 @@ package test.java.InterfaceTest.TextDNN;
 
 import A_V.ica.InitBehaviorICAKernel;
 import S_A.SVQ.stable.S_String;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 import java.util.List;
 

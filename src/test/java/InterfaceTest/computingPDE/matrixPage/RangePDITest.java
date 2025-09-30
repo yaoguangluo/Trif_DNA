@@ -1,8 +1,9 @@
 package test.java.InterfaceTest.computingPDE.matrixPage;
 
 import A_I.MPE.MAQPVDCOISIV.pdi.RangePDI;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳

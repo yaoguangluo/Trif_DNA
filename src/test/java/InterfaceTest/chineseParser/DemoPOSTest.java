@@ -4,8 +4,9 @@ import A_V.ASQ.PSU.test.TimeCheck;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_SS;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 import java.util.ArrayList;
 import java.util.Iterator;

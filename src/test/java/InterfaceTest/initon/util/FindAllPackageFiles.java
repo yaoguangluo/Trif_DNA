@@ -2,7 +2,7 @@ package test.java.InterfaceTest.initon.util;
 
 import U_A.PEU.P.table.TableSorterZYNK;
 import V_A.SQ.ReadPinYinBihua;
-import test.java.InterfaceTest.CommonTestInition;
+import test.java.interfaces.test.CommonTestInition;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳

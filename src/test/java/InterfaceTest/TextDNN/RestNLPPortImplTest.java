@@ -2,8 +2,9 @@ package test.java.InterfaceTest.TextDNN;
 
 import E_A.OSI.AOP.PCS.PP.port_E.RestNLPPortImpl;
 import S_A.pheromone.IMV_SIQ;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;

@@ -2,7 +2,7 @@ package DVIAQVIMIV;
 
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
-import test.java.InterfaceTest.CommonTestInition;
+import test.java.interfaces.test.CommonTestInition;
 import U_V.ESU.sort.Quick9DLYGWithString_ESU;
 
 import java.io.FileInputStream;

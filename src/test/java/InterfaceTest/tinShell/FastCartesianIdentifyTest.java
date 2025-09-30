@@ -6,7 +6,7 @@ import java.util.Iterator;
 import O_V.OSM.shell.CommandClass;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SixActionMap.WorkVerbalMap;
-import test.java.InterfaceTest.CommonTestInition;
+import test.java.interfaces.test.CommonTestInition;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳

@@ -7,7 +7,7 @@ import U_V.ESU.toolkitImageToBufferImage.U_X_toolkitImageToBufferImageAboutIconC
 import U_V.OEU.LYG4DQS4D.LYG9DWithDoubleTopSort5D;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
-import test.java.InterfaceTest.CommonTestInition;
+import test.java.interfaces.test.CommonTestInition;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;

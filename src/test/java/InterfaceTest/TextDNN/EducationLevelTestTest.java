@@ -3,8 +3,9 @@ package test.java.InterfaceTest.TextDNN;
 import A_V.ica.EducationRatio;
 import P_V.PEQ.OPM.VEC.test.EducationLevelTest;
 import S_A.SVQ.stable.S_String;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳

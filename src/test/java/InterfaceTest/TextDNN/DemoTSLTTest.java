@@ -3,8 +3,9 @@ package test.java.InterfaceTest.TextDNN;
 import M_V.MSU.OCI.ME.SMS.translator.C.Translator;
 import M_V.MSU.OEI.ME.SMS.SEU.OSD.OSI.E.Translator_E;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.Verbal;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 import java.util.List;
 

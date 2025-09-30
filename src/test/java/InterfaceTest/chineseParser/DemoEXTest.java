@@ -1,10 +1,11 @@
 package test.java.InterfaceTest.chineseParser;
 
 import A_V.ASQ.PSU.test.TimeCheck;
+import test.java.interfaces.test.CommonTestInition;
+
 //import S_A.pheromone.IMV_SIQ;
 //import S_A.pheromone.IMV_SIQ_SS;
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 import java.io.IOException;
 import java.util.ArrayList;

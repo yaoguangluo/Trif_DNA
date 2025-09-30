@@ -3,8 +3,9 @@ package test.java.InterfaceTest.TextDNN;
 import S_A.SVQ.stable.S_String;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_X_;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 import java.util.Iterator;
 

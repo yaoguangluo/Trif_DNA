@@ -4,11 +4,15 @@ import A_V.ASQ.PSU.test.TimeCheck;
 import S_A.SVQ.stable.S_Common;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_S_;
-import test.java.InterfaceTest.CommonTestInition;
+import test.java.interfaces.test.CommonTestInition;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+import java.util.logging.Logger;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -33,10 +37,14 @@ public class DemoEX {
 	int e = 0;
 	int f = 0;
 	int g = 0;
-
+	//refer
+	//https://logging.apache.org/log4j/2.x/javadoc/log4j-api/org/apache/logging/log4j/Logger.html
+	private static final Logger logger = Logger.getLogger("");
 	public static void main(String[] args) {
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
+		//logger.setLevel(Level.INFO);
+		logger.setLevel(Level.WARNING);
 		// 词性初始化
 		IMV_SIQ pos = commonTestInition.NE.app_S._A.getPosCnToCn();
 		List<String> sets = new ArrayList<>();
@@ -59,26 +67,43 @@ public class DemoEX {
 		}
 		t.end();
 		t.duration();
-		System.out.println("-展示分词-");
+		/*
+		 * Sonar--S106协议 修改，这是我第二个sonar纠正处。大家睁大眼睛看好了。嘿嚯。
+		 * 去system 改为 log4j。其实我在英**一直当个扫地僧，每天踩着地板擦着灰。腾云驾雾
+		 * 的大佬们折腾七年把我捣鼓来捣鼓去，都不信而已。我呢能怎么半？
+		 * 
+		 * 我的华瑞集系统没有需要日志的地方，可以全部把system.out注释掉，不要删除切记。
+		 * logger又有很多级别。 大家的工程需要日志Q就去写个资源文件去配置。不需要就别管。
+		 * 
+		 * 注意我这个版本log4j不支持 common 的logger.setLevel,要util才行，坑不坑先不管，
+		 * 我只是展示下用个fatal其他全部注释掉。
+		 * 
+		 * --罗瑶光
+		 * */
+		logger.info("System.out.println(\"-展示分词-\");");
 		for (int i = 0; i < sets.size(); i++) {
 			if (sets.get(i) != null) {
-				System.out.print(sets.get(i) + " ");
+				String string= sets.get(i) + " ";
+				logger.info(string);
 			}
 		}
-		System.out.println("-展示词性-注意副词库表问题，形容词副词表里面的词汇"
-			+ "不是罗瑶光研发设计的--具体见DemoPOSTest函数的修正方法");
+		//System.out.println("-展示词性-注意副词库表问题，形容词副词表里面的词汇"
+		//+"不是罗瑶光研发设计的--具体见DemoPOSTest函数的修正方法");
 		DemoPOSTest demoPOSTest = new DemoPOSTest();
 		demoPOSTest.testPOS(sets, pos);
 		//
-		System.out.println("-展示词频统计-");
+		logger.info("System.out.println(\"-展示词频统计-\")");
 		IMV_SIQ_S_ fwa = commonTestInition.NE.app_S._A
 			.getWordFrequencyByReturnSortMap(sets,
 				commonTestInition.NE);
-		// t.end();
 		for (int i = fwa.size() - 1; i >= 0; i--) {
-			System.out.print(fwa.get(i).get_word()
+//			System.out.print(fwa.get(i).get_word()
+//				+ S_Common.STRING_SYMBOL_PER + fwa.get(i)
+//					.get_frequency() + "----");
+			String string= fwa.get(i).get_word()
 				+ S_Common.STRING_SYMBOL_PER + fwa.get(i)
-					.get_frequency() + "----");
+				.get_frequency() + "----";
+			logger.info(string);
 		}
 		// 关闭
 		commonTestInition.endEnvironment();
@@ -258,3 +283,5 @@ public class DemoEX {
 //        }
 //    }
 //}
+
+// t.end();

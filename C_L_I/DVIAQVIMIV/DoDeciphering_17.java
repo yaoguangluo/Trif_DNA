@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import ME.VPC.M.app.App;
-import test.java.InterfaceTest.CommonTestInition;
+import test.java.interfaces.test.CommonTestInition;
 
 //import PEU.P.image.ReadWritePng;
 /*

@@ -4,8 +4,9 @@ import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import S_A.SEM.bloom.StaticFunctionMapQ_VECS_E;
 import S_A.pheromone.AES_QMS_XSD_TIH;
 import S_A.pheromone.IMV_SIQ;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 import java.util.ArrayList;
 import java.util.Iterator;

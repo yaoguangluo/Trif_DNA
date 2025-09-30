@@ -1,4 +1,8 @@
-package test.java.InterfaceTest;
+package test.java.interfaces.test;
+
+import java.util.logging.Level;
+
+import org.apache.logging.log4j.Logger;
 
 import A_V.E.RatioMap_E;
 import A_V.IVDTIXQCTIV.EmotionInit;

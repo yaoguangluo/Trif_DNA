@@ -6,8 +6,9 @@ import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_SS;
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
+
 import test.java.InterfaceTest.chineseParser.DemoPOSTest;
+import test.java.interfaces.test.CommonTestInition;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -4,8 +4,9 @@ import S_A.SVQ.stable.S_Maps;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_;
 import V_A.SQ.ReadPinYinBihua;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳

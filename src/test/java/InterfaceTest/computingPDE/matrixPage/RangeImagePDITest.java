@@ -4,9 +4,9 @@ import A_I.MPE.MAQPVDCOISIV.pdi.RangePDI;
 import P.image.Guassian;
 import U_A.PEU.P.image.ReadWritePng;
 import U_V.ESU.image.Image_ESU_X_pixRGBTableToFile;
+import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳

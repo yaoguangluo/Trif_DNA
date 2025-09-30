@@ -4,7 +4,7 @@ import U_V.ESU.array.Double_ESU;
 import U_V.OEU.LYG4DQS4D.LYG9DWithDoubleTopSort5D;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
-import test.java.InterfaceTest.CommonTestInition;
+import test.java.interfaces.test.CommonTestInition;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

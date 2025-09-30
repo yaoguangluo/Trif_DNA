@@ -4,8 +4,9 @@ import ASQ.classification.fissile.Fissile_X_fissilePosition2D;
 import A_V.ASQ.PSU.test.TimeCheck;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
 import S_A.pheromone.IMV_SIQ;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,10 +1,24 @@
 package test.java.InterfaceTest.chineseParser;
+/*
+ * 因2018年莫名回国，这7年被无数本地白道黑道包围式各种伎俩套罗瑶光先生之前的工作
+ * 经验，罗瑶光既尴尬又无奈这环境，于是跟业界敞开心扉，求各位大佬脚踏实地做一回
+ * 人。于是啥也不说了，直接摊牌，在eclipse的超市里下了sonar api，罗瑶光先生今天
+ * 第一次应用sonar于华瑞集，大家睁大眼睛，小生献丑了～。
+ * 
+ * chineseParser 修改为chinese.Parser------rule S120 sonar协议规范修改。
+ * 当年罗瑶光在佛森英**就是搞这个3个月。那就一切尽在不言中，开干。因国内屏蔽了谷歌，
+ * 最近罗瑶光把安卓手机设置里的google引擎关闭了，问题集又少了一大半。心情舒畅，就
+ * 继续编码。 
+ *  
+ * --罗瑶光 20251001
+ * */
 
 import A_V.ASQ.PSU.test.TimeCheck;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_SS;
+import test.java.interfaces.test.CommonTestInition;
+
 import org.junit.jupiter.api.Test;
-import test.java.InterfaceTest.CommonTestInition;
 
 import java.util.ArrayList;
 import java.util.List;
