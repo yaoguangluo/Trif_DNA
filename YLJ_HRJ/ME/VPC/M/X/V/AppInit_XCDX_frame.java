@@ -10,6 +10,7 @@ import javax.swing.JSlider;
 
 import ME.VPC.M.app.App;
 import M_V.MVQ.slider.DetaSlider;
+import S_logger.Log;
 
 /*
  * 1 关于UI组件变量的线程在外部封装，如thread local这类写法上，一定要注意哲学家进餐调度和面包店
@@ -48,7 +49,7 @@ public class AppInit_XCDX_frame {
 		NE.app_S.size_font_slider.setValue(0);
 		NE.app_S.size_font_slider.addChangeListener(event -> {
 		});
-		System.out.println("启动400编码调试开始-00000039");
+		Log.logger.info("启动400编码调试开始-00000039");
 		NE.app_S.size_font_slider.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
@@ -95,7 +96,7 @@ public class AppInit_XCDX_frame {
 			NE.app_S.leafrot = source.getValue();
 			NE.keyReleased(null);
 		});
-		System.out.println("启动400编码调试开始-00000041");
+		Log.logger.info("启动400编码调试开始-00000041");
 		NE.app_S.leaf.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
@@ -137,7 +138,7 @@ public class AppInit_XCDX_frame {
 			NE.app_S.read_speed_rot = source.getValue();
 			NE.keyReleased(null);
 		});
-		System.out.println("启动400编码调试开始-00000044");
+		Log.logger.info("启动400编码调试开始-00000044");
 		NE.app_S.read_speed_slider.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
@@ -175,7 +176,7 @@ public class AppInit_XCDX_frame {
 			JSlider source = (JSlider) event.getSource();
 			NE.app_S.lookrot = source.getValue();
 		});
-		System.out.println("启动400编码调试开始-00000035");
+		Log.logger.info("启动400编码调试开始-00000035");
 		NE.app_S.look.addMouseListener(new MouseListener() {// later.. do
 			@SuppressWarnings({ "serial", "deprecation" })
 			@Override
@@ -220,7 +221,7 @@ public class AppInit_XCDX_frame {
 		NE.app_S.rate.setValue(0);
 		NE.app_S.rate.addChangeListener(event -> {
 		});
-		System.out.println("启动400编码调试开始-00000037");
+		Log.logger.info("启动400编码调试开始-00000037");
 		NE.app_S.rate.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {

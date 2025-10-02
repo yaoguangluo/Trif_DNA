@@ -42,7 +42,7 @@ public class ServerInit_C {
 			// Integer.parseInt(properties.getProperty(S_Data.TCP_PORT));
 			// port = 3306;
 			port = Integer.valueOf(frontendTxt);
-			System.out.println("启动400编码调试开始-00000054-" + port);
+			S_logger.Log.logger.info("启动400编码调试开始-00000054-" + port);
 			// port= Config.detaVPCSDBPort;
 			server = new ServerSocket(port);
 			// 20230106-System.out.println("----德塔VPCS数据库服务器端口启动:" +
@@ -60,7 +60,7 @@ public class ServerInit_C {
 				dbConfigPath = ConfigIndex.detaDBPath;
 				DetaUtil.IV_DB(dbConfigPath);
 			}
-			System.out.println("----德塔VPCS数据库服务器DMA确认:成功！");
+			S_logger.Log.logger.info("----德塔VPCS数据库服务器DMA确认:成功！");
 			if (jTextPane != null) {
 				String text = jTextPane.getText();
 				text = "\r\n" + "----德塔VPCS数据库服务器DMA确认:成功！" + text;
@@ -68,7 +68,7 @@ public class ServerInit_C {
 				jTextPane.setText(text);
 			}
 			RequestFilter_C.IV_BlockList();
-			System.out.println("----德塔VPCS数据库服务器IP过滤服务启动:成功！");
+			S_logger.Log.logger.info("----德塔VPCS数据库服务器IP过滤服务启动:成功！");
 			if (jTextPane != null) {
 				String text = jTextPane.getText();
 				text = "\r\n" + "----德塔VPCS数据库服务器IP过滤服务启动:成功！" + text;
@@ -138,31 +138,31 @@ public class ServerInit_C {
 
 		App appReg = app;
 		System.out.flush();
-		System.out.println("----DETA HVPCS--1.9070");
+		S_logger.Log.logger.info("----DETA HVPCS--1.9070");
 		System.out.flush();
-		System.out.println("----Author: 罗瑶光");
+		S_logger.Log.logger.info("----Author: 罗瑶光");
 		System.out.flush();
-		System.out.println("----浏阳德塔软件开发有限公司开源项目");
+		S_logger.Log.logger.info("----浏阳德塔软件开发有限公司开源项目");
 		TimeProcess timeProcess = new TimeProcess();
 		timeProcess.begin();
 		SleeperHall sleeperHall = new SleeperHall();
 
 		port = 8000;
 		System.out.flush();
-		System.out.println("----德塔VPCS数据库服务器端口启动:" + port);
+		S_logger.Log.logger.info("----德塔VPCS数据库服务器端口启动:" + port);
 		// DetaUtil.initDB();
 		System.out.flush();
-		System.out.println("----德塔VPCS数据库服务器DMA确认:成功！");
-		System.out.println("----初始大文件:成功！");
+		S_logger.Log.logger.info("----德塔VPCS数据库服务器DMA确认:成功！");
+		S_logger.Log.logger.info("----初始大文件:成功！");
 		StableBlob.initBlobLimit();
-		System.out.println("----初始固定数据:成功！");
+		S_logger.Log.logger.info("----初始固定数据:成功！");
 		StableSets.intListPartBytes();
-		System.out.println("----初始http数据:成功！");
+		S_logger.Log.logger.info("----初始http数据:成功！");
 		StableSets.initHttpContentTypeMap();
 
 		timeProcess.end();
 		System.out.flush();
-		System.out.println(
+		S_logger.Log.logger.info(
 				"----德塔VPCS前端服务器启动一切正常-总耗时:" + timeProcess.duration() + "毫秒");
 		// ServerSocket server = new ServerSocket(port);
 		long clearTime = System.currentTimeMillis();
@@ -179,7 +179,7 @@ public class ServerInit_C {
 			}
 			if (0 >= timeHall.getMaxLimist()) {
 				System.out.flush();
-				System.out.println(sleeper_H.getThreadsCount());
+				S_logger.Log.logger.info("" + sleeper_H.getThreadsCount());
 				timeHall.resetLimists();// 20250523
 				continue Here;
 			}

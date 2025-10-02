@@ -6,6 +6,7 @@ import java.util.Iterator;
 import O_V.OSM.shell.CommandClass;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SixActionMap.WorkVerbalMap;
+import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 /*
@@ -123,7 +124,7 @@ public class FastCartesianIdentifyTest {
 
 			Object object = iterators.next();
 			String string = object.toString();
-			System.out.println(string);
+			Log.logger.info(string);
 			/*
 			 * 找出不含有特殊符号的条件拆分，方便垃圾分类。 1 不含有与或非的string 2 3
 			 */
@@ -188,9 +189,9 @@ public class FastCartesianIdentifyTest {
 			workVerbalMap.command_V._IMV_SIQ_SS_temp.put(string,
 				wordFrequency);
 		}
-		System.out.println("筛选前主要关系数-->"
+		Log.logger.info("筛选前主要关系数-->"
 			+ workVerbalMap.command_V._IMV_SIQ_SS.size());
-		System.out.println("筛选后主要关系数-->"
+		Log.logger.info("筛选后主要关系数-->"
 			+ workVerbalMap.command_V._IMV_SIQ_SS_temp.size());
 		workVerbalMap.command_V._IMV_SIQ_SS = workVerbalMap.command_V._IMV_SIQ_SS_temp;
 		return null;

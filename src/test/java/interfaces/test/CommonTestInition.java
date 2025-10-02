@@ -1,5 +1,6 @@
 package test.java.interfaces.test;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import A_V.E.RatioMap_E;
@@ -27,6 +28,7 @@ import S_A.SixActionMap.StudyVerbalMap;
 import S_A.SixActionMap.WorkVerbalMap;
 import S_A.VSQ.parser.EmotionSample;
 import S_A.linePage.PageQ;
+import S_logger.Log;
 import VSQ.parser.FMHMMListOneTime_E_X_S;
 import V_A.SQ.ReadPinYinBihua;
 import jnisort.LYGSortESU9D;
@@ -232,6 +234,9 @@ public class CommonTestInition {
 		if (null != NE) {
 			return;
 		}
+		//log later..
+		//Log.logger.setLevel(Level.WARNING);
+		Log.logger.setLevel(Level.INFO);
 		// 环境初始化。
 		App_S app_S = initBasic(stringConfigUI);
 		// */

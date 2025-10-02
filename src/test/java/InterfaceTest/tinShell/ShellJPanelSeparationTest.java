@@ -400,7 +400,7 @@ class ShellJPanelSeparationTest {
 			String string = iterator.next();
 			NE.app_S.appConfig.SectionJPanel.jTextPane
 					.setText(output.get(string).toString());
-			System.out.println("line-->:" + output.get(string).toString());
+			S_logger.Log.logger.info("line-->:" + output.get(string).toString());
 			// stringBuilder.append("/r/n" +
 			// output.get(string).toString());
 		}
@@ -409,7 +409,7 @@ class ShellJPanelSeparationTest {
 			Iterator<String> iterators = NE.app_S.helpVerbalMap.didJustNow
 					.keySet().iterator();
 			while (iterators.hasNext()) {
-				System.out.println("Action-->:" + iterators.next());
+				S_logger.Log.logger.info("Action-->:" + iterators.next());
 			}
 		}
 		return output;

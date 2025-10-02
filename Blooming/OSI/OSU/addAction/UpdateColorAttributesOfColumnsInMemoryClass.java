@@ -137,7 +137,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 //			//为-红色
 //			System.out.printf("highly fit"); // later in mapping iterator.*/
 //		}
-		System.out.println("Hello Word!");
+		S_logger.Log.logger.info("Hello Word!");
 		if (NE.app_S.workVerbalMap.command_V.cartesianLooped
 				.contains(className)) {
 			//System.out.println("400-size-01-"
@@ -148,15 +148,15 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 		//		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 
 		// 获取表
-		System.out.println("400---00001---");
+		S_logger.Log.logger.info("400---00001---");
 		if (!NE._I_U.outputMap.containsKey("获取表名")) {
 			return false;
 		}
-		System.out.println("400---00002---");
+		S_logger.Log.logger.info("400---00002---");
 		// later will loop join table;
 		String huoqubiaoming = NE._I_U.outputMap.getString("获取表名").replace("临时","");
 		if (XA_ShellTables.searchShellTables.containsKey(huoqubiaoming)) {
-			System.out.println("400---00003---");
+			S_logger.Log.logger.info("400---00003---");
 			/*
 			 * 思考，如果数据库中有这个表，而表名却是个缩写，那么这里的if之后有必要更改为
 			 * loop。containsKey改为marchKey
@@ -164,7 +164,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 			XA_ShellTable _XA_ShellTable = XA_ShellTables.searchShellTables
 					.get(huoqubiaoming);
 			Object[] columns = _XA_ShellTable.huaRuiJiJtableCulumns;
-			System.out.println("400---00004---");
+			S_logger.Log.logger.info("400---00004---");
 			//操作:中药名称|颜色标记为|红色;
 			String shellType = "操作:";
 			//这里我的PLSQL指令集不够精确和细腻，如何细腻化指令集不在这里描述，之后统一归纳。
@@ -175,12 +175,12 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 					shellType += "|";
 				}
 			}
-			System.out.println("400---00005---");
+			S_logger.Log.logger.info("400---00005---");
 			shellType += "颜色标记为|";
 			Iterator<String> iterators= NE.app_S.workVerbalMap.command_V
 					.cartesianWorkActionsRightsSV.keySet().iterator();
 			boolean find = false;
-			System.out.println("400---00006---");
+			S_logger.Log.logger.info("400---00006---");
 			while(iterators.hasNext()&&!find) {
 				String string = iterators.next();
 				/*
@@ -204,7 +204,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 				 * */
 				if(string.contains("+红色")) {
 					shellType += "红色";
-					System.out.println("---find---");
+					S_logger.Log.logger.info("---find---");
 					find = true;
 				}
 			}
@@ -254,15 +254,15 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 					}
 				}
 			}
-			System.out.println("400---00007---");
-			System.out.println(shellType);
+			S_logger.Log.logger.info("400---00007---");
+			S_logger.Log.logger.info(shellType);
 			String[] strings = shellType.split(":");
 			List<String[]> list = new ArrayList();
 			list.add(strings);
-			System.out.println("400---00008---");
+			S_logger.Log.logger.info("400---00008---");
 			NE._I_U.outputMap.put("操作", list);// 集成到老的接口模式先，避免bug*/
 			NE._I_U.outputMap.put("type", "进行选择");
-			System.out.println("400---00009---");
+			S_logger.Log.logger.info("400---00009---");
 		}
 		//避免一个指令句含有多次触发。
 		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(className, "");

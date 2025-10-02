@@ -16,6 +16,7 @@ import exception.thread.DetaThread;
 import P_V.PCS.thread.SocketThread;
 import P_V.PCS.thread.SocketThreadPool;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
+import S_logger.Log;
 
 import java.net.ServerSocket;
 import java.util.Properties;
@@ -43,14 +44,14 @@ public class BootVPCSBackEnd extends Thread {
 	public BootVPCSBackEnd(App_S app, App NE) {
 		properties = new Properties();
 		this.app = app;
-		System.out.println("启动400编码调试开始-00000052");
+		S_logger.Log.logger.info("启动400编码调试开始-00000052");
 		if (null == app._A) {
 			this._A = new CogsBinaryForest_AE();
 			this._A.IV_Mixed(NE);
 		} else {
 			this._A = app._A;
 		}
-		System.out.println("启动400编码调试开始-00000052-01");
+		S_logger.Log.logger.info("启动400编码调试开始-00000052-01");
 	}
 
 	public BootVPCSBackEnd() {
@@ -58,10 +59,10 @@ public class BootVPCSBackEnd extends Thread {
 
 	public void IV_(App NE) {// 代入逻辑必定都是E实体。不确定的具体引用加Q
 		try {
-			System.out.println("启动400编码调试开始-00000052-02");
+			S_logger.Log.logger.info("启动400编码调试开始-00000052-02");
 			// port= Integer.parseInt(properties.getProperty("port"));
 			int port = Integer.parseInt(app.backendTxt);
-			System.out.println("启动400编码调试开始-00000053-" + port);
+			S_logger.Log.logger.info("启动400编码调试开始-00000053-" + port);
 			// port= Config.detaVPCSBackEndPort;
 			server = new ServerSocket(port);
 			if (null == this._A) {
@@ -87,33 +88,32 @@ public class BootVPCSBackEnd extends Thread {
 		// SocketThreadPool socketThreadPool = new
 		// SocketThreadPool();
 		long before = System.currentTimeMillis();
-		System.out.println("启动400编码调试开始-00000052-01-02");
+		S_logger.Log.logger.info("启动400编码调试开始-00000052-01-02");
 		IV_(NE);
-		System.out.println("启动400编码调试开始-00000052-01-03");
+		S_logger.Log.logger.info("启动400编码调试开始-00000052-01-03");
 		I_RestService();
-		System.out.println("启动400编码调试开始-00000052-01-04");
+		S_logger.Log.logger.info("启动400编码调试开始-00000052-01-04");
 		long now = System.currentTimeMillis();
-		System.out.println("----DETA VPCS BackEnd--2.0");
-		System.out.println("----Author: 罗瑶光");
-		System.out.println("----浏阳德塔软件开发有限公司开源项目");
-		System.out.println("----德塔VPCS后端服务器----");
-		System.out
-				.println("----德塔VPCS后端服务器启动一切正常-总耗时:" + (now - before) + "毫秒");
-		System.out.println("启动400编码调试开始-00000052-01-04-01");
+		S_logger.Log.logger.info("----DETA VPCS BackEnd--2.0");
+		S_logger.Log.logger.info("----Author: 罗瑶光");
+		S_logger.Log.logger.info("----浏阳德塔软件开发有限公司开源项目");
+		S_logger.Log.logger.info("----德塔VPCS后端服务器----");
+		S_logger.Log.logger.info("----德塔VPCS后端服务器启动一切正常-总耗时:" + (now - before) + "毫秒");
+		S_logger.Log.logger.info("启动400编码调试开始-00000052-01-04-01");
 		while (true) {
 			try {
 				if (socketThreadPool.getThreadsCount() < 300) {
-					System.out.println("启动400编码调试开始-00000052-01-04-02");
+					S_logger.Log.logger.info("启动400编码调试开始-00000052-01-04-02");
 					SocketThread clientSocket = new SocketThread(
 							socketThreadPool, server.accept(),
 							System.currentTimeMillis() + ""
 									+ new Random().nextLong(),
 							NE);
-					System.out.println("启动400编码调试开始-00000052-01-04-03");
+					S_logger.Log.logger.info("启动400编码调试开始-00000052-01-04-03");
 					socketThreadPool.I_E_Socket(clientSocket.getSid(),
 							clientSocket);
 					clientSocket.start();
-					System.out.println("启动400编码调试开始-00000052-01-04-04");
+					S_logger.Log.logger.info("启动400编码调试开始-00000052-01-04-04");
 					DetaThread.sleepDeta(30);// lag limited
 				}
 			} catch (Exception e) {
@@ -135,7 +135,7 @@ public class BootVPCSBackEnd extends Thread {
 	}
 
 	public void run(SocketThreadPool socketThreadPool, App NE) {
-		System.out.println("启动400编码调试开始-00000052-01-01");
+		Log.logger.info("启动400编码调试开始-00000052-01-01");
 		bootBackEnd(socketThreadPool, NE);
 	}
 

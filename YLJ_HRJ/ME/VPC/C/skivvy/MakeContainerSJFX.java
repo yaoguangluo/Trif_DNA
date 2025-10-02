@@ -40,24 +40,24 @@ public class MakeContainerSJFX extends MakeContainer_X_S_s {
 		DetaThread.sleepDeta(1000);
 		containerPanel.setBounds(0, 0, WindowsUI.makeContainerWidth,
 				WindowsUI.makeContainerHeight);
-		System.out.println("启动400编码调试开始-00000055-001");
+		S_logger.Log.logger.info("启动400编码调试开始-00000055-001");
 		app_S.gUISample = new GUISample();
 		app_S.gUISample.IV_(this.tableData_old, this.text, NE);
-		System.out.println("启动400编码调试开始-00000055-001-03");
+		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-03");
 		app_S.gUISample.start();
 		containerPanel.add(app_S.gUISample);
 		containerPanel.setName("数据分析");
-		System.out.println("启动400编码调试开始-00000055-002");
+		S_logger.Log.logger.info("启动400编码调试开始-00000055-002");
 		jTabbedpane.addTab(containerPanel.getName(), new ImageIcon(),
 				containerPanel, containerPanel.getName());// 加入第一个页面
 		Color[] colors = TableRender.getTableCellRender();
 		int count = jTabbedpane.getTabCount();
 		jTabbedpane.setBackgroundAt(count - 1, colors[count % 3]);
-		System.out.println("启动400编码调试开始-00000055-003");
+		S_logger.Log.logger.info("启动400编码调试开始-00000055-003");
 		app_S.gUISample.validate();
 		jTabbedpane.validate();
 		isFinished = true;
-		System.out.println("启动400编码调试开始-00000055-004");
+		S_logger.Log.logger.info("启动400编码调试开始-00000055-004");
 		// app_S.validate();
 	}
 }

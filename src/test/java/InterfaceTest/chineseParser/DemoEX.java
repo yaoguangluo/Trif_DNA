@@ -4,15 +4,11 @@ import A_V.ASQ.PSU.test.TimeCheck;
 import S_A.SVQ.stable.S_Common;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_S_;
+import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
-import java.util.logging.Logger;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -39,12 +35,10 @@ public class DemoEX {
 	int g = 0;
 	//refer
 	//https://logging.apache.org/log4j/2.x/javadoc/log4j-api/org/apache/logging/log4j/Logger.html
-	private static final Logger logger = Logger.getLogger("");
+	//private static final Logger logger = Logger.getLogger("");
 	public static void main(String[] args) {
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
-		//logger.setLevel(Level.INFO);
-		logger.setLevel(Level.WARNING);
 		// 词性初始化
 		IMV_SIQ pos = commonTestInition.NE.app_S._A.getPosCnToCn();
 		List<String> sets = new ArrayList<>();
@@ -80,11 +74,11 @@ public class DemoEX {
 		 * 
 		 * --罗瑶光
 		 * */
-		logger.info("System.out.println(\"-展示分词-\");");
+		Log.logger.info("System.out.println(\"-展示分词-\");");
 		for (int i = 0; i < sets.size(); i++) {
 			if (sets.get(i) != null) {
 				String string= sets.get(i) + " ";
-				logger.info(string);
+				Log.logger.info(string);
 			}
 		}
 		//System.out.println("-展示词性-注意副词库表问题，形容词副词表里面的词汇"
@@ -92,7 +86,7 @@ public class DemoEX {
 		DemoPOSTest demoPOSTest = new DemoPOSTest();
 		demoPOSTest.testPOS(sets, pos);
 		//
-		logger.info("System.out.println(\"-展示词频统计-\")");
+		Log.logger.info("System.out.println(\"-展示词频统计-\")");
 		IMV_SIQ_S_ fwa = commonTestInition.NE.app_S._A
 			.getWordFrequencyByReturnSortMap(sets,
 				commonTestInition.NE);
@@ -103,7 +97,7 @@ public class DemoEX {
 			String string= fwa.get(i).get_word()
 				+ S_Common.STRING_SYMBOL_PER + fwa.get(i)
 				.get_frequency() + "----";
-			logger.info(string);
+			Log.logger.info(string);
 		}
 		// 关闭
 		commonTestInition.endEnvironment();

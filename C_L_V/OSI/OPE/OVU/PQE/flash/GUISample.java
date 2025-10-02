@@ -70,9 +70,9 @@ public class GUISample extends GUISample_X_S implements MouseMotionListener,
 		this.u = NE.app_S;
 		this._A = NE.app_S._A;
 		this.pos = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
-		System.out.println("启动400编码调试开始-00000055-001-02");
+		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02");
 		new Sample_X_I_Map().CreatMap(NE);
-		System.out.println("启动400编码调试开始-00000055-003");
+		S_logger.Log.logger.info("启动400编码调试开始-00000055-003");
 		new Sample_X_Register().Register(this, NE);
 		this.resize(w, h);
 	}

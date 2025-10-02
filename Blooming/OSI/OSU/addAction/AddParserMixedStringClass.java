@@ -102,12 +102,12 @@ public class AddParserMixedStringClass implements CrabInterface {
 		System.out.println("Hello Word!");
 		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(
 			className)) {
-			//System.out.println("400-size-01-"
-			//		+ NE.app_S.workVerbalMap.command_V.countReject++);
+			S_logger.Log.logger.info("400-size-01-"
+			+ NE.app_S.workVerbalMap.command_V.countReject++);
 			return false;
 		}
-		//System.out.println("400-size-02-"
-		//		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
+		S_logger.Log.logger.info("400-size-02-"
+		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 
 		inputValues = StaticFunctionMap.preValues(NE.app_S.outputMap,
 			传参因子);

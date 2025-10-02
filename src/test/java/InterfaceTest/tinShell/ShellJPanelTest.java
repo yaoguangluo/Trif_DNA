@@ -538,7 +538,7 @@ class ShellJPanelTest {
 				String string = iterator.next();
 				NE.app_S.appConfig.SectionJPanel.jTextPane.setText(
 					output.get(string).toString());
-				System.out.println("line-->:" + output.get(string)
+				S_logger.Log.logger.info("line-->:" + output.get(string)
 					.toString());
 			}
 			// DNA序列记忆标注
@@ -546,7 +546,7 @@ class ShellJPanelTest {
 				Iterator<String> iterators = NE.app_S.helpVerbalMap.didJustNow
 					.keySet().iterator();
 				while (iterators.hasNext()) {
-					System.out.println("Action-->:" + iterators
+					S_logger.Log.logger.info("Action-->:" + iterators
 						.next());
 				}
 			}

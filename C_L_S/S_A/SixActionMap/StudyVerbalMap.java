@@ -52,7 +52,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		if(command_V.chineseSimpleCommandWithoutNumerics.isEmpty()) {
 			command_V.chineseSimpleCommandWithoutNumerics = inputString.toString();	
 		}
-		System.out.println("chineseSimpleCommandWithoutNumerics400-1-->" + command_V.chineseSimpleCommandWithoutNumerics);
+		S_logger.Log.logger.info("chineseSimpleCommandWithoutNumerics400-1-->" + command_V.chineseSimpleCommandWithoutNumerics);
 		int fixOrder = 0;
 		for (fixOrder = 0; fixOrder < inputString.length(); fixOrder++) {
 			if ((inputString.charAt(fixOrder) > 47
@@ -154,9 +154,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 				 * number = studyVerbalMap_Q.getChineseFromNumerics(number);
 				 * */
 				String stringSwaped = getChineseFromNumerics(string);
-				System.out.println("stringSwaped-400-1->" + stringSwaped);
+				S_logger.Log.logger.info("stringSwaped-400-1->" + stringSwaped);
 				stringSwaped = command_V.fasterChineseNumberSwap(stringSwaped);
-				System.out.println("stringSwaped-400-2->" + stringSwaped);
+				S_logger.Log.logger.info("stringSwaped-400-2->" + stringSwaped);
 				//String stringSwaped = command_V.fasterChineseNumberSwap(string);
 				WordFrequency wordFrequency = new WordFrequency(1, stringSwaped);
 				String temp = command_V.numericsFromUnknownString.getString(string);
@@ -177,7 +177,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 				 * 之后要归纳下，避免重含，如果有逆向递归操作容易死循环。
 				 * */
 				String stringSwaped = command_V.fasterChineseNumberSwap(string);
-				System.out.println("stringSwaped-400-2->" + stringSwaped);
+				S_logger.Log.logger.info("stringSwaped-400-2->" + stringSwaped);
 				WordFrequency wordFrequency = new WordFrequency(1, stringSwaped);
 				String temp = command_V.numericsFromUnknownString.getString(string);
 				int tempInt = Integer.valueOf(temp);
@@ -253,7 +253,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 				 * */
 				
 				String regArabicNumber = command_V.fasterChineseNumberSwap(chineseNumber);
-				System.out.println("stringSwaped-400-2->" + regArabicNumber);
+				S_logger.Log.logger.info("stringSwaped-400-2->" + regArabicNumber);
 				WordFrequency wordFrequency = new WordFrequency(1, regArabicNumber);
 				String temp = command_V.numericsFromUnknownString.getString(string);
 				int tempInt = Integer.valueOf(temp);

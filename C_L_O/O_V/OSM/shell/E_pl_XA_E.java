@@ -151,7 +151,7 @@ public class E_pl_XA_E {
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
-				//System.out.println("400-10000001" + string);
+				S_logger.Log.logger.info("400-10000001" + string);
 				if (null != string) {
 					/* loop s later */
 					/*
@@ -174,7 +174,7 @@ public class E_pl_XA_E {
 					// 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
 					// 过滤和缩减了海量关系计算集合。
 					if (scaleRights < 12) {
-						System.out.println("couldDoThenDo-1-"
+						S_logger.Log.logger.info("couldDoThenDo-1-"
 							+ string);
 						IMV_SIQ_utils.couldDoThenDo(string, temp,
 							output, NE, scores);
@@ -189,7 +189,7 @@ public class E_pl_XA_E {
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
-				//System.out.println("400-10000001" + string);
+				S_logger.Log.logger.info("400-10000001" + string);
 				if (null != string) {
 					int scaleRights;
 					if (command_V.cartesianWorkActionsRightsVO
@@ -200,7 +200,7 @@ public class E_pl_XA_E {
 						scaleRights = 9999;
 					}
 					if (scaleRights < 12) {
-						System.out.println("couldDoThenDo-2-"
+						S_logger.Log.logger.info("couldDoThenDo-2-"
 							+ string);
 						IMV_SIQ_utils.couldDoThenDo(string, temp,
 							output, NE, scores);
@@ -237,7 +237,7 @@ public class E_pl_XA_E {
 			 *  更加稳定。
 			 */
 			/* loop s later */
-			System.out.println("couldDoThenDo-3-" + temp[0]);
+			S_logger.Log.logger.info("couldDoThenDo-3-" + temp[0]);
 			IMV_SIQ_utils.couldDoThenDo(temp[0], temp, output, NE,
 				scores);// later
 																			   // in

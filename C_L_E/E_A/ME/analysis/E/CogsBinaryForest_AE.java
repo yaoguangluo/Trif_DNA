@@ -61,25 +61,24 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 
 	public IMV_SIQ_S_ getWordFrequencyByReturnSortMap(List<String> sets,
 			App NE) {
-		for(String string : sets) {
-			System.out.print("-" + string);
-		}
+//		for(String string : sets) {
+//			System.out.print("-" + string);
+//		}
 		IMV_SIQ_SS _IMV_SIQ_SS = getWordFrequencyMap(sets, NE);
-		System.out.println("400-8-0001-007-03-02-");
-		for(String string : _IMV_SIQ_SS.keySet()) {
-			System.out.print("+" + string);
-		}
-		if (_IMV_SIQ_SS.containsKey("街")) {
-			System.out.println("400-8-0001-007-03-01-" + _IMV_SIQ_SS.size());
-		}
+//		for(String string : _IMV_SIQ_SS.keySet()) {
+//			System.out.print("+" + string);
+//		}//循环逻辑中不出现打印类。
+//		if (_IMV_SIQ_SS.containsKey("街")) {
+//			System.out.println("400-8-0001-007-03-01-" + _IMV_SIQ_SS.size());
+//		}
 		return sortWordFrequencyMapToSortMap(_IMV_SIQ_SS);
 	}
 
 	public IMV_SIQ_S_ sortWordFrequencyMapToSortMap(IMV_SIQ_SS map) {
-		System.out.println("400-8-0001-007-03-05-" + map.size());
+		//System.out.println("400-8-0001-007-03-05-" + map.size());
 		
 		IMV_SIQ_S_ listMap = quick6DLuoYaoguangSort.frequencyWordMapToMap(map);
-		System.out.println("400-8-0001-007-03-06-" + listMap.size());
+		//System.out.println("400-8-0001-007-03-06-" + listMap.size());
 		quick6DLuoYaoguangSort.quick6DLuoYaoGuangSortWordFrequency(listMap,
 				S_Pos.INT_ZERO, listMap.size() - S_Pos.INT_ONE);
 		return listMap;

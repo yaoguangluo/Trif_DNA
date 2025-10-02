@@ -151,12 +151,12 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子,
 		App NE, IMV_SIQ outputReg) {
-		//System.out.println("400-size-02-"
-		//		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
+		S_logger.Log.logger.info("400-size-02-"
+		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(
 			className)) {
-			//System.out.println("400-size-01-"
-			//		+ NE.app_S.workVerbalMap.command_V.countReject++);
+			S_logger.Log.logger.info("400-size-01-"
+			+ NE.app_S.workVerbalMap.command_V.countReject++);
 			return false;
 		}
 		// 1 识别 数字 信息
@@ -183,7 +183,7 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 		if (!NE.app_S.workVerbalMap.command_V.command.contains("行")) {
 			return false;
 		}
-		System.out.println("LimitedRow-string-400-00-->\n");
+		S_logger.Log.logger.info("LimitedRow-string-400-00-->\n");
 		Iterator<String> iterators = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
 			.keySet().iterator();
 		String fromValue = "";
@@ -192,14 +192,14 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 		boolean needFind = false;
 		while (iterators.hasNext()) {
 			String string = iterators.next();
-			System.out.println("LimitedRow-string-400-01-->"
+			S_logger.Log.logger.info("LimitedRow-string-400-01-->"
 				+ string);
 			if (string.contains("V+行")) {
 				needFind = true;
 				break;
 			}
 		}
-		System.out.println("LimitedRow-string-400-01-01->"
+		S_logger.Log.logger.info("LimitedRow-string-400-01-01->"
 			+ needFind);
 		List<String> fromValues = new ArrayList<>();
 		List<String> toValues = new ArrayList<>();
@@ -208,9 +208,9 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 				.keySet().iterator();
 			while (iterators.hasNext()) {
 				String string = iterators.next();
-				//System.out.println("LimitedRow-string-400-02-->" + string);
+				S_logger.Log.logger.info("LimitedRow-string-400-02-->" + string);
 				if (string.contains("从-")) {
-					System.out.println(
+					S_logger.Log.logger.info(
 						"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
 							+ string);
 					// 1
@@ -237,7 +237,7 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 					// 4
 				}
 				if (string.contains("到-")) {
-					System.out.println(
+					S_logger.Log.logger.info(
 						"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
 							+ string);
 					// 1
@@ -297,15 +297,15 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 		String shellType = "操作:" + fromValueStrings[0].split("-")[1]
 			+ "|行至|" + toValueStrings[0].split("-")[1] + "";
 		// 4 输出
-		System.out.println("400---00007---");
-		System.out.println(shellType);
+		S_logger.Log.logger.info("400---00007---");
+		S_logger.Log.logger.info(shellType);
 		String[] strings = shellType.split(":");
 		List<String[]> list = new ArrayList();
 		list.add(strings);
-		System.out.println("400---00008---");
+		S_logger.Log.logger.info("400---00008---");
 		NE._I_U.outputMap.put("操作", list);// 集成到老的接口模式先，避免bug*/
 		NE._I_U.outputMap.put("type", "进行选择");
-		System.out.println("400---00009---");
+		S_logger.Log.logger.info("400---00009---");
 		//register
 		NE._I_U.sets = strings[1].split("\\|");
 

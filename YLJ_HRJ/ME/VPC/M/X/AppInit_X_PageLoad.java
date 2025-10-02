@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import ME.VPC.M.app.App;
 import ME.VPC.S.ne.App_S;
+import S_logger.Log;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -18,7 +19,7 @@ import ME.VPC.S.ne.App_S;
 public class AppInit_X_PageLoad extends AppInit_X_PageLoad_S {
 
 	public void IV_(App_S app, App NE) throws InterruptedException, IOException {
-		System.out.println("启动400编码调试开始-00000051");
+		Log.logger.info("启动400编码调试开始-00000051");
 		// front later to hvpcs
 		bootDetaFrontEnd(NE);
 		// backend

@@ -4,6 +4,7 @@ import A_V.ASQ.PSU.test.TimeCheck;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_SS;
+import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -232,12 +233,12 @@ public class DemoPOSTest {
 		while (iteratorNoun.hasNext()) {
 			String wordNoun = iteratorNoun.next();
 			WordFrequency wordFrequency = noun.get(wordNoun);
-			System.out.println();
-			System.out.print("--词汇->" + wordFrequency.get_word());
-			System.out.print("-词性->" + wordFrequency.get_pos());
-			System.out.print("-平均距离->" + wordFrequency
+			Log.logger.info("");
+			Log.logger.info("--词汇->" + wordFrequency.get_word());
+			Log.logger.info("-词性->" + wordFrequency.get_pos());
+			Log.logger.info("-平均距离->" + wordFrequency
 				.getAveragePosition());
-			System.out.print("-出现频率->" + wordFrequency
+			Log.logger.info("-出现频率->" + wordFrequency
 				.get_frequency());
 		}
 
@@ -250,12 +251,12 @@ public class DemoPOSTest {
 		while (iteratorVerb.hasNext()) {
 			String wordVerb = iteratorVerb.next();
 			WordFrequency wordFrequency = verb.get(wordVerb);
-			System.out.println();
-			System.out.print("--词汇->" + wordFrequency.get_word());
-			System.out.print("-词性->" + wordFrequency.get_pos());
-			System.out.print("-平均距离->" + wordFrequency
+			Log.logger.info("");
+			Log.logger.info("--词汇->" + wordFrequency.get_word());
+			Log.logger.info("-词性->" + wordFrequency.get_pos());
+			Log.logger.info("-平均距离->" + wordFrequency
 				.getAveragePosition());
-			System.out.print("-出现频率->" + wordFrequency
+			Log.logger.info("-出现频率->" + wordFrequency
 				.get_frequency());
 		}
 
@@ -268,12 +269,12 @@ public class DemoPOSTest {
 		while (iteratorAdj.hasNext()) {
 			String wordAdj = iteratorAdj.next();
 			WordFrequency wordFrequency = adj.get(wordAdj);
-			System.out.println();
-			System.out.print("--词汇->" + wordFrequency.get_word());
-			System.out.print("-词性->" + wordFrequency.get_pos());
-			System.out.print("-平均距离->" + wordFrequency
+			Log.logger.info("");
+			Log.logger.info("--词汇->" + wordFrequency.get_word());
+			Log.logger.info("-词性->" + wordFrequency.get_pos());
+			Log.logger.info("-平均距离->" + wordFrequency
 				.getAveragePosition());
-			System.out.print("-出现频率->" + wordFrequency
+			Log.logger.info("-出现频率->" + wordFrequency
 				.get_frequency());
 		}
 
@@ -286,12 +287,12 @@ public class DemoPOSTest {
 		while (iteratorAdv.hasNext()) {
 			String wordAdv = iteratorAdv.next();
 			WordFrequency wordFrequency = adv.get(wordAdv);
-			System.out.println();
-			System.out.print("--词汇->" + wordFrequency.get_word());
-			System.out.print("-词性->" + wordFrequency.get_pos());
-			System.out.print("-平均距离->" + wordFrequency
+			Log.logger.info("");
+			Log.logger.info("--词汇->" + wordFrequency.get_word());
+			Log.logger.info("-词性->" + wordFrequency.get_pos());
+			Log.logger.info("-平均距离->" + wordFrequency
 				.getAveragePosition());
-			System.out.print("-出现频率->" + wordFrequency
+			Log.logger.info("-出现频率->" + wordFrequency
 				.get_frequency());
 		}
 	}
@@ -306,7 +307,7 @@ public class DemoPOSTest {
 		/*
 		 * 因为混合中文数字是charPosition 所以分词的sets也要charPosition变换增加精确度。
 		 */
-		System.out.println("-展示词性-");
+		Log.logger.info("-展示词性-");
 		for (int j = 0; j < 1; j++) {
 			for (int i = 0; i < sets.size(); i++) {
 				String string = sets.get(i);
@@ -314,7 +315,7 @@ public class DemoPOSTest {
 					String word = sets.get(i);
 					Object wordObjectPOS = pos.get(string);
 					if (null == wordObjectPOS) {
-						System.out.print(word + "/" + "NULL"
+						Log.logger.info(word + "/" + "NULL"
 							+ "----");
 						charPosition += string.length();
 						output.add(word + "/" + "NULL");
@@ -327,9 +328,9 @@ public class DemoPOSTest {
 					// 我罗瑶光就还是给出一个解决方案。就是所有出现形容词和副词的词汇，就看
 					// 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
 					// 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
-					if (word.equals("不断")) {
-						System.out.println();
-					}
+//					if (word.equals("不断")) {
+//						Log.logger.info("");
+//					}
 					if (wordPOS.contains("未知") || wordPOS.contains(
 						"形") || wordPOS.contains("副")) {
 						if (i + 1 < sets.size()) {
@@ -355,7 +356,7 @@ public class DemoPOSTest {
 							}
 						}
 					}
-					System.out.print(word + "/" + wordPOS + "----");
+					Log.logger.info(word + "/" + wordPOS + "----");
 					output.add(word + "/" + wordPOS);
 				}
 				charPosition += string.length();
@@ -366,17 +367,17 @@ public class DemoPOSTest {
 
 	//原测试函数分解后逻辑
 	public void testPOS(List<String> sets, IMV_SIQ pos) {
-		System.out.println("----------");
-		System.out.println("进行词性修正");
+		Log.logger.info("----------");
+		Log.logger.info("进行词性修正");
 		List<String> setsInput = testPOSOnlyGetList(sets, pos);
 		DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
-		System.out.println("----------");
-		System.out.println("进行词性组合");
+		Log.logger.info("----------");
+		Log.logger.info("进行词性组合");
 		List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(
 			setsInput, pos);
 		//--最终将修正的list 处理成 wordFrequency 格式list。
-		System.out.println("----------");
-		System.out.println("进行词性封装");
+		Log.logger.info("----------");
+		Log.logger.info("进行词性封装");
 		testPOStoWordFrequencyList(setsAfterInput, pos);
 
 	}

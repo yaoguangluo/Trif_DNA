@@ -16,6 +16,7 @@ import ME.VPC.M.app.App;
 import O_V.OSI.AOP.VPC.server.RestServer;
 //import P_V.PCS.thread.SocketThreadPool;
 import S_A.pheromone.MSI_EVD_SVX_TVS_DAH;
+import S_logger.Log;
 import exception.thread.DetaThread;
 
 //import javax.swing.JCheckBox;
@@ -70,7 +71,7 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 
 	// Trif later
 	protected void bootDetaBackEnd(App NE) {
-		System.out.println("启动400编码调试开始-00000052");
+		Log.logger.info("启动400编码调试开始-00000052");
 //		SocketThreadPool socketThreadPool = new SocketThreadPool();
 //		new BootVPCSBackEnd(NE.app_S, NE).bootBackEnd(socketThreadPool, NE);
 //		;
@@ -87,26 +88,26 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 	}
 
 	protected void bootDetaSJFX(App NE) {
-		System.out.println("启动400编码调试开始-00000052-01-06");
+		Log.logger.info("启动400编码调试开始-00000052-01-06");
 		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
 			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();
 			text = "\r\n" + "----正在载入数据分析页面！" + text;
 			text = "\r\n" + "..." + text;
 			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
 		}
-		System.out.println("启动400编码调试开始-00000055");
+		Log.logger.info("启动400编码调试开始-00000055");
 		Container containerPanel = new Container();
 		MakeContainerSJFX makeContainerSJFX = new MakeContainerSJFX(
 				NE.app_S.tableData_old, NE.app_S.text, containerPanel, NE);
 		makeContainerSJFX.start();
 		while (!makeContainerSJFX.isFinished) {
-			System.out.println("启动400编码调试开始-00000055-1");
+			Log.logger.info("启动400编码调试开始-00000055-1");
 			DetaThread.sleepDeta(500);
 		}
 	}
 
 	protected void bootDetaZNSZ(App NE) {
-		System.out.println("启动400编码调试开始-00000056");
+		Log.logger.info("启动400编码调试开始-00000056");
 		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
 			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();
 			text = "\r\n" + "----正在载入智能声诊页面！" + text;
@@ -145,7 +146,7 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 	}
 
 	protected void bootDetaLSYM(App NE) {
-		System.out.println("启动400编码调试开始-00000057");
+		Log.logger.info("启动400编码调试开始-00000057");
 		DetaThread.sleepDeta(300);
 		//
 		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
@@ -154,7 +155,7 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 			text = "\r\n" + "..." + text;
 			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
 		}
-		System.out.println("启动400编码调试开始-00000058");
+		Log.logger.info("启动400编码调试开始-00000058");
 		Container container = new Container();
 		MakeContainerTemp makeContainerTemp = new MakeContainerTemp(container,
 				NE);
@@ -175,7 +176,7 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 	}
 
 	protected void bootDetaZNXZ(App NE) throws InterruptedException, IOException {
-		System.out.println("启动400编码调试开始-00000059");
+		Log.logger.info("启动400编码调试开始-00000059");
 		doAmedicinefilter(NE);
 		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
 			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();
@@ -183,7 +184,7 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 			text = "\r\n" + "..." + text;
 			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
 		}
-		System.out.println("启动400编码调试开始-00000060");
+		Log.logger.info("启动400编码调试开始-00000060");
 		// 稍后
 		if (NE.tempString.contains("测试") || NE.tempString.contains("test")) {
 		} else {

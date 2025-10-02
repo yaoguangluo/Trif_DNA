@@ -67,7 +67,7 @@ public class ParserCharsFix {
 		HashMap<String, String> militery = new HashMap<>();
 		callFastReadProjectFile(militery, "militery.lyg", NE,
 			"otherlyg", S_Pos.UTF8_STRING, "/");
-		System.out.println("400-0000000001-" + militery.size());
+		S_logger.Log.logger.info("400-0000000001-" + militery.size());
 		environmentIndex.put("军事", militery);
 		// 还可以细化
 	}
@@ -105,7 +105,7 @@ public class ParserCharsFix {
 		HashMap<String, String> meeting = new HashMap<>();
 		callFastReadProjectFile(meeting, "meeting.lyg", NE,
 			"otherlyg", S_Pos.UTF8_STRING, "/");
-		System.out.println("400-0000000002-" + meeting.size());
+		S_logger.Log.logger.info("400-0000000002-" + meeting.size());
 		environmentIndex.put("会议", meeting);
 
 	}
@@ -117,7 +117,7 @@ public class ParserCharsFix {
 		HashMap<String, String> nation = new HashMap<>();
 		callFastReadProjectFile(nation, "nation.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		System.out.println("400-0000000003-" + nation.size());
+		S_logger.Log.logger.info("400-0000000003-" + nation.size());
 		environmentIndex.put("国家", nation);
 	}
 
@@ -128,7 +128,7 @@ public class ParserCharsFix {
 		HashMap<String, String> music = new HashMap<>();
 		callFastReadProjectFile(music, "music.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		System.out.println("400-0000000004-" + music.size());
+		S_logger.Log.logger.info("400-0000000004-" + music.size());
 		environmentIndex.put("传媒", music);
 	}
 
@@ -138,7 +138,7 @@ public class ParserCharsFix {
 		HashMap<String, String> carFix = new HashMap<>();
 		callFastReadProjectFile(carFix, "carFix.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		System.out.println("400-0000000005-" + carFix.size());
+		S_logger.Log.logger.info("400-0000000005-" + carFix.size());
 		environmentIndex.put("交通", carFix);
 	}
 
@@ -150,7 +150,7 @@ public class ParserCharsFix {
 		HashMap<String, String> food = new HashMap<>();
 		callFastReadProjectFile(food, "food.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		System.out.println("400-0000000006-" + food.size());
+		S_logger.Log.logger.info("400-0000000006-" + food.size());
 		environmentIndex.put("食物", food);
 	}
 
@@ -160,7 +160,7 @@ public class ParserCharsFix {
 		HashMap<String, String> city = new HashMap<>();
 		callFastReadProjectFile(city, "city.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		System.out.println("400-0000000007-" + city.size());
+		S_logger.Log.logger.info("400-0000000007-" + city.size());
 		environmentIndex.put("城市", city);
 	}
 
@@ -169,7 +169,7 @@ public class ParserCharsFix {
 		HashMap<String, String> street = new HashMap<>();
 		callFastReadProjectFile(street, "street.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		System.out.println("400-0000000008-" + street.size());
+		S_logger.Log.logger.info("400-0000000008-" + street.size());
 		environmentIndex.put("街道", street);
 	}
 
@@ -201,7 +201,7 @@ public class ParserCharsFix {
 		IMV_SIQ lenovo = NE.app_S.lenovoInit.getSensingMap()
 			.getLenovoMap();
 		// reduce
-		System.out.println("环    境：");
+		S_logger.Log.logger.info("环    境：");
 		Iterator<String> Iterator = environmentSampleMap.keySet()
 			.iterator();
 		while (Iterator.hasNext()) {
@@ -229,7 +229,7 @@ public class ParserCharsFix {
 						"later");
 				}
 				if (!string.replace(" ", "").isEmpty()) {
-					System.out.print(string + " ");
+					S_logger.Log.logger.info(string + " ");
 				}
 			}
 		}
@@ -276,7 +276,7 @@ public class ParserCharsFix {
 						}
 						subSet.clear();
 					}
-					System.out.println(" ");
+					S_logger.Log.logger.info(" ");
 					for (int j = 0; j < computeSet.size(); j++) {
 						StringBuilder stringBuilder = new StringBuilder();
 						boolean find = false;

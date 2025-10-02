@@ -5,6 +5,7 @@ import OSI.OSU.crab.CrabInterface;
 import O_V.OSA.shell.XA_ShellTable;
 import O_V.OSA.shell.XA_ShellTables;
 import S_A.pheromone.IMV_SIQ;
+import S_logger.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +24,7 @@ import java.util.logging.Logger;
 public class AddFindColumnsInMemoryClass implements CrabInterface {
 	String callFunctionKey;
 	String className = "AddFindColumnsInMemoryClass";
-	private static final Logger logger = Logger.getLogger("");
-
+	//private static final Logger logger = Logger.getLogger("");
 	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
 	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
 	// public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
@@ -119,18 +119,18 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 			return false;
 		}
 		//System.out.println("Hello Word!");
-		logger.info("Hello Word!");
+		S_logger.Log.logger.info("Hello Word!");
 		/*
 		 * 笛卡尔关系计算大幅缩减。此处有效。
 		 */
 		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(
 			className)) {
-			//	System.out.println("400-size-01-" 
-			//+ NE.app_S.workVerbalMap.command_V.countReject++);
+			S_logger.Log.logger.info("400-size-01-" 
+			+ NE.app_S.workVerbalMap.command_V.countReject++);
 			return false;
 		}
-		//System.out.println("400-size-02-"
-		//+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
+		S_logger.Log.logger.info("400-size-02-"
+		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 		// 获取表
 		if (!NE._I_U.outputMap.containsKey("获取表名")) {
 			return false;
@@ -154,13 +154,13 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 			//去掉末尾多余的:
 			shellType = shellType.substring(0, shellType.length()
 				- 1);
-			//System.out.println("400-01010101-" + shellType);
+			S_logger.Log.logger.info("400-01010101-" + shellType);
 			String string = "400-01010101-" + shellType;
-			logger.info(string);
+			S_logger.Log.logger.info(string);
 			String[] strings = shellType.split(":");
-			//System.out.println("400-01010102-" + strings[1]);
+			S_logger.Log.logger.info("400-01010102-" + strings[1]);
 			string = "400-01010102-" + strings[1];
-			logger.info(string);
+			S_logger.Log.logger.info(string);
 			List<String[]> list = new ArrayList();
 			list.add(strings);
 			NE._I_U.outputMap.put("获取列名", list);// 集成到老的接口模式先，避免bug*/
@@ -217,13 +217,13 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 			.containsKey("仅含-")) {
 			combinationIncreased += 1;
 			//System.out.printf("highly fit"); // later in mapping iterator.*/
-			logger.info("highly fit");
+			S_logger.Log.logger.info("highly fit");
 		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 			.containsKey("输出-")) {
 			combinationIncreased += 1;
 			//System.out.printf("highly fit"); // later in mapping iterator.*/
-			logger.info("highly fit");
+			S_logger.Log.logger.info("highly fit");
 		}
 		//		iterator= NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
 		//		while(iterator.hasNext()) {
@@ -233,18 +233,18 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 			.containsKey("V+")) {
 			combinationIncreased += 1;
 			//System.out.printf("highly fit"); // later in mapping iterator.*/
-			logger.info("highly fit");
+			S_logger.Log.logger.info("highly fit");
 		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 			.containsKey("名为-")) {
 			combinationIncreased += 1;
 			//System.out.printf("highly fit"); // later in mapping iterator.*/
-			logger.info("highly fit");
+			S_logger.Log.logger.info("highly fit");
 		}
 		if (combinationIncreased < 2) {
 			//System.out.println("-E-small-" + combinationIncreased);
 			String string = "-E-small-" + combinationIncreased;
-			logger.info(string);
+			S_logger.Log.logger.info(string);
 			return false;
 		}
 		return true;

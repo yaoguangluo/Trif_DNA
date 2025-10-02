@@ -6,7 +6,7 @@ import ME.VPC.V.dictionary.ZhongYaoDictionary;
 import ME.VPC.V.db.ZhongYaoDictionaryFromDB;
 import Q_V.OSV.VCQ.standard.DictionaryStandardDB;
 import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_logger.Log;
 import U_A.PEU.P.combination.ObjectCombination;
 
 import java.util.List;
@@ -75,7 +75,7 @@ public class DBReadMode {
 			ObjectCombination.mapCombinationTrif(app.dic_li,
 					d.mapToMap_li(app.dic_map), d.mapToMap_yw(app.dic_map));// later
 																			// trif
-			System.out.println("--之前设计功效包含所有，因为危险也是功效，比如毒药的功效就有毒。不能解释，"
+			Log.logger.warning("--之前设计功效包含所有，因为危险也是功效，比如毒药的功效就有毒。不能解释，"
 					+ "所以有毒作为功效，危险里面也要标注有毒，方便筛选--------");
 			ObjectCombination.mapCombination(app.dic_hai,
 					d.mapToMap_hai(app.dic_map));

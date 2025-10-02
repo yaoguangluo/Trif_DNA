@@ -102,7 +102,7 @@ public class CrabInterfaceClass implements CrabInterface {
 	// return null;
 	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子,
 		App NE, IMV_SIQ outputReg) {
-		System.out.println("Hello Word!");
+		S_logger.Log.logger.info("Hello Word!");
 		return true;
 	}
 

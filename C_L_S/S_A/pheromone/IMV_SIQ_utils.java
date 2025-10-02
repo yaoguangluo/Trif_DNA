@@ -2,6 +2,7 @@ package S_A.pheromone;
 
 import ME.VPC.M.app.App;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
+import S_logger.Log;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -31,8 +32,8 @@ public class IMV_SIQ_utils {
 		// 7代花再缩减 // flex
 		for (String actionKey : (Iterable<String>) NE.app_S.flowerAction.FlowerP_E_KernelActions
 			.keySet()) {
-			System.out.println("400-00001001-" + key);
-			System.out.println("400-00001002-" + actionKey);
+			Log.logger.info("400-00001001-" + key);
+			Log.logger.info("400-00001002-" + actionKey);
 			if (key.contains(actionKey)) {// later separate.
 				String temp = NE.app_S.flowerAction.FlowerP_E_KernelActions
 					.getString(actionKey);
@@ -61,8 +62,8 @@ public class IMV_SIQ_utils {
 					.getString(actionKey);
 				NE.app_S.flowerAction.doAction(temp, strings, output,
 					NE);
-				System.out.println("400-10000002" + actionKey);
-				System.out.println("400-10000003-" + temp);
+				Log.logger.info("400-10000002" + actionKey);
+				Log.logger.info("400-10000003-" + temp);
 			} else {
 				// System.out.println("400-10000004" + key);
 				/*
@@ -107,7 +108,7 @@ public class IMV_SIQ_utils {
 			 * */
 			if (stringsKey[0].equals(stringsAction[0])
 				|| stringsKey[1].equals(stringsAction[1])) {
-				System.out.println("400-10000004-1-" + actionKey);
+				Log.logger.info("400-10000004-1-" + actionKey);
 				String temp = NE.app_S.flowerAction.FlowerSixDomainActions
 					.getString(actionKey);
 				if (scores.containsKey(temp)) {

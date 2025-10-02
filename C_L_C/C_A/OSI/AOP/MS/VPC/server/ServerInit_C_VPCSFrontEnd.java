@@ -39,7 +39,7 @@ public class ServerInit_C_VPCSFrontEnd {
 	public void IV_() {
 		try {
 			port = Integer.valueOf(app.frontendTxt);
-			System.out.println("启动400编码调试开始-00000051-" + port);
+			S_logger.Log.logger.info("启动400编码调试开始-00000051-" + port);
 			// port= Config.detaVPCSFrontEndPort;
 			server = new ServerSocket(port);
 			// 20230106-System.out.println("----德塔VPCS前端服务器端口启动:" +
