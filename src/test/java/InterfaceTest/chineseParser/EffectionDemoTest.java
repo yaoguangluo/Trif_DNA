@@ -68,7 +68,7 @@ class EffectionDemoTest {
 			+ "和100+个功能DEMO在面对某具体行业已经体现了许多基础实用价值但面向整个社会各行各业我会写更多"
 			+ "的测试DEMO补充小目标26000+函数和1000+个功能DEMO扩大鲁棒性华瑞集测试插件的源码优化这个"
 			+ "项目罗瑶光主要是公开展示下自己的编码实力知道自己的真实斤两同时填补下软算DNA编码领域的国际"
-			+ "空白2018年10月就贴出了本人生活地址方便各类大佬组织现场技术群挑";
+			+ "空白2018年10月就贴出了本人生活地址方便各类用户组织现场技术群挑";
 		System.out.println("文字长度->" + inputString.length());
 		// 计算
 		StringBuilder sb = new StringBuilder(inputString);
