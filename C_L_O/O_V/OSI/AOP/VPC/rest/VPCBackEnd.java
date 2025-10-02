@@ -93,9 +93,6 @@ public class VPCBackEnd {
             //return VtoV.ObjectToJsonString(RestNLPPortImpl.dataYL(_A, data.get("input")));
             //20230106-System.out.println(data.get("medicine"));
             return VtoV.ObjectToJsonString(RestNLPPortImpl.dataYL(data.getString("medicine"), NE));
-            //之前连华为紫罗兰usb, 导致我2018的联想拯救者开不了机, 猫腻就出来了, 我的medicine修改的在那电脑里。
-            //腾讯冻结我sweet00048就是这个商业点, 因为我视频有当时的减肥的截图。哈。
-            //而我有两台联想, 又莫名mac私有保密登录, 就被玩了。这群大佬这样搞怎么办？了。
             //这是我2
         }
         return "";

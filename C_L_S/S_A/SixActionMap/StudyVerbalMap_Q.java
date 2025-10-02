@@ -14,7 +14,7 @@ import O_V.OSM.shell.CommandClass;
 public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 	/*
 	 * System.out.println("混合数字字符预处理锁定-->" + string);
-	 * 因为有些大佬喜欢写100万2000这种标识，就不用一百万两千和1002000这类规范的。
+	 * 因为有些用户喜欢写100万2000这种标识，就不用一百万两千和1002000这类规范的。
 	 * 所以我在这个if里面之后还要设计个阿拉伯数字转汉字的数字翻译机。 逻辑是先拆分数汉，
 	 * 再翻译数变汉，最后组合全汉输出即可。 --罗瑶光
 	 * 

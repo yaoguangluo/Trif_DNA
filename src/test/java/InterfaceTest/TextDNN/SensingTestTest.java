@@ -47,7 +47,7 @@ class SensingTestTest {
 			.getPredictionMap();
 		IMV_SIQ _getTrendingMap = commonTestInition.NE.app_S.emotionMap_E
 			.getTrendingMap();
-		// --下列这些词库-代表个人思维强烈，商业应用请大佬们面向产业领域重新设计和修改。
+		// --下列这些词库-代表个人思维强烈，商业应用请用户们面向产业领域重新设计和修改。
 		System.out.println("-----词汇分类和总数测试----");
 		// 1 褒义类词库
 		System.out.println("褒义词总数-->" + _getPositiveMap.size());
