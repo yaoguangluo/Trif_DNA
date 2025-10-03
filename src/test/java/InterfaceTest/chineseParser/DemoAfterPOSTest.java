@@ -15,10 +15,12 @@ package test.java.InterfaceTest.chineseParser;
 import A_V.ASQ.PSU.test.TimeCheck;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_SS;
+import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,13 +46,13 @@ public class DemoAfterPOSTest {
 	public IMV_SIQ_SS adj = new IMV_SIQ_SS();
 	public IMV_SIQ_SS adv = new IMV_SIQ_SS();
 
-	public static void main(String[] argv) {
+	public static void main(String[] argv) throws IOException {
 		DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
 		demoAfterPOSTest.main();
 	}
 
 	@Test
-	void main() {
+	void main() throws IOException {
 		// 初始化
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
@@ -65,8 +67,7 @@ public class DemoAfterPOSTest {
 			+ "个事物，如果有价值，就应该像教材一样在真实的环境中不断地实践测试和论证，"
 			+ "能经得起所有人长年累月地不断地挑剔的东西，才是货真价实的，罗瑶光的个人著"
 			+ "作权作品都是互联网，大数据产业领域基础作品，2018年后，在60余互联网app上"
-			+ "发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同时对垄断的" 
-			+ "产业有约束性。";
+			+ "发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同时对垄断的" + "产业有约束性。";
 		// String ss = "在，和无数群体，";
 		// DemoEX demoEX = new DemoEX();
 		StringBuilder sb = new StringBuilder(ss);
@@ -75,31 +76,31 @@ public class DemoAfterPOSTest {
 		t.begin();
 		sets = commonTestInition.NE.app_S._A.parserMixedString(sb);
 		t.end();
-		System.out.println();
-		System.out.println("--分词后数据--");
-		System.out.println();
+		Log.logger.info("");
+		Log.logger.info("--分词后数据--");
+		Log.logger.info("");
 		for (int i = 0; i < sets.size(); i++) {
-			System.out.print("-" + sets.get(i));
+			Log.logger.info("-" + sets.get(i));
 		}
-		System.out.println();
+		Log.logger.info("");
 		// 词性归纳
 		List<String> setsInput = testPOS(sets, pos);
-		System.out.println();
-		System.out.println("--分词后数据 词性简单归纳--");
-		System.out.println();
+		Log.logger.info("");
+		Log.logger.info("--分词后数据 词性简单归纳--");
+		Log.logger.info("");
 		for (int i = 0; i < setsInput.size(); i++) {
-			System.out.print("=" + setsInput.get(i));
+			Log.logger.info("=" + setsInput.get(i));
 		}
-		System.out.println();
-		System.out.println("--分词后数据 词性简单组合归纳--");
-		System.out.println();
+		Log.logger.info("");
+		Log.logger.info("--分词后数据 词性简单组合归纳--");
+		Log.logger.info("");
 		// 词性归纳 简单地探索可组合字词
 		List<String> setsAfterInput = testAfterPOS(setsInput, pos);
-		System.out.println();
+		Log.logger.info("");
 		for (int i = 0; i < setsAfterInput.size(); i++) {
-			System.out.print("+" + setsAfterInput.get(i));
+			Log.logger.info("+" + setsAfterInput.get(i));
 		}
-		System.out.println();
+		Log.logger.info("");
 		// 词性归纳 上面辅助应用于提高POS类计算前精确度
 		// new DemoPOSTest().testPOS(setsAfterInput, pos);
 		// 关闭
@@ -116,104 +117,127 @@ public class DemoAfterPOSTest {
 			String[] strings = string.split("/");
 			String connect = "";
 			for (int j = 1; j < 2; j++) {
-				if (i + j < sets.size()) {
-					String stringNext = sets.get(i + j);
-					String[] stringsNext = stringNext.split("/");
-					if (strings.length > 1 && stringsNext.length > 1
-						&& strings[1].equals(stringsNext[1])) {
-						// 关于名词做副词的用法，如 -正面-地-，这种组合，因为地字有明确标
-						// 识副词性结构助词，所以在跟进语言处理仅仅需要一个检查-正面-前面
-						// 是否有副词名词或者主语，和地字后面是不是副词或者动词，就能比较
-						// 准确地判断正面在这里是不是一个名词作副词用的语法。所以间接说明
-						// ，POS逻辑可以进行拓扑分解细化分层计算。我这里保持严谨，仅组合2
-						// 字词先。
-						if (3 > strings[0].length() + connect.length()
-							+ stringsNext[0].length()) {
-							connect += stringsNext[0];// 仅组合单字且不超过4位
-							reg += 1;
-						} else {
-							break;
-						}
-					} else {
-						// 避免跳跃加载。
-						break;
-					}
+				if (i + j >= sets.size()) {
+					continue;
 				}
+				String stringNext = sets.get(i + j);
+				String[] stringsNext = stringNext.split("/");
+				if (!(strings.length > 1 && stringsNext.length > 1
+					&& strings[1].equals(stringsNext[1]))) {
+					// 避免跳跃加载。
+					break;
+				}
+				// 关于名词做副词的用法，如 -正面-地-，这种组合，因为地字有明确标
+				// 识副词性结构助词，所以在跟进语言处理仅仅需要一个检查-正面-前面
+				// 是否有副词名词或者主语，和地字后面是不是副词或者动词，就能比较
+				// 准确地判断正面在这里是不是一个名词作副词用的语法。所以间接说明
+				// ，POS逻辑可以进行拓扑分解细化分层计算。我这里保持严谨，仅组合2
+				// 字词先。
+				if (3 <= strings[0].length() + connect.length()
+					+ stringsNext[0].length()) {
+					break;
+				}
+				connect += stringsNext[0];// 仅组合单字且不超过4位
+				reg += 1;
 			}
 			if (0 == reg) {
 				// 没有关联就加原变量
 				setsOutput.add(string);
-				System.out.print(string + "----");
+				Log.logger.info(string + "----");
 			} else {
-				setsOutput.add(strings[0] + connect + "/"
-					+ strings[1]);
-				System.out.print(strings[0] + connect + "/"
-					+ strings[1] + "----");
+				String stringConnect = strings[0] + connect + "/"
+					+ strings[1];
+				setsOutput.add(stringConnect);
+				Log.logger.info(stringConnect + "----");
 				i += reg;
 			}
 		}
 		return setsOutput;
 	}
 
+	/*
+	 * 这个函数主要展示罗瑶光先生对嵌套过多的 if 进行优化，优化流程和2019年的
+	 * deta parser 的if 条件非门优化return 思绪一致。因为罗瑶光先生在 英** 也做
+	 * 过条件优化，当时罗先生采用 提取法将多个if中的几个if进行提取出来包装成新函数
+	 * 进行return。
+	 * 
+	 * 而在这个函数，罗先生采用离散迪.摩根律进行非门return。进行区别。公示给大家看
+	 * 避免被一些大公司和个别社会人的团体非议。见200行。 205行和212行等。
+	 * 
+	 * --罗瑶光
+	 * 
+	 * */
+	@SuppressWarnings("unused")
 	public List<String> testPOS(List<String> sets, IMV_SIQ pos) {
 		List<String> setsOutput = new ArrayList<>();
 		int charPosition = 0;
 		// 结果归纳
 		// 1 名词 动词 形容词归纳
-		System.out.println("-展示词性-");
+		Log.logger.info("-展示词性-");
 		for (int j = 0; j < 1; j++) {
 			for (int i = 0; i < sets.size(); i++) {
 				String string = sets.get(i);
-				if (!string.replaceAll("\\s+", "").equals("")) {
-					String word = sets.get(i);
-					Object wordObjectPOS = pos.get(string);
-					if (null == wordObjectPOS) {
-						System.out.print(word + "/" + "NULL"
-							+ "----");
-						setsOutput.add(word + "/" + "NULL");
-						continue;
-					}
-					String wordPOS = wordObjectPOS.toString();
-					// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，里面副词
-					// 出现了整体性问题，到现在2025年，这7年没有一个人告知我这个问题，我的
-					// 自己工程又从来没有用过这副词的逻辑，所以一直没碰，现在商业化测试呢，
-					// 我罗瑶光就还是给出一个解决方案。就是所有出现形容词和副词的词汇，就看
-					// 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
-					// 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
-					if (word.equals("不断")) {
-						System.out.println();
-					}
-					if (wordPOS.contains("未知") || wordPOS.contains(
-						"形") || wordPOS.contains("副")) {
-						if (i + 1 < sets.size()) {
-							String wordNext = sets.get(i + 1);
-							Object wordNextObjectPOS = pos.get(
-								wordNext);
-							if (null != wordNextObjectPOS) {
-								String wordNextPOS = wordNextObjectPOS
-									.toString();
-								if (wordNext.equals("地")) {
-									wordPOS = "形谓词作副词";
-								} else if (wordNext.equals("的")) {
-									wordPOS = "形谓词作形容词";
-								} else if (wordNextPOS.contains(
-									"动词")) {
-									wordPOS = "形谓词作副词";
-								} else if (wordNextPOS.contains(
-									"名词")) {
-									wordPOS = "形谓词作形容词";
-								}
-							}
-						}
-					}
-					setsOutput.add(word + "/" + wordPOS);
+				if (string.replaceAll("\\s+", "").equals("")) {
+					charPosition += string.length();
+					continue;
 				}
+				String word = sets.get(i);
+				Object wordObjectPOS = pos.get(string);
+				if (null == wordObjectPOS) {
+					String wordsPOS = word + "/" + "NULL";
+					String wordsPOSs = wordsPOS + "----";
+					Log.logger.info(wordsPOSs);
+					setsOutput.add(wordsPOS);
+					continue;
+				}
+				String wordPOS = wordObjectPOS.toString();
+				// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，里面副词
+				// 出现了整体性问题，到现在2025年，这7年没有一个人告知我这个问题，我的
+				// 自己工程又从来没有用过这副词的逻辑，所以一直没碰，现在商业化测试呢，
+				// 我罗瑶光就还是给出一个解决方案。就是所有出现形容词和副词的词汇，就看
+				// 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
+				// 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
+				if (!(wordPOS.contains("未知") || wordPOS.contains("形")
+					|| wordPOS.contains("副"))) {
+					setsOutput.add(word + "/" + wordPOS);
+					charPosition += string.length();
+					continue;
+				}
+				if (i + 1 >= sets.size()) {
+					setsOutput.add(word + "/" + wordPOS);
+					charPosition += string.length();
+					continue;
+				}
+				String wordNext = sets.get(i + 1);
+				Object wordNextObjectPOS = pos.get(wordNext);
+				if (null == wordNextObjectPOS) {
+					setsOutput.add(word + "/" + wordPOS);
+					charPosition += string.length();
+					continue;
+				}
+				String wordNextPOS = wordNextObjectPOS.toString();
+				/*
+				 * Sonar-S1854协议 在wordPOS处无效。提示重复 = 定义。
+				 * 我思考了下这里不是无效的问题，是没有用到wordPOS变量。
+				 * 加了句setsOutput.add(word + "/" + wordPOS);就
+				 * 好了，所以sonar要修正这个提示错误。
+				 * --罗瑶光
+				 * */
+				if (wordNext.equals("地")) {
+					wordPOS = "形谓词作副词";
+				} else if (wordNext.equals("的")) {
+					wordPOS = "形谓词作形容词";
+				} else if (wordNextPOS.contains("动词")) {
+					wordPOS = "形谓词作副词";
+				} else if (wordNextPOS.contains("名词")) {
+					wordPOS = "形谓词作形容词";
+				}
+				setsOutput.add(word + "/" + wordPOS);
 				charPosition += string.length();
 			}
 		}
 		return setsOutput;
 	}
-
 }
 //输出观测 --发现量词含有形容词的属性，形容多少，程度等。
 //Connected to the target VM, address: '127.0.0.1:50692', transport: 'socket'
