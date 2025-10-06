@@ -195,14 +195,14 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 				/*
 				 * 思考--关于 6到-9 进行行数筛选指令句 的 条件分析，这里6到的组合是因为6是一个char，到也是，
 				 * 小于2就并在一起了，成了6到。于是开始更进思考，这里 如果是600，那么出现了一个问题，便是
-				 * 组字的拆卸问题，这个逻辑进行捋一捋，可以的到一个流程，便是 数字+一个字词变成高级笛卡尔的渡的关系。
+				 * 组字的拆卸问题，这个逻辑进行捋一捋，可以的得到一个流程，便是 数字+一个字词变成高级笛卡尔的渡的关系。
 				 * 而不是之前的 rootM.length() < 3. 这样做需要一个精度来进行控制。会让匹配更灵活，于是开始修改。
 				 * 因为词汇分词后是最大也就4个字。但是一旦包含数字就不同了。所以可以省略。
 				 * 
 				 * --罗瑶光
 				 * 
 				 * */	
-				System.out.println(rootM + "--" + rightM);
+				//System.out.println(rootM + "--" + rightM);
 				if (2 > rightM && rootM.length() < 3) {
 					//System.out.println(rootM + "--" + rightM);
 					//nounInText.remove(stringNounM);
