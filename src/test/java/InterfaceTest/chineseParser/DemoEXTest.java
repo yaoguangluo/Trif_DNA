@@ -161,7 +161,7 @@ class DemoEXTest {
 		List<String> setsB = new ArrayList<>();
 		// IMV_SIQ_SS seta = new IMV_SIQ_SS();
 		// loop测试---------------------------------------------------------
-		for (int i = 0; i < ss.length; i++) {
+		for (int i = 0; i < 67; i++) {
 			StringBuilder sb = new StringBuilder(ss[i]);
 			// 执行分词-输出 list格式 的 sets变量
 			TimeCheck t = new TimeCheck();
@@ -178,6 +178,7 @@ class DemoEXTest {
 			Log.logger.info("输入->" + ss[i]);
 			// 输出和统计观测开始------
 			Log.logger.info("输出->");
+			String setsTemp = "";
 			for (int j = 0; j < sets.size(); j++) {
 				if (sets.get(j) != null// 不为null
 					&& !sets.get(j).equals(" ")// 不为空
@@ -187,22 +188,30 @@ class DemoEXTest {
 						score[i] += 1;
 						totalVerbals++;
 						totalSegbals++;
-						System.out.print(sets.get(j) + "=");
+						setsTemp += sets.get(j) + "=";
+						//System.out.print(sets.get(j) + "=");
 					} else {
 						totalVerbals++;
-						System.out.print(sets.get(j) + "x");
+						setsTemp += sets.get(j) + "x";
+						//System.out.print(sets.get(j) + "x");
 					}
 				}
+			}
+			Log.logger.info(setsTemp);
+			if (setsTemp.isEmpty()) {
+				continue;
 			}
 			String size = verbal[i].get("-size-");
 			double sizeD = Double.valueOf(size);
 			score[i] = score[i] / sizeD;
 			Log.logger.info("");
-			Log.logger.info("数据保持单字拆解条件下-分词后过滤新兴潮流代词缩写词人名"
-				+ "等行业专业名词后对比正确率为->" + (score[i] * 100) + "%");
-			Log.logger.info("采样数据可自适应修改。注意保持对比格式的严谨～");
-			// 对比
-			Log.logger.info("理想->" + ss1[i]);
+			//if(score[i] < 1) {
+				Log.logger.info("数据保持单字拆解条件下-分词后过滤新兴潮流代词缩写词人名"
+					+ "等行业专业名词后对比正确率为->" + (score[i] * 100) + "%");
+				Log.logger.info("采样数据可自适应修改。注意保持对比格式的严谨～");
+				// 对比
+				Log.logger.info("理想->" + ss1[i]);	
+			//}
 		}
 		Log.logger.info("共计分词量总数-->" + totalVerbals);
 		Log.logger.info("共计正确分词数-->" + totalSegbals);
