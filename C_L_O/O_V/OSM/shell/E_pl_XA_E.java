@@ -361,17 +361,18 @@ public class E_pl_XA_E {
 		 * ，以后人工智能的基础思考模型就稳定了。然后元基索引 使用频率统计排序归纳，创造一个 
 		 * 自然选择的计算模拟环境。
 		 */
-		Iterator<String> iterators = command_V._IMV_SIQ_SS_Q.keySet()
-			.iterator();
-		while (iterators.hasNext()) {
-			String string = iterators.next();
-			WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q
-				.getW(string);
-			command_V._IMV_SIQ_SS.put(string, WordFrequency);
-			/*
-			 * 分词的position要统计char位置，不是word位置，不然会不准确 later --trif一下
-			 */
-		}
+//      这一层逻辑已经并入了 setHumanTalkAfterNewBusinessTest，于是注释掉。	
+//		Iterator<String> iterators = command_V._IMV_SIQ_SS_Q.keySet()
+//			.iterator();
+//		while (iterators.hasNext()) {
+//			String string = iterators.next();
+//			WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q
+//				.getW(string);
+//			command_V._IMV_SIQ_SS.put(string, WordFrequency);
+//			/*
+//			 * 分词的position要统计char位置，不是word位置，不然会不准确 later --trif一下
+//			 */
+//		}
 		FastCartesianIdentifyTest fastCartesianIdentifyTest = new FastCartesianIdentifyTest();
 		fastCartesianIdentifyTest
 			.getCartesianRelationShipFromHumanTalk(
