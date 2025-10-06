@@ -342,7 +342,7 @@ public class E_pl_XA_E {
 	}
 
 	// later out to data swap api
-	private static String doHumanTalkSwap(App NE,
+	public static String doHumanTalkSwap(App NE,
 		CommandClass command_V) {
 		// （首-先，一，开始，于是，顺其自然，）
 		// （将，获-取-得，授权，选择，确-定-保，认-准-定，标-记-出，拿-出-到-来，把，）

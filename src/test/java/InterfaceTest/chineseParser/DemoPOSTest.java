@@ -1,6 +1,7 @@
 package test.java.InterfaceTest.chineseParser;
 
 import A_V.ASQ.PSU.test.TimeCheck;
+import O_V.OSM.shell.CommandClass;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.pheromone.IMV_SIQ;
 import S_A.pheromone.IMV_SIQ_SS;
@@ -82,6 +83,7 @@ public class DemoPOSTest {
 		 */
 		System.out.println("-展示词性-");
 		for (int j = 0; j < 1; j++) {
+			String wordsTemp = "";
 			for (int i = 0; i < sets.size(); i++) {
 				String string = sets.get(i);
 				if (!string.replaceAll("\\s+", "").equals("")) {
@@ -89,7 +91,8 @@ public class DemoPOSTest {
 					String[] strings = words.split("/");
 					String word = strings[0];
 					String wordPOS = strings[1];
-					System.out.print(word + "/" + wordPOS + "----");
+					wordsTemp += word + "/" + wordPOS + "----";
+					//System.out.print(word + "/" + wordPOS + "----");
 					if (wordPOS.contains("名")) {
 						WordFrequency wordFrequency;
 						if (noun.containsKey(word)) {
@@ -222,6 +225,7 @@ public class DemoPOSTest {
 				}
 				charPosition += string.length();
 			}
+			Log.logger.info(wordsTemp);
 		}
 		// 输出显示
 		// 名词
@@ -233,13 +237,21 @@ public class DemoPOSTest {
 		while (iteratorNoun.hasNext()) {
 			String wordNoun = iteratorNoun.next();
 			WordFrequency wordFrequency = noun.get(wordNoun);
-			Log.logger.info("");
-			Log.logger.info("--词汇->" + wordFrequency.get_word());
-			Log.logger.info("-词性->" + wordFrequency.get_pos());
-			Log.logger.info("-平均距离->" + wordFrequency
-				.getAveragePosition());
-			Log.logger.info("-出现频率->" + wordFrequency
-				.get_frequency());
+//			Log.logger.info("");
+//			Log.logger.info("--词汇->" + wordFrequency.get_word());
+//			Log.logger.info("-词性->" + wordFrequency.get_pos());
+//			Log.logger.info("-平均距离->" + wordFrequency
+//				.getAveragePosition());
+//			Log.logger.info("-出现频率->" + wordFrequency
+//				.get_frequency());
+			String wordFrequencyTemp = "";
+			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
+			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
+			wordFrequencyTemp += "--平均距离->" + wordFrequency
+				.getAveragePosition();
+			wordFrequencyTemp += "--出现频率->" + wordFrequency
+				.get_frequency();
+			Log.logger.info(wordFrequencyTemp);
 		}
 
 		// 动词
@@ -251,13 +263,21 @@ public class DemoPOSTest {
 		while (iteratorVerb.hasNext()) {
 			String wordVerb = iteratorVerb.next();
 			WordFrequency wordFrequency = verb.get(wordVerb);
-			Log.logger.info("");
-			Log.logger.info("--词汇->" + wordFrequency.get_word());
-			Log.logger.info("-词性->" + wordFrequency.get_pos());
-			Log.logger.info("-平均距离->" + wordFrequency
-				.getAveragePosition());
-			Log.logger.info("-出现频率->" + wordFrequency
-				.get_frequency());
+//			Log.logger.info("");
+//			Log.logger.info("--词汇->" + wordFrequency.get_word());
+//			Log.logger.info("-词性->" + wordFrequency.get_pos());
+//			Log.logger.info("-平均距离->" + wordFrequency
+//				.getAveragePosition());
+//			Log.logger.info("-出现频率->" + wordFrequency
+//				.get_frequency());
+			String wordFrequencyTemp = "";
+			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
+			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
+			wordFrequencyTemp += "--平均距离->" + wordFrequency
+				.getAveragePosition();
+			wordFrequencyTemp += "--出现频率->" + wordFrequency
+				.get_frequency();
+			Log.logger.info(wordFrequencyTemp);
 		}
 
 		// 形容词
@@ -269,13 +289,21 @@ public class DemoPOSTest {
 		while (iteratorAdj.hasNext()) {
 			String wordAdj = iteratorAdj.next();
 			WordFrequency wordFrequency = adj.get(wordAdj);
-			Log.logger.info("");
-			Log.logger.info("--词汇->" + wordFrequency.get_word());
-			Log.logger.info("-词性->" + wordFrequency.get_pos());
-			Log.logger.info("-平均距离->" + wordFrequency
-				.getAveragePosition());
-			Log.logger.info("-出现频率->" + wordFrequency
-				.get_frequency());
+//			Log.logger.info("");
+//			Log.logger.info("--词汇->" + wordFrequency.get_word());
+//			Log.logger.info("-词性->" + wordFrequency.get_pos());
+//			Log.logger.info("-平均距离->" + wordFrequency
+//				.getAveragePosition());
+//			Log.logger.info("-出现频率->" + wordFrequency
+//				.get_frequency());
+			String wordFrequencyTemp = "";
+			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
+			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
+			wordFrequencyTemp += "--平均距离->" + wordFrequency
+				.getAveragePosition();
+			wordFrequencyTemp += "--出现频率->" + wordFrequency
+				.get_frequency();
+			Log.logger.info(wordFrequencyTemp);
 		}
 
 		// 副词
@@ -287,13 +315,21 @@ public class DemoPOSTest {
 		while (iteratorAdv.hasNext()) {
 			String wordAdv = iteratorAdv.next();
 			WordFrequency wordFrequency = adv.get(wordAdv);
-			Log.logger.info("");
-			Log.logger.info("--词汇->" + wordFrequency.get_word());
-			Log.logger.info("-词性->" + wordFrequency.get_pos());
-			Log.logger.info("-平均距离->" + wordFrequency
-				.getAveragePosition());
-			Log.logger.info("-出现频率->" + wordFrequency
-				.get_frequency());
+//			Log.logger.info("");
+//			Log.logger.info("--词汇->" + wordFrequency.get_word());
+//			Log.logger.info("-词性->" + wordFrequency.get_pos());
+//			Log.logger.info("-平均距离->" + wordFrequency
+//				.getAveragePosition());
+//			Log.logger.info("-出现频率->" + wordFrequency
+//				.get_frequency());
+			String wordFrequencyTemp = "";
+			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
+			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
+			wordFrequencyTemp += "--平均距离->" + wordFrequency
+				.getAveragePosition();
+			wordFrequencyTemp += "--出现频率->" + wordFrequency
+				.get_frequency();
+			Log.logger.info(wordFrequencyTemp);
 		}
 	}
 
@@ -309,14 +345,17 @@ public class DemoPOSTest {
 		 */
 		Log.logger.info("-展示词性-");
 		for (int j = 0; j < 1; j++) {
+			String wordsTemp = "";
 			for (int i = 0; i < sets.size(); i++) {
 				String string = sets.get(i);
 				if (!string.replaceAll("\\s+", "").equals("")) {
 					String word = sets.get(i);
 					Object wordObjectPOS = pos.get(string);
 					if (null == wordObjectPOS) {
-						Log.logger.info(word + "/" + "NULL"
-							+ "----");
+						wordsTemp += word + "/" + "NULL"
+							+ "----";
+//						Log.logger.info(word + "/" + "NULL"
+//							+ "----");
 						charPosition += string.length();
 						output.add(word + "/" + "NULL");
 						continue;
@@ -356,17 +395,20 @@ public class DemoPOSTest {
 							}
 						}
 					}
-					Log.logger.info(word + "/" + wordPOS + "----");
+					//Log.logger.info(word + "/" + wordPOS + "----");
+					wordsTemp+=word + "/" + wordPOS + "----";
 					output.add(word + "/" + wordPOS);
 				}
 				charPosition += string.length();
 			}
+			Log.logger.info(wordsTemp);
 		}
 		return output;
 	}
 
 	//原测试函数分解后逻辑
 	public void testPOS(List<String> sets, IMV_SIQ pos) {
+		
 		Log.logger.info("----------");
 		Log.logger.info("进行词性修正");
 		List<String> setsInput = testPOSOnlyGetList(sets, pos);

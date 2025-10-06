@@ -117,11 +117,15 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		 * 
 		 * */
 		int res = new StudyVerbalMap().extractNumberfromString(command_V);
-		
+		/*
+		 * 将replace 提取出来，然后进行字符的长度进行replace
+		 * */
+		//。。。todo
 		this.humanTalk = command_V.command;
 		// 分词 提取 英文段和数字段形成变量。比如dnn 12345等
 		S_logger.Log.logger.info("chineseSimpleCommandWithoutNumerics400-->" 
 		+ command_V.chineseSimpleCommandWithoutNumerics);
+	
 		command_V._IMV_SIQ_SS_ = NE.app_S._A
 				.parserMixedString(command_V.chineseSimpleCommandWithoutNumerics);
 		// -1 词频 归纳

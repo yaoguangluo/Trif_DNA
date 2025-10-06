@@ -1,14 +1,20 @@
 package test.java.InterfaceTest.chineseParser;
 
 import A_V.ASQ.PSU.test.TimeCheck;
+import O_V.OSM.shell.CommandClass;
+import O_V.OSM.shell.E_pl_XA_E;
 import S_A.SVQ.stable.S_Common;
 import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SIQ_SS;
 import S_A.pheromone.IMV_SIQ_S_;
+import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -33,6 +39,7 @@ public class DemoEX {
 	int e = 0;
 	int f = 0;
 	int g = 0;
+
 	//refer
 	//https://logging.apache.org/log4j/2.x/javadoc/log4j-api/org/apache/logging/log4j/Logger.html
 	//private static final Logger logger = Logger.getLogger("");
@@ -41,7 +48,6 @@ public class DemoEX {
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 词性初始化
 		IMV_SIQ pos = commonTestInition.NE.app_S._A.getPosCnToCn();
-		List<String> sets = new ArrayList<>();
 		TimeCheck t = new TimeCheck();
 		// 等待分词的语句
 		String ss = new String("在输出的数据表中仅展示从第零行到第三十行的数据"
@@ -52,15 +58,6 @@ public class DemoEX {
 			+ "西，才是货真价实的，罗瑶光的个人著作权作品都是互联网，大数据产业"
 			+ "领域基础作品，2018年后，在60余互联网app上发布德塔开源的作品，罗"
 			+ "瑶光先生认为开源作品对同行呈现包容性。同时对垄断产业有约束性。");
-		StringBuilder sb = new StringBuilder(ss);
-		t.begin();
-		for (int i = 0; i < 100000; i++) {
-			// 执行分词
-			sets = commonTestInition.NE.app_S._A.parserMixedString(
-				sb);
-		}
-		t.end();
-		t.duration();
 		/*
 		 * Sonar--S106协议 修改，这是我第二个sonar纠正处。 去system 改为 log4j。
 		 * 
@@ -72,208 +69,64 @@ public class DemoEX {
 		 * 
 		 * --罗瑶光
 		 * */
-		Log.logger.info("System.out.println(\"-展示分词-\");");
-		for (int i = 0; i < sets.size(); i++) {
-			if (sets.get(i) != null) {
-				String string= sets.get(i) + " ";
-				Log.logger.info(string);
-			}
+
+		/*
+		 * 用commandV来处理混合中文，看看效果。
+		 * */
+		CommandClass command_V = new CommandClass();
+		commonTestInition.NE.app_S.workVerbalMap.command_V = command_V;
+		commonTestInition.NE.app_S.currentTinmap = new TinMap();
+		command_V.command = ss.toString();
+		command_V.initSixActions(commonTestInition.NE);
+		command_V.initArabicNumber();
+		String commandSwap = E_pl_XA_E.doHumanTalkSwap(
+			commonTestInition.NE, command_V);
+
+		Log.logger.info("-展示分词识别---" + command_V._IMV_SIQ_SS_.size());
+		Log.logger.info("-展示数字提取识别---" + command_V._IMV_SIQ_SS_Q
+			.size());
+		/*
+		 * 之后我函数中所有的用来处理log和状态的变量都加temp后缀，方便统一识别和剔除。
+		 * --罗瑶光
+		 * */
+		Iterator<String> iterators_IMV_SIQ_SS = command_V._IMV_SIQ_SS_
+			.iterator();
+		Iterator<String> iterators_IMV_SIQ_SS_Q = command_V._IMV_SIQ_SS_Q
+			.keySet().iterator();
+		String iterators_IMV_SIQ_SS_Temp = "";
+		String iterators_IMV_SIQ_SS_Q_Temp = "";
+		while (iterators_IMV_SIQ_SS.hasNext()) {
+			iterators_IMV_SIQ_SS_Temp += "+" + iterators_IMV_SIQ_SS
+				.next();
 		}
-		//System.out.println("-展示词性-注意副词库表问题，形容词副词表里面的词汇"
-		//+"不是罗瑶光研发设计的--具体见DemoPOSTest函数的修正方法");
-		DemoPOSTest demoPOSTest = new DemoPOSTest();
-		demoPOSTest.testPOS(sets, pos);
-		//
-		Log.logger.info("System.out.println(\"-展示词频统计-\")");
-		IMV_SIQ_S_ fwa = commonTestInition.NE.app_S._A
-			.getWordFrequencyByReturnSortMap(sets,
-				commonTestInition.NE);
-		for (int i = fwa.size() - 1; i >= 0; i--) {
-//			System.out.print(fwa.get(i).get_word()
-//				+ S_Common.STRING_SYMBOL_PER + fwa.get(i)
-//					.get_frequency() + "----");
-			String string= fwa.get(i).get_word()
-				+ S_Common.STRING_SYMBOL_PER + fwa.get(i)
-				.get_frequency() + "----";
-			Log.logger.info(string);
+		while (iterators_IMV_SIQ_SS_Q.hasNext()) {
+			iterators_IMV_SIQ_SS_Q_Temp += "+"
+				+ iterators_IMV_SIQ_SS_Q.next();
 		}
+
+		Log.logger.info("-展示原文--------->" + ss);
+		Log.logger.info("-展示分词识别------>" + iterators_IMV_SIQ_SS_Temp);
+		Log.logger.info("-展示数字提取识别-->" + iterators_IMV_SIQ_SS_Q_Temp);
 		// 关闭
 		commonTestInition.endEnvironment();
 	}
 }
 //输出 2025-08-29--
 /*
-*环境初始化*
-*卷积环境 init*
-*PDE环境 init*
-*排序环境 init*
-*语料库表环境 init*
-*CNN type init*
-*ANN RNN DNN init*
-*六元催化 map*
-*花孢环境 init*
-*略先 init*
-*词性环境 init*
-*分词引擎 init*
-*自然语言环境 init*
-*其他枝叶 register*
--展示分词-
-罗瑶光 先生 从 2018 年 10 月 开始 ， 所有 个人 著作权 作品 ， 全部 开源 ， 到 现在 ， 和 
-无数 群体 ， 技术 社团 正面 交锋 7 年 ， 一直 0 纠纷 ， 罗瑶光 先生 认为 ， 一件 作品 ，
- 一个 事 物 ， 如果 有 价值 ， 就 应该 像 教材 一样 在 真实 的 环境 中 实践 测试 和 论证 
- ， 能 经得起 所有 人 长年累月 不断 地 挑剔 的 东西 ， 才是 货真价实 的 ， 罗瑶光 的 个人
-  著作权 作品 都是 互联网 ， 大 数据 产业 领域 基础 作品 ， 2018 年后 ， 在 60 余 互联网
-   app 上 发布 德塔 开源 的 作品 ， 罗瑶光 先生 认为 开源 作品 对 同行 呈现 包容 性 。 
-   同时 对 垄断 产业 有 约束 性 。     
+信息: -展示原文--------->在输出的数据表中仅展示从第零行到第三十行的数据罗瑶光先生从2018年10月开始，所有个人著作权作品，
+-1234 566778 900-全部开源，到现在，和无数群体，技术社团正面交锋7年，一直0纠纷，罗瑶光先生认为，一件作品，一个事物，如果
+有价值，就应该像教材一样在真实的环境中实践测试和论证，能经得起所有人长年累月不断地挑剔的东西，才是货真价实的，罗瑶光的个人
+著作权作品都是互联网，大数据产业领域基础作品，2018年后，在60余互联网app上发布德塔开源的作品，罗瑶光先生认为开源作品对同行
+呈现包容性。同时对垄断产业有约束性。
 
--展示词性-注意副词库表问题，形容词副词表里面的词汇不是罗瑶光研发设计的--具体见DemoPOSTest函数的修正方法
--展示词性-
-罗瑶光/人物名词----先生/名词----从/介词----2018/NULL----年/量词----10/数词----月/名词-
----开始/动词----，/标点----所有/名词----个人/名词----著作权/名词----作品/名词----，/标点
-----全部/副词----开源/未知----，/标点----到/动词----现在/时态词----，/标点----和/并列连词
-----无数/数词----群体/未知----，/标点----技术/名词----社团/名词----正面/名词----交锋/形谓词作形容词
-----7/名词----年/量词----，/标点----一直/形谓词作形容词----0/名词----纠纷/名词----，/标点--
---罗瑶光/人物名词----先生/名词----认为/动词----，/标点----一件/形谓词作形容词----作品/名词-
----，/标点----一个/量词----事/名词----物/名词----，/标点----如果/从属连词----有/动词----
-价值/名词----，/标点----就/副词----应该/情态词----像/形谓词作形容词----教材/名词----一样/形谓词
-----在/介词----真实/形谓词作形容词----的/结构助词----环境/名词----中/定名词----实践/名词---
--测试/动词----和/并列连词----论证/名词----，/标点----能/情态词----经得起/形谓词作形容词---
--所有/名词----人/名词----长年累月/名词----
-不断/形谓词作副词----地/形谓词作副词----挑剔/动词----的/结构助词----东西/名词----，/标点---
--才是/副词----货真价实/形谓词作形容词----的/结构助词----，/标点----罗瑶光/人物名词----的/结构助词
----个人/名词----著作权/名词----作品/名词----都是/形谓词作形容词----互联网/名词----，/标点---
--大/形谓词作形容词----数据/名词----产业/名词----领域/名词----基础/名词----作品/名词----，/标点-
----2018/NULL----年后/未知----，/标点----在/介词----60/NULL----余/实体名----互联网/名词--
---app/实体名----上/名词----发布/动词----德塔/名词----开源/形谓词作形容词----的/结构助词---
--作品/名词----，/标点----罗瑶光/人物名词----先生/名词----认为/动词----开源/形谓词作形容词--
---作品/名词----对/介词----同行/名词----呈现/动词----包容/动词----性/名词----。/标点---
--同时/连词----对/介词----垄断/动词----产业/名词----有/动词----约束/名词----性/名词----。/标点----
---词汇->罗瑶光-词性->名词-平均距离->56-出现频率->4.0
---词汇->先生-词性->名词-平均距离->49-出现频率->3.0
---词汇->月-词性->名词-平均距离->6-出现频率->1.0
---词汇->所有-词性->名词-平均距离->38-出现频率->2.0
---词汇->个人-词性->名词-平均距离->46-出现频率->2.0
---词汇->著作权-词性->名词-平均距离->47-出现频率->2.0
---词汇->作品-词性->名词-平均距离->75-出现频率->6.0
---词汇->技术-词性->名词-平均距离->24-出现频率->1.0
---词汇->社团-词性->名词-平均距离->25-出现频率->1.0
---词汇->正面-词性->名词-平均距离->26-出现频率->1.0
---词汇->7-词性->名词-平均距离->28-出现频率->1.0
---词汇->0-词性->名词-平均距离->32-出现频率->1.0
---词汇->纠纷-词性->名词-平均距离->33-出现频率->1.0
---词汇->事-词性->名词-平均距离->43-出现频率->1.0
---词汇->物-词性->名词-平均距离->44-出现频率->1.0
---词汇->价值-词性->名词-平均距离->48-出现频率->1.0
---词汇->教材-词性->名词-平均距离->53-出现频率->1.0
---词汇->环境-词性->名词-平均距离->58-出现频率->1.0
---词汇->中-词性->名词-平均距离->59-出现频率->1.0
---词汇->实践-词性->名词-平均距离->60-出现频率->1.0
---词汇->论证-词性->名词-平均距离->63-出现频率->1.0
---词汇->人-词性->名词-平均距离->68-出现频率->1.0
---词汇->长年累月-词性->名词-平均距离->69-出现频率->1.0
---词汇->东西-词性->名词-平均距离->74-出现频率->1.0
---词汇->互联网-词性->名词-平均距离->93-出现频率->2.0
---词汇->数据-词性->名词-平均距离->89-出现频率->1.0
---词汇->产业-词性->名词-平均距离->107-出现频率->2.0
---词汇->领域-词性->名词-平均距离->91-出现频率->1.0
---词汇->基础-词性->名词-平均距离->92-出现频率->1.0
---词汇->余-词性->名词-平均距离->100-出现频率->1.0
---词汇->app-词性->名词-平均距离->102-出现频率->1.0
---词汇->上-词性->名词-平均距离->103-出现频率->1.0
---词汇->德塔-词性->名词-平均距离->105-出现频率->1.0
---词汇->同行-词性->名词-平均距离->116-出现频率->1.0
---词汇->性-词性->名词-平均距离->123-出现频率->2.0
---词汇->约束-词性->名词-平均距离->126-出现频率->1.0
---词汇->开始-词性->动词-平均距离->7-出现频率->1.0
---词汇->到-词性->动词-平均距离->17-出现频率->1.0
---词汇->认为-词性->动词-平均距离->74-出现频率->2.0
---词汇->有-词性->动词-平均距离->86-出现频率->2.0
---词汇->测试-词性->动词-平均距离->61-出现频率->1.0
---词汇->挑剔-词性->动词-平均距离->72-出现频率->1.0
---词汇->发布-词性->动词-平均距离->104-出现频率->1.0
---词汇->呈现-词性->动词-平均距离->117-出现频率->1.0
---词汇->包容-词性->动词-平均距离->118-出现频率->1.0
---词汇->垄断-词性->动词-平均距离->123-出现频率->1.0
---词汇->开源-词性->形谓词作形容词-平均距离->78-出现频率->3.0
---词汇->群体-词性->null-平均距离->22-出现频率->1.0
---词汇->交锋-词性->形谓词作形容词-平均距离->27-出现频率->1.0
---词汇->一直-词性->形谓词作形容词-平均距离->31-出现频率->1.0
---词汇->一件-词性->形谓词作形容词-平均距离->39-出现频率->1.0
---词汇->像-词性->形谓词作形容词-平均距离->52-出现频率->1.0
---词汇->一样-词性->null-平均距离->54-出现频率->1.0
---词汇->真实-词性->形谓词作形容词-平均距离->56-出现频率->1.0
---词汇->经得起-词性->形谓词作形容词-平均距离->66-出现频率->1.0
---词汇->不断-词性->形谓词作副词-平均距离->70-出现频率->1.0
---词汇->地-词性->形谓词作副词-平均距离->71-出现频率->1.0
---词汇->货真价实-词性->形谓词作形容词-平均距离->77-出现频率->1.0
---词汇->都是-词性->形谓词作形容词-平均距离->85-出现频率->1.0
---词汇->大-词性->形谓词作形容词-平均距离->88-出现频率->1.0
---词汇->年后-词性->null-平均距离->96-出现频率->1.0
---词汇->全部-词性->null-平均距离->14-出现频率->1.0
---词汇->开源-词性->null-平均距离->15-出现频率->1.0
---词汇->群体-词性->null-平均距离->22-出现频率->1.0
---词汇->就-词性->null-平均距离->50-出现频率->1.0
---词汇->不断-词性->形谓词作副词-平均距离->70-出现频率->1.0
---词汇->地-词性->形谓词作副词-平均距离->71-出现频率->1.0
---词汇->才是-词性->null-平均距离->76-出现频率->1.0
---词汇->年后-词性->null-平均距离->96-出现频率->1.0-展示词频统计-
-，:18.0----作品:6.0----的:5.0----罗瑶光:4.0----开源:3.0----先生:3.0---- :2.0-
----互联网:2.0----2018:2.0----年:2.0----对:2.0----所有:2.0----个人:2.0----著作权:2.0-
----。:2.0----和:2.0----认为:2.0----有:2.0----性:2.0----产业:2.0----在:2.0----包容:1.0-
----大:1.0----数据:1.0----都是:1.0----货真价实:1.0----才是:1.0----东西:1.0-
----挑剔:1.0----地:1.0----不断:1.0----长年累月:1.0----人:1.0----经得起:1.0----能:1.0-
----论证:1.0----测试:1.0----实践:1.0----中:1.0----环境:1.0----领域:1.0----真实:1.0--
---基础:1.0----一样:1.0----教材:1.0----像:1.0----应该:1.0----就:1.0----价值:1.0--
---年后:1.0----如果:1.0----物:1.0----事:1.0----一个:1.0----一件:1.0----60:1.0---
--纠纷:1.0----0:1.0----一直:1.0----7:1.0----交锋:1.0----正面:1.0----社团:1.0--
---技术:1.0----群体:1.0----无数:1.0----余:1.0----现在:1.0----到:1.0----app:1.0---
--全部:1.0----同时:1.0----上:1.0----发布:1.0----德塔:1.0----垄断:1.0----开始:1.0-
----月:1.0----10:1.0----同行:1.0----从:1.0----约束:1.0----呈现:1.0----
+10月 06, 2025 9:05:46 上午 test.java.InterfaceTest.chineseParser.DemoEX main
+信息: -展示分词识别------>+在+输出+的+数据+表+中+仅+展示+从+第+行+到+第+行+的+数据+罗瑶光+先生+从+年月+开始+，+所有+
+个人+著作权+作品+，+-+ +-+全部+开源+，+到+现在+，+和+无数+群体+，+技术+社团+正面+交锋+年+，+直+纠纷+，+罗瑶光+先生+
+认为+，+件+作品+，+个+事+物+，+如果+有+价值+，+就+应该+像+教材+样+在+真实+的+环境+中+实践+测试+和+论证+，+能+经得起+
+所有+人+长年累月+不断+地+挑剔+的+东西+，+才是+货真价实+的+，+罗瑶光+的+个人+著作权+作品+都是+互联网+，+大+数据+产业+
+领域+基础+作品+，+年后+，+在+余+互联网+app+上+发布+德塔+开源+的+作品+，+罗瑶光+先生+认为+开源+作品+对+同行+呈现+包容+
+性+。+同时+对+垄断+产业+有+约束+性+。+ + 
+
+10月 06, 2025 9:05:46 上午 test.java.InterfaceTest.chineseParser.DemoEX main
+信息: -展示数字提取识别-->+566778+1+0+30+2018+1234+7+900+60+10
 */
-
-//64
-//EmotionMap_E emotionMap_E=new EmotionMap_E();
-//NERO_C_OneTime_E nERO_C_OneTime_E=
-//Nlp_CE_X_S nlp_CE_X_S=
-//  Pos_X_P pos_X_P=
-//SensingTest sensingTest=
-//FMHMMListOneTime_E fMHMMListOneTime_E=
-//Quick6DLuoYaoguangSort3DMap_E quick6DLuoYaoguangSort3DMap_E=
-
-//NERO_C_OneTime_E nERO_C_OneTime_E = new NERO_C_OneTime_E();
-//FMHMMListOneTime_E fMHMMListOneTime_E = new FMHMMListOneTime_E();
-//this.fHMMList = new FMHMMListOneTime_E();
-//_A.forestRoots = fHMMList.getMap();
-//FMHMMListOneTime_E_X_S fMHMMListOneTime_E_X_S = (FMHMMListOneTime_E_X_S)fHMMList;
-//wordsForest = fMHMMListOneTime_E_X_S.posCnToCn;
-//pos_C = new Pos_X_P();
-//nlp_C = new Nlp_CE_X_S();
-//nlp_C.pos_X_P = pos_C;
-//nero_C = new NERO_C_OneTime_E();
-//emotionMap = new EmotionMap_E();
-//sensingTest = new SensingTest();
-//quick6DLuoYaoguangSort = new Quick6DLuoYaoguangSort3DMap_E();
-
-//186
-//20230106-System.out.println(S_Count.a1);
-//20230106-System.out.println(S_Count.a2);
-//20230106-System.out.println(S_Count.a3);
-//20230106-System.out.println(S_Count.a4);
-//20230106-System.out.println(S_Count.a5);
-//20230106-System.out.println(S_Count.a6);
-//20230106-System.out.println(S_Count.a7);
-//20230106-System.out.println(S_Count.a8);
-//20230106-System.out.println(S_Count.a9);
-//20230106-System.out.println(S_Count.a10);
-//20230106-System.out.println(S_Count.a11);
-//20230106-System.out.println(S_Count.a12);
-//68
-//for (int j = 0; j < 1; j++) {
-//    for (int i = 0; i < sets.size(); i++) {
-//        if (!sets.get(i).replaceAll("\\s+", "").equals("")) {
-//            //System.out.print(sets.get(i) + "/" + pos.get(sets.get(i)) + "----");
-//        }
-//    }
-//}
-
-// t.end();

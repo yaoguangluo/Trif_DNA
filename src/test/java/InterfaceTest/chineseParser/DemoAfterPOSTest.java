@@ -79,27 +79,33 @@ public class DemoAfterPOSTest {
 		Log.logger.info("");
 		Log.logger.info("--分词后数据--");
 		Log.logger.info("");
+		String stringTemp = "";
 		for (int i = 0; i < sets.size(); i++) {
-			Log.logger.info("-" + sets.get(i));
+			stringTemp += "-" + sets.get(i);
 		}
+		Log.logger.info(stringTemp);
 		Log.logger.info("");
 		// 词性归纳
 		List<String> setsInput = testPOS(sets, pos);
 		Log.logger.info("");
 		Log.logger.info("--分词后数据 词性简单归纳--");
 		Log.logger.info("");
+		stringTemp = "";
 		for (int i = 0; i < setsInput.size(); i++) {
-			Log.logger.info("=" + setsInput.get(i));
+			stringTemp += "=" + setsInput.get(i);
 		}
+		Log.logger.info(stringTemp);
 		Log.logger.info("");
 		Log.logger.info("--分词后数据 词性简单组合归纳--");
 		Log.logger.info("");
 		// 词性归纳 简单地探索可组合字词
 		List<String> setsAfterInput = testAfterPOS(setsInput, pos);
 		Log.logger.info("");
+		stringTemp = "";
 		for (int i = 0; i < setsAfterInput.size(); i++) {
-			Log.logger.info("+" + setsAfterInput.get(i));
+			stringTemp += "+" + setsAfterInput.get(i);
 		}
+		Log.logger.info(stringTemp);
 		Log.logger.info("");
 		// 词性归纳 上面辅助应用于提高POS类计算前精确度
 		// new DemoPOSTest().testPOS(setsAfterInput, pos);
@@ -110,6 +116,7 @@ public class DemoAfterPOSTest {
 	// 适用于双字 三字 四字 五字 六字 七字 八字的一次条件计算组合。增加准确度
 	public List<String> testAfterPOS(List<String> sets, IMV_SIQ pos) {
 		List<String> setsOutput = new ArrayList<>();
+		String connectsTemp = "";
 		// 单字组合,支持4字最大关联
 		for (int i = 0; i < sets.size(); i++) {
 			int reg = 0;
@@ -143,15 +150,18 @@ public class DemoAfterPOSTest {
 			if (0 == reg) {
 				// 没有关联就加原变量
 				setsOutput.add(string);
-				Log.logger.info(string + "----");
+				//Log.logger.info(string + "----");
+				connectsTemp+=string + "----";
 			} else {
 				String stringConnect = strings[0] + connect + "/"
 					+ strings[1];
 				setsOutput.add(stringConnect);
-				Log.logger.info(stringConnect + "----");
+				//Log.logger.info(stringConnect + "----");
+				connectsTemp += stringConnect + "----";
 				i += reg;
 			}
 		}
+		Log.logger.info(connectsTemp);
 		return setsOutput;
 	}
 

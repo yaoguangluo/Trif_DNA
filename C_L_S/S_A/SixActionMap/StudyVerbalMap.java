@@ -30,6 +30,8 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		}
 		// command_V.getNumericsFromUnknownMap(command_V.command);
 		getNumericsFromUnknownMapAndFiltCommand(command_V);
+		//
+		command_V.chineseSimpleCommandWithoutNumerics = filterString;
 		return 0;
 	}
 
@@ -165,10 +167,13 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 				wordFrequency.positions.add(tempInt);
 				//wordFrequency.I_frequency(1);
 				wordFrequency.I_pos("变换数字字符串代词名词");
+				/*
+				 * replace应该分离出来，作为全局任务，避免出现2*18这种错误归纳。
+				 * */
 				command_V._IMV_SIQ_SS_Q.put(stringSwaped, wordFrequency);
-				command_V.chineseSimpleCommandWithoutNumerics 
-				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
-						, symbolsSwapNumericsByLength);
+//				command_V.chineseSimpleCommandWithoutNumerics 
+//				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
+//						, symbolsSwapNumericsByLength);
 			}
 			if (!hasNumerics && hasChars) {
 				/*
@@ -186,9 +191,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 				//wordFrequency.I_frequency(1);
 				wordFrequency.I_pos("变换数字字符串代词名词");
 				command_V._IMV_SIQ_SS_Q.put(stringSwaped, wordFrequency);
-				command_V.chineseSimpleCommandWithoutNumerics 
-				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
-						, symbolsSwapNumericsByLength);
+//				command_V.chineseSimpleCommandWithoutNumerics 
+//				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
+//						, symbolsSwapNumericsByLength);
 				/*
 				 * 下面注释的逻辑需要按照字符串的长短排序后按照长优先进行replace，不然会字符串断层错误。
 				 * */
@@ -262,9 +267,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 				//wordFrequency.I_frequency(1);
 				wordFrequency.I_pos("变换数字字符串代词名词");
 				command_V._IMV_SIQ_SS_Q.put(regArabicNumber, wordFrequency);
-				command_V.chineseSimpleCommandWithoutNumerics 
-				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
-						, symbolsSwapNumericsByLength);
+//				command_V.chineseSimpleCommandWithoutNumerics 
+//				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
+//						, symbolsSwapNumericsByLength);
 			}
 		}
 	}
