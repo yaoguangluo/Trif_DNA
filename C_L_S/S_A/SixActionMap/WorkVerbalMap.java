@@ -214,7 +214,16 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 				command_V._IMV_SIQ_SS.put(temp, wordFrequency);
 			}
 		}
-
+		/*
+		* 阿拉伯数字加进map中
+		*/
+		Iterator<String> iteratorNumbers= command_V._IMV_SIQ_SS_Q.keySet().iterator();
+		while(iteratorNumbers.hasNext()) {
+			String temp= iteratorNumbers.next();
+			WordFrequency wordFrequency = command_V._IMV_SIQ_SS_Q.getW(temp);
+			command_V._IMV_SIQ_SS.put(temp, wordFrequency);
+		}
+		S_logger.Log.logger.info("");
 	}
 
 	public void setHumanTalk(CommandClass command_V, App NE) {

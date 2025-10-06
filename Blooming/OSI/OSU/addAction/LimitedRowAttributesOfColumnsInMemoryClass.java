@@ -206,95 +206,119 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 				.keySet().iterator();
 			while (iterators.hasNext()) {
 				String string = iterators.next();
-				S_logger.Log.logger.info("LimitedRow-string-400-02-->" + string);
-				if (string.contains("从-")) {
-					S_logger.Log.logger.info(
-						"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
-							+ string);
-					// 1
-					String[] strings = string.split("-");
-					// 2
-					if (strings.length > 1) {
-						boolean isNumeric = true;
-						for (int i = 0; i < strings[1]
-							.length(); i++) {
-							if (strings[1].charAt(i) < 48
-								|| strings[1].charAt(i) > 57) {
-								isNumeric = false;
-							}
-						}
-						// 3
-						if (isNumeric) {
-							fromValue = strings[1];
-							fromValues.add(string);
-							/*
-							 * 相同数多的情况下，需要将fromValue +精度变成一个list，选择最短的条件进行输出。
-							 */
-						}
+//				S_logger.Log.logger.info("LimitedRow-string-400-02-->" + string);
+//				if (string.contains("从-")) {
+//					S_logger.Log.logger.info(
+//						"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
+//							+ string);
+//					// 1
+//					String[] strings = string.split("-");
+//					// 2
+//					if (strings.length > 1) {
+//						boolean isNumeric = true;
+//						for (int i = 0; i < strings[1]
+//							.length(); i++) {
+//							if (strings[1].charAt(i) < 48
+//								|| strings[1].charAt(i) > 57) {
+//								isNumeric = false;
+//							}
+//						}
+//						// 3
+//						if (isNumeric) {
+//							fromValue = strings[1];
+//							fromValues.add(string);
+//							/*
+//							 * 相同数多的情况下，需要将fromValue +精度变成一个list，选择最短的条件进行输出。
+//							 */
+//						}
+//					}
+//					// 4
+//				}
+//				if (string.contains("到-")) {
+//					S_logger.Log.logger.info(
+//						"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
+//							+ string);
+//					// 1
+//					String[] strings = string.split("-");
+//					// 2
+//					if (strings.length > 1) {
+//						boolean isNumeric = true;
+//						for (int i = 0; i < strings[1]
+//							.length(); i++) {
+//							if (strings[1].charAt(i) < 48
+//								|| strings[1].charAt(i) > 57) {
+//								isNumeric = false;
+//							}
+//						}
+//						// 3
+//						if (isNumeric) {
+//							toValue = strings[1];
+//							/*
+//							 * 同理 相同数多的情况下，需要将fromValue +精度变成一个list，选择最短的条件进行输出。
+//							 * 关于源码的循序渐进设计思维方式，价值思考 --later
+//							 */
+//							toValues.add(string);
+//						}
+//					}
+//				}
+				/*
+				 * 因为采用了更精确的混合中文数字提取识别，那么数字已经是严谨的词汇了，必然有 数字-数字 的笛卡尔关系组合
+				 * 稍后进行优化，扩展识别指令的条件集合。我现在做个假数据让指令跑通 采用 6到-9 ，这里这个-到-属于错误指令。
+				 * 稍后用更多条件剔除。并重新分析cartesianWorkActionsRightsVO的组成方式。
+				 * 
+				 * 另外--第 行--这种可数数词修饰的词字通过+条件进行识别剔除，而不是写contains ，所以要稍后优化。
+				 * --罗瑶光
+				 * 
+				 * */
+				if(string.contains("到-")&&!string.contains("第")&&!string.contains("行")) {
+					String[] strings=  string.split("到-");
+					if(!strings[0].isEmpty()) {
+						fromValues.add(strings[0]);
 					}
-					// 4
-				}
-				if (string.contains("到-")) {
-					S_logger.Log.logger.info(
-						"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
-							+ string);
-					// 1
-					String[] strings = string.split("-");
-					// 2
-					if (strings.length > 1) {
-						boolean isNumeric = true;
-						for (int i = 0; i < strings[1]
-							.length(); i++) {
-							if (strings[1].charAt(i) < 48
-								|| strings[1].charAt(i) > 57) {
-								isNumeric = false;
-							}
-						}
-						// 3
-						if (isNumeric) {
-							toValue = strings[1];
-							/*
-							 * 同理 相同数多的情况下，需要将fromValue +精度变成一个list，选择最短的条件进行输出。
-							 * 关于源码的循序渐进设计思维方式，价值思考 --later
-							 */
-							toValues.add(string);
-						}
+					if(!strings[1].isEmpty()) {
+						toValues.add(strings[1]);
 					}
+					System.out.println(string);
 				}
+				//todo
+				
 			}
 		}
 		// 排序逻辑
 		if (fromValues.isEmpty() || toValues.isEmpty()) {
 			return false;
 		}
-		String[] fromValueStrings = new String[fromValues.size()];
-		int[] fromValueStringRights = new int[fromValues.size()];
-		String[] toValueStrings = new String[toValues.size()];
-		int[] toValueStringRights = new int[toValues.size()];
-		/*
-		 * size大就用iterator，自己去探索为什么。
-		 * */
-		for (int i = 0; i < fromValues.size(); i++) {
-			fromValueStrings[i] = fromValues.get(i);
-			String temp = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
-				.getString(fromValueStrings[i]);
-			fromValueStringRights[i] = Integer.valueOf(temp);
-		}
-		for (int i = 0; i < toValues.size(); i++) {
-			toValueStrings[i] = toValues.get(i);
-			String temp = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
-				.getString(toValueStrings[i]);
-			toValueStringRights[i] = Integer.valueOf(temp);
-		}
-		// sort
-		new LYGSortESU9D().javaSort(fromValueStringRights,
-			fromValueStrings);
-		new LYGSortESU9D().javaSort(toValueStringRights,
-			toValueStrings);
+		//下面这种排序思维不适用于单行命令句中的数字识别，因为不会再出现有复杂笛卡尔条件。
+//		String[] fromValueStrings = new String[fromValues.size()];
+//		int[] fromValueStringRights = new int[fromValues.size()];
+//		String[] toValueStrings = new String[toValues.size()];
+//		int[] toValueStringRights = new int[toValues.size()];
+//		/*
+//		 * size大就用iterator，自己去探索为什么。
+//		 * */
+//		for (int i = 0; i < fromValues.size(); i++) {
+//			fromValueStrings[i] = fromValues.get(i);
+//			String temp = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
+//				.getString(fromValueStrings[i]);
+//			fromValueStringRights[i] = Integer.valueOf(temp);
+//		}
+//		for (int i = 0; i < toValues.size(); i++) {
+//			toValueStrings[i] = toValues.get(i);
+//			String temp = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
+//				.getString(toValueStrings[i]);
+//			toValueStringRights[i] = Integer.valueOf(temp);
+//		}
+//		// sort
+//		new LYGSortESU9D().javaSort(fromValueStringRights,
+//			fromValueStrings);
+//		new LYGSortESU9D().javaSort(toValueStringRights,
+//			toValueStrings);
 		// 3 信息组合 成指令集术语
-		String shellType = "操作:" + fromValueStrings[0].split("-")[1]
-			+ "|行至|" + toValueStrings[0].split("-")[1] + "";
+//		String shellType = "操作:" + fromValueStrings[0].split("-")[1]
+//			+ "|行至|" + toValueStrings[0].split("-")[1] + "";
 		// 4 输出
+		String shellType = "操作:" + fromValues.get(0)
+		+ "|行至|" + toValues.get(0) + "";
 		S_logger.Log.logger.info("400---00007---");
 		S_logger.Log.logger.info(shellType);
 		String[] strings = shellType.split(":");

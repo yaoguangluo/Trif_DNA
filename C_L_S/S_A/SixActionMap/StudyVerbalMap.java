@@ -28,6 +28,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		if (null == command_V.command) {
 			return -1;
 		}
+		filterString = "";//修正
 		// command_V.getNumericsFromUnknownMap(command_V.command);
 		getNumericsFromUnknownMapAndFiltCommand(command_V);
 		//
