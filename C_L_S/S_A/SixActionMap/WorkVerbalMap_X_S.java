@@ -8,16 +8,17 @@ import java.util.LinkedList;
 
 import ME.VPC.M.app.App;
 import O_V.OSM.shell.CommandClass;
-
-//1 6元SDLC
-//2 sdlc obss
-//3 obss normalization
-//4 normalizational format
-//5 format map
-//6 map parser
-//7 parser in PDE model
-//8 model in time norms
-//全部基于罗瑶光著作权基础堆积即可。
+/*
+ * 1 6元SDLC
+ * 2 sdlc obss
+ * 3 obss normalization
+ * 4 normalizational format
+ * 5 format map
+ * 6 map parser
+ * 7 parser in PDE model
+ * 8 model in time norms
+ * 全部基于罗瑶光著作权基础堆积即可。
+ **/
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
@@ -62,9 +63,10 @@ public class WorkVerbalMap_X_S {
 
 	public int i = 0;
 
-	// 为什么现在不设计成implements接口，因为目前没有明确六元函数定义域规范，
-	// 以后批量计算模型会CE按XCDX分解来做计算加速。
-	/*
+	/* 
+	 * 为什么现在不设计成implements接口，因为目前没有明确六元函数定义域规范，
+	 * 以后批量计算模型会CE按XCDX分解来做计算加速。
+	 *
 	 * 之前做了商业测试文件，里面有优化校准副词的函数逻辑，那么既然测试写了就要用到，
 	 * 于是我的思维是那就直接用阿，于是就把测试函数 new出来然后将Noun和VERB取代
 	 * 这里的nounInText和verbInText，准确率就提高了很多，并不代表结果会更精确，
@@ -96,15 +98,10 @@ public class WorkVerbalMap_X_S {
 			// pos load
 			WordFrequency wordFrequency = command_V._IMV_SIQ_SS.getW(
 				string);
-			//if (wordFrequency.get_pos().contains("名")) {
 			// 一切数据首先都应该名词化*/
 			nounInText.put(string, wordFrequency);
-			//}
-			// 动 pca map替换成cartsian map先 因为英语会出现had had 有且仅有这类语法。
-			//if (wordFrequency.get_pos().contains("动")) {
 			verbInText.put(string, wordFrequency);
-			//}
-			System.out.println(wordFrequency.positions);
+			S_logger.Log.logger.info("" + wordFrequency.positions);
 		}
 	}
 
@@ -164,9 +161,9 @@ public class WorkVerbalMap_X_S {
 					root += "+";
 					root += stringVerb;
 
-					//					root_v += stringVerb;
-					//					root_v += "-";
-					//					root_v += stringNoun;
+					/* root_v += stringVerb;
+					 * root_v += "-";
+					 * root_v += stringNoun;
 					/* 
 					 * CN
 					 * --十六元基索引逻辑
@@ -189,8 +186,9 @@ public class WorkVerbalMap_X_S {
 					root_pos += "_stringNoun" + averagePositionNoun;
 					root_pos += "_stringVerb" + averagePositionVerb;
 
-					//root_pos_v += "_stringVerb" + averagePositionVerb;
-					//root_pos_v += "_stringNoun" + averagePositionNoun;
+					/* root_pos_v += "_stringVerb" + averagePositionVerb;
+					*  root_pos_v += "_stringNoun" + averagePositionNoun;
+					*/
 					int right = Math.abs(averagePositionNoun
 						- averagePositionVerb);
 					int position = (averagePositionNoun
@@ -201,18 +199,19 @@ public class WorkVerbalMap_X_S {
 							.containsKey(root) && right > 0) {
 						if (right < NE.app_S.initonsDistanceRelationship) {
 							if (!root.contains(" ")) {
-								//command_V.cartesianWorkActions_posSV.put(root,
-								//		root_pos);
 								command_V.cartesianWorkActionsRightsSV
 									.put(root, right);
-								//command_V.cartesianWorkActionsRightsParserSV.put(stringNoun + "+",
-								//		right);
-								//command_V.cartesianWorkActionsRightsParserSV.put("+" + stringVerb,
-								//		right);
-								//command_V.cartesianWorkActionsPositionsSV.put(root,
-								//		position);
-								//System.out.println(root + ":" + right + ":"
-								//		+ position + ":" + root_pos);
+								/* command_V.cartesianWorkActions_posSV.put(root,
+								*		root_pos);
+								* command_V.cartesianWorkActionsRightsParserSV.put(stringNoun + "+",
+								*		right);
+								* command_V.cartesianWorkActionsRightsParserSV.put("+" + stringVerb,
+								*		right);
+								* command_V.cartesianWorkActionsPositionsSV.put(root,
+								*		position);
+								* System.out.println(root + ":" + right + ":"
+								*		+ position + ":" + root_pos);
+								*/
 							}
 						}
 					}
@@ -242,18 +241,21 @@ public class WorkVerbalMap_X_S {
 							.containsKey(root) && right > 0) {
 						if (right < NE.app_S.initonsDistanceRelationship) {
 							if (!root.contains(" ")) {
-								//command_V.cartesianWorkActions_posVO.put(root,
-								//		root_pos);
 								command_V.cartesianWorkActionsRightsVO
 									.put(root, right);
-								//command_V.cartesianWorkActionsRightsParserVO.put(stringVerb + "-",
-								//		right);
-								//command_V.cartesianWorkActionsRightsParserVO.put("-" + stringNoun,
-								//		right);
-								//command_V.cartesianWorkActionsPositionsVO.put(root,
-								//		position);
-								//System.out.println(root + ":" + right + ":"
-								//		+ position + ":" + root_pos);
+								/*
+								 * command_V.cartesianWorkActions_posVO.put(root,
+								 *		root_pos);
+								 * command_V.cartesianWorkActionsRightsParserVO.put(stringVerb + "-",
+								 *		right);
+								 * command_V.cartesianWorkActionsRightsParserVO.put("-" + stringNoun,
+								 *		right);
+								 * command_V.cartesianWorkActionsPositionsVO.put(root,
+								 *		position);
+								 * System.out.println(root + ":" + right + ":"
+								 *		+ position + ":" + root_pos);
+								 *
+								 */
 							}
 						}
 					}

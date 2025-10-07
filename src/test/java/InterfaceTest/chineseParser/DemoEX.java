@@ -69,7 +69,6 @@ public class DemoEX {
 		 * 
 		 * --罗瑶光
 		 * */
-
 		/*
 		 * 用commandV来处理混合中文，看看效果。
 		 * */
@@ -85,6 +84,7 @@ public class DemoEX {
 		Log.logger.info("-展示分词识别---" + command_V._IMV_SIQ_SS_.size());
 		Log.logger.info("-展示数字提取识别---" + command_V._IMV_SIQ_SS_Q
 			.size());
+		
 		/*
 		 * 之后我函数中所有的用来处理log和状态的变量都加temp后缀，方便统一识别和剔除。
 		 * --罗瑶光
@@ -129,4 +129,6 @@ public class DemoEX {
 
 10月 06, 2025 9:05:46 上午 test.java.InterfaceTest.chineseParser.DemoEX main
 信息: -展示数字提取识别-->+566778+1+0+30+2018+1234+7+900+60+10
+
+end cost: 1 ms
 */

@@ -135,6 +135,7 @@ public class DemoPOSTest {
 								word);
 						}
 						wordFrequency.positions.add(charPosition);
+						/*
 						// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，
 						// 里面副词出现了整体性问题，到现在2025年，这7年没有一个人告知我
 						// 这个问题，我的自己工程又从来没有用过这副词的逻辑，所以一直没碰
@@ -142,6 +143,7 @@ public class DemoPOSTest {
 						// 现形容词和副词的词汇，就看他下一个词汇是 动词还是名词，动词就
 						// 改副，名词就改形容词。即可。或者统一语料库后缀形副词。我选择前
 						// 者。这个词性属性不影响分词引擎。
+						 */
 						if (i + 1 < sets.size()) {
 							String wordNext = sets.get(i + 1);
 							Object wordNextObjectPOS = pos.get(
@@ -183,6 +185,7 @@ public class DemoPOSTest {
 								word);
 						}
 						wordFrequency.positions.add(charPosition);
+						/*
 						// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，
 						// 里面副词出现了整体性问题，到现在2025年，这7年没有一个人告知
 						// 我这个问题，我的自己工程又从来没有用过这副词的逻辑，所以一直
@@ -193,6 +196,7 @@ public class DemoPOSTest {
 						// 缺少地后戳的 连词结构 比如丰富和缓慢地测试，丰富不会被修改。
 						// 注意哦～因为语料库本就不属于德塔图灵分词的著作权源码内容，所
 						// 以一直不碰。要我优化可以，记得给我钱，--罗瑶光-送大神送到西。
+						*/
 						if (i + 1 < sets.size()) {
 							String wordNext = sets.get(i + 1);
 							Object wordNextObjectPOS = pos.get(
@@ -227,25 +231,31 @@ public class DemoPOSTest {
 			}
 			Log.logger.info(wordsTemp);
 		}
+		/*
 		// 输出显示
 		// 名词
 		// 输出词汇
 		// 输出词性
 		// 输出词频
 		// 输出词平均距离
+		//
+		*/
 		Iterator<String> iteratorNoun = noun.keySet().iterator();
 		while (iteratorNoun.hasNext()) {
 			String wordNoun = iteratorNoun.next();
 			WordFrequency wordFrequency = noun.get(wordNoun);
-//			Log.logger.info("");
-//			Log.logger.info("--词汇->" + wordFrequency.get_word());
-//			Log.logger.info("-词性->" + wordFrequency.get_pos());
-//			Log.logger.info("-平均距离->" + wordFrequency
-//				.getAveragePosition());
-//			Log.logger.info("-出现频率->" + wordFrequency
-//				.get_frequency());
+			/*	Log.logger.info("");
+			//	Log.logger.info("--词汇->" + wordFrequency.get_word());
+			//	Log.logger.info("-词性->" + wordFrequency.get_pos());
+			//	Log.logger.info("-平均距离->" + wordFrequency
+			//		.getAveragePosition());
+			//	Log.logger.info("-出现频率->" + wordFrequency
+			//		.get_frequency());
+			//
+			 */
 			String wordFrequencyTemp = "";
-			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
+			wordFrequencyTemp += "----词汇->" + wordFrequency
+				.get_word();
 			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
 			wordFrequencyTemp += "--平均距离->" + wordFrequency
 				.getAveragePosition();
@@ -254,24 +264,29 @@ public class DemoPOSTest {
 			Log.logger.info(wordFrequencyTemp);
 		}
 
-		// 动词
-		// 输出词汇
-		// 输出词性
-		// 输出词频
-		// 输出词平均距离
+		/* 
+		 * 动词
+		 * 输出词汇
+		 * 输出词性
+		 * 输出词频
+		 * 输出词平均距离
+		 */
 		Iterator<String> iteratorVerb = verb.keySet().iterator();
 		while (iteratorVerb.hasNext()) {
 			String wordVerb = iteratorVerb.next();
 			WordFrequency wordFrequency = verb.get(wordVerb);
-//			Log.logger.info("");
-//			Log.logger.info("--词汇->" + wordFrequency.get_word());
-//			Log.logger.info("-词性->" + wordFrequency.get_pos());
-//			Log.logger.info("-平均距离->" + wordFrequency
-//				.getAveragePosition());
-//			Log.logger.info("-出现频率->" + wordFrequency
-//				.get_frequency());
+			/*			
+			 * Log.logger.info("");
+			 * Log.logger.info("--词汇->" + wordFrequency.get_word());
+			 * Log.logger.info("-词性->" + wordFrequency.get_pos());
+			 * Log.logger.info("-平均距离->" + wordFrequency
+			 *	 .getAveragePosition());
+			 * Log.logger.info("-出现频率->" + wordFrequency
+			 *	 .get_frequency());
+			 */
 			String wordFrequencyTemp = "";
-			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
+			wordFrequencyTemp += "----词汇->" + wordFrequency
+				.get_word();
 			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
 			wordFrequencyTemp += "--平均距离->" + wordFrequency
 				.getAveragePosition();
@@ -279,25 +294,29 @@ public class DemoPOSTest {
 				.get_frequency();
 			Log.logger.info(wordFrequencyTemp);
 		}
-
+		/*
 		// 形容词
 		// 输出词汇
 		// 输出词性
 		// 输出词频
 		// 输出词平均距离
+		*/
 		Iterator<String> iteratorAdj = adj.keySet().iterator();
 		while (iteratorAdj.hasNext()) {
 			String wordAdj = iteratorAdj.next();
 			WordFrequency wordFrequency = adj.get(wordAdj);
-//			Log.logger.info("");
-//			Log.logger.info("--词汇->" + wordFrequency.get_word());
-//			Log.logger.info("-词性->" + wordFrequency.get_pos());
-//			Log.logger.info("-平均距离->" + wordFrequency
-//				.getAveragePosition());
-//			Log.logger.info("-出现频率->" + wordFrequency
-//				.get_frequency());
+			/*
+			//	Log.logger.info("");
+			//	Log.logger.info("--词汇->" + wordFrequency.get_word());
+			//	Log.logger.info("-词性->" + wordFrequency.get_pos());
+			//	Log.logger.info("-平均距离->" + wordFrequency
+			//		.getAveragePosition());
+			//	Log.logger.info("-出现频率->" + wordFrequency
+			//		.get_frequency());
+			*/
 			String wordFrequencyTemp = "";
-			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
+			wordFrequencyTemp += "----词汇->" + wordFrequency
+				.get_word();
 			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
 			wordFrequencyTemp += "--平均距离->" + wordFrequency
 				.getAveragePosition();
@@ -305,25 +324,29 @@ public class DemoPOSTest {
 				.get_frequency();
 			Log.logger.info(wordFrequencyTemp);
 		}
-
+		/*
 		// 副词
 		// 输出词汇
 		// 输出词性
 		// 输出词频
 		// 输出词平均距离
+		*/
 		Iterator<String> iteratorAdv = adv.keySet().iterator();
 		while (iteratorAdv.hasNext()) {
 			String wordAdv = iteratorAdv.next();
 			WordFrequency wordFrequency = adv.get(wordAdv);
-//			Log.logger.info("");
-//			Log.logger.info("--词汇->" + wordFrequency.get_word());
-//			Log.logger.info("-词性->" + wordFrequency.get_pos());
-//			Log.logger.info("-平均距离->" + wordFrequency
-//				.getAveragePosition());
-//			Log.logger.info("-出现频率->" + wordFrequency
-//				.get_frequency());
+			/*
+			//	Log.logger.info("");
+			//	Log.logger.info("--词汇->" + wordFrequency.get_word());
+			//	Log.logger.info("-词性->" + wordFrequency.get_pos());
+			//	Log.logger.info("-平均距离->" + wordFrequency
+			//		.getAveragePosition());
+			//	Log.logger.info("-出现频率->" + wordFrequency
+			//		.get_frequency());
+			*/
 			String wordFrequencyTemp = "";
-			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
+			wordFrequencyTemp += "----词汇->" + wordFrequency
+				.get_word();
 			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
 			wordFrequencyTemp += "--平均距离->" + wordFrequency
 				.getAveragePosition();
@@ -337,8 +360,10 @@ public class DemoPOSTest {
 	public List<String> testPOSOnlyGetList(List<String> sets,
 		IMV_SIQ pos) {
 		List<String> output = new ArrayList<String>();
+		/*
 		// 结果归纳
 		// 1 名词 动词 形容词归纳
+		*/
 		int charPosition = 0;
 		/*
 		 * 因为混合中文数字是charPosition 所以分词的sets也要charPosition变换增加精确度。
@@ -352,24 +377,20 @@ public class DemoPOSTest {
 					String word = sets.get(i);
 					Object wordObjectPOS = pos.get(string);
 					if (null == wordObjectPOS) {
-						wordsTemp += word + "/" + "NULL"
-							+ "----";
-//						Log.logger.info(word + "/" + "NULL"
-//							+ "----");
+						wordsTemp += word + "/" + "NULL" + "----";
 						charPosition += string.length();
 						output.add(word + "/" + "NULL");
 						continue;
 					}
 					String wordPOS = wordObjectPOS.toString();
-					// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，里面副词
-					// 出现了整体性问题，到现在2025年，这7年没有一个人告知我这个问题，我的
-					// 自己工程又从来没有用过这副词的逻辑，所以一直没碰，现在商业化测试呢，
-					// 我罗瑶光就还是给出一个解决方案。就是所有出现形容词和副词的词汇，就看
-					// 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
-					// 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
-//					if (word.equals("不断")) {
-//						Log.logger.info("");
-//					}
+					/*
+					 * 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，里面副词
+					 * 出现了整体性问题，到现在2025年，这7年没有一个人告知我这个问题，我的
+					 * 自己工程又从来没有用过这副词的逻辑，所以一直没碰，现在商业化测试呢，
+					 * 我罗瑶光就还是给出一个解决方案。就是所有出现形容词和副词的词汇，就看
+					 * 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
+					 * 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
+					 */
 					if (wordPOS.contains("未知") || wordPOS.contains(
 						"形") || wordPOS.contains("副")) {
 						if (i + 1 < sets.size()) {
@@ -395,8 +416,7 @@ public class DemoPOSTest {
 							}
 						}
 					}
-					//Log.logger.info(word + "/" + wordPOS + "----");
-					wordsTemp+=word + "/" + wordPOS + "----";
+					wordsTemp += word + "/" + wordPOS + "----";
 					output.add(word + "/" + wordPOS);
 				}
 				charPosition += string.length();
@@ -408,7 +428,7 @@ public class DemoPOSTest {
 
 	//原测试函数分解后逻辑
 	public void testPOS(List<String> sets, IMV_SIQ pos) {
-		
+
 		Log.logger.info("----------");
 		Log.logger.info("进行词性修正");
 		List<String> setsInput = testPOSOnlyGetList(sets, pos);

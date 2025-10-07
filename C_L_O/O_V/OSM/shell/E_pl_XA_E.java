@@ -4,8 +4,6 @@ import ME.VPC.M.app.App;
 import O_V.OSA.shell.PL_XA_E;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 import S_I.OSI.PSO.regex.DoSplit;
-import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import S_A.SixActionMap.FlowerAction;
 import S_A.pheromone.IMV_SIQ_utils;
 import U_V.ESU.list.List_ESU_X_stringlistToStringArray;
 import test.java.InterfaceTest.tinShell.FastCartesianIdentifyTest;
@@ -57,7 +55,6 @@ public class E_pl_XA_E {
 			command_V.commandWithoutNumerics = command.toString();
 			command_V.commandAcknowledge = command.toString();
 			command_V.command = command.toString();
-			;
 			/*
 			 * command是一条最短的指令句，指令句变成指令的中间数据目前保留在NE.app_S.workVerbalMap
 			 * 中，我在思考，每次计算完一句指令，这些过程产物都要clear掉，这是一种C语言的free写法，
@@ -167,9 +164,9 @@ public class E_pl_XA_E {
 					/*
 					 * map细化分解的好处显而易见，如我的早期的德塔分词，map全部分解。这是一种
 					 * 计算关系催化过程。之后这个map也可以元基来索引加速遍历。 --罗瑶光
+					 * 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
+					 * 过滤和缩减了海量关系计算集合。
 					 */
-					// 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
-					// 过滤和缩减了海量关系计算集合。
 					if (scaleRights < 12) {
 						S_logger.Log.logger.info("couldDoThenDo-1-"
 							+ string);
@@ -236,10 +233,7 @@ public class E_pl_XA_E {
 			/* loop s later */
 			S_logger.Log.logger.info("couldDoThenDo-3-" + temp[0]);
 			IMV_SIQ_utils.couldDoThenDo(temp[0], temp, output, NE,
-				scores);// later
-																			   // in
-																			   // pdn
-																			   // */
+				scores);// later in pdn */
 			if (temp[0].equals("获取临时表名")) {
 				// 稍后写入 元基花
 				output.put(temp[0], temp[1]);
@@ -296,11 +290,12 @@ public class E_pl_XA_E {
 	 * 这种驱动计算方式是更好地辅助我已经有的函数进行序列可控操作。如果不断地增加
 	 * 新的函数，和扩展系统的使用方式，那么遇到的问题根据这种逻辑便会指数增加，于是我
 	 * 停止了下脚步，我在思考，一种不需要辅助也能计算出有用结果的通用类逻辑，在最恶劣
-	 * 的环境里，只需要加入某种精度组合就能覆盖所有条件搭配的逻辑，目前我找到了很多 方法，1 -
-	 * 明确动词的指令集，因为人类的动词不但数量少还有限，又精确。非常方便 第一步索引先。2 -
-	 * 单句分解指令集，因为单句是一个完整逻辑句，方便以后各类歧义 句型 复句句型 首先转换 
-	 * 为单句再执行即可。3-最大的价值在 1 和 2 可以直接元基 索引 IDUQ 分类即可。方便 
-	 * 我的花语系统加速。 如 六元-StudyVerbalMap
+	 * 的环境里，只需要加入某种精度组合就能覆盖所有条件搭配的逻辑，目前我找到了很多方法，
+	 * 1-明确动词的指令集，因为人类的动词不但数量少还有限，又精确。非常方便 第一步索引先。
+	 * 2-单句分解指令集，因为单句是一个完整逻辑句，方便以后各类歧义 句型 复句句型首先转换 
+	 *   为单句再执行即可。
+	 * 3-最大的价值在 1 和 2 可以直接元基 索引 IDUQ 分类即可。方便我的花语系统
+	 *   加速。 如六元-StudyVerbalMap
 	 * 
 	 */
 	private static void doAcknowledgeSwap(String[] acknowledgeSwap,
@@ -344,14 +339,19 @@ public class E_pl_XA_E {
 	// later out to data swap api
 	public static String doHumanTalkSwap(App NE,
 		CommandClass command_V) {
-		// （首-先，一，开始，于是，顺其自然，）
-		// （将，获-取-得，授权，选择，确-定-保，认-准-定，标-记-出，拿-出-到-来，把，）
-		// （表 表格-单-库，矩阵，文-档-件，对象）
-		// （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
-		// work domain out later.*/
-		// NE.app_S.workVerbalMap.setHumanTalk(command, NE);
+		
+		/*
+		* （首-先，一，开始，于是，顺其自然，）
+		* （将，获-取-得，授权，选择，确-定-保，认-准-定，标-记-出，拿-出-到-来，把，）
+		* （表 表格-单-库，矩阵，文-档-件，对象）
+		* （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
+		*  work domain out later.
+		*  NE.app_S.workVerbalMap.setHumanTalk(command, NE);
+		*/
+		
 		NE.app_S.workVerbalMap.setHumanTalkAfterNewBusinessTest(
 			command_V, NE);
+		
 		/*
 		 * 思考1 - 当构造混合中文数字提取转换匹配后，进行归纳格式化成map，这个map则需要在
 		 * 这一层进行和分词结果整合。这种逻辑属于ETL类型逻辑， command_V._IMV_SIQ_SS
@@ -360,20 +360,21 @@ public class E_pl_XA_E {
 		 * 思考2 - 所以这种逻辑以后可以更进分解swap成用tinshell OSGI ETL节点来中文节点分层
 		 * ，以后人工智能的基础思考模型就稳定了。然后元基索引 使用频率统计排序归纳，创造一个 
 		 * 自然选择的计算模拟环境。
+		 * 
+		 *   这一层逻辑已经并入了 setHumanTalkAfterNewBusinessTest，于是注释掉。	
+		 *   Iterator<String> iterators = command_V._IMV_SIQ_SS_Q.keySet()
+		 *   	.iterator();
+		 *   while (iterators.hasNext()) {
+		 *   	String string = iterators.next();
+		 *   	WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q
+		 *   		.getW(string);
+		 *   	command_V._IMV_SIQ_SS.put(string, WordFrequency);
+		 *   }
+		 *   分词的position要统计char位置，不是word位置，不然会不准确 later --trif一下
 		 */
-//      这一层逻辑已经并入了 setHumanTalkAfterNewBusinessTest，于是注释掉。	
-//		Iterator<String> iterators = command_V._IMV_SIQ_SS_Q.keySet()
-//			.iterator();
-//		while (iterators.hasNext()) {
-//			String string = iterators.next();
-//			WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q
-//				.getW(string);
-//			command_V._IMV_SIQ_SS.put(string, WordFrequency);
-//			/*
-//			 * 分词的position要统计char位置，不是word位置，不然会不准确 later --trif一下
-//			 */
-//		}
-		FastCartesianIdentifyTest fastCartesianIdentifyTest = new FastCartesianIdentifyTest();
+		
+		FastCartesianIdentifyTest fastCartesianIdentifyTest 
+		= new FastCartesianIdentifyTest();
 		fastCartesianIdentifyTest
 			.getCartesianRelationShipFromHumanTalk(
 				NE.app_S.workVerbalMap);

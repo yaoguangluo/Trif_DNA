@@ -5,15 +5,16 @@ import O_V.OSM.shell.CommandClass;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import java.util.Iterator;
 
-//1 6元SDLC
-//2 sdlc obss
-//3 obss normalization
-//4 normalizational format
-//5 format map
-//6 map parser
-//7 parser in PDE model
-//8 model in time norms
-//全部基于罗瑶光著作权基础堆积即可。
+/* 1 6元SDLC
+ * 2 sdlc obss
+ * 3 obss normalization
+ * 4 normalizational format
+ * 5 format map
+ * 6 map parser
+ * 7 parser in PDE model
+ * 8 model in time norms
+ * 全部基于罗瑶光著作权基础堆积即可。
+ *
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
@@ -27,7 +28,8 @@ import java.util.Iterator;
 public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 	// 稍后去重 -trif
 	public void relationshipsCombinationWithNounAndVerb() {
-		Iterator<String> iteratorNounMd = nounInText.keySet().iterator();
+		Iterator<String> iteratorNounMd = nounInText.keySet()
+			.iterator();
 		NextNounMd: while (iteratorNounMd.hasNext()) {
 			String stringNounMd = iteratorNounMd.next();
 			if (stringNounMd.isEmpty()) {
@@ -38,49 +40,51 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 				continue NextNounMd;
 			}
 			WordFrequency wordFrequencyNounMd = command_V._IMV_SIQ_SS
-					.getW(stringNounMd);
+				.getW(stringNounMd);
 			int averagePositionNounMd = wordFrequencyNounMd
-					.getAveragePosition();
+				.getAveragePosition();
 
-			Iterator<String> iteratorVerbNd = verbInText.keySet().iterator();
+			Iterator<String> iteratorVerbNd = verbInText.keySet()
+				.iterator();
 			NextVerbNd: while (iteratorVerbNd.hasNext()) {
 				String stringVerbNd = iteratorVerbNd.next();
 				if (stringVerbNd.isEmpty()) {
 					continue NextVerbNd;
 				}
-				if (!command_V._IMV_SIQ_SS.containsKey(stringVerbNd)) {
+				if (!command_V._IMV_SIQ_SS.containsKey(
+					stringVerbNd)) {
 					/*稍后精简条件优化变量*/
 					continue NextVerbNd;
 				}
 				WordFrequency wordFrequencyVerbNd = command_V._IMV_SIQ_SS
-						.getW(stringVerbNd);
+					.getW(stringVerbNd);
 				int averagePositionVerbNd = wordFrequencyVerbNd
-						.getAveragePosition();
+					.getAveragePosition();
 				if (stringNounMd.equalsIgnoreCase(stringVerbNd)) {
 					continue NextVerbNd;
 				}
 				if (!((wordFrequencyNounMd.get_pos().contains("动")
-						|| wordFrequencyNounMd.get_pos().contains("名"))
-						&& (wordFrequencyNounMd.get_pos().contains("动")
-								|| wordFrequencyNounMd.get_pos()
-										.contains("名")))) {
+					|| wordFrequencyNounMd.get_pos().contains("名"))
+					&& (wordFrequencyNounMd.get_pos().contains("动")
+						|| wordFrequencyNounMd.get_pos().contains(
+							"名")))) {
 					// 因为笛卡尔交集，所以需要用pos map来识别。
 					continue NextVerbNd;
 				}
 				// noun-verb
 				String rootNd = stringNounMd + stringVerbNd;
 				String rootMd = stringVerbNd + stringNounMd;
-				int rightNd = Math
-						.abs(averagePositionNounMd - averagePositionVerbNd);
+				int rightNd = Math.abs(averagePositionNounMd
+					- averagePositionVerbNd);
 				int positionNd = (averagePositionNounMd
-						+ averagePositionVerbNd) >> 1;
+					+ averagePositionVerbNd) >> 1;
 				if (2 > rightNd && rootNd.length() < 3) {
 					//nounInText.remove(stringNounMd);
 					//verbInText.remove(stringVerbNd);
 					verbInText.put(rootNd, positionNd);
 					verbInText.put(rootMd, positionNd);
-					WordFrequency wordFrequency = new WordFrequency(1.0,
-							rootNd);
+					WordFrequency wordFrequency = new WordFrequency(
+						1.0, rootNd);
 					wordFrequency.positions.add(positionNd);
 					wordFrequency.I_pos("动词名词");
 					command_V._IMV_SIQ_SS.put(rootNd, wordFrequency);
@@ -91,7 +95,8 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 	}
 
 	public void relationshipsCombinationWithVerb() {
-		Iterator<String> iteratorVerbM = verbInText.keySet().iterator();
+		Iterator<String> iteratorVerbM = verbInText.keySet()
+			.iterator();
 		NextVerbM: while (iteratorVerbM.hasNext()) {
 			String stringVerbM = iteratorVerbM.next();
 			if (stringVerbM.isEmpty()) {
@@ -102,9 +107,11 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 				continue NextVerbM;
 			}
 			WordFrequency wordFrequencyVerbM = command_V._IMV_SIQ_SS
-					.getW(stringVerbM);
-			int averagePositionVerbM = wordFrequencyVerbM.getAveragePosition();
-			Iterator<String> iteratorVerbN = verbInText.keySet().iterator();
+				.getW(stringVerbM);
+			int averagePositionVerbM = wordFrequencyVerbM
+				.getAveragePosition();
+			Iterator<String> iteratorVerbN = verbInText.keySet()
+				.iterator();
 			NextVerbN: while (iteratorVerbN.hasNext()) {
 				String stringVerbN = iteratorVerbN.next();
 				if (stringVerbN.isEmpty()) {
@@ -115,30 +122,31 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 					continue NextVerbN;
 				}
 				WordFrequency wordFrequencyVerbN = command_V._IMV_SIQ_SS
-						.getW(stringVerbN);
+					.getW(stringVerbN);
 				int averagePositionVerbN = wordFrequencyVerbN
-						.getAveragePosition();
+					.getAveragePosition();
 				if (stringVerbN.equalsIgnoreCase(stringVerbN)) {
 					continue NextVerbN;
 				}
-				if (!wordFrequencyVerbM.get_pos()
-						.equals(wordFrequencyVerbN.get_pos())) {
+				if (!wordFrequencyVerbM.get_pos().equals(
+					wordFrequencyVerbN.get_pos())) {
 					// 因为笛卡尔交集，所以需要用pos map来识别。
 					continue NextVerbN;
 				}
 				// noun-verb
 				String rootN = stringVerbM + stringVerbN;
 				String rootM = stringVerbN + stringVerbM;
-				int rightN = Math
-						.abs(averagePositionVerbM - averagePositionVerbN);
+				int rightN = Math.abs(averagePositionVerbM
+					- averagePositionVerbN);
 				int positionN = (averagePositionVerbM
-						+ averagePositionVerbN) >> 1;
+					+ averagePositionVerbN) >> 1;
 				if (2 > rightN && rootN.length() < 3) {
 					//verbInText.remove(stringVerbM);
 					//verbInText.remove(stringVerbN);
 					verbInText.put(rootN, positionN);
 					verbInText.put(rootM, positionN);
-					WordFrequency wordFrequency = new WordFrequency(1.0, rootN);
+					WordFrequency wordFrequency = new WordFrequency(
+						1.0, rootN);
 					wordFrequency.positions.add(positionN);
 					wordFrequency.I_pos("动词");
 					command_V._IMV_SIQ_SS.put(rootN, wordFrequency);
@@ -147,12 +155,14 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 			}
 		}
 	}
-
-	// 在计算哲学和语文意识中，非动词类词性组合可以算法省略，因为不构成指令集核心成分。我先不管，
-	// 在计算意识中，单字的价值不打，但是在歧义处理中，单字是普遍存在的，如果下面函数执行，那么
-	// 需要有精确的语法做铺垫，如果没有，那么就要进行概率累积评估，累积打分算法逻辑来灵活驱动。
+	/*
+	* 在计算哲学和语文意识中，非动词类词性组合可以算法省略，因为不构成指令集核心成分。我先不管，
+	* 在计算意识中，单字的价值不打，但是在歧义处理中，单字是普遍存在的，如果下面函数执行，那么
+	* 需要有精确的语法做铺垫，如果没有，那么就要进行概率累积评估，累积打分算法逻辑来灵活驱动。
+	*/
 	public void relationshipsCombinationWithNoun() {
-		Iterator<String> iteratorNounM = nounInText.keySet().iterator();
+		Iterator<String> iteratorNounM = nounInText.keySet()
+			.iterator();
 		NextNounM: while (iteratorNounM.hasNext()) {
 			String stringNounM = iteratorNounM.next();
 			if (stringNounM.isEmpty()) {
@@ -162,9 +172,11 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 				continue NextNounM;
 			}
 			WordFrequency wordFrequencyNounM = command_V._IMV_SIQ_SS
-					.getW(stringNounM);
-			int averagePositionNounM = wordFrequencyNounM.getAveragePosition();
-			Iterator<String> iteratorNounN = nounInText.keySet().iterator();
+				.getW(stringNounM);
+			int averagePositionNounM = wordFrequencyNounM
+				.getAveragePosition();
+			Iterator<String> iteratorNounN = nounInText.keySet()
+				.iterator();
 			NextNounN: while (iteratorNounN.hasNext()) {
 				String stringNounN = iteratorNounN.next();
 				if (stringNounN.isEmpty()) {
@@ -174,34 +186,36 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 					continue NextNounN;
 				}
 				WordFrequency wordFrequencyNounN = command_V._IMV_SIQ_SS
-						.getW(stringNounN);
+					.getW(stringNounN);
 				int averagePositionNounN = wordFrequencyNounN
-						.getAveragePosition();
+					.getAveragePosition();
 				if (stringNounM.equalsIgnoreCase(stringNounN)) {
 					continue NextNounN;
 				}
-				if (!wordFrequencyNounM.get_pos()
-						.equals(wordFrequencyNounN.get_pos())) {
+				if (!wordFrequencyNounM.get_pos().equals(
+					wordFrequencyNounN.get_pos())) {
 					// 因为笛卡尔交集，所以需要用pos map来识别。
 					continue NextNounN;
 				}
 				// noun-verb
 				String rootM = stringNounM + stringNounN;
 				String rootN = stringNounN + stringNounM;
-				int rightM = Math
-						.abs(averagePositionNounM - averagePositionNounN);
+				int rightM = Math.abs(averagePositionNounM
+					- averagePositionNounN);
 				int positionM = (averagePositionNounM
-						+ averagePositionNounN) >> 1;
+					+ averagePositionNounN) >> 1;
 				/*
-				 * 思考--关于 6到-9 进行行数筛选指令句 的 条件分析，这里6到的组合是因为6是一个char，到也是，
-				 * 小于2就并在一起了，成了6到。于是开始更进思考，这里 如果是600，那么出现了一个问题，便是
-				 * 组字的拆卸问题，这个逻辑进行捋一捋，可以的得到一个流程，便是 数字+一个字词变成高级笛卡尔的渡的关系。
-				 * 而不是之前的 rootM.length() < 3. 这样做需要一个精度来进行控制。会让匹配更灵活，于是开始修改。
-				 * 因为词汇分词后是最大也就4个字。但是一旦包含数字就不同了。所以可以省略。
+				 * 思考--关于 6到-9 进行行数筛选指令句 的 条件分析，这里6到的组合是因为
+				 * 6是一个char，到也是，小于2就并在一起了，成了6到。于是开始更进思考，
+				 * 这里 如果是600，那么出现了一个问题，便是组字的拆卸问题，这个逻辑进行
+				 * 捋一捋，可以的得到一个流程，便是 数字+一个字词变成高级笛卡尔的渡的关系。
+				 * 而不是之前的 rootM.length() < 3. 这样做需要一个精度来进行控制。会
+				 * 让匹配更灵活，于是开始修改。因为词汇分词后是最大也就4个字。但是一旦包含
+				 * 数字就不同了。所以可以省略。
 				 * 
 				 * --罗瑶光
 				 * 
-				 * */	
+				 * */
 				//System.out.println(rootM + "--" + rightM);
 				if (2 > rightM && rootM.length() < 3) {
 					//System.out.println(rootM + "--" + rightM);
@@ -209,13 +223,14 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 					//nounInText.remove(stringNounN);
 					nounInText.put(rootM, positionM);
 					nounInText.put(rootN, positionM);
-					WordFrequency wordFrequency = new WordFrequency(1.0, rootM);
+					WordFrequency wordFrequency = new WordFrequency(
+						1.0, rootM);
 					wordFrequency.positions.add(positionM);
 					wordFrequency.I_pos("名词");
 					command_V._IMV_SIQ_SS.put(rootM, wordFrequency);
 					command_V._IMV_SIQ_SS.put(rootN, wordFrequency);
 				}
-				
+
 			}
 		}
 	}
@@ -231,20 +246,22 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 	 */
 	// tree sort 比quick top快，但耗费大量stack，于是不考虑。
 	public void sortCartesianWorkActionsDistanceSV(App NE,
-			CommandClass command_V) {
-		actionsDistanceV_SV = new int[command_V.cartesianWorkActionsRightsSV.size()];
+		CommandClass command_V) {
+		actionsDistanceV_SV = new int[command_V.cartesianWorkActionsRightsSV
+			.size()];
 		actionsDistance_SV = new String[command_V.cartesianWorkActionsRightsSV
-				.size()];
+			.size()];
 		Iterator<String> iterator = command_V.cartesianWorkActionsRightsSV
-				.keySet().iterator();
+			.keySet().iterator();
 		int i = 0;
 		while (iterator.hasNext()) {
 			String string = iterator.next();
 			actionsDistance_SV[i] = string;
 			actionsDistanceV_SV[i++] = command_V.cartesianWorkActionsRightsSV
-					.getInt(string);
+				.getInt(string);
 		}
-		NE.app_S.lYGSortESU9D.javaSort(actionsDistanceV_SV, actionsDistance_SV);
+		NE.app_S.lYGSortESU9D.javaSort(actionsDistanceV_SV,
+			actionsDistance_SV);
 		// loop
 		for (i = 0; i < actionsDistance_SV.length; i++) {
 			//System.out.println(actionsDistance_SV[i] + "-" + actionsDistanceV_SV[i]);
@@ -254,21 +271,25 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 
 		}
 	}
+
 	//NE.app_S.lYGSortESU9D.javaSort关于RNN精度排序之后做联想扩展功能时候会用到，先保留。
-	public void sortCartesianWorkActionsDistanceVO(App NE, CommandClass command_V) {
-		actionsDistanceV_VO = new int[command_V.cartesianWorkActionsRightsVO.size()];
+	public void sortCartesianWorkActionsDistanceVO(App NE,
+		CommandClass command_V) {
+		actionsDistanceV_VO = new int[command_V.cartesianWorkActionsRightsVO
+			.size()];
 		actionsDistance_VO = new String[command_V.cartesianWorkActionsRightsVO
-				.size()];
+			.size()];
 		Iterator<String> iterator = command_V.cartesianWorkActionsRightsVO
-				.keySet().iterator();
+			.keySet().iterator();
 		int i = 0;
 		while (iterator.hasNext()) {
 			String string = iterator.next();
 			actionsDistance_VO[i] = string;
 			actionsDistanceV_VO[i++] = command_V.cartesianWorkActionsRightsVO
-					.getInt(string);
+				.getInt(string);
 		}
-		NE.app_S.lYGSortESU9D.javaSort(actionsDistanceV_VO, actionsDistance_VO);
+		NE.app_S.lYGSortESU9D.javaSort(actionsDistanceV_VO,
+			actionsDistance_VO);
 		// loop
 		for (i = 0; i < actionsDistance_VO.length; i++) {
 			//System.out.println(actionsDistance_VO[i] + "-" + actionsDistanceV_VO[i]);
@@ -278,23 +299,24 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 
 		}
 	}
-	
+
 	public void sortCartesianWorkActionsPositionSV(App NE,
-			CommandClass command_V) {
+		CommandClass command_V) {
 		actionsPositionV_SV = new int[command_V.cartesianWorkActionsPositionsSV
-				.size()];
+			.size()];
 		actionsPosition_SV = new String[command_V.cartesianWorkActionsPositionsSV
-				.size()];
+			.size()];
 		Iterator<String> iterator = command_V.cartesianWorkActionsPositionsSV
-				.keySet().iterator();
+			.keySet().iterator();
 		int i = 0;
 		while (iterator.hasNext()) {
 			String string = iterator.next();
 			actionsPosition_SV[i] = string;
 			actionsPositionV_SV[i++] = command_V.cartesianWorkActionsPositionsSV
-					.getInt(string);
+				.getInt(string);
 		}
-		NE.app_S.lYGSortESU9D.javaSort(actionsPositionV_SV, actionsPosition_SV);
+		NE.app_S.lYGSortESU9D.javaSort(actionsPositionV_SV,
+			actionsPosition_SV);
 		// loop
 		for (i = 0; i < actionsPositionV_SV.length; i++) {
 			//System.out.println(actionsPosition_SV[i] + "+" + actionsPositionV_SV[i]);
@@ -305,21 +327,22 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 	}
 
 	public void sortCartesianWorkActionsPositionVO(App NE,
-			CommandClass command_V) {
+		CommandClass command_V) {
 		actionsPositionV_VO = new int[command_V.cartesianWorkActionsPositionsVO
-				.size()];
+			.size()];
 		actionsPosition_VO = new String[command_V.cartesianWorkActionsPositionsVO
-				.size()];
+			.size()];
 		Iterator<String> iterator = command_V.cartesianWorkActionsPositionsVO
-				.keySet().iterator();
+			.keySet().iterator();
 		int i = 0;
 		while (iterator.hasNext()) {
 			String string = iterator.next();
 			actionsPosition_VO[i] = string;
 			actionsPositionV_VO[i++] = command_V.cartesianWorkActionsPositionsVO
-					.getInt(string);
+				.getInt(string);
 		}
-		NE.app_S.lYGSortESU9D.javaSort(actionsPositionV_VO, actionsPosition_VO);
+		NE.app_S.lYGSortESU9D.javaSort(actionsPositionV_VO,
+			actionsPosition_VO);
 		// loop
 		for (i = 0; i < actionsPositionV_VO.length; i++) {
 			//System.out.println(actionsPosition_VO[i] + "+" + actionsPositionV_VO[i]);
@@ -328,14 +351,17 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 		}
 		// ------------
 	}
-	
+
 	/*
 	 * 关于复杂RNN关系 我引擎这里会逐渐用不到，因为DNN的重心分析加上语言的单句分解，是我
 	 * 的花语计算逻辑趋势，以后复杂的句子首先走短句分解而不是走全局关系，那么这个复杂关系
 	 * 价值将体现在修正和补充环境里面, 之后根据算法优化的BPM结构不断校正补充函数 -罗瑶光
 	 */
 	public void actionsNormalization(App NE, CommandClass command_V) {
-//		Iterator<String> iterators = command_V.cartesianWorkActionsPositions
+	}
+}
+
+//Iterator<String> iterators = command_V.cartesianWorkActionsPositions
 //				.keySet().iterator();
 //		LEFT: while (iterators.hasNext()) {
 //			String root_position_name = iterators.next();
@@ -397,5 +423,3 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 //				}
 //			}
 //		}
-	}
-}
