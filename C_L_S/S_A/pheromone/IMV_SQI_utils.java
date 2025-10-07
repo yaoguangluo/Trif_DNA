@@ -18,13 +18,13 @@ import java.util.Iterator;
  *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 /*
- * IMV_SIQ随着持续地优化，变得越来越复杂，于是之后有必要进行HVPCS关系分析。
+ * IMV_SQI随着持续地优化，变得越来越复杂，于是之后有必要进行HVPCS关系分析。
  * 减少30%内存堆栈
  * --trif
  * 
  * */
 @SuppressWarnings({ "unchecked" })
-public class IMV_SIQ_utils {
+public class IMV_SQI_utils {
 
 	public static void couldSQLThenSQL(String key, String[] strings,
 		TinMap output, App NE) throws InterruptedException,

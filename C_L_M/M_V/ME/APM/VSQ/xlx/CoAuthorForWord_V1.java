@@ -3,8 +3,8 @@ package M_V.ME.APM.VSQ.xlx;
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_Colors;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
@@ -422,15 +422,15 @@ public class CoAuthorForWord_V1 extends CoAuthorForWord_A {
 
 
     @SuppressWarnings("unused")
-    private IMV_SIQ kernerForest(String temp, IMV_SIQ root
+    private IMV_SQI kernerForest(String temp, IMV_SQI root
         , Map<String, Integer> findLeaf, int depth, App NE) {
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         if (++depth > 6) {
             return leaf;
         }
         int ml = 0;
         if (u.app_S.dic_li.containsKey(temp) || u.app_S.dic_yl.containsKey(temp) || u.app_S.dic_zf.containsKey(temp)) {
-            IMV_SIQ_SS map = _A.parserMixStringByReturnFrequencyMap(
+            IMV_SQI_SS map = _A.parserMixStringByReturnFrequencyMap(
                 (u.app_S.dic_li.get(temp) == null ? "" : u.app_S.dic_li.get(temp)) +
                     (u.app_S.dic_yl.get(temp) == null ? "" : u.app_S.dic_yl.get(temp).toString()) +
                     (u.app_S.dic_zf.get(temp) == null ? "" : u.app_S.dic_zf.get(temp).toString())
@@ -443,10 +443,10 @@ public class CoAuthorForWord_V1 extends CoAuthorForWord_A {
                     findLeaf.put(tempRec, 1);
                     frequencyLeaf.put(tempRec, 1);
                     if (u.app_S.dic_map.containsKey(tempRec)) {
-                        IMV_SIQ subLeaf = kernerForest(tempRec, leaf, findLeaf, depth, NE);
+                        IMV_SQI subLeaf = kernerForest(tempRec, leaf, findLeaf, depth, NE);
                         leaf.put(tempRec, subLeaf);
                     } else if (ml < 8) {
-                        IMV_SIQ subLeaf = kernerForest(tempRec, leaf, findLeaf, depth, NE);
+                        IMV_SQI subLeaf = kernerForest(tempRec, leaf, findLeaf, depth, NE);
                         if (subLeaf.size() > 0) {
                             leaf.put(tempRec, subLeaf);
                             ml++;

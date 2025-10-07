@@ -1,7 +1,7 @@
 package C_A.OCI.ME.pos.C;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 
@@ -39,10 +39,10 @@ public interface X_E extends X_O_parserFirst {
         , StringBuilder[] fixWord);
 
     int loopCheckBackFixForMap(StringBuilder[] fixWord, int backPosition
-        , int countLength, IMV_SIQ_SS outputList, String[] strings
+        , int countLength, IMV_SQI_SS outputList, String[] strings
         , int[] nestCountInputStringLength, App NE);
 
-    void didNotFindFirstCharForMap(IMV_SIQ_SS outputList
+    void didNotFindFirstCharForMap(IMV_SQI_SS outputList
         , String[] strings, StringBuilder[] fixWord, App NE);
 }
 

@@ -12,9 +12,9 @@
 //import P_V.PEQ.AMV.ECS.test.SensingTest;
 //import S_A.AVQ.OVQ.OSQ.VSQ.obj.Verbal;
 //import S_A.VSQ.parser.EmotionSample;
-//import S_A.pheromone.IMV_SIQ;
-//import S_A.pheromone.IMV_SIQ_;
-//import S_A.pheromone.IMV_SIQ_S_;
+//import S_A.pheromone.IMV_SQI;
+//import S_A.pheromone.IMV_SQI_;
+//import S_A.pheromone.IMV_SQI_S_;
 //import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.Test;
 //import org.mockito.InjectMocks;
@@ -78,7 +78,7 @@
 //    @Mock
 //    CogsBinaryForest_AE _A;
 //    @Mock
-//    IMV_SIQ posFec;
+//    IMV_SQI posFec;
 //    @Mock
 //    JTextPane text;
 //    @Mock
@@ -104,19 +104,19 @@
 //    @Mock
 //    DetaButton buttonCTV;
 //    @Mock
-//    IMV_SIQ dic_xj;
+//    IMV_SQI dic_xj;
 //    @Mock
-//    IMV_SIQ pos;
+//    IMV_SQI pos;
 //    @Mock
-//    IMV_SIQ pose;
+//    IMV_SQI pose;
 //    @Mock
-//    IMV_SIQ etc;
+//    IMV_SQI etc;
 //    @Mock
-//    IMV_SIQ cte;
+//    IMV_SQI cte;
 //    @Mock
-//    IMV_SIQ posec;
+//    IMV_SQI posec;
 //    @Mock
-//    IMV_SIQ posFullec;
+//    IMV_SQI posFullec;
 //    @Mock
 //    List<Verbal> verbals;
 //    @Mock
@@ -128,81 +128,81 @@
 //    @Mock
 //    List<String> copy_xj;
 //    @Mock
-//    IMV_SIQ_ dic_map;
+//    IMV_SQI_ dic_map;
 //    @Mock
-//    IMV_SIQ dic_chu_fang;
+//    IMV_SQI dic_chu_fang;
 //    @Mock
-//    IMV_SIQ dic_mz;
+//    IMV_SQI dic_mz;
 //    @Mock
-//    IMV_SIQ dic_zf;
+//    IMV_SQI dic_zf;
 //    @Mock
-//    IMV_SIQ dic_yy;
+//    IMV_SQI dic_yy;
 //    @Mock
-//    IMV_SIQ dic_fg;
+//    IMV_SQI dic_fg;
 //    @Mock
-//    IMV_SIQ dic_ff;
+//    IMV_SQI dic_ff;
 //    @Mock
-//    IMV_SIQ_ dic_sy;
+//    IMV_SQI_ dic_sy;
 //    @Mock
-//    IMV_SIQ dic_tl;
+//    IMV_SQI dic_tl;
 //    @Mock
-//    IMV_SIQ dic_bzm;
+//    IMV_SQI dic_bzm;
 //    @Mock
-//    IMV_SIQ_ dic_gn;
+//    IMV_SQI_ dic_gn;
 //    @Mock
-//    IMV_SIQ dic_lcbx;
+//    IMV_SQI dic_lcbx;
 //    @Mock
-//    IMV_SIQ dic_lcyy;
+//    IMV_SQI dic_lcyy;
 //    @Mock
-//    IMV_SIQ dic_zhfx;
+//    IMV_SQI dic_zhfx;
 //    @Mock
-//    IMV_SIQ dic_zhjb;
+//    IMV_SQI dic_zhjb;
 //    @Mock
-//    IMV_SIQ dic_yao_ming;
+//    IMV_SQI dic_yao_ming;
 //    @Mock
-//    IMV_SIQ dic_chengfen_danwei;
+//    IMV_SQI dic_chengfen_danwei;
 //    @Mock
-//    IMV_SIQ dic_yong_fa;
+//    IMV_SQI dic_yong_fa;
 //    @Mock
-//    IMV_SIQ dic_yong_liang;
+//    IMV_SQI dic_yong_liang;
 //    @Mock
-//    IMV_SIQ dic_yao_li;
+//    IMV_SQI dic_yao_li;
 //    @Mock
-//    IMV_SIQ dic_zhu_yi;
+//    IMV_SQI dic_zhu_yi;
 //    @Mock
-//    IMV_SIQ dic_shi_ying;
+//    IMV_SQI dic_shi_ying;
 //    @Mock
-//    IMV_SIQ dic_bu_liang_fan_ying;
+//    IMV_SQI dic_bu_liang_fan_ying;
 //    @Mock
-//    IMV_SIQ dic_yao_wu_xiang_hu_zuo_yong;
+//    IMV_SQI dic_yao_wu_xiang_hu_zuo_yong;
 //    @Mock
-//    IMV_SIQ dic_qi_ta;
+//    IMV_SQI dic_qi_ta;
 //    @Mock
-//    IMV_SIQ dic_jie_shao;
+//    IMV_SQI dic_jie_shao;
 //    @Mock
-//    IMV_SIQ_ dic_lx;
+//    IMV_SQI_ dic_lx;
 //    @Mock
-//    IMV_SIQ_ dic_by;
+//    IMV_SQI_ dic_by;
 //    @Mock
-//    IMV_SIQ_ dic_wx;
+//    IMV_SQI_ dic_wx;
 //    @Mock
-//    IMV_SIQ_ dic_bl;
+//    IMV_SQI_ dic_bl;
 //    @Mock
-//    IMV_SIQ_ dic_lc;
+//    IMV_SQI_ dic_lc;
 //    @Mock
-//    IMV_SIQ_ dic_zd;
+//    IMV_SQI_ dic_zd;
 //    @Mock
-//    IMV_SIQ_ dic_bf;
+//    IMV_SQI_ dic_bf;
 //    @Mock
-//    IMV_SIQ_ dic_zl;
+//    IMV_SQI_ dic_zl;
 //    @Mock
-//    IMV_SIQ_ dic_jy;
+//    IMV_SQI_ dic_jy;
 //    @Mock
-//    IMV_SIQ_ dic_yh;
+//    IMV_SQI_ dic_yh;
 //    @Mock
-//    IMV_SIQ_ dic_yf;
+//    IMV_SQI_ dic_yf;
 //    @Mock
-//    IMV_SIQ_ dic_yx;
+//    IMV_SQI_ dic_yx;
 //    @Mock
 //    Map<String, Integer> subASCmap;
 //    @Mock
@@ -375,10 +375,10 @@
 //
 //    @Test
 //    void testDoFwaArrangement() {
-//        when(_A.sortWordFrequencyMapToSortMap(any())).thenReturn(new IMV_SIQ_S_());
+//        when(_A.sortWordFrequencyMapToSortMap(any())).thenReturn(new IMV_SQI_S_());
 //
-//        //mock trif IMV_SIQ_S_ result = zyzdxPage.doFwaArrangement(new IMV_SIQ_SS(), new App());
-//        //mock trif  Assertions.assertEquals(new IMV_SIQ_S_(), result);
+//        //mock trif IMV_SQI_S_ result = zyzdxPage.doFwaArrangement(new IMV_SQI_SS(), new App());
+//        //mock trif  Assertions.assertEquals(new IMV_SQI_S_(), result);
 //    }
 //
 //    @Test
@@ -388,7 +388,7 @@
 //
 //    @Test
 //    void testSimpleClicked() {
-//        when(_A.sortWordFrequencyMapToSortMap(any())).thenReturn(new IMV_SIQ_S_());
+//        when(_A.sortWordFrequencyMapToSortMap(any())).thenReturn(new IMV_SQI_S_());
 //        when(_A.parserMixedString(anyString())).thenReturn(new ArrayList<String>(Arrays.asList("String")));
 //
 //        //mock trif  zyzdxPage.simpleClicked(new App());

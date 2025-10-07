@@ -1,7 +1,7 @@
 package M_V.ME.RelationPLSQL_;
 
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.math.BigDecimal;
 import java.util.Iterator;
@@ -18,24 +18,24 @@ import java.util.Map;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class X_P_OrMap {
-	public static void _E(String[] sets, List<IMV_SIQ> obj,
-			List<IMV_SIQ> joinObj, IMV_SIQ object, List<IMV_SIQ> newObj,
+	public static void _E(String[] sets, List<IMV_SQI> obj,
+			List<IMV_SQI> joinObj, IMV_SQI object, List<IMV_SQI> newObj,
 			Map<String, Boolean> findinNewObj) {
-		Iterator<IMV_SIQ> iterator = obj.iterator();
+		Iterator<IMV_SQI> iterator = obj.iterator();
 		int count = 0;
 		while (iterator.hasNext()) {
 			int objRowId = count++;
-			IMV_SIQ objRow = iterator.next();
-			IMV_SIQ row = (IMV_SIQ) objRow.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-			Iterator<IMV_SIQ> iteratorJoin = joinObj.iterator();
+			IMV_SQI objRow = iterator.next();
+			IMV_SQI row = (IMV_SQI) objRow.get(S_ShellETL.SHELL_ETL_ROWVALUE);
+			Iterator<IMV_SQI> iteratorJoin = joinObj.iterator();
 			int countJoin = 0;
 			while (iteratorJoin.hasNext()) {
 				int objJoinRowId = countJoin++;
-				IMV_SIQ objJoinRow = iteratorJoin.next();
-				IMV_SIQ joinRow = (IMV_SIQ) objJoinRow
+				IMV_SQI objJoinRow = iteratorJoin.next();
+				IMV_SQI joinRow = (IMV_SQI) objJoinRow
 						.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-				IMV_SIQ cell = (IMV_SIQ) row.get(sets[0]);
-				IMV_SIQ cellJoin = (IMV_SIQ) joinRow.get(sets[2]);
+				IMV_SQI cell = (IMV_SQI) row.get(sets[0]);
+				IMV_SQI cellJoin = (IMV_SQI) joinRow.get(sets[2]);
 				if (sets[1].equalsIgnoreCase(S_ShellETL.SHELL_ETL_DOUBLE_EQUALS)
 						|| sets[1].equalsIgnoreCase(
 								S_ShellETL.SHELL_ETL_TRIPAL_EQUALS)) {
@@ -45,8 +45,8 @@ public class X_P_OrMap {
 									.doubleValue()) {
 						if (!findinNewObj
 								.containsKey(objRowId + ":" + objJoinRowId)) {
-							IMV_SIQ newObjRow = new IMV_SIQ();
-							IMV_SIQ newRow = new IMV_SIQ();
+							IMV_SQI newObjRow = new IMV_SQI();
+							IMV_SQI newRow = new IMV_SQI();
 							newRow.putAll((Map<? extends String, ?>) objJoinRow
 									.get(S_ShellETL.SHELL_ETL_ROWVALUE));
 							newRow.putAll((Map<? extends String, ?>) objRow
@@ -64,8 +64,8 @@ public class X_P_OrMap {
 							.equals(cellJoin.get("culumnValue").toString())) {
 						if (!findinNewObj
 								.containsKey(objRowId + ":" + objJoinRowId)) {
-							IMV_SIQ newObjRow = new IMV_SIQ();
-							IMV_SIQ newRow = new IMV_SIQ();
+							IMV_SQI newObjRow = new IMV_SQI();
+							IMV_SQI newRow = new IMV_SQI();
 							newRow.putAll((Map<? extends String, ?>) objJoinRow
 									.get(S_ShellETL.SHELL_ETL_ROWVALUE));
 							newRow.putAll((Map<? extends String, ?>) objRow

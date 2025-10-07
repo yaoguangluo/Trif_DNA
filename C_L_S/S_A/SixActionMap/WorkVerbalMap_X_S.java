@@ -1,7 +1,7 @@
 package S_A.SixActionMap;
 
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -34,21 +34,21 @@ public class WorkVerbalMap_X_S {
 	public String subjectName;
 	public String objectName;
 	public String humanTalk;
-	public IMV_SIQ fixMap;
-	public IMV_SIQ doMap;
-	public IMV_SIQ objectMap;
-	public IMV_SIQ babeiMap;
-	public IMV_SIQ verbMap;
-	public IMV_SIQ data2DSubjectMap;
-	public IMV_SIQ positionMap;
-	public IMV_SIQ nounInText;
-	public IMV_SIQ verbInText;
+	public IMV_SQI fixMap;
+	public IMV_SQI doMap;
+	public IMV_SQI objectMap;
+	public IMV_SQI babeiMap;
+	public IMV_SQI verbMap;
+	public IMV_SQI data2DSubjectMap;
+	public IMV_SQI positionMap;
+	public IMV_SQI nounInText;
+	public IMV_SQI verbInText;
 	public CommandClass command_V;
 
-	public IMV_SIQ ActionsObject;
-	public IMV_SIQ nounInTextFull;// later
-	public IMV_SIQ verbInTextFull;// later
-	public IMV_SIQ cartesianWorkActionsFull;// later
+	public IMV_SQI ActionsObject;
+	public IMV_SQI nounInTextFull;// later
+	public IMV_SQI verbInTextFull;// later
+	public IMV_SQI cartesianWorkActionsFull;// later
 
 	public LinkedList<String> shortString = new LinkedList<>();
 	public int[] actionsPositionV_SV;
@@ -81,7 +81,7 @@ public class WorkVerbalMap_X_S {
 		babeiMap.clear();
 		nounInText.clear();// small calculus , later do full
 		verbInText.clear();
-		Iterator<String> iterator = command_V._IMV_SIQ_SS.keySet()
+		Iterator<String> iterator = command_V._IMV_SQI_SS.keySet()
 			.iterator();
 		while (iterator.hasNext()) {
 			String string = iterator.next();
@@ -96,7 +96,7 @@ public class WorkVerbalMap_X_S {
 				babeiMap.put(string, i++);
 			}
 			// pos load
-			WordFrequency wordFrequency = command_V._IMV_SIQ_SS.getW(
+			WordFrequency wordFrequency = command_V._IMV_SQI_SS.getW(
 				string);
 			// 一切数据首先都应该名词化*/
 			nounInText.put(string, wordFrequency);
@@ -114,10 +114,10 @@ public class WorkVerbalMap_X_S {
 			if (stringNoun.isEmpty()) {
 				continue NextNoun;
 			}
-			if (!command_V._IMV_SIQ_SS.containsKey(stringNoun)) {
+			if (!command_V._IMV_SQI_SS.containsKey(stringNoun)) {
 				continue NextNoun;
 			}
-			WordFrequency wordFrequencyNoun = command_V._IMV_SIQ_SS
+			WordFrequency wordFrequencyNoun = command_V._IMV_SQI_SS
 				.getW(stringNoun);
 			int averagePositionNoun = wordFrequencyNoun
 				.getAveragePosition();
@@ -128,10 +128,10 @@ public class WorkVerbalMap_X_S {
 				if (stringVerb.isEmpty()) {
 					continue NextVerb;
 				}
-				if (!command_V._IMV_SIQ_SS.containsKey(stringVerb)) {
+				if (!command_V._IMV_SQI_SS.containsKey(stringVerb)) {
 					continue NextVerb;
 				}
-				WordFrequency wordFrequencyVerb = command_V._IMV_SIQ_SS
+				WordFrequency wordFrequencyVerb = command_V._IMV_SQI_SS
 					.getW(stringVerb);
 				int averagePositionVerb = wordFrequencyVerb
 					.getAveragePosition();
@@ -266,15 +266,15 @@ public class WorkVerbalMap_X_S {
 
 	public void initActionMap(CommandClass command_V) {
 		// 计算关机分层
-		objectMap = new IMV_SIQ();
-		babeiMap = new IMV_SIQ();
-		verbMap = new IMV_SIQ();
-		fixMap = new IMV_SIQ();
-		nounInText = new IMV_SIQ();
-		verbInText = new IMV_SIQ();
+		objectMap = new IMV_SQI();
+		babeiMap = new IMV_SQI();
+		verbMap = new IMV_SQI();
+		fixMap = new IMV_SQI();
+		nounInText = new IMV_SQI();
+		verbInText = new IMV_SQI();
 		// （首-先，一，开始，于是，顺其自然，）
 		// （将，获-取-得，授权，选择，确-定-保，认-准-定，标-记-出，拿-出-到-来，把，）
-		data2DSubjectMap = new IMV_SIQ();
+		data2DSubjectMap = new IMV_SQI();
 		data2DSubjectMap.put("表", true);
 		data2DSubjectMap.put("表格", true);
 		data2DSubjectMap.put("表单", true);
@@ -292,7 +292,7 @@ public class WorkVerbalMap_X_S {
 		data2DSubjectMap.put("文献", true);
 		// （表 表格-单-库，矩阵，文-档-件，对象）
 		// 这里有很多问题，最终表达会影响计算精度，以后会细化分类逐步优化。-trif
-		doMap = new IMV_SIQ();
+		doMap = new IMV_SQI();
 		doMap.put("进行", true);
 		doMap.put("执行", true);
 		doMap.put("提", true);
@@ -340,14 +340,14 @@ public class WorkVerbalMap_X_S {
 		// （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
 	}
 }
-//public IMV_SIQ_SS _IMV_SIQ_SS;
-//public IMV_SIQ_S_ _IMV_SIQ_S_;
-//public List<String> _IMV_SIQ_SS_ = new ArrayList<>();
-// public IMV_SIQ unknown_map;
-// public IMV_SIQ cartesianWorkActions_pos;
-// public IMV_SIQ cartesianWorkActionsRights;
-// public IMV_SIQ cartesianWorkActionsPositions;
-// public IMV_SIQ normalizationalWorkActionsRights;
-// public IMV_SIQ normalizationalWorkActionsPositions;
-// public IMV_SIQ complementedWorkActionsRights;
-// public IMV_SIQ complementedWorkActionsPositions;
+//public IMV_SQI_SS _IMV_SQI_SS;
+//public IMV_SQI_S_ _IMV_SQI_S_;
+//public List<String> _IMV_SQI_SS_ = new ArrayList<>();
+// public IMV_SQI unknown_map;
+// public IMV_SQI cartesianWorkActions_pos;
+// public IMV_SQI cartesianWorkActionsRights;
+// public IMV_SQI cartesianWorkActionsPositions;
+// public IMV_SQI normalizationalWorkActionsRights;
+// public IMV_SQI normalizationalWorkActionsPositions;
+// public IMV_SQI complementedWorkActionsRights;
+// public IMV_SQI complementedWorkActionsPositions;

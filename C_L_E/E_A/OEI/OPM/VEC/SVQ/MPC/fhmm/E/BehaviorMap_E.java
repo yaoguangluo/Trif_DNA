@@ -1,7 +1,7 @@
 package E_A.OEI.OPM.VEC.SVQ.MPC.fhmm.E;
 
 import C_A.OCI.OPM.VEC.SVQ.MPC.fhmm.C.BehaviorMap;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -14,32 +14,32 @@ import S_A.pheromone.IMV_SIQ;
 public class BehaviorMap_E implements BehaviorMap{
 
 	@Override
-	public IMV_SIQ initBusinessMap()  {
+	public IMV_SQI initBusinessMap()  {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ initTradeMap()  {
+	public IMV_SQI initTradeMap()  {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ initFacilityMap()  {
+	public IMV_SQI initFacilityMap()  {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ initAckuisitionMap()  {
+	public IMV_SQI initAckuisitionMap()  {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ initCoorporationMap()  {
+	public IMV_SQI initCoorporationMap()  {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ initPromiseMap()  {
+	public IMV_SQI initPromiseMap()  {
 		return null;
 	}
 }

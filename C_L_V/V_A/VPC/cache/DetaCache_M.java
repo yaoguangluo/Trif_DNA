@@ -1,6 +1,6 @@
 package V_A.VPC.cache;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 import java.util.List;
@@ -18,11 +18,11 @@ import java.util.concurrent.ConcurrentHashMap;
  * */
 public class DetaCache_M {
     private static final ConcurrentHashMap<String, DetaCache> cacheMap
-        = new IMV_SIQ();
+        = new IMV_SQI();
     private static ConcurrentHashMap<String, List<byte[]>> bytesMap
-        = new IMV_SIQ();
-    private static IMV_SIQ stringMap
-        = new IMV_SIQ();
+        = new IMV_SQI();
+    private static IMV_SQI stringMap
+        = new IMV_SQI();
 
     private DetaCache_M() {
         super();

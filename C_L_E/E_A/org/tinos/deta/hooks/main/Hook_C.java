@@ -18,7 +18,7 @@ package E_A.org.tinos.deta.hooks.main;
 public interface Hook_C {
     //public List<String> exceptionList= new CopyOnWriteArrayList<>();
     //处理异常循环准备用map, 避免内存递增。
-    //public Map<String, ExceptInformation> exceptionMap= new IMV_SIQ();
+    //public Map<String, ExceptInformation> exceptionMap= new IMV_SQI();
     //这个函数用于异常描述
     public String getCurrentEnvironment(String session);
 

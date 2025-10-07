@@ -1,9 +1,9 @@
 package A_V.C;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_S_;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_S_;
+import S_A.pheromone.IMV_SQI_X_;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳 yaoguangluo@outlook.com,
@@ -14,39 +14,39 @@ import S_A.pheromone.IMV_SIQ_X_;
  * 神仙坳社区 大塘冲路一段 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public interface RatioMap {
-    double findTotalPositiveCount(IMV_SIQ_X_ emotionSampleMap);
+    double findTotalPositiveCount(IMV_SQI_X_ emotionSampleMap);
 
-    double findTotalNegativeCount(IMV_SIQ_X_ emotionSampleMap);
+    double findTotalNegativeCount(IMV_SQI_X_ emotionSampleMap);
 
-    double findTotalKeyCount(IMV_SIQ_X_ emotionSampleMap);
+    double findTotalKeyCount(IMV_SQI_X_ emotionSampleMap);
 
-    void IQ_Motivation(IMV_SIQ_X_ emotionSampleMap, IMV_SIQ motivation);
+    void IQ_Motivation(IMV_SQI_X_ emotionSampleMap, IMV_SQI motivation);
 
-    void IQ_Trending(IMV_SIQ_X_ emotionSampleMap, IMV_SIQ trending);
+    void IQ_Trending(IMV_SQI_X_ emotionSampleMap, IMV_SQI trending);
 
-    void IQ_Prediction(IMV_SIQ_X_ emotionSampleMap, IMV_SIQ prediction);
+    void IQ_Prediction(IMV_SQI_X_ emotionSampleMap, IMV_SQI prediction);
 
-    void IQ_Distinction(IMV_SIQ_X_ emotionSampleMap, IMV_SIQ distinction);
+    void IQ_Distinction(IMV_SQI_X_ emotionSampleMap, IMV_SQI distinction);
 
-    IMV_SIQ_X_ getEnvironmentSampleMap(IMV_SIQ_S_ wordFrequencyMap);
+    IMV_SQI_X_ getEnvironmentSampleMap(IMV_SQI_S_ wordFrequencyMap);
 
-    IMV_SIQ_X_ getEmotionSampleMap(IMV_SIQ_S_ wordFrequencyMap
-        , IMV_SIQ positive, IMV_SIQ negative, App NE);
+    IMV_SQI_X_ getEmotionSampleMap(IMV_SQI_S_ wordFrequencyMap
+        , IMV_SQI positive, IMV_SQI negative, App NE);
 
-    void IQ_EmotionRatio(IMV_SIQ_X_ emotionSampleMap, double positiveCount
+    void IQ_EmotionRatio(IMV_SQI_X_ emotionSampleMap, double positiveCount
         , double negativeCount, double medCount);
 
-    void IQ_MotivationRatio(IMV_SIQ_X_ emotionSampleMap, double sumOfEmotion);
+    void IQ_MotivationRatio(IMV_SQI_X_ emotionSampleMap, double sumOfEmotion);
 
-    void IQ_CorrelationRatio(IMV_SIQ_X_ emotionSampleMap, double sumOfEmotion);
+    void IQ_CorrelationRatio(IMV_SQI_X_ emotionSampleMap, double sumOfEmotion);
 
-    void IQ_ContinusRatio(IMV_SIQ_X_ emotionSampleMap, double emotionRatio);
+    void IQ_ContinusRatio(IMV_SQI_X_ emotionSampleMap, double emotionRatio);
 
-    void IQ_TrendsRatio(IMV_SIQ_X_ emotionSampleMap);
+    void IQ_TrendsRatio(IMV_SQI_X_ emotionSampleMap);
 
-    void IQ_PredictionRatio(IMV_SIQ_X_ emotionSampleMap);
+    void IQ_PredictionRatio(IMV_SQI_X_ emotionSampleMap);
 
-    void IQ_GuessRatio(IMV_SIQ_X_ emotionSampleMap);
+    void IQ_GuessRatio(IMV_SQI_X_ emotionSampleMap);
 
-    void IQ_SensingRatio(IMV_SIQ_X_ emotionSampleMap);
+    void IQ_SensingRatio(IMV_SQI_X_ emotionSampleMap);
 }

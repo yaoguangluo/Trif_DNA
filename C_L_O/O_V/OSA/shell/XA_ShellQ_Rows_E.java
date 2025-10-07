@@ -11,7 +11,7 @@ import O_V.OSM.shell.P_AO_pl_XA;
 import O_V.OSM.shell.P_I_CulumnsPL_XA;
 import S_A.SVQ.stable.S_ShellETL;
 import S_A.VSQ.parser.EmotionSample;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_I.OSI.PSO.regex.DoSplit;
 import U_V.ESU.list.List_ESU_X_stringlistToStringArray;
 
@@ -34,13 +34,13 @@ import java.util.concurrent.ConcurrentHashMap;
  * */
 
 public class XA_ShellQ_Rows_E {
-    public static List<IMV_SIQ> selectRowsByAttribute(String currentDB
+    public static List<IMV_SQI> selectRowsByAttribute(String currentDB
         , String tableName, String culmnName, Object value) {
         if (value == null) {
             value = "";
         }
         String objectType = "";
-        List<IMV_SIQ> output = new ArrayList<>();
+        List<IMV_SQI> output = new ArrayList<>();
         XA_ShellTable table = XA_ShellTables.searchShellTables.get(tableName);
         //稍后把下面的 Table 替换成 SearchShellTable 即可。
         for (int i = 0; i < table.huaRuiJiJtableRows.length; i++) {
@@ -65,9 +65,9 @@ public class XA_ShellQ_Rows_E {
     //今天看了下发现我的数据库 没有分页, 以后会设计一个文件夹最大为3000 rows
     //一页, 先不管了, shell 用不到sheets逻辑。
     //罗瑶光20210927
-    public static IMV_SIQ selectRowsByTablePath(String tablePath, String pageBegin
+    public static IMV_SQI selectRowsByTablePath(String tablePath, String pageBegin
         , String pageEnd, String direction) {
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         XA_ShellTable table = XA_ShellTables.searchShellTables.get(tablePath);
         output.put("tablePath", tablePath);
         int rowBeginIndex = Integer.valueOf(pageBegin);
@@ -76,10 +76,10 @@ public class XA_ShellQ_Rows_E {
         int totalRows = table.huaRuiJiJtableRows.length;
         List<Object> rowMapList = new ArrayList<>();
         int operationRowIndex = direction.contains("next") ? rowEndIndex++ : --rowBeginIndex;
-        IMV_SIQ culumnMaps = new IMV_SIQ();
+        IMV_SQI culumnMaps = new IMV_SQI();
         Here:
         for (int i = operationRowIndex; i < operationRowIndex + 15; i++) {
-            IMV_SIQ rowMap = new IMV_SIQ();
+            IMV_SQI rowMap = new IMV_SQI();
             if (i >= table.huaRuiJiJtableRows.length) {
                 continue Here;
             }
@@ -87,7 +87,7 @@ public class XA_ShellQ_Rows_E {
             Iterator<String> iterator = row.getCells().keySet().iterator();
             while (iterator.hasNext()) {
                 String culumnName = iterator.next();
-                IMV_SIQ culumnMap = new IMV_SIQ();
+                IMV_SQI culumnMap = new IMV_SQI();
                 culumnMap.put(S_ShellETL.SHELL_ETL_CULUMNNAME, culumnName);
                 culumnMap.put("culumnValue", row.getCells().get(culumnName));
                 culumnMaps.put(culumnName, culumnMap);
@@ -112,12 +112,12 @@ public class XA_ShellQ_Rows_E {
         }
         output.put("obj", rowMapList);
         List<Object> spec = new ArrayList<>();
-        IMV_SIQ row = (IMV_SIQ) rowMapList.get(0);
-        IMV_SIQ culumns = (IMV_SIQ) row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
+        IMV_SQI row = (IMV_SQI) rowMapList.get(0);
+        IMV_SQI culumns = (IMV_SQI) row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
 
         Iterator<String> it = culumns.keySet().iterator();
         while (it.hasNext()) {
-            spec.add(((IMV_SIQ) culumns.get(it.next())).get(S_ShellETL.SHELL_ETL_CULUMNNAME).toString());
+            spec.add(((IMV_SQI) culumns.get(it.next())).get(S_ShellETL.SHELL_ETL_CULUMNNAME).toString());
         }
         output.put("spec", spec);
         return output;
@@ -125,14 +125,14 @@ public class XA_ShellQ_Rows_E {
 
 
     //db替换shell中 20210927
-    public static Object selectRowsByAttributesOfCondition(IMV_SIQ object, App NE) {
+    public static Object selectRowsByAttributesOfCondition(IMV_SQI object, App NE) {
         if (!object.containsKey("recordRows")) {
-            Map<String, Boolean> recordRows = new IMV_SIQ();
+            Map<String, Boolean> recordRows = new IMV_SQI();
             object.put("recordRows", recordRows);
         }
-        List<IMV_SIQ> output = new ArrayList<>();
+        List<IMV_SQI> output = new ArrayList<>();
         if(object.containsKey("obj")) {
-        	output= (List<IMV_SIQ>)object.get("obj");
+        	output= (List<IMV_SQI>)object.get("obj");
         }
         //SearchShellTable table= SearchShellTables.searchShellTables.get(object.get("tableName").toString());
         List<String[]> conditionValues = (List<String[]>) object.get("条件为");//条件计算
@@ -174,13 +174,13 @@ public class XA_ShellQ_Rows_E {
 
     //20210927 注释下 稍后替换
     //先设计成 plsearch 语法和 plsql 语法通用, 方便我之后的plorm 统一一种方式扩展 pladmin
-    public static List<IMV_SIQ> selectRowsByAttributesOfAggregation(
-        IMV_SIQ object, EmotionSample emotionSample
+    public static List<IMV_SQI> selectRowsByAttributesOfAggregation(
+        IMV_SQI object, EmotionSample emotionSample
         , RatioMap_E ratioMap, App NE) {
         if (!object.containsKey("obj")) {
             return new ArrayList<>();
         }
-        List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("obj")));
+        List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("obj")));
         List<String[]> aggregationValues = (List<String[]>) object.get("操作");
         Iterator<String[]> iterator = aggregationValues.iterator();
         while (iterator.hasNext()) {
@@ -204,11 +204,11 @@ public class XA_ShellQ_Rows_E {
         return obj;
     }
 
-    public static Object selectRowsByAttributesOfGetCulumns(IMV_SIQ object) {
+    public static Object selectRowsByAttributesOfGetCulumns(IMV_SQI object) {
         if (!object.containsKey("obj")) {
             return new ArrayList<>();
         }
-        List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("obj")));
+        List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("obj")));
         List<String[]> getCulumnsValues = (List<String[]>) object.get("获取列名");//later
         Iterator<String[]> iterator = getCulumnsValues.iterator();
         while (iterator.hasNext()) {
@@ -223,11 +223,11 @@ public class XA_ShellQ_Rows_E {
 
     //PLETL命令一多, 之后准备分出去
     //罗瑶光 20211010
-    public static Object selectRowsByAttributesOfPLETL(IMV_SIQ object) {
+    public static Object selectRowsByAttributesOfPLETL(IMV_SQI object) {
         if (!object.containsKey("obj")) {
             return new ArrayList<>();
         }
-        List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("obj")));
+        List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("obj")));
         List<String[]> aggregationValues = (List<String[]>) object.get("PLETL");
         Iterator<String[]> iterator = aggregationValues.iterator();
         while (iterator.hasNext()) {
@@ -251,11 +251,11 @@ public class XA_ShellQ_Rows_E {
         return obj;
     }
 
-    public static Object selectRowsByAttributesOfPLTCP(IMV_SIQ object) {
+    public static Object selectRowsByAttributesOfPLTCP(IMV_SQI object) {
         if (!object.containsKey("obj")) {
             return new ArrayList<>();
         }
-        List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("obj")));
+        List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("obj")));
         List<String[]> aggregationValues = (List<String[]>) object.get("PLTCP");
         Iterator<String[]> iterator = aggregationValues.iterator();
         while (iterator.hasNext()) {

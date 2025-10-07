@@ -2,7 +2,7 @@ package M_V.ME.ConditionPLSQL_;
 
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaFileReader;
 
@@ -26,8 +26,8 @@ public class X_Table extends X_ {
 	// 奇怪了 这是一个没有读 缓存的plsql引擎, 我准备对比下history
 	// object 指令堆栈
 	// output 数据行
-	public static void P_Table(String[] sets, List<IMV_SIQ> output,
-			String DBTablePath, IMV_SIQ object) {
+	public static void P_Table(String[] sets, List<IMV_SQI> output,
+			String DBTablePath, IMV_SQI object) {
 		String DBTableRowsPath = DBTablePath + "/rows";
 		File fileDBTableRowsPath = new File(DBTableRowsPath);
 		if (fileDBTableRowsPath.isDirectory()) {
@@ -36,7 +36,7 @@ public class X_Table extends X_ {
 			assert rowList != null;
 			for (String row : rowList) {
 				count++;
-				IMV_SIQ rowMap = new IMV_SIQ();
+				IMV_SQI rowMap = new IMV_SQI();
 				String DBTableRowIndexPath = DBTablePath + "/rows/" + row;
 				File readDBTableRowIndexFile = new File(DBTableRowIndexPath);
 				if (readDBTableRowIndexFile.isDirectory()) {

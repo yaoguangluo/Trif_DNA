@@ -5,7 +5,7 @@ import M_V.MSQ.OP.SM.AOP.MEC.SIQ.SM.OSQ.E.rows.Q_Rows_E_X_selectRowsByAttribute;
 import M_V.MSU.OP.SM.AOP.MEC.SIQ.SM.update.EU.Rows.E.X_U_RowByTablePathAndAttribute;
 import O_V.OP.SM.AOP.MEC.SIQ.VPC.view.UsrFull;
 import S_A.SVQ.stable.S_Common;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.cache.Cache_M;
 import U_A.PEU.P.md5.Usr;
 import U_A.PEU.P.md5.UsrToken;
@@ -24,7 +24,7 @@ import java.util.List;
  * */
 public class LoginDAO_E {
 	public static Usr selectUsrByUId(Integer uId)  {
-		List<IMV_SIQ> list= Q_Rows_E_X_selectRowsByAttribute._E("backend", "usr"
+		List<IMV_SQI> list= Q_Rows_E_X_selectRowsByAttribute._E("backend", "usr"
 				, "u_id", "" + uId);
 		Usr usr= new Usr();
 		if(list.size() > 0) {
@@ -46,7 +46,7 @@ public class LoginDAO_E {
 	}
 
 	public static UsrToken selectUsrTokenByUId(Integer uId)  {
-		List<IMV_SIQ> list 
+		List<IMV_SQI> list 
 		= Q_Rows_E_X_selectRowsByAttribute._E("backend", "usrToken", "u_id"
 				, S_Common.STRING_EMPTY+ uId);
 		UsrToken usrToken= new UsrToken();
@@ -68,7 +68,7 @@ public class LoginDAO_E {
 	}
 
 	public static Usr selectUsrByUEmail(String uEmail)  {
-		List<IMV_SIQ> list= Q_Rows_E_X_selectRowsByAttribute._E("backend", "usr"
+		List<IMV_SQI> list= Q_Rows_E_X_selectRowsByAttribute._E("backend", "usr"
 				, "u_email", uEmail);
 		Usr usr= new Usr();
 		if(list.size() > 0) {

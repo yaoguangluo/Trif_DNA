@@ -2,7 +2,7 @@ package OSI.OSU.SI.PSQ.OEI.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.editP
 
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_AOU_AOQ_VES;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -46,7 +46,7 @@ public class EditPanelReaderHPanel extends OSU_AOU_AOQ_VES{
 					}
 					String[] textsPane= textPane.split("!");
 					textsPane= textsPane[textsPane.length - 1].split(";");
-					Map<Integer, String> medcine= new IMV_SIQ();
+					Map<Integer, String> medcine= new IMV_SQI();
 					int i1= 0;
 					for(int i= 0; i < textsPane.length; i++) {
 						if(textsPane[i].split("/").length > 1) {

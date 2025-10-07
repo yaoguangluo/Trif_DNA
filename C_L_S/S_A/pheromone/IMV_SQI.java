@@ -22,12 +22,12 @@ import java.util.concurrent.ConcurrentHashMap;
 *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 /*
- * IMV_SIQ随着持续地优化，变得越来越复杂，于是之后有必要进行HVPCS关系分析。
+ * IMV_SQI随着持续地优化，变得越来越复杂，于是之后有必要进行HVPCS关系分析。
  * --trif
  * 
  * */
 @SuppressWarnings({ "unchecked", "serial", "rawtypes" })
-public class IMV_SIQ extends ConcurrentHashMap {
+public class IMV_SQI extends ConcurrentHashMap {
 	public boolean containsKeyChar(char input) {
 		if (this.containsKey("" + input)) {
 			return true;
@@ -93,9 +93,9 @@ public class IMV_SIQ extends ConcurrentHashMap {
 		return null;
 	}
 
-	public IMV_SIQ getStringMap(String tag) {
+	public IMV_SQI getStringMap(String tag) {
 		if (this.containsKey(tag)) {
-			return (IMV_SIQ) this.get(tag);
+			return (IMV_SQI) this.get(tag);
 		}
 		return null;
 	}
@@ -157,11 +157,11 @@ public class IMV_SIQ extends ConcurrentHashMap {
 		return 0.0;
 	}
 
-	public IMV_SIQ QSV_IMV_SIQ(String key) {
+	public IMV_SQI QSV_IMV_SQI(String key) {
 		if (this.containsKey(key)) {
-			return (IMV_SIQ) this.get(key);
+			return (IMV_SQI) this.get(key);
 		}
-		return new IMV_SIQ();// avoid null;
+		return new IMV_SQI();// avoid null;
 	}
 
 	public boolean getBoolean(String string) {
@@ -217,7 +217,7 @@ public class IMV_SIQ extends ConcurrentHashMap {
 		this.put(s, huaRuiJiJtableRow);
 	}
 
-	public void put_IMV_SIQ(String cellName, IMV_SIQ culumnMap) {
+	public void put_IMV_SQI(String cellName, IMV_SQI culumnMap) {
 		this.put(cellName, culumnMap);
 	}
 

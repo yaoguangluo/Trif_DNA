@@ -17,9 +17,9 @@ import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.SVQ.stable.S_Common;
 import S_A.VSQ.parser.EmotionSample;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_S_;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_S_;
+import S_A.pheromone.IMV_SQI_X_;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -70,7 +70,7 @@ public class StaticFunctionMapA_VECS_E extends StaticFunctionMapCASE
 		Quick6DLuoYaoguangSort3DMap_E quick6DLuoYaoguangSort3DMap_E = NE._I_U.quick6DLuoYaoguangSort3DMap_E;
 		CogsBinaryForest_AE _A = new CogsBinaryForest_AE();
 		_A.IV_Mixed(NE);
-		IMV_SIQ pos = _A.getPosCnToCn();
+		IMV_SQI pos = _A.getPosCnToCn();
 		List<String> sets = new ArrayList<>();
 		sets = _A.parserMixedString(inputString._S_);
 		List<String> list = new ArrayList<>();
@@ -122,7 +122,7 @@ public class StaticFunctionMapA_VECS_E extends StaticFunctionMapCASE
 
 	@SuppressWarnings("unused")
 	@Override
-	public IMV_SIQ_X_ environmentReader(App NE) {
+	public IMV_SQI_X_ environmentReader(App NE) {
 		AES_QMS_XSD_TIH inputString = NE._I_U.inputString;
 		RatioMap_E ratioMap_E = NE._I_U.ratioMap_E;
 		EnvironmentInit environmentInit = NE._I_U.environmentInit;
@@ -131,7 +131,7 @@ public class StaticFunctionMapA_VECS_E extends StaticFunctionMapCASE
 		EmotionSample emotionSample = NE._I_U.emotionSample;
 		//EnvironmentInit environmentInit= new EnvironmentInit();
 		environmentInit.IV_(inputString._S_, NE);
-		IMV_SIQ_X_ environmentSampleMap = environmentInit
+		IMV_SQI_X_ environmentSampleMap = environmentInit
 			.getEmotionSampleMap();
 		return environmentSampleMap;
 	}
@@ -139,7 +139,7 @@ public class StaticFunctionMapA_VECS_E extends StaticFunctionMapCASE
 	// 词库计算在C aopm 中, 稍后并出去。
 	@SuppressWarnings("unused")
 	@Override
-	public IMV_SIQ lenovoReader(App NE) {
+	public IMV_SQI lenovoReader(App NE) {
 		AES_QMS_XSD_TIH inputString = NE._I_U.inputString;
 		RatioMap_E ratioMap_E = NE._I_U.ratioMap_E;
 		EnvironmentInit environmentInit = NE._I_U.environmentInit;
@@ -152,7 +152,7 @@ public class StaticFunctionMapA_VECS_E extends StaticFunctionMapCASE
 		lenovoInit.IV_(inputString._S_, NE);
 		//Map<String, EmotionSample> environmentSampleMap
 		// = lenovoInit.getEnvironmentInit().getEmotionSampleMap();
-		IMV_SIQ lenovo = lenovoInit.getSensingMap().getLenovoMap();
+		IMV_SQI lenovo = lenovoInit.getSensingMap().getLenovoMap();
 		return lenovo;
 	}
 
@@ -171,7 +171,7 @@ public class StaticFunctionMapA_VECS_E extends StaticFunctionMapCASE
 		_A.IV_Mixed(NE);
 		List<String> sets = new ArrayList<>();
 		sets = _A.parserMixedString(inputString._S_);
-		IMV_SIQ_S_ fwa = _A.getWordFrequencyByReturnSortMap(sets, NE);
+		IMV_SQI_S_ fwa = _A.getWordFrequencyByReturnSortMap(sets, NE);
 		List<String> list = new ArrayList<>();
 		Iterator<Integer> iterator = fwa.keySet().iterator();
 		while (iterator.hasNext()) {
@@ -220,11 +220,11 @@ public class StaticFunctionMapA_VECS_E extends StaticFunctionMapCASE
 		//        while (iteraor.hasNext()) {
 		//            //20230106-System.out.println(iteraor.next());
 		//        }
-		//		IMV_SIQ map= new StaticFunctionMapA_VECS_E()
+		//		IMV_SQI map= new StaticFunctionMapA_VECS_E()
 		//		.lenovoReader("C AOPM组, 以后并出去 ");
 		//		iteraor= map.keySet().iterator();
 		//		while(iteraor.hasNext()) {
-		//			//IMV_SIQ hash= (IMV_SIQ)iteraor.next();
+		//			//IMV_SQI hash= (IMV_SQI)iteraor.next();
 		//			//20230106-System.out.println(iteraor.next());
 		//		}
 

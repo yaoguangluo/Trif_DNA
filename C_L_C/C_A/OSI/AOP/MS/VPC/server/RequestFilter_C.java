@@ -1,6 +1,6 @@
 package C_A.OSI.AOP.MS.VPC.server;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.net.InetAddress;
 import java.net.Socket;
@@ -83,7 +83,7 @@ public class RequestFilter_C {
 	// DB在此处出错后能能DMA读写了. 罗瑶光 20210406 稍后进行block list函数设计 优先级降低
 	@SuppressWarnings("unchecked")
 	public static void IV_BlockList() {
-		ipBlock = new IMV_SIQ();
+		ipBlock = new IMV_SQI();
 		// FileInputStream fileInputStream= new FileInputStream(
 		// new File("src/main/resources/ipBlock.ips"));
 		// InputStreamReader inputStreamReader= new

@@ -1,6 +1,6 @@
 package S_A.SixActionMap;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
@@ -12,5 +12,5 @@ import S_A.pheromone.IMV_SIQ;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class HelpVerbalMap{
-    public IMV_SIQ didJustNow = new IMV_SIQ();
+    public IMV_SQI didJustNow = new IMV_SQI();
 }

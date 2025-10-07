@@ -630,7 +630,7 @@ public class RangePDI {
 	}
 }
 //436
-//        IMV_SIQ initonsSet = new IMV_SIQ();
+//        IMV_SQI initonsSet = new IMV_SQI();
 //        initonsSet.put("0", "0");//later remove out
 //        initonsSet.put("1", "1");
 //        initonsSet.put("2", "2");
@@ -648,7 +648,7 @@ public class RangePDI {
 //        initonsSet.put("14", "E");
 //        initonsSet.put("15", "F");
 //
-//        IMV_SIQ initonsCode = new IMV_SIQ();
+//        IMV_SQI initonsCode = new IMV_SQI();
 //        initonsCode.put("0", "D");
 //        initonsCode.put("1", "C");
 //        initonsCode.put("2", "P");
@@ -666,7 +666,7 @@ public class RangePDI {
 //        initonsCode.put("E", "U");
 //        initonsCode.put("F", "Q");
 //
-//        IMV_SIQ initonsSet = new IMV_SIQ();
+//        IMV_SQI initonsSet = new IMV_SQI();
 //        initonsSet.put("0", "0");
 //        initonsSet.put("1", "1");
 //        initonsSet.put("2", "2");
@@ -685,7 +685,7 @@ public class RangePDI {
 //        initonsSet.put("15", "F");
 //        initonsSet.put("16", "G");
 
-//        IMV_SIQ initonsCode = new IMV_SIQ();
+//        IMV_SQI initonsCode = new IMV_SQI();
 //        initonsCode.put("0", "D");
 //        initonsCode.put("1", "C");
 //        initonsCode.put("2", "P");

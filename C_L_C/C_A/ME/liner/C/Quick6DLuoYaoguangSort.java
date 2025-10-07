@@ -1,8 +1,8 @@
 package C_A.ME.liner.C;
 
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 import java.util.List;
 
@@ -20,9 +20,9 @@ public interface Quick6DLuoYaoguangSort {
 	void quick6DLuoYaoGuangSortWordFrequency(List<WordFrequency> list, int leftPosition
 		, int rightPosition);
 	int partitionList(List<WordFrequency> list, int leftPosition, int rightPosition);
-	List<WordFrequency> frequencyWordMapToList(IMV_SIQ_SS map);
-	void quick6DLuoYaoGuangSortWordFrequency(IMV_SIQ_S_ map, int leftPosition
+	List<WordFrequency> frequencyWordMapToList(IMV_SQI_SS map);
+	void quick6DLuoYaoGuangSortWordFrequency(IMV_SQI_S_ map, int leftPosition
 		, int rightPosition);
-	int partition(IMV_SIQ_S_ map, int leftPosition, int rightPosition);
-	IMV_SIQ_S_ frequencyWordMapToMap(IMV_SIQ_SS map);
+	int partition(IMV_SQI_S_ map, int leftPosition, int rightPosition);
+	IMV_SQI_S_ frequencyWordMapToMap(IMV_SQI_SS map);
 }

@@ -744,8 +744,8 @@ public class FMHMMListOneTime_EX extends FMHMMListOneTime_E_maps
 	}
 }
 /*
- * public void indexAll() { studyPos = new IMV_SIQ();
- * posCnToCn = new IMV_SIQ(); linkedHashMap = new IMV_SIQ();
+ * public void indexAll() { studyPos = new IMV_SQI();
+ * posCnToCn = new IMV_SQI(); linkedHashMap = new IMV_SQI();
  * listCn = new CopyOnWriteArrayList<>(); listAb = new
  * CopyOnWriteArrayList<>(); listKo = new
  * CopyOnWriteArrayList<>(); listJp = new

@@ -1,6 +1,6 @@
 package U_V.ESU.json;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.json.JSONArray;
@@ -26,7 +26,7 @@ public class Json_ESU_X_jsonArrayToList{
 			Object object= jSONArray.get(i);
 			if(object instanceof JSONObject){
 				list.add(new Gson().fromJson(jSONArray.getJSONObject(i).toString()
-						, new TypeToken<IMV_SIQ>(){}.getType()));
+						, new TypeToken<IMV_SQI>(){}.getType()));
 			}else if(object instanceof String){
 				list.add(String.valueOf(object));
 			}else if(object instanceof JSONArray){
@@ -38,8 +38,8 @@ public class Json_ESU_X_jsonArrayToList{
 }
 
 //  剔除个人著作权 申请范围	
-//	public static IMV_SIQ jsonObjectToMap(Gson gson
+//	public static IMV_SQI jsonObjectToMap(Gson gson
 //			, JSONObject jSONObject){
 //		return gson.fromJson(jSONObject.toString()
-//				, new TypeToken<IMV_SIQ>(){}.getType());
+//				, new TypeToken<IMV_SQI>(){}.getType());
 //	}

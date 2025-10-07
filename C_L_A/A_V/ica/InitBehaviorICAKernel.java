@@ -4,7 +4,7 @@ import A_V.IVDTIXQCTIV.EmotionInit;
 import A_V.IVDTIXQCTIV.EnvironmentInit;
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI_X_;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -74,7 +74,7 @@ public class InitBehaviorICAKernel {
 		EnvironmentInit environmentInit = NE.app_S.environmentInit;//new EnvironmentInit();//later
 		environmentInit.IV_FromEmotion(NE.app_S.emotionInit
 			.getWordFrequencyMap(), NE);
-		IMV_SIQ_X_ environmentSampleMap = environmentInit
+		IMV_SQI_X_ environmentSampleMap = environmentInit
 			.getEmotionSampleMap();
 		forRestReturn.add("观测角度：");
 		String environmentText = "";

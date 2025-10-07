@@ -5,7 +5,7 @@ import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_AOU_AOQ_VES;
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_MCI_MCU_MSI;
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_OPE_OPC_ECI;
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_OVQ_OSQ_VSQ;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.ImageIcon;
 import javax.swing.JTextPane;
@@ -35,7 +35,7 @@ public class OSU_MCI_MCU_MSI_S{
 	public Image thisImage;
 	public ImageIcon thisIcon;
 	//public String AMV_MVS_VSQ;
-	public IMV_SIQ pos;
+	public IMV_SQI pos;
 	public Map<String, String> nodeConfigurationMap;
 	public OSU_AOU_AOQ_VES _SQ__AOU_AOQ_VES;
 	public OSU_OPE_OPC_ECI _SQ__OPE_OPC_ECI;

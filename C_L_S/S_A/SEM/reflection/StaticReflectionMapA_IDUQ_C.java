@@ -5,7 +5,7 @@ import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapA_IDUQ_C;
 import S_A.SEM.bloom.StaticFunctionMapA_IDUQ_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //将dna加密的 main test 进行封装成函数。准备优化下。
 //著作权人+ 作者= 罗瑶光
@@ -24,12 +24,12 @@ public class StaticReflectionMapA_IDUQ_C extends
 	@SuppressWarnings("unused")
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_E,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		int 因子 = 0;
 		Object map = null;
 		if (callFunctionKey.contains("getPDW", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = StaticFunctionMapA_IDUQ_C.getPDW(NE);
@@ -39,7 +39,7 @@ public class StaticReflectionMapA_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getLock", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = StaticFunctionMapA_IDUQ_C.getLock(NE);
@@ -49,7 +49,7 @@ public class StaticReflectionMapA_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getCode", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = StaticFunctionMapA_IDUQ_C.getCode(NE);
@@ -59,7 +59,7 @@ public class StaticReflectionMapA_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("doPDE", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = StaticFunctionMapA_IDUQ_C.doPDE(NE);
@@ -69,7 +69,7 @@ public class StaticReflectionMapA_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("doPrefixPDE", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = StaticFunctionMapA_IDUQ_C.doPrefixPDE(NE);
@@ -79,7 +79,7 @@ public class StaticReflectionMapA_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("doPostfixPDE", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = StaticFunctionMapA_IDUQ_C.doPostfixPDE(NE);
@@ -89,7 +89,7 @@ public class StaticReflectionMapA_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("doSurffixPDE", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = StaticFunctionMapA_IDUQ_C.doSurffixPDE(NE);

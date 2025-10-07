@@ -7,7 +7,7 @@ import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.InputStream;
 import java.util.List;
@@ -26,7 +26,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @SuppressWarnings({ "unchecked", "resource", "unused" })
 public class FMHMMList_E implements FMHMMList {
 	private Map<Long, FMHMMNode> linkedHashMap;
-	private IMV_SIQ words;
+	private IMV_SQI words;
 	@SuppressWarnings(S_Pos.RAW_TYPES)
 	private Map<Integer, Map> linkedHashMapRoot;
 
@@ -36,9 +36,9 @@ public class FMHMMList_E implements FMHMMList {
 	}
 
 	public void index() {
-		words = new IMV_SIQ();
-		linkedHashMap = new IMV_SIQ();
-		linkedHashMapRoot = new IMV_SIQ();
+		words = new IMV_SQI();
+		linkedHashMap = new IMV_SQI();
+		linkedHashMapRoot = new IMV_SQI();
 		InputStream inputStream = getClass()
 				.getResourceAsStream(S_Pos.WORDS_SOURSE_LINK_POS_CN_TO_CN);
 		DetaBufferedReader cReader = new DetaBufferedReader(
@@ -72,7 +72,7 @@ public class FMHMMList_E implements FMHMMList {
 				FMHMMNode fHHMMNode = new FMHMMNode();
 				fHHMMNode.I_Vb(S_Pos.EMPTY_STRING + cInputString.charAt(i));
 				if (i + S_Pos.INT_ONE < cInputString.length()) {
-					Map<String, Integer> next = new IMV_SIQ();
+					Map<String, Integer> next = new IMV_SQI();
 					next.put(
 							S_Pos.EMPTY_STRING
 									+ cInputString.charAt(i + S_Pos.INT_ONE),
@@ -94,7 +94,7 @@ public class FMHMMList_E implements FMHMMList {
 						cInputString, i);
 			}
 		} else {
-			ConcurrentHashMap<String, Integer> concurrentHashMap = new IMV_SIQ();
+			ConcurrentHashMap<String, Integer> concurrentHashMap = new IMV_SQI();
 			if (i + S_Pos.INT_ONE < cInputString.length()) {
 				concurrentHashMap.put(
 						S_Pos.EMPTY_STRING
@@ -120,7 +120,7 @@ public class FMHMMList_E implements FMHMMList {
 		return linkedHashMap;
 	}
 
-	public IMV_SIQ getWords() {
+	public IMV_SQI getWords() {
 		return this.words;
 	}
 
@@ -128,15 +128,15 @@ public class FMHMMList_E implements FMHMMList {
 		return this.linkedHashMap;
 	}
 
-	public IMV_SIQ getPosEnToEn() {
+	public IMV_SQI getPosEnToEn() {
 		return null;
 	}
 
-	public IMV_SIQ getEnToCn() {
+	public IMV_SQI getEnToCn() {
 		return null;
 	}
 
-	public IMV_SIQ getCnToEn() {
+	public IMV_SQI getCnToEn() {
 		return null;
 	}
 
@@ -146,11 +146,11 @@ public class FMHMMList_E implements FMHMMList {
 	public void indexCnToEn() {
 	}
 
-	public IMV_SIQ getPosEnToCn() {
+	public IMV_SQI getPosEnToCn() {
 		return null;
 	}
 
-	public IMV_SIQ getPosCnToCn() {
+	public IMV_SQI getPosCnToCn() {
 		return null;
 	}
 
@@ -166,11 +166,11 @@ public class FMHMMList_E implements FMHMMList {
 	public void indexFullCnToEn() {
 	}
 
-	public IMV_SIQ getFullEnToCn() {
+	public IMV_SQI getFullEnToCn() {
 		return null;
 	}
 
-	public IMV_SIQ getFullCnToEn() {
+	public IMV_SQI getFullCnToEn() {
 		return null;
 	}
 
@@ -283,42 +283,42 @@ public class FMHMMList_E implements FMHMMList {
 	}
 
 	@Override
-	public IMV_SIQ getFullCnToJp() {
+	public IMV_SQI getFullCnToJp() {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ getFullCnToRs() {
+	public IMV_SQI getFullCnToRs() {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ getFullCnToAb() {
+	public IMV_SQI getFullCnToAb() {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ getFullCnToFn() {
+	public IMV_SQI getFullCnToFn() {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ getFullCnToGm() {
+	public IMV_SQI getFullCnToGm() {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ getFullCnToKo() {
+	public IMV_SQI getFullCnToKo() {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ getFullCnToSp() {
+	public IMV_SQI getFullCnToSp() {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ getFullCnToPy() {
+	public IMV_SQI getFullCnToPy() {
 		return null;
 	}
 
@@ -328,7 +328,7 @@ public class FMHMMList_E implements FMHMMList {
 	}
 
 	@Override
-	public Map<Long, IMV_SIQ> getWordsForests() {
+	public Map<Long, IMV_SQI> getWordsForests() {
 		return null;
 	}
 
@@ -337,12 +337,12 @@ public class FMHMMList_E implements FMHMMList {
 	}
 
 	@Override
-	public IMV_SIQ getStudyPos() {
+	public IMV_SQI getStudyPos() {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ getFullCnToTt() {
+	public IMV_SQI getFullCnToTt() {
 		return null;
 	}
 
@@ -357,12 +357,12 @@ public class FMHMMList_E implements FMHMMList {
 	}
 
 	@Override
-	public IMV_SIQ getFullNegative() {
+	public IMV_SQI getFullNegative() {
 		return null;
 	}
 
 	@Override
-	public IMV_SIQ getFullPositive() {
+	public IMV_SQI getFullPositive() {
 		return null;
 	}
 

@@ -12,7 +12,7 @@ import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E.RestLoginPort_E;
 import ME.VPC.M.app.App;
 import O_V.OSI.AOP.rest.medicine.RestMedicinePort_E;
 import S_A.SVQ.stable.S_Web;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.File;
 
@@ -26,7 +26,7 @@ import java.io.File;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class VPCYangliaojing {
-    public static String forward(App app, String string, IMV_SIQ data, App NE) {
+    public static String forward(App app, String string, IMV_SQI data, App NE) {
         //controller
         if (string.contains(S_Web.REST_PATH_SELECT)) {
             return QC.exec(string, data);

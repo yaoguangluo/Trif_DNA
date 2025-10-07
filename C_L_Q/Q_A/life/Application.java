@@ -4,7 +4,7 @@ import A_I.MPE.P.Family;
 import A_I.MPE.P.Life;
 import A_I.MPE.P.Race;
 import exception.thread.DetaThread;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import OSI.MSU.AVQ.ASQ.dnaSets.CMS;
 import OSI.MSU.AVQ.ASQ.dnaSets.PDN;
 
@@ -40,12 +40,12 @@ public class Application extends Thread {
 		life.born();
 		// register family
 		Family family = new Family();
-		ConcurrentHashMap<String, Life> familyLife = new IMV_SIQ();
+		ConcurrentHashMap<String, Life> familyLife = new IMV_SQI();
 		familyLife.put("Tin", life);
 		family.I_Family(familyLife);
 		// register race
 		Race race = new Race();
-		ConcurrentHashMap<String, Family> raceFamily = new IMV_SIQ();
+		ConcurrentHashMap<String, Family> raceFamily = new IMV_SQI();
 		raceFamily.put("Royal", family);
 		race.I_Race(raceFamily);
 		// init analysis
@@ -492,7 +492,7 @@ public class Application extends Thread {
 			String[] dNA_INITON, String orilink) {
 		// int count=0;
 
-		Map<String, Boolean> fileCheckMap = new IMV_SIQ();
+		Map<String, Boolean> fileCheckMap = new IMV_SQI();
 		File file = new File(files);
 		if (file.isDirectory()) {
 			String[] lists = file.list();
@@ -507,7 +507,7 @@ public class Application extends Thread {
 						if (cmss.javaCMSs.containsKey(chos)) {
 							list = cmss.javaCMSs.get(chos);
 						} else {
-							list = new IMV_SIQ();
+							list = new IMV_SQI();
 						}
 						for (String pdn : dNA_INITON) {
 							if (files.contains(pdn)) {
@@ -590,7 +590,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -652,7 +652,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);
@@ -718,7 +718,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -780,7 +780,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);
@@ -846,7 +846,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -908,7 +908,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);
@@ -974,7 +974,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -1036,7 +1036,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);
@@ -1102,7 +1102,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -1164,7 +1164,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);
@@ -1230,7 +1230,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -1292,7 +1292,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);
@@ -1358,7 +1358,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -1420,7 +1420,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);
@@ -1486,7 +1486,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -1548,7 +1548,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);
@@ -1614,7 +1614,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -1676,7 +1676,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);
@@ -1742,7 +1742,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -1804,7 +1804,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);
@@ -1870,7 +1870,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -1932,7 +1932,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);
@@ -1998,7 +1998,7 @@ public class Application extends Thread {
 										VECSmap.put(chos, list);
 									}
 								} else {
-									VECSmap = new IMV_SIQ();
+									VECSmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										VECSmap.put(chos, list);
@@ -2060,7 +2060,7 @@ public class Application extends Thread {
 										IDUQmap.put(chos, list);
 									}
 								} else {
-									IDUQmap = new IMV_SIQ();
+									IDUQmap = new IMV_SQI();
 									if (!list.isEmpty()) {
 										count++;
 										IDUQmap.put(chos, list);

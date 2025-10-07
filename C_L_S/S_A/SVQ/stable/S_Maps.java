@@ -1,6 +1,6 @@
 package S_A.SVQ.stable;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 /*
@@ -14,25 +14,25 @@ import java.util.Map;
  * */
 @SuppressWarnings("unchecked")
 public interface S_Maps{
-	public static final Map<String, StringBuilder> mingCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> jieCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> fuCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> dongCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> lianCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> liangCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> baDongCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> xianDingCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> daiCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> xingRongCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> zhuCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> weiCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> shengLueCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> qingTaiCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> xingWeiCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> shiTaiCi= new IMV_SIQ();
-	public static final Map<String, StringBuilder> dingMingCi= new IMV_SIQ();//地名词问题稍后修正
-	public static final Map<String, StringBuilder> CiOne= new IMV_SIQ();
-	public static final Map<String, StringBuilder> CiTwo= new IMV_SIQ();
-	public static final Map<String, StringBuilder> CiThree= new IMV_SIQ();
-	public static final Map<String, StringBuilder> CiFour= new IMV_SIQ();
+	public static final Map<String, StringBuilder> mingCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> jieCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> fuCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> dongCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> lianCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> liangCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> baDongCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> xianDingCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> daiCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> xingRongCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> zhuCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> weiCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> shengLueCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> qingTaiCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> xingWeiCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> shiTaiCi= new IMV_SQI();
+	public static final Map<String, StringBuilder> dingMingCi= new IMV_SQI();//地名词问题稍后修正
+	public static final Map<String, StringBuilder> CiOne= new IMV_SQI();
+	public static final Map<String, StringBuilder> CiTwo= new IMV_SQI();
+	public static final Map<String, StringBuilder> CiThree= new IMV_SQI();
+	public static final Map<String, StringBuilder> CiFour= new IMV_SQI();
 }

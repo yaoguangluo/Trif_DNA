@@ -5,7 +5,7 @@ import ME.VPC.M.app.App;
 import M_V.ME.word.forest.utils.Util_X_ContainsKey;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 /*
@@ -140,7 +140,7 @@ public class Nlp_CE_X_A_doPOSAndEMMCheck extends Nlp_CE_X_A_doSlangPartAndPOSChe
 		return S_Pos.INT_ONE;
 	}
 
-	public int ofThreeForMap(int countLength, IMV_SIQ_SS outputList,
+	public int ofThreeForMap(int countLength, IMV_SQI_SS outputList,
 			StringBuilder stringBuilder, StringBuilder[] prefixWord, App NE) {
 		String inputString = stringBuilder.toString();
 		if (wordsForest.containsKey(inputString)) {

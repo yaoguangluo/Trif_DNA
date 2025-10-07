@@ -15,7 +15,7 @@ import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 import OPE.VPC.S.skivvy.Skivvy;
 import exception.thread.DetaThread;
 import S_A.SVQ.stable.S_Annotation;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import OSI.OPE.OEI.PVI.SOI.SMQ.load.File_X_Load;
 import ME.VPC.M.app.App;
 import OSI.OPE.OVU.PQE.flash.ThisCanvas;
@@ -32,7 +32,7 @@ public class BootNeroDoc extends Thread implements Runnable {
     private NodeShow nodeView;
     private ThisCanvas canvas;
     private JTextPane rightBotJTextPane;
-    private IMV_SIQ pillow;
+    private IMV_SQI pillow;
     App NE;
 
     public BootNeroDoc(LinkList first, String fileCurrentpath, NodeShow nodeView
@@ -44,7 +44,7 @@ public class BootNeroDoc extends Thread implements Runnable {
         NE = app_NE;
     }
 
-    public void I_Pillow(IMV_SIQ map) {
+    public void I_Pillow(IMV_SQI map) {
         this.pillow = map;//map 提供运维, 可控等数据
     }
 

@@ -106,8 +106,8 @@ import S_A.AVQ.OVQ.OSQ.VSQ.obj.Verbal;
 import S_A.SVQ.stable.S_String;
 import S_A.VSQ.parser.EmotionSample;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import U_A.PEU.P.nlp.DETA_ANN_HMM;
 
 import java.util.ArrayList;
@@ -144,13 +144,13 @@ public class StaticFunctionMapP_VECS_E extends StaticFunctionMapCASE
 		////            emotionMap_E, nERO_C_OneTime_E, nlp_CE_X_S, pos_X_P, sensingTest
 		////                , fMHMMListOneTime_E, quick6DLuoYaoguangSort3DMap_E
 		//        );
-		IMV_SIQ ce = ((BinaryForest_AE) _A).getCnToEn();
-		IMV_SIQ ec = ((BinaryForest_AE) _A).getEnToCn();
-		IMV_SIQ poscc = ((BinaryForest_AE) _A).getPosCnToCn();
-		IMV_SIQ posec = ((BinaryForest_AE) _A).getPosEnToCn();
-		IMV_SIQ posee = ((BinaryForest_AE) _A).getPosEnToEn();
-		IMV_SIQ fce = ((BinaryForest_AE) _A).getFullCnToEn();
-		IMV_SIQ fec = ((BinaryForest_AE) _A).getFullEnToCn();
+		IMV_SQI ce = ((BinaryForest_AE) _A).getCnToEn();
+		IMV_SQI ec = ((BinaryForest_AE) _A).getEnToCn();
+		IMV_SQI poscc = ((BinaryForest_AE) _A).getPosCnToCn();
+		IMV_SQI posec = ((BinaryForest_AE) _A).getPosEnToCn();
+		IMV_SQI posee = ((BinaryForest_AE) _A).getPosEnToEn();
+		IMV_SQI fce = ((BinaryForest_AE) _A).getFullCnToEn();
+		IMV_SQI fec = ((BinaryForest_AE) _A).getFullEnToCn();
 		//20230106-System.out.println("输入");
 		// String v= "如流枫之回雪, 若浣花洗月";
 		////			 //String v= "数据一直在更新中";
@@ -784,8 +784,8 @@ public class StaticFunctionMapP_VECS_E extends StaticFunctionMapCASE
 		//        AES_QMS_XSD_TIH searchString = NE._I_U.searchString;
 		//        String[] sampleSentences = NE._I_U.sampleSentences;
 		A _A = NE._I_U._A;
-		IMV_SIQ nlp = NE._I_U.nlp;
-		IMV_SIQ_SS keyMap = NE._I_U.keyMap;
+		IMV_SQI nlp = NE._I_U.nlp;
+		IMV_SQI_SS keyMap = NE._I_U.keyMap;
 
 		return NLPTopicMatch_X_getNLPBestSentencesMatchScoreRights._E(
 			nlp, keyMap);

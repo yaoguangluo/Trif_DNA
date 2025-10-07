@@ -13,7 +13,7 @@ import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_Common;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_String;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -55,7 +55,7 @@ public class RNN_IDETest {
         }
         String[][] ideMatrix = new String[sensingMatrix.length][4];
         List<String> sets = sensingTest.getSets();
-        IMV_SIQ pos = sensingTest.getPosCnToCn();
+        IMV_SQI pos = sensingTest.getPosCnToCn();
         Iterator<String> setsIterator = sets.iterator();
         double count = 1.0;
         //map position
@@ -112,7 +112,7 @@ public class RNN_IDETest {
         }
         String[][] ideMatrix = new String[sensingMatrix.length][4];
         List<String> sets = sensingTest.getSets();
-        IMV_SIQ pos = sensingTest.getPosCnToCn();
+        IMV_SQI pos = sensingTest.getPosCnToCn();
         Iterator<String> setsIterator = sets.iterator();
         double count = 1.0;
         //map position
@@ -170,7 +170,7 @@ public class RNN_IDETest {
         }
         String[][] ideMatrix = new String[sensingMatrix.length][4];
         List<String> sets = NE.app_S.sensingTest.getSets();//later check object oriented vars
-        IMV_SIQ pos = NE.app_S.sensingTest.getPosCnToCn();
+        IMV_SQI pos = NE.app_S.sensingTest.getPosCnToCn();
         Iterator<String> setsIterator = sets.iterator();
         double count = 1.0;
         //map position

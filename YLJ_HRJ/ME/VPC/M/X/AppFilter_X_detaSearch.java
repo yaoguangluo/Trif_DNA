@@ -9,8 +9,8 @@ package ME.VPC.M.X;//package ME.VPC.M.app.X;
 //import P_V.PEQ.AMV.ECS.test.SensingTest;
 //import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 //import S_A.SVQ.stable.S_Maps;
-//import S_A.pheromone.IMV_SIQ;
-//import S_A.pheromone.IMV_SIQ_SS;
+//import S_A.pheromone.IMV_SQI;
+//import S_A.pheromone.IMV_SQI_SS;
 //import U_V.ESU.list.List_ESU_X_listToArray;
 //
 //import javax.swing.table.DefaultTableModel;
@@ -40,7 +40,7 @@ package ME.VPC.M.X;//package ME.VPC.M.app.X;
 //    //罗瑶光 202110121
 //    public int detaSearch(int[] score_code, String[] score
 //        , DefaultTableModel newTableModel, Object[][] tableData_old
-//        , List<String> copy, String key, IMV_SIQ dic_map
+//        , List<String> copy, String key, IMV_SQI dic_map
 //        , App_S u, boolean keyIsPCA, App NE) {
 //        SensingTest sensingTest = null;
 //        DNNTest dNNTest = null;
@@ -81,7 +81,7 @@ package ME.VPC.M.X;//package ME.VPC.M.app.X;
 //        int count = 0;
 //        String trimKey = key.replace(" ", "");
 //        int keyLength = key.length();
-//        IMV_SIQ_SS mapSearchWithoutSort = null;
+//        IMV_SQI_SS mapSearchWithoutSort = null;
 //        mapSearchWithoutSort = u._A.parserMixStringByReturnFrequencyMap(key, NE);
 //        Iterator<String> iteratorForCopy = copy.iterator();
 //        int copyCount = 0;
@@ -103,7 +103,7 @@ package ME.VPC.M.X;//package ME.VPC.M.app.X;
 //            String iteratorForCopyString = iteratorForCopy.next();
 //            score[copyCount] = iteratorForCopyString;
 //            String 待搜索词典 = dic_map.get(iteratorForCopyString).toString();
-//            IMV_SIQ dnnSet = new IMV_SIQ();
+//            IMV_SQI dnnSet = new IMV_SQI();
 //            double perRatio = 0.0;
 //            if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122.isSelected()) {
 //                //DNN分析
@@ -135,7 +135,7 @@ package ME.VPC.M.X;//package ME.VPC.M.app.X;
 //            }
 //            Iterator<String> iteratorWordFrequency = mapSearchWithoutSort
 //                .keySet().iterator();
-//            Map<String, Double> DNNcountBonus = new IMV_SIQ();
+//            Map<String, Double> DNNcountBonus = new IMV_SQI();
 //            double BonusFullRatio = 0.0;
 //            Here:
 //            while (iteratorWordFrequency.hasNext()) {

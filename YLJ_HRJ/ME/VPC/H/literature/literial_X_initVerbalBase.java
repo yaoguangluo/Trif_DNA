@@ -2,7 +2,7 @@ package ME.VPC.H.literature;
 
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class literial_X_initVerbalBase extends literial {
 		}
 
 		if (null == literialVerbalBaseMap) {
-			literialVerbalBaseMap = new IMV_SIQ();
+			literialVerbalBaseMap = new IMV_SQI();
 			InputStream in = new literial_X_initVerbalBase().getClass()
 					.getResourceAsStream("WToB.lyg");
 			DetaBufferedReader cReader = new DetaBufferedReader(

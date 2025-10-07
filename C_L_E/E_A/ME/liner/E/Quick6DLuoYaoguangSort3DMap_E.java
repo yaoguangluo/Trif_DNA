@@ -3,8 +3,8 @@ package E_A.ME.liner.E;
 import C_A.ME.liner.C.Quick6DLuoYaoguangSort;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 import java.util.Iterator;
 import java.util.List;
@@ -21,7 +21,7 @@ import java.util.List;
  * */
 public class Quick6DLuoYaoguangSort3DMap_E implements Quick6DLuoYaoguangSort {
     @Override
-    public void quick6DLuoYaoGuangSortWordFrequency(IMV_SIQ_S_ map
+    public void quick6DLuoYaoGuangSortWordFrequency(IMV_SQI_S_ map
         , int leftPosition, int rightPosition) {
         if (leftPosition < rightPosition) {
             int c = rightPosition - leftPosition + S_Pos.INT_ONE;
@@ -48,7 +48,7 @@ public class Quick6DLuoYaoguangSort3DMap_E implements Quick6DLuoYaoguangSort {
     }
 
     @Override
-    public int partition(IMV_SIQ_S_ map, int leftPosition, int rightPosition) {
+    public int partition(IMV_SQI_S_ map, int leftPosition, int rightPosition) {
         int leftPositionNew = leftPosition;
         WordFrequency wordFrequencyX = map.getW(leftPosition);
         WordFrequency wordFrequencyY = map.getW(rightPosition);
@@ -72,8 +72,8 @@ public class Quick6DLuoYaoguangSort3DMap_E implements Quick6DLuoYaoguangSort {
     }
 
     @SuppressWarnings(S_Pos.RAW_TYPES)
-    public IMV_SIQ_S_ frequencyWordMapToMap(IMV_SIQ_SS map) {
-        IMV_SIQ_S_ listMap = new IMV_SIQ_S_();
+    public IMV_SQI_S_ frequencyWordMapToMap(IMV_SQI_SS map) {
+        IMV_SQI_S_ listMap = new IMV_SQI_S_();
         Iterator iterator = map.keySet().iterator();
         int c = S_Pos.INT_ZERO;
         while (iterator.hasNext()) {
@@ -90,7 +90,7 @@ public class Quick6DLuoYaoguangSort3DMap_E implements Quick6DLuoYaoguangSort {
         return S_Pos.INT_ZERO;
     }
 
-    public List<WordFrequency> frequencyWordMapToList(IMV_SIQ_SS map) {
+    public List<WordFrequency> frequencyWordMapToList(IMV_SQI_SS map) {
         return null;
     }
 }

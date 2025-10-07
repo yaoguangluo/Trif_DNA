@@ -3,7 +3,7 @@ package ASQ.pca;
 import ASQ.basic.Distance_X_getDistance3D;
 import ASQ.euclid.Euclid_X_findHeartPosition3D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,10 +35,10 @@ public class AMV_MVS_VSQ_Filter_X_filterPosition3DsWithScaledDistance {
         return output;
     }
 
-    public static IMV_SIQ _E(Map<Double
+    public static IMV_SQI _E(Map<Double
         , List<AMV_MVS_VSQ_3D>> input
         , AMV_MVS_VSQ_3D heart, double scaleDistacne) {
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         for (double mapKey : input.keySet()) {
             List<AMV_MVS_VSQ_3D> position3DList = input.get(mapKey);
             AMV_MVS_VSQ_3D tempHeart = Euclid_X_findHeartPosition3D._E(position3DList);

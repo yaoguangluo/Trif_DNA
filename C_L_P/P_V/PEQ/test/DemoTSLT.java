@@ -22,7 +22,7 @@ import M_V.MSU.OCI.ME.SMS.translator.C.Translator;
 import M_V.MSU.OEI.ME.SMS.SEU.OSD.OSI.E.Translator_E;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.Verbal;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.List;
 
@@ -46,13 +46,13 @@ public class DemoTSLT {
         , App NE) {
         CogsBinaryForest_AE _A = new CogsBinaryForest_AE();
         _A.IV_Mixed(NE);
-        IMV_SIQ ce = ((BinaryForest_AE) _A).getCnToEn();
-        IMV_SIQ ec = ((BinaryForest_AE) _A).getEnToCn();
-        IMV_SIQ poscc = ((BinaryForest_AE) _A).getPosCnToCn();
-        IMV_SIQ posec = ((BinaryForest_AE) _A).getPosEnToCn();
-        IMV_SIQ posee = ((BinaryForest_AE) _A).getPosEnToEn();
-        IMV_SIQ fce = ((BinaryForest_AE) _A).getFullCnToEn();
-        IMV_SIQ fec = ((BinaryForest_AE) _A).getFullEnToCn();
+        IMV_SQI ce = ((BinaryForest_AE) _A).getCnToEn();
+        IMV_SQI ec = ((BinaryForest_AE) _A).getEnToCn();
+        IMV_SQI poscc = ((BinaryForest_AE) _A).getPosCnToCn();
+        IMV_SQI posec = ((BinaryForest_AE) _A).getPosEnToCn();
+        IMV_SQI posee = ((BinaryForest_AE) _A).getPosEnToEn();
+        IMV_SQI fce = ((BinaryForest_AE) _A).getFullCnToEn();
+        IMV_SQI fec = ((BinaryForest_AE) _A).getFullEnToCn();
         //20230106-System.out.println("输入");
         String v = "如流枫之回雪, 若浣花洗月";
 ////		 //String v= "数据一直在更新中";

@@ -3,7 +3,7 @@ import ME.VPC.S.ne.App_S;
 import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import I_A.IMO.EVU.bi_P.CoAuthorForWord;
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.JScrollPane;
 import java.awt.Color;
@@ -21,11 +21,11 @@ public class TaskMakeCoWorker extends Thread {
     public App_S u;
     public CogsBinaryForest_AE _A;
     public Container jpanelFirstu;
-    public IMV_SIQ pos;
+    public IMV_SQI pos;
     App NE;
 
     public TaskMakeCoWorker(App_S u, Container jpanelFirstu, CogsBinaryForest_AE _A
-        , IMV_SIQ pos, App app_NE) {
+        , IMV_SQI pos, App app_NE) {
         NE = app_NE;
         this.u = u;
         this.jpanelFirstu = jpanelFirstu;

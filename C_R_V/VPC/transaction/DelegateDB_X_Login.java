@@ -3,7 +3,7 @@ package VPC.transaction;
 import M_V.MSU.sessionValidation.X_sessionInitByTokenPDICertsDNA;
 import M_V.MSU.sessionValidation.X_sessionTokenCertsInitWithHumanWordsByDNA;
 import S_A.SVQ.stable.S_Token;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.dna.TokenCerts;
 import U_V.ESU.string.String_ESU_X_charsetSwap;
 import U_V.ESU.string.String_ESU_X_stringToURIencode;
@@ -24,7 +24,7 @@ import java.net.URLEncoder;
  * */
 public class DelegateDB_X_Login {
     @SuppressWarnings("deprecation")
-    public static IMV_SIQ transactionLogin(String uEmail, String uPassword) {
+    public static IMV_SQI transactionLogin(String uEmail, String uPassword) {
         String response = DetaFrontEndUtil_X_backEndRequest._E("login?uEmail="
             + URLEncoder.encode(uEmail) + "&uPassword=" + URLEncoder.encode(uPassword));
         return DSU.V.VtoV.JsonObjectToMap

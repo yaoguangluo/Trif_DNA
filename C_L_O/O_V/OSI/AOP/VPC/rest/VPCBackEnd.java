@@ -5,7 +5,7 @@ import DSU.V.VtoV;
 import E_A.OSI.AOP.PCS.PP.port_E.RestLoginPortImpl;
 import E_A.OSI.AOP.PCS.PP.port_E.RestNLPPortImpl;
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -17,7 +17,7 @@ import S_A.pheromone.IMV_SIQ;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class VPCBackEnd {
-    public static String forward(String string, IMV_SIQ data, App NE) {
+    public static String forward(String string, IMV_SQI data, App NE) {
         if (string.equalsIgnoreCase("/login")) {
             return VtoV.ObjectToJsonString(RestLoginPortImpl.login(data.getString("uEmail")
                 , data.getString("uPassword")));

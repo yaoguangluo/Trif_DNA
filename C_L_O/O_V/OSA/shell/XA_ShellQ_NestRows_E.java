@@ -9,7 +9,7 @@ import O_V.OSM.shell.P_I_CulumnsPL_XA;
 import O_V.OSM.shell.P_RelationPL_XA;
 import S_A.SVQ.stable.S_ShellETL;
 import S_A.VSQ.parser.EmotionSample;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -28,13 +28,13 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class XA_ShellQ_NestRows_E {
-    public static Object selectRowsByAttributesOfNestCondition(IMV_SIQ object, App NE) {
+    public static Object selectRowsByAttributesOfNestCondition(IMV_SQI object, App NE) {
         if (!object.containsKey("recordRows")) {
-            Map<String, Boolean> recordRows = new IMV_SIQ();
+            Map<String, Boolean> recordRows = new IMV_SQI();
             object.put("recordRows", recordRows);
         }
 
-        List<IMV_SIQ> output = new ArrayList<>();
+        List<IMV_SQI> output = new ArrayList<>();
         List<String[]> conditionValues = (List<String[]>) object.get(S_ShellETL.SHELL_ETL_CONDITION);
         Iterator<String[]> iterator = conditionValues.iterator();
         while (iterator.hasNext()) {
@@ -57,12 +57,12 @@ public class XA_ShellQ_NestRows_E {
     }
 
     public static Object selectRowsByAttributesOfNestAggregation(
-        IMV_SIQ object, EmotionSample emotionSample
+        IMV_SQI object, EmotionSample emotionSample
         , RatioMap_E ratioMap, App NE) {
         if (!object.containsKey("joinObj")) {
             return new ArrayList<>();
         }
-        List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("obj")));
+        List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("obj")));
         List<String[]> aggregationValues = (List<String[]>) object.get("aggregation");
         Iterator<String[]> iterator = aggregationValues.iterator();
         while (iterator.hasNext()) {
@@ -82,11 +82,11 @@ public class XA_ShellQ_NestRows_E {
         return obj;
     }
 
-    public static Object selectRowsByAttributesOfNestGetCulumns(IMV_SIQ object) {
+    public static Object selectRowsByAttributesOfNestGetCulumns(IMV_SQI object) {
         if (!object.containsKey("joinObj")) {
             return new ArrayList<>();
         }
-        List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("joinObj")));
+        List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("joinObj")));
         List<String[]> getCulumnsValues = (List<String[]>) object.get("getCulumns");
         Iterator<String[]> iterator = getCulumnsValues.iterator();
         while (iterator.hasNext()) {
@@ -99,14 +99,14 @@ public class XA_ShellQ_NestRows_E {
         return obj;
     }
 
-    public static Object selectRowsByAttributesOfNestRelation(IMV_SIQ object) {
+    public static Object selectRowsByAttributesOfNestRelation(IMV_SQI object) {
         if (!object.containsKey("obj") || !object.containsKey("joinObj")) {
             return new ArrayList<>();
         }
-        Map<String, Boolean> findinNewObj = new IMV_SIQ();
-        List<IMV_SIQ> newObj = new ArrayList<IMV_SIQ>();
-        List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("obj")));
-        List<IMV_SIQ> joinObj = ((List<IMV_SIQ>) (object.get("joinObj")));
+        Map<String, Boolean> findinNewObj = new IMV_SQI();
+        List<IMV_SQI> newObj = new ArrayList<IMV_SQI>();
+        List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("obj")));
+        List<IMV_SQI> joinObj = ((List<IMV_SQI>) (object.get("joinObj")));
         List<String[]> relationValues = (List<String[]>) object.get("relation");
         Iterator<String[]> iterator = relationValues.iterator();
         while (iterator.hasNext()) {

@@ -3,7 +3,7 @@ package E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E;
 import C_A.OSI.AOP.MS.VPC.S.hall.DatabaseLog_H;
 import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.company.E.LoginService_E;
 import M_V.ME.SM.OP.SM.AOP.MEC.SIQ.E.E_PLSQL_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.dna.StringUtil;
 import org.json.JSONObject;
 
@@ -24,9 +24,9 @@ import org.json.JSONObject;
  * */
 @SuppressWarnings({ "unchecked", "resource", "unused" })
 public class RestDBPLSQL_E {
-	public static IMV_SIQ restDBPLSQLImpl(String token, String email,
+	public static IMV_SQI restDBPLSQLImpl(String token, String email,
 			String password, String auth, String plsql, String mod) {
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		String who = "";
 		// security monitor
 		if (token != null && !token.equalsIgnoreCase("")) {

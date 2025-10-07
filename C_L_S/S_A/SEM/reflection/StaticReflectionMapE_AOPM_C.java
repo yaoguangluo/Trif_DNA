@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapE_AOPM_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -21,11 +21,11 @@ public class StaticReflectionMapE_AOPM_C extends
 
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		Object map = null;
 		if (callFunctionKey.contains("getSensingMap", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getSensingMap(NE);
@@ -35,7 +35,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getEmotionMap", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getEmotionMap(NE);
@@ -45,7 +45,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getCogsBinaryForest_A", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getCogsBinaryForest_A(
@@ -56,7 +56,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getEuclid_C", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getEuclid_C(NE);
@@ -68,7 +68,7 @@ public class StaticReflectionMapE_AOPM_C extends
 
 		if (callFunctionKey.contains("getQuick6DLuoYaoguangSort",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C
@@ -80,7 +80,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getNERO_C_OneTime", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getNERO_C_OneTime(NE);
@@ -90,7 +90,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getNERO_C", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getNERO_C(NE);
@@ -100,7 +100,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		//		if(callFunctionKey.contains("getNLP_C")){ 
-		//			IMV_SIQ inputValues= StaticFunctionMap.preValues(output, 传参因子);
+		//			IMV_SQI inputValues= StaticFunctionMap.preValues(output, 传参因子);
 		//			if(inputValues.getBoolean("find")) {
 		//				map= staticFunctionMapE_AOPM_C.getNLP_C(NE);
 		//			}
@@ -108,7 +108,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		//					, callFunctionKey);
 		//		}; 退化
 		if (callFunctionKey.contains("getBehaviorMap", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getBehaviorMap(NE);
@@ -118,7 +118,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getFMHMMList", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getFMHMMList(NE);
@@ -128,7 +128,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getPos_C_X_P", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getPos_C_X_P(NE);
@@ -138,7 +138,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getPos_C_X_E", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getPos_C_X_E(NE);
@@ -148,7 +148,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getPos_C_X_O", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getPos_C_X_O(NE);
@@ -158,7 +158,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getNlp_C_X_S", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getNlp_C_X_S(NE);
@@ -169,7 +169,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		;
 		if (callFunctionKey.contains("getNlp_C_X_A_doPOSAndEMMCheck",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C
@@ -182,7 +182,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		;
 		if (callFunctionKey.contains(
 			"getNlp_C_X_A_doSlangPartAndPOSCheck", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C
@@ -194,7 +194,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getA_X_Map", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getA_X_Map(NE);
@@ -204,7 +204,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getA", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getA(NE);
@@ -214,7 +214,7 @@ public class StaticReflectionMapE_AOPM_C extends
 		}
 		;
 		if (callFunctionKey.contains("getBinaryForest_A", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_AOPM_C.getBinaryForest_A(NE);

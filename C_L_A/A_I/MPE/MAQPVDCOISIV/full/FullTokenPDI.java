@@ -5,7 +5,7 @@ import A_I.MPE.MAQPVDCOISIV.initon.InitonLinkDNA;
 import A_I.MPE.MAQPVDCOISIV.pde.PDE_Decrement_FullFormular;
 import A_I.MPE.MAQPVDCOISIV.pde.PDE_Increment_FullFormular;
 import S_A.SVQ.stable.S_Common;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
@@ -659,7 +659,7 @@ public class FullTokenPDI {
 	@SuppressWarnings("unchecked")
 	public String initonSect(String key) {
 		String pdis = "";
-		IMV_SIQ map = new IMV_SIQ();
+		IMV_SQI map = new IMV_SQI();
 		map.put("0", "A");
 		map.put("1", "O");
 		map.put("2", "P");

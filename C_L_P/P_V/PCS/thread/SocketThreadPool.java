@@ -1,6 +1,6 @@
 package P_V.PCS.thread;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -17,7 +17,7 @@ public class SocketThreadPool {
     private Map<String, SocketThread> poolMap;
 
     public SocketThreadPool() {
-        poolMap = new IMV_SIQ();
+        poolMap = new IMV_SQI();
     }
 
     public int getThreadsCount() {

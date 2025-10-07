@@ -1,7 +1,7 @@
 package M_V.MSI.OP.SM.AOP.MEC.SIQ.SM.OSI.E;
 
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.cache.Cache_M;
 import VPC.DetaDB.DetaDBUtil_X_withoutCulumnNameType;
 
@@ -21,7 +21,7 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class I_Tables_E {
-    public static void I_Table(IMV_SIQ object, boolean mod) {
+    public static void I_Table(IMV_SQI object, boolean mod) {
         if (!object.containsKey("baseName") || !object.containsKey("tableName")) {
             return;
         }

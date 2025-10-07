@@ -3,8 +3,8 @@ package ME.VPC.V.dictionary;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 import YLJ_HRJ.ME.VPC.S.books.BookIndex;
 
 import java.io.InputStream;
@@ -44,8 +44,8 @@ public class XynkDictionary extends TxtDictionary {
 		return temp_list;
 	}
 
-	public IMV_SIQ_ listToMap(List<String> dic_list) {
-		dic_map = new IMV_SIQ_();
+	public IMV_SQI_ listToMap(List<String> dic_list) {
+		dic_map = new IMV_SQI_();
 		for (int i = 0; i < dic_list.size(); i++) {
 			if (dic_list.get(i).contains("病症段落")) {
 				String med_name = dic_list.get(i).replace("病症段落", "")
@@ -67,8 +67,8 @@ public class XynkDictionary extends TxtDictionary {
 		return dic_map;
 	}
 
-	public IMV_SIQ_ mapToMap_zl(IMV_SIQ dic_map) {
-		dic_zl = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_zl(IMV_SQI dic_map) {
+		dic_zl = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -100,8 +100,8 @@ public class XynkDictionary extends TxtDictionary {
 		return dic_zl;
 	}
 
-	public IMV_SIQ_ mapToMap_zd(IMV_SIQ dic_map) {
-		dic_zd = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_zd(IMV_SQI dic_map) {
+		dic_zd = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -133,8 +133,8 @@ public class XynkDictionary extends TxtDictionary {
 		return dic_zd;
 	}
 
-	public IMV_SIQ_ mapToMap_bf(IMV_SIQ dic_map) {
-		dic_bf = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_bf(IMV_SQI dic_map) {
+		dic_bf = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -162,8 +162,8 @@ public class XynkDictionary extends TxtDictionary {
 		return dic_bf;
 	}
 
-	public IMV_SIQ_ mapToMap_jy(IMV_SIQ dic_map) {
-		dic_jy = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_jy(IMV_SQI dic_map) {
+		dic_jy = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -187,8 +187,8 @@ public class XynkDictionary extends TxtDictionary {
 		return dic_jy;
 	}
 
-	public IMV_SIQ_ mapToMap_yh(IMV_SIQ dic_map) {
-		dic_yh = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_yh(IMV_SQI dic_map) {
+		dic_yh = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -216,8 +216,8 @@ public class XynkDictionary extends TxtDictionary {
 		return dic_yh;
 	}
 
-	public IMV_SIQ_ mapToMap_bl(IMV_SIQ dic_map) {
-		dic_bl = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_bl(IMV_SQI dic_map) {
+		dic_bl = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -261,8 +261,8 @@ public class XynkDictionary extends TxtDictionary {
 		return dic_bl;
 	}
 
-	public IMV_SIQ_ mapToMap_wx(IMV_SIQ dic_map) {
-		dic_wx = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_wx(IMV_SQI dic_map) {
+		dic_wx = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -294,8 +294,8 @@ public class XynkDictionary extends TxtDictionary {
 		return dic_wx;
 	}
 
-	public IMV_SIQ_ mapToMap_gn(IMV_SIQ dic_map) {
-		dic_gn = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_gn(IMV_SQI dic_map) {
+		dic_gn = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())

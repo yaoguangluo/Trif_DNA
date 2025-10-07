@@ -1,7 +1,7 @@
 package U_V.ESU.array;
 
 import S_A.SVQ.stable.S_Common;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -18,13 +18,13 @@ import java.util.Map;
 public class Double_ESU {
     public static Map<Double, Map<String, Boolean>> getMapFromDoubleStringArray
         (double[] score, String[] nameScore) {
-        Map<Double, Map<String, Boolean>> map = new IMV_SIQ();
+        Map<Double, Map<String, Boolean>> map = new IMV_SQI();
         for (int i = 0; i < score.length; i++) {
             Map<String, Boolean> maps;
             if (map.containsKey(score[i])) {
                 maps = map.get(score[i]);
             } else {
-                maps = new IMV_SIQ();
+                maps = new IMV_SQI();
             }
             //因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
             if (maps.containsKey(nameScore[i].toString())) {
@@ -40,14 +40,14 @@ public class Double_ESU {
 
     public static Map<Integer, Map<String, Boolean>> getMapFromIntStringArray
         (int[] score, String[] nameScore) {
-        Map<Integer, Map<String, Boolean>> map = new IMV_SIQ();
+        Map<Integer, Map<String, Boolean>> map = new IMV_SQI();
         for (int i = 0; i < score.length; i++) {
             Map<String, Boolean> maps;
             if (map.containsKey(score[i])) {
                 //因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
                 maps = map.get(score[i]);
             } else {
-                maps = new IMV_SIQ();
+                maps = new IMV_SQI();
             }
             //因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
             if (maps.containsKey(nameScore[i].toString())) {
@@ -64,14 +64,14 @@ public class Double_ESU {
     //稍后并到int array 新文件中
     public static Map<Integer, Map<String, Boolean>> getMapFromIntStringArray_ZhongYao
     (int[] score, String[] nameScore) {
-        Map<Integer, Map<String, Boolean>> map = new IMV_SIQ();
+        Map<Integer, Map<String, Boolean>> map = new IMV_SQI();
         for (int i = 0; i < score.length; i++) {
             Map<String, Boolean> maps;
             if (map.containsKey(score[i])) {
                 //因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
                 maps = map.get(score[i]);
             } else {
-                maps = new IMV_SIQ();
+                maps = new IMV_SQI();
             }
             //因为合并药材文件有相同名字所以用数字叠加模式。进行书籍分开
             if (maps.containsKey(nameScore[i].toString())) {

@@ -8,8 +8,8 @@ import M_V.MVQ.tabbedpane.DetabbedPane;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import java.awt.Container;
@@ -36,17 +36,17 @@ public class MakeContainerYXTP_X extends Thread implements Runnable {
 	public DetabbedPane jTabbedpane;
 	public List<String> tabNames;
 	public CogsBinaryForest_AE _A;
-	public IMV_SIQ pos;
-	public IMV_SIQ pose;
-	public IMV_SIQ etc;
-	public IMV_SIQ cte;
+	public IMV_SQI pos;
+	public IMV_SQI pose;
+	public IMV_SQI etc;
+	public IMV_SQI cte;
 	// buff spee cacu
 	// string xiao kuai gao
 	// button da man di
 	@SuppressWarnings("unchecked")
-	public Map<String, LinkedList<String>> listMap = new IMV_SIQ();
+	public Map<String, LinkedList<String>> listMap = new IMV_SQI();
 	@SuppressWarnings("unchecked")
-	public Map<String, LinkedList<String>> showMap = new IMV_SIQ();
+	public Map<String, LinkedList<String>> showMap = new IMV_SQI();
 	public Map<String, BufferedImage> cacuMap = new LinkedHashMap<>();
 	public List<String> cacuPip = new LinkedList<>();
 	public LinkedList<String> typeList = new LinkedList<>();
@@ -101,7 +101,7 @@ public class MakeContainerYXTP_X extends Thread implements Runnable {
 	@SuppressWarnings("unchecked")
 	public void AOP_VEC_SQ_PDE(List<String> pathRankList) {
 		// listMap;
-		Map<String, Boolean> map = new IMV_SIQ();
+		Map<String, Boolean> map = new IMV_SQI();
 		Iterator<String> iteratorPathRankList = pathRankList.iterator();
 		while (iteratorPathRankList.hasNext()) {
 			String StringPath = iteratorPathRankList.next();
@@ -153,7 +153,7 @@ public class MakeContainerYXTP_X extends Thread implements Runnable {
 		int[] score_code = new int[copy.size()];
 		int[] reg = new int[copy.size()];
 		// int count= 0;
-		IMV_SIQ_SS mapSearchWithoutSort = null;
+		IMV_SQI_SS mapSearchWithoutSort = null;
 		// Map<Integer, WordFrequency> mapSearchWithSort= null;
 		mapSearchWithoutSort = _A.parserMixStringByReturnFrequencyMap(key, NE);
 		Iterator<String> iteratorForCopy = copy.iterator();

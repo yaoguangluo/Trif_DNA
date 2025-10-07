@@ -2,8 +2,8 @@ package I_A.IMO.EVU.bi_P;
 
 import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import V_A.VSQ.OPE.jogl.JOGLOBJShape;
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
@@ -45,9 +45,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * *///, 基于gleem J3D官方demo 来写的。
 
 public class CoAuthor extends JPanel implements GLEventListener {
-    public IMV_SIQ root;
+    public IMV_SQI root;
     public Map<String, Integer> findLeaf;
-    public IMV_SIQ dic_li;
+    public IMV_SQI dic_li;
     public CogsBinaryForest_AE _A;
     public int c = 0;
     public int[] array;
@@ -85,7 +85,7 @@ public class CoAuthor extends JPanel implements GLEventListener {
     public String rootWord;
 
     // timeCheck ch=new timeCheck();
-    public CoAuthor(IMV_SIQ dic_li, App NE) throws HeadlessException {
+    public CoAuthor(IMV_SQI dic_li, App NE) throws HeadlessException {
         this._A = NE.app_S._A;
         this.dic_li = dic_li;
         this.setLayout(null);
@@ -346,17 +346,17 @@ public class CoAuthor extends JPanel implements GLEventListener {
 
     public void bootWordmap(String string, App NE) {
         rootWord = string;
-        root = new IMV_SIQ();
+        root = new IMV_SQI();
         findLeaf = new ConcurrentHashMap<String, Integer>();
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         kerner(rootWord, leaf, findLeaf, NE);
         root.put(rootWord, leaf);
     }
 
-    private void kerner(String temp, IMV_SIQ root, Map<String, Integer> findLeaf, App NE) {
+    private void kerner(String temp, IMV_SQI root, Map<String, Integer> findLeaf, App NE) {
         if (dic_li.containsKey(temp)) {
-            IMV_SIQ leaf = new IMV_SIQ();
-            IMV_SIQ_SS map = _A.parserMixStringByReturnFrequencyMap(dic_li.get(rootWord).toString(), NE);
+            IMV_SQI leaf = new IMV_SQI();
+            IMV_SQI_SS map = _A.parserMixStringByReturnFrequencyMap(dic_li.get(rootWord).toString(), NE);
             Iterator<String> it = map.keySet().iterator();
             while (it.hasNext()) {
                 String tempRec = it.next();

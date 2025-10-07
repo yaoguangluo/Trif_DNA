@@ -13,8 +13,8 @@ import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
 import S_A.SVQ.stable.S_Tag;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 import U_V.ESU.string.String_ESU_X_charsetSwap;
 import exception.thread.DetaThread;
 
@@ -282,7 +282,7 @@ public class App_X_getBox {
 	}
 
 	private void doButtonNext(App NE) {
-		IMV_SIQ_SS map = new IMV_SIQ_SS();
+		IMV_SQI_SS map = new IMV_SQI_SS();
 		try {
 			app.currentPage += 1;
 			app.currentPage = (app.currentPage > (app.sets == null ? 0
@@ -406,7 +406,7 @@ public class App_X_getBox {
 		}
 		try {
 			app.statistic.setSize(500, 800);
-			IMV_SIQ_S_ fwa = app._A.sortWordFrequencyMapToSortMap(
+			IMV_SQI_S_ fwa = app._A.sortWordFrequencyMapToSortMap(
 				map);
 			app.statistic.setContentType("text/html");
 			StringBuilder page = new StringBuilder();
@@ -650,7 +650,7 @@ public class App_X_getBox {
 	}
 
 	private void doButtonPrev(App NE) {
-		IMV_SIQ_SS map = new IMV_SIQ_SS();
+		IMV_SQI_SS map = new IMV_SQI_SS();
 		try {
 			app.currentPage -= 1;
 			app.currentPage = (app.currentPage < 0 ? 0
@@ -768,7 +768,7 @@ public class App_X_getBox {
 		}
 		try {
 			app.statistic.setSize(500, 800);
-			IMV_SIQ_S_ fwa = app._A.sortWordFrequencyMapToSortMap(
+			IMV_SQI_S_ fwa = app._A.sortWordFrequencyMapToSortMap(
 				map);
 			app.statistic.setContentType("text/html");
 			StringBuilder page = new StringBuilder();

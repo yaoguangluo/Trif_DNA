@@ -1,7 +1,7 @@
 package test.java.InterfaceTest.TextDNN;
 
 import E_A.OSI.AOP.PCS.PP.port_E.RestNLPPortImpl;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -102,8 +102,8 @@ class RestNLPPortImplTest {
 			+ "行呈现包容性。同时对垄断产业有约束性。");
 		Object object = RestNLPPortImpl.dataZF(ss,
 			commonTestInition.NE);
-		IMV_SIQ _IMV_SIQ = (IMV_SIQ) object;
-		String string = _IMV_SIQ.getString("zf");
+		IMV_SQI _IMV_SQI = (IMV_SQI) object;
+		String string = _IMV_SQI.getString("zf");
 		string = URLDecoder.decode(string, "UTF8");
 		System.out.println(string);
 		commonTestInition.endEnvironment();

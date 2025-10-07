@@ -15,7 +15,7 @@ import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.DB;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Spec;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Table;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.cache.Cache_M;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaFileReader;
@@ -41,7 +41,7 @@ public class DetaDBBufferCache_M {
 	}
 
 	public static void reflection() {
-		IMV_SIQ bases = new IMV_SIQ();
+		IMV_SQI bases = new IMV_SQI();
 		db.I_Bases(bases);
 		// 1获取db路径；//later null op20250422
 		String dBPath = Objects.requireNonNull(Cache_M.getCacheInfo("DBPath"))
@@ -59,13 +59,13 @@ public class DetaDBBufferCache_M {
 
 	private static void loopBases(DB db, String dBPath, String baseName) {
 		Base base = new Base();
-		IMV_SIQ tables = new IMV_SIQ();
+		IMV_SQI tables = new IMV_SQI();
 		base.I_Tables(tables);
 		String dBasePath = dBPath + "/" + baseName;
 		// get base
 		File fileDBasePath = new File(dBasePath);
 		if (fileDBasePath.isDirectory()) {
-			IMV_SIQ tableMap = new IMV_SIQ();
+			IMV_SQI tableMap = new IMV_SQI();
 			// get tables
 			String[] tableNames = fileDBasePath.list();
 			assert tableNames != null;
@@ -92,7 +92,7 @@ public class DetaDBBufferCache_M {
 
 	private static void loopSpec(Table table, String specPath) {
 		Spec spec = new Spec();
-		IMV_SIQ culumnTypes = new IMV_SIQ();
+		IMV_SQI culumnTypes = new IMV_SQI();
 		spec.I_CulumnTypes(culumnTypes);
 		File fileSpecPath = new File(specPath);
 		if (fileSpecPath.isDirectory()) {
@@ -117,7 +117,7 @@ public class DetaDBBufferCache_M {
 	}
 
 	private static void loopRows(Table table, String rowsPath) {
-		IMV_SIQ rows = new IMV_SIQ();
+		IMV_SQI rows = new IMV_SQI();
 		table.I_Rows(rows);
 		File fileRowsPath = new File(rowsPath);
 		if (fileRowsPath.isDirectory()) {
@@ -132,7 +132,7 @@ public class DetaDBBufferCache_M {
 	private static void loopRow(Table table, File fileRowsPath,
 			String rowIndex) {
 		Row row = new Row();
-		IMV_SIQ cells = new IMV_SIQ();
+		IMV_SQI cells = new IMV_SQI();
 		row.I_Cells(cells);
 		String rowIndexPath = fileRowsPath + "/" + rowIndex;
 		File fileRowPath = new File(rowIndexPath);

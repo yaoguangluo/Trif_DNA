@@ -2,7 +2,7 @@ package test.java.ME.VPC.V;
 
 import ME.VPC.M.app.App;
 import ME.VPC.V.ET.CecilPage_X_S_sListeners;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -141,7 +141,7 @@ class CecilPage_X_S_sListenersTest {
         assertEquals(0, actualCecilPage_X_S_sListeners.currentPage);
         assertNull(actualCecilPage_X_S_sListeners.tableData_old);
         assertNull(actualCecilPage_X_S_sListeners.table);
-        assertTrue(actualCecilPage_X_S_sListeners.subASCmap instanceof IMV_SIQ);
+        assertTrue(actualCecilPage_X_S_sListeners.subASCmap instanceof IMV_SQI);
         assertNull(actualCecilPage_X_S_sListeners.statistic);
         assertNull(actualCecilPage_X_S_sListeners.sets);
         assertNull(actualCecilPage_X_S_sListeners.sensingTest);
@@ -220,7 +220,7 @@ class CecilPage_X_S_sListenersTest {
         assertNull(actualCecilPage_X_S_sListeners.app_S);
         assertNull(actualCecilPage_X_S_sListeners._A);
         assertNull(actualCecilPage_X_S_sListeners.NE);
-        assertTrue(actualCecilPage_X_S_sListeners.DNNmap instanceof IMV_SIQ);
+        assertTrue(actualCecilPage_X_S_sListeners.DNNmap instanceof IMV_SQI);
         assertEquals(0, actualCecilPage_X_S_sListeners.getPropertyChangeListeners().length);
         assertNull(actualCecilPage_X_S_sListeners.getLayout());
         assertNull(actualCecilPage_X_S_sListeners.dic_bf);

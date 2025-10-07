@@ -2,7 +2,7 @@ package ASQ.find.AMV.MVS.VSQ;
 
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
 import P_V.PCI.ASQ.demension.Line3D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -20,9 +20,9 @@ public class GroupPascalHearts_X_getPosition3DsGroupPascalDirection {
     //通过坐标团的 精度匹配分割的内部坐标聚类团 进行 每个聚类团的 重心和中心距离 求解 获取有效的团稳定观测数据模型
     //思想 帕斯卡, 欧基里德, 数据挖掘, 贝叶斯, 立体几何, 流体力学, 量化拓扑力学, 离散数学, 统计与概率论 20191227
     //实现 罗瑶光
-    public static IMV_SIQ _E(
+    public static IMV_SQI _E(
         Map<Double, AMV_MVS_VSQ_3D> pascalHearts, Map<Double, AMV_MVS_VSQ_3D> pascalMids) {
-        IMV_SIQ pascalDirections = new IMV_SIQ();
+        IMV_SQI pascalDirections = new IMV_SQI();
         for (double key : pascalHearts.keySet()) {
             Line3D value = new Line3D();
             value.I_Begin(pascalMids.get(key));

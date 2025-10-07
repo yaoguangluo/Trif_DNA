@@ -3,7 +3,7 @@ package U_V.ESU.string;
 import ME.VPC.M.app.App;
 import P.image.Color_P;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
@@ -25,7 +25,7 @@ public class StringReplace {
         return string;
     }
 
-    public static boolean pos(String key, IMV_SIQ pos, IMV_SIQ maps
+    public static boolean pos(String key, IMV_SQI pos, IMV_SQI maps
         , String setOfi, StringBuilder page, App NE) {
         String split = "【";
         String splite = "】";

@@ -6,7 +6,7 @@ import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
 import S_A.SVQ.stable.S_ShellETL;
 import S_A.SVQ.stable.S_Token;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.dna.Token;
 import U_A.PEU.P.dna.TokenCerts;
 import U_V.ESU.string.String_ESU_X_charsetSwap;
@@ -37,18 +37,18 @@ import java.util.List;
  * */
 public class P_AO_PLTCP {
     @SuppressWarnings("unchecked")
-    public static void P_PltcpLimitMap(String[] sets, List<IMV_SIQ> output
-            , IMV_SIQ object) {
+    public static void P_PltcpLimitMap(String[] sets, List<IMV_SQI> output
+            , IMV_SQI object) {
         try {
-            List<IMV_SIQ> outputTemp = new ArrayList<>();
+            List<IMV_SQI> outputTemp = new ArrayList<>();
             if (sets[1].equalsIgnoreCase("进行WEB请求")) {
                 //主循环
-                List<IMV_SIQ> primaryInLoop = (List<IMV_SIQ>) object.get("obj");
-                Iterator<IMV_SIQ> outputTempIterator = primaryInLoop.iterator();
+                List<IMV_SQI> primaryInLoop = (List<IMV_SQI>) object.get("obj");
+                Iterator<IMV_SQI> outputTempIterator = primaryInLoop.iterator();
                 while (outputTempIterator.hasNext()) {
-                    IMV_SIQ rowOutputTempIterator = outputTempIterator.next();
-                    IMV_SIQ rowValueRowOutputTempIterator
-                            = (IMV_SIQ) rowOutputTempIterator.get(S_ShellETL.SHELL_ETL_ROWVALUE);
+                    IMV_SQI rowOutputTempIterator = outputTempIterator.next();
+                    IMV_SQI rowValueRowOutputTempIterator
+                            = (IMV_SQI) rowOutputTempIterator.get(S_ShellETL.SHELL_ETL_ROWVALUE);
                     //先固定好主谓宾格式, 以后再来设计宾补的格式, 目前先按定语来。
                     String server = sets[3];//稍后设计 安全检测。
                     String port = sets[5];

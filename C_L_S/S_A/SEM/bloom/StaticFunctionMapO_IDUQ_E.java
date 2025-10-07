@@ -11,7 +11,7 @@ import OPE.PSQ.OEU.SOI.SMQ.neroCell.BootNeroDoc;
 import OPE.VPC.S.H_Keeper.H_Keeper;
 import OPE.VPC.S.V.Pillow;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import OSI.OPE.OVU.PQE.flash.ThisCanvas;
 
 import javax.swing.JTextPane;
@@ -39,7 +39,7 @@ public class StaticFunctionMapO_IDUQ_E extends StaticFunctionMapCASE
 
 	// SaveAs_I_File{
 	//准备开始应用测试下。
-	public IMV_SIQ getRandomDNAkey(App NE) {
+	public IMV_SQI getRandomDNAkey(App NE) {
 		AES_QMS_XSD_TIH password = NE._I_U.password;
 		return SaveAs_I_File.getRandomDNAkey(password._S_);
 	}

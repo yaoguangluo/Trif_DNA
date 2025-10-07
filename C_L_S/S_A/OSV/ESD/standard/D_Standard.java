@@ -2,7 +2,7 @@ package S_A.OSV.ESD.standard;
 
 import O_V.OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 import O_V.OSI.AOP.MEC.SIQ.plorm.PLORM_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class D_Standard {
     //	drop samples
     //	tableName:test:drop;
 
-    public static IMV_SIQ DropCellORM(String rootPath, String baseName
+    public static IMV_SQI DropCellORM(String rootPath, String baseName
         , String tabKey) {
         PLORM_C orm = new PLORM_E();
         orm = orm.startAtRootDir(rootPath)
@@ -44,9 +44,9 @@ public class D_Standard {
         return null;
     }
 
-    public static IMV_SIQ DropCellPLSQL(String rootPath, String baseName
+    public static IMV_SQI DropCellPLSQL(String rootPath, String baseName
         , String tabKey) {
-        IMV_SIQ map = null;
+        IMV_SQI map = null;
         try {
             String plsql = "setRoot:" + rootPath + ";";
             plsql += "baseName:" + baseName + ";";

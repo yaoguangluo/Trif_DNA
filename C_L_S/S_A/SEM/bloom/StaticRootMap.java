@@ -1,7 +1,7 @@
 package S_A.SEM.bloom;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -27,43 +27,43 @@ public class StaticRootMap {
 	public Map<String, StaticClassMap> staticRootMap;
 	// flower annotationMap，在分层中，这里略
 	// 元基枝 root
-	public IMV_SIQ staticClassMap = new IMV_SIQ();
+	public IMV_SQI staticClassMap = new IMV_SQI();
 	// 函数入参登记
-	public IMV_SIQ staticClass_XE_Map = new IMV_SIQ();
+	public IMV_SQI staticClass_XE_Map = new IMV_SQI();
 	// 20230207 走统计新陈代谢
-	public Map<String, Long> staticBloomingTimes = new IMV_SIQ();// 需要
+	public Map<String, Long> staticBloomingTimes = new IMV_SQI();// 需要
 																 // new
-	public Map<String, Long> staticBloomingTime = new IMV_SIQ();// 需要 new
+	public Map<String, Long> staticBloomingTime = new IMV_SQI();// 需要 new
 																// 稍后分出去，先用来做只执行固定次数的函数统计
-	public Map<String, Long> staticBloomingDuration = new IMV_SIQ();// 需要
+	public Map<String, Long> staticBloomingDuration = new IMV_SQI();// 需要
 																	// new
-	public Map<String, List<Long>> staticBloomingDurationList = new IMV_SIQ();
+	public Map<String, List<Long>> staticBloomingDurationList = new IMV_SQI();
 	// 函数的api包
-	public IMV_SIQ staticBloomingLeafs = new IMV_SIQ();
+	public IMV_SQI staticBloomingLeafs = new IMV_SQI();
 	// 20230221 重新命名
-	public IMV_SIQ chromosomeRoot = new IMV_SIQ();
+	public IMV_SQI chromosomeRoot = new IMV_SQI();
 	// 元基花的标识
-	public IMV_SIQ chromosomeFlower = new IMV_SIQ();
+	public IMV_SQI chromosomeFlower = new IMV_SQI();
 	// 函数的api需求
-	public IMV_SIQ chromosomeLeaf = new IMV_SIQ();
+	public IMV_SQI chromosomeLeaf = new IMV_SQI();
 	// 运行标识
-	public IMV_SIQ chromosomeBlooming = new IMV_SIQ();
+	public IMV_SQI chromosomeBlooming = new IMV_SQI();
 	// 时间组合标识
-	public IMV_SIQ chromosomeMetabolism = new IMV_SIQ();
+	public IMV_SQI chromosomeMetabolism = new IMV_SQI();
 	// 消费组合元基编码标识
-	public IMV_SIQ chromosomePDE = new IMV_SIQ();
+	public IMV_SQI chromosomePDE = new IMV_SQI();
 	// DNA编码标识 用于花蕊和遗传
-	public IMV_SIQ chromosomeDNA = new IMV_SIQ();
+	public IMV_SQI chromosomeDNA = new IMV_SQI();
 	// rna计算标识 范围广泛
-	public IMV_SIQ chromosomeRNA = new IMV_SIQ();
+	public IMV_SQI chromosomeRNA = new IMV_SQI();
 	// etl节点标识 用于花蕊 花瓣 花粉
-	public IMV_SIQ chromosomeNode = new IMV_SIQ();
+	public IMV_SQI chromosomeNode = new IMV_SQI();
 
 	public void initMap(App NE) {
 		if (null != staticRootMap) {
 			return;
 		}
-		staticRootMap = new IMV_SIQ();
+		staticRootMap = new IMV_SQI();
 		StaticClassMap map_A_VECS = new StaticClassMap("A_VECS", NE);
 		StaticClassMap map_A_IDUQ = new StaticClassMap("A_IDUQ", NE);
 		StaticClassMap map_O_VECS = new StaticClassMap("O_VECS", NE);
@@ -128,7 +128,7 @@ public class StaticRootMap {
 	}
 
 	public void tinShellV006(String[] shellCommands,
-		IMV_SIQ shellOutput, App NE) throws InterruptedException,
+		IMV_SQI shellOutput, App NE) throws InterruptedException,
 		IOException {
 		tinShellV005(shellCommands, shellOutput, NE);
 		// +++++later
@@ -136,13 +136,13 @@ public class StaticRootMap {
 
 	@SuppressWarnings("static-access")
 	public void tinShellV005(String[] shellCommands,
-		IMV_SIQ shellOutput, App NE) throws InterruptedException,
+		IMV_SQI shellOutput, App NE) throws InterruptedException,
 		IOException {
 		// 稍后准备把 下面main的测试代码 进行封装 调通 一句执行命令, 多句执行命令, 多句并发执行命令。
 		// 然后并入tinshell。像shell replace命令那样。
 		// 罗瑶光
 		String[] strings = shellCommands;
-		IMV_SIQ output = shellOutput;
+		IMV_SQI output = shellOutput;
 		// 开始设计传参。
 		StaticRootMap staticRootMap = new StaticRootMap();
 		staticRootMap.initMap(NE);
@@ -321,9 +321,9 @@ public class StaticRootMap {
 		// strings[1]= "执行 I_VECS 下 main 接口, 参数是null";
 		strings[1] = "执行 U_VECS 下 main 接口, 参数是null";
 		//
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		String[] 传参因子 = new String[2];
-		IMV_SIQ inputValue = new IMV_SIQ();
+		IMV_SQI inputValue = new IMV_SQI();
 
 		double[] doubles = new double[5];
 		doubles[0] = 2.2222262;
@@ -355,7 +355,7 @@ public class StaticRootMap {
 
 	private static void doA_VECS_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_C = (StaticFunctionMapA_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("A_VECS");
 		// case 函数名接口
@@ -379,7 +379,7 @@ public class StaticRootMap {
 
 	private static void doP_VECS_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_C = (StaticFunctionMapP_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("P_VECS");
 		// case 函数名接口
@@ -403,7 +403,7 @@ public class StaticRootMap {
 
 	private static void doO_IDUQ_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_C = (StaticFunctionMapO_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("O_IDUQ");
 		// case 函数名接口
@@ -428,7 +428,7 @@ public class StaticRootMap {
 	@SuppressWarnings("unchecked")
 	private static void doO_VECS_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) throws InterruptedException,
+		IMV_SQI output, App NE) throws InterruptedException,
 		IOException {
 		StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_C = (StaticFunctionMapO_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("O_VECS");
@@ -453,7 +453,7 @@ public class StaticRootMap {
 
 	private static void doA_IDUQ_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_C = (StaticFunctionMapA_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("A_IDUQ");
 		// case 函数名接口
@@ -477,7 +477,7 @@ public class StaticRootMap {
 
 	private static void doU_VECS_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C = (StaticFunctionMapU_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("U_VECS");
 		// case 函数名接口
@@ -501,7 +501,7 @@ public class StaticRootMap {
 
 	private static void doP_IDUQ_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_C = (StaticFunctionMapP_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("P_IDUQ");
 		// case 函数名接口
@@ -525,7 +525,7 @@ public class StaticRootMap {
 
 	private static void doM_VECS_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapM_VECS_E staticFunctionMapM_VECS_C = (StaticFunctionMapM_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("M_VECS");
 		// case 函数名接口
@@ -550,7 +550,7 @@ public class StaticRootMap {
 
 	private static void doM_IDUQ_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C = (StaticFunctionMapM_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("M_IDUQ");
 		// case 函数名接口
@@ -574,7 +574,7 @@ public class StaticRootMap {
 
 	private static void doV_AOPM_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_C = (StaticFunctionMapV_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("V_AOPM");
 		// case 函数名接口
@@ -598,7 +598,7 @@ public class StaticRootMap {
 
 	private static void doV_IDUQ_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C = (StaticFunctionMapV_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("V_IDUQ");
 		// case 函数名接口
@@ -622,7 +622,7 @@ public class StaticRootMap {
 
 	private static void doE_AOPM_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_C = (StaticFunctionMapE_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("E_AOPM");
 		// case 函数名接口
@@ -646,7 +646,7 @@ public class StaticRootMap {
 
 	private static void doE_IDUQ_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_C = (StaticFunctionMapE_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("E_IDUQ");
 		// case 函数名接口
@@ -671,7 +671,7 @@ public class StaticRootMap {
 	@SuppressWarnings("unchecked")
 	private static void doC_AOPM_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) throws InterruptedException,
+		IMV_SQI output, App NE) throws InterruptedException,
 		IOException {
 		StaticFunctionMapC_AOPM_E staticFunctionMapC_AOPM_C = (StaticFunctionMapC_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("C_AOPM");
@@ -696,7 +696,7 @@ public class StaticRootMap {
 
 	private static void doC_IDUQ_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		/*
 		 * 以后剔除。
 		 * --罗瑶光
@@ -724,7 +724,7 @@ public class StaticRootMap {
 
 	private static void doS_AOPM_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_C = (StaticFunctionMapS_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("S_AOPM");
 		// case 函数名接口
@@ -748,7 +748,7 @@ public class StaticRootMap {
 
 	private static void doS_IDUQ_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapS_IDUQ_E staticFunctionMapS_IDUQ_C = (StaticFunctionMapS_IDUQ_E) NE.app_S.staticRootMap.staticClassMap
 			.get("S_IDUQ");
 		// case 函数名接口
@@ -772,7 +772,7 @@ public class StaticRootMap {
 
 	private static void doI_AOPM_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_C = (StaticFunctionMapI_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("I_AOPM");
 		// case 函数名接口
@@ -796,7 +796,7 @@ public class StaticRootMap {
 
 	private static void doI_VECS_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_C = (StaticFunctionMapI_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("I_VECS");
 		// case 函数名接口
@@ -820,7 +820,7 @@ public class StaticRootMap {
 
 	private static void doD_AOPM_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapD_AOPM_E staticFunctionMapD_AOPM_C = (StaticFunctionMapD_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("D_AOPM");
 		// case 函数名接口
@@ -844,7 +844,7 @@ public class StaticRootMap {
 
 	private static void doD_VECS_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapD_VECS_E staticFunctionMapD_VECS_C = (StaticFunctionMapD_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("D_VECS");
 		// case 函数名接口
@@ -868,7 +868,7 @@ public class StaticRootMap {
 
 	private static void doQ_AOPM_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapQ_AOPM_E staticFunctionMapQ_AOPM_C = (StaticFunctionMapQ_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("Q_AOPM");
 		// case 函数名接口
@@ -892,7 +892,7 @@ public class StaticRootMap {
 
 	private static void doQ_VECS_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapQ_VECS_E staticFunctionMapQ_VECS_C = (StaticFunctionMapQ_VECS_E) NE.app_S.staticRootMap.staticClassMap
 			.get("Q_VECS");
 		// case 函数名接口
@@ -916,7 +916,7 @@ public class StaticRootMap {
 
 	private static void doU_AOPM_Case(
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		StaticFunctionMapU_AOPM_E staticFunctionMapU_AOPM_C = (StaticFunctionMapU_AOPM_E) NE.app_S.staticRootMap.staticClassMap
 			.get("U_AOPM");
 		// case 函数名接口
@@ -949,7 +949,7 @@ public class StaticRootMap {
 	@SuppressWarnings("unused")
 	private static void do_CaseUtil(String chromosomeParName,
 		Map<String, StaticClassMap> staticRootMap, String string,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		/*
 		 * 将StaticFunctionMapU_AOPM_E 改为 StaticFunctionMapCASE map存储，
 		 * 方便函数去重。关于去重，可以refer下sonar lint。之后我的工程有15%的源码

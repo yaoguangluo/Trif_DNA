@@ -2,7 +2,7 @@ package M_V.MSU.OP.SM.AOP.MEC.SIQ.SM.update.EU.JoinRows.E;
 
 import M_V.ME.RelationPLSQL_.X_P_AndMap;
 import M_V.ME.RelationPLSQL_.X_P_OrMap;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,15 +18,15 @@ import java.util.Map;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class X_U_RowsByAttributesOfJoinRelation {
-	public static Object _E(IMV_SIQ object, boolean mod) {
+	public static Object _E(IMV_SQI object, boolean mod) {
 		if (!object.containsKey("updateObj")
 				|| !object.containsKey("updateJoinObj")) {
 			return new ArrayList<>();
 		}
-		Map<String, Boolean> findinNewObj = new IMV_SIQ();
-		List<IMV_SIQ> newObj = new ArrayList<>();
-		List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("updateObj")));
-		List<IMV_SIQ> joinObj = ((List<IMV_SIQ>) (object.get("updateJoinObj")));
+		Map<String, Boolean> findinNewObj = new IMV_SQI();
+		List<IMV_SQI> newObj = new ArrayList<>();
+		List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("updateObj")));
+		List<IMV_SQI> joinObj = ((List<IMV_SQI>) (object.get("updateJoinObj")));
 		List<String[]> relationValues = (List<String[]>) object.get("relation");
 		for (String[] relationValue : relationValues) {
 			boolean overObjMap = obj.size() != 0;

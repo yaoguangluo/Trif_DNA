@@ -1,7 +1,7 @@
 package M_V.MSQ.OP.SM.AOP.MEC.SIQ.SM.OSQ.E.rows;
 
 import M_V.ME.GetCulumnsPLSQL.X_P_GetCulumnsMap;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,11 +17,11 @@ import java.util.List;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class Q_Rows_E_X_selectRowsByAttributesOfGetCulumns {
-	public static Object _E(IMV_SIQ object) {
+	public static Object _E(IMV_SQI object) {
 		if (!object.containsKey("obj")) {
 			return new ArrayList<>();
 		}
-		List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("obj")));
+		List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("obj")));
 		List<String[]> getCulumnsValues = (List<String[]>) object
 				.get("getCulumns");
 		Iterator<String[]> iterator = getCulumnsValues.iterator();

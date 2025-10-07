@@ -2,7 +2,7 @@ package ASQ.forest;
 
 import ASQ.basic.Distance_X_getDistance2D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -23,8 +23,8 @@ public class Forest_X_getTSPForestIsolationGroups2D {
 	// Application Yaoguang.Luo
 	// 适用于 最短路径, 最小距离, 商旅分析预测, 等项目中
 
-	public static IMV_SIQ _E(List<AMV_MVS_VSQ_2D> groups, double scale) {
-		IMV_SIQ output = new IMV_SIQ();
+	public static IMV_SQI _E(List<AMV_MVS_VSQ_2D> groups, double scale) {
+		IMV_SQI output = new IMV_SQI();
 		Iterator<AMV_MVS_VSQ_2D> iterator = groups.iterator();
 		double i = 0.0;
 		while (iterator.hasNext()) {

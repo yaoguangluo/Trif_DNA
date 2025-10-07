@@ -9,7 +9,7 @@ import M_V.ME.E.PLSQLCommand_E_X_P_SetRoot;
 import M_V.ME.E.PLSQLCommand_E_X_P_TableName;
 import O_V.OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 
 /*
@@ -22,7 +22,7 @@ import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class E_PLSQL_E {
-	public static IMV_SIQ E_PLSQL(String plsql, boolean mod) {
+	public static IMV_SQI E_PLSQL(String plsql, boolean mod) {
 		//working for here
 		TinMap output= new TinMap();
 		//1make container
@@ -81,7 +81,7 @@ public class E_PLSQL_E {
 		return output;
 	}
 
-	public static IMV_SIQ E_PLORM(PLORM_C orm, boolean b)  {
+	public static IMV_SQI E_PLORM(PLORM_C orm, boolean b)  {
 		return E_PLSQL(orm.getPLSQL(), true);
 	}
 }

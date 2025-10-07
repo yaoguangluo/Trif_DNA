@@ -1,7 +1,7 @@
 package M_V.MSU.OP.SM.AOP.MEC.SIQ.SM.update.EU.JoinRows.E;
 
 import M_V.ME.GetCulumnsPLSQL.X_P_GetCulumnsMap;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +16,11 @@ import java.util.List;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class X_U_RowsByAttributesOfJoinGetCulumns {
-	public static Object _E(IMV_SIQ object) {
+	public static Object _E(IMV_SQI object) {
 		if (!object.containsKey("joinObj")) {
 			return new ArrayList<>();
 		}
-		List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("updateJoinObj")));
+		List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("updateJoinObj")));
 		List<String[]> getCulumnsValues = (List<String[]>) object
 				.get("getCulumns");
 		for (String[] getCulumnsValue : getCulumnsValues) {

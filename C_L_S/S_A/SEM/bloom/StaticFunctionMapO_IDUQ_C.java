@@ -2,7 +2,7 @@ package S_A.SEM.bloom;
 
 import ME.VPC.M.app.App;
 import OPE.PSQ.OEU.SOI.SMQ.neroCell.BootNeroDoc;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
@@ -21,7 +21,7 @@ public interface StaticFunctionMapO_IDUQ_C {
 
 	// SaveAs_I_File{
 	//准备开始应用测试下。
-	public IMV_SIQ getRandomDNAkey(App NE)
+	public IMV_SQI getRandomDNAkey(App NE)
 			;
 	public void Save(App NE) ;
 

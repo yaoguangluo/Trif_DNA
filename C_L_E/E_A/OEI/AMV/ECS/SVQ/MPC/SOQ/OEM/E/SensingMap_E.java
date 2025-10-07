@@ -2,7 +2,7 @@ package E_A.OEI.AMV.ECS.SVQ.MPC.SOQ.OEM.E;
 
 import C_A.OCI.AMV.ECS.SVQ.MPC.fhmm.C.SensingMap;
 import C_A.ME.analysis.C.BinaryForest_A;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 
@@ -16,19 +16,19 @@ import java.util.Iterator;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class SensingMap_E implements SensingMap {
-	private IMV_SIQ lenovoMap;
+	private IMV_SQI lenovoMap;
 
 	@Override
-	public IMV_SIQ getLenovoMap() {
+	public IMV_SQI getLenovoMap() {
 		return this.lenovoMap;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void IV_LenovoMap(BinaryForest_A _A) {
-		lenovoMap = new IMV_SIQ();
-		IMV_SIQ CnToEnMap = _A.getFullCnToEn();
-		IMV_SIQ EnToCnMap = _A.getEnToCn();
+		lenovoMap = new IMV_SQI();
+		IMV_SQI CnToEnMap = _A.getFullCnToEn();
+		IMV_SQI EnToCnMap = _A.getEnToCn();
 		Iterator<String> iterator = CnToEnMap.keySet().iterator();
 		while (iterator.hasNext()) {
 			String word = iterator.next();

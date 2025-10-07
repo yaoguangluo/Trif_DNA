@@ -2,7 +2,7 @@ package M_V.MSD.OP.SM.AOP.MEC.SIQ.SM.OSD.E;
 
 import M_V.MSQ.OP.SM.AOP.MEC.SIQ.SM.OSQ.E.rows.Q_Rows_E_X_selectRowsByAttributesOfCondition;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.cache.Cache_M;
 
 import java.io.File;
@@ -20,7 +20,7 @@ import java.util.Objects;
  * */
 public class D_Rows_E_X_D_RowByAttributesOfCondition {
 	@SuppressWarnings({ "unchecked" })
-	public static void _E(IMV_SIQ object, boolean mod) {
+	public static void _E(IMV_SQI object, boolean mod) {
 		if (!object.containsKey("baseName")
 				|| !object.containsKey("tableName")) {
 			return;
@@ -35,11 +35,11 @@ public class D_Rows_E_X_D_RowByAttributesOfCondition {
 		}
 		// make table dir
 		String tablePath = DBPath + "/" + object.get("tableName").toString();
-		List<IMV_SIQ> obj = (List<IMV_SIQ>) Q_Rows_E_X_selectRowsByAttributesOfCondition
+		List<IMV_SQI> obj = (List<IMV_SQI>) Q_Rows_E_X_selectRowsByAttributesOfCondition
 				._E(object);
-		for (IMV_SIQ row : obj) {
-			IMV_SIQ rowValue = (IMV_SIQ) row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-			IMV_SIQ indexCell = (IMV_SIQ) rowValue.get("Index");
+		for (IMV_SQI row : obj) {
+			IMV_SQI rowValue = (IMV_SQI) row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
+			IMV_SQI indexCell = (IMV_SQI) rowValue.get("Index");
 			String indexValue = indexCell.get("culumnValue").toString();
 			D_Rows_E_X_D_RowByTablePathAndIndex._E(tablePath, indexValue, mod);
 		}

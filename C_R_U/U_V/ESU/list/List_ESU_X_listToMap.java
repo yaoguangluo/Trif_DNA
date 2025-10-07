@@ -1,6 +1,6 @@
 package U_V.ESU.list;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.json.JSONObject;
@@ -20,6 +20,6 @@ import java.util.List;
 public class List_ESU_X_listToMap{
 	public static String _E(Gson gson, List<Object> list){
 		return gson.fromJson(new JSONObject(gson.toJson(list)).toString()
-				, new TypeToken<IMV_SIQ>(){}.getType());
+				, new TypeToken<IMV_SQI>(){}.getType());
 	}
 }

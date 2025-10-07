@@ -1,7 +1,7 @@
 package E_A.OEI.SVQ.MPC.fhmm.E;
 
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.time.TimeCheck;
 
 import java.util.Hashtable;
@@ -99,7 +99,7 @@ public class PillowsSet {
 		// timecheck.end();
 		// timecheck.duration();
 		// 20230106-System.out.println(pillowsMap.getPillow(100));
-		Map<Long, Object> map = new IMV_SIQ();
+		Map<Long, Object> map = new IMV_SQI();
 		for (long i = 0; i < 5000000; i++) {
 			map.put(i, i);
 		}
@@ -114,7 +114,7 @@ public class PillowsSet {
 		// 20230106-System.out.println(map.get(v));
 		// c
 
-		map = new IMV_SIQ();
+		map = new IMV_SQI();
 		for (long i = 0; i < 5000000; i++) {
 			map.put(i, i);
 		}

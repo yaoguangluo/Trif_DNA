@@ -14,7 +14,7 @@ import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaFileInputStream;
 import exception.file.O.DetaFileWriter;
 import exception.file.O.DetaInputStreamReader;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -189,7 +189,7 @@ public class ShellReplace {
 
     //稍后设计成map来存储这些String条件变量。
     public void replaceStringWithFileName(String fileDirectroyPath, String searchString
-            , IMV_SIQ conditions) {
+            , IMV_SQI conditions) {
         this.fileType = conditions.getString("fileType");
         this.fileName = conditions.getString("fileName");
         this.fileSize_KB = Long.valueOf(conditions.getString("filesize_KB"));
@@ -273,7 +273,7 @@ public class ShellReplace {
     public static void main(String[] argv) {
         //new ShellReplace().replaceString("C:\\Users\\Lenovo\\Desktop
         //\\DNA_RNA\\2021\\repalceSample", ">_<", "..>_<..");
-        IMV_SIQ conditions = new IMV_SIQ();
+        IMV_SQI conditions = new IMV_SQI();
         conditions.put("fileType", "");
         conditions.put("fileName", "");
         conditions.put("filesize_KB", "");
@@ -294,7 +294,7 @@ public class ShellReplace {
         shellReplace.rollbackWithRecordingLog(conditions);
     }
 
-    private void rollbackWithRecordingLog(IMV_SIQ conditions) {
+    private void rollbackWithRecordingLog(IMV_SQI conditions) {
         File file = new File(fileDirectroyPath);
         if (file.isFile()) {
             fileDirectroyPath = file.getPath();
@@ -356,7 +356,7 @@ public class ShellReplace {
     }
 
     //设计一种简单的log模式先。
-    public void replaceStringWithLogRecording(IMV_SIQ conditions) {
+    public void replaceStringWithLogRecording(IMV_SQI conditions) {
         //记录
         //稍后对下面去重。
         this.replaceLogPath = conditions.getString("replaceLogPath");

@@ -8,7 +8,7 @@ import M_V.MVQ.button.DetaButton;
 import M_V.MVQ.tabbedpane.DetabbedPane;
 import S_A.linePage.Line2025;
 import S_A.linePage.PageP_M;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import exception.thread.DetaThread;
 import jniFFT.LYGFFT;
 
@@ -47,8 +47,8 @@ public class MakeContainerZNSZ extends MakeContainerZNSZ_X_S {
 	}
 
 	public MakeContainerZNSZ(A _A, Container jpanelFourth, App_S u2,
-			DetabbedPane jTabbedpane, List<String> tabNames2, IMV_SIQ pos,
-			IMV_SIQ pose, IMV_SIQ etc, IMV_SIQ cte, App app_NE) {
+			DetabbedPane jTabbedpane, List<String> tabNames2, IMV_SQI pos,
+			IMV_SQI pose, IMV_SQI etc, IMV_SQI cte, App app_NE) {
 		super(app_NE);
 		NE = app_NE;
 		this.jpanelFourth = jpanelFourth;

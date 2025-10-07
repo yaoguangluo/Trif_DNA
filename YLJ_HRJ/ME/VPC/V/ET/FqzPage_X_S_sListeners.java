@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import ME.VPC.S.pillow.FqzPage_X_S_s;
 import ME.VPC.V.dictionary.FqzDictionary;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import javax.swing.JTextField;
@@ -106,7 +106,7 @@ public class FqzPage_X_S_sListeners extends FqzPage_X_S_s
 		int[] score_code = new int[copy.size()];
 		int[] reg = new int[copy.size()];
 		int count = 0;
-		IMV_SIQ_SS mapSearchWithoutSort = null;
+		IMV_SQI_SS mapSearchWithoutSort = null;
 		if (null == _A) {
 			return; // trif
 		}
@@ -264,14 +264,14 @@ public class FqzPage_X_S_sListeners extends FqzPage_X_S_s
 //String primaryKey= "病名";
 //String tabKey= "zysz";
 ////以后设计 uniq forenkey等.
-//Map<String, IMV_SIQ> map= d.dbToMap(primaryKey, tabKey);
-//IMV_SIQ dic_bing_ming= map.get("病名");
-//IMV_SIQ dic_yongyao= map.get("用药");
+//Map<String, IMV_SQI> map= d.dbToMap(primaryKey, tabKey);
+//IMV_SQI dic_bing_ming= map.get("病名");
+//IMV_SQI dic_yongyao= map.get("用药");
 //dic_map= map.get("dic_map");
 //
 ////		DictionaryDB d= new DictionaryDB();
-////		IMV_SIQ dic_bing_ming= new IMV_SIQ();
-////		IMV_SIQ dic_yongyao= new IMV_SIQ();
+////		IMV_SQI dic_bing_ming= new IMV_SQI();
+////		IMV_SQI dic_yongyao= new IMV_SQI();
 ////		dic_map= d.txtToMap(dic_bing_ming, dic_yongyao);
 //
 //tableData_old= new Object[dic_map.size()][4];
@@ -293,7 +293,7 @@ public class FqzPage_X_S_sListeners extends FqzPage_X_S_s
 //key= "";
 //}
 //sets= null;
-//Map<String, WordFrequency> map= new IMV_SIQ();
+//Map<String, WordFrequency> map= new IMV_SQI();
 //try {
 //row= table.getSelectedRow();
 //int col= table.getSelectedColumn();

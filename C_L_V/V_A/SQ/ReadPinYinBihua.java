@@ -5,8 +5,8 @@ import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_Pos;
 import exception.file.O.DetaBufferedReader;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -18,13 +18,13 @@ import S_A.pheromone.IMV_SIQ_;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class ReadPinYinBihua {
-    public static IMV_SIQ_ pinYin = null;
-    public static IMV_SIQ biHua = null;
+    public static IMV_SQI_ pinYin = null;
+    public static IMV_SQI biHua = null;
 
     public static void getPinYinBihuaMap(App NE) {
         try {
-            pinYin = new IMV_SIQ_();
-            biHua = new IMV_SIQ();
+            pinYin = new IMV_SQI_();
+            biHua = new IMV_SQI();
             DetaBufferedReader cReaderp = FastReadProjectFile
                 .getDetaBufferedReader(S_File.PinYinCN_lyg
                     , NE.resourceTail + "lygs/", S_Pos.UTF8_STRING);

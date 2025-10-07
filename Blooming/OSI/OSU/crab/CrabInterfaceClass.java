@@ -2,7 +2,7 @@ package OSI.OSU.crab;
 
 import ME.VPC.M.app.App;
 import S_A.SEM.bloom.StaticFunctionMap;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import test.java.interfaces.test.CommonTestInition;
 
 /*
@@ -18,14 +18,14 @@ import test.java.interfaces.test.CommonTestInition;
 public class CrabInterfaceClass implements CrabInterface {
 	String callFunctionKey;
 
-	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
-	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
-	// public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
-	// public IMV_SIQ chromosomeBlooming= new IMV_SIQ();
-	// public IMV_SIQ chromosomeMetabolism= new IMV_SIQ();
-	// public IMV_SIQ chromosomePDE= new IMV_SIQ();
-	// public IMV_SIQ chromosomeDNA= new IMV_SIQ();
-	// public IMV_SIQ chromosomeNode= new IMV_SIQ();
+	// public IMV_SQI chromosomeRoot= new IMV_SQI();
+	// public IMV_SQI chromosomeFlower= new IMV_SQI();
+	// public IMV_SQI chromosomeLeaf= new IMV_SQI();
+	// public IMV_SQI chromosomeBlooming= new IMV_SQI();
+	// public IMV_SQI chromosomeMetabolism= new IMV_SQI();
+	// public IMV_SQI chromosomePDE= new IMV_SQI();
+	// public IMV_SQI chromosomeDNA= new IMV_SQI();
+	// public IMV_SQI chromosomeNode= new IMV_SQI();
 	/*
 	 * 用于表达元基花的链接
 	 */
@@ -100,8 +100,8 @@ public class CrabInterfaceClass implements CrabInterface {
 	// StaticRootMap.chromosomeRNA.put("crab", null);
 	// System.out.println("Hello Word!");
 	// return null;
-	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子,
-		App NE, IMV_SIQ outputReg) {
+	public boolean logic(IMV_SQI inputValues, String[] 传参因子, int 因子,
+		App NE, IMV_SQI outputReg) {
 		S_logger.Log.logger.info("Hello Word!");
 		return true;
 	}
@@ -119,8 +119,8 @@ public class CrabInterfaceClass implements CrabInterface {
 		crabInterfaceClass.bloomings(commonTestInition.NE);
 		//
 		String callFunctionKey = ("callFunctionKey");
-		IMV_SIQ outputReg = new IMV_SIQ();
-		IMV_SIQ inputValue = new IMV_SIQ();
+		IMV_SQI outputReg = new IMV_SQI();
+		IMV_SQI inputValue = new IMV_SQI();
 		String chromosome = commonTestInition.NE.app_S.staticRootMap.staticClass_XE_Map
 			.getString(callFunctionKey);
 		String[] 传参因子 = StaticFunctionMap.callAnnotationMap(

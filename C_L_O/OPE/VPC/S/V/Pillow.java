@@ -10,7 +10,7 @@
 package OPE.VPC.S.V;
 
 import OPE.PSQ.OEU.SOI.SMQ.neroCell.BootNeroDoc;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -19,7 +19,7 @@ public class Pillow{
 	public static Map<Long, Object> pillowBase;
 	public static void register(BootNeroDoc bootNeroDoc) {
 		//bootNeroDoc 需要拿出来的数据资源, 比如可重用数据, 运维数据, 可控数据等。
-		IMV_SIQ map= new IMV_SIQ();
+		IMV_SQI map= new IMV_SQI();
 		//...
 		bootNeroDoc.I_Pillow(map);
 		pillowBase.put(bootNeroDoc.getId(), map);

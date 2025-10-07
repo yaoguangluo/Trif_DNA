@@ -3,8 +3,8 @@ package C_A.ME.analysis.C;
 import C_A.OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 import java.util.List;
 
@@ -18,15 +18,15 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public interface CogsBinaryForest_A extends BinaryForest_A {
-    IMV_SIQ_SS parserMixStringByReturnFrequencyMap(String key, App NE);
+    IMV_SQI_SS parserMixStringByReturnFrequencyMap(String key, App NE);
 
-    IMV_SIQ_SS getWordFrequencyMap(List<String> sets, App NE);
+    IMV_SQI_SS getWordFrequencyMap(List<String> sets, App NE);
 
-    IMV_SIQ_S_ getWordFrequencyByReturnSortMap(List<String> sets, App NE);
+    IMV_SQI_S_ getWordFrequencyByReturnSortMap(List<String> sets, App NE);
 
     EmotionMap getEmotionMap();
 
-    IMV_SIQ_S_ sortWordFrequencyMapToSortMap(IMV_SIQ_SS map);
+    IMV_SQI_S_ sortWordFrequencyMapToSortMap(IMV_SQI_SS map);
 
-    List<WordFrequency> sortWordFrequencyMap(IMV_SIQ_SS map);
+    List<WordFrequency> sortWordFrequencyMap(IMV_SQI_SS map);
 }

@@ -4,7 +4,7 @@ import E_A.OSI.AOP.PCS.PP.company_E.LoginServiceImpl;
 import M_V.MSU.sessionValidation.X_sessionInitByTokenPDICertsDNA;
 import M_V.MSU.sessionValidation.X_sessionTokenCertsInitWithHumanWordsByDNA;
 import S_A.SVQ.stable.S_Token;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.dna.TokenCerts;
 import U_A.PEU.P.md5.Usr;
 import U_V.ESU.string.String_ESU_X_charsetSwap;
@@ -24,12 +24,12 @@ import org.json.JSONObject;
 public class DelegateDB_X_RegisterDB_DNA {
     //注册函数也用dna设计先分开来。
     @SuppressWarnings("unused")
-    public static IMV_SIQ transactionRegisterDB_DNA(String uEmail, String uEmailEnsure
+    public static IMV_SQI transactionRegisterDB_DNA(String uEmail, String uEmailEnsure
         , String uName, String uPassword, String uPassWDEnsure, String uAddress
         , String uPhone, String uWeChat, String uQq, String uAge, String uSex) {
         Usr usr = LoginServiceImpl.findUsrByUEmail(uEmail);
         if (usr.getuEmail() != null) {
-            IMV_SIQ out = new IMV_SIQ();
+            IMV_SQI out = new IMV_SQI();
             out.putString("loginInfo", "unsuccess");
             out.putString("returnResult", "unsuccess");
             return out;

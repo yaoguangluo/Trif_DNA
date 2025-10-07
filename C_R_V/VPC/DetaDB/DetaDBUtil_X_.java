@@ -1,6 +1,6 @@
 package VPC.DetaDB;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -12,5 +12,5 @@ import S_A.pheromone.IMV_SIQ;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class DetaDBUtil_X_ {
-	public static IMV_SIQ culumnType;
+	public static IMV_SQI culumnType;
 }

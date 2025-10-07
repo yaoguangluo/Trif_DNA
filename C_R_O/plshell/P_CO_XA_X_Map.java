@@ -9,8 +9,8 @@ import O_V.OSA.shell.XA_ShellTables;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import java.math.BigDecimal;
@@ -31,13 +31,13 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class P_CO_XA_X_Map extends P_CO_XA_X_ {
 	// 以后优化成统一对象输出, 不需要再转换。2019-1-15 tin
-	public static IMV_SIQ rowToRowMap(Row row) {
-		IMV_SIQ culumnMaps = new IMV_SIQ();
-		IMV_SIQ rowMap = new IMV_SIQ();
+	public static IMV_SQI rowToRowMap(Row row) {
+		IMV_SQI culumnMaps = new IMV_SQI();
+		IMV_SQI rowMap = new IMV_SQI();
 		for (String cellName : row.getCells().keySet()) {
 			if (!cellName.contains("is_delete")) {
 				Cell cell = row.getCell(cellName);
-				IMV_SIQ culumnMap = new IMV_SIQ();
+				IMV_SQI culumnMap = new IMV_SQI();
 				culumnMap.putString(S_ShellETL.SHELL_ETL_CULUMNNAME, cellName);
 				if (null != cell && null != cell.getCellValue()) {
 					culumnMap.putString("culumnValue",
@@ -45,10 +45,10 @@ public class P_CO_XA_X_Map extends P_CO_XA_X_ {
 				} else {
 					culumnMap.putString("culumnValue", "");
 				}
-				culumnMaps.put_IMV_SIQ(cellName, culumnMap);
+				culumnMaps.put_IMV_SQI(cellName, culumnMap);
 			}
 		}
-		rowMap.put_IMV_SIQ(S_ShellETL.SHELL_ETL_ROWVALUE, culumnMaps);
+		rowMap.put_IMV_SQI(S_ShellETL.SHELL_ETL_ROWVALUE, culumnMaps);
 		return rowMap;
 	}
 
@@ -56,15 +56,15 @@ public class P_CO_XA_X_Map extends P_CO_XA_X_ {
 	// 方便下一步表格编译计算。
 	// 罗瑶光202109302339
 	@SuppressWarnings("unchecked")
-	public static Row rowMapToRow(IMV_SIQ _IMV_SIQ_) {
+	public static Row rowMapToRow(IMV_SQI _IMV_SQI_) {
 		Row row = new Row();
-		ConcurrentHashMap<String, Cell> cells = new IMV_SIQ();
+		ConcurrentHashMap<String, Cell> cells = new IMV_SQI();
 		row.I_Cells(cells);
-		IMV_SIQ _IMV_SIQ = _IMV_SIQ_.QSV_IMV_SIQ(S_ShellETL.SHELL_ETL_ROWVALUE);
-		for (String cellName : (Iterable<String>) _IMV_SIQ.keySet()) {
+		IMV_SQI _IMV_SQI = _IMV_SQI_.QSV_IMV_SQI(S_ShellETL.SHELL_ETL_ROWVALUE);
+		for (String cellName : (Iterable<String>) _IMV_SQI.keySet()) {
 			if (!cellName.contains("is_delete")) {
 				Cell cell = new Cell();
-				IMV_SIQ culumnMap = _IMV_SIQ.QSV_IMV_SIQ(cellName);
+				IMV_SQI culumnMap = _IMV_SQI.QSV_IMV_SQI(cellName);
 				cell.I_CellValue(culumnMap.get("culumnValue"));
 				row.putCell(cellName, cell);
 			}
@@ -74,10 +74,10 @@ public class P_CO_XA_X_Map extends P_CO_XA_X_ {
 
 	// 猫腻哥 把我pmap的output 都改了, 今天一查问题全出来了。20210927
 	// 懒得管, 把P_Map 改成 shellP_Map
-	public static void P_Map(String[] sets, List<IMV_SIQ> output,
-			String tableName, IMV_SIQ object, App NE) {
+	public static void P_Map(String[] sets, List<IMV_SQI> output,
+			String tableName, IMV_SQI object, App NE) {
 		// 算了统一接口, 以后统一优化改。
-		List<IMV_SIQ> outputTemp = new ArrayList<>();
+		List<IMV_SQI> outputTemp = new ArrayList<>();
 		// 创建一个table
 		XA_ShellTable table;
 		// outputTemp.addAll(output);
@@ -107,8 +107,8 @@ public class P_CO_XA_X_Map extends P_CO_XA_X_ {
 			int[] score_code = new int[table.huaRuiJiJtableRows.length];
 			int[] reg = new int[table.huaRuiJiJtableRows.length];
 			int count = 0;
-			IMV_SIQ pos = NE.app_S._A.getPosCnToCn();
-			IMV_SIQ_SS mapSearchWithoutSort;
+			IMV_SQI pos = NE.app_S._A.getPosCnToCn();
+			IMV_SQI_SS mapSearchWithoutSort;
 			mapSearchWithoutSort = NE.app_S._A
 					.parserMixStringByReturnFrequencyMap(key, NE);
 			// Iterator<String> iteratorForCopy= copy.iterator();*/
@@ -121,7 +121,7 @@ public class P_CO_XA_X_Map extends P_CO_XA_X_ {
 						(i * 3 + 3) < key.length() ? (i * 3 + 3)
 								: key.length() - 1);
 			}
-			IMV_SIQ map = new IMV_SIQ();
+			IMV_SQI map = new IMV_SQI();
 			for (int i = 0; i < table.huaRuiJiJtableRows.length; i++) {
 				// while(iteratorForCopy.hasNext()) {*/
 				String temps = table.huaRuiJiJtableRows[i].getCell(sets[0])
@@ -263,7 +263,7 @@ public class P_CO_XA_X_Map extends P_CO_XA_X_ {
 			if (null == key || key.equals("")) {
 				return;
 			}
-			IMV_SIQ dnnSet = new IMV_SIQ();
+			IMV_SQI dnnSet = new IMV_SQI();
 			double perRatio = 0.0;
 			if (null == NE.app_S.DNNmap || NE.app_S.DNNmap.isEmpty()) {
 				NE.app_S.DNNmap = GetDNNMap.doGetDNNMap(NE.app_S, NE);
@@ -272,8 +272,8 @@ public class P_CO_XA_X_Map extends P_CO_XA_X_ {
 			int[] score_code = new int[table.huaRuiJiJtableRows.length];
 			int[] reg = new int[table.huaRuiJiJtableRows.length];
 			int count = 0;
-			IMV_SIQ pos = NE.app_S._A.getPosCnToCn();
-			IMV_SIQ_SS mapSearchWithoutSort;
+			IMV_SQI pos = NE.app_S._A.getPosCnToCn();
+			IMV_SQI_SS mapSearchWithoutSort;
 			mapSearchWithoutSort = NE.app_S._A
 					.parserMixStringByReturnFrequencyMap(key, NE);
 			// Iterator<String> iteratorForCopy= copy.iterator();*/
@@ -286,7 +286,7 @@ public class P_CO_XA_X_Map extends P_CO_XA_X_ {
 						(i * 3 + 3) < key.length() ? (i * 3 + 3)
 								: key.length() - 1);
 			}
-			IMV_SIQ map = new IMV_SIQ();
+			IMV_SQI map = new IMV_SQI();
 			for (int i = 0; i < table.huaRuiJiJtableRows.length; i++) {
 				String temps = table.huaRuiJiJtableRows[i].getCell(sets[0])
 						.getCellValue().toString();
@@ -306,7 +306,7 @@ public class P_CO_XA_X_Map extends P_CO_XA_X_ {
 				map.putRow(score[copyCount], table.huaRuiJiJtableRows[i]);
 				Iterator<String> iteratorWordFrequency = mapSearchWithoutSort
 						.keySet().iterator();
-				IMV_SIQ DNNcountBonus = new IMV_SIQ();
+				IMV_SQI DNNcountBonus = new IMV_SQI();
 				double BonusFullRatio = 0.0;
 				Here: while (iteratorWordFrequency.hasNext()) {
 					String mapSearchaAtII = iteratorWordFrequency.next();

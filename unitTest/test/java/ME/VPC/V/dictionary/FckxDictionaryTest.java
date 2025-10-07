@@ -1,8 +1,8 @@
 package test.java.ME.VPC.V.dictionary;
 
 import ME.VPC.V.dictionary.FckxDictionary;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -27,89 +27,89 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * */
 class FckxDictionaryTest {
     @Mock
-    IMV_SIQ_ dic_yf;
+    IMV_SQI_ dic_yf;
     @Mock
     Iterator<String> iter;
     @Mock
     List<String> copy;
     @Mock
-    IMV_SIQ_ dic_yx;
+    IMV_SQI_ dic_yx;
     @Mock
-    IMV_SIQ_ dic_sy;
+    IMV_SQI_ dic_sy;
     @Mock
-    IMV_SIQ_ dic_lc;
+    IMV_SQI_ dic_lc;
     @Mock
-    IMV_SIQ_ dic_by;
+    IMV_SQI_ dic_by;
     @Mock
-    IMV_SIQ_ dic_lx;
+    IMV_SQI_ dic_lx;
     @Mock
-    IMV_SIQ_ dic_map;
+    IMV_SQI_ dic_map;
     @Mock
     List<String> temp_list;
     @Mock
-    IMV_SIQ_ dic_zd;
+    IMV_SQI_ dic_zd;
     @Mock
-    IMV_SIQ_ dic_zl;
+    IMV_SQI_ dic_zl;
     @Mock
-    IMV_SIQ_ dic_bf;
+    IMV_SQI_ dic_bf;
     @Mock
-    IMV_SIQ_ dic_jy;
+    IMV_SQI_ dic_jy;
     @Mock
-    IMV_SIQ_ dic_yh;
+    IMV_SQI_ dic_yh;
     @Mock
-    IMV_SIQ_ dic_bl;
+    IMV_SQI_ dic_bl;
     @Mock
-    IMV_SIQ_ dic_wx;
+    IMV_SQI_ dic_wx;
     @Mock
-    IMV_SIQ_ dic_gn;
+    IMV_SQI_ dic_gn;
     @Mock
-    IMV_SIQ dic_xj;
+    IMV_SQI dic_xj;
     @Mock
     List<String> dic_list;
     @Mock
-    IMV_SIQ pinyin;
+    IMV_SQI pinyin;
     @Mock
-    IMV_SIQ dic_index;
+    IMV_SQI dic_index;
     @Mock
-    IMV_SIQ dic_yw;
+    IMV_SQI dic_yw;
     @Mock
-    IMV_SIQ dic_li;
+    IMV_SQI dic_li;
     @Mock
-    IMV_SIQ dic_hai;
+    IMV_SQI dic_hai;
     @Mock
-    IMV_SIQ dic_xz;
+    IMV_SQI dic_xz;
     @Mock
-    IMV_SIQ dic_zf;
+    IMV_SQI dic_zf;
     @Mock
-    IMV_SIQ dic_cj;
+    IMV_SQI dic_cj;
     @Mock
-    IMV_SIQ dic_jj;
+    IMV_SQI dic_jj;
     @Mock
-    IMV_SIQ dic_cy;
+    IMV_SQI dic_cy;
     @Mock
-    IMV_SIQ dic_ya;
+    IMV_SQI dic_ya;
     @Mock
-    IMV_SIQ dic_jm;
+    IMV_SQI dic_jm;
     @Mock
-    IMV_SIQ dic_xw;
+    IMV_SQI dic_xw;
     @Mock
-    IMV_SIQ dic_yl;
+    IMV_SQI dic_yl;
     @Mock
-    IMV_SIQ dic_ym;
+    IMV_SQI dic_ym;
     @Mock
-    IMV_SIQ dic_chu_fang;
+    IMV_SQI dic_chu_fang;
     @Mock
     Iterator<String> it;
     @Mock
-    IMV_SIQ dic_mz;
+    IMV_SQI dic_mz;
     @Mock
-    IMV_SIQ dic_yy;
+    IMV_SQI dic_yy;
     @Mock
-    IMV_SIQ dic_tl;
+    IMV_SQI dic_tl;
     @Mock
-    IMV_SIQ dic_ff;
+    IMV_SQI dic_ff;
     @Mock
-    IMV_SIQ dic_fg;
+    IMV_SQI dic_fg;
     @InjectMocks
     FckxDictionary fckxDictionary;
 
@@ -125,92 +125,92 @@ class FckxDictionaryTest {
 
     @Test
     void testListToMap() {
-        IMV_SIQ_ result = fckxDictionary.listToMap(new ArrayList<>(Arrays.asList("String")));
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.listToMap(new ArrayList<>(Arrays.asList("String")));
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_zd() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_zd(new IMV_SIQ());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_zd(new IMV_SQI());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_zl() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_zl(new IMV_SIQ());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_zl(new IMV_SQI());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_bf() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_bf(new IMV_SIQ());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_bf(new IMV_SQI());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_jy() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_jy(new IMV_SIQ_());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_jy(new IMV_SQI_());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_yh() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_yh(new IMV_SIQ_());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_yh(new IMV_SQI_());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_bl() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_bl(new IMV_SIQ());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_bl(new IMV_SQI());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_wx() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_wx(new IMV_SIQ());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_wx(new IMV_SQI());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_gn() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_gn(new IMV_SIQ());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_gn(new IMV_SQI());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_yf() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_yf(new IMV_SIQ_());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_yf(new IMV_SQI_());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_yx() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_yx(new IMV_SIQ_());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_yx(new IMV_SQI_());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_sy() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_sy(new IMV_SIQ_());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_sy(new IMV_SQI_());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_lc() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_lc(new IMV_SIQ_());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_lc(new IMV_SQI_());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_by() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_by(new IMV_SIQ_());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_by(new IMV_SQI_());
+        assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_lx() {
-        IMV_SIQ_ result = fckxDictionary.mapToMap_lx(new IMV_SIQ_());
-        assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = fckxDictionary.mapToMap_lx(new IMV_SQI_());
+        assertEquals(new IMV_SQI_(), result);
     }
 }
 

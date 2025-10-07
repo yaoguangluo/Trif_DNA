@@ -13,8 +13,8 @@ package test.java.InterfaceTest.chineseParser;
  * */
 
 import A_V.ASQ.PSU.test.TimeCheck;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
@@ -41,10 +41,10 @@ import java.util.List;
  *   就这么简单？no no no 我知道还有其他问题，--稍后-- 罗瑶光。
  */
 public class DemoAfterPOSTest {
-	public IMV_SIQ_SS noun = new IMV_SIQ_SS();
-	public IMV_SIQ_SS verb = new IMV_SIQ_SS();
-	public IMV_SIQ_SS adj = new IMV_SIQ_SS();
-	public IMV_SIQ_SS adv = new IMV_SIQ_SS();
+	public IMV_SQI_SS noun = new IMV_SQI_SS();
+	public IMV_SQI_SS verb = new IMV_SQI_SS();
+	public IMV_SQI_SS adj = new IMV_SQI_SS();
+	public IMV_SQI_SS adv = new IMV_SQI_SS();
 
 	public static void main(String[] argv) throws IOException {
 		DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
@@ -58,7 +58,7 @@ public class DemoAfterPOSTest {
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 准备计算
 		// 词性初始化
-		IMV_SIQ pos = commonTestInition.NE.app_S._A.getPosCnToCn();
+		IMV_SQI pos = commonTestInition.NE.app_S._A.getPosCnToCn();
 		List<String> sets = new ArrayList<>();
 		TimeCheck t = new TimeCheck();
 		// 等待分词的语句
@@ -114,7 +114,7 @@ public class DemoAfterPOSTest {
 	}
 
 	// 适用于双字 三字 四字 五字 六字 七字 八字的一次条件计算组合。增加准确度
-	public List<String> testAfterPOS(List<String> sets, IMV_SIQ pos) {
+	public List<String> testAfterPOS(List<String> sets, IMV_SQI pos) {
 		List<String> setsOutput = new ArrayList<>();
 		String connectsTemp = "";
 		// 单字组合,支持4字最大关联
@@ -180,7 +180,7 @@ public class DemoAfterPOSTest {
 	 * 
 	 * */
 	@SuppressWarnings("unused")
-	public List<String> testPOS(List<String> sets, IMV_SIQ pos) {
+	public List<String> testPOS(List<String> sets, IMV_SQI pos) {
 		List<String> setsOutput = new ArrayList<>();
 		int charPosition = 0;
 		// 结果归纳

@@ -5,7 +5,7 @@ import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapA_VECS_C;
 import S_A.SEM.bloom.StaticFunctionMapA_VECS_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -23,12 +23,12 @@ public class StaticReflectionMapA_VECS_C extends
 	@SuppressWarnings("unused")
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		int 因子 = 0;
 		Object map = null;
 		if (callFunctionKey.contains("parserMixedString", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = StaticFunctionMapA_VECS_C.parserMixedString(NE);
@@ -38,7 +38,7 @@ public class StaticReflectionMapA_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("parserMixedStringToList", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapA_VECS_C
@@ -49,7 +49,7 @@ public class StaticReflectionMapA_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("posReader", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapA_VECS_C.posReader(NE);
@@ -59,7 +59,7 @@ public class StaticReflectionMapA_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("dnnReader", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapA_VECS_C.dnnReader(NE);
@@ -69,7 +69,7 @@ public class StaticReflectionMapA_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("mindReader", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapA_VECS_C.mindReader(NE);
@@ -79,7 +79,7 @@ public class StaticReflectionMapA_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("emotionReader", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapA_VECS_C.emotionReader(NE);
@@ -89,7 +89,7 @@ public class StaticReflectionMapA_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("educationReader", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapA_VECS_C.educationReader(NE);
@@ -99,7 +99,7 @@ public class StaticReflectionMapA_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("environmentReader", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapA_VECS_C.environmentReader(NE);
@@ -109,7 +109,7 @@ public class StaticReflectionMapA_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("lenovoReader", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapA_VECS_C.lenovoReader(NE);
@@ -119,7 +119,7 @@ public class StaticReflectionMapA_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("frequencyReader", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapA_VECS_C.frequencyReader(NE);

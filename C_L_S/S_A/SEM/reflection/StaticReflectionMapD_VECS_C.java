@@ -3,7 +3,7 @@ package S_A.SEM.reflection;
 import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMapD_VECS_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -19,7 +19,7 @@ public class StaticReflectionMapD_VECS_C extends
 	StaticReflectionMapCASE {
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapD_VECS_E staticFunctionMapD_VECS_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 
 	}
 

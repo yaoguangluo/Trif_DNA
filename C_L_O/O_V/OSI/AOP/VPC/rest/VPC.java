@@ -14,7 +14,7 @@ import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E.RestDBPLSQL_E;
 import E_A.OSI.AOP.PCS.PP.port_E.RestLoginPortImpl;
 import E_A.OSI.AOP.VPC.PP.port_E.RestAskPort_E;
 import E_A.OSI.AOP.VPC.PP.port_E.RestLoginPort_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.dna.DNAAuth;
 
 //import PEU.P.md5.Usr;
@@ -31,7 +31,7 @@ import U_A.PEU.P.dna.DNAAuth;
  * */
 public class VPC extends ServerVPC_Standard {
     //逐步分离出来, 方便vpcs 之后继承。
-    public static String forwardDB(App_S app, String string, IMV_SIQ data) {
+    public static String forwardDB(App_S app, String string, IMV_SQI data) {
 //		if(!DNAAuthCheck(app, string, data)) {
 //			return "";
 //		}
@@ -109,7 +109,7 @@ public class VPC extends ServerVPC_Standard {
     }
 
     //remove apps later..
-    public static String forward(App_S app, String string, IMV_SIQ data) {
+    public static String forward(App_S app, String string, IMV_SQI data) {
 //		if(!DNAAuth.DNAAuthStatusCheckEmailAndPassword(app, string, data)) {
 //			return "";
 //		}

@@ -3,8 +3,8 @@ package ME.VPC.V.db;
 import A_I.MPE.MAQPVDCOISIV.full.FullDNATokenPDI;
 import ME.VPC.M.app.App;
 import V_A.SQ.ReadPinYinBihua;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -28,9 +28,9 @@ public class ZhongYaoDictionaryFromDB {
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
-	public IMV_SIQ listToMap(List<String> dic_list) {
-		IMV_SIQ dic_map = new IMV_SIQ();
-		IMV_SIQ map = null;
+	public IMV_SQI listToMap(List<String> dic_list) {
+		IMV_SQI dic_map = new IMV_SQI();
+		IMV_SQI map = null;
 		// for(int i=0; i<)
 		String plsql = "setRoot:C:/DetaDB1;" + "baseName:ZYY;"
 				+ "tableName:zybc:select;" + "condition:or:ID|<=|3000;";
@@ -41,17 +41,17 @@ public class ZhongYaoDictionaryFromDB {
 			e1.printStackTrace();
 		}
 		ArrayList list = (ArrayList) map.get("obj");
-		Iterator<IMV_SIQ> iterator = list.iterator();
+		Iterator<IMV_SQI> iterator = list.iterator();
 		return map;
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public IMV_SIQ listToMap(IMV_SIQ dic_yw, IMV_SIQ dic_li, IMV_SIQ dic_hai,
-			IMV_SIQ dic_xz, IMV_SIQ dic_ya, IMV_SIQ dic_jm, IMV_SIQ dic_xw,
-			IMV_SIQ dic_cy, IMV_SIQ dic_jj, IMV_SIQ dic_zf, IMV_SIQ dic_cj,
-			IMV_SIQ dic_yl, App NE) {
-		IMV_SIQ dic_map = new IMV_SIQ();
-		IMV_SIQ map = null;
+	public IMV_SQI listToMap(IMV_SQI dic_yw, IMV_SQI dic_li, IMV_SQI dic_hai,
+			IMV_SQI dic_xz, IMV_SQI dic_ya, IMV_SQI dic_jm, IMV_SQI dic_xw,
+			IMV_SQI dic_cy, IMV_SQI dic_jj, IMV_SQI dic_zf, IMV_SQI dic_cj,
+			IMV_SQI dic_yl, App NE) {
+		IMV_SQI dic_map = new IMV_SQI();
+		IMV_SQI map = null;
 		// for(int i=0; i<)
 		// System.out.println("1");
 		NE.app_S.appConfig.SectionJPanel.jTextPane.setText("1");
@@ -64,20 +64,20 @@ public class ZhongYaoDictionaryFromDB {
 			e1.printStackTrace();
 		}
 		ArrayList list = (ArrayList) map.get("obj");
-		Iterator<IMV_SIQ> iterator = list.iterator();
+		Iterator<IMV_SQI> iterator = list.iterator();
 		while (iterator.hasNext()) {
-			IMV_SIQ hashmap = iterator.next();
+			IMV_SQI hashmap = iterator.next();
 			StringBuilder stringBuilder = new StringBuilder();
 			if (hashmap.containsKey("rowValue")) {
-				IMV_SIQ rowValue = (IMV_SIQ) hashmap.get("rowValue");
+				IMV_SQI rowValue = (IMV_SQI) hashmap.get("rowValue");
 				String keyName = null;
 				if (rowValue.containsKey("中药名称")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("中药名称");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("中药名称");
 					keyName = temp.get("culumnValue").toString();
 					stringBuilder.append(temp.get("culumnValue").toString());
 				}
 				if (rowValue.containsKey("常见药")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("常见药");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("常见药");
 					String cj = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					cj = new FullDNATokenPDI().initonDeSect(cj);
@@ -85,7 +85,7 @@ public class ZhongYaoDictionaryFromDB {
 					stringBuilder.append(cj);
 				}
 				if (rowValue.containsKey("搭配")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("搭配");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("搭配");
 					String zf = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					zf = new FullDNATokenPDI().initonDeSect(zf);
@@ -93,7 +93,7 @@ public class ZhongYaoDictionaryFromDB {
 					stringBuilder.append(zf);
 				}
 				if (rowValue.containsKey("愚按")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("愚按");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("愚按");
 					String ya = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					ya = new FullDNATokenPDI().initonDeSect(ya);
@@ -101,7 +101,7 @@ public class ZhongYaoDictionaryFromDB {
 					stringBuilder.append(ya);
 				}
 				if (rowValue.containsKey("崇源")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("崇源");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("崇源");
 					String cy = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					cy = new FullDNATokenPDI().initonDeSect(cy);
@@ -109,7 +109,7 @@ public class ZhongYaoDictionaryFromDB {
 					stringBuilder.append(cy);
 				}
 				if (rowValue.containsKey("经解")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("经解");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("经解");
 					String jj = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					jj = new FullDNATokenPDI().initonDeSect(jj);
@@ -117,7 +117,7 @@ public class ZhongYaoDictionaryFromDB {
 					stringBuilder.append(jj);
 				}
 				if (rowValue.containsKey("经脉")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("经脉");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("经脉");
 					String jm = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					jm = new FullDNATokenPDI().initonDeSect(jm);
@@ -125,7 +125,7 @@ public class ZhongYaoDictionaryFromDB {
 					stringBuilder.append(jm);
 				}
 				if (rowValue.containsKey("性味")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("性味");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("性味");
 					String xw = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					xw = new FullDNATokenPDI().initonDeSect(xw);
@@ -133,7 +133,7 @@ public class ZhongYaoDictionaryFromDB {
 					stringBuilder.append(xw);
 				}
 				if (rowValue.containsKey("用量")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("用量");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("用量");
 					String yl = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					// yl= new FullDNATokenPDI().initonDeSect(yl);
@@ -141,7 +141,7 @@ public class ZhongYaoDictionaryFromDB {
 					stringBuilder.append(yl);
 				}
 				if (rowValue.containsKey("风险规避")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("风险规避");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("风险规避");
 					String hai = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					hai = new FullDNATokenPDI().initonDeSect(hai);
@@ -149,7 +149,7 @@ public class ZhongYaoDictionaryFromDB {
 					stringBuilder.append(hai);
 				}
 				if (rowValue.containsKey("功效")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("功效");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("功效");
 					String li = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					li = new FullDNATokenPDI().initonDeSect(li);
@@ -157,7 +157,7 @@ public class ZhongYaoDictionaryFromDB {
 					stringBuilder.append(li);
 				}
 				if (rowValue.containsKey("笔记原文")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("笔记原文");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("笔记原文");
 					String yw = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					// yw= new FullDNATokenPDI().initonDeSect(yw);
@@ -165,7 +165,7 @@ public class ZhongYaoDictionaryFromDB {
 					stringBuilder.append(yw);
 				}
 				if (rowValue.containsKey("中医馆药理")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("中医馆药理");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("中医馆药理");
 					String xz = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					xz = new FullDNATokenPDI().initonDeSect(xz);
@@ -181,10 +181,10 @@ public class ZhongYaoDictionaryFromDB {
 	}
 
 	@SuppressWarnings("unchecked")
-	public IMV_SIQ_ mapToIndex(IMV_SIQ_ dic_map) {
-		// Map<String, String> pinyin = new IMV_SIQ();
-		IMV_SIQ_ pinyin = ReadPinYinBihua.pinYin;
-		IMV_SIQ_ dic_index = new IMV_SIQ_();
+	public IMV_SQI_ mapToIndex(IMV_SQI_ dic_map) {
+		// Map<String, String> pinyin = new IMV_SQI();
+		IMV_SQI_ pinyin = ReadPinYinBihua.pinYin;
+		IMV_SQI_ dic_index = new IMV_SQI_();
 		Iterator<String> iter = dic_map.keySet().iterator();
 		while (iter.hasNext()) {
 			String index = iter.next().replaceAll(" ", "").replace("〔", "")

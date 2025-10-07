@@ -19,7 +19,7 @@ import exception.file.O.DetaInputStreamReader;
 import P_V.PEQ.AMV.ECS.test.RNN_IDETest;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.VSQ.parser.EmotionSample;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -146,7 +146,7 @@ public class SocketThread extends Thread implements Runnable {
                 //输出
                 outputValue = page.toString();
                 String sb = outputValue.toString();
-                IMV_SIQ output = new IMV_SIQ();
+                IMV_SQI output = new IMV_SQI();
                 output.put(URLEncoder.encode("sb", "UTF-8"), sb);
                 String outputString = VtoV.ObjectToJsonString(output);
                 //20230106-System.out.println();

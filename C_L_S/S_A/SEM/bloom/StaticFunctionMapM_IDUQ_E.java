@@ -6,7 +6,7 @@ import A_I.MPE.MSU.pde.DecadeToPDS;
 import A_I.MPE.MSU.pde.DecadeToPDS16;
 import A_I.MPE.MSU.pds.PDE_PDS_DL;
 import A_I.MPE.MSU.pds.PDE_PDS_DL16;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳

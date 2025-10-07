@@ -1,6 +1,6 @@
 package A_I.MPE.P;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -22,5 +22,5 @@ public class Race {
 	}
 
 	@SuppressWarnings("unchecked")
-	ConcurrentHashMap<String, Family> race = new IMV_SIQ();
+	ConcurrentHashMap<String, Family> race = new IMV_SQI();
 }

@@ -1,7 +1,7 @@
 package M_V.MSQ.OP.SM.AOP.MEC.SIQ.SM.OSQ.E.rows;
 
 import M_V.ME.SM.OP.SM.AOP.MEC.SIQ.E.P_AggregationPLSQL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.cache.Cache_M;
 
 import java.util.ArrayList;
@@ -18,11 +18,11 @@ import java.util.List;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class Q_Rows_E_X_selectRowsByAttributesOfAggregation {
-	public static List<IMV_SIQ> _E(IMV_SIQ object) {
+	public static List<IMV_SQI> _E(IMV_SQI object) {
 		if (!object.containsKey("obj")) {
 			return new ArrayList<>();
 		}
-		List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("obj")));
+		List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("obj")));
 		List<String[]> aggregationValues = (List<String[]>) object
 				.get("aggregation");
 		Iterator<String[]> iterator = aggregationValues.iterator();

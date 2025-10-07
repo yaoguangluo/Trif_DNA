@@ -3,7 +3,7 @@ package ASQ.classification.fissile;
 import ASQ.euclid.Euclid_X_findCryptionPosition3D;
 import ASQ.basic.Distance_X_getDistance3D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -24,10 +24,10 @@ import java.util.Iterator;
  * */
 
 public class FissileWithMatch_X_fissilePosition3DWithMatch {
-    public static IMV_SIQ _E(ArrayList<AMV_MVS_VSQ_3D> groups
+    public static IMV_SQI _E(ArrayList<AMV_MVS_VSQ_3D> groups
         , double scale) {
-        IMV_SIQ distanceGroups = new IMV_SIQ();
-        IMV_SIQ distanceHeart = new IMV_SIQ();
+        IMV_SQI distanceGroups = new IMV_SQI();
+        IMV_SQI distanceHeart = new IMV_SQI();
         Iterator<AMV_MVS_VSQ_3D> iterator = groups.iterator();
         double i = 0.0;
         while (iterator.hasNext()) {

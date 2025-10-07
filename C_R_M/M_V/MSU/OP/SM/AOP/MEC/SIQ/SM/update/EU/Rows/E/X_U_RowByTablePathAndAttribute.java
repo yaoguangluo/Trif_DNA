@@ -4,7 +4,7 @@ import M_V.MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaFileReader;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -23,7 +23,7 @@ import java.util.Objects;
 *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class X_U_RowByTablePathAndAttribute {
-	public static IMV_SIQ _E(String tablePath, String culumnName,
+	public static IMV_SQI _E(String tablePath, String culumnName,
 			String culumnValue, JSONObject jobj) {
 		String[] sets = tablePath.split("/");
 		File fileDBTable = new File(tablePath);
@@ -93,6 +93,6 @@ public class X_U_RowByTablePathAndAttribute {
 				}
 			}
 		}
-		return new IMV_SIQ();
+		return new IMV_SQI();
 	}
 }

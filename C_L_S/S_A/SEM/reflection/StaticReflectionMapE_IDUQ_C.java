@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapE_IDUQ_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -22,12 +22,12 @@ public class StaticReflectionMapE_IDUQ_C extends
 	@SuppressWarnings("unused")
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		int 因子 = 0;
 		Object map = null;
 		if (callFunctionKey.contains("getNodeInfo", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getNodeInfo(NE);
@@ -37,7 +37,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getNodeProject", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getNodeProject(NE);
@@ -47,7 +47,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getCheckRange", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getCheckRange(NE);
@@ -57,7 +57,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getChooseCheck", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getChooseCheck(NE);
@@ -67,7 +67,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getDrawArrow", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getDrawArrow(NE);
@@ -77,7 +77,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getDynamicLine_U", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getDynamicLine_U(NE);
@@ -87,7 +87,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getU_RelatedLine", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getU_RelatedLine(NE);
@@ -97,7 +97,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getU_RelatedLine", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getU_RelatedLine(NE);
@@ -107,7 +107,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getLinkOSGI", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getLinkOSGI(NE);
@@ -117,7 +117,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getNodeOSGI", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getNodeOSGI(NE);
@@ -127,7 +127,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("_OSU_MCI_MCU_MSI", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C._OSU_MCI_MCU_MSI(NE);
@@ -138,7 +138,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		;
 		if (callFunctionKey.contains(
 			"_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C
@@ -151,7 +151,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		;
 		if (callFunctionKey.contains("_OSU_AVQ_ASQ_OPE_OPC_ECI",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C
@@ -162,7 +162,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getUnicornJSplitPane", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getUnicornJSplitPane(
@@ -173,7 +173,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getUnicornSplitPaneUI", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getUnicornSplitPaneUI(
@@ -184,7 +184,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getUnicornScrollBarUI", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getUnicornScrollBarUI(
@@ -196,7 +196,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		;
 		if (callFunctionKey.contains("getUnicornTreeCellRenderer",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C
@@ -208,7 +208,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getUnicornTreeUI", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getUnicornTreeUI(NE);
@@ -218,7 +218,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getCacuString", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getCacuString(NE);
@@ -228,7 +228,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getUnicornSplitPaneUI", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getUnicornSplitPaneUI(
@@ -239,7 +239,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getCheckRangeVPS", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getCheckRangeVPS(NE);
@@ -249,7 +249,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getChooseQ_VPS", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getChooseQ_VPS(NE);
@@ -259,7 +259,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getDrawArrowVPS", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getDrawArrowVPS(NE);
@@ -269,7 +269,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getDrawFlashSide", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getDrawFlashSide(NE);
@@ -279,7 +279,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getDrawSinLineVPS", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getDrawSinLineVPS(NE);
@@ -289,7 +289,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getDynamicLineU_VPS", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getDynamicLineU_VPS(
@@ -300,7 +300,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getLinkList", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getLinkList(NE);
@@ -310,7 +310,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getLinkNode", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getLinkNode(NE);
@@ -320,7 +320,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getSort", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getSort(NE);
@@ -330,7 +330,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getU_RelatedLineVPS", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getU_RelatedLineVPS(
@@ -341,7 +341,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getOSGI_chansfer", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C.getOSGI_chansfer(NE);
@@ -353,7 +353,7 @@ public class StaticReflectionMapE_IDUQ_C extends
 		if (callFunctionKey.contains(
 			"_OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapE_IDUQ_C

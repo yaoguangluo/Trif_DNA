@@ -4,8 +4,8 @@ package ME.VPC.M.X;//package ME.VPC.M.app.X;
 //import ME.VPC.S.App_S;
 //import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 //import S_A.SVQ.stable.S_Maps;
-//import S_A.pheromone.IMV_SIQ;
-//import S_A.pheromone.IMV_SIQ_SS;
+//import S_A.pheromone.IMV_SQI;
+//import S_A.pheromone.IMV_SQI_SS;
 //import U_V.ESU.list.List_ESU_X_listToArray;
 //
 //import javax.swing.table.DefaultTableModel;
@@ -30,7 +30,7 @@ package ME.VPC.M.X;//package ME.VPC.M.app.X;
 //    //later pos
 //    public int detaSearch(int[] score_code, String[] score
 //        , DefaultTableModel newTableModel, Object[][] tableData_old, List<String> copy
-//        , String key, IMV_SIQ dic_map, IMV_SIQ pos, App_S u, boolean keyIsPCA, App NE) {
+//        , String key, IMV_SQI dic_map, IMV_SQI pos, App_S u, boolean keyIsPCA, App NE) {
 //        u = NE.app_S;
 //        boolean nullCheck = false;//今天优化下这个jingDuSouSuo函数。
 //        //nullcheck一遍
@@ -52,7 +52,7 @@ package ME.VPC.M.X;//package ME.VPC.M.app.X;
 //        int count = 0;
 //        String trimKey = key.replace(" ", "");
 //        int keyLength = key.length();
-//        IMV_SIQ_SS mapSearchWithoutSort = null;
+//        IMV_SQI_SS mapSearchWithoutSort = null;
 //        mapSearchWithoutSort = NE.app_S._A.parserMixStringByReturnFrequencyMap(key, NE);
 //        List<String> list = new ArrayList<>();
 //        int copyCount = 0;

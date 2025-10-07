@@ -2,7 +2,7 @@ package DetaSrc.org.deta.boot.sets;
 
 import java.util.Map;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -27,7 +27,7 @@ public class Request_S {
 	private String requestNameFix;
 	private String requestLinkFix;
 	// private Map<String, String> requestValue;
-	private IMV_SIQ requestValue;
+	private IMV_SQI requestValue;
 	public boolean waitingForShake = true;
 
 	public String getRequestIp() {
@@ -78,11 +78,11 @@ public class Request_S {
 		this.requestLinkFix = requestLinkFix;
 	}
 
-	public IMV_SIQ getRequestValue() {
+	public IMV_SQI getRequestValue() {
 		return requestValue;
 	}
 
-	public void setRequestValue(IMV_SIQ requestValue) {
+	public void setRequestValue(IMV_SQI requestValue) {
 		this.requestValue = requestValue;
 	}
 

@@ -3,7 +3,7 @@ package ASQ.find.AMV.MVS.VSQ;
 import ASQ.classification.fissile.FissileWithMatch_X_fissilePosition3DWithMatch;
 import ASQ.demension.AMV.MVS.VSQ.FindMid_X_getPosition3DGroupsMids;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -23,7 +23,7 @@ public class GroupPascalHearts_X_getPosition3DsGroupPascalMids {
     //实现 罗瑶光
     public static Map<Double, AMV_MVS_VSQ_3D> _E(
         ArrayList<AMV_MVS_VSQ_3D> groups, double scale) {
-        IMV_SIQ pascalGroups
+        IMV_SQI pascalGroups
             = FissileWithMatch_X_fissilePosition3DWithMatch._E(groups, scale);
         return (Map<Double, AMV_MVS_VSQ_3D>) FindMid_X_getPosition3DGroupsMids._E(pascalGroups);
     }

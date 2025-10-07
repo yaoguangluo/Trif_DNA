@@ -8,7 +8,7 @@ import S_A.SEM.bloom.InitonTalk;
 import S_A.SVQ.stable.S_File;
 import S_A.SVQ.stable.S_Tag;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -42,7 +42,7 @@ public class App_XCDX {
 	// , 24组相关配置全部改下。这样代码就少了, 就快了。
 	public JTextField nameFeelFilter(App NE) throws InterruptedException, IOException {
 		NE._I_U.string = new AES_QMS_XSD_TIH("");
-		IMV_SIQ map = InitonTalk.listenFlower(
+		IMV_SQI map = InitonTalk.listenFlower(
 				"执行 " + "M_VECS" + " 下 " + "CfxTextField" + " 接口, 参数是 传参因子",
 				"CfxTextField", "M_VECS", NE);
 		app.app_S.nameFeelFilter = (CfxTextField) map.get("interfaceReturn");
@@ -73,7 +73,7 @@ public class App_XCDX {
 		NE._I_U.c = null;
 		// app.app_S.data= new CfxTextPane(S_Tag.NEI_RONG, 1350,
 		// 2980, null);
-		IMV_SIQ map = InitonTalk.listenFlower(
+		IMV_SQI map = InitonTalk.listenFlower(
 				"执行 " + "M_VECS" + " 下 " + "CfxTextPane" + " 接口, 参数是 传参因子",
 				"CfxTextPane", "M_VECS", NE);
 		// example 不断的 talk 人性化 序列化即可，搞这个不是我罗瑶光的下一步重点，所以优先级降低。
@@ -89,7 +89,7 @@ public class App_XCDX {
 
 	public JTextField name(App NE) throws InterruptedException, IOException {
 		NE._I_U.string = new AES_QMS_XSD_TIH("");
-		IMV_SIQ map = InitonTalk.listenFlower(
+		IMV_SQI map = InitonTalk.listenFlower(
 				"执行 " + "M_VECS" + " 下 " + "CfxTextField" + " 接口, 参数是 传参因子",
 				"CfxTextField", "M_VECS", NE);
 		// 分词动+名，壮+补，取指令，---不可取，AOPM繁琐。
@@ -106,7 +106,7 @@ public class App_XCDX {
 
 	public JTextField nameHospital(App NE) throws InterruptedException, IOException {
 		NE._I_U.string = new AES_QMS_XSD_TIH("");
-		IMV_SIQ map = InitonTalk.listenFlower(
+		IMV_SQI map = InitonTalk.listenFlower(
 				"执行 " + "M_VECS" + " 下 " + "CfxTextField" + " 接口, 参数是 传参因子",
 				"CfxTextField", "M_VECS", NE);
 		app.app_S.nameHospital = (CfxTextField) map.get("interfaceReturn");
@@ -119,7 +119,7 @@ public class App_XCDX {
 
 	public JTextField name_filter(App NE) throws InterruptedException, IOException {
 		NE._I_U.string = new AES_QMS_XSD_TIH("");
-		IMV_SIQ map = InitonTalk.listenFlower(
+		IMV_SQI map = InitonTalk.listenFlower(
 				"执行 " + "M_VECS" + " 下 " + "CfxTextField" + " 接口, 参数是 传参因子",
 				"CfxTextField", "M_VECS", NE);
 		app.app_S.name_filter = (CfxTextField) map.get("interfaceReturn");
@@ -132,7 +132,7 @@ public class App_XCDX {
 
 	public JTextField name_filter_not_have(App NE) throws InterruptedException, IOException {// 某种稳定的函数执行与固定搭配。
 		NE._I_U.string = new AES_QMS_XSD_TIH("");
-		IMV_SIQ map = InitonTalk.listenFlower(
+		IMV_SQI map = InitonTalk.listenFlower(
 				"执行 " + "M_VECS" + " 下 " + "CfxTextField" + " 接口, 参数是 传参因子",
 				"CfxTextField", "M_VECS", NE);
 		app.app_S.name_filter_not_have = (CfxTextField) map
@@ -148,8 +148,8 @@ public class App_XCDX {
 //41        String callFunctionKey = "CfxTextField";
 //        //StaticRootMap.initMap();
 //        String[] strings = new String[1];
-//        IMV_SIQ output = new IMV_SIQ();
-//        IMV_SIQ inputValue = new IMV_SIQ();
+//        IMV_SQI output = new IMV_SQI();
+//        IMV_SQI inputValue = new IMV_SQI();
 //        String[] 传参因子
 //                = StaticFunctionMapM_VECS_C.annotationMap.get(callFunctionKey).split(":");
 //        NE._I_U.string = null;
@@ -170,7 +170,7 @@ public class App_XCDX {
 //
 //        StaticRootMap.tinShellV006(strings, output);
 //        @SuppressWarnings("unchecked")
-//        IMV_SIQ map = (IMV_SIQ) output.get(callFunctionKey);
+//        IMV_SQI map = (IMV_SQI) output.get(callFunctionKey);
 
 //        NE._I_U.string= null;
 //        NE._I_U.x=0;
@@ -182,8 +182,8 @@ public class App_XCDX {
 //        String callFunctionKey = "CfxTextField";
 //        //StaticRootMap.initMap();
 //        String[] strings = new String[1];
-//        IMV_SIQ output = new IMV_SIQ();
-//        IMV_SIQ inputValue = new IMV_SIQ();
+//        IMV_SQI output = new IMV_SQI();
+//        IMV_SQI inputValue = new IMV_SQI();
 //        String[] 传参因子
 //                = StaticFunctionMapM_VECS_C.annotationMap.get(callFunctionKey).split(":");
 //        NE._I_U.string=null;
@@ -199,7 +199,7 @@ public class App_XCDX {
 //        strings[0] = "执行 M_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 //        StaticRootMap.tinShellV005(strings, output, NE);
 //        @SuppressWarnings("unchecked")
-//        IMV_SIQ map = (IMV_SIQ) output.get(callFunctionKey);
+//        IMV_SQI map = (IMV_SQI) output.get(callFunctionKey);
 
 //        NE._I_U.string= null;
 //        NE._I_U.x=0;
@@ -211,8 +211,8 @@ public class App_XCDX {
 //        String callFunctionKey = "CfxTextField";
 //        //StaticRootMap.initMap();
 //        String[] strings = new String[1];
-//        IMV_SIQ output = new IMV_SIQ();
-//        IMV_SIQ inputValue = new IMV_SIQ();
+//        IMV_SQI output = new IMV_SQI();
+//        IMV_SQI inputValue = new IMV_SQI();
 //        String[] 传参因子
 //                = StaticFunctionMapM_VECS_C.annotationMap.get(callFunctionKey).split(":");
 //        NE._I_U.string=null;
@@ -228,7 +228,7 @@ public class App_XCDX {
 //        strings[0] = "执行 M_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 //        StaticRootMap.tinShellV005(strings, output, NE);
 //        @SuppressWarnings("unchecked")
-//        IMV_SIQ map = (IMV_SIQ) output.get(callFunctionKey);
+//        IMV_SQI map = (IMV_SQI) output.get(callFunctionKey);
 //        NE._I_U.string= null;
 //        NE._I_U.x=0;
 //        NE._I_U.y=0;

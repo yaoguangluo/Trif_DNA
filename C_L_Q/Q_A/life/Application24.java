@@ -4,7 +4,7 @@ import A_I.MPE.P.Family;
 import A_I.MPE.P.Life;
 import A_I.MPE.P.Race;
 import exception.thread.DetaThread;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import OSI.MSU.AVQ.ASQ.dnaSets.CMS;
 import OSI.MSU.AVQ.ASQ.dnaSets.PDN;
 
@@ -39,12 +39,12 @@ public class Application24 extends Thread {
 		life.born();
 		// register family
 		Family family = new Family();
-		ConcurrentHashMap<String, Life> familyLife = new IMV_SIQ();
+		ConcurrentHashMap<String, Life> familyLife = new IMV_SQI();
 		familyLife.put("Tin", life);
 		family.I_Family(familyLife);
 		// register race
 		Race race = new Race();
-		ConcurrentHashMap<String, Family> raceFamily = new IMV_SIQ();
+		ConcurrentHashMap<String, Family> raceFamily = new IMV_SQI();
 		raceFamily.put("Royal", family);
 		race.I_Race(raceFamily);
 		// init analysis
@@ -277,7 +277,7 @@ public class Application24 extends Thread {
 						if (cmss.javaCMSs.containsKey(chos)) {
 							list = cmss.javaCMSs.get(chos);
 						} else {
-							list = new IMV_SIQ();
+							list = new IMV_SQI();
 						}
 						for (String pdn : dNA_INITON) {
 							if (files.contains(pdn)) {

@@ -4,7 +4,7 @@ import ME.VPC.E.sleeper.FyydPage_X_S_s;
 import ME.VPC.M.app.App;
 import ME.VPC.V.dictionary.FyydDictionary;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import javax.swing.JTextField;
@@ -96,7 +96,7 @@ public class FyydPage_X_S_sListeners extends FyydPage_X_S_s
 		int[] score_code = new int[copy.size()];
 		int[] reg = new int[copy.size()];
 		int count = 0;
-		IMV_SIQ_SS mapSearchWithoutSort = null;
+		IMV_SQI_SS mapSearchWithoutSort = null;
 		if (null == _A) {
 			return; // trif
 		}
@@ -247,8 +247,8 @@ public class FyydPage_X_S_sListeners extends FyydPage_X_S_s
 }
 //45
 //DictionaryDB d= new DictionaryDB();
-//IMV_SIQ dic_shu_ming= new IMV_SIQ();
-//IMV_SIQ dic_duanluo= new IMV_SIQ();
+//IMV_SQI dic_shu_ming= new IMV_SQI();
+//IMV_SQI dic_duanluo= new IMV_SQI();
 //
 //try {
 //	//dic_map= d.txtToMap(dic_shu_ming, dic_duanluo);
@@ -263,9 +263,9 @@ public class FyydPage_X_S_sListeners extends FyydPage_X_S_s
 //String primaryKey= "书名";
 //String tabKey= "gjjd";
 ////以后设计 uniq forenkey等.
-//Map<String, IMV_SIQ> map= d.dbToMap(primaryKey, tabKey);
-//IMV_SIQ dic_shu_ming= map.get("书名");
-//IMV_SIQ dic_duanluo= map.get("段落");
+//Map<String, IMV_SQI> map= d.dbToMap(primaryKey, tabKey);
+//IMV_SQI dic_shu_ming= map.get("书名");
+//IMV_SQI dic_duanluo= map.get("段落");
 //dic_map= map.get("dic_map");
 
 //Dictionary d= new Dictionary();

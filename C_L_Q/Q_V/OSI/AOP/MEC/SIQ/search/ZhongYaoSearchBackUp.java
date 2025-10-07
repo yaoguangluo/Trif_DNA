@@ -57,7 +57,7 @@ public class ZhongYaoSearchBackUp {}//begin
 //        int[] score_code = new int[app.copy.size()];
 //        int[] reg = new int[app.copy.size()];
 //        int count = 0;
-//        IMV_SIQ_SS mapSearchWithoutSort = null;
+//        IMV_SQI_SS mapSearchWithoutSort = null;
 //        if (app.dic_map.containsKey(zhongyao.replaceAll(" ", ""))) {
 //            mapSearchWithoutSort = app._A.parserMixStringByReturnFrequencyMap(zhongyao);
 //        } else {

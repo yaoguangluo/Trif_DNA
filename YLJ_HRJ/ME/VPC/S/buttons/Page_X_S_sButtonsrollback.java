@@ -7,8 +7,8 @@ import P.image.Color_P;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,7 +35,7 @@ public class Page_X_S_sButtonsrollback {
 		// buttonPrev.setBounds(290, 0, 100, 30);
 		buttonPrev.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {// later short chars.
-				IMV_SIQ_SS map = new IMV_SIQ_SS();
+				IMV_SQI_SS map = new IMV_SQI_SS();
 				page_X_S_s.currentPage -= 1;
 				page_X_S_s.currentPage = (page_X_S_s.currentPage < 0 ? 0
 						: page_X_S_s.currentPage);
@@ -136,7 +136,7 @@ public class Page_X_S_sButtonsrollback {
 				page_X_S_s.data.setSelectionEnd(0);
 				page_X_S_s.data.validate();
 				page_X_S_s.statistic.setSize(500, 800);
-				IMV_SIQ_S_ fwa = page_X_S_s._A
+				IMV_SQI_S_ fwa = page_X_S_s._A
 						.sortWordFrequencyMapToSortMap(map);
 				page_X_S_s.statistic.setContentType("text/html");
 				page.delete(0, page.length());// = new StringBuilder();

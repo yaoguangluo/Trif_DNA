@@ -27,7 +27,7 @@ public class TestDemo{
 //				+ "条件为:或:testCulumn1|<|20:testCulumn2|==|fire;";
 //
 //		
-//		IMV_SIQ output= E_PLSearch_E.E_PLSearch(plSearch, false, new IMV_SIQ());
+//		IMV_SQI output= E_PLSearch_E.E_PLSearch(plSearch, false, new IMV_SQI());
 //		//输出 检测
 //		//20230106-System.out.println(output.size());
 	}

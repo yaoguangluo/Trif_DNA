@@ -3,7 +3,7 @@ package test.java.InterfaceTest.chineseParser;
 import ASQ.basic.Distance_X_getDistance2D;
 import A_V.ASQ.PSU.test.TimeCheck;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -71,7 +71,7 @@ class EffectionForestIsolationDemoTest {
 		//计算
 		StringBuilder sb = new StringBuilder(inputString);
 		//准备POS分词
-		IMV_SIQ pos = commonTestInition.NE.app_S._A.getPosCnToCn();
+		IMV_SQI pos = commonTestInition.NE.app_S._A.getPosCnToCn();
 		List<String> sets = new ArrayList<>();
 		//执行分词
 		TimeCheck t = new TimeCheck();

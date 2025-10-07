@@ -18,22 +18,22 @@ class GetDNNMapTest {
     @Test
     void testDoGetDNNMap() {
         // mock trif
-//        Map<String, IMV_SIQ> result = GetDNNMap.doGetDNNMap(new App_S(), new App());
+//        Map<String, IMV_SQI> result = GetDNNMap.doGetDNNMap(new App_S(), new App());
 //        Assertions.assertEquals(
-//            //Map.of("String", new IMV_SIQ()
+//            //Map.of("String", new IMV_SQI()
 //
-//        new HashMap<String, IMV_SIQ>(){{put("String", new IMV_SIQ());}}
+//        new HashMap<String, IMV_SQI>(){{put("String", new IMV_SQI());}}
 //            , result);
     }
 
     @Test
     void testDoGetDNNMap2() {
         // mock trif
-//        Map<String, IMV_SIQ> result = GetDNNMap.doGetDNNMap(new App_S()
-//            , new HashMap<String, IMV_SIQ>(){{put("String", new IMV_SIQ());}}
+//        Map<String, IMV_SQI> result = GetDNNMap.doGetDNNMap(new App_S()
+//            , new HashMap<String, IMV_SQI>(){{put("String", new IMV_SQI());}}
 //            , "dnnFile", new App());
 //        Assertions.assertEquals(
-//            new HashMap<String, IMV_SIQ>(){{put("String", new IMV_SIQ());}}
+//            new HashMap<String, IMV_SQI>(){{put("String", new IMV_SQI());}}
 //            , result);
     }
 }

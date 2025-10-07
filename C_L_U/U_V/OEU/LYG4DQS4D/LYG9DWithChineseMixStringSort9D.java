@@ -3,7 +3,7 @@
 ////import java.io.InputStream;
 ////import java.io.InputStreamReader;
 //
-//import S_A.pheromone.IMV_SIQ;
+//import S_A.pheromone.IMV_SQI;
 //
 //import java.util.Map;
 //
@@ -20,7 +20,7 @@
 *  208号 阳光家园别墅小区 第十栋别墅 第三层
 // * */
 //public class LYG9DWithChineseMixStringSort9D{
-//	Map<String, Boolean> find= new IMV_SIQ();
+//	Map<String, Boolean> find= new IMV_SQI();
 //	Map<String, String> pinyin;
 //	int range;
 //	int deeps;
@@ -377,7 +377,7 @@
 ////    		//index
 ////    		String cInputStringc;
 ////    		String cInputStringp;
-////    		Map<String, String> map= new IMV_SIQ();
+////    		Map<String, String> map= new IMV_SQI();
 ////    		while ((cInputStringp= cReaderp.readDetaLine())!= null) {
 ////    			cInputStringc= cReaderc.readDetaLine();
 ////    			String[] words= cInputStringp.split("/")[0].split(" ");

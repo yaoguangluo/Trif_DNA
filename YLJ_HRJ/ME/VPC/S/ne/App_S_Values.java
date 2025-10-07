@@ -2,8 +2,8 @@ package ME.VPC.S.ne;
 
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_MCI_MCU_MSI;
 import S_A.SVQ.stable.S_Tag;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,24 +24,24 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class App_S_Values extends App_S_X_Statics {
 	//
 	public List<String> CacheStringPiple = new CopyOnWriteArrayList<>();
-	public IMV_SIQ CacheString = new IMV_SIQ();
+	public IMV_SQI CacheString = new IMV_SQI();
 	public List<OSU_MCI_MCU_MSI> searchList = new ArrayList<>();
-	public IMV_SIQ_ dic_map = new IMV_SIQ_();
-	public IMV_SIQ_ dic_li = new IMV_SIQ_();
-	public IMV_SIQ_ dic_hai = new IMV_SIQ_();
-	public IMV_SIQ_ dic_xz = new IMV_SIQ_();
-	public IMV_SIQ_ dic_ya = new IMV_SIQ_();
-	public IMV_SIQ_ dic_jm = new IMV_SIQ_();
-	public IMV_SIQ_ dic_xw = new IMV_SIQ_();
-	public IMV_SIQ_ dic_cy = new IMV_SIQ_();
-	public IMV_SIQ_ dic_cj = new IMV_SIQ_();
-	public IMV_SIQ_ dic_jj = new IMV_SIQ_();
-	public IMV_SIQ_ dic_zf = new IMV_SIQ_();
-	public IMV_SIQ_ dic_yl = new IMV_SIQ_();
-	public IMV_SIQ_ dic_yw = new IMV_SIQ_();
-	public IMV_SIQ_ dic_index = new IMV_SIQ_();
-	public Map<String, IMV_SIQ> DNNmap = new IMV_SIQ();
-	public Map<String, int[][]> subASCmap = new IMV_SIQ();
+	public IMV_SQI_ dic_map = new IMV_SQI_();
+	public IMV_SQI_ dic_li = new IMV_SQI_();
+	public IMV_SQI_ dic_hai = new IMV_SQI_();
+	public IMV_SQI_ dic_xz = new IMV_SQI_();
+	public IMV_SQI_ dic_ya = new IMV_SQI_();
+	public IMV_SQI_ dic_jm = new IMV_SQI_();
+	public IMV_SQI_ dic_xw = new IMV_SQI_();
+	public IMV_SQI_ dic_cy = new IMV_SQI_();
+	public IMV_SQI_ dic_cj = new IMV_SQI_();
+	public IMV_SQI_ dic_jj = new IMV_SQI_();
+	public IMV_SQI_ dic_zf = new IMV_SQI_();
+	public IMV_SQI_ dic_yl = new IMV_SQI_();
+	public IMV_SQI_ dic_yw = new IMV_SQI_();
+	public IMV_SQI_ dic_index = new IMV_SQI_();
+	public Map<String, IMV_SQI> DNNmap = new IMV_SQI();
+	public Map<String, int[][]> subASCmap = new IMV_SQI();
 	// values
 	public int currentPage;
 	public int rangeHigh = 40;

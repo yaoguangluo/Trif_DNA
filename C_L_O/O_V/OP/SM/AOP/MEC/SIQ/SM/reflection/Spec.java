@@ -1,6 +1,6 @@
 package O_V.OP.SM.AOP.MEC.SIQ.SM.reflection;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -11,11 +11,11 @@ import S_A.pheromone.IMV_SIQ;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class Spec{
-	private IMV_SIQ culumnTypes;
-	public IMV_SIQ getCulumnTypes() {
+	private IMV_SQI culumnTypes;
+	public IMV_SQI getCulumnTypes() {
 		return culumnTypes;
 	}
-	public void I_CulumnTypes(IMV_SIQ culumnTypes) {
+	public void I_CulumnTypes(IMV_SQI culumnTypes) {
 		this.culumnTypes= culumnTypes;
 	}
 	public void I_CulumnType(String culumnName, String culumnType) {

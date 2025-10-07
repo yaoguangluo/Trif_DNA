@@ -170,7 +170,9 @@ public class ServerInit_C {
 		timeHall.registerServer(server);
 		timeHall.registerSleeperHall(sleeperHall);
 		timeHall.start();
-
+		/*
+		 * S2189 later
+		 * */
 		Here: while (true) {// later do 6 dead id filter
 			if (sleeper_H.getThreadsCount() > 2) {
 				sleeper_H.callSkivvy();

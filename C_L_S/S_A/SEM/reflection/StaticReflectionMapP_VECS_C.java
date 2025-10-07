@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapP_VECS_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -22,12 +22,12 @@ public class StaticReflectionMapP_VECS_C extends
 	@SuppressWarnings("unused")
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		int 因子 = 0;
 		Object map = null;
 		if (callFunctionKey.contains("aNNTest", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.aNNTest(NE);
@@ -36,7 +36,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "aNNTest");
 		} //, "aNNTest");
 		if (callFunctionKey.contains("dNNTest", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.dNNTest(NE);
@@ -45,7 +45,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "dNNTest");
 		} //, "dNNTest");
 		if (callFunctionKey.contains("rNNTest", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.rNNTest(NE);
@@ -54,7 +54,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "rNNTest");
 		} //, "rNNTest");
 		if (callFunctionKey.contains("sensingTest", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.sensingTest(NE);
@@ -63,7 +63,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "sensingTest");
 		} //, "sensingTest");
 		if (callFunctionKey.contains("educationLevelTest", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapP_VECS_C.educationLevelTest(NE);
@@ -72,7 +72,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "educationLevelTest");
 		} //, "educationLevelTest");
 		if (callFunctionKey.contains("literarinessLevelTest", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapP_VECS_C.literarinessLevelTest(NE);
@@ -81,7 +81,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "literarinessLevelTest");
 		} //, "literarinessLevelTest");
 		if (callFunctionKey.contains("successICATest", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapP_VECS_C.successICATest(NE);
@@ -90,7 +90,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "successICATest");
 		} //, "successICATest");
 		if (callFunctionKey.contains("getSideEnd2D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.getSideEnd2D(NE);
@@ -99,7 +99,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "getSideEnd2D");
 		} //, "getSideEnd2D");
 		if (callFunctionKey.contains("getSideEnd3D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.getSideEnd3D(NE);
@@ -109,7 +109,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getSideEnd3D");
 		if (callFunctionKey.contains("addNewPositionWithoutHeart",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -120,7 +120,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"addNewPositionWithoutHeart");
 		} //, "addNewPositionWithoutHeart");
 		if (callFunctionKey.contains("addNewPositionWithHeart", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -131,7 +131,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "addNewPositionWithHeart");
 		if (callFunctionKey.contains(
 			"getShortestSamplePosition2DGroup", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -143,7 +143,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getShortestSamplePosition2DGroup");
 		if (callFunctionKey.contains(
 			"getShorterSamplePosition2DGroupsWithScale", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -155,7 +155,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getShorterSamplePosition2DGroupsWithScale");
 		if (callFunctionKey.contains(
 			"getShortestSamplePosition3DGroup", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -167,7 +167,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getShortestSamplePosition3DGroup");
 		if (callFunctionKey.contains(
 			"getShortestSamplePosition3DGroupsWithScale", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -178,7 +178,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"getShortestSamplePosition3DGroupsWithScale");
 		} //, "getShortestSamplePosition3DGroupsWithScale");
 		if (callFunctionKey.contains("fissilePosition2D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.fissilePosition2D(NE);
@@ -187,7 +187,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "fissilePosition2D");
 		} //, "fissilePosition2D");
 		if (callFunctionKey.contains("fissilePosition3D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.fissilePosition3D(NE);
@@ -197,7 +197,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "fissilePosition3D");
 		if (callFunctionKey.contains("fusionPosition2DwithHeart",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -209,7 +209,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "fusionPosition2DwithHeart");
 		if (callFunctionKey.contains("fusionPosition3DwithHeart",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -220,7 +220,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"fusionPosition3DwithHeart");
 		} //, "fusionPosition3DwithHeart");
 		if (callFunctionKey.contains("getTSPIsolationGroups2D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -230,7 +230,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "getTSPIsolationGroups2D");
 		} //, "getTSPIsolationGroups2D");
 		if (callFunctionKey.contains("getTSPIsolationGroups3D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -241,7 +241,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getTSPIsolationGroups3D");
 		if (callFunctionKey.contains("getTSPForestIsolationGroups2D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -253,7 +253,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getTSPForestIsolationGroups2D");
 		if (callFunctionKey.contains("getTSPForestIsolationGroups3D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -265,7 +265,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getTSPForestIsolationGroups3D");
 		if (callFunctionKey.contains(
 			"trackTracePosition2DHeartsWithSingerGroup", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -277,7 +277,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "trackTracePosition2DHeartsWithSingerGroup");
 		if (callFunctionKey.contains(
 			"trackTracePosition3DHeartsWithSingerGroup", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -289,7 +289,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "trackTracePosition3DHeartsWithSingerGroup");
 		if (callFunctionKey.contains("trackTracePosition2DByHearts",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -301,7 +301,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "trackTracePosition2DByHearts");
 		if (callFunctionKey.contains("trackTracePosition3DByHearts",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -313,7 +313,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "trackTracePosition3DByHearts");
 		if (callFunctionKey.contains(
 			"trackTracePosition2DHeartsWithFissileGroups", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -325,7 +325,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "trackTracePosition2DHeartsWithFissileGroups");
 		if (callFunctionKey.contains(
 			"trackTracePosition3DHeartsWithFissileGroups", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -337,7 +337,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "trackTracePosition3DHeartsWithFissileGroups");
 		if (callFunctionKey.contains(
 			"findMeanDistanceFromPositions2D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -349,7 +349,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findMeanDistanceFromPositions2D");
 		if (callFunctionKey.contains(
 			"findMeanDistanceFromPositions3D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -361,7 +361,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findMeanDistanceFromPositions3D");
 		if (callFunctionKey.contains(
 			"findPascalMeanDistanceByEachPositions2D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -373,7 +373,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findPascalMeanDistanceByEachPositions2D");
 		if (callFunctionKey.contains(
 			"findPascalMeanDistanceByEachPositions3D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -385,7 +385,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findPascalMeanDistanceByEachPositions3D");
 		if (callFunctionKey.contains(
 			"getPosition2DsGroupPascalHearts", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -397,7 +397,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getPosition2DsGroupPascalHearts");
 		if (callFunctionKey.contains(
 			"getPosition3DsGroupPascalHearts", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -409,7 +409,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getPosition3DsGroupPascalHearts");
 		if (callFunctionKey.contains("getPosition2DsGroupPascalMids",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -422,7 +422,7 @@ public class StaticReflectionMapP_VECS_C extends
 
 		if (callFunctionKey.contains("getPosition3DsGroupPascalMids",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -434,7 +434,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getPosition3DsGroupPascalMids");
 		if (callFunctionKey.contains(
 			"getPosition2DsGroupPascalDirection", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -446,7 +446,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getPosition2DsGroupPascalDirection");
 		if (callFunctionKey.contains(
 			"getPosition3DsGroupPascalDirection", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -458,7 +458,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getPosition3DsGroupPascalDirection");
 		if (callFunctionKey.contains(
 			"getPosition3DsGroupPascalDirection", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -470,7 +470,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getPosition3DsGroupPascalDirection");
 		if (callFunctionKey.contains(
 			"getPosition2DsGroupPascalDirection", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -482,7 +482,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getPosition2DsGroupPascalDirection");
 		if (callFunctionKey.contains("getYaoguangLuo2DEulerRingTSP",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -494,7 +494,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getYaoguangLuo2DEulerRingTSP");
 		if (callFunctionKey.contains("getYaoguangLuo3DEulerRingTSP",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -506,7 +506,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getYaoguangLuo3DEulerRingTSP");
 		if (callFunctionKey.contains("getYaoguangLuo2DEulerRingTSP2D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -518,7 +518,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getYaoguangLuo2DEulerRingTSP2D");
 		if (callFunctionKey.contains("getYaoguangLuo3DEulerRingTSP2D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -530,7 +530,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getYaoguangLuo3DEulerRingTSP2D");
 		if (callFunctionKey.contains("getYaoguangLuo2DEulerRingTSP3D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -542,7 +542,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getYaoguangLuo2DEulerRingTSP3D");
 		if (callFunctionKey.contains("getYaoguangLuo3DEulerRingTSP3D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -555,7 +555,7 @@ public class StaticReflectionMapP_VECS_C extends
 
 		if (callFunctionKey.contains("getImagePix2DGroupFilter",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -566,7 +566,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getImagePix2DGroupFilter");
 		if (callFunctionKey.contains("getImagePix3DGroupFilter",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -576,7 +576,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "getImagePix3DGroupFilter");
 		} //, "getImagePix3DGroupFilter");
 		if (callFunctionKey.contains("NLPBestSentenceMatch", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.NLPBestSentenceMatch(
@@ -586,7 +586,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "NLPBestSentenceMatch");
 		} //, "NLPBestSentenceMatch");
 		if (callFunctionKey.contains("NLPBestSentencesMatch", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.NLPBestSentencesMatch(
@@ -597,7 +597,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "NLPBestSentencesMatch");
 		if (callFunctionKey.contains("getNLPBestSentencesMatchScore",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -609,7 +609,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getNLPBestSentencesMatchScore");
 		if (callFunctionKey.contains(
 			"getNLPBestSentencesMatchScoreRights", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -620,7 +620,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"getNLPBestSentencesMatchScoreRights");
 		} //, "getNLPBestSentencesMatchScoreRights");
 		if (callFunctionKey.contains("getErrorAsserts", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.getErrorAsserts(NE);
@@ -629,7 +629,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "getErrorAsserts");
 		} //, "getErrorAsserts");
 		if (callFunctionKey.contains("getBinaryErrorAsserts", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.getBinaryErrorAsserts(
@@ -640,7 +640,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getBinaryErrorAsserts");
 		if (callFunctionKey.contains("findTotalIncrementWithScale",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -652,7 +652,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findTotalIncrementWithScale");
 		if (callFunctionKey.contains("findMeanIncrementWithScale",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -664,7 +664,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findMeanIncrementWithScale");
 		if (callFunctionKey.contains(
 			"findMeanOfFilterDoubleArrayWithScale", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -675,7 +675,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"findMeanOfFilterDoubleArrayWithScale");
 		} //, "findMeanOfFilterDoubleArrayWithScale");
 		if (callFunctionKey.contains("findMeanOfDoubleArray", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.findMeanOfDoubleArray(
@@ -686,7 +686,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findMeanOfDoubleArray");
 		if (callFunctionKey.contains("findMeanOfTwoDoubleArray",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -697,7 +697,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findMeanOfTwoDoubleArray");
 		if (callFunctionKey.contains("findMeanOfTwoDoubleArray2D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -709,7 +709,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findMeanOfTwoDoubleArray2D");
 		if (callFunctionKey.contains("findMeanOfDoubleMatrix2D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -720,7 +720,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findMeanOfDoubleMatrix2D");
 		if (callFunctionKey.contains("findRowMeanOfDoubleMatrix2D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -732,7 +732,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findRowMeanOfDoubleMatrix2D");
 		if (callFunctionKey.contains("findCulumnMeanOfDoubleMatrix2D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -744,7 +744,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findCulumnMeanOfDoubleMatrix2D");
 		if (callFunctionKey.contains("findMeanOfDoubleMatrix3D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -754,7 +754,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "findMeanOfDoubleMatrix3D");
 		} //, "findMeanOfDoubleMatrix3D");
 		if (callFunctionKey.contains("findMeanOfDoubleList", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.findMeanOfDoubleList(
@@ -764,7 +764,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "findMeanOfDoubleList");
 		} //, "findMeanOfDoubleList");
 		if (callFunctionKey.contains("findMeanOfMartrix1DList", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -774,7 +774,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "findMeanOfMartrix1DList");
 		} //, "findMeanOfMartrix1DList");
 		if (callFunctionKey.contains("findMeanOfMartrix2DList", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -784,7 +784,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "findMeanOfMartrix2DList");
 		} //, "findMeanOfMartrix2DList");
 		if (callFunctionKey.contains("findSumOfDoubleArray", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.findSumOfDoubleArray(
@@ -794,7 +794,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "findSumOfDoubleArray");
 		} //, "findSumOfDoubleArray");
 		if (callFunctionKey.contains("findSumOfTwoDoubleArray", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -805,7 +805,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findSumOfTwoDoubleArray");
 		if (callFunctionKey.contains("findSumOfTwoDoubleArray2D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -816,7 +816,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"findSumOfTwoDoubleArray2D");
 		} //, "findSumOfTwoDoubleArray2D");
 		if (callFunctionKey.contains("findSumOfDoubleMatrix2D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -827,7 +827,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findSumOfDoubleMatrix2D");
 		if (callFunctionKey.contains("findRowSumOfDoubleMatrix2D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -839,7 +839,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findRowSumOfDoubleMatrix2D");
 		if (callFunctionKey.contains("findCulumnSumOfDoubleMatrix2D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -850,7 +850,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"findCulumnSumOfDoubleMatrix2D");
 		} //, "findCulumnSumOfDoubleMatrix2D");
 		if (callFunctionKey.contains("findSumOfDoubleMatrix3D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -860,7 +860,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "findSumOfDoubleMatrix3D");
 		} //, "findSumOfDoubleMatrix3D");
 		if (callFunctionKey.contains("findSumOfDoubleList", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.findSumOfDoubleList(
@@ -870,7 +870,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "findSumOfDoubleList");
 		} //, "findSumOfDoubleList");
 		if (callFunctionKey.contains("findSumOfMartrix1DList", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -880,7 +880,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "findSumOfMartrix1DList");
 		} //, "findSumOfMartrix1DList");
 		if (callFunctionKey.contains("findSumOfMartrix2DList", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -890,7 +890,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "findSumOfMartrix2DList");
 		} //, "findSumOfMartrix2DList");
 		if (callFunctionKey.contains("getShareholdCount", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.getShareholdCount(NE);
@@ -900,7 +900,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getShareholdCount");
 		if (callFunctionKey.contains("encodeEstimateSumOfScoresList",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -912,7 +912,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "encodeEstimateSumOfScoresList");
 		if (callFunctionKey.contains("encodeEstimateSumOfScoresArray",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -924,7 +924,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "encodeEstimateSumOfScoresArray");
 		if (callFunctionKey.contains(
 			"getEstimateCartesianSumOfScoresArray", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -936,7 +936,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getEstimateCartesianSumOfScoresArray");
 		if (callFunctionKey.contains(
 			"getEstimateCartesian1DSumOfScoresArray", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -948,7 +948,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getEstimateCartesian1DSumOfScoresArray");
 		if (callFunctionKey.contains("encodeEstimateInitonsScore",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -961,7 +961,7 @@ public class StaticReflectionMapP_VECS_C extends
 
 		if (callFunctionKey.contains("decodeEstimateInitonsScore",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -972,7 +972,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"decodeEstimateInitonsScore");
 		} //, "decodeEstimateInitonsScore");
 		if (callFunctionKey.contains("getRightsEstimateScore", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -983,7 +983,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getRightsEstimateScore");
 		if (callFunctionKey.contains("getSimilarFuzzSetWithScale",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -994,7 +994,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"getSimilarFuzzSetWithScale");
 		} //, "getSimilarFuzzSetWithScale");
 		if (callFunctionKey.contains("getDistanceRatio2D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.getDistanceRatio2D(
@@ -1004,7 +1004,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "getDistanceRatio2D");
 		} //, "getDistanceRatio2D");
 		if (callFunctionKey.contains("getARCDistanceRatio2D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.getARCDistanceRatio2D(
@@ -1015,7 +1015,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getARCDistanceRatio2D");
 		if (callFunctionKey.contains("getTrueARCDistanceRatio2D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1026,7 +1026,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"getTrueARCDistanceRatio2D");
 		} //, "getTrueARCDistanceRatio2D");
 		if (callFunctionKey.contains("getDistanceRatio3D", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.getDistanceRatio3D(
@@ -1037,7 +1037,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getDistanceRatio3D");
 		if (callFunctionKey.contains("getTrueARCDistanceRatio3D",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1049,7 +1049,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getTrueARCDistanceRatio3D");
 		if (callFunctionKey.contains("getPercentListByOuterKey",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1059,7 +1059,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "getPercentListByOuterKey");
 		} //, "getPercentListByOuterKey");
 		if (callFunctionKey.contains("kernel", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapP_VECS_C.kernel(NE);
@@ -1068,7 +1068,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "kernel");
 		} //, "kernel");
 		if (callFunctionKey.contains("kernelFix", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapP_VECS_C.kernelFix(NE);
@@ -1078,7 +1078,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "kernelFix");
 		if (callFunctionKey.contains(
 			"findTotalIncrementRatioWithScale", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1090,7 +1090,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "findTotalIncrementRatioWithScale");
 		if (callFunctionKey.contains(
 			"findMeanIncrementRatioWithScale", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1101,7 +1101,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"findMeanIncrementRatioWithScale");
 		} //, "findMeanIncrementRatioWithScale");
 		if (callFunctionKey.contains("frequencyUpSplit", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.frequencyUpSplit(NE);
@@ -1110,7 +1110,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "frequencyUpSplit");
 		} //, "frequencyUpSplit");
 		if (callFunctionKey.contains("frequencyDownSplit", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.frequencyDownSplit(
@@ -1121,7 +1121,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "frequencyDownSplit");
 		if (callFunctionKey.contains("frequencyUpSplitWithScale",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1133,7 +1133,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "frequencyUpSplitWithScale");
 		if (callFunctionKey.contains("frequencyDownSplitWithScale",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1145,7 +1145,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "frequencyDownSplitWithScale");
 
 		if (callFunctionKey.contains("predictionResult", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.predictionResult(NE);
@@ -1154,7 +1154,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "predictionResult");
 		} //, "predictionResult");
 		if (callFunctionKey.contains("predictionMatrixResult", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1165,7 +1165,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "predictionMatrixResult");
 		if (callFunctionKey.contains("getImagePixClassificationMap",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1176,7 +1176,7 @@ public class StaticReflectionMapP_VECS_C extends
 				"getImagePixClassificationMap");
 		} //, "getImagePixClassificationMap");
 		if (callFunctionKey.contains("getVWaveFromImagePix", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.getVWaveFromImagePix(
@@ -1186,7 +1186,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "getVWaveFromImagePix");
 		} //, "getVWaveFromImagePix");
 		if (callFunctionKey.contains("getHWaveFromImagePix", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C.getHWaveFromImagePix(
@@ -1196,7 +1196,7 @@ public class StaticReflectionMapP_VECS_C extends
 				.getBoolean("find"), map, "getHWaveFromImagePix");
 		} //, "getHWaveFromImagePix");
 		if (callFunctionKey.contains("getPixPercentByDeterPix", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1207,7 +1207,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getPixPercentByDeterPix");
 		if (callFunctionKey.contains(
 			"getClusterPercentByDeterPixGroup", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1219,7 +1219,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getClusterPercentByDeterPixGroup");
 		if (callFunctionKey.contains("getPixPercentByDeterPixGroup",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1231,7 +1231,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getPixPercentByDeterPixGroup");
 		if (callFunctionKey.contains(
 			"filterFusion2DSetsWithCountScale", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1243,7 +1243,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "filterFusion2DSetsWithCountScale");
 		if (callFunctionKey.contains(
 			"filterFusion3DSetsWithCountScale", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1255,7 +1255,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "filterFusion3DSetsWithCountScale");
 		if (callFunctionKey.contains(
 			"filterPosition2DsWithScaledDistance", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1267,7 +1267,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "filterPosition2DsWithScaledDistance");
 		if (callFunctionKey.contains(
 			"filterPosition3DsWithScaledDistance", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1279,7 +1279,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "filterPosition3DsWithScaledDistance");
 		if (callFunctionKey.contains(
 			"filterPosition2DsWithScaledDistance", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1291,7 +1291,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "filterPosition2DsWithScaledDistance");
 		if (callFunctionKey.contains(
 			"filterPosition3DsWithScaledDistance", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1303,7 +1303,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "filterPosition3DsWithScaledDistance");
 		if (callFunctionKey.contains("getPercentListByOuterKey",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1314,7 +1314,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getPercentListByOuterKey");
 		if (callFunctionKey.contains("getPercentArrayByOuterKey",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1326,7 +1326,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getPercentArrayByOuterKey");
 		if (callFunctionKey.contains("getEachPercentSetOfArray",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C
@@ -1337,7 +1337,7 @@ public class StaticReflectionMapP_VECS_C extends
 		} //, "getEachPercentSetOfArray");
 		if (callFunctionKey.contains("getPercentArrayByOuterKey",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_VECS_C

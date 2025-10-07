@@ -19,7 +19,7 @@ import P_V.PEQ.AMV.ECS.test.DNNTest;
 import P_V.PEQ.AMV.ECS.test.RNN_IDETest;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.VSQ.parser.EmotionSample;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -47,35 +47,35 @@ class MakeContainer_ZHONG_YAOTest {
     @Mock
     AE _A;
     @Mock
-    IMV_SIQ pos;
+    IMV_SQI pos;
     @Mock
-    IMV_SIQ pose;
+    IMV_SQI pose;
     @Mock
-    IMV_SIQ etc;
+    IMV_SQI etc;
     @Mock
-    IMV_SIQ cte;
+    IMV_SQI cte;
     @Mock
-    IMV_SIQ pinyin;
+    IMV_SQI pinyin;
     @Mock
-    IMV_SIQ ctj;
+    IMV_SQI ctj;
     @Mock
-    IMV_SIQ ctk;
+    IMV_SQI ctk;
     @Mock
-    IMV_SIQ ctt;
+    IMV_SQI ctt;
     @Mock
-    IMV_SIQ ctr;
+    IMV_SQI ctr;
     @Mock
-    IMV_SIQ cko;
+    IMV_SQI cko;
     @Mock
-    IMV_SIQ cfn;
+    IMV_SQI cfn;
     @Mock
-    IMV_SIQ csp;
+    IMV_SQI csp;
     @Mock
-    IMV_SIQ cgm;
+    IMV_SQI cgm;
     @Mock
-    IMV_SIQ posec;
+    IMV_SQI posec;
     @Mock
-    IMV_SIQ posFullec;
+    IMV_SQI posFullec;
     @Mock
     App_S app_S;
     @Mock

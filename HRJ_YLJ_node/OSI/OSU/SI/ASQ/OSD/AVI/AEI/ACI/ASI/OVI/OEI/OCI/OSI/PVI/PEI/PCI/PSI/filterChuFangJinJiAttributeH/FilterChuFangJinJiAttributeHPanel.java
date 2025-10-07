@@ -2,7 +2,7 @@ package OSI.OSU.SI.ASQ.OSD.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.filte
 
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_AOU_AOQ_VES;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -49,7 +49,7 @@ public class FilterChuFangJinJiAttributeHPanel extends OSU_AOU_AOQ_VES{
 					//表头
 					Object[] spec= new Object[] {"中药名", "克重", "功效", "禁忌", "性味", "经脉"};
 					//表行
-					Map<Integer, Object[]> cf= new IMV_SIQ();
+					Map<Integer, Object[]> cf= new IMV_SQI();
 					int c=0;
 					Here:
 						for(int i= 0; i < rc; i++){

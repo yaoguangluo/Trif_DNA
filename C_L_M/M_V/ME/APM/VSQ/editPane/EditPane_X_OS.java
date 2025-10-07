@@ -18,7 +18,7 @@ import P.image.Color_P;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.string.String_ESU_X_charsetSwap;
 import U_V.ESU.string.String_ESU_X_stringToURIencode;
 import U_V.ESU.string.String_ESU_X_uRIencodeToURIdecode;
@@ -151,7 +151,7 @@ public class EditPane_X_OS extends EditPane_X_ {
     public void showDataTagDNN(Iterator<String> iterator, List<String> setsForGet
         , String setOfi, StringBuilder page, String response
         , Map<String, Double> dNNrank) {
-        IMV_SIQ_SS map = new IMV_SIQ_SS();
+        IMV_SQI_SS map = new IMV_SQI_SS();
         iterator = setsForGet.iterator();
         NE.app_S.listCharPosition = 0;
         Here:
@@ -238,7 +238,7 @@ public class EditPane_X_OS extends EditPane_X_ {
         data.validate();
     }
 }
-//Map<String, WordFrequency> map= new IMV_SIQ();
+//Map<String, WordFrequency> map= new IMV_SQI();
 //iterator= setsForGet.iterator();
 //Here:
 //	while(iterator.hasNext()) {

@@ -1,8 +1,8 @@
 package test.java.InterfaceTest.chineseParser;
 
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 import V_A.SQ.ReadPinYinBihua;
 import test.java.interfaces.test.CommonTestInition;
 
@@ -55,7 +55,7 @@ class FMHMMListOneTime_ETest {
 		System.out.println("形谓总数-->" + S_Maps.xingWeiCi.size());
 		System.out.println("助词总数-->" + S_Maps.zhuCi.size());
 		//词性类词库
-		IMV_SIQ pos = commonTestInition.NE.app_S._A.getPosCnToCn();
+		IMV_SQI pos = commonTestInition.NE.app_S._A.getPosCnToCn();
 		System.out.println("词性总数-->" + pos.size());
 		//词长类词库
 		System.out.println("--------词长类词库--------");
@@ -65,15 +65,15 @@ class FMHMMListOneTime_ETest {
 		System.out.println("四字词长总数-->" + S_Maps.CiFour.size());
 		//多国语言类词库
 		System.out.println("--------语种类词库--------");
-		IMV_SIQ chineseToEnglish = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToEn;
-		IMV_SIQ chineseToJapanese = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToJp;
-		IMV_SIQ chineseToArabic = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToAb;
-		IMV_SIQ chineseToTradition = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToTt;
-		IMV_SIQ chineseToRussian = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToRs;
-		IMV_SIQ chineseToKorean = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToKo;
-		IMV_SIQ chineseToFrench = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToFn;
-		IMV_SIQ chineseToSpanish = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToSp;
-		IMV_SIQ chineseToGerman = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToGm;
+		IMV_SQI chineseToEnglish = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToEn;
+		IMV_SQI chineseToJapanese = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToJp;
+		IMV_SQI chineseToArabic = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToAb;
+		IMV_SQI chineseToTradition = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToTt;
+		IMV_SQI chineseToRussian = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToRs;
+		IMV_SQI chineseToKorean = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToKo;
+		IMV_SQI chineseToFrench = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToFn;
+		IMV_SQI chineseToSpanish = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToSp;
+		IMV_SQI chineseToGerman = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToGm;
 		System.out.println("中英对照总数-->" + chineseToEnglish.size());
 		System.out.println("繁体对照总数-->" + chineseToTradition.size());
 		System.out.println("中韩对照总数-->" + chineseToKorean.size());
@@ -86,8 +86,8 @@ class FMHMMListOneTime_ETest {
 		//其他小语种略先。
 		//拼音笔画词库
 		System.out.println("--------汉语拼音笔画词库--------");
-		IMV_SIQ_ pinYin = ReadPinYinBihua.pinYin;
-		IMV_SIQ biHua = ReadPinYinBihua.biHua;
+		IMV_SQI_ pinYin = ReadPinYinBihua.pinYin;
+		IMV_SQI biHua = ReadPinYinBihua.biHua;
 		System.out.println("拼音总数-->" + pinYin.size());
 		System.out.println("笔画总数-->" + biHua.size());
 		//词灵类词库

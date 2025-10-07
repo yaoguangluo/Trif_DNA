@@ -10,7 +10,7 @@ import ME.VPC.S.ne.WindowsUI;
 import ME.VPC.V.ET.CecilPage_X_S_sListeners;
 import M_V.MVQ.button.DetaButton;
 import S_A.SEM.bloom.StaticFunctionMapM_VECS_C;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -67,8 +67,8 @@ public class CecilPage extends CecilPage_X_S_sListeners {
 		String callFunctionKey = "DetaButton";
 		// StaticRootMap.initMap();
 		String[] strings = new String[1];
-		IMV_SIQ output = new IMV_SIQ();
-		IMV_SIQ inputValue = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
+		IMV_SQI inputValue = new IMV_SQI();
 		String[] 传参因子 = NE.app_S.staticFunctionMapM_VECS_C.annotationMap
 			.getString(callFunctionKey).split(":");
 		inputValue.put(传参因子[0], "共有 " + (sets == null ? 0
@@ -86,7 +86,7 @@ public class CecilPage extends CecilPage_X_S_sListeners {
 		strings[0] = "执行 M_VECS 下 " + callFunctionKey
 			+ " 接口, 参数是 传参因子";
 		NE.app_S.staticRootMap.tinShellV005(strings, output, NE);
-		IMV_SIQ map = (IMV_SIQ) output.get(callFunctionKey);
+		IMV_SQI map = (IMV_SQI) output.get(callFunctionKey);
 		buttonSum = (DetaButton) map.get("interfaceReturn");
 		// buttonSum= new DetaButton("共有 " + (sets==null?0:(1 +
 		// sets.size() / 2001))+ " 页");
@@ -95,7 +95,7 @@ public class CecilPage extends CecilPage_X_S_sListeners {
 		inputValue.put(传参因子[0], "当前页面：" + (currentPage + 1));
 		output.put("inputValues", inputValue);
 		NE.app_S.staticRootMap.tinShellV005(strings, output, NE);
-		map = (IMV_SIQ) output.get(callFunctionKey);
+		map = (IMV_SQI) output.get(callFunctionKey);
 		buttonCrt = (DetaButton) map.get("interfaceReturn");
 		// buttonCrt= new DetaButton("当前页面：" + (currentPage + 1));
 		buttonCrt.setBounds(120, 0, 150, 30);

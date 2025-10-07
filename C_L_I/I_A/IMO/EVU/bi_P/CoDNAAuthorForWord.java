@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import M_V.MVQ.button.DetaButton;
 import M_V.MVQ.slider.DetaSlider;
 import Q_A.life.Application;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import bi_P.CoDNAAuthorForWord_X_S;
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
@@ -58,10 +58,10 @@ public class CoDNAAuthorForWord extends CoDNAAuthorForWord_X_S implements MouseM
     public CoDNAAuthorForWord(App NE) throws HeadlessException {
         DetaThread.sleepDeta(100);
         rootWord = "";
-        rootLeaf = new IMV_SIQ();
-        findLeaf = new IMV_SIQ();
-        frequencyLeaf = new IMV_SIQ();
-        didLeaf = new IMV_SIQ();
+        rootLeaf = new IMV_SQI();
+        findLeaf = new IMV_SQI();
+        frequencyLeaf = new IMV_SQI();
+        didLeaf = new IMV_SQI();
         this._A = NE.app_S._A;
         this.pos = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
         this.u = NE.app_S;
@@ -306,7 +306,7 @@ public class CoDNAAuthorForWord extends CoDNAAuthorForWord_X_S implements MouseM
 
     @SuppressWarnings({"unchecked", "static-access"})
     private void drawWords(int[] s, int se, double[] root, float a, int j, int k
-        , IMV_SIQ root3, Map<String, Integer> didLeaf) {
+        , IMV_SQI root3, Map<String, Integer> didLeaf) {
         DetaThread.sleepDeta(3);
         if (root3 == null || root3.size() == 0) {
             return;
@@ -325,7 +325,7 @@ public class CoDNAAuthorForWord extends CoDNAAuthorForWord_X_S implements MouseM
                 continue Here;
             }
 
-            IMV_SIQ leaf = (IMV_SIQ) root3.get(leafName);
+            IMV_SQI leaf = (IMV_SQI) root3.get(leafName);
             if (leaf.size() > 0) {
                 a1 = 1.0;
             }
@@ -464,42 +464,42 @@ public class CoDNAAuthorForWord extends CoDNAAuthorForWord_X_S implements MouseM
         frequencyLeaf.clear();
         findLeaf.put(string, 1);
         frequencyLeaf.put(string, 1);
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         int depth = 0;
-        IMV_SIQ subLeaf = kernerDNAForest("DNA", leaf, findLeaf, depth);
+        IMV_SQI subLeaf = kernerDNAForest("DNA", leaf, findLeaf, depth);
         leaf.put(string, subLeaf);
         rootLeaf = leaf;
     }
 
 
-    private IMV_SIQ kernerDNAForest(String string, IMV_SIQ root
+    private IMV_SQI kernerDNAForest(String string, IMV_SQI root
         , Map<String, Integer> findLeaf, int depth) {
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         //chos
         Iterator<String> iteratorChos = cms.javaCMSsroot.keySet().iterator();//24
         while (iteratorChos.hasNext()) {
             String chos = iteratorChos.next();
-            IMV_SIQ leafChosLeaf = new IMV_SIQ();
+            IMV_SQI leafChosLeaf = new IMV_SQI();
             Iterator<String> iteratorChosLeaf
                 = cms.javaCMSsroot.get(chos).keySet().iterator();//24*3i
             while (iteratorChosLeaf.hasNext()) {
                 String chosLeafs = iteratorChosLeaf.next();
-                IMV_SIQ leafChos = new IMV_SIQ();//24
+                IMV_SQI leafChos = new IMV_SQI();//24
                 Iterator<String> iteratorChosLeafPDNs = cms.javaCMSsroot.get(chos)
                     .get(chosLeafs).keySet().iterator();
                 while (iteratorChosLeafPDNs.hasNext()) {
                     String chosLeaf = iteratorChosLeafPDNs.next();
-                    IMV_SIQ leafChosLeafs = new IMV_SIQ();
+                    IMV_SQI leafChosLeafs = new IMV_SQI();
                     Iterator<String> iteratorChosLeafPDN = cms.javaCMSsroot.get(chos)
                         .get(chosLeafs).get(chosLeaf).javaPDNs.keySet().iterator();
                     while (iteratorChosLeafPDN.hasNext()) {
                         String chosLeafPDN = iteratorChosLeafPDN.next();
-                        IMV_SIQ leafChosLeafMap = new IMV_SIQ();
+                        IMV_SQI leafChosLeafMap = new IMV_SQI();
                         Iterator<String> iteratorChosLeafPDNSet = cms.javaCMSsroot
                             .get(chos).get(chosLeafs).get(chosLeaf).javaPDNs.get(chosLeafPDN).iterator();
                         while (iteratorChosLeafPDNSet.hasNext()) {
                             String chosLeafPDNSet = iteratorChosLeafPDNSet.next();
-                            leafChosLeafMap.put(chosLeafPDNSet, new IMV_SIQ());//java name
+                            leafChosLeafMap.put(chosLeafPDNSet, new IMV_SQI());//java name
                         }
                         leafChosLeafs.put(chosLeafPDN, leafChosLeafMap);//initons name
                     }

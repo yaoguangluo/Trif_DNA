@@ -5,7 +5,7 @@ import ME.VPC.M.app.App;
 import M_V.MPI.xls.commonXLS.CommonXls;
 import M_V.MVQ.tabbedpane.DetabbedPane;
 import exception.thread.DetaThread;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.ImageIcon;
 import java.awt.Color;
@@ -28,10 +28,10 @@ public class MakeContainerXLS extends MakeContainerTemp {
     public DetabbedPane jTabbedpane;
     public List<String> tabNames;
     public CogsBinaryForest_AE _A;
-    public IMV_SIQ pos;
-    public IMV_SIQ pose;
-    public IMV_SIQ etc;
-    public IMV_SIQ cte;
+    public IMV_SQI pos;
+    public IMV_SQI pose;
+    public IMV_SQI etc;
+    public IMV_SQI cte;
     public String fileType;
 
     public MakeContainerXLS(String fileType, App NE) {

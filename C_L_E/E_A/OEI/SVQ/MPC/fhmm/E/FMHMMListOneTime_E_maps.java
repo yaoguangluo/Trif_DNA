@@ -8,7 +8,7 @@ import S_A.AVQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
 import VSQ.parser.FMHMMListOneTime_E_X_S;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.nlp.StopSymbol_UTF8;
 
 import java.io.InputStream;
@@ -59,16 +59,16 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public Map<Long, FMHMMNode>[] getMaps() {
 		int segment = this.linkedHashMap.size();
 		int perRatio = segment / S_Pos.INT_SIX;
-		Map<Long, FMHMMNode>[] maps = new IMV_SIQ[S_Pos.INT_SIX];
+		Map<Long, FMHMMNode>[] maps = new IMV_SQI[S_Pos.INT_SIX];
 		Iterator<Long> iterator = this.linkedHashMap.keySet().iterator();
-		maps[S_Pos.INT_ZERO] = new IMV_SIQ();
+		maps[S_Pos.INT_ZERO] = new IMV_SQI();
 		int index = S_Pos.INT_ZERO;
 		int count = S_Pos.INT_ONE;
 		while (iterator.hasNext()) {
 			if (S_Pos.INT_ZERO == count++ % perRatio) {
 				if (index < S_Pos.INT_FIVE) {
 					index++;
-					maps[index] = new IMV_SIQ();
+					maps[index] = new IMV_SQI();
 				}
 			}
 			Long key = iterator.next();
@@ -79,8 +79,8 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 
 	// 稍后translator的index 去重 统一用index mixed
 	public void index() {
-		posCnToCn = new IMV_SIQ();
-		linkedHashMap = new IMV_SIQ();
+		posCnToCn = new IMV_SQI();
+		linkedHashMap = new IMV_SQI();
 		listCn = new CopyOnWriteArrayList<>();
 		InputStream inputStream = getClass()
 				.getResourceAsStream(S_Pos.WORDS_SOURSE_LINK_POS_CN_TO_CN);
@@ -277,7 +277,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public void indexFullEnToCn() {
 		Iterator<String> listcc = listCn.iterator();
 		Iterator<String> listee = listEn.iterator();
-		fullEnToCn = new IMV_SIQ();
+		fullEnToCn = new IMV_SQI();
 		while (listcc.hasNext() && listee.hasNext()) {
 			fullEnToCn.put(
 					listee.next().split(S_Pos.NLP_SYMBO_SLASH)[S_Pos.INT_ZERO]
@@ -289,7 +289,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public void indexFullCnToEn() {
 		Iterator<String> listcc = listCn.iterator();
 		Iterator<String> listee = listEn.iterator();
-		fullCnToEn = new IMV_SIQ();
+		fullCnToEn = new IMV_SQI();
 		while (listcc.hasNext() && listee.hasNext()) {
 			fullCnToEn.put(
 					listcc.next().split(S_Pos.NLP_SYMBO_SLASH)[S_Pos.INT_ZERO],
@@ -301,7 +301,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public void indexFullCnToFn() {
 		Iterator<String> listcc = listCn.iterator();
 		Iterator<String> listfn = listFn.iterator();
-		fullCnToFn = new IMV_SIQ();
+		fullCnToFn = new IMV_SQI();
 		while (listcc.hasNext() && listfn.hasNext()) {
 			fullCnToFn.put(
 					listcc.next().split(S_Pos.NLP_SYMBO_SLASH)[S_Pos.INT_ZERO],
@@ -313,7 +313,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public void indexFullCnToKo() {
 		Iterator<String> listcc = listCn.iterator();
 		Iterator<String> listko = listKo.iterator();
-		fullCnToKo = new IMV_SIQ();
+		fullCnToKo = new IMV_SQI();
 		while (listcc.hasNext() && listko.hasNext()) {
 			fullCnToKo.put(
 					listcc.next().split(S_Pos.NLP_SYMBO_SLASH)[S_Pos.INT_ZERO],
@@ -325,7 +325,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public void indexFullCnToJp() {
 		Iterator<String> listcc = listCn.iterator();
 		Iterator<String> listjp = listJp.iterator();
-		fullCnToJp = new IMV_SIQ();
+		fullCnToJp = new IMV_SQI();
 		while (listcc.hasNext() && listjp.hasNext()) {
 			fullCnToJp.put(
 					listcc.next().split(S_Pos.NLP_SYMBO_SLASH)[S_Pos.INT_ZERO],
@@ -337,7 +337,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public void indexFullCnToGm() {
 		Iterator<String> listcc = listCn.iterator();
 		Iterator<String> listgm = listGm.iterator();
-		fullCnToGm = new IMV_SIQ();
+		fullCnToGm = new IMV_SQI();
 		while (listcc.hasNext() && listgm.hasNext()) {
 			fullCnToGm.put(
 					listcc.next().split(S_Pos.NLP_SYMBO_SLASH)[S_Pos.INT_ZERO],
@@ -349,7 +349,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public void indexFullCnToSp() {
 		Iterator<String> listcc = listCn.iterator();
 		Iterator<String> listsp = listSp.iterator();
-		fullCnToSp = new IMV_SIQ();
+		fullCnToSp = new IMV_SQI();
 		while (listcc.hasNext() && listsp.hasNext()) {
 			fullCnToSp.put(
 					listcc.next().split(S_Pos.NLP_SYMBO_SLASH)[S_Pos.INT_ZERO],
@@ -361,7 +361,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public void indexFullCnToRs() {
 		Iterator<String> listcc = listCn.iterator();
 		Iterator<String> listrs = listRs.iterator();
-		fullCnToRs = new IMV_SIQ();
+		fullCnToRs = new IMV_SQI();
 		while (listcc.hasNext() && listrs.hasNext()) {
 			fullCnToRs.put(
 					listcc.next().split(S_Pos.NLP_SYMBO_SLASH)[S_Pos.INT_ZERO],
@@ -373,7 +373,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public void indexFullCnToAb() {
 		Iterator<String> listcc = listCn.iterator();
 		Iterator<String> listab = listAb.iterator();
-		fullCnToAb = new IMV_SIQ();
+		fullCnToAb = new IMV_SQI();
 		while (listcc.hasNext() && listab.hasNext()) {
 			fullCnToAb.put(
 					listcc.next().split(S_Pos.NLP_SYMBO_SLASH)[S_Pos.INT_ZERO],
@@ -385,7 +385,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public void indexFullCnToPy() {
 		Iterator<String> listcc = listCn.iterator();
 		Iterator<String> listpy = listPy.iterator();
-		fullCnToPy = new IMV_SIQ();
+		fullCnToPy = new IMV_SQI();
 		while (listcc.hasNext() && listpy.hasNext()) {
 			fullCnToPy.put(
 					listcc.next().split(S_Pos.NLP_SYMBO_SLASH)[S_Pos.INT_ZERO],
@@ -397,7 +397,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	public void indexFullCnToTt() {
 		Iterator<String> listcc = listCn.iterator();
 		Iterator<String> listtt = listTt.iterator();
-		fullCnToTt = new IMV_SIQ();
+		fullCnToTt = new IMV_SQI();
 		while (listcc.hasNext() && listtt.hasNext()) {
 			fullCnToTt.put(
 					listcc.next().split(S_Pos.NLP_SYMBO_SLASH)[S_Pos.INT_ZERO],
@@ -406,16 +406,16 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 		}
 	}
 
-	public IMV_SIQ getFullEnToCn() {
+	public IMV_SQI getFullEnToCn() {
 		return this.fullEnToCn;
 	}
 
-	public IMV_SIQ getFullCnToEn() {
+	public IMV_SQI getFullCnToEn() {
 		return this.fullCnToEn;
 	}
 
 	public void indexPosEnToCn(App NE) {
-		posEnToCn = new IMV_SIQ();
+		posEnToCn = new IMV_SQI();
 		// InputStream in=
 		// getClass().getResourceAsStream(S_Pos.WORDS_SOURSE_LINK_POS_EN_TO_CN);
 		DetaBufferedReader cReader = FastReadProjectFile.getDetaBufferedReader(
@@ -547,7 +547,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	}
 
 	public void indexPosEnToEn(App NE) {
-		posEnToEn = new IMV_SIQ();
+		posEnToEn = new IMV_SQI();
 		listEn = new CopyOnWriteArrayList<>();
 		DetaBufferedReader cReader = FastReadProjectFile.getDetaBufferedReader(
 				S_Pos.WORDS_SOURSE_LINK_POS_EN_TO_EN, NE.resourceTail + "lygs/",
@@ -571,7 +571,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	}
 
 	public void indexEnToCn(App NE) {
-		enToCn = new IMV_SIQ();
+		enToCn = new IMV_SQI();
 		DetaBufferedReader cReader = FastReadProjectFile.getDetaBufferedReader(
 				S_Pos.WORDS_SOURSE_LINK_EN_TO_CN, NE.resourceTail + "lygs/",
 				S_Pos.UTF8_STRING);
@@ -592,7 +592,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	}
 
 	public void indexCnToEn(App NE) {
-		cnToEn = new IMV_SIQ();
+		cnToEn = new IMV_SQI();
 		DetaBufferedReader cReader = FastReadProjectFile.getDetaBufferedReader(
 				S_Pos.WORDS_SOURSE_LINK_CN_TO_EN, NE.resourceTail + "lygs/",
 				S_Pos.UTF8_STRING);
@@ -624,7 +624,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 			FMHMMNode fHHMMNode = new FMHMMNode();
 			fHHMMNode.I_Vb(S_Pos.EMPTY_STRING + cInputString.charAt(i));
 			if (i + S_Pos.INT_ONE < cInputString.length()) {
-				Map<String, Integer> next = new IMV_SIQ();
+				Map<String, Integer> next = new IMV_SQI();
 				next.put(
 						S_Pos.EMPTY_STRING
 								+ cInputString.charAt(i + S_Pos.INT_ONE),
@@ -645,7 +645,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 			}
 			return linkedHashMap;
 		}
-		Map<String, Integer> HashMap = new IMV_SIQ();
+		Map<String, Integer> HashMap = new IMV_SQI();
 		if (i + S_Pos.INT_ONE < cInputString.length()) {
 			HashMap.put(
 					S_Pos.EMPTY_STRING + cInputString.charAt(i + S_Pos.INT_ONE),
@@ -669,55 +669,55 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 		return linkedHashMap;
 	}
 
-	public IMV_SIQ getPosCnToCn() {
+	public IMV_SQI getPosCnToCn() {
 		return this.posCnToCn;
 	}
 
-	public IMV_SIQ getEnToCn() {
+	public IMV_SQI getEnToCn() {
 		return enToCn;
 	}
 
-	public IMV_SIQ getCnToEn() {
+	public IMV_SQI getCnToEn() {
 		return cnToEn;
 	}
 
-	public IMV_SIQ getPosEnToCn() {
+	public IMV_SQI getPosEnToCn() {
 		return this.posEnToCn;
 	}
 
-	public IMV_SIQ getPosEnToEn() {
+	public IMV_SQI getPosEnToEn() {
 		return this.posEnToEn;
 	}
 
-	public IMV_SIQ getFullCnToJp() {
+	public IMV_SQI getFullCnToJp() {
 		return this.fullCnToJp;
 	}
 
-	public IMV_SIQ getFullCnToRs() {
+	public IMV_SQI getFullCnToRs() {
 		return this.fullCnToRs;
 	}
 
-	public IMV_SIQ getFullCnToAb() {
+	public IMV_SQI getFullCnToAb() {
 		return this.fullCnToAb;
 	}
 
-	public IMV_SIQ getFullCnToFn() {
+	public IMV_SQI getFullCnToFn() {
 		return this.fullCnToFn;
 	}
 
-	public IMV_SIQ getFullCnToGm() {
+	public IMV_SQI getFullCnToGm() {
 		return this.fullCnToGm;
 	}
 
-	public IMV_SIQ getFullCnToKo() {
+	public IMV_SQI getFullCnToKo() {
 		return this.fullCnToKo;
 	}
 
-	public IMV_SIQ getFullCnToSp() {
+	public IMV_SQI getFullCnToSp() {
 		return this.fullCnToSp;
 	}
 
-	public IMV_SIQ getFullCnToPy() {
+	public IMV_SQI getFullCnToPy() {
 		this.fullCnToPy.put("鼋", "yuan");// 这些我稍后也会移动到stable文件中去, 免得乱码。
 		this.fullCnToPy.put("鹑", "chun");
 		this.fullCnToPy.put("鸲鹆", "qu yu");
@@ -745,12 +745,12 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 		return this.fullCnToPy;
 	}
 
-	public IMV_SIQ getFullCnToTt() {
+	public IMV_SQI getFullCnToTt() {
 		return this.fullCnToTt;
 	}
 
 	public void indexFullNegative() {
-		fullNegative = new IMV_SIQ();
+		fullNegative = new IMV_SQI();
 		InputStream in = getClass()
 				.getResourceAsStream(S_Pos.WORDS_SOURSE_LINK_POS_NEGATIVE);
 		DetaBufferedReader cReader = new DetaBufferedReader(
@@ -765,7 +765,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	}
 
 	public void indexFullPositive() {
-		fullPositive = new IMV_SIQ();
+		fullPositive = new IMV_SQI();
 		InputStream in = getClass()
 				.getResourceAsStream(S_Pos.WORDS_SOURSE_LINK_POS_POSITIVE);
 		DetaBufferedReader cReader = new DetaBufferedReader(
@@ -780,22 +780,22 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 
 	}
 
-	public IMV_SIQ getFullNegative() {
+	public IMV_SQI getFullNegative() {
 		return this.fullNegative;
 	}
 
-	public IMV_SIQ getFullPositive() {
+	public IMV_SQI getFullPositive() {
 		return this.fullPositive;
 	}
 
 	@Override
-	public Map<Long, IMV_SIQ> getWordsForests() {
-		Map<Long, IMV_SIQ> output = new IMV_SIQ();
+	public Map<Long, IMV_SQI> getWordsForests() {
+		Map<Long, IMV_SQI> output = new IMV_SQI();
 		Iterator<String> WordTree = posCnToCn.keySet().iterator();
 		while (WordTree.hasNext()) {
 			String treeName = WordTree.next();
 			if (0 < treeName.length()) {
-				IMV_SIQ treeLeafs;
+				IMV_SQI treeLeafs;
 				if (output.containsKey(
 						Long.valueOf(treeName.charAt(S_Pos.INT_ZERO)))) {
 					treeLeafs = output
@@ -804,7 +804,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 					output.put(Long.valueOf(treeName.charAt(S_Pos.INT_ZERO)),
 							treeLeafs);
 				} else {
-					treeLeafs = new IMV_SIQ();
+					treeLeafs = new IMV_SQI();
 				}
 				treeLeafs.put(treeName, posCnToCn.get(treeName));
 				output.put(Long.valueOf(treeName.charAt(S_Pos.INT_ZERO)),
@@ -819,7 +819,7 @@ public class FMHMMListOneTime_E_maps extends FMHMMListOneTime_E_X_S
 	}
 
 	@Override
-	public IMV_SIQ getStudyPos() {
+	public IMV_SQI getStudyPos() {
 		return this.studyPos;
 	}
 }

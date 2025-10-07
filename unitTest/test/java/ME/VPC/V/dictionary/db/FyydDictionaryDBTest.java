@@ -27,8 +27,8 @@ class FyydDictionaryDBTest {
     @Test
     void testTxtToMap() {
         // mock trif
-        //IMV_SIQ result = fyydDictionaryDB.txtToMap(new IMV_SIQ(), new IMV_SIQ());
-        //Assertions.assertEquals(new IMV_SIQ(), result);
+        //IMV_SQI result = fyydDictionaryDB.txtToMap(new IMV_SQI(), new IMV_SQI());
+        //Assertions.assertEquals(new IMV_SQI(), result);
     }
 }
 

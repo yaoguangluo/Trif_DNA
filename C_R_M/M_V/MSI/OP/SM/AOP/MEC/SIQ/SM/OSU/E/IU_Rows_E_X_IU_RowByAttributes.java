@@ -1,6 +1,6 @@
 package M_V.MSI.OP.SM.AOP.MEC.SIQ.SM.OSU.E;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.json.JSONObject;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class IU_Rows_E_X_IU_RowByAttributes {
-	public static void IU_RowByAttributes(IMV_SIQ object, boolean mod) {
+	public static void IU_RowByAttributes(IMV_SQI object, boolean mod) {
 		JSONObject jsobj = new JSONObject();
 		// for late will make an exception record queue system, to
 		// control all of the db write;

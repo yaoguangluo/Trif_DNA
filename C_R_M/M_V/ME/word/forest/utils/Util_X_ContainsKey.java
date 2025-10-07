@@ -3,7 +3,7 @@ package M_V.ME.word.forest.utils;
 import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -17,7 +17,7 @@ import S_A.pheromone.IMV_SIQ_SS;
 *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class Util_X_ContainsKey {
-	public static void not_E(IMV_SIQ_SS outputList, String countWordNode,
+	public static void not_E(IMV_SQI_SS outputList, String countWordNode,
 			StringBuilder[] prefixWord, App NE) {
 		String string = String.valueOf(countWordNode.charAt(S_Pos.INT_ZERO));
 		if (outputList.containsKey(string)) {
@@ -40,7 +40,7 @@ public class Util_X_ContainsKey {
 		prefixWord[S_Pos.INT_ZERO].append(countWordNode.charAt(S_Pos.INT_ZERO));
 	}
 
-	public static void _E(IMV_SIQ_SS outputList, String countWordNode,
+	public static void _E(IMV_SQI_SS outputList, String countWordNode,
 			StringBuilder[] prefixWord, App NE) {
 		prefixWord[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
 				prefixWord[S_Pos.INT_ZERO].length());

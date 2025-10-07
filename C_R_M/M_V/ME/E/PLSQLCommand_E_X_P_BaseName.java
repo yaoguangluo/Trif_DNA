@@ -1,6 +1,6 @@
 package M_V.ME.E;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -13,7 +13,7 @@ import S_A.pheromone.IMV_SIQ;
  * */
 
 public class PLSQLCommand_E_X_P_BaseName {
-	public static void _E(String[] acknowledge, IMV_SIQ object) {
+	public static void _E(String[] acknowledge, IMV_SQI object) {
 		object.put(acknowledge[0], acknowledge[1]);
 	}
 }

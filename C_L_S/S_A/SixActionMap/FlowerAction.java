@@ -6,7 +6,7 @@ import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 
 /*
@@ -28,10 +28,10 @@ public class FlowerAction {
 	 * 
 	 * */
 
-	public IMV_SIQ FlowerSixDomainActions = new IMV_SIQ();
+	public IMV_SQI FlowerSixDomainActions = new IMV_SQI();
 	// later will// do in // dynamic
-	public IMV_SIQ FlowerP_E_KernelActions = new IMV_SIQ();
-	public IMV_SIQ FlowerChromosomeActions = new IMV_SIQ();
+	public IMV_SQI FlowerP_E_KernelActions = new IMV_SQI();
+	public IMV_SQI FlowerChromosomeActions = new IMV_SQI();
 
 	@SuppressWarnings("unchecked")
 	public void initFlowerP_E_KernelActions() {
@@ -98,8 +98,8 @@ public class FlowerAction {
 			+ callFunctionKey);
 		// 花语初始
 		String[] strings = new String[1];
-		IMV_SIQ outputReg = new IMV_SIQ();
-		IMV_SIQ inputValue = new IMV_SIQ();
+		IMV_SQI outputReg = new IMV_SQI();
+		IMV_SQI inputValue = new IMV_SQI();
 		NE.app_S.helpVerbalMap.didJustNow.put(callFunctionKey,
 			new Object());// later*/
 		String chromosome = NE.app_S.staticRootMap.staticClass_XE_Map
@@ -141,7 +141,7 @@ public class FlowerAction {
 				NE);
 		}
 		// need VPCS sections later
-		IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+		IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 		if (null != map) {
 			if (map.getString("feedback").equals("object")) {
 				Object objectReg = map.get("interfaceReturn");
@@ -153,8 +153,8 @@ public class FlowerAction {
 // if (temp[0].equals("获取表名")) {
 //        String callFunctionKey = ("P_TableName");
 //        String[] strings = new String[1];
-//        IMV_SIQ outputReg = new IMV_SIQ();
-//        IMV_SIQ inputValue = new IMV_SIQ();
+//        IMV_SQI outputReg = new IMV_SQI();
+//        IMV_SQI inputValue = new IMV_SQI();
 
 //        String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //           .getString(callFunctionKey).split(":");
@@ -171,8 +171,8 @@ public class FlowerAction {
 //  if (temp[0].equals("setRoot")) {
 //        String callFunctionKey = ("P_SetRoot");
 //        String[] strings = new String[1];
-//        IMV_SIQ outputReg = new IMV_SIQ();
-//        IMV_SIQ inputValue = new IMV_SIQ();
+//        IMV_SQI outputReg = new IMV_SQI();
+//        IMV_SQI inputValue = new IMV_SQI();
 
 //        String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //           .getString(callFunctionKey).split(":");
@@ -190,8 +190,8 @@ public class FlowerAction {
 //    if (temp[0].equals("界面操作")) {
 //        String callFunctionKey = ("P_YLJOperation");
 //        String[] strings = new String[1];
-//        IMV_SIQ outputReg = new IMV_SIQ();
-//        IMV_SIQ inputValue = new IMV_SIQ();
+//        IMV_SQI outputReg = new IMV_SQI();
+//        IMV_SQI inputValue = new IMV_SQI();
 
 //        String chromosome = StaticRootMap.staticClass_XE_Map.getString(callFunctionKey);
 //        String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome

@@ -1,6 +1,6 @@
 package S_A.SVQ.stable;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -57,5 +57,5 @@ public class S_ShellETL{
 	public static final String SHELL_ETL_NOT_IN= "!in";
 	
 	@SuppressWarnings("unchecked")
-	public static Map<String, String> storeValue= new IMV_SIQ();
+	public static Map<String, String> storeValue= new IMV_SQI();
 }

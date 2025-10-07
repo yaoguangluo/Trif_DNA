@@ -4,8 +4,8 @@ import ME.VPC.M.app.App;
 import O_V.OSA.shell.XA_ShellTable;
 import O_V.OSA.shell.XA_ShellTables;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_utils;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_utils;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 import U_A.PEU.P.cache.Cache;
 import U_A.PEU.P.cache.Cache_M;
@@ -37,7 +37,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 
 public class Pl_XA_Command_E {
-	public static void P_SetRoot(String[] acknowledge, IMV_SIQ output, App NE) {
+	public static void P_SetRoot(String[] acknowledge, IMV_SQI output, App NE) {
 		String dbPath = acknowledge[1];
 		for (int i = 2; i < acknowledge.length; i++) {
 			dbPath += ":" + acknowledge[i];
@@ -63,11 +63,11 @@ public class Pl_XA_Command_E {
 		}
 	}
 
-	public static void P_BaseName(String[] acknowledge, IMV_SIQ object) {
+	public static void P_BaseName(String[] acknowledge, IMV_SQI object) {
 		object.put(acknowledge[0], acknowledge[1]);
 	}
 
-	public static void P_TableName(String[] acknowledge, IMV_SIQ object) {
+	public static void P_TableName(String[] acknowledge, IMV_SQI object) {
 		object.put(acknowledge[0], acknowledge[1]);
 		object.put("type", acknowledge[2]);
 	}
@@ -76,7 +76,7 @@ public class Pl_XA_Command_E {
 	// 导致相同函数在不同的花瓣下进行的统一的操作时候，产生这类混淆。
 	// 中药同源表导入新版本没有缓存库注册，同时变量名混淆+函数混淆，没有记录String[]buffer列。会出现null
 	// later
-	public static void P_ListNeedStart(String[] acknowledge, IMV_SIQ object) {
+	public static void P_ListNeedStart(String[] acknowledge, IMV_SQI object) {
 		object.put("start", "1");// later
 		if (object.containsKey(acknowledge[0])) {
 			List<String[]> relationValues = (List<String[]>) object
@@ -90,7 +90,7 @@ public class Pl_XA_Command_E {
 		object.put(acknowledge[0], relationValues);
 	}
 
-	public static void P_Join(String[] acknowledge, IMV_SIQ object) {
+	public static void P_Join(String[] acknowledge, IMV_SQI object) {
 		if (object.getCompareV("countJoins", "1")) {
 			object.put("countJoins", "n");
 		}
@@ -148,23 +148,23 @@ public class Pl_XA_Command_E {
 						|| (object.getCompareV("countJoins", "1")
 								&& object.getCompareV("newCommand", "join")))) {
 			if (object.containsKey("条件为")) {
-				IMV_SIQ_utils.couldSQLThenSQL("条件为", NE.app_S.acknowledge,
+				IMV_SQI_utils.couldSQLThenSQL("条件为", NE.app_S.acknowledge,
 						object, NE);
 			}
 			if (object.containsKey("操作")) {
-				IMV_SIQ_utils.couldSQLThenSQL("操作", NE.app_S.acknowledge,
+				IMV_SQI_utils.couldSQLThenSQL("操作", NE.app_S.acknowledge,
 						object, NE);
 			}
 			if (object.containsKey("获取列名")) {
-				IMV_SIQ_utils.couldSQLThenSQL("获取列名", NE.app_S.acknowledge,
+				IMV_SQI_utils.couldSQLThenSQL("获取列名", NE.app_S.acknowledge,
 						object, NE);
 			}
 			if (object.containsKey("PLETL")) {
-				IMV_SIQ_utils.couldSQLThenSQL("PLETL", NE.app_S.acknowledge,
+				IMV_SQI_utils.couldSQLThenSQL("PLETL", NE.app_S.acknowledge,
 						object, NE);
 			}
 			if (object.containsKey("PLTCP")) {
-				IMV_SIQ_utils.couldSQLThenSQL("PLTCP", NE.app_S.acknowledge,
+				IMV_SQI_utils.couldSQLThenSQL("PLTCP", NE.app_S.acknowledge,
 						object, NE);
 			}
 			object.remove("recordRows");
@@ -174,11 +174,11 @@ public class Pl_XA_Command_E {
 				|| (object.getCompareV("countJoins", "1")
 						&& !object.getCompareV("newCommand", "join")))) {
 			if (object.containsKey(S_ShellETL.SHELL_ETL_CONDITION)) {
-				IMV_SIQ_utils.couldSQLThenSQL(S_ShellETL.SHELL_ETL_CONDITION,
+				IMV_SQI_utils.couldSQLThenSQL(S_ShellETL.SHELL_ETL_CONDITION,
 						NE.app_S.acknowledge, object, NE);
 			}
 			if (object.containsKey("relation")) {
-				IMV_SIQ_utils.couldSQLThenSQL("relation", NE.app_S.acknowledge,
+				IMV_SQI_utils.couldSQLThenSQL("relation", NE.app_S.acknowledge,
 						object, NE);
 			}
 			if (object.containsKey("aggregation")) {
@@ -187,7 +187,7 @@ public class Pl_XA_Command_E {
 				// SearchShellQ_JoinRows_E.selectRowsByAttributesOfJoinAggregation(object));
 			}
 			if (object.containsKey("getCulumns")) {
-				IMV_SIQ_utils.couldSQLThenSQL("getCulumns",
+				IMV_SQI_utils.couldSQLThenSQL("getCulumns",
 						NE.app_S.acknowledge, object, NE);
 			}
 			if (object.containsKey("PLETL")) {
@@ -278,7 +278,7 @@ public class Pl_XA_Command_E {
 		if (object.getCompareV("start", "1")) {
 			P_E_Kernel(object, mod, NE);
 		}
-		List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("obj")));
+		List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("obj")));
 		int totalPages = 0;
 		if (obj != null) {
 			totalPages = obj.size();
@@ -314,9 +314,9 @@ public class Pl_XA_Command_E {
 		// .searchShellTables.get(object.get("tableName").toString());
 		// Object[] specs= table.getHuaRuiJiJtableCulumns();
 		// }else {//进行map 验证检测 罗瑶光 20210405
-		// IMV_SIQ map= obj.get(0);
-		// IMV_SIQ objectInMap
-		// = (IMV_SIQ)map.get(S_ShellETL.SHELL_ETL_ROWVALUE);
+		// IMV_SQI map= obj.get(0);
+		// IMV_SQI objectInMap
+		// = (IMV_SQI)map.get(S_ShellETL.SHELL_ETL_ROWVALUE);
 		// iterator= null== objectInMap?
 		// null:objectInMap.keySet().iterator();
 		// }
@@ -332,7 +332,7 @@ public class Pl_XA_Command_E {
 		}
 	}
 
-	public static void P_StoreValues(String[] acknowledge, IMV_SIQ output) {
+	public static void P_StoreValues(String[] acknowledge, IMV_SQI output) {
 
 		// 如果没有初始就初始
 		// 如果已经初始就存值
@@ -345,7 +345,7 @@ public class Pl_XA_Command_E {
 	}
 
 	// 之后准备设计成工厂类 或者 单例类 bean
-	public static void P_fileOperations(String[] acknowledge, IMV_SIQ output) {
+	public static void P_fileOperations(String[] acknowledge, IMV_SQI output) {
 		// 确定文件夹:路径:进行搜索
 		if (acknowledge[0].equals("确定文件夹")) {
 			String filePath = (S_ShellETL.storeValue.containsKey(acknowledge[1])
@@ -384,7 +384,7 @@ public class Pl_XA_Command_E {
 				// ShellReplace().replaceString("C:\\Users\\Lenovo\\Desktop\\DNA_RNA\\2021
 				// \\repalceSample", ">_<", "..>_<..");
 				try {
-					IMV_SIQ conditions = new IMV_SIQ();
+					IMV_SQI conditions = new IMV_SQI();
 					conditions.put("fileType",
 							(S_ShellETL.storeValue.containsKey("文件类型")
 									? S_ShellETL.storeValue.get("文件类型")
@@ -436,7 +436,7 @@ public class Pl_XA_Command_E {
 
 	// 界面操作:searchContent|发热痰黄:searchWays|DNN:searchScales|1:fatarFilter|开
 	// :professionNameFilter|开:inClusterFilter|开:healthyFilter|开:containsFilter|毒:relatiedJingLuoFilter|:unrelatiedXingWeiFilter|温燥:
-	public static void P_YLJOperation(String[] acknowledge, IMV_SIQ output,
+	public static void P_YLJOperation(String[] acknowledge, IMV_SQI output,
 			App NE) {
 		// 读取配置, 然后
 		String searchContent = "";
@@ -590,8 +590,8 @@ public class Pl_XA_Command_E {
 ////				String callFunctionKey= "selectRowsByAttributesOfGetCulumns";
 ////				//StaticRootMap.initMap();
 ////				String[] strings= new String[1];
-////				IMV_SIQ outputReg= new IMV_SIQ();
-////				IMV_SIQ inputValue= new IMV_SIQ();
+////				IMV_SQI outputReg= new IMV_SQI();
+////				IMV_SQI inputValue= new IMV_SQI();
 ////				String[] 传参因子
 ////				= StaticFunctionMapO_VECS_C.annotationMap.get(callFunctionKey).split(":");
 ////				inputValue.put(传参因子[0], object);
@@ -600,7 +600,7 @@ public class Pl_XA_Command_E {
 ////				//strings[0]= "执行 元基花 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
 ////				strings[0]= "执行 O_VECS 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
 ////				StaticRootMap.tinShellV005(strings, outputReg);
-////				IMV_SIQ map= (IMV_SIQ) outputReg.get(callFunctionKey);
+////				IMV_SQI map= (IMV_SQI) outputReg.get(callFunctionKey);
 ////				Object objectReg= map.get("interfaceReturn");
 ////				object.put("obj", objectReg);
 //	//	//	//			}
@@ -610,8 +610,8 @@ public class Pl_XA_Command_E {
 //                String callFunctionKey = "selectRowsByAttributesOfJoinCondition";
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = object;
@@ -621,22 +621,22 @@ public class Pl_XA_Command_E {
 //                //strings[0]= "执行 元基花 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
 //                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 //                StaticRootMap.tinShellV005(strings, outputReg);
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                if (null != map) {
 //                    if (map.getString("feedback").equals("object")) {
 //                        Object objectReg = map.get("interfaceReturn");
 //                        object.put("obj", objectReg);
 //                    }
 //                }
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                Object objectReg = map.get("interfaceReturn");
 //                object.put("joinObj", objectReg);
 //135
 //                String callFunctionKey = "selectRowsByAttributesOfCondition";
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = object;
@@ -646,7 +646,7 @@ public class Pl_XA_Command_E {
 //                //strings[0]= "执行 元基花 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
 //                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 //                StaticRootMap.tinShellV005(strings, outputReg);
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                Object objectReg = map.get("interfaceReturn");
 //                object.put("obj", objectReg);
 
@@ -656,8 +656,8 @@ public class Pl_XA_Command_E {
 //                String callFunctionKey = "selectRowsByAttributesOfAggregation";
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = object;
@@ -667,7 +667,7 @@ public class Pl_XA_Command_E {
 //                //strings[0]= "执行 元基花 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
 //                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 //                StaticRootMap.tinShellV005(strings, outputReg);
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                Object objectReg = map.get("interfaceReturn");
 //                ;
 //                object.put("obj", objectReg);
@@ -676,8 +676,8 @@ public class Pl_XA_Command_E {
 //                String callFunctionKey = "selectRowsByAttributesOfGetCulumns";
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = object;
@@ -687,15 +687,15 @@ public class Pl_XA_Command_E {
 //                //strings[0]= "执行 元基花 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
 //                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 //                StaticRootMap.tinShellV005(strings, outputReg);
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                if (null != map) {
 //                    if (map.getString("feedback").equals("object")) {
 //                        Object objectReg = map.get("interfaceReturn");
 //                        object.put("obj", objectReg);
 //                    }
 //                }
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
-//                IMV_SIQ objectReg = (IMV_SIQ) map.get("interfaceReturn");
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
+//                IMV_SQI objectReg = (IMV_SQI) map.get("interfaceReturn");
 //                if(!objectReg.isEmpty()){
 //                    object.put("obj", objectReg);
 //                }
@@ -704,8 +704,8 @@ public class Pl_XA_Command_E {
 //                String callFunctionKey = "selectRowsByAttributesOfPLETL";
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = object;
@@ -715,14 +715,14 @@ public class Pl_XA_Command_E {
 //                //strings[0]= "执行 元基花 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
 //                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 //                StaticRootMap.tinShellV005(strings, outputReg);
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                if (null != map) {
 //                    if (map.getString("feedback").equals("object")) {
 //                        Object objectReg = map.get("interfaceReturn");
 //                        object.put("obj", objectReg);
 //                    }
 //                }
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                Object objectReg = map.get("interfaceReturn");
 //                eclipsec，javac 狗一样的同行。
 //                object.put("obj", objectReg);
@@ -731,8 +731,8 @@ public class Pl_XA_Command_E {
 //                String callFunctionKey = "selectRowsByAttributesOfPLTCP";
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = object;
@@ -742,14 +742,14 @@ public class Pl_XA_Command_E {
 //                //strings[0]= "执行 元基花 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
 //                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 //                StaticRootMap.tinShellV005(strings, outputReg);
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                if (null != map) {
 //                    if (map.getString("feedback").equals("object")) {
 //                        Object objectReg = map.get("interfaceReturn");
 //                        object.put("obj", objectReg);
 //                    }
 //                }
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                Object objectReg = map.get("interfaceReturn");
 //                object.put("obj", objectReg);
 //165
@@ -757,8 +757,8 @@ public class Pl_XA_Command_E {
 //                String callFunctionKey = "selectRowsByAttributesOfJoinRelation";
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = object;
@@ -768,14 +768,14 @@ public class Pl_XA_Command_E {
 //                //strings[0]= "执行 元基花 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
 //                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 //                StaticRootMap.tinShellV005(strings, outputReg);
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                if (null != map) {
 //                    if (map.getString("feedback").equals("object")) {
 //                        Object objectReg = map.get("interfaceReturn");
 //                        object.put("obj", objectReg);
 //                    }
 //                }
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                Object objectReg = map.get("interfaceReturn");
 //                ;
 //                object.put("obj", objectReg);
@@ -786,8 +786,8 @@ public class Pl_XA_Command_E {
 //                String callFunctionKey = "selectRowsByAttributesOfJoinGetCulumns";
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = object;
@@ -797,13 +797,13 @@ public class Pl_XA_Command_E {
 //                //strings[0]= "执行 元基花 下 "+ callFunctionKey+ " 接口, 参数是 传参因子";
 //                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 //                StaticRootMap.tinShellV005(strings, outputReg);
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                if (null != map) {
 //                    if (map.getString("feedback").equals("object")) {
 //                        Object objectReg = map.get("interfaceReturn");
 //                        object.put("obj", objectReg);
 //                    }
 //                }
-//                IMV_SIQ map = (IMV_SIQ) outputReg.get(callFunctionKey);
+//                IMV_SQI map = (IMV_SQI) outputReg.get(callFunctionKey);
 //                Object objectReg = map.get("interfaceReturn");
 //                object.put("joinObj", objectReg);

@@ -8,7 +8,7 @@ import exception.file.O.DetaFileInputStream;
 import exception.file.O.DetaInputStreamReader;
 import S_A.SVQ.stable.S_Pos;
 import S_A.VSQ.parser.EmotionMap_ES;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -28,7 +28,7 @@ public class EmotionMap_E extends EmotionMap_ES implements EmotionMap {
     //导致工程转ideaj打包缺少一把资源文件上层路径问题，于是
     //加个变量来校正
 	public void IV_PositiveMap(App NE) {
-        positiveMap = new IMV_SIQ();
+        positiveMap = new IMV_SQI();
         DetaFile file = new DetaFile(S_Pos.WORDS_SOURSE_LINK_POS_POSITIVE);
         InputStream in = DetaFileInputStream.E(file.getDetaCanonicalPath()
             .replace(file.getPath(), NE.resourceTail + "lygs/"
@@ -45,7 +45,7 @@ public class EmotionMap_E extends EmotionMap_ES implements EmotionMap {
     }
 
     public void IV_MotivationMap(App NE) {
-        motivationMap = new IMV_SIQ();
+        motivationMap = new IMV_SQI();
         DetaFile file = new DetaFile(S_Pos.WORDS_SOURSE_LINK_MOTIVATION);
         InputStream in = DetaFileInputStream.E(file.getDetaCanonicalPath()
             .replace(file.getDetaPath(), NE.resourceTail + "lygs/"
@@ -63,7 +63,7 @@ public class EmotionMap_E extends EmotionMap_ES implements EmotionMap {
     }
 
 	public void IV_TrendingMap(App NE) {
-        trendingMap = new IMV_SIQ();
+        trendingMap = new IMV_SQI();
         DetaFile file = new DetaFile(S_Pos.WORDS_SOURSE_LINK_TRENDING);
         InputStream in = DetaFileInputStream.E(file.getDetaCanonicalPath()
             .replace(file.getPath(), NE.resourceTail + "lygs/"
@@ -81,7 +81,7 @@ public class EmotionMap_E extends EmotionMap_ES implements EmotionMap {
     }
 
     public void IV_NegativeMap(App NE) {
-        negativeMap = new IMV_SIQ();
+        negativeMap = new IMV_SQI();
         //URL url= new URL(S_Pos.WORDS_SOURSE_LINK_POS_NEGATIVE);
         DetaFile file = new DetaFile(S_Pos.WORDS_SOURSE_LINK_POS_NEGATIVE);
         InputStream inputStream = DetaFileInputStream.E(file.getDetaCanonicalPath()
@@ -100,7 +100,7 @@ public class EmotionMap_E extends EmotionMap_ES implements EmotionMap {
     }
 
     public void IV_PredictionMap(App NE) {
-        predictionMap = new IMV_SIQ();
+        predictionMap = new IMV_SQI();
         DetaFile file = new DetaFile(S_Pos.WORDS_SOURSE_LINK_PREDICTION);
         InputStream in = DetaFileInputStream.E(file.getDetaCanonicalPath()
             .replace(file.getPath(), NE.resourceTail + "lygs/"
@@ -118,7 +118,7 @@ public class EmotionMap_E extends EmotionMap_ES implements EmotionMap {
     }
 
     public void IV_DistinctionMap(App NE) {
-        distinctionMap = new IMV_SIQ();
+        distinctionMap = new IMV_SQI();
         DetaFile file = new DetaFile(S_Pos.WORDS_SOURSE_LINK_DISTINCTION);
         InputStream in = DetaFileInputStream.E(file.getDetaCanonicalPath()
             .replace(file.getPath(), NE.resourceTail + "lygs/"

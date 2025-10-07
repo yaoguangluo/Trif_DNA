@@ -3,7 +3,7 @@ package ME.VPC.V.dictionary;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI_;
 import YLJ_HRJ.ME.VPC.S.books.BookIndex;
 
 import java.io.InputStream;
@@ -43,8 +43,8 @@ public class CecilDictionary extends Dictionary_S {
 	}
 
 	@SuppressWarnings({ "resource", "unchecked" })
-	public IMV_SIQ_ listNameToMap(List<String> dic_list) {
-		dic_map = new IMV_SIQ_();
+	public IMV_SQI_ listNameToMap(List<String> dic_list) {
+		dic_map = new IMV_SQI_();
 		for (int i = 0; i < dic_list.size(); i++) {
 			String para = "";
 			String name = dic_list.get(i).toString();

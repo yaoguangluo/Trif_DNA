@@ -1,7 +1,7 @@
 package U_V.ESU.tinos.vector;
 
 import S_A.ESU.code.stable.S_;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 import java.util.Vector;
@@ -17,8 +17,8 @@ import java.util.Vector;
  * */
 
 public class Vector_ESU_X_vectorToMap {
-    public static IMV_SIQ _E(Vector<Object> vector) {
-        IMV_SIQ map = new IMV_SIQ();
+    public static IMV_SQI _E(Vector<Object> vector) {
+        IMV_SQI map = new IMV_SQI();
         Iterator<Object> iterator = vector.iterator();
         int i = 0;
         while (iterator.hasNext()) {

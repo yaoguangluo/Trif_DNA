@@ -2,7 +2,7 @@
 package DVIAQVIMIV;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.ESU.array.Double_ESU;
 import U_V.ESU.toolkitImageToBufferImage.U_X_toolkitImageToBufferImageAboutIconConfig;
 import U_V.OEU.LYG4DQS4D.LYG9DWithDoubleTopSort5D;
@@ -62,7 +62,7 @@ public class SkinPathDoubleDetectTripFix2D_E {
 		BufferedImage bufferedImage, App NE) {
 		List<String> output = new ArrayList<>();
 		SkinPathDoubleDetectTripFix2D_E skinPathDoubleDetectTrip = new SkinPathDoubleDetectTripFix2D_E();
-		skinPathDoubleDetectTrip.afterFirstNames = new IMV_SIQ();
+		skinPathDoubleDetectTrip.afterFirstNames = new IMV_SQI();
 		//		skinPathDoubleDetectTrip.initDeciphring("C:\\Users\\yaogu
 		//\\Desktop\\project\\开源门户\\deciphering\\F_DB6.txt", 6);
 		//		skinPathDoubleDetectTrip.initDeciphring("C:\\Users\\yaogu

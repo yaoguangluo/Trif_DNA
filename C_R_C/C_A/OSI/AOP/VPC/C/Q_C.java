@@ -4,7 +4,7 @@ import DSU.V.VtoV;
 
 import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E.RestDB_QE;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //import org.lyg.common.maps.VtoV;
 //import org.lyg.vpc.P.portImpl.RestDBSelectImpl;
@@ -33,7 +33,7 @@ import S_A.pheromone.IMV_SIQ;
 *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class Q_C {
-    public static String exec(String string, IMV_SIQ data) {
+    public static String exec(String string, IMV_SQI data) {
         if (string.equalsIgnoreCase("/selectRowsByAttribute")) {
             return VtoV.ObjectToJsonString(RestDB_QE.selectRowsByAttribute(
                 data.getString("baseName"), data.getString("tableName")

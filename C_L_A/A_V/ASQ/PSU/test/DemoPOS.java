@@ -11,7 +11,7 @@ import P.Pos_X_P;
 import E_A.OEI.SVQ.MPC.fhmm.E.FMHMMListOneTime_E;
 import ME.VPC.M.app.App;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class DemoPOS {
 			, Quick6DLuoYaoguangSort3DMap_E quick6DLuoYaoguangSort3DMap_E, App NE)  {
 		AE _A= new CogsBinaryForest_AE();
 		_A.IV_Mixed(NE);//.init();*/
-		IMV_SIQ nlp= ((BinaryForest_AE) _A).getPosCnToCn();
+		IMV_SQI nlp= ((BinaryForest_AE) _A).getPosCnToCn();
 		List<String> sets= new ArrayList<>();
 		String[] ss= new String[37];
 		String[] ss1= new String[37];

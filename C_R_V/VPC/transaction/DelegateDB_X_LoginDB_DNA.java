@@ -5,7 +5,7 @@ import E_A.OSI.AOP.PCS.PP.company_E.LoginServiceImpl;
 import M_V.MSU.sessionValidation.X_sessionInitByTokenPDICertsDNA;
 import M_V.MSU.sessionValidation.X_sessionTokenCertsInitWithHumanWordsByDNA;
 import S_A.SVQ.stable.S_Token;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.dna.StringUtil;
 import U_A.PEU.P.dna.TokenCerts;
 import U_A.PEU.P.md5.Usr;
@@ -30,7 +30,7 @@ public class DelegateDB_X_LoginDB_DNA {
     //token验证是输入pds, 比对的pde
     //这个函数设计完后我就设计register, 注册一个pde存根, 这样就可以验证这个登陆函数了。
     //罗瑶光 20210731
-    public static IMV_SIQ transactionLoginDB_DNA(String uEmail, String uPassword) {
+    public static IMV_SQI transactionLoginDB_DNA(String uEmail, String uPassword) {
         Usr usr = LoginServiceImpl.findUsrByUEmail(uEmail);
         UsrToken usrToken = LoginServiceImpl.findUsrTokenByUId(usr.getuId());
         //DNA SESSION 替换
@@ -51,7 +51,7 @@ public class DelegateDB_X_LoginDB_DNA {
         //20230106-System.out.println("pds--3>"+ pDE_RNA_Formular1.pds);
         //
         if (!pDE_RNA_Formular1.pde.equals(usrToken.getuPassword())) {
-            IMV_SIQ out = new IMV_SIQ();
+            IMV_SQI out = new IMV_SQI();
             out.putString("loginInfo", "unsuccess");
             out.putString("returnResult", "unsuccess");
             return out;
@@ -87,7 +87,7 @@ public class DelegateDB_X_LoginDB_DNA {
         String jsonToken = StringUtil.encode(json);
         LoginServiceImpl.U_UsrTokenByUId(usr.getuId(), lock, passwordEncoder
             , token.getuTime() / 1000);
-        IMV_SIQ out = new IMV_SIQ();
+        IMV_SQI out = new IMV_SQI();
         out.putObject("userToken", jsonToken);// 仅仅含有时间, EMAIL 和 pds 3个
         out.putObject("userEmail", uEmail);
         out.putString("loginInfo", "success");

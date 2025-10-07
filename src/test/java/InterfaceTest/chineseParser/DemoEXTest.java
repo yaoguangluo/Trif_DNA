@@ -4,8 +4,8 @@ import A_V.ASQ.PSU.test.TimeCheck;
 import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
-//import S_A.pheromone.IMV_SIQ;
-//import S_A.pheromone.IMV_SIQ_SS;
+//import S_A.pheromone.IMV_SQI;
+//import S_A.pheromone.IMV_SQI_SS;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -156,10 +156,10 @@ class DemoEXTest {
 		ParserCharsFix parserCharsFix = new ParserCharsFix();
 		parserCharsFix.initenvironmentIndex(commonTestInition.NE);
 		// 词性初始化
-		// IMV_SIQ pos = commonTestInition.NE.app_S._A
+		// IMV_SQI pos = commonTestInition.NE.app_S._A
 		// .getPosCnToCn();
 		List<String> setsB = new ArrayList<>();
-		// IMV_SIQ_SS seta = new IMV_SIQ_SS();
+		// IMV_SQI_SS seta = new IMV_SQI_SS();
 		// loop测试---------------------------------------------------------
 		for (int i = 0; i < 67; i++) {
 			StringBuilder sb = new StringBuilder(ss[i]);

@@ -3,7 +3,7 @@ package E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E;
 import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.company.E.LoginService_E;
 import M_V.MSI.OP.SM.AOP.MEC.SIQ.SM.OSU.E.IU_Rows_E_X_IU_RowByBaseName;
 import M_V.MSI.OP.SM.AOP.MEC.SIQ.SM.OSU.E.IU_Rows_E_X_IU_RowByTablePathAndIndex;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.json.JSONObject;
 
 /*
@@ -17,10 +17,10 @@ import org.json.JSONObject;
  * */
 @SuppressWarnings({ "unchecked", "resource", "unused" })
 public class RestDB_IUE {
-	public static IMV_SIQ insertRowByTablePath(String tablePath,
+	public static IMV_SQI insertRowByTablePath(String tablePath,
 			String pageIndex, String culumnOfNewRow, String token, String email,
 			String password, String auth) {
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		if (token != null && !token.equalsIgnoreCase("")) {
 			String checkStatus = LoginService_E.checkTokenStatus(token,
 					"common");
@@ -49,10 +49,10 @@ public class RestDB_IUE {
 		return output;
 	}
 
-	public static IMV_SIQ insertRowByBaseName(String baseName, String tableName,
+	public static IMV_SQI insertRowByBaseName(String baseName, String tableName,
 			String culumnOfNewRow, String token, String email, String password,
 			String auth) {
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		String checkStatus = LoginService_E.checkRightsStatus(email, password,
 				"DB");
 		if (checkStatus.contains("invalid")) {

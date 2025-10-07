@@ -7,8 +7,8 @@ import ME.VPC.S.pillow.PageWords;
 import ME.VPC.V.dictionary.ZynkxDictionary;
 import Q_V.OSI.AOP.MEC.SIQ.search.ZhongYaoSearch;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -120,7 +120,7 @@ public class ZynkxPage_X_S_sListeners extends ZynkxPage_X_S_s
 			key = "";
 		}
 		sets = null;
-		IMV_SIQ_SS map = new IMV_SIQ_SS();
+		IMV_SQI_SS map = new IMV_SQI_SS();
 		row = table.getSelectedRow();
 		col = table.getSelectedColumn();
 		String value = (String) table.getValueAt(row, col);
@@ -158,7 +158,7 @@ public class ZynkxPage_X_S_sListeners extends ZynkxPage_X_S_s
 		statistic.setSize(500, 800);
 		// Map<Integer, WordFrequency> fwa=
 		// _A.sortWordFrequencyMapToSortMap(map);
-		IMV_SIQ_S_ fwa = doFwaArrangement(map, NE);
+		IMV_SQI_S_ fwa = doFwaArrangement(map, NE);
 		statistic.setContentType("text/html");
 		page.delete(0, page.length());
 		Here: for (int i = fwa.size() - 1; i >= 0; i--) {
@@ -320,7 +320,7 @@ public class ZynkxPage_X_S_sListeners extends ZynkxPage_X_S_s
 //String primaryKey= "病症药名";
 //String tabKey= "zyfj";
 ////以后设计 uniq forenkey等.
-//Map<String, IMV_SIQ> map= d.dbToMap(primaryKey, tabKey);
+//Map<String, IMV_SQI> map= d.dbToMap(primaryKey, tabKey);
 //dic_bzm=map.get("病症药名");
 //dic_chu_fang=map.get("成人处方");
 //dic_mz=map.get("脉症");
@@ -332,15 +332,15 @@ public class ZynkxPage_X_S_sListeners extends ZynkxPage_X_S_s
 //dic_fg=map.get("方歌");
 //dic_map=map.get("dic_map");
 ////////////////////////////////////////////////////////////////////////////////////
-//dic_bzm= new IMV_SIQ();
-//dic_chu_fang= new IMV_SIQ();
-//dic_mz= new IMV_SIQ();
-//dic_zf= new IMV_SIQ();
-//dic_yy= new IMV_SIQ();
-//dic_sy= new IMV_SIQ();
-//dic_tl= new IMV_SIQ();
-//dic_ff= new IMV_SIQ();
-//dic_fg= new IMV_SIQ();	
+//dic_bzm= new IMV_SQI();
+//dic_chu_fang= new IMV_SQI();
+//dic_mz= new IMV_SQI();
+//dic_zf= new IMV_SQI();
+//dic_yy= new IMV_SQI();
+//dic_sy= new IMV_SQI();
+//dic_tl= new IMV_SQI();
+//dic_ff= new IMV_SQI();
+//dic_fg= new IMV_SQI();	
 //dic_map= d.txtToMap(dic_bzm, dic_chu_fang, dic_mz, dic_zf
 // , dic_yy, dic_sy, dic_tl, dic_ff, dic_fg);
 

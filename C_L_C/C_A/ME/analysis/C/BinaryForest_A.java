@@ -1,7 +1,7 @@
 package C_A.ME.analysis.C;
 
 import P_V.PEQ.AMV.ECS.test.SensingTest;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -14,16 +14,16 @@ import S_A.pheromone.IMV_SIQ;
  * */
 public interface BinaryForest_A {
     void studyNewWord(String study, String token, String posStudy);
-    IMV_SIQ getStudyPos();
-    IMV_SIQ getCtK();
-    IMV_SIQ getCtG();
-    IMV_SIQ getCtS();
-    IMV_SIQ getPosEnToCn();
-    IMV_SIQ getPosEnToEn();
-    IMV_SIQ getPosCnToCn();
-    IMV_SIQ getEnToCn();
-    IMV_SIQ getCnToEn();
-    IMV_SIQ getFullEnToCn();
-    IMV_SIQ getFullCnToEn();
+    IMV_SQI getStudyPos();
+    IMV_SQI getCtK();
+    IMV_SQI getCtG();
+    IMV_SQI getCtS();
+    IMV_SQI getPosEnToCn();
+    IMV_SQI getPosEnToEn();
+    IMV_SQI getPosCnToCn();
+    IMV_SQI getEnToCn();
+    IMV_SQI getCnToEn();
+    IMV_SQI getFullEnToCn();
+    IMV_SQI getFullCnToEn();
     SensingTest getSensingTest();
 }

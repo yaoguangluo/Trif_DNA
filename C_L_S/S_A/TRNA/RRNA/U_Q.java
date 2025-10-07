@@ -7,8 +7,8 @@ import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
 import S_A.SixActionMap.HelpVerbalMap;
 import S_A.SixActionMap.StudyVerbalMap;
 import S_A.SixActionMap.WorkVerbalMap;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 import U_A.PEU.P.image.ConvexHull;
 import jniLYGAFDCDFFT.LYGAFDCTDFFT;
@@ -42,12 +42,12 @@ public class U_Q extends Q_I {
     public StudyVerbalMap studyVerbalMap;
     public WorkVerbalMap workVerbalMap;
     public TinMap currentTinmap;
-    public List<IMV_SIQ> outputMapList;
-    public List<IMV_SIQ> joinObj;
-    public List<IMV_SIQ> newObj;
+    public List<IMV_SQI> outputMapList;
+    public List<IMV_SQI> joinObj;
+    public List<IMV_SQI> newObj;
     public LYGAFDCTDFFT lYGAFDCTDFFT;
     public LYGAFDCTDFFT_F lYGAFDCTDFFT_F;
-    public IMV_SIQ dataMap;
+    public IMV_SQI dataMap;
     public Object[][][] objectsT;
     public JSONObject jsobj;
     public Object[] objectA;
@@ -56,7 +56,7 @@ public class U_Q extends Q_I {
     public TinMap outputMap;
     public int initonsDistanceRelationship = 30;
     public List<String> output;
-    public IMV_SIQ tableNameMap = new IMV_SIQ();
+    public IMV_SQI tableNameMap = new IMV_SQI();
     public List<Object> list;
     public List<Object> outputObjectList;
 
@@ -72,7 +72,7 @@ public class U_Q extends Q_I {
     public List<Object> destination;
     public List<AMV_MVS_VSQ_2D> groupsList;
     public List<Double> outputDoubleList;
-    public List<IMV_SIQ> obj;
+    public List<IMV_SQI> obj;
     public List<AMV_MVS_VSQ_2D> list2D;
     public List<AMV_MVS_VSQ_3D> list3D;
     public List<AMV_MVS_VSQ_2D> coods;
@@ -92,23 +92,23 @@ public class U_Q extends Q_I {
     public ArrayList<AMV_MVS_VSQ_3D> groups3D;
     public List<RatioMatrix> groupsRatioList;
     //
-    public IMV_SIQ map;
-    public IMV_SIQ nlp;
+    public IMV_SQI map;
+    public IMV_SQI nlp;
 
     public HelpVerbalMap helpVerbalMap;
-    public IMV_SIQ inputMap;
-    public IMV_SIQ rowCells;
-    public IMV_SIQ textContent;
-    public IMV_SIQ dic_xj;
-    public IMV_SIQ conditions;
+    public IMV_SQI inputMap;
+    public IMV_SQI rowCells;
+    public IMV_SQI textContent;
+    public IMV_SQI dic_xj;
+    public IMV_SQI conditions;
     //public TinMap objectMap;//later normalization
-    public IMV_SIQ dic_li;
-    public IMV_SIQ rowMap;
-    public IMV_SIQ pos;
-    public IMV_SIQ inputValues;
-    public IMV_SIQ destinationMap;
-    public IMV_SIQ_SS keyMap;
-    public IMV_SIQ_SS outputList;
+    public IMV_SQI dic_li;
+    public IMV_SQI rowMap;
+    public IMV_SQI pos;
+    public IMV_SQI inputValues;
+    public IMV_SQI destinationMap;
+    public IMV_SQI_SS keyMap;
+    public IMV_SQI_SS outputList;
 
     public Map<String, Boolean> findinNewObj;
     public Map<Double, List<AMV_MVS_VSQ_2D>> groups2D;
@@ -143,7 +143,7 @@ public class U_Q extends Q_I {
     public JSONObject culumnOfNewRow;
     public JSONObject jaculumnOfUpdateRow;
     //
-    public IMV_SIQ inputHashMap;
+    public IMV_SQI inputHashMap;
     public Hashtable<String, Object> hashtable;
 
     public JSONObject jSONObject;

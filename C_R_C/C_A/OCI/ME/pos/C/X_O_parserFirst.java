@@ -1,7 +1,7 @@
 package C_A.OCI.ME.pos.C;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 /*
@@ -24,10 +24,10 @@ public interface X_O_parserFirst {
     int twoCharOfThree(int countLength, List<String> outputList, String[] strings
         , StringBuilder[] fixWord);
 
-    int charOfTwoForMap(int countLength, IMV_SIQ_SS outputList, String[] strings
+    int charOfTwoForMap(int countLength, IMV_SQI_SS outputList, String[] strings
         , StringBuilder[] fixWord, App NE);
 
-    int charOfThreeForMap(int countLength, IMV_SIQ_SS outputList, String[] strings
+    int charOfThreeForMap(int countLength, IMV_SQI_SS outputList, String[] strings
         , StringBuilder[] fixWord, App NE);
 }
 

@@ -6,7 +6,7 @@ import M_V.ME.ConditionPLSQL_.X_Table;
 import M_V.MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Spec;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.cache.Cache_M;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaFileReader;
@@ -27,15 +27,15 @@ import java.util.Objects;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class Q_NestRows_E_X_selectRowsByAttributesOfNestCondition {
-	public static Object _E(IMV_SIQ object) {
+	public static Object _E(IMV_SQI object) {
 		if (!object.containsKey("recordRows")) {
-			Map<String, Boolean> recordRows = new IMV_SIQ();
+			Map<String, Boolean> recordRows = new IMV_SQI();
 			object.put("recordRows", recordRows);
 		}
 		Spec spec = new Spec();
-		spec.I_CulumnTypes(new IMV_SIQ());
+		spec.I_CulumnTypes(new IMV_SQI());
 		String objectType = "";
-		List<IMV_SIQ> output = new ArrayList<>();
+		List<IMV_SQI> output = new ArrayList<>();
 		// 锁定数据库
 		String DBPath = Objects.requireNonNull(Cache_M.getCacheInfo("DBPath"))
 				.getValue().toString() + "/"

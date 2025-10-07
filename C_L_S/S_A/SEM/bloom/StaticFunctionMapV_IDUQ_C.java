@@ -3,7 +3,7 @@ package S_A.SEM.bloom;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 import ME.VPC.C.skivvy.MakeContainerSJFX;
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import OSI.OPE.OVU.PQE.flash.GUISample;
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
@@ -16,7 +16,7 @@ import OSI.OPE.OVU.PQE.flash.GUISample;
  * */
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapV_IDUQ_C {
-	public static IMV_SIQ annotationMap = new IMV_SIQ();
+	public static IMV_SQI annotationMap = new IMV_SQI();
 
 	public MakeContainerSJFX initETL(App NE);
 

@@ -4,7 +4,7 @@ import dnn.GetDNNMap;
 import dnn.WriteDNNMap;
 import ME.VPC.M.app.App;
 import ME.VPC.M.X.AppSearch_X_DetaSearchWithDNN;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.ESU.office.XlsToYLJBufferPage;
 import U_V.ESU.office.XlsxToYLJBufferPage;
 import U_V.ESU.sort.Quick9DLYGWithString_ESU;
@@ -59,7 +59,7 @@ public class CommonXlsPage_X_S_sListeners extends CommonXlsPage_X_S_s
         dnnPath = dnnPath.replace(".xls", ".lygDnn");
         File file;//配置文件在同一个文件架夹下便于管理。
         file = new File(dnnPath);
-        Map<String, IMV_SIQ> subDNNmap = new IMV_SIQ();
+        Map<String, IMV_SQI> subDNNmap = new IMV_SQI();
         if (file.exists()) {
             GetDNNMap.doGetDNNMap(app_S, NE.app_S.DNNmap, dnnPath, NE);
         } else {//如果没有，就生成小表。
@@ -72,7 +72,7 @@ public class CommonXlsPage_X_S_sListeners extends CommonXlsPage_X_S_s
             Iterator<String> iterator = subDNNmap.keySet().iterator();
             while (iterator.hasNext()) {
                 String string = iterator.next();
-                IMV_SIQ dnnSet = subDNNmap.get(string);
+                IMV_SQI dnnSet = subDNNmap.get(string);
                 NE.app_S.DNNmap.put(string, dnnSet);
             }
         }//CommonXLSDNN.createXlSDNN(tableData_old, identifyColumns);

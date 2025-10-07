@@ -27,8 +27,8 @@ public class MSI_EVD_SVX_TVS_DAH extends MakeContainerZNSZ {
     }
 
     public MSI_EVD_SVX_TVS_DAH(A _A, Container jpanelFourth, App_S u2
-        , DetabbedPane jTabbedpane, List<String> tabNames2, IMV_SIQ pos
-        , IMV_SIQ pose, IMV_SIQ etc, IMV_SIQ cte, App NE) {
+        , DetabbedPane jTabbedpane, List<String> tabNames2, IMV_SQI pos
+        , IMV_SQI pose, IMV_SQI etc, IMV_SQI cte, App NE) {
         super(_A, jpanelFourth, u2, jTabbedpane, tabNames2, pos, pose, etc, cte, NE);
     }
 }

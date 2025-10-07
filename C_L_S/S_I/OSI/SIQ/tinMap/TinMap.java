@@ -1,6 +1,6 @@
 //package S_I.OSI.SIQ.tinMap;
 //
-//import S_A.pheromone.IMV_SIQ;
+//import S_A.pheromone.IMV_SQI;
 //
 //import java.util.ArrayList;
 //import java.util.Iterator;
@@ -16,7 +16,7 @@
 // * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
 //*  208号 阳光家园别墅小区 第十栋别墅 第三层
 // * */
-//public class TinMap extends IMV_SIQ implements Cloneable {
+//public class TinMap extends IMV_SQI implements Cloneable {
 //    /**
 //     * 因为map 下面的指令集比较复杂, 先用一个clone 代替, 如果不行就再完整设计一个copy函数
 //     * 测试了下不能复制, 不知道是不是这个jdk版本问题, 于是重新设计 map copy clone 函数。
@@ -37,9 +37,9 @@
 //            Iterator<String> iterator = this.keySet().iterator();
 //            while (iterator.hasNext()) {
 //                String string = iterator.next();
-//                IMV_SIQ newMap = new IMV_SIQ();
-//                IMV_SIQ map
-//                    = (IMV_SIQ) this.get(string);
+//                IMV_SQI newMap = new IMV_SQI();
+//                IMV_SQI map
+//                    = (IMV_SQI) this.get(string);
 //                Iterator<String> iterators = map.keySet().iterator();
 //                while (iterators.hasNext()) {
 //                    String strings = iterators.next();
@@ -54,13 +54,13 @@
 //                            = arrayList.iterator();
 //                        while (iteratormap.hasNext()) {
 //                            Map<String, Map<String, Map<String, String>>> hashmapNew
-//                                = new IMV_SIQ();
+//                                = new IMV_SQI();
 //                            Map<String, Map<String, Map<String, String>>> hashmap
 //                                = iteratormap.next();
 //                            Iterator<String> iteratormapIterator = hashmap.keySet().iterator();
 //                            while (iteratormapIterator.hasNext()) {
 //                                String iteratormapIteratorString = iteratormapIterator.next();
-//                                Map<String, Map<String, String>> hashMapsNew = new IMV_SIQ();
+//                                Map<String, Map<String, String>> hashMapsNew = new IMV_SQI();
 //                                Map<String, Map<String, String>> hashMaps
 //                                    = hashmap.get(iteratormapIteratorString);
 //                                Iterator<String> iteratormapIteratorHashMaps
@@ -69,7 +69,7 @@
 //                                    String iteratormapIteratorHashMapsString
 //                                        = iteratormapIteratorHashMaps.next();
 //                                    Map<String, String> iteratormapIteratorHashMapsStringHashMapsNew
-//                                        = new IMV_SIQ();
+//                                        = new IMV_SQI();
 //                                    Map<String, String> iteratormapIteratorHashMapsStringHashMaps
 //                                        = hashMaps.get(iteratormapIteratorHashMapsString);
 //                                    Iterator<String> iteratormapIteratorHashMapsStringHashMapsIterator
@@ -120,8 +120,8 @@
 ////			Iterator<String> iterator= this.keySet().iterator();
 ////			while(iterator.hasNext()) {
 ////				String string= iterator.next();
-////				IMV_SIQ newMap= new IMV_SIQ();
-////				IMV_SIQ map= (IMV_SIQ)this.get(string);
+////				IMV_SQI newMap= new IMV_SQI();
+////				IMV_SQI map= (IMV_SQI)this.get(string);
 ////				Iterator<String> iterators= map.keySet().iterator();
 ////				while(iterators.hasNext()) {
 ////					String strings= iterators.next();
@@ -132,17 +132,17 @@
 ////						//
 ////						Iterator<HashMap<String, HashMap<String, HashMap<String, String>>>> iteratormap= arrayList.iterator();
 ////						while(iteratormap.hasNext()) {
-////							HashMap<String, HashMap<String, HashMap<String, String>>> hashmapNew= new IMV_SIQ();
+////							HashMap<String, HashMap<String, HashMap<String, String>>> hashmapNew= new IMV_SQI();
 ////							HashMap<String, HashMap<String, HashMap<String, String>>> hashmap= iteratormap.next();
 ////							Iterator<String> iteratormapIterator= hashmap.keySet().iterator();
 ////							while(iteratormapIterator.hasNext()) {
 ////								String iteratormapIteratorString= iteratormapIterator.next();
-////								HashMap<String, HashMap<String, String>> hashMapsNew= new IMV_SIQ();
+////								HashMap<String, HashMap<String, String>> hashMapsNew= new IMV_SQI();
 ////								HashMap<String, HashMap<String, String>> hashMaps= hashmap.get(iteratormapIteratorString);
 ////								Iterator<String> iteratormapIteratorHashMaps= hashMaps.keySet().iterator();
 ////								while(iteratormapIteratorHashMaps.hasNext()) {
 ////									String iteratormapIteratorHashMapsString= iteratormapIteratorHashMaps.next();
-////									HashMap<String, String> iteratormapIteratorHashMapsStringHashMapsNew= new IMV_SIQ();
+////									HashMap<String, String> iteratormapIteratorHashMapsStringHashMapsNew= new IMV_SQI();
 ////									HashMap<String, String> iteratormapIteratorHashMapsStringHashMaps
 ////									= hashMaps.get(iteratormapIteratorHashMapsString);
 ////									Iterator<String> iteratormapIteratorHashMapsStringHashMapsIterator

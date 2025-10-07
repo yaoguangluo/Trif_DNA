@@ -4,7 +4,7 @@ import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
 import S_A.SVQ.stable.S_Pos;
 import S_A.SVQ.stable.S_Web;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -82,7 +82,7 @@ public class RequestRecord_C {
 		if (vPCSRequest.getRequestIsRest()) {
 			String[] column = content[S_Pos.INT_ONE]
 					.split(S_Web.STRING_JUNCTION);
-			IMV_SIQ data = new IMV_SIQ();
+			IMV_SQI data = new IMV_SQI();
 			for (String cell : column) {
 				String[] cells = cell.split(S_Web.MATH_EQUAL);
 				try {

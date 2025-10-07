@@ -1,6 +1,6 @@
 package ME.VPC.H.literature;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.List;
 
@@ -18,5 +18,5 @@ import java.util.List;
 //20211028
 public class literial {
 	public static List<String> literialVerbalBase;
-	public static IMV_SIQ literialVerbalBaseMap;
+	public static IMV_SQI literialVerbalBaseMap;
 }

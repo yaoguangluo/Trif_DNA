@@ -7,7 +7,7 @@ import M_V.ME.word.forest.utils.Util_X_ContainsKey;
 import M_V.ME.word.forest.utils.Util_X_prefixWordEqualZero;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 /*
@@ -77,7 +77,7 @@ public class Nlp_CE_X_A_doSlangPartAndPOSCheck extends XCE_XAS_U
 	}
 
 	// 新陈代谢
-	public int forTwoCharForMap(int countLength, IMV_SIQ_SS outputList,
+	public int forTwoCharForMap(int countLength, IMV_SQI_SS outputList,
 			StringBuilder stringBuilder, StringBuilder[] prefixWord, App NE) {
 		String countWordNode = stringBuilder.toString();
 		if (!wordsForest.containsKey(countWordNode)) {

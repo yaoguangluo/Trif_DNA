@@ -3,7 +3,7 @@ package ASQ.YaoguangLuoEulerRing.tsp;
 import ASQ.basic.Distance_X_getDistance3D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
 import P_V.PCI.ASQ.demension.Line3D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.OEU.LYG4DQS4D.LYG9DWithDoubleTopSort4D;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class TSP3D_X_getYaoguangLuo3DEulerRingTSP3D {
         //2 get all lines
         List<Line3D> linesMap = new ArrayList<>();
         Iterator<AMV_MVS_VSQ_3D> iteratorOuter = positions.iterator();
-        IMV_SIQ indexMap = new IMV_SIQ();
+        IMV_SQI indexMap = new IMV_SQI();
         while (iteratorOuter.hasNext()) {
             AMV_MVS_VSQ_3D position3DOuter = iteratorOuter.next();
             Iterator<AMV_MVS_VSQ_3D> iteratorInner = positions.iterator();
@@ -59,11 +59,11 @@ public class TSP3D_X_getYaoguangLuo3DEulerRingTSP3D {
                     || !Objects.equals(position3DOuter.getZ(), position3DInner.getZ()))) {
                     continue;
                 }
-                IMV_SIQ map;
+                IMV_SQI map;
                 if (indexMap.containsKey(position3DOuter.getTag())) {
                     map = indexMap.getStringMap(position3DOuter.getTag());
                 } else {
-                    map = new IMV_SIQ();
+                    map = new IMV_SQI();
                 }
                 map.put(position3DInner.getTag(), "");
                 indexMap.put(position3DOuter.getTag(), map);
@@ -75,7 +75,7 @@ public class TSP3D_X_getYaoguangLuo3DEulerRingTSP3D {
         Iterator<Line3D> linesKeySets = linesMap.iterator();
         //4 get each distance of line.
         i = 0;
-        IMV_SIQ uniqueLines = new IMV_SIQ();
+        IMV_SQI uniqueLines = new IMV_SQI();
         while (linesKeySets.hasNext()) {
             Line3D line3D = linesKeySets.next();
             double distanceDouble = Distance_X_getDistance3D._E(line3D.getBegin(), line3D.getEnd());
@@ -94,7 +94,7 @@ public class TSP3D_X_getYaoguangLuo3DEulerRingTSP3D {
         distance = new LYG9DWithDoubleTopSort4D().sort(distance, sortRangeScale, sortDeepsScale);//算法应用更新
         //7 From small to big loop the distance and make a condition tree.
         List<Line3D> outputLine3D = new ArrayList<>();
-        IMV_SIQ outputDouble3D = new IMV_SIQ();
+        IMV_SQI outputDouble3D = new IMV_SQI();
         for (i = 0; i < distance.length; i++) {
             List<Line3D> list = uniqueLines.getListLine3D(distance[i]);
 					for (Line3D line3D : list) {

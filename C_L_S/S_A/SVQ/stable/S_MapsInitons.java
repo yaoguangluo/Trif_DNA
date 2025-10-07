@@ -1,6 +1,6 @@
 package S_A.SVQ.stable;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 //思想 罗瑶光 DNA元基催化与肽计算
@@ -43,14 +43,14 @@ import java.util.Map;
  * */
 @SuppressWarnings("unchecked")
 public class S_MapsInitons{
-	public final Map<String, String> initonsMap= new IMV_SIQ();
-	public final Map<String, Integer> numberSet= new IMV_SIQ();
-	public final Map<String, String> initonsSet= new IMV_SIQ();
-	public final Map<String, String> initonsCode= new IMV_SIQ();
-	public final Map<String, String> initonsMap16= new IMV_SIQ();
-	public final Map<String, Integer> numberSet16= new IMV_SIQ();
-	public final Map<String, String> initonsSet16= new IMV_SIQ();
-	public final Map<String, String> initonsCode16= new IMV_SIQ();
+	public final Map<String, String> initonsMap= new IMV_SQI();
+	public final Map<String, Integer> numberSet= new IMV_SQI();
+	public final Map<String, String> initonsSet= new IMV_SQI();
+	public final Map<String, String> initonsCode= new IMV_SQI();
+	public final Map<String, String> initonsMap16= new IMV_SQI();
+	public final Map<String, Integer> numberSet16= new IMV_SQI();
+	public final Map<String, String> initonsSet16= new IMV_SQI();
+	public final Map<String, String> initonsCode16= new IMV_SQI();
 
 	public void init() {
  		initonsMap.put("A", "7");

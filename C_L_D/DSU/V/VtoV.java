@@ -1,6 +1,6 @@
 package DSU.V;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.json.JSONObject;
@@ -17,11 +17,11 @@ import java.lang.reflect.Type;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class VtoV {
-	public static IMV_SIQ JsonObjectToMap(JSONObject response) {
+	public static IMV_SQI JsonObjectToMap(JSONObject response) {
 		Gson gson = new Gson();
-		Type type = new TypeToken<IMV_SIQ>() {
+		Type type = new TypeToken<IMV_SQI>() {
 		}.getType();
-		IMV_SIQ responseMap = gson.fromJson(response.toString(), type);
+		IMV_SQI responseMap = gson.fromJson(response.toString(), type);
 		return responseMap;
 	}
 
@@ -41,7 +41,7 @@ public class VtoV {
 //	JSONObject responseJson= XML.toJSONObject(response);
 //	return responseJson;
 //}
-//	public String MapToJsonString(IMV_SIQ response ){
+//	public String MapToJsonString(IMV_SQI response ){
 //		Gson gson= new Gson();
 //		return gson.toJson(response);
 //	}
@@ -51,15 +51,15 @@ public class VtoV {
 //		return gson.toJson(response);
 //
 
-//	public IMV_SIQ XmlToMap(String response){
+//	public IMV_SQI XmlToMap(String response){
 //		JSONObject responseJson= XML.toJSONObject(response);
 //		Gson gson= new Gson();
-//		Type type= new TypeToken<IMV_SIQ>(){}.getType();
-//		IMV_SIQ responseMap=gson.fromJson(responseJson.toString(), type);
+//		Type type= new TypeToken<IMV_SQI>(){}.getType();
+//		IMV_SQI responseMap=gson.fromJson(responseJson.toString(), type);
 //		return responseMap;
 //	}
 
-//	public String MapToXml(IMV_SIQ response){
+//	public String MapToXml(IMV_SQI response){
 //		Gson gson= new Gson();
 //		String json= gson.toJson(response);
 //		JSONObject jsonObj= new JSONObject(json);

@@ -1,6 +1,6 @@
 package S_A.SVQ.stable;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //作者, 个人著作权人 罗瑶光, 浏阳
 /*
@@ -13,7 +13,7 @@ import S_A.pheromone.IMV_SIQ;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class S_File{
-	public static IMV_SIQ DNA_PDN= new IMV_SIQ();
+	public static IMV_SQI DNA_PDN= new IMV_SQI();
 	//	//test
 	public static final String logo_png= "logo.png";
 //	public static final String sc_a_png= "a.png";

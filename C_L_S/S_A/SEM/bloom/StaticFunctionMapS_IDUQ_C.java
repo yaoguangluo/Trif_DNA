@@ -17,7 +17,7 @@ import java.util.List;
 //著作权人+ 作者= 罗瑶光
 public interface StaticFunctionMapS_IDUQ_C  {
 
-	//TinMap extends ConcurrentIMV_SIQ implements Cloneable{
+	//TinMap extends ConcurrentIMV_SQI implements Cloneable{
 	public TinMap clone(App NE);
 
 	// DoSplit

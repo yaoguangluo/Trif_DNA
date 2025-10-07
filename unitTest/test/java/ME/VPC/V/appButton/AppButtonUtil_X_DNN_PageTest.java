@@ -31,7 +31,7 @@ class AppButtonUtil_X_DNN_PageTest {
     @Test
     void testDoRankDNN() {
         // mock trif
-//        AppButtonUtil_X_DNN_Page.doRankDNN(null, "response", new IMV_SIQ(), new HashMap<String, Double>(){
+//        AppButtonUtil_X_DNN_Page.doRankDNN(null, "response", new IMV_SQI(), new HashMap<String, Double>(){
 //                {put("String", Double.valueOf(0));
 //            }}, new App());
     }

@@ -13,7 +13,7 @@ import ME.VPC.M.app.App;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 import OPE.SI.MCI.OEI.OVU.PQE.extOSGI.OSGI_chansfer;
 import OSI.OPE.OVU.PQE.flash.ThisCanvas;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_I.OSI.PEI.PCI.PSI.tinShell.AddTinShellNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI;
 import S_I.OSI.PEI.PCI.PSI.tinShell.AddTinShellRun;
 import S_I.OSI.PEI.PCI.PSI.tinShell.AddTinShellView;
@@ -29,13 +29,13 @@ import java.util.Map;
 public class BootNeroCell {
     public static void bootCell(LinkNode linkNode, JTextPane rightBotJTextPane
             , ThisCanvas canvas, App NE) {
-        Map<String, LinkNode> bootMaps = new IMV_SIQ();
+        Map<String, LinkNode> bootMaps = new IMV_SQI();
         LinkNode currentNode = linkNode;
         while (null != currentNode) {
             bootMaps.put(currentNode.primaryKey, currentNode);
             currentNode = currentNode.next;
         }
-        Map<String, Boolean> bootedMaps = new IMV_SIQ();
+        Map<String, Boolean> bootedMaps = new IMV_SQI();
         //准备写深度搜索来做神经流传导, 先更新下版本 1.0.3_beta, 这几天完善。20190617 8：28 罗瑶光
         //我在思考设计一个vpcs 执行器来做etlshell节点的 刷新-初始-保存-执行四个线。
         //早期的模式是简单的执行配置 保存运行 查看, , 现在我要改成 在执行之前确认要保存配置,

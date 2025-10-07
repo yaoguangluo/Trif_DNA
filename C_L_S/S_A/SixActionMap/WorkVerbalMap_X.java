@@ -35,11 +35,11 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 			if (stringNounMd.isEmpty()) {
 				continue NextNounMd;
 			}
-			if (!command_V._IMV_SIQ_SS.containsKey(stringNounMd)) {
+			if (!command_V._IMV_SQI_SS.containsKey(stringNounMd)) {
 				/*稍后精简条件优化变量*/
 				continue NextNounMd;
 			}
-			WordFrequency wordFrequencyNounMd = command_V._IMV_SIQ_SS
+			WordFrequency wordFrequencyNounMd = command_V._IMV_SQI_SS
 				.getW(stringNounMd);
 			int averagePositionNounMd = wordFrequencyNounMd
 				.getAveragePosition();
@@ -51,12 +51,12 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 				if (stringVerbNd.isEmpty()) {
 					continue NextVerbNd;
 				}
-				if (!command_V._IMV_SIQ_SS.containsKey(
+				if (!command_V._IMV_SQI_SS.containsKey(
 					stringVerbNd)) {
 					/*稍后精简条件优化变量*/
 					continue NextVerbNd;
 				}
-				WordFrequency wordFrequencyVerbNd = command_V._IMV_SIQ_SS
+				WordFrequency wordFrequencyVerbNd = command_V._IMV_SQI_SS
 					.getW(stringVerbNd);
 				int averagePositionVerbNd = wordFrequencyVerbNd
 					.getAveragePosition();
@@ -87,8 +87,8 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 						1.0, rootNd);
 					wordFrequency.positions.add(positionNd);
 					wordFrequency.I_pos("动词名词");
-					command_V._IMV_SIQ_SS.put(rootNd, wordFrequency);
-					command_V._IMV_SIQ_SS.put(rootMd, wordFrequency);
+					command_V._IMV_SQI_SS.put(rootNd, wordFrequency);
+					command_V._IMV_SQI_SS.put(rootMd, wordFrequency);
 				}
 			}
 		}
@@ -102,11 +102,11 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 			if (stringVerbM.isEmpty()) {
 				continue NextVerbM;
 			}
-			if (!command_V._IMV_SIQ_SS.containsKey(stringVerbM)) {
+			if (!command_V._IMV_SQI_SS.containsKey(stringVerbM)) {
 				/*稍后精简条件优化变量*/
 				continue NextVerbM;
 			}
-			WordFrequency wordFrequencyVerbM = command_V._IMV_SIQ_SS
+			WordFrequency wordFrequencyVerbM = command_V._IMV_SQI_SS
 				.getW(stringVerbM);
 			int averagePositionVerbM = wordFrequencyVerbM
 				.getAveragePosition();
@@ -117,11 +117,11 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 				if (stringVerbN.isEmpty()) {
 					continue NextVerbN;
 				}
-				if (!command_V._IMV_SIQ_SS.containsKey(stringVerbN)) {
+				if (!command_V._IMV_SQI_SS.containsKey(stringVerbN)) {
 					/*稍后精简条件优化变量*/
 					continue NextVerbN;
 				}
-				WordFrequency wordFrequencyVerbN = command_V._IMV_SIQ_SS
+				WordFrequency wordFrequencyVerbN = command_V._IMV_SQI_SS
 					.getW(stringVerbN);
 				int averagePositionVerbN = wordFrequencyVerbN
 					.getAveragePosition();
@@ -149,8 +149,8 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 						1.0, rootN);
 					wordFrequency.positions.add(positionN);
 					wordFrequency.I_pos("动词");
-					command_V._IMV_SIQ_SS.put(rootN, wordFrequency);
-					command_V._IMV_SIQ_SS.put(rootM, wordFrequency);
+					command_V._IMV_SQI_SS.put(rootN, wordFrequency);
+					command_V._IMV_SQI_SS.put(rootM, wordFrequency);
 				}
 			}
 		}
@@ -168,10 +168,10 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 			if (stringNounM.isEmpty()) {
 				continue NextNounM;
 			}
-			if (!command_V._IMV_SIQ_SS.containsKey(stringNounM)) {
+			if (!command_V._IMV_SQI_SS.containsKey(stringNounM)) {
 				continue NextNounM;
 			}
-			WordFrequency wordFrequencyNounM = command_V._IMV_SIQ_SS
+			WordFrequency wordFrequencyNounM = command_V._IMV_SQI_SS
 				.getW(stringNounM);
 			int averagePositionNounM = wordFrequencyNounM
 				.getAveragePosition();
@@ -182,10 +182,10 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 				if (stringNounN.isEmpty()) {
 					continue NextNounN;
 				}
-				if (!command_V._IMV_SIQ_SS.containsKey(stringNounN)) {
+				if (!command_V._IMV_SQI_SS.containsKey(stringNounN)) {
 					continue NextNounN;
 				}
-				WordFrequency wordFrequencyNounN = command_V._IMV_SIQ_SS
+				WordFrequency wordFrequencyNounN = command_V._IMV_SQI_SS
 					.getW(stringNounN);
 				int averagePositionNounN = wordFrequencyNounN
 					.getAveragePosition();
@@ -227,8 +227,8 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 						1.0, rootM);
 					wordFrequency.positions.add(positionM);
 					wordFrequency.I_pos("名词");
-					command_V._IMV_SIQ_SS.put(rootM, wordFrequency);
-					command_V._IMV_SIQ_SS.put(rootN, wordFrequency);
+					command_V._IMV_SQI_SS.put(rootM, wordFrequency);
+					command_V._IMV_SQI_SS.put(rootN, wordFrequency);
 				}
 
 			}

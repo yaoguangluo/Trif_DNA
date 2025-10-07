@@ -2,7 +2,7 @@ package S_A.SEM.bloom;
 
 import A_I.MPE.MAQPVDCOISIV.full.FullDNATokenPDI;
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import VPC.PdeSwapFix.X_pdeToPds;
 import VPC.PdeSwapFix.X_pdsToPde;
 import VPC.PdeSwapFix.X_pdwToPdc;

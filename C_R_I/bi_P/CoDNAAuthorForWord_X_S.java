@@ -2,7 +2,7 @@ package bi_P;
 
 import ME.VPC.S.ne.App_S;
 import C_A.ME.analysis.C.A;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import V_A.VSQ.OPE.jogl.JOGLOBJShape;
 import OSI.MSU.AVQ.ASQ.dnaSets.CMS;
 import com.jogamp.opengl.GL2;
@@ -60,13 +60,13 @@ public class CoDNAAuthorForWord_X_S extends JPanel {
 	public int zybc = 0;
 	public int c = 0;
 	public String rootWord;// later..
-	public IMV_SIQ pos;
+	public IMV_SQI pos;
 	public Map<String, Integer> findLeaf;
 	public Map<String, Integer> frequencyLeaf;
 	public Map<String, Integer> didLeaf;
-	public IMV_SIQ dic_li;
-	public IMV_SIQ dic_yl;
-	public IMV_SIQ rootLeaf;
+	public IMV_SQI dic_li;
+	public IMV_SQI dic_yl;
+	public IMV_SQI rootLeaf;
 	public App_S u;
 	public A _A;
 

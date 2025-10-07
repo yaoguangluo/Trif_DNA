@@ -1,6 +1,6 @@
 package U_V.ESU.imageToList;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -19,9 +19,9 @@ import java.util.List;
 
 public class ImageToList_X_waveImageToArrayMapWithBlack {
 	//该函数用于股市等波形缓存转换成数组。
-	public static IMV_SIQ _E(
+	public static IMV_SQI _E(
 			BufferedImage bufferedImage) {
-		IMV_SIQ output= new IMV_SIQ();
+		IMV_SQI output= new IMV_SQI();
 		for (int i= 0; i< bufferedImage.getWidth(); ++i) {
 			for (int j= 0; j< bufferedImage.getHeight(); ++j) {
 				int color= bufferedImage.getRGB(i, j);

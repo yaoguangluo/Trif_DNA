@@ -7,7 +7,7 @@ import OSI.OSU.addAction.AddParserMixedStringClass;
 import OSI.OSU.addAction.AddParserMixedStringToListClass;
 import OSI.OSU.addAction.LimitedRowAttributesOfColumnsInMemoryClass;
 import OSI.OSU.addAction.UpdateColorAttributesOfColumnsInMemoryClass;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
@@ -20,7 +20,7 @@ import S_A.pheromone.IMV_SIQ;
  * */
 @SuppressWarnings("unchecked")
 public class CreativeVerbalMap {
-	public IMV_SIQ flowerActionMap = new IMV_SIQ();
+	public IMV_SQI flowerActionMap = new IMV_SQI();
 
 	public static void initInitonActions(App NE) {
 		regAddActionInterfaceClass(NE);

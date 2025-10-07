@@ -4,7 +4,7 @@ package ME.VPC.V.appButton;
 import ME.VPC.S.ne.App_S;
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import P.image.Color_P;
 
 import java.util.Iterator;
@@ -35,7 +35,7 @@ public class AppButtonUtil_X_pagechinese {
 			return;
 			// mock trif
 		}
-		IMV_SIQ pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
+		IMV_SQI pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
 		List<String> setsForGet = sets.subList(currentPage * 2000,
 				(currentPage + 1) * 2000 < sets.size()
 						? (currentPage + 1) * 2000

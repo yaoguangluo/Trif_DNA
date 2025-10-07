@@ -33,7 +33,7 @@ import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.U_RelatedLineVPS;
 import OPE.SI.MCI.OEI.OVU.PQE.extOSGI.OSGI_chansfer;
 import OPE.SI.MCI.OEI.OVU.PQE.extOSGI.OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import OSI.OPE.OVU.PQE.flash.GUISample;
 
 import javax.swing.JTextPane;
@@ -155,7 +155,7 @@ public class StaticFunctionMapE_IDUQ_E extends StaticFunctionMapCASE
 		PopupMenu popupMenu = NE._I_U.popupMenu;
 		App app = NE._I_U.app;
 		A _A = NE._I_U._A;
-		IMV_SIQ pos = NE._I_U.pos;
+		IMV_SQI pos = NE._I_U.pos;
 		return new NodeShow(gUISample, tableData_old, text, popupMenu,
 			NE);
 	}
@@ -225,7 +225,7 @@ public class StaticFunctionMapE_IDUQ_E extends StaticFunctionMapCASE
 		JTextPane text = NE._I_U.text;
 		App app = NE._I_U.app;
 		A _A = NE._I_U._A;
-		IMV_SIQ pos = NE._I_U.pos;
+		IMV_SQI pos = NE._I_U.pos;
 		return new OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(
 			tableData_old, text, NE);
 	}

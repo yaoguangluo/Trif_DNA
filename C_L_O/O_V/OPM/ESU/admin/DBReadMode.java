@@ -5,7 +5,7 @@ import ME.VPC.M.app.App;
 import ME.VPC.V.dictionary.ZhongYaoDictionary;
 import ME.VPC.V.db.ZhongYaoDictionaryFromDB;
 import Q_V.OSV.VCQ.standard.DictionaryStandardDB;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_logger.Log;
 import U_A.PEU.P.combination.ObjectCombination;
 
@@ -111,7 +111,7 @@ public class DBReadMode {
 		String primaryKey = "中药名称";
 		String tabKey = "zybc";
 		// 以后设计 uniq forenkey等.
-		Map<String, IMV_SIQ> map = d.dbToMap(primaryKey, tabKey);
+		Map<String, IMV_SQI> map = d.dbToMap(primaryKey, tabKey);
 		ObjectCombination.mapCombination(app.dic_index, map.get("中药名称"));
 		ObjectCombination.mapCombination(app.dic_yw, map.get("笔记原文"));
 		ObjectCombination.mapCombination(app.dic_li, map.get("功效"));

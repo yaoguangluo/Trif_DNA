@@ -1,7 +1,7 @@
 package S_A.linePage;
 
 import I_A.IMS.EUQ.SP.SoundWavePanelVectorNew;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import jniFFT.LYGFFT;
 import jniLYGAFDCDFFT.LYGAFDCTDFFT;
 import jniLYGAFDCDFFT.LYGAFDCTDFFT_F;
@@ -39,8 +39,8 @@ public class PageQ_S {
     public float[] fxet_record;
     public float[] fllt_record;
     public LYGAFDCTDFFT lYGAFDCTDFFT;
-    public IMV_SIQ cacheBz;
-    public IMV_SIQ cacheSj;
+    public IMV_SQI cacheBz;
+    public IMV_SQI cacheSj;
     public Vector<java.lang.Float> forOutput;
     public int n;
     public int type;

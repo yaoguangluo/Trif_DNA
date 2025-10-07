@@ -7,8 +7,8 @@ import P.image.Color_P;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.Verbal;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import javax.swing.JTextField;
@@ -83,7 +83,7 @@ public class CecilPage_X_S_sListeners extends CecilPage_X_S_s
 			key = "";
 		}
 		sets = null;
-		IMV_SIQ_SS map = new IMV_SIQ_SS();
+		IMV_SQI_SS map = new IMV_SQI_SS();
 		int row = table.getSelectedRow();
 		int col = table.getSelectedColumn();
 		String value = (String) table.getValueAt(row, col);
@@ -180,7 +180,7 @@ public class CecilPage_X_S_sListeners extends CecilPage_X_S_s
 		data.validate();
 		//
 		statistic.setSize(500, 800);
-		IMV_SIQ_S_ fwa = doFwaArrangement(map, NE);
+		IMV_SQI_S_ fwa = doFwaArrangement(map, NE);
 		statistic.setContentType("text/html");
 		page.delete(0, page.length());
 		Here: for (int i = fwa.size() - 1; i >= 0; i--) {
@@ -414,7 +414,7 @@ public class CecilPage_X_S_sListeners extends CecilPage_X_S_s
 //		//稍后缩进
 //		CommonXlsPage_X_S_s commonXlsPage_X_S_s= new CommonXlsPage_X_S_s();
 //		DB db= new DB();
-//		ConcurrentHashMap<String, Base> bases= new IMV_SIQ();
+//		ConcurrentHashMap<String, Base> bases= new IMV_SQI();
 //		db.I_Bases(bases);
 //		boolean hasSpec= true;
 //		//read

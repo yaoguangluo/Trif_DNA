@@ -1,7 +1,7 @@
 package E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.company.E;
 
 import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.factory.E.LoginDAO_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.dna.StringUtil;
 import U_A.PEU.P.dna.Token;
 import U_A.PEU.P.dna.TokenUtil;
@@ -136,7 +136,7 @@ public class LoginService_E {
 	}
 
 	public static String checkTokenStatusAndGetLevel(String token, String level,
-			IMV_SIQ output) {
+			IMV_SQI output) {
 		if (null == token || token.equalsIgnoreCase("undefined")) {
 			return "invalid 秘钥丢失请重新登陆。";
 		}

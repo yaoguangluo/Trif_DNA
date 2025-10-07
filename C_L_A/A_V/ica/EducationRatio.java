@@ -4,8 +4,8 @@ import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_S_;
 
 import java.util.Iterator;
 import java.util.List;
@@ -23,9 +23,9 @@ public class EducationRatio {
 	public double[] getEducationKernel(String text,
 		CogsBinaryForest_AE _AE, App NE) {
 		CogsBinaryForest_AE _A = _AE;
-		IMV_SIQ pos = _A.getPosCnToCn();
+		IMV_SQI pos = _A.getPosCnToCn();
 		List<String> sets = _A.parserMixedString(text);
-		IMV_SIQ_S_ map = _A.getWordFrequencyByReturnSortMap(sets, NE);
+		IMV_SQI_S_ map = _A.getWordFrequencyByReturnSortMap(sets, NE);
 		double[] output = new double[S_Pos.INT_SEVEN];
 		output[S_Pos.INT_ZERO] = (double) (sets.size());
 		Iterator<Integer> iterator = map.keySet().iterator();

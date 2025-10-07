@@ -9,7 +9,7 @@ import C_A.OSI.AOP.VPC.C.U_C;
 import DSU.V.VtoV;
 import E_A.OSI.AOP.VPC.PP.port_E.RestAskPort_E;
 import E_A.OSI.AOP.VPC.PP.port_E.RestLoginPort_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.File;
 
@@ -25,7 +25,7 @@ import java.io.File;
  * */
 public class ServerVPC_Standard {
 	@SuppressWarnings("unchecked")
-	public static String forward(String string, IMV_SIQ data) {
+	public static String forward(String string, IMV_SQI data) {
 //		if(!DNAAuth.DNAAuthStatusCheckEmailAndPassword(app, string, data)) {
 //			return "";
 //		}

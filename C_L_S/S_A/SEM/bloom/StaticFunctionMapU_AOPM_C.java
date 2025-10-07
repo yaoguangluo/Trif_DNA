@@ -1,7 +1,7 @@
 package S_A.SEM.bloom;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.dna.Token;
 import U_A.PEU.P.image.ConvexHull.Vertex;
 import U_A.PEU.P.table.TableSorterZYNK;
@@ -25,13 +25,13 @@ import java.util.Vector;
 public interface StaticFunctionMapU_AOPM_C {
 	//Cache_M 入选jdk, 略
 	//ObjectClassification
-	public Map<String, IMV_SIQ>mapClassification(App NE);
-	public Map<String, IMV_SIQ>mapClassification2D(App NE);
+	public Map<String, IMV_SQI>mapClassification(App NE);
+	public Map<String, IMV_SQI>mapClassification2D(App NE);
 	public Map<String, String[]>stringClassification2D(App NE);
 	public Map<String, List<String>>listClassification2D(App NE);
 
 	//ObjectCombination {
-	public IMV_SIQ mapCombination(App NE);
+	public IMV_SQI mapCombination(App NE);
 	public List<Object> listCombination(App NE);
 	public int[] intArrayCombination(App NE);
 	public double[]  doubleArrayCombination(App NE);
@@ -158,12 +158,12 @@ public interface StaticFunctionMapU_AOPM_C {
 
 	////VtoV{ 移除著作权的 和 u vecs 已经出现的稍后剔除出去。先注释掉
 	//public JSONObject XmlToJsonObject(String response);
-	//public IMV_SIQ JsonObjectToMap(JSONObject response);
-	//public String MapToJsonString(IMV_SIQ response);
+	//public IMV_SQI JsonObjectToMap(JSONObject response);
+	//public String MapToJsonString(IMV_SQI response);
 	//public String ListToJsonString(List<Object> response);
 	//public String ObjectToJsonString(Object response);
-	//public IMV_SIQ XmlToMap(String response);
-	//public String MapToXml(IMV_SIQ response);
+	//public IMV_SQI XmlToMap(String response);
+	//public String MapToXml(IMV_SQI response);
 	//public List<Object> JsonArrayToList(JSONArray jobj);
 
 	//CnnMeasure{

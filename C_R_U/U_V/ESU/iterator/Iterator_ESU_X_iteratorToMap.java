@@ -1,6 +1,6 @@
 package U_V.ESU.iterator;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.json.JSONObject;
@@ -20,6 +20,6 @@ import java.util.Iterator;
 public class Iterator_ESU_X_iteratorToMap{
 	public static String _E(Gson gson, Iterator<Object> iterator){
 		return gson.fromJson(new JSONObject(gson.toJson(iterator)).toString()
-				, new TypeToken<IMV_SIQ>(){}.getType());
+				, new TypeToken<IMV_SQI>(){}.getType());
 	}
 }

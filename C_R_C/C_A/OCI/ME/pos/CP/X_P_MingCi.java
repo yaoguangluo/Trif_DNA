@@ -1,7 +1,7 @@
 package C_A.OCI.ME.pos.CP;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public interface X_P_MingCi {
     int P_MingCiOfTwo(List<String> outputList, int countLength, String[] strings
         , StringBuilder[] fixWord, int charPosition, StringBuilder inputString);
 
-    int P_MingCiOfTwoForMap(IMV_SIQ_SS outputList, int countLength
+    int P_MingCiOfTwoForMap(IMV_SQI_SS outputList, int countLength
         , String[] strings, StringBuilder[] fixWord, App NE);
 
     int P_MingCiOfThree(List<String> outputList, int countLength

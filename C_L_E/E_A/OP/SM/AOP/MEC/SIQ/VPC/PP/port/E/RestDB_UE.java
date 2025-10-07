@@ -2,7 +2,7 @@ package E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E;
 
 import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.company.E.LoginService_E;
 import M_V.MSU.OP.SM.AOP.MEC.SIQ.SM.update.EU.Rows.E.X_U_RowByTablePathAndIndex;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.json.JSONObject;
 
 /*
@@ -16,10 +16,10 @@ import org.json.JSONObject;
  * */
 @SuppressWarnings({ "unchecked", "resource", "unused" })
 public class RestDB_UE {
-	public static IMV_SIQ updateRowByTablePathAndIndex(String tablePath,
+	public static IMV_SQI updateRowByTablePathAndIndex(String tablePath,
 			String pageIndex, String culumnOfUpdateRow, String token,
 			String email, String password, String auth) {
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		if (token != null && !token.equalsIgnoreCase("")) {
 			String checkStatus = LoginService_E.checkTokenStatus(token,
 					"level");

@@ -7,7 +7,7 @@ import A_I.MPE.MAQPVDCOISIV.pde.PDE_Decrement_FullFormular;
 import A_I.MPE.MAQPVDCOISIV.pde.PDE_Increment_FullDNAFormular;
 import A_I.MPE.MAQPVDCOISIV.pde.PDE_Increment_FullFormular;
 import S_A.SVQ.stable.S_Common;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
@@ -909,7 +909,7 @@ public class FullDNATokenPDI {
 	@SuppressWarnings("unchecked")
 	public String initonSect(String key) {
 		String pdis = "";
-		IMV_SIQ map = new IMV_SIQ();
+		IMV_SQI map = new IMV_SQI();
 		map.put("0", "A");
 		map.put("1", "O");
 		map.put("2", "P");
@@ -941,7 +941,7 @@ public class FullDNATokenPDI {
 	@SuppressWarnings("unchecked")
 	public String initonDeSect(String key) {
 		String pdis = "";
-		IMV_SIQ map = new IMV_SIQ();
+		IMV_SQI map = new IMV_SQI();
 		map.put("A", "0");
 		map.put("O", "1");
 		map.put("P", "2");

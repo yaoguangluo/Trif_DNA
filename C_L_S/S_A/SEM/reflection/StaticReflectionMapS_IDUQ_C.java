@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapS_IDUQ_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -23,12 +23,12 @@ public class StaticReflectionMapS_IDUQ_C extends
 	public void callFunction(CallFunctionKey callFunctionKey
 	//这种方式映射太复杂了, 今天一看, 想到了好几种简单点的映射哈哈
 		, StaticFunctionMapS_IDUQ_E staticFunctionMapS_IDUQ_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		int 因子 = 0;
 		Object map = null;
 		if (callFunctionKey.contains("clone", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapS_IDUQ_C.clone(NE);
@@ -38,7 +38,7 @@ public class StaticReflectionMapS_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("splitRegex", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapS_IDUQ_C.splitRegex(NE);

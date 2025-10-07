@@ -2,7 +2,7 @@ package ASQ.demension.AMV.MVS.VSQ;
 
 import ASQ.euclid.Euclid_X_findHeartPosition3D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -19,8 +19,8 @@ import java.util.Map;
 
 public class FindHeart_X_getPosition3DGroupsHearts {
     //求坐标团的重心。
-    public static IMV_SIQ _E(Map<Double, ArrayList<AMV_MVS_VSQ_3D>> groups) {
-        IMV_SIQ output = new IMV_SIQ();
+    public static IMV_SQI _E(Map<Double, ArrayList<AMV_MVS_VSQ_3D>> groups) {
+        IMV_SQI output = new IMV_SQI();
         for (double value : (Iterable<Double>) output.keySet()) {
             output.put(value, Euclid_X_findHeartPosition3D._E(groups.get(value)));
         }

@@ -2,7 +2,7 @@ package M_V.ME.APM.VSQ.xlx;
 
 import ME.VPC.M.app.App;
 import exception.thread.DetaThread;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
@@ -42,9 +42,9 @@ public class CoAuthorForWord extends CoAuthorForWord_Q implements MouseMotionLis
         DetaThread.sleepDeta(100);
         rootWord = "";
         rootLeaf = new LinkedHashMap<String, Object>();
-        findLeaf = new IMV_SIQ();
-        frequencyLeaf = new IMV_SIQ();
-        didLeaf = new IMV_SIQ();
+        findLeaf = new IMV_SQI();
+        frequencyLeaf = new IMV_SQI();
+        didLeaf = new IMV_SQI();
         this._A = NE.app_S._A;
         this.pos = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
         this.u = NE;

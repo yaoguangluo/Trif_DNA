@@ -2,8 +2,8 @@ package ME.VPC.V.dictionary;
 
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -55,8 +55,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_list;
 	}
 
-	public IMV_SIQ_ listToMap(List<String> dic_list) {
-		dic_map = new IMV_SIQ_();
+	public IMV_SQI_ listToMap(List<String> dic_list) {
+		dic_map = new IMV_SQI_();
 		for (int i = 0; i < dic_list.size(); i++) {
 			if (dic_list.get(i).contains("摘要")) {
 				String med_name = dic_list.get(i + 1);
@@ -104,8 +104,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_map;
 	}
 
-	public IMV_SIQ mapToMap_li(IMV_SIQ dic_map) {
-		dic_li = new IMV_SIQ();
+	public IMV_SQI mapToMap_li(IMV_SQI dic_map) {
+		dic_li = new IMV_SQI();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -178,8 +178,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 	}
 
 	@SuppressWarnings("unused")
-	public IMV_SIQ mapToMap_hai(IMV_SIQ dic_map) {
-		dic_hai = new IMV_SIQ();
+	public IMV_SQI mapToMap_hai(IMV_SQI dic_map) {
+		dic_hai = new IMV_SQI();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -303,8 +303,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_hai;
 	}
 
-	public IMV_SIQ mapToMap_xz(IMV_SIQ dic_map) {
-		dic_xz = new IMV_SIQ();
+	public IMV_SQI mapToMap_xz(IMV_SQI dic_map) {
+		dic_xz = new IMV_SQI();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -351,8 +351,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_xz;
 	}
 
-	public IMV_SIQ mapToMap_zf(IMV_SIQ dic_map) {
-		dic_zf = new IMV_SIQ();
+	public IMV_SQI mapToMap_zf(IMV_SQI dic_map) {
+		dic_zf = new IMV_SQI();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -377,8 +377,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_zf;
 	}
 
-	public IMV_SIQ mapToMap_cj(IMV_SIQ dic_map) {
-		dic_cj = new IMV_SIQ();
+	public IMV_SQI mapToMap_cj(IMV_SQI dic_map) {
+		dic_cj = new IMV_SQI();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -402,8 +402,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_cj;
 	}
 
-	public IMV_SIQ mapToMap_jj(IMV_SIQ dic_map) {
-		dic_jj = new IMV_SIQ();
+	public IMV_SQI mapToMap_jj(IMV_SQI dic_map) {
+		dic_jj = new IMV_SQI();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -427,8 +427,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_jj;
 	}
 
-	public IMV_SIQ mapToMap_cy(IMV_SIQ dic_map) {
-		dic_cy = new IMV_SIQ();
+	public IMV_SQI mapToMap_cy(IMV_SQI dic_map) {
+		dic_cy = new IMV_SQI();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -457,8 +457,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_cy;
 	}
 
-	public IMV_SIQ mapToMap_ya(IMV_SIQ dic_map) {
-		dic_ya = new IMV_SIQ();
+	public IMV_SQI mapToMap_ya(IMV_SQI dic_map) {
+		dic_ya = new IMV_SQI();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -495,8 +495,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_ya;
 	}
 
-	public IMV_SIQ mapToMap_jm(IMV_SIQ dic_map) {
-		dic_jm = new IMV_SIQ();
+	public IMV_SQI mapToMap_jm(IMV_SQI dic_map) {
+		dic_jm = new IMV_SQI();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -521,8 +521,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_jm;
 	}
 
-	public IMV_SIQ mapToMap_xw(IMV_SIQ dic_map) {
-		dic_xw = new IMV_SIQ();
+	public IMV_SQI mapToMap_xw(IMV_SQI dic_map) {
+		dic_xw = new IMV_SQI();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -573,9 +573,9 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 	}
 
 	@SuppressWarnings("resource")
-	public IMV_SIQ mapToMap_yl(IMV_SIQ dic_map, IMV_SIQ dic_xw, IMV_SIQ dic_li,
-			IMV_SIQ dic_xz, IMV_SIQ dic_jm) {
-		dic_yl = new IMV_SIQ();
+	public IMV_SQI mapToMap_yl(IMV_SQI dic_map, IMV_SQI dic_xw, IMV_SQI dic_li,
+			IMV_SQI dic_xz, IMV_SQI dic_jm) {
+		dic_yl = new IMV_SQI();
 		InputStream in = getClass()
 				.getResourceAsStream("中药学第九版最全表格(含临床应用).txt");
 		DetaBufferedReader cReader = new DetaBufferedReader(
@@ -628,8 +628,8 @@ public class ZhongYaoDictionaryOld extends Dictionary_S {
 		return dic_yl;
 	}
 
-	public IMV_SIQ mapToMap_ym(IMV_SIQ dic_map) {
-		dic_ym = new IMV_SIQ();
+	public IMV_SQI mapToMap_ym(IMV_SQI dic_map) {
+		dic_ym = new IMV_SQI();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext()) {

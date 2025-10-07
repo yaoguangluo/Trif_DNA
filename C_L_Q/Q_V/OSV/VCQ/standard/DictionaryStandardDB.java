@@ -2,7 +2,7 @@ package Q_V.OSV.VCQ.standard;
 
 import A_I.MPE.MAQPVDCOISIV.full.FullDNATokenPDI;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -28,22 +28,22 @@ public class DictionaryStandardDB {
 
     //gg的意思是青年小哥哥 GG 一个temp 变量 哈
     @SuppressWarnings({"unchecked", "rawtypes"})
-    public Map<String, IMV_SIQ> dbToMap(String primaryKey, String tabKey) {
-        IMV_SIQ dic_map = new IMV_SIQ();
-        Map<String, IMV_SIQ> dbMap = new IMV_SIQ();
-        IMV_SIQ map = DictionaryPLSQLStandardDB.bootORMReadDBInCommonWay(tabKey);
-        //IMV_SIQ map= DictionaryPLSQLStandardDB.bootPLSQLReadDBInCommonWay(tabKey);
+    public Map<String, IMV_SQI> dbToMap(String primaryKey, String tabKey) {
+        IMV_SQI dic_map = new IMV_SQI();
+        Map<String, IMV_SQI> dbMap = new IMV_SQI();
+        IMV_SQI map = DictionaryPLSQLStandardDB.bootORMReadDBInCommonWay(tabKey);
+        //IMV_SQI map= DictionaryPLSQLStandardDB.bootPLSQLReadDBInCommonWay(tabKey);
         ArrayList list = (ArrayList) map.get("obj");
-        Iterator<IMV_SIQ> iterator = list.iterator();
+        Iterator<IMV_SQI> iterator = list.iterator();
         Here:
         while (iterator.hasNext()) {
-            IMV_SIQ hashmap = iterator.next();
+            IMV_SQI hashmap = iterator.next();
             StringBuilder stringBuilder = new StringBuilder();
             if (hashmap.containsKey(S_ShellETL.SHELL_ETL_ROWVALUE)) {
-                IMV_SIQ rowValue = (IMV_SIQ)
+                IMV_SQI rowValue = (IMV_SQI)
                     hashmap.get(S_ShellETL.SHELL_ETL_ROWVALUE);
                 String keyName = null;
-                IMV_SIQ temp = (IMV_SIQ) rowValue.get(primaryKey);
+                IMV_SQI temp = (IMV_SQI) rowValue.get(primaryKey);
                 keyName = null == temp.get("culumnValue") ? ""
                     : temp.get("culumnValue").toString().replace("@Tin@"
                     , ":").replace("@Tin@", ":");
@@ -61,16 +61,16 @@ public class DictionaryStandardDB {
                     , ":").replace("@Tin@", ":");
                 if (dbMap.containsKey(primaryKey)) {
                     //获取hashmap 子集;
-                    IMV_SIQ hashMap = dbMap.get(primaryKey);
+                    IMV_SQI hashMap = dbMap.get(primaryKey);
                     //hashmap 子集添加数据
                     if (null == hashMap) {
-                        hashMap = new IMV_SIQ();
+                        hashMap = new IMV_SQI();
                     }
                     hashMap.put(keyName, keyName);
                     //hashmap 子集存档
                     dbMap.put(primaryKey, hashMap);
                 } else {
-                    IMV_SIQ hashMap = new IMV_SIQ();
+                    IMV_SQI hashMap = new IMV_SQI();
                     hashMap.put(keyName, keyName);
                     dbMap.put(primaryKey, hashMap);
                 }
@@ -79,7 +79,7 @@ public class DictionaryStandardDB {
                 while (iterators.hasNext()) {
                     String string = iterators.next();//lieBiaoMing
                     if (!string.equalsIgnoreCase(primaryKey)) {
-                        temp = (IMV_SIQ) rowValue.get(string);
+                        temp = (IMV_SQI) rowValue.get(string);
                         gg = null == temp.get("culumnValue") ? "" : temp.get("culumnValue").toString();
                         //去null//去empty 稍后
                         try {
@@ -91,14 +91,14 @@ public class DictionaryStandardDB {
                         }
                         if (dbMap.containsKey(string) && null != dbMap.get(string)) {
                             //获取hashmap 子集;
-                            IMV_SIQ hashMap = dbMap.get(string);
+                            IMV_SQI hashMap = dbMap.get(string);
                             //hashmap 子集添加数据
                             hashMap.put(keyName, gg.replace("@Tin@"
                                 , ":").replace("@Tin@", ":"));
                             //hashmap 子集存档
                             dbMap.put(string, hashMap);
                         } else {
-                            IMV_SIQ hashMap = new IMV_SIQ();
+                            IMV_SQI hashMap = new IMV_SQI();
                             hashMap.put(keyName, gg.replace("@Tin@"
                                 , ":").replace("@Tin@", ":"));
                             dbMap.put(string, hashMap);

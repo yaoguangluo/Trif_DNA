@@ -5,7 +5,7 @@ import ME.XCE_XAS;
 import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 
@@ -56,7 +56,7 @@ public class Pos_X_O extends XCE_XAS implements X_O_parserFirst {
 		return countLength;//trif-countLength
 	}
 
-	public int charOfTwoForMap(int countLength, IMV_SIQ_SS outputList,
+	public int charOfTwoForMap(int countLength, IMV_SQI_SS outputList,
 			String[] strings, StringBuilder[] fixWord, App NE) {
 		countLength -= S_Pos.INT_TWO;
 		WordFrequency wordFrequency;
@@ -78,7 +78,7 @@ public class Pos_X_O extends XCE_XAS implements X_O_parserFirst {
 
 	// wordFrequency.I_frequency(1.0);
 	// wordFrequency.I_Word(strings[S_Pos.INT_ZERO]);
-	public int charOfThreeForMap(int countLength, IMV_SIQ_SS outputList,
+	public int charOfThreeForMap(int countLength, IMV_SQI_SS outputList,
 			String[] strings, StringBuilder[] fixWord, App NE) {
 		countLength -= S_Pos.INT_THREE;
 		WordFrequency wordFrequency;

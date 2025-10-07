@@ -9,7 +9,7 @@
  * */
 package M_V.MS.OP.SM.AOP.MEC.SIQ.cache;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 import java.util.List;
@@ -25,9 +25,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class DetaCache_M {
-	private static final ConcurrentHashMap<String, DetaCache> cacheMap = new IMV_SIQ();
-	private static final ConcurrentHashMap<String, List<byte[]>> bytesMap = new IMV_SIQ();
-	private static final IMV_SIQ stringMap = new IMV_SIQ();
+	private static final ConcurrentHashMap<String, DetaCache> cacheMap = new IMV_SQI();
+	private static final ConcurrentHashMap<String, List<byte[]>> bytesMap = new IMV_SQI();
+	private static final IMV_SQI stringMap = new IMV_SQI();
 
 	private DetaCache_M() {
 		super();

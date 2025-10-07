@@ -2,8 +2,8 @@ package OSI.OSU.SI.OSI.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.addZYZDBo
 
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -14,12 +14,12 @@ import java.util.regex.Pattern;
 
 public class dictionary{	
 	public List<String> dic_list;
-	public IMV_SIQ dic_map;
-	public IMV_SIQ dic_gn;
-	public IMV_SIQ dic_lcbx;
-	public IMV_SIQ dic_zhfx;
-	public IMV_SIQ dic_lcyy;
-	public IMV_SIQ dic_zhjb;
+	public IMV_SQI dic_map;
+	public IMV_SQI dic_gn;
+	public IMV_SQI dic_lcbx;
+	public IMV_SQI dic_zhfx;
+	public IMV_SQI dic_lcyy;
+	public IMV_SQI dic_zhjb;
 	public List<String> txtToList() {
 		List<String> dic_list= new ArrayList<>();
 		List<String> temp_list= new ArrayList<>();
@@ -52,8 +52,8 @@ public class dictionary{
 		return dic_list;
 	}
 	
-	public IMV_SIQ_ listToMap(IMV_SIQ_ dic_map, List<String> dic_list) {
-		//IMV_SIQ dic_map= new IMV_SIQ();
+	public IMV_SQI_ listToMap(IMV_SQI_ dic_map, List<String> dic_list) {
+		//IMV_SQI dic_map= new IMV_SQI();
 		for(int i= 0; i < dic_list.size(); i++) {
 			if(dic_list.get(i).contains("[概念]")) {
 				String med_name=dic_list.get(i-1);
@@ -77,8 +77,8 @@ public class dictionary{
 		return dic_map;
 	}
 
-	public IMV_SIQ mapToMap_zhjb(IMV_SIQ dic_map) {
-		IMV_SIQ dic_zhjb= new IMV_SIQ();
+	public IMV_SQI mapToMap_zhjb(IMV_SQI dic_map) {
+		IMV_SQI dic_zhjb= new IMV_SQI();
 		Iterator<String> iter= dic_map.keySet().iterator();
 		List<String> copy= new ArrayList<String>();
 		while (iter.hasNext())
@@ -98,8 +98,8 @@ public class dictionary{
 		return dic_zhjb;
 	}
 
-	public IMV_SIQ mapToMap_lcyy(IMV_SIQ dic_map) {
-		IMV_SIQ dic_lcyy= new IMV_SIQ();
+	public IMV_SQI mapToMap_lcyy(IMV_SQI dic_map) {
+		IMV_SQI dic_lcyy= new IMV_SQI();
 		Iterator<String> iter= dic_map.keySet().iterator();
 		List<String> copy= new ArrayList<String>();
 		while (iter.hasNext())
@@ -126,8 +126,8 @@ public class dictionary{
 		return dic_lcyy;
 	}
 
-	public IMV_SIQ mapToMap_zhfx(IMV_SIQ dic_map) {
-		IMV_SIQ dic_zhfx= new IMV_SIQ();
+	public IMV_SQI mapToMap_zhfx(IMV_SQI dic_map) {
+		IMV_SQI dic_zhfx= new IMV_SQI();
 		Iterator<String> iter= dic_map.keySet().iterator();
 		List<String> copy= new ArrayList<String>();
 		while (iter.hasNext())
@@ -163,8 +163,8 @@ public class dictionary{
 		return dic_zhfx;
 	}
 
-	public IMV_SIQ mapToMap_lcbx(IMV_SIQ dic_map) {
-		IMV_SIQ dic_lcbx= new IMV_SIQ();
+	public IMV_SQI mapToMap_lcbx(IMV_SQI dic_map) {
+		IMV_SQI dic_lcbx= new IMV_SQI();
 		Iterator<String> iter= dic_map.keySet().iterator();
 		List<String> copy= new ArrayList<String>();
 		while (iter.hasNext())
@@ -209,8 +209,8 @@ public class dictionary{
 		return dic_lcbx;
 	}
 
-	public IMV_SIQ_ mapToMap_gn(IMV_SIQ_ dic_map) {
-		IMV_SIQ_ dic_li= new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_gn(IMV_SQI_ dic_map) {
+		IMV_SQI_ dic_li= new IMV_SQI_();
 		Iterator<String> iter= dic_map.keySet().iterator();
 		List<String> copy= new ArrayList<String>();
 		while (iter.hasNext())

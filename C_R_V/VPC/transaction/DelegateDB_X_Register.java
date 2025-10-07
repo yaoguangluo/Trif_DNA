@@ -1,7 +1,7 @@
 package VPC.transaction;
 
 import DSU.V.VtoV;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import VPC.DetaFrontEnd.DetaFrontEndUtil_X_backEndRequest;
 import org.json.JSONObject;
 
@@ -19,7 +19,7 @@ import java.net.URLEncoder;
  * */
 public class DelegateDB_X_Register {
     @SuppressWarnings("deprecation")
-    public static IMV_SIQ transactionRegister(String uEmail, String uName, String uPassword) {
+    public static IMV_SQI transactionRegister(String uEmail, String uName, String uPassword) {
         String response = DetaFrontEndUtil_X_backEndRequest._E("register?uEmail="
             + URLEncoder.encode(uEmail)
             + "&uName=" + URLEncoder.encode(uName)
@@ -27,14 +27,14 @@ public class DelegateDB_X_Register {
         return VtoV.JsonObjectToMap
             (new JSONObject(response));
     }
-//    public static IMV_SIQ transactionRegister(String uEmail, String uEmailEnsure
+//    public static IMV_SQI transactionRegister(String uEmail, String uEmailEnsure
 //        , String uName, String uPassword, String uPassWDEnsure, String uAddress
 //        , String uPhone, String uWeChat, String uQq, String uAge, String uSex) {
 //        String response = DetaFrontEndUtil_X_backEndRequest._E("register?uEmail="
 //            + URLEncoder.encode(uEmail)
 //            + "&uName=" + URLEncoder.encode(uName)
 //            + "&uPassword=" + URLEncoder.encode(uPassword));
-//        IMV_SIQ out = D_V.PCS.VQS.DSU.V.VtoV.JsonObjectToMap
+//        IMV_SQI out = D_V.PCS.VQS.DSU.V.VtoV.JsonObjectToMap
 //            (new JSONObject(response));
 //        return out;
 //    }

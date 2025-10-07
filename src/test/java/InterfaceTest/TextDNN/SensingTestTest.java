@@ -1,6 +1,6 @@
 package test.java.InterfaceTest.TextDNN;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -35,17 +35,17 @@ class SensingTestTest {
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 1 显示当前所有词库，重要属性
-		IMV_SIQ _getDistinctionMap = commonTestInition.NE.app_S.emotionMap_E
+		IMV_SQI _getDistinctionMap = commonTestInition.NE.app_S.emotionMap_E
 			.getDistinctionMap();
-		IMV_SIQ _getMotivationMap = commonTestInition.NE.app_S.emotionMap_E
+		IMV_SQI _getMotivationMap = commonTestInition.NE.app_S.emotionMap_E
 			.getMotivationMap();
-		IMV_SIQ _getNegativeMap = commonTestInition.NE.app_S.emotionMap_E
+		IMV_SQI _getNegativeMap = commonTestInition.NE.app_S.emotionMap_E
 			.getNegativeMap();
-		IMV_SIQ _getPositiveMap = commonTestInition.NE.app_S.emotionMap_E
+		IMV_SQI _getPositiveMap = commonTestInition.NE.app_S.emotionMap_E
 			.getPositiveMap();
-		IMV_SIQ _getPredictionMap = commonTestInition.NE.app_S.emotionMap_E
+		IMV_SQI _getPredictionMap = commonTestInition.NE.app_S.emotionMap_E
 			.getPredictionMap();
-		IMV_SIQ _getTrendingMap = commonTestInition.NE.app_S.emotionMap_E
+		IMV_SQI _getTrendingMap = commonTestInition.NE.app_S.emotionMap_E
 			.getTrendingMap();
 		// --下列这些词库-代表个人思维强烈，商业应用请用户们面向产业领域重新设计和修改。
 		System.out.println("-----词汇分类和总数测试----");

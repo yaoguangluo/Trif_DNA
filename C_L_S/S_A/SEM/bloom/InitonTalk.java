@@ -3,7 +3,7 @@ package S_A.SEM.bloom;
 import java.io.IOException;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //打个调用花语的 包
 /*
@@ -38,7 +38,7 @@ public class InitonTalk {
 
 	// 指令结构语句
 	@SuppressWarnings("unchecked")
-	public static IMV_SIQ listenFlower(String initonsLanguage,
+	public static IMV_SQI listenFlower(String initonsLanguage,
 			String functionIdentify, String calyxChromosome, App NE)
 			throws InterruptedException, IOException {
 		String callFunctionKey = functionIdentify;//
@@ -46,8 +46,8 @@ public class InitonTalk {
 				System.currentTimeMillis());
 		NE.app_S.staticRootMap.initMap(NE);
 		String[] strings = new String[1];
-		IMV_SIQ output = new IMV_SIQ();
-		IMV_SIQ inputValue = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
+		IMV_SQI inputValue = new IMV_SQI();
 		String[] 传参因子 = new String[0];// LATER USE SWICH
 		if (calyxChromosome.equalsIgnoreCase("M_VECS")) {
 			传参因子 = NE.app_S.staticFunctionMapM_VECS_C.annotationMap
@@ -166,7 +166,7 @@ public class InitonTalk {
 				- bootedTimeMillis;
 		NE.app_S.staticRootMap.staticBloomingDuration.put(callFunctionKey,
 				durationalTimeMillis);
-		IMV_SIQ map = (IMV_SIQ) output.get(callFunctionKey);
+		IMV_SQI map = (IMV_SQI) output.get(callFunctionKey);
 		return map;// map里面需要一些固定的标准参数。
 	}
 	// do a list , average, etc recoder later..

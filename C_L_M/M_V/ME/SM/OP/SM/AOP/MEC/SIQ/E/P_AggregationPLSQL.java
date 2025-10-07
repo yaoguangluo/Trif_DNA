@@ -1,6 +1,6 @@
 package M_V.ME.SM.OP.SM.AOP.MEC.SIQ.E;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -20,14 +20,14 @@ import java.util.List;
  * */
 public class P_AggregationPLSQL {
     public static void P_AggregationLimitMap(String[] sets
-        , List<IMV_SIQ> output) {
-        List<IMV_SIQ> outputTemp = new ArrayList<>();
-        Iterator<IMV_SIQ> iterator = output.iterator();
+        , List<IMV_SQI> output) {
+        List<IMV_SQI> outputTemp = new ArrayList<>();
+        Iterator<IMV_SQI> iterator = output.iterator();
         int count = 0;
         while (iterator.hasNext()) {
             int rowid = count++;
-            IMV_SIQ row = iterator.next();
-            IMV_SIQ rowMap = new IMV_SIQ();
+            IMV_SQI row = iterator.next();
+            IMV_SQI rowMap = new IMV_SQI();
             if (sets[1].equalsIgnoreCase("~")) {
                 if (rowid >= new BigDecimal(sets[0]).doubleValue() && rowid
                     <= new BigDecimal(sets[2]).doubleValue()) {

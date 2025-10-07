@@ -7,8 +7,8 @@ import S_A.AVQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 import java.util.Iterator;
 import java.util.List;
@@ -23,26 +23,27 @@ import java.util.Map;
  * 204925063, 389418686, F2406501, 0626136
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
-public class CogsBinaryForest_AE extends BinaryForest_AE
-		implements CogsBinaryForest_A {
+public class CogsBinaryForest_AE extends BinaryForest_AE implements
+	CogsBinaryForest_A {
 	/*
 	 * positionStackPoint改为char的position 位置。
 	 */
-	public IMV_SIQ_SS getWordFrequencyMap(List<String> sets, App NE) {
-		IMV_SIQ_SS map = new IMV_SIQ_SS();
+	public IMV_SQI_SS getWordFrequencyMap(List<String> sets, App NE) {
+		IMV_SQI_SS map = new IMV_SQI_SS();
 		Iterator<String> iterator = sets.iterator();
 		int positionStackPoint = 1;
 		Here: while (iterator.hasNext()) {
 			String setOfi = iterator.next();
 			if (map.containsKey(setOfi)) {
 				WordFrequency wordFrequency = map.getW(setOfi);
-				wordFrequency.I_frequency(
-						wordFrequency.get_frequency() + S_Pos.INT_ONE);
+				wordFrequency.I_frequency(wordFrequency
+					.get_frequency() + S_Pos.INT_ONE);
 				wordFrequency.positions.add(positionStackPoint);
 				map.put(setOfi, wordFrequency);
 				continue Here;
 			}
-			WordFrequency wordFrequency = new WordFrequency(1.0, setOfi);
+			WordFrequency wordFrequency = new WordFrequency(1.0,
+				setOfi);
 			wordFrequency.positions.add(positionStackPoint);
 			map.put(setOfi, wordFrequency);
 			positionStackPoint += setOfi.length();
@@ -51,43 +52,49 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 	}
 
 	// 计算函数以后移出 DNA元基组 到RNA.
-	public List<WordFrequency> sortWordFrequencyMap(IMV_SIQ_SS map) {
+	public List<WordFrequency> sortWordFrequencyMap(IMV_SQI_SS map) {
 		List<WordFrequency> list = quick6DLuoYaoguangSort
-				.frequencyWordMapToList(map);
-		quick6DLuoYaoguangSort.quick6DLuoYaoGuangSortWordFrequency(list,
-				S_Pos.INT_ZERO, list.size() - S_Pos.INT_ONE);
+			.frequencyWordMapToList(map);
+		quick6DLuoYaoguangSort.quick6DLuoYaoGuangSortWordFrequency(
+			list, S_Pos.INT_ZERO, list.size() - S_Pos.INT_ONE);
 		return list;
 	}
 
-	public IMV_SIQ_S_ getWordFrequencyByReturnSortMap(List<String> sets,
-			App NE) {
-//		for(String string : sets) {
-//			System.out.print("-" + string);
-//		}
-		IMV_SIQ_SS _IMV_SIQ_SS = getWordFrequencyMap(sets, NE);
-//		for(String string : _IMV_SIQ_SS.keySet()) {
-//			System.out.print("+" + string);
-//		}//循环逻辑中不出现打印类。
-//		if (_IMV_SIQ_SS.containsKey("街")) {
-//			System.out.println("400-8-0001-007-03-01-" + _IMV_SIQ_SS.size());
-//		}
-		return sortWordFrequencyMapToSortMap(_IMV_SIQ_SS);
+	/*
+	//	for(String string : sets) {
+	//			System.out.print("-" + string);
+	//		}
+	//
+	//	for(String string : _IMV_SQI_SS.keySet()) {
+	//			System.out.print("+" + string);
+	//		}//循环逻辑中不出现打印类。
+	//		if (_IMV_SQI_SS.containsKey("街")) {
+	//			System.out.println("400-8-0001-007-03-01-" + _IMV_SQI_SS.size());
+	//		}
+	//
+	 */
+	public IMV_SQI_S_ getWordFrequencyByReturnSortMap(
+		List<String> sets, App NE) {
+		IMV_SQI_SS _IMV_SQI_SS = getWordFrequencyMap(sets, NE);
+		return sortWordFrequencyMapToSortMap(_IMV_SQI_SS);
 	}
 
-	public IMV_SIQ_S_ sortWordFrequencyMapToSortMap(IMV_SIQ_SS map) {
+	public IMV_SQI_S_ sortWordFrequencyMapToSortMap(IMV_SQI_SS map) {
 		//System.out.println("400-8-0001-007-03-05-" + map.size());
-		
-		IMV_SIQ_S_ listMap = quick6DLuoYaoguangSort.frequencyWordMapToMap(map);
+
+		IMV_SQI_S_ listMap = quick6DLuoYaoguangSort
+			.frequencyWordMapToMap(map);
 		//System.out.println("400-8-0001-007-03-06-" + listMap.size());
-		quick6DLuoYaoguangSort.quick6DLuoYaoGuangSortWordFrequency(listMap,
-				S_Pos.INT_ZERO, listMap.size() - S_Pos.INT_ONE);
+		quick6DLuoYaoguangSort.quick6DLuoYaoGuangSortWordFrequency(
+			listMap, S_Pos.INT_ZERO, listMap.size() - S_Pos.INT_ONE);
 		return listMap;
 	}
 
-	public IMV_SIQ_SS parserMixStringByReturnFrequencyMap(String inputString,
-			App NE) {
-		mixedString = new StringBuilder(inputString + S_Pos.SPACE_STRING);
-		IMV_SIQ_SS outputList = new IMV_SIQ_SS();
+	public IMV_SQI_SS parserMixStringByReturnFrequencyMap(
+		String inputString, App NE) {
+		mixedString = new StringBuilder(inputString
+			+ S_Pos.SPACE_STRING);
+		IMV_SQI_SS outputList = new IMV_SQI_SS();
 		Map<Long, FMHMMNode> forestRoots = fHMMList.getMap();// .getRoot();
 		int inputLength = mixedString.length();
 		int forestDepth = S_Pos.INT_ZERO;
@@ -97,88 +104,97 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 		fixWords[S_Pos.INT_ONE] = new StringBuilder();
 		StringBuilder stringBuilder = new StringBuilder();
 		int find = S_Pos.INT_ZERO;
-		Here: for (int charPosition = S_Pos.INT_ZERO; charPosition < inputLength; 
-				charPosition += (countLength == S_Pos.INT_ZERO
-				? S_Pos.INT_ONE: countLength)) {// luan ma
+		Here: for (int charPosition = S_Pos.INT_ZERO; charPosition 
+			< inputLength; charPosition += (countLength == S_Pos.INT_ZERO
+			? S_Pos.INT_ONE
+			: countLength)) {// luan ma
 			NE._I_U.parserCharPosition = charPosition;
-			if (mixedString.charAt(charPosition) < S_Pos.INT_ONE_TWO_EIGHT
-					&& charPosition < mixedString.length() - S_Pos.INT_ONE) {
+			if (mixedString.charAt(
+				charPosition) < S_Pos.INT_ONE_TWO_EIGHT
+				&& charPosition < mixedString.length()
+					- S_Pos.INT_ONE) {
 				if (find == S_Pos.INT_ZERO) {
 					fixWords[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
-							fixWords[S_Pos.INT_ZERO].length());
+						fixWords[S_Pos.INT_ZERO].length());
 				}
-				fixWords[S_Pos.INT_ZERO]
-						.append(mixedString.charAt(charPosition));
+				fixWords[S_Pos.INT_ZERO].append(mixedString.charAt(
+					charPosition));
 				countLength = S_Pos.INT_ONE;
 				find = S_Pos.INT_ONE;
 				continue Here;
 			}
 			if (find == S_Pos.INT_ONE) {
 				find = S_Pos.INT_ZERO;
-				Iterator<String> it = fHMMList.englishStringToWordsList(
-						fixWords[S_Pos.INT_ZERO].toString()).iterator();
+				Iterator<String> it = fHMMList
+					.englishStringToWordsList(fixWords[S_Pos.INT_ZERO]
+						.toString()).iterator();
 				while (it.hasNext()) {
 					String temp = it.next();
 					if (outputList.containsKey(temp)) {
-						WordFrequency wordFrequency = outputList.getW(temp);
-						wordFrequency.I_frequency(
-								wordFrequency.get_frequency() + S_Pos.INT_ONE);
-						wordFrequency.positions.add(NE._I_U.parserCharPosition);
+						WordFrequency wordFrequency = outputList.getW(
+							temp);
+						wordFrequency.I_frequency(wordFrequency
+							.get_frequency() + S_Pos.INT_ONE);
+						wordFrequency.positions.add(
+							NE._I_U.parserCharPosition);
 						outputList.put(temp, wordFrequency);
 					} else {
-						WordFrequency wordFrequency = new WordFrequency(1.0,
-								temp);
-						wordFrequency.positions.add(NE._I_U.parserCharPosition);
+						WordFrequency wordFrequency = new WordFrequency(
+							1.0, temp);
+						wordFrequency.positions.add(
+							NE._I_U.parserCharPosition);
 						outputList.put(temp, wordFrequency);
 					}
 				}
 				fixWords[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
-						fixWords[S_Pos.INT_ZERO].length());
+					fixWords[S_Pos.INT_ZERO].length());
 			}
-			stringBuilder.delete(S_Pos.INT_ZERO, stringBuilder.length());
+			stringBuilder.delete(S_Pos.INT_ZERO, stringBuilder
+				.length());
 			stringBuilder = nero_C.getBinaryForestRecurWords(
-					stringBuilder.append(mixedString.charAt(charPosition)),
-					mixedString, charPosition, inputLength, forestRoots,
-					forestDepth, charPosition + S_Pos.INT_ONE);
+				stringBuilder.append(mixedString.charAt(
+					charPosition)), mixedString, charPosition,
+				inputLength, forestRoots, forestDepth, charPosition
+					+ S_Pos.INT_ONE);
 			String countWordNode = stringBuilder.toString();
 			int compare = countLength = countWordNode.length();
 			if (compare == S_Pos.INT_TWO) {
-				countLength = nlp_C.forTwoCharForMap(countLength, outputList,
-						stringBuilder, fixWords, NE);
+				countLength = nlp_C.forTwoCharForMap(countLength,
+					outputList, stringBuilder, fixWords, NE);
 				continue Here;
 			}
 			if (compare == S_Pos.INT_THREE) {
 				I_FixWords(charPosition, mixedString, fixWords);
-				countLength = nlp_C.ofThreeForMap(countLength, outputList,
-						stringBuilder, fixWords, NE);
+				countLength = nlp_C.ofThreeForMap(countLength,
+					outputList, stringBuilder, fixWords, NE);
 				continue Here;
 			}
 			if (compare == S_Pos.INT_ONE) {
 				if (outputList.containsKey(countWordNode)) {
-					WordFrequency wordFrequency = outputList
-							.getW(countWordNode);
-					wordFrequency.I_frequency(
-							wordFrequency.get_frequency() + S_Pos.INT_ONE);
-					wordFrequency.positions.add(NE._I_U.parserCharPosition);
+					WordFrequency wordFrequency = outputList.getW(
+						countWordNode);
+					wordFrequency.I_frequency(wordFrequency
+						.get_frequency() + S_Pos.INT_ONE);
+					wordFrequency.positions.add(
+						NE._I_U.parserCharPosition);
 					outputList.put(countWordNode, wordFrequency);
 				} else {
-					WordFrequency wordFrequency = new WordFrequency(1.0,
-							fixWords[S_Pos.INT_ZERO].toString());
-					wordFrequency.positions.add(NE._I_U.parserCharPosition);// xian
-																			// dan
-																			// hou
-																			// duo..later..
+					WordFrequency wordFrequency = new WordFrequency(
+						1.0, fixWords[S_Pos.INT_ZERO].toString());
+					wordFrequency.positions.add(
+						NE._I_U.parserCharPosition);
+					// xian dan hou duo..later..
 					outputList.put(countWordNode, wordFrequency);
 				}
 				fixWords[S_Pos.INT_ZERO].delete(S_Pos.INT_ZERO,
-						fixWords[S_Pos.INT_ZERO].length());
+					fixWords[S_Pos.INT_ZERO].length());
 				fixWords[S_Pos.INT_ZERO].append(countWordNode);
 				continue Here;
 			}
 			if (compare == S_Pos.INT_FOUR) {
 				I_FixWords(charPosition, mixedString, fixWords);
 				countLength = nlp_C.forMap(countLength, outputList,
-						stringBuilder, fixWords, NE);
+					stringBuilder, fixWords, NE);
 			}
 		}
 		return outputList;
@@ -189,11 +205,14 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 	}
 
 	@SuppressWarnings("unchecked")
-	public void initPCAWordPOS(IMV_SIQ_SS mapSearchWithoutSort, App NE) {
-		Iterator<String> iterator = mapSearchWithoutSort.keySet().iterator();
+	public void initPCAWordPOS(IMV_SQI_SS mapSearchWithoutSort,
+		App NE) {
+		Iterator<String> iterator = mapSearchWithoutSort.keySet()
+			.iterator();
 		while (iterator.hasNext()) {
 			String string = iterator.next();
-			WordFrequency wordFrequency = mapSearchWithoutSort.getW(string);
+			WordFrequency wordFrequency = mapSearchWithoutSort.getW(
+				string);
 			StringBuilder stringBuilder = new StringBuilder();
 			if (S_Maps.mingCi.containsKey(string)) {
 				stringBuilder.append("名词");
@@ -230,8 +249,9 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 			} else {
 				stringBuilder.append("未知");
 				// 关联studyMap later -trif
-				if(null != NE.app_S.workVerbalMap.command_V) {
-					NE.app_S.workVerbalMap.command_V.unknown_map.put(string, true);	
+				if (null != NE.app_S.workVerbalMap.command_V) {
+					NE.app_S.workVerbalMap.command_V.unknown_map.put(
+						string, true);
 				}
 			}
 			wordFrequency.I_pos(stringBuilder.toString());
@@ -251,7 +271,7 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 //                    wordFrequency.I_frequency(1.0);
 //                    wordFrequency.I_Word(fixWords[S_Pos.INT_ZERO].toString());
 
-//    public IMV_SIQ_SS parserStringByReturnFrequencyMap(StringBuilder inputString, App NE) {
+//    public IMV_SQI_SS parserStringByReturnFrequencyMap(StringBuilder inputString, App NE) {
 //        int countLength;
 //        int find = S_Pos.INT_ZERO;
 //        int forestDepth = S_Pos.INT_ZERO;
@@ -261,7 +281,7 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 //        fixWords[S_Pos.INT_ONE] = new StringBuilder();
 //        StringBuilder stringBuilder = new StringBuilder();
 //        //Map<String, String> wordsForest = fHMMList.getPosCnToCn();
-//        IMV_SIQ_SS outputList = new IMV_SIQ_SS();
+//        IMV_SQI_SS outputList = new IMV_SQI_SS();
 //        Map<Long, FMHMMNode> forestRoots = fHMMList.getMap();
 //        for (int charPosition = S_Pos.INT_ZERO; charPosition < inputLength; charPosition
 //            += (countLength == S_Pos.INT_ZERO ? S_Pos.INT_ONE : countLength)) {
@@ -320,8 +340,8 @@ public class CogsBinaryForest_AE extends BinaryForest_AE
 //    }
 
 //62
-//public IMV_SIQ_S_ sortWordFrequencyMapToUnsortMap(IMV_SIQ_SS map) {
-//    IMV_SIQ_S_ listMap = quick6DLuoYaoguangSort.frequencyWordMapToMap(map);
+//public IMV_SQI_S_ sortWordFrequencyMapToUnsortMap(IMV_SQI_SS map) {
+//    IMV_SQI_S_ listMap = quick6DLuoYaoguangSort.frequencyWordMapToMap(map);
 //    return listMap;
 //}
 

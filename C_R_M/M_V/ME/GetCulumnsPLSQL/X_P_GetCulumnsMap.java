@@ -1,7 +1,7 @@
 package M_V.ME.GetCulumnsPLSQL;
 
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,20 +17,20 @@ import java.util.List;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class X_P_GetCulumnsMap {
-	public static Object _E(List<IMV_SIQ> obj, String[] getCulumnsValueArray) {
-		List<IMV_SIQ> newobj = new ArrayList<>();
-		Iterator<IMV_SIQ> iterator = obj.iterator();
+	public static Object _E(List<IMV_SQI> obj, String[] getCulumnsValueArray) {
+		List<IMV_SQI> newobj = new ArrayList<>();
+		Iterator<IMV_SQI> iterator = obj.iterator();
 		int count = 0;
 		while (iterator.hasNext()) {
 			int rowId = count++;
-			IMV_SIQ row = iterator.next();
-			IMV_SIQ newRow = new IMV_SIQ();
-			IMV_SIQ rowValue = new IMV_SIQ();
+			IMV_SQI row = iterator.next();
+			IMV_SQI newRow = new IMV_SQI();
+			IMV_SQI rowValue = new IMV_SQI();
 			for (int i = 1; i < getCulumnsValueArray.length; i++) {
 				String[] sets = getCulumnsValueArray[i].split("\\|");
-				if (((IMV_SIQ) row.get(S_ShellETL.SHELL_ETL_ROWVALUE))
+				if (((IMV_SQI) row.get(S_ShellETL.SHELL_ETL_ROWVALUE))
 						.containsKey(sets[0])) {
-					IMV_SIQ cell = (IMV_SIQ) ((IMV_SIQ) row
+					IMV_SQI cell = (IMV_SQI) ((IMV_SQI) row
 							.get(S_ShellETL.SHELL_ETL_ROWVALUE)).get(sets[0]);
 					if (1 == sets.length) {
 						rowValue.put(sets[0], cell);

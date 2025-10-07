@@ -318,8 +318,8 @@ public class SoundWaveJPanel extends SoundWave implements Runnable{
 //		int channels= 2;  
 //		format= new AudioFormat(encoding, rate, sampleSize,
 //				channels, (sampleSize/ 8) * channels, rate, bigEndian);
-//		cache_sj=new IMV_SIQ();
-//		cache_bz=new IMV_SIQ();
+//		cache_sj=new IMV_SQI();
+//		cache_bz=new IMV_SQI();
 //		InputStream ain= getClass().getResourceAsStream("zabo.txt");
 //		DetaBufferedReader acReader= new DetaBufferedReader(DetaInputStreamReader.E(ain));  
 //		String actempString= null; 

@@ -2,7 +2,7 @@ package test.java.ME.VPC.V;
 
 import ME.VPC.M.app.App;
 import ME.VPC.S.pillow.PageWords;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +18,7 @@ import java.util.List;
  * */
 class PageWordsTest {
     /**
-     * Method under test: {@link PageWords#renderWordLoopPOS(StringBuilder, List, IMV_SIQ_SS, String, boolean, App)}
+     * Method under test: {@link PageWords#renderWordLoopPOS(StringBuilder, List, IMV_SQI_SS, String, boolean, App)}
      */
     @Test
     @Disabled("TODO: Complete this test")
@@ -33,7 +33,7 @@ class PageWordsTest {
         // TODO: Populate arranged inputs
         StringBuilder page = null;
         List<String> setsForGet = null;
-        IMV_SIQ_SS map = null;
+        IMV_SQI_SS map = null;
         String key = "";
         boolean needMap = false;
         App NE = null;
@@ -46,7 +46,7 @@ class PageWordsTest {
     }
 
     /**
-     * Method under test: {@link PageWords#MapProcedureWordLoopPOS(IMV_SIQ_SS, String, App)}
+     * Method under test: {@link PageWords#MapProcedureWordLoopPOS(IMV_SQI_SS, String, App)}
      */
     @Test
     @Disabled("TODO: Complete this test")
@@ -59,7 +59,7 @@ class PageWordsTest {
 
         // Arrange
         // TODO: Populate arranged inputs
-        IMV_SIQ_SS map = null;
+        IMV_SQI_SS map = null;
         String setOfi = "";
         App NE = null;
 

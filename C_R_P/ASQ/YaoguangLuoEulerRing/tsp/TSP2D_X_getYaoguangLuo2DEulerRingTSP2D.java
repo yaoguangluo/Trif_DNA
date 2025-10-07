@@ -3,7 +3,7 @@ package ASQ.YaoguangLuoEulerRing.tsp;
 import ASQ.basic.Distance_X_getDistance2D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
 import P_V.PCI.ASQ.demension.Line2D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.OEU.LYG4DQS4D.LYG9DWithDoubleTopSort4D;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class TSP2D_X_getYaoguangLuo2DEulerRingTSP2D {
         List<Line2D> linesMap = new ArrayList<>();
         Iterator<AMV_MVS_VSQ_2D> iteratorOuter = AMV_MVS_VSQs.iterator();
         Object[] _AMV_MVS_VSQs = AMV_MVS_VSQs.toArray();
-        IMV_SIQ indexMap = new IMV_SIQ();
+        IMV_SQI indexMap = new IMV_SQI();
         while (iteratorOuter.hasNext()) {
             AMV_MVS_VSQ_2D AMV_MVS_VSQ2DOuter = iteratorOuter.next();
             Iterator<AMV_MVS_VSQ_2D> iteratorInner = AMV_MVS_VSQs.iterator();
@@ -58,11 +58,11 @@ public class TSP2D_X_getYaoguangLuo2DEulerRingTSP2D {
                     || !Objects.equals(AMV_MVS_VSQ2DOuter.getY(), AMV_MVS_VSQ2DInner.getY()))) {
                     continue;
                 }
-                IMV_SIQ map;
+                IMV_SQI map;
                 if (indexMap.containsKey(AMV_MVS_VSQ2DOuter.getTag())) {
                     map = indexMap.getStringMap(AMV_MVS_VSQ2DOuter.getTag());
                 } else {
-                    map = new IMV_SIQ();
+                    map = new IMV_SQI();
                 }
                 map.put(AMV_MVS_VSQ2DInner.getTag(), "");
                 indexMap.put(AMV_MVS_VSQ2DOuter.getTag(), map);
@@ -74,7 +74,7 @@ public class TSP2D_X_getYaoguangLuo2DEulerRingTSP2D {
         Iterator<Line2D> linesKeySets = linesMap.iterator();
         //4 get each distance of line.
         i = 0;
-        IMV_SIQ uniqueLines = new IMV_SIQ();
+        IMV_SQI uniqueLines = new IMV_SQI();
         while (linesKeySets.hasNext()) {
             Line2D line2D = linesKeySets.next();
             double distanceDouble = Distance_X_getDistance2D._E(line2D.getBegin(), line2D.getEnd());
@@ -98,7 +98,7 @@ public class TSP2D_X_getYaoguangLuo2DEulerRingTSP2D {
         distance = new LYG9DWithDoubleTopSort4D().sort(distance, sortRangeScale, 4);//算法应用更新
         //7 From small to big loop the distance and make a condition tree.
         List<Line2D> outputLine2D = new ArrayList<>();
-        IMV_SIQ outputDouble2D = new IMV_SIQ();
+        IMV_SQI outputDouble2D = new IMV_SQI();
         for (i = 0; i < distance.length; i++) {
             List<Line2D> list = uniqueLines.getListLine2D(distance[i]);
             if (null == list) {

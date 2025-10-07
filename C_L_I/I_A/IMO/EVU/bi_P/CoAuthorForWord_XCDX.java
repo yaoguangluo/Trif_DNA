@@ -1,7 +1,7 @@
 package I_A.IMO.EVU.bi_P;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -38,9 +38,9 @@ public class CoAuthorForWord_XCDX extends CoAuthorForWord_XCDX_M implements
         frequencyLeaf.clear();
         findLeaf.put(rootWord, 1);
         frequencyLeaf.put(rootWord, 1);
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         int depth = 0;
-        IMV_SIQ subLeaf = kernerSea(rootWord, leaf, findLeaf, depth, NE);
+        IMV_SQI subLeaf = kernerSea(rootWord, leaf, findLeaf, depth, NE);
         leaf.put(rootWord, subLeaf);
         rootLeaf = leaf;
         String output = subLeaf.keySet().toString();
@@ -62,9 +62,9 @@ public class CoAuthorForWord_XCDX extends CoAuthorForWord_XCDX_M implements
         frequencyLeaf.clear();
         findLeaf.put(rootWord, 1);
         frequencyLeaf.put(rootWord, 1);
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         int depth = 0;
-        IMV_SIQ subLeaf = kernerClassification(rootWord, leaf, findLeaf, depth, NE);
+        IMV_SQI subLeaf = kernerClassification(rootWord, leaf, findLeaf, depth, NE);
         leaf.put(rootWord, subLeaf);
         rootLeaf = leaf;
     }
@@ -84,9 +84,9 @@ public class CoAuthorForWord_XCDX extends CoAuthorForWord_XCDX_M implements
         frequencyLeaf.clear();
         findLeaf.put(rootWord, 1);
         frequencyLeaf.put(rootWord, 1);
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         int depth = 0;
-        IMV_SIQ subLeaf = kernerForest(rootWord, leaf, findLeaf, depth, NE);
+        IMV_SQI subLeaf = kernerForest(rootWord, leaf, findLeaf, depth, NE);
         leaf.put(rootWord, subLeaf);
         rootLeaf = leaf;
         String output = subLeaf.keySet().toString();
@@ -109,9 +109,9 @@ public class CoAuthorForWord_XCDX extends CoAuthorForWord_XCDX_M implements
         frequencyLeaf.clear();
         findLeaf.put(mingCheng, 1);
         frequencyLeaf.put(mingCheng, 1);
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         int depth = 0;
-        IMV_SIQ subLeaf = kernerDnnForest(dnn, leaf, findLeaf, depth);
+        IMV_SQI subLeaf = kernerDnnForest(dnn, leaf, findLeaf, depth);
         leaf.put(mingCheng, subLeaf);
         rootLeaf = leaf;
     }
@@ -133,9 +133,9 @@ public class CoAuthorForWord_XCDX extends CoAuthorForWord_XCDX_M implements
         frequencyLeaf.clear();
         findLeaf.put(mingCheng, 1);
         frequencyLeaf.put(mingCheng, 1);
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         int depth = 0;
-        IMV_SIQ subLeaf = kernerDnnBingMingForest(dnn, leaf, findLeaf, depth);
+        IMV_SQI subLeaf = kernerDnnBingMingForest(dnn, leaf, findLeaf, depth);
         leaf.put(mingCheng, subLeaf);
         rootLeaf = leaf;
     }
@@ -156,9 +156,9 @@ public class CoAuthorForWord_XCDX extends CoAuthorForWord_XCDX_M implements
         frequencyLeaf.clear();
         findLeaf.put(fangji, 1);
         frequencyLeaf.put(fangji, 1);
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         int depth = 0;
-        IMV_SIQ subLeaf = kernerZynkForest(zucheng, leaf, findLeaf, depth, NE);
+        IMV_SQI subLeaf = kernerZynkForest(zucheng, leaf, findLeaf, depth, NE);
         leaf.put(fangji, subLeaf);
         String output = subLeaf.keySet().toString();
         rootLeaf = leaf;
@@ -180,9 +180,9 @@ public class CoAuthorForWord_XCDX extends CoAuthorForWord_XCDX_M implements
         frequencyLeaf.clear();
         findLeaf.put(fangji, 1);
         frequencyLeaf.put(fangji, 1);
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         int depth = 0;
-        IMV_SIQ subLeaf = kernerZynkJForest(zucheng, leaf, findLeaf, depth, NE);
+        IMV_SQI subLeaf = kernerZynkJForest(zucheng, leaf, findLeaf, depth, NE);
         leaf.put(fangji, subLeaf);
         rootLeaf = leaf;
     }

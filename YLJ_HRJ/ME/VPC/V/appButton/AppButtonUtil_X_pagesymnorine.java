@@ -5,7 +5,7 @@ import ME.VPC.S.ne.App_S;
 import ME.VPC.M.app.App;
 import P.image.Color_P;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 import java.util.List;
@@ -36,9 +36,9 @@ public class AppButtonUtil_X_pagesymnorine {
 						? (currentPage + 1) * 2000
 						: sets.size());
 		App_S u = NE.app_S;
-		IMV_SIQ pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
-		IMV_SIQ cte = u.fMHMMListOneTime_E_X_S.fullCnToEn;
-		IMV_SIQ etc = u.fMHMMListOneTime_E_X_S.fullEnToCn;
+		IMV_SQI pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
+		IMV_SQI cte = u.fMHMMListOneTime_E_X_S.fullCnToEn;
+		IMV_SQI etc = u.fMHMMListOneTime_E_X_S.fullEnToCn;
 		Iterator<String> iterator = setsForGet.iterator();
 		Here: while (iterator.hasNext()) {
 			String setOfi = iterator.next();

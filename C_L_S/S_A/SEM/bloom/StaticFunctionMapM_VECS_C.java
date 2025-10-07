@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import M_V.MVQ.button.CfxButton;
 import M_V.MVQ.tableRender.ColorTableRender;
 import M_V.MVQ.textpane.CfxTextPane;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.dna.Token;
 import U_A.PEU.P.dna.TokenCerts;
 
@@ -45,9 +45,9 @@ public interface StaticFunctionMapM_VECS_C{
     public Object selectRowsByAttributesOfJoinRelation(App NE);
 
     //IU_Rows_E {
-    public IMV_SIQ insertRowByTablePathAndIndex(App NE);
+    public IMV_SQI insertRowByTablePathAndIndex(App NE);
 
-    public IMV_SIQ insertRowByBaseName(App NE);
+    public IMV_SQI insertRowByBaseName(App NE);
 
     public void IU_RowByAttributes(App NE);
 
@@ -55,28 +55,28 @@ public interface StaticFunctionMapM_VECS_C{
     public void I_Table(App NE);
 
     //D_Rows_E {
-    public IMV_SIQ deleteRowByTablePathAndIndex(App NE);
+    public IMV_SQI deleteRowByTablePathAndIndex(App NE);
 
     public void D_RowByAttributesOfCondition(App NE);
 
 
     //U_Rows_E {
-    public IMV_SIQ updateRowByTablePathAndIndex(App NE);
+    public IMV_SQI updateRowByTablePathAndIndex(App NE);
 
-    public IMV_SIQ updateRowByTablePathAndAttribute(App NE);
+    public IMV_SQI updateRowByTablePathAndAttribute(App NE);
 
     public Object updateRowsByRecordConditions(App NE);
 
     public Object updateRowsByAttributesOfCondition(App NE);
 
-    public List<IMV_SIQ> updateRowsByAttributesOfAggregation(App NE);
+    public List<IMV_SQI> updateRowsByAttributesOfAggregation(App NE);
 
     public Object updateRowsByAttributesOfGetCulumns(App NE);
 
     //E_PLSQL_E {
-    public IMV_SIQ E_PLSQL(App NE);
+    public IMV_SQI E_PLSQL(App NE);
 
-    public IMV_SIQ E_PLORM(App NE);
+    public IMV_SQI E_PLORM(App NE);
 
     //P_AggregationPLSQL {
     public void P_AggregationLimitMap(App NE);
@@ -93,7 +93,7 @@ public interface StaticFunctionMapM_VECS_C{
 
     //P_ConditionPLSQL_X_Map extends P_ConditionPLSQL_XCDX {
     //以后优化成统一对象输出, 不需要再转换。2019-1-15 tin
-    public IMV_SIQ rowToRowMap(App NE);
+    public IMV_SQI rowToRowMap(App NE);
 
     public void P_Map(App NE);
 

@@ -1,7 +1,7 @@
 package S_A.SixActionMap;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.lang.reflect.Field;
 
@@ -15,10 +15,10 @@ import java.lang.reflect.Field;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class StudyVerbalMap_X {
-    public IMV_SIQ _SMV = new IMV_SIQ();
-    public IMV_SIQ _SMQ = new IMV_SIQ();
-    public IMV_SIQ _SMI = new IMV_SIQ();
-    public static IMV_SIQ initonDelegate = new IMV_SIQ();
+    public IMV_SQI _SMV = new IMV_SQI();
+    public IMV_SQI _SMQ = new IMV_SQI();
+    public IMV_SQI _SMI = new IMV_SQI();
+    public static IMV_SQI initonDelegate = new IMV_SQI();
 
     //先归纳汉语 归纳方式 DNA十六元基语义解码规范。 AOPM VECS IDUQ TXHF
     @SuppressWarnings("unchecked")

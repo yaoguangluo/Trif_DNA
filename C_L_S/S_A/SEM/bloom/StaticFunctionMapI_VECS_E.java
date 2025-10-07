@@ -6,7 +6,7 @@ import DVIAQVIMIV.SkinPathDoubleDetectTripFix2D;
 import DVIAQVIMIV.SkinPathDoubleDetectTripFix2D_E;
 import ME.VPC.M.app.App;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -210,7 +210,7 @@ public class StaticFunctionMapI_VECS_E extends StaticFunctionMapCASE
 		String[] stringA = NE._I_U.stringA;
 		//
 		SkinPathDoubleDetectTripFix2D skinPathDoubleDetectTrip = new SkinPathDoubleDetectTripFix2D();
-		skinPathDoubleDetectTrip.afterFirstNames = new IMV_SIQ();
+		skinPathDoubleDetectTrip.afterFirstNames = new IMV_SQI();
 		skinPathDoubleDetectTrip.initDeciphring(stringA[0], 6);
 		skinPathDoubleDetectTrip.initDeciphring(stringA[1], 5);
 		skinPathDoubleDetectTrip.initDeciphring(stringA[2], 17);

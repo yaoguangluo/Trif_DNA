@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapQ_VECS_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -22,12 +22,12 @@ public class StaticReflectionMapQ_VECS_C extends
 	@SuppressWarnings({ "unused" })
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapQ_VECS_E staticFunctionMapQ_VECS_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		int 因子 = 0;
 		Object map = null;
 		if (callFunctionKey.contains("searchFromTable", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapQ_VECS_C.searchFromTable(NE, 0);
@@ -38,7 +38,7 @@ public class StaticReflectionMapQ_VECS_C extends
 		;
 		if (callFunctionKey.contains("searchFromTablewithScale",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapQ_VECS_C

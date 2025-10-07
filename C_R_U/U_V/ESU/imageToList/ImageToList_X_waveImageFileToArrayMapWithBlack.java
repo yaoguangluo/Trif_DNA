@@ -1,6 +1,6 @@
 package U_V.ESU.imageToList;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -22,8 +22,8 @@ import java.util.List;
 
 public class ImageToList_X_waveImageFileToArrayMapWithBlack {
     //该函数用于股市等波形图片文件转换成相同颜色数组分类集合。
-    public static IMV_SIQ _E(String FilePath) {
-        IMV_SIQ output = new IMV_SIQ();
+    public static IMV_SQI _E(String FilePath) {
+        IMV_SQI output = new IMV_SQI();
         BufferedImage bufferedImage;
         try {
             bufferedImage = ImageIO.read(new File(FilePath));

@@ -3,7 +3,7 @@ package O_V.OSA.shell;
 import java.io.IOException;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //稍后将DMA文件与内存操作替换成 jtable表内存操作 罗瑶光
 /*
@@ -82,7 +82,7 @@ public interface PL_XA_C {
 
     public PL_XA_C finalE(boolean b, App NE) throws InterruptedException, IOException;
 
-    public IMV_SIQ returnAsMap();
+    public IMV_SQI returnAsMap();
 
     public PL_XA_C checkAndFixPlSearchGrammarErrors();
 

@@ -1,7 +1,7 @@
 package ASQ.nlp;
 
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -18,7 +18,7 @@ import java.util.Map;
  * */
 
 public class NLPTopicMatch_X_getNLPBestSentencesMatchScoreRights {
-    public static double[] _E(Map<String, String> nlp, IMV_SIQ_SS keyMap) {
+    public static double[] _E(Map<String, String> nlp, IMV_SQI_SS keyMap) {
         double[] scoreRights = new double[keyMap.size()];
         int scoreRightsPoint = 0;
         Iterator<String> keyIterator = keyMap.keySet().iterator();

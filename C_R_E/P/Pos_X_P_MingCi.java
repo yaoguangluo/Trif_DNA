@@ -5,7 +5,7 @@ import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 
@@ -267,7 +267,7 @@ public class Pos_X_P_MingCi extends Pos_X_P_LiangCi implements X_P_MingCi {
 		return countLength = S_Pos.INT_ONE;
 	}
 
-	public int P_MingCiOfTwoForMap(IMV_SIQ_SS outputList, int countLength,
+	public int P_MingCiOfTwoForMap(IMV_SQI_SS outputList, int countLength,
 			String[] strings, StringBuilder[] fixWord, App NE) {
 		if (wordsForest.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
 			if (S_Maps.liangCi

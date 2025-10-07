@@ -7,7 +7,7 @@ import M_V.MPI.xls.commonXLS.MakeContainerXLS;
 import M_V.MVQ.slider.DetaSlider;
 import O_V.OSA.shell.XA_ShellTables;
 import S_A.SVQ.stable.S_HTTP;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import dnn.GetDNNMap;
 
 import javax.swing.JCheckBox;
@@ -46,7 +46,7 @@ public class SectionJPanel extends SectionJPanel_X_S {
 	 * 作者罗瑶光
 	 */
 	@SuppressWarnings("unchecked")
-	public Map<String, Boolean> pagehookJCheckBoxMap = new IMV_SIQ();
+	public Map<String, Boolean> pagehookJCheckBoxMap = new IMV_SQI();
 	//
 	// App NE;
 

@@ -12,7 +12,7 @@ import P_V.PEQ.AMV.ECS.test.DNNTest;
 import P_V.PEQ.AMV.ECS.test.RNN_IDETest;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.VSQ.parser.EmotionSample;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import exception.thread.DetaThread;
 
 import javax.swing.ImageIcon;
@@ -37,10 +37,10 @@ public class MakeContainerXLS extends Thread implements Runnable {
     public DetabbedPane jTabbedpane;
     public List<String> tabNames;
     public CogsBinaryForest_AE _A;
-    public IMV_SIQ pos;
-    public IMV_SIQ pose;
-    public IMV_SIQ etc;
-    public IMV_SIQ cte;
+    public IMV_SQI pos;
+    public IMV_SQI pose;
+    public IMV_SQI etc;
+    public IMV_SQI cte;
     public String fileType;
     public DNNTest dNNTest;
     public ANNTest aNNTest;
@@ -53,7 +53,7 @@ public class MakeContainerXLS extends Thread implements Runnable {
 
     public MakeContainerXLS(CogsBinaryForest_AE _A, App_S u2
         , DetabbedPane jTabbedpane, List<String> tabNames2
-        , IMV_SIQ pos, IMV_SIQ pose, IMV_SIQ etc, IMV_SIQ cte, String fileType
+        , IMV_SQI pos, IMV_SQI pose, IMV_SQI etc, IMV_SQI cte, String fileType
         , EmotionSample emotionSample, RatioMap_E ratioMap_E
         , SensingTest sensingTest, App app_NE) {
         super();
@@ -75,8 +75,8 @@ public class MakeContainerXLS extends Thread implements Runnable {
 
     public MakeContainerXLS(CommonXls component, CogsBinaryForest_AE _A, App_S u2
         , DetabbedPane jTabbedpane, List<String> tabNames2
-        , IMV_SIQ pos, IMV_SIQ pose
-        , IMV_SIQ etc, IMV_SIQ cte, String fileType
+        , IMV_SQI pos, IMV_SQI pose
+        , IMV_SQI etc, IMV_SQI cte, String fileType
         , EmotionSample emotionSample, RatioMap_E ratioMap_E, SensingTest sensingTest
         , App app_NE) {
         super();

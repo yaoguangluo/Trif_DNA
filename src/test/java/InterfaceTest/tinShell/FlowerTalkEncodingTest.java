@@ -3,8 +3,8 @@ package test.java.InterfaceTest.tinShell;
 import P_V.PEQ.AMV.ECS.test.ANNTest;
 import P_V.PEQ.AMV.ECS.test.DNNTest;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import org.junit.jupiter.api.Test;
 
 import test.java.InterfaceTest.chineseParser.DemoPOSTest;
@@ -52,7 +52,7 @@ class FlowerTalkEncodingTest {
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 词性初始化
-		IMV_SIQ pos = commonTestInition.NE.app_S._A.getPosCnToCn();
+		IMV_SQI pos = commonTestInition.NE.app_S._A.getPosCnToCn();
 		// init test
 		// 输入一句话 如tinshell这个String变量
 		String tinshell = ("首先获取一个表，名字是" + "怎么也捂不热哟～"
@@ -75,24 +75,24 @@ class FlowerTalkEncodingTest {
 		DemoPOSTest demoPOSTest = new DemoPOSTest();
 		demoPOSTest.testPOS(listVerbal, pos);
 		// 1.3 可取出各类词汇map
-		IMV_SIQ_SS _IMV_SIQ_SS_noun = demoPOSTest.noun;
-		IMV_SIQ_SS _IMV_SIQ_SS_verb = demoPOSTest.verb;
-		IMV_SIQ_SS _IMV_SIQ_SS_adv = demoPOSTest.adv;
-		IMV_SIQ_SS _IMV_SIQ_SS_adj = demoPOSTest.adj;
+		IMV_SQI_SS _IMV_SQI_SS_noun = demoPOSTest.noun;
+		IMV_SQI_SS _IMV_SQI_SS_verb = demoPOSTest.verb;
+		IMV_SQI_SS _IMV_SQI_SS_adv = demoPOSTest.adv;
+		IMV_SQI_SS _IMV_SQI_SS_adj = demoPOSTest.adj;
 		// 1.4 组合词汇距离权重
 		HashMap<String, Double> connectionRNN = new HashMap<>();
 		// 名动组合
-		Iterator<String> iteratorN = _IMV_SIQ_SS_noun.keySet()
+		Iterator<String> iteratorN = _IMV_SQI_SS_noun.keySet()
 			.iterator();
-		Iterator<String> iteratorV = _IMV_SIQ_SS_verb.keySet()
+		Iterator<String> iteratorV = _IMV_SQI_SS_verb.keySet()
 			.iterator();
 		while (iteratorN.hasNext()) {
-			WordFrequency WordFrequencyN = _IMV_SIQ_SS_noun.get(
+			WordFrequency WordFrequencyN = _IMV_SQI_SS_noun.get(
 				iteratorN.next());
 			String stringN = WordFrequencyN.get_word();
 			double positionN = WordFrequencyN.getAveragePosition();
 			while (iteratorV.hasNext()) {
-				WordFrequency WordFrequencyV = _IMV_SIQ_SS_verb.get(
+				WordFrequency WordFrequencyV = _IMV_SQI_SS_verb.get(
 					iteratorV.next());
 				String stringV = WordFrequencyV.get_word();
 				double positionV = WordFrequencyV
@@ -120,13 +120,13 @@ class FlowerTalkEncodingTest {
 		}
 		// 输出
 		System.out.println("--程度 词汇一览");
-		Iterator<String> iteratorsAdj = _IMV_SIQ_SS_adj.keySet()
+		Iterator<String> iteratorsAdj = _IMV_SQI_SS_adj.keySet()
 			.iterator();
 		while (iteratorsAdj.hasNext()) {
 			System.out.print(" " + iteratorsAdj.next());
 		}
 		System.out.println();
-		Iterator<String> iteratorsAdv = _IMV_SIQ_SS_adv.keySet()
+		Iterator<String> iteratorsAdv = _IMV_SQI_SS_adv.keySet()
 			.iterator();
 		while (iteratorsAdv.hasNext()) {
 			System.out.print(" " + iteratorsAdv.next());
@@ -140,7 +140,7 @@ class FlowerTalkEncodingTest {
 		System.out.println();
 		System.out.println();
 		System.out.println("--名词 词汇一览");
-		Iterator<String> iteratorsNoun = _IMV_SIQ_SS_noun.keySet()
+		Iterator<String> iteratorsNoun = _IMV_SQI_SS_noun.keySet()
 			.iterator();
 		while (iteratorsNoun.hasNext()) {
 			System.out.print(" " + iteratorsNoun.next());
@@ -148,7 +148,7 @@ class FlowerTalkEncodingTest {
 		System.out.println();
 		System.out.println();
 		System.out.println("--动词 词汇一览");
-		Iterator<String> iteratorsVerb = _IMV_SIQ_SS_verb.keySet()
+		Iterator<String> iteratorsVerb = _IMV_SQI_SS_verb.keySet()
 			.iterator();
 		while (iteratorsVerb.hasNext()) {
 			System.out.print(" " + iteratorsVerb.next());

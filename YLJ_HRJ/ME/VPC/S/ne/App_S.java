@@ -24,7 +24,7 @@ import M_V.MPI.xls.commonXLS.MakeContainerXLS;
 import S_A.SEM.bloom.StaticRootMap;
 import S_A.SVQ.stable.S_MapsInitons;
 import S_A.SixActionMap.FlowerAction;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import YLJ_HRJ.ME.VPC.S.images.ImageIndex;
 
 import S_A.SEM.reflection.*;
@@ -68,7 +68,7 @@ public class App_S extends App_S_Systems {
 	public AppSearch appSearch;
 	public AppFilter_X_IV_ appFilter;
 	public MakeContainer_ZHONG_YAO makeContainer_ZHONG_YAO;
-	public IMV_SIQ tempPages = new IMV_SIQ();
+	public IMV_SQI tempPages = new IMV_SQI();
 	public List<MakeContainerXLS> makeContainerXLSList = new CopyOnWriteArrayList<>();
 	public JFrame frame;
 	public AppInit_XCDX appInit;

@@ -5,7 +5,7 @@ import ME.VPC.S.ne.App_S;
 import ME.VPC.M.app.App;
 import P.image.Color_P;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 import java.util.List;
@@ -40,8 +40,8 @@ public class AppButtonUtil_X_pageenglish {
 		if (null == u) {
 			return; /// fatal trif
 		}
-		IMV_SIQ pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
-		IMV_SIQ cte = u.fMHMMListOneTime_E_X_S.fullCnToEn;
+		IMV_SQI pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
+		IMV_SQI cte = u.fMHMMListOneTime_E_X_S.fullCnToEn;
 		Iterator<String> iterator = setsForGet.iterator();
 		Here: while (iterator.hasNext()) {
 			String setOfi = iterator.next();

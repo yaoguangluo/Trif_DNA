@@ -2,7 +2,7 @@ package OSI.OSU.SI.OVI.OVQ.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.chuFa
 
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_AOU_AOQ_VES;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.JButton;
 import javax.swing.JTextPane;
@@ -42,7 +42,7 @@ public class ChuFangWuXingShowHPanel extends OSU_AOU_AOQ_VES{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					_SQ__OPE_OPC_ECI.topMapIn= new IMV_SIQ();
+					_SQ__OPE_OPC_ECI.topMapIn= new IMV_SQI();
 					for(int i=0;i<_SQ__OPE_OPC_ECI.toptablein.getRowCount();i++) {
 						if(null != _SQ__OPE_OPC_ECI.toptablein.getValueAt(i, 5)) {
 							String temp= _SQ__OPE_OPC_ECI.toptablein.getValueAt(i, 5).toString();

@@ -3,7 +3,7 @@ package ASQ.YaoguangLuoEulerRing.tsp;
 import ASQ.basic.Distance_X_getDistance3D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
 import P_V.PCI.ASQ.demension.Line3D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.OEU.LYG4DQS4D.LYG9DWithDoubleTopSort4D;
 
 import java.util.ArrayList;
@@ -57,7 +57,7 @@ public class TSP_X_getYaoguangLuo3DEulerRingTSP {
         Iterator<Line3D> linesKeySets = linesMap.iterator();
         //4 get each distance of line.
         i = 0;
-        IMV_SIQ uniqueLines = new IMV_SIQ();
+        IMV_SQI uniqueLines = new IMV_SQI();
         while (linesKeySets.hasNext()) {
             Line3D line3D = linesKeySets.next();
             double distanceDouble = Distance_X_getDistance3D._E(line3D.getBegin(), line3D.getEnd());
@@ -78,7 +78,7 @@ public class TSP_X_getYaoguangLuo3DEulerRingTSP {
         distance = new LYG9DWithDoubleTopSort4D().sort(distance, sortRangeScale, 4);//算法应用更新
         //7 From small to big loop the distance and make a condition tree.
         List<Line3D> outputLine3D = new ArrayList<>();
-        IMV_SIQ outputDouble3D = new IMV_SIQ();
+        IMV_SQI outputDouble3D = new IMV_SQI();
         for (i = 0; i < distance.length; i++) {
             List<Line3D> list = uniqueLines.getListLine3D(distance[i]);
             for (Line3D line3D : list) {

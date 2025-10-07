@@ -9,8 +9,8 @@ import P_V.PEQ.AMV.ECS.test.RNN_IDETest;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import javax.swing.table.DefaultTableModel;
@@ -39,7 +39,7 @@ public class AppSearch_X_DetaSearch extends ScrollPane {
 	@SuppressWarnings({ "unchecked", "unused" })
 	public static int detaSearch(int[] score_code, String[] score,
 			DefaultTableModel newTableModel, Object[][] tableData_old,
-			List<String> copy, String key, IMV_SIQ dic_map, boolean keyIsPCA,
+			List<String> copy, String key, IMV_SQI dic_map, boolean keyIsPCA,
 			App NE) {
 		if (null == NE.app_S) {
 			return -1; // trif
@@ -48,7 +48,7 @@ public class AppSearch_X_DetaSearch extends ScrollPane {
 		if (null == u.fMHMMListOneTime_E_X_S) {
 			return -1; // trif
 		}
-		IMV_SIQ pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
+		IMV_SQI pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
 		SensingTest sensingTest = null;
 		DNNTest dNNTest = null;
 		ANNTest aNNTest = null;
@@ -87,7 +87,7 @@ public class AppSearch_X_DetaSearch extends ScrollPane {
 		int count = 0;
 		String trimKey = key.replace(" ", "");
 		int keyLength = key.length();
-		IMV_SIQ_SS mapSearchWithoutSort = null;
+		IMV_SQI_SS mapSearchWithoutSort = null;
 		mapSearchWithoutSort = u._A.parserMixStringByReturnFrequencyMap(key,
 				NE);
 		Iterator<String> iteratorForCopy = copy.iterator();
@@ -111,7 +111,7 @@ public class AppSearch_X_DetaSearch extends ScrollPane {
 			score[copyCount] = iteratorForCopyString;
 			String dai_sou_suo_ci_dian = dic_map.get(iteratorForCopyString)
 					.toString();
-			IMV_SIQ dnnSet = new IMV_SIQ();
+			IMV_SQI dnnSet = new IMV_SQI();
 			double perRatio = 0.0;
 			if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122.isSelected()) {
 				// DNN分析
@@ -140,7 +140,7 @@ public class AppSearch_X_DetaSearch extends ScrollPane {
 			}
 			Iterator<String> iteratorWordFrequency = mapSearchWithoutSort
 					.keySet().iterator();
-			Map<String, Double> DNNcountBonus = new IMV_SIQ();
+			Map<String, Double> DNNcountBonus = new IMV_SQI();
 			double BonusFullRatio = 0.0;
 			Here: while (iteratorWordFrequency.hasNext()) {
 				String mapSearchaAtII = iteratorWordFrequency.next();

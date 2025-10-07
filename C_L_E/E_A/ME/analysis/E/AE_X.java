@@ -12,7 +12,7 @@ import P_V.PEQ.AMV.ECS.test.SensingTest;
 import Q_V.QSD.VQS.MSO.Q_parser;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -33,7 +33,7 @@ public class AE_X extends AS implements A {
     public FHMMList_indexAll fHMMList;
     public Nlp_CE_X_S nlp_C;
     public NERO_C_OneTime nero_C;
-    public Map<Long, IMV_SIQ> wordsForests;
+    public Map<Long, IMV_SQI> wordsForests;
     public Quick6DLuoYaoguangSort quick6DLuoYaoguangSort;
     public Map<Long, FMHMMNode>[] forestsRoots;
     public Map<Long, FMHMMNode> forestRoots;

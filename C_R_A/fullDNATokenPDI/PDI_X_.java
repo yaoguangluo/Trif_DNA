@@ -2,7 +2,7 @@ package fullDNATokenPDI;
 
 import A_I.MPE.MAQPVDCOISIV.initon.Initon;
 import S_A.SVQ.stable.S_Common;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -169,7 +169,7 @@ public class PDI_X_ extends PDI_X_S {
 
     public String initonSect(String key) {
         String pdis = "";
-        Map<String, String> map = new IMV_SIQ();
+        Map<String, String> map = new IMV_SQI();
         map.put("0", "A");
         map.put("1", "O");
         map.put("2", "P");
@@ -200,7 +200,7 @@ public class PDI_X_ extends PDI_X_S {
 
     public String initonETLSect(String key) {
         String pdis = "";
-        Map<String, String> map = new IMV_SIQ();
+        Map<String, String> map = new IMV_SQI();
         map.put("0", "A");
         map.put("1", "O");
         map.put("2", "P");
@@ -231,7 +231,7 @@ public class PDI_X_ extends PDI_X_S {
 
     public String initonDeSect(String key) {
         String pdis = "";
-        Map<String, String> map = new IMV_SIQ();
+        Map<String, String> map = new IMV_SQI();
         map.put("A", "0");
         map.put("O", "1");
         map.put("P", "2");

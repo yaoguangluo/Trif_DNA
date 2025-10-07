@@ -20,7 +20,7 @@ import java.util.LinkedHashMap;
 //AES_QMS_XSD_TIH
 //遇到了问题， 修改jdk, 发布会 触犯甲骨文权利，不方便我公开， 不修改 又及其繁琐，
 @SuppressWarnings("serial")
-public class IMV_SIQ_SS extends LinkedHashMap<String, WordFrequency> {
+public class IMV_SQI_SS extends LinkedHashMap<String, WordFrequency> {
     //later check digital types。
     public WordFrequency getW(String value){//later override..
         if(this.containsKey(value)){

@@ -1,7 +1,7 @@
 //package test.java.ME.VPC.V.dictionary;
 //
 //import ME.VPC.V.dictionary.XyscDictionary;
-//import S_A.pheromone.IMV_SIQ;
+//import S_A.pheromone.IMV_SQI;
 //import org.junit.jupiter.api.Test;
 ///*
 // * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -18,17 +18,17 @@
 //    void testTxtToMap() {
 //        // Setup
 //        final XyscDictionary xyscDictionaryUnderTest = new XyscDictionary();
-//        final IMV_SIQ dic_yao_ming = new IMV_SIQ();
-//        final IMV_SIQ dic_chengfen_danwei = new IMV_SIQ();
-//        final IMV_SIQ dic_yong_fa = new IMV_SIQ();
-//        final IMV_SIQ dic_yao_li = new IMV_SIQ();
-//        final IMV_SIQ dic_zhu_yi = new IMV_SIQ();
-//        final IMV_SIQ dic_shi_ying = new IMV_SIQ();
-//        final IMV_SIQ dic_bu_liang_fan_ying = new IMV_SIQ();
-//        final IMV_SIQ dic_yao_wu_xiang_hu_zuo_yong = new IMV_SIQ();
-//        final IMV_SIQ dic_qi_ta = new IMV_SIQ();
-//        final IMV_SIQ dic_yong_liang = new IMV_SIQ();
-//        final IMV_SIQ dic_jie_shao = new IMV_SIQ();
+//        final IMV_SQI dic_yao_ming = new IMV_SQI();
+//        final IMV_SQI dic_chengfen_danwei = new IMV_SQI();
+//        final IMV_SQI dic_yong_fa = new IMV_SQI();
+//        final IMV_SQI dic_yao_li = new IMV_SQI();
+//        final IMV_SQI dic_zhu_yi = new IMV_SQI();
+//        final IMV_SQI dic_shi_ying = new IMV_SQI();
+//        final IMV_SQI dic_bu_liang_fan_ying = new IMV_SQI();
+//        final IMV_SQI dic_yao_wu_xiang_hu_zuo_yong = new IMV_SQI();
+//        final IMV_SQI dic_qi_ta = new IMV_SQI();
+//        final IMV_SQI dic_yong_liang = new IMV_SQI();
+//        final IMV_SQI dic_jie_shao = new IMV_SQI();
 //
 //        // Run the test
 //        xyscDictionaryUnderTest.txtToMap(dic_yao_ming, dic_chengfen_danwei, dic_yong_fa,

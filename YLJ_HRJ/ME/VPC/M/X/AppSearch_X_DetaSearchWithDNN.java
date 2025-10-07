@@ -4,8 +4,8 @@ import ME.VPC.S.ne.App_S;
 import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.ScrollPane;
@@ -41,7 +41,7 @@ public class AppSearch_X_DetaSearchWithDNN extends ScrollPane {
 			int[] reg = new int[tableData_oldListObjects.size()];
 			String trimKey = key.replace(" ", "").trim();
 			int keyLength = key.length();
-			IMV_SIQ_SS mapSearchWithoutSort = null;
+			IMV_SQI_SS mapSearchWithoutSort = null;
 			mapSearchWithoutSort = u._A.parserMixStringByReturnFrequencyMap(key,
 					NE);
 			u._A.initPCAWordPOS(mapSearchWithoutSort, NE);
@@ -63,7 +63,7 @@ public class AppSearch_X_DetaSearchWithDNN extends ScrollPane {
 					identifyString.append(columns[i + 1]);
 				}
 				scoreOutput[copyCount] = iteratorForCopyString;
-				Map<String, Double> dnnSet = new IMV_SIQ();
+				Map<String, Double> dnnSet = new IMV_SQI();
 				double perRatio = 0.0;
 				if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122
 						.isSelected()) {// DNN分析
@@ -75,7 +75,7 @@ public class AppSearch_X_DetaSearchWithDNN extends ScrollPane {
 				}
 				Iterator<String> iteratorWordFrequency = mapSearchWithoutSort
 						.keySet().iterator();
-				Map<String, Double> DNNcountBonus = new IMV_SIQ();
+				Map<String, Double> DNNcountBonus = new IMV_SQI();
 				double BonusFullRatio = 0.0;
 				Here: while (iteratorWordFrequency.hasNext()) {
 					String mapSearchaAtII = iteratorWordFrequency.next();

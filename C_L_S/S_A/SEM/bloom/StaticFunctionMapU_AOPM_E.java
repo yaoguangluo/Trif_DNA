@@ -4,7 +4,7 @@ import ME.VPC.C.skivvy.MakeContainerZNSZ;
 import ME.VPC.M.app.App;
 import P.image.Color_P;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.classification.ObjectClassification;
 import U_A.PEU.P.combination.ObjectCombination;
 import U_A.PEU.P.dna.DNAAuth;
@@ -95,15 +95,15 @@ import java.util.Vector;
 public class StaticFunctionMapU_AOPM_E extends StaticFunctionMapCASE
 	implements StaticFunctionMapU_AOPM_C {
 	// ObjectClassification
-	public Map<String, IMV_SIQ> mapClassification(App NE) {
-		IMV_SIQ input = NE._I_U.inputMap;
+	public Map<String, IMV_SQI> mapClassification(App NE) {
+		IMV_SQI input = NE._I_U.inputMap;
 		String[] keywords = NE._I_U.keywords;
 		return ObjectClassification.mapClassification(input,
 			keywords);
 	};
 
-	public Map<String, IMV_SIQ> mapClassification2D(App NE) {
-		IMV_SIQ input = NE._I_U.inputMap;
+	public Map<String, IMV_SQI> mapClassification2D(App NE) {
+		IMV_SQI input = NE._I_U.inputMap;
 		String[] keywords = NE._I_U.keywords;
 		return ObjectClassification.mapClassification2D(input,
 			keywords);
@@ -124,9 +124,9 @@ public class StaticFunctionMapU_AOPM_E extends StaticFunctionMapCASE
 	};// 稍后一一把接口函数主体 实例化。。。。。。。。下面所有的。
 	  // ObjectCombination {
 
-	public IMV_SIQ mapCombination(App NE) {
-		IMV_SIQ output = NE._I_U.outputMap;
-		IMV_SIQ destination = NE._I_U.destinationMap;
+	public IMV_SQI mapCombination(App NE) {
+		IMV_SQI output = NE._I_U.outputMap;
+		IMV_SQI destination = NE._I_U.destinationMap;
 		return ObjectCombination.mapCombination(output, destination);
 	};
 
@@ -196,7 +196,7 @@ public class StaticFunctionMapU_AOPM_E extends StaticFunctionMapCASE
 	public boolean DNAAuthStatusCheckEmailAndPds(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		IMV_SIQ data = NE._I_U.dataMap;
+		IMV_SQI data = NE._I_U.dataMap;
 		return DNAAuth.DNAAuthStatusCheckEmailAndPds(app, string._S_,
 			data);
 	}
@@ -206,7 +206,7 @@ public class StaticFunctionMapU_AOPM_E extends StaticFunctionMapCASE
 	public boolean DNAAuthStatusCheckEmailAndPde(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		IMV_SIQ data = NE._I_U.dataMap;
+		IMV_SQI data = NE._I_U.dataMap;
 		return DNAAuth.DNAAuthStatusCheckEmailAndPde(app, string._S_,
 			data);
 	}
@@ -216,7 +216,7 @@ public class StaticFunctionMapU_AOPM_E extends StaticFunctionMapCASE
 	public boolean DNAAuthStatusCheckEmailAndPassword(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		IMV_SIQ data = NE._I_U.dataMap;
+		IMV_SQI data = NE._I_U.dataMap;
 		return DNAAuth.DNAAuthStatusCheckEmailAndPassword(app.app_S,
 			string._S_, data);
 	}
@@ -226,7 +226,7 @@ public class StaticFunctionMapU_AOPM_E extends StaticFunctionMapCASE
 	public boolean DNAAuthCheck(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		IMV_SIQ data = NE._I_U.dataMap;
+		IMV_SQI data = NE._I_U.dataMap;
 		return DNAAuth.DNAAuthCheck(app, string._S_, data);
 	}
 
@@ -237,7 +237,7 @@ public class StaticFunctionMapU_AOPM_E extends StaticFunctionMapCASE
 		AES_QMS_XSD_TIH input = NE._I_U.inputString;
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		IMV_SIQ data = NE._I_U.dataMap;
+		IMV_SQI data = NE._I_U.dataMap;
 		return StringUtil.encode(input._S_);
 	};
 
@@ -675,17 +675,17 @@ public class StaticFunctionMapU_AOPM_E extends StaticFunctionMapCASE
 	// //VtoV{ 移除著作权的 和 u vecs 已经出现的稍后剔除出去。 先注释掉先
 	// public JSONObject XmlToJsonObject(String response){
 	// return null;};
-	// public IMV_SIQ JsonObjectToMap(JSONObject response){
+	// public IMV_SQI JsonObjectToMap(JSONObject response){
 	// return null;};
-	// public String MapToJsonString(IMV_SIQ response){
+	// public String MapToJsonString(IMV_SQI response){
 	// return null;};
 	// public String ListToJsonString(List<Object> response){
 	// return null;};
 	// public String ObjectToJsonString(Object response){
 	// return null;};
-	// public IMV_SIQ XmlToMap(String response){
+	// public IMV_SQI XmlToMap(String response){
 	// return null;};
-	// public String MapToXml(IMV_SIQ response){
+	// public String MapToXml(IMV_SQI response){
 	// return null;};
 	// public List<Object> JsonArrayToList(JSONArray jobj){
 	// return null;};

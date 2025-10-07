@@ -2,8 +2,8 @@ package ASQ.nlp;
 
 import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import java.util.List;
@@ -32,10 +32,10 @@ public class NLPTopicMatch_X_getNLPBestSentencesMatchScore {
 ////                , quick6DLuoYaoguangSort3DMap_E
 //        );
         //init the nlp POS(part of speech) functions.
-        IMV_SIQ nlp = _A.getPosCnToCn();
+        IMV_SQI nlp = _A.getPosCnToCn();
         List<String> keys = _A.parserMixedString(searchString);
         //find a appear frequency from the keys of search string.
-        IMV_SIQ_SS keyMap = _A.getWordFrequencyMap(keys, NE);
+        IMV_SQI_SS keyMap = _A.getWordFrequencyMap(keys, NE);
         //get a POS score rights array from keyMap.
         String[] stringKeys = List_ESU_X_listToArray._E(keys);
         double[] scoreRights
@@ -44,7 +44,7 @@ public class NLPTopicMatch_X_getNLPBestSentencesMatchScore {
         double[] matchScore = new double[sampleSentences.length];
         for (int i = 0; i < sampleSentences.length; i++) {
             List<String> matchList = _A.parserMixedString(sampleSentences[i]);
-            IMV_SIQ_SS matchMap = _A.getWordFrequencyMap(matchList, NE);
+            IMV_SQI_SS matchMap = _A.getWordFrequencyMap(matchList, NE);
             for (int j = 0; j < stringKeys.length; j++) {
                 if (matchMap.containsKey(stringKeys[j])) {
                     matchScore[i] += scoreRights[j]

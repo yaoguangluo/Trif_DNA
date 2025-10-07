@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapP_IDUQ_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -22,12 +22,12 @@ public class StaticReflectionMapP_IDUQ_C extends
 	@SuppressWarnings("unused")
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		int 因子 = 0;
 		Object map = null;
 		if (callFunctionKey.contains("copyMap", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_IDUQ_C.copyMap(NE);
@@ -37,7 +37,7 @@ public class StaticReflectionMapP_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("mask", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_IDUQ_C.mask(NE);
@@ -47,7 +47,7 @@ public class StaticReflectionMapP_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("copy", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_IDUQ_C.copy(NE);
@@ -57,7 +57,7 @@ public class StaticReflectionMapP_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("mutationCopy", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_IDUQ_C.mutationCopy(NE);
@@ -67,7 +67,7 @@ public class StaticReflectionMapP_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("dating", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_IDUQ_C.dating(NE);
@@ -77,7 +77,7 @@ public class StaticReflectionMapP_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("inheritance", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_IDUQ_C.inheritance(NE);
@@ -87,7 +87,7 @@ public class StaticReflectionMapP_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("born", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapP_IDUQ_C.born(NE);
@@ -97,7 +97,7 @@ public class StaticReflectionMapP_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("mutation", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_IDUQ_C.mutation(NE);
@@ -107,7 +107,7 @@ public class StaticReflectionMapP_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("separater", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_IDUQ_C.separater(NE);
@@ -117,7 +117,7 @@ public class StaticReflectionMapP_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("swap", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapP_IDUQ_C.swap(NE);

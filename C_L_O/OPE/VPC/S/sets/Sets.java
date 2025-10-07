@@ -9,14 +9,14 @@
  * */
 package OPE.VPC.S.sets;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 //作者 +著作权人： 罗瑶光, 浏阳
 public class Sets{
 	public static Map<Long, Object> setsMap;
 	public static void register(long l) {
-		IMV_SIQ map= new IMV_SIQ();
+		IMV_SQI map= new IMV_SQI();
 		setsMap.put(l, map);
 	}
 }

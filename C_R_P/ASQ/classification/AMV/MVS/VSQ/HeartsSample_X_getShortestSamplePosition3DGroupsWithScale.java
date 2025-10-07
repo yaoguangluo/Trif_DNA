@@ -3,7 +3,7 @@ package ASQ.classification.AMV.MVS.VSQ;
 import ASQ.basic.Distance_X_getDistance3D;
 import ASQ.euclid.Euclid_X_findHeartPosition3D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.List;
 import java.util.Map;
@@ -22,9 +22,9 @@ import java.util.Map;
  * */
 
 public class HeartsSample_X_getShortestSamplePosition3DGroupsWithScale {
-    public static IMV_SIQ _E(AMV_MVS_VSQ_3D inputHeart, Map<Double
+    public static IMV_SQI _E(AMV_MVS_VSQ_3D inputHeart, Map<Double
         , List<AMV_MVS_VSQ_3D>> groups, double scale) {
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         for (double mapKey : groups.keySet()) {
             List<AMV_MVS_VSQ_3D> positions = groups.get(mapKey);
             AMV_MVS_VSQ_3D heart = Euclid_X_findHeartPosition3D._E(positions);

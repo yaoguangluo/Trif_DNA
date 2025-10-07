@@ -19,7 +19,7 @@ import OSI.OPE.OEI.PVI.SOI.SMQ.load.File_X_getOrigianlTextByLock;
 import OSI.OPE.OVU.PQE.flash.GUISample;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
@@ -39,7 +39,7 @@ import java.io.File;
 //元基花裁剪，做了导入和执行分化模式。
 public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 	implements StaticFunctionMapV_IDUQ_C {
-	public IMV_SIQ annotationMap = new IMV_SIQ();
+	public IMV_SQI annotationMap = new IMV_SQI();
 
 	@Override
 	public MakeContainerSJFX initETL(App NE) {
@@ -54,7 +54,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 
 	//元基花裁剪，做了导入和执行分化模式。
 	public MakeContainerSJFX initETLWithInitons(App NE) {
-		IMV_SIQ inputValues = NE._I_U.inputValues;
+		IMV_SQI inputValues = NE._I_U.inputValues;
 		String[] 传参因子 = NE._I_U.传参因子;
 		int 因子 = NE._I_U.因子;
 		//导入20230219
@@ -73,7 +73,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 		JTextPane text = NE._I_U.text;
 		App app = NE._I_U.app;
 		CogsBinaryForest_AE _A = NE._I_U._AE;
-		IMV_SIQ pos = NE._I_U.pos;
+		IMV_SQI pos = NE._I_U.pos;
 
 		GUISample gUISample = new GUISample();
 		gUISample.IV_(tableData_old, text, NE);
@@ -84,7 +84,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 
 	@SuppressWarnings("unchecked")
 	public GUISample onlyInitETLWithInitons(App NE) {
-		IMV_SIQ inputValues = NE._I_U.inputValues;
+		IMV_SQI inputValues = NE._I_U.inputValues;
 		String[] 传参因子 = NE._I_U.传参因子;
 		int 因子 = NE._I_U.因子;
 
@@ -94,7 +94,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 		App app = (App) inputValues.get(传参因子[因子++]);
 		CogsBinaryForest_AE _A = (CogsBinaryForest_AE) inputValues
 			.get(传参因子[因子++]);
-		IMV_SIQ pos = (IMV_SIQ) inputValues.get(传参因子[因子++]);
+		IMV_SQI pos = (IMV_SQI) inputValues.get(传参因子[因子++]);
 		//
 		GUISample gUISample = new GUISample();
 		gUISample.IV_(tableData_old, text, NE);
@@ -123,7 +123,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 		////            emotionMap_E, nERO_C_OneTime_E, nlp_CE_X_S, pos_X_P, sensingTest
 		////                , fMHMMListOneTime_E, quick6DLuoYaoguangSort3DMap_E
 		//        );
-		IMV_SIQ pos = _A.getPosCnToCn();
+		IMV_SQI pos = _A.getPosCnToCn();
 
 		JTextPane text = new JTextPane();
 		app.app_S.jTabbedpane = new DetabbedPane(0, 0, null, NE);
@@ -141,7 +141,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 
 	public void demoETLWithInitons(App NE) {
 
-		IMV_SIQ inputValues = NE._I_U.inputValues;
+		IMV_SQI inputValues = NE._I_U.inputValues;
 		String[] 传参因子 = NE._I_U.传参因子;
 		int 因子 = NE._I_U.因子;
 		EmotionMap_E emotionMap_E = NE._I_U.emotionMap_E;
@@ -162,7 +162,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 		////                , fMHMMListOneTime_E
 		////                , quick6DLuoYaoguangSort3DMap_E
 		//        );
-		IMV_SIQ pos = _A.getPosCnToCn();
+		IMV_SQI pos = _A.getPosCnToCn();
 
 		JTextPane text = new JTextPane();
 		app.app_S.jTabbedpane = new DetabbedPane(0, 0, null, NE);
@@ -183,7 +183,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 	}
 
 	public void ETLDocLoaderWithInitons(App NE) {
-		//        IMV_SIQ inputValues, String[] 传参因子, int 因子
+		//        IMV_SQI inputValues, String[] 传参因子, int 因子
 	}
 
 	@Override
@@ -191,7 +191,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 	}
 
 	public void ETLDocExecWithInitons(App NE) {
-		//        IMV_SIQ inputValues, String[] 传参因子, int 因子
+		//        IMV_SQI inputValues, String[] 传参因子, int 因子
 	}
 
 	@Override
@@ -199,7 +199,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 	}
 
 	public void ETLDocSaveWithInitons(App NE) {
-		//        IMV_SIQ inputValues, String[] 传参因子, int 因子
+		//        IMV_SQI inputValues, String[] 传参因子, int 因子
 	}
 
 	// LoadFile{
@@ -211,7 +211,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 	}
 
 	public String getOrigianlTextByLockWithInitons(App NE) {
-		IMV_SIQ inputValues = NE._I_U.inputValues;
+		IMV_SQI inputValues = NE._I_U.inputValues;
 		String[] 传参因子 = NE._I_U.传参因子;
 		int 因子 = NE._I_U.因子;
 
@@ -231,7 +231,7 @@ public class StaticFunctionMapV_IDUQ_E extends StaticFunctionMapCASE
 	}
 
 	public LinkNode LoadWithInitons(App NE) {
-		IMV_SIQ inputValues = NE._I_U.inputValues;
+		IMV_SQI inputValues = NE._I_U.inputValues;
 		String[] 传参因子 = NE._I_U.传参因子;
 		int 因子 = NE._I_U.因子;
 		return File_X_Load._E((LinkNode) inputValues.get(传参因子[因子++]),

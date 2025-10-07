@@ -1,6 +1,6 @@
 package S_A.OSV.ESD.standard;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,9 +31,9 @@ public class D_CellStandard {
     //	condition:or:testCulumn1|<|20:testCulumn2|==|fire;
     //	condition:and:testCulumn1|>|100:testCulumn2|==|fire;
     //避免函数执行, 先注释
-    public static IMV_SIQ DeleteCellORM(String rootPath, String baseName
+    public static IMV_SQI DeleteCellORM(String rootPath, String baseName
         , String tabKey
-        , IMV_SIQ rowCells, Boolean initonEncrypt) {
+        , IMV_SQI rowCells, Boolean initonEncrypt) {
         //  PLORMInterf orm= new PLORMImpl();
         //	orm= orm.startAtRootDir(rootPath)
         //			.withBaseName(baseName)
@@ -44,9 +44,9 @@ public class D_CellStandard {
         return null;
     }
 
-    public static IMV_SIQ DeleteCellPLSQL(String rootPath, String baseName
-        , String tabKey, IMV_SIQ rowCells, Boolean initonEncrypt) {
-        IMV_SIQ map = null;
+    public static IMV_SQI DeleteCellPLSQL(String rootPath, String baseName
+        , String tabKey, IMV_SQI rowCells, Boolean initonEncrypt) {
+        IMV_SQI map = null;
         try {
             //	String plsql= "setRoot:"+ rootPath+ ";";
             //	plsql+= "baseName:"+ baseName+ ";";

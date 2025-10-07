@@ -1,8 +1,8 @@
 package test.java.ME.VPC.V.dictionary;
 
 import ME.VPC.V.dictionary.ZynkxDictionary;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,89 +25,89 @@ import java.util.List;
  * */
 class ZynkxDictionaryTest {
     @Mock
-    IMV_SIQ_ dic_yf;
+    IMV_SQI_ dic_yf;
     @Mock
     Iterator<String> iter;
     @Mock
     List<String> copy;
     @Mock
-    IMV_SIQ_ dic_yx;
+    IMV_SQI_ dic_yx;
     @Mock
-    IMV_SIQ_ dic_sy;
+    IMV_SQI_ dic_sy;
     @Mock
-    IMV_SIQ_ dic_lc;
+    IMV_SQI_ dic_lc;
     @Mock
-    IMV_SIQ_ dic_by;
+    IMV_SQI_ dic_by;
     @Mock
-    IMV_SIQ_ dic_lx;
+    IMV_SQI_ dic_lx;
     @Mock
-    IMV_SIQ_ dic_map;
+    IMV_SQI_ dic_map;
     @Mock
     List<String> temp_list;
     @Mock
-    IMV_SIQ_ dic_zd;
+    IMV_SQI_ dic_zd;
     @Mock
-    IMV_SIQ_ dic_zl;
+    IMV_SQI_ dic_zl;
     @Mock
-    IMV_SIQ_ dic_bf;
+    IMV_SQI_ dic_bf;
     @Mock
-    IMV_SIQ_ dic_jy;
+    IMV_SQI_ dic_jy;
     @Mock
-    IMV_SIQ_ dic_yh;
+    IMV_SQI_ dic_yh;
     @Mock
-    IMV_SIQ_ dic_bl;
+    IMV_SQI_ dic_bl;
     @Mock
-    IMV_SIQ_ dic_wx;
+    IMV_SQI_ dic_wx;
     @Mock
-    IMV_SIQ_ dic_gn;
+    IMV_SQI_ dic_gn;
     @Mock
-    IMV_SIQ dic_xj;
+    IMV_SQI dic_xj;
     @Mock
     List<String> dic_list;
     @Mock
-    IMV_SIQ pinyin;
+    IMV_SQI pinyin;
     @Mock
-    IMV_SIQ dic_index;
+    IMV_SQI dic_index;
     @Mock
-    IMV_SIQ dic_yw;
+    IMV_SQI dic_yw;
     @Mock
-    IMV_SIQ dic_li;
+    IMV_SQI dic_li;
     @Mock
-    IMV_SIQ dic_hai;
+    IMV_SQI dic_hai;
     @Mock
-    IMV_SIQ dic_xz;
+    IMV_SQI dic_xz;
     @Mock
-    IMV_SIQ dic_zf;
+    IMV_SQI dic_zf;
     @Mock
-    IMV_SIQ dic_cj;
+    IMV_SQI dic_cj;
     @Mock
-    IMV_SIQ dic_jj;
+    IMV_SQI dic_jj;
     @Mock
-    IMV_SIQ dic_cy;
+    IMV_SQI dic_cy;
     @Mock
-    IMV_SIQ dic_ya;
+    IMV_SQI dic_ya;
     @Mock
-    IMV_SIQ dic_jm;
+    IMV_SQI dic_jm;
     @Mock
-    IMV_SIQ dic_xw;
+    IMV_SQI dic_xw;
     @Mock
-    IMV_SIQ dic_yl;
+    IMV_SQI dic_yl;
     @Mock
-    IMV_SIQ dic_ym;
+    IMV_SQI dic_ym;
     @Mock
-    IMV_SIQ dic_chu_fang;
+    IMV_SQI dic_chu_fang;
     @Mock
     Iterator<String> it;
     @Mock
-    IMV_SIQ dic_mz;
+    IMV_SQI dic_mz;
     @Mock
-    IMV_SIQ dic_yy;
+    IMV_SQI dic_yy;
     @Mock
-    IMV_SIQ dic_tl;
+    IMV_SQI dic_tl;
     @Mock
-    IMV_SIQ dic_ff;
+    IMV_SQI dic_ff;
     @Mock
-    IMV_SIQ dic_fg;
+    IMV_SQI dic_fg;
     @InjectMocks
     ZynkxDictionary zynkxDictionary;
 
@@ -124,56 +124,56 @@ class ZynkxDictionaryTest {
 
     @Test
     void testListToMap() {
-        IMV_SIQ_ result = zynkxDictionary.listToMap(new ArrayList<>(Arrays.asList("String")));
-        Assertions.assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = zynkxDictionary.listToMap(new ArrayList<>(Arrays.asList("String")));
+        Assertions.assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToChuFang() {
-        IMV_SIQ result = zynkxDictionary.MapToChuFang(new ArrayList<>(Arrays.asList("String")), new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zynkxDictionary.MapToChuFang(new ArrayList<>(Arrays.asList("String")), new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testMapTomz() {
-        IMV_SIQ result = zynkxDictionary.MapTomz(new ArrayList<>(Arrays.asList("String")), new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zynkxDictionary.MapTomz(new ArrayList<>(Arrays.asList("String")), new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testMapTozf() {
-        IMV_SIQ result = zynkxDictionary.MapTozf(new ArrayList<>(Arrays.asList("String")), new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zynkxDictionary.MapTozf(new ArrayList<>(Arrays.asList("String")), new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testMapToyy() {
-        IMV_SIQ result = zynkxDictionary.MapToyy(new ArrayList<>(Arrays.asList("String")), new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zynkxDictionary.MapToyy(new ArrayList<>(Arrays.asList("String")), new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testMapTosy() {
-        IMV_SIQ_ result = zynkxDictionary.MapTosy(new ArrayList<>(Arrays.asList("String")), new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = zynkxDictionary.MapTosy(new ArrayList<>(Arrays.asList("String")), new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapTotl() {
-        IMV_SIQ result = zynkxDictionary.MapTotl(new ArrayList<>(Arrays.asList("String")), new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zynkxDictionary.MapTotl(new ArrayList<>(Arrays.asList("String")), new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testMapToff() {
-        IMV_SIQ result = zynkxDictionary.MapToff(new ArrayList<>(Arrays.asList("String")), new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zynkxDictionary.MapToff(new ArrayList<>(Arrays.asList("String")), new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testMapTofg() {
-        IMV_SIQ result = zynkxDictionary.MapTofg(new ArrayList<>(Arrays.asList("String")), new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zynkxDictionary.MapTofg(new ArrayList<>(Arrays.asList("String")), new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI(), result);
     }
 }
 

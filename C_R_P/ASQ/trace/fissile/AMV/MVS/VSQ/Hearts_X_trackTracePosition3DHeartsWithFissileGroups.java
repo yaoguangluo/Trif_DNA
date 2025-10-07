@@ -3,7 +3,7 @@ package ASQ.trace.fissile.AMV.MVS.VSQ;
 import ASQ.euclid.Euclid_X_findCryptionPosition3D;
 import ASQ.basic.Distance_X_getDistance3D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -24,10 +24,10 @@ public class Hearts_X_trackTracePosition3DHeartsWithFissileGroups {
     //创作日期2019 年 12 月 21 日  作品说明Gitee, Github, DetaOSS
     //作品说明适用于 坐标团 动态分析, 增量轨迹分析, 熵增信息单元记录。
     //作者 罗瑶光
-    public static IMV_SIQ
+    public static IMV_SQI
     _E(List<AMV_MVS_VSQ_3D> coods, double distanceScale) {
-        IMV_SIQ output = new IMV_SIQ();
-        IMV_SIQ distanceGroups = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
+        IMV_SQI distanceGroups = new IMV_SQI();
         Iterator<AMV_MVS_VSQ_3D> iterator = coods.iterator();
         double i = 0.0;
         Here:

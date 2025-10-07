@@ -9,8 +9,8 @@ import O_V.OSA.shell.XA_ShellTables;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import java.math.BigDecimal;
@@ -38,11 +38,11 @@ import java.util.Objects;
 //Table table= DetaDBBufferCache_M.db.getBase(baseName).getTable(tableName);
 //算了统一接口, 以后统一优化改。
 public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
-	public static void P_Cache(String[] sets, List<IMV_SIQ> output,
-			String tableName, IMV_SIQ object, String condition, App NE) {
+	public static void P_Cache(String[] sets, List<IMV_SQI> output,
+			String tableName, IMV_SQI object, String condition, App NE) {
 		// 创建一个table
 		XA_ShellTable table = null;
-		List<IMV_SIQ> outputTemp = new ArrayList<>(output);// later trif
+		List<IMV_SQI> outputTemp = new ArrayList<>(output);// later trif
 		/*
 		 * 这里明显逻辑出错了，怎么输出会正确呢？
 		 * 首先为空就是取原表，如果是或，那么就是加表，
@@ -82,8 +82,8 @@ public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
 			int[] score_code = new int[table.huaRuiJiJtableRows.length];
 			int[] reg = new int[table.huaRuiJiJtableRows.length];
 			int count = 0;
-			IMV_SIQ pos = NE.app_S._A.getPosCnToCn();
-			IMV_SIQ_SS mapSearchWithoutSort;
+			IMV_SQI pos = NE.app_S._A.getPosCnToCn();
+			IMV_SQI_SS mapSearchWithoutSort;
 			mapSearchWithoutSort = NE.app_S._A
 					.parserMixStringByReturnFrequencyMap(key, NE);
 			// Iterator<String> iteratorForCopy= copy.iterator();
@@ -96,7 +96,7 @@ public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
 						(i * 3 + 3) < key.length() ? (i * 3 + 3)
 								: key.length() - 1);
 			}
-			Map<String, Row> map = new IMV_SIQ();
+			Map<String, Row> map = new IMV_SQI();
 			for (int i = 0; i < table.huaRuiJiJtableRows.length; i++) {
 				// while(iteratorForCopy.hasNext()) {
 				String temps = table.huaRuiJiJtableRows[i].getCell(sets[0])
@@ -208,7 +208,7 @@ public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
 			Map<Integer, Boolean> recordRows = (Map<Integer, Boolean>) object
 					.get("recordRows");
 			if (null == recordRows) {
-				recordRows = new IMV_SIQ();
+				recordRows = new IMV_SQI();
 			}
 			recordRows.clear();
 			// recordRows 没有 值
@@ -232,7 +232,7 @@ public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
 			if (null == key || key.equals("")) {
 				return;
 			}
-			Map<String, Double> dnnSet = new IMV_SIQ();
+			Map<String, Double> dnnSet = new IMV_SQI();
 			double perRatio = 0.0;
 			if (null == NE.app_S.DNNmap || NE.app_S.DNNmap.isEmpty()) {
 				NE.app_S.DNNmap = GetDNNMap.doGetDNNMap(NE.app_S, NE);
@@ -242,8 +242,8 @@ public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
 			int[] score_code = new int[table.huaRuiJiJtableRows.length];
 			int[] reg = new int[table.huaRuiJiJtableRows.length];
 			int count = 0;
-			IMV_SIQ pos = NE.app_S._A.getPosCnToCn();
-			IMV_SIQ_SS mapSearchWithoutSort;
+			IMV_SQI pos = NE.app_S._A.getPosCnToCn();
+			IMV_SQI_SS mapSearchWithoutSort;
 			mapSearchWithoutSort = NE.app_S._A
 					.parserMixStringByReturnFrequencyMap(key, NE);//这种函数之后淘汰，因为对应的切词都优化好几个版本了。
 			// Iterator<String> iteratorForCopy= copy.iterator();
@@ -256,7 +256,7 @@ public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
 						(i * 3 + 3) < key.length() ? (i * 3 + 3)
 								: key.length() - 1);
 			}
-			Map<String, Row> map = new IMV_SIQ();
+			Map<String, Row> map = new IMV_SQI();
 			for (int i = 0; i < table.huaRuiJiJtableRows.length; i++) {
 				String temps = table.huaRuiJiJtableRows[i].getCell(sets[0])
 						.getCellValue().toString();
@@ -277,7 +277,7 @@ public class P_CO_XA_X_Cache extends P_CO_XA_X_ {
 				// 次序问题
 				Iterator<String> iteratorWordFrequency = mapSearchWithoutSort
 						.keySet().iterator();
-				Map<String, Double> DNNcountBonus = new IMV_SIQ();
+				Map<String, Double> DNNcountBonus = new IMV_SQI();
 				double BonusFullRatio = 0.0;
 				Here: while (iteratorWordFrequency.hasNext()) {
 					String mapSearchaAtII = iteratorWordFrequency.next();

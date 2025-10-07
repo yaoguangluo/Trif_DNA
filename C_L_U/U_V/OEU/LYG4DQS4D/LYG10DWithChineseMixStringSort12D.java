@@ -3,7 +3,7 @@ package U_V.OEU.LYG4DQS4D;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.OEU.xqpx.wcms.sort.LYG10D15D_X_CUA;
 import U_V.PEU.S.UVIMIACI.VerbalSource;
 
@@ -22,8 +22,8 @@ import java.util.Map;
  * */
 public class LYG10DWithChineseMixStringSort12D {
     Map<String, String> pinyin;
-    Map<String, Integer> filter = new IMV_SIQ();
-    Map<String, Boolean> find = new IMV_SIQ();
+    Map<String, Integer> filter = new IMV_SQI();
+    Map<String, Boolean> find = new IMV_SQI();
     int range;
     int deeps;
     String numbers = "0123456789.Ee";
@@ -474,8 +474,8 @@ public class LYG10DWithChineseMixStringSort12D {
                 DetaInputStreamReader.E(inputStreamp, "UTF8"));
             //index
             String cInputStringp;
-            Map<String, String> map = new IMV_SIQ();
-            bihua = new IMV_SIQ();
+            Map<String, String> map = new IMV_SQI();
+            bihua = new IMV_SQI();
             while ((cInputStringp = cReaderp.readDetaLine()) != null) {
                 String[] words = cInputStringp.split("->");
                 if (words.length > 1) {

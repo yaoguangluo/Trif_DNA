@@ -1,7 +1,7 @@
 package E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E;
 
 import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.company.E.LoginService_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.cache.Cache;
 import U_A.PEU.P.cache.Cache_M;
 import YLJ_HRJ.ME.VPC.S.configs.ConfigIndex;
@@ -21,11 +21,11 @@ import java.io.IOException;
  * */
 public class RestDBConfig_E {
 	@SuppressWarnings("unchecked")
-	public static IMV_SIQ setDBPath(String basePath, String token,
+	public static IMV_SQI setDBPath(String basePath, String token,
 			String auth) {
-		IMV_SIQ output;
+		IMV_SQI output;
 		try {
-			output = new IMV_SIQ();
+			output = new IMV_SQI();
 			String checkStatus = LoginService_E.checkTokenStatus(token,
 					"level");
 			if (checkStatus.contains("invalid") && (auth.contains("1"))) {
@@ -65,9 +65,9 @@ public class RestDBConfig_E {
 	}
 
 	@SuppressWarnings("unchecked")
-	public static IMV_SIQ setDBTable(String tableName, String token,
+	public static IMV_SQI setDBTable(String tableName, String token,
 			String auth) {
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		String checkStatus = LoginService_E.checkTokenStatus(token, "level");
 		if (checkStatus.contains("invalid") && (auth.contains("1"))) {
 			output.put("loginInfo", "unsuccess");

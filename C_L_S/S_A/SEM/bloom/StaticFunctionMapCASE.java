@@ -1,6 +1,6 @@
 package S_A.SEM.bloom;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人，作者 罗瑶光, 浏阳
@@ -13,5 +13,5 @@ import S_A.pheromone.IMV_SIQ;
  * */
 public class StaticFunctionMapCASE{
 	// Cache_M 入选jdk, 略
-		public IMV_SIQ annotationMap = new IMV_SIQ();
+		public IMV_SQI annotationMap = new IMV_SQI();
 }

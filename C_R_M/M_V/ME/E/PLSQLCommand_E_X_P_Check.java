@@ -4,7 +4,7 @@ import M_V.MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Base;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Table;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 import U_A.PEU.P.cache.Cache_M;
 
@@ -30,7 +30,7 @@ public class PLSQLCommand_E_X_P_Check {
 		if (object.getCompareV("start", "1")) {
 			PLSQLCommand_E_X_P_E_Kernel._E(object, mod);
 		}
-		List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("obj")));
+		List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("obj")));
 		int totalPages = 0;
 		if (obj != null) {
 			totalPages = obj.size();
@@ -61,8 +61,8 @@ public class PLSQLCommand_E_X_P_Check {
 				iterator = table.getSpec().getCulumnTypes().keySet().iterator();
 			}
 		} else {// 进行map 验证检测 罗瑶光 20210405
-			IMV_SIQ map = obj.get(0);
-			IMV_SIQ objectInMap = (IMV_SIQ) map
+			IMV_SQI map = obj.get(0);
+			IMV_SQI objectInMap = (IMV_SQI) map
 					.get(S_ShellETL.SHELL_ETL_ROWVALUE);
 			iterator = null == objectInMap ? null
 					: objectInMap.keySet().iterator();

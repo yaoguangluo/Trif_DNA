@@ -5,7 +5,7 @@ import DSU.V.VtoV;
 import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E.RestDB_QE;
 import S_A.SVQ.stable.S_ShellETL;
 import S_A.SVQ.stable.S_Web;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -30,7 +30,7 @@ import S_A.pheromone.IMV_SIQ;
 *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class QC {
-    public static String exec(String string, IMV_SIQ data) {
+    public static String exec(String string, IMV_SQI data) {
         if (string.equalsIgnoreCase(S_Web.REST_PATH_SELECT_ROWS_BY_ATTRIBUTE)) {
             return VtoV.ObjectToJsonString(RestDB_QE.selectRowsByAttribute(data
                     .getString("baseName"), data.getString("tableName")

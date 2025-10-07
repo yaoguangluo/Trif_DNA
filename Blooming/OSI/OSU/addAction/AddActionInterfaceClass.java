@@ -4,7 +4,7 @@ import java.util.logging.Logger;
 
 import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_logger.Log;
 
 /*
@@ -21,14 +21,14 @@ public class AddActionInterfaceClass implements CrabInterface {
 	String callFunctionKey;
 	String className = "AddActionInterfaceClass";
 	//private static final Logger logger = Logger.getLogger("");
-	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
-	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
-	// public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
-	// public IMV_SIQ chromosomeBlooming= new IMV_SIQ();
-	// public IMV_SIQ chromosomeMetabolism= new IMV_SIQ();
-	// public IMV_SIQ chromosomePDE= new IMV_SIQ();
-	// public IMV_SIQ chromosomeDNA= new IMV_SIQ();
-	// public IMV_SIQ chromosomeNode= new IMV_SIQ();
+	// public IMV_SQI chromosomeRoot= new IMV_SQI();
+	// public IMV_SQI chromosomeFlower= new IMV_SQI();
+	// public IMV_SQI chromosomeLeaf= new IMV_SQI();
+	// public IMV_SQI chromosomeBlooming= new IMV_SQI();
+	// public IMV_SQI chromosomeMetabolism= new IMV_SQI();
+	// public IMV_SQI chromosomePDE= new IMV_SQI();
+	// public IMV_SQI chromosomeDNA= new IMV_SQI();
+	// public IMV_SQI chromosomeNode= new IMV_SQI();
 	/*
 	 * 用于表达元基花的链接
 	 */
@@ -102,8 +102,8 @@ public class AddActionInterfaceClass implements CrabInterface {
 	// System.out.println("Hello Word!");
 	// return null;
 	@SuppressWarnings("unchecked")
-	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子,
-		App NE, IMV_SIQ outputReg) {
+	public boolean logic(IMV_SQI inputValues, String[] 传参因子, int 因子,
+		App NE, IMV_SQI outputReg) {
 		//System.out.println("Hello Word!");
 		Log.logger.info("Hello Word!");
 		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(

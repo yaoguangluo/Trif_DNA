@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapO_IDUQ_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 
 //著作权人+ 作者= 罗瑶光
@@ -23,12 +23,12 @@ public class StaticReflectionMapO_IDUQ_C extends
 	@SuppressWarnings("unused")
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		int 因子 = 0;
 		Object map = null;
 		if (callFunctionKey.contains("U_", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				//java 虚拟机完全可以在 代入的时候将object 自动去匹配成传参类型的, 不能转就null
@@ -40,7 +40,7 @@ public class StaticReflectionMapO_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getRandomDNAkey", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapO_IDUQ_C.getRandomDNAkey(NE);
@@ -50,7 +50,7 @@ public class StaticReflectionMapO_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("Save", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapO_IDUQ_C.Save(NE);
@@ -60,7 +60,7 @@ public class StaticReflectionMapO_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("bootCell", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapO_IDUQ_C.bootCell(NE);
@@ -70,7 +70,7 @@ public class StaticReflectionMapO_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("BootNeroDoc", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapO_IDUQ_C.BootNeroDoc(NE);
@@ -80,7 +80,7 @@ public class StaticReflectionMapO_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("vpcsRegister", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapO_IDUQ_C.vpcsRegister(NE);
@@ -90,7 +90,7 @@ public class StaticReflectionMapO_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("register", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapO_IDUQ_C.register(NE);

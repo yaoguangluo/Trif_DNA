@@ -10,8 +10,8 @@ import E_A.OEI.SVQ.MPC.fhmm.E.FMHMMListOneTime_E;
 import ME.VPC.M.app.App;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_X_;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,10 +67,10 @@ public interface StaticFunctionMapA_VECS_C{
     public List<String> educationReader(App NE);
 
     //环境分析
-    public IMV_SIQ_X_ environmentReader(App NE);
+    public IMV_SQI_X_ environmentReader(App NE);
 
     //联想分析
-    public IMV_SIQ lenovoReader(App NE);
+    public IMV_SQI lenovoReader(App NE);
 
     //词频分析
     public List<String> frequencyReader(App NE);

@@ -1,7 +1,7 @@
 package I_A.IMO.EVU.bi_P;
 import ME.VPC.S.ne.App_S;
 import E_A.ME.analysis.E.CogsBinaryForest_AE;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import V_A.VSQ.OPE.jogl.JOGLOBJShape;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.awt.GLCanvas;
@@ -90,11 +90,11 @@ public class CoAuthorForWord_XCDX_S extends JPanel {
     public ChangeListener listener;
     //util
     public Map<String, Integer> didLeaf;
-    public IMV_SIQ dic_li;
-    public IMV_SIQ dic_yl;
-    public IMV_SIQ rootLeaf;
+    public IMV_SQI dic_li;
+    public IMV_SQI dic_yl;
+    public IMV_SQI rootLeaf;
 
-    public IMV_SIQ pos;
+    public IMV_SQI pos;
     public Map<String, Integer> findLeaf;
     public Map<String, Integer> frequencyLeaf;
     //native

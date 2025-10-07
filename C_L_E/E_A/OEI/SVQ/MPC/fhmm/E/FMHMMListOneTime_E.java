@@ -4,7 +4,7 @@ import C_A.OCI.SVQ.MPC.fhmm.C.FHMMList_indexAll;
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import exception.file.O.DetaBufferedReader;
 
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -23,9 +23,9 @@ public class FMHMMListOneTime_E extends FMHMMListOneTime_EX
 		implements FHMMList_indexAll {
 	public void indexMixed(App NE) {
 		// init
-		studyPos = new IMV_SIQ();
-		posCnToCn = new IMV_SIQ();
-		linkedHashMap = new IMV_SIQ();
+		studyPos = new IMV_SQI();
+		posCnToCn = new IMV_SQI();
+		linkedHashMap = new IMV_SQI();
 		listCn = new CopyOnWriteArrayList<>();
 		listAb = new CopyOnWriteArrayList<>();
 		listKo = new CopyOnWriteArrayList<>();
@@ -274,8 +274,8 @@ public class FMHMMListOneTime_E extends FMHMMListOneTime_EX
 	}
 }
 /*
- * public void indexAll() { studyPos = new IMV_SIQ();
- * posCnToCn = new IMV_SIQ(); linkedHashMap = new IMV_SIQ();
+ * public void indexAll() { studyPos = new IMV_SQI();
+ * posCnToCn = new IMV_SQI(); linkedHashMap = new IMV_SQI();
  * listCn = new CopyOnWriteArrayList<>(); listAb = new
  * CopyOnWriteArrayList<>(); listKo = new
  * CopyOnWriteArrayList<>(); listJp = new

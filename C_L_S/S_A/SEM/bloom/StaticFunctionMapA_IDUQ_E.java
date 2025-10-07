@@ -14,7 +14,7 @@ import ME.VPC.M.app.App;
  * */
 public class StaticFunctionMapA_IDUQ_E extends StaticFunctionMapCASE
 	implements StaticFunctionMapA_IDUQ_C {
-	//public IMV_SIQ annotationMap = new IMV_SIQ();
+	//public IMV_SQI annotationMap = new IMV_SQI();
 
 	@SuppressWarnings("unused")
 	public static void main(String[] argv) {

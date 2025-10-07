@@ -3,7 +3,7 @@ package S_A.SEM.reflection;
 import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMapCASE;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人，作者 罗瑶光, 浏阳
@@ -16,11 +16,11 @@ import S_A.pheromone.IMV_SIQ;
  * */
 
 public class StaticReflectionMapCASE {
-	public IMV_SIQ annotationMap = new IMV_SIQ();
+	public IMV_SQI annotationMap = new IMV_SQI();
 
 	/*稍后 implements + overrider overwrite即可*/
 	public void callFunction(CallFunctionKey callFunctionKey,
-		StaticFunctionMapCASE staticFunctionMapCASE, IMV_SIQ output,
+		StaticFunctionMapCASE staticFunctionMapCASE, IMV_SQI output,
 		App NE, String chromesomeParName) {
 		//
 		//to do.. 稍后先抽象构造，都ok了就去static集成。替换原函数。

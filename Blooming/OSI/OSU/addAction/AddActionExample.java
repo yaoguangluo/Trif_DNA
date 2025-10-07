@@ -2,7 +2,7 @@ package OSI.OSU.addAction;
 
 import ME.VPC.M.app.App;
 import O_V.OSM.shell.Pl_XA_Command_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 
@@ -20,7 +20,7 @@ public class AddActionExample {
 	public void addClass(App NE) {
 		Pl_XA_Command_E.P_TableName(NE._I_U.acknowledge,
 			NE._I_U.outputMap);
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		Iterator<String> iterator = NE.app_S.tableNameMap.keySet()
 			.iterator();
 		while (iterator.hasNext()) {

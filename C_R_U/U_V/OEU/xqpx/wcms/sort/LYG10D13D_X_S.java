@@ -4,7 +4,7 @@ package U_V.OEU.xqpx.wcms.sort;
 //import java.io.InputStream;
 //import java.io.InputStreamReader;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -23,9 +23,9 @@ import java.util.Map;
  * */
 @SuppressWarnings("unchecked")
 public class LYG10D13D_X_S implements LYG10D13D_X_SC {
-	public Map<String, Boolean> find = new IMV_SIQ();
+	public Map<String, Boolean> find = new IMV_SQI();
 	public Map<String, String> pinyin;
-	public Map<String, Integer> filter = new IMV_SIQ();
+	public Map<String, Integer> filter = new IMV_SQI();
 	public int range;
 	public int deeps;
 	public String numbers = "0123456789.Ee";

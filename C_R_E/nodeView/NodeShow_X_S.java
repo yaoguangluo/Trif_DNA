@@ -4,7 +4,7 @@ import ME.VPC.S.ne.App_S;
 import C_A.ME.analysis.C.A;
 import OPE.OEQ.MCQ.OVU.PQE.osgi.LinkOSGI;
 import OPE.OEQ.MCQ.OVU.PQE.osgi.NodeOSGI;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import OSI.OPE.OVU.PQE.flash.GUISample;
 
 import javax.swing.ImageIcon;
@@ -37,7 +37,7 @@ public class NodeShow_X_S extends JScrollPane {
 	public PopupMenu popupMenu;
 	public App_S u;
 	public A _A;
-	public IMV_SIQ pos;
+	public IMV_SQI pos;
 }
 //	public String labelname;
 //

@@ -7,8 +7,8 @@ import P_V.PEQ.AMV.ECS.test.DNNTest;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.iterator.Iterator_ESU_X_iteratorToList;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
@@ -39,7 +39,7 @@ public class AppSearch_X_DetaSearchWithDNN_backup extends ScrollPane {
 			String[] scoreOutput, App NE) {// later zou zhege yinqing */
 		int count = 0;
 		App_S u = NE.app_S;
-		IMV_SIQ pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
+		IMV_SQI pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
 		try {
 			SensingTest sensingTest = null;
 			DNNTest dNNTest = null;
@@ -67,7 +67,7 @@ public class AppSearch_X_DetaSearchWithDNN_backup extends ScrollPane {
 			int[] reg = new int[tableData_old.length];
 			String trimKey = key.replace(" ", "").trim();
 			int keyLength = key.length();
-			IMV_SIQ_SS mapSearchWithoutSort = null;
+			IMV_SQI_SS mapSearchWithoutSort = null;
 			mapSearchWithoutSort = u._A.parserMixStringByReturnFrequencyMap(key,
 					NE);
 			int copyCount = 0;
@@ -98,7 +98,7 @@ public class AppSearch_X_DetaSearchWithDNN_backup extends ScrollPane {
 				}
 				String iteratorForCopyString = stringTempOut.toString();
 				scoreOutput[copyCount] = stringTempOut.toString();
-				Map<String, Double> dnnSet = new IMV_SIQ();
+				Map<String, Double> dnnSet = new IMV_SQI();
 				double perRatio = 0.0;
 				if (u.appConfig.SectionJPanel.jlabel_peizhi_di2122
 						.isSelected()) {// DNN分析
@@ -111,7 +111,7 @@ public class AppSearch_X_DetaSearchWithDNN_backup extends ScrollPane {
 				}
 				Iterator<String> iteratorWordFrequency = mapSearchWithoutSort
 						.keySet().iterator();
-				Map<String, Double> DNNcountBonus = new IMV_SIQ();
+				Map<String, Double> DNNcountBonus = new IMV_SQI();
 				double BonusFullRatio = 0.0;
 				Here: while (iteratorWordFrequency.hasNext()) {
 					String mapSearchaAtII = iteratorWordFrequency.next();
@@ -323,7 +323,7 @@ public class AppSearch_X_DetaSearchWithDNN_backup extends ScrollPane {
 //			scoreOutput[copyCount]= stringTempOut.toString();
 //			String 待搜索词典= stringTemp;
 //			setIdentify(identify, 待搜索词典, subASCmap);
-//			Map<String, Double> dnnSet= new IMV_SIQ();
+//			Map<String, Double> dnnSet= new IMV_SQI();
 //			double perRatio= 0.0;
 //			if(u.appConfig.SectionJPanel.jlabel_peizhi_di2122.isSelected()) {//DNN分析		
 //				if(u.DNNmap.containsKey(identifyString)) {
@@ -333,7 +333,7 @@ public class AppSearch_X_DetaSearchWithDNN_backup extends ScrollPane {
 //				}
 //			}
 //			Iterator<String> iteratorWordFrequency= mapSearchWithoutSort.keySet().iterator();
-//			Map<String, Double> DNNcountBonus= new IMV_SIQ();
+//			Map<String, Double> DNNcountBonus= new IMV_SQI();
 //			double BonusFullRatio= 0.0;
 //			Here:
 //				while(iteratorWordFrequency.hasNext()) { 

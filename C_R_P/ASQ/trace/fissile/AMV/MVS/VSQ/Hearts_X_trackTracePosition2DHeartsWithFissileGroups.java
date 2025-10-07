@@ -3,7 +3,7 @@ package ASQ.trace.fissile.AMV.MVS.VSQ;
 import ASQ.basic.Distance_X_getDistance2D;
 import ASQ.euclid.Euclid_X_findCryptionPosition2D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,8 +27,8 @@ public class Hearts_X_trackTracePosition2DHeartsWithFissileGroups {
     //作者 罗瑶光
     public static Map<Double, List<AMV_MVS_VSQ_2D>>
     _E(List<AMV_MVS_VSQ_2D> coods, double distanceScale) {
-        IMV_SIQ output = new IMV_SIQ();
-        Map<Double, List<AMV_MVS_VSQ_2D>> distanceGroups = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
+        Map<Double, List<AMV_MVS_VSQ_2D>> distanceGroups = new IMV_SQI();
         Iterator<AMV_MVS_VSQ_2D> iterator = coods.iterator();
         double i = 0.0;
         Here:

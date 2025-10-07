@@ -3,7 +3,7 @@ package S_A.OSV.ESI.standard;
 import A_I.MPE.MAQPVDCOISIV.full.FullDNATokenPDI;
 import O_V.OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 import O_V.OSI.AOP.MEC.SIQ.plorm.PLORM_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -29,10 +29,10 @@ public class IU_CellStandard {
     }
 
     @SuppressWarnings("unchecked")
-	public static IMV_SIQ InsertCellORM(String rootPath, String baseName
-        , String tabKey, IMV_SIQ rowCells, Boolean initonEncrypt) {
+	public static IMV_SQI InsertCellORM(String rootPath, String baseName
+        , String tabKey, IMV_SQI rowCells, Boolean initonEncrypt) {
         Iterator<String> iterators = rowCells.keySet().iterator();
-        IMV_SIQ map = null;
+        IMV_SQI map = null;
         try {
             PLORM_C orm = new PLORM_E();
             orm = orm.startAtRootDir(rootPath)
@@ -64,11 +64,11 @@ public class IU_CellStandard {
     }
 
     @SuppressWarnings("unchecked")
-	public static IMV_SIQ InsertCellPLSQL(String rootPath, String baseName
+	public static IMV_SQI InsertCellPLSQL(String rootPath, String baseName
         , String tabKey
-        , IMV_SIQ rowCells, Boolean initonEncrypt) {
+        , IMV_SQI rowCells, Boolean initonEncrypt) {
         Iterator<String> iterators = rowCells.keySet().iterator();
-        IMV_SIQ map = null;
+        IMV_SQI map = null;
         try {
             String plsql = "setRoot:" + rootPath + ";";
             plsql += "baseName:" + baseName + ";";

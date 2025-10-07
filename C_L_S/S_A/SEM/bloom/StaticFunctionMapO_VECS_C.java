@@ -2,7 +2,7 @@ package S_A.SEM.bloom;
 
 import ME.VPC.M.app.App;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.IOException;
 import java.util.List;
@@ -23,9 +23,9 @@ public interface StaticFunctionMapO_VECS_C{
 	public void SortStringDemo(App NE);
 
 	// TransactionDelegate {逻辑型 应用接口略。
-	public IMV_SIQ transactionLogin(App NE);
+	public IMV_SQI transactionLogin(App NE);
 
-	public IMV_SIQ transactionRegister(App NE);
+	public IMV_SQI transactionRegister(App NE);
 
 	// 养疗经读表函数
 	// DBReadMode{
@@ -65,14 +65,14 @@ public interface StaticFunctionMapO_VECS_C{
 	public Object selectRowsByAttributesOfNestRelation(App NE);
 
 	// XA_ShellQ_Rows_E {
-	public List<IMV_SIQ> selectRowsByAttribute(App NE);
+	public List<IMV_SQI> selectRowsByAttribute(App NE);
 
 	public void XA_ShellQ_Rows_E_main(App NE);
 
 	// 今天看了下发现我的数据库 没有分页, 以后会设计一个文件夹最大为3000 rows
 	// 一页, 先不管了, shell 用不到sheets逻辑。
 	// 罗瑶光20210927
-	public IMV_SIQ selectRowsByTablePath(App NE);
+	public IMV_SQI selectRowsByTablePath(App NE);
 
 	// db替换shell中 20210927
 	public Object selectRowsByAttributesOfCondition(App NE);
@@ -80,7 +80,7 @@ public interface StaticFunctionMapO_VECS_C{
 	// 20210927 注释下 稍后替换
 	// 先设计成 plsearch 语法和 plsql 语法通用, 方便我之后的plorm 统一一种方式扩展
 	// pladmin
-	public List<IMV_SIQ> selectRowsByAttributesOfAggregation(App NE);
+	public List<IMV_SQI> selectRowsByAttributesOfAggregation(App NE);
 
 	public Object selectRowsByAttributesOfGetCulumns(App NE);
 
@@ -139,17 +139,17 @@ public interface StaticFunctionMapO_VECS_C{
 	// RestMedicinePort_E {
 	public App kernel(App NE);
 
-	public IMV_SIQ getMedicineBookFeedbackZY(App NE);
+	public IMV_SQI getMedicineBookFeedbackZY(App NE);
 
-	public IMV_SIQ getMedicineBookFeedbackXY(App NE);
+	public IMV_SQI getMedicineBookFeedbackXY(App NE);
 
-	public IMV_SIQ getMedicineBookFeedbackZT(App NE);
+	public IMV_SQI getMedicineBookFeedbackZT(App NE);
 
-	public IMV_SIQ getMedicineBookFeedbackXT(App NE);
+	public IMV_SQI getMedicineBookFeedbackXT(App NE);
 
-	public IMV_SIQ getMedicineBookFeedbackYT(App NE);
+	public IMV_SQI getMedicineBookFeedbackYT(App NE);
 
-	public IMV_SIQ getMedicineBookFeedback(App NE);
+	public IMV_SQI getMedicineBookFeedback(App NE);
 
 	public Object doSearch(App NE);
 
@@ -173,9 +173,9 @@ public interface StaticFunctionMapO_VECS_C{
 	// OSI.AOP.VPC.server 启动例子
 	// PL ETL shell
 	// E_pl_XA_E {
-	// public IMV_SIQ E_pl_XA(App NE);
+	// public IMV_SQI E_pl_XA(App NE);
 
-	public IMV_SIQ E_pl_XA(App NE) throws InterruptedException, IOException;
+	public IMV_SQI E_pl_XA(App NE) throws InterruptedException, IOException;
 
 	// P_AO_pl_XA {
 	public void P_AggregationLimitMap(App NE);
@@ -214,7 +214,7 @@ public interface StaticFunctionMapO_VECS_C{
 
 	// P_CO_pl_XA_X_Map extends P_CO_pl_XA_XCDX {
 	// 以后优化成统一对象输出, 不需要再转换。2019-1-15 tin
-	public IMV_SIQ rowToRowMap(App NE);
+	public IMV_SQI rowToRowMap(App NE);
 
 	// 将rowToRowMap 进行逆向 RowMapToRow 一来验证, 2来找最小计算模型,
 	// 方便下一步表格编译计算。

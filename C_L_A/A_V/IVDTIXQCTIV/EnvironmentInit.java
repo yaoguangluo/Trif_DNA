@@ -5,8 +5,8 @@ import java.util.List;
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_String;
 import VSQ.parser.EnvironmentInit_X_S;
-import S_A.pheromone.IMV_SIQ_S_;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI_S_;
+import S_A.pheromone.IMV_SQI_X_;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳 yaoguangluo@outlook.com,
@@ -21,7 +21,7 @@ public class EnvironmentInit extends EnvironmentInit_X_S {
 	public static void main(String[] argv) {
 		EnvironmentInit environmentInit = new EnvironmentInit();
 		environmentInit.IV_(S_String.text1, new App());
-		IMV_SIQ_X_ environmentSampleMap = environmentInit
+		IMV_SQI_X_ environmentSampleMap = environmentInit
 			.getEmotionSampleMap();
 	}
 
@@ -103,7 +103,7 @@ public class EnvironmentInit extends EnvironmentInit_X_S {
 		rationMap.IQ_Distinction(emotionSampleMap, distinction);
 	}
 
-	public void IV_FromEmotion(IMV_SIQ_S_ getWordFrequencyMap,
+	public void IV_FromEmotion(IMV_SQI_S_ getWordFrequencyMap,
 		App NE) {
 		emotionMap = NE.app_S.emotionMap_E;
 		//parser sentence
@@ -123,7 +123,7 @@ public class EnvironmentInit extends EnvironmentInit_X_S {
 }
 
 //
-//public void IV_FromEmotionExcludeEmotion(IMV_SIQ_S_ getWordFrequencyMap, App NE) {
+//public void IV_FromEmotionExcludeEmotion(IMV_SQI_S_ getWordFrequencyMap, App NE) {
 //    emotionMap = NE.app_S.emotionMap_E;
 //    motivation = emotionMap.getMotivationMap();
 //    trending = emotionMap.getTrendingMap();

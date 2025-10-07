@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapM_IDUQ_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -21,11 +21,11 @@ public class StaticReflectionMapM_IDUQ_C extends
 
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		Object map = null;
 		if (callFunctionKey.contains("getQ_OulerRing", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapM_IDUQ_C.getQ_OulerRing();
@@ -35,7 +35,7 @@ public class StaticReflectionMapM_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getQ_OulerRing16", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapM_IDUQ_C.getQ_OulerRing16();
@@ -45,7 +45,7 @@ public class StaticReflectionMapM_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getDecadeToPDS", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapM_IDUQ_C.getDecadeToPDS();
@@ -55,7 +55,7 @@ public class StaticReflectionMapM_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getDecadeToPDS16", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapM_IDUQ_C.getDecadeToPDS16();
@@ -65,7 +65,7 @@ public class StaticReflectionMapM_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getPDE_PDS_DL", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapM_IDUQ_C.getPDE_PDS_DL();
@@ -75,7 +75,7 @@ public class StaticReflectionMapM_IDUQ_C extends
 		}
 		;
 		if (callFunctionKey.contains("getPDE_PDS_DL16", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapM_IDUQ_C.getPDE_PDS_DL16();

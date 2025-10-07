@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 import S_A.SixActionMap.WorkVerbalMap;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 /*
  * Thinking， should I make a English version about this presentation？
  * COZ I logged in GitHub just now and checked the traffic history，
@@ -29,8 +29,8 @@ import S_A.pheromone.IMV_SIQ;
  * -- YaoguangLuo  
  * 
  * */
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 /*
  * 看到这些变量在增加，我在思考，计算数据的关系很多思绪可以从关系方式数据库的范式定义
@@ -62,7 +62,7 @@ public class CommandClassBackUp {
 	public String[] stringSets;
 	public Map<String, String[]> stringSetsMap = new HashMap<>();
 	// 单句的预处理
-	public List<String> _IMV_SIQ_SS_ = new ArrayList<>();
+	public List<String> _IMV_SQI_SS_ = new ArrayList<>();
 	/*
 	 * 稍后这些关于当前的命令句对应的workVerbalMap中需要clear的对象都走这个类，
 	 * 免得以后修改或者增加条件，不谨慎漏了几个clear。我认为这是一种计算关系的优 化方式，属于聚类优化计算逻辑。
@@ -72,42 +72,42 @@ public class CommandClassBackUp {
 	 * --罗瑶光
 	 * 
 	 */
-	public IMV_SIQ_SS _IMV_SIQ_SS = new IMV_SIQ_SS();
-	public IMV_SIQ_S_ _IMV_SIQ_S_ = new IMV_SIQ_S_();
+	public IMV_SQI_SS _IMV_SQI_SS = new IMV_SQI_SS();
+	public IMV_SQI_S_ _IMV_SQI_S_ = new IMV_SQI_S_();
 	// core
-//	public IMV_SIQ cartesianWorkActionsRights = new IMV_SIQ();//
-//	public IMV_SIQ cartesianWorkActionsPositions = new IMV_SIQ();//
-//	public IMV_SIQ cartesianWorkActions_pos = new IMV_SIQ();//
+//	public IMV_SQI cartesianWorkActionsRights = new IMV_SQI();//
+//	public IMV_SQI cartesianWorkActionsPositions = new IMV_SQI();//
+//	public IMV_SQI cartesianWorkActions_pos = new IMV_SQI();//
 	// 关系大幅减少。
-	// public IMV_SIQ cartesianRootMap = new IMV_SIQ();
-	// public IMV_SIQ cartesianRootWithScaleMap = new IMV_SIQ();
-	// public IMV_SIQ cartesianRootRelationMap = new IMV_SIQ();
-	// public IMV_SIQ normalizationalWorkActionsRights = new
-	// IMV_SIQ();
-	// public IMV_SIQ normalizationalWorkActionsPositions = new
-	// IMV_SIQ();
-	// public IMV_SIQ complementedWorkActionsRights = new
-	// IMV_SIQ();
-	// public IMV_SIQ complementedWorkActionsPositions = new
-	// IMV_SIQ();
-	public IMV_SIQ unknown_map = new IMV_SIQ();
+	// public IMV_SQI cartesianRootMap = new IMV_SQI();
+	// public IMV_SQI cartesianRootWithScaleMap = new IMV_SQI();
+	// public IMV_SQI cartesianRootRelationMap = new IMV_SQI();
+	// public IMV_SQI normalizationalWorkActionsRights = new
+	// IMV_SQI();
+	// public IMV_SQI normalizationalWorkActionsPositions = new
+	// IMV_SQI();
+	// public IMV_SQI complementedWorkActionsRights = new
+	// IMV_SQI();
+	// public IMV_SQI complementedWorkActionsPositions = new
+	// IMV_SQI();
+	public IMV_SQI unknown_map = new IMV_SQI();
 	/*
 	 * 关系大幅减少仅仅代表计算关系的优化比较通畅，并不代表计算属性的优化是完美的，
 	 * 于是开始细化计算关系，确定计算属性的重心价值。于是开始拆解 +- SVO关系。
 	 * 这里分解后，所有涉及这个逻辑的都要分解。于是跟进优化。 --罗瑶光
 	 */
-	public IMV_SIQ cartesianWorkActionsRightsSV = new IMV_SIQ();//
-	public IMV_SIQ cartesianWorkActionsPositionsSV = new IMV_SIQ();//
-	public IMV_SIQ cartesianWorkActions_posSV = new IMV_SIQ();//
+	public IMV_SQI cartesianWorkActionsRightsSV = new IMV_SQI();//
+	public IMV_SQI cartesianWorkActionsPositionsSV = new IMV_SQI();//
+	public IMV_SQI cartesianWorkActions_posSV = new IMV_SQI();//
 
-	public IMV_SIQ cartesianWorkActionsRightsVO = new IMV_SIQ();//
-	public IMV_SIQ cartesianWorkActionsPositionsVO = new IMV_SIQ();//
-	public IMV_SIQ cartesianWorkActions_posVO = new IMV_SIQ();//
+	public IMV_SQI cartesianWorkActionsRightsVO = new IMV_SQI();//
+	public IMV_SQI cartesianWorkActionsPositionsVO = new IMV_SQI();//
+	public IMV_SQI cartesianWorkActions_posVO = new IMV_SQI();//
 
-	public IMV_SIQ numericsFromUnknownString = new IMV_SIQ();
-	public IMV_SIQ alfabeticsFromUnknownString = new IMV_SIQ();
-	public IMV_SIQ symbolicsFromUnknownString = new IMV_SIQ();
-	public IMV_SIQ unicodesFromUnknownString = new IMV_SIQ();
+	public IMV_SQI numericsFromUnknownString = new IMV_SQI();
+	public IMV_SQI alfabeticsFromUnknownString = new IMV_SQI();
+	public IMV_SQI symbolicsFromUnknownString = new IMV_SQI();
+	public IMV_SQI unicodesFromUnknownString = new IMV_SQI();
 
 	/*
 	 * 在这个逻辑中主要有2类，一类是阿拉伯字符如250，一类是语义字符如二百五十。这个关系是
@@ -171,7 +171,7 @@ public class CommandClassBackUp {
 		 */
 	}
 
-	public IMV_SIQ getUnicodesFromUnknownMap(String inputString) {
+	public IMV_SQI getUnicodesFromUnknownMap(String inputString) {
 
 		return null;
 	}

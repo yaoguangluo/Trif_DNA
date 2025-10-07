@@ -2,7 +2,7 @@ package M_V.MPI.xls.commonXLS;
 
 import ME.VPC.M.app.App;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -16,8 +16,8 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class CommonXLSDNN {
-    public static Map<String, IMV_SIQ> createXlSDNN(Object[][] tableData_old
-            , int[] identifyColumns, Map<String, IMV_SIQ> subDNNmap, App NE){
+    public static Map<String, IMV_SQI> createXlSDNN(Object[][] tableData_old
+            , int[] identifyColumns, Map<String, IMV_SQI> subDNNmap, App NE){
         //init deta parser
         SensingTest sensingTest = NE.app_S._A.getSensingTest();
 //        DNNTest dNNTest = new DNNTest();
@@ -38,7 +38,7 @@ public class CommonXLSDNN {
                         stringIdentify += (null != tableData_old[i][j]
                                 ? tableData_old[i][j] : "").toString();
                     }//Map<String, Double> dnnSet= NE.app_S.DNNmap.get(stringIdentify);
-                    IMV_SIQ dnnSet = new IMV_SIQ();
+                    IMV_SQI dnnSet = new IMV_SQI();
                     for (int j = 0; j < tableData_old[0].length; j++) {
                         needDNNString += (null != tableData_old[i][j]
                                 ? tableData_old[i][j] : "").toString();

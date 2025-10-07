@@ -1,6 +1,6 @@
 package M_V.ME.GetCulumnsPLSQL;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 @SuppressWarnings({"unused"})
 /*
@@ -13,7 +13,7 @@ import S_A.pheromone.IMV_SIQ;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class X_getCulumnsMapWithAs {
-	public static Object _E(String[] sets, IMV_SIQ row) {
+	public static Object _E(String[] sets, IMV_SQI row) {
 		return row.get(sets[2]);	
 	}
 }

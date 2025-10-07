@@ -109,7 +109,7 @@ public class FastCartesianIdentifyTest {
 		 */
 		/*
 		 * 开始筛选出含有特殊符号的map，命名为relationsASCII，从command_V. 
-		 * _IMV_SIQ_SS 中提取 于是开始思考，是先提取再计算还是先计算再提取？ 
+		 * _IMV_SQI_SS 中提取 于是开始思考，是先提取再计算还是先计算再提取？ 
 		 * --先提取再计算，加速主要关系输出。
 		 * --先计算再提取，增加细腻属性关系。
 		 * 于是跟进思考，含有特殊符号的relationsASCII属性对语言分析有什么充份
@@ -118,7 +118,7 @@ public class FastCartesianIdentifyTest {
 		 * 这些符号没有严谨的词性意义，在SVO中的POS作用表达不强，于是采用先提取再计算的逻辑。
 		 * 很多时候在非应激表达的劳动中，说服我做决策的从来不是我的主观爱好，而是客观辩证思维。
 		 */
-		Iterator<String> iterators = workVerbalMap.command_V._IMV_SIQ_SS
+		Iterator<String> iterators = workVerbalMap.command_V._IMV_SQI_SS
 			.keySet().iterator();
 		while (iterators.hasNext()) {
 
@@ -136,11 +136,11 @@ public class FastCartesianIdentifyTest {
 				 * 关于这种逻辑的写法逐char匹配，应该在更前分词的时候就过滤掉，因为考虑到分词时候
 				 * 万一有符号+String的代号的组合转码条件，将造成更多断开的碎片。
 				 */
-				WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SIQ_SS
+				WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SQI_SS
 					.getW(string);
 				workVerbalMap.command_V.relationsGrammar.put(string,
 					wordFrequency);
-				// workVerbalMap.command_V._IMV_SIQ_SS.remove(string);
+				// workVerbalMap.command_V._IMV_SQI_SS.remove(string);
 				continue;
 			}
 			if (string.contains("*")) {
@@ -162,9 +162,9 @@ public class FastCartesianIdentifyTest {
 				 * --罗瑶光
 				 * 
 				 */
-				//WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SIQ_SS
+				//WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SQI_SS
 				//		.getW(string);
-				//workVerbalMap.command_V._IMV_SIQ_SS_temp.put(string,
+				//workVerbalMap.command_V._IMV_SQI_SS_temp.put(string,
 				//		wordFrequency);
 				//continue;
 			}
@@ -174,7 +174,7 @@ public class FastCartesianIdentifyTest {
 			boolean findEnglish = false;
 			findEnglish = findEnglishFromString(string);
 			if (true == findEnglish) {
-				WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SIQ_SS
+				WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SQI_SS
 					.getW(string);
 				workVerbalMap.command_V.relationsEnglish.put(string,
 					wordFrequency);
@@ -184,16 +184,16 @@ public class FastCartesianIdentifyTest {
 			 * ASCII关系 特殊符号关系 这个最难处理，各种语言符号，各种特殊符号，各种。。later
 			 */
 			// to do
-			WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SIQ_SS
+			WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SQI_SS
 				.getW(string);
-			workVerbalMap.command_V._IMV_SIQ_SS_temp.put(string,
+			workVerbalMap.command_V._IMV_SQI_SS_temp.put(string,
 				wordFrequency);
 		}
 		Log.logger.info("筛选前主要关系数-->"
-			+ workVerbalMap.command_V._IMV_SIQ_SS.size());
+			+ workVerbalMap.command_V._IMV_SQI_SS.size());
 		Log.logger.info("筛选后主要关系数-->"
-			+ workVerbalMap.command_V._IMV_SIQ_SS_temp.size());
-		workVerbalMap.command_V._IMV_SIQ_SS = workVerbalMap.command_V._IMV_SIQ_SS_temp;
+			+ workVerbalMap.command_V._IMV_SQI_SS_temp.size());
+		workVerbalMap.command_V._IMV_SQI_SS = workVerbalMap.command_V._IMV_SQI_SS_temp;
 		return null;
 	}
 
@@ -243,7 +243,8 @@ public class FastCartesianIdentifyTest {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] argv) {
 		// 初始
-		FastCartesianIdentifyTest fastCartesianIdentifyTest = new FastCartesianIdentifyTest();
+		FastCartesianIdentifyTest fastCartesianIdentifyTest 
+		= new FastCartesianIdentifyTest();
 		// 启动测试开始
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
@@ -264,13 +265,13 @@ public class FastCartesianIdentifyTest {
 		commonTestInition.NE.app_S.workVerbalMap
 			.setHumanTalkAfterNewBusinessTest(command_V,
 				commonTestInition.NE);
-		Iterator<String> iterators = command_V._IMV_SIQ_SS_Q.keySet()
+		Iterator<String> iterators = command_V._IMV_SQI_SS_Q.keySet()
 			.iterator();
 		while (iterators.hasNext()) {
 			String string = iterators.next();
-			WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q
+			WordFrequency WordFrequency = command_V._IMV_SQI_SS_Q
 				.getW(string);
-			command_V._IMV_SIQ_SS.put(string, WordFrequency);
+			command_V._IMV_SQI_SS.put(string, WordFrequency);
 		}
 		commonTestInition.NE.app_S.workVerbalMap.initEnvironment();
 

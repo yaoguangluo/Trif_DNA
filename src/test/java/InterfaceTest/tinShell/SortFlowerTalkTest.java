@@ -5,7 +5,7 @@ import S_A.SEM.bloom.StaticFunctionMapQ_VECS_E;
 import S_A.SixActionMap.CreativeVerbalMap;
 import S_A.SixActionMap.StudyVerbalMap;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -76,7 +76,7 @@ class SortFlowerTalkTest {
 		commonTestInition.NE.app_S.flowerAction
 			.initFlowerSixDomainActions();
 		// 输出 linkedHashMap
-		IMV_SIQ textContent = commonTestInition.NE.app_S.flowerAction.FlowerSixDomainActions;
+		IMV_SQI textContent = commonTestInition.NE.app_S.flowerAction.FlowerSixDomainActions;
 
 		// 设置输入待搜索列表，
 		Iterator<String> iterators = textContent.keySet().iterator();

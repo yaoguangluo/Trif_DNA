@@ -9,8 +9,8 @@ import P.Pos_X_P;
 import E_A.OEI.SVQ.MPC.fhmm.E.FMHMMListOneTime_E;
 import ME.VPC.M.app.App;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -35,7 +35,7 @@ public class DemoPOSMedcine {
         , Quick6DLuoYaoguangSort3DMap_E quick6DLuoYaoguangSort3DMap_E, App NE) {
         CogsBinaryForest_AE _A = new CogsBinaryForest_AE();
         _A.IV_Mixed(NE);
-        IMV_SIQ nlp = _A.getPosCnToCn();
+        IMV_SQI nlp = _A.getPosCnToCn();
         List<String> sets = new ArrayList<>();
         String[] ss = new String[1];
         String[] ss1 = new String[1];
@@ -44,7 +44,7 @@ public class DemoPOSMedcine {
         //ss1[0]= "、 益母 、结婚益母";
         for (int i = 0; i < ss.length; i++) {
             //20230106-System.out.println("超级变态复杂病句-->" + ss[i]);
-            IMV_SIQ_SS map = _A.parserMixStringByReturnFrequencyMap(
+            IMV_SQI_SS map = _A.parserMixStringByReturnFrequencyMap(
                 ss[0], NE
             );
             out.print("分析处理真实结果-->");

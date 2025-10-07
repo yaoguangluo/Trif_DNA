@@ -4,9 +4,9 @@ import A_V.C.RatioMap;
 import C_A.OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import C_A.ME.analysis.C.A;
 import E_A.ME.analysis.E.CogsBinaryForest_AE;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_S_;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_S_;
+import S_A.pheromone.IMV_SQI_X_;
 
 import java.util.List;
 
@@ -28,19 +28,19 @@ public class EnvironmentInit_X_S {
         return _A;
     }
 
-    public IMV_SIQ getPositive() {
+    public IMV_SQI getPositive() {
         return positive;
     }
 
-    public IMV_SIQ getNegative() {
+    public IMV_SQI getNegative() {
         return negative;
     }
 
-    public IMV_SIQ getMotivation() {
+    public IMV_SQI getMotivation() {
         return motivation;
     }
 
-    public IMV_SIQ getPrediction() {
+    public IMV_SQI getPrediction() {
         return prediction;
     }
 
@@ -48,30 +48,30 @@ public class EnvironmentInit_X_S {
         return sets;
     }
 
-    public IMV_SIQ_S_ getWordFrequencyMap() {
+    public IMV_SQI_S_ getWordFrequencyMap() {
         return wordFrequencyMap;
     }
 
-    public IMV_SIQ_X_ getEmotionSampleMap() {
+    public IMV_SQI_X_ getEmotionSampleMap() {
         return emotionSampleMap;
     }
 
-    public IMV_SIQ getDistinction() {
+    public IMV_SQI getDistinction() {
         return distinction;
     }
 
     public EmotionMap emotionMap;
     public CogsBinaryForest_AE _A;
-    public IMV_SIQ positive;
-    public IMV_SIQ negative;
-    public IMV_SIQ motivation;
-    public IMV_SIQ trending;
-    public IMV_SIQ prediction;
-    public IMV_SIQ distinction;
+    public IMV_SQI positive;
+    public IMV_SQI negative;
+    public IMV_SQI motivation;
+    public IMV_SQI trending;
+    public IMV_SQI prediction;
+    public IMV_SQI distinction;
     public List<String> sets;
     public RatioMap rationMap;
-    public IMV_SIQ_S_ wordFrequencyMap;
-    public IMV_SIQ_X_ emotionSampleMap;
+    public IMV_SQI_S_ wordFrequencyMap;
+    public IMV_SQI_X_ emotionSampleMap;
 }
 //public RatioMap getRationMap() {
 //		return rationMap;
@@ -79,16 +79,16 @@ public class EnvironmentInit_X_S {
 //	public void I_Sets(List<String> sets) {
 //		this.sets= sets;
 //	}
-//	public void I_Trending(IMV_SIQ trending) {
+//	public void I_Trending(IMV_SQI trending) {
 //		this.trending= trending;
 //	}
-//	public void I_Motivation(IMV_SIQ motivation) {
+//	public void I_Motivation(IMV_SQI motivation) {
 //		this.motivation= motivation;
 //	}
-//	public void I_Negative(IMV_SIQ negative) {
+//	public void I_Negative(IMV_SQI negative) {
 //		this.negative= negative;
 //	}
-//	public void I_Positive(IMV_SIQ positive) {
+//	public void I_Positive(IMV_SQI positive) {
 //		this.positive= positive;
 //	}
 //
@@ -103,17 +103,17 @@ public class EnvironmentInit_X_S {
 //		this.rationMap= rationMap;
 //	}
 //
-//public void I_Prediction(IMV_SIQ prediction) {
+//public void I_Prediction(IMV_SQI prediction) {
 //		this.prediction= prediction;
 //	}
-//	public IMV_SIQ getTrending() {
+//	public IMV_SQI getTrending() {
 //		return trending;
 //	}
-//	public void I_WordFrequencyMap(IMV_SIQ_S_ wordFrequencyMap) {
+//	public void I_WordFrequencyMap(IMV_SQI_S_ wordFrequencyMap) {
 //		this.wordFrequencyMap= wordFrequencyMap;
 //	}
 //
-//public void I_EmotionSampleMap(IMV_SIQ_X_ emotionSampleMap) {
+//public void I_EmotionSampleMap(IMV_SQI_X_ emotionSampleMap) {
 //	this.emotionSampleMap= emotionSampleMap;
 //}
 //
@@ -138,7 +138,7 @@ public class EnvironmentInit_X_S {
 //	this.totalCount= totalCount;
 //}
 //
-//	public void I_Distinction(IMV_SIQ distinction) {
+//	public void I_Distinction(IMV_SQI distinction) {
 //		this.distinction= distinction;
 //	}
 //

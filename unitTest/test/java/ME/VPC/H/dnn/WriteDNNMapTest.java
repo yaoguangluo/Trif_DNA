@@ -1,7 +1,7 @@
 package test.java.ME.VPC.H.dnn;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import dnn.WriteDNNMap;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,7 @@ class WriteDNNMapTest {
 
     @Test
     void testDoWriteDNNMap2() {
-        WriteDNNMap.doWriteDNNMap("stringPath", new App(), new HashMap<String, IMV_SIQ>(){{put("String", new IMV_SIQ());}});
+        WriteDNNMap.doWriteDNNMap("stringPath", new App(), new HashMap<String, IMV_SQI>(){{put("String", new IMV_SQI());}});
     }
 }
 

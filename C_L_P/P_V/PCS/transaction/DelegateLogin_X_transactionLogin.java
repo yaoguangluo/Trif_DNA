@@ -11,7 +11,7 @@ package P_V.PCS.transaction;
 
 import DSU.V.VtoV;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import VPC.DetaDB.DetaDBUtil_X_DBRequest;
 import org.json.JSONObject;
 
@@ -28,12 +28,12 @@ import java.net.URLEncoder;
  * */
 public class DelegateLogin_X_transactionLogin {
     @SuppressWarnings("deprecation")
-    public static IMV_SIQ transactionLogin(String uEmail
+    public static IMV_SQI transactionLogin(String uEmail
         , String uPassword) {
         String response = DetaDBUtil_X_DBRequest._E("/login?uEmail="
             + URLEncoder.encode(uEmail) + "&uPassword="
             + URLEncoder.encode(uPassword));
-        IMV_SIQ out = VtoV.JsonObjectToMap(new JSONObject(response));
+        IMV_SQI out = VtoV.JsonObjectToMap(new JSONObject(response));
         return out;
     }
 }

@@ -5,7 +5,7 @@ import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkList;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 import ME.VPC.M.app.App;
 import OPE.PSQ.OEU.SOI.SMQ.neroCell.BootNeroCell;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import OSI.OPE.OEI.PVI.SOI.SMQ.load.File_X_Load;
 
 import javax.swing.JTextPane;
@@ -23,7 +23,7 @@ import java.io.File;
 public class PLETL_E implements PLETL_C {
     @Override
     public boolean doNeroFlow(JTextPane rightBotJTextPane, NodeShow nodeView, LinkList first
-        , String documentFlowAddress, IMV_SIQ inputMap, App NE) {
+        , String documentFlowAddress, IMV_SQI inputMap, App NE) {
         //很好的将 《德塔socket plsql数据库》 和 《德塔 ETL》变成脑的记忆和计算中枢配合。
         //别急, 这个组合虽然没有自主意识, 但是已经形成了VPCS计算神经元的单株 锥形。20200322 罗瑶光
         try {

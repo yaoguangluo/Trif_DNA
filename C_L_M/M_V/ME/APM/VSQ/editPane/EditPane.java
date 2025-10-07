@@ -4,7 +4,7 @@ import E_A.OSI.AOP.PCS.PP.port_E.RestNLPPortImpl;
 import ME.VPC.M.app.App;
 import ME.VPC.V.appButton.AppButtonUtil_X_DNN;
 import M_V.MVQ.button.DetaButton;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.JSlider;
 import javax.swing.JTextPane;
@@ -54,7 +54,7 @@ public class EditPane extends EditPane_X_OS {
                     return;
                 }
                 try {
-                    IMV_SIQ output = RestNLPPortImpl
+                    IMV_SQI output = RestNLPPortImpl
                         .dataCY(text.getText().trim(), NE);
                     String cy = output.get("cy").toString().trim();
                     cy = URLDecoder.decode(cy, "UTF-8");
@@ -84,7 +84,7 @@ public class EditPane extends EditPane_X_OS {
                 }
                 try {
                     @SuppressWarnings("unchecked")
-                    IMV_SIQ output = (IMV_SIQ) RestNLPPortImpl
+                    IMV_SQI output = (IMV_SQI) RestNLPPortImpl
                         .dataZF(text.getText().trim(), NE);
                     String zf = output.get("zf").toString().trim();
                     zf = URLDecoder.decode(zf, "UTF-8");
@@ -119,7 +119,7 @@ public class EditPane extends EditPane_X_OS {
                 //稍后新button 罗瑶光20230905
                 //dnn rank
                 JTextPane statistic = new JTextPane();
-                Map<String, Double> dNNrank = new IMV_SIQ();
+                Map<String, Double> dNNrank = new IMV_SQI();
                 AppButtonUtil_X_DNN.doRankDNN(statistic, response, pos, dNNrank, NE);
                 //String temp= statistic.getText();
                 data.setText(statistic.getText());
@@ -160,7 +160,7 @@ public class EditPane extends EditPane_X_OS {
                 //稍后新button 罗瑶光20230905
                 //				//dnn rank
                 JTextPane statistic = new JTextPane();
-                Map<String, Double> dNNrank = new IMV_SIQ();
+                Map<String, Double> dNNrank = new IMV_SQI();
                 AppButtonUtil_X_DNN.doRankDNN(statistic, response, pos, dNNrank, NE);
                 //DNN
                 showDataTagDNN(iterator, setsForGet, setOfi, page, response, dNNrank);
@@ -194,7 +194,7 @@ public class EditPane extends EditPane_X_OS {
                 //稍后新button 罗瑶光20230905
                 //				//dnn rank
                 JTextPane statistic = new JTextPane();
-                Map<String, Double> dNNrank = new IMV_SIQ();
+                Map<String, Double> dNNrank = new IMV_SQI();
                 AppButtonUtil_X_DNN.doRankDNN(statistic, response, pos, dNNrank, NE);
                 //DNN
                 showDataTagDNN(iterator, setsForGet, setOfi, page, response, dNNrank);
@@ -223,7 +223,7 @@ public class EditPane extends EditPane_X_OS {
                 //稍后新button 罗瑶光20230905
                 //				//dnn rank
                 JTextPane statistic = new JTextPane();
-                Map<String, Double> dNNrank = new IMV_SIQ();
+                Map<String, Double> dNNrank = new IMV_SQI();
                 AppButtonUtil_X_DNN.doRankDNN(statistic, response, pos, dNNrank, NE);
                 //DNN
                 showDataTagDNN(iterator, setsForGet, setOfi, page, response, dNNrank);
@@ -257,7 +257,7 @@ public class EditPane extends EditPane_X_OS {
                     //稍后新button 罗瑶光20230905
                     //dnn rank
                     JTextPane statistic = new JTextPane();
-                    Map<String, Double> dNNrank = new IMV_SIQ();
+                    Map<String, Double> dNNrank = new IMV_SQI();
                     AppButtonUtil_X_DNN.doRankDNN(statistic, response, pos, dNNrank, NE);
                     //DNN
                     showDataTagDNN(iterator, setsForGet, setOfi, page, response, dNNrank);
@@ -267,7 +267,7 @@ public class EditPane extends EditPane_X_OS {
     }
 }
 
-//Map<String, WordFrequency> map= new IMV_SIQ();
+//Map<String, WordFrequency> map= new IMV_SQI();
 //iterator= setsForGet.iterator();
 //Here:
 //	while(iterator.hasNext()) {

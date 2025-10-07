@@ -3,7 +3,7 @@ package E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E;
 import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.company.E.LoginService_E;
 import M_V.MSQ.OP.SM.AOP.MEC.SIQ.SM.OSQ.E.rows.Q_Rows_E_X_selectRowsByAttribute;
 import M_V.MSQ.OP.SM.AOP.MEC.SIQ.SM.OSQ.E.rows.Q_Rows_E_X_selectRowsByTablePath;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -16,10 +16,10 @@ import S_A.pheromone.IMV_SIQ;
  * */
 @SuppressWarnings({ "unchecked", "resource", "unused" })
 public class RestDB_QE {
-	public static IMV_SIQ selectRowsByAttribute(String baseName,
+	public static IMV_SQI selectRowsByAttribute(String baseName,
 			String tableName, String culumnName, String value, String token,
 			String email, String password, String auth) {
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		if (token != null && !token.equalsIgnoreCase("")) {
 			String checkStatus = LoginService_E.checkTokenStatus(token,
 					"common");
@@ -46,10 +46,10 @@ public class RestDB_QE {
 		return output;
 	}
 
-	public static IMV_SIQ selectRowsByTablePath(String tablePath,
+	public static IMV_SQI selectRowsByTablePath(String tablePath,
 			String pageBegin, String pageEnd, String direction, String token,
 			String email, String password, String auth) {
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		if (token != null && !token.equalsIgnoreCase("")) {
 			String checkStatus = LoginService_E.checkTokenStatus(token,
 					"common");
@@ -79,7 +79,7 @@ public class RestDB_QE {
 //69 		//		if(Cache_M.getCacheInfo(tablePath + S_Common.STRING_SYMBOL_PER + pageBegin
 //		//+ S_Common.STRING_SYMBOL_PER + pageEnd
 //		//+ S_Common.STRING_SYMBOL_PER + direction) != null) {
-//		//			output= (IMV_SIQ)(Cache_M.getCacheInfo(tablePath
+//		//			output= (IMV_SQI)(Cache_M.getCacheInfo(tablePath
 //		//+ S_Common.STRING_SYMBOL_PER + pageBegin + S_Common.STRING_SYMBOL_PER
 //		//+ pageEnd + S_Common.STRING_SYMBOL_PER + direction).getValue());
 //		//			return output;

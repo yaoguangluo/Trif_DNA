@@ -4,7 +4,7 @@ import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaFileReader;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.File;
 import java.util.List;
@@ -24,7 +24,7 @@ public class X_Kernel extends X_ {
 	// 我先调通下, 之后朔源.
 	// 准备验算下20210406 罗瑶光
 	public static void P_kernel(File readDBTableRowIndexFile,
-			List<IMV_SIQ> output, Row bufferRow, IMV_SIQ rowMap) {
+			List<IMV_SQI> output, Row bufferRow, IMV_SQI rowMap) {
 		String[] culumnList = readDBTableRowIndexFile.list();
 		assert culumnList != null;
 		for (String culumn : culumnList) {

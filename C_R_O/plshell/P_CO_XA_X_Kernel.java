@@ -4,7 +4,7 @@ import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaFileReader;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.File;
 import java.io.FileReader;
@@ -27,7 +27,7 @@ public class P_CO_XA_X_Kernel extends P_CO_XA_X_ {
 	// 我先调通下, 之后溯源.
 	// 准备验算下20210406 罗瑶光
 	public static void P_kernel(File readDBTableRowIndexFile,
-			List<IMV_SIQ> output, Row bufferRow, IMV_SIQ rowMap) {
+			List<IMV_SQI> output, Row bufferRow, IMV_SQI rowMap) {
 		String[] culumnList = readDBTableRowIndexFile.list(); // 生成一个列表头名组
 		assert culumnList != null;
 		for (String culumn : culumnList) { // 遍历头名
@@ -76,7 +76,7 @@ public class P_CO_XA_X_Kernel extends P_CO_XA_X_ {
 	// 下面逻辑要全部改掉
 	public static void P_kernel_search(int rowId,
 			Object[] huaRuiJiJtableCulumns, Object[][] huaRuiJiJtable,
-			List<IMV_SIQ> output, Row bufferRow, IMV_SIQ rowMap) {
+			List<IMV_SQI> output, Row bufferRow, IMV_SQI rowMap) {
 		Object[] rowList = huaRuiJiJtable[rowId];
 		for (int i = 0; i < huaRuiJiJtableCulumns.length; i++) {
 			Cell cell = new Cell();

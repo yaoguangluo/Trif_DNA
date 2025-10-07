@@ -1,7 +1,7 @@
 package ASQ.fusion;
 
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.List;
 import java.util.Map;
@@ -19,8 +19,8 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class Filter_X_filterFusion2DSetsWithCountScale {
-    public static IMV_SIQ _E(Map<Double, List<AMV_MVS_VSQ_2D>> groups, double countScale) {
-        IMV_SIQ output = new IMV_SIQ();
+    public static IMV_SQI _E(Map<Double, List<AMV_MVS_VSQ_2D>> groups, double countScale) {
+        IMV_SQI output = new IMV_SQI();
         for (double value : groups.keySet()) {
             if (groups.get(value).size() >= countScale) {
                 output.put(value, groups.get(value));

@@ -3,7 +3,7 @@ package ASQ.classification.fissile;
 import ASQ.basic.Distance_X_getDistance2D;
 import ASQ.euclid.Euclid_X_findCryptionPosition2D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -29,8 +29,8 @@ import java.util.Map;
 public class Fissile_X_fissilePosition2D {
     public static Map<Double, List<AMV_MVS_VSQ_2D>> _E(List<AMV_MVS_VSQ_2D> groups
         , double scale) {
-        IMV_SIQ distanceGroups = new IMV_SIQ();
-        Map<Double, AMV_MVS_VSQ_2D> distanceHeart = new IMV_SIQ();
+        IMV_SQI distanceGroups = new IMV_SQI();
+        Map<Double, AMV_MVS_VSQ_2D> distanceHeart = new IMV_SQI();
         Iterator<AMV_MVS_VSQ_2D> iterator = groups.iterator();
         double i = 0.0;//设置总分类数
         Here:

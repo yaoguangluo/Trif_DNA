@@ -1,6 +1,6 @@
 package VPC.DetaDB;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -12,7 +12,7 @@ import S_A.pheromone.IMV_SIQ;
  * */
 public class DetaDBUtil_X_IV_CulumnNameType {
     public static void _E() {
-        DetaDBUtil_X_.culumnType = new IMV_SIQ();//later
+        DetaDBUtil_X_.culumnType = new IMV_SQI();//later
         DetaDBUtil_X_.culumnType.putBoolean("int", true);
         DetaDBUtil_X_.culumnType.putBoolean("long", true);
         DetaDBUtil_X_.culumnType.putBoolean("double", true);

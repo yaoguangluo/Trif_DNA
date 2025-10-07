@@ -1,7 +1,7 @@
 //package VPC.transaction;
 //
 //import E_A.OSI.AOP.PCS.PP.company_E.LoginServiceImpl;
-//import S_A.pheromone.IMV_SIQ;
+//import S_A.pheromone.IMV_SQI;
 //import U_A.PEU.P.dna.StringUtil;
 //import U_A.PEU.P.dna.Token;
 //import U_A.PEU.P.dna.TokenUtil;
@@ -22,12 +22,12 @@
 //public class DelegateDB_X_LoginDB {
 //    //新增数据库合并的login 和register
 //    //今天准备准被换下DNAPassword, 罗瑶光20210731
-//    public static IMV_SIQ transactionLoginDB(String uEmail, String uPassword) {
+//    public static IMV_SQI transactionLoginDB(String uEmail, String uPassword) {
 //        Usr usr = LoginServiceImpl.findUsrByUEmail(uEmail);
 //        UsrToken usrToken = LoginServiceImpl.findUsrTokenByUId(usr.getuId());
 //        String password = TokenUtil.getSecondMD5Password(uPassword);
 //        if (!password.equals(usrToken.getuPassword())) {
-//            IMV_SIQ out = new IMV_SIQ();
+//            IMV_SQI out = new IMV_SQI();
 //            out.putString("loginInfo", "unsuccess");
 //            out.putString("returnResult", "unsuccess");
 //            return out;
@@ -37,7 +37,7 @@
 //        String jsonToken = StringUtil.encode(json);
 //        LoginServiceImpl.U_UsrTokenByUId(usr.getuId(), token.getuKey()
 //            , password, token.getuTime() / 1000);
-//        IMV_SIQ out = new IMV_SIQ();
+//        IMV_SQI out = new IMV_SQI();
 //        out.putString("userToken", jsonToken);
 //        out.putString("userEmail", uEmail);
 //        out.putString("loginInfo", "success");

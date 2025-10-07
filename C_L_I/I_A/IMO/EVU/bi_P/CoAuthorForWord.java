@@ -6,7 +6,7 @@ import M_V.MVQ.slider.DetaSlider;
 import exception.thread.DetaThread;
 import Q_V.OSI.AOP.MEC.SIQ.search.ZhongYaoSearch;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
@@ -53,10 +53,10 @@ public class CoAuthorForWord extends CoAuthorForWord_XCDX implements GLEventList
 //		System.loadLibrary();
         DetaThread.sleepDeta(100);
         rootWord = "";
-        rootLeaf = new IMV_SIQ();
-        findLeaf = new IMV_SIQ();
-        frequencyLeaf = new IMV_SIQ();
-        didLeaf = new IMV_SIQ();
+        rootLeaf = new IMV_SQI();
+        findLeaf = new IMV_SQI();
+        frequencyLeaf = new IMV_SQI();
+        didLeaf = new IMV_SQI();
         this._A = NE.app_S._A;
         this.pos = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
         this.u = NE.app_S;
@@ -366,7 +366,7 @@ public class CoAuthorForWord extends CoAuthorForWord_XCDX implements GLEventList
 
     @SuppressWarnings({"unchecked", "static-access"})
     private void drawWords(GL2 gl, int[] s, int se, double[] root, float a, int j
-        , int k, IMV_SIQ root3, Map<String, Integer> didLeaf) {
+        , int k, IMV_SQI root3, Map<String, Integer> didLeaf) {
         DetaThread.sleepDeta(3);
         if (root3 == null || root3.size() == 0) {
             return;
@@ -385,7 +385,7 @@ public class CoAuthorForWord extends CoAuthorForWord_XCDX implements GLEventList
                 continue Here;
             }
             int type = 0;
-            IMV_SIQ leaf = (IMV_SIQ) root3.get(leafName);
+            IMV_SQI leaf = (IMV_SQI) root3.get(leafName);
             if (leaf.size() > 0) {
                 a1 = 1.0;
             }

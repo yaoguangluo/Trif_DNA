@@ -2,7 +2,7 @@ package I_A.IMS.EUQ.SP;
 
 import ME.VPC.M.app.App;
 import M_V.MVQ.button.DetaButton;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.movie.LYGFileIO;
 import U_A.PEU.P.sound.SoundRecord;
 import jniFFT.LYGFFT;
@@ -53,7 +53,7 @@ public class SoundWave extends JPanel {
 
     public Vector<Double> lines;
     public Vector<java.lang.Float> forOutput;
-    public IMV_SIQ cache_sj = new IMV_SIQ();
-    public IMV_SIQ cache_bz = new IMV_SIQ();
+    public IMV_SQI cache_sj = new IMV_SQI();
+    public IMV_SQI cache_bz = new IMV_SQI();
     public List<byte[]> temps = new CopyOnWriteArrayList<>();
 }

@@ -1,6 +1,6 @@
 //package U_V.ESU.tree;
 //
-//import S_A.pheromone.IMV_SIQ;
+//import S_A.pheromone.IMV_SQI;
 //import com.google.gson.Gson;
 //import com.google.gson.reflect.TypeToken;
 //import org.json.JSONObject;
@@ -20,7 +20,7 @@
 //public class Tree_ESU_X_treeToMap {
 //    public static String _E(Gson gson, Set<Object> sets) {
 //        return gson.fromJson(new JSONObject(gson.toJson(sets)).toString()
-//                , new TypeToken<IMV_SIQ>() {
+//                , new TypeToken<IMV_SQI>() {
 //                }.getType());
 //    }
 //}

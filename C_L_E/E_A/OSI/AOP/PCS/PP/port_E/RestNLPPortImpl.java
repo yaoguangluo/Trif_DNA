@@ -9,9 +9,9 @@ import P_V.PEQ.AMV.ECS.test.RNN_IDETest;
 import P_V.PEQ.OPM.VEC.test.SuccessICATest;
 import S_A.SVQ.stable.S_Maps;
 import S_A.VSQ.parser.EmotionSample;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_S_;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_S_;
+import S_A.pheromone.IMV_SQI_X_;
 import U_V.ESU.sort.Quick9DLYGWithDoubleString_ESU;
 
 import java.io.FileNotFoundException;
@@ -37,11 +37,11 @@ import java.util.List;
  * */
 public class RestNLPPortImpl {// implements RestLoginPort {
 
-    public static IMV_SIQ dataWS(String string, App NE) {
+    public static IMV_SQI dataWS(String string, App NE) {
         ////20230106-System.out.printntln(string);
         //List<String> sets= _A.parserMixedString(string);
         List<String> sets = NE.app_S._A.parserMixedString(string);
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         String ws = "";
         Iterator<String> iterator = sets.iterator();
         while (iterator.hasNext()) {
@@ -57,9 +57,9 @@ public class RestNLPPortImpl {// implements RestLoginPort {
         return output;
     }
 
-    public static IMV_SIQ dataCX(String string, App NE) {
+    public static IMV_SQI dataCX(String string, App NE) {
         ////20230106-System.out.printntln(string);
-        IMV_SIQ pos = NE.app_S._A.getPosCnToCn();
+        IMV_SQI pos = NE.app_S._A.getPosCnToCn();
         List<String> sets = NE.app_S._A.parserString(string);
         Iterator<String> iterator = sets.iterator();
         String cx = "";
@@ -69,7 +69,7 @@ public class RestNLPPortImpl {// implements RestLoginPort {
                 cx += token + "/" + pos.get(token) + " ";
             }
         }
-        IMV_SIQ outputMap = new IMV_SIQ();
+        IMV_SQI outputMap = new IMV_SQI();
         try {
             outputMap.put(URLEncoder.encode("cx", "UTF-8")
                 , URLEncoder.encode(cx, "UTF-8"));
@@ -79,14 +79,14 @@ public class RestNLPPortImpl {// implements RestLoginPort {
         return outputMap;
     }
 
-    public static IMV_SIQ dataCY(String string, App NE) {
+    public static IMV_SQI dataCY(String string, App NE) {
         ////20230106-System.out.printntln(string);
         //LenovoInit lenovoInit = new LenovoInit();
         NE.app_S.lenovoInit.IV_Exclude_A(string, NE);
-        IMV_SIQ_X_ environmentSampleMap = NE.app_S.lenovoInit
+        IMV_SQI_X_ environmentSampleMap = NE.app_S.lenovoInit
             .getEnvironmentInit().getEmotionSampleMap();
-        IMV_SIQ lenovo = NE.app_S.lenovoInit.getSensingMap().getLenovoMap();
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI lenovo = NE.app_S.lenovoInit.getSensingMap().getLenovoMap();
+        IMV_SQI output = new IMV_SQI();
         List<String> ciyi = new LinkedList<>();
         ciyi.add("\r\n环    境：");
         Iterator<String> Iterator = environmentSampleMap.keySet().iterator();
@@ -160,7 +160,7 @@ public class RestNLPPortImpl {// implements RestLoginPort {
         return output;
     }
 
-    public static IMV_SIQ dataCG(String string, App NE) {
+    public static IMV_SQI dataCG(String string, App NE) {
         ////20230106-System.out.printntln(string);
         // SensingTest sensingTest = _A.getSensingTest();
         DNNTest dNNTest = NE.app_S.dNNTest;
@@ -168,7 +168,7 @@ public class RestNLPPortImpl {// implements RestLoginPort {
         RNN_IDETest rNN_IDETest = NE.app_S.rNN_IDETest;
         String[][] ann = aNNTest.getANNMatrix(string, NE);
         String[][] dnn = dNNTest.getDNNMatrix(ann, string, NE);
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         List<String> cigan = new LinkedList<>();
         Here:
         for (int i = 0; i < dnn.length; i++) {
@@ -214,14 +214,14 @@ public class RestNLPPortImpl {// implements RestLoginPort {
         return output;
     }
 
-    public static IMV_SIQ dataCJ(String string, App NE) {
+    public static IMV_SQI dataCJ(String string, App NE) {
         ////20230106-System.out.printntln(string);
         double[][] kernel = new double[1][];
         InitBehaviorICAKernel InitBehaviorICAKernel = new InitBehaviorICAKernel();
         kernel[0] = InitBehaviorICAKernel.getBehaviorICAKernel(string, NE);
         SuccessICATest successICATest = new SuccessICATest();
         successICATest.IQ_KernelCNN(kernel);
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         String cj = "\r\n";
         Iterator<String> iterator = InitBehaviorICAKernel.getForRestReturn().iterator();
         while (iterator.hasNext()) {
@@ -236,16 +236,16 @@ public class RestNLPPortImpl {// implements RestLoginPort {
         return output;
     }
 
-    public static IMV_SIQ dataCL(String string, App NE) {
+    public static IMV_SQI dataCL(String string, App NE) {
         return null;
     }
 
     public synchronized static Object dataXX(String string, App NE) {
         ////20230106-System.out.printntln(string);
-        IMV_SIQ outputMap;
+        IMV_SQI outputMap;
         try {
-            IMV_SIQ pos = NE.app_S._A.getPosCnToCn();
-            IMV_SIQ studyPos = NE.app_S._A.getStudyPos();
+            IMV_SQI pos = NE.app_S._A.getPosCnToCn();
+            IMV_SQI studyPos = NE.app_S._A.getStudyPos();
             List<String> sets = NE.app_S._A.parserString(string);
             Iterator<String> iterator = sets.iterator();
             String xx = "";
@@ -306,7 +306,7 @@ public class RestNLPPortImpl {// implements RestLoginPort {
                     posStudy = "";
                 }
             }
-            outputMap = new IMV_SIQ();
+            outputMap = new IMV_SQI();
             outputMap.put(URLEncoder.encode("xx", "UTF-8")
                 , URLEncoder.encode(xx, "UTF-8"));
         } catch (FileNotFoundException e) {
@@ -322,7 +322,7 @@ public class RestNLPPortImpl {// implements RestLoginPort {
     public static Object dataHF(String string, App NE) {
         ////20230106-System.out.printntln(string);
         List<String> sets = NE.app_S._A.parserMixedString(string);
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         String hf = "";
         Iterator<String> iterator = sets.iterator();
         while (iterator.hasNext()) {
@@ -341,8 +341,8 @@ public class RestNLPPortImpl {// implements RestLoginPort {
         //Map<Integer, WordFrequency> fwa= AE_X_Map.getWordFrequencyByReturnSortMap(sets);
         //Map<Integer, WordFrequency> fwa= new AE_X_Map()
         // .getWordFrequencyByReturnSortMap(sets);
-        IMV_SIQ_S_ fwa = NE.app_S._A.getWordFrequencyByReturnSortMap(sets, NE);
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI_S_ fwa = NE.app_S._A.getWordFrequencyByReturnSortMap(sets, NE);
+        IMV_SQI output = new IMV_SQI();
         String cp = "";
         for (int i = fwa.size() - 1; i >= 0; i--) {
             cp += fwa.getW(i).get_word() + ":" + fwa.getW(i).get_frequency() + "----";
@@ -359,7 +359,7 @@ public class RestNLPPortImpl {// implements RestLoginPort {
     public static Object dataZF(String string, App NE) {
         ////20230106-System.out.printntln(string);
         List<String> sets = NE.app_S._A.parserMixedString(string);
-        IMV_SIQ pos = NE.app_S._A.getPosCnToCn();
+        IMV_SQI pos = NE.app_S._A.getPosCnToCn();
         String zf = "";
         Iterator<String> iterator = sets.iterator();
         double mingCi = 0.0;
@@ -466,7 +466,7 @@ public class RestNLPPortImpl {// implements RestLoginPort {
         pj += "文学修养" + (level < 0.20 ? "一般" : (level < 0.30 ? "良好" : (level < 0.40 ? "优秀"
             : (level < 0.65 ? "卓越" : "无与伦比")))) + ";";
         zf += pj + "\r\n";
-        IMV_SIQ outputMap = new IMV_SIQ();
+        IMV_SQI outputMap = new IMV_SQI();
         try {
             outputMap.put(URLEncoder.encode("zf", "UTF-8")
                 , URLEncoder.encode(zf, "UTF-8"));
@@ -480,7 +480,7 @@ public class RestNLPPortImpl {// implements RestLoginPort {
         ////20230106-System.out.printntln(string);
         ANNTest aNNTest = new ANNTest();
         String[][] ann = aNNTest.getANNMatrix(string, NE);
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         String xl = "词名/情感/动机/词权/持续/趋势/预测/猜想/意识/";
         xl += "\r\n";
         for (int i = 0; i < ann.length; i++) {
@@ -504,7 +504,7 @@ public class RestNLPPortImpl {// implements RestLoginPort {
     public static Object dataRN(String string, App NE) {
         //RNN_IDETest rNN_IDETest = new RNN_IDETest();
         String[][] rnn = NE.app_S.rNN_IDETest.getIDEMatrixExclude_A(string, NE);
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         String rn = "词名/pos距离/covex距离/euclid距离";
         rn += "\r\n";
         for (int i = 0; i < rnn.length; i++) {
@@ -525,7 +525,7 @@ public class RestNLPPortImpl {// implements RestLoginPort {
     @SuppressWarnings("unused")
     public static Object dataSB(int[][][] rgb, App NE) {
         List<String> sets = NE.app_S._A.parserMixedString("");
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         String yl = NE.app_S.appConfig.pLShellJPanel.getStringFromStringBuilder();
         try {
             output.put(URLEncoder.encode("yl", "UTF-8")
@@ -542,7 +542,7 @@ public class RestNLPPortImpl {// implements RestLoginPort {
     public static Object dataYL(String string, App NE) {
         ////20230106-System.out.printntln(string);
         List<String> sets = NE.app_S._A.parserMixedString(string);
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         //执行养疗经tinshell搜索
         if (null != NE.app_S.appConfig) {
             if (null != NE.app_S.appConfig.pLShellJPanel) {

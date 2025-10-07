@@ -237,7 +237,7 @@ public class XynkPage extends XynkPage_X_S_sListeners {
 //			validate();
 //		}
 //		
-//		Map<String, WordFrequency> map= new IMV_SIQ();
+//		Map<String, WordFrequency> map= new IMV_SQI();
 //		iterator= setsForGet.iterator();
 //		Here:
 //			while(iterator.hasNext()) {
@@ -401,7 +401,7 @@ public class XynkPage extends XynkPage_X_S_sListeners {
 //			validate();
 //		}
 //		
-//		Map<String, WordFrequency> map= new IMV_SIQ();
+//		Map<String, WordFrequency> map= new IMV_SQI();
 //		iterator= setsForGet.iterator();
 //		Here:
 //			while(iterator.hasNext()) {

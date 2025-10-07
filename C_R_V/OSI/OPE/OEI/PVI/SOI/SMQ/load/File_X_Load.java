@@ -7,7 +7,7 @@ import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkList;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.Sort;
 import S_A.SVQ.stable.S_Token;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import exception.file.O.DetaBufferedReader;
 
 import java.io.File;
@@ -29,7 +29,7 @@ public class File_X_Load {
     public static LinkNode _E(LinkNode first, NodeShow nodeView, File file
         , LinkList thislist, App NE) {
         //get path
-        IMV_SIQ nodeMap = new IMV_SIQ();
+        IMV_SQI nodeMap = new IMV_SQI();
         try {
             InputStream in = Files.newInputStream(file.toPath());
             DetaBufferedReader cReader = new DetaBufferedReader(
@@ -41,7 +41,7 @@ public class File_X_Load {
 
             String ctempString;
             String ctempStringKey;
-            IMV_SIQ currentNodeMap = new IMV_SIQ();
+            IMV_SQI currentNodeMap = new IMV_SQI();
             while ((ctempString = cReader.readDetaLine()) != null
                 && (ctempStringKey = cReaderKey.readDetaLine()) != null) {
                 if (!ctempString.contains("######################")) {

@@ -1,6 +1,6 @@
 package DVIAQVIMIV;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.ESU.array.Double_ESU;
 import U_V.OEU.LYG4DQS4D.LYG9DWithDoubleTopSort5D;
 import exception.file.O.DetaBufferedReader;
@@ -51,7 +51,7 @@ public class SkinPathDoubleDetectTripFix {
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		SkinPathDoubleDetectTripFix skinPathDoubleDetectTrip = new SkinPathDoubleDetectTripFix();
-		skinPathDoubleDetectTrip.afterFirstNames = new IMV_SIQ();
+		skinPathDoubleDetectTrip.afterFirstNames = new IMV_SQI();
 		skinPathDoubleDetectTrip.initDeciphring(
 			"C:/Users/yaogu/Desktop/project/开源门户/deciphering/F_DB6.txt",
 			6);

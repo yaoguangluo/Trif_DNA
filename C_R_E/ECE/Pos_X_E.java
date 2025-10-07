@@ -5,7 +5,7 @@ import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 
@@ -89,7 +89,7 @@ public class Pos_X_E extends Pos_X_O implements X_E {
 	}
 
 	public int loopCheckBackFixForMap(StringBuilder[] fixWord, int backPosition,
-			int countLength, IMV_SIQ_SS outputList, String[] strings,
+			int countLength, IMV_SQI_SS outputList, String[] strings,
 			int[] nestCountInputStringLength, App NE) {
 		String charPositionAtFixWord = S_Pos.EMPTY_STRING
 				+ fixWord[S_Pos.INT_ONE].charAt(backPosition);
@@ -104,7 +104,7 @@ public class Pos_X_E extends Pos_X_O implements X_E {
 		return S_Pos.INT_ERROR;
 	}
 
-	public void didNotFindFirstCharForMap(IMV_SIQ_SS outputList,
+	public void didNotFindFirstCharForMap(IMV_SQI_SS outputList,
 			String[] strings, StringBuilder[] fixWord, App NE) {
 		if (!wordsForest.containsKey(strings[S_Pos.INT_TWO])) {
 			return;

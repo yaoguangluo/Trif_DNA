@@ -4,7 +4,7 @@ import C_A.ME.analysis.C.BinaryForest_A;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -26,7 +26,7 @@ public class BinaryForest_AE extends AE implements BinaryForest_A {
 		Map<String, Integer> map;
 		if (null == fFHMMNode) {
 			fFHMMNode = new FMHMMNode();
-			map = new IMV_SIQ();
+			map = new IMV_SQI();
 		} else {
 			map = fFHMMNode.getNext();
 		}
@@ -38,22 +38,22 @@ public class BinaryForest_AE extends AE implements BinaryForest_A {
 	}
 
 	@Override
-	public IMV_SIQ getStudyPos() {
+	public IMV_SQI getStudyPos() {
 		return fHMMList.getStudyPos();
 	}
 
 	@Override
-	public IMV_SIQ getCtK() {
+	public IMV_SQI getCtK() {
 		return fHMMList.getFullCnToKo();
 	}
 
 	@Override
-	public IMV_SIQ getCtS() {
+	public IMV_SQI getCtS() {
 		return fHMMList.getFullCnToSp();
 	}
 
 	@Override
-	public IMV_SIQ getCtG() {
+	public IMV_SQI getCtG() {
 		return fHMMList.getFullCnToGm();
 	}
 
@@ -62,61 +62,61 @@ public class BinaryForest_AE extends AE implements BinaryForest_A {
 		return this.sensingTest;
 	}
 
-	public IMV_SIQ getPosEnToCn() {
+	public IMV_SQI getPosEnToCn() {
 		return fHMMList.getPosEnToCn();
 	}
 
-	public IMV_SIQ getPosEnToEn() {
+	public IMV_SQI getPosEnToEn() {
 		return fHMMList.getPosEnToEn();
 	}
 
 	@Override
-	public IMV_SIQ getPosCnToCn() {
+	public IMV_SQI getPosCnToCn() {
 		return fHMMList.getPosCnToCn();
 	}
 
-	public IMV_SIQ getFullEnToCn() {
+	public IMV_SQI getFullEnToCn() {
 		return fHMMList.getFullEnToCn();
 	}
 
-	public IMV_SIQ getFullCnToEn() {
+	public IMV_SQI getFullCnToEn() {
 		return fHMMList.getFullCnToEn();
 	}
 
-	public IMV_SIQ getEnToCn() {
+	public IMV_SQI getEnToCn() {
 		return fHMMList.getEnToCn();
 	}
 
-	public IMV_SIQ getCnToEn() {
+	public IMV_SQI getCnToEn() {
 		return fHMMList.getCnToEn();
 	}
 }
 //	@Override
-//	public IMV_SIQ getPinYin() {
+//	public IMV_SQI getPinYin() {
 //		return fHMMList.getFullCnToPy();
 //	}
 //
 //	@Override
-//	public IMV_SIQ getCtT() {
+//	public IMV_SQI getCtT() {
 //		return fHMMList.getFullCnToTt();
 //	}
 
 //	@Override
-//	public IMV_SIQ getCtF() {
+//	public IMV_SQI getCtF() {
 //		return fHMMList.getFullCnToFn();
 //	}
 //
 //	@Override
-//	public IMV_SIQ getCtJ() {
+//	public IMV_SQI getCtJ() {
 //		return fHMMList.getFullCnToJp();
 //	}
 //
 //	@Override
-//	public IMV_SIQ getCtR() {
+//	public IMV_SQI getCtR() {
 //		return fHMMList.getFullCnToRs();
 //	}
 //
 //	@Override
-//	public IMV_SIQ getCtA() {
+//	public IMV_SQI getCtA() {
 //		return fHMMList.getFullCnToAb();
 //	}

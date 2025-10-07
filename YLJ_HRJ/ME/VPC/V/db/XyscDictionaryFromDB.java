@@ -2,7 +2,7 @@ package ME.VPC.V.db;
 
 import O_V.OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 import O_V.OSI.AOP.MEC.SIQ.plorm.PLORM_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -25,9 +25,9 @@ public class XyscDictionaryFromDB {
 	}
 
 	// @SuppressWarnings({"unchecked", "rawtypes", "unused"})
-	public IMV_SIQ listToMap(List<String> dic_list) {
-		IMV_SIQ dic_map = new IMV_SIQ();
-		IMV_SIQ map = null;
+	public IMV_SQI listToMap(List<String> dic_list) {
+		IMV_SQI dic_map = new IMV_SQI();
+		IMV_SQI map = null;
 		// for(int i=0; i<)
 		String plsql = "setRoot:C:/DetaDB;" + "baseName:ZYY;"
 				+ "tableName:xybg:select;" + "condition:or:ID|<=|3000;";
@@ -45,18 +45,18 @@ public class XyscDictionaryFromDB {
 			e1.printStackTrace();
 		}
 		// ArrayList list= (ArrayList) map.get("obj");
-		// Iterator<IMV_SIQ> iterator= list.iterator();
+		// Iterator<IMV_SQI> iterator= list.iterator();
 		return map;
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public void txtToMap(IMV_SIQ dic_yao_ming, IMV_SIQ dic_chengfen_danwei,
-			IMV_SIQ dic_yong_fa, IMV_SIQ dic_yao_li, IMV_SIQ dic_zhu_yi,
-			IMV_SIQ dic_shi_ying, IMV_SIQ dic_bu_liang_fan_ying,
-			IMV_SIQ dic_yao_wu_xiang_hu_zuo_yong, IMV_SIQ dic_qi_ta,
-			IMV_SIQ dic_yong_liang, IMV_SIQ dic_jie_shao) {
-		IMV_SIQ dic_map = new IMV_SIQ();
-		IMV_SIQ map = null;
+	public void txtToMap(IMV_SQI dic_yao_ming, IMV_SQI dic_chengfen_danwei,
+			IMV_SQI dic_yong_fa, IMV_SQI dic_yao_li, IMV_SQI dic_zhu_yi,
+			IMV_SQI dic_shi_ying, IMV_SQI dic_bu_liang_fan_ying,
+			IMV_SQI dic_yao_wu_xiang_hu_zuo_yong, IMV_SQI dic_qi_ta,
+			IMV_SQI dic_yong_liang, IMV_SQI dic_jie_shao) {
+		IMV_SQI dic_map = new IMV_SQI();
+		IMV_SQI map = null;
 		// for(int i=0; i<)
 		String plsql = "setRoot:C:/DetaDB;" + "baseName:ZYY;"
 				+ "tableName:xybg:select;" + "condition:or:ID|<=|3000;";
@@ -81,15 +81,15 @@ public class XyscDictionaryFromDB {
 			e1.printStackTrace();
 		}
 		ArrayList list = (ArrayList) map.get("obj");
-		Iterator<IMV_SIQ> iterator = list.iterator();
+		Iterator<IMV_SQI> iterator = list.iterator();
 		while (iterator.hasNext()) {
-			IMV_SIQ hashmap = iterator.next();
+			IMV_SQI hashmap = iterator.next();
 			StringBuilder stringBuilder = new StringBuilder();
 			if (hashmap.containsKey("rowValue")) {
-				IMV_SIQ rowValue = (IMV_SIQ) hashmap.get("rowValue");
+				IMV_SQI rowValue = (IMV_SQI) hashmap.get("rowValue");
 				String keyName = null;
 				if (rowValue.containsKey("西药名")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("西药名");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("西药名");
 					keyName = temp.get("culumnValue").toString()
 							.replace("@Tin@", ":");
 					dic_yao_ming.put(keyName,
@@ -99,7 +99,7 @@ public class XyscDictionaryFromDB {
 					stringBuilder.append(temp.get("culumnValue").toString());
 				}
 				if (rowValue.containsKey("介绍")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("介绍");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("介绍");
 					dic_jie_shao.put(keyName,
 							null == temp.get("culumnValue") ? ""
 									: temp.get("culumnValue").toString()
@@ -107,7 +107,7 @@ public class XyscDictionaryFromDB {
 					stringBuilder.append(temp.get("culumnValue").toString());
 				}
 				if (rowValue.containsKey("药理")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("药理");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("药理");
 					dic_yao_li.put(keyName,
 							null == temp.get("culumnValue") ? ""
 									: temp.get("culumnValue").toString()
@@ -115,7 +115,7 @@ public class XyscDictionaryFromDB {
 					stringBuilder.append(temp.get("culumnValue").toString());
 				}
 				if (rowValue.containsKey("主要成分")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("主要成分");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("主要成分");
 					dic_chengfen_danwei.put(keyName,
 							null == temp.get("culumnValue") ? ""
 									: temp.get("culumnValue").toString()
@@ -123,7 +123,7 @@ public class XyscDictionaryFromDB {
 					stringBuilder.append(temp.get("culumnValue").toString());
 				}
 				if (rowValue.containsKey("用法")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("用法");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("用法");
 					dic_yong_fa.put(keyName,
 							null == temp.get("culumnValue") ? ""
 									: temp.get("culumnValue").toString()
@@ -131,7 +131,7 @@ public class XyscDictionaryFromDB {
 					stringBuilder.append(temp.get("culumnValue").toString());
 				}
 				if (rowValue.containsKey("注意事项")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("注意事项");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("注意事项");
 					dic_zhu_yi.put(keyName,
 							null == temp.get("culumnValue") ? ""
 									: temp.get("culumnValue").toString()
@@ -139,7 +139,7 @@ public class XyscDictionaryFromDB {
 					stringBuilder.append(temp.get("culumnValue").toString());
 				}
 				if (rowValue.containsKey("适应症")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("适应症");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("适应症");
 					dic_shi_ying.put(keyName,
 							null == temp.get("culumnValue") ? ""
 									: temp.get("culumnValue").toString()
@@ -147,7 +147,7 @@ public class XyscDictionaryFromDB {
 					stringBuilder.append(temp.get("culumnValue").toString());
 				}
 				if (rowValue.containsKey("不良反应")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("不良反应");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("不良反应");
 					dic_bu_liang_fan_ying.put(keyName,
 							null == temp.get("culumnValue") ? ""
 									: temp.get("culumnValue").toString()
@@ -155,7 +155,7 @@ public class XyscDictionaryFromDB {
 					stringBuilder.append(temp.get("culumnValue").toString());
 				}
 				if (rowValue.containsKey("用量")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("用量");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("用量");
 					dic_yong_liang.put(keyName,
 							null == temp.get("culumnValue") ? ""
 									: temp.get("culumnValue").toString()
@@ -163,7 +163,7 @@ public class XyscDictionaryFromDB {
 					stringBuilder.append(temp.get("culumnValue").toString());
 				}
 				if (rowValue.containsKey("药物相互作用")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("药物相互作用");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("药物相互作用");
 					dic_yao_wu_xiang_hu_zuo_yong.put(keyName,
 							null == temp.get("culumnValue") ? ""
 									: temp.get("culumnValue").toString()
@@ -171,7 +171,7 @@ public class XyscDictionaryFromDB {
 					stringBuilder.append(temp.get("culumnValue").toString());
 				}
 				if (rowValue.containsKey("其他")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("其他");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("其他");
 					dic_qi_ta.put(keyName,
 							null == temp.get("culumnValue") ? ""
 									: temp.get("culumnValue").toString()

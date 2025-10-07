@@ -1,7 +1,7 @@
 package U_A.PEU.P.combination;
 
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -19,10 +19,10 @@ import java.util.Vector;
  * */
 @SuppressWarnings("unchecked")
 public class ObjectCombination {
-	public static IMV_SIQ mapCombination(IMV_SIQ output,
-		IMV_SIQ destination) {
+	public static IMV_SQI mapCombination(IMV_SQI output,
+		IMV_SQI destination) {
 		if (null == output) {
-			output = new IMV_SIQ();
+			output = new IMV_SQI();
 		}
 		Iterator<String> keyIterator = destination.keySet()
 			.iterator();
@@ -35,10 +35,10 @@ public class ObjectCombination {
 		return output;
 	}
 
-	public static IMV_SIQ mapCombinationTrif(IMV_SIQ output,
-		IMV_SIQ destination, IMV_SIQ refernation) {
+	public static IMV_SQI mapCombinationTrif(IMV_SQI output,
+		IMV_SQI destination, IMV_SQI refernation) {
 		if (null == output) {
-			output = new IMV_SIQ();
+			output = new IMV_SQI();
 		}
 		Iterator<String> keyIterator = destination.keySet()
 			.iterator();

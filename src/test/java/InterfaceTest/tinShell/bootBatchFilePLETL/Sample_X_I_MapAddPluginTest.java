@@ -6,7 +6,7 @@ import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 import OPE.PSQ.OEU.SOI.SMQ.neroCell.BootNeroCell;
 import OSI.OPE.OEI.PVI.SOI.SMQ.load.File_X_Load;
 import S_A.SVQ.stable.S_Annotation;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 import exception.thread.DetaThread;
 
@@ -167,15 +167,15 @@ class Sample_X_I_MapAddPluginTest {
 				ArrayList arrayList = (ArrayList) tinShell.get("obj");
 				int times = 0;
 				for (Object object : arrayList) {
-					IMV_SIQ _IMV_SIQ = (IMV_SIQ) object;
-					Object _object = _IMV_SIQ.get("rowValue");
-					IMV_SIQ _IMV_SIQ_ = (IMV_SIQ) _object;
+					IMV_SQI _IMV_SQI = (IMV_SQI) object;
+					Object _object = _IMV_SQI.get("rowValue");
+					IMV_SQI _IMV_SQI_ = (IMV_SQI) _object;
 					if (times++ < 1) {
-						System.out.println("列数->" + _IMV_SIQ_.size());
+						System.out.println("列数->" + _IMV_SQI_.size());
 					}
-					Object _object_ = _IMV_SIQ_.get("中药名称");
-					IMV_SIQ __IMV_SIQ_ = (IMV_SIQ) _object_;
-					System.out.println(__IMV_SIQ_.get("culumnValue"));
+					Object _object_ = _IMV_SQI_.get("中药名称");
+					IMV_SQI __IMV_SQI_ = (IMV_SQI) _object_;
+					System.out.println(__IMV_SQI_.get("culumnValue"));
 				}
 				linkNode = linkNode.next;
 			}

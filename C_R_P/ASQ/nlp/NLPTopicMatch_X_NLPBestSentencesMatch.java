@@ -1,7 +1,7 @@
 package ASQ.nlp;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.OEU.LYG4DQS4D.LYG9DWithDoubleTopSort4D;
 
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ public class NLPTopicMatch_X_NLPBestSentencesMatch {
         double[] matchScore = NLPTopicMatch_X_getNLPBestSentencesMatchScore
             ._E(searchString, sampleSentences, NE);
         //get iden key
-        IMV_SIQ tempBase = new IMV_SIQ();
+        IMV_SQI tempBase = new IMV_SQI();
         for (int i = 0; i < matchScore.length; i++) {
             List<String> tempList;
             if (tempBase.containsKey(matchScore[i])) {

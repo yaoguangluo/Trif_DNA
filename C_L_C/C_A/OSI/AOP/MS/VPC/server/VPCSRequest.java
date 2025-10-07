@@ -1,6 +1,6 @@
 //package C_A.OSI.AOP.MS.VPC.server;
 //
-//import S_A.pheromone.IMV_SIQ;
+//import S_A.pheromone.IMV_SQI;
 //
 ///*
 // * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -24,7 +24,7 @@
 //    private String requestIpFix;
 //    private String requestNameFix;
 //    private String requestLinkFix;
-//    private IMV_SIQ requestValue;
+//    private IMV_SQI requestValue;
 //
 //    public String getRequestPort() {
 //        return requestPort;
@@ -82,11 +82,11 @@
 //        this.requestLinkFix = requestLinkFix;
 //    }
 //
-//    public IMV_SIQ getRequestValue() {
+//    public IMV_SQI getRequestValue() {
 //        return requestValue;
 //    }
 //
-//    public void I_RequestValue(IMV_SIQ requestValue) {
+//    public void I_RequestValue(IMV_SQI requestValue) {
 //        this.requestValue = requestValue;
 //    }
 //

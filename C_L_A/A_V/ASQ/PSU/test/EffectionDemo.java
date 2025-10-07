@@ -1,7 +1,7 @@
 package A_V.ASQ.PSU.test;
 
 import S_A.SVQ.stable.S_Common;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳 yaoguangluo@outlook.com,
@@ -17,23 +17,23 @@ public class EffectionDemo {
         TimeCheck timeCheck = new TimeCheck();
         //titan sets
         //20230106-System.out.println(1);
-        IMV_SIQ map = new IMV_SIQ();
+        IMV_SQI map = new IMV_SQI();
         for (int i = 0; i < 100000; i++) {
             map.put("" + i, S_Common.STRING_EMPTY + i);
         }
         //20230106-System.out.println(2);
         //subset
-        IMV_SIQ map1 = new IMV_SIQ();
+        IMV_SQI map1 = new IMV_SQI();
         for (int i = 0; i < 30000; i++) {
             map1.put("" + i, S_Common.STRING_EMPTY + i);
         }
         //20230106-System.out.println(3);
-        IMV_SIQ map2 = new IMV_SIQ();
+        IMV_SQI map2 = new IMV_SQI();
         for (int i = 0; i < 30000; i++) {
             map2.put("" + i, S_Common.STRING_EMPTY + i);
         }
         //20230106-System.out.println(4);
-        IMV_SIQ map3 = new IMV_SIQ();
+        IMV_SQI map3 = new IMV_SQI();
         for (int i = 0; i < 30000; i++) {
             map3.put("" + i, S_Common.STRING_EMPTY + i);
         }
@@ -50,8 +50,8 @@ public class EffectionDemo {
         timeCheck.duration();
     }
 
-    private static void function2(IMV_SIQ map1, IMV_SIQ map2
-        , IMV_SIQ map3) {
+    private static void function2(IMV_SQI map1, IMV_SQI map2
+        , IMV_SQI map3) {
         Here:
         for (int i = 0; i < 100000; i++) {
             int digits = (int) (Math.random() * 30000);
@@ -67,7 +67,7 @@ public class EffectionDemo {
         }
     }
 
-    private static void function1(IMV_SIQ map) {
+    private static void function1(IMV_SQI map) {
         Here1:
         for (int i = 0; i < 100000; i++) {
             int digits = (int) (Math.random() * 30000);
@@ -79,12 +79,12 @@ public class EffectionDemo {
 }
 //39
 //		//20230106-System.out.println(5);
-//		Map<String, String> map4= new IMV_SIQ();
+//		Map<String, String> map4= new IMV_SQI();
 //		for(int i=0; i<20000; i++) {
 //			map4.put(""+i, S_Common.STRING_EMPTYi);
 //		}
 //		//20230106-System.out.println(6);
-//		Map<String, String> map5= new IMV_SIQ();
+//		Map<String, String> map5= new IMV_SQI();
 //		for(int i=0; i<20000; i++) {
 //			map5.put(""+i, S_Common.STRING_EMPTYi);
 //		}

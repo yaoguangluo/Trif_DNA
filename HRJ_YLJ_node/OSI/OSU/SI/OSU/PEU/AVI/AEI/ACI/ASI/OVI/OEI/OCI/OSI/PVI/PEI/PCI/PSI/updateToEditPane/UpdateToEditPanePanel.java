@@ -2,7 +2,7 @@ package OSI.OSU.SI.OSU.PEU.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.updat
 
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_AOU_AOQ_VES;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.JButton;
 import javax.swing.JTextPane;
@@ -44,7 +44,7 @@ public class UpdateToEditPanePanel extends OSU_AOU_AOQ_VES{
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					int rc= _SQ__OPE_OPC_ECI.toptablein.getRowCount();
-							Map<Integer, Object[]> cf= new IMV_SIQ();
+							Map<Integer, Object[]> cf= new IMV_SQI();
 					String preAdd= "仅作中药推荐, 不做处方权分析, 请拥有处方权职业药师慎重分析药理根据病情搭配修改。谢谢!";
 					preAdd += "\r\n\r\n";
 					for(int i=0;i<rc;i++) {

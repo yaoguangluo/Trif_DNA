@@ -76,8 +76,8 @@ import P_V.PEQ.AMV.ECS.test.RNN_IDETest;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.VSQ.parser.EmotionSample;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 import U_A.PEU.P.dna.Token;
 import U_A.PEU.P.dna.TokenCerts;
@@ -108,55 +108,55 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	//static
 	//U_JoinRows_E {
 	public Object updateRowsByAttributesOfJoinCondition(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		boolean mod = NE._I_U.mod;
 		return X_U_RowsByAttributesOfJoinCondition._E(object, mod);
 	}
 
 	public Object updateRowsByAttributesOfJoinAggregation(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		boolean mod = NE._I_U.mod;
 		return X_U_RowsByAttributesOfJoinAggregation._E(object, mod);
 	}
 
 	public Object updateRowsByAttributesOfJoinGetCulumns(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		return X_U_RowsByAttributesOfJoinGetCulumns._E(object);
 	}
 
 	public Object updateRowsByAttributesOfJoinRelation(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		boolean mod = NE._I_U.mod;
 		return X_U_RowsByAttributesOfJoinRelation._E(object, mod);
 	}
 
 	//Q_JoinRows_E {
 	public Object selectRowsByAttributesOfJoinCondition(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		return Q_JoinRows_E_X_selectRowsByAttributesOfJoinCondition
 			._E(object);
 	}
 
 	public Object selectRowsByAttributesOfJoinAggregation(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		return Q_JoinRows_E_X_selectRowsByAttributesOfJoinAggregation
 			._E(object);
 	}
 
 	public Object selectRowsByAttributesOfJoinGetCulumns(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		return Q_JoinRows_E_X_selectRowsByAttributesOfJoinGetCulumns
 			._E(object);
 	}
 
 	public Object selectRowsByAttributesOfJoinRelation(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		return Q_JoinRows_E_X_selectRowsByAttributesOfJoinRelation._E(
 			object);
 	}
 
 	//IU_Rows_E {
-	public IMV_SIQ insertRowByTablePathAndIndex(App NE) {
+	public IMV_SQI insertRowByTablePathAndIndex(App NE) {
 		AES_QMS_XSD_TIH tablePath = NE._I_U.tablePath;
 		AES_QMS_XSD_TIH pageIndex = NE._I_U.pageIndex;
 		JSONObject culumnOfNewRow = NE._I_U.culumnOfNewRow;
@@ -165,12 +165,12 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 				pageIndex._S_, culumnOfNewRow);
 	}
 
-	public IMV_SIQ insertRowByBaseName(App NE) {
+	public IMV_SQI insertRowByBaseName(App NE) {
 		AES_QMS_XSD_TIH baseName = NE._I_U.baseName;
 		AES_QMS_XSD_TIH tableName = NE._I_U.tableName;
 		JSONObject jsobj = NE._I_U.jsobj;//later do idu
 		if (null == tableName || null == tableName) {
-			return new IMV_SIQ();
+			return new IMV_SQI();
 		}
 		boolean mod = NE._I_U.mod;
 		return IU_Rows_E_X_IU_RowByBaseName.insertRowByBaseName(
@@ -178,7 +178,7 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	}
 
 	public void IU_RowByAttributes(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		boolean mod = NE._I_U.mod;
 		IU_Rows_E_X_IU_RowByAttributes.IU_RowByAttributes(object,
 			mod);
@@ -187,13 +187,13 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 
 	//I_Tables_E {
 	public void I_Table(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		boolean mod = NE._I_U.mod;
 		I_Tables_E.I_Table(object, mod);
 	}
 
 	//D_Rows_E {
-	public IMV_SIQ deleteRowByTablePathAndIndex(App NE) {
+	public IMV_SQI deleteRowByTablePathAndIndex(App NE) {
 		AES_QMS_XSD_TIH tablePath = NE._I_U.tablePath;
 		AES_QMS_XSD_TIH pageIndex = NE._I_U.pageIndex;
 		boolean mod = NE._I_U.mod;
@@ -202,13 +202,13 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	}
 
 	public void D_RowByAttributesOfCondition(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		boolean mod = NE._I_U.mod;
 		D_Rows_E_X_D_RowByAttributesOfCondition._E(object, mod);
 	}
 
 	//U_Rows_E {
-	public IMV_SIQ updateRowByTablePathAndIndex(App NE) {
+	public IMV_SQI updateRowByTablePathAndIndex(App NE) {
 		AES_QMS_XSD_TIH tablePath = NE._I_U.tablePath;
 		AES_QMS_XSD_TIH pageIndex = NE._I_U.pageIndex;
 		JSONObject jaculumnOfUpdateRow = NE._I_U.jaculumnOfUpdateRow;
@@ -216,7 +216,7 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 			pageIndex._S_, jaculumnOfUpdateRow);
 	}
 
-	public IMV_SIQ updateRowByTablePathAndAttribute(App NE) {
+	public IMV_SQI updateRowByTablePathAndAttribute(App NE) {
 		AES_QMS_XSD_TIH tablePath = NE._I_U.tablePath;
 		AES_QMS_XSD_TIH culumnName = NE._I_U.culmnName;
 		AES_QMS_XSD_TIH culumnValue = NE._I_U.culumnValue;
@@ -226,36 +226,36 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	}
 
 	public Object updateRowsByRecordConditions(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		boolean mod = NE._I_U.mod;
 		return X_U_RowsByRecordConditions._E(object, mod);
 	}
 
 	public Object updateRowsByAttributesOfCondition(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		boolean mod = NE._I_U.mod;
 		return X_U_RowsByAttributesOfCondition._E(object, mod);
 	}
 
-	public List<IMV_SIQ> updateRowsByAttributesOfAggregation(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+	public List<IMV_SQI> updateRowsByAttributesOfAggregation(App NE) {
+		IMV_SQI object = NE._I_U.outputMap;
 		boolean mod = NE._I_U.mod;
 		return X_U_RowsByAttributesOfAggregation._E(object, mod);
 	}
 
 	public Object updateRowsByAttributesOfGetCulumns(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		return X_U_RowsByAttributesOfGetCulumns._E(object);
 	}
 
 	//E_PLSQL_E {
-	public IMV_SIQ E_PLSQL(App NE) {
+	public IMV_SQI E_PLSQL(App NE) {
 		AES_QMS_XSD_TIH plsql = NE._I_U.plsql;
 		boolean mod = NE._I_U.mod;
 		return E_PLSQL_E.E_PLSQL(plsql._S_, mod);
 	}
 
-	public IMV_SIQ E_PLORM(App NE) {
+	public IMV_SQI E_PLORM(App NE) {
 		PLORM_C orm = NE._I_U.orm;
 		boolean b = NE._I_U.b;
 		return E_PLSQL_E.E_PLORM(orm, b);
@@ -264,17 +264,17 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	//P_AggregationPLSQL {
 	public void P_AggregationLimitMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
+		List<IMV_SQI> output = NE._I_U.outputMapList;
 		P_AggregationPLSQL.P_AggregationLimitMap(sets, output);
 	}
 
 	//P_ConditionPLSQL_X_Cache extends P_ConditionPLSQL_XCDX {
 	public void P_Cache(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
+		List<IMV_SQI> output = NE._I_U.outputMapList;
 		AES_QMS_XSD_TIH tableName = NE._I_U.tableName;
 		AES_QMS_XSD_TIH baseName = NE._I_U.baseName;
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		if (null == tableName || null == tableName) {
 			return;
 		}
@@ -294,9 +294,9 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 		File readDBTableRowIndexFile = NE._I_U.readDBTableRowIndexFile;
 		DetaBufferedReader reader = NE._I_U.reader;
 		AES_QMS_XSD_TIH DBTableRowIndexPath = NE._I_U.DBTableRowIndexPath;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
+		List<IMV_SQI> output = NE._I_U.outputMapList;
 		Row bufferRow = NE._I_U.bufferRow;
-		IMV_SIQ rowMap = NE._I_U.rowMap;
+		IMV_SQI rowMap = NE._I_U.rowMap;
 
 		X_Kernel.P_kernel(readDBTableRowIndexFile, output, bufferRow,
 			rowMap);
@@ -304,14 +304,14 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 
 	//P_ConditionPLSQL_X_Map extends P_ConditionPLSQL_XCDX {
 	//以后优化成统一对象输出, 不需要再转换。2019-1-15 tin
-	public IMV_SIQ rowToRowMap(App NE) {
+	public IMV_SQI rowToRowMap(App NE) {
 		Row row = NE._I_U.row;
 		return X_Map.rowToRowMap(row);
 	}
 
 	public void P_Map(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
+		List<IMV_SQI> output = NE._I_U.outputMapList;
 		AES_QMS_XSD_TIH dBTablePath = NE._I_U.dBTablePath;
 		X_Map.P_Map(sets, output, dBTablePath._S_);
 	}
@@ -323,9 +323,9 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	//output 数据行
 	public void P_Table(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
+		List<IMV_SQI> output = NE._I_U.outputMapList;
 		AES_QMS_XSD_TIH DBTablePath = NE._I_U.dBTablePath;
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		if (null == DBTablePath) {
 			return;//later do a anormalization
 		}
@@ -335,18 +335,18 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	//P_GetCulumnsPLSQL {
 	public Object getCulumnsMapWithAs(App NE) {
 		String[] sets = NE._I_U.sets;
-		IMV_SIQ row = NE._I_U.rowMap;
+		IMV_SQI row = NE._I_U.rowMap;
 		return X_getCulumnsMapWithAs._E(sets, row);
 	}
 
 	public Object getCulumnsMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		IMV_SIQ row = NE._I_U.rowMap;
+		IMV_SQI row = NE._I_U.rowMap;
 		return X_getCulumnsMap._E(sets, row);
 	}
 
 	public Object P_GetCulumnsMap(App NE) {
-		List<IMV_SIQ> obj = NE._I_U.obj;
+		List<IMV_SQI> obj = NE._I_U.obj;
 		String[] getCulumnsValueArray = NE._I_U.getCulumnsValueArray;
 		return X_P_GetCulumnsMap._E(obj, getCulumnsValueArray);
 	}
@@ -354,19 +354,19 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	//P_RelationPLSQL {
 	public void P_AndMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> obj = NE._I_U.obj;
-		List<IMV_SIQ> joinObj = NE._I_U.joinObj;
-		IMV_SIQ object = NE._I_U.outputMap;
-		List<IMV_SIQ> newObj = NE._I_U.newObj;
+		List<IMV_SQI> obj = NE._I_U.obj;
+		List<IMV_SQI> joinObj = NE._I_U.joinObj;
+		IMV_SQI object = NE._I_U.outputMap;
+		List<IMV_SQI> newObj = NE._I_U.newObj;
 		X_P_AndMap._E(sets, obj, joinObj, object, newObj);
 	}
 
 	public void P_OrMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> obj = NE._I_U.obj;
-		List<IMV_SIQ> joinObj = NE._I_U.joinObj;
-		IMV_SIQ object = NE._I_U.outputMap;
-		List<IMV_SIQ> newObj = NE._I_U.newObj;
+		List<IMV_SQI> obj = NE._I_U.obj;
+		List<IMV_SQI> joinObj = NE._I_U.joinObj;
+		IMV_SQI object = NE._I_U.outputMap;
+		List<IMV_SQI> newObj = NE._I_U.newObj;
 		Map<String, Boolean> findinNewObj = NE._I_U.findinNewObj;
 		X_P_OrMap._E(sets, obj, joinObj, object, newObj,
 			findinNewObj);
@@ -376,31 +376,31 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	@SuppressWarnings("unused")
 	public void P_SetRoot(App NE) {
 		String[] acknowledge = NE._I_U.acknowledge;
-		IMV_SIQ output = NE._I_U.outputMap;
+		IMV_SQI output = NE._I_U.outputMap;
 		PLSQLCommand_E_X_P_SetRoot._E(acknowledge);
 	}
 
 	public void P_BaseName(App NE) {
 		String[] acknowledge = NE._I_U.acknowledge;
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		PLSQLCommand_E_X_P_BaseName._E(acknowledge, object);
 	}
 
 	//    public void P_TableName(App NE){
 	//        String[] acknowledge = NE._I_U.acknowledge;
-	//        IMV_SIQ object = NE._I_U.outputMap;
+	//        IMV_SQI object = NE._I_U.outputMap;
 	//        PLSQLCommand_E_X_P_TableName._E(acknowledge, object);
 	//    }
 
 	public void P_ListNeedStart(App NE) {
 		String[] acknowledge = NE._I_U.acknowledge;
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		PLSQLCommand_E_X_P_ListNeedStart._E(acknowledge, object);
 	}
 
 	public void P_Join(App NE) {
 		String[] acknowledge = NE._I_U.acknowledge;
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		PLSQLCommand_E_X_P_Join._E(acknowledge, object);
 	}
 
@@ -423,7 +423,7 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	//WordForestUtil {
 	@SuppressWarnings("unused")
 	public void wordsForestNotContainsKey(App NE) {
-		IMV_SIQ_SS outputList = NE._I_U.outputList;
+		IMV_SQI_SS outputList = NE._I_U.outputList;
 		AES_QMS_XSD_TIH countWordNode = NE._I_U.countWordNode;
 		StringBuilder[] prefixWord = NE._I_U.prefixWord;
 		int charPosition = NE._I_U.parserCharPosition;
@@ -432,7 +432,7 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	}
 
 	public void prefixWordEqualZero(App NE) {
-		IMV_SIQ_SS outputList = NE._I_U.outputList;
+		IMV_SQI_SS outputList = NE._I_U.outputList;
 		AES_QMS_XSD_TIH countWordNode = NE._I_U.countWordNode;
 		StringBuilder[] prefixWord = NE._I_U.prefixWord;
 		Util_X_prefixWordEqualZero._E(outputList, countWordNode._S_,
@@ -440,7 +440,7 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 	}
 
 	public void wordsForestContainsKey(App NE) {
-		IMV_SIQ_SS outputList = NE._I_U.outputList;
+		IMV_SQI_SS outputList = NE._I_U.outputList;
 		AES_QMS_XSD_TIH countWordNode = NE._I_U.countWordNode;
 		StringBuilder[] prefixWord = NE._I_U.prefixWord;
 		Util_X_ContainsKey._E(outputList, countWordNode._S_,
@@ -449,13 +449,13 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 
 	//WordFrequencyUtil {
 	public void WordFrequencyFindCheck(App NE) {
-		IMV_SIQ_SS outputList = NE._I_U.outputList;
+		IMV_SQI_SS outputList = NE._I_U.outputList;
 		StringBuilder[] fixWords = NE._I_U.fixWords;
 		Util_X_FindCheck._E(outputList, fixWords, NE);
 	}
 
 	public void WordFrequencyCompareCheck(App NE) {
-		IMV_SIQ_SS outputList = NE._I_U.outputList;
+		IMV_SQI_SS outputList = NE._I_U.outputList;
 		StringBuilder[] fixWords = NE._I_U.fixWords;
 		AES_QMS_XSD_TIH countWordNode = NE._I_U.countWordNode;
 		Util_X_CompareCheck._E(outputList, fixWords,

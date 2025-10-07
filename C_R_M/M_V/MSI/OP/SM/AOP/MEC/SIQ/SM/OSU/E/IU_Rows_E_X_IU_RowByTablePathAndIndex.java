@@ -3,7 +3,7 @@ package M_V.MSI.OP.SM.AOP.MEC.SIQ.SM.OSU.E;
 import M_V.MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -21,7 +21,7 @@ import java.util.Iterator;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class IU_Rows_E_X_IU_RowByTablePathAndIndex {
-	public static IMV_SIQ insertRowByTablePathAndIndex(String tablePath,
+	public static IMV_SQI insertRowByTablePathAndIndex(String tablePath,
 			String pageIndex, JSONObject culumnOfNewRow) {
 		String[] sets = tablePath.split("/");
 		int rowInsertIndex = Integer.parseInt(pageIndex);
@@ -31,7 +31,7 @@ public class IU_Rows_E_X_IU_RowByTablePathAndIndex {
 			File fileDBTableRowsPath = new File(DBTableRowsPath);
 			if (fileDBTableRowsPath.isDirectory()) {
 				Row row = new Row();
-				IMV_SIQ cells = new IMV_SIQ();
+				IMV_SQI cells = new IMV_SQI();
 				row.I_Cells(cells);
 				String DBTableRowIndexPath = DBTableRowsPath + "/row"
 						+ rowInsertIndex;
@@ -73,7 +73,7 @@ public class IU_Rows_E_X_IU_RowByTablePathAndIndex {
 						.putRow("row" + rowInsertIndex, row);
 			}
 		}
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		output.put("totalPages", rowInsertIndex);
 		return output;
 	}

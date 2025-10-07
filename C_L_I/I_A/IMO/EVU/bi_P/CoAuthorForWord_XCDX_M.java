@@ -2,8 +2,8 @@ package I_A.IMO.EVU.bi_P;
 
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.awt.Font;
 import java.awt.Graphics2D;
@@ -21,9 +21,9 @@ import java.util.Map;
  * *///, 基于gleem J3D官方demo 来写的。
 public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
     //dnn bingming
-    public IMV_SIQ kernerDnnBingMingForest(String[] dnn, IMV_SIQ root
+    public IMV_SQI kernerDnnBingMingForest(String[] dnn, IMV_SQI root
         , Map<String, Integer> findLeaf, int depth) {
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         if (++depth > 6) {
             return leaf;
         }
@@ -51,11 +51,11 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                             findLeaf.put(tempRec, 1);
                             frequencyLeaf.put(tempRec, -1);
                             Iterator<String> iterator = u.xyscPage.dic_shi_ying.keySet().iterator();
-                            IMV_SIQ gongxiao = new IMV_SIQ();
+                            IMV_SQI gongxiao = new IMV_SQI();
                             Here:
                             while (iterator.hasNext()) {
                                 String yaoming = iterator.next();
-                                IMV_SIQ gongxiaoyaoming = new IMV_SIQ();
+                                IMV_SQI gongxiaoyaoming = new IMV_SQI();
                                 String li = u.xyscPage.dic_shi_ying.get(yaoming).toString();
                                 li += u.xyscPage.dic_yao_li.get(yaoming).toString();
                                 if (li.contains(tempRec)) {
@@ -124,9 +124,9 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
     }
 
     //dnn
-    public IMV_SIQ kernerDnnForest(String[] dnn, IMV_SIQ root
+    public IMV_SQI kernerDnnForest(String[] dnn, IMV_SQI root
         , Map<String, Integer> findLeaf, int depth) {
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         if (++depth > 6) {
             return leaf;
         }
@@ -153,11 +153,11 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                             findLeaf.put(tempRec, 1);
                             frequencyLeaf.put(tempRec, -1);
                             Iterator<String> iterator = u.dic_li.keySet().iterator();
-                            IMV_SIQ gongxiao = new IMV_SIQ();
+                            IMV_SQI gongxiao = new IMV_SQI();
                             Here:
                             while (iterator.hasNext()) {
                                 String yaoming = iterator.next();
-                                IMV_SIQ gongxiaoyaoming = new IMV_SIQ();
+                                IMV_SQI gongxiaoyaoming = new IMV_SQI();
                                 if (u.dic_li.get(yaoming).toString().contains(tempRec)) {
                                     String hai = u.dic_hai.getString(yaoming);
                                     String li = u.dic_li.getString(yaoming);
@@ -235,14 +235,14 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
     }
 
     //neike JINJI
-    public IMV_SIQ kernerZynkJForest(String temp, IMV_SIQ root
+    public IMV_SQI kernerZynkJForest(String temp, IMV_SQI root
         , Map<String, Integer> findLeaf, int depth, App NE) {
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         if (++depth > 6) {
             return leaf;
         }
         int ml = 0;
-        IMV_SIQ_SS map = _A.parserMixStringByReturnFrequencyMap(temp, NE);
+        IMV_SQI_SS map = _A.parserMixStringByReturnFrequencyMap(temp, NE);
         Iterator<String> it = map.keySet().iterator();
         int max = 0;
         while (it.hasNext()) {
@@ -251,10 +251,10 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                 findLeaf.put(tempRec, 1);
                 frequencyLeaf.put(tempRec, -1);
                 if (u.dic_map.containsKey(tempRec)) {
-                    IMV_SIQ subLeaf = new IMV_SIQ();
+                    IMV_SQI subLeaf = new IMV_SQI();
                     if (u.dic_hai.containsKey(tempRec)) {
                         if (!u.dic_hai.get(tempRec).toString().contains("笔记")) {
-                            IMV_SIQ leafLiSub = new IMV_SIQ();
+                            IMV_SQI leafLiSub = new IMV_SQI();
                             subLeaf.put(u.dic_hai.get(tempRec).toString(), leafLiSub);
                         }
                     }
@@ -263,7 +263,7 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                     }
                     //return leaf;
                 } else if (ml < 8) {
-                    IMV_SIQ subLeaf = kernerForest(tempRec, leaf, findLeaf, depth, NE);
+                    IMV_SQI subLeaf = kernerForest(tempRec, leaf, findLeaf, depth, NE);
                     if (subLeaf.size() > 0) {
                         leaf.put(tempRec, subLeaf);
                         ml++;
@@ -277,15 +277,15 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
     }
 
     //li
-    public IMV_SIQ kernerForest(String temp, IMV_SIQ root
+    public IMV_SQI kernerForest(String temp, IMV_SQI root
         , Map<String, Integer> findLeaf, int depth, App NE) {
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         if (++depth > 6) {
             return leaf;
         }
         //int ml=0;
         if (u.dic_li.containsKey(temp) || u.dic_yl.containsKey(temp) || u.dic_zf.containsKey(temp)) {
-            IMV_SIQ_SS map = _A.parserMixStringByReturnFrequencyMap(
+            IMV_SQI_SS map = _A.parserMixStringByReturnFrequencyMap(
                 (u.dic_li.get(temp) == null ? "" : u.dic_li.get(temp)) +
                     (u.dic_yl.get(temp) == null ? "" : "") +
                     (u.dic_zf.get(temp) == null ? "" : "")
@@ -313,10 +313,10 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                                 findLeaf.put(tempRec, 1);
                                 frequencyLeaf.put(tempRec, -1);
                                 Iterator<String> iterator = u.dic_li.keySet().iterator();
-                                IMV_SIQ gongxiao = new IMV_SIQ();
+                                IMV_SQI gongxiao = new IMV_SQI();
                                 while (iterator.hasNext()) {
                                     String yaoming = iterator.next();
-                                    IMV_SIQ gongxiaoyaoming = new IMV_SIQ();
+                                    IMV_SQI gongxiaoyaoming = new IMV_SQI();
                                     if (u.dic_li.get(yaoming).toString().contains(tempRec)) {
                                         String hai = u.dic_hai.get(yaoming).toString();
                                         if (!hai.contains("慎") && !hai.contains("禁") && !hai.contains("恶")
@@ -426,15 +426,15 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
     }
 
     //neike
-    public IMV_SIQ kernerZynkForest(String temp, IMV_SIQ root
+    public IMV_SQI kernerZynkForest(String temp, IMV_SQI root
         , Map<String, Integer> findLeaf, int depth, App NE) {
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         if (++depth > 6) {
             return leaf;
         }
         int ml = 0;
         int max = 0;
-        IMV_SIQ_SS map = _A.parserMixStringByReturnFrequencyMap(temp, NE);
+        IMV_SQI_SS map = _A.parserMixStringByReturnFrequencyMap(temp, NE);
         Iterator<String> it = map.keySet().iterator();
         while (it.hasNext()) {
             String tempRec = it.next();
@@ -442,9 +442,9 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                 findLeaf.put(tempRec, 1);
                 frequencyLeaf.put(tempRec, -1);
                 if (u.dic_map.containsKey(tempRec)) {
-                    IMV_SIQ subLeaf = new IMV_SIQ();
+                    IMV_SQI subLeaf = new IMV_SQI();
                     if (u.dic_li.containsKey(tempRec)) {
-                        IMV_SIQ_SS liMap
+                        IMV_SQI_SS liMap
                             = this._A.parserMixStringByReturnFrequencyMap(u.dic_li.get(tempRec).toString(), NE);
                         Iterator<String> itli = liMap.keySet().iterator();
                         while (itli.hasNext()) {
@@ -456,7 +456,7 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                                     } else {
                                         frequencyLeaf.put(word, frequencyLeaf.get(word) + 1);
                                     }
-                                    IMV_SIQ leafLiSub = new IMV_SIQ();
+                                    IMV_SQI leafLiSub = new IMV_SQI();
                                     if (pos.getString(word).contains("动")) {
                                         subLeaf.put(word, leafLiSub);
                                     }
@@ -475,7 +475,7 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                     }
                     //return leaf;
                 } else if (ml < 8) {
-                    IMV_SIQ subLeaf = kernerForest(tempRec, leaf, findLeaf, depth, NE);
+                    IMV_SQI subLeaf = kernerForest(tempRec, leaf, findLeaf, depth, NE);
                     if (subLeaf.size() > 0) {
                         leaf.put(tempRec, subLeaf);
                         ml++;
@@ -489,9 +489,9 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
     }
 
     //gongxiao
-    public IMV_SIQ kernerClassification(String temp, IMV_SIQ root
+    public IMV_SQI kernerClassification(String temp, IMV_SQI root
         , Map<String, Integer> findLeaf, int depth, App NE) {
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         if (++depth > 6) {
             return leaf;
         }
@@ -501,20 +501,20 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
             findLeaf.put(className, 1);
             frequencyLeaf.put(className, -1);
             //add sub sets
-            IMV_SIQ_SS liMap
+            IMV_SQI_SS liMap
                 = this._A.parserMixStringByReturnFrequencyMap(u.dic_li.get(temp).toString(), NE);
             Iterator<String> it = liMap.keySet().iterator();
-            IMV_SIQ leafLi = new IMV_SIQ();
+            IMV_SQI leafLi = new IMV_SQI();
             int ml = 0;
             while (it.hasNext()) {
                 String word = liMap.getW(it.next()).get_word();
                 if (this.pos.containsKey(word)) {
                     if (word.length() > 1) {
-                        IMV_SIQ leafLiSub = new IMV_SIQ();
+                        IMV_SQI leafLiSub = new IMV_SQI();
                         leafLi.put(word, leafLiSub);
                         frequencyLeaf.put(word, -1);
                     } else if (ml < 10) {
-                        IMV_SIQ leafLiSub = new IMV_SIQ();
+                        IMV_SQI leafLiSub = new IMV_SQI();
                         if (leafLiSub.size() > 0) {
                             leaf.put(word, leafLiSub);
                             ml++;
@@ -529,7 +529,7 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
             String className = temp + "禁忌";
             findLeaf.put(className, 1);
             frequencyLeaf.put(className, -1);
-            IMV_SIQ leafLi = new IMV_SIQ();
+            IMV_SQI leafLi = new IMV_SQI();
             String string = u.dic_hai.get(temp).toString().length() > 40
                 ? u.dic_hai.get(temp).toString().substring(0, 40) : u.dic_hai.get(temp).toString();
             leafLi.put(string, leafLi);
@@ -541,20 +541,20 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
             findLeaf.put(className, 1);
             frequencyLeaf.put(className, -1);
             //add sub sets
-            IMV_SIQ_SS liMap
+            IMV_SQI_SS liMap
                 = this._A.parserMixStringByReturnFrequencyMap(u.dic_xw.get(temp).toString(), NE);
             Iterator<String> it = liMap.keySet().iterator();
-            IMV_SIQ leafLi = new IMV_SIQ();
+            IMV_SQI leafLi = new IMV_SQI();
             int ml = 0;
             while (it.hasNext()) {
                 String word = liMap.getW(it.next()).get_word();
                 if (this.pos.containsKey(word)) {
                     if (word.length() > 1) {
-                        IMV_SIQ leafLiSub = new IMV_SIQ();
+                        IMV_SQI leafLiSub = new IMV_SQI();
                         leafLi.put(word, leafLiSub);
                         frequencyLeaf.put(word, -1);
                     } else if (ml < 10) {
-                        IMV_SIQ leafLiSub = new IMV_SIQ();
+                        IMV_SQI leafLiSub = new IMV_SQI();
                         leafLi.put(word, leafLiSub);
                         frequencyLeaf.put(word, -1);
                         ml++;
@@ -568,7 +568,7 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
             findLeaf.put(className, 1);
             frequencyLeaf.put(className, -1);
             //add sub sets
-            IMV_SIQ leafLi = new IMV_SIQ();
+            IMV_SQI leafLi = new IMV_SQI();
             leafLi.put(u.dic_yl.get(temp).toString(), leafLi);
             frequencyLeaf.put(u.dic_yl.get(temp).toString(), -1);
             leaf.put(className, leafLi);
@@ -577,9 +577,9 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
     }
 
     //hai
-    public IMV_SIQ kernerSea(String temp, IMV_SIQ root
+    public IMV_SQI kernerSea(String temp, IMV_SQI root
         , Map<String, Integer> findLeaf, int depth, App NE) {
-        IMV_SIQ leaf = new IMV_SIQ();
+        IMV_SQI leaf = new IMV_SQI();
         if (++depth > 6) {
             return leaf;
         }
@@ -593,7 +593,7 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
         }
         if (u.dic_li.containsKey(temp) || u.dic_yl.containsKey(temp)
             || u.dic_zf.containsKey(temp)) {
-            IMV_SIQ_SS map = _A.parserMixStringByReturnFrequencyMap(
+            IMV_SQI_SS map = _A.parserMixStringByReturnFrequencyMap(
                 (u.dic_li.get(temp) == null ? "" : u.dic_li.get(temp)) +
                     (u.dic_yl.get(temp) == null ? "" : "") +
                     (u.dic_zf.get(temp) == null ? "" : "")
@@ -622,14 +622,14 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                                 findLeaf.put(tempRec, 1);
                                 frequencyLeaf.put(tempRec, -1);
                                 Iterator<String> iterator = u.dic_li.keySet().iterator();
-                                IMV_SIQ gongxiao
-                                    = new IMV_SIQ();
+                                IMV_SQI gongxiao
+                                    = new IMV_SQI();
                                 //int max= 0;
                                 //bianli gongxiao
                                 Here:
                                 while (iterator.hasNext()) {
                                     String yaoming = iterator.next();
-                                    IMV_SIQ gongxiaoyaoming = new IMV_SIQ();
+                                    IMV_SQI gongxiaoyaoming = new IMV_SQI();
                                     if (u.dic_li.get(yaoming).toString().contains(tempRec)) {
                                         String hai = u.dic_hai.get(yaoming).toString();
                                         if (hai.contains("慎") || hai.contains("禁") || hai.contains("恶")
@@ -660,14 +660,14 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                                                 )) {
                                                     if (maiLuoRatio.contains("心包")) {
                                                         if ((maiLuo.contains("心包"))) {
-                                                            gongxiaoyaoming.put(hai, new IMV_SIQ());
+                                                            gongxiaoyaoming.put(hai, new IMV_SQI());
                                                             findLeaf.put(yaoming, 1);
                                                             gongxiao.put(yaoming, gongxiaoyaoming);
                                                         }
                                                     }
                                                     if (!maiLuoRatio.contains("心包") && maiLuoRatio.contains("心")) {
                                                         if ((!maiLuo.contains("心包") && maiLuo.contains("心"))) {
-                                                            gongxiaoyaoming.put(hai, new IMV_SIQ());
+                                                            gongxiaoyaoming.put(hai, new IMV_SQI());
                                                             findLeaf.put(yaoming, 1);
                                                             gongxiao.put(yaoming, gongxiaoyaoming);
                                                         }
@@ -686,7 +686,7 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                                                         || (maiLuoRatio.contains("三焦") && maiLuo.contains("三焦"))
                                                         || (maiLuoRatio.contains("胃") && maiLuo.contains("胃"))
                                                     ) {
-                                                        gongxiaoyaoming.put(hai, new IMV_SIQ());
+                                                        gongxiaoyaoming.put(hai, new IMV_SQI());
                                                         findLeaf.put(yaoming, 1);
                                                         gongxiao.put(yaoming, gongxiaoyaoming);
                                                     }
@@ -704,7 +704,7 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                                                         && !maiLuoRatio.contains("三焦") && !maiLuo.contains("三焦")
                                                         && !maiLuoRatio.contains("胃") && !maiLuo.contains("胃")
                                                     )) {
-                                                        gongxiaoyaoming.put(hai, new IMV_SIQ());
+                                                        gongxiaoyaoming.put(hai, new IMV_SQI());
                                                         findLeaf.put(yaoming, 1);
                                                         gongxiao.put(yaoming, gongxiaoyaoming);
                                                     }
@@ -719,14 +719,14 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                                                 )) {
                                                     if (maiLuoRatio.contains("心包")) {
                                                         if ((maiLuo.contains("心包"))) {
-                                                            gongxiaoyaoming.put(hai, new IMV_SIQ());
+                                                            gongxiaoyaoming.put(hai, new IMV_SQI());
                                                             findLeaf.put(yaoming, 1);
                                                             gongxiao.put(yaoming, gongxiaoyaoming);
                                                         }
                                                     }
                                                     if (!maiLuoRatio.contains("心包") && maiLuoRatio.contains("心")) {
                                                         if ((!maiLuo.contains("心包") && maiLuo.contains("心"))) {
-                                                            gongxiaoyaoming.put(hai, new IMV_SIQ());
+                                                            gongxiaoyaoming.put(hai, new IMV_SQI());
                                                             findLeaf.put(yaoming, 1);
                                                             gongxiao.put(yaoming, gongxiaoyaoming);
                                                         }
@@ -745,7 +745,7 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                                                         || (maiLuoRatio.contains("三焦") && maiLuo.contains("三焦"))
                                                         || (maiLuoRatio.contains("胃") && maiLuo.contains("胃"))
                                                     ) {
-                                                        gongxiaoyaoming.put(hai, new IMV_SIQ());
+                                                        gongxiaoyaoming.put(hai, new IMV_SQI());
                                                         findLeaf.put(yaoming, 1);
                                                         gongxiao.put(yaoming, gongxiaoyaoming);
                                                     }
@@ -762,7 +762,7 @@ public class CoAuthorForWord_XCDX_M extends CoAuthorForWord_XCDX_S {
                                                         && !maiLuoRatio.contains("三焦") && !maiLuo.contains("三焦")
                                                         && !maiLuoRatio.contains("胃") && !maiLuo.contains("胃"))
                                                     ) {
-                                                        gongxiaoyaoming.put(hai, new IMV_SIQ());
+                                                        gongxiaoyaoming.put(hai, new IMV_SQI());
                                                         findLeaf.put(yaoming, 1);
                                                         gongxiao.put(yaoming, gongxiaoyaoming);
                                                     }

@@ -13,9 +13,9 @@ import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_Pos;
 import S_A.SVQ.stable.S_String;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_S_;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_S_;
+import S_A.pheromone.IMV_SQI_X_;
 
 import java.util.Iterator;
 import java.util.List;
@@ -41,12 +41,12 @@ public class SensingTest {
         this.sets = sets;
     }
 
-    public IMV_SIQ getPosCnToCn() {
+    public IMV_SQI getPosCnToCn() {
         return this.pos;
     }
 
     private List<String> sets;
-    private IMV_SIQ pos;
+    private IMV_SQI pos;
 
     public String[][] getMatrix(String text, App NE) {
         this.text = text;
@@ -59,17 +59,17 @@ public class SensingTest {
         //_A.IV_Mixed();
         //初始化表
         pos = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
-        IMV_SIQ positive = NE.app_S.emotionMap_E.getPositiveMap();
-        IMV_SIQ negative = NE.app_S.emotionMap_E.getNegativeMap();
-        IMV_SIQ motivation = NE.app_S.emotionMap_E.getMotivationMap();
-        IMV_SIQ trending = NE.app_S.emotionMap_E.getTrendingMap();
-        IMV_SIQ prediction = NE.app_S.emotionMap_E.getPredictionMap();
+        IMV_SQI positive = NE.app_S.emotionMap_E.getPositiveMap();
+        IMV_SQI negative = NE.app_S.emotionMap_E.getNegativeMap();
+        IMV_SQI motivation = NE.app_S.emotionMap_E.getMotivationMap();
+        IMV_SQI trending = NE.app_S.emotionMap_E.getTrendingMap();
+        IMV_SQI prediction = NE.app_S.emotionMap_E.getPredictionMap();
         //进行输入分词
         sets = _A.parserMixedString(this.text);
-        IMV_SIQ_S_ wordFrequencyMap = _A.getWordFrequencyByReturnSortMap(sets, NE);
+        IMV_SQI_S_ wordFrequencyMap = _A.getWordFrequencyByReturnSortMap(sets, NE);
         //RatioMap rationMap= new RatioMap_E();
         //获取一个表集列准备init
-        IMV_SIQ_X_ emotionSampleMap = NE.app_S.ratioMap
+        IMV_SQI_X_ emotionSampleMap = NE.app_S.ratioMap
             .getEmotionSampleMap(wordFrequencyMap, positive, negative, NE);
         //获取表集的总属性
         double positiveCount = NE.app_S.ratioMap.findTotalPositiveCount(emotionSampleMap);
@@ -145,11 +145,11 @@ public class SensingTest {
 //120 //    public String[][] getMatrix(String text) {
 ////        pos = NE.app_S._A.getPosCnToCn();
 ////        EmotionMap emotionMap = NE.app_S._A.getEmotionMap();
-////        IMV_SIQ positive = emotionMap.getPositiveMap();
-////        IMV_SIQ negative = emotionMap.getNegativeMap();
-////        IMV_SIQ motivation = emotionMap.getMotivationMap();
-////        IMV_SIQ trending = emotionMap.getTrendingMap();
-////        IMV_SIQ prediction = emotionMap.getPredictionMap();
+////        IMV_SQI positive = emotionMap.getPositiveMap();
+////        IMV_SQI negative = emotionMap.getNegativeMap();
+////        IMV_SQI motivation = emotionMap.getMotivationMap();
+////        IMV_SQI trending = emotionMap.getTrendingMap();
+////        IMV_SQI prediction = emotionMap.getPredictionMap();
 ////        sets = NE.app_S._A.parserMixedString(text);
 ////        Map<Integer, WordFrequency> wordFrequencyMap
 ////                = NE.app_S._A.getWordFrequencyByReturnSortMap(sets);

@@ -3,7 +3,7 @@ package E_A.ME.euclid.E;
 import C_A.ME.euclid.C.Euclid_C;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -20,7 +20,7 @@ import java.util.Map;
 public class Euclid_CE implements Euclid_C {
     @SuppressWarnings({S_Pos.RAW_TYPES, S_Pos.UNCHECKED})
     public Map<Integer, Map> mCogsEuclid(Map<Long, FMHMMNode> HashMap) {
-        Map<Integer, Map> HashMapRoot = new IMV_SIQ();
+        Map<Integer, Map> HashMapRoot = new IMV_SQI();
         Iterator<Long> iter = HashMap.keySet().iterator();
         while (iter.hasNext()) {
             Long keyValue = iter.next();
@@ -28,16 +28,16 @@ public class Euclid_CE implements Euclid_C {
             int range = (charOfKeyValueToInteger >> S_Pos.INT_SIX);
             int rangeHigh = range >> S_Pos.INT_FOUR;
             if (!HashMapRoot.containsKey(rangeHigh)) {
-                Map<Long, FMHMMNode> innerHashMap = new IMV_SIQ();
+                Map<Long, FMHMMNode> innerHashMap = new IMV_SQI();
                 innerHashMap.put(keyValue, HashMap.get(keyValue));
-                Map<Integer, Map> root = new IMV_SIQ();
+                Map<Integer, Map> root = new IMV_SQI();
                 root.put(range, innerHashMap);
                 HashMapRoot.put(rangeHigh, root);
                 continue;
             }
             Map<Integer, Map> root = HashMapRoot.get(rangeHigh);
             if (!root.containsKey(range)) {
-                Map<Long, FMHMMNode> innerHashMap = new IMV_SIQ();
+                Map<Long, FMHMMNode> innerHashMap = new IMV_SQI();
                 innerHashMap.put(keyValue, HashMap.get(keyValue));
                 root.put(range, innerHashMap);
                 HashMapRoot.put(rangeHigh, root);

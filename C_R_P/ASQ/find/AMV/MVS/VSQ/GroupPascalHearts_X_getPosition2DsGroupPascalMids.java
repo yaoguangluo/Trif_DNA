@@ -3,7 +3,7 @@ package ASQ.find.AMV.MVS.VSQ;
 import ASQ.classification.fissile.FissileWithMatch_X_fissilePosition2DWithMatch;
 import ASQ.demension.AMV.MVS.VSQ.FindMid_X_getPosition2DGroupsMids;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -24,7 +24,7 @@ public class GroupPascalHearts_X_getPosition2DsGroupPascalMids {
 
     public static Map<Double, AMV_MVS_VSQ_2D> _E(
         ArrayList<AMV_MVS_VSQ_2D> groups, double scale) {
-        IMV_SIQ pascalGroups
+        IMV_SQI pascalGroups
             = FissileWithMatch_X_fissilePosition2DWithMatch._E(groups, scale);
         return (Map<Double, AMV_MVS_VSQ_2D>) FindMid_X_getPosition2DGroupsMids._E(pascalGroups);
     }

@@ -1,7 +1,7 @@
 package C_A.OCI.SVQ.MPC.fhmm.C;
 
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import java.util.List;
 import java.util.Map;
 
@@ -28,23 +28,23 @@ public interface FMHMMList extends FHMMList {
 	public Map<Long, FMHMMNode> doCheckAndRunNeroPostFix(FMHMMNode fFHMMNode,
 			String cInputString, int i);
 
-	public IMV_SIQ getWords();
+	public IMV_SQI getWords();
 
 	public Map<Long, FMHMMNode> getMap();
 
-	public IMV_SIQ getPosEnToEn();
+	public IMV_SQI getPosEnToEn();
 
-	public IMV_SIQ getEnToCn();
+	public IMV_SQI getEnToCn();
 
-	public IMV_SIQ getCnToEn();
+	public IMV_SQI getCnToEn();
 
 	public void indexEnToCn();
 
 	public void indexCnToEn();
 
-	public IMV_SIQ getPosEnToCn();
+	public IMV_SQI getPosEnToCn();
 
-	public IMV_SIQ getPosCnToCn();
+	public IMV_SQI getPosCnToCn();
 
 	public void indexPosEnToCn();
 
@@ -54,9 +54,9 @@ public interface FMHMMList extends FHMMList {
 
 	public void indexFullCnToEn();
 
-	public IMV_SIQ getFullEnToCn();
+	public IMV_SQI getFullEnToCn();
 
-	public IMV_SIQ getFullCnToEn();
+	public IMV_SQI getFullCnToEn();
 
 	public List<String> englishStringToWordsList(String string);
 
@@ -76,31 +76,31 @@ public interface FMHMMList extends FHMMList {
 
 	public void indexFullCnToPy();
 
-	public IMV_SIQ getFullCnToJp();
+	public IMV_SQI getFullCnToJp();
 
-	public IMV_SIQ getFullCnToRs();
+	public IMV_SQI getFullCnToRs();
 
-	public IMV_SIQ getFullCnToAb();
+	public IMV_SQI getFullCnToAb();
 
-	public IMV_SIQ getFullCnToFn();
+	public IMV_SQI getFullCnToFn();
 
-	public IMV_SIQ getFullCnToGm();
+	public IMV_SQI getFullCnToGm();
 
-	public IMV_SIQ getFullCnToKo();
+	public IMV_SQI getFullCnToKo();
 
-	public IMV_SIQ getFullCnToSp();
+	public IMV_SQI getFullCnToSp();
 
-	public IMV_SIQ getFullCnToPy();
+	public IMV_SQI getFullCnToPy();
 
 	public Map<Long, FMHMMNode>[] getMaps();
 
-	public Map<Long, IMV_SIQ> getWordsForests();
+	public Map<Long, IMV_SQI> getWordsForests();
 
 	public void studyNewPos(String string, String posStudy);
 
-	public IMV_SIQ getStudyPos();
+	public IMV_SQI getStudyPos();
 
-	public IMV_SIQ getFullCnToTt();
+	public IMV_SQI getFullCnToTt();
 
 	public void indexFullCnToTt();
 }

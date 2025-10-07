@@ -6,7 +6,7 @@ import M_V.AVQ.PVU.vedio.PlayerControl;
 import M_V.AVQ.PVU.vedio.PlayerShow;
 import M_V.MVQ.button.DetaButton;
 import M_V.MVQ.filenameFilter.TXTFilter;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.imageio.ImageIO;
 import java.awt.Color;
@@ -413,7 +413,7 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 				}
 				final int flipsInt = f3 | f2 | f1 | f0;
 				// 初始桢
-				Map<Integer, BufferedImage> flipImage = new IMV_SIQ();
+				Map<Integer, BufferedImage> flipImage = new IMV_SQI();
 				for (int i = 0; i < flipsInt; i++) {
 					byte[] filp = new byte[widthInt * heightInt * 4];
 					try {

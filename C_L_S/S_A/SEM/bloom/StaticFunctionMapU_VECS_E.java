@@ -2,7 +2,7 @@ package S_A.SEM.bloom;
 
 import ME.VPC.M.app.App;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.ESU.array.Array_ESU_X_arrayToJson;
 import U_V.ESU.array.Array_ESU_X_arrayToList;
 import U_V.ESU.array.Array_ESU_X_arrayToMap;
@@ -215,7 +215,7 @@ public class StaticFunctionMapU_VECS_E extends StaticFunctionMapCASE
 	}
 
 	@Override
-	public IMV_SIQ arrayToMap(App NE) {
+	public IMV_SQI arrayToMap(App NE) {
 		Gson gson = NE._I_U.gson;
 		Object[] objects = NE._I_U.objectA;
 		return Array_ESU_X_arrayToMap._E(objects);
@@ -684,14 +684,14 @@ public class StaticFunctionMapU_VECS_E extends StaticFunctionMapCASE
 	}
 
 	@Override
-	public List<IMV_SIQ> mapToList(App NE) {
-		IMV_SIQ map = NE._I_U.map;
+	public List<IMV_SQI> mapToList(App NE) {
+		IMV_SQI map = NE._I_U.map;
 		return Map_ESU_X_mapToList._E(map);
 	}
 
 	@Override
 	public Hashtable<String, Object> mapToHash(App NE) {
-		IMV_SIQ map = NE._I_U.map;
+		IMV_SQI map = NE._I_U.map;
 		return Map_ESU_X_mapToHash._E(map);
 	}
 
@@ -775,7 +775,7 @@ public class StaticFunctionMapU_VECS_E extends StaticFunctionMapCASE
 	}
 
 	@Override
-	public IMV_SIQ vectorToMap(App NE) {
+	public IMV_SQI vectorToMap(App NE) {
 		Vector<Object> vector = NE._I_U.vector;
 		return Vector_ESU_X_vectorToMap._E(vector);
 	}
@@ -846,7 +846,7 @@ public class StaticFunctionMapU_VECS_E extends StaticFunctionMapCASE
 	}
 
 	@Override
-	public IMV_SIQ stringBuilderToMap(App NE) {
+	public IMV_SQI stringBuilderToMap(App NE) {
 		Gson gson = NE._I_U.gson;
 		StringBuilder stringBuilder = NE._I_U.stringBuilder;
 		return S_ESU_X_stringBuilderToMap._E(gson, stringBuilder);

@@ -5,8 +5,8 @@ import ME.VPC.S.ne.Page_X_S_sVSQ;
 import ME.VPC.S.pillow.PageWords;
 import M_V.MVQ.button.DetaButton;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,7 +32,7 @@ public class Page_X_S_sButtonsrollafter {
 		// buttonNext.setBounds(410, 0, 100, 30);
 		buttonNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				IMV_SIQ_SS map = new IMV_SIQ_SS();
+				IMV_SQI_SS map = new IMV_SQI_SS();
 				try {
 					page_X_S_s.currentPage += 1;
 					if (page_X_S_s.currentPage * maxInPage >= page_X_S_s.sets
@@ -67,7 +67,7 @@ public class Page_X_S_sButtonsrollafter {
 				}
 				try {
 					page_X_S_s.statistic.setSize(500, 800);
-					IMV_SIQ_S_ fwa = page_X_S_s._A
+					IMV_SQI_S_ fwa = page_X_S_s._A
 							.sortWordFrequencyMapToSortMap(map);
 					page_X_S_s.statistic.setContentType("text/html");
 					StringBuilder page = new StringBuilder();

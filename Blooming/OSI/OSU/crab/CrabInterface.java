@@ -1,7 +1,7 @@
 package OSI.OSU.crab;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
@@ -13,14 +13,14 @@ import S_A.pheromone.IMV_SIQ;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public interface CrabInterface {
-	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
-//	public IMV_SIQ chromosomeFlower= new IMV_SIQ();
-//	public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
-//	public IMV_SIQ chromosomeBlooming= new IMV_SIQ();
-//	public IMV_SIQ chromosomeMetabolism= new IMV_SIQ();
-//	public IMV_SIQ chromosomePDE= new IMV_SIQ();
-//	public IMV_SIQ chromosomeDNA= new IMV_SIQ();
-//	public IMV_SIQ chromosomeNode= new IMV_SIQ();
+	// public IMV_SQI chromosomeRoot= new IMV_SQI();
+//	public IMV_SQI chromosomeFlower= new IMV_SQI();
+//	public IMV_SQI chromosomeLeaf= new IMV_SQI();
+//	public IMV_SQI chromosomeBlooming= new IMV_SQI();
+//	public IMV_SQI chromosomeMetabolism= new IMV_SQI();
+//	public IMV_SQI chromosomePDE= new IMV_SQI();
+//	public IMV_SQI chromosomeDNA= new IMV_SQI();
+//	public IMV_SQI chromosomeNode= new IMV_SQI();
 	/*
 	 * 用于表达元基花的链接
 	 */
@@ -67,7 +67,7 @@ public interface CrabInterface {
 	// StaticRootMap.chromosomeRNA.put("crab", null);
 	// System.out.println("Hello Word!");
 	// return null;
-	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg);
+	public boolean logic(IMV_SQI inputValues, String[] 传参因子, int 因子, App NE, IMV_SQI outputReg);
 
 	// public void main(String[] arg) {
 	// CrabInterface crabInterface= CrabInterface.logic(null,

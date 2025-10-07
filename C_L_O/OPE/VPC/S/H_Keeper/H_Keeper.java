@@ -16,7 +16,7 @@ import OPE.VPC.S.V.Pillow;
 import OPE.VPC.S.V.V;
 import OPE.VPC.S.sets.Sets;
 import OPE.VPC.S.skivvy.Skivvy;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import ME.VPC.M.app.App;
 import OSI.OPE.OVU.PQE.flash.ThisCanvas;
 
@@ -31,7 +31,7 @@ public class H_Keeper {
         , NodeShow nodeView
         , JTextPane rightBotJTextPane, ThisCanvas canvas, App NE) {
         if (null == _H_Keeper) {
-            _H_Keeper = new IMV_SIQ();
+            _H_Keeper = new IMV_SQI();
         }
 
         if (200 > _H_Keeper.size()) {

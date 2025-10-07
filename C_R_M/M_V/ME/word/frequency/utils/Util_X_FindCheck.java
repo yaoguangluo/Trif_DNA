@@ -3,7 +3,7 @@ package M_V.ME.word.frequency.utils;
 import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -15,7 +15,7 @@ import S_A.pheromone.IMV_SIQ_SS;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class Util_X_FindCheck {
-	public static void _E(IMV_SIQ_SS outputList, StringBuilder[] fixWords,
+	public static void _E(IMV_SQI_SS outputList, StringBuilder[] fixWords,
 			App NE) {
 		String string = fixWords[S_Pos.INT_ZERO].toString();
 		if (outputList.containsKey(string)) {

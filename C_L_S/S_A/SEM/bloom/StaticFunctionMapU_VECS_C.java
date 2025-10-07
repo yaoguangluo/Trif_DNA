@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.OEU.xqpx.wcms.sort.LYG10D15D_X_CUA;
 import U_V.PEU.S.UVIMIACI.VerbalSource;
 
@@ -44,7 +44,7 @@ public interface StaticFunctionMapU_VECS_C {
 
 	public String arrayToXml(App NE);
 
-	public IMV_SIQ arrayToMap(App NE);
+	public IMV_SQI arrayToMap(App NE);
 
 	public Vector<Object> arrayToVector(App NE);
 
@@ -163,10 +163,10 @@ public interface StaticFunctionMapU_VECS_C {
 
 	//Json_ESU
 	//  剔除个人著作权 申请范围
-	//	public IMV_SIQ jsonObjectToMap(Gson gson
+	//	public IMV_SQI jsonObjectToMap(Gson gson
 	//			, JSONObject jSONObject){
 	//		return gson.fromJson(jSONObject.toString()
-	//, new TypeToken<IMV_SIQ>(){}.getType()){  };
+	//, new TypeToken<IMV_SQI>(){}.getType()){  };
 	//	}
 
 	public List<Object> jsonArrayToList(App NE);
@@ -200,16 +200,16 @@ public interface StaticFunctionMapU_VECS_C {
 
 	//Map_ESU{
 	//  剔除个人著作权 申请范围
-	//	public String mapToJsonString(Gson gson, IMV_SIQ map){
+	//	public String mapToJsonString(Gson gson, IMV_SQI map){
 	//		return gson.toJson(map);
 	//	}
 	//
-	//	public String mapToXml(Gson gson, IMV_SIQ map){
+	//	public String mapToXml(Gson gson, IMV_SQI map){
 	//		JSONObject jSONObject= new JSONObject(gson.toJson(map)){  };
 	//		return XML.toString(jSONObject);
 	//	}
 
-	public List<IMV_SIQ> mapToList(App NE);
+	public List<IMV_SQI> mapToList(App NE);
 
 	public Hashtable<String, Object> mapToHash(App NE);
 
@@ -226,8 +226,8 @@ public interface StaticFunctionMapU_VECS_C {
 				DetaInputStreamReader.E(inputStreamp, "UTF8"));
 			//index
 			String cInputStringp;
-			IMV_SIQ map = new IMV_SIQ();
-			Map<String, Integer> bihua = new IMV_SIQ();
+			IMV_SQI map = new IMV_SQI();
+			Map<String, Integer> bihua = new IMV_SQI();
 			while ((cInputStringp = cReaderp
 				.readDetaLine()) != null) {
 				String[] words = cInputStringp.split("->");
@@ -272,9 +272,9 @@ public interface StaticFunctionMapU_VECS_C {
 	public List<Object> xmlToList(App NE);
 
 	//  剔除个人著作权 申请范围
-	//	public IMV_SIQ xmlToMap(Gson gson, String string){
+	//	public IMV_SQI xmlToMap(Gson gson, String string){
 	//		return gson.fromJson(XML.toJSONObject(string).toString()
-	//, new TypeToken<IMV_SIQ>(){}.getType());
+	//, new TypeToken<IMV_SQI>(){}.getType());
 	//	}
 
 	public Vector<Object> xmlToVector(App NE);
@@ -296,7 +296,7 @@ public interface StaticFunctionMapU_VECS_C {
 	public List<String[]> txtFileToListStringArray(App NE);
 
 	//Vector_ESU
-	public IMV_SIQ vectorToMap(App NE);
+	public IMV_SQI vectorToMap(App NE);
 
 	public List<Object> vectorToList(App NE);
 
@@ -319,7 +319,7 @@ public interface StaticFunctionMapU_VECS_C {
 
 	public String[] stringBuilderToSplitArray(App NE);
 
-	public IMV_SIQ stringBuilderToMap(App NE);
+	public IMV_SQI stringBuilderToMap(App NE);
 
 	//String_ESU{
 	public String[] stringToArray(App NE);

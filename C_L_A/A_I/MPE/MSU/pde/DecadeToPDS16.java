@@ -10,7 +10,7 @@
 package A_I.MPE.MSU.pde;
 
 import A_I.MPE.MSU.pds.PDE_PDS_DL16;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -32,11 +32,11 @@ public class DecadeToPDS16 {
 	// 思想：肽展公式 1.2.2, 元基数字逻辑； 十六进制元基组合数学；概率论
 	// 算法：进制计算, 肽展计算
 	// 程序员： 罗瑶光,
-	public IMV_SIQ initonsMap = new IMV_SIQ();
-	public IMV_SIQ initonsCode = new IMV_SIQ();
-	public IMV_SIQ initonsSet = new IMV_SIQ();
+	public IMV_SQI initonsMap = new IMV_SQI();
+	public IMV_SQI initonsCode = new IMV_SQI();
+	public IMV_SQI initonsSet = new IMV_SQI();
 	@SuppressWarnings("unchecked")
-	public Map<String, Integer> numberSet = new IMV_SIQ();
+	public Map<String, Integer> numberSet = new IMV_SQI();
 
 	public static void main(String[] Args) {
 		DecadeToPDS16 decadeToPDS = new DecadeToPDS16();

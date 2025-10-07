@@ -4,8 +4,8 @@ import ME.VPC.M.app.App;
 import ME.VPC.S.pillow.PageWords;
 import M_V.MVQ.tableRender.ColorTableRender;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 import U_A.PEU.P.table.TableSorterZYNK;
 
 import javax.swing.JTable;
@@ -32,7 +32,7 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class Page_X_S_VSE extends Page_X_S_sVSQ {
 
-	public IMV_SIQ_S_ doFwaArrangement(IMV_SIQ_SS map, App NE) {
+	public IMV_SQI_S_ doFwaArrangement(IMV_SQI_SS map, App NE) {
 		if (null == NE.app_S) {
 			return null;// fatar trif
 		}
@@ -42,9 +42,9 @@ public class Page_X_S_VSE extends Page_X_S_sVSQ {
 		if (null == NE.app_S._A) {
 			return null;// fatar trif
 		}
-		IMV_SIQ_S_ fwaOriginal = NE.app_S._A.sortWordFrequencyMapToSortMap(map);
-		IMV_SIQ_S_ fwa = new IMV_SIQ_S_();
-		IMV_SIQ_S_ fwaComplex = new IMV_SIQ_S_();
+		IMV_SQI_S_ fwaOriginal = NE.app_S._A.sortWordFrequencyMapToSortMap(map);
+		IMV_SQI_S_ fwa = new IMV_SQI_S_();
+		IMV_SQI_S_ fwaComplex = new IMV_SQI_S_();
 		int singer = 0;
 		int complex = 0;
 		for (int i = 0; i < fwaOriginal.size(); i++) {
@@ -94,7 +94,7 @@ public class Page_X_S_VSE extends Page_X_S_sVSQ {
 			key = "";
 		}
 		sets = null;
-		IMV_SIQ_SS map = new IMV_SIQ_SS();
+		IMV_SQI_SS map = new IMV_SQI_SS();
 		try {
 			row = table.getSelectedRow();
 			col = table.getSelectedColumn();
@@ -131,7 +131,7 @@ public class Page_X_S_VSE extends Page_X_S_sVSQ {
 		}
 		try {
 			statistic.setSize(500, 800);
-			IMV_SIQ_S_ fwa = doFwaArrangement(map, NE);
+			IMV_SQI_S_ fwa = doFwaArrangement(map, NE);
 			statistic.setContentType("text/html");
 			StringBuilder page = new StringBuilder();
 			Here: for (int i = fwa.size() - 1; i >= 0; i--) {

@@ -2,7 +2,7 @@ package M_V.MSQ.OP.SM.AOP.MEC.SIQ.SM.OSQ.E.nestRows;
 
 import M_V.ME.RelationPLSQL_.X_P_AndMap;
 import M_V.ME.RelationPLSQL_.X_P_OrMap;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,14 +19,14 @@ import java.util.Map;
  * 神仙坳社区 大塘冲路一段 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class Q_NestRows_E_X_selectRowsByAttributesOfNestRelation {
-	public static Object _E(IMV_SIQ object) {
+	public static Object _E(IMV_SQI object) {
 		if (!object.containsKey("obj") || !object.containsKey("joinObj")) {
 			return new ArrayList<>();
 		}
-		Map<String, Boolean> findinNewObj = new IMV_SIQ();
-		List<IMV_SIQ> newObj = new ArrayList<>();
-		List<IMV_SIQ> obj = ((List<IMV_SIQ>) (object.get("obj")));
-		List<IMV_SIQ> joinObj = ((List<IMV_SIQ>) (object.get("joinObj")));
+		Map<String, Boolean> findinNewObj = new IMV_SQI();
+		List<IMV_SQI> newObj = new ArrayList<>();
+		List<IMV_SQI> obj = ((List<IMV_SQI>) (object.get("obj")));
+		List<IMV_SQI> joinObj = ((List<IMV_SQI>) (object.get("joinObj")));
 		List<String[]> relationValues = (List<String[]>) object.get("relation");
 		for (String[] relationValue : relationValues) {
 			boolean overObjMap = obj.size() != 0;

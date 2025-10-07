@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
 import O_V.OSA.shell.XA_ShellTable;
 import O_V.OSA.shell.XA_ShellTables;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -23,14 +23,14 @@ import java.util.List;
 public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterface {
 	String callFunctionKey;
 	String className = "UpdateColorAttributesOfColumnsInMemoryClass";
-	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
-	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
-	// public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
-	// public IMV_SIQ chromosomeBlooming= new IMV_SIQ();
-	// public IMV_SIQ chromosomeMetabolism= new IMV_SIQ();
-	// public IMV_SIQ chromosomePDE= new IMV_SIQ();
-	// public IMV_SIQ chromosomeDNA= new IMV_SIQ();
-	// public IMV_SIQ chromosomeNode= new IMV_SIQ();
+	// public IMV_SQI chromosomeRoot= new IMV_SQI();
+	// public IMV_SQI chromosomeFlower= new IMV_SQI();
+	// public IMV_SQI chromosomeLeaf= new IMV_SQI();
+	// public IMV_SQI chromosomeBlooming= new IMV_SQI();
+	// public IMV_SQI chromosomeMetabolism= new IMV_SQI();
+	// public IMV_SQI chromosomePDE= new IMV_SQI();
+	// public IMV_SQI chromosomeDNA= new IMV_SQI();
+	// public IMV_SQI chromosomeNode= new IMV_SQI();
 	/*
 	 * 用于表达元基花的链接
 	 */
@@ -132,7 +132,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 	 * 
 	 * 
 	 * */
-	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子, App NE, IMV_SIQ outputReg) {
+	public boolean logic(IMV_SQI inputValues, String[] 传参因子, int 因子, App NE, IMV_SQI outputReg) {
 //		if (NE.app_S.workVerbalMap.cartesianWorkActionsRights.containsKey("-红色")) {
 //			//为-红色
 //			System.out.printf("highly fit"); // later in mapping iterator.*/
@@ -291,7 +291,7 @@ public class UpdateColorAttributesOfColumnsInMemoryClass implements CrabInterfac
 
 //        Pl_XA_Command_E.P_TableName(NE._I_U.acknowledge
 //            , NE._I_U.outputMap);
-//        IMV_SIQ object = NE._I_U.outputMap;
+//        IMV_SQI object = NE._I_U.outputMap;
 //        Iterator<String> iterator = NE.app_S.tableNameMap.keySet().iterator();
 //        while (iterator.hasNext()) {
 //            String string = iterator.next();

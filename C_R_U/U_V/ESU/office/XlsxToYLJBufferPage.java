@@ -7,7 +7,7 @@ import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.DB;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Spec;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Table;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -47,7 +47,7 @@ public class XlsxToYLJBufferPage {
         int rowSize = row.getLastCellNum();
         commonXlsPage_X_S_s.columnTitle = new Object[rowSize];
         String[] specNames = new String[row.getLastCellNum()];
-        IMV_SIQ culumnTypes = new IMV_SIQ();
+        IMV_SQI culumnTypes = new IMV_SQI();
         spec.I_CulumnTypes(culumnTypes);
         for (int cellNumber = 0; cellNumber < rowSize; cellNumber++) {
             XSSFCell cellInputTemp = row.getCell(cellNumber);
@@ -109,7 +109,7 @@ public class XlsxToYLJBufferPage {
             }
             String baseName = "XlsImges";
             Base baseBuffer = new Base();
-            IMV_SIQ tables = new IMV_SIQ();
+            IMV_SQI tables = new IMV_SQI();
             baseBuffer.I_Tables(tables);
             //table name
             for (int sheetNumber = 0; sheetNumber < wb.getNumberOfSheets(); sheetNumber++) {
@@ -126,7 +126,7 @@ public class XlsxToYLJBufferPage {
                     startRow = 1;
                 }
                 //row
-                IMV_SIQ rows = new IMV_SIQ();
+                IMV_SQI rows = new IMV_SQI();
                 tableBuffer.I_Rows(rows);
                 output = new Object[sheet.getPhysicalNumberOfRows() - startRow][20];//max 20
                 if (hasSpec) {
@@ -138,7 +138,7 @@ public class XlsxToYLJBufferPage {
                     XSSFRow row = sheet.getRow(rowNumber);
                     int rowSize = row.getLastCellNum();
                     Row rowBuffer = new Row();
-                    IMV_SIQ cells = new IMV_SIQ();
+                    IMV_SQI cells = new IMV_SQI();
                     rowBuffer.I_Cells(cells);
                     for (int cellNumber = 0; cellNumber < rowSize; cellNumber++) {
                         XSSFCell cellInputTemp = row.getCell(cellNumber);
@@ -192,7 +192,7 @@ public class XlsxToYLJBufferPage {
     public Object[][] readNonObjectXlsx(CommonXlsPage_X_S_s commonXlsPage_X_S_s
         , int cellPhoneColumn, boolean hasSpec) {
         DB db = new DB();
-        IMV_SIQ bases = new IMV_SIQ();
+        IMV_SQI bases = new IMV_SQI();
         db.I_Bases(bases);
         //read
         //read

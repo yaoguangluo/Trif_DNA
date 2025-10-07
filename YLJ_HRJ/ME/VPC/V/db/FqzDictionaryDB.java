@@ -3,7 +3,7 @@ package ME.VPC.V.db;
 import A_I.MPE.MAQPVDCOISIV.full.FullDNATokenPDI;
 import O_V.OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 import O_V.OSI.AOP.MEC.SIQ.plorm.PLORM_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -26,9 +26,9 @@ public class FqzDictionaryDB {
 	}
 
 	// @SuppressWarnings({"unchecked", "rawtypes", "unused"})
-	public IMV_SIQ listToMap(List<String> dic_list) {
-		IMV_SIQ dic_map = new IMV_SIQ();
-		IMV_SIQ map = null;
+	public IMV_SQI listToMap(List<String> dic_list) {
+		IMV_SQI dic_map = new IMV_SQI();
+		IMV_SQI map = null;
 		// for(int i=0; i<)
 		String plsql = "setRoot:C:/DetaDB1;" + "baseName:ZYY;"
 				+ "tableName:gjjd:select;" + "condition:or:ID|<=|3000;";
@@ -46,14 +46,14 @@ public class FqzDictionaryDB {
 			e1.printStackTrace();
 		}
 		// ArrayList list= (ArrayList) map.get("obj");
-		// Iterator<IMV_SIQ> iterator= list.iterator();
+		// Iterator<IMV_SQI> iterator= list.iterator();
 		return map;
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public IMV_SIQ txtToMap(IMV_SIQ dic_bing_ming, IMV_SIQ dic_yongyao) {
-		IMV_SIQ dic_map = new IMV_SIQ();
-		IMV_SIQ map = null;
+	public IMV_SQI txtToMap(IMV_SQI dic_bing_ming, IMV_SQI dic_yongyao) {
+		IMV_SQI dic_map = new IMV_SQI();
+		IMV_SQI map = null;
 		// for(int i=0; i<)
 		String plsql = "setRoot:C:/DetaDB1;" + "baseName:ZYY;"
 				+ "tableName:zysz:select;" + "condition:or:ID|<=|3000;";
@@ -78,17 +78,17 @@ public class FqzDictionaryDB {
 			e1.printStackTrace();
 		}
 		ArrayList list = (ArrayList) map.get("obj");
-		Iterator<IMV_SIQ> iterator = list.iterator();
+		Iterator<IMV_SQI> iterator = list.iterator();
 		// int index= 0;
 		Here: while (iterator.hasNext()) {
 			// index++;
-			IMV_SIQ hashmap = iterator.next();
+			IMV_SQI hashmap = iterator.next();
 			StringBuilder stringBuilder = new StringBuilder();
 			if (hashmap.containsKey("rowValue")) {
-				IMV_SIQ rowValue = (IMV_SIQ) hashmap.get("rowValue");
+				IMV_SQI rowValue = (IMV_SQI) hashmap.get("rowValue");
 				String keyName = null;
 				if (rowValue.containsKey("病名")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("病名");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("病名");
 					keyName = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString()
 									.replace("@Tin@", ":");
@@ -103,7 +103,7 @@ public class FqzDictionaryDB {
 					stringBuilder.append(keyName);
 				}
 				if (rowValue.containsKey("用药")) {
-					IMV_SIQ temp = (IMV_SIQ) rowValue.get("用药");
+					IMV_SQI temp = (IMV_SQI) rowValue.get("用药");
 					String gg = null == temp.get("culumnValue") ? ""
 							: temp.get("culumnValue").toString();
 					gg = new FullDNATokenPDI().initonDeSect(gg);

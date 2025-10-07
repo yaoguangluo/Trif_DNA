@@ -1,6 +1,6 @@
 package OSI.MSU.AVQ.ASQ.dnaSets;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 //作者 +著作权人： 罗瑶光, 浏阳
@@ -18,7 +18,7 @@ public class CMS{
 	public Map<String, Map<String, Map<String, PDN>>> javaCMSsroot;
 	
 	public void IV_() {	
-		javaCMSs= new IMV_SIQ();
-		javaCMSsroot= new IMV_SIQ();
+		javaCMSs= new IMV_SQI();
+		javaCMSsroot= new IMV_SQI();
 	}
 }

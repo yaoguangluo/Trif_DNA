@@ -1,7 +1,7 @@
 package M_V.ME.RelationPLSQL_;
 
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -18,14 +18,14 @@ import java.util.List;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class X_P_AndMap {
-	public static void _E(String[] sets, List<IMV_SIQ> obj,
-			List<IMV_SIQ> joinObj, IMV_SIQ object, List<IMV_SIQ> newObj) {
-		List<IMV_SIQ> newObjTemp = new ArrayList<>();
-		Iterator<IMV_SIQ> iterator = newObj.iterator();
+	public static void _E(String[] sets, List<IMV_SQI> obj,
+			List<IMV_SQI> joinObj, IMV_SQI object, List<IMV_SQI> newObj) {
+		List<IMV_SQI> newObjTemp = new ArrayList<>();
+		Iterator<IMV_SQI> iterator = newObj.iterator();
 		int count = 0;
 		while (iterator.hasNext()) {
 			int objRowId = count++;
-			IMV_SIQ objRow = iterator.next();
+			IMV_SQI objRow = iterator.next();
 			if (objRow.containsKey(sets[0]) && objRow.containsKey(sets[2])) {
 				if (sets[1].equalsIgnoreCase(S_ShellETL.SHELL_ETL_DOUBLE_EQUALS)
 						|| sets[1].equalsIgnoreCase(

@@ -2,7 +2,7 @@ package test.java.ME.VPC.V;
 
 import ME.VPC.M.app.App;
 import ME.VPC.V.ET.FyydPage_X_S_sListeners;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -139,7 +139,7 @@ class FyydPage_X_S_sListenersTest {
         assertEquals(0, actualFyydPage_X_S_sListeners.getKeyListeners().length);
         assertNull(actualFyydPage_X_S_sListeners.cte);
         assertNull(actualFyydPage_X_S_sListeners.table);
-        assertTrue(actualFyydPage_X_S_sListeners.subASCmap instanceof IMV_SIQ);
+        assertTrue(actualFyydPage_X_S_sListeners.subASCmap instanceof IMV_SQI);
         assertNull(actualFyydPage_X_S_sListeners.statistic);
         assertNull(actualFyydPage_X_S_sListeners.sets);
         assertNull(actualFyydPage_X_S_sListeners.sensingTest);
@@ -219,7 +219,7 @@ class FyydPage_X_S_sListenersTest {
         assertNull(actualFyydPage_X_S_sListeners.app_S);
         assertNull(actualFyydPage_X_S_sListeners._A);
         assertNull(actualFyydPage_X_S_sListeners.NE);
-        assertTrue(actualFyydPage_X_S_sListeners.DNNmap instanceof IMV_SIQ);
+        assertTrue(actualFyydPage_X_S_sListeners.DNNmap instanceof IMV_SQI);
         assertEquals(0, actualFyydPage_X_S_sListeners.getPropertyChangeListeners().length);
         assertNull(actualFyydPage_X_S_sListeners.getLayout());
         assertNull(actualFyydPage_X_S_sListeners.data);

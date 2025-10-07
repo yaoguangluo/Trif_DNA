@@ -1,6 +1,6 @@
 package U_V.ESU.xml;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.ESU.json.Json_ESU_X_jsonArrayToList;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -32,7 +32,7 @@ public class XML_ESU_X_xmlToList {
             Object object = jSONArray.get(i);
             if (object instanceof JSONObject) {
                 list.add(new Gson().fromJson(jSONArray.getJSONObject(i).toString()
-                        , new TypeToken<IMV_SIQ>() {
+                        , new TypeToken<IMV_SQI>() {
                         }.getType()));
             } else if (object instanceof String) {
                 list.add(String.valueOf(object));

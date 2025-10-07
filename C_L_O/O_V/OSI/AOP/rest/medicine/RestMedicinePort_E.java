@@ -7,8 +7,8 @@ import S_A.AVQ.OVQ.OSQ.VSQ.obj.Verbal;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Annotation;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -162,7 +162,7 @@ public class RestMedicinePort_E {
         int[] score_code = new int[app.app_S.copy.size()];
         double[] reg = new double[app.app_S.copy.size()];
         int count = 0;
-        IMV_SIQ_SS mapSearchWithoutSort = null;
+        IMV_SQI_SS mapSearchWithoutSort = null;
         if (key.split(" ")[0].length() > 5) {
             mapSearchWithoutSort = app.app_S._A.parserMixStringByReturnFrequencyMap(key, NE);
         } else {
@@ -355,7 +355,7 @@ public class RestMedicinePort_E {
         return app;
     }
 
-    public static IMV_SIQ getMedicineBookFeedbackZY(App app, String string, App NE) {
+    public static IMV_SQI getMedicineBookFeedbackZY(App app, String string, App NE) {
         app = RestMedicinePort_E.kernel(app, string, NE);
         if (null == app) {
             return null;
@@ -379,7 +379,7 @@ public class RestMedicinePort_E {
         }
         preAdd += "\r\n\r\n";
         if (app.app_S.text.getText().length() > 5000) {
-            IMV_SIQ output = new IMV_SIQ();
+            IMV_SQI output = new IMV_SQI();
             try {
                 output.put(URLEncoder.encode("zy", "UTF-8"), URLEncoder.encode(preAdd, "UTF-8"));
             } catch (UnsupportedEncodingException e) {
@@ -394,7 +394,7 @@ public class RestMedicinePort_E {
             app.app_S.text.setText(preAdd);
         }
         app.app_S.text.validate();
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         try {
             output.put(URLEncoder.encode("zy", "UTF-8"), URLEncoder.encode(preAdd, "UTF-8"));
         } catch (UnsupportedEncodingException e) {
@@ -404,7 +404,7 @@ public class RestMedicinePort_E {
         return output;
     }
 
-    public static IMV_SIQ getMedicineBookFeedbackXY(App app, String string) {
+    public static IMV_SQI getMedicineBookFeedbackXY(App app, String string) {
         app = RestMedicinePort_E.kernel(app, string, app);
         if (null == app) {
             return null;
@@ -447,7 +447,7 @@ public class RestMedicinePort_E {
                 + "可能性：" + app.app_S.wskxPage.table.getValueAt(i, 1).toString();
             preAdd += "\r\n\r\n";
         }
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         try {
             output.put(URLEncoder.encode("xy", "UTF-8"), URLEncoder.encode(preAdd, "UTF-8"));
         } catch (UnsupportedEncodingException e) {
@@ -457,7 +457,7 @@ public class RestMedicinePort_E {
         return output;
     }
 
-    public static IMV_SIQ getMedicineBookFeedbackZT(App app, String string) {
+    public static IMV_SQI getMedicineBookFeedbackZT(App app, String string) {
         app = RestMedicinePort_E.kernel(app, string, app);//later duplicate
         //feedback
         String preAdd = "仅作病症预测推荐, 不做行医诊治分析, 请拥有医师资格证人员慎重分析病情, 来做证候分析。谢谢!";
@@ -507,7 +507,7 @@ public class RestMedicinePort_E {
             }
         }
         if (app.app_S.text.getText().length() > 5000) {
-            IMV_SIQ output = new IMV_SIQ();
+            IMV_SQI output = new IMV_SQI();
             try {
                 output.put(URLEncoder.encode("zt", "UTF-8"), URLEncoder.encode(preAdd, "UTF-8"));
             } catch (UnsupportedEncodingException e) {
@@ -522,7 +522,7 @@ public class RestMedicinePort_E {
             app.app_S.text.setText(preAdd);
         }
         app.app_S.text.validate();
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         try {
             output.put(URLEncoder.encode("zt", "UTF-8"), URLEncoder.encode(preAdd, "UTF-8"));
         } catch (UnsupportedEncodingException e) {
@@ -532,7 +532,7 @@ public class RestMedicinePort_E {
         return output;
     }
 
-    public static IMV_SIQ getMedicineBookFeedbackXT(App app, String string) {
+    public static IMV_SQI getMedicineBookFeedbackXT(App app, String string) {
         app = RestMedicinePort_E.kernel(app, string, app);
         //feedback
         String preAdd = "仅作病症预测推荐, 不做行医诊治分析, 请拥有医师资格证人员慎重分析病情, 来做证候分析。谢谢!";
@@ -546,7 +546,7 @@ public class RestMedicinePort_E {
         }
         preAdd += "\r\n\r\n";
         app.app_S.text.validate();
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         try {
             output.put(URLEncoder.encode("xt", "UTF-8"), URLEncoder.encode(preAdd, "UTF-8"));
         } catch (UnsupportedEncodingException e) {
@@ -556,7 +556,7 @@ public class RestMedicinePort_E {
         return output;
     }
 
-    public static IMV_SIQ getMedicineBookFeedbackYT(App app, String string) {
+    public static IMV_SQI getMedicineBookFeedbackYT(App app, String string) {
         app = RestMedicinePort_E.kernel(app, string, app);
         //feedback
         String preAdd = "仅作病症预测推荐, 不做行医诊治分析, 请拥有医师资格证人员慎重分析病情, 来做证候分析。谢谢!";
@@ -606,7 +606,7 @@ public class RestMedicinePort_E {
             }
         }
         if (app.app_S.text.getText().length() > 5000) {
-            IMV_SIQ output = new IMV_SIQ();
+            IMV_SQI output = new IMV_SQI();
             try {
                 output.put(URLEncoder.encode("yt", "UTF-8"), URLEncoder.encode(preAdd, "UTF-8"));
             } catch (UnsupportedEncodingException e) {
@@ -620,7 +620,7 @@ public class RestMedicinePort_E {
             app.app_S.text.setText(preAdd);
         }
         app.app_S.text.validate();
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         try {
             output.put(URLEncoder.encode("yt", "UTF-8"), URLEncoder.encode(preAdd, "UTF-8"));
         } catch (UnsupportedEncodingException e) {
@@ -629,7 +629,7 @@ public class RestMedicinePort_E {
         return output;
     }
 
-    public static IMV_SIQ getMedicineBookFeedback(App app, String string) {
+    public static IMV_SQI getMedicineBookFeedback(App app, String string) {
         app = RestMedicinePort_E.kernel(app, string, app);
         //feedback
         String preAdd = "仅作病症预测推荐, 不做行医诊治分析, 请拥有医师资格证人员慎重分析病情, 来做证候分析。谢谢!";
@@ -731,7 +731,7 @@ public class RestMedicinePort_E {
             }
         }
         if (app.app_S.text.getText().length() > 5000) {
-            IMV_SIQ output = new IMV_SIQ();
+            IMV_SQI output = new IMV_SQI();
             try {
                 output.put(URLEncoder.encode("yl", "UTF-8"), URLEncoder.encode(preAdd, "UTF-8"));
             } catch (UnsupportedEncodingException e) {
@@ -745,7 +745,7 @@ public class RestMedicinePort_E {
             app.app_S.text.setText(preAdd);
         }
         app.app_S.text.validate();
-        IMV_SIQ output = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
         try {
             output.put(URLEncoder.encode("yl", "UTF-8"), URLEncoder.encode(preAdd, "UTF-8"));
         } catch (UnsupportedEncodingException e) {

@@ -6,7 +6,7 @@ import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.DB;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Spec;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Table;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -45,7 +45,7 @@ public class XlsToYLJBufferPageBackeUp {
         Object[][] output = null;
         try {
             DB db = new DB();
-            IMV_SIQ bases = new IMV_SIQ();
+            IMV_SQI bases = new IMV_SQI();
             db.I_Bases(bases);
             //read
             FileDialog filedialog = new FileDialog(new Frame()
@@ -62,7 +62,7 @@ public class XlsToYLJBufferPageBackeUp {
             }
             String baseName = "XlsImages";
             Base baseBuffer = new Base();
-            IMV_SIQ tables = new IMV_SIQ();
+            IMV_SQI tables = new IMV_SQI();
             baseBuffer.I_Tables(tables);
             //table name
             for (int sheetNumber = 0; sheetNumber < wb.getNumberOfSheets(); sheetNumber++) {
@@ -78,7 +78,7 @@ public class XlsToYLJBufferPageBackeUp {
                     HSSFRow row = sheet.getRow(0);
                     int rowSize = row.getLastCellNum();
                     specNames = new String[row.getLastCellNum()];
-                    IMV_SIQ culumnTypes = new IMV_SIQ();
+                    IMV_SQI culumnTypes = new IMV_SQI();
                     spec.I_CulumnTypes(culumnTypes);
                     for (int cellNumber = 0; cellNumber < rowSize; cellNumber++) {
                         HSSFCell cellInputTemp = row.getCell(cellNumber);
@@ -130,7 +130,7 @@ public class XlsToYLJBufferPageBackeUp {
                     tableBuffer.I_Spec(spec);
                 }
                 //row
-                ConcurrentHashMap<String, Row> rows = new IMV_SIQ();
+                ConcurrentHashMap<String, Row> rows = new IMV_SQI();
                 tableBuffer.I_Rows(rows);
                 output = new Object[sheet.getPhysicalNumberOfRows() - startRow][20];//max 20
                 //loop
@@ -138,7 +138,7 @@ public class XlsToYLJBufferPageBackeUp {
                     HSSFRow row = sheet.getRow(rowNumber);
                     int rowSize = row.getLastCellNum();
                     Row rowBuffer = new Row();
-                    IMV_SIQ cells = new IMV_SIQ();
+                    IMV_SQI cells = new IMV_SQI();
                     rowBuffer.I_Cells(cells);
                     for (int cellNumber = 0; cellNumber < rowSize; cellNumber++) {
                         HSSFCell cellInputTemp = row.getCell(cellNumber);

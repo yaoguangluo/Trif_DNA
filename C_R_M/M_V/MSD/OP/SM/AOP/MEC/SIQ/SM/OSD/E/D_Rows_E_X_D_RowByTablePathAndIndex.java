@@ -2,7 +2,7 @@ package M_V.MSD.OP.SM.AOP.MEC.SIQ.SM.OSD.E;
 
 import M_V.MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Table;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.File;
 
@@ -16,7 +16,7 @@ import java.io.File;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class D_Rows_E_X_D_RowByTablePathAndIndex {
-	public static IMV_SIQ _E(String tablePath, String pageIndex, boolean mod) {
+	public static IMV_SQI _E(String tablePath, String pageIndex, boolean mod) {
 		int rowInsertIndex = Integer.parseInt(pageIndex);
 		File fileDBTable = new File(tablePath);
 		if (fileDBTable.isDirectory()) {
@@ -43,7 +43,7 @@ public class D_Rows_E_X_D_RowByTablePathAndIndex {
 				}
 			}
 		}
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		output.put("totalPages", rowInsertIndex);
 		String[] sets = tablePath.split("/");
 		String baseName = sets[sets.length - 2];

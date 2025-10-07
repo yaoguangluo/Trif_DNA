@@ -1,6 +1,6 @@
 package U_V.ESU.map;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Hashtable;
 
@@ -15,7 +15,7 @@ import java.util.Hashtable;
  * */
 
 public class Map_ESU_X_mapToHash{
-	public static Hashtable<String, Object> _E(IMV_SIQ map){
+	public static Hashtable<String, Object> _E(IMV_SQI map){
 		Hashtable<String, Object> hashtable= new Hashtable<>();
 		for (String string : (Iterable<String>) map.keySet()) {
 			hashtable.put(string, map.get(string));
@@ -24,11 +24,11 @@ public class Map_ESU_X_mapToHash{
 	}
 }
 //  剔除个人著作权 申请范围	
-//	public static String mapToJsonString(Gson gson, IMV_SIQ map){
+//	public static String mapToJsonString(Gson gson, IMV_SQI map){
 //		return gson.toJson(map);
 //	}
 //
-//	public static String mapToXml(Gson gson, IMV_SIQ map){
+//	public static String mapToXml(Gson gson, IMV_SQI map){
 //		JSONObject jSONObject= new JSONObject(gson.toJson(map));
 //		return XML.toString(jSONObject);	
 //	}

@@ -1,7 +1,7 @@
 package M_V.ME.APM.VSQ.xlx;
 
 import S_A.SVQ.stable.S_Colors;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
@@ -138,7 +138,7 @@ public class CoAuthorForWord_V extends CoAuthorForWord_A {
 
     @SuppressWarnings({"unchecked", "static-access"})
     public void drawWordsBlack(int[] s, int se, double[] root, float a, int j
-        , int k, IMV_SIQ root3, Map<String, Integer> didLeaf
+        , int k, IMV_SQI root3, Map<String, Integer> didLeaf
         , float length, float rotRatio, float rotRatioZ) {
         if (root3 == null || root3.size() == 0) {
             return;
@@ -160,7 +160,7 @@ public class CoAuthorForWord_V extends CoAuthorForWord_A {
             if (leafName.length() == 0) {
                 continue Here;
             }
-            IMV_SIQ leaf = (IMV_SIQ) root3.get(leafName);
+            IMV_SQI leaf = (IMV_SQI) root3.get(leafName);
             if (leaf.size() > 0) {
             }
             double mca = Math.cos(2 * Math.PI * ((i + rotRatio / 100)) / (s[se])) * a;

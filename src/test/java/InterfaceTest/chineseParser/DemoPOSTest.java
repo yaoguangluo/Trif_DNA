@@ -1,10 +1,9 @@
 package test.java.InterfaceTest.chineseParser;
 
 import A_V.ASQ.PSU.test.TimeCheck;
-import O_V.OSM.shell.CommandClass;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
@@ -32,10 +31,10 @@ import java.util.List;
  * 固一个区域的层面，眼光思考的是整个体系的脉络，挑战的是整个环境变化。--罗瑶光
  * */
 public class DemoPOSTest {
-	public IMV_SIQ_SS noun = new IMV_SIQ_SS();
-	public IMV_SIQ_SS verb = new IMV_SIQ_SS();
-	public IMV_SIQ_SS adj = new IMV_SIQ_SS();
-	public IMV_SIQ_SS adv = new IMV_SIQ_SS();
+	public IMV_SQI_SS noun = new IMV_SQI_SS();
+	public IMV_SQI_SS verb = new IMV_SQI_SS();
+	public IMV_SQI_SS adj = new IMV_SQI_SS();
+	public IMV_SQI_SS adv = new IMV_SQI_SS();
 
 	public static void main(String[] argv) {
 		DemoPOSTest demoPOSTest = new DemoPOSTest();
@@ -49,7 +48,7 @@ public class DemoPOSTest {
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 准备计算
 		// 词性初始化
-		IMV_SIQ pos = commonTestInition.NE.app_S._A.getPosCnToCn();
+		IMV_SQI pos = commonTestInition.NE.app_S._A.getPosCnToCn();
 		List<String> sets = new ArrayList<>();
 		TimeCheck t = new TimeCheck();
 		// 等待分词的语句
@@ -74,159 +73,151 @@ public class DemoPOSTest {
 	}
 
 	public void testPOStoWordFrequencyList(List<String> sets,
-		IMV_SIQ pos) {
+		IMV_SQI pos) {
 		// 结果归纳
 		// 1 名词 动词 形容词归纳
 		int charPosition = 0;
 		/*
 		 * 因为混合中文数字是charPosition 所以分词的sets也要charPosition变换增加精确度。
 		 */
-		System.out.println("-展示词性-");
+		Log.logger.info("-展示词性-");
 		for (int j = 0; j < 1; j++) {
 			String wordsTemp = "";
 			for (int i = 0; i < sets.size(); i++) {
 				String string = sets.get(i);
-				if (!string.replaceAll("\\s+", "").equals("")) {
-					String words = sets.get(i);
-					String[] strings = words.split("/");
-					String word = strings[0];
-					String wordPOS = strings[1];
-					wordsTemp += word + "/" + wordPOS + "----";
-					//System.out.print(word + "/" + wordPOS + "----");
-					if (wordPOS.contains("名")) {
-						WordFrequency wordFrequency;
-						if (noun.containsKey(word)) {
-							wordFrequency = noun.get(word);
-							double f = wordFrequency.get_frequency();
-							wordFrequency.I_frequency(f + 1);// 2
-															 // 词频归纳
-						} else {
-							wordFrequency = new WordFrequency(1,
-								word);
-						}
-						wordFrequency.positions.add(charPosition);
-						wordFrequency.I_pos("名词");
-						noun.put(word, wordFrequency);
+				if (string.replaceAll("\\s+", "").equals("")) {
+					charPosition += string.length();
+					continue;
+				}
+				String words = sets.get(i);
+				String[] strings = words.split("/");
+				String word = strings[0];
+				String wordPOS = strings[1];
+				wordsTemp += word + "/" + wordPOS + "----";
+				//System.out.print(word + "/" + wordPOS + "----");
+				if (wordPOS.contains("名")) {
+					WordFrequency wordFrequency;
+					if (noun.containsKey(word)) {
+						wordFrequency = noun.get(word);
+						double f = wordFrequency.get_frequency();
+						wordFrequency.I_frequency(f + 1);// 2 词频归纳
+					} else {
+						wordFrequency = new WordFrequency(1, word);
 					}
-					if (wordPOS.contains("动")) {
-						WordFrequency wordFrequency;
-						if (verb.containsKey(word)) {
-							wordFrequency = verb.get(word);
-							double f = wordFrequency.get_frequency();
-							wordFrequency.I_frequency(f + 1);
-							// 2 // 词频归纳
-						} else {
-							wordFrequency = new WordFrequency(1,
-								word);
-						}
-						wordFrequency.positions.add(charPosition);
-						wordFrequency.I_pos("动词");
-						verb.put(word, wordFrequency);
+					wordFrequency.positions.add(charPosition);
+					wordFrequency.I_pos("名词");
+					noun.put(word, wordFrequency);
+				}
+				if (wordPOS.contains("动")) {
+					WordFrequency wordFrequency;
+					if (verb.containsKey(word)) {
+						wordFrequency = verb.get(word);
+						double f = wordFrequency.get_frequency();
+						wordFrequency.I_frequency(f + 1);
+						// 2 // 词频归纳
+					} else {
+						wordFrequency = new WordFrequency(1, word);
 					}
-					if (wordPOS.contains("未知") || wordPOS.contains(
-						"形")) {
-						WordFrequency wordFrequency;
-						if (adj.containsKey(word)) {
-							wordFrequency = adj.get(word);
-							double f = wordFrequency.get_frequency();
-							wordFrequency.I_frequency(f + 1);// 词频归纳
-						} else {
-							wordFrequency = new WordFrequency(1,
-								word);
-						}
-						wordFrequency.positions.add(charPosition);
-						/*
-						// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，
-						// 里面副词出现了整体性问题，到现在2025年，这7年没有一个人告知我
-						// 这个问题，我的自己工程又从来没有用过这副词的逻辑，所以一直没碰
-						// ，现在商业化测试呢，我罗瑶光就还是给出一个解决方案。就是所有出
-						// 现形容词和副词的词汇，就看他下一个词汇是 动词还是名词，动词就
-						// 改副，名词就改形容词。即可。或者统一语料库后缀形副词。我选择前
-						// 者。这个词性属性不影响分词引擎。
-						 */
-						if (i + 1 < sets.size()) {
-							String wordNext = sets.get(i + 1);
-							Object wordNextObjectPOS = pos.get(
-								wordNext);
-							if (null != wordNextObjectPOS) {
-								String wordNextPOS = wordNextObjectPOS
-									.toString();
-								if (wordNext.equals("地")) {
-									wordFrequency.I_pos("形谓词作副词");
-								} else if (wordNext.equals("的")) {
-									wordFrequency.I_pos("形谓词作形容词");
-								} else if (wordNextPOS.contains(
-									"动词")) {
-									wordFrequency.I_pos("形谓词作副词");
-								} else if (wordNextPOS.contains(
-									"名词")) {
-									wordFrequency.I_pos("形谓词作形容词");
-								} else {
-									wordPOS = "形谓词通用";// -trif later
-									wordFrequency.I_pos(wordPOS);
-								}
-							} else {
+					wordFrequency.positions.add(charPosition);
+					wordFrequency.I_pos("动词");
+					verb.put(word, wordFrequency);
+				}
+				if (wordPOS.contains("未知") || wordPOS.contains("形")) {
+					WordFrequency wordFrequency;
+					if (adj.containsKey(word)) {
+						wordFrequency = adj.get(word);
+						double f = wordFrequency.get_frequency();
+						wordFrequency.I_frequency(f + 1);// 词频归纳
+					} else {
+						wordFrequency = new WordFrequency(1, word);
+					}
+					wordFrequency.positions.add(charPosition);
+					/*
+					// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，
+					// 里面副词出现了整体性问题，到现在2025年，这7年没有一个人告知我
+					// 这个问题，我的自己工程又从来没有用过这副词的逻辑，所以一直没碰
+					// ，现在商业化测试呢，我罗瑶光就还是给出一个解决方案。就是所有出
+					// 现形容词和副词的词汇，就看他下一个词汇是 动词还是名词，动词就
+					// 改副，名词就改形容词。即可。或者统一语料库后缀形副词。我选择前
+					// 者。这个词性属性不影响分词引擎。
+					 */
+					if (i + 1 < sets.size()) {
+						String wordNext = sets.get(i + 1);
+						Object wordNextObjectPOS = pos.get(wordNext);
+						if (null != wordNextObjectPOS) {
+							String wordNextPOS = wordNextObjectPOS
+								.toString();
+							if (wordNext.equals("地")) {
+								wordFrequency.I_pos("形谓词作副词");
+							} else if (wordNext.equals("的")) {
 								wordFrequency.I_pos("形谓词作形容词");
+							} else if (wordNextPOS.contains("动词")) {
+								wordFrequency.I_pos("形谓词作副词");
+							} else if (wordNextPOS.contains("名词")) {
+								wordFrequency.I_pos("形谓词作形容词");
+							} else {
+								wordPOS = "形谓词通用";// -trif later
+								wordFrequency.I_pos(wordPOS);
 							}
 						} else {
 							wordFrequency.I_pos("形谓词作形容词");
 						}
-						adj.put(word, wordFrequency);
+					} else {
+						wordFrequency.I_pos("形谓词作形容词");
 					}
-					if (wordPOS.contains("未知") || wordPOS.contains(
-						"副")) {
-						WordFrequency wordFrequency;
-						if (adv.containsKey(word)) {
-							wordFrequency = adv.get(word);
-							double f = wordFrequency.get_frequency();
-							wordFrequency.I_frequency(f + 1);// 2 词频归纳
-						} else {
-							wordFrequency = new WordFrequency(1,
-								word);
-						}
-						wordFrequency.positions.add(charPosition);
-						/*
-						// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，
-						// 里面副词出现了整体性问题，到现在2025年，这7年没有一个人告知
-						// 我这个问题，我的自己工程又从来没有用过这副词的逻辑，所以一直
-						// 没碰，现在商业化测试呢，我罗瑶光就还是给出一个解决方案。就是
-						// 所有出现形容词和副词的词汇，就看他下一个词汇是动词还是名词，
-						// 动词就改副，名词就改形容词。即可。或者统一语料库后缀形副词。
-						// 我选择前者。这个词性属性不影响分词引擎。这种修改不适用于歧义
-						// 缺少地后戳的 连词结构 比如丰富和缓慢地测试，丰富不会被修改。
-						// 注意哦～因为语料库本就不属于德塔图灵分词的著作权源码内容，所
-						// 以一直不碰。要我优化可以，记得给我钱，--罗瑶光-送大神送到西。
-						*/
-						if (i + 1 < sets.size()) {
-							String wordNext = sets.get(i + 1);
-							Object wordNextObjectPOS = pos.get(
-								wordNext);
-							if (null != wordNextObjectPOS) {
-								String wordNextPOS = wordNextObjectPOS
-									.toString();
-								if (wordNext.equals("地")) {
-									wordFrequency.I_pos("形谓词作副词");
-								} else if (wordNext.equals("的")) {
-									wordFrequency.I_pos("形谓词作形容词");
-								} else if (wordNextPOS.contains(
-									"动词")) {
-									wordFrequency.I_pos("形谓词作副词");
-								} else if (wordNextPOS.contains(
-									"名词")) {
-									wordFrequency.I_pos("形谓词作形容词");
-								} else {
-									wordPOS = "形谓词通用";// -trif later
-									wordFrequency.I_pos(wordPOS);
-								}
-							} else {
-								wordFrequency.I_pos("形谓词作副词");
-							}
-						} else {
-							wordFrequency.I_pos("形谓词作副词");
-						}
-						adv.put(word, wordFrequency);
-					}
+					adj.put(word, wordFrequency);
 				}
+				if (!(wordPOS.contains("未知") || wordPOS.contains(
+					"副"))) {
+					charPosition += string.length();
+					continue;
+				}
+				WordFrequency wordFrequency;
+				if (adv.containsKey(word)) {
+					wordFrequency = adv.get(word);
+					double f = wordFrequency.get_frequency();
+					wordFrequency.I_frequency(f + 1);// 2 词频归纳
+				} else {
+					wordFrequency = new WordFrequency(1, word);
+				}
+				wordFrequency.positions.add(charPosition);
+				/*
+				// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，
+				// 里面副词出现了整体性问题，到现在2025年，这7年没有一个人告知
+				// 我这个问题，我的自己工程又从来没有用过这副词的逻辑，所以一直
+				// 没碰，现在商业化测试呢，我罗瑶光就还是给出一个解决方案。就是
+				// 所有出现形容词和副词的词汇，就看他下一个词汇是动词还是名词，
+				// 动词就改副，名词就改形容词。即可。或者统一语料库后缀形副词。
+				// 我选择前者。这个词性属性不影响分词引擎。这种修改不适用于歧义
+				// 缺少地后戳的 连词结构 比如丰富和缓慢地测试，丰富不会被修改。
+				// 注意哦～因为语料库本就不属于德塔图灵分词的著作权源码内容，所
+				// 以一直不碰。要我优化可以，记得公开当面给我钱，--罗瑶光
+				*/
+				if (i + 1 < sets.size()) {
+					String wordNext = sets.get(i + 1);
+					Object wordNextObjectPOS = pos.get(wordNext);
+					if (null != wordNextObjectPOS) {
+						String wordNextPOS = wordNextObjectPOS
+							.toString();
+						if (wordNext.equals("地")) {
+							wordFrequency.I_pos("形谓词作副词");
+						} else if (wordNext.equals("的")) {
+							wordFrequency.I_pos("形谓词作形容词");
+						} else if (wordNextPOS.contains("动词")) {
+							wordFrequency.I_pos("形谓词作副词");
+						} else if (wordNextPOS.contains("名词")) {
+							wordFrequency.I_pos("形谓词作形容词");
+						} else {
+							wordPOS = "形谓词通用";// -trif later
+							wordFrequency.I_pos(wordPOS);
+						}
+					} else {
+						wordFrequency.I_pos("形谓词作副词");
+					}
+				} else {
+					wordFrequency.I_pos("形谓词作副词");
+				}
+				adv.put(word, wordFrequency);
 				charPosition += string.length();
 			}
 			Log.logger.info(wordsTemp);
@@ -244,15 +235,6 @@ public class DemoPOSTest {
 		while (iteratorNoun.hasNext()) {
 			String wordNoun = iteratorNoun.next();
 			WordFrequency wordFrequency = noun.get(wordNoun);
-			/*	Log.logger.info("");
-			//	Log.logger.info("--词汇->" + wordFrequency.get_word());
-			//	Log.logger.info("-词性->" + wordFrequency.get_pos());
-			//	Log.logger.info("-平均距离->" + wordFrequency
-			//		.getAveragePosition());
-			//	Log.logger.info("-出现频率->" + wordFrequency
-			//		.get_frequency());
-			//
-			 */
 			String wordFrequencyTemp = "";
 			wordFrequencyTemp += "----词汇->" + wordFrequency
 				.get_word();
@@ -275,15 +257,6 @@ public class DemoPOSTest {
 		while (iteratorVerb.hasNext()) {
 			String wordVerb = iteratorVerb.next();
 			WordFrequency wordFrequency = verb.get(wordVerb);
-			/*			
-			 * Log.logger.info("");
-			 * Log.logger.info("--词汇->" + wordFrequency.get_word());
-			 * Log.logger.info("-词性->" + wordFrequency.get_pos());
-			 * Log.logger.info("-平均距离->" + wordFrequency
-			 *	 .getAveragePosition());
-			 * Log.logger.info("-出现频率->" + wordFrequency
-			 *	 .get_frequency());
-			 */
 			String wordFrequencyTemp = "";
 			wordFrequencyTemp += "----词汇->" + wordFrequency
 				.get_word();
@@ -305,15 +278,6 @@ public class DemoPOSTest {
 		while (iteratorAdj.hasNext()) {
 			String wordAdj = iteratorAdj.next();
 			WordFrequency wordFrequency = adj.get(wordAdj);
-			/*
-			//	Log.logger.info("");
-			//	Log.logger.info("--词汇->" + wordFrequency.get_word());
-			//	Log.logger.info("-词性->" + wordFrequency.get_pos());
-			//	Log.logger.info("-平均距离->" + wordFrequency
-			//		.getAveragePosition());
-			//	Log.logger.info("-出现频率->" + wordFrequency
-			//		.get_frequency());
-			*/
 			String wordFrequencyTemp = "";
 			wordFrequencyTemp += "----词汇->" + wordFrequency
 				.get_word();
@@ -335,15 +299,6 @@ public class DemoPOSTest {
 		while (iteratorAdv.hasNext()) {
 			String wordAdv = iteratorAdv.next();
 			WordFrequency wordFrequency = adv.get(wordAdv);
-			/*
-			//	Log.logger.info("");
-			//	Log.logger.info("--词汇->" + wordFrequency.get_word());
-			//	Log.logger.info("-词性->" + wordFrequency.get_pos());
-			//	Log.logger.info("-平均距离->" + wordFrequency
-			//		.getAveragePosition());
-			//	Log.logger.info("-出现频率->" + wordFrequency
-			//		.get_frequency());
-			*/
 			String wordFrequencyTemp = "";
 			wordFrequencyTemp += "----词汇->" + wordFrequency
 				.get_word();
@@ -357,8 +312,9 @@ public class DemoPOSTest {
 	}
 
 	// 分解
+	@SuppressWarnings("unused")
 	public List<String> testPOSOnlyGetList(List<String> sets,
-		IMV_SIQ pos) {
+		IMV_SQI pos) {
 		List<String> output = new ArrayList<String>();
 		/*
 		// 结果归纳
@@ -373,52 +329,55 @@ public class DemoPOSTest {
 			String wordsTemp = "";
 			for (int i = 0; i < sets.size(); i++) {
 				String string = sets.get(i);
-				if (!string.replaceAll("\\s+", "").equals("")) {
-					String word = sets.get(i);
-					Object wordObjectPOS = pos.get(string);
-					if (null == wordObjectPOS) {
-						wordsTemp += word + "/" + "NULL" + "----";
-						charPosition += string.length();
-						output.add(word + "/" + "NULL");
-						continue;
-					}
-					String wordPOS = wordObjectPOS.toString();
-					/*
-					 * 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，里面副词
-					 * 出现了整体性问题，到现在2025年，这7年没有一个人告知我这个问题，我的
-					 * 自己工程又从来没有用过这副词的逻辑，所以一直没碰，现在商业化测试呢，
-					 * 我罗瑶光就还是给出一个解决方案。就是所有出现形容词和副词的词汇，就看
-					 * 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
-					 * 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
-					 */
-					if (wordPOS.contains("未知") || wordPOS.contains(
-						"形") || wordPOS.contains("副")) {
-						if (i + 1 < sets.size()) {
-							String wordNext = sets.get(i + 1);
-							Object wordNextObjectPOS = pos.get(
-								wordNext);
-							if (null != wordNextObjectPOS) {
-								String wordNextPOS = wordNextObjectPOS
-									.toString();
-								if (wordNext.equals("地")) {
-									wordPOS = "形谓词作副词";
-								} else if (wordNext.equals("的")) {
-									wordPOS = "形谓词作形容词";
-								} else if (wordNextPOS.contains(
-									"动词")) {
-									wordPOS = "形谓词作副词";
-								} else if (wordNextPOS.contains(
-									"名词")) {
-									wordPOS = "形谓词作形容词";
-								} else {
-									wordPOS = "形谓词通用";// -trif later
-								}
-							}
-						}
-					}
+				if (string.replaceAll("\\s+", "").equals("")) {
+					charPosition += string.length();
+					continue;
+				}
+				String word = sets.get(i);
+				Object wordObjectPOS = pos.get(string);
+				if (null == wordObjectPOS) {
+					wordsTemp += word + "/" + "NULL" + "----";
+					charPosition += string.length();
+					output.add(word + "/" + "NULL");
+					continue;
+				}
+				String wordPOS = wordObjectPOS.toString();
+				/*
+				 * 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，里面副词
+				 * 出现了整体性问题，到现在2025年，这7年没有一个人告知我这个问题，我的
+				 * 自己工程又从来没有用过这副词的逻辑，所以一直没碰，现在商业化测试呢，
+				 * 我罗瑶光就还是给出一个解决方案。就是所有出现形容词和副词的词汇，就看
+				 * 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
+				 * 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
+				 */
+				if (!(wordPOS.contains("未知") || wordPOS.contains("形")
+					|| wordPOS.contains("副"))) {
 					wordsTemp += word + "/" + wordPOS + "----";
 					output.add(word + "/" + wordPOS);
+					charPosition += string.length();
+					continue;
 				}
+				if (i + 1 < sets.size()) {
+					String wordNext = sets.get(i + 1);
+					Object wordNextObjectPOS = pos.get(wordNext);
+					if (null != wordNextObjectPOS) {
+						String wordNextPOS = wordNextObjectPOS
+							.toString();
+						if (wordNext.equals("地")) {
+							wordPOS = "形谓词作副词";
+						} else if (wordNext.equals("的")) {
+							wordPOS = "形谓词作形容词";
+						} else if (wordNextPOS.contains("动词")) {
+							wordPOS = "形谓词作副词";
+						} else if (wordNextPOS.contains("名词")) {
+							wordPOS = "形谓词作形容词";
+						} else {
+							wordPOS = "形谓词通用";// -trif later
+						}
+					}
+				}
+				wordsTemp += word + "/" + wordPOS + "----";
+				output.add(word + "/" + wordPOS);
 				charPosition += string.length();
 			}
 			Log.logger.info(wordsTemp);
@@ -427,7 +386,7 @@ public class DemoPOSTest {
 	}
 
 	//原测试函数分解后逻辑
-	public void testPOS(List<String> sets, IMV_SIQ pos) {
+	public void testPOS(List<String> sets, IMV_SQI pos) {
 
 		Log.logger.info("----------");
 		Log.logger.info("进行词性修正");
@@ -543,7 +502,7 @@ public class DemoPOSTest {
 //
 //Process finished with exit code 0
 
-//public void testPOS(List<String> sets, IMV_SIQ pos) {
+//public void testPOS(List<String> sets, IMV_SQI pos) {
 //// 结果归纳
 //// 1 名词 动词 形容词归纳
 //int charPosition = 0;
@@ -782,3 +741,43 @@ public class DemoPOSTest {
 //	System.out.print("-出现频率->" + wordFrequency.get_frequency());
 //}
 //}
+
+/*	Log.logger.info("");
+//	Log.logger.info("--词汇->" + wordFrequency.get_word());
+//	Log.logger.info("-词性->" + wordFrequency.get_pos());
+//	Log.logger.info("-平均距离->" + wordFrequency
+//		.getAveragePosition());
+//	Log.logger.info("-出现频率->" + wordFrequency
+//		.get_frequency());
+//
+ */
+
+/*
+//	Log.logger.info("");
+//	Log.logger.info("--词汇->" + wordFrequency.get_word());
+//	Log.logger.info("-词性->" + wordFrequency.get_pos());
+//	Log.logger.info("-平均距离->" + wordFrequency
+//		.getAveragePosition());
+//	Log.logger.info("-出现频率->" + wordFrequency
+//		.get_frequency());
+*/
+
+/*
+//	Log.logger.info("");
+//	Log.logger.info("--词汇->" + wordFrequency.get_word());
+//	Log.logger.info("-词性->" + wordFrequency.get_pos());
+//	Log.logger.info("-平均距离->" + wordFrequency
+//		.getAveragePosition());
+//	Log.logger.info("-出现频率->" + wordFrequency
+//		.get_frequency());
+*/
+
+/*			
+ * Log.logger.info("");
+ * Log.logger.info("--词汇->" + wordFrequency.get_word());
+ * Log.logger.info("-词性->" + wordFrequency.get_pos());
+ * Log.logger.info("-平均距离->" + wordFrequency
+ *	 .getAveragePosition());
+ * Log.logger.info("-出现频率->" + wordFrequency
+ *	 .get_frequency());
+ */

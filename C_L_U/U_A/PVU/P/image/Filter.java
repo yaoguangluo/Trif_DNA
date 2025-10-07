@@ -162,7 +162,7 @@ public class Filter{
 	}
 	
 //	public Map<Double, ArrayList<Position2D>> P(int[][] rp1, int distance) {
-//		Map<Double, ArrayList<Position2D>> map= new IMV_SIQ();
+//		Map<Double, ArrayList<Position2D>> map= new IMV_SQI();
 //		int mask[][]= new int[rp1.length][rp1[0].length];	
 //		for(int i= 1; i< rp1.length-1; i++) {
 //			for(int j= 1; j< rp1[0].length-1; j++) {

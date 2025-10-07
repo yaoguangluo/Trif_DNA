@@ -5,7 +5,7 @@ import E_A.OEI.SVQ.MPC.fhmm.E.FastReadProjectFile;
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_MCI_MCU_MSI;
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_Common;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import OSI.OPE.OVU.PQE.flash.ThisCanvas;
 
 import javax.swing.ImageIcon;
@@ -27,7 +27,7 @@ public class AddFuChanBookNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI extends OSU_MCI_MC
 	}
 	
 	public AddFuChanBookNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI(Object[][] tableData_old, JTextPane text, App_S u
-			, CogsBinaryForest_AE _A, IMV_SIQ pos) {
+			, CogsBinaryForest_AE _A, IMV_SQI pos) {
 		this.text= text;
 		this.tableData_old= tableData_old;
 		thisIcon= FastReadProjectFile.getDetaImageIconReader("imageread.jpg", "DetaResources/imgETL/");

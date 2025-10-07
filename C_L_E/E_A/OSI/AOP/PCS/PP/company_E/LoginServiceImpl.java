@@ -1,7 +1,7 @@
 package E_A.OSI.AOP.PCS.PP.company_E;
 
 import E_A.OSI.AOP.PCS.PP.factory_E.LoginDAOImpl;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.dna.StringUtil;
 import U_A.PEU.P.dna.Token;
 import U_A.PEU.P.dna.TokenUtil;
@@ -113,7 +113,7 @@ public class LoginServiceImpl {// implements LoginService {
 	
 	
 	public static String checkTokenStatusAndGetLevel(String token
-			, String level, IMV_SIQ output)  {
+			, String level, IMV_SQI output)  {
 		if (null== token || token.equalsIgnoreCase("undefined")) {
 			return "invalid ..";
 		}

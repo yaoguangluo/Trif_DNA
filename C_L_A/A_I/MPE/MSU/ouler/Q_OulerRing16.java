@@ -10,7 +10,7 @@
 package A_I.MPE.MSU.ouler;
 
 import S_A.SVQ.stable.S_Common;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -286,9 +286,9 @@ TVI8
 	public static void main(String[] args) {
 		//init AOPM VECS IDUQ TXH DD
 		//初始环路
-		Map<String, Boolean> initonsLink= new IMV_SIQ();
+		Map<String, Boolean> initonsLink= new IMV_SQI();
 		//环路探索
-		Map<String, Boolean> didInitonsLink= new IMV_SIQ();
+		Map<String, Boolean> didInitonsLink= new IMV_SQI();
 		initonsLink.put("DC", true);
 		initonsLink.put("CD", true);
 		initonsLink.put("IV", true);

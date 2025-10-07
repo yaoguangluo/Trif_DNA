@@ -1,6 +1,6 @@
 package U_V.ESU.stringBuilder;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.json.JSONObject;
@@ -16,12 +16,12 @@ import org.json.JSONObject;
  * */
 
 public class S_ESU_X_stringBuilderToMap {
-    public static IMV_SIQ _E(Gson gson
+    public static IMV_SQI _E(Gson gson
             , StringBuilder stringBuilder) {
         JSONObject jSONObject
                 = new JSONObject(gson.toJson(stringBuilder.toString()));
         return gson.fromJson(jSONObject.toString()
-                , new TypeToken<IMV_SIQ>() {
+                , new TypeToken<IMV_SQI>() {
                 }.getType());
     }
 }

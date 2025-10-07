@@ -1,7 +1,7 @@
 package C_A.OCI.AMV.ECS.SVQ.MPC.fhmm.C;
 
 import C_A.ME.analysis.C.BinaryForest_A;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -13,6 +13,6 @@ import S_A.pheromone.IMV_SIQ;
  * */
 public interface SensingMap{
 	void IV_LenovoMap(BinaryForest_A _A) ;
-	public IMV_SIQ getLenovoMap();
-	//public void I_LenovoMap(IMV_SIQ lenovoMap);
+	public IMV_SQI getLenovoMap();
+	//public void I_LenovoMap(IMV_SQI lenovoMap);
 }

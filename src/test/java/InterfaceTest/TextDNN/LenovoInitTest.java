@@ -1,8 +1,8 @@
 package test.java.InterfaceTest.TextDNN;
 
 import S_A.SVQ.stable.S_String;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_X_;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -52,9 +52,9 @@ class LenovoInitTest {
 		String text = S_String.text1;
 		commonTestInition.NE.app_S.lenovoInit.IV_Exclude_A(text,
 			commonTestInition.NE);
-		IMV_SIQ_X_ environmentSampleMap = commonTestInition.NE.app_S.lenovoInit
+		IMV_SQI_X_ environmentSampleMap = commonTestInition.NE.app_S.lenovoInit
 			.getEnvironmentInit().getEmotionSampleMap();
-		IMV_SIQ lenovo = commonTestInition.NE.app_S.lenovoInit
+		IMV_SQI lenovo = commonTestInition.NE.app_S.lenovoInit
 			.getSensingMap().getLenovoMap();
 		// reduce
 		System.out.println("环    境：");

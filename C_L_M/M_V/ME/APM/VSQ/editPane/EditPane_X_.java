@@ -14,7 +14,7 @@ import P.image.Color_P;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.SVQ.stable.S_Maps;
 import S_A.VSQ.parser.EmotionSample;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.ESU.string.StringReplace;
 import exception.thread.DetaThread;
 
@@ -44,18 +44,18 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class EditPane_X_ extends Container implements KeyListener {
-    private IMV_SIQ ctj;
-    private IMV_SIQ ctk;
-    private IMV_SIQ ctt;
-    private IMV_SIQ ctr;
+    private IMV_SQI ctj;
+    private IMV_SQI ctk;
+    private IMV_SQI ctt;
+    private IMV_SQI ctr;
 
-    private IMV_SIQ cko;
-    private IMV_SIQ cfn;
-    private IMV_SIQ csp;
-    private IMV_SIQ cgm;
+    private IMV_SQI cko;
+    private IMV_SQI cfn;
+    private IMV_SQI csp;
+    private IMV_SQI cgm;
     //
     public App NE;
-    private IMV_SIQ pinyin;
+    private IMV_SQI pinyin;
     private EmotionSample emotionSample;
     private RatioMap ratioMap;
     private RatioMap_E ratioMap_E;
@@ -66,10 +66,10 @@ public class EditPane_X_ extends Container implements KeyListener {
     public String dataValue;
     public JTextPane data;
     public JTextPane text;
-    public IMV_SIQ pose;
-    public IMV_SIQ etc;
-    public IMV_SIQ cte;
-    public IMV_SIQ pos;
+    public IMV_SQI pose;
+    public IMV_SQI etc;
+    public IMV_SQI cte;
+    public IMV_SQI pos;
     public AE _A;
     public DetaButton buttonHighLight;
 

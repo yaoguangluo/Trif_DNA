@@ -13,7 +13,7 @@ import C_A.OSI.AOP.MS.VPC.server.ServerForward_Standard;
 import ME.VPC.M.app.App;
 import O_V.OSI.AOP.VPC.rest.VPCBackEnd;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -36,7 +36,7 @@ import java.nio.charset.StandardCharsets;
 public class RestMap extends ServerForward_Standard {
 	public static void P(String[] type, Socket socket, App NE) {
 		String[] column = type[1].split("&");
-		IMV_SIQ data = new IMV_SIQ();
+		IMV_SQI data = new IMV_SQI();
 		for (String cell : column) {
 			String[] cells = cell.split(S_ShellETL.SHELL_ETL_SIMPLE_EUQALS);
 			try {

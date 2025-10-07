@@ -7,7 +7,7 @@ import ME.VPC.M.app.App;
 import ME.VPC.S.ne.App_S;
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_MCI_MCU_MSI;
 import OSI.OPE.OVU.PQE.flash.ThisCanvas;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import exception.thread.DetaThread;
 
 import javax.swing.ImageIcon;
@@ -45,7 +45,7 @@ public class AddPGSearchPageNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI
 
 	public AddPGSearchPageNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI(
 			Object[][] tableData_old, JTextPane text, App_S u,
-			CogsBinaryForest_AE _A, IMV_SIQ pos) {
+			CogsBinaryForest_AE _A, IMV_SQI pos) {
 		this.text = text;
 		this.tableData_old = tableData_old;
 		thisIcon = FastReadProjectFile.getDetaImageIconReader("imageread.jpg",

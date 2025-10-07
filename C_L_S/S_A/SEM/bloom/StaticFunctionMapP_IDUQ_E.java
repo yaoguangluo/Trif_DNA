@@ -11,7 +11,7 @@ import A_I.MPE.P.PDN;
 import A_I.MPE.P.RST;
 import A_I.MPE.P.SeparaterLaw;
 import A_I.MPE.P.SwapLaw;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;

@@ -4,7 +4,7 @@ import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import E_A.OEI.SVQ.MPC.fhmm.E.FastReadProjectFile;
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import V_A.VSQ.OPE.jogl.JOGLOBJShape;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.glu.GLU;
@@ -36,7 +36,7 @@ import java.util.Map;
 @SuppressWarnings("serial")
 public class CoAuthorForWord_X_S extends JPanel {
     public ByteBuffer checkImageBuf = GLBuffers.newDirectByteBuffer(20 * 100 * 3);
-    public IMV_SIQ rootClassMap = new IMV_SIQ();
+    public IMV_SQI rootClassMap = new IMV_SQI();
 
     public Boolean clicked = false;
     public int mousex = 0;
@@ -48,8 +48,8 @@ public class CoAuthorForWord_X_S extends JPanel {
     public Map<String, Integer> frequencyLeaf;
     public Map<String, Integer> didLeaf;
     public App u;
-    public IMV_SIQ dic_li;
-    public IMV_SIQ dic_yl;
+    public IMV_SQI dic_li;
+    public IMV_SQI dic_yl;
     public CogsBinaryForest_AE _A;
     public int c = 0;
     public double t = 1.0d;
@@ -230,23 +230,23 @@ public class CoAuthorForWord_X_S extends JPanel {
     public int[][] g;
     public JOGLOBJShape shape = null;
 }
-//43  //   public List<IMV_SIQ> rootLeafList = new ArrayList<>();
-////    public IMV_SIQ rootLeafWuXing;
-////    public IMV_SIQ rootLeafYuanJi;
-////    public IMV_SIQ rootLeafShuangYuan;
-////    public IMV_SIQ rootLeafBaYou;
-////    public IMV_SIQ rootLeafJingLuo;
-////    public IMV_SIQ rootLeafZiWu;
-////    public IMV_SIQ rootLeafLiuZhu;
-////    public IMV_SIQ rootLeafJieQi;
-////    public IMV_SIQ rootLeafBaGang;
-////    public IMV_SIQ rootLeafKanYu;
-////    public IMV_SIQ rootLeafLiuRen;
-////    public IMV_SIQ rootLeafYiShu;
-////    public IMV_SIQ rootLeafTianXing;
-////    public IMV_SIQ rootLeafJingYi;
-////    public IMV_SIQ rootLeafHeLuo;
-////    public IMV_SIQ rootLeafSanJiao;
+//43  //   public List<IMV_SQI> rootLeafList = new ArrayList<>();
+////    public IMV_SQI rootLeafWuXing;
+////    public IMV_SQI rootLeafYuanJi;
+////    public IMV_SQI rootLeafShuangYuan;
+////    public IMV_SQI rootLeafBaYou;
+////    public IMV_SQI rootLeafJingLuo;
+////    public IMV_SQI rootLeafZiWu;
+////    public IMV_SQI rootLeafLiuZhu;
+////    public IMV_SQI rootLeafJieQi;
+////    public IMV_SQI rootLeafBaGang;
+////    public IMV_SQI rootLeafKanYu;
+////    public IMV_SQI rootLeafLiuRen;
+////    public IMV_SQI rootLeafYiShu;
+////    public IMV_SQI rootLeafTianXing;
+////    public IMV_SQI rootLeafJingYi;
+////    public IMV_SQI rootLeafHeLuo;
+////    public IMV_SQI rootLeafSanJiao;
 
 //    public float[] whiteLight = {0.2f, 0.2f, 0.2f, 1.0f};
 //    public float sourceLight[] = {0.8f, 0.8f, 0.8f, 1.0f};

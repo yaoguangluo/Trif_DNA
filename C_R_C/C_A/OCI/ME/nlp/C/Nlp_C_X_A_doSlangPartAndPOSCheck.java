@@ -1,7 +1,7 @@
 package C_A.OCI.ME.nlp.C;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 
@@ -20,6 +20,6 @@ public interface Nlp_C_X_A_doSlangPartAndPOSCheck {
         , StringBuilder stringBuilder, StringBuilder[] prefixWord, int charPosition
         , StringBuilder textInputString);
 
-    int forTwoCharForMap(int countLength, IMV_SIQ_SS outputList
+    int forTwoCharForMap(int countLength, IMV_SQI_SS outputList
         , StringBuilder stringBuilder, StringBuilder[] prefixWord, App NE);
 }

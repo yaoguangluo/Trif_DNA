@@ -3,7 +3,7 @@ package ASQ.fusion;
 import ASQ.basic.Distance_X_getDistance2D;
 import ASQ.euclid.Euclid_X_findCryptionPosition2D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 import java.util.List;
@@ -27,14 +27,14 @@ import java.util.Objects;
  * */
 
 public class Fusion_X_fusionPosition2DwithHeart {
-    public static IMV_SIQ _E(Map<Double, List<AMV_MVS_VSQ_2D>> groups
+    public static IMV_SQI _E(Map<Double, List<AMV_MVS_VSQ_2D>> groups
         , Map<Double, AMV_MVS_VSQ_2D> groupsHeart, double scale) {
         //初始
-        IMV_SIQ output = new IMV_SIQ();
-        IMV_SIQ outputHeart = new IMV_SIQ();
+        IMV_SQI output = new IMV_SQI();
+        IMV_SQI outputHeart = new IMV_SQI();
         //逐团比较重心距离
         Iterator<Double> outLoop = groupsHeart.keySet().iterator();
-        IMV_SIQ isDelete = new IMV_SIQ();
+        IMV_SQI isDelete = new IMV_SQI();
         //小于精度内融聚
         //HereOut:
         while (outLoop.hasNext()) {

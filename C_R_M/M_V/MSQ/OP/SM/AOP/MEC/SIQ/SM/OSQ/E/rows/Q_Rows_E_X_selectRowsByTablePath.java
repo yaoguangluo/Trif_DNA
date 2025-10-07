@@ -1,7 +1,7 @@
 package M_V.MSQ.OP.SM.AOP.MEC.SIQ.SM.OSQ.E.rows;
 
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import exception.file.O.DetaFileInputStream;
 
 import java.io.File;
@@ -20,9 +20,9 @@ import java.util.List;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class Q_Rows_E_X_selectRowsByTablePath {
-	public static IMV_SIQ _E(String tablePath, String pageBegin, String pageEnd,
+	public static IMV_SQI _E(String tablePath, String pageBegin, String pageEnd,
 			String direction) {
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		try {
 			int totalPages = 0;
 			output.put("tablePath", tablePath);
@@ -55,17 +55,17 @@ public class Q_Rows_E_X_selectRowsByTablePath {
 							continue;
 						}
 						i++;
-						IMV_SIQ rowMap = new IMV_SIQ();
+						IMV_SQI rowMap = new IMV_SQI();
 						String[] readDBTableRowCulumnsIndexFile = readDBTableRowIndexFile
 								.list();
-						IMV_SIQ culumnMaps = new IMV_SIQ();
+						IMV_SQI culumnMaps = new IMV_SQI();
 						assert readDBTableRowCulumnsIndexFile != null;
 						for (String readDBTableRowCulumnIndexFile : readDBTableRowCulumnsIndexFile) {
 							if (readDBTableRowCulumnIndexFile
 									.contains("is_delete")) {
 								continue;
 							}
-							IMV_SIQ culumnMap = new IMV_SIQ();
+							IMV_SQI culumnMap = new IMV_SQI();
 							String DBTableRowIndexCulumnPath = DBTableRowIndexPath
 									+ "/" + readDBTableRowCulumnIndexFile;
 							File readDBTableRowIndexCulumnFile = new File(
@@ -113,10 +113,10 @@ public class Q_Rows_E_X_selectRowsByTablePath {
 			}
 			output.put("obj", rowMapList);
 			List<Object> spec = new ArrayList<>();
-			IMV_SIQ row = (IMV_SIQ) rowMapList.get(0);
-			IMV_SIQ culumns = (IMV_SIQ) row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
+			IMV_SQI row = (IMV_SQI) rowMapList.get(0);
+			IMV_SQI culumns = (IMV_SQI) row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
 			for (String s : (Iterable<String>) culumns.keySet()) {
-				spec.add(((IMV_SIQ) culumns.get(s))
+				spec.add(((IMV_SQI) culumns.get(s))
 						.get(S_ShellETL.SHELL_ETL_CULUMNNAME).toString());
 			}
 			output.put("spec", spec);

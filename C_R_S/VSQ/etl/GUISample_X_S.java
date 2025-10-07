@@ -9,7 +9,7 @@ import OPE.OVU.MVQ.OVU.PQE.nodeView.NodeShow;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkList;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.U_RelatedLineVPS;
 import OSI.OPE.OVU.PQE.flash.ThisCanvas;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import exception.thread.DetaThread;
 
 import javax.swing.JApplet;
@@ -59,8 +59,8 @@ public class GUISample_X_S extends JApplet {
     public U_RelatedLineVPS updateRelatedLine;
     public CogsBinaryForest_AE _A;
     public Object[][] tableData_old;
-    public IMV_SIQ pos;
-    public IMV_SIQ nodeReflection = new IMV_SIQ();
+    public IMV_SQI pos;
+    public IMV_SQI nodeReflection = new IMV_SQI();
 
     public LinkList first;
     public NodeShow nodeView;

@@ -6,7 +6,7 @@ import ME.VPC.H.literature.literial_X_literial_liner_P;
 import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import java.util.Iterator;
@@ -71,7 +71,7 @@ public class ZhongYaoSearch {//缩小倍差 later。。
         int[] score_code = new int[app.copy.size()];
         int[] reg = new int[app.copy.size()];
         int count = 0;
-        IMV_SIQ_SS mapSearchWithoutSort = null;
+        IMV_SQI_SS mapSearchWithoutSort = null;
         if (app.dic_map.containsKey(zhongyaoReplace)) {
             mapSearchWithoutSort = app._A.parserMixStringByReturnFrequencyMap(zhongyao, NE);
         } else {

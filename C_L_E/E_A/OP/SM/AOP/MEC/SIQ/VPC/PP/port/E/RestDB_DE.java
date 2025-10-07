@@ -2,7 +2,7 @@ package E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E;
 
 import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.company.E.LoginService_E;
 import M_V.MSD.OP.SM.AOP.MEC.SIQ.SM.OSD.E.D_Rows_E_X_D_RowByTablePathAndIndex;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -15,10 +15,10 @@ import S_A.pheromone.IMV_SIQ;
  * */
 @SuppressWarnings({ "unchecked", "resource", "unused" })
 public class RestDB_DE {
-	public static IMV_SIQ deleteRowByTablePathAndIndex(String tablePath,
+	public static IMV_SQI deleteRowByTablePathAndIndex(String tablePath,
 			String pageIndex, String token, String email, String password,
 			String auth) {
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		if (token != null && !token.equalsIgnoreCase("")) {
 			String checkStatus = LoginService_E.checkTokenStatus(token,
 					"level");

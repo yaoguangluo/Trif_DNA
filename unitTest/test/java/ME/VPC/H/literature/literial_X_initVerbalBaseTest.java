@@ -1,6 +1,6 @@
 package test.java.ME.VPC.H.literature;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -21,7 +21,7 @@ class literial_X_initVerbalBaseTest {
     @Mock
     List<String> literialVerbalBase;
     @Mock
-    IMV_SIQ literialVerbalBaseMap;
+    IMV_SQI literialVerbalBaseMap;
     @InjectMocks
     ME.VPC.H.literature.literial_X_initVerbalBase literial_X_initVerbalBase;
 

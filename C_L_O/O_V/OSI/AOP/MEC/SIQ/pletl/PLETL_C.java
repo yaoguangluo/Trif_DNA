@@ -3,7 +3,7 @@ package O_V.OSI.AOP.MEC.SIQ.pletl;
 import OPE.OVU.MVQ.OVU.PQE.nodeView.NodeShow;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkList;
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.JTextPane;
 
@@ -18,5 +18,5 @@ import javax.swing.JTextPane;
  * */
 public interface PLETL_C {
     public boolean doNeroFlow(JTextPane rightBotJTextPane, NodeShow nodeView, LinkList first
-        , String documentFlowAddress, IMV_SIQ inputMap, App NE);
+        , String documentFlowAddress, IMV_SQI inputMap, App NE);
 }

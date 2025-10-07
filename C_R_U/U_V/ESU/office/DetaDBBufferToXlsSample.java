@@ -6,7 +6,7 @@ import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.DB;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Spec;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Table;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.ESU.date.Date_ESU;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -81,7 +81,7 @@ public class DetaDBBufferToXlsSample {
         String[] specsType = null;
         if (hasSpec) {
             HSSFRow hSSFRow = tempOutSheet.createRow(0);
-            IMV_SIQ CulumnTypes = spec.getCulumnTypes();
+            IMV_SQI CulumnTypes = spec.getCulumnTypes();
             specs = new String[CulumnTypes.size()];
             specsType = new String[CulumnTypes.size()];
             Iterator<String> iterator = CulumnTypes.keySet().iterator();

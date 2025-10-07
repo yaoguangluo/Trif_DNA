@@ -10,7 +10,7 @@ import P.image.Color_P;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.string.String_ESU_X_charsetSwap;
 import U_V.ESU.string.String_ESU_X_uRIencodeToURIdecode;
 
@@ -94,7 +94,7 @@ public class Page_X_S_sButtons_zhong_yao_DNN {
 								.toString(),
 						dnn, true);
 				// (this.app_S.table.getValueAt(row, 2).toString(), false);
-				IMV_SIQ_SS map = new IMV_SIQ_SS();
+				IMV_SQI_SS map = new IMV_SQI_SS();
 				iterator = setsForGet.iterator();
 				NE.app_S.listCharPosition = 0;
 				Here: while (iterator.hasNext()) {

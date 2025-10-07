@@ -2,7 +2,7 @@ package Q_V.OSV.VCQ.standard;
 
 import O_V.OSI.AOP.MEC.SIQ.plorm.PLORM_C;
 import O_V.OSI.AOP.MEC.SIQ.plorm.PLORM_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +23,8 @@ public class DictionaryPLSQLStandardDB {
         return dic_list;
     }
 
-    public static IMV_SIQ bootORMReadDBInCommonWay(String tabKey) {
-        IMV_SIQ map = null;
+    public static IMV_SQI bootORMReadDBInCommonWay(String tabKey) {
+        IMV_SQI map = null;
         try {
             PLORM_C orm = new PLORM_E();
             map = orm.startAtRootDir("C:/DetaDB1").withBaseName("ZYY")
@@ -41,9 +41,9 @@ public class DictionaryPLSQLStandardDB {
         return map;
     }
 
-    public static IMV_SIQ bootORMReadDBByRangeRowID(String rootPath, String baseName
+    public static IMV_SQI bootORMReadDBByRangeRowID(String rootPath, String baseName
         , boolean unTest, String tabKey, String RangeRowIDCount) {
-        IMV_SIQ map = null;
+        IMV_SQI map = null;
         try {
             PLORM_C orm = new PLORM_E();
             map = orm.startAtRootDir(rootPath).withBaseName(baseName)
@@ -61,10 +61,10 @@ public class DictionaryPLSQLStandardDB {
     }
 
     //下面这些例子, 本人只是给大家一些更多的参考而已.
-    public static IMV_SIQ bootORMReadDBByLessThanAndEqualTo(String rootPath
+    public static IMV_SQI bootORMReadDBByLessThanAndEqualTo(String rootPath
         , String baseName, String conditionSubject, String conditionObject
         , boolean unTest, String tabKey) {
-        IMV_SIQ map = null;
+        IMV_SQI map = null;
         try {
             PLORM_C orm = new PLORM_E();
             map = orm.startAtRootDir(rootPath).withBaseName(baseName)
@@ -81,8 +81,8 @@ public class DictionaryPLSQLStandardDB {
         return map;
     }
 
-    public static IMV_SIQ bootPLSQLReadDBInCommonWay(String tabKey) {
-        IMV_SIQ map = null;
+    public static IMV_SQI bootPLSQLReadDBInCommonWay(String tabKey) {
+        IMV_SQI map = null;
         try {
             String plsql = "setRoot:C:/DetaDB1;" +
                 "baseName:ZYY;" +

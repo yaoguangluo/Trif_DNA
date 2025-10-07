@@ -2,7 +2,7 @@ package OSI.OSU.SI.OSI.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.addXYSCBo
 
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,10 +13,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class dictionary{	
-	public void txtToMap(IMV_SIQ dic_yao_ming, IMV_SIQ dic_chengfen_danwei,
-											 IMV_SIQ dic_yong_fa, IMV_SIQ dic_yao_li, IMV_SIQ dic_zhu_yi,
-											 IMV_SIQ dic_shi_ying, IMV_SIQ dic_bu_liang_fan_ying, IMV_SIQ dic_yao_wu_xiang_hu_zuo_yong,
-											 IMV_SIQ dic_qi_ta, IMV_SIQ dic_yong_liang, IMV_SIQ dic_jie_shao) {
+	public void txtToMap(IMV_SQI dic_yao_ming, IMV_SQI dic_chengfen_danwei,
+											 IMV_SQI dic_yong_fa, IMV_SQI dic_yao_li, IMV_SQI dic_zhu_yi,
+											 IMV_SQI dic_shi_ying, IMV_SQI dic_bu_liang_fan_ying, IMV_SQI dic_yao_wu_xiang_hu_zuo_yong,
+											 IMV_SQI dic_qi_ta, IMV_SQI dic_yong_liang, IMV_SQI dic_jie_shao) {
 		InputStream in= this.getClass().getResourceAsStream("127个西医常用药品功能主治.txt");
 		DetaBufferedReader cReader= new DetaBufferedReader(DetaInputStreamReader.E(in, "UTF-8"));
 		String ctempString= null; 
@@ -160,7 +160,7 @@ public class dictionary{
 			}
 		}
 		cReader.closeDeta();
-		IMV_SIQ dic_map= new IMV_SIQ();
+		IMV_SQI dic_map= new IMV_SQI();
 		for(int i= 0; i< temp_list.size(); i++) {
 			if(temp_list.get(i).contains("西药类")) {
 				String med_name= temp_list.get(i).replace("西药类", "")+ temp_list.get(i+1)+ temp_list.get(i+2);

@@ -2,7 +2,7 @@ package M_V.MSU.OP.SM.AOP.MEC.SIQ.SM.update.EU.Rows.E;
 
 import M_V.MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -20,7 +20,7 @@ import java.util.Iterator;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class X_U_RowByTablePathAndIndex {
-	public static IMV_SIQ _E(String tablePath, String pageIndex,
+	public static IMV_SQI _E(String tablePath, String pageIndex,
 			JSONObject jaculumnOfUpdateRow) {
 		String[] sets = tablePath.split("/");
 		int rowInsertIndex = Integer.parseInt(pageIndex);
@@ -69,7 +69,7 @@ public class X_U_RowByTablePathAndIndex {
 				}
 			}
 		}
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		output.put("totalPages", rowInsertIndex);
 		return output;
 	}

@@ -1,6 +1,6 @@
 package U_V.ESU.string;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -17,7 +17,7 @@ import java.util.Map;
 *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class QuickLuoyaoguang4D {
-    Map<String, Boolean> find = new IMV_SIQ();
+    Map<String, Boolean> find = new IMV_SQI();
 
     public void quick4DStringArray(String[] a, int lp, int rp, int scale) {
         quick4DString(a, lp, rp, 0);

@@ -1,6 +1,6 @@
 package OSI.MSU.AVQ.ASQ.dnaSets;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.List;
 import java.util.Map;
@@ -19,6 +19,6 @@ public class PDN{
 	public Map<String, List<String>> javaPDNs;
 
 	public void IV_() {	
-		javaPDNs= new IMV_SIQ();
+		javaPDNs= new IMV_SQI();
 	}
 }

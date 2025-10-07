@@ -42,17 +42,17 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
         commonRotClass.rootLeaf = subLeaf;
     }
 }
-//subLeaf.put("浆-花色-", new IMV_SIQ());
-//subLeaf.put("灰-曲直-", new IMV_SIQ());
-//subLeaf.put("林-呼怒-", new IMV_SIQ());
-//subLeaf.put("山-歌意-", new IMV_SIQ());
-//subLeaf.put("岸-禾蔷-", new IMV_SIQ());
-//subLeaf.put("北坎-河-恐呻", new IMV_SIQ());
-//subLeaf.put("溪-润健-", new IMV_SIQ());
-//subLeaf.put("沼-悦魄-", new IMV_SIQ());
-//subLeaf.put("石-商忧-", new IMV_SIQ());
-//subLeaf.put("岩-思顺-", new IMV_SIQ());
-//subLeaf.put("沙-宫赤-", new IMV_SIQ());
+//subLeaf.put("浆-花色-", new IMV_SQI());
+//subLeaf.put("灰-曲直-", new IMV_SQI());
+//subLeaf.put("林-呼怒-", new IMV_SQI());
+//subLeaf.put("山-歌意-", new IMV_SQI());
+//subLeaf.put("岸-禾蔷-", new IMV_SQI());
+//subLeaf.put("北坎-河-恐呻", new IMV_SQI());
+//subLeaf.put("溪-润健-", new IMV_SQI());
+//subLeaf.put("沼-悦魄-", new IMV_SQI());
+//subLeaf.put("石-商忧-", new IMV_SQI());
+//subLeaf.put("岩-思顺-", new IMV_SQI());
+//subLeaf.put("沙-宫赤-", new IMV_SQI());
 
 //if(null== commonRotClass.inputs) {
 //	commonRotClass.inputs= new String[11];
@@ -68,18 +68,18 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //	commonRotClass.inputs[9]= new String("岩-思顺-");
 //	commonRotClass.inputs[10]= new String("沙-宫赤-");
 //}
-//subLeaf.put("马-午丞-灵境-甲午刑-休加制", new IMV_SIQ());
-//subLeaf.put("蛇-巳云-新象-辰戌刑", new IMV_SIQ());
-//subLeaf.put("龙-辰云-新象-辰戌刑", new IMV_SIQ());
-//subLeaf.put("兔-卯力-凶伤-开惊加制", new IMV_SIQ());
-//subLeaf.put("虎-寅月-山亭-甲申刑-殇杜加制", new IMV_SIQ());
-//subLeaf.put("牛-丑月-山亭-甲申刑-殇杜加制", new IMV_SIQ());
-//subLeaf.put("鼠-子目-屯才-生死加制", new IMV_SIQ());
-//subLeaf.put("猪-亥口-阴池-丙丁奇门", new IMV_SIQ());
-//subLeaf.put("狗-戌口-阴池-丙丁奇门", new IMV_SIQ());
-//subLeaf.put("鸡-酉早-水阁-丙丁奇门", new IMV_SIQ());
-//subLeaf.put("猴-申因-枯木-甲戊刑", new IMV_SIQ());
-//subLeaf.put("羊-未因-枯木-甲戊刑", new IMV_SIQ());
+//subLeaf.put("马-午丞-灵境-甲午刑-休加制", new IMV_SQI());
+//subLeaf.put("蛇-巳云-新象-辰戌刑", new IMV_SQI());
+//subLeaf.put("龙-辰云-新象-辰戌刑", new IMV_SQI());
+//subLeaf.put("兔-卯力-凶伤-开惊加制", new IMV_SQI());
+//subLeaf.put("虎-寅月-山亭-甲申刑-殇杜加制", new IMV_SQI());
+//subLeaf.put("牛-丑月-山亭-甲申刑-殇杜加制", new IMV_SQI());
+//subLeaf.put("鼠-子目-屯才-生死加制", new IMV_SQI());
+//subLeaf.put("猪-亥口-阴池-丙丁奇门", new IMV_SQI());
+//subLeaf.put("狗-戌口-阴池-丙丁奇门", new IMV_SQI());
+//subLeaf.put("鸡-酉早-水阁-丙丁奇门", new IMV_SQI());
+//subLeaf.put("猴-申因-枯木-甲戊刑", new IMV_SQI());
+//subLeaf.put("羊-未因-枯木-甲戊刑", new IMV_SQI());
 
 
 //if(null== commonRotClass.inputs) {
@@ -97,14 +97,14 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //	commonRotClass.inputs[10]= new String("猴-申因-枯木-甲戊刑");
 //	commonRotClass.inputs[11]= new String("羊-未因-枯木-甲戊刑");
 //}
-//subLeaf.put("景-层乱枯紫稠急-疏同", new IMV_SIQ());
-//subLeaf.put("杜-散灿鲜靛急瀑", new IMV_SIQ());
-//subLeaf.put("殇-衣嫩蓝青微湍", new IMV_SIQ());
-//subLeaf.put("生-软柔黄珊细缓", new IMV_SIQ());
-//subLeaf.put("修-滑透墨辉绵平-枢密", new IMV_SIQ());
-//subLeaf.put("开-坚鲜浓红呼清", new IMV_SIQ());
-//subLeaf.put("精-纯淡红橙当浊", new IMV_SIQ());
-//subLeaf.put("陨-混浓棕黄刺污", new IMV_SIQ());
+//subLeaf.put("景-层乱枯紫稠急-疏同", new IMV_SQI());
+//subLeaf.put("杜-散灿鲜靛急瀑", new IMV_SQI());
+//subLeaf.put("殇-衣嫩蓝青微湍", new IMV_SQI());
+//subLeaf.put("生-软柔黄珊细缓", new IMV_SQI());
+//subLeaf.put("修-滑透墨辉绵平-枢密", new IMV_SQI());
+//subLeaf.put("开-坚鲜浓红呼清", new IMV_SQI());
+//subLeaf.put("精-纯淡红橙当浊", new IMV_SQI());
+//subLeaf.put("陨-混浓棕黄刺污", new IMV_SQI());
 
 //
 //if(null== commonRotClass.inputs) {
@@ -119,32 +119,32 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //	commonRotClass.inputs[7]= new String("陨-混浓棕黄刺污");
 //}
 
-//subLeaf.put("午-天广-酉", new IMV_SIQ());
-//subLeaf.put("丙-太威-辛", new IMV_SIQ());
-//subLeaf.put("巳-天屏-酉", new IMV_SIQ());
-//subLeaf.put("巽-太乙-Kui", new IMV_SIQ());
-//subLeaf.put("辰-天罡-Li", new IMV_SIQ());
-//subLeaf.put("乙-天宫-甲", new IMV_SIQ());
-//subLeaf.put("卯-天苑-丁", new IMV_SIQ());
-//subLeaf.put("甲-天苑-丙", new IMV_SIQ());
+//subLeaf.put("午-天广-酉", new IMV_SQI());
+//subLeaf.put("丙-太威-辛", new IMV_SQI());
+//subLeaf.put("巳-天屏-酉", new IMV_SQI());
+//subLeaf.put("巽-太乙-Kui", new IMV_SQI());
+//subLeaf.put("辰-天罡-Li", new IMV_SQI());
+//subLeaf.put("乙-天宫-甲", new IMV_SQI());
+//subLeaf.put("卯-天苑-丁", new IMV_SQI());
+//subLeaf.put("甲-天苑-丙", new IMV_SQI());
 //
-//subLeaf.put("寅-天培-未", new IMV_SIQ());
-//subLeaf.put("艮-天市-丁", new IMV_SIQ());
-//subLeaf.put("丑-天厨-辰", new IMV_SIQ());
-//subLeaf.put("Kui-阴光-巳", new IMV_SIQ());
-//subLeaf.put("子-天垒-巳", new IMV_SIQ());
-//subLeaf.put("壬-天辅-申", new IMV_SIQ());
-//subLeaf.put("亥-天皇-乙", new IMV_SIQ());
-//subLeaf.put("乾-天庭-卯", new IMV_SIQ());
+//subLeaf.put("寅-天培-未", new IMV_SQI());
+//subLeaf.put("艮-天市-丁", new IMV_SQI());
+//subLeaf.put("丑-天厨-辰", new IMV_SQI());
+//subLeaf.put("Kui-阴光-巳", new IMV_SQI());
+//subLeaf.put("子-天垒-巳", new IMV_SQI());
+//subLeaf.put("壬-天辅-申", new IMV_SQI());
+//subLeaf.put("亥-天皇-乙", new IMV_SQI());
+//subLeaf.put("乾-天庭-卯", new IMV_SQI());
 //
-//subLeaf.put("戌-天魁-丑", new IMV_SIQ());
-//subLeaf.put("辛-天乙-丑", new IMV_SIQ());
-//subLeaf.put("酉-少微-寅", new IMV_SIQ());
-//subLeaf.put("庚-天汉-午", new IMV_SIQ());
-//subLeaf.put("申-天关-Kui", new IMV_SIQ());
-//subLeaf.put("坤-天镜-乙", new IMV_SIQ());
-//subLeaf.put("未-天常-Kui", new IMV_SIQ());
-//subLeaf.put("丁-南极-寅", new IMV_SIQ());
+//subLeaf.put("戌-天魁-丑", new IMV_SQI());
+//subLeaf.put("辛-天乙-丑", new IMV_SQI());
+//subLeaf.put("酉-少微-寅", new IMV_SQI());
+//subLeaf.put("庚-天汉-午", new IMV_SQI());
+//subLeaf.put("申-天关-Kui", new IMV_SQI());
+//subLeaf.put("坤-天镜-乙", new IMV_SQI());
+//subLeaf.put("未-天常-Kui", new IMV_SQI());
+//subLeaf.put("丁-南极-寅", new IMV_SQI());
 //
 //if(null== commonRotClass.inputs) {
 //	commonRotClass.inputs= new String[24];
@@ -199,18 +199,18 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //commonRotClass.inputs[7]= new String("中焦-血分-脾-腹");
 //}
 //640
-////		subLeaf.put("03-白羊-土-3m21_4m19", new IMV_SIQ());
-//subLeaf.put("04-金牛-金-4m20_5m20", new IMV_SIQ());
-//subLeaf.put("05-双子-金-5m21_6m21", new IMV_SIQ());
-//subLeaf.put("06-巨蟹-土-6m22_7m22", new IMV_SIQ());
-//subLeaf.put("07-狮子-火-7m23_8m22", new IMV_SIQ());
-//subLeaf.put("08-处女-火-8m23_9m22", new IMV_SIQ());
-//subLeaf.put("09-天枰-土-9m23_10m23", new IMV_SIQ());
-//subLeaf.put("10-天蝎-木-10m24_11m22", new IMV_SIQ());
-//subLeaf.put("11-射手-木-11m23_12m21", new IMV_SIQ());
-//subLeaf.put("12-魔蝎-土-12m22_1m19", new IMV_SIQ());
-//subLeaf.put("01-水瓶-水-1m20_2m18", new IMV_SIQ());
-//subLeaf.put("02-双鱼-水-2m19_3m20", new IMV_SIQ());
+////		subLeaf.put("03-白羊-土-3m21_4m19", new IMV_SQI());
+//subLeaf.put("04-金牛-金-4m20_5m20", new IMV_SQI());
+//subLeaf.put("05-双子-金-5m21_6m21", new IMV_SQI());
+//subLeaf.put("06-巨蟹-土-6m22_7m22", new IMV_SQI());
+//subLeaf.put("07-狮子-火-7m23_8m22", new IMV_SQI());
+//subLeaf.put("08-处女-火-8m23_9m22", new IMV_SQI());
+//subLeaf.put("09-天枰-土-9m23_10m23", new IMV_SQI());
+//subLeaf.put("10-天蝎-木-10m24_11m22", new IMV_SQI());
+//subLeaf.put("11-射手-木-11m23_12m21", new IMV_SQI());
+//subLeaf.put("12-魔蝎-土-12m22_1m19", new IMV_SQI());
+//subLeaf.put("01-水瓶-水-1m20_2m18", new IMV_SQI());
+//subLeaf.put("02-双鱼-水-2m19_3m20", new IMV_SQI());
 //
 //if(null== commonRotClass.inputs) {
 //	commonRotClass.inputs= new String[12];
@@ -241,28 +241,28 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //}
 //
 //691
-//subLeaf.put("上焦-血分-营分-心-小肠", new IMV_SIQ());
-//subLeaf.put("气分-胆-股", new IMV_SIQ());
-//subLeaf.put("下焦-气分-血分-肝-足", new IMV_SIQ());
-//subLeaf.put("中焦-气分-胃-手", new IMV_SIQ());
-//subLeaf.put("下焦-血分-卫分-耳-肾-膀胱", new IMV_SIQ());
-//subLeaf.put("气分-大肠-首-健", new IMV_SIQ());
-//subLeaf.put("上焦-卫分-肺-口", new IMV_SIQ());
-//subLeaf.put("中焦-血分-脾-腹", new IMV_SIQ());
+//subLeaf.put("上焦-血分-营分-心-小肠", new IMV_SQI());
+//subLeaf.put("气分-胆-股", new IMV_SQI());
+//subLeaf.put("下焦-气分-血分-肝-足", new IMV_SQI());
+//subLeaf.put("中焦-气分-胃-手", new IMV_SQI());
+//subLeaf.put("下焦-血分-卫分-耳-肾-膀胱", new IMV_SQI());
+//subLeaf.put("气分-大肠-首-健", new IMV_SQI());
+//subLeaf.put("上焦-卫分-肺-口", new IMV_SQI());
+//subLeaf.put("中焦-血分-脾-腹", new IMV_SQI());
 //
 //640
-//subLeaf.put("03-白羊-土-3m21_4m19", new IMV_SIQ());
-//subLeaf.put("04-金牛-金-4m20_5m20", new IMV_SIQ());
-//subLeaf.put("05-双子-金-5m21_6m21", new IMV_SIQ());
-//subLeaf.put("06-巨蟹-土-6m22_7m22", new IMV_SIQ());
-//subLeaf.put("07-狮子-火-7m23_8m22", new IMV_SIQ());
-//subLeaf.put("08-处女-火-8m23_9m22", new IMV_SIQ());
-//subLeaf.put("09-天枰-土-9m23_10m23", new IMV_SIQ());
-//subLeaf.put("10-天蝎-木-10m24_11m22", new IMV_SIQ());
-//subLeaf.put("11-射手-木-11m23_12m21", new IMV_SIQ());
-//subLeaf.put("12-魔蝎-土-12m22_1m19", new IMV_SIQ());
-//subLeaf.put("01-水瓶-水-1m20_2m18", new IMV_SIQ());
-//subLeaf.put("02-双鱼-水-2m19_3m20", new IMV_SIQ());
+//subLeaf.put("03-白羊-土-3m21_4m19", new IMV_SQI());
+//subLeaf.put("04-金牛-金-4m20_5m20", new IMV_SQI());
+//subLeaf.put("05-双子-金-5m21_6m21", new IMV_SQI());
+//subLeaf.put("06-巨蟹-土-6m22_7m22", new IMV_SQI());
+//subLeaf.put("07-狮子-火-7m23_8m22", new IMV_SQI());
+//subLeaf.put("08-处女-火-8m23_9m22", new IMV_SQI());
+//subLeaf.put("09-天枰-土-9m23_10m23", new IMV_SQI());
+//subLeaf.put("10-天蝎-木-10m24_11m22", new IMV_SQI());
+//subLeaf.put("11-射手-木-11m23_12m21", new IMV_SQI());
+//subLeaf.put("12-魔蝎-土-12m22_1m19", new IMV_SQI());
+//subLeaf.put("01-水瓶-水-1m20_2m18", new IMV_SQI());
+//subLeaf.put("02-双鱼-水-2m19_3m20", new IMV_SQI());
 //
 //if(null== commonRotClass.inputs) {
 //	commonRotClass.inputs= new String[12];
@@ -279,34 +279,34 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //	commonRotClass.inputs[10]= new String("01-水瓶-水-1m20_2m18");
 //	commonRotClass.inputs[11]= new String("02-双鱼-水-2m19_3m20");
 //}
-//subLeaf.put("夏至", new IMV_SIQ());
-//subLeaf.put("芒种", new IMV_SIQ());
-//subLeaf.put("小满", new IMV_SIQ());
-//subLeaf.put("立夏", new IMV_SIQ());
-//subLeaf.put("谷雨", new IMV_SIQ());
+//subLeaf.put("夏至", new IMV_SQI());
+//subLeaf.put("芒种", new IMV_SQI());
+//subLeaf.put("小满", new IMV_SQI());
+//subLeaf.put("立夏", new IMV_SQI());
+//subLeaf.put("谷雨", new IMV_SQI());
 //
-//subLeaf.put("清明", new IMV_SIQ());
-//subLeaf.put("春分", new IMV_SIQ());
-//subLeaf.put("惊蛰", new IMV_SIQ());
-//subLeaf.put("雨水", new IMV_SIQ());
-//subLeaf.put("立春", new IMV_SIQ());
+//subLeaf.put("清明", new IMV_SQI());
+//subLeaf.put("春分", new IMV_SQI());
+//subLeaf.put("惊蛰", new IMV_SQI());
+//subLeaf.put("雨水", new IMV_SQI());
+//subLeaf.put("立春", new IMV_SQI());
 //
-//subLeaf.put("大寒", new IMV_SIQ());
-//subLeaf.put("小寒", new IMV_SIQ());
-//subLeaf.put("冬至", new IMV_SIQ());
-//subLeaf.put("大雪", new IMV_SIQ());
-//subLeaf.put("小雪", new IMV_SIQ());
+//subLeaf.put("大寒", new IMV_SQI());
+//subLeaf.put("小寒", new IMV_SQI());
+//subLeaf.put("冬至", new IMV_SQI());
+//subLeaf.put("大雪", new IMV_SQI());
+//subLeaf.put("小雪", new IMV_SQI());
 //
-//subLeaf.put("立冬", new IMV_SIQ());
-//subLeaf.put("霜降", new IMV_SIQ());
-//subLeaf.put("寒露", new IMV_SIQ());
-//subLeaf.put("秋分", new IMV_SIQ());
-//subLeaf.put("白露", new IMV_SIQ());
+//subLeaf.put("立冬", new IMV_SQI());
+//subLeaf.put("霜降", new IMV_SQI());
+//subLeaf.put("寒露", new IMV_SQI());
+//subLeaf.put("秋分", new IMV_SQI());
+//subLeaf.put("白露", new IMV_SQI());
 //
-//subLeaf.put("处暑", new IMV_SIQ());
-//subLeaf.put("立秋", new IMV_SIQ());
-//subLeaf.put("大暑", new IMV_SIQ());
-//subLeaf.put("小暑", new IMV_SIQ());
+//subLeaf.put("处暑", new IMV_SQI());
+//subLeaf.put("立秋", new IMV_SQI());
+//subLeaf.put("大暑", new IMV_SQI());
+//subLeaf.put("小暑", new IMV_SQI());
 
 
 //if(null== commonRotClass.inputs) {
@@ -340,14 +340,14 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //	commonRotClass.inputs[22]= new String("大暑");
 //	commonRotClass.inputs[23]= new String("小暑");
 //}
-//subLeaf.put("心 小肠 离 腕踝上 经", new IMV_SIQ());
-//subLeaf.put("胆 肝 巽 掌趾前 荥", new IMV_SIQ());
-//subLeaf.put("胆 肝 震 掌趾前 荥", new IMV_SIQ());
-//subLeaf.put("血 胃 艮 肘膝中 合", new IMV_SIQ());
-//subLeaf.put("肾 膀胱 坎 掌趾后 输", new IMV_SIQ());
-//subLeaf.put("大肠 乾 手足端 井", new IMV_SIQ());
-//subLeaf.put("肺 兑 手足端 井", new IMV_SIQ());
-//subLeaf.put("血 脾 坤 肘膝中 合", new IMV_SIQ());
+//subLeaf.put("心 小肠 离 腕踝上 经", new IMV_SQI());
+//subLeaf.put("胆 肝 巽 掌趾前 荥", new IMV_SQI());
+//subLeaf.put("胆 肝 震 掌趾前 荥", new IMV_SQI());
+//subLeaf.put("血 胃 艮 肘膝中 合", new IMV_SQI());
+//subLeaf.put("肾 膀胱 坎 掌趾后 输", new IMV_SQI());
+//subLeaf.put("大肠 乾 手足端 井", new IMV_SQI());
+//subLeaf.put("肺 兑 手足端 井", new IMV_SQI());
+//subLeaf.put("血 脾 坤 肘膝中 合", new IMV_SQI());
 
 //if(null== commonRotClass.inputs) {
 //	commonRotClass.inputs= new String[8];
@@ -360,23 +360,23 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //	commonRotClass.inputs[6]= new String("肺 兑 手足端 井");
 //	commonRotClass.inputs[7]= new String("血 脾 坤 肘膝中 合");
 //}
-//subLeaf.put("XJ 离 手少阳 手少阴 手厥阴 手太阳↑ Ⅲ", new IMV_SIQ());
-//subLeaf.put("WS YQ 巽 足少阳↖ Ⅴ", new IMV_SIQ());
-//subLeaf.put("YQ MG 震 足厥阴← Ⅳ", new IMV_SIQ());
-//subLeaf.put("MG 艮 手少阳 足阳明↙ Ⅶ", new IMV_SIQ());
-//subLeaf.put("JA 坎 足少阴 足太阴 手少阳↓ Ⅵ", new IMV_SIQ());
-//subLeaf.put("XH FG 乾 手阳明 ↘ Ⅰ", new IMV_SIQ());
-//subLeaf.put("LZ SX 兑 手太阴→ Ⅱ", new IMV_SIQ());
-//subLeaf.put("SX JZ 坤 足太阴↗ Ⅷ", new IMV_SIQ());
+//subLeaf.put("XJ 离 手少阳 手少阴 手厥阴 手太阳↑ Ⅲ", new IMV_SQI());
+//subLeaf.put("WS YQ 巽 足少阳↖ Ⅴ", new IMV_SQI());
+//subLeaf.put("YQ MG 震 足厥阴← Ⅳ", new IMV_SQI());
+//subLeaf.put("MG 艮 手少阳 足阳明↙ Ⅶ", new IMV_SQI());
+//subLeaf.put("JA 坎 足少阴 足太阴 手少阳↓ Ⅵ", new IMV_SQI());
+//subLeaf.put("XH FG 乾 手阳明 ↘ Ⅰ", new IMV_SQI());
+//subLeaf.put("LZ SX 兑 手太阴→ Ⅱ", new IMV_SQI());
+//subLeaf.put("SX JZ 坤 足太阴↗ Ⅷ", new IMV_SQI());
 
-//subLeaf.put("XJ禁XH 离 胆", new IMV_SIQ());
-//subLeaf.put("WS禁LZ 巽 胆 肝", new IMV_SIQ());
-//subLeaf.put("YQ MG禁LZ 震 消化 胃", new IMV_SIQ());
-//subLeaf.put("MG禁JA 艮 唾 胰", new IMV_SIQ());
-//subLeaf.put("JA禁JZ 坎 发", new IMV_SIQ());
-//subLeaf.put("XH FG禁XJ 乾 眠 泪", new IMV_SIQ());
-//subLeaf.put("LZ SX禁JA 兑 窦", new IMV_SIQ());
-//subLeaf.put("SX JZ禁JA 坤 鼻 汗", new IMV_SIQ());
+//subLeaf.put("XJ禁XH 离 胆", new IMV_SQI());
+//subLeaf.put("WS禁LZ 巽 胆 肝", new IMV_SQI());
+//subLeaf.put("YQ MG禁LZ 震 消化 胃", new IMV_SQI());
+//subLeaf.put("MG禁JA 艮 唾 胰", new IMV_SQI());
+//subLeaf.put("JA禁JZ 坎 发", new IMV_SQI());
+//subLeaf.put("XH FG禁XJ 乾 眠 泪", new IMV_SQI());
+//subLeaf.put("LZ SX禁JA 兑 窦", new IMV_SQI());
+//subLeaf.put("SX JZ禁JA 坤 鼻 汗", new IMV_SQI());
 //
 //if(null== commonRotClass.inputs) {
 //	commonRotClass.inputs= new String[8];
@@ -389,19 +389,19 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //	commonRotClass.inputs[6]= new String("LZ SX禁JA 兑 窦");
 //	commonRotClass.inputs[7]= new String("SX JZ禁JA 坤 鼻 汗");
 //}
-//subLeaf.put("DH 景 酰 离↑ Ⅲ", new IMV_SIQ());
-//subLeaf.put("QA 杜 酸 巽↖ Ⅴ", new IMV_SIQ());
-//subLeaf.put("PI 殇 酮 震← Ⅳ", new IMV_SIQ());
-//subLeaf.put("ST 生 酯 艮↙ Ⅶ", new IMV_SIQ());
-//subLeaf.put("UO 休 酚 坎↓ Ⅵ", new IMV_SIQ());
-//subLeaf.put("MV 开 醚 乾↘ Ⅰ", new IMV_SIQ());
-//subLeaf.put("CX 惊 醇 兑→ Ⅱ", new IMV_SIQ());
-//subLeaf.put("DD E 死 酶 坤↗ Ⅷ", new IMV_SIQ());
-//subLeaf.put("H PV DD 酰 火↑", new IMV_SIQ());
-//subLeaf.put("H OEU 醇酮 木↖", new IMV_SIQ());
-//subLeaf.put("H CDI 酯酸 土↗", new IMV_SIQ());
-//subLeaf.put("H MXS 醚 水↙", new IMV_SIQ());
-//subLeaf.put("H AQT 酚酶 金↘ ", new IMV_SIQ());
+//subLeaf.put("DH 景 酰 离↑ Ⅲ", new IMV_SQI());
+//subLeaf.put("QA 杜 酸 巽↖ Ⅴ", new IMV_SQI());
+//subLeaf.put("PI 殇 酮 震← Ⅳ", new IMV_SQI());
+//subLeaf.put("ST 生 酯 艮↙ Ⅶ", new IMV_SQI());
+//subLeaf.put("UO 休 酚 坎↓ Ⅵ", new IMV_SQI());
+//subLeaf.put("MV 开 醚 乾↘ Ⅰ", new IMV_SQI());
+//subLeaf.put("CX 惊 醇 兑→ Ⅱ", new IMV_SQI());
+//subLeaf.put("DD E 死 酶 坤↗ Ⅷ", new IMV_SQI());
+//subLeaf.put("H PV DD 酰 火↑", new IMV_SQI());
+//subLeaf.put("H OEU 醇酮 木↖", new IMV_SQI());
+//subLeaf.put("H CDI 酯酸 土↗", new IMV_SQI());
+//subLeaf.put("H MXS 醚 水↙", new IMV_SQI());
+//subLeaf.put("H AQT 酚酶 金↘ ", new IMV_SQI());
 
 //if(null== commonRotClass.inputs) {
 //	commonRotClass.inputs= new String[5];
@@ -411,22 +411,22 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //	commonRotClass.inputs[3]= new String("H MXS 醚 水↙");
 //	commonRotClass.inputs[4]= new String("H AQT 酚酶 金↘");
 //}
-//subLeaf.put("PV 景 酰 离↑ Ⅲ", new IMV_SIQ());
-//subLeaf.put("UH 杜 酮 巽↖ Ⅴ", new IMV_SIQ());
-//subLeaf.put("OE 殇 醇 震← Ⅳ", new IMV_SIQ());
-//subLeaf.put("IX 生 酯 艮↙ Ⅶ", new IMV_SIQ());
-//subLeaf.put("MS 休 醚 坎↓ Ⅵ", new IMV_SIQ());
-//subLeaf.put("Q 开 酶 乾↘ Ⅰ", new IMV_SIQ());
-//subLeaf.put("ACT 惊 酚 兑→ Ⅱ", new IMV_SIQ());
-//subLeaf.put("D 死 酸 坤↗ Ⅷ", new IMV_SIQ());
-//subLeaf.put("酰 离 DH 清润核酸↑ Ⅲ", new IMV_SIQ());
-//subLeaf.put("酸 巽 QA erosion调节↖ Ⅴ", new IMV_SIQ());
-//subLeaf.put("酮 震 IP 激素扩散← Ⅳ", new IMV_SIQ());
-//subLeaf.put("酯 艮 TS 体能聚能↙ Ⅶ", new IMV_SIQ());
-//subLeaf.put("酚 坎 OU 受体免疫↓ Ⅵ", new IMV_SIQ());
-//subLeaf.put("醚 乾 VM 受体诱导↘ Ⅰ", new IMV_SIQ());
-//subLeaf.put("醇 兑 CX 扩散免疫→ Ⅱ", new IMV_SIQ());
-//subLeaf.put("酶 坤 DD E erosion诱导↗ Ⅷ", new IMV_SIQ());
+//subLeaf.put("PV 景 酰 离↑ Ⅲ", new IMV_SQI());
+//subLeaf.put("UH 杜 酮 巽↖ Ⅴ", new IMV_SQI());
+//subLeaf.put("OE 殇 醇 震← Ⅳ", new IMV_SQI());
+//subLeaf.put("IX 生 酯 艮↙ Ⅶ", new IMV_SQI());
+//subLeaf.put("MS 休 醚 坎↓ Ⅵ", new IMV_SQI());
+//subLeaf.put("Q 开 酶 乾↘ Ⅰ", new IMV_SQI());
+//subLeaf.put("ACT 惊 酚 兑→ Ⅱ", new IMV_SQI());
+//subLeaf.put("D 死 酸 坤↗ Ⅷ", new IMV_SQI());
+//subLeaf.put("酰 离 DH 清润核酸↑ Ⅲ", new IMV_SQI());
+//subLeaf.put("酸 巽 QA erosion调节↖ Ⅴ", new IMV_SQI());
+//subLeaf.put("酮 震 IP 激素扩散← Ⅳ", new IMV_SQI());
+//subLeaf.put("酯 艮 TS 体能聚能↙ Ⅶ", new IMV_SQI());
+//subLeaf.put("酚 坎 OU 受体免疫↓ Ⅵ", new IMV_SQI());
+//subLeaf.put("醚 乾 VM 受体诱导↘ Ⅰ", new IMV_SQI());
+//subLeaf.put("醇 兑 CX 扩散免疫→ Ⅱ", new IMV_SQI());
+//subLeaf.put("酶 坤 DD E erosion诱导↗ Ⅷ", new IMV_SQI());
 
 //public void bootFlowerForest(String string, boolean isButton, CommonRotClass commonRotClass) {
 //if(rootWord== null) {
@@ -442,10 +442,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -464,10 +464,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -486,10 +486,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -508,10 +508,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -530,10 +530,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -552,10 +552,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -574,10 +574,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -595,10 +595,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -617,11 +617,11 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -640,10 +640,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -662,10 +662,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -684,10 +684,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //
 //leaf.put(rootWord, subLeaf);
@@ -708,10 +708,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -729,10 +729,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //
-//subLeaf.put("", new IMV_SIQ());
+//subLeaf.put("", new IMV_SQI());
 //
 //leaf.put(rootWord, subLeaf);
 ////	rootLeafList.add(subLeaf);
@@ -753,11 +753,11 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -776,10 +776,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;
@@ -801,10 +801,10 @@ public class CoAuthorForWord_X_maps extends CoAuthorForWord_X_S {
 //frequencyLeaf.clear();
 //findLeaf.put(rootWord, 1);
 //frequencyLeaf.put(rootWord, 1);
-//IMV_SIQ leaf= new IMV_SIQ();
-//IMV_SIQ subLeaf= new LinkedHashMap<>();
+//IMV_SQI leaf= new IMV_SQI();
+//IMV_SQI subLeaf= new LinkedHashMap<>();
 //for(int i= 0; i< commonRotClass.inputs.length; i++) {
-//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SIQ());
+//	subLeaf.put(commonRotClass.inputs[i].toString(), new IMV_SQI());
 //}
 //leaf.put(rootWord, subLeaf);
 //commonRotClass.rootLeaf= subLeaf;

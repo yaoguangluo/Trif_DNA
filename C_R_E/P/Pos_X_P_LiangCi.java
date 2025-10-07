@@ -5,7 +5,7 @@ import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 /*
@@ -68,7 +68,7 @@ public class Pos_X_P_LiangCi extends Pos_X_P_LianCi implements X_P_LiangCi {
 	}
 
 	// 离散结合率优化 流水阀门
-	public int P_LiangCiOfThreeForMap(IMV_SIQ_SS outputList, int countLength,
+	public int P_LiangCiOfThreeForMap(IMV_SQI_SS outputList, int countLength,
 			String[] strings, StringBuilder[] fixWord, App NE) {
 		if (!wordsForest.containsKey(fixWord[S_Pos.INT_ZERO].toString())) {
 			return countLength;

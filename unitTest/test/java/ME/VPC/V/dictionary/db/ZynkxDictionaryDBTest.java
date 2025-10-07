@@ -10,7 +10,7 @@ package test.java.ME.VPC.V.dictionary.db;
  * */
 
 import ME.VPC.V.db.ZynkxDictionaryDB;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -23,10 +23,10 @@ class ZynkxDictionaryDBTest {
     @Test
     void testListToMap1() {
         // Setup
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zynkxDictionaryDB.listToMap(new ArrayList<>(Arrays.asList("value")));
+        final IMV_SQI result = zynkxDictionaryDB.listToMap(new ArrayList<>(Arrays.asList("value")));
 
         // Verify the results
         // mock trif assertEquals(expectedResult, result);
@@ -40,20 +40,20 @@ class ZynkxDictionaryDBTest {
     @Test
     void testTxtToMap1() {
         // Setup
-        final IMV_SIQ dic_bzm = new IMV_SIQ();
-        final IMV_SIQ dic_chu_fang = new IMV_SIQ();
-        final IMV_SIQ dic_mz = new IMV_SIQ();
-        final IMV_SIQ dic_zf = new IMV_SIQ();
-        final IMV_SIQ dic_yy = new IMV_SIQ();
-        final IMV_SIQ dic_sy = new IMV_SIQ();
-        final IMV_SIQ dic_tl = new IMV_SIQ();
-        final IMV_SIQ dic_ff = new IMV_SIQ();
-        final IMV_SIQ dic_fg = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_bzm = new IMV_SQI();
+        final IMV_SQI dic_chu_fang = new IMV_SQI();
+        final IMV_SQI dic_mz = new IMV_SQI();
+        final IMV_SQI dic_zf = new IMV_SQI();
+        final IMV_SQI dic_yy = new IMV_SQI();
+        final IMV_SQI dic_sy = new IMV_SQI();
+        final IMV_SQI dic_tl = new IMV_SQI();
+        final IMV_SQI dic_ff = new IMV_SQI();
+        final IMV_SQI dic_fg = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
         // mock trif
-//        final IMV_SIQ result = zynkxDictionaryDB.txtToMap(dic_bzm, dic_chu_fang, dic_mz,
+//        final IMV_SQI result = zynkxDictionaryDB.txtToMap(dic_bzm, dic_chu_fang, dic_mz,
 //            dic_zf, dic_yy, dic_sy, dic_tl, dic_ff, dic_fg);
 //
 //        // Verify the results
@@ -68,14 +68,14 @@ class ZynkxDictionaryDBTest {
 
     @Test
     void testListToMap() {
-        IMV_SIQ result = zynkxDictionaryDB.listToMap(new ArrayList<>(Arrays.asList("String")));
-        // mock trif  Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zynkxDictionaryDB.listToMap(new ArrayList<>(Arrays.asList("String")));
+        // mock trif  Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testTxtToMap() {
-        // mock trif IMV_SIQ result = zynkxDictionaryDB.txtToMap(new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ());
-        // mock trif Assertions.assertEquals(new IMV_SIQ(), result);
+        // mock trif IMV_SQI result = zynkxDictionaryDB.txtToMap(new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI());
+        // mock trif Assertions.assertEquals(new IMV_SQI(), result);
     }
 }
 

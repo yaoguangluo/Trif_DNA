@@ -1,5 +1,9 @@
 package S_A.pheromone;
 
+import S_A.VSQ.parser.EmotionSample;
+
+import java.util.concurrent.ConcurrentHashMap;
+
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * * 作者的家庭是父亲 罗荣武，母亲 刘瑞珍，女儿 christina.yaja.luo/罗雅佳, 前妻ringli/李妙环。
@@ -16,12 +20,11 @@ package S_A.pheromone;
 //AES_QMS_XSD_TIH
 //遇到了问题， 修改jdk, 发布会 触犯甲骨文权利，不方便我公开， 不修改 又及其繁琐，
 @SuppressWarnings("serial")
-public class IMV_SIQ_SA extends IMV_SIQ_X_ {
-//    //later check digital types。
-//    public EmotionSample getW(int value){//later override..
-//        if(this.containsKey(value)){
-//            return this.get(value);
-//        }
-//        return null;//daoshihou zhiyaogaizheli fix here later..
-//    }
+public class IMV_SQI_X_ extends ConcurrentHashMap<String, EmotionSample> {//later do
+    public EmotionSample get_S(String key) {
+        if(this.containsKey(key)){
+            return (EmotionSample)this.get(key);
+        }
+        return null;
+    }
 }

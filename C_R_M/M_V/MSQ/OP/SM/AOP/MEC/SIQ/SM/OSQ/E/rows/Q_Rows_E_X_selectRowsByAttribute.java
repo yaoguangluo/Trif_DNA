@@ -2,7 +2,7 @@ package M_V.MSQ.OP.SM.AOP.MEC.SIQ.SM.OSQ.E.rows;
 
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaFileReader;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.cache.Cache_M;
 
 import java.io.File;
@@ -21,13 +21,13 @@ import java.util.Objects;
  * 神仙坳社区 大塘冲路一段 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class Q_Rows_E_X_selectRowsByAttribute {
-	public static List<IMV_SIQ> _E(String currentDB, String tableName,
+	public static List<IMV_SQI> _E(String currentDB, String tableName,
 			String culmnName, Object value) {
 		if (value == null) {
 			value = "";
 		}
 		String objectType = "";
-		List<IMV_SIQ> output = new ArrayList<>();
+		List<IMV_SQI> output = new ArrayList<>();
 		// 锁定数据库
 		String DBPath = Objects.requireNonNull(Cache_M.getCacheInfo("DBPath"))
 				.getValue().toString() + "/" + currentDB;
@@ -59,7 +59,7 @@ public class Q_Rows_E_X_selectRowsByAttribute {
 							String[] rowList = fileDBTableRowsPath.list();
 							assert rowList != null;
 							for (String row : rowList) {
-								IMV_SIQ rowMap = new IMV_SIQ();
+								IMV_SQI rowMap = new IMV_SQI();
 								String DBTableRowIndexPath = DBTablePath
 										+ "/rows/" + row;
 								File readDBTableRowIndexFile = new File(

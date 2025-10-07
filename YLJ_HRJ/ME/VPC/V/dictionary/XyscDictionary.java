@@ -2,8 +2,8 @@ package ME.VPC.V.dictionary;
 
 import exception.file.O.DetaBufferedReader;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 import S_logger.Log;
 
 import java.util.ArrayList;
@@ -23,11 +23,11 @@ import E_A.OEI.SVQ.MPC.fhmm.E.FastReadProjectFile;
  * */
 public class XyscDictionary extends Dictionary_S {
 	@SuppressWarnings({ "unchecked" })
-	public void txtToMap(IMV_SIQ dic_yao_ming, IMV_SIQ dic_chengfen_danwei,
-			IMV_SIQ dic_yong_fa, IMV_SIQ dic_yao_li, IMV_SIQ dic_zhu_yi,
-			IMV_SIQ dic_shi_ying, IMV_SIQ dic_bu_liang_fan_ying,
-			IMV_SIQ dic_yao_wu_xiang_hu_zuo_yong, IMV_SIQ dic_qi_ta,
-			IMV_SIQ dic_yong_liang, IMV_SIQ dic_jie_shao) {
+	public void txtToMap(IMV_SQI dic_yao_ming, IMV_SQI dic_chengfen_danwei,
+			IMV_SQI dic_yong_fa, IMV_SQI dic_yao_li, IMV_SQI dic_zhu_yi,
+			IMV_SQI dic_shi_ying, IMV_SQI dic_bu_liang_fan_ying,
+			IMV_SQI dic_yao_wu_xiang_hu_zuo_yong, IMV_SQI dic_qi_ta,
+			IMV_SQI dic_yong_liang, IMV_SQI dic_jie_shao) {
 		Log.logger.info("启动400编码调试开始-00000065-01");
 		DetaBufferedReader cReader = FastReadProjectFile.getDetaBufferedReader(
 				S_File._127xiYiChangYongYaoPinGongNengZhuZhi_txt, "DetaResources/books/", "UTF8");
@@ -234,7 +234,7 @@ public class XyscDictionary extends Dictionary_S {
 			}
 		}
 		cReader.closeDeta();
-		dic_map = new IMV_SIQ_();
+		dic_map = new IMV_SQI_();
 		for (int i = 0; i < temp_list.size(); i++) {
 			if (temp_list.get(i).contains("西药类")) {
 				String med_name = temp_list.get(i).replace("西药类", "")

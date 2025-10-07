@@ -1,7 +1,7 @@
 package test.java.ME.VPC.V.dictionary;
 
 import ME.VPC.V.dictionary.WskxDictionary;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI_;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -37,10 +37,10 @@ class WskxDictionaryTest {
     void testListToMap() {
         // Setup
         final WskxDictionary wskxDictionaryUnderTest = new WskxDictionary();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = wskxDictionaryUnderTest.listToMap(new ArrayList<>(Arrays.asList("value")));
+        final IMV_SQI_ result = wskxDictionaryUnderTest.listToMap(new ArrayList<>(Arrays.asList("value")));
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -50,11 +50,11 @@ class WskxDictionaryTest {
     void testMapToMap_zl() {
         // Setup
         final WskxDictionary wskxDictionaryUnderTest = new WskxDictionary();
-        final IMV_SIQ_ dic_map = new IMV_SIQ_();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI_ dic_map = new IMV_SQI_();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = wskxDictionaryUnderTest.mapToMap_zl(dic_map);
+        final IMV_SQI_ result = wskxDictionaryUnderTest.mapToMap_zl(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -64,11 +64,11 @@ class WskxDictionaryTest {
     void testMapToMap_zd() {
         // Setup
         final WskxDictionary wskxDictionaryUnderTest = new WskxDictionary();
-        final IMV_SIQ_ dic_map = new IMV_SIQ_();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI_ dic_map = new IMV_SQI_();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = wskxDictionaryUnderTest.mapToMap_zd(dic_map);
+        final IMV_SQI_ result = wskxDictionaryUnderTest.mapToMap_zd(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -78,11 +78,11 @@ class WskxDictionaryTest {
     void testMapToMap_bf() {
         // Setup
         final WskxDictionary wskxDictionaryUnderTest = new WskxDictionary();
-        final IMV_SIQ_ dic_map = new IMV_SIQ_();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI_ dic_map = new IMV_SQI_();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = wskxDictionaryUnderTest.mapToMap_bf(dic_map);
+        final IMV_SQI_ result = wskxDictionaryUnderTest.mapToMap_bf(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -92,11 +92,11 @@ class WskxDictionaryTest {
     void testMapToMap_jy() {
         // Setup
         final WskxDictionary wskxDictionaryUnderTest = new WskxDictionary();
-        final IMV_SIQ_ dic_map = new IMV_SIQ_();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI_ dic_map = new IMV_SQI_();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = wskxDictionaryUnderTest.mapToMap_jy(dic_map);
+        final IMV_SQI_ result = wskxDictionaryUnderTest.mapToMap_jy(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -106,11 +106,11 @@ class WskxDictionaryTest {
     void testMapToMap_yh() {
         // Setup
         final WskxDictionary wskxDictionaryUnderTest = new WskxDictionary();
-        final IMV_SIQ_ dic_map = new IMV_SIQ_();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI_ dic_map = new IMV_SQI_();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = wskxDictionaryUnderTest.mapToMap_yh(dic_map);
+        final IMV_SQI_ result = wskxDictionaryUnderTest.mapToMap_yh(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -120,11 +120,11 @@ class WskxDictionaryTest {
     void testMapToMap_bl() {
         // Setup
         final WskxDictionary wskxDictionaryUnderTest = new WskxDictionary();
-        final IMV_SIQ_ dic_map = new IMV_SIQ_();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI_ dic_map = new IMV_SQI_();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = wskxDictionaryUnderTest.mapToMap_bl(dic_map);
+        final IMV_SQI_ result = wskxDictionaryUnderTest.mapToMap_bl(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -134,11 +134,11 @@ class WskxDictionaryTest {
     void testMapToMap_wx() {
         // Setup
         final WskxDictionary wskxDictionaryUnderTest = new WskxDictionary();
-        final IMV_SIQ_ dic_map = new IMV_SIQ_();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI_ dic_map = new IMV_SQI_();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = wskxDictionaryUnderTest.mapToMap_wx(dic_map);
+        final IMV_SQI_ result = wskxDictionaryUnderTest.mapToMap_wx(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -148,11 +148,11 @@ class WskxDictionaryTest {
     void testMapToMap_gn() {
         // Setup
         final WskxDictionary wskxDictionaryUnderTest = new WskxDictionary();
-        final IMV_SIQ_ dic_map = new IMV_SIQ_();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI_ dic_map = new IMV_SQI_();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = wskxDictionaryUnderTest.mapToMap_gn(dic_map);
+        final IMV_SQI_ result = wskxDictionaryUnderTest.mapToMap_gn(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);

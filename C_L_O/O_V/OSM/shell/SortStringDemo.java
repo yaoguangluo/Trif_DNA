@@ -2,7 +2,7 @@ package O_V.OSM.shell;
 
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.table.TableSorterZYNK;
 import U_V.OEU.xqpx.wcms.sort.LYG10D13D_X_CAS;
 import U_V.PEU.S.UVIMIACI.VerbalSource;
@@ -24,7 +24,7 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class SortStringDemo {
-	public static IMV_SIQ pinYin = null;
+	public static IMV_SQI pinYin = null;
 	public static Map<String, Integer> biHua = null;
 
 	public static void initMap() {
@@ -38,8 +38,8 @@ public class SortStringDemo {
 					DetaInputStreamReader.E(inputStreamp, "UTF8"));
 			// index
 			String cInputStringp;
-			IMV_SIQ map = new IMV_SIQ();
-			biHua = new IMV_SIQ();
+			IMV_SQI map = new IMV_SQI();
+			biHua = new IMV_SQI();
 			while ((cInputStringp = cReaderp.readDetaLine()) != null) {
 				String[] words = cInputStringp.split("->");
 				if (words.length > 1) {

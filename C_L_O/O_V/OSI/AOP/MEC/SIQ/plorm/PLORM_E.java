@@ -1,7 +1,7 @@
 package O_V.OSI.AOP.MEC.SIQ.plorm;
 
 import M_V.ME.SM.OP.SM.AOP.MEC.SIQ.E.E_PLSQL_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -15,7 +15,7 @@ import S_A.pheromone.IMV_SIQ;
 public class PLORM_E implements PLORM_C{
 	private String PLSQL= "";
 	private String[] PLSQLArray;
-	private IMV_SIQ map;
+	private IMV_SQI map;
 	public String getPLSQL() {
 		return PLSQL;
 	}
@@ -212,7 +212,7 @@ public class PLORM_E implements PLORM_C{
 	}
 
 	@Override
-	public IMV_SIQ returnAsMap() {
+	public IMV_SQI returnAsMap() {
 		return this.map;
 	}
 

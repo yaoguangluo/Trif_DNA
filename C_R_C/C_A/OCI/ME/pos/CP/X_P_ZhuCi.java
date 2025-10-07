@@ -1,7 +1,7 @@
 package C_A.OCI.ME.pos.CP;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 /*
@@ -18,7 +18,7 @@ public interface X_P_ZhuCi {
     int P_ZhuCiOfThree(List<String> outputList, int countLength
         , String[] strings, StringBuilder[] fixWord);
 
-    int P_ZhuCiOfThreeForMap(IMV_SIQ_SS outputList, int countLength
+    int P_ZhuCiOfThreeForMap(IMV_SQI_SS outputList, int countLength
         , String[] strings, StringBuilder[] fixWord, App NE);
 }
 

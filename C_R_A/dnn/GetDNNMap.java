@@ -4,7 +4,7 @@ import E_A.OEI.SVQ.MPC.fhmm.E.FastReadProjectFile;
 import ME.VPC.M.app.App;
 import ME.VPC.S.ne.App_S;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import exception.file.O.DetaBufferedReader;
 
 import java.io.File;
@@ -32,8 +32,8 @@ public class GetDNNMap {
 
     //这个函数用于dnn的全文索引进行txt读取
     @SuppressWarnings("static-access")
-    public static Map<String, IMV_SIQ> doGetDNNMap(App_S app, App NE) {
-        Map<String, IMV_SIQ> map = new IMV_SIQ();
+    public static Map<String, IMV_SQI> doGetDNNMap(App_S app, App NE) {
+        Map<String, IMV_SQI> map = new IMV_SQI();
         try {
             DetaBufferedReader bufferedWriter = FastReadProjectFile.getDetaBufferedReader(S_File.dnnFile
                 , "DetaResources/dnnmap/", "UTF8");
@@ -52,11 +52,11 @@ public class GetDNNMap {
                         String wordName = strings[0].toString();
                         double wordDNN = Double.valueOf(strings[1].toString());
                         if (map.containsKey(pageName)) {
-                            IMV_SIQ maps = map.get(pageName);
+                            IMV_SQI maps = map.get(pageName);
                             maps.put(wordName, wordDNN);
                             map.put(pageName, maps);
                         } else {
-                            IMV_SIQ maps = new IMV_SIQ();
+                            IMV_SQI maps = new IMV_SQI();
                             maps.put(wordName, wordDNN);
                             map.put(pageName, maps);
                         }
@@ -72,8 +72,8 @@ public class GetDNNMap {
     }
 
     @SuppressWarnings("static-access")
-    public static Map<String, IMV_SIQ> doGetDNNMap(App_S app
-        , Map<String, IMV_SIQ> map, String dnnFile, App NE) {
+    public static Map<String, IMV_SQI> doGetDNNMap(App_S app
+        , Map<String, IMV_SQI> map, String dnnFile, App NE) {
         try {
             File file;//配置文件在同一个文件架夹下便于管理。
             file = new File(dnnFile);
@@ -96,11 +96,11 @@ public class GetDNNMap {
                         String wordName = strings[0].toString();
                         double wordDNN = Double.valueOf(strings[1].toString());
                         if (map.containsKey(pageName)) {
-                            IMV_SIQ maps = map.get(pageName);
+                            IMV_SQI maps = map.get(pageName);
                             maps.put(wordName, wordDNN);
                             map.put(pageName, maps);
                         } else {
-                            IMV_SIQ maps = new IMV_SIQ();
+                            IMV_SQI maps = new IMV_SQI();
                             maps.put(wordName, wordDNN);
                             map.put(pageName, maps);
                         }

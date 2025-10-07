@@ -4,7 +4,7 @@ import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import E_A.OEI.SVQ.MPC.fhmm.E.FastReadProjectFile;
 import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_MCI_MCU_MSI;
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import OSI.OPE.OVU.PQE.flash.ThisCanvas;
 
 import javax.swing.ImageIcon;
@@ -26,7 +26,7 @@ public class AddXYSCBookNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI extends OSU_MCI_MCU_
 	}
 	
 	public AddXYSCBookNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI(Object[][] tableData_old, JTextPane text, App_S u
-			, CogsBinaryForest_AE _A, IMV_SIQ pos) {
+			, CogsBinaryForest_AE _A, IMV_SQI pos) {
 		this.text= text;
 		this.tableData_old= tableData_old;
 		thisIcon= FastReadProjectFile.getDetaImageIconReader("imageread.jpg", "DetaResources/imgETL/");
@@ -50,17 +50,17 @@ public class AddXYSCBookNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI extends OSU_MCI_MCU_
 	}
 	public void IMP_PSU(App NE){
 		dictionary d= new dictionary();
-		u.xyscPage.dic_yao_ming= new IMV_SIQ();
-		u.xyscPage.dic_chengfen_danwei= new IMV_SIQ();
-		u.xyscPage.dic_yong_fa= new IMV_SIQ();
-		u.xyscPage.dic_yong_liang= new IMV_SIQ();
-		u.xyscPage.dic_yao_li= new IMV_SIQ();
-		u.xyscPage.dic_zhu_yi= new IMV_SIQ();
-		u.xyscPage.dic_shi_ying= new IMV_SIQ();
-		u.xyscPage.dic_jie_shao= new IMV_SIQ();
-		u.xyscPage.dic_bu_liang_fan_ying= new IMV_SIQ();
-		u.xyscPage.dic_yao_wu_xiang_hu_zuo_yong= new IMV_SIQ();
-		u.xyscPage.dic_qi_ta= new IMV_SIQ();
+		u.xyscPage.dic_yao_ming= new IMV_SQI();
+		u.xyscPage.dic_chengfen_danwei= new IMV_SQI();
+		u.xyscPage.dic_yong_fa= new IMV_SQI();
+		u.xyscPage.dic_yong_liang= new IMV_SQI();
+		u.xyscPage.dic_yao_li= new IMV_SQI();
+		u.xyscPage.dic_zhu_yi= new IMV_SQI();
+		u.xyscPage.dic_shi_ying= new IMV_SQI();
+		u.xyscPage.dic_jie_shao= new IMV_SQI();
+		u.xyscPage.dic_bu_liang_fan_ying= new IMV_SQI();
+		u.xyscPage.dic_yao_wu_xiang_hu_zuo_yong= new IMV_SQI();
+		u.xyscPage.dic_qi_ta= new IMV_SQI();
 		d.txtToMap(u.xyscPage.dic_yao_ming, u.xyscPage.dic_chengfen_danwei, u.xyscPage.dic_yong_fa
 				, u.xyscPage.dic_yao_li, u.xyscPage.dic_zhu_yi, u.xyscPage.dic_shi_ying
 				, u.xyscPage.dic_bu_liang_fan_ying, u.xyscPage.dic_yao_wu_xiang_hu_zuo_yong

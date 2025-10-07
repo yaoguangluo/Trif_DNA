@@ -3,7 +3,7 @@ package E_A.OSI.AOP.PCS.PP.factory_E;
 import DSU.V.VtoV;
 
 import O_V.OSI.AOP.PCS.view.UsrFull;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.md5.Usr;
 import U_A.PEU.P.md5.UsrToken;
 import VPC.DetaDB.DetaDBUtil_X_DBRequest;
@@ -30,8 +30,8 @@ public class LoginDAOImpl{// implements LoginDAO{
 			+ "backend" + "&tableName=" + "usr" + "&culumnName=" + URLEncoder.encode("u_id")
 				+ "&value=" + uId + "&email=" + URLEncoder.encode("313699483@qq.com") 
 				+ "&password=" + URLEncoder.encode("Fengyue1985!") + "&auth=" + "0");
-		IMV_SIQ map= (IMV_SIQ) VtoV.JsonObjectToMap(new JSONObject(json));
-		List<IMV_SIQ> list= (List<IMV_SIQ>) map.get("obj");
+		IMV_SQI map= (IMV_SQI) VtoV.JsonObjectToMap(new JSONObject(json));
+		List<IMV_SQI> list= (List<IMV_SQI>) map.get("obj");
 		Usr usr= new Usr();
 		if(list.size() > 0) {
 			usr.I_uAddress(list.get(0).get("u_address")!=null?list.get(0)
@@ -61,8 +61,8 @@ public class LoginDAOImpl{// implements LoginDAO{
 				+ "&tableName=" + "usrToken" + "&culumnName=" + "u_id" + "&value=" + uId + "&email=" 
 				+ URLEncoder.encode("313699483@qq.com") + "&password=" 
 				+ URLEncoder.encode("Fengyue1985!") + "&auth=" + "0");		
-		IMV_SIQ map= (IMV_SIQ) VtoV.JsonObjectToMap(new JSONObject(json));
-		List<IMV_SIQ> list= (List<IMV_SIQ>) map.get("obj");
+		IMV_SQI map= (IMV_SQI) VtoV.JsonObjectToMap(new JSONObject(json));
+		List<IMV_SQI> list= (List<IMV_SQI>) map.get("obj");
 		UsrToken usrToken= new UsrToken();
 		if(list.size() > 0) {	
 			usrToken.I_uId(Integer.valueOf(list.get(0).get("u_id").toString()));
@@ -87,8 +87,8 @@ public class LoginDAOImpl{// implements LoginDAO{
 				+ "&tableName=" + "usr" + "&culumnName=" + URLEncoder.encode("u_email") + "&value=" 
 				+ URLEncoder.encode(uEmail) + "&email=" + URLEncoder.encode("313699483@qq.com") 
 				+ "&password=" + URLEncoder.encode("Fengyue1985!") + "&auth=" + "0");
-		IMV_SIQ map= (IMV_SIQ) VtoV.JsonObjectToMap(new JSONObject(json));
-		List<IMV_SIQ> list= (List<IMV_SIQ>) map.get("obj");
+		IMV_SQI map= (IMV_SQI) VtoV.JsonObjectToMap(new JSONObject(json));
+		List<IMV_SQI> list= (List<IMV_SQI>) map.get("obj");
 		Usr usr= new Usr();
 		if(list.size() > 0) {
 			usr.I_uAddress(list.get(0).get("u_address")

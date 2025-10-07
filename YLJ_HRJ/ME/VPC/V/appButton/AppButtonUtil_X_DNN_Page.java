@@ -11,8 +11,8 @@ import P.image.Color_P;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.string.String_ESU_X_charsetSwap;
 import U_V.ESU.string.String_ESU_X_uRIencodeToURIdecode;
 
@@ -48,7 +48,7 @@ public class AppButtonUtil_X_DNN_Page extends AppButtonUtil_X_DNN {
 			DetaButton buttonSum, DetaButton buttonCrt, JTextPane data,
 			JTextPane statistic, String zhong_xi_yao, App NE) {// shaohou
 															   // zhenghe danli
-		IMV_SIQ pos = u.fMHMMListOneTime_E.posCnToCn;// later..
+		IMV_SQI pos = u.fMHMMListOneTime_E.posCnToCn;// later..
 		List<String> setsForGet = sets.subList(currentPage * 2000,
 				(currentPage + 1) * 2000 < sets.size()
 						? (currentPage + 1) * 2000
@@ -102,10 +102,10 @@ public class AppButtonUtil_X_DNN_Page extends AppButtonUtil_X_DNN {
 		}
 		// (this.u.table.getValueAt(row, 2).toString(), false);
 		// dnn rank
-		Map<String, Double> dNNrank = new IMV_SIQ();
+		Map<String, Double> dNNrank = new IMV_SQI();
 		doRankDNN(statistic, response, pos, dNNrank, NE);
 		// DNN
-		IMV_SIQ_SS map = new IMV_SIQ_SS();
+		IMV_SQI_SS map = new IMV_SQI_SS();
 		iterator = setsForGet.iterator();
 		NE.app_S.listCharPosition = 0;
 		Here: while (iterator.hasNext()) {

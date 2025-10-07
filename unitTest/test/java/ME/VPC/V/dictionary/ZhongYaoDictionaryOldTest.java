@@ -1,8 +1,8 @@
 package test.java.ME.VPC.V.dictionary;
 
 import ME.VPC.V.dictionary.ZhongYaoDictionaryOld;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -41,10 +41,10 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testListToMap() {
         // Setup
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = zhongYaoDictionaryOldUnderTest.listToMap(
+        final IMV_SQI_ result = zhongYaoDictionaryOldUnderTest.listToMap(
             new ArrayList<>(Arrays.asList("value")));
 
         // Verify the results
@@ -54,11 +54,11 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_li() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_li(dic_map);
+        final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_li(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -67,11 +67,11 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_hai() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_hai(dic_map);
+        final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_hai(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -80,11 +80,11 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_xz() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_xz(dic_map);
+        final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_xz(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -93,11 +93,11 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_zf() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_zf(dic_map);
+        final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_zf(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -106,11 +106,11 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_cj() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_cj(dic_map);
+        final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_cj(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -119,11 +119,11 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_jj() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_jj(dic_map);
+        final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_jj(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -132,11 +132,11 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_cy() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_cy(dic_map);
+        final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_cy(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -145,11 +145,11 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_ya() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_ya(dic_map);
+        final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_ya(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -158,11 +158,11 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_jm() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_jm(dic_map);
+        final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_jm(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -171,11 +171,11 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_xw() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_xw(dic_map);
+        final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_xw(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -184,15 +184,15 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_yl() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ dic_xw = new IMV_SIQ();
-        final IMV_SIQ dic_li = new IMV_SIQ();
-        final IMV_SIQ dic_xz = new IMV_SIQ();
-        final IMV_SIQ dic_jm = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI dic_xw = new IMV_SQI();
+        final IMV_SQI dic_li = new IMV_SQI();
+        final IMV_SQI dic_xz = new IMV_SQI();
+        final IMV_SQI dic_jm = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // mock trif Run the test
-        //final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_yl(dic_map, dic_xw,
+        //final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_yl(dic_map, dic_xw,
            // dic_li, dic_xz, dic_jm);
 
         // Verify the results
@@ -202,11 +202,11 @@ class ZhongYaoDictionaryOldTest {
     @Test
     void testMapToMap_ym() {
         // Setup
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ expectedResult = new IMV_SIQ();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI expectedResult = new IMV_SQI();
 
         // Run the test
-        final IMV_SIQ result = zhongYaoDictionaryOldUnderTest.mapToMap_ym(dic_map);
+        final IMV_SQI result = zhongYaoDictionaryOldUnderTest.mapToMap_ym(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);

@@ -2,8 +2,8 @@ package ME.VPC.V.dictionary;
 
 import exception.file.O.DetaBufferedReader;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,8 +75,8 @@ public class ZynkxDictionary extends Dictionary_S {
 		return temp_list;
 	}
 
-	public IMV_SIQ_ listToMap(List<String> dic_list) {
-		dic_map = new IMV_SIQ_();
+	public IMV_SQI_ listToMap(List<String> dic_list) {
+		dic_map = new IMV_SQI_();
 		for (int i = 0; i < dic_list.size(); i++) {
 			if (dic_list.get(i).contains("^")) {
 				String med_name = dic_list.get(i);
@@ -167,8 +167,8 @@ public class ZynkxDictionary extends Dictionary_S {
 		return dic_map;
 	}
 
-	public IMV_SIQ MapToChuFang(List<String> dic_list, IMV_SIQ dic_map) {
-		dic_chu_fang = new IMV_SIQ();
+	public IMV_SQI MapToChuFang(List<String> dic_list, IMV_SQI dic_map) {
+		dic_chu_fang = new IMV_SQI();
 		for (int i = 0; i < dic_list.size(); i++) {
 			if (dic_list.get(i).contains("^")) {
 				String med_name = dic_list.get(i);
@@ -239,8 +239,8 @@ public class ZynkxDictionary extends Dictionary_S {
 		return dic_chu_fang;
 	}
 
-	public IMV_SIQ MapTomz(List<String> dic_list, IMV_SIQ dic_map) {
-		dic_mz = new IMV_SIQ();
+	public IMV_SQI MapTomz(List<String> dic_list, IMV_SQI dic_map) {
+		dic_mz = new IMV_SQI();
 		it = dic_map.keySet().iterator();
 		while (it.hasNext()) {
 			String name = it.next();
@@ -258,8 +258,8 @@ public class ZynkxDictionary extends Dictionary_S {
 		return dic_mz;
 	}
 
-	public IMV_SIQ MapTozf(List<String> dic_list, IMV_SIQ dic_map) {
-		dic_zf = new IMV_SIQ();
+	public IMV_SQI MapTozf(List<String> dic_list, IMV_SQI dic_map) {
+		dic_zf = new IMV_SQI();
 		it = dic_map.keySet().iterator();
 		while (it.hasNext()) {
 			String name = it.next();
@@ -285,8 +285,8 @@ public class ZynkxDictionary extends Dictionary_S {
 		return dic_zf;
 	}
 
-	public IMV_SIQ MapToyy(List<String> dic_list, IMV_SIQ dic_map) {
-		dic_yy = new IMV_SIQ();
+	public IMV_SQI MapToyy(List<String> dic_list, IMV_SQI dic_map) {
+		dic_yy = new IMV_SQI();
 		it = dic_map.keySet().iterator();
 		while (it.hasNext()) {
 			String name = it.next();
@@ -308,8 +308,8 @@ public class ZynkxDictionary extends Dictionary_S {
 		return dic_yy;
 	}
 
-	public IMV_SIQ_ MapTosy(List<String> dic_list, IMV_SIQ dic_map) {
-		dic_sy = new IMV_SIQ_();
+	public IMV_SQI_ MapTosy(List<String> dic_list, IMV_SQI dic_map) {
+		dic_sy = new IMV_SQI_();
 		it = dic_map.keySet().iterator();
 		while (it.hasNext()) {
 			String name = it.next();
@@ -327,8 +327,8 @@ public class ZynkxDictionary extends Dictionary_S {
 		return dic_sy;
 	}
 
-	public IMV_SIQ MapTotl(List<String> dic_list, IMV_SIQ dic_map) {
-		dic_tl = new IMV_SIQ();
+	public IMV_SQI MapTotl(List<String> dic_list, IMV_SQI dic_map) {
+		dic_tl = new IMV_SQI();
 		it = dic_map.keySet().iterator();
 		while (it.hasNext()) {
 			String name = it.next();
@@ -346,8 +346,8 @@ public class ZynkxDictionary extends Dictionary_S {
 		return dic_tl;
 	}
 
-	public IMV_SIQ MapToff(List<String> dic_list, IMV_SIQ dic_map) {
-		dic_ff = new IMV_SIQ();
+	public IMV_SQI MapToff(List<String> dic_list, IMV_SQI dic_map) {
+		dic_ff = new IMV_SQI();
 		it = dic_map.keySet().iterator();
 		while (it.hasNext()) {
 			String name = it.next();
@@ -365,8 +365,8 @@ public class ZynkxDictionary extends Dictionary_S {
 		return dic_ff;
 	}
 
-	public IMV_SIQ MapTofg(List<String> dic_list, IMV_SIQ dic_map) {
-		dic_fg = new IMV_SIQ();
+	public IMV_SQI MapTofg(List<String> dic_list, IMV_SQI dic_map) {
+		dic_fg = new IMV_SQI();
 		it = dic_map.keySet().iterator();
 		while (it.hasNext()) {
 			String name = it.next();

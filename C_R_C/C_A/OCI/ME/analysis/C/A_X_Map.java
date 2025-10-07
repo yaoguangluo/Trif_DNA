@@ -3,8 +3,8 @@ package C_A.OCI.ME.analysis.C;
 import C_A.OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 import java.util.List;
 
@@ -20,21 +20,21 @@ import java.util.List;
  * */
 
 public interface A_X_Map {
-    IMV_SIQ_SS parserStringByReturnFrequencyMap(String inputString, App NE);
+    IMV_SQI_SS parserStringByReturnFrequencyMap(String inputString, App NE);
 
-    IMV_SIQ_SS parserMixStringByReturnFrequencyMap(String key, App NE);
+    IMV_SQI_SS parserMixStringByReturnFrequencyMap(String key, App NE);
 
-    IMV_SIQ_SS getWordFrequencyMap(List<String> sets, App NE);
+    IMV_SQI_SS getWordFrequencyMap(List<String> sets, App NE);
 
-    IMV_SIQ_S_ getWordFrequencyByReturnSortMap(List<String> sets, App NE);
+    IMV_SQI_S_ getWordFrequencyByReturnSortMap(List<String> sets, App NE);
 
     List<WordFrequency> getWordFrequency(List<String> sets, App NE);
 
     EmotionMap getEmotionMap();
 
-    IMV_SIQ_S_ sortWordFrequencyMapToUnsortMap(IMV_SIQ_SS map);
+    IMV_SQI_S_ sortWordFrequencyMapToUnsortMap(IMV_SQI_SS map);
 
-    IMV_SIQ_S_ sortWordFrequencyMapToSortMap(IMV_SIQ_SS map);
+    IMV_SQI_S_ sortWordFrequencyMapToSortMap(IMV_SQI_SS map);
 
-    List<WordFrequency> sortWordFrequencyMap(IMV_SIQ_SS map);
+    List<WordFrequency> sortWordFrequencyMap(IMV_SQI_SS map);
 }

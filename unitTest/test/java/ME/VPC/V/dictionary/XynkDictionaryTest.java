@@ -1,8 +1,8 @@
 package test.java.ME.VPC.V.dictionary;
 
 import ME.VPC.V.dictionary.XynkDictionary;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -37,10 +37,10 @@ class XynkDictionaryTest {
     void testListToMap() {
         // Setup
         final XynkDictionary xynkDictionaryUnderTest = new XynkDictionary();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = xynkDictionaryUnderTest.listToMap(new ArrayList<>(Arrays.asList("value")));
+        final IMV_SQI_ result = xynkDictionaryUnderTest.listToMap(new ArrayList<>(Arrays.asList("value")));
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -50,11 +50,11 @@ class XynkDictionaryTest {
     void testMapToMap_zl() {
         // Setup
         final XynkDictionary xynkDictionaryUnderTest = new XynkDictionary();
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = xynkDictionaryUnderTest.mapToMap_zl(dic_map);
+        final IMV_SQI_ result = xynkDictionaryUnderTest.mapToMap_zl(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -64,11 +64,11 @@ class XynkDictionaryTest {
     void testMapToMap_zd() {
         // Setup
         final XynkDictionary xynkDictionaryUnderTest = new XynkDictionary();
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = xynkDictionaryUnderTest.mapToMap_zd(dic_map);
+        final IMV_SQI_ result = xynkDictionaryUnderTest.mapToMap_zd(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -78,11 +78,11 @@ class XynkDictionaryTest {
     void testMapToMap_bf() {
         // Setup
         final XynkDictionary xynkDictionaryUnderTest = new XynkDictionary();
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = xynkDictionaryUnderTest.mapToMap_bf(dic_map);
+        final IMV_SQI_ result = xynkDictionaryUnderTest.mapToMap_bf(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -92,11 +92,11 @@ class XynkDictionaryTest {
     void testMapToMap_jy() {
         // Setup
         final XynkDictionary xynkDictionaryUnderTest = new XynkDictionary();
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = xynkDictionaryUnderTest.mapToMap_jy(dic_map);
+        final IMV_SQI_ result = xynkDictionaryUnderTest.mapToMap_jy(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -106,11 +106,11 @@ class XynkDictionaryTest {
     void testMapToMap_yh() {
         // Setup
         final XynkDictionary xynkDictionaryUnderTest = new XynkDictionary();
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = xynkDictionaryUnderTest.mapToMap_yh(dic_map);
+        final IMV_SQI_ result = xynkDictionaryUnderTest.mapToMap_yh(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -120,11 +120,11 @@ class XynkDictionaryTest {
     void testMapToMap_bl() {
         // Setup
         final XynkDictionary xynkDictionaryUnderTest = new XynkDictionary();
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = xynkDictionaryUnderTest.mapToMap_bl(dic_map);
+        final IMV_SQI_ result = xynkDictionaryUnderTest.mapToMap_bl(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -134,11 +134,11 @@ class XynkDictionaryTest {
     void testMapToMap_wx() {
         // Setup
         final XynkDictionary xynkDictionaryUnderTest = new XynkDictionary();
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = xynkDictionaryUnderTest.mapToMap_wx(dic_map);
+        final IMV_SQI_ result = xynkDictionaryUnderTest.mapToMap_wx(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);
@@ -148,11 +148,11 @@ class XynkDictionaryTest {
     void testMapToMap_gn() {
         // Setup
         final XynkDictionary xynkDictionaryUnderTest = new XynkDictionary();
-        final IMV_SIQ dic_map = new IMV_SIQ();
-        final IMV_SIQ_ expectedResult = new IMV_SIQ_();
+        final IMV_SQI dic_map = new IMV_SQI();
+        final IMV_SQI_ expectedResult = new IMV_SQI_();
 
         // Run the test
-        final IMV_SIQ_ result = xynkDictionaryUnderTest.mapToMap_gn(dic_map);
+        final IMV_SQI_ result = xynkDictionaryUnderTest.mapToMap_gn(dic_map);
 
         // Verify the results
         assertEquals(expectedResult, result);

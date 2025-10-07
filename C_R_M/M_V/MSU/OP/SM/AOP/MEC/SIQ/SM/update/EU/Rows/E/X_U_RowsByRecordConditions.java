@@ -4,7 +4,7 @@ import M_V.MS.OP.SM.AOP.MEC.SIQ.cache.DetaDBBufferCache_M;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.cache.Cache_M;
 
 import java.io.File;
@@ -24,22 +24,22 @@ import java.util.Objects;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class X_U_RowsByRecordConditions {
-	public static Object _E(IMV_SIQ object, boolean mod) {
+	public static Object _E(IMV_SQI object, boolean mod) {
 		String DBPath = Objects.requireNonNull(Cache_M.getCacheInfo("DBPath"))
 				.getValue().toString() + "/"
 				+ object.get("baseName").toString();
 		String DBtablePath = DBPath + "/" + object.get("tableName").toString();
 		String DBTableRowsPath = DBtablePath + "/rows";
-		List<IMV_SIQ> updateObj = (List<IMV_SIQ>) object.get("updateObj");
-		Iterator<IMV_SIQ> updateObjIterator = updateObj.iterator();
+		List<IMV_SQI> updateObj = (List<IMV_SQI>) object.get("updateObj");
+		Iterator<IMV_SQI> updateObjIterator = updateObj.iterator();
 		List<String[]> culumnValues = (List<String[]>) object
 				.get("culumnValue");
 		Iterator<String[]> culumnValuesIterator = culumnValues.iterator();
 		while (updateObjIterator.hasNext()) {
-			IMV_SIQ objRow = updateObjIterator.next();
-			IMV_SIQ objCells = (IMV_SIQ) objRow
+			IMV_SQI objRow = updateObjIterator.next();
+			IMV_SQI objCells = (IMV_SQI) objRow
 					.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-			IMV_SIQ onjCell = (IMV_SIQ) objCells.get("Index");
+			IMV_SQI onjCell = (IMV_SQI) objCells.get("Index");
 			String rowIndex = "row";
 			rowIndex += onjCell.get("culumnValue").toString();
 			while (culumnValuesIterator.hasNext()) {

@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import OSI.OSU.crab.CrabInterface;
 import O_V.OSA.shell.XA_ShellTable;
 import O_V.OSA.shell.XA_ShellTables;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_logger.Log;
 
 import java.util.ArrayList;
@@ -25,14 +25,14 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	String callFunctionKey;
 	String className = "AddFindColumnsInMemoryClass";
 	//private static final Logger logger = Logger.getLogger("");
-	// public IMV_SIQ chromosomeRoot= new IMV_SIQ();
-	// public IMV_SIQ chromosomeFlower= new IMV_SIQ();
-	// public IMV_SIQ chromosomeLeaf= new IMV_SIQ();
-	// public IMV_SIQ chromosomeBlooming= new IMV_SIQ();
-	// public IMV_SIQ chromosomeMetabolism= new IMV_SIQ();
-	// public IMV_SIQ chromosomePDE= new IMV_SIQ();
-	// public IMV_SIQ chromosomeDNA= new IMV_SIQ();
-	// public IMV_SIQ chromosomeNode= new IMV_SIQ();
+	// public IMV_SQI chromosomeRoot= new IMV_SQI();
+	// public IMV_SQI chromosomeFlower= new IMV_SQI();
+	// public IMV_SQI chromosomeLeaf= new IMV_SQI();
+	// public IMV_SQI chromosomeBlooming= new IMV_SQI();
+	// public IMV_SQI chromosomeMetabolism= new IMV_SQI();
+	// public IMV_SQI chromosomePDE= new IMV_SQI();
+	// public IMV_SQI chromosomeDNA= new IMV_SQI();
+	// public IMV_SQI chromosomeNode= new IMV_SQI();
 	/*
 	 * 用于表达元基花的链接
 	 */
@@ -110,8 +110,8 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	 * 况下。 以后 +-的精确词性搭配语法不会出现 -N 和 N- 类型，这种思维可以将错误锁定在词汇的
 	 * 词性的校准逻辑层面，保持算法的BPM结构模块相对稳定性。 --罗瑶光
 	 */
-	public boolean logic(IMV_SIQ inputValues, String[] 传参因子, int 因子,
-		App NE, IMV_SIQ outputReg) {
+	public boolean logic(IMV_SQI inputValues, String[] 传参因子, int 因子,
+		App NE, IMV_SQI outputReg) {
 		/*
 		 * TVM extension
 		 * */
@@ -259,7 +259,7 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 
 //        Pl_XA_Command_E.P_TableName(NE._I_U.acknowledge
 //            , NE._I_U.outputMap);
-//        IMV_SIQ object = NE._I_U.outputMap;
+//        IMV_SQI object = NE._I_U.outputMap;
 //        Iterator<String> iterator = NE.app_S.tableNameMap.keySet().iterator();
 //        while (iterator.hasNext()) {
 //            String string = iterator.next();

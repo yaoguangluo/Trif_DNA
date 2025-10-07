@@ -3,7 +3,7 @@ package O_V.OSA.shell;
 import ME.VPC.M.app.App;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -24,7 +24,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class XA_ShellTables {
-    public static Map<String, XA_ShellTable> searchShellTables = new IMV_SIQ();
+    public static Map<String, XA_ShellTable> searchShellTables = new IMV_SQI();
 
     //先把接口做足, 罗瑶光20210925
     //将表变成表映射

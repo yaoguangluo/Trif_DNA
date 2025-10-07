@@ -288,7 +288,7 @@ public class Monitor_X_S {
 ////	public IplImage difcv;
 ////	public IplImage oldcv;
 
-//	public Map<String, Boolean> eyeShows= new IMV_SIQ();
+//	public Map<String, Boolean> eyeShows= new IMV_SQI();
 
 //	public Image newImage;
 //	public Image oldImage;

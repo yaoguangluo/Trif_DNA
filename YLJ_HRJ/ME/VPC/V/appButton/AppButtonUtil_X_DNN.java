@@ -5,7 +5,7 @@ import ME.VPC.M.app.App;
 import ME.VPC.S.ne.App_S;
 import P.image.Color_P;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.JTextPane;
 import java.util.Map;
@@ -26,7 +26,7 @@ public class AppButtonUtil_X_DNN {
 	public static boolean doResponseContainsSetofI(StringBuilder page,
 			String setOfi, Map<String, Double> dNNrank, App NE) {
 		App_S u = NE.app_S;
-		IMV_SIQ pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
+		IMV_SQI pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
 		// System.out.println("root:"+ u.jsliderDNNRatio);
 		u.appConfig.SectionJPanel.jTextPane
 				.setText("root:" + u.jsliderDNNRatio);
@@ -81,7 +81,7 @@ public class AppButtonUtil_X_DNN {
 	}
 
 	public static void doRankDNN(JTextPane statistic, String response,
-			IMV_SIQ pos, Map<String, Double> dNNrank, App NE) {
+			IMV_SQI pos, Map<String, Double> dNNrank, App NE) {
 		try {
 			statistic.setSize(500, 800);
 			// Map<Integer, WordFrequency> fwa=

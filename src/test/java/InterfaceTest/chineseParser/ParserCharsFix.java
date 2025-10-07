@@ -10,8 +10,8 @@ import java.util.Map;
 import E_A.OEI.SVQ.MPC.fhmm.E.FastReadProjectFile;
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_X_;
 import exception.file.O.DetaBufferedReader;
 
 /*
@@ -193,11 +193,11 @@ public class ParserCharsFix {
 		// System.out.println("400-8-0001-001-" + sets.size());
 		NE.app_S.lenovoInit.IV_SetsExclude_A(sets, NE);
 		// System.out.println("400-8-0001-002-" + sets.size());
-		IMV_SIQ_X_ environmentSampleMap = NE.app_S.lenovoInit
+		IMV_SQI_X_ environmentSampleMap = NE.app_S.lenovoInit
 			.getEnvironmentInit().getEmotionSampleMap();
 		// System.out.println("400-8-0001-003-" +
 		// environmentSampleMap.size());
-		IMV_SIQ lenovo = NE.app_S.lenovoInit.getSensingMap()
+		IMV_SQI lenovo = NE.app_S.lenovoInit.getSensingMap()
 			.getLenovoMap();
 		// reduce
 		S_logger.Log.logger.info("环    境：");
@@ -320,7 +320,7 @@ public class ParserCharsFix {
 }
 // Map<String, String> invironmentMap = new HashMap<>();
 // NE.app_S.sensingMap_E.IV_LenovoMap(NE.app_S._A);
-// IMV_SIQ lenovo =
+// IMV_SQI lenovo =
 // NE.app_S.lenovoInit.getSensingMap().getLenovoMap();
 // Iterator<String> Iterator = sets.iterator();
 // while (Iterator.hasNext()) {

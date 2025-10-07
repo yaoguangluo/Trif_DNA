@@ -5,7 +5,7 @@ import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Cell;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Row;
 import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Table;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.math.BigDecimal;
 import java.util.Iterator;
@@ -23,8 +23,8 @@ import java.util.Map;
  * 神仙坳社区 大塘冲路一段 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
 public class X_Cache extends X_ {
-	public static void P_Cache(String[] sets, List<IMV_SIQ> output,
-			String tableName, String baseName, IMV_SIQ object) {
+	public static void P_Cache(String[] sets, List<IMV_SQI> output,
+			String tableName, String baseName, IMV_SQI object) {
 		Table table = DetaDBBufferCache_M.db.getBase(baseName)
 				.getTable(tableName);
 		Iterator<String> iterator = table.getRows().keySet().iterator();

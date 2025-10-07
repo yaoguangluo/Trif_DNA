@@ -1,8 +1,8 @@
 package test.java.ME.VPC.V.dictionary;
 
 import ME.VPC.V.dictionary.ZyzdxDictionary;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -31,38 +31,38 @@ class ZyzdxDictionaryTest {
 
     @Test
     void testListToMap() {
-        IMV_SIQ_ result = zyzdxDictionary.listToMap(new ArrayList<>(Arrays.asList("String")));
-        Assertions.assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = zyzdxDictionary.listToMap(new ArrayList<>(Arrays.asList("String")));
+        Assertions.assertEquals(new IMV_SQI_(), result);
     }
 
     @Test
     void testMapToMap_zhjb() {
-        IMV_SIQ result = zyzdxDictionary.mapToMap_zhjb(new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zyzdxDictionary.mapToMap_zhjb(new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testMapToMap_lcyy() {
-        IMV_SIQ result = zyzdxDictionary.mapToMap_lcyy(new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zyzdxDictionary.mapToMap_lcyy(new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testMapToMap_zhfx() {
-        IMV_SIQ result = zyzdxDictionary.mapToMap_zhfx(new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zyzdxDictionary.mapToMap_zhfx(new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testMapToMap_lcbx() {
-        IMV_SIQ result = zyzdxDictionary.mapToMap_lcbx(new IMV_SIQ());
-        Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = zyzdxDictionary.mapToMap_lcbx(new IMV_SQI());
+        Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testMapToMap_gn() {
-        IMV_SIQ_ result = zyzdxDictionary.mapToMap_gn(new IMV_SIQ_());
-        Assertions.assertEquals(new IMV_SIQ_(), result);
+        IMV_SQI_ result = zyzdxDictionary.mapToMap_gn(new IMV_SQI_());
+        Assertions.assertEquals(new IMV_SQI_(), result);
     }
 }
 

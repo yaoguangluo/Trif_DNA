@@ -1,6 +1,6 @@
 package ME.VPC.V.dictionary;
 
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI_;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -17,8 +17,8 @@ import java.util.regex.Pattern;
  * */
 @SuppressWarnings("unchecked")
 public class TxtDictionary extends Dictionary_S {
-	public IMV_SIQ_ mapToMap_yf(IMV_SIQ_ dic_map) {
-		dic_yf = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_yf(IMV_SQI_ dic_map) {
+		dic_yf = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -46,8 +46,8 @@ public class TxtDictionary extends Dictionary_S {
 		return dic_yf;
 	}
 
-	public IMV_SIQ_ mapToMap_yx(IMV_SIQ_ dic_map) {
-		dic_yx = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_yx(IMV_SQI_ dic_map) {
+		dic_yx = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -71,8 +71,8 @@ public class TxtDictionary extends Dictionary_S {
 		return dic_yx;
 	}
 
-	public IMV_SIQ_ mapToMap_sy(IMV_SIQ_ dic_map) {
-		dic_sy = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_sy(IMV_SQI_ dic_map) {
+		dic_sy = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -100,8 +100,8 @@ public class TxtDictionary extends Dictionary_S {
 		return dic_sy;
 	}
 
-	public IMV_SIQ_ mapToMap_lc(IMV_SIQ_ dic_map) {
-		dic_lc = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_lc(IMV_SQI_ dic_map) {
+		dic_lc = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -129,8 +129,8 @@ public class TxtDictionary extends Dictionary_S {
 		return dic_lc;
 	}
 
-	public IMV_SIQ_ mapToMap_by(IMV_SIQ_ dic_map) {
-		dic_by = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_by(IMV_SQI_ dic_map) {
+		dic_by = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -166,8 +166,8 @@ public class TxtDictionary extends Dictionary_S {
 		return dic_by;
 	}
 
-	public IMV_SIQ_ mapToMap_lx(IMV_SIQ_ dic_map) {
-		dic_lx = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_lx(IMV_SQI_ dic_map) {
+		dic_lx = new IMV_SQI_();
 		iter = dic_map.keySet().iterator();
 		copy = new ArrayList<String>();
 		while (iter.hasNext())

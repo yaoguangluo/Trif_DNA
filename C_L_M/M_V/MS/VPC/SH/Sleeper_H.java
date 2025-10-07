@@ -1,7 +1,7 @@
 //package M_V.MS.VPC.SH;
 //
 //import C_A.OSI.AOP.MS.VPC.server.ServerSleeper_Standard;
-//import S_A.pheromone.IMV_SIQ;
+//import S_A.pheromone.IMV_SQI;
 //
 //import java.util.Map;
 ///*
@@ -16,7 +16,7 @@
 //public class Sleeper_H{
 //	private Map<Integer, ServerSleeper_Standard> sleepersMap;
 //	public Sleeper_H(){
-//		sleepersMap= new IMV_SIQ();
+//		sleepersMap= new IMV_SQI();
 //	}
 //	public int getThreadsCount() {
 //		return sleepersMap.size();

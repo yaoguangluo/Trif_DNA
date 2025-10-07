@@ -1,7 +1,7 @@
 package S_A.SEM.bloom;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com, -
@@ -22,23 +22,23 @@ public interface StaticFunctionMapS_AOPM_C {
     //	condition:or:testCulumn1|<|20:testCulumn2|==|fire;
     //	condition:and:testCulumn1|>|100:testCulumn2|==|fire;
 
-    public IMV_SIQ DeleteCellORM(App NE);
+    public IMV_SQI DeleteCellORM(App NE);
 
-    public IMV_SIQ DeleteCellPLSQL(App NE);
+    public IMV_SQI DeleteCellPLSQL(App NE);
 
     //D_Standard{
 
     //	drop samples
     //	tableName:test:drop;
 
-    public IMV_SIQ DropCellORM(App NE);
+    public IMV_SQI DropCellORM(App NE);
 
-    public IMV_SIQ DropCellPLSQL(App NE);
+    public IMV_SQI DropCellPLSQL(App NE);
 
     //IU_CellStandard{
-    public IMV_SIQ InsertCellORM(App NE);
+    public IMV_SQI InsertCellORM(App NE);
 
-    public IMV_SIQ InsertCellPLSQL(App NE);
+    public IMV_SQI InsertCellPLSQL(App NE);
 
     // U_CellStandard{
 
@@ -63,11 +63,11 @@ public interface StaticFunctionMapS_AOPM_C {
     //	culumnValue:date0:19850525;
     //	culumnValue:date1:19850526;
 
-    public IMV_SIQ UpdateCellORM(App NE);
+    public IMV_SQI UpdateCellORM(App NE);
 
-    public IMV_SIQ UpdateCellORMByRowId(App NE);
+    public IMV_SQI UpdateCellORMByRowId(App NE);
 
-    public IMV_SIQ UpdateCellORMByEquals(App NE);
+    public IMV_SQI UpdateCellORMByEquals(App NE);
 
     //	update samples tableName:test:update;
     //	condition:or:testCulumn1|<|20:testCulumn2|==|fire;
@@ -89,7 +89,7 @@ public interface StaticFunctionMapS_AOPM_C {
     //  condition 可以用uid in 或者 uid== 来实现.这样会导致计算变慢, 所以 设计rowid culumnid
     //的数字比较选项是有必要的.
 
-    public IMV_SIQ UpdateCellPLSQL(App NE);
+    public IMV_SQI UpdateCellPLSQL(App NE);
 
 
     //S 接口的应用

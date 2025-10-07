@@ -1,6 +1,6 @@
 package O_V.OSI.AOP.MEC.SIQ.plorm;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -78,7 +78,7 @@ public interface PLORM_C {
 
     public PLORM_C finalE(boolean b);
 
-    public IMV_SIQ returnAsMap();
+    public IMV_SQI returnAsMap();
 
     public PLORM_C checkAndFixPlsqlGrammarErrors();
 

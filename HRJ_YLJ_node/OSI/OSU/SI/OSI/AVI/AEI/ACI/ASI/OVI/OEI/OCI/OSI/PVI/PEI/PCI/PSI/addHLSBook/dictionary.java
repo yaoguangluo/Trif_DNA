@@ -2,7 +2,7 @@ package OSI.OSU.SI.OSI.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.addHLSBoo
 
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI_;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public class dictionary{
 		return temp_list;
 	}
 	
-	public IMV_SIQ_ listNameToMap(IMV_SIQ_ dic_map, List<String> dic_list) {
+	public IMV_SQI_ listNameToMap(IMV_SQI_ dic_map, List<String> dic_list) {
 		//Map<String, String> dic_map= new ConcurrentHashMap<String, String>();
 		for(int i= 0; i < dic_list.size(); i++) {
 			String para= "";

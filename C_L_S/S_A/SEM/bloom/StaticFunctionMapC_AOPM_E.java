@@ -22,7 +22,7 @@ import E_A.OEI.SVQ.MPC.fhmm.E.FMHMMListOneTime_E;
 import ME.VPC.M.app.App;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import javax.swing.JTextPane;
 
@@ -275,7 +275,7 @@ public class StaticFunctionMapC_AOPM_E extends StaticFunctionMapCASE
 	// ServerVPC_Standard {
 	public String forward(App NE) {
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		IMV_SIQ data = NE._I_U.dataMap;
+		IMV_SQI data = NE._I_U.dataMap;
 		return ServerVPC_Standard.forward(string._S_, data);
 	}
 

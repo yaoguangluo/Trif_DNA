@@ -11,7 +11,7 @@ package P_V.PEQ.AMV.ECS.test;
 
 import ME.VPC.M.app.App;
 import M_V.MSV.OSQ.sets.DetaDouble;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.nlp.DETA_DNN;
 
 import java.util.ArrayList;
@@ -86,7 +86,7 @@ public class DNNTest {
 
     private String[][] getAnnWithMaskRnn(String[][] ann, String[][] rnn) {
         //map
-        Map<String, Boolean> rnnMap = new IMV_SIQ();
+        Map<String, Boolean> rnnMap = new IMV_SQI();
         for (int i = 0; i < rnn.length; i++) {
             if (!rnnMap.containsKey(rnn[i][0])) {
                 rnnMap.put(rnn[i][0], true);

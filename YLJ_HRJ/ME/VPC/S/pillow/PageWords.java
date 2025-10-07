@@ -5,8 +5,8 @@ import P.image.Color_P;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.Iterator;
 import java.util.List;
@@ -23,10 +23,10 @@ import java.util.List;
 public class PageWords {
 
     public static void renderWordLoopPOS(StringBuilder page
-        , List<String> setsForGet, IMV_SIQ_SS map, String key
+        , List<String> setsForGet, IMV_SQI_SS map, String key
         , boolean needMap, App NE) {
         App_S u = NE.app_S;
-        IMV_SIQ pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
+        IMV_SQI pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
         Iterator<String> iterator = setsForGet.iterator();
         Here:
         while (iterator.hasNext()) {
@@ -97,9 +97,9 @@ public class PageWords {
     }
 
     @SuppressWarnings("unused")
-	public static void MapProcedureWordLoopPOS(IMV_SIQ_SS map
+	public static void MapProcedureWordLoopPOS(IMV_SQI_SS map
         , String setOfi, App NE) {
-        IMV_SIQ pos = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
+        IMV_SQI pos = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
         if (S_Maps.mingCi.containsKey(setOfi) || S_Maps.dongCi.containsKey(setOfi)
             || S_Maps.xingRongCi.containsKey(setOfi)) {
             if (map.containsKey(setOfi)) {

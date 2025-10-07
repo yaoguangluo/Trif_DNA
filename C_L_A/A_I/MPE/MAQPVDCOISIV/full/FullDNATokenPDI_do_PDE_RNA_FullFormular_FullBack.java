@@ -887,7 +887,7 @@ public class FullDNATokenPDI_do_PDE_RNA_FullFormular_FullBack {
     //
     //	public String initonSect(String key) {
     //		String pdis= "";
-    //		Map<String, String> map= new IMV_SIQ();
+    //		Map<String, String> map= new IMV_SQI();
     //		map.put("0", "A");
     //		map.put("1", "O");
     //		map.put("2", "P");
@@ -918,7 +918,7 @@ public class FullDNATokenPDI_do_PDE_RNA_FullFormular_FullBack {
     //
     //	public String initonDeSect(String key) {
     //		String pdis= "";
-    //		Map<String, String> map= new IMV_SIQ();
+    //		Map<String, String> map= new IMV_SQI();
     //		map.put("A", "0");
     //		map.put("O", "1");
     //		map.put("P", "2");

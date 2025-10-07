@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapV_AOPM_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -22,13 +22,13 @@ public class StaticReflectionMapV_AOPM_C extends
 	@SuppressWarnings("unused")
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		int 因子 = 0;
 		Object map = null;
 		if (callFunctionKey.contains("PdeSwapPdcToPde", NE)) {
 			String trif = "PdeSwapPdcToPde";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.PdeSwapPdcToPde(NE);
@@ -39,7 +39,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("PdeSwapPdcToPds", NE)) {
 			String trif = "PdeSwapPdcToPds";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.PdeSwapPdcToPds(NE);
@@ -50,7 +50,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("PdeSwapPdeToPds", NE)) {
 			String trif = "PdeSwapPdeToPds";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.PdeSwapPdeToPds(NE);
@@ -61,7 +61,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("PdeSwapPdsToPde", NE)) {
 			String trif = "PdeSwapPdsToPde";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.PdeSwapPdsToPde(NE);
@@ -72,7 +72,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("PdeSwapFixpdcToPde", NE)) {
 			String trif = "PdeSwapFixpdcToPde";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.PdeSwapFixpdcToPde(
@@ -84,7 +84,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("PdeSwapFixpdcToPds", NE)) {
 			String trif = "PdeSwapFixpdcToPds";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.PdeSwapFixpdcToPds(
@@ -96,7 +96,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("PdeSwapFixpdsToPde", NE)) {
 			String trif = "PdeSwapFixpdsToPde";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.PdeSwapFixpdsToPde(
@@ -108,7 +108,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("PdeSwapFixpdeToPds", NE)) {
 			String trif = "PdeSwapFixpdeToPds";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.PdeSwapFixpdeToPds(
@@ -120,7 +120,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("PdeSwapFixtextToPdw", NE)) {
 			String trif = "PdeSwapFixtextToPdw";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.PdeSwapFixtextToPdw(
@@ -133,7 +133,7 @@ public class StaticReflectionMapV_AOPM_C extends
 
 		if (callFunctionKey.contains("PdeSwapFixtextToPdw", NE)) {
 			String trif = "PdeSwapFixtextToPdw";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.PdeSwapFixtextToPdw(
@@ -145,7 +145,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("PdeSwapFixpdwToPdc", NE)) {
 			String trif = "PdeSwapFixpdwToPdc";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.PdeSwapFixpdwToPdc(
@@ -157,7 +157,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("DetaDBUtilDBRequest", NE)) {
 			String trif = "DetaDBUtilDBRequest";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.DetaDBUtilDBRequest(
@@ -170,7 +170,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		if (callFunctionKey.contains("DetaDBUtilbackEndRequest",
 			NE)) {
 			String trif = "DetaDBUtilbackEndRequest";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C
@@ -182,7 +182,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("DetaDBUtilcacheRequest", NE)) {
 			String trif = "DetaDBUtilcacheRequest";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C
@@ -194,7 +194,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("IV_CulumnNameType", NE)) {
 			String trif = "IV_CulumnNameType";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapV_AOPM_C.IV_CulumnNameType(NE);
@@ -206,7 +206,7 @@ public class StaticReflectionMapV_AOPM_C extends
 
 		if (callFunctionKey.contains("withoutCulumnNameType", NE)) {
 			String trif = "withoutCulumnNameType";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.withoutCulumnNameType(
@@ -219,7 +219,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		if (callFunctionKey.contains("DetaFrontEndUtilbackEndRequest",
 			NE)) {
 			String trif = "DetaFrontEndUtilbackEndRequest";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C
@@ -232,7 +232,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		if (callFunctionKey.contains("DetaFrontEndUtilbackEndRequest",
 			NE)) {
 			String trif = "DetaFrontEndUtilbackEndRequest";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C
@@ -246,7 +246,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		if (callFunctionKey.contains(
 			"DetaFrontEndUtilhuaRuiJiRequest", NE)) {
 			String trif = "DetaFrontEndUtilhuaRuiJiRequest";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C
@@ -259,7 +259,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		if (callFunctionKey.contains("DetaFrontEndUtilcacheRequest",
 			NE)) {
 			String trif = "DetaFrontEndUtilcacheRequest";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C
@@ -271,7 +271,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("IV_DB", NE)) {
 			String trif = "IV_DB";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapV_AOPM_C.IV_DB(NE);
@@ -283,7 +283,7 @@ public class StaticReflectionMapV_AOPM_C extends
 
 		if (callFunctionKey.contains("compress", NE)) {
 			String trif = "compress";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.compress(NE);
@@ -294,7 +294,7 @@ public class StaticReflectionMapV_AOPM_C extends
 		;
 		if (callFunctionKey.contains("uncompress", NE)) {
 			String trif = "uncompress";
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapV_AOPM_C.uncompress(NE);

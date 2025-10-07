@@ -1,7 +1,7 @@
 package dnn;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -26,7 +26,7 @@ import java.util.Map;
 public class WriteDNNMap {
     //这个函数用于dnn的全文索引进行txt记录
     public static void doWriteDNNMap(String stringPath, App app) {
-        Map<String, IMV_SIQ> map = app.app_S.DNNmap;
+        Map<String, IMV_SQI> map = app.app_S.DNNmap;
         try {
             File file = new File(stringPath);
             file.createNewFile();
@@ -63,8 +63,8 @@ public class WriteDNNMap {
     }
 
     public static void doWriteDNNMap(String stringPath, App app
-        , Map<String, IMV_SIQ> subDNNmap) {
-        Map<String, IMV_SIQ> map = subDNNmap;
+        , Map<String, IMV_SQI> subDNNmap) {
+        Map<String, IMV_SQI> map = subDNNmap;
         try {
             File file = new File(stringPath);
             file.createNewFile();

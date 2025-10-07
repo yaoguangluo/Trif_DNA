@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import M_V.MVQ.button.DetaButton;
 import M_V.MVQ.filenameFilter.TXTFilter;
 import exception.thread.DetaThread;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.sound.SoundRecord;
 import U_A.PEU.P.wave.DFT;
 
@@ -312,8 +312,8 @@ public class JpZNSZ extends JPanel implements Runnable {
             int channels = 2;
             AudioFormat format = new AudioFormat(encoding, rate, sampleSize,
                     channels, (sampleSize / 8) * channels, rate, bigEndian);
-            Map<String, String> cache_sj = new IMV_SIQ();
-            Map<String, String> cache_bz = new IMV_SIQ();
+            Map<String, String> cache_sj = new IMV_SQI();
+            Map<String, String> cache_bz = new IMV_SQI();
 //			//InputStream ain= getClass().getResourceAsStream("zabo.txt");
 //			//DetaBufferedReader acReader= new DetaBufferedReader(DetaInputStreamReader.E(ain));  
 //			//String actempString= null; 

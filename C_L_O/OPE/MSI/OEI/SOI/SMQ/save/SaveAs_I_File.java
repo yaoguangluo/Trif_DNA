@@ -15,7 +15,7 @@ import M_V.MSU.sessionValidation.X_sessionTokenCertsInitWithHumanWordsByDNA_ETL;
 import M_V.MVQ.filenameFilter.TXTFilter;
 import S_A.SVQ.stable.S_Annotation;
 import S_A.SVQ.stable.S_Token;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.dna.Token;
 import U_A.PEU.P.dna.TokenCerts;
 import U_V.ESU.string.String_ESU_X_charsetSwap;
@@ -33,9 +33,9 @@ import java.io.FileWriter;
 public class SaveAs_I_File {
     //准备开始应用测试下。//稍后hook 进行 异常修整 20230218
     @SuppressWarnings("unchecked")
-	public static IMV_SIQ getRandomDNAkey(String password) {
+	public static IMV_SQI getRandomDNAkey(String password) {
         String[] string = new String[4];
-        IMV_SIQ map = new IMV_SIQ();
+        IMV_SQI map = new IMV_SQI();
         //生成lock
         TokenCerts tokenCerts
             = X_sessionTokenCertsInitWithHumanWordsByDNA_ETL._E(password, false, null);
@@ -147,7 +147,7 @@ public class SaveAs_I_File {
                 //new FullDNATokenPDI().initonDeSect(S_Token.EMPTY_STRING);
                 fileWriter.write(S_Token.LINE_ENTER);
                 fileWriterKey.write(S_Token.LINE_ENTER);
-                IMV_SIQ map = getRandomDNAkey(S_Token.ETL_NODE_COORDINATION_X
+                IMV_SQI map = getRandomDNAkey(S_Token.ETL_NODE_COORDINATION_X
                     + S_Token.ETL_SYMBOL_PER + NodeCoordinationX);
                 fileWriter.write(map.getString(S_Token.DNA_TOKEN_LOCK));
                 fileWriterKey.write(map.getString(S_Token.DNA_TOKEN_KEY));

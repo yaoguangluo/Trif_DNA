@@ -1,7 +1,7 @@
 package E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E;
 
 import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.company.E.LoginService_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -14,24 +14,24 @@ import S_A.pheromone.IMV_SIQ;
  * */
 @SuppressWarnings({ "unchecked", "resource", "unused" })
 public class RestLoginPort_E {
-	public static IMV_SIQ logout(String uEmail, String uToken) {
-		IMV_SIQ output = new IMV_SIQ();
+	public static IMV_SQI logout(String uEmail, String uToken) {
+		IMV_SQI output = new IMV_SQI();
 		output.put("userEmail", "friend");
 		output.put("userToken", "123456");
 		return output;
 	}
 
-	public static IMV_SIQ change(String uEmail, String uChange,
+	public static IMV_SQI change(String uEmail, String uChange,
 			String uChangeEnsure, String uToken, String uPassword) {
 		return null;
 	}
 
-	public static IMV_SIQ find(String uEmail) {
+	public static IMV_SQI find(String uEmail) {
 		return null;
 	}
 
-	public static IMV_SIQ checkStatus(String token) {
-		IMV_SIQ output = new IMV_SIQ();
+	public static IMV_SQI checkStatus(String token) {
+		IMV_SQI output = new IMV_SQI();
 		String checkStatus = LoginService_E.checkTokenStatusAndGetLevel(token,
 				"level", output);
 		if (checkStatus.contains("invalid")) {
@@ -44,16 +44,16 @@ public class RestLoginPort_E {
 		return output;
 	}
 }
-//	public static IMV_SIQ login(String uEmail, String uPassword)  {
-//		IMV_SIQ map= TransactionDelegate.transactionLogin(uEmail, uPassword);
+//	public static IMV_SQI login(String uEmail, String uPassword)  {
+//		IMV_SQI map= TransactionDelegate.transactionLogin(uEmail, uPassword);
 //		return map;
 //	}
 
-//	public static IMV_SIQ register(String uEmail, String uEmailEnsure
+//	public static IMV_SQI register(String uEmail, String uEmailEnsure
 //			, String uName, String uPassword,
 //			String uPassWDEnsure, String uAddress, String uPhone, String uWeChat,
 //			String uQq, String uAge, String uSex)  {
-//		IMV_SIQ output= TransactionDelegate.transactionRegister(uEmail
+//		IMV_SQI output= TransactionDelegate.transactionRegister(uEmail
 //				, uEmailEnsure, uName, uPassword,
 //				uPassWDEnsure, uAddress, uPhone, uWeChat,
 //				uQq, uAge, uSex);

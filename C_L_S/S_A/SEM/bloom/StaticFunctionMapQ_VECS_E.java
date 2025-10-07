@@ -5,8 +5,8 @@ import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import javax.swing.table.DefaultTableModel;
@@ -33,7 +33,7 @@ public class StaticFunctionMapQ_VECS_E extends StaticFunctionMapCASE
 		DefaultTableModel newTableModel = NE._I_U.newTableModel;
 		Object[][] tableData_old = NE._I_U.tableData_old;
 		ArrayList<String> copy_xj = NE._I_U.copy_xj;
-		IMV_SIQ dic_xj = NE._I_U.dic_xj;
+		IMV_SQI dic_xj = NE._I_U.dic_xj;
 		App app = NE._I_U.app;
 
 		if (null == key || key.equals("")) {//把null key check提前, 搜索加快
@@ -49,9 +49,9 @@ public class StaticFunctionMapQ_VECS_E extends StaticFunctionMapCASE
 		int[] score_code = new int[copy_xj.size()];
 		int[] reg = new int[copy_xj.size()];
 		int count = 0;
-		IMV_SIQ_SS mapSearchWithoutSort = null;
+		IMV_SQI_SS mapSearchWithoutSort = null;
 		CogsBinaryForest_AE _A = app.app_S._A;
-		IMV_SIQ pos = _A.getPosCnToCn();
+		IMV_SQI pos = _A.getPosCnToCn();
 		mapSearchWithoutSort = _A.parserMixStringByReturnFrequencyMap(
 			key._S_, NE);
 		Iterator<String> iteratorForCopy = copy_xj.iterator();
@@ -210,7 +210,7 @@ public class StaticFunctionMapQ_VECS_E extends StaticFunctionMapCASE
 		int rangeScale, boolean isKey) {
 		AES_QMS_XSD_TIH searchkey = NE._I_U.searchkey;
 		ArrayList<String> nameContent = NE._I_U.nameContent;
-		IMV_SIQ textContent = NE._I_U.textContent;
+		IMV_SQI textContent = NE._I_U.textContent;
 		double lookrot = NE._I_U.lookrot;
 		CogsBinaryForest_AE _AE = NE._I_U._AE;
 
@@ -223,10 +223,10 @@ public class StaticFunctionMapQ_VECS_E extends StaticFunctionMapCASE
 		int[] score_code = new int[nameContent.size()];
 		int[] reg = new int[nameContent.size()];
 		int count = 0;
-		IMV_SIQ_SS mapSearchWithoutSort = null;
+		IMV_SQI_SS mapSearchWithoutSort = null;
 		CogsBinaryForest_AE _A = _AE;
 		//_A.IV_Mixed(emotionMap_E);
-		IMV_SIQ pos = _A.getPosCnToCn();
+		IMV_SQI pos = _A.getPosCnToCn();
 		mapSearchWithoutSort = _A.parserMixStringByReturnFrequencyMap(
 			searchkey._S_, NE);
 		Iterator<String> iteratorForCopy = nameContent.iterator();
@@ -390,7 +390,7 @@ public class StaticFunctionMapQ_VECS_E extends StaticFunctionMapCASE
 		String[] argv = NE._I_U.argv;
 		CogsBinaryForest_AE _AE = NE._I_U._AE;
 		ArrayList<String> nameContent = new ArrayList<String>();
-		IMV_SIQ textContent = new IMV_SIQ();
+		IMV_SQI textContent = new IMV_SQI();
 		double lookrot = 0.0;
 		nameContent.add("罗瑶光");
 		nameContent.add("罗**");

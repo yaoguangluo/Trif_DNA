@@ -593,16 +593,16 @@ class ShellJPanelTest {
  * 分析混合歧义中文数字提取机，在简单的功能测试了下ok后，那么就准备
  * 应用下，逻辑是，
  * --1-- 首先识别出中文混合数字，进入到wordFrequency
- * map中	 如 command_V._IMV_SIQ_SS = NE.app_S._A
- *	.getWordFrequencyMap(command_V._IMV_SIQ_SS_, NE);
- * 和 NE.app_S._A.initPCAWordPOS(command_V._IMV_SIQ_SS, NE);
+ * map中	 如 command_V._IMV_SQI_SS = NE.app_S._A
+ *	.getWordFrequencyMap(command_V._IMV_SQI_SS_, NE);
+ * 和 NE.app_S._A.initPCAWordPOS(command_V._IMV_SQI_SS, NE);
  * 变量管理关系-- 
- * 1 数字变量的set list--command_V._IMV_SIQ_SS_
- * 2 数字变量的map pos标注--command_V._IMV_SIQ_SS
+ * 1 数字变量的set list--command_V._IMV_SQI_SS_
+ * 2 数字变量的map pos标注--command_V._IMV_SQI_SS
  * --2-- 原文string剔除掉数字后进行原函数计算得到
- * 3 数字变量的set list--command_V._IMV_SIQ_SS_
- * 4 数字变量的map pos标注--command_V._IMV_SIQ_SS
- * 然后将4合并成final-command_V._IMV_SIQ_SS
+ * 3 数字变量的set list--command_V._IMV_SQI_SS_
+ * 4 数字变量的map pos标注--command_V._IMV_SQI_SS
+ * 然后将4合并成final-command_V._IMV_SQI_SS
  * 就可以将数字碎片融入原函数的笛卡尔关系中获取指令集。
  * 然后分析 从- 组合 到- 展示+行 仅+展示
  * --罗瑶光

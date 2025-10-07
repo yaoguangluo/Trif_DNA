@@ -28,7 +28,7 @@ import S_A.SEM.reflection.StaticReflectionMapU_AOPM_C;
 import S_A.SEM.reflection.StaticReflectionMapU_VECS_C;
 import S_A.SEM.reflection.StaticReflectionMapV_AOPM_C;
 import S_A.SEM.reflection.StaticReflectionMapV_IDUQ_C;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //用来索引函数 注册类
 //罗瑶光
@@ -44,7 +44,7 @@ import S_A.pheromone.IMV_SIQ;
 public class StaticFunctionMap {
 	public static void doA_VECS_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapA_VECS_E staticFunctionMapA_VECS_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		if (callFunctionKey.contains("main", NE)) {
 			// ....
 		}
@@ -54,161 +54,161 @@ public class StaticFunctionMap {
 
 	public static void doA_IDUQ_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapA_IDUQ_E staticFunctionMapA_IDUQ_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapA_IDUQ_C.callFunction(callFunctionKey,
 				staticFunctionMapA_IDUQ_C, output, NE);
 	}
 
 	public static void doO_VECS_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapO_VECS_E staticFunctionMapO_VECS_C,
-			IMV_SIQ output, App NE) throws InterruptedException, IOException {
+			IMV_SQI output, App NE) throws InterruptedException, IOException {
 		NE.app_S.staticReflectionMapO_VECS_C.callFunction(callFunctionKey,
 				staticFunctionMapO_VECS_C, output, NE);
 	}
 
 	public static void doO_IDUQ_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapO_IDUQ_E staticFunctionMapO_IDUQ_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapO_IDUQ_C.callFunction(callFunctionKey,
 				staticFunctionMapO_IDUQ_C, output, NE);
 	}
 
 	public static void doP_VECS_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapP_VECS_E staticFunctionMapP_VECS_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapP_VECS_C.callFunction(callFunctionKey,
 				staticFunctionMapP_VECS_C, output, NE);
 	}
 
 	public static void doP_IDUQ_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapP_IDUQ_E staticFunctionMapP_IDUQ_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapP_IDUQ_C.callFunction(callFunctionKey,
 				staticFunctionMapP_IDUQ_C, output, NE);
 	}
 
 	public static void doM_VECS_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapM_VECS_E staticFunctionMapM_VECS_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapM_VECS_C.callFunction(callFunctionKey,
 				staticFunctionMapM_VECS_C, output, NE);
 	}
 
 	public static void doM_IDUQ_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapM_IDUQ_E staticFunctionMapM_IDUQ_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapM_IDUQ_C.callFunction(callFunctionKey,
 				staticFunctionMapM_IDUQ_C, output, NE);
 	}
 
 	public static void doV_AOPM_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapV_AOPM_E staticFunctionMapV_AOPM_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapV_AOPM_C.callFunction(callFunctionKey,
 				staticFunctionMapV_AOPM_C, output, NE);
 	}
 
 	public static void doV_IDUQ_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapV_IDUQ_E staticFunctionMapV_IDUQ_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapV_IDUQ_C.callFunction(callFunctionKey,
 				staticFunctionMapV_IDUQ_C, output, NE);
 	}
 
 	public static void doE_AOPM_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapE_AOPM_E staticFunctionMapE_AOPM_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapE_AOPM_C.callFunction(callFunctionKey,
 				staticFunctionMapE_AOPM_C, output, NE);
 	}
 
 	public static void doE_IDUQ_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapE_IDUQ_E staticFunctionMapE_IDUQ_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapE_IDUQ_C.callFunction(callFunctionKey,
 				staticFunctionMapE_IDUQ_C, output, NE);
 	}
 
 	public static void doC_AOPM_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapC_AOPM_E staticFunctionMapC_AOPM_C,
-			IMV_SIQ output, App NE) throws InterruptedException, IOException {
+			IMV_SQI output, App NE) throws InterruptedException, IOException {
 		NE.app_S.staticReflectionMapC_AOPM_C.callFunction(callFunctionKey,
 				staticFunctionMapC_AOPM_C, output, NE);
 	}
 
 	public static void doC_IDUQ_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapC_IDUQ_E staticFunctionMapC_IDUQ_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapC_IDUQ_C.callFunction(callFunctionKey,
 				staticFunctionMapC_IDUQ_C, output, NE);
 	}
 
 	public static void doS_AOPM_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapS_AOPM_E staticFunctionMapS_AOPM_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapS_AOPM_C.callFunction(callFunctionKey,
 				staticFunctionMapS_AOPM_C, output, NE);
 	}
 
 	public static void doS_IDUQ_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapS_IDUQ_E staticFunctionMapS_IDUQ_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapS_IDUQ_C.callFunction(callFunctionKey,
 				staticFunctionMapS_IDUQ_C, output, NE);
 	}
 
 	public static void doI_AOPM_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapI_AOPM_E staticFunctionMapI_AOPM_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapI_AOPM_C.callFunction(callFunctionKey,
 				staticFunctionMapI_AOPM_C, output, NE);
 	}
 
 	public static void doI_VECS_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapI_VECS_C.callFunction(callFunctionKey,
 				staticFunctionMapI_VECS_C, output, NE);
 	}
 
 	public static void doD_AOPM_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapD_AOPM_E staticFunctionMapD_AOPM_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapD_AOPM_C.callFunction(callFunctionKey,
 				staticFunctionMapD_AOPM_C, output, NE);
 	}
 
 	public static void doD_VECS_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapD_VECS_E staticFunctionMapD_VECS_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapD_VECS_C.callFunction(callFunctionKey,
 				staticFunctionMapD_VECS_C, output, NE);
 	}
 
 	public static void doU_AOPM_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapU_AOPM_E staticFunctionMapU_AOPM_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapU_AOPM_C.callFunction(callFunctionKey,
 				staticFunctionMapU_AOPM_C, output, NE);
 	}
 	
 	public static void doU_VECS_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapU_VECS_E staticFunctionMapU_VECS_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapU_VECS_C.callFunction(callFunctionKey,
 				staticFunctionMapU_VECS_C, output, NE);
 	}
 
 	public static void doQ_AOPM_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapQ_AOPM_E staticFunctionMapQ_AOPM_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapQ_AOPM_C.callFunction(callFunctionKey,
 				staticFunctionMapQ_AOPM_C, output, NE);
 	}
 
 	public static void doQ_VECS_CaseFunction(CallFunctionKey callFunctionKey,
 			String string, StaticFunctionMapQ_VECS_E staticFunctionMapQ_VECS_C,
-			IMV_SIQ output, App NE) {
+			IMV_SQI output, App NE) {
 		NE.app_S.staticReflectionMapQ_VECS_C.callFunction(callFunctionKey,
 				staticFunctionMapQ_VECS_C, output, NE);
 	}
@@ -218,9 +218,9 @@ public class StaticFunctionMap {
 	// 这时候返回值的替换 传参map, 和传参因子的改变出现了, 我要做的就是添加 新的return因子,
 
 	@SuppressWarnings("unchecked")
-	public static IMV_SIQ preValues(IMV_SIQ output, String[] 传参因子) {
+	public static IMV_SQI preValues(IMV_SQI output, String[] 传参因子) {
 		boolean find = false;
-		IMV_SIQ inputValues = null;
+		IMV_SQI inputValues = null;
 		// 取值方法, 先检查上一个接口
 		if (null != output.get("lastInterfaceBackfeed")) {
 			if (output.get("lastInterfaceBackfeed").toString()
@@ -228,13 +228,13 @@ public class StaticFunctionMap {
 				String lastInterfaceReturn = (String) output
 						.get("lastInterfaceName");// 取 上一次运行接口名
 				if (null != lastInterfaceReturn) {
-					IMV_SIQ lastReturns = (IMV_SIQ) output
+					IMV_SQI lastReturns = (IMV_SQI) output
 							.get(lastInterfaceReturn);
 					// 取上一次运行接口的返回结果。
-					// inputValues= (IMV_SIQ)
+					// inputValues= (IMV_SQI)
 					// lastReturns.get("interfaceReturn");//
 					// 因为java的return是唯一值, 所以很好确定位置为第一个
-					inputValues = new IMV_SIQ();
+					inputValues = new IMV_SQI();
 					inputValues.put(传参因子[0],
 							lastReturns.get("interfaceReturn"));
 					find = true;
@@ -258,7 +258,7 @@ public class StaticFunctionMap {
 		//////////////////////////////////////////////////////////////////////////////////////
 		// 操作方法, 就检查全局传参
 		if (!find) {// 当上一个接口没有返回这个接口需要的数据时, 就检查全局传参
-			inputValues = (IMV_SIQ) output.get("inputValues");// 取存储值
+			inputValues = (IMV_SQI) output.get("inputValues");// 取存储值
 		}
 		// 检查特定输入参数是否匹配
 		if (null != inputValues) {
@@ -281,16 +281,16 @@ public class StaticFunctionMap {
 
 	// 之前变动中英文编码 和 中药分离出系统 和 元基花走孢子模式优化，导致这类参数null 变成全局null的问题。
 	@SuppressWarnings("unchecked")
-	public static void postValues(IMV_SIQ output, boolean find, Object map,
+	public static void postValues(IMV_SQI output, boolean find, Object map,
 			String callFunctionKey) {
 		if (find) {
-			IMV_SIQ returnValue = new IMV_SIQ();
+			IMV_SQI returnValue = new IMV_SQI();
 			returnValue.put("feedback", "object");
 			if (null == map) {
 				returnValue.put("feedback", "null");
 			}
 			// 存储方法
-			map = null == map ? new IMV_SIQ() : map;// later all in 1
+			map = null == map ? new IMV_SQI() : map;// later all in 1
 			returnValue.put("interfaceReturn", map);// later interfaceReturn
 													// will cause a tinshell
 													// probs
@@ -410,7 +410,7 @@ public class StaticFunctionMap {
 	
 	public static void doCaseFunction(CallFunctionKey callFunctionKey,
 		String string, StaticFunctionMapCASE staticFunctionMapCASE,
-		IMV_SIQ output, App NE, String chromesomeParName) {
+		IMV_SQI output, App NE, String chromesomeParName) {
 		//--later 
 		//NE.app_S.staticReflectionMapCASE.callFunction(callFunctionKey,
 		//	staticFunctionMapCASE, output, NE, chromesomeParName);

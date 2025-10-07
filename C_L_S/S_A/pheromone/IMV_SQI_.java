@@ -11,7 +11,7 @@ package S_A.pheromone;
 *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 @SuppressWarnings("serial")
-public class IMV_SIQ_ extends IMV_SIQ{
+public class IMV_SQI_ extends IMV_SQI{
     public String getTrimString(String key){
         if(this.containsKey(key)) {
             return this.get(key).toString().replaceAll("\\s*", "");

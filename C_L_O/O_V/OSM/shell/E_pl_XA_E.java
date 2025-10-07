@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import O_V.OSA.shell.PL_XA_E;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 import S_I.OSI.PSO.regex.DoSplit;
-import S_A.pheromone.IMV_SIQ_utils;
+import S_A.pheromone.IMV_SQI_utils;
 import U_V.ESU.list.List_ESU_X_stringlistToStringArray;
 import test.java.InterfaceTest.tinShell.FastCartesianIdentifyTest;
 
@@ -67,8 +67,8 @@ public class E_pl_XA_E {
 			command_V.initSixActions(NE);
 			/*
 			 * 开始构造混合歧义语义数字构造机，在这里要构造2个函数，一个是initArabicNumber
-			 * 用于提取混合数字变量到command_V._IMV_SIQ_SS中，我定义为_IMV_SIQ_SS_Q
-			 * 另外一个函数是fussionOfArabicNumber，用于原函数进行组合_IMV_SIQ_SS_Q的内容。
+			 * 用于提取混合数字变量到command_V._IMV_SQI_SS中，我定义为_IMV_SQI_SS_Q
+			 * 另外一个函数是fussionOfArabicNumber，用于原函数进行组合_IMV_SQI_SS_Q的内容。
 			 * 注意initArabicNumber提取数字要提取position，避免序次问题出错。 --罗瑶光
 			 */
 			command_V.initArabicNumber();
@@ -170,7 +170,7 @@ public class E_pl_XA_E {
 					if (scaleRights < 12) {
 						S_logger.Log.logger.info("couldDoThenDo-1-"
 							+ string);
-						IMV_SIQ_utils.couldDoThenDo(string, temp,
+						IMV_SQI_utils.couldDoThenDo(string, temp,
 							output, NE, scores);
 					}
 					// later // in // pdn
@@ -196,7 +196,7 @@ public class E_pl_XA_E {
 					if (scaleRights < 12) {
 						S_logger.Log.logger.info("couldDoThenDo-2-"
 							+ string);
-						IMV_SIQ_utils.couldDoThenDo(string, temp,
+						IMV_SQI_utils.couldDoThenDo(string, temp,
 							output, NE, scores);
 					}
 				}
@@ -232,7 +232,7 @@ public class E_pl_XA_E {
 			 */
 			/* loop s later */
 			S_logger.Log.logger.info("couldDoThenDo-3-" + temp[0]);
-			IMV_SIQ_utils.couldDoThenDo(temp[0], temp, output, NE,
+			IMV_SQI_utils.couldDoThenDo(temp[0], temp, output, NE,
 				scores);// later in pdn */
 			if (temp[0].equals("获取临时表名")) {
 				// 稍后写入 元基花
@@ -354,21 +354,21 @@ public class E_pl_XA_E {
 		
 		/*
 		 * 思考1 - 当构造混合中文数字提取转换匹配后，进行归纳格式化成map，这个map则需要在
-		 * 这一层进行和分词结果整合。这种逻辑属于ETL类型逻辑， command_V._IMV_SIQ_SS
-		 * command_V._IMV_SIQ_SS_Q
+		 * 这一层进行和分词结果整合。这种逻辑属于ETL类型逻辑， command_V._IMV_SQI_SS
+		 * command_V._IMV_SQI_SS_Q
 		 * 
 		 * 思考2 - 所以这种逻辑以后可以更进分解swap成用tinshell OSGI ETL节点来中文节点分层
 		 * ，以后人工智能的基础思考模型就稳定了。然后元基索引 使用频率统计排序归纳，创造一个 
 		 * 自然选择的计算模拟环境。
 		 * 
 		 *   这一层逻辑已经并入了 setHumanTalkAfterNewBusinessTest，于是注释掉。	
-		 *   Iterator<String> iterators = command_V._IMV_SIQ_SS_Q.keySet()
+		 *   Iterator<String> iterators = command_V._IMV_SQI_SS_Q.keySet()
 		 *   	.iterator();
 		 *   while (iterators.hasNext()) {
 		 *   	String string = iterators.next();
-		 *   	WordFrequency WordFrequency = command_V._IMV_SIQ_SS_Q
+		 *   	WordFrequency WordFrequency = command_V._IMV_SQI_SS_Q
 		 *   		.getW(string);
-		 *   	command_V._IMV_SIQ_SS.put(string, WordFrequency);
+		 *   	command_V._IMV_SQI_SS.put(string, WordFrequency);
 		 *   }
 		 *   分词的position要统计char位置，不是word位置，不然会不准确 later --trif一下
 		 */
@@ -392,7 +392,7 @@ public class E_pl_XA_E {
 }
 
 // working for here
-// IMV_SIQ output= new IMV_SIQ();
+// IMV_SQI output= new IMV_SQI();
 // 1make container
 // String[] commands= plSearch.replace(" ",
 // "").replace("\n", "").split(";");
@@ -429,8 +429,8 @@ public class E_pl_XA_E {
 //String callFunctionKey = ("P_TableName");
 //    //StaticRootMap.initMap();
 //    String[] strings = new String[1];
-//    IMV_SIQ outputReg = new IMV_SIQ();
-//    IMV_SIQ inputValue = new IMV_SIQ();
+//    IMV_SQI outputReg = new IMV_SQI();
+//    IMV_SQI inputValue = new IMV_SQI();
 //    String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //        .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = output;//加了map后缀需要更新关联函数
@@ -446,8 +446,8 @@ public class E_pl_XA_E {
 //String callFunctionKey = ("P_SetRoot");
 //    //StaticRootMap.initMap();
 //    String[] strings = new String[1];
-//    IMV_SIQ outputReg = new IMV_SIQ();
-//    IMV_SIQ inputValue = new IMV_SIQ();
+//    IMV_SQI outputReg = new IMV_SQI();
+//    IMV_SQI inputValue = new IMV_SQI();
 //    String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //        .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = output;
@@ -458,7 +458,7 @@ public class E_pl_XA_E {
 //                    strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 //                    StaticRootMap.tinShellV005(strings, outputReg);
 //@SuppressWarnings("unchecked")
-//IMV_SIQ map= (IMV_SIQ) outputReg.get(callFunctionKey);
+//IMV_SQI map= (IMV_SQI) outputReg.get(callFunctionKey);
 //app.app_S.nameFeelFilter= (CfxTextField) map.get("interfaceReturn");
 
 //67
@@ -466,8 +466,8 @@ public class E_pl_XA_E {
 //                String callFunctionKey = ("P_BaseName");
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");// all in 1 later
 //                NE._I_U.outputMap = output;
@@ -483,8 +483,8 @@ public class E_pl_XA_E {
 //                String callFunctionKey = ("P_YLJOperation");
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String chromosome = StaticRootMap.staticClass_XE_Map.getString(callFunctionKey);
 //                String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome, callFunctionKey); //我是神！ tin神！
 //                NE._I_U.outputMap = output;
@@ -500,8 +500,8 @@ public class E_pl_XA_E {
 //                String callFunctionKey = "P_StoreValues";
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = output;
@@ -517,8 +517,8 @@ public class E_pl_XA_E {
 //                String callFunctionKey = "P_fileOperations";
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = output;
@@ -534,8 +534,8 @@ public class E_pl_XA_E {
 //                String callFunctionKey = "P_fileOperations";
 //                //StaticRootMap.initMap();
 //                String[] strings = new String[1];
-//                IMV_SIQ outputReg = new IMV_SIQ();
-//                IMV_SIQ inputValue = new IMV_SIQ();
+//                IMV_SQI outputReg = new IMV_SQI();
+//                IMV_SQI inputValue = new IMV_SQI();
 //                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //                    .getString(callFunctionKey).split(":");
 //                NE._I_U.outputMap = output;

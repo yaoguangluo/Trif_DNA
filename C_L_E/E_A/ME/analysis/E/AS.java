@@ -5,7 +5,7 @@ import C_A.OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import ME.XCE_XAS;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import Q_V.QSD.VQS.MSO.Q_parser;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.List;
 import java.util.Map;
@@ -23,7 +23,7 @@ import java.util.Map;
  * */
 public class AS extends XCE_XAS {
 	public Quick6DLuoYaoguangSort quick6DLuoYaoguangSort;
-	public Map<Long, IMV_SIQ> wordsForests;
+	public Map<Long, IMV_SQI> wordsForests;
 	public int find;
 	public int inputLength;
 	public int forestDepth;

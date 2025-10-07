@@ -1,6 +1,6 @@
 //package U_V.OEU.LYG4DQS4D;
 //
-//import S_A.pheromone.IMV_SIQ;
+//import S_A.pheromone.IMV_SQI;
 //
 //import java.util.Map;
 ////作者+ 个人著作权人： 罗瑶光, 浏阳,
@@ -14,7 +14,7 @@
 *  208号 阳光家园别墅小区 第十栋别墅 第三层
 // * */
 //public class LYG5DWithChineseMixStringSort8D{
-//	Map<String, Boolean> find= new IMV_SIQ();
+//	Map<String, Boolean> find= new IMV_SQI();
 //	Map<String, String> pinyin;
 //	int range;
 //	int deeps;

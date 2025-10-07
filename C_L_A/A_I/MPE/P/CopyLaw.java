@@ -1,6 +1,6 @@
 package A_I.MPE.P;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
@@ -28,7 +28,7 @@ public class CopyLaw {
 	@SuppressWarnings("unchecked")
 	public ConcurrentHashMap<Integer, PDN> copyMap(
 			ConcurrentLinkedDeque<PDN> functionLineDeque) {
-		ConcurrentHashMap<Integer, PDN> output = new IMV_SIQ();
+		ConcurrentHashMap<Integer, PDN> output = new IMV_SQI();
 		Iterator<PDN> iterator = functionLineDeque.iterator();
 		int count = 0;
 		while (iterator.hasNext()) {

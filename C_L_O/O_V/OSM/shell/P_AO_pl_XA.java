@@ -10,7 +10,7 @@ import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_ShellETL;
 import S_A.VSQ.parser.EmotionSample;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.ESU.string.String_ESU_X_stringArrayToString;
 import U_V.OEU.LYG4DQS4D.LYG9DWithDoubleTopSort4D;
 import U_V.OEU.LYG4DQS4D.Quick_7D_luoyaoguang_Sort;
@@ -36,10 +36,10 @@ import java.util.Map;
 public class P_AO_pl_XA {
 	@SuppressWarnings({ "unchecked" })
 	public static void P_AggregationLimitMap(String[] sets,
-			List<IMV_SIQ> output, EmotionSample emotionSample,
+			List<IMV_SQI> output, EmotionSample emotionSample,
 			RatioMap_E ratioMap, App NE) {
 		
-		List<IMV_SIQ> outputTemp = new ArrayList<>();
+		List<IMV_SQI> outputTemp = new ArrayList<>();
 		if (sets[1].equalsIgnoreCase("sortNumber")) {
 			// outputTemp 是一个arraylist, 已经具备了 排序的 模子。
 			// 这里通常会有数字和字符串2种模式,
@@ -56,15 +56,15 @@ public class P_AO_pl_XA {
 			// 看怎么改
 			outputTemp.addAll(output);
 			// 1 list 存map
-			Map<String, IMV_SIQ> maps = new IMV_SIQ();
-			Iterator<IMV_SIQ> iterators = outputTemp.iterator();
+			Map<String, IMV_SQI> maps = new IMV_SQI();
+			Iterator<IMV_SQI> iterators = outputTemp.iterator();
 			String[] strings = new String[outputTemp.size()];
 			int index = 0;
 			while (iterators.hasNext()) {
-				IMV_SIQ map = iterators.next();
-				IMV_SIQ rowValue = (IMV_SIQ) map
+				IMV_SQI map = iterators.next();
+				IMV_SQI rowValue = (IMV_SQI) map
 						.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-				IMV_SIQ culumnValue = (IMV_SIQ) rowValue.get(sets[0]);
+				IMV_SQI culumnValue = (IMV_SQI) rowValue.get(sets[0]);
 				maps.put(culumnValue.get("culumnValue").toString(), map);
 				strings[index++] = culumnValue.get("culumnValue").toString();
 			}
@@ -102,15 +102,15 @@ public class P_AO_pl_XA {
 			// 看怎么改
 			outputTemp.addAll(output);
 			// 1 list 存map
-			Map<String, IMV_SIQ> maps = new IMV_SIQ();
-			Iterator<IMV_SIQ> iterators = outputTemp.iterator();
+			Map<String, IMV_SQI> maps = new IMV_SQI();
+			Iterator<IMV_SQI> iterators = outputTemp.iterator();
 			double[] doubles = new double[outputTemp.size()];
 			int index = 0;
 			while (iterators.hasNext()) {
-				IMV_SIQ map = iterators.next();
-				IMV_SIQ rowValue = (IMV_SIQ) map
+				IMV_SQI map = iterators.next();
+				IMV_SQI rowValue = (IMV_SQI) map
 						.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-				IMV_SIQ culumnValue = (IMV_SIQ) rowValue.get(sets[0]);
+				IMV_SQI culumnValue = (IMV_SQI) rowValue.get(sets[0]);
 				maps.put(culumnValue.get("culumnValue").toString(), map);
 				doubles[index++] = Double
 						.valueOf(culumnValue.get("culumnValue").toString());
@@ -146,12 +146,12 @@ public class P_AO_pl_XA {
 			System.out.println("sets[1]-"+sets[1]);
 			System.out.println("sets[2]-"+sets[2]);
 			//if (!sets[0].contains(";") && !sets[2].contains(";")) {
-				Iterator<IMV_SIQ> iterator = output.iterator();
+				Iterator<IMV_SQI> iterator = output.iterator();
 				int count = 0;
 				while (iterator.hasNext()) {
 					int rowid = count++;
-					IMV_SIQ row = iterator.next();
-					IMV_SIQ rowMap = new IMV_SIQ();
+					IMV_SQI row = iterator.next();
+					IMV_SQI rowMap = new IMV_SQI();
 					if (sets[1].equalsIgnoreCase("行至")) {
 						if (rowid >= new BigDecimal(sets[0]).doubleValue()
 								&& rowid <= new BigDecimal(sets[2])
@@ -168,16 +168,16 @@ public class P_AO_pl_XA {
 		// 稍后我会把这里 改成 contains 德塔DNN词汇, 这样语言就自适应了。
 		// 罗瑶光 20211003
 		if (sets[1].equalsIgnoreCase("颜色标记为")) {
-			Iterator<IMV_SIQ> iterator = output.iterator();
+			Iterator<IMV_SQI> iterator = output.iterator();
 			int count = 0;
 			while (iterator.hasNext()) {
 				int rowid = count++;
-				IMV_SIQ row = iterator.next();
-				IMV_SIQ rowMap = new IMV_SIQ();
+				IMV_SQI row = iterator.next();
+				IMV_SQI rowMap = new IMV_SQI();
 				if (sets[1].equalsIgnoreCase("颜色标记为")) {
-					IMV_SIQ map = (IMV_SIQ) row
+					IMV_SQI map = (IMV_SQI) row
 							.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-					IMV_SIQ mapCulumn = (IMV_SIQ) map.get(sets[0]);
+					IMV_SQI mapCulumn = (IMV_SQI) map.get(sets[0]);
 					String rowCellFromString = mapCulumn.get("culumnValue")
 							.toString();
 					if (sets[2].equals("红色")) {
@@ -210,18 +210,18 @@ public class P_AO_pl_XA {
 
 		// 之后分出去准备思考怎么分类。罗瑶光
 		if (String_ESU_X_stringArrayToString._E(sets).contains("替换")) {
-			Iterator<IMV_SIQ> iterator = output.iterator();
+			Iterator<IMV_SQI> iterator = output.iterator();
 			int count = 0;
 			while (iterator.hasNext()) {
 				int rowid = count++;
-				IMV_SIQ row = iterator.next();
-				IMV_SIQ rowMap = new IMV_SIQ();
+				IMV_SQI row = iterator.next();
+				IMV_SQI rowMap = new IMV_SQI();
 				// 先分类, 之后再统一进行管理
 				if (sets[1].equalsIgnoreCase("把")) {
 					if (sets[3].equalsIgnoreCase("替换为")) {
-						IMV_SIQ map = (IMV_SIQ) row
+						IMV_SQI map = (IMV_SQI) row
 								.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-						IMV_SIQ mapCulumn = (IMV_SIQ) map.get(sets[0]);
+						IMV_SQI mapCulumn = (IMV_SQI) map.get(sets[0]);
 						String rowCellFromString = mapCulumn.get("culumnValue")
 								.toString();
 						rowCellFromString = rowCellFromString.replace(sets[2],
@@ -236,9 +236,9 @@ public class P_AO_pl_XA {
 				}
 				if (sets[2].equalsIgnoreCase("被")) {
 					if (sets[3].equalsIgnoreCase("替换为")) {
-						IMV_SIQ map = (IMV_SIQ) row
+						IMV_SQI map = (IMV_SQI) row
 								.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-						IMV_SIQ mapCulumn = (IMV_SIQ) map.get(sets[0]);
+						IMV_SQI mapCulumn = (IMV_SQI) map.get(sets[0]);
 						String rowCellFromString = mapCulumn.get("culumnValue")
 								.toString();
 						rowCellFromString = rowCellFromString.replace(sets[1],
@@ -251,9 +251,9 @@ public class P_AO_pl_XA {
 						outputTemp.add(row);
 					}
 					if (sets[4].equalsIgnoreCase("替换")) {
-						IMV_SIQ map = (IMV_SIQ) row
+						IMV_SQI map = (IMV_SQI) row
 								.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-						IMV_SIQ mapCulumn = (IMV_SIQ) map.get(sets[0]);
+						IMV_SQI mapCulumn = (IMV_SQI) map.get(sets[0]);
 						String rowCellFromString = mapCulumn.get("culumnValue")
 								.toString();
 						rowCellFromString = rowCellFromString.replace(sets[1],
@@ -268,9 +268,9 @@ public class P_AO_pl_XA {
 				}
 				if (sets[1].equalsIgnoreCase("用")) {
 					if (sets[3].equalsIgnoreCase("替换")) {
-						IMV_SIQ map = (IMV_SIQ) row
+						IMV_SQI map = (IMV_SQI) row
 								.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-						IMV_SIQ mapCulumn = (IMV_SIQ) map.get(sets[0]);
+						IMV_SQI mapCulumn = (IMV_SQI) map.get(sets[0]);
 						String rowCellFromString = mapCulumn.get("culumnValue")
 								.toString();
 						rowCellFromString = rowCellFromString.replace(sets[4],
@@ -289,21 +289,21 @@ public class P_AO_pl_XA {
 		// 操作|进行分词|词性标注;
 		// 操作|进行分词|DNN;
 		if (sets[1].equalsIgnoreCase("进行分词")) {
-			Iterator<IMV_SIQ> iterator = output.iterator();
+			Iterator<IMV_SQI> iterator = output.iterator();
 			int count = 0;
 			while (iterator.hasNext()) {
 				int rowid = count++;
-				IMV_SIQ row = iterator.next();
-				IMV_SIQ rowMap = new IMV_SIQ();
+				IMV_SQI row = iterator.next();
+				IMV_SQI rowMap = new IMV_SQI();
 				if (sets[2].equalsIgnoreCase("词性显色")) {
-					IMV_SIQ map = (IMV_SIQ) row
+					IMV_SQI map = (IMV_SQI) row
 							.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-					IMV_SIQ mapCulumn = (IMV_SIQ) map.get(sets[0]);
+					IMV_SQI mapCulumn = (IMV_SQI) map.get(sets[0]);
 					String rowCellFromString = mapCulumn.get("culumnValue")
 							.toString();
 					List<String> list = NE.app_S._A
 							.parserMixedString(rowCellFromString);
-					IMV_SIQ nlp = NE.app_S._A.getPosCnToCn();
+					IMV_SQI nlp = NE.app_S._A.getPosCnToCn();
 					Iterator<String> iterators = list.iterator();
 					rowCellFromString = "";
 					rowCellFromString += "<div style=\"background:white\">";
@@ -334,14 +334,14 @@ public class P_AO_pl_XA {
 					outputTemp.add(row);
 				}
 				if (sets[2].equalsIgnoreCase("词性标注")) {
-					IMV_SIQ map = (IMV_SIQ) row
+					IMV_SQI map = (IMV_SQI) row
 							.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-					IMV_SIQ mapCulumn = (IMV_SIQ) map.get(sets[0]);
+					IMV_SQI mapCulumn = (IMV_SQI) map.get(sets[0]);
 					String rowCellFromString = mapCulumn.get("culumnValue")
 							.toString();
 					List<String> list = NE.app_S._A
 							.parserMixedString(rowCellFromString);
-					IMV_SIQ nlp = NE.app_S._A.getPosCnToCn();
+					IMV_SQI nlp = NE.app_S._A.getPosCnToCn();
 					Iterator<String> iterators = list.iterator();
 					rowCellFromString = "";
 					rowCellFromString += "<div style=\"background:white\">";
@@ -365,9 +365,9 @@ public class P_AO_pl_XA {
 				}
 				// 之后我会把dataCG函数进行重新封装, 去重。
 				if (sets[2].equalsIgnoreCase("DNN")) {
-					IMV_SIQ map = (IMV_SIQ) row
+					IMV_SQI map = (IMV_SQI) row
 							.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-					IMV_SIQ mapCulumn = (IMV_SIQ) map.get(sets[0]);
+					IMV_SQI mapCulumn = (IMV_SQI) map.get(sets[0]);
 					String rowCellFromString = mapCulumn.get("culumnValue")
 							.toString();
 					//
@@ -430,12 +430,12 @@ public class P_AO_pl_XA {
 
 //		//稍后把这里 行遍历 改成 命令遍历。提高计算速度
 //		//罗瑶光20211002
-//		Iterator<IMV_SIQ> iterator= output.iterator();
+//		Iterator<IMV_SQI> iterator= output.iterator();
 //		int count= 0;
 //		while(iterator.hasNext()) {
 //			int rowid= count++;
-//			IMV_SIQ row= iterator.next();
-//			IMV_SIQ rowMap= new IMV_SIQ();
+//			IMV_SQI row= iterator.next();
+//			IMV_SQI rowMap= new IMV_SQI();
 //			if(sets[1].equalsIgnoreCase("行至")) {
 //				if(rowid >= new BigDecimal(sets[0]).doubleValue() && rowid 
 //						<= new BigDecimal(sets[2]).doubleValue()) {
@@ -444,8 +444,8 @@ public class P_AO_pl_XA {
 //			}
 //
 //			if(sets[1].equalsIgnoreCase("颜色")) {
-//				IMV_SIQ map= (IMV_SIQ)row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-//				IMV_SIQ mapCulumn= (IMV_SIQ)map.get(sets[0]);
+//				IMV_SQI map= (IMV_SQI)row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
+//				IMV_SQI mapCulumn= (IMV_SQI)map.get(sets[0]);
 //				String rowCellFromString= mapCulumn.get("culumnValue").toString();
 //				if(sets[2].equals("红色")) {
 //					sets[2]= "red";
@@ -470,8 +470,8 @@ public class P_AO_pl_XA {
 //			}
 //
 //			if(sets[1].equalsIgnoreCase("分词")) {
-//				IMV_SIQ map= (IMV_SIQ)row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
-//				IMV_SIQ mapCulumn= (IMV_SIQ)map.get(sets[0]);
+//				IMV_SQI map= (IMV_SQI)row.get(S_ShellETL.SHELL_ETL_ROWVALUE);
+//				IMV_SQI mapCulumn= (IMV_SQI)map.get(sets[0]);
 //				String rowCellFromString= mapCulumn.get("culumnValue").toString();
 //				List<String> list= HRJFrame.NE.app_S._A.parserMixedString(rowCellFromString);
 //				Map<String, String> nlp= HRJFrame.NE.app_S._A.getPosCnToCn();
@@ -503,7 +503,7 @@ public class P_AO_pl_XA {
 	}
 
 	// 分出去
-	public static void P_PletlLimitMap(String[] sets, List<IMV_SIQ> obj) {
+	public static void P_PletlLimitMap(String[] sets, List<IMV_SQI> obj) {
 
 	}
 }

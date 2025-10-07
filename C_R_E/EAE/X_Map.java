@@ -9,8 +9,8 @@ import M_V.ME.word.frequency.utils.Util_X_FindCheck;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.FMHMMNode;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 import java.util.List;
 import java.util.Map;
@@ -30,7 +30,7 @@ import java.util.Map;
  * */
 
 public class X_Map extends AE implements A_X_Map {
-	public IMV_SIQ_SS parserStringByReturnFrequencyMap(String inputString,
+	public IMV_SQI_SS parserStringByReturnFrequencyMap(String inputString,
 			App NE) {
 		int inputLength = mixedString.length();
 		int forestDepth = S_Pos.INT_ZERO;
@@ -43,7 +43,7 @@ public class X_Map extends AE implements A_X_Map {
 		StringBuilder stringBuilder = new StringBuilder();
 		// Map<String, String> wordsForest =
 		// fHMMList.getPosCnToCn();
-		IMV_SIQ_SS outputList = new IMV_SIQ_SS();
+		IMV_SQI_SS outputList = new IMV_SQI_SS();
 		// Map<Long, FMHMMNode> forestRoots = fHMMList.getMap();
 		for (int charPosition = S_Pos.INT_ZERO; charPosition < inputLength; charPosition += (countLength == S_Pos.INT_ZERO
 				? S_Pos.INT_ONE
@@ -106,8 +106,8 @@ public class X_Map extends AE implements A_X_Map {
 		return outputList;
 	}
 
-	public IMV_SIQ_SS getWordFrequencyMap(List<String> sets, App NE) {
-		IMV_SIQ_SS map = new IMV_SIQ_SS();
+	public IMV_SQI_SS getWordFrequencyMap(List<String> sets, App NE) {
+		IMV_SQI_SS map = new IMV_SQI_SS();
 		for (String setOfi : sets) {
 			if (map.containsKey(setOfi)) {
 				WordFrequency wordFrequency = map.getW(setOfi);
@@ -125,7 +125,7 @@ public class X_Map extends AE implements A_X_Map {
 	}
 
 	// 计算函数以后移出 DNA元基组 到RNA.
-	public List<WordFrequency> sortWordFrequencyMap(IMV_SIQ_SS map) {
+	public List<WordFrequency> sortWordFrequencyMap(IMV_SQI_SS map) {
 		List<WordFrequency> list = quick6DLuoYaoguangSort
 				.frequencyWordMapToList(map);
 		quick6DLuoYaoguangSort.quick6DLuoYaoGuangSortWordFrequency(list,
@@ -133,27 +133,27 @@ public class X_Map extends AE implements A_X_Map {
 		return list;
 	}
 
-	public IMV_SIQ_S_ getWordFrequencyByReturnSortMap(List<String> sets,
+	public IMV_SQI_S_ getWordFrequencyByReturnSortMap(List<String> sets,
 			App NE) {
 		return sortWordFrequencyMapToSortMap(getWordFrequencyMap(sets, NE));
 	}
 
-	public IMV_SIQ_S_ sortWordFrequencyMapToUnsortMap(IMV_SIQ_SS map) {
+	public IMV_SQI_S_ sortWordFrequencyMapToUnsortMap(IMV_SQI_SS map) {
 		return quick6DLuoYaoguangSort.frequencyWordMapToMap(map);
 	}
 
-	public IMV_SIQ_S_ sortWordFrequencyMapToSortMap(IMV_SIQ_SS map) {
-		IMV_SIQ_S_ listMap = quick6DLuoYaoguangSort.frequencyWordMapToMap(map);
+	public IMV_SQI_S_ sortWordFrequencyMapToSortMap(IMV_SQI_SS map) {
+		IMV_SQI_S_ listMap = quick6DLuoYaoguangSort.frequencyWordMapToMap(map);
 		quick6DLuoYaoguangSort.quick6DLuoYaoGuangSortWordFrequency(listMap,
 				S_Pos.INT_ZERO, listMap.size() - S_Pos.INT_ONE);
 		return listMap;
 	}
 
-	public IMV_SIQ_SS parserMixStringByReturnFrequencyMap(String inputString,
+	public IMV_SQI_SS parserMixStringByReturnFrequencyMap(String inputString,
 			App NE) {
 		mixedString = new StringBuilder(inputString + S_Pos.SPACE_STRING);
-		// IMV_SIQ wordsForest = fHMMList.getPosCnToCn();
-		IMV_SIQ_SS outputList = new IMV_SIQ_SS();
+		// IMV_SQI wordsForest = fHMMList.getPosCnToCn();
+		IMV_SQI_SS outputList = new IMV_SQI_SS();
 		Map<Long, FMHMMNode> forestRoots = fHMMList.getMap();// .getRoot();
 		int inputLength = mixedString.length();
 		int forestDepth = S_Pos.INT_ZERO;

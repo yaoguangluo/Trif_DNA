@@ -11,8 +11,8 @@ import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_String;
 import S_A.VSQ.parser.EmotionSample;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_X_;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳 yaoguangluo@outlook.com,
@@ -49,9 +49,9 @@ public class LenovoInit {
 		SensingMap_E sensingMap_E, EmotionSample emotionSample) {
 		LenovoInit lenovoInit = new LenovoInit();
 		lenovoInit.IV_(S_String.text1, new App());
-		IMV_SIQ_X_ environmentSampleMap = lenovoInit
+		IMV_SQI_X_ environmentSampleMap = lenovoInit
 			.getEnvironmentInit().getEmotionSampleMap();
-		IMV_SIQ lenovo = lenovoInit.getSensingMap().getLenovoMap();
+		IMV_SQI lenovo = lenovoInit.getSensingMap().getLenovoMap();
 	}
 
 	public void IV_(String text, App NE) {

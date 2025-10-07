@@ -209,7 +209,7 @@ public class InitonsPDS {
 	}
 	// later in new file.
 }
-////        IMV_SIQ initonsMap = new IMV_SIQ();
+////        IMV_SQI initonsMap = new IMV_SQI();
 ////        initonsMap.put("A", "7");
 ////        initonsMap.put("O", "A");
 ////        initonsMap.put("P", "2");
@@ -228,7 +228,7 @@ public class InitonsPDS {
 ////        initonsMap.put("-", "5");
 ////        initonsMap.put("H", "4");
 ////
-////        Map<String, Integer> numberSet = new IMV_SIQ();
+////        Map<String, Integer> numberSet = new IMV_SQI();
 ////        numberSet.put("0", 0);
 ////        numberSet.put("1", 1);
 ////        numberSet.put("2", 2);
@@ -247,7 +247,7 @@ public class InitonsPDS {
 ////        numberSet.put("F", 15);
 ////        numberSet.put("G", 16);
 
-//    IMV_SIQ initonsMap = new IMV_SIQ();
+//    IMV_SQI initonsMap = new IMV_SQI();
 //        initonsMap.put("D", "0");
 //            initonsMap.put("C", "1");
 //            initonsMap.put("P", "2");
@@ -265,7 +265,7 @@ public class InitonsPDS {
 //            initonsMap.put("U", "E");
 //            initonsMap.put("Q", "F");
 //
-//            Map<String, Integer> numberSet = new IMV_SIQ();
+//            Map<String, Integer> numberSet = new IMV_SQI();
 //    numberSet.put("0", 0);
 //    numberSet.put("1", 1);
 //    numberSet.put("2", 2);

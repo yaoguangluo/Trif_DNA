@@ -4,7 +4,7 @@ import ME.VPC.M.app.App;
 import S_A.SEM.bloom.CallFunctionKey;
 import S_A.SEM.bloom.StaticFunctionMap;
 import S_A.SEM.bloom.StaticFunctionMapI_VECS_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 //著作权人+ 作者= 罗瑶光
 /*
@@ -22,7 +22,7 @@ public class StaticReflectionMapI_VECS_C extends
 	@SuppressWarnings({ "unchecked", "unused" })
 	public void callFunction(CallFunctionKey callFunctionKey,
 		StaticFunctionMapI_VECS_E staticFunctionMapI_VECS_C,
-		IMV_SIQ output, App NE) {
+		IMV_SQI output, App NE) {
 		String[] 传参因子 = (String[]) output.get("传参因子");
 		int 因子 = 0;
 		Object map = null;
@@ -32,7 +32,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("doTestWithImageAPP", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapI_VECS_C.doTestWithImageAPP(
@@ -43,7 +43,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("doFourJianPDErosion", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				//24组设计完后统一用 linked map 以后接口写法传参只有linked map 一个变量
@@ -55,7 +55,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("doFourSuanPDErosion", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapI_VECS_C.doFourSuanPDErosion(
@@ -66,7 +66,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("doEightSuanPDErosion", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapI_VECS_C.doEightSuanPDErosion(
@@ -77,7 +77,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("doEightJianPDErosion", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapI_VECS_C.doEightJianPDErosion(
@@ -88,7 +88,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("doFirstPDErosionWithTop", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapI_VECS_C.doFirstPDErosionWithTop(NE);
@@ -99,7 +99,7 @@ public class StaticReflectionMapI_VECS_C extends
 		;
 		if (callFunctionKey.contains("doSecondPDErosionWithTop",
 			NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapI_VECS_C.doSecondPDErosionWithTop(
@@ -110,7 +110,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("doThirdPDErosionWithTop", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapI_VECS_C.doThirdPDErosionWithTop(NE);
@@ -120,7 +120,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("initDeciphring", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapI_VECS_C.initDeciphring(NE);
@@ -130,7 +130,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("doTestWithFilePath", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapI_VECS_C.doTestWithFilePath(NE);
@@ -140,7 +140,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("doTestWithImage", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapI_VECS_C.doTestWithImage(NE);
@@ -150,7 +150,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("doTestBufferedImagePath", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapI_VECS_C.doTestWithBufferedImage(NE);
@@ -160,7 +160,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("staticMain", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				staticFunctionMapI_VECS_C.staticMain(NE);
@@ -170,7 +170,7 @@ public class StaticReflectionMapI_VECS_C extends
 		}
 		;
 		if (callFunctionKey.contains("doPDERangePDI16", NE)) {
-			IMV_SIQ inputValues = StaticFunctionMap.preValues(output,
+			IMV_SQI inputValues = StaticFunctionMap.preValues(output,
 				传参因子);
 			if (inputValues.getBoolean("find")) {
 				map = staticFunctionMapI_VECS_C.doPDERangePDI16(NE);

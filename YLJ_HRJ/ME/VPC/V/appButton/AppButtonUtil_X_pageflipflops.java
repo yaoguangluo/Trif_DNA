@@ -3,7 +3,7 @@ package ME.VPC.V.appButton;
 
 import ME.VPC.M.app.App;
 import ME.VPC.S.pillow.PageWords;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 //把通用节点的 按钮操作提取出来 统一化管理去重。
@@ -26,7 +26,7 @@ public class AppButtonUtil_X_pageflipflops {
 	// StringBuilder page= new StringBuilder().append("");
 	// AppPageUtil.pageflipPages(page, map, key, pos, sets,
 	// currentPage);
-	public static void pageflipPages(StringBuilder page, IMV_SIQ_SS map,
+	public static void pageflipPages(StringBuilder page, IMV_SQI_SS map,
 			String key, List<String> sets, int currentPage, App NE) {
 		List<String> setsForGet = sets.subList(currentPage * 2000,
 				(currentPage + 1) * 2000 < sets.size()

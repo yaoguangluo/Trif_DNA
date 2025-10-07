@@ -41,7 +41,7 @@ import P_V.PEQ.AMV.ECS.test.RNN_IDETest;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.VSQ.parser.EmotionSample;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 
 import javax.swing.JTable;
@@ -74,7 +74,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 
 	// TransactionDelegate {逻辑型 应用接口略。
 	@SuppressWarnings("unused")
-	public IMV_SIQ transactionLogin(App NE) {
+	public IMV_SQI transactionLogin(App NE) {
 		AES_QMS_XSD_TIH uEmail = NE._I_U.uEmail;
 		AES_QMS_XSD_TIH uPassword = NE._I_U.uPassword;
 		// return TransactionDelegate.transactionLogin(uEmail,
@@ -84,7 +84,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	}
 
 	@SuppressWarnings("unused")
-	public IMV_SIQ transactionRegister(App NE) {
+	public IMV_SQI transactionRegister(App NE) {
 		AES_QMS_XSD_TIH uEmail = NE._I_U.uEmail;
 		AES_QMS_XSD_TIH uEmailEnsure = NE._I_U.uEmailEnsure;
 		AES_QMS_XSD_TIH uName = NE._I_U.uName;
@@ -159,7 +159,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	}
 
 	public Object selectRowsByAttributesOfJoinAggregation(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		EmotionSample emotionSample = NE._I_U.emotionSample;
 		RatioMap_E ratioMap_E = NE._I_U.ratioMap_E;
 		return XA_ShellQ_JoinRows_E
@@ -186,7 +186,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	}
 
 	public Object selectRowsByAttributesOfNestAggregation(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		EmotionSample emotionSample = NE._I_U.emotionSample;
 		RatioMap_E ratioMap = NE._I_U.ratioMap_E;
 		return XA_ShellQ_NestRows_E
@@ -206,7 +206,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	}
 
 	// XA_ShellQ_Rows_E {
-	public List<IMV_SIQ> selectRowsByAttribute(App NE) {
+	public List<IMV_SQI> selectRowsByAttribute(App NE) {
 		AES_QMS_XSD_TIH currentDB = NE._I_U.currentDB;
 		AES_QMS_XSD_TIH tableName = NE._I_U.tableName;
 		AES_QMS_XSD_TIH culmnName = NE._I_U.culmnName;
@@ -227,14 +227,14 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	// 今天看了下发现我的数据库 没有分页, 以后会设计一个文件夹最大为3000 rows
 	// 一页, 先不管了, shell 用不到sheets逻辑。
 	// 罗瑶光20210927
-	public IMV_SIQ selectRowsByTablePath(App NE) {
+	public IMV_SQI selectRowsByTablePath(App NE) {
 		AES_QMS_XSD_TIH tablePath = NE._I_U.tablePath;
 		AES_QMS_XSD_TIH pageBegin = NE._I_U.pageBegin;
 		AES_QMS_XSD_TIH pageEnd = NE._I_U.pageEnd;
 		AES_QMS_XSD_TIH direction = NE._I_U.direction;
 		if (null == tablePath || null == pageBegin || null == pageEnd
 			|| null == direction) {
-			return new IMV_SIQ();
+			return new IMV_SQI();
 		}
 		return XA_ShellQ_Rows_E.selectRowsByTablePath(tablePath._S_,
 			pageBegin._S_, pageEnd._S_, direction._S_);
@@ -251,8 +251,8 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	// 20210927 注释下 稍后替换
 	// 先设计成 plsearch 语法和 plsql 语法通用, 方便我之后的plorm 统一一种方式扩展
 	// pladmin
-	public List<IMV_SIQ> selectRowsByAttributesOfAggregation(App NE) {
-		IMV_SIQ object = NE._I_U.outputMap;
+	public List<IMV_SQI> selectRowsByAttributesOfAggregation(App NE) {
+		IMV_SQI object = NE._I_U.outputMap;
 		EmotionSample emotionSample = NE._I_U.emotionSample;
 		RatioMap_E ratioMap = NE._I_U.ratioMap_E;
 		return XA_ShellQ_Rows_E.selectRowsByAttributesOfAggregation(
@@ -414,7 +414,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 		NodeShow nodeView = NE._I_U.nodeView;
 		LinkList first = NE._I_U.firstLinkList;
 		AES_QMS_XSD_TIH documentFlowAddress = NE._I_U.documentFlowAddress;
-		IMV_SIQ inputMap = NE._I_U.inputHashMap;
+		IMV_SQI inputMap = NE._I_U.inputHashMap;
 		return new PLETL_E().doNeroFlow(rightBotJTextPane, nodeView,
 			first, documentFlowAddress._S_, inputMap, NE);
 	}
@@ -435,7 +435,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 		return RestMedicinePort_E.kernel(app, string._S_, NE);
 	}
 
-	public IMV_SIQ getMedicineBookFeedbackZY(App NE) {
+	public IMV_SQI getMedicineBookFeedbackZY(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
 		return RestMedicinePort_E.getMedicineBookFeedbackZY(app,
@@ -443,7 +443,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 
 	}
 
-	public IMV_SIQ getMedicineBookFeedbackXY(App NE) {
+	public IMV_SQI getMedicineBookFeedbackXY(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
 		return RestMedicinePort_E.getMedicineBookFeedbackXY(app,
@@ -451,28 +451,28 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 
 	}
 
-	public IMV_SIQ getMedicineBookFeedbackZT(App NE) {
+	public IMV_SQI getMedicineBookFeedbackZT(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
 		return RestMedicinePort_E.getMedicineBookFeedbackZT(app,
 			string._S_);
 	}
 
-	public IMV_SIQ getMedicineBookFeedbackXT(App NE) {
+	public IMV_SQI getMedicineBookFeedbackXT(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
 		return RestMedicinePort_E.getMedicineBookFeedbackXT(app,
 			string._S_);
 	}
 
-	public IMV_SIQ getMedicineBookFeedbackYT(App NE) {
+	public IMV_SQI getMedicineBookFeedbackYT(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
 		return RestMedicinePort_E.getMedicineBookFeedbackYT(app,
 			string._S_);
 	}
 
-	public IMV_SIQ getMedicineBookFeedback(App NE) {
+	public IMV_SQI getMedicineBookFeedback(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
 		return RestMedicinePort_E.getMedicineBookFeedback(app,
@@ -490,14 +490,14 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	public String forwardDB(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		IMV_SIQ data = NE._I_U.dataMap;
+		IMV_SQI data = NE._I_U.dataMap;
 		return VPC.forwardDB(app.app_S, string._S_, data);
 	}
 
 	public String forwardVPC(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		IMV_SIQ data = NE._I_U.dataMap;
+		IMV_SQI data = NE._I_U.dataMap;
 		return VPC.forward(app.app_S, string._S_, data);
 
 	}
@@ -514,7 +514,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 		EmotionMap_E emotionMap_E = NE._I_U.emotionMap_E;
 		LenovoInit lenovoInit = NE._I_U.lenovoInit;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		IMV_SIQ data = NE._I_U.dataMap;
+		IMV_SQI data = NE._I_U.dataMap;
 		EmotionSample emotionSample = NE._I_U.emotionSample;
 		SensingTest sensingTest = NE._I_U.sensingTest;
 		RNN_IDETest rNN_IDETest = NE._I_U.rNN_IDETest;
@@ -526,7 +526,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	public String forwardVPCYangliaojing(App NE) {
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
-		IMV_SIQ data = NE._I_U.dataMap;
+		IMV_SQI data = NE._I_U.dataMap;
 		return VPCYangliaojing.forward(app, string._S_, data, NE);
 	}
 
@@ -566,7 +566,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	@SuppressWarnings("unchecked")
 	public void P_AggregationLimitMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> output = (List<IMV_SIQ>) NE.app_S.currentTinmap
+		List<IMV_SQI> output = (List<IMV_SQI>) NE.app_S.currentTinmap
 			.get("obj");
 		EmotionSample emotionSample = NE._I_U.emotionSample;
 		RatioMap_E ratioMap = NE._I_U.ratioMap_E;
@@ -577,7 +577,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	// 分出去
 	public void P_PletlLimitMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> obj = NE._I_U.obj;
+		List<IMV_SQI> obj = NE._I_U.obj;
 		P_AO_pl_XA.P_PletlLimitMap(sets, obj);
 	}
 
@@ -585,25 +585,25 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	public void P_PletlLimitMaps(App NE)
 		throws InstantiationException {// later
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
-		IMV_SIQ object = NE._I_U.outputMap;
+		List<IMV_SQI> output = NE._I_U.outputMapList;
+		IMV_SQI object = NE._I_U.outputMap;
 		P_AO_PLETL.P_PletlLimitMap(sets, output, object);
 	}
 
 	// P_AO_PLTCP {
 	public void P_PltcpLimitMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
-		IMV_SIQ object = NE._I_U.outputMap;
+		List<IMV_SQI> output = NE._I_U.outputMapList;
+		IMV_SQI object = NE._I_U.outputMap;
 		P_AO_PLTCP.P_PltcpLimitMap(sets, output, object);
 	}
 
 	// P_CO_pl_XA_X_Cache extends P_CO_pl_XA_XCDX {
 	public void P_Cache(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
+		List<IMV_SQI> output = NE._I_U.outputMapList;
 		AES_QMS_XSD_TIH tableName = NE._I_U.tableName;
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		AES_QMS_XSD_TIH condition = NE._I_U.condition;
 		if (null == tableName || null == condition) {
 			return;
@@ -624,9 +624,9 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 		File readDBTableRowIndexFile = NE._I_U.readDBTableRowIndexFile;
 		DetaBufferedReader reader = NE._I_U.reader;
 		AES_QMS_XSD_TIH DBTableRowIndexPath = NE._I_U.DBTableRowIndexPath;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
+		List<IMV_SQI> output = NE._I_U.outputMapList;
 		Row bufferRow = NE._I_U.bufferRow;
-		IMV_SIQ rowMap = NE._I_U.rowMap;
+		IMV_SQI rowMap = NE._I_U.rowMap;
 		P_CO_XA_X_Kernel.P_kernel(readDBTableRowIndexFile, output,
 			bufferRow, rowMap);
 	}
@@ -648,16 +648,16 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 		int rowId = NE._I_U.rowId;
 		Object[] huaRuiJiJtableCulumns = NE._I_U.huaRuiJiJtableCulumns;
 		Object[][] huaRuiJiJtable = NE._I_U.huaRuiJiJtable;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
+		List<IMV_SQI> output = NE._I_U.outputMapList;
 		Row bufferRow = NE._I_U.bufferRow;
-		IMV_SIQ rowMap = NE._I_U.rowMap;
+		IMV_SQI rowMap = NE._I_U.rowMap;
 		P_CO_XA_X_Kernel.P_kernel_search(rowId, huaRuiJiJtableCulumns,
 			huaRuiJiJtable, output, bufferRow, rowMap);
 	}
 
 	// P_CO_pl_XA_X_Map extends P_CO_pl_XA_XCDX {
 	// 以后优化成统一对象输出, 不需要再转换。2019-1-15 tin
-	public IMV_SIQ rowToRowMap(App NE) {
+	public IMV_SQI rowToRowMap(App NE) {
 		Row row = NE._I_U.row;
 		return P_CO_XA_X_Map.rowToRowMap(row);
 	}
@@ -666,7 +666,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	// 方便下一步表格编译计算。
 	// 罗瑶光202109302339
 	public Row rowMapToRow(App NE) {
-		IMV_SIQ map = NE._I_U.map;
+		IMV_SQI map = NE._I_U.map;
 		return P_CO_XA_X_Map.rowMapToRow(map);
 
 	}
@@ -676,9 +676,9 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	// 懒得管, 把P_Map 改成 shellP_Map
 	public void P_Map(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> output = NE._I_U.outputMapList;
+		List<IMV_SQI> output = NE._I_U.outputMapList;
 		AES_QMS_XSD_TIH tableName = NE._I_U.tableName;
-		IMV_SIQ object = NE._I_U.outputMap;
+		IMV_SQI object = NE._I_U.outputMap;
 		if (null == tableName) {
 			return;
 		}
@@ -688,19 +688,19 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	// P_I_CulumnsPL_XA {
 	public Object getCulumnsMapWithAs(App NE) {
 		String[] sets = NE._I_U.sets;
-		IMV_SIQ row = NE._I_U.rowMap;
+		IMV_SQI row = NE._I_U.rowMap;
 		return P_I_CulumnsPL_XA.getCulumnsMapWithAs(sets, row);
 
 	}
 
 	public Object getCulumnsMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		IMV_SIQ row = NE._I_U.rowMap;
+		IMV_SQI row = NE._I_U.rowMap;
 		return P_I_CulumnsPL_XA.getCulumnsMap(sets, row);
 	}
 
 	public Object P_GetCulumnsMap(App NE) {
-		List<IMV_SIQ> obj = NE._I_U.obj;
+		List<IMV_SQI> obj = NE._I_U.obj;
 		String[] getCulumnsValueArray = NE._I_U.getCulumnsValueArray;
 		return P_I_CulumnsPL_XA.P_GetCulumnsMap(obj,
 			getCulumnsValueArray);
@@ -709,19 +709,19 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	// P_RelationPL_XA {
 	public void P_AndMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> obj = NE._I_U.obj;
-		List<IMV_SIQ> joinObj = NE._I_U.joinObj;
-		IMV_SIQ object = NE._I_U.outputMap;
-		List<IMV_SIQ> newObj = NE._I_U.newObj;
+		List<IMV_SQI> obj = NE._I_U.obj;
+		List<IMV_SQI> joinObj = NE._I_U.joinObj;
+		IMV_SQI object = NE._I_U.outputMap;
+		List<IMV_SQI> newObj = NE._I_U.newObj;
 		P_RelationPL_XA.P_AndMap(sets, obj, joinObj, object, newObj);
 	}
 
 	public void P_OrMap(App NE) {
 		String[] sets = NE._I_U.sets;
-		List<IMV_SIQ> obj = NE._I_U.obj;
-		List<IMV_SIQ> joinObj = NE._I_U.joinObj;
-		IMV_SIQ object = NE._I_U.outputMap;
-		List<IMV_SIQ> newObj = NE._I_U.newObj;
+		List<IMV_SQI> obj = NE._I_U.obj;
+		List<IMV_SQI> joinObj = NE._I_U.joinObj;
+		IMV_SQI object = NE._I_U.outputMap;
+		List<IMV_SQI> newObj = NE._I_U.newObj;
 		Map<String, Boolean> findinNewObj = NE._I_U.findinNewObj;
 		P_RelationPL_XA.P_OrMap(sets, obj, joinObj, object, newObj,
 			findinNewObj);
@@ -799,7 +799,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 	public void replaceStringWithMapAndFileName(App NE) {
 		AES_QMS_XSD_TIH fileDirectroyPath = NE._I_U.fileDirectroyPath;
 		AES_QMS_XSD_TIH searchString = NE._I_U.searchString;
-		IMV_SIQ conditions = NE._I_U.conditions;
+		IMV_SQI conditions = NE._I_U.conditions;
 		new ShellReplace().replaceStringWithFileName(
 			fileDirectroyPath._S_, searchString._S_, conditions);
 	}
@@ -861,7 +861,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 
 	// 设计一种简单的log模式先。
 	public void replaceStringWithLogRecording(App NE) {
-		IMV_SIQ conditions = NE._I_U.conditions;
+		IMV_SQI conditions = NE._I_U.conditions;
 		new ShellReplace().replaceStringWithLogRecording(conditions);
 	}
 }

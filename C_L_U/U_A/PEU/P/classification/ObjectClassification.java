@@ -1,6 +1,6 @@
 package U_A.PEU.P.classification;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import java.util.Iterator;
@@ -19,19 +19,19 @@ import java.util.Map;
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class ObjectClassification {
-	public static Map<String, IMV_SIQ>
-	mapClassification(IMV_SIQ input, String[] keywords) {
-		Map<String, IMV_SIQ> output= new IMV_SIQ();
+	public static Map<String, IMV_SQI>
+	mapClassification(IMV_SQI input, String[] keywords) {
+		Map<String, IMV_SQI> output= new IMV_SQI();
 		Iterator<String> iterator= input.keySet().iterator();
 		while(iterator.hasNext()) {
 			String string= iterator.next();
 			for(int i= 0; i< keywords.length; i++) {
 				if(string.contains(keywords[i])) {
-					IMV_SIQ map;
+					IMV_SQI map;
 					if(output.containsKey(keywords[i])) {
 						map= output.get(keywords[i]);
 					}else {
-						map= new IMV_SIQ(); 
+						map= new IMV_SQI(); 
 					}
 					map.put(string, input.get(string));
 					output.put(keywords[i], map);
@@ -42,12 +42,12 @@ public class ObjectClassification {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static Map<String, IMV_SIQ> mapClassification2D(IMV_SIQ input
+	public static Map<String, IMV_SQI> mapClassification2D(IMV_SQI input
 		, String[] keywords) {
-		Map<String, IMV_SIQ> output= new IMV_SIQ();
-		IMV_SIQ[] outputArray= new IMV_SIQ[keywords.length];
+		Map<String, IMV_SQI> output= new IMV_SQI();
+		IMV_SQI[] outputArray= new IMV_SQI[keywords.length];
 		for(int i= 0; i< keywords.length; i++) {
-			outputArray[i]= new IMV_SIQ();
+			outputArray[i]= new IMV_SQI();
 		}
 		Iterator<String> iterator= input.keySet().iterator();
 		while(iterator.hasNext()) {
@@ -67,7 +67,7 @@ public class ObjectClassification {
 	@SuppressWarnings("unchecked")
 	public static Map<String, String[]>
 	stringClassification2D(String[] input, String[] keywords) {
-		Map<String, String[]> output= new IMV_SIQ();
+		Map<String, String[]> output= new IMV_SQI();
 		List<String>[] outputArray= new LinkedList[keywords.length];
 		for(int i= 0; i< keywords.length; i++) {
 			outputArray[i]= new LinkedList<>();
@@ -88,7 +88,7 @@ public class ObjectClassification {
 	@SuppressWarnings("unchecked")
 	public static Map<String, List<String>>
 	listClassification2D(List<String> input, String[] keywords) {
-		Map<String, List<String>> output= new IMV_SIQ();
+		Map<String, List<String>> output= new IMV_SQI();
 		List<String>[] outputArray= new LinkedList[keywords.length];
 		for(int i= 0; i< keywords.length; i++) {
 			outputArray[i]= new LinkedList<>();
@@ -109,7 +109,7 @@ public class ObjectClassification {
 	
 	@SuppressWarnings("unchecked")
 	public static void main(String[] ARGS) {
-		IMV_SIQ input= new IMV_SIQ();
+		IMV_SQI input= new IMV_SQI();
 		String[] keywords= new String[3];
 		input.put("罗", "罗");
 		input.put("罗", "罗");

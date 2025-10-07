@@ -23,7 +23,7 @@ import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaFileReader;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import S_A.SVQ.stable.S_Common;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -48,10 +48,10 @@ public class ReadOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
     public String searchString;
     public List<String[]> indexResult;
     public AE _A;
-    public IMV_SIQ pos;
-    public IMV_SIQ pose;
-    public IMV_SIQ posec;
-    public IMV_SIQ indexWords;
+    public IMV_SQI pos;
+    public IMV_SQI pose;
+    public IMV_SQI posec;
+    public IMV_SQI indexWords;
 
     public ReadOSU_MSQ_OPE_OPC_ECI() {
     }
@@ -80,7 +80,7 @@ public class ReadOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
         String[] fileList = category.list();
         List<String> list = _A.parserMixedString(searchString);
         //list to map
-        indexWords = new IMV_SIQ();
+        indexWords = new IMV_SQI();
         for (String string : list) {
             indexWords.put(string, pos.containsKey(string) ? pos.get(string) : "未知");
         }

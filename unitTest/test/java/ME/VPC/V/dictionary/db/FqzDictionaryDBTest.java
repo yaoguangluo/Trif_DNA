@@ -10,7 +10,7 @@ package test.java.ME.VPC.V.dictionary.db;
  * */
 
 import ME.VPC.V.db.FqzDictionaryDB;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -28,14 +28,14 @@ class FqzDictionaryDBTest {
 
     @Test
     void testListToMap() {
-        IMV_SIQ result = fqzDictionaryDB.listToMap(new ArrayList<>(Arrays.asList("String")));
-        // mock trif  Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = fqzDictionaryDB.listToMap(new ArrayList<>(Arrays.asList("String")));
+        // mock trif  Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testTxtToMap() {
-        // mock trif  IMV_SIQ result = fqzDictionaryDB.txtToMap(new IMV_SIQ(), new IMV_SIQ());
-        // mock trif  Assertions.assertEquals(new IMV_SIQ(), result);
+        // mock trif  IMV_SQI result = fqzDictionaryDB.txtToMap(new IMV_SQI(), new IMV_SQI());
+        // mock trif  Assertions.assertEquals(new IMV_SQI(), result);
     }
 }
 

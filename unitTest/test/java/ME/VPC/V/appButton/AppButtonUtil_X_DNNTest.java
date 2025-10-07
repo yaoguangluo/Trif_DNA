@@ -31,7 +31,7 @@ class AppButtonUtil_X_DNNTest {
 
         map.put("String", Double.valueOf(0));
 // mock trif
-        //AppButtonUtil_X_DNN.doRankDNN(null, "response", new IMV_SIQ(), map, new App());
+        //AppButtonUtil_X_DNN.doRankDNN(null, "response", new IMV_SQI(), map, new App());
     }
 }
 

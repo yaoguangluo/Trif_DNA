@@ -3,7 +3,7 @@ package test.java.InterfaceTest.tinShell;
 import E_A.ME.analysis.E.CogsBinaryForest_AE;
 import S_A.SEM.bloom.StaticFunctionMapQ_VECS_E;
 import S_A.pheromone.AES_QMS_XSD_TIH;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -57,7 +57,7 @@ class StaticFunctionMapQ_VECS_ETest {
 		String[] argv = commonTestInition.NE._I_U.argv;
 		CogsBinaryForest_AE _AE = commonTestInition.NE._I_U._AE;
 		ArrayList<String> nameContent = new ArrayList<String>();
-		IMV_SIQ textContent = new IMV_SIQ();
+		IMV_SQI textContent = new IMV_SQI();
 		double lookrot = 0.0;
 		// 设置输入待搜索列表，
 		nameContent.add("罗瑶光");

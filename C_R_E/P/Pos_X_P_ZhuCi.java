@@ -5,7 +5,7 @@ import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 
@@ -101,7 +101,7 @@ public class Pos_X_P_ZhuCi extends Pos_X_P_MingCi implements X_P_ZhuCi {
 		return countLength;
 	}
 
-	public int P_ZhuCiOfThreeForMap(IMV_SIQ_SS outputList, int countLength,
+	public int P_ZhuCiOfThreeForMap(IMV_SQI_SS outputList, int countLength,
 			String[] strings, StringBuilder[] fixWord, App NE) {
 		if (S_Pos.INT_ZERO == outputList.size()) {
 			didNotFindFirstCharForMap(outputList, strings, fixWord, NE);

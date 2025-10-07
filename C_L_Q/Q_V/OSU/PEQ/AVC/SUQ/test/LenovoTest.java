@@ -1,8 +1,8 @@
 package Q_V.OSU.PEQ.AVC.SUQ.test;
 
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_X_;
 
 import java.util.Iterator;
 
@@ -22,9 +22,9 @@ public class LenovoTest {
         String text = "..请用户 自行添加sample.." +
                 "。";
         NE.app_S.lenovoInit.IV_(text, NE);
-        IMV_SIQ_X_ environmentSampleMap = NE.app_S.lenovoInit
+        IMV_SQI_X_ environmentSampleMap = NE.app_S.lenovoInit
             .getEnvironmentInit().getEmotionSampleMap();
-        IMV_SIQ lenovo = NE.app_S.lenovoInit.getSensingMap().getLenovoMap();
+        IMV_SQI lenovo = NE.app_S.lenovoInit.getSensingMap().getLenovoMap();
         //reduce
         //20230106-System.out.println("环    境：");
         Iterator<String> Iterator = environmentSampleMap.keySet().iterator();

@@ -3,7 +3,7 @@ package E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.port.E;
 import E_A.OP.SM.AOP.MEC.SIQ.VPC.PP.company.E.LoginService_E;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.cache.Cache_M;
 import org.json.JSONException;
 
@@ -27,9 +27,9 @@ import java.util.Map;
  * */
 @SuppressWarnings({ "unchecked", "resource", "unused" })
 public class Rest_C_Port_E {
-	public static IMV_SIQ startResults(int aa, String token, String auth)
+	public static IMV_SQI startResults(int aa, String token, String auth)
 			throws NumberFormatException, JSONException, Exception {
-		IMV_SIQ result = new IMV_SIQ();
+		IMV_SQI result = new IMV_SQI();
 		String checkStatus = LoginService_E.checkTokenStatus(token, "common");
 		if (checkStatus.contains("invalid") && (auth.contains("1"))) {
 			result.put("loginInfo", "unsuccess");
@@ -40,9 +40,9 @@ public class Rest_C_Port_E {
 		return result;
 	}
 
-	public static IMV_SIQ startResultsBb(int bb, String token, String auth)
+	public static IMV_SQI startResultsBb(int bb, String token, String auth)
 			throws NumberFormatException, JSONException, Exception {
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		String checkStatus = LoginService_E.checkTokenStatus(token, "common");
 		if (checkStatus.contains("invalid") && (auth.contains("1"))) {
 			output.put("loginInfo", "unsuccess");
@@ -78,9 +78,9 @@ public class Rest_C_Port_E {
 		return output;
 	}
 
-	public static IMV_SIQ getDBCategory(String baseName, String token,
+	public static IMV_SQI getDBCategory(String baseName, String token,
 			String auth) {
-		IMV_SIQ output = new IMV_SIQ();
+		IMV_SQI output = new IMV_SQI();
 		if (token != null && !token.equalsIgnoreCase("")) {
 			String checkStatus = LoginService_E.checkTokenStatus(token,
 					"common");
@@ -98,7 +98,7 @@ public class Rest_C_Port_E {
 		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString()
 				+ "/" + baseName;
 		// 锁定表
-		IMV_SIQ table = new IMV_SIQ();
+		IMV_SQI table = new IMV_SQI();
 		File fileDBPath = new File(DBPath);
 		if (fileDBPath.isDirectory()) {
 			String[] files = fileDBPath.list();
@@ -106,14 +106,14 @@ public class Rest_C_Port_E {
 				table.put(file, DBPath + "/" + file);
 			}
 		}
-		Map<String, IMV_SIQ> bases = new IMV_SIQ();
+		Map<String, IMV_SQI> bases = new IMV_SQI();
 		bases.put(baseName, table);
 		output.put("obj", bases);
 		return output;
 	}
 
-	public static IMV_SIQ getAllDBCategory(String token, String auth) {
-		IMV_SIQ output = new IMV_SIQ();
+	public static IMV_SQI getAllDBCategory(String token, String auth) {
+		IMV_SQI output = new IMV_SQI();
 		if (token != null && !token.equalsIgnoreCase("")) {
 			String checkStatus = LoginService_E.checkTokenStatus(token,
 					"common");
@@ -129,20 +129,20 @@ public class Rest_C_Port_E {
 			return output;
 		}
 		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString();
-		IMV_SIQ db = new IMV_SIQ();
+		IMV_SQI db = new IMV_SQI();
 		List<Object> baseList = new ArrayList<>();
 		File fileDBPath = new File(DBPath);
 		if (fileDBPath.isDirectory()) {
 			String[] files = fileDBPath.list();
 			for (String file : files) {
-				IMV_SIQ base = new IMV_SIQ();
+				IMV_SQI base = new IMV_SQI();
 				String DBBasePath = DBPath + "/" + file;
 				File fileDBBasePath = new File(DBBasePath);
 				if (fileDBBasePath.isDirectory()) {
 					List<Object> tableList = new ArrayList<>();
 					String[] filesInfileDBBasePath = fileDBBasePath.list();
 					for (String fileInfileDBBasePath : filesInfileDBBasePath) {
-						IMV_SIQ table = new IMV_SIQ();
+						IMV_SQI table = new IMV_SQI();
 						String DBTablePath = DBBasePath + "/"
 								+ fileInfileDBBasePath;
 						table.put("tableName", fileInfileDBBasePath);
@@ -170,7 +170,7 @@ public class Rest_C_Port_E {
 /*
  * Session session=
  * HibernateUtil.getSessionFactory().openSession();
- * session.beginTransaction(); IMV_SIQ result=new IMV_SIQ();
+ * session.beginTransaction(); IMV_SQI result=new IMV_SQI();
  * 
  * String hql= "FROM Lolroler as l where l.name= :userName";
  * 
@@ -197,8 +197,8 @@ public class Rest_C_Port_E {
  * User("iluwatar"); dispatcher.dispatch(new
  * UserCreatedEvent(user));
  * 
- * //20230106-System.out.println(3333); IMV_SIQ result=new
- * IMV_SIQ(); result.put("end", user.getUsername());
+ * //20230106-System.out.println(3333); IMV_SQI result=new
+ * IMV_SQI(); result.put("end", user.getUsername());
  * //20230106-System.out.println("4444"+result.get("end"));
  * return Response.status(Status.OK).entity(result).build();
  */

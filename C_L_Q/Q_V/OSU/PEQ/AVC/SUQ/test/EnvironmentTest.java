@@ -3,7 +3,7 @@ package Q_V.OSU.PEQ.AVC.SUQ.test;
 import A_V.IVDTIXQCTIV.EnvironmentInit;
 import ME.VPC.M.app.App;
 import S_A.SVQ.stable.S_String;
-import S_A.pheromone.IMV_SIQ_X_;
+import S_A.pheromone.IMV_SQI_X_;
 
 import java.util.Iterator;
 /*
@@ -21,7 +21,7 @@ public class EnvironmentTest{
 		//init
 		EnvironmentInit environmentInit= new EnvironmentInit();
 		environmentInit.IV_(S_String.text1, NE);
-		IMV_SIQ_X_ environmentSampleMap= environmentInit.getEmotionSampleMap();
+		IMV_SQI_X_ environmentSampleMap= environmentInit.getEmotionSampleMap();
 		//reduce
 		//20230106-System.out.println("环    境：");
 		Iterator<String> Iterator= environmentSampleMap.keySet().iterator();

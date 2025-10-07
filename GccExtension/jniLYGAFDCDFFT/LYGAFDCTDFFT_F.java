@@ -1,7 +1,7 @@
 package jniLYGAFDCDFFT;
 
 import P.wave.proportion.Proportion_X_newXY;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.Map;
 
@@ -871,7 +871,7 @@ public class LYGAFDCTDFFT_F {
 	public float kc[][] = new float[11][512];
 	public float ks[][] = new float[11][512];
 	@SuppressWarnings("unchecked")
-	public Map<Integer, Integer> ki = new IMV_SIQ();
+	public Map<Integer, Integer> ki = new IMV_SQI();
 
 	// 0 1 2 3 4 5 6 7 8 9
 	// 512 256 128 64 32 16 8 4 2 1

@@ -6,7 +6,7 @@ import java.net.URLDecoder;
 
 import DetaSrc.org.deta.boot.sets.VPCSRequest;
 import DetaSrc.org.deta.boot.sets.VPCSResponse;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -108,7 +108,7 @@ public class RequestRecordControllerBUp {
 		}
 		if (vPCSRequest.getRequestIsRest()) {
 			String[] column = content[1].split("&");
-			IMV_SIQ data = new IMV_SIQ();
+			IMV_SQI data = new IMV_SQI();
 			for (String cell : column) {
 				String[] cells = cell.split("=");
 				if (cells.length > 1) {

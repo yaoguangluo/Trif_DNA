@@ -1,6 +1,6 @@
 package A_V.cap;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import VSQ.ICAQDTVMQVM.Monitor_X_S;
 
 import java.awt.image.BufferedImage;
@@ -26,7 +26,7 @@ public class Monitor_X_Animation_Ica {
             monitor.gpcar = new int[image.getHeight()][image.getWidth()];
             monitor.gpcag = new int[image.getHeight()][image.getWidth()];
             monitor.gpcab = new int[image.getHeight()][image.getWidth()];
-            IMV_SIQ map = new IMV_SIQ();
+            IMV_SQI map = new IMV_SQI();
             if (monitor.isRcaButton) {
                 for (int i = 0; i < image.getHeight(); ++i) {
                     for (int j = 0; j < image.getWidth(); ++j) {
@@ -53,7 +53,7 @@ public class Monitor_X_Animation_Ica {
         , Monitor_X_ monitor_XCDX, Monitor_X_S monitor) {
         if (a) {
             if (b[j][i] == 0) {
-                IMV_SIQ map = new IMV_SIQ();
+                IMV_SQI map = new IMV_SQI();
                 int size = monitor_XCDX.getMskFilter(c, b, i, j, 0, map);
                 if (size > monitor.facy) {
                     for (String temp : (Iterable<String>) map.keySet()) {

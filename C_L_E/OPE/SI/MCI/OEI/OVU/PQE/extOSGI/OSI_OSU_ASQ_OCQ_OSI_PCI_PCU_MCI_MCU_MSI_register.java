@@ -26,7 +26,7 @@ import OSI.OSU.PSU.OSU.MSQ.VQ.SQ.movieTransfer.MovieTransferNodeInterface;
 import OSI.OSU.SI.OVI.OSI.AVI.AEI.ACI.ASI.OVI.OEI.OCI.OSI.PVI.PEI.PCI.PSI.addPGSearchPage.AddPGSearchPageNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI;
 import OSI.OVU.OSU.MSQ.OSU.AVU.OSQ.butterworthFilter.ButterworthFilterNodeInterface;
 import O_V.OSI.OSU.AVU.OSQ.wavePlay.WavePlayNodeInterface;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_I.OSI.OSU.VSQ.OSU.MSQ.VQ.SQ.lygPlayer.LYGPlayerNodeInterface;
 import S_I.OSI.OSU.VSQ.OSU.MSQ.VQ.SQ.lygRead.LYGReadNodeInterface;
 import S_I.OSI.OVI.OSU.MSQ.MV.SQ.imageRead.ImageReadNodeInterface;
@@ -61,7 +61,7 @@ public class OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register {
 	Object[][] tableData_old;
 	public App_S u;
 	public A _A;
-	public IMV_SIQ pos;
+	public IMV_SQI pos;
 
 	public OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(
 			Object[][] tableData_old, JTextPane text, App NE) {

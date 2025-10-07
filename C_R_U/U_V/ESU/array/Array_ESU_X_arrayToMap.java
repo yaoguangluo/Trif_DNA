@@ -1,7 +1,7 @@
 package U_V.ESU.array;
 
 import S_A.ESU.code.stable.S_;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -14,8 +14,8 @@ import S_A.pheromone.IMV_SIQ;
  * */
 
 public class Array_ESU_X_arrayToMap {
-    public static IMV_SIQ _E(Object[] objects) {
-        IMV_SIQ map = new IMV_SIQ();
+    public static IMV_SQI _E(Object[] objects) {
+        IMV_SQI map = new IMV_SQI();
         int i = 0;
         for (Object object : objects) {
             map.putObject(S_.STRING_EMPTY + i++, object);

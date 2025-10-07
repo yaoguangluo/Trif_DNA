@@ -14,7 +14,7 @@ import I_A.IMS.EUQ.SP.Recoder;
 import I_A.IMS.EUQ.recoder.Jpv;
 import I_A.IMS.EUQ.recoder.VoicejPanel;
 import ME.VPC.M.app.App;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.awt.HeadlessException;
 
@@ -41,9 +41,9 @@ public class StaticFunctionMapI_AOPM_E extends StaticFunctionMapCASE
 
 	@SuppressWarnings("unused")
 	public CoAuthor getCoAuthor(App NE) {
-		IMV_SIQ dic_li = NE._I_U.dic_li;
+		IMV_SQI dic_li = NE._I_U.dic_li;
 		CogsBinaryForest_AE _AE = NE._I_U._AE;
-		IMV_SIQ pos = NE._I_U.pos;
+		IMV_SQI pos = NE._I_U.pos;
 		return new CoAuthor(dic_li, NE);
 	}
 
@@ -52,7 +52,7 @@ public class StaticFunctionMapI_AOPM_E extends StaticFunctionMapCASE
 		throws HeadlessException {
 		App app = NE._I_U.app;//later
 		CogsBinaryForest_AE _AE = NE._I_U._AE;
-		IMV_SIQ pos = NE._I_U.pos;
+		IMV_SQI pos = NE._I_U.pos;
 		return new CoAuthorForWord(NE);
 	}
 
@@ -61,7 +61,7 @@ public class StaticFunctionMapI_AOPM_E extends StaticFunctionMapCASE
 		throws HeadlessException {
 		App app = NE._I_U.app;//later..
 		A _A = NE._I_U._A;
-		IMV_SIQ pos = NE._I_U.pos;
+		IMV_SQI pos = NE._I_U.pos;
 		return new CoDNAAuthorForWord(NE);
 	}
 

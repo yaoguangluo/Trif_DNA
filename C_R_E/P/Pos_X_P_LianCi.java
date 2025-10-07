@@ -5,7 +5,7 @@ import ME.VPC.M.app.App;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI_SS;
 
 import java.util.List;
 
@@ -105,7 +105,7 @@ public class Pos_X_P_LianCi extends Pos_X_P_JieCi implements X_P_LianCi {
 	}
 
 	//奇怪没做为什么要减去？
-	public int P_LianCiOfThreeForMap(IMV_SIQ_SS outputList, int countLength,
+	public int P_LianCiOfThreeForMap(IMV_SQI_SS outputList, int countLength,
 			String[] strings, StringBuilder[] fixWord, App NE) {
 		if (outputList.size() == S_Pos.INT_ZERO) {
 			didNotFindFirstCharForMap(outputList, strings, fixWord, NE);

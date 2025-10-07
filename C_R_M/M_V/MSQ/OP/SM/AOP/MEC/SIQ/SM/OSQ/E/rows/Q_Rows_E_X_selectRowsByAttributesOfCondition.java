@@ -8,7 +8,7 @@ import O_V.OP.SM.AOP.MEC.SIQ.SM.reflection.Spec;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaFileReader;
 import S_A.SVQ.stable.S_ShellETL;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import U_A.PEU.P.cache.Cache_M;
 
 import java.io.File;
@@ -28,15 +28,15 @@ import java.util.Map;
  */
 public class Q_Rows_E_X_selectRowsByAttributesOfCondition {
 	// 因为数据id的补充, 今天开始进行相应的debug验证 罗瑶光20210405
-	public static Object _E(IMV_SIQ object) {
+	public static Object _E(IMV_SQI object) {
 		if (!object.containsKey("recordRows")) {
-			Map<String, Boolean> recordRows = new IMV_SIQ();
+			Map<String, Boolean> recordRows = new IMV_SQI();
 			object.put("recordRows", recordRows);
 		}
 		Spec spec = new Spec();
-		spec.I_CulumnTypes(new IMV_SIQ());
+		spec.I_CulumnTypes(new IMV_SQI());
 		String objectType = "";
-		List<IMV_SIQ> output = new ArrayList<>();
+		List<IMV_SQI> output = new ArrayList<>();
 		// 锁定数据库
 		String DBPath = Cache_M.getCacheInfo("DBPath").getValue().toString()
 				+ "/" + object.get("baseName").toString();

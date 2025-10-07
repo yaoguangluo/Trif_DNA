@@ -2,7 +2,7 @@ package M_V.MVQ.label;
 
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 //import org.reportMap.ReportIndex;
 
 import java.io.IOException;
@@ -22,7 +22,7 @@ import java.util.Map;
  * */
 public class DetaLabelConjunction {
     public static DetaLabelConjunction detaLabelConjunction;
-    public Map<String, Boolean> checkSets = new IMV_SIQ();
+    public Map<String, Boolean> checkSets = new IMV_SQI();
 
     public void IV_() {
 //        try {

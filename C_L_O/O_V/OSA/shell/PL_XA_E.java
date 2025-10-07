@@ -3,7 +3,7 @@ package O_V.OSA.shell;
 import ME.VPC.M.app.App;
 import O_V.OSI.AOP.MEC.SIQ.plorm.Const;
 import O_V.OSM.shell.E_pl_XA_E;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 
 import java.io.IOException;
@@ -27,7 +27,7 @@ import javax.swing.table.DefaultTableModel;
 public class PL_XA_E implements PL_XA_C {
 	private String PLSearch = "";
 	private String[] PLSearchArray;
-	private IMV_SIQ map;
+	private IMV_SQI map;
 	private DefaultTableModel defaultTableModel;
 	private Object[][] tableData_old;
 	private App app;
@@ -224,7 +224,7 @@ public class PL_XA_E implements PL_XA_C {
 	}
 
 	@Override
-	public IMV_SIQ returnAsMap() {
+	public IMV_SQI returnAsMap() {
 		return this.map;
 	}
 

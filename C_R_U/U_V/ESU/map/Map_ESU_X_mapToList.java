@@ -1,6 +1,6 @@
 package U_V.ESU.map;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +16,10 @@ import java.util.List;
  * */
 
 public class Map_ESU_X_mapToList {
-    public static List<IMV_SIQ> _E(IMV_SIQ map) {
-        List<IMV_SIQ> list = new ArrayList<>();
+    public static List<IMV_SQI> _E(IMV_SQI map) {
+        List<IMV_SQI> list = new ArrayList<>();
         for (String string : (Iterable<String>) map.keySet()) {
-            IMV_SIQ singer = new IMV_SIQ();
+            IMV_SQI singer = new IMV_SQI();
             singer.put(string, map.get(string));
             list.add(singer);
         }
@@ -27,11 +27,11 @@ public class Map_ESU_X_mapToList {
     }
 }
 //剔除个人著作权 申请范围	
-//	public static String mapToJsonString(Gson gson, IMV_SIQ map){
+//	public static String mapToJsonString(Gson gson, IMV_SQI map){
 //		return gson.toJson(map);
 //	}
 //
-//	public static String mapToXml(Gson gson, IMV_SIQ map){
+//	public static String mapToXml(Gson gson, IMV_SQI map){
 //		JSONObject jSONObject= new JSONObject(gson.toJson(map));
 //		return XML.toString(jSONObject);	
 //	}

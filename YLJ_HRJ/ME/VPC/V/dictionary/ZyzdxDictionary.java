@@ -3,8 +3,8 @@ package ME.VPC.V.dictionary;
 import exception.file.O.DetaBufferedReader;
 import exception.file.O.DetaInputStreamReader;
 import S_A.SVQ.stable.S_File;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_;
 import YLJ_HRJ.ME.VPC.S.books.BookIndex;
 
 import java.io.InputStream;
@@ -60,8 +60,8 @@ public class ZyzdxDictionary {
 		return dic_list;
 	}
 
-	public IMV_SIQ_ listToMap(List<String> dic_list) {
-		IMV_SIQ_ dic_map = new IMV_SIQ_();
+	public IMV_SQI_ listToMap(List<String> dic_list) {
+		IMV_SQI_ dic_map = new IMV_SQI_();
 		for (int i = 0; i < dic_list.size(); i++) {
 			if (dic_list.get(i).contains("[概念]")) {
 				String med_name = dic_list.get(i - 1);
@@ -91,8 +91,8 @@ public class ZyzdxDictionary {
 		return dic_map;
 	}
 
-	public IMV_SIQ mapToMap_zhjb(IMV_SIQ dic_map) {
-		IMV_SIQ dic_zhjb = new IMV_SIQ();
+	public IMV_SQI mapToMap_zhjb(IMV_SQI dic_map) {
+		IMV_SQI dic_zhjb = new IMV_SQI();
 		Iterator<String> iter = dic_map.keySet().iterator();
 		List<String> copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -116,8 +116,8 @@ public class ZyzdxDictionary {
 		return dic_zhjb;
 	}
 
-	public IMV_SIQ mapToMap_lcyy(IMV_SIQ dic_map) {
-		IMV_SIQ dic_lcyy = new IMV_SIQ();
+	public IMV_SQI mapToMap_lcyy(IMV_SQI dic_map) {
+		IMV_SQI dic_lcyy = new IMV_SQI();
 		Iterator<String> iter = dic_map.keySet().iterator();
 		List<String> copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -149,8 +149,8 @@ public class ZyzdxDictionary {
 		return dic_lcyy;
 	}
 
-	public IMV_SIQ mapToMap_zhfx(IMV_SIQ dic_map) {
-		IMV_SIQ dic_zhfx = new IMV_SIQ();
+	public IMV_SQI mapToMap_zhfx(IMV_SQI dic_map) {
+		IMV_SQI dic_zhfx = new IMV_SQI();
 		Iterator<String> iter = dic_map.keySet().iterator();
 		List<String> copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -192,8 +192,8 @@ public class ZyzdxDictionary {
 		return dic_zhfx;
 	}
 
-	public IMV_SIQ mapToMap_lcbx(IMV_SIQ dic_map) {
-		IMV_SIQ dic_lcbx = new IMV_SIQ();
+	public IMV_SQI mapToMap_lcbx(IMV_SQI dic_map) {
+		IMV_SQI dic_lcbx = new IMV_SQI();
 		Iterator<String> iter = dic_map.keySet().iterator();
 		List<String> copy = new ArrayList<String>();
 		while (iter.hasNext())
@@ -243,8 +243,8 @@ public class ZyzdxDictionary {
 		return dic_lcbx;
 	}
 
-	public IMV_SIQ_ mapToMap_gn(IMV_SIQ_ dic_map) {
-		IMV_SIQ_ dic_li = new IMV_SIQ_();
+	public IMV_SQI_ mapToMap_gn(IMV_SQI_ dic_map) {
+		IMV_SQI_ dic_li = new IMV_SQI_();
 		Iterator<String> iter = dic_map.keySet().iterator();
 		List<String> copy = new ArrayList<String>();
 		while (iter.hasNext())

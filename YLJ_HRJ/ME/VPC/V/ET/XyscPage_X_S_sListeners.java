@@ -6,8 +6,8 @@ import ME.VPC.V.dictionary.XyscDictionary;
 import M_V.MSV.OSU.string.NullObject;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Maps;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
 import U_V.ESU.list.List_ESU_X_listToArray;
 
 import javax.swing.JTextField;
@@ -47,17 +47,17 @@ public class XyscPage_X_S_sListeners extends XyscPage_X_S_s
 		NE = app_NE;
 		// dictionaryFromDB d= new dictionaryFromDB();
 		XyscDictionary d = new XyscDictionary();
-		dic_yao_ming = new IMV_SIQ();
-		dic_chengfen_danwei = new IMV_SIQ();
-		dic_yong_fa = new IMV_SIQ();
-		dic_yong_liang = new IMV_SIQ();
-		dic_yao_li = new IMV_SIQ();
-		dic_zhu_yi = new IMV_SIQ();
-		dic_shi_ying = new IMV_SIQ();
-		dic_jie_shao = new IMV_SIQ();
-		dic_bu_liang_fan_ying = new IMV_SIQ();
-		dic_yao_wu_xiang_hu_zuo_yong = new IMV_SIQ();
-		dic_qi_ta = new IMV_SIQ();
+		dic_yao_ming = new IMV_SQI();
+		dic_chengfen_danwei = new IMV_SQI();
+		dic_yong_fa = new IMV_SQI();
+		dic_yong_liang = new IMV_SQI();
+		dic_yao_li = new IMV_SQI();
+		dic_zhu_yi = new IMV_SQI();
+		dic_shi_ying = new IMV_SQI();
+		dic_jie_shao = new IMV_SQI();
+		dic_bu_liang_fan_ying = new IMV_SQI();
+		dic_yao_wu_xiang_hu_zuo_yong = new IMV_SQI();
+		dic_qi_ta = new IMV_SQI();
 		d.txtToMap(dic_yao_ming, dic_chengfen_danwei, dic_yong_fa, dic_yao_li,
 				dic_zhu_yi, dic_shi_ying, dic_bu_liang_fan_ying,
 				dic_yao_wu_xiang_hu_zuo_yong, dic_qi_ta, dic_yong_liang,
@@ -151,7 +151,7 @@ public class XyscPage_X_S_sListeners extends XyscPage_X_S_s
 		int[] score_code = new int[copy.size()];
 		int[] reg = new int[copy.size()];
 		int count = 0;
-		IMV_SIQ_SS mapSearchWithoutSort = null;
+		IMV_SQI_SS mapSearchWithoutSort = null;
 		mapSearchWithoutSort = _A.parserMixStringByReturnFrequencyMap(key, NE);
 		Iterator<String> iteratorForCopy = copy.iterator();
 		int copyCount = 0;
@@ -358,7 +358,7 @@ public class XyscPage_X_S_sListeners extends XyscPage_X_S_s
 //		String tabKey= "xybg";
 //		//以后设计 uniq forenkey等.
 //		//记得在数据库文件rows 的row 下加 is_delete_0 文件夹. 不然不显示哦 罗瑶光20210505
-//		Map<String, IMV_SIQ> map= d.dbToMap(primaryKey, tabKey);
+//		Map<String, IMV_SQI> map= d.dbToMap(primaryKey, tabKey);
 //		dic_yao_ming= map.get("西药名");
 //		dic_jie_shao= map.get("介绍");
 //		dic_yao_li= map.get("药理");
@@ -370,4 +370,4 @@ public class XyscPage_X_S_sListeners extends XyscPage_X_S_s
 //		dic_yong_liang= map.get("用量");
 //		dic_yao_wu_xiang_hu_zuo_yong= map.get("药物相互作用");
 //		dic_qi_ta= map.get("其他");
-//		IMV_SIQ dic_map= map.get("dic_map");
+//		IMV_SQI dic_map= map.get("dic_map");

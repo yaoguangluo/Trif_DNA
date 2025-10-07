@@ -14,7 +14,7 @@ class AppButtonUtil_X_pageflipflopsTest {
 
     @Test
     void testPageflipPages() {
-        // mock trif AppButtonUtil_X_pageflipflops.pageflipPages(null, new IMV_SIQ_SS(), "key", new ArrayList<>(Arrays.asList("String")), 0, new App());
+        // mock trif AppButtonUtil_X_pageflipflops.pageflipPages(null, new IMV_SQI_SS(), "key", new ArrayList<>(Arrays.asList("String")), 0, new App());
     }
 }
 

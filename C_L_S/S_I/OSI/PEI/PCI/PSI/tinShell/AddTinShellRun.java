@@ -31,7 +31,7 @@ public class AddTinShellRun extends OSU_OPE_OPC_ECI {
         _SQ__OVQ_OSQ_VSQ.tableout = this.toptablein;
         //_SQ__OVQ_OSQ_VSQ.outputOut= this.topOutput;
         //if(null== _SQ__OVQ_OSQ_VSQ.outputOut) {
-        //	 _SQ__OVQ_OSQ_VSQ.outputOut= new IMV_SIQ();
+        //	 _SQ__OVQ_OSQ_VSQ.outputOut= new IMV_SQI();
         //}
         _SQ__OVQ_OSQ_VSQ.outputOut = new TinMap();
 //		if(null!= this.topOutput) {//我先设置成top为mainshell mid和down为附加shell, 这样就可以设计 附加shell的命令了。
@@ -80,8 +80,8 @@ public class AddTinShellRun extends OSU_OPE_OPC_ECI {
 //			Iterator<String> iterator= this.topOutput.keySet().iterator(); 
 //			while(iterator.hasNext()) {
 //				String string= iterator.next();
-//				ConcurrentIMV_SIQ newMap= new IMV_SIQ();
-//				ConcurrentIMV_SIQ map= (ConcurrentIMV_SIQ)this.topOutput.get(string);
+//				ConcurrentIMV_SQI newMap= new IMV_SQI();
+//				ConcurrentIMV_SQI map= (ConcurrentIMV_SQI)this.topOutput.get(string);
 //				Iterator<String> iterators= map.keySet().iterator(); 
 //				while(iterators.hasNext()) {
 //					String strings= iterators.next();
@@ -120,7 +120,7 @@ public class AddTinShellRun extends OSU_OPE_OPC_ECI {
 //		if(null!= topOutput) {
 //			_SQ__OVQ_OSQ_VSQ.outputOut= topOutput.clone();
 //		}
-//		IMV_SIQ map= (IMV_SIQ)_SQ__OVQ_OSQ_VSQ.outputOut.get(S_ShellETL.SHELL_ETL_TIN_SHELL_ETL);
+//		IMV_SQI map= (IMV_SQI)_SQ__OVQ_OSQ_VSQ.outputOut.get(S_ShellETL.SHELL_ETL_TIN_SHELL_ETL);
 //		if(null!= midOutput&& null!= map) {
 //			map.put(S_ShellETL.SHELL_ETL_MID_SHELL, midOutput.clone());
 //		}

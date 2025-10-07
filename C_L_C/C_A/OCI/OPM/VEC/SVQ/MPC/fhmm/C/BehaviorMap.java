@@ -1,6 +1,6 @@
 package C_A.OCI.OPM.VEC.SVQ.MPC.fhmm.C;
 
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -11,10 +11,10 @@ import S_A.pheromone.IMV_SIQ;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public interface BehaviorMap{
-	IMV_SIQ initBusinessMap();
-	IMV_SIQ initTradeMap();
-	IMV_SIQ initFacilityMap();
-	IMV_SIQ initAckuisitionMap();
-	IMV_SIQ initCoorporationMap();
-	IMV_SIQ initPromiseMap();
+	IMV_SQI initBusinessMap();
+	IMV_SQI initTradeMap();
+	IMV_SQI initFacilityMap();
+	IMV_SQI initAckuisitionMap();
+	IMV_SQI initCoorporationMap();
+	IMV_SQI initPromiseMap();
 }

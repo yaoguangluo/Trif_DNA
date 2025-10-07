@@ -3,7 +3,7 @@ package S_A.SixActionMap;
 import ME.VPC.M.app.App;
 import O_V.OSM.shell.CommandClass;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import test.java.InterfaceTest.chineseParser.DemoAfterPOSTest;
 import test.java.InterfaceTest.chineseParser.DemoPOSTest;
 
@@ -135,7 +135,7 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 
 		TimeCheck t = new TimeCheck();
 		t.begin();
-		command_V._IMV_SIQ_SS_ = NE.app_S._A.parserMixedString(
+		command_V._IMV_SQI_SS_ = NE.app_S._A.parserMixedString(
 			command_V.chineseSimpleCommandWithoutNumerics);
 		t.end();
 		t.duration();
@@ -153,18 +153,18 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		*
 		*/
 
-		command_V._IMV_SIQ_SS = NE.app_S._A.getWordFrequencyMap(
-			command_V._IMV_SIQ_SS_, NE);
-		NE.app_S._A.initPCAWordPOS(command_V._IMV_SIQ_SS, NE);
+		command_V._IMV_SQI_SS = NE.app_S._A.getWordFrequencyMap(
+			command_V._IMV_SQI_SS_, NE);
+		NE.app_S._A.initPCAWordPOS(command_V._IMV_SQI_SS, NE);
 
-		IMV_SIQ pos = NE.app_S._A.getPosCnToCn();
+		IMV_SQI pos = NE.app_S._A.getPosCnToCn();
 		DemoPOSTest demoPOSTest = new DemoPOSTest();
 		/*
-		*  demoPOSTest.testPOS(command_V._IMV_SIQ_SS_, pos);
+		*  demoPOSTest.testPOS(command_V._IMV_SQI_SS_, pos);
 		*  --解决方法 首先分解
 		*/
 		List<String> setsInput = demoPOSTest.testPOSOnlyGetList(
-			command_V._IMV_SIQ_SS_, pos);
+			command_V._IMV_SQI_SS_, pos);
 		/*
 		 * 思考，当一个原来的词汇关系系统计算中，纠正了副词的准确性，那么原来的函数中形容词的词数
 		 * 就会大幅地减少，如果之后的跟进计算用到了形容词，而没有用到副词，那么条件的精度会增加，
@@ -173,7 +173,7 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		 */
 		/*
 		 * DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
-		 * List<String> setsInput = demoAfterPOSTest.testPOS(command_V._IMV_SIQ_SS_, pos);
+		 * List<String> setsInput = demoAfterPOSTest.testPOS(command_V._IMV_SQI_SS_, pos);
 		 * List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(setsInput, pos);
 		 * 
 		 * 在测试文档中已经设计了更为精准的 DemoAfterPOSTest 服务，于是这里进行替换下函数，
@@ -197,89 +197,92 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 			.iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next();
-			if (command_V._IMV_SIQ_SS.containsKey(temp)) {
-				WordFrequency wordFrequency = command_V._IMV_SIQ_SS
+			if (command_V._IMV_SQI_SS.containsKey(temp)) {
+				WordFrequency wordFrequency = command_V._IMV_SQI_SS
 					.get(temp);
 				WordFrequency wordFrequencyTemp = demoPOSTest.noun
 					.get(temp);
 				wordFrequency.I_pos(wordFrequencyTemp.get_pos());
-				command_V._IMV_SIQ_SS.put(temp, wordFrequency);
+				command_V._IMV_SQI_SS.put(temp, wordFrequency);
 			}
 		}
 		iterators = demoPOSTest.verb.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next();
-			if (command_V._IMV_SIQ_SS.containsKey(temp)) {
-				WordFrequency wordFrequency = command_V._IMV_SIQ_SS
+			if (command_V._IMV_SQI_SS.containsKey(temp)) {
+				WordFrequency wordFrequency = command_V._IMV_SQI_SS
 					.get(temp);
 				WordFrequency wordFrequencyTemp = demoPOSTest.verb
 					.get(temp);
 				wordFrequency.I_pos(wordFrequencyTemp.get_pos());
-				command_V._IMV_SIQ_SS.put(temp, wordFrequency);
+				command_V._IMV_SQI_SS.put(temp, wordFrequency);
 			}
 		}
 		iterators = demoPOSTest.adj.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next();
-			if (command_V._IMV_SIQ_SS.containsKey(temp)) {
-				WordFrequency wordFrequency = command_V._IMV_SIQ_SS
+			if (command_V._IMV_SQI_SS.containsKey(temp)) {
+				WordFrequency wordFrequency = command_V._IMV_SQI_SS
 					.get(temp);
 				WordFrequency wordFrequencyTemp = demoPOSTest.adj.get(
 					temp);
 				wordFrequency.I_pos(wordFrequencyTemp.get_pos());
-				command_V._IMV_SIQ_SS.put(temp, wordFrequency);
+				command_V._IMV_SQI_SS.put(temp, wordFrequency);
 			}
 		}
 		iterators = demoPOSTest.adv.keySet().iterator();
 		while (iterators.hasNext()) {
 			String temp = iterators.next();
-			if (command_V._IMV_SIQ_SS.containsKey(temp)) {
-				WordFrequency wordFrequency = command_V._IMV_SIQ_SS
+			if (command_V._IMV_SQI_SS.containsKey(temp)) {
+				WordFrequency wordFrequency = command_V._IMV_SQI_SS
 					.get(temp);
 				WordFrequency wordFrequencyTemp = demoPOSTest.adv.get(
 					temp);
 				wordFrequency.I_pos(wordFrequencyTemp.get_pos());
-				command_V._IMV_SIQ_SS.put(temp, wordFrequency);
+				command_V._IMV_SQI_SS.put(temp, wordFrequency);
 			}
 		}
-		/*
-		* 阿拉伯数字加进map中，归纳在子函数这，是方便函数被第三方接口封装调用方便。
-		*/
-		Iterator<String> iteratorNumbers = command_V._IMV_SIQ_SS_Q
-			.keySet().iterator();
-		while (iteratorNumbers.hasNext()) {
-			String temp = iteratorNumbers.next();
-			WordFrequency wordFrequency = command_V._IMV_SIQ_SS_Q
-				.getW(temp);
-			command_V._IMV_SIQ_SS.put(temp, wordFrequency);
-		}
-		S_logger.Log.logger.info("");
 	}
-
+	/*
+	* 阿拉伯数字加进map中，归纳在子函数这，是方便函数被第三方接口封装调用方便。
+	* 
+	* S_logger.Log.logger.info("--" + command_V._IMV_SQI_SS_Q.size());
+	* S_logger.Log.logger.info("--" + command_V._IMV_SQI_SS.size());
+	* Iterator<String> iteratorNumbers = command_V._IMV_SQI_SS_Q
+	* 	.keySet().iterator();
+	* while (iteratorNumbers.hasNext()) {
+	* 	String temp = iteratorNumbers.next();
+	* 	WordFrequency wordFrequency = command_V._IMV_SQI_SS_Q
+	* 		.getW(temp);
+	* 	command_V._IMV_SQI_SS.put(temp, wordFrequency);
+	* }
+	* S_logger.Log.logger.info("++" + command_V._IMV_SQI_SS.size());
+	*/
+	
 	public void setHumanTalk(CommandClass command_V, App NE) {
-		command_V._IMV_SIQ_SS.clear();
-		command_V._IMV_SIQ_SS_.clear();
-		command_V._IMV_SIQ_S_.clear();
+		command_V._IMV_SQI_SS.clear();
+		command_V._IMV_SQI_SS_.clear();
+		command_V._IMV_SQI_S_.clear();
 		this.humanTalk = command_V.command;
 		// 分词 提取 英文段和数字段形成变量。比如dnn 12345等
-		command_V._IMV_SIQ_SS_ = NE.app_S._A.parserMixedString(
+		command_V._IMV_SQI_SS_ = NE.app_S._A.parserMixedString(
 			command_V.command);
-		for (int i = 0; i < command_V._IMV_SIQ_SS_.size(); i++) {
-			System.out.println(command_V._IMV_SIQ_SS_.get(i));
+		for (int i = 0; i < command_V._IMV_SQI_SS_.size(); i++) {
+			System.out.println(command_V._IMV_SQI_SS_.get(i));
 		}
 		/*
 		* 1 精确词汇pos函数
 		* 2 精确词汇笛卡尔 取缔之前的老快速 map 频率
 		*/
-		command_V._IMV_SIQ_SS = NE.app_S._A.getWordFrequencyMap(
-			command_V._IMV_SIQ_SS_, NE);
+		command_V._IMV_SQI_SS = NE.app_S._A.getWordFrequencyMap(
+			command_V._IMV_SQI_SS_, NE);
 		/*
 		* 3 精确词汇rnn 和 position
 		* loop unknown
 		* 4 精确词汇的mapping肽指令集
 		* 5 局部替换即可，价值可识别12345和英文abcde 方便人类语言中入参识别。
 		 */
-		NE.app_S._A.initPCAWordPOS(command_V._IMV_SIQ_SS, NE);
+		NE.app_S._A.initPCAWordPOS(command_V._IMV_SQI_SS, NE);
 	}
 
 	/*
@@ -338,18 +341,18 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 }
 //计算辩证意识大幅减少大量算子。
 
-// this._IMV_SIQ_SS =
+// this._IMV_SQI_SS =
 // NE.app_S._A.parserMixStringByReturnFrequencyMap(command,
 // NE);
 
-//_IMV_SIQ_SS.clear();
-//_IMV_SIQ_SS_.clear();
-//_IMV_SIQ_S_.clear();
+//_IMV_SQI_SS.clear();
+//_IMV_SQI_SS_.clear();
+//_IMV_SQI_S_.clear();
 //
-// command_V._IMV_SIQ_SS;
-// command_V._IMV_SIQ_SS_;
-// command_V._IMV_SIQ_S_;
-// public IMV_SIQ_SS noun = new IMV_SIQ_SS();
-// public IMV_SIQ_SS verb = new IMV_SIQ_SS();
-// public IMV_SIQ_SS adj = new IMV_SIQ_SS();
-// public IMV_SIQ_SS adv = new IMV_SIQ_SS();
+// command_V._IMV_SQI_SS;
+// command_V._IMV_SQI_SS_;
+// command_V._IMV_SQI_S_;
+// public IMV_SQI_SS noun = new IMV_SQI_SS();
+// public IMV_SQI_SS verb = new IMV_SQI_SS();
+// public IMV_SQI_SS adj = new IMV_SQI_SS();
+// public IMV_SQI_SS adv = new IMV_SQI_SS();

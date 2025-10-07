@@ -10,7 +10,7 @@ package test.java.ME.VPC.V.dictionary.db;
  * */
 
 import ME.VPC.V.db.XyscDictionaryFromDB;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -28,13 +28,13 @@ class XyscDictionaryFromDBTest {
 
     @Test
     void testListToMap() {
-        IMV_SIQ result = xyscDictionaryFromDB.listToMap(new ArrayList<>(Arrays.asList("String")));
-        //mock trif  Assertions.assertEquals(new IMV_SIQ(), result);
+        IMV_SQI result = xyscDictionaryFromDB.listToMap(new ArrayList<>(Arrays.asList("String")));
+        //mock trif  Assertions.assertEquals(new IMV_SQI(), result);
     }
 
     @Test
     void testTxtToMap() {
-        //mock trif  xyscDictionaryFromDB.txtToMap(new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ(), new IMV_SIQ());
+        //mock trif  xyscDictionaryFromDB.txtToMap(new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI(), new IMV_SQI());
     }
 }
 

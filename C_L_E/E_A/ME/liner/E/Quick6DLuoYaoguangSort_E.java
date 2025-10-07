@@ -3,8 +3,8 @@ package E_A.ME.liner.E;
 import C_A.ME.liner.C.Quick6DLuoYaoguangSort;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SVQ.stable.S_Pos;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -77,7 +77,7 @@ public class Quick6DLuoYaoguangSort_E implements Quick6DLuoYaoguangSort {
     }
 
     @SuppressWarnings(S_Pos.RAW_TYPES)
-    public List<WordFrequency> frequencyWordMapToList(IMV_SIQ_SS map) {
+    public List<WordFrequency> frequencyWordMapToList(IMV_SQI_SS map) {
         List<WordFrequency> list = new ArrayList<>();
         Iterator iterator = map.keySet().iterator();//later..
         while (iterator.hasNext()) {
@@ -87,17 +87,17 @@ public class Quick6DLuoYaoguangSort_E implements Quick6DLuoYaoguangSort {
     }
 
     @Override
-    public void quick6DLuoYaoGuangSortWordFrequency(IMV_SIQ_S_ map, int leftPosition
+    public void quick6DLuoYaoGuangSortWordFrequency(IMV_SQI_S_ map, int leftPosition
         , int rightPosition) {
     }
 
     @Override
-    public int partition(IMV_SIQ_S_ map, int leftPosition, int rightPosition) {
+    public int partition(IMV_SQI_S_ map, int leftPosition, int rightPosition) {
         return S_Pos.INT_ZERO;
     }
 
     @Override
-    public IMV_SIQ_S_ frequencyWordMapToMap(IMV_SIQ_SS map) {
+    public IMV_SQI_S_ frequencyWordMapToMap(IMV_SQI_SS map) {
         return null;
     }
 }

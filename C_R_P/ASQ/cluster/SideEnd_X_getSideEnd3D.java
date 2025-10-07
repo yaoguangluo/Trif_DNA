@@ -4,7 +4,7 @@ import ASQ.basic.Distance_X_getDistance3D;
 import ASQ.euclid.Euclid_X_findHeartPosition3D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
 import P_V.PCI.ASQ.ratio.DistanceRatio;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ import java.util.List;
 public class SideEnd_X_getSideEnd3D {
     public static List<AMV_MVS_VSQ_3D> _E(List<AMV_MVS_VSQ_3D> list, double scale) {
         AMV_MVS_VSQ_3D heart = Euclid_X_findHeartPosition3D._E(list);
-        IMV_SIQ ratioSide = new IMV_SIQ();
+        IMV_SQI ratioSide = new IMV_SQI();
         for (AMV_MVS_VSQ_3D AMV_MVS_VSQ3D : list) {
             double ratio = DistanceRatio.getDistanceRatio3D(heart, AMV_MVS_VSQ3D);
             if (ratioSide.containsKey(ratio)) {

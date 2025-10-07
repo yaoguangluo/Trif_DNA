@@ -9,9 +9,9 @@ import P.Pos_X_P;
 import E_A.OEI.SVQ.MPC.fhmm.E.FMHMMListOneTime_E;
 import ME.VPC.M.app.App;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
-import S_A.pheromone.IMV_SIQ;
-import S_A.pheromone.IMV_SIQ_SS;
-import S_A.pheromone.IMV_SIQ_S_;
+import S_A.pheromone.IMV_SQI;
+import S_A.pheromone.IMV_SQI_SS;
+import S_A.pheromone.IMV_SQI_S_;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,9 +42,9 @@ public class DemoEX2 {
         , Quick6DLuoYaoguangSort3DMap_E quick6DLuoYaoguangSort3DMap_E, App NE) {
         CogsBinaryForest_AE _A = new CogsBinaryForest_AE();
         _A.IV_Mixed(NE);
-        IMV_SIQ pos = _A.getPosCnToCn();
+        IMV_SQI pos = _A.getPosCnToCn();
         List<String> sets = new ArrayList<>();
-        IMV_SIQ_SS seta = new IMV_SIQ_SS();
+        IMV_SQI_SS seta = new IMV_SQI_SS();
         TimeCheck t = new TimeCheck();
 //		String ss= "从容易开始从从容容易从容易开始从从容容易从容易开始从从容容易从容易开始从从容容易"
 //				+ "从容易开始从从容容易从容易开始从从容容易从容易开始从从容容易从容易开始从从容容易"
@@ -103,7 +103,7 @@ public class DemoEX2 {
         //20230106-System.out.println("");
         //20230106-System.out.println("-->");
 //		t.begin();
-        IMV_SIQ_S_ fwa = _A.getWordFrequencyByReturnSortMap(sets, NE);
+        IMV_SQI_S_ fwa = _A.getWordFrequencyByReturnSortMap(sets, NE);
 //		t.end();
         for (int i = fwa.size() - 1; i >= 0; i--) {
             //20230106-System.out.print(fwa.get(i).get_word() + S_Common.STRING_SYMBOL_PER

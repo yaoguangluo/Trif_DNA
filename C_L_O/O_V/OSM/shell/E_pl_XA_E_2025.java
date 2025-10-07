@@ -5,7 +5,7 @@
 //import S_A.SEM.bloom.StaticFunctionMapO_VECS_C;
 //import S_A.SEM.bloom.StaticRootMap;
 //import S_A.SVQ.stable.S_ShellETL;
-//import S_A.pheromone.IMV_SIQ;
+//import S_A.pheromone.IMV_SQI;
 //import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
 //import S_I.OSI.PSO.regex.DoSplit;
 //import S_A.SixActionMap.FlowerAction;
@@ -29,7 +29,7 @@
 //	public static TinMap E_pl_XA(String plSearch, boolean mod, TinMap output,
 //			App NE) throws InterruptedException, IOException {
 //		// working for here
-//		// IMV_SIQ output= new IMV_SIQ();
+//		// IMV_SQI output= new IMV_SQI();
 //		// 1make container
 //		if (null == output) {
 //			output = NE._I_U.outputMap;// later all in 1 and contans objectmap
@@ -95,8 +95,8 @@
 //				String callFunctionKey = "P_fileOperations";
 //				// StaticRootMap.initMap();
 //				String[] strings = new String[1];
-//				IMV_SIQ outputReg = new IMV_SIQ();
-//				IMV_SIQ inputValue = new IMV_SIQ();
+//				IMV_SQI outputReg = new IMV_SQI();
+//				IMV_SQI inputValue = new IMV_SQI();
 //				String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //						.getString(callFunctionKey).split(":");
 //				NE._I_U.outputMap = output;
@@ -113,8 +113,8 @@
 //				String callFunctionKey = "P_ListNeedStart";
 //				// StaticRootMap.initMap();
 //				String[] strings = new String[1];
-//				IMV_SIQ outputReg = new IMV_SIQ();
-//				IMV_SIQ inputValue = new IMV_SIQ();
+//				IMV_SQI outputReg = new IMV_SQI();
+//				IMV_SQI inputValue = new IMV_SQI();
 //				String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //						.getString(callFunctionKey).split(":");
 //				NE._I_U.outputMap = output;
@@ -131,8 +131,8 @@
 //				String callFunctionKey = "P_ListNeedStart";
 //				// StaticRootMap.initMap();
 //				String[] strings = new String[1];
-//				IMV_SIQ outputReg = new IMV_SIQ();
-//				IMV_SIQ inputValue = new IMV_SIQ();
+//				IMV_SQI outputReg = new IMV_SQI();
+//				IMV_SQI inputValue = new IMV_SQI();
 //				String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //						.getString(callFunctionKey).split(":");
 //				NE._I_U.outputMap = output;
@@ -149,8 +149,8 @@
 //				String callFunctionKey = "P_ListNeedStart";
 //				// StaticRootMap.initMap();
 //				String[] strings = new String[1];
-//				IMV_SIQ outputReg = new IMV_SIQ();
-//				IMV_SIQ inputValue = new IMV_SIQ();
+//				IMV_SQI outputReg = new IMV_SQI();
+//				IMV_SQI inputValue = new IMV_SQI();
 //				String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //						.getString(callFunctionKey).split(":");
 //				NE._I_U.outputMap = output;
@@ -167,8 +167,8 @@
 //				String callFunctionKey = "P_Join";
 //				// StaticRootMap.initMap();
 //				String[] strings = new String[1];
-//				IMV_SIQ outputReg = new IMV_SIQ();
-//				IMV_SIQ inputValue = new IMV_SIQ();
+//				IMV_SQI outputReg = new IMV_SQI();
+//				IMV_SQI inputValue = new IMV_SQI();
 //				String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //						.getString(callFunctionKey).split(":");
 //				NE._I_U.outputMap = output;
@@ -187,8 +187,8 @@
 //				String callFunctionKey = "P_ListNeedStart";
 //				// StaticRootMap.initMap();
 //				String[] strings = new String[1];
-//				IMV_SIQ outputReg = new IMV_SIQ();
-//				IMV_SIQ inputValue = new IMV_SIQ();
+//				IMV_SQI outputReg = new IMV_SQI();
+//				IMV_SQI inputValue = new IMV_SQI();
 //				String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //						.getString(callFunctionKey).split(":");
 //				NE._I_U.outputMap = output;
@@ -205,8 +205,8 @@
 //				String callFunctionKey = "P_ListNeedStart";
 //				// StaticRootMap.initMap();
 //				String[] strings = new String[1];
-//				IMV_SIQ outputReg = new IMV_SIQ();
-//				IMV_SIQ inputValue = new IMV_SIQ();
+//				IMV_SQI outputReg = new IMV_SQI();
+//				IMV_SQI inputValue = new IMV_SQI();
 //				String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //						.getString(callFunctionKey).split(":");
 //				NE._I_U.outputMap = output;
@@ -225,8 +225,8 @@
 //				String callFunctionKey = "P_ListNeedStart";
 //				// StaticRootMap.initMap();
 //				String[] strings = new String[1];
-//				IMV_SIQ outputReg = new IMV_SIQ();
-//				IMV_SIQ inputValue = new IMV_SIQ();
+//				IMV_SQI outputReg = new IMV_SQI();
+//				IMV_SQI inputValue = new IMV_SQI();
 //				String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //						.getString(callFunctionKey).split(":");
 //				NE._I_U.outputMap = output;
@@ -243,8 +243,8 @@
 //				String callFunctionKey = "P_ListNeedStart";
 //				// StaticRootMap.initMap();
 //				String[] strings = new String[1];
-//				IMV_SIQ outputReg = new IMV_SIQ();
-//				IMV_SIQ inputValue = new IMV_SIQ();
+//				IMV_SQI outputReg = new IMV_SQI();
+//				IMV_SQI inputValue = new IMV_SQI();
 //				String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //						.getString(callFunctionKey).split(":");
 //				NE._I_U.outputMap = output;
@@ -261,8 +261,8 @@
 //				String callFunctionKey = "P_ListNeedStart";// later
 //				// StaticRootMap.initMap();
 //				String[] strings = new String[1];
-//				IMV_SIQ outputReg = new IMV_SIQ();
-//				IMV_SIQ inputValue = new IMV_SIQ();
+//				IMV_SQI outputReg = new IMV_SQI();
+//				IMV_SQI inputValue = new IMV_SQI();
 //				String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //						.getString(callFunctionKey).split(":");
 //				NE._I_U.outputMap = output;
@@ -281,8 +281,8 @@
 //				String callFunctionKey = "P_ListNeedStart";// later
 //				// StaticRootMap.initMap();
 //				String[] strings = new String[1];
-//				IMV_SIQ outputReg = new IMV_SIQ();
-//				IMV_SIQ inputValue = new IMV_SIQ();
+//				IMV_SQI outputReg = new IMV_SQI();
+//				IMV_SQI inputValue = new IMV_SQI();
 //				String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //						.getString(callFunctionKey).split(":");
 //				NE._I_U.outputMap = output;
@@ -429,8 +429,8 @@
 ////String callFunctionKey = ("P_TableName");
 ////    //StaticRootMap.initMap();
 ////    String[] strings = new String[1];
-////    IMV_SIQ outputReg = new IMV_SIQ();
-////    IMV_SIQ inputValue = new IMV_SIQ();
+////    IMV_SQI outputReg = new IMV_SQI();
+////    IMV_SQI inputValue = new IMV_SQI();
 ////    String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 ////        .getString(callFunctionKey).split(":");
 ////                NE._I_U.outputMap = output;//加了map后缀需要更新关联函数
@@ -446,8 +446,8 @@
 ////String callFunctionKey = ("P_SetRoot");
 ////    //StaticRootMap.initMap();
 ////    String[] strings = new String[1];
-////    IMV_SIQ outputReg = new IMV_SIQ();
-////    IMV_SIQ inputValue = new IMV_SIQ();
+////    IMV_SQI outputReg = new IMV_SQI();
+////    IMV_SQI inputValue = new IMV_SQI();
 ////    String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 ////        .getString(callFunctionKey).split(":");
 ////                NE._I_U.outputMap = output;
@@ -458,7 +458,7 @@
 ////                    strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
 ////                    StaticRootMap.tinShellV005(strings, outputReg);
 ////@SuppressWarnings("unchecked")
-////IMV_SIQ map= (IMV_SIQ) outputReg.get(callFunctionKey);
+////IMV_SQI map= (IMV_SQI) outputReg.get(callFunctionKey);
 ////app.app_S.nameFeelFilter= (CfxTextField) map.get("interfaceReturn");
 //
 ////67
@@ -466,8 +466,8 @@
 ////                String callFunctionKey = ("P_BaseName");
 ////                //StaticRootMap.initMap();
 ////                String[] strings = new String[1];
-////                IMV_SIQ outputReg = new IMV_SIQ();
-////                IMV_SIQ inputValue = new IMV_SIQ();
+////                IMV_SQI outputReg = new IMV_SQI();
+////                IMV_SQI inputValue = new IMV_SQI();
 ////                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 ////                    .getString(callFunctionKey).split(":");// all in 1 later
 ////                NE._I_U.outputMap = output;
@@ -483,8 +483,8 @@
 ////                String callFunctionKey = ("P_YLJOperation");
 ////                //StaticRootMap.initMap();
 ////                String[] strings = new String[1];
-////                IMV_SIQ outputReg = new IMV_SIQ();
-////                IMV_SIQ inputValue = new IMV_SIQ();
+////                IMV_SQI outputReg = new IMV_SQI();
+////                IMV_SQI inputValue = new IMV_SQI();
 ////                String chromosome = StaticRootMap.staticClass_XE_Map.getString(callFunctionKey);
 ////                String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome, callFunctionKey); //我是神！ tin神！
 ////                NE._I_U.outputMap = output;
@@ -500,8 +500,8 @@
 ////                String callFunctionKey = "P_StoreValues";
 ////                //StaticRootMap.initMap();
 ////                String[] strings = new String[1];
-////                IMV_SIQ outputReg = new IMV_SIQ();
-////                IMV_SIQ inputValue = new IMV_SIQ();
+////                IMV_SQI outputReg = new IMV_SQI();
+////                IMV_SQI inputValue = new IMV_SQI();
 ////                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 ////                    .getString(callFunctionKey).split(":");
 ////                NE._I_U.outputMap = output;
@@ -517,8 +517,8 @@
 ////                String callFunctionKey = "P_fileOperations";
 ////                //StaticRootMap.initMap();
 ////                String[] strings = new String[1];
-////                IMV_SIQ outputReg = new IMV_SIQ();
-////                IMV_SIQ inputValue = new IMV_SIQ();
+////                IMV_SQI outputReg = new IMV_SQI();
+////                IMV_SQI inputValue = new IMV_SQI();
 ////                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 ////                    .getString(callFunctionKey).split(":");
 ////                NE._I_U.outputMap = output;
@@ -534,8 +534,8 @@
 ////                String callFunctionKey = "P_fileOperations";
 ////                //StaticRootMap.initMap();
 ////                String[] strings = new String[1];
-////                IMV_SIQ outputReg = new IMV_SIQ();
-////                IMV_SIQ inputValue = new IMV_SIQ();
+////                IMV_SQI outputReg = new IMV_SQI();
+////                IMV_SQI inputValue = new IMV_SQI();
 ////                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 ////                    .getString(callFunctionKey).split(":");
 ////                NE._I_U.outputMap = output;

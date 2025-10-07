@@ -2,7 +2,7 @@ package P_V.PCI.ASQ.image;
 
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_3D;
-import S_A.pheromone.IMV_SIQ;
+import S_A.pheromone.IMV_SQI;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -21,7 +21,7 @@ public class ImagePixClassification {
     //作者：罗瑶光
     //将shareholder分层处理的图片像素数据进行 分类归类统计输出
     public static Map<Integer, ArrayList<AMV_MVS_VSQ_2D>> getImagePixClassificationMap(int[][] pixMap) {
-        Map<Integer, ArrayList<AMV_MVS_VSQ_2D>> output = new IMV_SIQ();
+        Map<Integer, ArrayList<AMV_MVS_VSQ_2D>> output = new IMV_SQI();
         for (int i = 0; i < pixMap.length; i++) {
             for (int j = 0; j < pixMap[0].length; j++) {
                 if (pixMap[i][j] > 0) {
@@ -41,7 +41,7 @@ public class ImagePixClassification {
     }
 
     public static Map<Integer, ArrayList<AMV_MVS_VSQ_3D>> getImagePixClassificationMap(int[][][] pixMap) {
-        Map<Integer, ArrayList<AMV_MVS_VSQ_3D>> output = new IMV_SIQ();
+        Map<Integer, ArrayList<AMV_MVS_VSQ_3D>> output = new IMV_SQI();
         for (int i = 0; i < pixMap.length; i++) {
             for (int j = 0; j < pixMap[0].length; j++) {
                 for (int k = 0; k < pixMap[0][0].length; k++) {
