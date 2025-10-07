@@ -120,8 +120,10 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		 * --罗瑶光
 		 * 
 		 * */
-		int res = new StudyVerbalMap().extractNumberfromString(
-			command_V);
+		if(false == command_V.initedArabicNumber) {
+			int res = new StudyVerbalMap().extractNumberfromString(
+				command_V);	
+		}
 		/*
 		 * 将replace 提取出来，然后进行字符的长度进行replace //。。。todo
 		 * */

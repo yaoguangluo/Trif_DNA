@@ -27,7 +27,8 @@ import java.util.List;
  * */
 class TSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest {
 	public static void main(String[] argv) {
-		TSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest tSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest = new TSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest();
+		TSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest tSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest 
+		= new TSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest();
 		tSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest._E();
 	}
 

@@ -596,31 +596,38 @@ public class CommandClass {
 	public  IMV_SQI_SS _IMV_SQI_SS_Q = new IMV_SQI_SS();
 	public  String commandWithoutNumerics = "";
 	public  String chineseSimpleCommandWithoutNumerics = "";
+	public  boolean  initedArabicNumber = false;
 	/*
 	 * 保证相等长度替换，symbolSwapNumerics只能包含一个位的char符号。
 	 * */
 	public  String symbolSwapNumerics = "*";
 	public void initArabicNumber() {
 		/*
-		 * 开始填写这几天的逻辑。
-		 * */
-		/*1 取变量，拿出所有混合数字，标注position，剔除掉原句中的这些变量。这里会遇到一个问题
+		 * --开始填写这几天的逻辑。
+		 * 1 取变量，拿出所有混合数字，标注position，剔除掉原句中的这些变量。这里会遇到一个问题
 		    就是 commandClass 的command 要分解出一个 commandWithoutNumerics，用于分词。
 		    那么剔除掉的地方需要一个标识，不然序次会打乱，于是用symbolSwap 替换代入到函数中，
 		    我先设计个*看看效果，以后跟进测试。 
 		    
 		    studyVerbalMap 六个元 可以注册到 commandClass
 		    
-		    --2022年后靠近电磁音频传感器产生的奇怪意识，
+		    --外因太多我管不了，当然公开当面给我钱，我能用合同报税的形式cover一点。
+		    --内因就一点，我要把自己的东西不断地优化好。
+		    
 		    --罗瑶光
 		*/
 		regNE.app_S.studyVerbalMap.extractNumberfromString(this);
+		/*
 		//regNE.app_S.studyVerbalMap.formatNumericMap(this);
 		
-		//2 取变量，拿出所有混合数字，标注position，剔除掉原句中的这些变量。
-		//3
-		//4
-		System.out.println("chineseSimpleCommandWithoutNumerics-->" + this.chineseSimpleCommandWithoutNumerics);
+		// 2 取变量，拿出所有混合数字，标注position，剔除掉原句中的这些变量。
+		// 3
+		// 4
+		//
+		//*/
+		
+		System.out.println("chineseSimpleCommandWithoutNumerics-->" 
+		+ this.chineseSimpleCommandWithoutNumerics);
 		//
 	}
 	//400局部输出正确

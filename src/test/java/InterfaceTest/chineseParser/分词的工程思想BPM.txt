@@ -25,7 +25,13 @@
       --regNE.app_S.studyVerbalMap.extractNumberfromString
       --这里出现2次重复计算，稍后可以分析和去重。
       /*
-      * 分析 todo。。
+      * 分析 todo。。思考--如果将extractNumberfromString集成与初始函数中，
+      * 那么会出现指令句分词时候重复计算。
+      * --如果将extractNumberfromString集成于指令句函数中，那么普通的语言句
+      * 分词便不能有效的识别混合歧义数字词汇。
+      * --于是进行优化，将extractNumberfromString函数拿出来作为重要的一环即可。
+      * 设计 initedArabicNumber boolean区别。
+      * --罗瑶光
       */
       
   

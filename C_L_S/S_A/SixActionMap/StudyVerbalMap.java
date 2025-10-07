@@ -33,6 +33,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		getNumericsFromUnknownMapAndFiltCommand(command_V);
 		//
 		command_V.chineseSimpleCommandWithoutNumerics = filterString;
+		command_V.initedArabicNumber = true;
 		return 0;
 	}
 
