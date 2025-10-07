@@ -197,8 +197,10 @@ public class CreativeVerbalMap {
 		NE.app_S.flowerAction.FlowerSixDomainActions.put("E+颜色",
 			"updateColorAttributesOfColumnsInMemoryClass");
 		// 注册花函数
-		UpdateColorAttributesOfColumnsInMemoryClass updateColorAttributesOfColumnsInMemoryClass = new UpdateColorAttributesOfColumnsInMemoryClass();
-		String callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass = "updateColorAttributesOfColumnsInMemoryClass";
+		UpdateColorAttributesOfColumnsInMemoryClass updateColorAttributesOfColumnsInMemoryClass 
+		= new UpdateColorAttributesOfColumnsInMemoryClass();
+		String callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass
+		= "updateColorAttributesOfColumnsInMemoryClass";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
 		/*
@@ -239,7 +241,8 @@ public class CreativeVerbalMap {
 	 *现在二和一出现了多个问题，首先是老工程合并出现了多个花语段，
 	 *然后花肽合并出现了if else 逻辑问题。
 	 *
-	 *因为 if else的价值就是 新函数不走花语 所以花语就不用再管了，以后新的函数直接走肽语调用花函数即可
+	 *因为 if else的价值就是 新函数不走花语 所以花语就不用再管了，以后新的函数直接走肽语调用
+	 *花函数即可
 	 *
 	 * */
 	static void regLimitedRowAttributesOfColumnsInMemoryClass(
@@ -253,8 +256,10 @@ public class CreativeVerbalMap {
 			"P_AggregationLimitMap");
 
 		// 注册花函数
-		LimitedRowAttributesOfColumnsInMemoryClass limitedRowAttributesOfColumnsInMemoryClass = new LimitedRowAttributesOfColumnsInMemoryClass();
-		String callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass = "P_AggregationLimitMap";
+		LimitedRowAttributesOfColumnsInMemoryClass limitedRowAttributesOfColumnsInMemoryClass 
+		= new LimitedRowAttributesOfColumnsInMemoryClass();
+		String callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass 
+		= "P_AggregationLimitMap";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
 		/*
