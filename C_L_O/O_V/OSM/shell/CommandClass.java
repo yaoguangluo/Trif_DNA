@@ -134,7 +134,7 @@ public class CommandClass {
 		for (int i = 0; i < inputString.length(); i++) {
 			if (inputString.charAt(i) < 48 || inputString.charAt(i) > 57) {
 				if (!string.isEmpty()) {
-					System.out.println(string + "--" + fixOrder);
+					S_logger.Log.logger.info("" + string + "--" + fixOrder);
 					// println函数走图形打印机，并发工程记得注释掉或者用其他的classic观测API
 					numericsFromUnknownString.put(string.toString(),
 							fixOrder++);
@@ -145,7 +145,7 @@ public class CommandClass {
 			string += inputString.charAt(i);
 		}
 		if (!string.isEmpty()) {
-			System.out.println(string + "--" + fixOrder);
+			S_logger.Log.logger.info("" + string + "--" + fixOrder);
 			// println函数走图形打印机，并发工程记得注释掉或者用其他的classic观测API
 			numericsFromUnknownString.put(string.toString(), fixOrder++);
 			string = "";
@@ -166,7 +166,7 @@ public class CommandClass {
 				string += inputString.charAt(i);
 			} else {
 				if (!string.isEmpty()) {
-					System.out.println(string + "--" + fixOrder);
+					S_logger.Log.logger.info("" + string + "--" + fixOrder);
 					alfabeticsFromUnknownString.put(string.toString(),
 							fixOrder++);
 					string = "";
@@ -175,7 +175,7 @@ public class CommandClass {
 			}
 		}
 		if (!string.isEmpty()) {
-			System.out.println(string + "--" + fixOrder);
+			S_logger.Log.logger.info("" + string + "--" + fixOrder);
 			alfabeticsFromUnknownString.put(string.toString(), fixOrder++);
 			string = "";
 		}
@@ -240,7 +240,7 @@ public class CommandClass {
 		// ----------------
 		// 0--0
 		// 30--1
-		System.out.println("--------中文数字机-V00001---------");
+		S_logger.Log.logger.info("" + "--------中文数字机-V00001---------");
 		String number = "一";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "拾";
@@ -294,9 +294,9 @@ public class CommandClass {
 		number = "十万";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "十万万";
-		System.out.println("十万万");
-		System.out.println("-学好语文，这叫十亿-先不处理歧义句");
-		System.out.println("-先不处理超亿句，我框架都写好了，直接split 加函数即可。");
+		S_logger.Log.logger.info("" + "十万万");
+		S_logger.Log.logger.info("" + "-学好语文，这叫十亿-先不处理歧义句");
+		S_logger.Log.logger.info("" + "-先不处理超亿句，我框架都写好了，直接split 加函数即可。");
 		number = "十二万";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "万";
@@ -341,13 +341,13 @@ public class CommandClass {
 		stringSwap = stringSwap.replace("佰", "百");
 		stringSwap = stringSwap.replace("仟", "千");
 		stringSwap = stringSwap.replace("万", "万");
-		System.out.println("简体-->" + stringSwap);
+		S_logger.Log.logger.info("" + "简体-->" + stringSwap);
 		return stringSwap;
 	}
 
 	@SuppressWarnings("unused")
 	public String fasterChineseNumberSwap(String chineseNumber) {
-		System.out.println("输入-->" + chineseNumber);
+		S_logger.Log.logger.info("" + "输入-->" + chineseNumber);
 		/*
 		 * 上面是计算哲学和计算关系和计算逻辑的分析方法，需要巨大的采样，不符合我的思维认知方式
 		 * 于是按照罗瑶光的思绪分析，开始编码。首先我要进行数据预处理，将文字中所有繁体全部简化
@@ -369,44 +369,44 @@ public class CommandClass {
 		String total6 = "";
 		String outputYi = "";
 		String[] stringsYi = stringSwap.split("亿");
-		// System.out.println("stringsYi.length-->" +
+		// S_logger.Log.logger.info("" + "stringsYi.length-->" +
 		// stringsYi.length);
 		if (stringsYi.length > 0) {
 			int j = 0;
 			for (String stringYi : stringsYi) {
 				j++;
-				// System.out.println("stringYi-->" + stringYi);
+				// S_logger.Log.logger.info("" + "stringYi-->" + stringYi);
 				/*
 				 * 简化后文字开始进行精确分析，然后拆分最大逻辑集合确定万为最大计算量级， 
 				 * 有 千万，一百万， 一千零二十万，乘积是10 000 4个零。
 				 */
-				// System.out.println(stringYi);
+				// S_logger.Log.logger.info("" + stringYi);
 				String[] stringsWan = stringYi.split("万");
-				// System.out.println("stringsWan.length-->" +
+				// S_logger.Log.logger.info("" + "stringsWan.length-->" +
 				// stringsWan.length);
 				String outputWan = "";
 				if (stringsWan.length > 0) {
 					int i = 0;
 					for (String stringWan : stringsWan) {
 						i++;
-						// System.out.println("stringWan-->" + stringWan);
+						// S_logger.Log.logger.info("" + "stringWan-->" + stringWan);
 						/*
 						 * 逻辑分层后，这里只要处理一万以内的组合，大幅减少条件分析。
 						 */
-						// System.out.println("longWan-->" + stringWan);
+						// S_logger.Log.logger.info("" + "longWan-->" + stringWan);
 						if (stringWan.isEmpty()) {
 							outputWan += "" + 1;
 							reg = outputWan;
-							System.out.println("total1-->" + outputWan);
+							S_logger.Log.logger.info("" + "total1-->" + outputWan);
 							total1 = outputWan.toString();
 							continue;
 						}
 						long longWan = processWan(stringWan);
-						// System.out.println("longWan-->" + longWan);
+						// S_logger.Log.logger.info("" + "longWan-->" + longWan);
 						if (outputWan.isEmpty()) {
 							outputWan += "" + longWan;
 							reg = outputWan;
-							System.out.println("total2-->" + outputWan);
+							S_logger.Log.logger.info("" + "total2-->" + outputWan);
 							total2 = outputWan.toString();
 							continue;
 						}
@@ -421,20 +421,20 @@ public class CommandClass {
 						}
 						reg = outputWan;
 						total3= outputWan.toString();
-						System.out.println("total3-->" + outputWan);
+						S_logger.Log.logger.info("" + "total3-->" + outputWan);
 					}
 					if (stringYi.contains("万") && stringsWan.length < 2) {
 						outputWan += "0000";
 						reg = outputWan;
 						total4 = outputWan.toString();
-						System.out.println("total4-->" + outputWan);
+						S_logger.Log.logger.info("" + "total4-->" + outputWan);
 					}
 				} else {
 					// wan to do
 					outputWan = "10000";
 					reg = outputWan;
 					total5 = outputWan.toString();
-					System.out.println("total5-->" + outputWan);
+					S_logger.Log.logger.info("" + "total5-->" + outputWan);
 				}
 				if (1 == j) {
 					regYi = reg;
@@ -444,57 +444,57 @@ public class CommandClass {
 				}
 			}
 			if (stringSwap.contains("亿") && stringsYi.length < 2) {
-				System.out.println("亿1-->" + stringSwap);
+				S_logger.Log.logger.info("" + "亿1-->" + stringSwap);
 				outputYi += reg + "00000000";
 				total6 = outputYi.toString();
-				System.out.println("total6-->" + outputYi);
+				S_logger.Log.logger.info("" + "total6-->" + outputYi);
 			}
 			if (stringSwap.contains("亿") && stringsYi.length > 1) {
-				//System.out.println("regYi2-->" + regYi);
-				//System.out.println("亿2-->" + stringSwap);
-				//System.out.println("regWan2-->" + regWan);
-				//System.out.println("stringsYi.length-->" + stringsYi.length);
+				//S_logger.Log.logger.info("" + "regYi2-->" + regYi);
+				//S_logger.Log.logger.info("" + "亿2-->" + stringSwap);
+				//S_logger.Log.logger.info("" + "regWan2-->" + regWan);
+				//S_logger.Log.logger.info("" + "stringsYi.length-->" + stringsYi.length);
 				if (regWan.length() < 2) {
 					regYi += "0000000" + regWan;
-					//System.out.println("regWan1-->" + regWan);
-					//System.out.println("regYi1-->" + regYi);
+					//S_logger.Log.logger.info("" + "regWan1-->" + regWan);
+					//S_logger.Log.logger.info("" + "regYi1-->" + regYi);
 				} else if (regWan.length() < 3) {
 					regYi += "000000" + regWan;
-					//System.out.println("regWan2-->" + regWan);
-					//System.out.println("regYi2-->" + regYi);
+					//S_logger.Log.logger.info("" + "regWan2-->" + regWan);
+					//S_logger.Log.logger.info("" + "regYi2-->" + regYi);
 				} else if (regWan.length() < 4) {
 					regYi += "00000" + regWan;
-					//System.out.println("regWan3-->" + regWan);
-					//System.out.println("regYi3-->" + regYi);
+					//S_logger.Log.logger.info("" + "regWan3-->" + regWan);
+					//S_logger.Log.logger.info("" + "regYi3-->" + regYi);
 				} else if (regWan.length() < 5) {
 					regYi += "0000" + regWan;
-					//System.out.println("regWan4-->" + regWan);
-					//System.out.println("regYi4-->" + regYi);
+					//S_logger.Log.logger.info("" + "regWan4-->" + regWan);
+					//S_logger.Log.logger.info("" + "regYi4-->" + regYi);
 				} else if (regWan.length() < 6) {
 					regYi += "000" + regWan;
-					//System.out.println("regWan5-->" + regWan);
-					//System.out.println("regYi5-->" + regYi);
+					//S_logger.Log.logger.info("" + "regWan5-->" + regWan);
+					//S_logger.Log.logger.info("" + "regYi5-->" + regYi);
 				} else if (regWan.length() < 7) {
 					regYi += "00" + regWan;
-					//System.out.println("regWan6-->" + regWan);
-					//System.out.println("regYi6-->" + regYi);
+					//S_logger.Log.logger.info("" + "regWan6-->" + regWan);
+					//S_logger.Log.logger.info("" + "regYi6-->" + regYi);
 				} else if (regWan.length() < 8) {
 					regYi += "0" + regWan;
-					//System.out.println("regWan7-->" + regWan);
-					//System.out.println("regYi7-->" + regYi);
+					//S_logger.Log.logger.info("" + "regWan7-->" + regWan);
+					//S_logger.Log.logger.info("" + "regYi7-->" + regYi);
 				}else if (regWan.length() < 9) {
 					regYi += "" + regWan;
-					//System.out.println("regWan7-->" + regWan);
-					//System.out.println("regYi7-->" + regYi);
+					//S_logger.Log.logger.info("" + "regWan7-->" + regWan);
+					//S_logger.Log.logger.info("" + "regYi7-->" + regYi);
 				}
 				outputYi += regYi;
-				System.out.println("total7-->" + outputYi);
+				S_logger.Log.logger.info("" + "total7-->" + outputYi);
 			}
 
 		} else {
 			// yi to do
 			outputYi = "100000000";
-			System.out.println("total8-->" + outputYi);
+			S_logger.Log.logger.info("" + "total8-->" + outputYi);
 
 		}
 		if(!outputYi.isEmpty()) {
@@ -583,7 +583,7 @@ public class CommandClass {
 			 * 毁灭证据的思维。这几年特别写核心源码的时候，想删除的动机意识特别强烈。这是我的 
 			 * 一个严重的错误习惯，以后要改正。
 			 */
-			// System.out.println("loop-->" + total);
+			// S_logger.Log.logger.info("" + "loop-->" + total);
 		}
 		if (-1 != value) {
 			total += value;
@@ -626,7 +626,7 @@ public class CommandClass {
 		//
 		//*/
 		
-		System.out.println("chineseSimpleCommandWithoutNumerics-->" 
+		S_logger.Log.logger.info("" + "chineseSimpleCommandWithoutNumerics-->" 
 		+ this.chineseSimpleCommandWithoutNumerics);
 		//
 	}

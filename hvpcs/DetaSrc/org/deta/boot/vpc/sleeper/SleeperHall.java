@@ -42,7 +42,7 @@ public class SleeperHall {
 				sleepersMap.remove(sid);
 				sleeper = null;
 				System.out.flush();
-				System.out.println(sid + " -free");
+				S_logger.Log.logger.info("" + sid + " -free");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -61,7 +61,7 @@ public class SleeperHall {
 					sleepersMap.remove(integer);
 					sleeper = null;
 					System.out.flush();
-					System.out.println("" + integer
+					S_logger.Log.logger.info("" + integer
 							+ new Date(System.currentTimeMillis()).toString()
 							+ "-h free");
 				}

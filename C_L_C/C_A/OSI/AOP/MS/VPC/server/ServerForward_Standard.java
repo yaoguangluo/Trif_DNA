@@ -150,7 +150,7 @@ public class ServerForward_Standard {
 		if (vPCSRequest.getRequestForwardType()
 				.equalsIgnoreCase(S_Web.STREAM_BYTES)) {
 			System.out.flush();
-			System.out.println("-bytes");
+			S_logger.Log.logger.info("" + "-bytes");
 			RestMapVision_XP_bytes.processBytes(vPCSRequest, vPCSResponse);
 			return;
 			// ServerRestMap_Standard.P_Bytes(vPCSRequest,
@@ -159,7 +159,7 @@ public class ServerForward_Standard {
 		if (vPCSRequest.getRequestForwardType()
 				.equalsIgnoreCase(S_Web.STREAM_BUFFER)) {
 			System.out.flush();
-			System.out.println("-bytes");
+			S_logger.Log.logger.info("" + "-bytes");
 			RestMapVision_XP_bytes.processBytes(vPCSRequest, vPCSResponse);
 			return;
 			// ServerRestMap_Standard.P_Buffer(vPCSRequest,
@@ -168,7 +168,7 @@ public class ServerForward_Standard {
 		if (vPCSRequest.getRequestForwardType()
 				.equalsIgnoreCase(S_Web.STREAM_BYTES_BUFFER)) {
 			System.out.flush();
-			System.out.println("-bytes");
+			S_logger.Log.logger.info("" + "-bytes");
 			RestMapVision_XP_bytes.processBytes(vPCSRequest, vPCSResponse);
 			return;
 			// ServerRestMap_Standard.P_BufferBytes(vPCSRequest,
@@ -177,7 +177,7 @@ public class ServerForward_Standard {
 		if (vPCSRequest.getRequestForwardType()
 				.equalsIgnoreCase(S_Web.STREAM_BYTES_WITHOUT_ZIP)) {
 			System.out.flush();
-			System.out.println("-bytes");
+			S_logger.Log.logger.info("" + "-bytes");
 			RestMapVision_XP_bytes.processBytes(vPCSRequest, vPCSResponse);
 			return;
 			// ServerRestMap_Standard.P_BytesWithoutZip(vPCSRequest,

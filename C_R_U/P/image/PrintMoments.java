@@ -41,10 +41,10 @@ public class PrintMoments {
         }
     }
 }
-//20230106-System.out.println("region--->"+pix);
-//20230106-System.out.println("p00------>"+p00);
-//20230106-System.out.println("p01------>"+p01);
-//20230106-System.out.println("p02------>"+p02);
-//20230106-System.out.println("p10------>"+p10);
-//20230106-System.out.println("p11------>"+p11);
-//20230106-System.out.println("p20------>"+p20);
+//20230106-S_logger.Log.logger.info("" + "region--->"+pix);
+//20230106-S_logger.Log.logger.info("" + "p00------>"+p00);
+//20230106-S_logger.Log.logger.info("" + "p01------>"+p01);
+//20230106-S_logger.Log.logger.info("" + "p02------>"+p02);
+//20230106-S_logger.Log.logger.info("" + "p10------>"+p10);
+//20230106-S_logger.Log.logger.info("" + "p11------>"+p11);
+//20230106-S_logger.Log.logger.info("" + "p20------>"+p20);

@@ -2,7 +2,7 @@ package test.java.InterfaceTest.convolution;
 
 import P.image.Sobel;
 import org.junit.jupiter.api.Test;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -45,7 +45,7 @@ class SobelTest {
 			for (int j = 0; j < 16; j++) {
 				System.out.print("-" + output[i][j]);
 			}
-			System.out.println();
+			S_logger.Log.logger.info("" + "");
 		}
 	}
 

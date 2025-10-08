@@ -90,7 +90,7 @@ public class SkinPathDetectString {
 		//6 推荐
 		for (int i = 0; i < scoreDouble.length; i++) {
 			if (nameScore[i].contains("狼")) {
-				//20230106-System.out.println("相似图片:"+ nameScore[i]+ "-----分数:"+ scoreDouble[i]);
+				//20230106-S_logger.Log.logger.info("" + "相似图片:"+ nameScore[i]+ "-----分数:"+ scoreDouble[i]);
 			}
 		}
 		//

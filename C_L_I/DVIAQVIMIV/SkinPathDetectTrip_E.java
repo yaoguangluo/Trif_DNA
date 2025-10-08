@@ -240,7 +240,7 @@ public class SkinPathDetectTrip_E {
 					NE.app_S.sixteenInitonJianScaleTxt)
 				+ score_suan_17[i] * Double.valueOf(
 					NE.app_S.sixteenInitonSuanScaleTxt);
-			////20230106-System.out.println(score_suan_17[i]);
+			////20230106-S_logger.Log.logger.info("" + score_suan_17[i]);
 		}
 		//5 筛选
 		double[] scoreDouble = new double[score.length];
@@ -273,10 +273,10 @@ public class SkinPathDetectTrip_E {
 					output.add("###相似图片:" + i + "位" + string
 						+ ">-----分数:" + scoreDouble[i]);
 				}
-				////20230106-System.out.println("相似图片:"+ i+ "位"+ string+ ">-----分数:"+ scoreDouble[i]);
+				////20230106-S_logger.Log.logger.info("" + "相似图片:"+ i+ "位"+ string+ ">-----分数:"+ scoreDouble[i]);
 			}
 			map.remove(scoreDouble[i]);
-			//	//20230106-System.out.println("相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
+			//	//20230106-S_logger.Log.logger.info("" + "相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
 		}
 		//弹出面板
 		//
@@ -400,10 +400,10 @@ public class SkinPathDetectTrip_E {
 	//				String string = iterator.next();
 	//				output.add("相似图片:" + i + "位" + string + ">-----分数:"
 	//					+ scoreDouble[i]);
-	//				////20230106-System.out.println("相似图片:"+ i+ "位"+ string+ ">-----分数:"+ scoreDouble[i]);
+	//				////20230106-S_logger.Log.logger.info("" + "相似图片:"+ i+ "位"+ string+ ">-----分数:"+ scoreDouble[i]);
 	//			}
 	//			map.remove(scoreDouble[i]);
-	//			//	//20230106-System.out.println("相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
+	//			//	//20230106-S_logger.Log.logger.info("" + "相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
 	//		}
 	//		//弹出面板
 	//

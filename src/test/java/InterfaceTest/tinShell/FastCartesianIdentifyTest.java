@@ -124,7 +124,7 @@ public class FastCartesianIdentifyTest {
 
 			Object object = iterators.next();
 			String string = object.toString();
-			Log.logger.info(string);
+			S_logger.Log.logger.info("" + string);
 			/*
 			 * 找出不含有特殊符号的条件拆分，方便垃圾分类。 1 不含有与或非的string 2 3
 			 */
@@ -189,9 +189,9 @@ public class FastCartesianIdentifyTest {
 			workVerbalMap.command_V._IMV_SQI_SS_temp.put(string,
 				wordFrequency);
 		}
-		Log.logger.info("筛选前主要关系数-->"
+		S_logger.Log.logger.info("" + "筛选前主要关系数-->"
 			+ workVerbalMap.command_V._IMV_SQI_SS.size());
-		Log.logger.info("筛选后主要关系数-->"
+		S_logger.Log.logger.info("" + "筛选后主要关系数-->"
 			+ workVerbalMap.command_V._IMV_SQI_SS_temp.size());
 		workVerbalMap.command_V._IMV_SQI_SS = workVerbalMap.command_V._IMV_SQI_SS_temp;
 		return null;
@@ -310,120 +310,120 @@ public class FastCartesianIdentifyTest {
 		commonTestInition.NE.app_S.workVerbalMap.actionsNormalization(
 			commonTestInition.NE, command_V);
 		//
-		System.out.println("-----笛卡尔词汇观测-----");
-		System.out.println("1-cartesianWorkA-"
+		S_logger.Log.logger.info("" + "-----笛卡尔词汇观测-----");
+		S_logger.Log.logger.info("" + "1-cartesianWorkA-"
 			+ commonTestInition.NE.app_S.workVerbalMap.verbInText
 				.size());
 		Iterator<String> iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.verbInText
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">" + "");
+			S_logger.Log.logger.info("" + string + ">" + "");
 		}
-		System.out.println("1-cartesianWorkB-"
+		S_logger.Log.logger.info("" + "1-cartesianWorkB-"
 			+ commonTestInition.NE.app_S.workVerbalMap.nounInText
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.nounInText
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">" + "");
+			S_logger.Log.logger.info("" + string + ">" + "");
 		}
 
 		// 输出
-		System.out.println("-----笛卡尔关系推荐逻辑观测-----");
-		System.out.println("1-cartesianWorkActionsPositionsSV-"
+		S_logger.Log.logger.info("" + "-----笛卡尔关系推荐逻辑观测-----");
+		S_logger.Log.logger.info("" + "1-cartesianWorkActionsPositionsSV-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">"
+			S_logger.Log.logger.info("" + string + ">"
 				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV
 					.getString(string));
 		}
 
-		System.out.println("2-cartesianWorkActionsPositionsVO-"
+		S_logger.Log.logger.info("" + "2-cartesianWorkActionsPositionsVO-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">"
+			S_logger.Log.logger.info("" + string + ">"
 				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO
 					.getString(string));
 		}
 
-		System.out.println("3-cartesianWorkActionsRightsSV-"
+		S_logger.Log.logger.info("" + "3-cartesianWorkActionsRightsSV-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">"
+			S_logger.Log.logger.info("" + string + ">"
 				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
 					.getString(string));
 		}
 
-		System.out.println("4-cartesianWorkActionsRightsVO-"
+		S_logger.Log.logger.info("" + "4-cartesianWorkActionsRightsVO-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">"
+			S_logger.Log.logger.info("" + string + ">"
 				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
 					.getString(string));
 		}
 
-		System.out.println("5-cartesianWorkActions_posSV-"
+		S_logger.Log.logger.info("" + "5-cartesianWorkActions_posSV-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">"
+			S_logger.Log.logger.info("" + string + ">"
 				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV
 					.getString(string));
 		}
 
-		System.out.println("6-cartesianWorkActions_posVO-"
+		S_logger.Log.logger.info("" + "6-cartesianWorkActions_posVO-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">"
+			S_logger.Log.logger.info("" + string + ">"
 				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO
 					.getString(string));
 		}
 
-		System.out.println("7-cartesianWorkActionsRightsParserSV-"
+		S_logger.Log.logger.info("" + "7-cartesianWorkActionsRightsParserSV-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">"
+			S_logger.Log.logger.info("" + string + ">"
 				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
 					.getString(string));
 		}
 
-		System.out.println("8-cartesianWorkActionsRightsParserVO-"
+		S_logger.Log.logger.info("" + "8-cartesianWorkActionsRightsParserVO-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
-			System.out.println(string + ">"
+			S_logger.Log.logger.info("" + string + ">"
 				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 					.getString(string));
 		}

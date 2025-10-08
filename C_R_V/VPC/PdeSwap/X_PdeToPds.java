@@ -30,7 +30,7 @@ public class X_PdeToPds {
         pDE_RNA_Formular2.pdeisKey = is;
         pDE_RNA_Formular2.pdedeKey = de;
         pDE_RNA_Formular2.pdedsKey = ds;
-        //20230106-System.out.println("准备计算元基DNA序列："+ pds);
+        //20230106-S_logger.Log.logger.info("" + "准备计算元基DNA序列："+ pds);
         //pds~pde
 
         Initon[] initon = new Initon[pds.length()];

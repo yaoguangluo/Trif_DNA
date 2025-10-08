@@ -94,7 +94,7 @@ public class FlowerAction {
 		TinMap output, App NE) throws InterruptedException,
 		IOException {
 		/*400 越来越多，准备设计逻辑层快速索引文档指南*/
-		S_logger.Log.logger.info("pre-doAction-400-00005-"
+		S_logger.Log.logger.info("" + "pre-doAction-400-00005-"
 			+ callFunctionKey);
 		// 花语初始
 		String[] strings = new String[1];

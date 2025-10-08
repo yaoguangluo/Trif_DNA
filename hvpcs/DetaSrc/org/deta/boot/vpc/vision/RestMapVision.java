@@ -51,7 +51,7 @@ import DetaSrc.org.deta.boot.vpc.sleeper.Sleeper;
 	public static void getResponse(VPCSRequest vPCSRequest,
 			VPCSResponse vPCSResponse) {
 		System.out.flush();
-		System.out.println(vPCSResponse.getHashCode() + "-pe");
+		S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-pe");
 		vPCSResponse.closeAllBeforeGC();
 	}
 }
@@ -65,16 +65,16 @@ import DetaSrc.org.deta.boot.vpc.sleeper.Sleeper;
 //					 new OutputStreamWriter(vPCSResponse.socket
 //							 .getOutputStream(), "UTF-8")), true);
 //		 }catch(Exception e) {
-//			 System.out.flush();System.out.println(e.getMessage());
-//			 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//			 System.out.flush();S_logger.Log.logger.info("" + e.getMessage());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //					 + "-processRest err");
-//			 System.out.flush();System.out.println(vPCSRequest.getRequestLink());
-//			 System.out.flush();System.out.println(vPCSRequest.getRequestFilePath());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSRequest.getRequestLink());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSRequest.getRequestFilePath());
 //			 StableBlob.addException();
 //			 return;
 //		 }
 //		 if(output.length()> 0) {
-//			 System.out.flush();System.out.println("success YL");
+//			 System.out.flush();S_logger.Log.logger.info("" + "success YL");
 //			 vPCSResponse.printWriter.flush();
 //			 vPCSResponse.printWriter.println("HTTP/1.1 200 OK\n\n"); 
 //			 output=output.charAt(0)=='"'?output.substring(1, output.length()):output;
@@ -83,12 +83,12 @@ import DetaSrc.org.deta.boot.vpc.sleeper.Sleeper;
 //			 vPCSResponse.printWriter.flush();
 //			 vPCSResponse.printWriter.println(output.replace("\\\"", "\""));
 //			 vPCSResponse.printWriter.close();	
-//			 System.out.flush();System.out.println(vPCSResponse.getHashCode() + "-f");
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-f");
 //		 }else {
 //			 vPCSResponse.printWriter.flush();
 //			 vPCSResponse.printWriter.println("HTTP/1.1 204 OK\n\n"); 
 //			 vPCSResponse.printWriter.close();	
-//			 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //					 + "-processRest length err");
 //			 System.out.flush();System.out.print(vPCSRequest.getRequestLink());
 //			 System.out.flush();System.out.print(vPCSRequest.getRequestFilePath());
@@ -165,12 +165,12 @@ import DetaSrc.org.deta.boot.vpc.sleeper.Sleeper;
 //				 }
 //			 }	
 //			 vPCSResponse.dataOutputStream.close();
-//			 System.out.flush();System.out.println(vPCSResponse.getHashCode() + " -f");	
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + " -f");	
 //		 }catch(Exception e) {
-//			 System.out.flush();System.out.println(e.getMessage());
-//			 System.out.flush();System.out.println(vPCSResponse.getHashCode()+"-processBytes err");
-//			 System.out.flush();System.out.println(vPCSRequest.getRequestLink());
-//			 System.out.flush();System.out.println(vPCSRequest.getRequestFilePath());
+//			 System.out.flush();S_logger.Log.logger.info("" + e.getMessage());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()+"-processBytes err");
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSRequest.getRequestLink());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSRequest.getRequestFilePath());
 //			 StableBlob.addException();
 //			 return;
 //		 }
@@ -220,13 +220,13 @@ import DetaSrc.org.deta.boot.vpc.sleeper.Sleeper;
 //					 vPCSResponse.bufferedWriter.close();
 //				 }
 //			 }
-//			 System.out.flush();System.out.println(vPCSResponse.getHashCode() + "-f");
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-f");
 //		 }catch(Exception e) {
-//			 System.out.flush();System.out.println(e.getMessage());
-//			 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//			 System.out.flush();S_logger.Log.logger.info("" + e.getMessage());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //					 + "-processBuffer bufferedWriter err");
-//			 System.out.flush();System.out.println(vPCSRequest.getRequestLink());
-//			 System.out.flush();System.out.println(vPCSRequest.getRequestFilePath());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSRequest.getRequestLink());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSRequest.getRequestFilePath());
 //			 StableBlob.addException();
 //			 return;	
 //		 }
@@ -292,13 +292,13 @@ import DetaSrc.org.deta.boot.vpc.sleeper.Sleeper;
 //				 vPCSResponse.dataOutputStream.flush();
 //			 }
 //			 vPCSResponse.dataOutputStream.close();
-//			 System.out.flush();System.out.println(vPCSResponse.getHashCode() + "-f");
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-f");
 //		 }catch(Exception e) {
-//			 System.out.flush();System.out.println(e.getMessage());
-//			 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//			 System.out.flush();S_logger.Log.logger.info("" + e.getMessage());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //					 +"-processBufferBytes dataOutputStream err");
-//			 System.out.flush();System.out.println(vPCSRequest.getRequestLink());
-//			 System.out.flush();System.out.println(vPCSRequest.getRequestFilePath());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSRequest.getRequestLink());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSRequest.getRequestFilePath());
 //			 StableBlob.addException();
 //			 return;
 //		 }
@@ -375,13 +375,13 @@ import DetaSrc.org.deta.boot.vpc.sleeper.Sleeper;
 //			 if(null!= vPCSResponse.byteArrayOutputStream) {
 //				 vPCSResponse.byteArrayOutputStream.close();	
 //			 }	
-//			 System.out.flush();System.out.println(vPCSResponse.getHashCode() + "-f");	
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-f");	
 //		 }catch(Exception e) {
-//			 System.out.flush();System.out.println(e.getMessage());
-//			 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//			 System.out.flush();S_logger.Log.logger.info("" + e.getMessage());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //					 +"-processBytesWithoutZip fileInputStream err");
-//			 System.out.flush();System.out.println(vPCSRequest.getRequestLink());
-//			 System.out.flush();System.out.println(vPCSRequest.getRequestFilePath());	
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSRequest.getRequestLink());
+//			 System.out.flush();S_logger.Log.logger.info("" + vPCSRequest.getRequestFilePath());	
 //			 StableBlob.addException();
 //			 return;
 //		 }

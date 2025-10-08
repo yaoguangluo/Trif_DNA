@@ -46,7 +46,7 @@ public class RestCall_X_backEndRequest {
 				._E(token.getmPassword(), "UTF8", "UTF8");
 		String passwordEncoder = String_ESU_X_stringToURIencode
 				._E(passwordString, "UTF8");
-		// 20230106-System.out.println("pds--1>"+tokenCerts.getPds());
+		// 20230106-S_logger.Log.logger.info("" + "pds--1>"+tokenCerts.getPds());
 		// 这里的数据下面没有标识, 准备写个tag来描述下先
 		// java 从没有url的长度限制, 如果出问题就会不报错, 欺骗方式下滑。
 		// 所以准备写个tag。

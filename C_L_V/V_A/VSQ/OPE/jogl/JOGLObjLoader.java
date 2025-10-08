@@ -137,7 +137,7 @@ public class JOGLObjLoader {
         JOGLOBJShape mesh = new JOGLOBJShape();
         String line;
         while ((line = br.readDetaLine()) != null) {
-            ////20230106-System.out.println("line: " + line);
+            ////20230106-S_logger.Log.logger.info("" + "line: " + line);
             Matcher commentm = commentpat.matcher(line);
             Matcher mtllibm = mtllibpat.matcher(line);
             Matcher usemtlm = usemtlpat.matcher(line);

@@ -209,7 +209,7 @@ public class WorkVerbalMap_X_S {
 								*		right);
 								* command_V.cartesianWorkActionsPositionsSV.put(root,
 								*		position);
-								* System.out.println(root + ":" + right + ":"
+								* S_logger.Log.logger.info("" + root + ":" + right + ":"
 								*		+ position + ":" + root_pos);
 								*/
 							}
@@ -252,7 +252,7 @@ public class WorkVerbalMap_X_S {
 								 *		right);
 								 * command_V.cartesianWorkActionsPositionsVO.put(root,
 								 *		position);
-								 * System.out.println(root + ":" + right + ":"
+								 * S_logger.Log.logger.info("" + root + ":" + right + ":"
 								 *		+ position + ":" + root_pos);
 								 *
 								 */

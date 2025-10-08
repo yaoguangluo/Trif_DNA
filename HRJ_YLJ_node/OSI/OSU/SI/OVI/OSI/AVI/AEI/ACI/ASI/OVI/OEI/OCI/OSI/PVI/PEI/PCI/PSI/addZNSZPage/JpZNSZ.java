@@ -158,7 +158,7 @@ public class JpZNSZ extends JPanel implements Runnable {
                 filedialog.setFilenameFilter(new TXTFilter("png"));
                 filedialog.setVisible(true);
                 String filepath = filedialog.getDirectory() + filedialog.getFile();
-                System.out.println(filepath);
+                S_logger.Log.logger.info("" + filepath);
                 try {
                     File outputBin = new File(filepath + ".png");
                     if (null == imageForOutput) {
@@ -166,7 +166,7 @@ public class JpZNSZ extends JPanel implements Runnable {
                     }
                     ImageIO.write(imageForOutput, "png", outputBin);
                 } catch (IOException writePngError) {
-                    System.out.println(filepath);
+                    S_logger.Log.logger.info("" + filepath);
                 }
                 //锟斤拷锟酵计
             }
@@ -299,7 +299,7 @@ public class JpZNSZ extends JPanel implements Runnable {
     @SuppressWarnings({"unchecked", "unused"})
     public void run() {
         while (reg == 1) {
-            //System.out.println("luo");
+            //S_logger.Log.logger.info("" + "luo");
             SoundWaveVector sw = new SoundWaveVector();
             time = new Thread(rec);
             time.setPriority(6);
@@ -349,7 +349,7 @@ public class JpZNSZ extends JPanel implements Runnable {
                 int frameSizeInBytes = format.getFrameSize();
                 int bufferLengthInFrames = line.getBufferSize() / 8;
                 int bufferLengthInBytes = bufferLengthInFrames * frameSizeInBytes;
-                //  System.out.println("bufferLengthInBytes : " + bufferLengthInBytes +" **");
+                //  S_logger.Log.logger.info("" + "bufferLengthInBytes : " + bufferLengthInBytes +" **");
                 byte[] data = new byte[bufferLengthInBytes];
                 int numBytesRead = 0;
                 line.start();

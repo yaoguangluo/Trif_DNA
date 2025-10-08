@@ -108,7 +108,7 @@
 //		//IO.WAVRead("C:\\Users\\yaoguang\\Desktop\\study\\sound\\AHag.wav");
 //		//File F=new File("C:\\Users\\yaoguang\\Desktop\\study\\sound\\AHag.wav");
 //		File F=new File(Apath);
-//		System.out.println(F.length());
+//		S_logger.Log.logger.info("" + F.length());
 //		AudioInputStream ais= null;
 //		try {
 //			ais= AudioSystem.getAudioInputStream(F);
@@ -252,7 +252,7 @@
 //      	  	iv[2]=(byte)(v>>16&0xff);
 //      	  	iv[3]=(byte)(v>>24&0xff);
 //        	wr.write(iv);
-//	  		System.out.println("<MWR>\n"+cur.header.MWFrame+"\n</MWR>\n");
+//	  		S_logger.Log.logger.info("" + "<MWR>\n"+cur.header.MWFrame+"\n</MWR>\n");
 //   //2
 //	  		headpos+=4;
 //	  		v=cur.header.MHFrame;
@@ -262,7 +262,7 @@
 //      	  	iv[2]=(byte)(v>>16&0xff);
 //      	  	iv[3]=(byte)(v>>24&0xff);
 //        	wr.write(iv);
-//	  		System.out.println("<MHR>\n"+cur.header.MHFrame+"\n</MHR>\n");
+//	  		S_logger.Log.logger.info("" + "<MHR>\n"+cur.header.MHFrame+"\n</MHR>\n");
 //	  //3
 //	  		headpos+=4;
 //	  		v=cur.header.MFrameLeangth;
@@ -272,7 +272,7 @@
 //      	  	iv[2]=(byte)(v>>16&0xff);
 //      	  	iv[3]=(byte)(v>>24&0xff);
 //        	wr.write(iv);
-//	  		System.out.println("<MFL>\n"+cur.header.MFrameLeangth+"\n</MFL>\n");
+//	  		S_logger.Log.logger.info("" + "<MFL>\n"+cur.header.MFrameLeangth+"\n</MFL>\n");
 //	  	//4
 //	  		headpos+=4;
 //	  		v=cur.header.MFrameRate;
@@ -282,7 +282,7 @@
 //      	  	iv[2]=(byte)(v>>16&0xff);
 //      	  	iv[3]=(byte)(v>>24&0xff);
 //        	wr.write(iv);
-//	  		System.out.println("<MFR>\n"+cur.header.MFrameRate+"\n</MFR>\n");
+//	  		S_logger.Log.logger.info("" + "<MFR>\n"+cur.header.MFrameRate+"\n</MFR>\n");
 //	    //5
 //	  		headpos+=4;
 //	  	  	byte[] size=new byte[1];
@@ -397,7 +397,7 @@
 //	  			iv[reg]=0;
 //	  		}
 //	  		wr.write(iv);
-//	  		System.out.println("finish head");
+//	  		S_logger.Log.logger.info("" + "finish head");
 //	  		headpos+=16;
 //
 //	  		//wav pos of lyg file
@@ -434,7 +434,7 @@
 //       		// prm.setQuality(25f/100f, true);
 //     	   //  encoder.encode(oldimage, prm);
 //     	     byte[] ba=os.toByteArray();
-//     	     System.out.println(ba.length);
+//     	     S_logger.Log.logger.info("" + ba.length);
 //     	     int rl=ba.length;
 //        	 byte[] rlb= new byte[4];
 //        	 rlb[0]= (byte)(rl&0xff);
@@ -498,7 +498,7 @@
 //           		 //	prm.setQuality(25f/100f, true);
 //           		 //	encoder.encode(oldimage, prm);
 //           		 	ba=os.toByteArray();
-//           		 	System.out.println(ba.length);
+//           		 	S_logger.Log.logger.info("" + ba.length);
 //           		 	rl=ba.length;
 //           		 	rlb= new byte[4];
 //           		 	rlb[0]= (byte)(rl&0xff);
@@ -507,7 +507,7 @@
 //          	  	 	rlb[3]=(byte)(rl>>24&0xff);
 //          	  	 	wr.write(rlb);
 //          	  	 	wr.write(ba);
-//          	  	 	System.out.println(i+"-------------------------------------------------------");
+//          	  	 	S_logger.Log.logger.info("" + i+"-------------------------------------------------------");
 //        		}
 //        		else
 //        			{  //if (almost the same
@@ -527,7 +527,7 @@
 //                  	//	 	prm.setQuality(25f/100f, true);
 //                  	//	 	encoder.encode(oldimage, prm);
 //                  		 	ba=os.toByteArray();
-//                  		 	System.out.println(ba.length);
+//                  		 	S_logger.Log.logger.info("" + ba.length);
 //                  		 	rl=ba.length;
 //                  		 	rlb= new byte[4];
 //                  		 	rlb[0]= (byte)(rl&0xff);
@@ -536,7 +536,7 @@
 //                 	  	 	rlb[3]=(byte)(rl>>24&0xff);
 //                 	  	 	wr.write(rlb);
 //                 	  	 	wr.write(ba);
-//                 	  	 	System.out.println(i+"-------------------------------------------------------");
+//                 	  	 	S_logger.Log.logger.info("" + i+"-------------------------------------------------------");
 //        			   }
 //        			   else
 //        			   {
@@ -547,7 +547,7 @@
 //             	  	 	   rlb[2]= (byte)(rl>>16&0xff);
 //             	  	 	   rlb[3]= (byte)(rl>>24&0xff);
 //             	  	 	   wr.write(rlb);
-//             	  	 	   System.out.println(i+"-------------------------------------------------------");
+//             	  	 	   S_logger.Log.logger.info("" + i+"-------------------------------------------------------");
 //
 //        			   }
 //        			}
@@ -606,7 +606,7 @@
 //		 raf.close();
 //		 raf=null;
 //		 //add audio
-//		 System.out.println("end");
+//		 S_logger.Log.logger.info("" + "end");
 //        } catch (UnsupportedEncodingException e) {
 ////			e.printStackTrace();
 //		} catch (FileNotFoundException e) {

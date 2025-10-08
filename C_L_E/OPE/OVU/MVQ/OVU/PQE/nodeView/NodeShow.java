@@ -38,12 +38,12 @@ public class NodeShow extends NodeShow_X_S {
 		this._A = NE.app_S._A;
 		this.pos = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
 		link = new LinkOSGI();
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01");
 		first = new OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register(
 				this.tableData_old, this.text, NE).Rigester(first, link, NE);
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-02");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-02");
 		U_Tree();
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-03");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-03");
 	}
 
 	public void U_Tree() {

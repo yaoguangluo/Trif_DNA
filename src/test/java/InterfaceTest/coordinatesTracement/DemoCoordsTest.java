@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -61,11 +61,11 @@ public class DemoCoordsTest {
 		position2D5.I_Y(25);
 		input.add(position2D5);
 		//double v= FindPCAMeanDistance.findMeanDistanceFromPositions2D(input, 5, 4);
-		//System.out.println(v);
+		//S_logger.Log.logger.info("" + v);
 		double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D
 			._E(input, 3, 4);
 		for (int i = 0; i < v.length; i++) {
-			System.out.println(v[i]);
+			S_logger.Log.logger.info("" + v[i]);
 		}
 	}
 
@@ -73,7 +73,7 @@ public class DemoCoordsTest {
 		double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D
 			._E(inputs, 3, 4);
 		for (int i = 0; i < v.length; i++) {
-			System.out.println(v[i]);
+			S_logger.Log.logger.info("" + v[i]);
 		}
 	}
 }

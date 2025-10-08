@@ -40,7 +40,7 @@ public class Ft2DFilterView extends OSU_OVQ_OSQ_VSQ
 		     	 Dimension d= this.getSize();
 		          int w= 500;
 		          int h= 500;
-		         // System.out.println(d.width+"**"+d.height);
+		         // S_logger.Log.logger.info("" + d.width+"**"+d.height);
 		          int INFOPAD= 15;
 		          //Graphics g= getGraphics(); 
 		          Graphics2D g2= (Graphics2D) g;
@@ -56,7 +56,7 @@ public class Ft2DFilterView extends OSU_OVQ_OSQ_VSQ
 		                      /*
 		                      for(int i= 0; i < lygout.adataFrame.audiofft[0].length-1; i++) 
 		                      {
-		                	  //System.out.println(v.getX1()+"|"+v.getY1()+"|"+v.getX2()+"|"+v.getY2());
+		                	  //S_logger.Log.logger.info("" + v.getX1()+"|"+v.getY1()+"|"+v.getX2()+"|"+v.getY2());
 		                    	  int x0=(int)lygout.adataFrame.audiofft[0][i].getImaginary();
 		                    	  int y0=(int)lygout.adataFrame.audiofft[0][i].getReal();
 		                    	  int x1=(int)lygout.adataFrame.audiofft[0][i+1].getImaginary();

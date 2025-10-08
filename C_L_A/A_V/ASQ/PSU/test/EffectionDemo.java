@@ -16,28 +16,28 @@ public class EffectionDemo {
 	public static void main(String[] argv) {
         TimeCheck timeCheck = new TimeCheck();
         //titan sets
-        //20230106-System.out.println(1);
+        //20230106-S_logger.Log.logger.info("" + 1);
         IMV_SQI map = new IMV_SQI();
         for (int i = 0; i < 100000; i++) {
             map.put("" + i, S_Common.STRING_EMPTY + i);
         }
-        //20230106-System.out.println(2);
+        //20230106-S_logger.Log.logger.info("" + 2);
         //subset
         IMV_SQI map1 = new IMV_SQI();
         for (int i = 0; i < 30000; i++) {
             map1.put("" + i, S_Common.STRING_EMPTY + i);
         }
-        //20230106-System.out.println(3);
+        //20230106-S_logger.Log.logger.info("" + 3);
         IMV_SQI map2 = new IMV_SQI();
         for (int i = 0; i < 30000; i++) {
             map2.put("" + i, S_Common.STRING_EMPTY + i);
         }
-        //20230106-System.out.println(4);
+        //20230106-S_logger.Log.logger.info("" + 4);
         IMV_SQI map3 = new IMV_SQI();
         for (int i = 0; i < 30000; i++) {
             map3.put("" + i, S_Common.STRING_EMPTY + i);
         }
-        //20230106-System.out.println(7);
+        //20230106-S_logger.Log.logger.info("" + 7);
         //time check
         timeCheck.begin();
         function1(map);
@@ -78,12 +78,12 @@ public class EffectionDemo {
     }
 }
 //39
-//		//20230106-System.out.println(5);
+//		//20230106-S_logger.Log.logger.info("" + 5);
 //		Map<String, String> map4= new IMV_SQI();
 //		for(int i=0; i<20000; i++) {
 //			map4.put(""+i, S_Common.STRING_EMPTYi);
 //		}
-//		//20230106-System.out.println(6);
+//		//20230106-S_logger.Log.logger.info("" + 6);
 //		Map<String, String> map5= new IMV_SQI();
 //		for(int i=0; i<20000; i++) {
 //			map5.put(""+i, S_Common.STRING_EMPTYi);

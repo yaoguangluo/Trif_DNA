@@ -17,14 +17,14 @@ public class TimeCheck {
 
 	public void begin() {
 		System.out.flush();
-		System.out.println("start: " + (new Date()));
+		S_logger.Log.logger.info("" + "start: " + (new Date()));
 		before = System.currentTimeMillis();
 	}
 
 	public void end() {
 		now = System.currentTimeMillis();
 		System.out.flush();
-		System.out.println("time: " + duration() + " ms");
+		S_logger.Log.logger.info("" + "time: " + duration() + " ms");
 	}
 
 	public long duration() {

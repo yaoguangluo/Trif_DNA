@@ -71,7 +71,7 @@ public class Hear {
 			int frameSizeInBytes= format.getFrameSize();
 			int bufferLengthInFrames= line.getBufferSize()/(8);
 			int bufferLengthInBytes= bufferLengthInFrames* frameSizeInBytes;
-			//20230106-System.out.println("bufferLengthInBytes : "+ bufferLengthInBytes +" **");
+			//20230106-S_logger.Log.logger.info("" + "bufferLengthInBytes : "+ bufferLengthInBytes +" **");
 			int numBytesRead= 0;
 	//		byte[] data= new byte[bufferLengthInBytes];
 			byte[] data= new byte[2400];
@@ -98,7 +98,7 @@ public class Hear {
 			//print
 			//			DetaThread.sleepDeta(10);
 			//			SoundPlay soundPlay= new SoundPlay();
-			//			//20230106-System.out.println("speak");
+			//			//20230106-S_logger.Log.logger.info("" + "speak");
 			//			soundPlay.Play(audioInputStream);
 
 			//Configuration configuration= new Configuration();

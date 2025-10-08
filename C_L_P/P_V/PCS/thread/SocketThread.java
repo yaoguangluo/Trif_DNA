@@ -149,7 +149,7 @@ public class SocketThread extends Thread implements Runnable {
                 IMV_SQI output = new IMV_SQI();
                 output.put(URLEncoder.encode("sb", "UTF-8"), sb);
                 String outputString = VtoV.ObjectToJsonString(output);
-                //20230106-System.out.println();
+                //20230106-S_logger.Log.logger.info("" + "");
 
                 PrintWriter pw = new PrintWriter(new BufferedWriter(
                     new OutputStreamWriter(socket.getOutputStream()

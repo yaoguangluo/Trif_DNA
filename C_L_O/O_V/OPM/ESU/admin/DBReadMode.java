@@ -115,7 +115,7 @@ public class DBReadMode {
 		ObjectCombination.mapCombination(app.dic_index, map.get("中药名称"));
 		ObjectCombination.mapCombination(app.dic_yw, map.get("笔记原文"));
 		ObjectCombination.mapCombination(app.dic_li, map.get("功效"));
-		System.out.println("---------------");
+		S_logger.Log.logger.info("" + "---------------");
 		// 因为我不是学医的，所以坚决不碰医学资料。null空用原文笔记替代。稍后写常见匹配提取正则
 //        String object = app.dic_li.getString("功效");
 //        object=object.replace(".", "").replace("。", "");

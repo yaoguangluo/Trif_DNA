@@ -4,6 +4,7 @@ import ASQ.classification.fissile.Fissile_X_fissilePosition2D;
 import A_V.ASQ.PSU.test.TimeCheck;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
 import S_A.pheromone.IMV_SQI;
+import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -69,7 +70,7 @@ class EffectionDemoTest {
 			+ "的测试DEMO补充小目标26000+函数和1000+个功能DEMO扩大鲁棒性华瑞集测试插件的源码优化这个"
 			+ "项目罗瑶光主要是公开展示下自己的编码实力知道自己的真实斤两同时填补下软算DNA编码领域的国际"
 			+ "空白2018年10月就贴出了本人生活地址方便各类用户组织现场技术群挑";
-		System.out.println("文字长度->" + inputString.length());
+		S_logger.Log.logger.info("" + "文字长度->" + inputString.length());
 		// 计算
 		StringBuilder sb = new StringBuilder(inputString);
 		// 准备POS分词
@@ -81,15 +82,15 @@ class EffectionDemoTest {
 		sets = commonTestInition.NE.app_S._A.parserMixedString(sb);
 		t.end();
 		// 输出
-		System.out.println("分词词汇数->" + sets.size());
+		S_logger.Log.logger.info("" + "分词词汇数->" + sets.size());
 		// 将 list<wordString>进行增维 wordString[I][J];
 		double worldLengthDouble = (double) sets.size();
 		int worldLengthInt = sets.size();
 		// 可自由设置，用于滑组控件，保证有效观测。我采用正方体
 		int weight = (int) Math.sqrt(worldLengthDouble);
-		System.out.println("分词词汇增维宽度->" + weight);
+		S_logger.Log.logger.info("" + "分词词汇增维宽度->" + weight);
 		int height = 1 + worldLengthInt / weight;
-		System.out.println("分词词汇增维长度->" + height);
+		S_logger.Log.logger.info("" + "分词词汇增维长度->" + height);
 		String[][] wordString = new String[weight][height];
 		dataList1DSwapToString2D(sets, wordString);
 		// 1.3-输入
@@ -106,7 +107,7 @@ class EffectionDemoTest {
 						continue;
 					}
 					if (wordObjectPOS.toString().contains("名")) {
-						System.out.println("有效名词-" + wordString[i][j]
+						S_logger.Log.logger.info("" + "有效名词-" + wordString[i][j]
 							+ "-坐标-" + i + ":" + j);
 						AMV_MVS_VSQ_2D position2D = new AMV_MVS_VSQ_2D();
 						position2D.I_X(i);
@@ -120,7 +121,7 @@ class EffectionDemoTest {
 		// 处理fissile
 		int scale = weight / 3;
 		// 可根据 2D词汇的一行含量来进行精度设置，增加观测质量。我才用正方体除3的9等分。
-		System.out.println("精度->" + scale);
+		S_logger.Log.logger.info("" + "精度->" + scale);
 		Map<Double, List<AMV_MVS_VSQ_2D>> output = Fissile_X_fissilePosition2D
 			._E(inputNoun, scale);
 		// 颜色显示
@@ -128,21 +129,21 @@ class EffectionDemoTest {
 		Iterator<Double> iterator = output.keySet().iterator();
 		while (iterator.hasNext()) {
 			double temp = iterator.next();
-			System.out.println();
-			System.out.println("团->" + temp);
+			S_logger.Log.logger.info("" + "");
+			S_logger.Log.logger.info("" + "团->" + temp);
 			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp)
 				.iterator();
 			while (iterator1.hasNext()) {
 				AMV_MVS_VSQ_2D temp1 = iterator1.next();
 				String coord = (int) temp1.getX() + ":" + (int) temp1
 					.getY();
-				System.out.println(coord);
+				S_logger.Log.logger.info("" + coord);
 				colorCoords.put(coord, "" + (int) (99 - temp));
 			}
 		}
 		// 输出 , 可用转义颜色码但繁琐，我采用原生color 方便其他领域扩展跟进计算。
 		for (int i = 0; i < wordString.length; i++) {
-			System.out.println();
+			S_logger.Log.logger.info("" + "");
 			for (int j = 0; j < wordString[0].length; j++) {
 				String coord = i + ":" + j;
 				if (colorCoords.containsKey(coord)) {
@@ -153,7 +154,7 @@ class EffectionDemoTest {
 			}
 		}
 		// 结束
-		System.out.println();
+		S_logger.Log.logger.info("" + "");
 		// 关闭
 		commonTestInition.endEnvironment();
 	}

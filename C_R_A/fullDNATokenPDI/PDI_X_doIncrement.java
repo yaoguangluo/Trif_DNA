@@ -29,7 +29,7 @@ public class PDI_X_doIncrement {
         while (InitonPDE.hasPrev()) {
             InitonPDE = InitonPDE.prev;
         }
-        //20230106-System.out.println();
+        //20230106-S_logger.Log.logger.info("" + "");
         //20230106-System.out.print("A->");
         while (InitonPDE.hasNext()) {
             //20230106-System.out.print(InitonPDE.getStore());
@@ -51,7 +51,7 @@ public class PDI_X_doIncrement {
         while (InitonPDE.hasPrev()) {
             InitonPDE = InitonPDE.prev;
         }
-        //20230106-System.out.println();
+        //20230106-S_logger.Log.logger.info("" + "");
         //20230106-System.out.print("O->");
         while (InitonPDE.hasNext()) {
             //20230106-System.out.print(InitonPDE.getStore());
@@ -73,7 +73,7 @@ public class PDI_X_doIncrement {
         while (InitonPDE.hasPrev()) {
             InitonPDE = InitonPDE.prev;
         }
-        //20230106-System.out.println();
+        //20230106-S_logger.Log.logger.info("" + "");
         //20230106-System.out.print("P->");
         while (InitonPDE.hasNext()) {
             //20230106-System.out.print(InitonPDE.getStore());
@@ -95,7 +95,7 @@ public class PDI_X_doIncrement {
         while (InitonPDE.hasPrev()) {
             InitonPDE = InitonPDE.prev;
         }
-        //20230106-System.out.println();
+        //20230106-S_logger.Log.logger.info("" + "");
         //20230106-System.out.print("M->");
         while (InitonPDE.hasNext()) {
             //20230106-System.out.print(InitonPDE.getStore());
@@ -117,7 +117,7 @@ public class PDI_X_doIncrement {
         while (InitonPDE.hasPrev()) {
             InitonPDE = InitonPDE.prev;
         }
-        //20230106-System.out.println();
+        //20230106-S_logger.Log.logger.info("" + "");
         //20230106-System.out.print("V->");
         while (InitonPDE.hasNext()) {
             //20230106-System.out.print(InitonPDE.getStore());
@@ -139,7 +139,7 @@ public class PDI_X_doIncrement {
         while (InitonPDE.hasPrev()) {
             InitonPDE = InitonPDE.prev;
         }
-        //20230106-System.out.println();
+        //20230106-S_logger.Log.logger.info("" + "");
         //20230106-System.out.print("C->");
         while (InitonPDE.hasNext()) {
             //20230106-System.out.print(InitonPDE.getStore());
@@ -162,7 +162,7 @@ public class PDI_X_doIncrement {
         while (InitonPDE.hasPrev()) {
             InitonPDE = InitonPDE.prev;
         }
-        //20230106-System.out.println();
+        //20230106-S_logger.Log.logger.info("" + "");
         //20230106-System.out.print("E->");
         while (InitonPDE.hasNext()) {
             //20230106-System.out.print(InitonPDE.getStore());
@@ -185,7 +185,7 @@ public class PDI_X_doIncrement {
         while (InitonPDE.hasPrev()) {
             InitonPDE = InitonPDE.prev;
         }
-        //20230106-System.out.println();
+        //20230106-S_logger.Log.logger.info("" + "");
         //20230106-System.out.print("S->");
         while (InitonPDE.hasNext()) {
             //20230106-System.out.print(InitonPDE.getStore());

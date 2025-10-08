@@ -19,7 +19,7 @@ import S_logger.Log;
 public class AppInit_X_PageLoad extends AppInit_X_PageLoad_S {
 
 	public void IV_(App_S app, App NE) throws InterruptedException, IOException {
-		Log.logger.info("启动400编码调试开始-00000051");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000051");
 		// front later to hvpcs
 		bootDetaFrontEnd(NE);
 		// backend
@@ -55,7 +55,7 @@ public class AppInit_X_PageLoad extends AppInit_X_PageLoad_S {
 	}
 
 }
-//		System.out.println("启动400编码调试开始-00000061");
+//		S_logger.Log.logger.info("" + "启动400编码调试开始-00000061");
 //DetaThread.sleepDeta(300);
 //if (app.appConfig.vPCSRestPanel.tabNamesHook[16]) {
 //	if (app.appConfig.SectionJPanel.jTextPane != null) {

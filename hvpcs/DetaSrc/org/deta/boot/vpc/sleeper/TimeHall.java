@@ -41,7 +41,7 @@ public class TimeHall extends Thread implements Runnable {
 	public int getMaxLimist() {
 		maxLimist -= 1;
 		System.out.flush();
-		System.out.println(maxLimist);
+		S_logger.Log.logger.info("" + maxLimist);
 		return maxLimist;
 	}
 

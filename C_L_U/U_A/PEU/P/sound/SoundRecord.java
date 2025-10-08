@@ -64,11 +64,11 @@ public class SoundRecord  implements Runnable {
 		int frameSizeInBytes= format.getFrameSize();
 		int bufferLengthInFrames= line.getBufferSize() / 8;
 		int bufferLengthInBytes= bufferLengthInFrames * frameSizeInBytes;
-		//20230106-System.out.println("bufferLengthInBytes : " + bufferLengthInBytes +" **");
+		//20230106-S_logger.Log.logger.info("" + "bufferLengthInBytes : " + bufferLengthInBytes +" **");
 		byte[] data= new byte[bufferLengthInBytes];
 		int numBytesRead= 0;
 		line.start();
-		////20230106-System.out.println(line);
+		////20230106-S_logger.Log.logger.info("" + line);
 		while (thread != null) {
 			if((numBytesRead= line.read(data, 0, bufferLengthInBytes))== -1) {
 				break;

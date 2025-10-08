@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313620483@qq.com, 2080315360@qq.com,
@@ -90,7 +90,7 @@ class List_ESU_X_listToArrayTest {
 			// 输出
 			System.out.print(needKeySort[j] + "-->");
 			for (Object object : lists) {
-				System.out.println(needKeySort[j] + "-" + object
+				S_logger.Log.logger.info("" + needKeySort[j] + "-" + object
 					.toString());
 				outputArray[count][0] = needKeySort[j];
 				outputArray[count++][1] = object;

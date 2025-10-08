@@ -36,7 +36,7 @@ public class RegionGet {
 				n++;
 			}
 		}
-		//20230106-System.out.println(n);
+		//20230106-S_logger.Log.logger.info("" + n);
 		new_region=new int[n];
 		n=0;
 		for(int i= 0; i < 256; i++){
@@ -44,7 +44,7 @@ public class RegionGet {
 				new_region[n++]= i;
 			}
 		}
-		//20230106-System.out.println("value"+n);
+		//20230106-S_logger.Log.logger.info("" + "value"+n);
 		scale=new_region.length-1;
 		//return new_region;	  
 	}

@@ -45,7 +45,7 @@ public class PDI_X_ extends PDI_X_S {
         //0e  1s  2 humanword 3 seccode 4dna initons
         PDI_X_ pDE_RNA_FullFormular = new PDI_X_();
         pDE_RNA_FullFormular.code = pDE_RNA_FullFormular.initonSect(humanWord);
-        //20230106-System.out.println(pDE_RNA_FullFormular.code);
+        //20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormular.code);
         pDE_RNA_FullFormular.enSecCode(pDE_RNA_FullFormular, false);
         pDE_RNA_FullFormular.pdedeKey = pDE_RNA_FullFormular.pdeieKey;
         pDE_RNA_FullFormular.pdedsKey = pDE_RNA_FullFormular.pdeisKey;
@@ -57,7 +57,7 @@ public class PDI_X_ extends PDI_X_S {
         string[2] = humanWord;
         string[3] = pDE_RNA_FullFormular.code;
         string[4] = pDE_RNA_FullFormular.pde;
-        //20230106-System.out.println(pDE_RNA_FullFormular.pde);
+        //20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormular.pde);
         return string;
     }
 

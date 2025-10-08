@@ -43,7 +43,7 @@ public class HoughWavFilterOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ extends OSU_OVQ_OSQ_VSQ
 		     	 Dimension d= this.getSize();
 		          int w= 800;
 		          int h= 600;
-		         // System.out.println(d.width+"**"+d.height);
+		         // S_logger.Log.logger.info("" + d.width+"**"+d.height);
 		          int INFOPAD= 15;
 		          //Graphics g= getGraphics();  
 		          Graphics2D g2= (Graphics2D) g;
@@ -56,7 +56,7 @@ public class HoughWavFilterOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ extends OSU_OVQ_OSQ_VSQ
 		                  g2.setColor(Color.black);
 		                  for (int i= 1; i < lines.size(); i++) {
 		                	  Line2D v=(Line2D) lines.get(i);
-		                	  //System.out.println(v.getX1()+"|"+v.getY1()+"|"+v.getX2()+"|"+v.getY2());
+		                	  //S_logger.Log.logger.info("" + v.getX1()+"|"+v.getY1()+"|"+v.getX2()+"|"+v.getY2());
 		                      g2.draw((Line2D) lines.get(i));
 		                  }
 		              }

@@ -33,7 +33,7 @@ public class X_PdcToPde {
         pDE_RNA_Formular1.pdeieKey = ie;
         pDE_RNA_Formular1.pdeisKey = is;
         pDE_RNA_Formular.doKeyUnPress(tokenCerts.getPdnPassword(), pDE_RNA_Formular1, true);
-        //System.out.println("pde--3>"+ pDE_RNA_Formular1.pde);
+        //S_logger.Log.logger.info("" + "pde--3>"+ pDE_RNA_Formular1.pde);
         return pDE_RNA_Formular1.pde;
     }
 
@@ -52,7 +52,7 @@ public class X_PdcToPde {
 
         pDE_RNA_FullFormular.text = "控制吸收";
         pDE_RNA_FullFormular.pdw = pDE_RNA_FullFormular.initonSect(pDE_RNA_FullFormular.text);
-        System.out.println("原文: " + pDE_RNA_FullFormular.text);
+        S_logger.Log.logger.info("" + "原文: " + pDE_RNA_FullFormular.text);
         //pDE_RNA_FullFormular.pdw= "字典保密：MSIOCUOCIPCUPCI";
         String[] lock = new String[12];
         lock[0] = "A";
@@ -79,30 +79,30 @@ public class X_PdcToPde {
         for (i = 0; i < pDE_RNA_FullFormular.pdw.length(); i++) {
             pDE_RNA_FullFormular.code += pDE_RNA_FullFormular.lock + pDE_RNA_FullFormular.pdw.charAt(i);
         }
-        System.out.println("肽语: " + pDE_RNA_FullFormular.pdw);
-        System.out.println("肽锁: " + pDE_RNA_FullFormular.lock);
-        System.out.println("散列肽语:" + pDE_RNA_FullFormular.code);
+        S_logger.Log.logger.info("" + "肽语: " + pDE_RNA_FullFormular.pdw);
+        S_logger.Log.logger.info("" + "肽锁: " + pDE_RNA_FullFormular.lock);
+        S_logger.Log.logger.info("" + "散列肽语:" + pDE_RNA_FullFormular.code);
         pDE_RNA_FullFormular.bys = "0.6/0.3/0.5/0.632";
-        System.out.println("静态密钥: " + pDE_RNA_FullFormular.bys);
+        S_logger.Log.logger.info("" + "静态密钥: " + pDE_RNA_FullFormular.bys);
         pDE_RNA_FullFormular.doKeyPress(pDE_RNA_FullFormular.code, pDE_RNA_FullFormular, false);
-        System.out.println("静态肽展降元概率钥匙E: " + pDE_RNA_FullFormular.pdedeKey);
-        System.out.println("静态肽展降元概率钥匙S: " + pDE_RNA_FullFormular.pdedsKey);
-        System.out.println("静态肽展降元: " + pDE_RNA_FullFormular.pds);
+        S_logger.Log.logger.info("" + "静态肽展降元概率钥匙E: " + pDE_RNA_FullFormular.pdedeKey);
+        S_logger.Log.logger.info("" + "静态肽展降元概率钥匙S: " + pDE_RNA_FullFormular.pdedsKey);
+        S_logger.Log.logger.info("" + "静态肽展降元: " + pDE_RNA_FullFormular.pds);
 
-        System.out.println("静态肽展增元概率钥匙E: " + pDE_RNA_FullFormular.pdeieKey);
-        System.out.println("静态肽展增元概率钥匙S: " + pDE_RNA_FullFormular.pdeisKey);
-        System.out.println("静态肽展增元: " + pDE_RNA_FullFormular.pde);
+        S_logger.Log.logger.info("" + "静态肽展增元概率钥匙E: " + pDE_RNA_FullFormular.pdeieKey);
+        S_logger.Log.logger.info("" + "静态肽展增元概率钥匙S: " + pDE_RNA_FullFormular.pdeisKey);
+        S_logger.Log.logger.info("" + "静态肽展增元: " + pDE_RNA_FullFormular.pde);
 
         pDE_RNA_FullFormular.time = "" + System.currentTimeMillis();
         pDE_RNA_FullFormular.cacheId = "ID" + Math.random() + ":" + Math.random();
-        System.out.println("时间:  " + pDE_RNA_FullFormular.time);
-        System.out.println("账号随机缓存字符串:  " + pDE_RNA_FullFormular.cacheId);
+        S_logger.Log.logger.info("" + "时间:  " + pDE_RNA_FullFormular.time);
+        S_logger.Log.logger.info("" + "账号随机缓存字符串:  " + pDE_RNA_FullFormular.cacheId);
         pDE_RNA_FullFormular.session_key = pDE_RNA_FullFormular.pde;
-        System.out.println("Session: " + pDE_RNA_FullFormular.session_key);
-        System.out.println("=============================================================================");
-        System.out.println("开始前序验证：");
-        System.out.println("开始Session解析： " + pDE_RNA_FullFormular.session_key);
-        System.out.println("开始概率钥匙解析：" + pDE_RNA_FullFormular.pdedeKey + pDE_RNA_FullFormular.pdedsKey
+        S_logger.Log.logger.info("" + "Session: " + pDE_RNA_FullFormular.session_key);
+        S_logger.Log.logger.info("" + "=============================================================================");
+        S_logger.Log.logger.info("" + "开始前序验证：");
+        S_logger.Log.logger.info("" + "开始Session解析： " + pDE_RNA_FullFormular.session_key);
+        S_logger.Log.logger.info("" + "开始概率钥匙解析：" + pDE_RNA_FullFormular.pdedeKey + pDE_RNA_FullFormular.pdedsKey
             + pDE_RNA_FullFormular.pdeieKey + pDE_RNA_FullFormular.pdeisKey);
 
         FullDNATokenPDI pDE_RNA_FullFormular1 = new FullDNATokenPDI();
@@ -112,32 +112,32 @@ public class X_PdcToPde {
         pDE_RNA_FullFormular1.pdeisKey = pDE_RNA_FullFormular.pdeisKey;
 
         pDE_RNA_FullFormular.doKeyUnPress(pDE_RNA_FullFormular.code, pDE_RNA_FullFormular1, true);
-        System.out.println();
-        System.out.println("得到原降元元基DNA序列：" + pDE_RNA_FullFormular.pds);
-        System.out.println("得到新降元元基DNA序列：" + pDE_RNA_FullFormular1.pds);
-        System.out.println("得到原元基DNA序列：" + pDE_RNA_FullFormular.pde);
-        System.out.println("得到新元基DNA序列：" + pDE_RNA_FullFormular1.pde);
-        System.out.println("验证正确？");
-        System.out.println(pDE_RNA_FullFormular.pde.equals(pDE_RNA_FullFormular1.pde) ? "正确" : "失败");
-        System.out.println("=======================================================================");
-        System.out.println("开始pde降元验证：");
+        S_logger.Log.logger.info("" + "");
+        S_logger.Log.logger.info("" + "得到原降元元基DNA序列：" + pDE_RNA_FullFormular.pds);
+        S_logger.Log.logger.info("" + "得到新降元元基DNA序列：" + pDE_RNA_FullFormular1.pds);
+        S_logger.Log.logger.info("" + "得到原元基DNA序列：" + pDE_RNA_FullFormular.pde);
+        S_logger.Log.logger.info("" + "得到新元基DNA序列：" + pDE_RNA_FullFormular1.pde);
+        S_logger.Log.logger.info("" + "验证正确？");
+        S_logger.Log.logger.info(pDE_RNA_FullFormular.pde.equals(pDE_RNA_FullFormular1.pde) ? "正确" : "失败");
+        S_logger.Log.logger.info("" + "=======================================================================");
+        S_logger.Log.logger.info("" + "开始pde降元验证：");
         FullDNATokenPDI pDE_RNA_FullFormular2 = new FullDNATokenPDI();
         pDE_RNA_FullFormular2.pdeieKey = pDE_RNA_FullFormular.pdeieKey;
         pDE_RNA_FullFormular2.pdeisKey = pDE_RNA_FullFormular.pdeisKey;
         pDE_RNA_FullFormular2.pdedeKey = pDE_RNA_FullFormular.pdeieKey;
         pDE_RNA_FullFormular2.pdedsKey = pDE_RNA_FullFormular.pdeisKey;
-        System.out.println("准备计算元基DNA序列：" + pDE_RNA_FullFormular1.pde);
+        S_logger.Log.logger.info("" + "准备计算元基DNA序列：" + pDE_RNA_FullFormular1.pde);
         String pds = X_PdeToPds.PdeToPds(pDE_RNA_FullFormular1.pde, pDE_RNA_FullFormular2.pdedeKey
             , pDE_RNA_FullFormular2.pdedsKey
             , pDE_RNA_FullFormular2.pdeieKey
             , pDE_RNA_FullFormular2.pdeisKey);
-        System.out.println("pds");
-        System.out.println("pds");
-        System.out.println(pDE_RNA_FullFormular1.pds);
-        System.out.println(pds);
+        S_logger.Log.logger.info("" + "pds");
+        S_logger.Log.logger.info("" + "pds");
+        S_logger.Log.logger.info("" + pDE_RNA_FullFormular1.pds);
+        S_logger.Log.logger.info("" + pds);
 
 
-        System.out.println("开始pds增元验证：");
+        S_logger.Log.logger.info("" + "开始pds增元验证：");
         FullDNATokenPDI pDE_RNA_FullFormular3 = new FullDNATokenPDI();
         pDE_RNA_FullFormular3.pdeieKey = pDE_RNA_FullFormular.pdeieKey;
         pDE_RNA_FullFormular3.pdeisKey = pDE_RNA_FullFormular.pdeisKey;
@@ -148,9 +148,9 @@ public class X_PdcToPde {
             , pDE_RNA_FullFormular3.pdedsKey
             , pDE_RNA_FullFormular3.pdeieKey
             , pDE_RNA_FullFormular3.pdeisKey);
-        System.out.println("pde");
-        System.out.println("pde");
-        System.out.println(pDE_RNA_FullFormular1.pde);
-        System.out.println(pde);
+        S_logger.Log.logger.info("" + "pde");
+        S_logger.Log.logger.info("" + "pde");
+        S_logger.Log.logger.info("" + pDE_RNA_FullFormular1.pde);
+        S_logger.Log.logger.info("" + pde);
     }
 }

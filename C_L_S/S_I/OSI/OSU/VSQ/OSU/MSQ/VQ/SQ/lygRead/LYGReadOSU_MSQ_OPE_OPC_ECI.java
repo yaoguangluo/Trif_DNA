@@ -16,6 +16,6 @@ public class LYGReadOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
 		//IO.lygRead("C:\\Users\\yaoguang\\Desktop\\study\\sound\\newluo.lyg");
 		toplygin.IV_();
 	    _SQ__OVQ_OSQ_VSQ.lygout=toplygin;
-	    //20230106-System.out.println("run end");
+	    //20230106-S_logger.Log.logger.info("" + "run end");
 	}
 }

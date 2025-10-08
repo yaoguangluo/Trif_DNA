@@ -178,7 +178,7 @@ import DetaSrc.org.deta.boot.sets.VPCSResponse;
 //
 
 
-//		System.out.flush();System.out.println("form-->"+ message);
+//		System.out.flush();S_logger.Log.logger.info("" + "form-->"+ message);
 //		String[] byteStrings= message.split("Content-Type: image/jpeg");
 //		if(byteStrings.length< 2) {
 //			byteStrings= message.split("Content-Type: image/png");
@@ -188,7 +188,7 @@ import DetaSrc.org.deta.boot.sets.VPCSResponse;
 //		}
 //		String byteString= byteStrings[1];
 //		byte[] stringBytes= byteString.getBytes();
-//		System.out.flush();System.out.println("data-->"+ new String(stringBytes));
+//		System.out.flush();S_logger.Log.logger.info("" + "data-->"+ new String(stringBytes));
 //		fileOutputStream.write(stringBytes, 0, stringBytes.length);
 //		
 //		while((len= inputStream.read(bytes))> 0) {
@@ -197,12 +197,12 @@ import DetaSrc.org.deta.boot.sets.VPCSResponse;
 //			if(byteBoundarys.length> 1) {
 //				String byteBoundary= byteBoundarys[0];
 //				byte[] boundaryBytes= byteBoundary.getBytes();
-//				System.out.flush();System.out.println("data-->"+ new String(boundaryBytes));
+//				System.out.flush();S_logger.Log.logger.info("" + "data-->"+ new String(boundaryBytes));
 //				fileOutputStream.write(boundaryBytes, 0, boundaryBytes.length);
 //				fileOutputStream.close();
 //				return;
 //			}
-//			System.out.flush();System.out.println("data-->"+ message);
+//			System.out.flush();S_logger.Log.logger.info("" + "data-->"+ message);
 //			fileOutputStream.write(bytes, 0, len);
 //		}
 //	}	

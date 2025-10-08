@@ -124,7 +124,7 @@ public class AppInit_XCDX_engine {
 			text = "\r\n" + "..." + text;
 			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
 		}
-		Log.logger.info("启动400编码调试开始-00000030");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000030");
 		DetaThread.sleepDeta(2000);// 分词初始
 		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
 			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();

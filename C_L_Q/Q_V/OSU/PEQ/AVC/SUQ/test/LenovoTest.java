@@ -26,7 +26,7 @@ public class LenovoTest {
             .getEnvironmentInit().getEmotionSampleMap();
         IMV_SQI lenovo = NE.app_S.lenovoInit.getSensingMap().getLenovoMap();
         //reduce
-        //20230106-System.out.println("环    境：");
+        //20230106-S_logger.Log.logger.info("" + "环    境：");
         Iterator<String> Iterator = environmentSampleMap.keySet().iterator();
         while (Iterator.hasNext()) {
             String word = Iterator.next();
@@ -39,8 +39,8 @@ public class LenovoTest {
                 }
             }
         }
-        //20230106-System.out.println("");
-        //20230106-System.out.println("动机联想：");
+        //20230106-S_logger.Log.logger.info("" + "");
+        //20230106-S_logger.Log.logger.info("" + "动机联想：");
         Iterator = environmentSampleMap.keySet().iterator();
         while (Iterator.hasNext()) {
             String word = Iterator.next();
@@ -53,8 +53,8 @@ public class LenovoTest {
                 }
             }
         }
-        //20230106-System.out.println("");
-        //20230106-System.out.println("倾向探索：" );
+        //20230106-S_logger.Log.logger.info("" + "");
+        //20230106-S_logger.Log.logger.info("" + "倾向探索：" );
         Iterator = environmentSampleMap.keySet().iterator();
         while (Iterator.hasNext()) {
             String word = Iterator.next();
@@ -69,8 +69,8 @@ public class LenovoTest {
         }
 
         //reduce
-        //20230106-System.out.println("");
-        //20230106-System.out.println("决策挖掘：");
+        //20230106-S_logger.Log.logger.info("" + "");
+        //20230106-S_logger.Log.logger.info("" + "决策挖掘：");
         Iterator = environmentSampleMap.keySet().iterator();
         while (Iterator.hasNext()) {
             String word = Iterator.next();

@@ -418,7 +418,7 @@ public class StaticFunctionMapQ_VECS_E extends StaticFunctionMapCASE
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();
 			for (int i = 0; i < object.length; i++) {
-				System.out.println(object[i].toString());
+				S_logger.Log.logger.info("" + object[i].toString());
 			}
 		}
 		searchkey._S_ = "罗瑶";
@@ -435,7 +435,7 @@ public class StaticFunctionMapQ_VECS_E extends StaticFunctionMapCASE
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();
 			for (int i = 0; i < object.length; i++) {
-				System.out.println(object[i].toString());
+				S_logger.Log.logger.info("" + object[i].toString());
 			}
 		}
 
@@ -451,7 +451,7 @@ public class StaticFunctionMapQ_VECS_E extends StaticFunctionMapCASE
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();
 			for (int i = 0; i < object.length; i++) {
-				System.out.println(object[i].toString());
+				S_logger.Log.logger.info("" + object[i].toString());
 			}
 		}
 	}

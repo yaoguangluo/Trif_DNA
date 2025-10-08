@@ -6,7 +6,7 @@ import U_A.PEU.P.table.TableSorterZYNK;
 import U_V.OEU.xqpx.wcms.sort.LYG10D13D_X_CAS;
 import V_A.SQ.ReadPinYinBihua;
 import test.java.interfaces.test.CommonTestInition;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -35,7 +35,7 @@ public class FindAllProjectFiles {
 		TableSorterZYNK tableSorterZYNK = new TableSorterZYNK(
 			commonTestInition.NE);
 		//
-		System.out.println("---------初始注册函数SMI");
+		S_logger.Log.logger.info("" + "---------初始注册函数SMI");
 		commonTestInition.NE.app_S.studyVerbalMap.init_SMV(
 			commonTestInition.NE);
 		Iterator<String> iterators = commonTestInition.NE.app_S.studyVerbalMap._SMI
@@ -45,10 +45,10 @@ public class FindAllProjectFiles {
 		int i = 0;
 		while (iterators.hasNext()) {
 			String temp = iterators.next();
-			System.out.println(temp);
+			S_logger.Log.logger.info("" + temp);
 			_SMI_[i++] = temp;
 		}
-		System.out.println("---------初始注册函数SMV");
+		S_logger.Log.logger.info("" + "---------初始注册函数SMV");
 		iterators = commonTestInition.NE.app_S.studyVerbalMap._SMV
 			.keySet().iterator();
 		String[] _SMV_ = new String[commonTestInition.NE.app_S.studyVerbalMap._SMV
@@ -56,11 +56,11 @@ public class FindAllProjectFiles {
 		i = 0;
 		while (iterators.hasNext()) {
 			String temp = iterators.next();
-			System.out.println(temp);
+			S_logger.Log.logger.info("" + temp);
 			_SMV_[i++] = temp;
 		}
 
-		System.out.println("---------初始注册函数SMQ");
+		S_logger.Log.logger.info("" + "---------初始注册函数SMQ");
 		iterators = commonTestInition.NE.app_S.studyVerbalMap._SMQ
 			.keySet().iterator();
 		String[] _SMQ_ = new String[commonTestInition.NE.app_S.studyVerbalMap._SMQ
@@ -68,7 +68,7 @@ public class FindAllProjectFiles {
 		i = 0;
 		while (iterators.hasNext()) {
 			String temp = iterators.next();
-			System.out.println(temp);
+			S_logger.Log.logger.info("" + temp);
 			_SMQ_[i++] = temp;
 		}
 		// sort list
@@ -78,7 +78,7 @@ public class FindAllProjectFiles {
 		//						0, 9, 30, ReadPinYinBihua.pinYin, ReadPinYinBihua.biHua,
 		//						7, 70);
 		//		for (String string : _SMI_) {
-		//			System.out.println(string);
+		//			S_logger.Log.logger.info("" + string);
 		//		}
 
 		//		int returnInt = new LYG10D13D_X_CAS()
@@ -86,7 +86,7 @@ public class FindAllProjectFiles {
 		//						0, 9, 30, ReadPinYinBihua.pinYin, ReadPinYinBihua.biHua,
 		//						7, 70);
 		//		for (String string : _SMV_) {
-		//			System.out.println(string);
+		//			S_logger.Log.logger.info("" + string);
 		//		}
 		/*
 		 * 拼音词库表中 161行 x->x 去掉，不然会导致ascii检索比较问题 影响排序输出。
@@ -102,9 +102,9 @@ public class FindAllProjectFiles {
 			.quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(
 				strings, 0, strings.length - 1, 40,
 				ReadPinYinBihua.pinYin, ReadPinYinBihua.biHua, 7, 70);
-		System.out.println("---------输出注册函数SMQ");
+		S_logger.Log.logger.info("" + "---------输出注册函数SMQ");
 		for (String string : strings) {
-			System.out.println(string);
+			S_logger.Log.logger.info("" + string);
 		}
 		//		
 		//		// 1 java获取指定类的变量列表
@@ -112,8 +112,8 @@ public class FindAllProjectFiles {
 		//		Method[] method = commonTestInition.NE.app_S.getClass()
 		//				.getDeclaredMethods();
 		//		for (Method m : method) {
-		//			System.out.println("-->" + m.getName());
-		//			System.out.println("-->" + m.getAnnotations());
+		//			S_logger.Log.logger.info("" + "-->" + m.getName());
+		//			S_logger.Log.logger.info("" + "-->" + m.getAnnotations());
 		//		}
 		//		// 2 java获取工程的函数名列表
 		//

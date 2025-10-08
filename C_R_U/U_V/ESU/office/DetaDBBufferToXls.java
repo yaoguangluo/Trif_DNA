@@ -46,7 +46,7 @@ public class DetaDBBufferToXls {
         String tableName = "Sheet1";
         boolean finished = new DetaDBBufferToXls().detaDBBufferToXlsWithTableName(db
             , outputXlsFilePath, baseName, tableName);
-        System.out.println(finished);
+        S_logger.Log.logger.info("" + finished);
     }
 
     //shaohou youhua luoyaoguang

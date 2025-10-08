@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -64,8 +64,8 @@ class Map_ESU_X_mapToListTest {
 		for (int j = 0; j < needKeySort.length; j++) {
 			Object object = input.get(needKeySort[j]);
 			//输出
-			System.out.println(needKeySort[j]);
-			System.out.println(object.toString());
+			S_logger.Log.logger.info("" + needKeySort[j]);
+			S_logger.Log.logger.info("" + object.toString());
 			//变换
 			outputList.add(object);
 			//其他格式扩展

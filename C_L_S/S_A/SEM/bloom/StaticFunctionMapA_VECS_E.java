@@ -196,7 +196,7 @@ public class StaticFunctionMapA_VECS_E extends StaticFunctionMapCASE
 		//                        , quick6DLuoYaoguangSort3DMap_E);
 		//        Iterator<String> iteraor = list.iterator();
 		//        while (iteraor.hasNext()) {
-		//            //20230106-System.out.println(iteraor.next());
+		//            //20230106-S_logger.Log.logger.info("" + iteraor.next());
 		//        }
 		//
 		//        list = new StaticFunctionMapA_VECS_E()
@@ -207,7 +207,7 @@ public class StaticFunctionMapA_VECS_E extends StaticFunctionMapCASE
 		//                        , quick6DLuoYaoguangSort3DMap_E);
 		//        iteraor = list.iterator();
 		//        while (iteraor.hasNext()) {
-		//            //20230106-System.out.println(iteraor.next());
+		//            //20230106-S_logger.Log.logger.info("" + iteraor.next());
 		//        }
 		//
 		//        list = new StaticFunctionMapA_VECS_E()
@@ -218,14 +218,14 @@ public class StaticFunctionMapA_VECS_E extends StaticFunctionMapCASE
 		//                        , quick6DLuoYaoguangSort3DMap_E);
 		//        iteraor = list.iterator();
 		//        while (iteraor.hasNext()) {
-		//            //20230106-System.out.println(iteraor.next());
+		//            //20230106-S_logger.Log.logger.info("" + iteraor.next());
 		//        }
 		//		IMV_SQI map= new StaticFunctionMapA_VECS_E()
 		//		.lenovoReader("C AOPM组, 以后并出去 ");
 		//		iteraor= map.keySet().iterator();
 		//		while(iteraor.hasNext()) {
 		//			//IMV_SQI hash= (IMV_SQI)iteraor.next();
-		//			//20230106-System.out.println(iteraor.next());
+		//			//20230106-S_logger.Log.logger.info("" + iteraor.next());
 		//		}
 
 		//		Map<String, EmotionSample> map= new StaticFunctionMapA_VECS_E()
@@ -233,7 +233,7 @@ public class StaticFunctionMapA_VECS_E extends StaticFunctionMapCASE
 		//		iteraor= map.keySet().iterator();
 		//		while(iteraor.hasNext()) {
 		//			EmotionSample hash= map.get(iteraor.next());
-		//			////20230106-System.out.println(hash);
+		//			////20230106-S_logger.Log.logger.info("" + hash);
 		//		}
 	}
 }

@@ -69,7 +69,7 @@ public class Coding_ESU {
         File nameTofile = new File(stringPath.replace(target, ""));
         if (nameTofile.exists()) {
             nameTofile.delete();
-            //20230106-System.out.println("deleted:"+ string);
+            //20230106-S_logger.Log.logger.info("" + "deleted:"+ string);
         }
         DetaThread.sleepDeta(2);
         if (!nameTofile.exists()) {
@@ -81,7 +81,7 @@ public class Coding_ESU {
     private void doCodingSwapAddTail(File file, String decoding, String encoding
             , String fileTail, String target, String targetType) {
         String string = file.getAbsolutePath();
-        //20230106-System.out.println(string);
+        //20230106-S_logger.Log.logger.info("" + string);
         if (!string.contains(fileTail)) {
             return;
         }

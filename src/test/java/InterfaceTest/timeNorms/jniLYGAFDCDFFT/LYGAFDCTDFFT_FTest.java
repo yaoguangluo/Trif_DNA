@@ -4,6 +4,8 @@ import jniLYGAFDCDFFT.LYGAFDCTDFFT_F;
 
 import org.junit.jupiter.api.Test;
 
+import S_logger.Log;
+
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -29,7 +31,7 @@ class LYGAFDCTDFFT_FTest {
 	 */
 	@Test
 	void all() {
-		System.out.println("罗瑶光时微分 时叠积 函数 在 主流滤波中 的 观测和优化 内积噪"
+		S_logger.Log.logger.info("" + "罗瑶光时微分 时叠积 函数 在 主流滤波中 的 观测和优化 内积噪"
 			+ " 方式 真实应用方式");
 		// 罗瑶光个人著作权文件 时量子解析公式
 		// |tero(x)>+|tcol(x)> = (deta[t0-t1]/deta1(t0-t1)) * (m/p)= 1;
@@ -72,42 +74,42 @@ class LYGAFDCTDFFT_FTest {
 			out, 4);
 		// trif later
 		// 输出
-		System.out.println("--input");
+		S_logger.Log.logger.info("" + "--input");
 		for (int i = 0; i < 32; i++) {
 			System.out.print("--" + input[i]);
 		}
-		System.out.println("--");
-		System.out.println("--虚构空间变换");
+		S_logger.Log.logger.info("" + "--");
+		S_logger.Log.logger.info("" + "--虚构空间变换");
 		for (int i = 0; i < 32; i++) {
 			System.out.print("--" + fit[i]);
 		}
-		System.out.println("--");
-		System.out.println("--虚构时能");
+		S_logger.Log.logger.info("" + "--");
+		S_logger.Log.logger.info("" + "--虚构时能");
 		for (int i = 0; i < 32; i++) {
 			System.out.print("--" + ffn[i]);
 		}
-		System.out.println("--");
-		System.out.println("--虚度时能");
+		S_logger.Log.logger.info("" + "--");
+		S_logger.Log.logger.info("" + "--虚度时能");
 		for (int i = 0; i < 32; i++) {
 			System.out.print("--" + flt[i]);
 		}
-		System.out.println("--");
-		System.out.println("--薛定谔虚度漂移");
+		S_logger.Log.logger.info("" + "--");
+		S_logger.Log.logger.info("" + "--薛定谔虚度漂移");
 		for (int i = 0; i < 32; i++) {
 			System.out.print("--" + fxet[i]);
 		}
-		System.out.println("--");
-		System.out.println("--时函数");
+		S_logger.Log.logger.info("" + "--");
+		S_logger.Log.logger.info("" + "--时函数");
 		for (int i = 0; i < 32; i++) {
 			System.out.print("--" + ffl[i]);
 		}
-		System.out.println("--");
-		System.out.println("--时函数 虚度分解A");
+		S_logger.Log.logger.info("" + "--");
+		S_logger.Log.logger.info("" + "--时函数 虚度分解A");
 		for (int i = 0; i < 32; i++) {
 			System.out.print("--" + fflA[i]);
 		}
-		System.out.println("--");
-		System.out.println("--时函数 虚度分解BI");
+		S_logger.Log.logger.info("" + "--");
+		S_logger.Log.logger.info("" + "--时函数 虚度分解BI");
 		for (int i = 0; i < 32; i++) {
 			System.out.print("--" + fflBI[i]);
 		}

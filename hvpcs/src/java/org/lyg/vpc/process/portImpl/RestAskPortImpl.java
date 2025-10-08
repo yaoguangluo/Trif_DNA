@@ -381,7 +381,7 @@ public class RestAskPortImpl {// implements RestAskPort {
 			throws UnsupportedEncodingException, IOException {
 		// �����֤�����������
 		System.out.flush();
-		System.out.println("huaruiji->" + token + email);
+		S_logger.Log.logger.info("" + "huaruiji->" + token + email);
 		String object = DetaDBUtil.DBRequest("dataYL?medicine="
 				+ URLEncoder.encode(string, "UTF-8") + "&token="
 				+ URLEncoder.encode(

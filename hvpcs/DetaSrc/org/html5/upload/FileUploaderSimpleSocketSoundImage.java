@@ -98,7 +98,7 @@ import src.java.org.lyg.common.maps.VtoV;
 		}
 		// ׼����2���¡�
 		// 1 email token ��֤�۵�
-		// System.out.flush();System.out.println(email+ token);
+		// System.out.flush();S_logger.Log.logger.info("" + email+ token);
 		// 2 bytesNext �� stringInputNext
 		// �����Ƿ���image��boundary����ʼ�������
 		// ��������һ�����⣬����û�е�½�͵������ӿڣ���ô������ڵ�һ��bytes��������next��
@@ -191,7 +191,7 @@ import src.java.org.lyg.common.maps.VtoV;
 			// �ļ��ü�
 			File F = new File(outPath + fileName);
 			System.out.flush();
-			System.out.println(F.length());
+			S_logger.Log.logger.info("" + F.length());
 			AudioInputStream ais = AudioSystem.getAudioInputStream(F);
 			LYGFileIO IO = new LYGFileIO();
 			IO.reset();
@@ -291,7 +291,7 @@ import src.java.org.lyg.common.maps.VtoV;
 			// �ļ�����
 			// ���� ������
 			System.out.flush();
-			System.out.println("success rgb");
+			S_logger.Log.logger.info("" + "success rgb");
 			// ���
 			Map<String, Object> outputMap = new HashMap<>();
 			String string = "success write";
@@ -305,7 +305,7 @@ import src.java.org.lyg.common.maps.VtoV;
 			outputMap.put("zt", URLEncoder.encode(string, "UTF-8"));
 			outputMap.put("tempAddr", URLEncoder.encode(imageName, "UTF-8"));
 			System.out.flush();
-			System.out.println("success noise");
+			S_logger.Log.logger.info("" + "success noise");
 			String output = VtoV.ObjectToJsonString(outputMap);
 			vPCSResponse.printWriter = null;
 			try {
@@ -316,11 +316,11 @@ import src.java.org.lyg.common.maps.VtoV;
 						true);
 			} catch (Exception e) {
 				System.out.flush();
-				System.out.println();
+				S_logger.Log.logger.info("" + "");
 			}
 			if (output.length() > 0) {
 				System.out.flush();
-				System.out.println("success YLJ");
+				S_logger.Log.logger.info("" + "success YLJ");
 				vPCSResponse.printWriter.println("HTTP/1.1 200 OK\n\n");
 				output = output.charAt(0) == '"'
 						? output.substring(1, output.length())
@@ -337,7 +337,7 @@ import src.java.org.lyg.common.maps.VtoV;
 						.removeThreadById(vPCSResponse.getSocket().hashCode());
 				Thread.sleep(15);
 				System.out.flush();
-				System.out.println("success all");
+				S_logger.Log.logger.info("" + "success all");
 			} else {
 				System.out.flush();
 				System.out.print(vPCSRequest.getRequestLink());

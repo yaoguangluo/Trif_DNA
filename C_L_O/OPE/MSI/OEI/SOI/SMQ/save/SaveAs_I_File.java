@@ -44,7 +44,7 @@ public class SaveAs_I_File {
         String passwordString = String_ESU_X_charsetSwap._E(token.getmPassword()
             , "UTF8", "UTF8");
         String passwordEncoder = String_ESU_X_stringToURIencode._E(passwordString, "UTF8");
-        ////20230106-System.out.println("pds--1>"+ tokenCerts.getPds());
+        ////20230106-S_logger.Log.logger.info("" + "pds--1>"+ tokenCerts.getPds());
         String passwordPDE = passwordEncoder.toString();//稍后把这里封装成line写行的函数, 做成循环
         String passwordPDS = token.getmPasswordPDS().toString();
         String lock = tokenCerts.getPdnLock();
@@ -81,14 +81,14 @@ public class SaveAs_I_File {
         filedialog.setFilenameFilter(new TXTFilter(S_Annotation.FILE_FORMAT_ETL));
         filedialog.setVisible(true);
         String fileSavepath = filedialog.getDirectory() + filedialog.getFile();
-        System.out.println(fileSavepath);
+        S_logger.Log.logger.info("" + fileSavepath);
         if (new File(fileSavepath).isFile()
             && fileSavepath.contains(S_Annotation.FILE_FORMAT_ETL)) {
-            System.out.println(S_Annotation.DOC_EXIST);
+            S_logger.Log.logger.info("" + S_Annotation.DOC_EXIST);
             return;
         }
         fileSavepath = fileSavepath + S_Annotation.FILE_FORMAT_ETL;
-        System.out.println(fileSavepath);
+        S_logger.Log.logger.info("" + fileSavepath);
         //create file and save
         try {
             //SessionValidation sessionValidation= new SessionValidation();

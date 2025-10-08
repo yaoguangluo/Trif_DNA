@@ -113,7 +113,7 @@ public class Demo extends Thread{
 	@SuppressWarnings("unused")
 	private static void print(int[] a) {
 		for(int i=0;i<a.length;i++){
-			//20230106-System.out.println(a[i]);
+			//20230106-S_logger.Log.logger.info("" + a[i]);
 		}
 	}
 
@@ -121,7 +121,7 @@ public class Demo extends Thread{
 		int[] array=new int[100000000];
 		for(int i=0;i<100000000;i++){
 			array[i]=(int)(Math.random()*10000000);
-			////20230106-System.out.println(array[i]);
+			////20230106-S_logger.Log.logger.info("" + array[i]);
 		}
 //		array[0]=1;
 //		array[1]=3;

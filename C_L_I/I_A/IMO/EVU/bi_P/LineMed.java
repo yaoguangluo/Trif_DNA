@@ -196,7 +196,7 @@ public class LineMed extends JPanel implements GLEventListener {
         gl.glClearColor(0f, 0f, 0f, 0f);  // The Type Of Depth Testing To Do
         gl.glHint(gl.GL_PERSPECTIVE_CORRECTION_HINT, gl.GL_NICEST);
 
-        //20230106-System.out.println("error");
+        //20230106-S_logger.Log.logger.info("" + "error");
         array = arrayInit();
     }
 

@@ -49,7 +49,7 @@ public class AppInit_XCDX_frame {
 		NE.app_S.size_font_slider.setValue(0);
 		NE.app_S.size_font_slider.addChangeListener(event -> {
 		});
-		Log.logger.info("启动400编码调试开始-00000039");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000039");
 		NE.app_S.size_font_slider.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
@@ -96,7 +96,7 @@ public class AppInit_XCDX_frame {
 			NE.app_S.leafrot = source.getValue();
 			NE.keyReleased(null);
 		});
-		Log.logger.info("启动400编码调试开始-00000041");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000041");
 		NE.app_S.leaf.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
@@ -138,7 +138,7 @@ public class AppInit_XCDX_frame {
 			NE.app_S.read_speed_rot = source.getValue();
 			NE.keyReleased(null);
 		});
-		Log.logger.info("启动400编码调试开始-00000044");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000044");
 		NE.app_S.read_speed_slider.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
@@ -176,7 +176,7 @@ public class AppInit_XCDX_frame {
 			JSlider source = (JSlider) event.getSource();
 			NE.app_S.lookrot = source.getValue();
 		});
-		Log.logger.info("启动400编码调试开始-00000035");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000035");
 		NE.app_S.look.addMouseListener(new MouseListener() {// later.. do
 			@SuppressWarnings({ "serial", "deprecation" })
 			@Override
@@ -221,7 +221,7 @@ public class AppInit_XCDX_frame {
 		NE.app_S.rate.setValue(0);
 		NE.app_S.rate.addChangeListener(event -> {
 		});
-		Log.logger.info("启动400编码调试开始-00000037");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000037");
 		NE.app_S.rate.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {

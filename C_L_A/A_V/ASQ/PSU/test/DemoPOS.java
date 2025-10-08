@@ -112,7 +112,7 @@ public class DemoPOS {
 		ss1[35]= "版权 归属 ????? ????? 回应";
 		ss1[36]= " ????? 用户 发现";
 		for (int i= 0; i < ss.length; i++) {
-			//20230106-System.out.println("超级变?复杂病?????-->" + ss[i]);
+			//20230106-S_logger.Log.logger.info("" + "超级变?复杂病?????-->" + ss[i]);
 			sets= _A.parserMixedString(ss[i].replace(" ", ""));//词?分?????
 			System.out.print("分析处理真实结果-->");
 			for (int j= 0; j < sets.size(); j++) {
@@ -120,15 +120,15 @@ public class DemoPOS {
 					System.out.print(sets.get(j) + " ");
 				}
 			}
-			System.out.println();
-			System.out.println("期望得到分词效果-->" + ss1[i]);
+			S_logger.Log.logger.info("" + "");
+			S_logger.Log.logger.info("" + "期望得到分词效果-->" + ss1[i]);
 			for (int k= 0; k < sets.size(); k++) {
 				if (!sets.get(k).replaceAll("\\s+", "").equals("")) {
 					nlp.get(sets.get(k));
-					System.out.println(sets.get(k) + "/" + nlp.get(sets.get(k)) + "  ");
+					S_logger.Log.logger.info("" + sets.get(k) + "/" + nlp.get(sets.get(k)) + "  ");
 				}
 			}
-			System.out.println("");
+			S_logger.Log.logger.info("" + "");
 		}
 	}
 }

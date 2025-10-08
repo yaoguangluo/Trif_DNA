@@ -46,7 +46,7 @@ public class E_pl_XA_E {
 		for (String command : commands) {
 			HashMap<String, Integer> scores = new HashMap<>();
 			NE._I_U.commandAcknowledge = command;
-			System.out.println("command" + command);
+			S_logger.Log.logger.info("" + "command" + command);
 			CommandClass command_V = new CommandClass();
 			// 函数注册 价值降低
 			NE.app_S.workVerbalMap.command_V = command_V;
@@ -108,7 +108,7 @@ public class E_pl_XA_E {
 				acknowledgeSwap = List_ESU_X_stringlistToStringArray
 					._E(commandLists);
 				command_V.acknowledgeSwap = acknowledgeSwap;
-				System.out.println(commandSwap);
+				S_logger.Log.logger.info("" + commandSwap);
 				doAcknowledgeSwap(acknowledgeSwap, command, NE);
 				// later // duplications
 				// return null;
@@ -145,7 +145,7 @@ public class E_pl_XA_E {
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
-				S_logger.Log.logger.info("400-10000001" + string);
+				S_logger.Log.logger.info("" + "400-10000001" + string);
 				if (null != string) {
 					/* loop s later */
 					/*
@@ -168,7 +168,7 @@ public class E_pl_XA_E {
 					 * 过滤和缩减了海量关系计算集合。
 					 */
 					if (scaleRights < 12) {
-						S_logger.Log.logger.info("couldDoThenDo-1-"
+						S_logger.Log.logger.info("" + "couldDoThenDo-1-"
 							+ string);
 						IMV_SQI_utils.couldDoThenDo(string, temp,
 							output, NE, scores);
@@ -183,7 +183,7 @@ public class E_pl_XA_E {
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
-				S_logger.Log.logger.info("400-10000001" + string);
+				S_logger.Log.logger.info("" + "400-10000001" + string);
 				if (null != string) {
 					int scaleRights;
 					if (command_V.cartesianWorkActionsRightsVO
@@ -194,7 +194,7 @@ public class E_pl_XA_E {
 						scaleRights = 9999;
 					}
 					if (scaleRights < 12) {
-						S_logger.Log.logger.info("couldDoThenDo-2-"
+						S_logger.Log.logger.info("" + "couldDoThenDo-2-"
 							+ string);
 						IMV_SQI_utils.couldDoThenDo(string, temp,
 							output, NE, scores);
@@ -231,7 +231,7 @@ public class E_pl_XA_E {
 			 *  更加稳定。
 			 */
 			/* loop s later */
-			S_logger.Log.logger.info("couldDoThenDo-3-" + temp[0]);
+			S_logger.Log.logger.info("" + "couldDoThenDo-3-" + temp[0]);
 			IMV_SQI_utils.couldDoThenDo(temp[0], temp, output, NE,
 				scores);// later in pdn */
 			if (temp[0].equals("获取临时表名")) {

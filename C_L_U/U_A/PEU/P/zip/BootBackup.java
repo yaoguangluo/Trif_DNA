@@ -37,9 +37,9 @@ public class BootBackup {
 		boolean flag = BootBackup.fileToZip(sourceFilePath, zipFilePath,
 				fileName);
 		if (flag) {
-			// 20230106-System.out.println("文件打包成功!");
+			// 20230106-S_logger.Log.logger.info("" + "文件打包成功!");
 		} else {
-			// 20230106-System.out.println("文件打包失败!");
+			// 20230106-S_logger.Log.logger.info("" + "文件打包失败!");
 		}
 		// delete all binlog file;
 	}
@@ -56,19 +56,19 @@ public class BootBackup {
 		FileOutputStream fileOutputStream = null;
 		ZipOutputStream zipOutputStream = null;
 		if (!sourceFile.exists()) {
-			// 20230106-System.out.println("待压缩的文件目录："+ sourceFilePath+
+			// 20230106-S_logger.Log.logger.info("" + "待压缩的文件目录："+ sourceFilePath+
 			// "不存在.");
 		} else {
 			try {
 				File zipFile = new File(zipFilePath + "/" + fileName + ".zip");
 				if (zipFile.exists()) {
-					// 20230106-System.out.println(zipFilePath+ "目录下存在名字为:"+
+					// 20230106-S_logger.Log.logger.info("" + zipFilePath+ "目录下存在名字为:"+
 					// fileName+ ".zip"
 					// + "打包文件.");
 				} else {
 					File[] sourceFiles = sourceFile.listFiles();
 					if (null == sourceFiles || sourceFiles.length < 1) {
-						// 20230106-System.out.println("待压缩的文件目录：" +
+						// 20230106-S_logger.Log.logger.info("" + "待压缩的文件目录：" +
 						// sourceFilePath
 						// + "里面不存在文件, 无需压缩.");
 					} else {

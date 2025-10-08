@@ -45,7 +45,7 @@ public class Classification_X_predictionResult {
             && predictionErrorRight >= 0 && predictionErrorError <= 0) {
             //to do fixlater
             //return true;
-            System.out.println(true);
+            S_logger.Log.logger.info("" + true);
         }
         return true;
     }

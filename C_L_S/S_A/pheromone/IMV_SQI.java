@@ -264,7 +264,7 @@ public class IMV_SQI extends ConcurrentHashMap {
 //			return;
 //		}
 //		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(key, "");
-//		System.out.println("400-size-01" + NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
+//		S_logger.Log.logger.info("" + "400-size-01" + NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 //		Iterator<String> iterators = FlowerAction.FlowerSixDomainActions
 //				.keySet().iterator();
 //		while (iterators.hasNext()) {
@@ -279,10 +279,10 @@ public class IMV_SQI extends ConcurrentHashMap {
 //				String temp = FlowerAction.FlowerSixDomainActions
 //						.getString(actionKey);
 //				FlowerAction.doAction(temp, strings, output, NE);
-//				System.out.println("400-10000002" + actionKey);
-//				System.out.println("400-10000003" + temp);
+//				S_logger.Log.logger.info("" + "400-10000002" + actionKey);
+//				S_logger.Log.logger.info("" + "400-10000003" + temp);
 //			} else {
-//				//System.out.println("400-10000004" + key);
+//				//S_logger.Log.logger.info("" + "400-10000004" + key);
 //				/*
 //				 * 这里也一样加一个条件，可以有效的去重+的逻辑, 提高计算关系的依赖。
 //				 * 
@@ -320,7 +320,7 @@ public class IMV_SQI extends ConcurrentHashMap {
 //		if (stringsKey.length > 1 && stringsAction.length > 1) {
 //			if (stringsKey[0].equals(stringsAction[0])
 //					&& stringsKey[1].equals(stringsAction[1])) {
-//				System.out.println("400-10000004-1-" + actionKey);
+//				S_logger.Log.logger.info("" + "400-10000004-1-" + actionKey);
 //				String temp = FlowerAction.FlowerSixDomainActions
 //						.getString(actionKey);
 //				if (scores.containsKey(temp)) {

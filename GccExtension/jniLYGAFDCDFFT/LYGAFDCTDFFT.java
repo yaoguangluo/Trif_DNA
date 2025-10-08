@@ -23,7 +23,7 @@ public class LYGAFDCTDFFT {
         double[] input = new double[256];
         for (int i = 0; i < input.length; i++) {
             input[i] = (1000000 * Math.random());
-            System.out.println(input[i]);
+            S_logger.Log.logger.info("" + input[i]);
         }
         double[] output = new LYGAFDCTDFFT().jniLYGAFDCTDFFT(input);
         double[] outputcdft = new LYGAFDCTDFFT().jniLYGAFDCTDFT(input);
@@ -34,13 +34,13 @@ public class LYGAFDCTDFFT {
         double[] b = new FFT().fft1(input);
         double[] output1 = dFT.ft(input);
         for (int i = 0; i < input.length; i++) {
-            System.out.println("-----" + i + "-----");
-            System.out.println(output[i]);
-            System.out.println(output1[i]);
-            System.out.println(b[i]);
-            System.out.println(outputcdft[i]);
-            System.out.println(outputldft[i]);
-            System.out.println(outputlogdft[i]);
+            S_logger.Log.logger.info("" + "-----" + i + "-----");
+            S_logger.Log.logger.info("" + output[i]);
+            S_logger.Log.logger.info("" + output1[i]);
+            S_logger.Log.logger.info("" + b[i]);
+            S_logger.Log.logger.info("" + outputcdft[i]);
+            S_logger.Log.logger.info("" + outputldft[i]);
+            S_logger.Log.logger.info("" + outputlogdft[i]);
         }
     }
 
@@ -187,10 +187,10 @@ public class LYGAFDCTDFFT {
             sumca += out[j].ca;
             sumcb += out[j].cb;
         }
-        System.out.println("--");
-        System.out.println(sum);
-        System.out.println(sumca);
-        System.out.println(sumcb);
+        S_logger.Log.logger.info("" + "--");
+        S_logger.Log.logger.info("" + sum);
+        S_logger.Log.logger.info("" + sumca);
+        S_logger.Log.logger.info("" + sumcb);
         return output;
     }
 

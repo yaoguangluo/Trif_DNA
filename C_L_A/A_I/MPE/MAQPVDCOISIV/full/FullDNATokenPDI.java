@@ -63,7 +63,7 @@ public class FullDNATokenPDI {
 		// 0e 1s 2 humanword 3 seccode 4dna initons
 		FullDNATokenPDI pDE_RNA_FullFormular = new FullDNATokenPDI();
 		pDE_RNA_FullFormular.code = pDE_RNA_FullFormular.initonSect(humanWord);
-		// 20230106-System.out.println(pDE_RNA_FullFormular.code);
+		// 20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormular.code);
 		pDE_RNA_FullFormular.enSecCode(pDE_RNA_FullFormular, false);
 		pDE_RNA_FullFormular.pdedeKey = pDE_RNA_FullFormular.pdeieKey;
 		pDE_RNA_FullFormular.pdedsKey = pDE_RNA_FullFormular.pdeisKey;
@@ -75,7 +75,7 @@ public class FullDNATokenPDI {
 		string[2] = humanWord;
 		string[3] = pDE_RNA_FullFormular.code;
 		string[4] = pDE_RNA_FullFormular.pde;
-		// 20230106-System.out.println(pDE_RNA_FullFormular.pde);
+		// 20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormular.pde);
 		return string;
 	}
 
@@ -184,7 +184,7 @@ public class FullDNATokenPDI {
 //
 //		pDE_RNA_FullFormular.text= "控制吸收";
 //		pDE_RNA_FullFormular.pdw= pDE_RNA_FullFormular.IV_onSect(pDE_RNA_FullFormular.text);
-//		//20230106-System.out.println("原文: "+ pDE_RNA_FullFormular.text);
+//		//20230106-S_logger.Log.logger.info("" + "原文: "+ pDE_RNA_FullFormular.text);
 //		//pDE_RNA_FullFormular.pdw= "字典保密：MSIOCUOCIPCUPCI";
 //		String[] lock= new String[12];
 //        lock[0]= "A"; lock[3]= "O"; lock[6]= "P"; lock[9] = "M";
@@ -203,31 +203,31 @@ public class FullDNATokenPDI {
 //			pDE_RNA_FullFormular.code+= pDE_RNA_FullFormular.lock 
 	// + pDE_RNA_FullFormular.pdw.charAt(i);
 //		}
-//		//20230106-System.out.println("肽语: "+ pDE_RNA_FullFormular.pdw);
-//		//20230106-System.out.println("肽锁: "+ pDE_RNA_FullFormular.lock);
-//		//20230106-System.out.println("散列肽语:"+ pDE_RNA_FullFormular.code);
+//		//20230106-S_logger.Log.logger.info("" + "肽语: "+ pDE_RNA_FullFormular.pdw);
+//		//20230106-S_logger.Log.logger.info("" + "肽锁: "+ pDE_RNA_FullFormular.lock);
+//		//20230106-S_logger.Log.logger.info("" + "散列肽语:"+ pDE_RNA_FullFormular.code);
 //		pDE_RNA_FullFormular.bys= "0.6/0.3/0.5/0.632";
-//		//20230106-System.out.println("静态密钥: "+ pDE_RNA_FullFormular.bys);
+//		//20230106-S_logger.Log.logger.info("" + "静态密钥: "+ pDE_RNA_FullFormular.bys);
 //		pDE_RNA_FullFormular.doKeyPress(pDE_RNA_FullFormular.code, pDE_RNA_FullFormular, false);
-//		//20230106-System.out.println("静态肽展降元概率钥匙E: "+ pDE_RNA_FullFormular.pdedeKey);
-//		//20230106-System.out.println("静态肽展降元概率钥匙S: "+ pDE_RNA_FullFormular.pdedsKey);
-//		//20230106-System.out.println("静态肽展降元: "+ pDE_RNA_FullFormular.pds);
+//		//20230106-S_logger.Log.logger.info("" + "静态肽展降元概率钥匙E: "+ pDE_RNA_FullFormular.pdedeKey);
+//		//20230106-S_logger.Log.logger.info("" + "静态肽展降元概率钥匙S: "+ pDE_RNA_FullFormular.pdedsKey);
+//		//20230106-S_logger.Log.logger.info("" + "静态肽展降元: "+ pDE_RNA_FullFormular.pds);
 //		
-//		//20230106-System.out.println("静态肽展增元概率钥匙E: "+ pDE_RNA_FullFormular.pdeieKey);
-//		//20230106-System.out.println("静态肽展增元概率钥匙S: "+ pDE_RNA_FullFormular.pdeisKey);
-//		//20230106-System.out.println("静态肽展增元: "+ pDE_RNA_FullFormular.pde);
+//		//20230106-S_logger.Log.logger.info("" + "静态肽展增元概率钥匙E: "+ pDE_RNA_FullFormular.pdeieKey);
+//		//20230106-S_logger.Log.logger.info("" + "静态肽展增元概率钥匙S: "+ pDE_RNA_FullFormular.pdeisKey);
+//		//20230106-S_logger.Log.logger.info("" + "静态肽展增元: "+ pDE_RNA_FullFormular.pde);
 //
 //		pDE_RNA_FullFormular.time= "" + System.currentTimeMillis();
 //		pDE_RNA_FullFormular.cacheId= "ID" + Math.random() 
 	// + S_Common.STRING_SYMBOL_PER + Math.random();
-//		//20230106-System.out.println("时间:  " + pDE_RNA_FullFormular.time);
-//		//20230106-System.out.println("账号随机缓存字符串:  " + pDE_RNA_FullFormular.cacheId);
+//		//20230106-S_logger.Log.logger.info("" + "时间:  " + pDE_RNA_FullFormular.time);
+//		//20230106-S_logger.Log.logger.info("" + "账号随机缓存字符串:  " + pDE_RNA_FullFormular.cacheId);
 //		pDE_RNA_FullFormular.session_key= pDE_RNA_FullFormular.pde;
-//		//20230106-System.out.println("Session: " + pDE_RNA_FullFormular.session_key);
-//		//20230106-System.out.println("=====================================================");
-//		//20230106-System.out.println("开始前序验证：");
-//		//20230106-System.out.println("开始Session解析： " + pDE_RNA_FullFormular.session_key);
-//		//20230106-System.out.println("开始概率钥匙解析：" + pDE_RNA_FullFormular.pdedeKey
+//		//20230106-S_logger.Log.logger.info("" + "Session: " + pDE_RNA_FullFormular.session_key);
+//		//20230106-S_logger.Log.logger.info("" + "=====================================================");
+//		//20230106-S_logger.Log.logger.info("" + "开始前序验证：");
+//		//20230106-S_logger.Log.logger.info("" + "开始Session解析： " + pDE_RNA_FullFormular.session_key);
+//		//20230106-S_logger.Log.logger.info("" + "开始概率钥匙解析：" + pDE_RNA_FullFormular.pdedeKey
 	// + pDE_RNA_FullFormular.pdedsKey
 //				+ pDE_RNA_FullFormular.pdeieKey+ pDE_RNA_FullFormular.pdeisKey);
 //		
@@ -238,33 +238,33 @@ public class FullDNATokenPDI {
 //		pDE_RNA_FullFormular1.pdeisKey= pDE_RNA_FullFormular.pdeisKey.toString();
 //		
 //		pDE_RNA_FullFormular.doKeyUnPress(pDE_RNA_FullFormular.code, pDE_RNA_FullFormular1, true);
-//		//20230106-System.out.println();
-//		//20230106-System.out.println("得到原降元元基DNA序列："+ pDE_RNA_FullFormular.pds);
-//		//20230106-System.out.println("得到新降元元基DNA序列："+ pDE_RNA_FullFormular1.pds);
-//		//20230106-System.out.println("得到原元基DNA序列："+ pDE_RNA_FullFormular.pde);
-//		//20230106-System.out.println("得到新元基DNA序列："+ pDE_RNA_FullFormular1.pde);
-//		//20230106-System.out.println("验证正确？");
-//		//20230106-System.out.println(pDE_RNA_FullFormular.pde.equals(pDE_RNA_FullFormular1.pde)
+//		//20230106-S_logger.Log.logger.info("" + "");
+//		//20230106-S_logger.Log.logger.info("" + "得到原降元元基DNA序列："+ pDE_RNA_FullFormular.pds);
+//		//20230106-S_logger.Log.logger.info("" + "得到新降元元基DNA序列："+ pDE_RNA_FullFormular1.pds);
+//		//20230106-S_logger.Log.logger.info("" + "得到原元基DNA序列："+ pDE_RNA_FullFormular.pde);
+//		//20230106-S_logger.Log.logger.info("" + "得到新元基DNA序列："+ pDE_RNA_FullFormular1.pde);
+//		//20230106-S_logger.Log.logger.info("" + "验证正确？");
+//		//20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormular.pde.equals(pDE_RNA_FullFormular1.pde)
 	// ? "正确": "失败");
-////		//20230106-System.out.println("==========================================");
-//		//20230106-System.out.println("开始后序验证：");
+////		//20230106-S_logger.Log.logger.info("" + "==========================================");
+//		//20230106-S_logger.Log.logger.info("" + "开始后序验证：");
 //		FullDNATokenPDI pDE_RNA_FullFormular2= new FullDNATokenPDI();
 //		pDE_RNA_FullFormular2.pdeieKey= pDE_RNA_FullFormular.pdedeKey.toString();
 //		pDE_RNA_FullFormular2.pdeisKey= pDE_RNA_FullFormular.pdedsKey.toString();
 //		pDE_RNA_FullFormular2.pdedeKey= pDE_RNA_FullFormular.pdeieKey.toString();
 //		pDE_RNA_FullFormular2.pdedsKey= pDE_RNA_FullFormular.pdeisKey.toString();
-//		//20230106-System.out.println("准备计算元基DNA序列："+ pDE_RNA_FullFormular1.pde);
+//		//20230106-S_logger.Log.logger.info("" + "准备计算元基DNA序列："+ pDE_RNA_FullFormular1.pde);
 //		pDE_RNA_FullFormular2.doSessionKeyUnPress(pDE_RNA_FullFormular1.pde
 	// , pDE_RNA_FullFormular2, true);
-//		//20230106-System.out.println();
-//		//20230106-System.out.println("得到原续降元元基DNA序列："+ pDE_RNA_FullFormular1.pds);
-//		//20230106-System.out.println("得到后续降元元基DNA序列："+ pDE_RNA_FullFormular2.pds);
-//		//20230106-System.out.println("验证正确？");
-//		//20230106-System.out.println(pDE_RNA_FullFormular1.pds.equals(pDE_RNA_FullFormular2.pds)
+//		//20230106-S_logger.Log.logger.info("" + "");
+//		//20230106-S_logger.Log.logger.info("" + "得到原续降元元基DNA序列："+ pDE_RNA_FullFormular1.pds);
+//		//20230106-S_logger.Log.logger.info("" + "得到后续降元元基DNA序列："+ pDE_RNA_FullFormular2.pds);
+//		//20230106-S_logger.Log.logger.info("" + "验证正确？");
+//		//20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormular1.pds.equals(pDE_RNA_FullFormular2.pds)
 	// ? "正确": "失败");
 //	
-//		//20230106-System.out.println("===================================================");
-//		//20230106-System.out.println("开始整序验证：");
+//		//20230106-S_logger.Log.logger.info("" + "===================================================");
+//		//20230106-S_logger.Log.logger.info("" + "开始整序验证：");
 //		FullDNATokenPDI pDE_RNA_FullFormular3= new FullDNATokenPDI();
 //
 //		
@@ -274,18 +274,18 @@ public class FullDNATokenPDI {
 //		pDE_RNA_FullFormular3.pdedsKey= pDE_RNA_FullFormular.pdeisKey.toString();
 //		
 //		
-//		//20230106-System.out.println("准备计算元基DNA序列："+ pDE_RNA_FullFormular1.pde);//pde加成
+//		//20230106-S_logger.Log.logger.info("" + "准备计算元基DNA序列："+ pDE_RNA_FullFormular1.pde);//pde加成
 //		pDE_RNA_FullFormular3.doFullSessionKeyUnPress(pDE_RNA_FullFormular1.pde
 	// , pDE_RNA_FullFormular3, true);
-//		//20230106-System.out.println();
-//		//20230106-System.out.println("得到原续降元元基DNA序列："+ pDE_RNA_FullFormular1.pds);
-//		//20230106-System.out.println("得到后续降元元基DNA序列："+ pDE_RNA_FullFormular3.pds);
-//		//20230106-System.out.println("验证正确？");
-//		//20230106-System.out.println(pDE_RNA_FullFormular1.pds.equals(pDE_RNA_FullFormular3.pds)
+//		//20230106-S_logger.Log.logger.info("" + "");
+//		//20230106-S_logger.Log.logger.info("" + "得到原续降元元基DNA序列："+ pDE_RNA_FullFormular1.pds);
+//		//20230106-S_logger.Log.logger.info("" + "得到后续降元元基DNA序列："+ pDE_RNA_FullFormular3.pds);
+//		//20230106-S_logger.Log.logger.info("" + "验证正确？");
+//		//20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormular1.pds.equals(pDE_RNA_FullFormular3.pds)
 	// ? "正确": "失败");
-//		//20230106-System.out.println("准备整序计算元基DNA序列："+ pDE_RNA_FullFormular1.pde);
-//		//20230106-System.out.println("准备整序计算元基DNA序列："+ pDE_RNA_FullFormular3.pde);
-//		//20230106-System.out.println(pDE_RNA_FullFormular1.pde.equals(pDE_RNA_FullFormular3.pde)
+//		//20230106-S_logger.Log.logger.info("" + "准备整序计算元基DNA序列："+ pDE_RNA_FullFormular1.pde);
+//		//20230106-S_logger.Log.logger.info("" + "准备整序计算元基DNA序列："+ pDE_RNA_FullFormular3.pde);
+//		//20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormular1.pde.equals(pDE_RNA_FullFormular3.pde)
 	// ? "正确": "失败");
 //		
 //	}
@@ -548,7 +548,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("A->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -571,7 +571,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("O->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -594,7 +594,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("P->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -617,7 +617,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("M->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -640,7 +640,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("V->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -663,7 +663,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("C->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -686,7 +686,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("E->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -709,7 +709,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("S->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -732,7 +732,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("A->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -755,7 +755,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("O->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -778,7 +778,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("P->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -801,7 +801,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("M->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -824,7 +824,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("V->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -847,7 +847,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("C->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -870,7 +870,7 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("E->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
@@ -893,13 +893,13 @@ public class FullDNATokenPDI {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		// 20230106-System.out.print("S->");
 		while (InitonPDE.hasNext()) {
 			// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.next;
 		}
-		// 20230106-System.out.println();
+		// 20230106-S_logger.Log.logger.info("" + "");
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.prev;
 		}

@@ -9,7 +9,7 @@ public class WekaPilot2DOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
 	public WekaPilot2DOSU_MSQ_OPE_OPC_ECI( ) {
  	}
 	public void run(final WekaPilot2DOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ _SQ__OVQ_OSQ_VSQ) {
-		  System.out.println("runed"+value); 
+		  S_logger.Log.logger.info("" + "runed"+value); 
 	  		_SQ__OVQ_OSQ_VSQ.path=new String(filepath); 
 		  //_SQ__OVQ_OSQ_VSQ.out=new JTable(content, spec);
 	}

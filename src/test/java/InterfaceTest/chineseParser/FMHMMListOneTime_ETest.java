@@ -3,6 +3,7 @@ package test.java.InterfaceTest.chineseParser;
 import S_A.SVQ.stable.S_Maps;
 import S_A.pheromone.IMV_SQI;
 import S_A.pheromone.IMV_SQI_;
+import S_logger.Log;
 import V_A.SQ.ReadPinYinBihua;
 import test.java.interfaces.test.CommonTestInition;
 
@@ -37,34 +38,34 @@ class FMHMMListOneTime_ETest {
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 1 显示当前所有词库，重要属性
 		// 1.1 词汇类词库
-		System.out.println("--------词性类词库--------");
-		System.out.println("把动词总数-->" + S_Maps.baDongCi.size());
-		System.out.println("代词总数-->" + S_Maps.daiCi.size());
-		System.out.println("定名词总数-->" + S_Maps.dingMingCi.size());
-		System.out.println("动词总数-->" + S_Maps.dongCi.size());
-		System.out.println("副词总数-->" + S_Maps.fuCi.size());
-		System.out.println("介词总数-->" + S_Maps.jieCi.size());
-		System.out.println("连词总数-->" + S_Maps.lianCi.size());
-		System.out.println("量词总数-->" + S_Maps.liangCi.size());
-		System.out.println("名词总数-->" + S_Maps.mingCi.size());
-		System.out.println("情态总数-->" + S_Maps.qingTaiCi.size());
-		System.out.println("省略总数-->" + S_Maps.shengLueCi.size());
-		System.out.println("时态总数-->" + S_Maps.shiTaiCi.size());
-		System.out.println("限定总数-->" + S_Maps.xianDingCi.size());
-		System.out.println("形容总数-->" + S_Maps.xingRongCi.size());
-		System.out.println("形谓总数-->" + S_Maps.xingWeiCi.size());
-		System.out.println("助词总数-->" + S_Maps.zhuCi.size());
+		S_logger.Log.logger.info("" + "--------词性类词库--------");
+		S_logger.Log.logger.info("" + "把动词总数-->" + S_Maps.baDongCi.size());
+		S_logger.Log.logger.info("" + "代词总数-->" + S_Maps.daiCi.size());
+		S_logger.Log.logger.info("" + "定名词总数-->" + S_Maps.dingMingCi.size());
+		S_logger.Log.logger.info("" + "动词总数-->" + S_Maps.dongCi.size());
+		S_logger.Log.logger.info("" + "副词总数-->" + S_Maps.fuCi.size());
+		S_logger.Log.logger.info("" + "介词总数-->" + S_Maps.jieCi.size());
+		S_logger.Log.logger.info("" + "连词总数-->" + S_Maps.lianCi.size());
+		S_logger.Log.logger.info("" + "量词总数-->" + S_Maps.liangCi.size());
+		S_logger.Log.logger.info("" + "名词总数-->" + S_Maps.mingCi.size());
+		S_logger.Log.logger.info("" + "情态总数-->" + S_Maps.qingTaiCi.size());
+		S_logger.Log.logger.info("" + "省略总数-->" + S_Maps.shengLueCi.size());
+		S_logger.Log.logger.info("" + "时态总数-->" + S_Maps.shiTaiCi.size());
+		S_logger.Log.logger.info("" + "限定总数-->" + S_Maps.xianDingCi.size());
+		S_logger.Log.logger.info("" + "形容总数-->" + S_Maps.xingRongCi.size());
+		S_logger.Log.logger.info("" + "形谓总数-->" + S_Maps.xingWeiCi.size());
+		S_logger.Log.logger.info("" + "助词总数-->" + S_Maps.zhuCi.size());
 		//词性类词库
 		IMV_SQI pos = commonTestInition.NE.app_S._A.getPosCnToCn();
-		System.out.println("词性总数-->" + pos.size());
+		S_logger.Log.logger.info("" + "词性总数-->" + pos.size());
 		//词长类词库
-		System.out.println("--------词长类词库--------");
-		System.out.println("单字词长总数-->" + S_Maps.CiOne.size());
-		System.out.println("双字词长总数-->" + S_Maps.CiTwo.size());
-		System.out.println("三字词长总数-->" + S_Maps.CiThree.size());
-		System.out.println("四字词长总数-->" + S_Maps.CiFour.size());
+		S_logger.Log.logger.info("" + "--------词长类词库--------");
+		S_logger.Log.logger.info("" + "单字词长总数-->" + S_Maps.CiOne.size());
+		S_logger.Log.logger.info("" + "双字词长总数-->" + S_Maps.CiTwo.size());
+		S_logger.Log.logger.info("" + "三字词长总数-->" + S_Maps.CiThree.size());
+		S_logger.Log.logger.info("" + "四字词长总数-->" + S_Maps.CiFour.size());
 		//多国语言类词库
-		System.out.println("--------语种类词库--------");
+		S_logger.Log.logger.info("" + "--------语种类词库--------");
 		IMV_SQI chineseToEnglish = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToEn;
 		IMV_SQI chineseToJapanese = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToJp;
 		IMV_SQI chineseToArabic = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToAb;
@@ -74,119 +75,119 @@ class FMHMMListOneTime_ETest {
 		IMV_SQI chineseToFrench = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToFn;
 		IMV_SQI chineseToSpanish = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToSp;
 		IMV_SQI chineseToGerman = commonTestInition.NE.app_S.fMHMMListOneTime_E_X_S.fullCnToGm;
-		System.out.println("中英对照总数-->" + chineseToEnglish.size());
-		System.out.println("繁体对照总数-->" + chineseToTradition.size());
-		System.out.println("中韩对照总数-->" + chineseToKorean.size());
-		System.out.println("中日对照总数-->" + chineseToJapanese.size());
-		System.out.println("中法对照总数-->" + chineseToFrench.size());
-		System.out.println("中西对照总数-->" + chineseToSpanish.size());
-		System.out.println("中俄对照总数-->" + chineseToRussian.size());
-		System.out.println("中德对照总数-->" + chineseToGerman.size());
-		System.out.println("中阿对照总数-->" + chineseToArabic.size());
+		S_logger.Log.logger.info("" + "中英对照总数-->" + chineseToEnglish.size());
+		S_logger.Log.logger.info("" + "繁体对照总数-->" + chineseToTradition.size());
+		S_logger.Log.logger.info("" + "中韩对照总数-->" + chineseToKorean.size());
+		S_logger.Log.logger.info("" + "中日对照总数-->" + chineseToJapanese.size());
+		S_logger.Log.logger.info("" + "中法对照总数-->" + chineseToFrench.size());
+		S_logger.Log.logger.info("" + "中西对照总数-->" + chineseToSpanish.size());
+		S_logger.Log.logger.info("" + "中俄对照总数-->" + chineseToRussian.size());
+		S_logger.Log.logger.info("" + "中德对照总数-->" + chineseToGerman.size());
+		S_logger.Log.logger.info("" + "中阿对照总数-->" + chineseToArabic.size());
 		//其他小语种略先。
 		//拼音笔画词库
-		System.out.println("--------汉语拼音笔画词库--------");
+		S_logger.Log.logger.info("" + "--------汉语拼音笔画词库--------");
 		IMV_SQI_ pinYin = ReadPinYinBihua.pinYin;
 		IMV_SQI biHua = ReadPinYinBihua.biHua;
-		System.out.println("拼音总数-->" + pinYin.size());
-		System.out.println("笔画总数-->" + biHua.size());
+		S_logger.Log.logger.info("" + "拼音总数-->" + pinYin.size());
+		S_logger.Log.logger.info("" + "笔画总数-->" + biHua.size());
 		//词灵类词库
 		// 2 词库表中有回车空行检测，
 		// 3 词库表的KV不对称检测，
 		//标本
-		System.out.println("--------语种词库表的KV不对称仅仅快速检测--------");
-		System.out.println("--------头--------");
-		System.out.println("头-中英对照-->" + chineseToEnglish.getString(
+		S_logger.Log.logger.info("" + "--------语种词库表的KV不对称仅仅快速检测--------");
+		S_logger.Log.logger.info("" + "--------头--------");
+		S_logger.Log.logger.info("" + "头-中英对照-->" + chineseToEnglish.getString(
 			"标本"));
-		System.out.println("头-繁体对照-->" + chineseToTradition.getString(
+		S_logger.Log.logger.info("" + "头-繁体对照-->" + chineseToTradition.getString(
 			"标本"));
-		System.out.println("头-中韩对照-->" + chineseToKorean.getString(
+		S_logger.Log.logger.info("" + "头-中韩对照-->" + chineseToKorean.getString(
 			"标本"));
-		System.out.println("头-中日对照-->" + chineseToJapanese.getString(
+		S_logger.Log.logger.info("" + "头-中日对照-->" + chineseToJapanese.getString(
 			"标本"));
-		System.out.println("头-中法对照-->" + chineseToFrench.getString(
+		S_logger.Log.logger.info("" + "头-中法对照-->" + chineseToFrench.getString(
 			"标本"));
-		System.out.println("头-中西对照-->" + chineseToSpanish.getString(
+		S_logger.Log.logger.info("" + "头-中西对照-->" + chineseToSpanish.getString(
 			"标本"));
-		System.out.println("头-中俄对照-->" + chineseToRussian.getString(
+		S_logger.Log.logger.info("" + "头-中俄对照-->" + chineseToRussian.getString(
 			"标本"));
-		System.out.println("头-中德对照-->" + chineseToGerman.getString(
+		S_logger.Log.logger.info("" + "头-中德对照-->" + chineseToGerman.getString(
 			"标本"));
-		System.out.println("头-中阿对照-->" + chineseToArabic.getString(
+		S_logger.Log.logger.info("" + "头-中阿对照-->" + chineseToArabic.getString(
 			"标本"));
-		System.out.println("--------中--------");
+		S_logger.Log.logger.info("" + "--------中--------");
 		//立足
-		System.out.println("中-中英对照-->" + chineseToEnglish.getString(
+		S_logger.Log.logger.info("" + "中-中英对照-->" + chineseToEnglish.getString(
 			"立足"));
-		System.out.println("中-繁体对照-->" + chineseToTradition.getString(
+		S_logger.Log.logger.info("" + "中-繁体对照-->" + chineseToTradition.getString(
 			"立足"));
-		System.out.println("中-中韩对照-->" + chineseToKorean.getString(
+		S_logger.Log.logger.info("" + "中-中韩对照-->" + chineseToKorean.getString(
 			"立足"));
-		System.out.println("中-中日对照-->" + chineseToJapanese.getString(
+		S_logger.Log.logger.info("" + "中-中日对照-->" + chineseToJapanese.getString(
 			"立足"));
-		System.out.println("中-中法对照-->" + chineseToFrench.getString(
+		S_logger.Log.logger.info("" + "中-中法对照-->" + chineseToFrench.getString(
 			"立足"));
-		System.out.println("中-中西对照-->" + chineseToSpanish.getString(
+		S_logger.Log.logger.info("" + "中-中西对照-->" + chineseToSpanish.getString(
 			"立足"));
-		System.out.println("中-中俄对照-->" + chineseToRussian.getString(
+		S_logger.Log.logger.info("" + "中-中俄对照-->" + chineseToRussian.getString(
 			"立足"));
-		System.out.println("中-中德对照-->" + chineseToGerman.getString(
+		S_logger.Log.logger.info("" + "中-中德对照-->" + chineseToGerman.getString(
 			"立足"));
-		System.out.println("中-中阿对照-->" + chineseToArabic.getString(
+		S_logger.Log.logger.info("" + "中-中阿对照-->" + chineseToArabic.getString(
 			"立足"));
-		System.out.println("--------尾--------");
+		S_logger.Log.logger.info("" + "--------尾--------");
 		//羌活
-		System.out.println("尾-中英对照总数-->" + chineseToEnglish.getString(
+		S_logger.Log.logger.info("" + "尾-中英对照总数-->" + chineseToEnglish.getString(
 			"羌活"));
-		System.out.println("尾-中繁体字对照-->" + chineseToTradition
+		S_logger.Log.logger.info("" + "尾-中繁体字对照-->" + chineseToTradition
 			.getString("羌活"));
-		System.out.println("尾-中韩对照总数-->" + chineseToKorean.getString(
+		S_logger.Log.logger.info("" + "尾-中韩对照总数-->" + chineseToKorean.getString(
 			"羌活"));
-		System.out.println("尾-中日对照总数-->" + chineseToJapanese
+		S_logger.Log.logger.info("" + "尾-中日对照总数-->" + chineseToJapanese
 			.getString("羌活"));
-		System.out.println("尾-中法对照总数-->" + chineseToFrench.getString(
+		S_logger.Log.logger.info("" + "尾-中法对照总数-->" + chineseToFrench.getString(
 			"羌活"));
-		System.out.println("尾-中西对照总数-->" + chineseToSpanish.getString(
+		S_logger.Log.logger.info("" + "尾-中西对照总数-->" + chineseToSpanish.getString(
 			"羌活"));
-		System.out.println("尾-中俄对照总数-->" + chineseToRussian.getString(
+		S_logger.Log.logger.info("" + "尾-中俄对照总数-->" + chineseToRussian.getString(
 			"羌活"));
-		System.out.println("尾-中德对照总数-->" + chineseToGerman.getString(
+		S_logger.Log.logger.info("" + "尾-中德对照总数-->" + chineseToGerman.getString(
 			"羌活"));
-		System.out.println("尾-中阿对照总数-->" + chineseToArabic.getString(
+		S_logger.Log.logger.info("" + "尾-中阿对照总数-->" + chineseToArabic.getString(
 			"羌活"));
 		// 4 词库表的多语序列不对齐检测，
 		// 5 词库表乱码检测，
-		System.out.println("--------词库表乱码检测仅仅快速检测--------");
-		System.out.println("乱码-拼音词库导入检测-->" + pinYin.getString("罗"));
-		System.out.println("乱码-笔画词库导入检测-->" + biHua.getString("罗"));
+		S_logger.Log.logger.info("" + "--------词库表乱码检测仅仅快速检测--------");
+		S_logger.Log.logger.info("" + "乱码-拼音词库导入检测-->" + pinYin.getString("罗"));
+		S_logger.Log.logger.info("" + "乱码-笔画词库导入检测-->" + biHua.getString("罗"));
 
-		System.out.println("乱码-单字词长总数-->" + S_Maps.CiOne.get("罗"));
-		System.out.println("乱码-双字词长总数-->" + S_Maps.CiTwo.get("信号"));
-		System.out.println("乱码-三字词长总数-->" + S_Maps.CiThree.get(
+		S_logger.Log.logger.info("" + "乱码-单字词长总数-->" + S_Maps.CiOne.get("罗"));
+		S_logger.Log.logger.info("" + "乱码-双字词长总数-->" + S_Maps.CiTwo.get("信号"));
+		S_logger.Log.logger.info("" + "乱码-三字词长总数-->" + S_Maps.CiThree.get(
 			"看不清"));
-		System.out.println("乱码-四字词长总数-->" + S_Maps.CiFour.get(
+		S_logger.Log.logger.info("" + "乱码-四字词长总数-->" + S_Maps.CiFour.get(
 			"屈指可数"));
 
-		System.out.println("乱码-把动词总数-->" + S_Maps.baDongCi.get("把"));
-		System.out.println("乱码-代词总数-->" + S_Maps.daiCi.get("自身"));
-		System.out.println("乱码-定名词总数-->" + S_Maps.dingMingCi.get(
+		S_logger.Log.logger.info("" + "乱码-把动词总数-->" + S_Maps.baDongCi.get("把"));
+		S_logger.Log.logger.info("" + "乱码-代词总数-->" + S_Maps.daiCi.get("自身"));
+		S_logger.Log.logger.info("" + "乱码-定名词总数-->" + S_Maps.dingMingCi.get(
 			"中"));
-		System.out.println("乱码-动词总数-->" + S_Maps.dongCi.get("耍"));
-		System.out.println("乱码-副词总数-->" + S_Maps.fuCi.get("仿佛"));
+		S_logger.Log.logger.info("" + "乱码-动词总数-->" + S_Maps.dongCi.get("耍"));
+		S_logger.Log.logger.info("" + "乱码-副词总数-->" + S_Maps.fuCi.get("仿佛"));
 		//这个副词体系在中文理解上都有问题，因为英文是+地后戳。。
-		System.out.println("乱码-介词总数-->" + S_Maps.jieCi.get("在"));
-		System.out.println("乱码-连词总数-->" + S_Maps.lianCi.get("假如"));
-		System.out.println("乱码-量词总数-->" + S_Maps.liangCi.get("吨"));
-		System.out.println("乱码-名词总数-->" + S_Maps.mingCi.get("酒桶"));
-		System.out.println("乱码-情态总数-->" + S_Maps.qingTaiCi.get("应该"));
-		System.out.println("乱码-省略总数-->" + S_Maps.shengLueCi.get("等"));
-		System.out.println("乱码-时态总数-->" + S_Maps.shiTaiCi.get("以前"));
-		System.out.println("乱码-限定总数-->" + S_Maps.xianDingCi.get(
+		S_logger.Log.logger.info("" + "乱码-介词总数-->" + S_Maps.jieCi.get("在"));
+		S_logger.Log.logger.info("" + "乱码-连词总数-->" + S_Maps.lianCi.get("假如"));
+		S_logger.Log.logger.info("" + "乱码-量词总数-->" + S_Maps.liangCi.get("吨"));
+		S_logger.Log.logger.info("" + "乱码-名词总数-->" + S_Maps.mingCi.get("酒桶"));
+		S_logger.Log.logger.info("" + "乱码-情态总数-->" + S_Maps.qingTaiCi.get("应该"));
+		S_logger.Log.logger.info("" + "乱码-省略总数-->" + S_Maps.shengLueCi.get("等"));
+		S_logger.Log.logger.info("" + "乱码-时态总数-->" + S_Maps.shiTaiCi.get("以前"));
+		S_logger.Log.logger.info("" + "乱码-限定总数-->" + S_Maps.xianDingCi.get(
 			"任何"));
-		System.out.println("乱码-形容总数-->" + S_Maps.xingRongCi.get(
+		S_logger.Log.logger.info("" + "乱码-形容总数-->" + S_Maps.xingRongCi.get(
 			"重大"));
-		System.out.println("乱码-形谓总数-->" + S_Maps.xingWeiCi.get("美丽"));
-		System.out.println("乱码-助词总数-->" + S_Maps.zhuCi.get("呵"));
+		S_logger.Log.logger.info("" + "乱码-形谓总数-->" + S_Maps.xingWeiCi.get("美丽"));
+		S_logger.Log.logger.info("" + "乱码-助词总数-->" + S_Maps.zhuCi.get("呵"));
 		// 6 词库表分隔符错误等检查
 		// 7 等。。以后添加
 		commonTestInition.endEnvironment();

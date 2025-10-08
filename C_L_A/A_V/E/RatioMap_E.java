@@ -271,7 +271,7 @@ public class RatioMap_E implements RatioMap {
 			}
 			emotionSampleMap.put(word, emotionSample);
 		}
-		System.out.println("trif");
+		S_logger.Log.logger.info("" + "trif");
 	}
 
 	@Override

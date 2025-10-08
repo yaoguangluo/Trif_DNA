@@ -35,7 +35,7 @@ public class code{
 		byte[] bytes= new byte[1024];
 		int len= 0;
 		while((len= fileInputStream.read(bytes))> 0) {
-			System.out.flush();System.out.println(new String(bytes));	
+			System.out.flush();S_logger.Log.logger.info("" + new String(bytes));	
 			String string= new String(bytes);
 			if(string.contains("image/jpeg\r\n\r\n")) {
 				byte[] bytesStrings= "image/jpeg\r\n\r\n".getBytes();
@@ -93,7 +93,7 @@ public class code{
 			Thread.sleep(5);
 		}
 		fileOutputStream.close();
-		System.out.flush();System.out.println(new String(bytes));
+		System.out.flush();S_logger.Log.logger.info("" + new String(bytes));
 	}
 
 	//BufferedReader - outputstream test error
@@ -139,7 +139,7 @@ public class code{
 //while((len= fileInputStream.read(bytes))> 0) {
 //	fileOutputStream.write(bytes, 0, len);
 //	String string= new String(bytes);
-//	System.out.flush();System.out.println(string);
+//	System.out.flush();S_logger.Log.logger.info("" + string);
 //	Thread.sleep(5);
 //}
 //fileOutputStream.close();
@@ -159,7 +159,7 @@ public class code{
 //String binaryString= Integer.toBinaryString(c);
 //StringBuilder.append(binaryString);
 //		}
-//		System.out.flush();System.out.println(StringBuilder.toString());
+//		System.out.flush();S_logger.Log.logger.info("" + StringBuilder.toString());
 //1101 0011 1011 0111 0000 1110 0111 1100 1011 0111 1110 1010 1110
 //0001 1001 0111 0011 1110 1101 0110 1101 0
 //1011 0110 1101 1011 0110 1101 1011 0110 1101 1010 1111 1001 0111
@@ -188,7 +188,7 @@ public class code{
 //	}
 //}
 //		}
-//		System.out.flush();System.out.println(stringBuilder.toString());
+//		System.out.flush();S_logger.Log.logger.info("" + stringBuilder.toString());
 //		
 //		//HttpPostRequestDecoder decoder 
 //= new HttpPostRequestDecoder(new DefaultHttpDataFactory(false), req);

@@ -70,21 +70,21 @@ public class OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register {
 		this.u = NE.app_S;
 		this._A = this.u._A;
 		this.pos = this.u.fMHMMListOneTime_E_X_S.posCnToCn;
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-01");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-01");
 	}
 
 	@SuppressWarnings({ "unchecked", "unused" })
 	public NodeOSGI Rigester(NodeOSGI first, LinkOSGI link, App NE) {
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02");
 		// 注册
 		// XlsReaderNodeInterface xlsReaderNodeInterface= new
 		// XlsReaderNodeInterface();
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-000");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-000");
 		// OSU_MCI_MCU_MSI XlsReadernode = (OSU_MCI_MCU_MSI)
 		// xlsReaderNodeInterface;
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-01-01-01");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-01-01-01");
 		// first = link.addNode(first, XlsReadernode);
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-01");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-01");
 		// OSU_MCI_MCU_MSI imageReadNode = new
 		// ImageReadNodeInterface();
 		// first = link.addNode(first, imageReadNode);
@@ -104,7 +104,7 @@ public class OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register {
 		// OSU_MCI_MCU_MSI GuassianFilterNode = new
 		// GuassianFilterInterface();
 		// first = link.addNode(first, GuassianFilterNode);
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-03");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-03");
 		// OSU_MCI_MCU_MSI FindColorRNode = new
 		// FindColorRInterface();
 		// first = link.addNode(first, FindColorRNode);
@@ -123,7 +123,7 @@ public class OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register {
 		// = new EmbossFilterInterface();
 		// first = link.addNode(first, EmbossFilterNode);
 
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-04");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-04");
 		// OSU_MCI_MCU_MSI LaplacianFilterNode
 		// = new LaplacianFilterInterface();
 		// first = link.addNode(first, LaplacianFilterNode);
@@ -142,7 +142,7 @@ public class OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register {
 //
 //        OSU_MCI_MCU_MSI LaplacianWaveFilterNode = new LaplacianFilterNodeInterface();
 //        first = link.addNode(first, LaplacianWaveFilterNode);
-//        System.out.println("启动400编码调试开始-00000055-001-02-04-01-01-05");
+//        S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-05");
 //        OSU_MCI_MCU_MSI HoughWavFilterNode = new HoughWavFilterNodeInterface();
 //        first = link.addNode(first, HoughWavFilterNode);
 //
@@ -160,7 +160,7 @@ public class OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register {
 //
 //        OSU_MCI_MCU_MSI MorphologyFilter = new MorphologyFilterInterface();
 //        first = link.addNode(first, MorphologyFilter);
-//        System.out.println("启动400编码调试开始-00000055-001-02-04-01-01-06");
+//        S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-06");
 //        OSU_MCI_MCU_MSI LYGReadNode = new LYGReadNodeInterface();
 //        first = link.addNode(first, LYGReadNode);
 //
@@ -181,7 +181,7 @@ public class OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register {
 //
 //        OSU_MCI_MCU_MSI freqCountNode = new FreqCountNodeInterface();
 //        first = link.addNode(first, freqCountNode);
-//        System.out.println("启动400编码调试开始-00000055-001-02-04-01-01-07");
+//        S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-07");
 //        OSU_MCI_MCU_MSI lygFilterNode = new LygFilterNodeInterface();
 //        first = link.addNode(first, lygFilterNode);
 //
@@ -193,7 +193,7 @@ public class OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register {
 //
 //        OSU_MCI_MCU_MSI logFFT = new LogFFTInterface();
 //        first = link.addNode(first, logFFT);
-//        System.out.println("启动400编码调试开始-00000055-001-02-04-01-01-08");
+//        S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-08");
 //        OSU_MCI_MCU_MSI logFFTcount = new LogFFTcountInterface();
 //        first = link.addNode(first, logFFTcount);
 //		OSU_MCI_MCU_MSI dNA3DShow
@@ -203,13 +203,13 @@ public class OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register {
 		OSU_MCI_MCU_MSI searchPG = new AddPGSearchPageNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI();
 		if (null == searchPG) {
 			//later do fatal changes
-			S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-04-err");
+			S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-04-err");
 		}
 		searchPG.pageName = "图片搜索";
 		// first= link.addNode(first, searchPG);
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-04");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-04");
 		OSU_MCI_MCU_MSI _OSU_MCI_MCU_MSI = searchPG;
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-05");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-05");
 		u.gUISample.nodeReflection
 				.put(_OSU_MCI_MCU_MSI._SQ_OSU_MSQ_OSU_AVQ_ASQ_SQ_VPC_PCS, "");
 		_OSU_MCI_MCU_MSI.register(u.gUISample.tableData_old, u.gUISample.text,
@@ -221,7 +221,7 @@ public class OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register {
 //				, OSU_MCI_MCU_MSI);
 		first = link.addNode(first, _OSU_MCI_MCU_MSI);
 		u.searchList.add(searchPG);
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-06");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-06");
 		OSU_MCI_MCU_MSI tinShell = new AddTinShellNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI();
 		tinShell.pageName = "Tin语言";
 		// first= link.addNode(first, searchPG);
@@ -292,15 +292,15 @@ public class OSI_OSU_ASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI_register {
 //filedialog.setFilenameFilter(new TXTFilter(S_Data.FILE_FORMAT_ETL));
 //filedialog.setVisible(true);
 //jarCategoryLink= filedialog.getDirectory();
-//////20230106-System.out.println(jarCategoryLink);
+//////20230106-S_logger.Log.logger.info("" + jarCategoryLink);
 //if(null== jarCategoryLink|| jarCategoryLink.isEmpty()|| jarCategoryLink.contains
 //(S_Data.FILE_FORMAT_JAR)) {
-////20230106-System.out.println(S_Data.ATTENSION_RECHOICE);
+////20230106-S_logger.Log.logger.info("" + S_Data.ATTENSION_RECHOICE);
 //return first;
 //}
 //File file= new File(jarCategoryLink);
 //if(file.isFile()) {
-////20230106-System.out.println(S_Data.ATTENSION_FILE_CHOICE);
+////20230106-S_logger.Log.logger.info("" + S_Data.ATTENSION_FILE_CHOICE);
 //return first;
 //}
 //File[] files= file.listFiles();

@@ -30,7 +30,7 @@ public class X_PdcToPds {
         pDE_RNA_Formular1.pdeieKey = ie;
         pDE_RNA_Formular1.pdeisKey = is;
         pDE_RNA_Formular.doKeyUnPress(tokenCerts.getPdnPassword(), pDE_RNA_Formular1, true);
-        ////20230106-System.out.println("pds--3>"+ pDE_RNA_Formular1.pds);
+        ////20230106-S_logger.Log.logger.info("" + "pds--3>"+ pDE_RNA_Formular1.pds);
         return pDE_RNA_Formular1.pds;
     }
 }

@@ -82,8 +82,8 @@ public class LYG9DWithDoubleTopSort3D {
         timecheck.end();
         timecheck.duration();
         for (int i = 0; i < doubles.length - 1; i++) {
-            //20230106-System.out.println(i+"->"+ doubles[i]);
+            //20230106-S_logger.Log.logger.info("" + i+"->"+ doubles[i]);
         }
-        //20230106-System.out.println("end");
+        //20230106-S_logger.Log.logger.info("" + "end");
     }
 }

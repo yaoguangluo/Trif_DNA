@@ -118,15 +118,15 @@ public class SkinPathDetectDis {
             while (iterator.hasNext()) {
                 String string = iterator.next();
                 if (string.contains("狼")) {
-                    //20230106-System.out.println("相似图片:"+ i+ "位"+ string+ "-----分数:"+ scoreDouble[i]);
+                    //20230106-S_logger.Log.logger.info("" + "相似图片:"+ i+ "位"+ string+ "-----分数:"+ scoreDouble[i]);
                 } else {
                     if (i < 20) {
-                        //20230106-System.out.println("相似图片:"+ i+ "位"+ string+ "-----分数:"+ scoreDouble[i]);
+                        //20230106-S_logger.Log.logger.info("" + "相似图片:"+ i+ "位"+ string+ "-----分数:"+ scoreDouble[i]);
                     }
                 }
             }
             map.remove(scoreDouble[i]);
-            //	//20230106-System.out.println("相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
+            //	//20230106-S_logger.Log.logger.info("" + "相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
         }
     }
 

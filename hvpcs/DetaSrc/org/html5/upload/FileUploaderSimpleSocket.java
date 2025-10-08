@@ -86,7 +86,7 @@ import src.java.org.lyg.common.utils.DetaDBUtil;
 		// ׼����2���¡�
 		// 1 email token ��֤�۵�
 		System.out.flush();
-		System.out.println(email + token);
+		S_logger.Log.logger.info("" + email + token);
 		if (null == token) {
 			vPCSResponse.returnCode(204);
 			return;
@@ -200,7 +200,7 @@ import src.java.org.lyg.common.utils.DetaDBUtil;
 					file);
 			BufferedImage bufferedImageIn = ImageIO.read(inputStreamTemp);
 			System.out.flush();
-			System.out.println(bufferedImageIn.getHeight() + "&&"
+			S_logger.Log.logger.info("" + bufferedImageIn.getHeight() + "&&"
 					+ bufferedImageIn.getWidth());
 			BufferedImage bufferedImage = bufferedImageIn;
 			if (bufferedImageIn.getHeight() > 800
@@ -213,7 +213,7 @@ import src.java.org.lyg.common.utils.DetaDBUtil;
 			int h = bufferedImage.getHeight();
 			int w = bufferedImage.getWidth();
 			System.out.flush();
-			System.out.println(h + "&&" + w);
+			S_logger.Log.logger.info("" + h + "&&" + w);
 			int[][] rgb = new int[h][w];
 			for (int i = 0; i < h; i++) {
 				for (int j = 0; j < w; j++) {
@@ -245,7 +245,7 @@ import src.java.org.lyg.common.utils.DetaDBUtil;
 				}
 			}
 			System.out.flush();
-			System.out.println("success rgb");
+			S_logger.Log.logger.info("" + "success rgb");
 			String string = DetaDBUtil.huaRuiJiRequest("socketSB?image="
 					+ URLEncoder.encode(stringBuilder.toString(), "UTF-8"));
 			// ���
@@ -262,11 +262,11 @@ import src.java.org.lyg.common.utils.DetaDBUtil;
 						true);
 			} catch (Exception e) {
 				System.out.flush();
-				System.out.println();
+				S_logger.Log.logger.info("" + "");
 			}
 			if (output.length() > 0) {
 				System.out.flush();
-				System.out.println("success YLJ");
+				S_logger.Log.logger.info("" + "success YLJ");
 				vPCSResponse.printWriter.println("HTTP/1.1 200 OK\n\n");
 				output = output.charAt(0) == '"'
 						? output.substring(1, output.length())
@@ -283,7 +283,7 @@ import src.java.org.lyg.common.utils.DetaDBUtil;
 						.removeThreadById(vPCSResponse.getSocket().hashCode());
 				Thread.sleep(15);
 				System.out.flush();
-				System.out.println("success all");
+				S_logger.Log.logger.info("" + "success all");
 			} else {
 				System.out.flush();
 				System.out.print(vPCSRequest.getRequestLink());

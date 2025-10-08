@@ -27,31 +27,31 @@ public class X_sessionInitByTokenPDICertsDNA {
 		pDE_RNA_Formular.key[3] = 0.0;
 		pDE_RNA_Formular.doKeyPress(tokenCerts.getPdnPassword(),
 				pDE_RNA_Formular, false);
-		// //20230106-System.out.println("静态肽展降元概率钥匙E: "+
+		// //20230106-S_logger.Log.logger.info("" + "静态肽展降元概率钥匙E: "+
 		// pDE_RNA_Formular.pdedeKey);
-		// //20230106-System.out.println("静态肽展降元概率钥匙S: "+
+		// //20230106-S_logger.Log.logger.info("" + "静态肽展降元概率钥匙S: "+
 		// pDE_RNA_Formular.pdedsKey);
-		// //20230106-System.out.println("静态肽展降元: "+
+		// //20230106-S_logger.Log.logger.info("" + "静态肽展降元: "+
 		// pDE_RNA_Formular.pds);
 		tokenCerts.I_Pds(pDE_RNA_Formular.pds);
 		token.I_Updsde(pDE_RNA_Formular.pdedeKey);
 		token.I_Updsds(pDE_RNA_Formular.pdedsKey);
 		token.I_Updsie(pDE_RNA_Formular.pdeieKey);
 		token.I_Updsis(pDE_RNA_Formular.pdeisKey);
-		// //20230106-System.out.println("静态肽展增元概率钥匙E: "+
+		// //20230106-S_logger.Log.logger.info("" + "静态肽展增元概率钥匙E: "+
 		// pDE_RNA_Formular.pdeieKey);
-		// //20230106-System.out.println("静态肽展增元概率钥匙S: "+
+		// //20230106-S_logger.Log.logger.info("" + "静态肽展增元概率钥匙S: "+
 		// pDE_RNA_Formular.pdeisKey);
-		// //20230106-System.out.println("静态肽展增元: "+
+		// //20230106-S_logger.Log.logger.info("" + "静态肽展增元: "+
 		// pDE_RNA_Formular.pde);
 		pDE_RNA_Formular.time = "" + System.currentTimeMillis();
 		pDE_RNA_Formular.cacheId = "ID" + Math.random() + ":" + Math.random();
-		// //20230106-System.out.println("时间: " +
+		// //20230106-S_logger.Log.logger.info("" + "时间: " +
 		// pDE_RNA_Formular.time);
-		// //20230106-System.out.println("账号随机缓存字符串: " +
+		// //20230106-S_logger.Log.logger.info("" + "账号随机缓存字符串: " +
 		// pDE_RNA_Formular.cacheId);
 		pDE_RNA_Formular.session_key = pDE_RNA_Formular.pde;
-		// //20230106-System.out.println("Session: " +
+		// //20230106-S_logger.Log.logger.info("" + "Session: " +
 		// pDE_RNA_Formular.session_key);
 		token.I_mPassword(pDE_RNA_Formular.pde);
 		token.I_mPasswordPDS(pDE_RNA_Formular.pds);

@@ -42,7 +42,7 @@ public class LYGSortESU9D {
  * //            System.out.print(a[i]);
  * //            System.out.print("-");
  * //            System.out.print(sa[i]);
- * //            System.out.println("--");
+ * //            S_logger.Log.logger.info("" + "--");
  * //        }
  * //    }
  */

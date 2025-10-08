@@ -43,7 +43,7 @@ public class DemoPOSMedcine {
         ss1[0] = "";
         //ss1[0]= "、 益母 、结婚益母";
         for (int i = 0; i < ss.length; i++) {
-            //20230106-System.out.println("超级变态复杂病句-->" + ss[i]);
+            //20230106-S_logger.Log.logger.info("" + "超级变态复杂病句-->" + ss[i]);
             IMV_SQI_SS map = _A.parserMixStringByReturnFrequencyMap(
                 ss[0], NE
             );

@@ -92,7 +92,7 @@ public class LYGFileIO {
             while ((line = reader.readDetaLine()) != null) {
                 //read head
                 if (line.equals("<HEAD>")) {
-                    //20230106-System.out.println("has HEAD");
+                    //20230106-S_logger.Log.logger.info("" + "has HEAD");
                     header = new Header();
                 }
                 if (line.equals("<MFR>")) {
@@ -146,7 +146,7 @@ public class LYGFileIO {
                 }
                 //read frame
                 if (line.equals("<FRAME>")) {
-                    //20230106-System.out.println("has FRAME");
+                    //20230106-S_logger.Log.logger.info("" + "has FRAME");
                 }
                 if (line.equals("<AF>")) {
                     adataFrame = new AdataFrame();
@@ -174,7 +174,7 @@ public class LYGFileIO {
                                 && i2 < (int) header.SFrameRate
                                 && !line.equals("<MF>")
                         ) {
-                            //20230106-System.out.println(i2);
+                            //20230106-S_logger.Log.logger.info("" + i2);
                             adataFrame.audioArray[i2++] = Double.parseDouble(line);
                             line = reader.readDetaLine();
                         }
@@ -228,30 +228,30 @@ public class LYGFileIO {
             BufferedWriter wr = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(string), "UTF8"));
             wr.write("<HEAD>" + "\n");
             wr.write("<MFR>\n" + header.MFrameRate + "\n</MFR>\n");
-            //20230106-System.out.println("<MFR>\n"+header.MFrameRate+"\n</MFR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MFR>\n"+header.MFrameRate+"\n</MFR>\n");
             wr.write("<MHR>\n" + header.MHFrame + "\n</MHR>\n");
-            //20230106-System.out.println("<MHR>\n"+header.MHFrame+"\n</MHR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MHR>\n"+header.MHFrame+"\n</MHR>\n");
             wr.write("<MWR>\n" + header.MWFrame + "\n</MWR>\n");
-            //20230106-System.out.println("<MWR>\n"+header.MWFrame+"\n</MWR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MWR>\n"+header.MWFrame+"\n</MWR>\n");
             wr.write("<MFL>\n" + header.MFrameLeangth + "\n</MFL>\n");
-            //20230106-System.out.println("<MFL>\n"+header.MFrameLeangth+"\n</MFL>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MFL>\n"+header.MFrameLeangth+"\n</MFL>\n");
             //en /1sample rate /2samplesize /3 channels /4framesize  /5 framrate/bigendianture
             wr.write("<AEN>\n" + header.SEn.toString() + "\n</AEN>\n");
-            //20230106-System.out.println("<AEN>\n"+header.SEn.toString()+"\n</AEN>\n");
+            //20230106-S_logger.Log.logger.info("" + "<AEN>\n"+header.SEn.toString()+"\n</AEN>\n");
             wr.write("<ASR>\n" + header.SSampleRate + "\n</ASR>\n");
-            //20230106-System.out.println("<ASR>\n"+header.SSampleRate+"\n</ASR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<ASR>\n"+header.SSampleRate+"\n</ASR>\n");
             wr.write("<ASS>\n" + header.SSampleSizeInBits + "\n</ASS>\n");
-            //20230106-System.out.println("<ASS>\n"+header.SSampleSizeInBits+"\n</ASS>\n");
+            //20230106-S_logger.Log.logger.info("" + "<ASS>\n"+header.SSampleSizeInBits+"\n</ASS>\n");
             wr.write("<ACH>\n" + header.SChannels + "\n</ACH>\n");
-            //20230106-System.out.println("<ACH>\n"+header.SChannels+"\n</ACH>\n");
+            //20230106-S_logger.Log.logger.info("" + "<ACH>\n"+header.SChannels+"\n</ACH>\n");
             wr.write("<AFS>\n" + header.SFrameSize + "\n</AFS>\n");
-            //20230106-System.out.println("<AFS>\n"+header.SFrameSize+"\n</AFS>\n");
+            //20230106-S_logger.Log.logger.info("" + "<AFS>\n"+header.SFrameSize+"\n</AFS>\n");
             wr.write("<AFR>\n" + header.SFrameRate + "\n</AFR>\n");
-            //20230106-System.out.println("<AFR>\n"+header.SFrameRate+"\n</AFR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<AFR>\n"+header.SFrameRate+"\n</AFR>\n");
             wr.write("<ABE>\n" + header.SBigEndian + "\n</ABE>\n");
-            //20230106-System.out.println("<ABE>\n"+header.SBigEndian+"\n</ABE>\n");
+            //20230106-S_logger.Log.logger.info("" + "<ABE>\n"+header.SBigEndian+"\n</ABE>\n");
             wr.write("<AFL>\n" + header.SFrameLeangth + "\n</AFL>\n");
-            //20230106-System.out.println("<AFL>\n"+header.SFrameLeangth+"\n</AFL>\n");
+            //20230106-S_logger.Log.logger.info("" + "<AFL>\n"+header.SFrameLeangth+"\n</AFL>\n");
             wr.write("</HEAD>" + "\n");
             wr.write("<FRAME>" + "\n");
             wr.write("<AF>" + "\n");
@@ -346,7 +346,7 @@ public class LYGFileIO {
             int f3 = ((int) iv[3] << 24 & 0xff000000);
             f0 = f3 | f2 | f1 | f0;
             header.MWFrame = f0;
-            //20230106-System.out.println("<MWR>\n"+header.MWFrame+"\n</MWR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MWR>\n"+header.MWFrame+"\n</MWR>\n");
 
             headpos += 4;
             iv = new byte[4];
@@ -357,7 +357,7 @@ public class LYGFileIO {
             f3 = ((int) iv[3] << 24 & 0xff000000);
             f0 = f3 | f2 | f1 | f0;
             header.MHFrame = f0;
-            //20230106-System.out.println("<MWR>\n"+header.MHFrame+"\n</MWR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MWR>\n"+header.MHFrame+"\n</MWR>\n");
             headpos += 4;
             //3
             iv = new byte[4];
@@ -368,7 +368,7 @@ public class LYGFileIO {
             f3 = ((int) iv[3] << 24 & 0xff000000);
             f0 = f3 | f2 | f1 | f0;
             header.MFrameLeangth = f0;
-            //20230106-System.out.println("<MWR>\n"+header.MFrameLeangth+"\n</MWR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MWR>\n"+header.MFrameLeangth+"\n</MWR>\n");
             headpos += 4;
             //4
             iv = new byte[4];
@@ -379,7 +379,7 @@ public class LYGFileIO {
             f3 = (int) iv[3] << 24 & 0xff000000;
             f0 = f3 | f2 | f1 | f0;
             header.MFrameRate = f0;
-            //20230106-System.out.println("<MWR>\n"+header.MFrameLeangth+"\n</MWR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MWR>\n"+header.MFrameLeangth+"\n</MWR>\n");
             headpos += 4;
             //5
             byte[] size = new byte[1];
@@ -397,7 +397,7 @@ public class LYGFileIO {
 
                 String se = new String(ch);
                 header.SEn = new Encoding(se);
-                //20230106-System.out.println("good");
+                //20230106-S_logger.Log.logger.info("" + "good");
                 headpos += array.length;
             }
             //6
@@ -410,7 +410,7 @@ public class LYGFileIO {
             f0 = f3 | f2 | f1 | f0;
             float fl = Float.intBitsToFloat(f0);//.floatToIntBits(IO.header.SSampleRate);
             header.SSampleRate = fl;
-            //20230106-System.out.println("<MWR>\n"+header.SSampleRate+"\n</MWR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MWR>\n"+header.SSampleRate+"\n</MWR>\n");
             headpos += 4;
             //7
             iv = new byte[4];
@@ -421,7 +421,7 @@ public class LYGFileIO {
             f3 = (int) iv[3] << 24 & 0xff000000;
             f0 = f3 | f2 | f1 | f0;
             header.SSampleSizeInBits = f0;
-            //20230106-System.out.println("<MWR>\n"
+            //20230106-S_logger.Log.logger.info("" + "<MWR>\n"
             // +header.SSampleSizeInBits+"\n</MWR>\n");
             headpos += 4;
             //8
@@ -433,7 +433,7 @@ public class LYGFileIO {
             f3 = (int) iv[3] << 24 & 0xff000000;
             f0 = f3 | f2 | f1 | f0;
             header.SChannels = f0;
-            //20230106-System.out.println("<MWR>\n"+header.SChannels+"\n</MWR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MWR>\n"+header.SChannels+"\n</MWR>\n");
             headpos += 4;
             //9
             iv = new byte[4];
@@ -444,7 +444,7 @@ public class LYGFileIO {
             f3 = (int) iv[3] << 24 & 0xff000000;
             f0 = f3 | f2 | f1 | f0;
             header.SFrameSize = f0;
-            //20230106-System.out.println("<MWR>\n"+header.SFrameSize+"\n</MWR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MWR>\n"+header.SFrameSize+"\n</MWR>\n");
             headpos += 4;
             //10
             iv = new byte[4];
@@ -456,7 +456,7 @@ public class LYGFileIO {
             f0 = f3 | f2 | f1 | f0;
             fl = Float.intBitsToFloat(f0);//.floatToIntBits(IO.header.SSampleRate);
             header.SFrameRate = fl;
-            //20230106-System.out.println("<MWR>\n"+header.SFrameRate+"\n</MWR>\n");
+            //20230106-S_logger.Log.logger.info("" + "<MWR>\n"+header.SFrameRate+"\n</MWR>\n");
             headpos += 4;
             //11
             byte[] bein = new byte[1];
@@ -501,7 +501,7 @@ public class LYGFileIO {
             headpos += 8;
             header.MovPos = headpos;
             duration = (double)(header.MFrameLeangth / header.MFrameRate);
-            //20230106-System.out.println("end header get");
+            //20230106-S_logger.Log.logger.info("" + "end header get");
         } catch (Exception e) {
             e.printStackTrace();
         }

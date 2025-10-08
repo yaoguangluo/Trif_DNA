@@ -4,7 +4,7 @@ import A_V.ASQ.PSU.test.TimeCheck;
 import U_V.OEU.LYG4DQS4D.LYG9DWithDoubleTopSort5D;
 
 import org.junit.jupiter.api.Test;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -54,10 +54,10 @@ class LYG9DWithDoubleTopSort5DTest {
 		lYG9DWithDoubleTopSort5D.sort(doubles, 7, 70);
 		timecheck.end();
 		timecheck.duration();
-		System.out.println("--double 随机排序完成，容错率测试--");
+		S_logger.Log.logger.info("" + "--double 随机排序完成，容错率测试--");
 		for (int i = 0; i < doubles.length - 1; i++) {
 			if (doubles[i] > doubles[i + 1]) {
-				System.out.println(i + "->" + doubles[i]);
+				S_logger.Log.logger.info("" + i + "->" + doubles[i]);
 			}
 		}
 	}
@@ -73,10 +73,10 @@ class LYG9DWithDoubleTopSort5DTest {
 		lYG9DWithLongTopSort5D.sort(longV, 7, 70);
 		timecheck.end();
 		timecheck.duration();
-		System.out.println("--long 随机排序完成，容错率测试--");
+		S_logger.Log.logger.info("" + "--long 随机排序完成，容错率测试--");
 		for (int i = 0; i < longV.length - 1; i++) {
 			if (longV[i] > longV[i + 1]) {
-				System.out.println(i + "->" + longV[i]);
+				S_logger.Log.logger.info("" + i + "->" + longV[i]);
 			}
 		}
 	}
@@ -93,12 +93,12 @@ class LYG9DWithDoubleTopSort5DTest {
 		lYG9DWithIntTopSort5D.sort(intV, 7, 70);
 		timecheck.end();
 		timecheck.duration();
-		System.out.println("--int 随机排序完成，容错率测试--");
-		System.out.println("--int 排序耗时长是因为>=计算 随机大量的相同数导致"
+		S_logger.Log.logger.info("" + "--int 随机排序完成，容错率测试--");
+		S_logger.Log.logger.info("" + "--int 排序耗时长是因为>=计算 随机大量的相同数导致"
 			+ "，真实环境中过滤后不可能出现这种条件。--");
 		for (int i = 0; i < intV.length - 1; i++) {
 			if (intV[i] > intV[i + 1]) {
-				System.out.println(i + "->" + intV[i]);
+				S_logger.Log.logger.info("" + i + "->" + intV[i]);
 			}
 		}
 	}
@@ -114,10 +114,10 @@ class LYG9DWithDoubleTopSort5DTest {
 		lYG9DWithFloatTopSort5D.sort(floatV, 7, 70);
 		timecheck.end();
 		timecheck.duration();
-		System.out.println("--float 随机排序完成，容错率测试--");
+		S_logger.Log.logger.info("" + "--float 随机排序完成，容错率测试--");
 		for (int i = 0; i < floatV.length - 1; i++) {
 			if (floatV[i] > floatV[i + 1]) {
-				System.out.println(i + "->" + floatV[i]);
+				S_logger.Log.logger.info("" + i + "->" + floatV[i]);
 			}
 		}
 	}

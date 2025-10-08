@@ -40,7 +40,7 @@ public class RequestRecordController {
 		}
 		if (length < 1) {
 			System.out.flush();
-			System.out.println(vPCSResponse.getHashCode() + "-check");
+			S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-check");
 			vPCSResponse.setErrorCode(204);
 			return;
 		}
@@ -52,24 +52,24 @@ public class RequestRecordController {
 		rbytes = null;
 		String temp = stringInput.substring(0, length > 60 ? 60 : length);
 		System.out.flush();
-		System.out.println(vPCSResponse.getHashCode() + "->" + temp);
+		S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "->" + temp);
 		String[] stringInputs = stringInput.split("\r\n");
 		String mess = stringInputs[0];
 		if (null == mess) {
 			System.out.flush();
-			System.out.println(vPCSResponse.getHashCode() + "-check mess");
+			S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-check mess");
 			vPCSResponse.setErrorCode(204);
 			return;
 		}
 		if (mess.length() > 3000) {
 			System.out.flush();
-			System.out.println(vPCSResponse.getHashCode() + "-check length");
+			S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-check length");
 			vPCSResponse.setErrorCode(204);
 			return;
 		}
 		if (mess.equalsIgnoreCase("") || !mess.contains("HTTP")) {
 			System.out.flush();
-			System.out.println(vPCSResponse.getHashCode() + "-check contains");
+			S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-check contains");
 			vPCSResponse.setErrorCode(204);
 			return;
 		}
@@ -87,7 +87,7 @@ public class RequestRecordController {
 				|| temp_mess.contains("file") || temp_mess.contains("#if")
 				|| temp_mess.contains("#el")) {
 			System.out.flush();
-			System.out.println(vPCSResponse.getHashCode() + "-check tails");
+			S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-check tails");
 			vPCSResponse.setErrorCode(204);
 			return;
 		}
@@ -126,7 +126,7 @@ public class RequestRecordController {
 				vPCSRequest.setRequestLink(content[0] + "index.html");
 			}
 			System.out.flush();
-			System.out.println(vPCSResponse.getHashCode() + "-check"
+			S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-check"
 					+ vPCSRequest.getRequestLink());
 			return;
 		}
@@ -140,14 +140,14 @@ public class RequestRecordController {
 					string = URLDecoder.decode(cells[1], "UTF-8");
 				} catch (UnsupportedEncodingException e) {
 					System.out.flush();
-					System.out.println(
+					S_logger.Log.logger.info("" + 
 							vPCSResponse.getHashCode() + "-check decoding");
 					vPCSResponse.setErrorCode(204);
 					return;
 				}
 				if (null == string) {
 					System.out.flush();
-					System.out.println(
+					S_logger.Log.logger.info("" + 
 							vPCSResponse.getHashCode() + "-check rest");
 					vPCSResponse.setErrorCode(204);
 					return;

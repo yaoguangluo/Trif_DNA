@@ -1,6 +1,7 @@
 package test.java.InterfaceTest.computingPDE.matrixPage;
 
 import A_I.MPE.MAQPVDCOISIV.pdi.RangePDI;
+import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -56,7 +57,7 @@ class RangePDITest {
 			for (int j = 0; j < 32; j++) {
 				System.out.print("-" + rp[i][j]);
 			}
-			System.out.println();
+			S_logger.Log.logger.info("" + "");
 		}
 		// 关闭
 		commonTestInition.endEnvironment();

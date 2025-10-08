@@ -142,9 +142,9 @@ public class P_AO_pl_XA {
 		}
 		//need fix later -
 		if (sets[1].equalsIgnoreCase("行至")) {
-			System.out.println("sets[0]-"+sets[0]);
-			System.out.println("sets[1]-"+sets[1]);
-			System.out.println("sets[2]-"+sets[2]);
+			S_logger.Log.logger.info("" + "sets[0]-"+sets[0]);
+			S_logger.Log.logger.info("" + "sets[1]-"+sets[1]);
+			S_logger.Log.logger.info("" + "sets[2]-"+sets[2]);
 			//if (!sets[0].contains(";") && !sets[2].contains(";")) {
 				Iterator<IMV_SQI> iterator = output.iterator();
 				int count = 0;

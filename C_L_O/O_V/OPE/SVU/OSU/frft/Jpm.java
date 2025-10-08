@@ -55,7 +55,7 @@ public class Jpm extends Panel {
             Dimension d = this.getSize();
             int w = 1024;
             int h = 400;
-            ////20230106-System.out.println(d.width+"**"+d.height);
+            ////20230106-S_logger.Log.logger.info("" + d.width+"**"+d.height);
             int INFOPAD = 15;
             //Graphics g= getGraphics();
             Graphics2D g2 = (Graphics2D) g;
@@ -117,7 +117,7 @@ public class Jpm extends Panel {
                     f[k].real += p[n].real * Math.cos(v);
                 }
             }
-            //  //20230106-System.out.println(c);
+            //  //20230106-S_logger.Log.logger.info("" + c);
             g2.setColor(Color.black);
             for (int i = 0; i < N - 1; i++) {
                 g2.drawLine(i, 500, i, (int) (Math.sqrt(f[i].real * f[i].real

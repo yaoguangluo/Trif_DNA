@@ -7,7 +7,7 @@ import test.java.interfaces.test.CommonTestInition;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -59,7 +59,7 @@ class InitBehaviorICAKernelTest {
 		// output
 		List<String> list = initBehaviorICAKernel.getForRestReturn();
 		for (String string : list) {
-			System.out.println(string);
+			S_logger.Log.logger.info("" + string);
 		}
 		commonTestInition.endEnvironment();
 	}

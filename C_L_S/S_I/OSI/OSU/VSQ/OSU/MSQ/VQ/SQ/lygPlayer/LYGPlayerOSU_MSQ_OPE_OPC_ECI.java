@@ -31,6 +31,6 @@ public class LYGPlayerOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
 		 ff.add(jj);
 	     ff.setSize(800, 600);
 	     ff.setVisible(true);
-	     //20230106-System.out.println("run end");
+	     //20230106-S_logger.Log.logger.info("" + "run end");
 	}
 }

@@ -15,7 +15,7 @@ import S_A.SVQ.stable.S_MapsInitons;
  */
 public class RangePDI {
 	public static void main(String[] argv) {
-		//// 20230106-System.out.println(new RangePDI().IOE(16,
+		//// 20230106-S_logger.Log.logger.info("" + new RangePDI().IOE(16,
 		//// 20));
 	}
 

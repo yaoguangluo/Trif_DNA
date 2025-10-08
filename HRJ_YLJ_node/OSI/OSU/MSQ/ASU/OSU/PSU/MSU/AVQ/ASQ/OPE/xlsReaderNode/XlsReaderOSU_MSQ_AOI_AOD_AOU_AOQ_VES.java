@@ -60,7 +60,7 @@ public class XlsReaderOSU_MSQ_AOI_AOD_AOU_AOQ_VES extends OSU_AOU_AOQ_VES {
 				filedialog=new FileDialog(new Frame(), "filechoose", FileDialog.LOAD);
 				filedialog.setVisible(true);
 				_SQ__OPE_OPC_ECI.filepath=filedialog.getDirectory()+filedialog.getFile();
-				System.out.println(_SQ__OPE_OPC_ECI.filepath);     
+				S_logger.Log.logger.info("" + _SQ__OPE_OPC_ECI.filepath);     
 				FileInputStream fis= null;
 				try {
 					fis= new FileInputStream(_SQ__OPE_OPC_ECI.filepath);
@@ -89,7 +89,7 @@ public class XlsReaderOSU_MSQ_AOI_AOD_AOU_AOQ_VES extends OSU_AOU_AOQ_VES {
 					@Override
 					public void actionPerformed(ActionEvent arg0){
 						HSSFSheet sheet= wb.getSheetAt(Integer.valueOf(jcb.getSelectedIndex())); 		 
-						System.out.println(jcb.getSelectedIndex());
+						S_logger.Log.logger.info("" + jcb.getSelectedIndex());
 						HSSFRow row= sheet.getRow(0);   
 						String[][] content= new String[sheet.getPhysicalNumberOfRows()][row.getLastCellNum()];
 						String[] spec=new String[row.getLastCellNum()];
@@ -98,16 +98,16 @@ public class XlsReaderOSU_MSQ_AOI_AOD_AOU_AOQ_VES extends OSU_AOU_AOQ_VES {
 							for(int j=0;j<row.getLastCellNum();j++){
 								cell= row.getCell(j);
 								if(cell.getCellType().equals(CellType.STRING)){
-									System.out.println(cell.getStringCellValue());
+									S_logger.Log.logger.info("" + cell.getStringCellValue());
 									spec[j]=new String("String"); 
 								}
 								if(cell.getCellType().equals(CellType.NUMERIC)){
 									spec[j]=new String("RichString"); 
 //									if(HSSFDateUtil.isCellDateFormatted(cell)){
-//										System.out.println(cell.getDateCellValue());
+//										S_logger.Log.logger.info("" + cell.getDateCellValue());
 //										spec[j]=new String("Date"); 
 //									}else{
-//										System.out.println(cell.getNumericCellValue());
+//										S_logger.Log.logger.info("" + cell.getNumericCellValue());
 //										spec[j]=new String("Number"); 
 //									}
 								}
@@ -120,17 +120,17 @@ public class XlsReaderOSU_MSQ_AOI_AOD_AOU_AOQ_VES extends OSU_AOU_AOQ_VES {
 								for(int j=0;j<row.getLastCellNum();j++){
 									cell= row.getCell(j);
 									if(cell.getCellType().equals(CellType.STRING)){
-										System.out.println(cell.getStringCellValue());
+										S_logger.Log.logger.info("" + cell.getStringCellValue());
 										content[i][j]=new String(cell.getStringCellValue());
 									}
 									if(cell.getCellType().equals(CellType.NUMERIC)){
 										content[i][j]=new String(cell.getRichStringCellValue().toString());
 //										if(HSSFDateUtil.isCellDateFormatted(cell)){
-//											System.out.println(cell.getDateCellValue().toString());
+//											S_logger.Log.logger.info("" + cell.getDateCellValue().toString());
 //											content[i][j]=new String(cell.getDateCellValue().toString());
 //										}
 //										else{
-//											System.out.println(cell.getNumericCellValue());
+//											S_logger.Log.logger.info("" + cell.getNumericCellValue());
 //											content[i][j]=new String(Double.toString(cell.getNumericCellValue()));
 //										}
 									}
@@ -153,6 +153,6 @@ public class XlsReaderOSU_MSQ_AOI_AOD_AOU_AOQ_VES extends OSU_AOU_AOQ_VES {
 		close= false;
 	}
 	public void config(){
-		System.out.println(S_ShellETL.SHELL_ETL_DID_CONFIG);       
+		S_logger.Log.logger.info("" + S_ShellETL.SHELL_ETL_DID_CONFIG);       
 	}
 }

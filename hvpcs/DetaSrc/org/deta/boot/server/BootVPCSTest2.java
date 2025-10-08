@@ -13,6 +13,6 @@ public class BootVPCSTest2 {
 	 public static void main(String[] args) throws IOException, InterruptedException {
 		String filePath= "C:/Usgit1/frontend_datources/static/index.html";
 		String[] stings= filePath.split("\\.");
-		System.out.println(stings[1]);
+		S_logger.Log.logger.info("" + stings[1]);
 	 }
  }

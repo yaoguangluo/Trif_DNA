@@ -48,7 +48,7 @@ public class RestMap extends ServerForward_Standard {
 		String output = "";
 		try {
 			output = VPCBackEnd.forward(type[0], data, NE);
-//			//20230106-System.out.println(output);
+//			//20230106-S_logger.Log.logger.info("" + output);
 			PrintWriter pw = new PrintWriter(
 					new BufferedWriter(new OutputStreamWriter(
 							socket.getOutputStream(), StandardCharsets.UTF_8)),

@@ -101,7 +101,7 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 	//
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeRNA.put("crab", null);
-	// System.out.println("Hello Word!");
+	// S_logger.Log.logger.info("" + "Hello Word!");
 	// return null;
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	/*
@@ -118,18 +118,18 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 		if (false == scorePass(NE)) {
 			return false;
 		}
-		//System.out.println("Hello Word!");
-		S_logger.Log.logger.info("Hello Word!");
+		//S_logger.Log.logger.info("" + "Hello Word!");
+		S_logger.Log.logger.info("" + "Hello Word!");
 		/*
 		 * 笛卡尔关系计算大幅缩减。此处有效。
 		 */
 		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(
 			className)) {
-			S_logger.Log.logger.info("400-size-01-" 
+			S_logger.Log.logger.info("" + "400-size-01-" 
 			+ NE.app_S.workVerbalMap.command_V.countReject++);
 			return false;
 		}
-		S_logger.Log.logger.info("400-size-02-"
+		S_logger.Log.logger.info("" + "400-size-02-"
 		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 		// 获取表
 		if (!NE._I_U.outputMap.containsKey("获取表名")) {
@@ -154,13 +154,13 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 			//去掉末尾多余的:
 			shellType = shellType.substring(0, shellType.length()
 				- 1);
-			S_logger.Log.logger.info("400-01010101-" + shellType);
+			S_logger.Log.logger.info("" + "400-01010101-" + shellType);
 			String string = "400-01010101-" + shellType;
-			S_logger.Log.logger.info(string);
+			S_logger.Log.logger.info("" + string);
 			String[] strings = shellType.split(":");
-			S_logger.Log.logger.info("400-01010102-" + strings[1]);
+			S_logger.Log.logger.info("" + "400-01010102-" + strings[1]);
 			string = "400-01010102-" + strings[1];
-			S_logger.Log.logger.info(string);
+			S_logger.Log.logger.info("" + string);
 			List<String[]> list = new ArrayList();
 			list.add(strings);
 			NE._I_U.outputMap.put("获取列名", list);// 集成到老的接口模式先，避免bug*/
@@ -211,40 +211,40 @@ public class AddFindColumnsInMemoryClass implements CrabInterface {
 		//		Iterator<String> iterator= NE.app_S.workVerbalMap.command_V
 		//.cartesianWorkActionsRightsParserVO.keySet().iterator();
 		//		while(iterator.hasNext()) {
-		//			System.out.println("400-iterator-01-" + iterator.next());
+		//			S_logger.Log.logger.info("" + "400-iterator-01-" + iterator.next());
 		//		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 			.containsKey("仅含-")) {
 			combinationIncreased += 1;
 			//System.out.printf("highly fit"); // later in mapping iterator.*/
-			S_logger.Log.logger.info("highly fit");
+			S_logger.Log.logger.info("" + "highly fit");
 		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 			.containsKey("输出-")) {
 			combinationIncreased += 1;
 			//System.out.printf("highly fit"); // later in mapping iterator.*/
-			S_logger.Log.logger.info("highly fit");
+			S_logger.Log.logger.info("" + "highly fit");
 		}
 		//		iterator= NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
 		//		while(iterator.hasNext()) {
-		//			//System.out.println("400-iterator-02-" + iterator.next());
+		//			//S_logger.Log.logger.info("" + "400-iterator-02-" + iterator.next());
 		//		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
 			.containsKey("V+")) {
 			combinationIncreased += 1;
 			//System.out.printf("highly fit"); // later in mapping iterator.*/
-			S_logger.Log.logger.info("highly fit");
+			S_logger.Log.logger.info("" + "highly fit");
 		}
 		if (NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 			.containsKey("名为-")) {
 			combinationIncreased += 1;
 			//System.out.printf("highly fit"); // later in mapping iterator.*/
-			S_logger.Log.logger.info("highly fit");
+			S_logger.Log.logger.info("" + "highly fit");
 		}
 		if (combinationIncreased < 2) {
-			//System.out.println("-E-small-" + combinationIncreased);
+			//S_logger.Log.logger.info("" + "-E-small-" + combinationIncreased);
 			String string = "-E-small-" + combinationIncreased;
-			S_logger.Log.logger.info(string);
+			S_logger.Log.logger.info("" + string);
 			return false;
 		}
 		return true;

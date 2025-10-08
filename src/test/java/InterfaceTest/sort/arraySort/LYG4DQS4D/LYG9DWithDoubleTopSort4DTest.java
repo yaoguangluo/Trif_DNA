@@ -4,7 +4,7 @@ import A_V.ASQ.PSU.test.TimeCheck;
 import U_V.OEU.LYG4DQS4D.LYG9DWithDoubleTopSort4D;
 
 import org.junit.jupiter.api.Test;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -47,9 +47,9 @@ class LYG9DWithDoubleTopSort4DTest {
 		timecheck.duration();
 		for (int i = 0; i < doubles.length - 1; i++) {
 			if (doubles[i] > doubles[i + 1]) {
-				System.out.println(i + "->" + doubles[i]);
+				S_logger.Log.logger.info("" + i + "->" + doubles[i]);
 			}
 		}
-		// 20230106-System.out.println("end");
+		// 20230106-S_logger.Log.logger.info("" + "end");
 	}
 }

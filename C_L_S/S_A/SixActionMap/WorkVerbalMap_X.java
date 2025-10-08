@@ -216,9 +216,9 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 				 * --罗瑶光
 				 * 
 				 * */
-				//System.out.println(rootM + "--" + rightM);
+				//S_logger.Log.logger.info("" + rootM + "--" + rightM);
 				if (2 > rightM && rootM.length() < 3) {
-					//System.out.println(rootM + "--" + rightM);
+					//S_logger.Log.logger.info("" + rootM + "--" + rightM);
 					//nounInText.remove(stringNounM);
 					//nounInText.remove(stringNounN);
 					nounInText.put(rootM, positionM);
@@ -264,7 +264,7 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 			actionsDistance_SV);
 		// loop
 		for (i = 0; i < actionsDistance_SV.length; i++) {
-			//System.out.println(actionsDistance_SV[i] + "-" + actionsDistanceV_SV[i]);
+			//S_logger.Log.logger.info("" + actionsDistance_SV[i] + "-" + actionsDistanceV_SV[i]);
 			//command_V.normalizationalWorkActionsRights.put(
 			//		actionsDistance[i] + "-" + actionsDistanceV[i],
 			//		actionsDistanceV[i]);
@@ -292,7 +292,7 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 			actionsDistance_VO);
 		// loop
 		for (i = 0; i < actionsDistance_VO.length; i++) {
-			//System.out.println(actionsDistance_VO[i] + "-" + actionsDistanceV_VO[i]);
+			//S_logger.Log.logger.info("" + actionsDistance_VO[i] + "-" + actionsDistanceV_VO[i]);
 			//command_V.normalizationalWorkActionsRights.put(
 			//		actionsDistance[i] + "-" + actionsDistanceV[i],
 			//		actionsDistanceV[i]);
@@ -319,7 +319,7 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 			actionsPosition_SV);
 		// loop
 		for (i = 0; i < actionsPositionV_SV.length; i++) {
-			//System.out.println(actionsPosition_SV[i] + "+" + actionsPositionV_SV[i]);
+			//S_logger.Log.logger.info("" + actionsPosition_SV[i] + "+" + actionsPositionV_SV[i]);
 			//command_V.normalizationalWorkActionsPositions
 			//		.put(actionsPosition[i] + "+" + actionsPositionV[i], "");
 		}
@@ -345,7 +345,7 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 			actionsPosition_VO);
 		// loop
 		for (i = 0; i < actionsPositionV_VO.length; i++) {
-			//System.out.println(actionsPosition_VO[i] + "+" + actionsPositionV_VO[i]);
+			//S_logger.Log.logger.info("" + actionsPosition_VO[i] + "+" + actionsPositionV_VO[i]);
 			//command_V.normalizationalWorkActionsPositions
 			//		.put(actionsPosition[i] + "+" + actionsPositionV[i], "");
 		}
@@ -415,7 +415,7 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 //						//		average_position);
 //						if (root_right_name.contains("列")
 //								|| root_right_name.contains("展示")) {
-//							// System.out.println(root_right_name + "--"
+//							// S_logger.Log.logger.info("" + root_right_name + "--"
 //							// + root_position_name + ":" + average_rights
 //							// + ":" + average_position + ":" + least_rights);
 //						}

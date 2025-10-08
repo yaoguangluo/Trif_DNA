@@ -29,17 +29,17 @@ public class CompileJNI {
                     sStringPath +
                     " " +
                     cStringPath;
-            System.out.println(test);
+            S_logger.Log.logger.info("" + test);
             Process sr = Runtime.getRuntime().exec(test);
             BufferedReader cin = new BufferedReader(new InputStreamReader(sr
                     .getInputStream()));
             String cline;
             while ((cline = cin.readLine()) != null) {
-                System.out.println(cline);
+                S_logger.Log.logger.info("" + cline);
             }
             cin.close();
             sr.waitFor();
-            System.out.println("end");
+            S_logger.Log.logger.info("" + "end");
         } catch (Exception e) {
             e.printStackTrace();
         }

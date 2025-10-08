@@ -60,7 +60,7 @@ public class Guassian_F {
             gua[l] = t;
             sumhere = sumhere + gua[l];
         }
-        //   //20230106-System.out.println("--->"+sumhere);
+        //   //20230106-S_logger.Log.logger.info("" + "--->"+sumhere);
         //--normalization
         double sum1 = 0.0;
         for (int j = 0; j < 5; ++j) {
@@ -68,7 +68,7 @@ public class Guassian_F {
             sum1 = sum1 + gua[j];
         }
         //--end of producing gaussian matrix
-        // //20230106-System.out.println("gaussian sum: " + sum1);
+        // //20230106-S_logger.Log.logger.info("" + "gaussian sum: " + sum1);
         double sum = 0.0;
         for (int i = 2; i < input.length - 2; i++) {
             sum = 0.0;

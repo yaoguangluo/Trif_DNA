@@ -2,6 +2,7 @@ package test.java.InterfaceTest.TextDNN;
 
 import P_V.PEQ.AMV.ECS.test.ANNTest;
 import S_A.SVQ.stable.S_String;
+import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -49,7 +50,7 @@ class ANNTestTest {
 				}
 				sum += temp.doubleValue();
 			}
-			System.out.println(annMatrix[j][0] + "-" + annMatrix[j][1]
+			S_logger.Log.logger.info("" + annMatrix[j][0] + "-" + annMatrix[j][1]
 				+ "-" + annMatrix[j][2] + "-" + annMatrix[j][3]
 				+ "-ANN:" + sum);
 		}

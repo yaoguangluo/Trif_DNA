@@ -27,7 +27,7 @@ public class AppButtonUtil_X_DNN {
 			String setOfi, Map<String, Double> dNNrank, App NE) {
 		App_S u = NE.app_S;
 		IMV_SQI pos = u.fMHMMListOneTime_E_X_S.posCnToCn;
-		// System.out.println("root:"+ u.jsliderDNNRatio);
+		// S_logger.Log.logger.info("" + "root:"+ u.jsliderDNNRatio);
 		u.appConfig.SectionJPanel.jTextPane
 				.setText("root:" + u.jsliderDNNRatio);
 		double rank = dNNrank.containsKey(setOfi) ? dNNrank.get(setOfi) : 0;

@@ -32,8 +32,8 @@ public class IMV_SQI_utils {
 		// 7代花再缩减 // flex
 		for (String actionKey : (Iterable<String>) NE.app_S.flowerAction.FlowerP_E_KernelActions
 			.keySet()) {
-			Log.logger.info("400-00001001-" + key);
-			Log.logger.info("400-00001002-" + actionKey);
+			S_logger.Log.logger.info("" + "400-00001001-" + key);
+			S_logger.Log.logger.info("" + "400-00001002-" + actionKey);
 			if (key.contains(actionKey)) {// later separate.
 				String temp = NE.app_S.flowerAction.FlowerP_E_KernelActions
 					.getString(actionKey);
@@ -62,10 +62,10 @@ public class IMV_SQI_utils {
 					.getString(actionKey);
 				NE.app_S.flowerAction.doAction(temp, strings, output,
 					NE);
-				Log.logger.info("400-10000002" + actionKey);
-				Log.logger.info("400-10000003-" + temp);
+				S_logger.Log.logger.info("" + "400-10000002" + actionKey);
+				S_logger.Log.logger.info("" + "400-10000003-" + temp);
 			} else {
-				// System.out.println("400-10000004" + key);
+				// S_logger.Log.logger.info("" + "400-10000004" + key);
 				/*
 				 * 这里也一样加一个条件，可以有效的去重+的逻辑, 提高计算关系的依赖。
 				 * 
@@ -108,7 +108,7 @@ public class IMV_SQI_utils {
 			 * */
 			if (stringsKey[0].equals(stringsAction[0])
 				|| stringsKey[1].equals(stringsAction[1])) {
-				Log.logger.info("400-10000004-1-" + actionKey);
+				S_logger.Log.logger.info("" + "400-10000004-1-" + actionKey);
 				String temp = NE.app_S.flowerAction.FlowerSixDomainActions
 					.getString(actionKey);
 				if (scores.containsKey(temp)) {

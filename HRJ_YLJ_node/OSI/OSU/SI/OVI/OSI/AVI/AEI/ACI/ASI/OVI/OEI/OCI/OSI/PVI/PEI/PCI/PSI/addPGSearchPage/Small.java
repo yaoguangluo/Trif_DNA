@@ -15,7 +15,7 @@ public class Small{
 //		if(rootFile.exists()&& rootFile.isDirectory()) {
 //			String[] strings= rootFile.list();
 //			for(String string: strings) {
-//				//System.out.println(string);
+//				//S_logger.Log.logger.info("" + string);
 //				File subRoot= new File(root+ "\\"+ string);
 //				if(string.contains("jpg")){//&& string.contains("下肢的皮神经和浅静脉")) {
 //					//small

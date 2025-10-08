@@ -49,7 +49,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		// number extra
 		String string = "";
 		String inputString = command_V.command;
-		S_logger.Log.logger.info(inputString);
+		S_logger.Log.logger.info("" + inputString);
 		inputString = command_V.simpleChineseNumberSwap(inputString);
 		/*
 		 * 思考--涉及拆嵌套的逻辑如何分关系。
@@ -58,7 +58,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			command_V.chineseSimpleCommandWithoutNumerics = inputString
 				.toString();
 		}
-		S_logger.Log.logger.info(
+		S_logger.Log.logger.info("" + 
 			"chineseSimpleCommandWithoutNumerics400-1-->"
 				+ command_V.chineseSimpleCommandWithoutNumerics);
 		int fixOrder = 0;
@@ -96,8 +96,8 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 					|| inputString.charAt(fixOrder) == '仟')) {
 			} else {
 				if (!string.isEmpty()) {
-					//S_logger.Log.logger.info(filterString);
-					S_logger.Log.logger.info(string + "--"
+					//S_logger.Log.logger.info("" + filterString);
+					S_logger.Log.logger.info("" + string + "--"
 						+ fixOrder);
 					command_V.numericsFromUnknownString.put(string
 						.toString(), fixOrder);
@@ -113,15 +113,15 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 				}
 				filterString += inputString.charAt(fixOrder);
 				//filterString += "\\&";
-				//S_logger.Log.logger.info(filterString);
+				//S_logger.Log.logger.info("" + filterString);
 				continue;
 			}
 			string += inputString.charAt(fixOrder);
 		}
 		if (!string.isEmpty()) {
 			//filterString += "\\&";
-			//S_logger.Log.logger.info(filterString);
-			S_logger.Log.logger.info("nums-->" + string + "--"
+			//S_logger.Log.logger.info("" + filterString);
+			S_logger.Log.logger.info("" + "nums-->" + string + "--"
 				+ fixOrder);
 			// println函数走图形打印机，并发工程记得注释掉或者用其他的classic观测API
 			command_V.numericsFromUnknownString.put(string.toString(),
@@ -160,7 +160,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		 * --罗瑶光
 		 * */
 
-		S_logger.Log.logger.info("混合数字字符探索-->" + string);
+		S_logger.Log.logger.info("" + "混合数字字符探索-->" + string);
 		boolean hasNumerics = false;
 		boolean hasChars = false;
 		if (string.contains("0") || string.contains("1") || string
@@ -186,11 +186,11 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			 * number = studyVerbalMap_Q.getChineseFromNumerics(number);
 			 * */
 			String stringSwaped = getChineseFromNumerics(string);
-			S_logger.Log.logger.info("stringSwaped-400-1->"
+			S_logger.Log.logger.info("" + "stringSwaped-400-1->"
 				+ stringSwaped);
 			stringSwaped = command_V.fasterChineseNumberSwap(
 				stringSwaped);
-			S_logger.Log.logger.info("stringSwaped-400-2->"
+			S_logger.Log.logger.info("" + "stringSwaped-400-2->"
 				+ stringSwaped);
 			//String stringSwaped = command_V.fasterChineseNumberSwap(string);
 			WordFrequency wordFrequency = new WordFrequency(1,
@@ -198,7 +198,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			String temp = command_V.numericsFromUnknownString
 				.getString(string);
 			int tempInt = Integer.valueOf(temp);
-			S_logger.Log.logger.info("position-->" + tempInt);
+			S_logger.Log.logger.info("" + "position-->" + tempInt);
 			wordFrequency.positions.add(tempInt);
 			//wordFrequency.I_frequency(1);
 			wordFrequency.I_pos("变换数字字符串代词名词");
@@ -220,14 +220,14 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			 * */
 			String stringSwaped = command_V.fasterChineseNumberSwap(
 				string);
-			S_logger.Log.logger.info("stringSwaped-400-2->"
+			S_logger.Log.logger.info("" + "stringSwaped-400-2->"
 				+ stringSwaped);
 			WordFrequency wordFrequency = new WordFrequency(1,
 				stringSwaped);
 			String temp = command_V.numericsFromUnknownString
 				.getString(string);
 			int tempInt = Integer.valueOf(temp);
-			S_logger.Log.logger.info("position-->" + tempInt);
+			S_logger.Log.logger.info("" + "position-->" + tempInt);
 			wordFrequency.positions.add(tempInt);
 			//wordFrequency.I_frequency(1);
 			wordFrequency.I_pos("变换数字字符串代词名词");
@@ -242,7 +242,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			return stringSwaped;//减少遍历
 		}
 		if (hasNumerics && hasChars) {
-			S_logger.Log.logger.info("混合数字字符预处理锁定-->" + string);
+			S_logger.Log.logger.info("" + "混合数字字符预处理锁定-->" + string);
 			/*
 			 * 因为有些用户喜欢写100万2000这种标识，就不用一百万两千和1002000这类规范的。
 			 * 所以我在这个if里面之后还要设计个阿拉伯数字转汉字的数字翻译机。 逻辑是先拆分数汉，
@@ -261,9 +261,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 						String chineseNumberPars = getChineseFromNumerics(
 							arabicNumber);
 						String fix = "";
-						S_logger.Log.logger.info("chineseNumber-->"
+						S_logger.Log.logger.info("" + "chineseNumber-->"
 							+ chineseNumber);
-						S_logger.Log.logger.info(
+						S_logger.Log.logger.info("" + 
 							"chineseNumberPars length-->"
 								+ chineseNumberPars.length());
 						if (!chineseNumber.isEmpty() && arabicNumber
@@ -280,9 +280,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 				String chineseNumberPars = getChineseFromNumerics(
 					arabicNumber);
 				String fix = "";
-				S_logger.Log.logger.info("chineseNumber-->"
+				S_logger.Log.logger.info("" + "chineseNumber-->"
 					+ chineseNumber);
-				S_logger.Log.logger.info("chineseNumberPars length-->"
+				S_logger.Log.logger.info("" + "chineseNumberPars length-->"
 					+ chineseNumberPars.length());
 				if (!chineseNumber.isEmpty() && arabicNumber
 					.length() < 4) {
@@ -295,7 +295,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			chineseNumber = prefixOptimization(chineseNumber);
 			// oder-fix
 			chineseNumber = orderfixOptimization(chineseNumber);
-			S_logger.Log.logger.info("混合数字字符预处理结果-->"
+			S_logger.Log.logger.info("" + "混合数字字符预处理结果-->"
 				+ chineseNumber);
 			//稍后去重
 			/*
@@ -306,14 +306,14 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 
 			String regArabicNumber = command_V
 				.fasterChineseNumberSwap(chineseNumber);
-			S_logger.Log.logger.info("stringSwaped-400-2->"
+			S_logger.Log.logger.info("" + "stringSwaped-400-2->"
 				+ regArabicNumber);
 			WordFrequency wordFrequency = new WordFrequency(1,
 				regArabicNumber);
 			String temp = command_V.numericsFromUnknownString
 				.getString(string);
 			int tempInt = Integer.valueOf(temp);
-			S_logger.Log.logger.info("position-->" + tempInt);
+			S_logger.Log.logger.info("" + "position-->" + tempInt);
 			wordFrequency.positions.add(tempInt);
 			//wordFrequency.I_frequency(1);
 			wordFrequency.I_pos("变换数字字符串代词名词");
@@ -463,13 +463,13 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
  */
 
 //command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
-//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
+//S_logger.Log.logger.info("" + "commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
 
 //command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
-//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
+//S_logger.Log.logger.info("" + "commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
 
 //command_V.commandWithoutNumerics.replace(string, command_V.symbolSwapNumerics);
-//System.out.println("commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
+//S_logger.Log.logger.info("" + "commandWithoutNumerics-->" + command_V.commandWithoutNumerics);
 
 //if (!chineseNumber.isEmpty()) {
 //while (chineseNumber.charAt(0) == '零'
@@ -487,10 +487,10 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 //}
 //}
 
-//System.out.println(
+//S_logger.Log.logger.info("" + 
 //"1-->" + commandClass.numericsFromUnknownString.size());
-//System.out.println("2-->" + commandClass.commandWithNumFilters);
-//System.out.println("3-->" + studyVerbalMap.filterString);
+//S_logger.Log.logger.info("" + "2-->" + commandClass.commandWithNumFilters);
+//S_logger.Log.logger.info("" + "3-->" + studyVerbalMap.filterString);
 
 //StudyVerbalMap_Q studyVerbalMap_Q = new StudyVerbalMap_Q();
 //String number = "9992980400000088";

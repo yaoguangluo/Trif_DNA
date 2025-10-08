@@ -34,7 +34,7 @@ public class Guassian2dPro{
 		if (audioBytes== null)  {
 			try {
 				audioBytes= new byte[(int) (ais.getFrameLength() *af.getFrameSize())];
-				//20230106-System.out.println("audiobyte length:"+audioBytes.length);
+				//20230106-S_logger.Log.logger.info("" + "audiobyte length:"+audioBytes.length);
 				ais.read(audioBytes);
 			} catch (Exception ex) { 
 				//reportStatus(ex.toString());
@@ -78,8 +78,8 @@ public class Guassian2dPro{
 				}
 			}
 		}
-		//20230106-System.out.println(audioBytes.length);
-		//20230106-System.out.println(af.getFrameSize());        
+		//20230106-S_logger.Log.logger.info("" + audioBytes.length);
+		//20230106-S_logger.Log.logger.info("" + af.getFrameSize());        
 		double []gua=new double[5];
 		double sig=1.6;
 		double t= 0.0;
@@ -92,7 +92,7 @@ public class Guassian2dPro{
 			sumhere= sumhere + gua[l];
 		}	 
 
-		//20230106-System.out.println("--->"+sumhere); 	
+		//20230106-S_logger.Log.logger.info("" + "--->"+sumhere); 	
 		//--normalization      
 		double sum1=0.0;
 		for(int j=0; j<5; ++j)  {
@@ -101,7 +101,7 @@ public class Guassian2dPro{
 		}
 
 		//--end of producing gaussian matrix
-		//20230106-System.out.println("gaussian sum: " + sum1);
+		//20230106-S_logger.Log.logger.info("" + "gaussian sum: " + sum1);
 		guassian=new double[audioData.length];
 		double sum=0.0;
 		for(int i=2;i<audioData.length-2;i++) {  
@@ -112,8 +112,8 @@ public class Guassian2dPro{
 			guassian[i]=sum;
 		}
 		double y_last= 0.0;
-		//20230106-System.out.println(w);
-		//20230106-System.out.println(audioData.length);
+		//20230106-S_logger.Log.logger.info("" + w);
+		//20230106-S_logger.Log.logger.info("" + audioData.length);
 		int frames_per_pixel= audioBytes.length / af.getFrameSize()/w;
 		byte my_byte= 0;
 		int idx=0;

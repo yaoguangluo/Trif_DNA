@@ -35,7 +35,7 @@ public class SoundWaveVector implements Runnable {
             try {
                 int reg = 0;
                 audioBytes = new byte[(int) (sFrameRate * af.getFrameSize())];
-                //20230106-System.out.println("audiobyte length:"+audioBytes.length);
+                //20230106-S_logger.Log.logger.info("" + "audiobyte length:"+audioBytes.length);
                 reg = ais.read(audioBytes);
                 if (reg < audioBytes.length) ;
                 {
@@ -45,7 +45,7 @@ public class SoundWaveVector implements Runnable {
                     }
                     audioBytes = iner;
                 }
-                //20230106-System.out.println(reg);
+                //20230106-S_logger.Log.logger.info("" + reg);
             } catch (Exception ex) {
                 //reportStatus(ex.toString());
                 return null;
@@ -87,10 +87,10 @@ public class SoundWaveVector implements Runnable {
                 }
             }
         }
-        //20230106-System.out.println(audioBytes.length);
-        //20230106-System.out.println(af.getFrameSize());
-        //20230106-System.out.println(w);
-        //20230106-System.out.println(audioData.length);
+        //20230106-S_logger.Log.logger.info("" + audioBytes.length);
+        //20230106-S_logger.Log.logger.info("" + af.getFrameSize());
+        //20230106-S_logger.Log.logger.info("" + w);
+        //20230106-S_logger.Log.logger.info("" + audioData.length);
         int frames_per_pixel = audioBytes.length / af.getFrameSize() / w;
         byte my_byte = 0;
         double y_last = 0.0;
@@ -121,7 +121,7 @@ public class SoundWaveVector implements Runnable {
         if (audioBytes == null) {
             try {
                 audioBytes = new byte[(int) (ais.getFrameLength() * af.getFrameSize())];
-                // //20230106-System.out.println("audiobyte length:"+audioBytes.length);
+                // //20230106-S_logger.Log.logger.info("" + "audiobyte length:"+audioBytes.length);
                 ais.read(audioBytes);
             } catch (Exception ex) {
                 //reportStatus(ex.toString());
@@ -164,10 +164,10 @@ public class SoundWaveVector implements Runnable {
                 }
             }
         }
-        // //20230106-System.out.println(audioBytes.length);
-        //  //20230106-System.out.println(af.getFrameSize());
-        //  //20230106-System.out.println(w);
-        //   //20230106-System.out.println(audioData.length);
+        // //20230106-S_logger.Log.logger.info("" + audioBytes.length);
+        //  //20230106-S_logger.Log.logger.info("" + af.getFrameSize());
+        //  //20230106-S_logger.Log.logger.info("" + w);
+        //   //20230106-S_logger.Log.logger.info("" + audioData.length);
         int frames_per_pixel = audioBytes.length / af.getFrameSize() / w;
         byte my_byte = 0;
         double y_last = 0.0;
@@ -180,7 +180,7 @@ public class SoundWaveVector implements Runnable {
             idx = (int) (frames_per_pixel * numChannels * i);
             newdata[i] = audioData[idx];
         }
-        //20230106-System.out.println("good1");
+        //20230106-S_logger.Log.logger.info("" + "good1");
         //lvbo
         for (int i = 5; i < newdata.length - 5; i++) {
             double sum = 0.0;
@@ -193,10 +193,10 @@ public class SoundWaveVector implements Runnable {
                 newdata1[i] = 0.0;
             newdata1[i] *= 2;
         }
-        //20230106-System.out.println("good2");
+        //20230106-S_logger.Log.logger.info("" + "good2");
         //xianfu
         for (double x = 0.0; x < w; x++) {
-            ////20230106-System.out.println("->"+audioData[idx]);
+            ////20230106-S_logger.Log.logger.info("" + "->"+audioData[idx]);
             double y_new = newdata1[(int) x];
             lines.add(new Line2D.Double(x, y_last, x, y_new));
             y_last = y_new;
@@ -205,7 +205,7 @@ public class SoundWaveVector implements Runnable {
             if (y_new < nshock)
                 nshock = y_new;
         }
-        //20230106-System.out.println("good3");
+        //20230106-S_logger.Log.logger.info("" + "good3");
         return lines;
     }
 
@@ -219,7 +219,7 @@ public class SoundWaveVector implements Runnable {
         if (audioBytes == null) {
             try {
                 audioBytes = new byte[(int) (ais.getFrameLength() * af.getFrameSize())];
-                // //20230106-System.out.println("audiobyte length:"+audioBytes.length);
+                // //20230106-S_logger.Log.logger.info("" + "audiobyte length:"+audioBytes.length);
                 ais.read(audioBytes);
             } catch (Exception ex) {
                 //reportStatus(ex.toString());
@@ -263,10 +263,10 @@ public class SoundWaveVector implements Runnable {
                 }
             }
         }
-        // //20230106-System.out.println(audioBytes.length);
-        //  //20230106-System.out.println(af.getFrameSize());
-        //  //20230106-System.out.println(w);
-        //   //20230106-System.out.println(audioData.length);
+        // //20230106-S_logger.Log.logger.info("" + audioBytes.length);
+        //  //20230106-S_logger.Log.logger.info("" + af.getFrameSize());
+        //  //20230106-S_logger.Log.logger.info("" + w);
+        //   //20230106-S_logger.Log.logger.info("" + audioData.length);
         int frames_per_pixel = audioBytes.length / af.getFrameSize() / w;
 
         byte my_byte = 0;
@@ -280,7 +280,7 @@ public class SoundWaveVector implements Runnable {
             } else {
                 my_byte = (byte) (128 * audioData[idx] / 32768);
             }
-            //20230106-System.out.println("->"+audioData[idx]);
+            //20230106-S_logger.Log.logger.info("" + "->"+audioData[idx]);
             double y_new = (double) (h * (128 - my_byte) / 256);
             lines.add(new Line2D.Double(x, y_last, x, y_new));
             y_last = y_new;
@@ -321,7 +321,7 @@ public class SoundWaveVector implements Runnable {
         if (audioBytes == null) {
             try {
                 audioBytes = new byte[(int) (ais.getFrameLength() * af.getFrameSize())];
-                //20230106-System.out.println("audiobyte length:"+audioBytes.length);
+                //20230106-S_logger.Log.logger.info("" + "audiobyte length:"+audioBytes.length);
                 ais.read(audioBytes);
             } catch (Exception ex) {
                 //reportStatus(ex.toString());

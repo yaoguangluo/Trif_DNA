@@ -73,7 +73,7 @@ class StaticFunctionMapQ_VECS_ETest {
 		textContent.put("罗旺振", "罗旺振luowangzhen");
 
 		AES_QMS_XSD_TIH searchkey = new AES_QMS_XSD_TIH("罗瑶光");
-		System.out.println("测试搜索关键字->" + searchkey._S_);
+		S_logger.Log.logger.info("" + "测试搜索关键字->" + searchkey._S_);
 		commonTestInition.NE._I_U.searchkey = searchkey;
 		commonTestInition.NE._I_U.nameContent = nameContent;
 		commonTestInition.NE._I_U.textContent = textContent;
@@ -85,11 +85,11 @@ class StaticFunctionMapQ_VECS_ETest {
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();
 			for (int i = 0; i < object.length; i++) {
-				System.out.println(object[i].toString());
+				S_logger.Log.logger.info("" + object[i].toString());
 			}
 		}
 		searchkey._S_ = "罗瑶";
-		System.out.println("测试搜索关键字->" + searchkey._S_);
+		S_logger.Log.logger.info("" + "测试搜索关键字->" + searchkey._S_);
 		commonTestInition.NE._I_U.searchkey = searchkey;
 		commonTestInition.NE._I_U.nameContent = nameContent;
 		commonTestInition.NE._I_U.textContent = textContent;
@@ -102,12 +102,12 @@ class StaticFunctionMapQ_VECS_ETest {
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();
 			for (int i = 0; i < object.length; i++) {
-				System.out.println(object[i].toString());
+				S_logger.Log.logger.info("" + object[i].toString());
 			}
 		}
 
 		searchkey._S_ = "罗振";
-		System.out.println("测试搜索关键字->" + searchkey._S_);
+		S_logger.Log.logger.info("" + "测试搜索关键字->" + searchkey._S_);
 		commonTestInition.NE._I_U.searchkey = searchkey;
 		commonTestInition.NE._I_U.nameContent = nameContent;
 		commonTestInition.NE._I_U.textContent = textContent;
@@ -119,7 +119,7 @@ class StaticFunctionMapQ_VECS_ETest {
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();
 			for (int i = 0; i < object.length; i++) {
-				System.out.println(object[i].toString());
+				S_logger.Log.logger.info("" + object[i].toString());
 			}
 		}
 		commonTestInition.endEnvironment();

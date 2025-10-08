@@ -181,7 +181,7 @@ public class TSPEuler{
 	public static void sort( List<node> nodes, int x, int y, int N){
 		node temp= nodes.get(nodes.size()- 1);
 		node temp1= nodes.get(nodes.size()- 1);
-		//20230106-System.out.println("the short one");
+		//20230106-S_logger.Log.logger.info("" + "the short one");
 		node []out= new node[N];
 		while(temp!= null){
 			out[temp.used]= temp;
@@ -193,11 +193,11 @@ public class TSPEuler{
 		}
 		for(int i1= 0;i1< out.length; i1++){
 			if(out[i1]!= null){
-				//20230106-System.out.println("x:"+ out[i1].x
+				//20230106-S_logger.Log.logger.info("" + "x:"+ out[i1].x
 				//		+ "y:"+ out[i1].y);
 			}
 		}
-		//20230106-System.out.println("the shortest distance:"
+		//20230106-S_logger.Log.logger.info("" + "the shortest distance:"
 		//		+ out[out.length- 1].total_dis);
 	}
 	public static int find(node first, int i, int[] x, int[] y){

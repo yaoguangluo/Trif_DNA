@@ -45,7 +45,7 @@ public class MedianFilterOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ extends OSU_OVQ_OSQ_VSQ
 		     	  Dimension d= this.getSize();
 		          int w= 80000;
 		          int h= 600;
-		         // System.out.println(d.width+"**"+d.height);
+		         // S_logger.Log.logger.info("" + d.width+"**"+d.height);
 		          int INFOPAD= 15;
 		          //Graphics g= getGraphics();  
 		          Graphics2D g2= (Graphics2D) g;

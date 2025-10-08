@@ -65,7 +65,7 @@ public interface CrabInterface {
 	//
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeRNA.put("crab", null);
-	// System.out.println("Hello Word!");
+	// S_logger.Log.logger.info("" + "Hello Word!");
 	// return null;
 	public boolean logic(IMV_SQI inputValues, String[] 传参因子, int 因子, App NE, IMV_SQI outputReg);
 

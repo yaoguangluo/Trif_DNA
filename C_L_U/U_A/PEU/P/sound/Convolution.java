@@ -34,7 +34,7 @@ public class Convolution{
 		if(count>(count+0.5)){
 			count=count+1;
 		}
-		//20230106-System.out.println(count);
+		//20230106-S_logger.Log.logger.info("" + count);
 		return count;
 	}
 }

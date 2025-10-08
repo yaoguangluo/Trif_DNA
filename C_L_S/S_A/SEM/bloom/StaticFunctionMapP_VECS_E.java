@@ -151,13 +151,13 @@ public class StaticFunctionMapP_VECS_E extends StaticFunctionMapCASE
 		IMV_SQI posee = ((BinaryForest_AE) _A).getPosEnToEn();
 		IMV_SQI fce = ((BinaryForest_AE) _A).getFullCnToEn();
 		IMV_SQI fec = ((BinaryForest_AE) _A).getFullEnToCn();
-		//20230106-System.out.println("输入");
+		//20230106-S_logger.Log.logger.info("" + "输入");
 		// String v= "如流枫之回雪, 若浣花洗月";
 		////			 //String v= "数据一直在更新中";
 		//			String v= "中国正在崛起的道路上奔跑";
 		//			String v= "我一直在奔跑, 我需要一双翅膀！";
 		//			String v= "他也一直在奔跑, 他同样需要一双翅膀！";
-		//20230106-System.out.println(v);
+		//20230106-S_logger.Log.logger.info("" + v);
 		Translator ts = new Translator_E();
 		ts.IV_(_A);
 		//			TimeCheck t= new TimeCheck();
@@ -165,31 +165,31 @@ public class StaticFunctionMapP_VECS_E extends StaticFunctionMapCASE
 		List<Verbal> verbals = ts.index(_A, v._S_);
 		String ch = ts.getChineseSentenseFromVerbalList(verbals);
 		//			t.end();
-		//20230106-System.out.println("中文");
-		//20230106-System.out.println(ch);
+		//20230106-S_logger.Log.logger.info("" + "中文");
+		//20230106-S_logger.Log.logger.info("" + ch);
 
 		for (int i = 0; i < verbals.size(); i++) {
 			//20230106-System.out.print(verbals.get(i).getChinese());
 			//20230106-System.out.print(verbals.get(i).getEnglish());
 			//20230106-System.out.print(verbals.get(i).getExplain());
-			//20230106-System.out.println(verbals.get(i).getPartOfSpeech());
+			//20230106-S_logger.Log.logger.info("" + verbals.get(i).getPartOfSpeech());
 		}
 		List<Verbal> verbalsFix = ts.fixPos(verbals);
 		String en = ts.getEnglishSentenseFromVerbalFixList(
 			verbalsFix);
-		//20230106-System.out.println("");
-		//20230106-System.out.println("英文");
-		//20230106-System.out.println(en);
+		//20230106-S_logger.Log.logger.info("" + "");
+		//20230106-S_logger.Log.logger.info("" + "英文");
+		//20230106-S_logger.Log.logger.info("" + en);
 
 		for (int i = 0; i < verbalsFix.size(); i++) {
 			//20230106-System.out.print(verbalsFix.get(i).getChinese());
 			//20230106-System.out.print(verbalsFix.get(i).getEnglish());
 			//20230106-System.out.print(verbalsFix.get(i).getExplain());
-			//20230106-System.out.println(verbalsFix.get(i).getPartOfSpeech());
+			//20230106-S_logger.Log.logger.info("" + verbalsFix.get(i).getPartOfSpeech());
 		}
 
-		//20230106-System.out.println("");
-		//20230106-System.out.println("中文解释");
+		//20230106-S_logger.Log.logger.info("" + "");
+		//20230106-S_logger.Log.logger.info("" + "中文解释");
 		for (int i = 0; i < verbals.size(); i++) {
 			//20230106-System.out.print(verbals.get(i).getExplain()
 			//		==null?verbals.get(i).getChinese():verbals.get(i).getExplain());
@@ -221,7 +221,7 @@ public class StaticFunctionMapP_VECS_E extends StaticFunctionMapCASE
 				sum += Double.valueOf(AnnMatrix[j][i]);
 			}
 			if (sum >= 0.6) {
-				//20230106-System.out.println(AnnMatrix[j][0]+AnnMatrix[j][1]
+				//20230106-S_logger.Log.logger.info("" + AnnMatrix[j][0]+AnnMatrix[j][1]
 				//		+ AnnMatrix[j][2] + AnnMatrix[j][3] + "ANN:" + sum);
 			}
 		}
@@ -256,7 +256,7 @@ public class StaticFunctionMapP_VECS_E extends StaticFunctionMapCASE
 				//20230106-System.out.print(ann[i][3] + ":");
 				//20230106-System.out.print(dnn[i][0] + ":");
 				//20230106-System.out.print(dnn[i][3] + ":");
-				//20230106-System.out.println("");
+				//20230106-S_logger.Log.logger.info("" + "");
 			}
 		}
 		return dnn;//输出的是dnn, 不是lwa加工。
@@ -347,7 +347,7 @@ public class StaticFunctionMapP_VECS_E extends StaticFunctionMapCASE
 			for (int j = 0; j < successICATest.kernelCNN[0].length; j++) {
 				//20230106-System.out.print(successICATest.kernelCNN[i][j] + " ");
 			}
-			//20230106-System.out.println();
+			//20230106-S_logger.Log.logger.info("" + "");
 		}
 	}
 

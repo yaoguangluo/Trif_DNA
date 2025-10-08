@@ -61,13 +61,13 @@ public class AddTinShellNodeASQ_OCQ_OSI_PCI_PCU_MCI_MCU_MSI extends OSU_MCI_MCU_
         //SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI
         //先把tinshellrun拿出来到一键执行的上层去, 再迭代下来。罗瑶光 20211103
         if (null != _SQ__OPE_OPC_ECI.topOutput) {
-            //20230106-System.out.println(_SQ__OPE_OPC_ECI.topOutput.size());
+            //20230106-S_logger.Log.logger.info("" + _SQ__OPE_OPC_ECI.topOutput.size());
         }
         if (null != _SQ__OPE_OPC_ECI.midOutput) {
-            //20230106-System.out.println(SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI.midOutput.size());
+            //20230106-S_logger.Log.logger.info("" + SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI.midOutput.size());
         }
         if (null != _SQ__OPE_OPC_ECI.downOutput) {
-            //20230106-System.out.println(SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI.downOutput.size());
+            //20230106-S_logger.Log.logger.info("" + SQ_OSU_MSQ_OSU_AVQ_ASQ_OPE_OPC_ECI.downOutput.size());
         }
         ((AddTinShellRun) _SQ__OPE_OPC_ECI).run(_OSU_AVQ_ASQ_AVQ_ASQ_OVQ_OSQ_VSQ
 					, this, NE);

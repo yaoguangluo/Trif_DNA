@@ -43,14 +43,14 @@ public class BootVPCSTest {
 
 				 requestBody = stringBuilder.toString();
 				 if(null==requestBody||requestBody.isEmpty()){
-					 System.out.flush();System.out.println("time out or net error"+ System.currentTimeMillis()); 
+					 System.out.flush();S_logger.Log.logger.info("" + "time out or net error"+ System.currentTimeMillis()); 
 				 }else {
-					 System.out.flush();System.out.println(li++ + System.currentTimeMillis());  
+					 System.out.flush();S_logger.Log.logger.info("" + li++ + System.currentTimeMillis());  
 				 }
 				 inputStream.close();
 				 bufferedReader.close();
 			 } catch (Exception ex) {
-				 System.out.flush();System.out.println("time out or net error"); 
+				 System.out.flush();S_logger.Log.logger.info("" + "time out or net error"); 
 				 if (bufferedReader != null) {
 					 try {
 						 bufferedReader.close();

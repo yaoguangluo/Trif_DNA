@@ -21,8 +21,8 @@
 //		this.range= range;
 //		this.deeps= deeps;
 //		processDouble(array, 0, array.length- 1, 0);
-//		////20230106-System.out.println(to);
-//		////20230106-System.out.println(tp);
+//		////20230106-S_logger.Log.logger.info("" + to);
+//		////20230106-S_logger.Log.logger.info("" + tp);
 //		return array;
 //	}
 //

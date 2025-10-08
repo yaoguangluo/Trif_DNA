@@ -27,8 +27,8 @@ public class Demo extends Thread {
         array2[5] = array[5];
         array2[6] = array[6];
         array2[7] = array[7];
-        //20230106-System.out.println(" ");
-        //20230106-System.out.println("罗瑶光小高峰过滤快速排序4代：");
+        //20230106-S_logger.Log.logger.info("" + " ");
+        //20230106-S_logger.Log.logger.info("" + "罗瑶光小高峰过滤快速排序4代：");
         TimeCheck imeCheck2 = new TimeCheck();
         imeCheck2.begin();
         array2 = new LYG9DWithDoubleQuickSort4D().sort(array, 7, 70);
@@ -41,13 +41,13 @@ public class Demo extends Thread {
     private static void print(double[] a) {
         int count = 0;
         for (int i = 0; i < a.length - 1; i++) {
-            ////20230106-System.out.println(a[i]);
+            ////20230106-S_logger.Log.logger.info("" + a[i]);
             //if(a[i]>a[i+1]){
             //	count++;
-            //20230106-System.out.println(a[i]);
+            //20230106-S_logger.Log.logger.info("" + a[i]);
             //}
         }
-        //20230106-System.out.println(count);
+        //20230106-S_logger.Log.logger.info("" + count);
     }
 
     private static double[] arrayInit() {
@@ -56,7 +56,7 @@ public class Demo extends Thread {
         for (int i = 5119, j = 0; i > 0; i--, j++) {
             //array[j]= r.nextInt();
             array[j] = (double) j % 8;
-            ////20230106-System.out.println(array[j]);
+            ////20230106-S_logger.Log.logger.info("" + array[j]);
         }
         return array;
     }

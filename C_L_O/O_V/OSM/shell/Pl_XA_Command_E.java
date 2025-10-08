@@ -415,7 +415,7 @@ public class Pl_XA_Command_E {
 									: acknowledge[3]));
 					conditions.put("fileDirectroyPath",
 							S_ShellETL.storeValue.get("确定文件夹"));
-					// 20230106-System.out.println("--->>"+
+					// 20230106-S_logger.Log.logger.info("" + "--->>"+
 					// S_ShellETL.storeValue.get("确定文件夹"));
 					conditions.put("replaceLogPath",
 							S_ShellETL.storeValue.get("确定文件夹")

@@ -2,6 +2,7 @@ package test.java.InterfaceTest.TextDNN;
 
 import P_V.PEQ.AMV.ECS.test.RNN_IDETest;
 import S_A.SVQ.stable.S_String;
+import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -43,7 +44,7 @@ class RNN_IDETestTest {
 			for (int j = 0; j < strings[0].length; j++) {
 				System.out.print("-" + strings[i][j]);
 			}
-			System.out.println("-");
+			S_logger.Log.logger.info("" + "-");
 		}
 		// end
 		commonTestInition.endEnvironment();

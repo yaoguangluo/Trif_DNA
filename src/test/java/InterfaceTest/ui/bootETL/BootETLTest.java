@@ -37,12 +37,12 @@ class BootETLTest {
 	@SuppressWarnings("deprecation")
 	void testUIofETL() throws InterruptedException {
 		// test without mock api
-		System.out.println("初始化");
+		S_logger.Log.logger.info("" + "初始化");
 		App_X NE = new App_X();
 		// 配置 模式为启动ETL
 		NE.tempString = "启动ETL";
 		// 启动
-		S_logger.Log.logger.info("启动400编码调试开始-00000001");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000001");
 		// App NE = (App)(NE_X);//稍后一把app 线程启动
 		// vpcs，于是做动态app，有600文件要改动加NE。
 		// 20250308 罗瑶光
@@ -63,9 +63,9 @@ class BootETLTest {
 			WindowsUI.basicHeight - 5 + NE.app_S.rangeHigh);
 		NE.app_S.frame.setVisible(true);
 		try {
-			S_logger.Log.logger.info("启动400编码调试开始-00000002");
+			S_logger.Log.logger.info("" + "启动400编码调试开始-00000002");
 			NE.init(NE);
-			S_logger.Log.logger.info("启动400编码调试开始-00000003");
+			S_logger.Log.logger.info("" + "启动400编码调试开始-00000003");
 			DetaThread.sleepDeta(100);
 			NE.start();
 		} catch (Exception e) {
@@ -75,11 +75,11 @@ class BootETLTest {
 		NE.app_S.frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent windowevent) {
 				try {
-					S_logger.Log.logger.info("pre closing...1");
+					S_logger.Log.logger.info("" + "pre closing...1");
 					if (NE.app_S.monitor != null) {
 						NE.app_S.monitor.monitor_X_S.stop = 1;
 					}
-					S_logger.Log.logger.info("pre closing...2");
+					S_logger.Log.logger.info("" + "pre closing...2");
 					if (NE.app_S.monitor != null) {
 						NE.app_S.monitor.removeAll();
 						DetaThread.sleepDeta(500);
@@ -90,13 +90,13 @@ class BootETLTest {
 						NE.app_S.monitor = null;
 						DetaThread.sleepDeta(500);
 					}
-					S_logger.Log.logger.info("pre closing...3");
+					S_logger.Log.logger.info("" + "pre closing...3");
 					NE.stop();
 					NE.app_S.frame.removeAll();
-					System.out.println("closed");
+					S_logger.Log.logger.info("" + "closed");
 				} catch (Exception e) {
-					S_logger.Log.logger.info("启动400编码调试开始-00000004");
-					S_logger.Log.logger.info("close error");
+					S_logger.Log.logger.info("" + "启动400编码调试开始-00000004");
+					S_logger.Log.logger.info("" + "close error");
 					NE.disable();
 					NE.destroy();
 					e.printStackTrace();
@@ -105,7 +105,7 @@ class BootETLTest {
 					NE.app_S.frame.removeAll();
 					NE.app_S.frame.disable();
 				}
-				S_logger.Log.logger.info("启动400编码调试开始-00000005");
+				S_logger.Log.logger.info("" + "启动400编码调试开始-00000005");
 				System.gc();
 				System.exit(0);
 			}

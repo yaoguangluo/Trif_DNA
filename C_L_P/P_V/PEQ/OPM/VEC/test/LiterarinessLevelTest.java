@@ -36,10 +36,10 @@ public class LiterarinessLevelTest {
                     * measurement[i][S_Pos.INT_THREE])
                     / measurement[i][S_Pos.INT_ONE];
             literarinessDuration += literarinessLevel[i];
-            //20230106-System.out.println("literarinessLevel:" +literarinessLevel[i]);
+            //20230106-S_logger.Log.logger.info("" + "literarinessLevel:" +literarinessLevel[i]);
         }
         literarinessDuration /= literarinessLevel.length;
-        //20230106-System.out.println("literarinessDuration:" + literarinessDuration);
+        //20230106-S_logger.Log.logger.info("" + "literarinessDuration:" + literarinessDuration);
     }
 
     public static void main(String[] argv, CogsBinaryForest_AE _AE

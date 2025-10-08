@@ -75,7 +75,7 @@ public class Monitor_X_Animation_Pca {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            ////20230106-System.out.println(e.getMessage());
+            ////20230106-S_logger.Log.logger.info("" + e.getMessage());
         }
     }
 }

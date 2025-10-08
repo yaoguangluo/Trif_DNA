@@ -80,7 +80,7 @@ public class DetaYLJBufferToXls {
                         }
                         realLine += k;
                     }
-                    //System.out.println(string.length());
+                    //S_logger.Log.logger.info("" + string.length());
                 } else {
                     String string = "";
                     xSSFCell.setCellValue(string);
@@ -113,7 +113,7 @@ public class DetaYLJBufferToXls {
 //	//complements
 //	XSSFCell xSSFCell= rowXls.createCell(j);
 //	String temp= string.toString();
-//	System.out.println(string.length());
+//	S_logger.Log.logger.info("" + string.length());
 //	xSSFCell.setCellValue(temp);
 //	xSSFCell.setCellType(CellType.STRING);
 //

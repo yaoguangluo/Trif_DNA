@@ -98,7 +98,7 @@ public class PillowsSet {
 		// }
 		// timecheck.end();
 		// timecheck.duration();
-		// 20230106-System.out.println(pillowsMap.getPillow(100));
+		// 20230106-S_logger.Log.logger.info("" + pillowsMap.getPillow(100));
 		Map<Long, Object> map = new IMV_SQI();
 		for (long i = 0; i < 5000000; i++) {
 			map.put(i, i);
@@ -111,7 +111,7 @@ public class PillowsSet {
 		}
 		timecheck.end();
 		timecheck.duration();
-		// 20230106-System.out.println(map.get(v));
+		// 20230106-S_logger.Log.logger.info("" + map.get(v));
 		// c
 
 		map = new IMV_SQI();
@@ -126,7 +126,7 @@ public class PillowsSet {
 		}
 		timecheck.end();
 		timecheck.duration();
-		// 20230106-System.out.println(map.get(v));
+		// 20230106-S_logger.Log.logger.info("" + map.get(v));
 
 		// map compare
 		map = new LinkedHashMap<>();
@@ -140,7 +140,7 @@ public class PillowsSet {
 		}
 		timecheck.end();
 		timecheck.duration();
-		// 20230106-System.out.println(map.get(v));
+		// 20230106-S_logger.Log.logger.info("" + map.get(v));
 
 		//
 		Hashtable<Long, Object> table = new Hashtable<>();
@@ -154,7 +154,7 @@ public class PillowsSet {
 		}
 		timecheck.end();
 		timecheck.duration();
-		// 20230106-System.out.println(table.get(v));
+		// 20230106-S_logger.Log.logger.info("" + table.get(v));
 		//
 		TreeMap<Long, Object> tree = new TreeMap<>();
 		for (long i = 0; i < 5000000; i++) {
@@ -167,7 +167,7 @@ public class PillowsSet {
 		}
 		timecheck.end();
 		timecheck.duration();
-		// 20230106-System.out.println(tree.get(v));
+		// 20230106-S_logger.Log.logger.info("" + tree.get(v));
 	}
 
 	private void fixEntry() {

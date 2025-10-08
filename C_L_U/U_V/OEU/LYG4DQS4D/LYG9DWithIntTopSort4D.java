@@ -85,9 +85,9 @@ public class LYG9DWithIntTopSort4D {
         timecheck.duration();
         for (int i = 0; i < doubles.length - 1; i++) {
             if (doubles[i] > doubles[i + 1]) {
-                //20230106-System.out.println(i+"->"+ doubles[i]);
+                //20230106-S_logger.Log.logger.info("" + i+"->"+ doubles[i]);
             }
         }
-        //20230106-System.out.println("end");
+        //20230106-S_logger.Log.logger.info("" + "end");
     }
 }

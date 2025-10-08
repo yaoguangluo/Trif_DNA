@@ -82,9 +82,9 @@ public class Flt extends JPanel{
 //		Set llll=cache_sj.keySet();
 //		@SuppressWarnings("rawtypes")
 //		Iterator lllll=llll.iterator();
-//		////20230106-System.out.println("outsj");
+//		////20230106-S_logger.Log.logger.info("" + "outsj");
 //		while(lllll.hasNext()) {
-//			////20230106-System.out.println(lllll.next());
+//			////20230106-S_logger.Log.logger.info("" + lllll.next());
 //		}
 //		String rt="no find in txt";
 //		InputStream ain= getClass().getResourceAsStream("a.txt");
@@ -298,7 +298,7 @@ public class Flt extends JPanel{
 //	double fengtong[][]= PeakStatistic_X_fengTong1.fengTong1(sihua8);
 //	double fengtongYy[][]= PeakStatistic_X_fengPaiyY.fengPaiYy(fengtong);
 //	double r= fengtongYy[0][0]>fengtongYy[1][0]?fengtongYy[0][0]:fengtongYy[1][0];
-//	//20230106-System.out.println(r);
+//	//20230106-S_logger.Log.logger.info("" + r);
 //	if(r>200) {
 //		return "";
 //	}

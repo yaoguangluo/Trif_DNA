@@ -109,7 +109,7 @@ public class Monitor_X_Animation_Pde {
         }
         if (!monitor.recordStop) {
             if (monitor.imageList.size() < 32 * 60 * 60) {
-                //20230106-System.out.println(1);
+                //20230106-S_logger.Log.logger.info("" + 1);
                 int width = image.getWidth();
                 int height = image.getHeight();
                 int[][] flips = new int[width][height];

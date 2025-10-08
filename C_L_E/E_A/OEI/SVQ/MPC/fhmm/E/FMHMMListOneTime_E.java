@@ -237,10 +237,10 @@ public class FMHMMListOneTime_E extends FMHMMListOneTime_EX
 		S_Maps.xingWeiCi.remove("");
 		S_Maps.zhuCi.remove("");
 
-		// 20230106-System.out.println(S_Maps.CiOne.size());
-		// 20230106-System.out.println(S_Maps.CiTwo.size());
-		// 20230106-System.out.println(S_Maps.CiThree.size());
-		// 20230106-System.out.println(S_Maps.CiFour.size());
+		// 20230106-S_logger.Log.logger.info("" + S_Maps.CiOne.size());
+		// 20230106-S_logger.Log.logger.info("" + S_Maps.CiTwo.size());
+		// 20230106-S_logger.Log.logger.info("" + S_Maps.CiThree.size());
+		// 20230106-S_logger.Log.logger.info("" + S_Maps.CiFour.size());
 		// System.gc();
 		// DetaThread.sleepDeta(200);
 	}
@@ -940,10 +940,10 @@ public class FMHMMListOneTime_E extends FMHMMListOneTime_EX
  * S_Maps.weiCi.remove(""); S_Maps.xianDingCi.remove("");
  * S_Maps.xingRongCi.remove("");
  * S_Maps.xingWeiCi.remove(""); S_Maps.zhuCi.remove("");
- * //20230106-System.out.println(S_Maps.CiOne.size());
- * //20230106-System.out.println(S_Maps.CiTwo.size());
- * //20230106-System.out.println(S_Maps.CiThree.size());
- * //20230106-System.out.println(S_Maps.CiFour.size()); }
+ * //20230106-S_logger.Log.logger.info("" + S_Maps.CiOne.size());
+ * //20230106-S_logger.Log.logger.info("" + S_Maps.CiTwo.size());
+ * //20230106-S_logger.Log.logger.info("" + S_Maps.CiThree.size());
+ * //20230106-S_logger.Log.logger.info("" + S_Maps.CiFour.size()); }
  */
 
 //

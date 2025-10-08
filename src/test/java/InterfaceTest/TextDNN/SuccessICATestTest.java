@@ -3,6 +3,7 @@ package test.java.InterfaceTest.TextDNN;
 import A_V.ica.InitBehaviorICAKernel;
 import P_V.PEQ.OPM.VEC.test.SuccessICATest;
 import S_A.SVQ.stable.S_String;
+import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -54,7 +55,7 @@ class SuccessICATestTest {
 				System.out.print(successICATest.kernelCNN[i][j]
 					+ " ");
 			}
-			System.out.println();
+			S_logger.Log.logger.info("" + "");
 		}
 		// do ICA normalization
 		// do ROBUST ICA

@@ -45,7 +45,7 @@ public class DEMO_LYG_to_WAV {
             }
         }
 
-        //20230106-System.out.println("read");
+        //20230106-S_logger.Log.logger.info("" + "read");
         //IO.reset();
     }
 }

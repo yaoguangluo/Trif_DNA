@@ -266,7 +266,7 @@ public class YaoguangEulerTSP{
 	public static void sort( List<node> nodes, int x, int y, int N){
 		if(N> 41){
 			for(int i= 0; i< nodes.size(); i++){
-				//20230106-System.out.println(nodes.get(i).prev.x+ ":"+nodes.get(i).prev.y+
+				//20230106-S_logger.Log.logger.info("" + nodes.get(i).prev.x+ ":"+nodes.get(i).prev.y+
 					//	"<-"+nodes.get(i).x+ ":"+ nodes.get(i).y+ "->"
 					//	+ nodes.get(i).next.x+ ":"+nodes.get(i).next.y);
 			}
@@ -274,7 +274,7 @@ public class YaoguangEulerTSP{
 		}
 		node temp= nodes.get(nodes.size()-1);
 		node temp1= nodes.get(nodes.size()-1);
-		//20230106-System.out.println("the short one");
+		//20230106-S_logger.Log.logger.info("" + "the short one");
 		node []out= new node[N];
 		while(temp!= null){
 			out[temp.used]= temp;
@@ -286,11 +286,11 @@ public class YaoguangEulerTSP{
 		}
 		for(int i1= 0; i1< out.length; i1++){
 			if(out[i1]!= null){
-				//20230106-System.out.println("x:"+ out[i1].x
+				//20230106-S_logger.Log.logger.info("" + "x:"+ out[i1].x
 				//		+ "y:"+out[i1].y);
 			}
 		}
-		//20230106-System.out.println("the shortest distance:"
+		//20230106-S_logger.Log.logger.info("" + "the shortest distance:"
 		//		+ out[out.length-1].total_dis);
 	}
 

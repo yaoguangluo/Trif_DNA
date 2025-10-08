@@ -62,7 +62,7 @@ public class VPCSResponse extends Response_S {
 		}
 		this.sleeperHall.removeThreadById(this.hashCode);
 		System.out.flush();
-		System.out.println(this.getHashCode() + "-fatar");
+		S_logger.Log.logger.info("" + this.getHashCode() + "-fatar");
 		this.sleeperHall.callSkivvy();
 	}
 
@@ -70,7 +70,7 @@ public class VPCSResponse extends Response_S {
 		try {
 			if (errorCode == 204) {
 				System.out.flush();
-				System.out.println(this.getHashCode() + "-bicha");
+				S_logger.Log.logger.info("" + this.getHashCode() + "-bicha");
 			}
 			if (null == this.socket) {
 				closeAllBeforeGC();
@@ -96,7 +96,7 @@ public class VPCSResponse extends Response_S {
 	public void clearBuffer() {
 		this.sleeperHall.removeThreadById(this.hashCode);
 		System.out.flush();
-		System.out.println(this.hashCode + " -clear");
+		S_logger.Log.logger.info("" + this.hashCode + " -clear");
 	}
 
 	// old interface

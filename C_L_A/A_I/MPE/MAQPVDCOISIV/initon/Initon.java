@@ -347,10 +347,10 @@ public class Initon {
 
 		initonV = initonV.storeRNAExtension(initonV);
 		while (initonV.hasNext()) {
-			// 20230106-System.out.println(initonV.getStore());
+			// 20230106-S_logger.Log.logger.info("" + initonV.getStore());
 			initonV = initonV.forwardNext();
 		}
-		// 20230106-System.out.println(initonV.getStore());
+		// 20230106-S_logger.Log.logger.info("" + initonV.getStore());
 	}
 
 }

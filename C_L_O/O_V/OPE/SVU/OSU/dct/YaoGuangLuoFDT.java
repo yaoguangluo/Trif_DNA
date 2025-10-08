@@ -28,7 +28,7 @@ public class YaoGuangLuoFDT{
 			for(int n= 0; n< N; n++){
 				double v= v1* n;
 				cos[k][n]= Math.cos(v);
-				//20230106-System.out.println(""+ k+ " "+n+ " "+ cos[k][n]);
+				//20230106-S_logger.Log.logger.info("" + ""+ k+ " "+n+ " "+ cos[k][n]);
 				sin[k][n]= Math.sin(v);
 			}
 		} 

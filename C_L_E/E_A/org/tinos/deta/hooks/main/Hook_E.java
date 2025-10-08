@@ -59,10 +59,10 @@ public class Hook_E extends Throwable implements Hook_C {
     //用于显示异常
     @SuppressWarnings("unused")
     public void showException(Exception exception) {
-        //20230106-System.out.println(exception.toString());
+        //20230106-S_logger.Log.logger.info("" + exception.toString());
         StackTraceElement[] stackTraceElements = exception.getStackTrace();
         for (StackTraceElement stackTraceElement : stackTraceElements) {
-            //20230106-System.out.println(stackTraceElement.toString());
+            //20230106-S_logger.Log.logger.info("" + stackTraceElement.toString());
         }
     }
 
@@ -100,7 +100,7 @@ public class Hook_E extends Throwable implements Hook_C {
     public void hookThrowable(Throwable throwable) {
         String session = "" + Math.random();
         exceptionList.add(getCurrentEnvironment(session) + throwable.toString());
-        ////20230106-System.out.println(new Hook().getCurrentEnvironment()+ throwable.toString());
+        ////20230106-S_logger.Log.logger.info("" + new Hook().getCurrentEnvironment()+ throwable.toString());
         StackTraceElement[] stackTraceElements = throwable.getStackTrace();
         for (StackTraceElement stackTraceElement : stackTraceElements) {
             exceptionList.add(getCurrentEnvironment(session) + stackTraceElement.toString());

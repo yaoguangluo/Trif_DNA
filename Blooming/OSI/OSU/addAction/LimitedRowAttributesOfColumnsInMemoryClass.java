@@ -100,7 +100,7 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 	//
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeRNA.put("crab", null);
-	// System.out.println("Hello Word!");
+	// S_logger.Log.logger.info("" + "Hello Word!");
 	// return null;
 	/*
 	 * 在通过一系列的测试后，我的意识也在时刻改变自己的思维方式，于是跟进增加一个指令--
@@ -151,12 +151,12 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public boolean logic(IMV_SQI inputValues, String[] 传参因子, int 因子,
 		App NE, IMV_SQI outputReg) {
-		S_logger.Log.logger.info("400-size-02-"
+		S_logger.Log.logger.info("" + "400-size-02-"
 			+ NE.app_S.workVerbalMap.command_V.cartesianLooped
 				.size());
 		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(
 			className)) {
-			S_logger.Log.logger.info("400-size-01-"
+			S_logger.Log.logger.info("" + "400-size-01-"
 				+ NE.app_S.workVerbalMap.command_V.countReject++);
 			return false;
 		}
@@ -182,7 +182,7 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 		if (!NE.app_S.workVerbalMap.command_V.command.contains("行")) {
 			return false;
 		}
-		S_logger.Log.logger.info("LimitedRow-string-400-00-->\n");
+		S_logger.Log.logger.info("" + "LimitedRow-string-400-00-->\n");
 		Iterator<String> iterators = NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
 			.keySet().iterator();
 		String fromValue = "";
@@ -191,14 +191,14 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 		boolean needFind = false;
 		while (iterators.hasNext()) {
 			String string = iterators.next();
-			S_logger.Log.logger.info("LimitedRow-string-400-01-->"
+			S_logger.Log.logger.info("" + "LimitedRow-string-400-01-->"
 				+ string);
 			if (string.contains("V+行")) {
 				needFind = true;
 				break;
 			}
 		}
-		S_logger.Log.logger.info("LimitedRow-string-400-01-01->"
+		S_logger.Log.logger.info("" + "LimitedRow-string-400-01-01->"
 			+ needFind);
 		List<String> fromValues = new ArrayList<>();
 		List<String> toValues = new ArrayList<>();
@@ -207,10 +207,10 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 				.keySet().iterator();
 			while (iterators.hasNext()) {
 				String string = iterators.next();
-				S_logger.Log.logger.info("LimitedRow-string-400-02-->"
+				S_logger.Log.logger.info("" + "LimitedRow-string-400-02-->"
 					+ string);
 				if (string.contains("从-")) {
-					S_logger.Log.logger.info(
+					S_logger.Log.logger.info("" + 
 						"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
 							+ string);
 					// 1
@@ -237,7 +237,7 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 					// 4
 				}
 				if (string.contains("到-")) {
-					S_logger.Log.logger.info(
+					S_logger.Log.logger.info("" + 
 						"LimitedRowAttributesOfColumnsInMemoryClass-string-400-->"
 							+ string);
 					// 1
@@ -297,7 +297,7 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 				//	if(!strings[1].isEmpty()) {
 				//		toValues.add(strings[1]);
 				//	}
-				//	System.out.println(string);
+				//	S_logger.Log.logger.info("" + string);
 				//}
 				//todo
 
@@ -338,15 +338,15 @@ public class LimitedRowAttributesOfColumnsInMemoryClass implements
 		// 4 输出
 		//		String shellType = "操作:" + fromValues.get(0)
 		//		+ "|行至|" + toValues.get(0) + "";
-		S_logger.Log.logger.info("400---00007---");
-		S_logger.Log.logger.info(shellType);
+		S_logger.Log.logger.info("" + "400---00007---");
+		S_logger.Log.logger.info("" + shellType);
 		String[] strings = shellType.split(":");
 		List<String[]> list = new ArrayList();
 		list.add(strings);
-		S_logger.Log.logger.info("400---00008---");
+		S_logger.Log.logger.info("" + "400---00008---");
 		NE._I_U.outputMap.put("操作", list);// 集成到老的接口模式先，避免bug*/
 		NE._I_U.outputMap.put("type", "进行选择");
-		S_logger.Log.logger.info("400---00009---");
+		S_logger.Log.logger.info("" + "400---00009---");
 		//register
 		NE._I_U.sets = strings[1].split("\\|");
 

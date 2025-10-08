@@ -42,10 +42,10 @@ public class ServerInit_C {
 			// Integer.parseInt(properties.getProperty(S_Data.TCP_PORT));
 			// port = 3306;
 			port = Integer.valueOf(frontendTxt);
-			S_logger.Log.logger.info("启动400编码调试开始-00000054-" + port);
+			S_logger.Log.logger.info("" + "启动400编码调试开始-00000054-" + port);
 			// port= Config.detaVPCSDBPort;
 			server = new ServerSocket(port);
-			// 20230106-System.out.println("----德塔VPCS数据库服务器端口启动:" +
+			// 20230106-S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器端口启动:" +
 			// port);
 			if (jTextPane != null) {
 				String text = jTextPane.getText();
@@ -60,7 +60,7 @@ public class ServerInit_C {
 				dbConfigPath = ConfigIndex.detaDBPath;
 				DetaUtil.IV_DB(dbConfigPath);
 			}
-			S_logger.Log.logger.info("----德塔VPCS数据库服务器DMA确认:成功！");
+			S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器DMA确认:成功！");
 			if (jTextPane != null) {
 				String text = jTextPane.getText();
 				text = "\r\n" + "----德塔VPCS数据库服务器DMA确认:成功！" + text;
@@ -68,7 +68,7 @@ public class ServerInit_C {
 				jTextPane.setText(text);
 			}
 			RequestFilter_C.IV_BlockList();
-			S_logger.Log.logger.info("----德塔VPCS数据库服务器IP过滤服务启动:成功！");
+			S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器IP过滤服务启动:成功！");
 			if (jTextPane != null) {
 				String text = jTextPane.getText();
 				text = "\r\n" + "----德塔VPCS数据库服务器IP过滤服务启动:成功！" + text;
@@ -76,7 +76,7 @@ public class ServerInit_C {
 				jTextPane.setText(text);
 			}
 			DetaDBBufferCache_M.reflection();
-			// 20230106-System.out.println("----德塔VPCS数据库服务器启动整库过程映射服务:成功！");
+			// 20230106-S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器启动整库过程映射服务:成功！");
 			if (jTextPane != null) {
 				String text = jTextPane.getText();
 				text = "\r\n" + "----德塔VPCS数据库服务器启动整库过程映射服务:成功！" + text;
@@ -84,7 +84,7 @@ public class ServerInit_C {
 				jTextPane.setText(text);
 			}
 			DatabaseLog_H.I_BinLog_H();
-			// 20230106-System.out.println("----德塔VPCS数据库服务器启动整库过程映射服务:成功！");
+			// 20230106-S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器启动整库过程映射服务:成功！");
 			if (jTextPane != null) {
 				String text = jTextPane.getText();
 				text = "\r\n" + "----德塔VPCS数据库服务器启动整库过程映射服务:成功！" + text;
@@ -108,9 +108,9 @@ public class ServerInit_C {
 	@SuppressWarnings("unused")
 	public void IV_Server(App app) throws InterruptedException, IOException {
 		dbConfigPath = app.app_S.dbConfigPath;
-		// 20230106-System.out.println("----DETA VPCS--2.0");
-		// 20230106-System.out.println("----Author: 罗瑶光");
-		// 20230106-System.out.println("----浏阳德塔软件开发有限公司开源项目");
+		// 20230106-S_logger.Log.logger.info("" + "----DETA VPCS--2.0");
+		// 20230106-S_logger.Log.logger.info("" + "----Author: 罗瑶光");
+		// 20230106-S_logger.Log.logger.info("" + "----浏阳德塔软件开发有限公司开源项目");
 		if (app.app_S.appConfig.SectionJPanel.jTextPane != null) {
 			String text = app.app_S.appConfig.SectionJPanel.jTextPane.getText();
 			text = "\r\n" + "载入德塔 PLSQL数据库 映射添加完毕！" + text;
@@ -132,37 +132,37 @@ public class ServerInit_C {
 			text = "\r\n" + "..." + text;
 			app.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
 		}
-		// 20230106-System.out.println("----德塔VPCS数据库服务器启动一切正常-总耗时:"
+		// 20230106-S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器启动一切正常-总耗时:"
 		// + time_P.duration()+ "毫秒");
 		app.app_S.ready = true;
 
 		App appReg = app;
 		System.out.flush();
-		S_logger.Log.logger.info("----DETA HVPCS--1.9070");
+		S_logger.Log.logger.info("" + "----DETA HVPCS--1.9070");
 		System.out.flush();
-		S_logger.Log.logger.info("----Author: 罗瑶光");
+		S_logger.Log.logger.info("" + "----Author: 罗瑶光");
 		System.out.flush();
-		S_logger.Log.logger.info("----浏阳德塔软件开发有限公司开源项目");
+		S_logger.Log.logger.info("" + "----浏阳德塔软件开发有限公司开源项目");
 		TimeProcess timeProcess = new TimeProcess();
 		timeProcess.begin();
 		SleeperHall sleeperHall = new SleeperHall();
 
 		port = 8000;
 		System.out.flush();
-		S_logger.Log.logger.info("----德塔VPCS数据库服务器端口启动:" + port);
+		S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器端口启动:" + port);
 		// DetaUtil.initDB();
 		System.out.flush();
-		S_logger.Log.logger.info("----德塔VPCS数据库服务器DMA确认:成功！");
-		S_logger.Log.logger.info("----初始大文件:成功！");
+		S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器DMA确认:成功！");
+		S_logger.Log.logger.info("" + "----初始大文件:成功！");
 		StableBlob.initBlobLimit();
-		S_logger.Log.logger.info("----初始固定数据:成功！");
+		S_logger.Log.logger.info("" + "----初始固定数据:成功！");
 		StableSets.intListPartBytes();
-		S_logger.Log.logger.info("----初始http数据:成功！");
+		S_logger.Log.logger.info("" + "----初始http数据:成功！");
 		StableSets.initHttpContentTypeMap();
 
 		timeProcess.end();
 		System.out.flush();
-		S_logger.Log.logger.info(
+		S_logger.Log.logger.info("" + 
 				"----德塔VPCS前端服务器启动一切正常-总耗时:" + timeProcess.duration() + "毫秒");
 		// ServerSocket server = new ServerSocket(port);
 		long clearTime = System.currentTimeMillis();
@@ -204,7 +204,7 @@ public class ServerInit_C {
 ////		try {
 ////			properties.load(new FileInputStream
 ////					(new File("src/main/resources/property.proterties")));
-////			//20230106-System.out.println("----德塔VPCS数据库服务器资源载入:成功！");
+////			//20230106-S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器资源载入:成功！");
 ////		}catch (IOException e) {
 ////			e.printStackTrace();
 ////		}

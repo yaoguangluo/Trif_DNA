@@ -23,7 +23,7 @@ public class DETA_ANN_HMM {
                 sum += Double.valueOf(inputNLP[k][i]);
             }
             for (int j = 0; j < inputNLP.length; j++) {
-                //System.out.println(sum);
+                //S_logger.Log.logger.info("" + sum);
                 outNLP[j][i] = "" + Double.valueOf(inputNLP[j][i]) / sum;
             }
         }
@@ -42,7 +42,7 @@ public class DETA_ANN_HMM {
 //                for (int k = 0; k < inputNLP.length; k++) {
 //                    sum += Double.valueOf(inputNLP[k][i]);
 //                }
-//                ////20230106-System.out.println(sum);
+//                ////20230106-S_logger.Log.logger.info("" + sum);
 //                outNLP[j][i] = "" + Double.valueOf(inputNLP[j][i]) / sum;
 //            }
 //        }

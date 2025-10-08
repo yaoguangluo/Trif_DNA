@@ -10,7 +10,7 @@ public class HoughTransformRun extends OSU_OPE_OPC_ECI {
 		super();
 	}
 	public void run(final HoughTransformView _SQ__OVQ_OSQ_VSQ) {
-		//20230106-System.out.println("runed"+value); 
+		//20230106-S_logger.Log.logger.info("" + "runed"+value); 
 		int out[][]= new int[topgin.length][topgin[0].length];
 		for (int i= 0; i < topgin.length; i++) {
 			for (int j= 0; j < topgin[0].length; j++) {

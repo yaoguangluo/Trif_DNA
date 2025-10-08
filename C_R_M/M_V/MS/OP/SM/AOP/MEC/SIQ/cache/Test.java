@@ -18,6 +18,6 @@ public class Test {
 		Cache c= new Cache();
 		c.I_Value("good");
 		Cache_M.putCache("result", c);
-		//20230106-System.out.println(Cache_M.getCacheInfo("result").getValue().toString()); 
+		//20230106-S_logger.Log.logger.info("" + Cache_M.getCacheInfo("result").getValue().toString()); 
 	} 
 }

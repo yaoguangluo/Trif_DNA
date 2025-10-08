@@ -69,7 +69,7 @@ public class CogsBinaryForest_AE extends BinaryForest_AE implements
 	//			System.out.print("+" + string);
 	//		}//循环逻辑中不出现打印类。
 	//		if (_IMV_SQI_SS.containsKey("街")) {
-	//			System.out.println("400-8-0001-007-03-01-" + _IMV_SQI_SS.size());
+	//			S_logger.Log.logger.info("" + "400-8-0001-007-03-01-" + _IMV_SQI_SS.size());
 	//		}
 	//
 	 */
@@ -80,11 +80,11 @@ public class CogsBinaryForest_AE extends BinaryForest_AE implements
 	}
 
 	public IMV_SQI_S_ sortWordFrequencyMapToSortMap(IMV_SQI_SS map) {
-		//System.out.println("400-8-0001-007-03-05-" + map.size());
+		//S_logger.Log.logger.info("" + "400-8-0001-007-03-05-" + map.size());
 
 		IMV_SQI_S_ listMap = quick6DLuoYaoguangSort
 			.frequencyWordMapToMap(map);
-		//System.out.println("400-8-0001-007-03-06-" + listMap.size());
+		//S_logger.Log.logger.info("" + "400-8-0001-007-03-06-" + listMap.size());
 		quick6DLuoYaoguangSort.quick6DLuoYaoGuangSortWordFrequency(
 			listMap, S_Pos.INT_ZERO, listMap.size() - S_Pos.INT_ONE);
 		return listMap;

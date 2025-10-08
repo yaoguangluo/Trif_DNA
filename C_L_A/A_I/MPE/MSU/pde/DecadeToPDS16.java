@@ -45,30 +45,30 @@ public class DecadeToPDS16 {
 		double pDE_KEY_rate = 0.25;// 随便模拟一个0-1之间的概率钥匙, 假设 0~0.5为酸
 		// , 0.5~1 为碱；
 		decadeToPDS.doPDS(decadeToPDS, decade, pDE_KEY_rate);
-		// 20230106-System.out.println(1);
+		// 20230106-S_logger.Log.logger.info("" + 1);
 	}
 
 //	//元基符号变元基数字
-//	////20230106-System.out.println("输入十进制数："+ decade);
+//	////20230106-S_logger.Log.logger.info("" + "输入十进制数："+ decade);
 //	String seventeen= decadeToPDS.decadeToSeventeen(decade, decadeToPDS);
-//	////20230106-System.out.println("元基进制数为："+ seventeen);
+//	////20230106-S_logger.Log.logger.info("" + "元基进制数为："+ seventeen);
 //	String initons= decadeToPDS.seventeenToIntons(seventeen, decadeToPDS);
-//	////20230106-System.out.println("变换为元基："+initons);
+//	////20230106-S_logger.Log.logger.info("" + "变换为元基："+initons);
 //	//initons= "AOPMVE";
-//	////20230106-System.out.println("输入元基："+ initons);
-//	////20230106-System.out.println("输入概率："+ pDE_KEY_rate);
+//	////20230106-S_logger.Log.logger.info("" + "输入元基："+ initons);
+//	////20230106-S_logger.Log.logger.info("" + "输入概率："+ pDE_KEY_rate);
 //	String pDS= decadeToPDS.initonsToPDS(initons, pDE_KEY_rate, decadeToPDS);
-//	////20230106-System.out.println("输出肽丝:"+ pDS);
+//	////20230106-S_logger.Log.logger.info("" + "输出肽丝:"+ pDS);
 //	pDS= pDS.replace(".", "");
 //	String pDSInitons= decadeToPDS.PDSToInitons(pDS, pDE_KEY_rate, decadeToPDS);
-//	////20230106-System.out.println("肽丝增元:"+ pDSInitons);
+//	////20230106-S_logger.Log.logger.info("" + "肽丝增元:"+ pDSInitons);
 //	//第二卷的肽展公式 可以用到了
 //	//String pDEInitons= decadeToPDS.PDSToPDE(pDSInitons, pDE_KEY_rate, decadeToPDS);
-//	////20230106-System.out.println("肽展增元:"+ pDEInitons);
+//	////20230106-S_logger.Log.logger.info("" + "肽展增元:"+ pDEInitons);
 //	String pDSSeventeen= decadeToPDS.initonsToSeventeen(pDSInitons, decadeToPDS);
-//	////20230106-System.out.println("元基数字:"+ pDSSeventeen);
+//	////20230106-S_logger.Log.logger.info("" + "元基数字:"+ pDSSeventeen);
 //	String pDSDecade= decadeToPDS.seventeenToDecade(pDSSeventeen, decadeToPDS);
-//	////20230106-System.out.println("输出十进制数:"+ pDSDecade);
+//	////20230106-S_logger.Log.logger.info("" + "输出十进制数:"+ pDSDecade);
 //	return Integer.valueOf(pDSDecade);
 	private int doPDS(DecadeToPDS16 decadeToPDS, int decade,
 			double pDE_KEY_rate) {
@@ -207,7 +207,7 @@ public class DecadeToPDS16 {
 			PDS += new PDE_PDS_DL16().initonPDSwithBYS("" + initons.charAt(i),
 					pDE_KEY_rate, PDEKey, true) + ".";
 		}
-		//// 20230106-System.out.println("生成钥匙："+ PDEKey);
+		//// 20230106-S_logger.Log.logger.info("" + "生成钥匙："+ PDEKey);
 		//
 		return PDS;
 	}

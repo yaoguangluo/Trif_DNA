@@ -36,7 +36,7 @@ public class Btest {
             for (int j = 0; j < m; j++) {
                 System.out.print(sample[i][j] + "  ");
             }
-            System.out.println("--");
+            S_logger.Log.logger.info("" + "--");
         }
     }
 }

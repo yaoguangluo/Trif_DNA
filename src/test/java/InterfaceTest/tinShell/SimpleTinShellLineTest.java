@@ -40,7 +40,7 @@ public class SimpleTinShellLineTest {
 		ShellJPanelSeparationTest shellJPanelSeparationTest)
 		throws IOException, InterruptedException {
 		// test without mock api
-		System.out.println(
+		S_logger.Log.logger.info("" + 
 			"test without mock api -- tinshell 批处理测试 执行复杂"
 				+ "条件搜索逻辑--我本地苹果mac上已经调通可运行。方便我之后的各类型测试");
 		ShellJPanelTest shellJPanelTest = new ShellJPanelTest();

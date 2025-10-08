@@ -134,7 +134,7 @@ public class App_X_getBox {
 					e1.printStackTrace();
 				}
 				app.table.setValueAt(temp, app.row, app.col);
-				//System.out.println(temp);
+				//S_logger.Log.logger.info("" + temp);
 				app.appConfig.SectionJPanel.jTextPane.setText(temp);
 			}
 		});
@@ -1049,7 +1049,7 @@ public class App_X_getBox {
 				}
 				URL linkUrl = e.getURL();
 				String string;
-				//System.out.println(linkUrl.getFile());
+				//S_logger.Log.logger.info("" + linkUrl.getFile());
 				app.appConfig.SectionJPanel.jTextPane.setText(linkUrl
 					.getFile());
 				string = String_ESU_X_charsetSwap._E(linkUrl.getFile()

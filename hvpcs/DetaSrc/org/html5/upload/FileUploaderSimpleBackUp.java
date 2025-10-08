@@ -114,7 +114,7 @@ import java.io.InputStream;
 			fileOutputStream.write(newBytes);	
 		}
 		while((length= inputStream.read(bytes))> 0) {//��ͷ
-			//System.out.flush();System.out.println(new String(bytes));	
+			//System.out.flush();S_logger.Log.logger.info("" + new String(bytes));	
 			String string= new String(bytes);
 			if(string.contains("image/jpeg\r\n\r\n")) {
 				byte[] bytesStrings= "image/jpeg\r\n\r\n".getBytes();

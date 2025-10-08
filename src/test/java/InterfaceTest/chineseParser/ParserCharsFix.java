@@ -67,7 +67,7 @@ public class ParserCharsFix {
 		HashMap<String, String> militery = new HashMap<>();
 		callFastReadProjectFile(militery, "militery.lyg", NE,
 			"otherlyg", S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("400-0000000001-" + militery.size());
+		S_logger.Log.logger.info("" + "400-0000000001-" + militery.size());
 		environmentIndex.put("军事", militery);
 		// 还可以细化
 	}
@@ -105,7 +105,7 @@ public class ParserCharsFix {
 		HashMap<String, String> meeting = new HashMap<>();
 		callFastReadProjectFile(meeting, "meeting.lyg", NE,
 			"otherlyg", S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("400-0000000002-" + meeting.size());
+		S_logger.Log.logger.info("" + "400-0000000002-" + meeting.size());
 		environmentIndex.put("会议", meeting);
 
 	}
@@ -117,7 +117,7 @@ public class ParserCharsFix {
 		HashMap<String, String> nation = new HashMap<>();
 		callFastReadProjectFile(nation, "nation.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("400-0000000003-" + nation.size());
+		S_logger.Log.logger.info("" + "400-0000000003-" + nation.size());
 		environmentIndex.put("国家", nation);
 	}
 
@@ -128,7 +128,7 @@ public class ParserCharsFix {
 		HashMap<String, String> music = new HashMap<>();
 		callFastReadProjectFile(music, "music.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("400-0000000004-" + music.size());
+		S_logger.Log.logger.info("" + "400-0000000004-" + music.size());
 		environmentIndex.put("传媒", music);
 	}
 
@@ -138,7 +138,7 @@ public class ParserCharsFix {
 		HashMap<String, String> carFix = new HashMap<>();
 		callFastReadProjectFile(carFix, "carFix.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("400-0000000005-" + carFix.size());
+		S_logger.Log.logger.info("" + "400-0000000005-" + carFix.size());
 		environmentIndex.put("交通", carFix);
 	}
 
@@ -150,7 +150,7 @@ public class ParserCharsFix {
 		HashMap<String, String> food = new HashMap<>();
 		callFastReadProjectFile(food, "food.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("400-0000000006-" + food.size());
+		S_logger.Log.logger.info("" + "400-0000000006-" + food.size());
 		environmentIndex.put("食物", food);
 	}
 
@@ -160,7 +160,7 @@ public class ParserCharsFix {
 		HashMap<String, String> city = new HashMap<>();
 		callFastReadProjectFile(city, "city.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("400-0000000007-" + city.size());
+		S_logger.Log.logger.info("" + "400-0000000007-" + city.size());
 		environmentIndex.put("城市", city);
 	}
 
@@ -169,7 +169,7 @@ public class ParserCharsFix {
 		HashMap<String, String> street = new HashMap<>();
 		callFastReadProjectFile(street, "street.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("400-0000000008-" + street.size());
+		S_logger.Log.logger.info("" + "400-0000000008-" + street.size());
 		environmentIndex.put("街道", street);
 	}
 
@@ -190,31 +190,31 @@ public class ParserCharsFix {
 		List<String> sets) {
 		Map<String, String> invironmentMap = new HashMap<>();
 		// 稍后函数提取出来，小片段化去重。
-		// System.out.println("400-8-0001-001-" + sets.size());
+		// S_logger.Log.logger.info("" + "400-8-0001-001-" + sets.size());
 		NE.app_S.lenovoInit.IV_SetsExclude_A(sets, NE);
-		// System.out.println("400-8-0001-002-" + sets.size());
+		// S_logger.Log.logger.info("" + "400-8-0001-002-" + sets.size());
 		IMV_SQI_X_ environmentSampleMap = NE.app_S.lenovoInit
 			.getEnvironmentInit().getEmotionSampleMap();
-		// System.out.println("400-8-0001-003-" +
+		// S_logger.Log.logger.info("" + "400-8-0001-003-" +
 		// environmentSampleMap.size());
 		IMV_SQI lenovo = NE.app_S.lenovoInit.getSensingMap()
 			.getLenovoMap();
 		// reduce
-		S_logger.Log.logger.info("环    境：");
+		S_logger.Log.logger.info("" + "环    境：");
 		Iterator<String> Iterator = environmentSampleMap.keySet()
 			.iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
-			// System.out.println("400-8-0001" + word);
+			// S_logger.Log.logger.info("" + "400-8-0001" + word);
 			NE.app_S.emotionSample = environmentSampleMap.get_S(word);
 			String stringDistinction = NE.app_S.emotionSample
 				.getDistinction();
-			// System.out.println("400-8-0002" + stringDistinction);
+			// S_logger.Log.logger.info("" + "400-8-0002" + stringDistinction);
 			if (null != stringDistinction) {
 				String string = "";
 				if (lenovo.containsKey(stringDistinction)) {
 					string = lenovo.get(stringDistinction).toString();
-					// System.out.println("400-8-0003" + string);
+					// S_logger.Log.logger.info("" + "400-8-0003" + string);
 					// System.out.print(
 					// lenovo.get(NE.app_S.emotionSample
 					// .getDistinction()).toString() + " ");
@@ -228,7 +228,7 @@ public class ParserCharsFix {
 						"later");
 				}
 				if (!string.replace(" ", "").isEmpty()) {
-					S_logger.Log.logger.info(string + " ");
+					S_logger.Log.logger.info("" + string + " ");
 				}
 			}
 		}
@@ -262,8 +262,8 @@ public class ParserCharsFix {
 				for (int i = 9; i > 1; i--) {
 					// 逐词排查连字条件分析
 					// 减少computeSet算子数
-					// System.out.println("400-" + i);
-					// System.out.println("");
+					// S_logger.Log.logger.info("" + "400-" + i);
+					// S_logger.Log.logger.info("" + "");
 					if (!subSet.isEmpty()) {
 						computeSet.clear();
 						Iterator<String> iteratorsSubset = subSet
@@ -275,7 +275,7 @@ public class ParserCharsFix {
 						}
 						subSet.clear();
 					}
-					S_logger.Log.logger.info(" ");
+					S_logger.Log.logger.info("" + " ");
 					for (int j = 0; j < computeSet.size(); j++) {
 						StringBuilder stringBuilder = new StringBuilder();
 						boolean find = false;
@@ -292,7 +292,7 @@ public class ParserCharsFix {
 							}
 							String string = stringBuilder.toString();
 							if (environmentMap.containsKey(string)) {
-								// System.out.println("400-2-" + string);
+								// S_logger.Log.logger.info("" + "400-2-" + string);
 								subSet.add(string);
 								find = true;
 								// 同时原list去掉string。
@@ -305,7 +305,7 @@ public class ParserCharsFix {
 						if (false == find) {
 							// 如果没有找到就加原来的set，如果找到了，就要记录k值，
 							// 如果k值是右终界点而substring处理了词中前字拆分逻辑，那么不考虑这类逻辑，
-							// System.out.println("400-3-" + computeSet.get(j));
+							// S_logger.Log.logger.info("" + "400-3-" + computeSet.get(j));
 							subSet.add(computeSet.get(j));
 						}
 					}

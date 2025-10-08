@@ -174,10 +174,10 @@ class DemoEXTest {
 			List<String> sets = parserCharsFix.charFix(
 				commonTestInition.NE, setsB);
 			// 输入
-			Log.logger.info("array->" + i);
-			Log.logger.info("输入->" + ss[i]);
+			S_logger.Log.logger.info("" + "array->" + i);
+			S_logger.Log.logger.info("" + "输入->" + ss[i]);
 			// 输出和统计观测开始------
-			Log.logger.info("输出->");
+			S_logger.Log.logger.info("" + "输出->");
 			String setsTemp = "";
 			for (int j = 0; j < sets.size(); j++) {
 				if (sets.get(j) != null// 不为null
@@ -197,33 +197,33 @@ class DemoEXTest {
 					}
 				}
 			}
-			Log.logger.info(setsTemp);
+			S_logger.Log.logger.info("" + setsTemp);
 			if (setsTemp.isEmpty()) {
 				continue;
 			}
 			String size = verbal[i].get("-size-");
 			double sizeD = Double.valueOf(size);
 			score[i] = score[i] / sizeD;
-			Log.logger.info("");
+			S_logger.Log.logger.info("" + "");
 			//if(score[i] < 1) {
-			Log.logger.info("数据保持单字拆解条件下-分词后过滤新兴潮流代词缩写词人名"
+			S_logger.Log.logger.info("" + "数据保持单字拆解条件下-分词后过滤新兴潮流代词缩写词人名"
 				+ "等行业专业名词后对比正确率为->" + (score[i] * 100) + "%");
-			Log.logger.info("采样数据可自适应修改。注意保持对比格式的严谨～");
+			S_logger.Log.logger.info("" + "采样数据可自适应修改。注意保持对比格式的严谨～");
 			// 对比
-			Log.logger.info("理想->" + ss1[i]);
+			S_logger.Log.logger.info("" + "理想->" + ss1[i]);
 			//}
 		}
-		Log.logger.info("共计分词量总数-->" + totalVerbals);
-		Log.logger.info("共计正确分词数-->" + totalSegbals);
+		S_logger.Log.logger.info("" + "共计分词量总数-->" + totalVerbals);
+		S_logger.Log.logger.info("" + "共计正确分词数-->" + totalSegbals);
 		double ratio = totalSegbals / totalVerbals;
-		Log.logger.info("总分词正确比率-->" + +(ratio * 100) + "%");
-		Log.logger.info("分词环境-总分词正确比率-代表数据保持单字拆解条件下-分词后过滤新兴潮流代词"
+		S_logger.Log.logger.info("" + "总分词正确比率-->" + +(ratio * 100) + "%");
+		S_logger.Log.logger.info("" + "分词环境-总分词正确比率-代表数据保持单字拆解条件下-分词后过滤新兴潮流代词"
 			+ "缩写词人名等行业专业名词后的对比正确率");
-		Log.logger.info("分词环境-总分词正确比率 含有社会10余个专业领域的-web随机短文摘录分词");
-		Log.logger.info("分词环境-总分词正确比率 含有罗瑶光先生以前的笔记随机长文摘录分词");
-		Log.logger.info("分词环境-总分词正确比率 含有当前流行的浏览器AI自动生成的随机长文摘录分词");
-		Log.logger.info("分词环境-总分词正确比率 属于全部去标点符号的歧义短文分词比率");
-		Log.logger.info("分词环境-总分词正确比率 不适用太多单字词的古文，古文建议用分句api，不应该"
+		S_logger.Log.logger.info("" + "分词环境-总分词正确比率 含有社会10余个专业领域的-web随机短文摘录分词");
+		S_logger.Log.logger.info("" + "分词环境-总分词正确比率 含有罗瑶光先生以前的笔记随机长文摘录分词");
+		S_logger.Log.logger.info("" + "分词环境-总分词正确比率 含有当前流行的浏览器AI自动生成的随机长文摘录分词");
+		S_logger.Log.logger.info("" + "分词环境-总分词正确比率 属于全部去标点符号的歧义短文分词比率");
+		S_logger.Log.logger.info("" + "分词环境-总分词正确比率 不适用太多单字词的古文，古文建议用分句api，不应该"
 			+ "用分词api。");
 		// 结束
 		commonTestInition.endEnvironment();

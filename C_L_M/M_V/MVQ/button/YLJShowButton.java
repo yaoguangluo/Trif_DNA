@@ -129,12 +129,12 @@ public class YLJShowButton extends JButton implements MouseListener
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		
-		////20230106-System.out.println(e.getButton());
+		////20230106-S_logger.Log.logger.info("" + e.getButton());
 	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		
-		////20230106-System.out.println(e.getButton());
+		////20230106-S_logger.Log.logger.info("" + e.getButton());
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {

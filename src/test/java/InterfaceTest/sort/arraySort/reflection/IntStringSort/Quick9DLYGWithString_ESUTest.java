@@ -11,7 +11,7 @@ import U_V.ESU.sort.Quick9DLYGWithInt_ESU;
 import jnisort.LYGSortESU9D;
 
 import org.junit.jupiter.api.Test;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313620483@qq.com, 2080315360@qq.com,
@@ -39,21 +39,21 @@ class Quick9DLYGWithString_ESUTest {
 	 */
 	@Test
 	void sort() {
-		System.out.println("int数组排序算法映射int数据数组排序demo");
+		S_logger.Log.logger.info("" + "int数组排序算法映射int数据数组排序demo");
 		sortIntInt();
-		System.out.println("int数组排序算法映射String数据数组排序demo");
+		S_logger.Log.logger.info("" + "int数组排序算法映射String数据数组排序demo");
 		sortIntString();
-		System.out.println("double数组排序算法映射double数据数组排序demo");
+		S_logger.Log.logger.info("" + "double数组排序算法映射double数据数组排序demo");
 		sortDoubleDouble();
-		System.out.println("double数组排序算法映射String数据数组排序demo");
+		S_logger.Log.logger.info("" + "double数组排序算法映射String数据数组排序demo");
 		sortDoubleString();
-		System.out.println("int数组排序算法映射Object数据数组排序demo");
+		S_logger.Log.logger.info("" + "int数组排序算法映射Object数据数组排序demo");
 		sortIntObject();
-		System.out.println("double数组排序算法映射object数据数组排序demo");
+		S_logger.Log.logger.info("" + "double数组排序算法映射object数据数组排序demo");
 		sortDoubleObject();
-		System.out.println("float数组排序算法映射object数据数组排序demo");
+		S_logger.Log.logger.info("" + "float数组排序算法映射object数据数组排序demo");
 		sortFloatObject();
-		System.out.println("float数组排序算法映射float数据数组排序demo");
+		S_logger.Log.logger.info("" + "float数组排序算法映射float数据数组排序demo");
 		sortFloatFloat();
 	}
 
@@ -71,7 +71,7 @@ class Quick9DLYGWithString_ESUTest {
 			System.out.print(a[i]);
 			System.out.print("-");
 			System.out.print(sa[i]);
-			System.out.println("--");
+			S_logger.Log.logger.info("" + "--");
 		}
 	}
 
@@ -88,7 +88,7 @@ class Quick9DLYGWithString_ESUTest {
 			System.out.print(a[i]);
 			System.out.print("-");
 			System.out.print(sa[i]);
-			System.out.println("--");
+			S_logger.Log.logger.info("" + "--");
 		}
 	}
 
@@ -106,7 +106,7 @@ class Quick9DLYGWithString_ESUTest {
 			System.out.print(a[i]);
 			System.out.print("-");
 			System.out.print(sa[i]);
-			System.out.println("--");
+			S_logger.Log.logger.info("" + "--");
 		}
 	}
 
@@ -124,7 +124,7 @@ class Quick9DLYGWithString_ESUTest {
 			System.out.print(a[i]);
 			System.out.print("-");
 			System.out.print(sa[i]);
-			System.out.println("--");
+			S_logger.Log.logger.info("" + "--");
 
 		}
 	}
@@ -143,7 +143,7 @@ class Quick9DLYGWithString_ESUTest {
 			System.out.print(a[i]);
 			System.out.print("-");
 			System.out.print((String) sa[i]);
-			System.out.println("--");
+			S_logger.Log.logger.info("" + "--");
 		}
 	}
 
@@ -161,7 +161,7 @@ class Quick9DLYGWithString_ESUTest {
 			System.out.print(a[i]);
 			System.out.print("-");
 			System.out.print((String) sa[i]);
-			System.out.println("--");
+			S_logger.Log.logger.info("" + "--");
 		}
 	}
 
@@ -179,7 +179,7 @@ class Quick9DLYGWithString_ESUTest {
 			System.out.print(a[i]);
 			System.out.print("-");
 			System.out.print((String) sa[i]);
-			System.out.println("--");
+			S_logger.Log.logger.info("" + "--");
 		}
 	}
 
@@ -197,7 +197,7 @@ class Quick9DLYGWithString_ESUTest {
 			System.out.print(a[i]);
 			System.out.print("-");
 			System.out.print(sa[i]);
-			System.out.println("--");
+			S_logger.Log.logger.info("" + "--");
 		}
 	}
 

@@ -29,6 +29,6 @@ public class TestDemo{
 //		
 //		IMV_SQI output= E_PLSearch_E.E_PLSearch(plSearch, false, new IMV_SQI());
 //		//输出 检测
-//		//20230106-System.out.println(output.size());
+//		//20230106-S_logger.Log.logger.info("" + output.size());
 	}
 }

@@ -69,7 +69,7 @@ public class PrintTest4 implements Printable {
     @Override
     public int print(Graphics graphics, PageFormat pageFormat, int pageIndex)
         throws PrinterException {
-        //20230106-System.out.println(">>>>>>>>>>>>>>>>>>>>>>指定页号："+pageIndex);
+        //20230106-S_logger.Log.logger.info("" + ">>>>>>>>>>>>>>>>>>>>>>指定页号："+pageIndex);
         Component c = null;
         //print string
         //String str= prePrint.toString();
@@ -91,7 +91,7 @@ public class PrintTest4 implements Printable {
                     , 2.0f, dash1, 0.0f));
                 //g2.setStroke(bs_3);//设置线宽
                 float heigth = font.getSize2D();//字体高度
-                //20230106-System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>x="+x);
+                //20230106-S_logger.Log.logger.info("" + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>x="+x);
                 Image src = Toolkit.getDefaultToolkit().getImage("D:/背景图片/yesorno.jpg");
                 g2.drawImage(src, x, y, c);
                 int img_Height = src.getHeight(c);

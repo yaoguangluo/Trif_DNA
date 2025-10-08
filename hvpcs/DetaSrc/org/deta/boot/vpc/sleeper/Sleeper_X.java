@@ -69,7 +69,7 @@ public class Sleeper_X extends Sleeper_O implements Runnable {
 		DetaSrc.org.deta.boot.vpc.vision.RestMapVision.returnResponse(this);
 		pillows.vPCSResponse.closeAllBeforeGC();
 		System.out.flush();
-		System.out.println(pillows.vPCSResponse.getHashCode()
+		S_logger.Log.logger.info("" + pillows.vPCSResponse.getHashCode()
 				+ "-check returnResponse waiting for skivvy");
 	}
 

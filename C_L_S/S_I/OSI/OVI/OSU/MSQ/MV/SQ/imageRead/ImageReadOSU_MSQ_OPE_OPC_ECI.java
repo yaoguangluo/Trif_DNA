@@ -17,7 +17,7 @@ public class ImageReadOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
     }
 
     public void run(final ImageReadOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ _SQ__OVQ_OSQ_VSQ) {
-        //20230106-System.out.println("runed"+value);
+        //20230106-S_logger.Log.logger.info("" + "runed"+value);
         _SQ__OVQ_OSQ_VSQ.path = new String(filepath);
         BufferedImage image = null;
         try {

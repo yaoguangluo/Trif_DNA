@@ -25,19 +25,19 @@ public class RChromosomeRegistation {
 
 	// test
 	public static void main(String[] argv) {
-		System.out.println("1：" + RChromosomeRegistation.class);
-		System.out.println("2：" + RChromosomeRegistation.class.getName());
-		System.out.println(
+		S_logger.Log.logger.info("" + "1：" + RChromosomeRegistation.class);
+		S_logger.Log.logger.info("" + "2：" + RChromosomeRegistation.class.getName());
+		S_logger.Log.logger.info("" + 
 				"3：" + RChromosomeRegistation.class.getCanonicalName());
-		System.out.println("4：" + RChromosomeRegistation.class.getPackage());
-		System.out.println("5：" + RChromosomeRegistation.class.getSimpleName());
-		System.out.println("6：" + RChromosomeRegistation.class.getTypeName());
+		S_logger.Log.logger.info("" + "4：" + RChromosomeRegistation.class.getPackage());
+		S_logger.Log.logger.info("" + "5：" + RChromosomeRegistation.class.getSimpleName());
+		S_logger.Log.logger.info("" + "6：" + RChromosomeRegistation.class.getTypeName());
 		System.out
 				.println("7：" + RChromosomeRegistation.class.toGenericString());
 		Method[] method = RChromosomeRegistation.class.getDeclaredMethods();
 		for (Method m : method) {
-			System.out.println("-->" + m.getName());
-			System.out.println("-->" + m.getAnnotations());
+			S_logger.Log.logger.info("" + "-->" + m.getName());
+			S_logger.Log.logger.info("" + "-->" + m.getAnnotations());
 		}
 	}
 }

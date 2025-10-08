@@ -6,7 +6,7 @@ import S_A.SVQ.stable.S_String;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -45,42 +45,42 @@ class EducationLevelTestTest {
 		kernel[0] = new EducationRatio().getEducationKernel(
 			S_String.text1, commonTestInition.NE.app_S._A,
 			commonTestInition.NE);
-		System.out.println("kernel0->" + kernel[0][0] + "--"
+		S_logger.Log.logger.info("" + "kernel0->" + kernel[0][0] + "--"
 			+ kernel[0][1] + "--" + kernel[0][2]);
 		kernel[1] = new EducationRatio().getEducationKernel(
 			S_String.text2, commonTestInition.NE.app_S._A,
 			commonTestInition.NE);
-		System.out.println("kernel1->" + kernel[1][0] + "--"
+		S_logger.Log.logger.info("" + "kernel1->" + kernel[1][0] + "--"
 			+ kernel[1][1] + "--" + kernel[1][2]);
 		kernel[2] = new EducationRatio().getEducationKernel(
 			S_String.text3, commonTestInition.NE.app_S._A,
 			commonTestInition.NE);
-		System.out.println("kernel2->" + kernel[2][0] + "--"
+		S_logger.Log.logger.info("" + "kernel2->" + kernel[2][0] + "--"
 			+ kernel[2][1] + "--" + kernel[2][2]);
 
 		// ANN kernel
 		double[][] kernelRatio = new double[3][];
 		kernelRatio[0] = new EducationRatio().getEducationRatioKernel(
 			kernel[0]);
-		System.out.println("kernelRatio0->" + kernelRatio[0][0] + "--"
+		S_logger.Log.logger.info("" + "kernelRatio0->" + kernelRatio[0][0] + "--"
 			+ kernelRatio[0][1] + "--" + kernelRatio[0][2]);
 		kernelRatio[1] = new EducationRatio().getEducationRatioKernel(
 			kernel[1]);
-		System.out.println("kernelRatio1->" + kernelRatio[1][0] + "--"
+		S_logger.Log.logger.info("" + "kernelRatio1->" + kernelRatio[1][0] + "--"
 			+ kernelRatio[1][1] + "--" + kernelRatio[1][2]);
 		kernelRatio[2] = new EducationRatio().getEducationRatioKernel(
 			kernel[2]);
-		System.out.println("kernelRatio2->" + kernelRatio[2][0] + "--"
+		S_logger.Log.logger.info("" + "kernelRatio2->" + kernelRatio[2][0] + "--"
 			+ kernelRatio[2][1] + "--" + kernelRatio[2][2]);
 		EducationLevelTest educationLevelTest = new EducationLevelTest();
 		educationLevelTest.IQ_EducationLevel(kernelRatio);
 		// output
 		// 建议用public getter，别被我的测试文件进行偷懒操作。
 		for (int i = 0; i < educationLevelTest.EducationLevel.length; i++) {
-			System.out.println("EducationLevel" + i + "->"
+			S_logger.Log.logger.info("" + "EducationLevel" + i + "->"
 				+ educationLevelTest.EducationLevel[i]);
 		}
-		System.out.println(educationLevelTest.EducationDuration);
+		S_logger.Log.logger.info("" + educationLevelTest.EducationDuration);
 		// end
 		commonTestInition.NE.stop();
 		commonTestInition.endEnvironment();

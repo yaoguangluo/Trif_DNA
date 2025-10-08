@@ -62,18 +62,18 @@ public class DemoEX2 {
         }
         t.end();
         t.duration();
-        //20230106-System.out.println(S_Count.a1);
-        //20230106-System.out.println(S_Count.a2);
-        //20230106-System.out.println(S_Count.a3);
-        //20230106-System.out.println(S_Count.a4);
-//		//20230106-System.out.println(S_Count.a5);
-//		//20230106-System.out.println(S_Count.a6);
-//		//20230106-System.out.println(S_Count.a7);
-//		//20230106-System.out.println(S_Count.a8);
-//		//20230106-System.out.println(S_Count.a9);
-//		//20230106-System.out.println(S_Count.a10);
-//		//20230106-System.out.println(S_Count.a11);
-//		//20230106-System.out.println(S_Count.a12);
+        //20230106-S_logger.Log.logger.info("" + S_Count.a1);
+        //20230106-S_logger.Log.logger.info("" + S_Count.a2);
+        //20230106-S_logger.Log.logger.info("" + S_Count.a3);
+        //20230106-S_logger.Log.logger.info("" + S_Count.a4);
+//		//20230106-S_logger.Log.logger.info("" + S_Count.a5);
+//		//20230106-S_logger.Log.logger.info("" + S_Count.a6);
+//		//20230106-S_logger.Log.logger.info("" + S_Count.a7);
+//		//20230106-S_logger.Log.logger.info("" + S_Count.a8);
+//		//20230106-S_logger.Log.logger.info("" + S_Count.a9);
+//		//20230106-S_logger.Log.logger.info("" + S_Count.a10);
+//		//20230106-S_logger.Log.logger.info("" + S_Count.a11);
+//		//20230106-S_logger.Log.logger.info("" + S_Count.a12);
         for (int i = 0; i < sets.size(); i++) {
             if (sets.get(i) != null) {
                 //	System.out.print(sets.get(i) + " ");
@@ -85,10 +85,10 @@ public class DemoEX2 {
 //				//20230106-System.out.print(sets.get(i) + " ");
 //			}
 //		}
-        //20230106-System.out.println("");
+        //20230106-S_logger.Log.logger.info("" + "");
 //		t.duration();
-        //20230106-System.out.println("");
-        //20230106-System.out.println("?????-->");
+        //20230106-S_logger.Log.logger.info("" + "");
+        //20230106-S_logger.Log.logger.info("" + "?????-->");
 //		t.begin();
         for (int j = 0; j < 1; j++) {
             for (int i = 0; i < sets.size(); i++) {
@@ -98,10 +98,10 @@ public class DemoEX2 {
             }
         }
 //		t.end();
-        //20230106-System.out.println("");
+        //20230106-S_logger.Log.logger.info("" + "");
 //		t.duration();
-        //20230106-System.out.println("");
-        //20230106-System.out.println("-->");
+        //20230106-S_logger.Log.logger.info("" + "");
+        //20230106-S_logger.Log.logger.info("" + "-->");
 //		t.begin();
         IMV_SQI_S_ fwa = _A.getWordFrequencyByReturnSortMap(sets, NE);
 //		t.end();
@@ -109,7 +109,7 @@ public class DemoEX2 {
             //20230106-System.out.print(fwa.get(i).get_word() + S_Common.STRING_SYMBOL_PER
             //		+ fwa.get(i).get_frequency() + "----");
         }
-        //20230106-System.out.println("");
+        //20230106-S_logger.Log.logger.info("" + "");
 //		t.duration();
     }
 }

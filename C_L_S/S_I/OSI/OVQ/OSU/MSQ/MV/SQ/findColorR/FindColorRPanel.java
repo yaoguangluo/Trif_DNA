@@ -30,7 +30,7 @@ public class FindColorRPanel extends OSU_AOU_AOQ_VES
 		button.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e)
             {
-            	//20230106-System.out.println(e.getSource());
+            	//20230106-S_logger.Log.logger.info("" + e.getSource());
                 	close=true;
                 	_SQ__OPE_OPC_ECI.value=1;
             }
@@ -44,7 +44,7 @@ public class FindColorRPanel extends OSU_AOU_AOQ_VES
 				 filedialog=new FileDialog(new Frame(), "filechoose", FileDialog.LOAD);
 				 filedialog.setVisible(true);
 				 _SQ__OPE_OPC_ECI.filepath=filedialog.getDirectory()+filedialog.getFile();
-			     //20230106-System.out.println(_SQ__OPE_OPC_ECI.filepath);
+			     //20230106-S_logger.Log.logger.info("" + _SQ__OPE_OPC_ECI.filepath);
 				}
 			});
 		panel.add(readfile);
@@ -54,6 +54,6 @@ public class FindColorRPanel extends OSU_AOU_AOQ_VES
  	}
 	public void config()
 	{    
-		//20230106-System.out.println(S_ShellETL.SHELL_ETL_DID_CONFIG);       
+		//20230106-S_logger.Log.logger.info("" + S_ShellETL.SHELL_ETL_DID_CONFIG);       
 	}
 }

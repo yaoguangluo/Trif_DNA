@@ -54,7 +54,7 @@ public class FFT{
 	public cp[] fftk(cp[] x) {
 		int N= x.length;
 		if (N== 1){
-			//System.out.println("--"+x[0].image);
+			//S_logger.Log.logger.info("" + "--"+x[0].image);
 			return new cp[] {x[0]};
 		}
 		if (N % 2 != 0) {
@@ -76,7 +76,7 @@ public class FFT{
 		double th= pi/ N;
 		for (int k= 0; k< N/ 2; k++) {
 			double kth= k* th;
-			System.out.println("----"+kth);
+			S_logger.Log.logger.info("" + "----"+kth);
 			cp wk= new cp();
 			wk.real= Math.cos(kth);
 			wk.image= Math.sin(kth);
@@ -98,16 +98,16 @@ public class FFT{
 		for(int i=0; i<n;i++){
 			a[i]= (1000000 * Math.random());
 			c[i]=a[i];
-			System.out.println(a[i]);
+			S_logger.Log.logger.info("" + a[i]);
 		}
 		double[] b= new FFT().fft1(a);
 		double[] d= new LYGFFT().jnifft(c);
 		for(int i=0; i<n; i++){
-			System.out.println(b[i]);
-			System.out.println(d[i]);
+			S_logger.Log.logger.info("" + b[i]);
+			S_logger.Log.logger.info("" + d[i]);
 		}
-		System.out.println(b.length);
-		System.out.println(d.length);
+		S_logger.Log.logger.info("" + b.length);
+		S_logger.Log.logger.info("" + d.length);
 	}
 }
 

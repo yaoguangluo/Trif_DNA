@@ -218,17 +218,17 @@ public class SkinPathDoubleDetectTrip {
 			while (iterator.hasNext()) {
 				String string = iterator.next();
 				if (string.contains("白癜风伴")) {
-					////20230106-System.out.println("相似图片:"+ i+ "位"+ string+ "-----分数:"+ scoreDouble[i]);
+					////20230106-S_logger.Log.logger.info("" + "相似图片:"+ i+ "位"+ string+ "-----分数:"+ scoreDouble[i]);
 					afterFirstNames.put(string, true);
 				} else {
 					if (i < 20) {
-						////20230106-System.out.println("相似图片:"+ i+ "位"+ string+ "-----分数:"+ scoreDouble[i]);
+						////20230106-S_logger.Log.logger.info("" + "相似图片:"+ i+ "位"+ string+ "-----分数:"+ scoreDouble[i]);
 						afterFirstNames.put(string, true);
 					}
 				}
 			}
 			map.remove(scoreDouble[i]);
-			//	//20230106-System.out.println("相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
+			//	//20230106-S_logger.Log.logger.info("" + "相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
 		}
 	}
 
@@ -395,11 +395,11 @@ public class SkinPathDoubleDetectTrip {
 			while (iterator.hasNext()) {
 				String string = iterator.next();
 				if (afterFirstNames.containsKey(string)) {
-					//20230106-System.out.println("相似图片:"+ i+ "位"+ string+ "-----分数:"+ scoreDouble[i]);
+					//20230106-S_logger.Log.logger.info("" + "相似图片:"+ i+ "位"+ string+ "-----分数:"+ scoreDouble[i]);
 				}
 			}
 			map.remove(scoreDouble[i]);
-			//	//20230106-System.out.println("相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
+			//	//20230106-S_logger.Log.logger.info("" + "相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
 		}
 	}
 

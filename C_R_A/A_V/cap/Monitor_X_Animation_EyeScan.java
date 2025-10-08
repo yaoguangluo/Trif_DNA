@@ -278,7 +278,7 @@ public class Monitor_X_Animation_EyeScan {
                                 && find22 >= 0
                                 && find22 < 20 + m) {
                             if (i > 50 && i < 550 && j > 50 && j < 400) {
-                                //20230106-System.out.println(find6);
+                                //20230106-S_logger.Log.logger.info("" + find6);
                                 for (int m1 = -wy1 / 2 - 20; m1 < wy1 / 2 + 20; m1++) {
                                     for (int n1 = -hy1 / 2; n1 < hy1 / 2 + 10; n1++) {
                                         output[i + m1][j + n1] = 255;

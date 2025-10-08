@@ -14,6 +14,6 @@ public class MovieTransferOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI{
 //		File f= new File(this.filepath);
 //		Export e=new Export(f.toURL().toString());
 //	    _SQ__OVQ_OSQ_VSQ.lygout=toplygin;
-//	    System.out.println("run end");
+//	    S_logger.Log.logger.info("" + "run end");
 //	}
 }

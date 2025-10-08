@@ -8,7 +8,7 @@ class DelegateDB_X_LoginDB_DNATest {
 
     @BeforeEach
     void setUp() {
-        System.out.println("trif project V0.01");
+        S_logger.Log.logger.info("" + "trif project V0.01");
     }
 
     @AfterEach
@@ -17,6 +17,6 @@ class DelegateDB_X_LoginDB_DNATest {
 
     @Test
     void transactionLoginDB_DNA() {
-        System.out.println("trif project V0.01");
+        S_logger.Log.logger.info("" + "trif project V0.01");
     }
 }

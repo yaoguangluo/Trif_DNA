@@ -49,7 +49,7 @@ public class DemoCogs {
         _A.IV_Mixed(NE);
         sets = new CopyOnWriteArrayList<>();
         String ss = "从容易开始从容易知";
-        //20230106-System.out.println("");
+        //20230106-S_logger.Log.logger.info("" + "");
         ExecutorService executorService = Executors.newFixedThreadPool(1);
         for (int i = 0; i < 100; i++) {
             executorService.submit(new TaskWithResult(i, _A, ss));
@@ -63,7 +63,7 @@ public class DemoCogs {
             j++;
             if (j > 15) {
                 j = 0;
-                //20230106-System.out.println("");
+                //20230106-S_logger.Log.logger.info("" + "");
             }
         }
     }

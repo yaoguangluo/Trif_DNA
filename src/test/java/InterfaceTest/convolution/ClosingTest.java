@@ -1,6 +1,7 @@
 package test.java.InterfaceTest.convolution;
 
 import P.image.Closing;
+import S_logger.Log;
 
 import org.junit.jupiter.api.Test;
 
@@ -50,7 +51,7 @@ class ClosingTest {
 			for (int j = 0; j < 16; j++) {
 				System.out.print("-" + output[i][j]);
 			}
-			System.out.println();
+			S_logger.Log.logger.info("" + "");
 		}
 	}
 }

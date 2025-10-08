@@ -23,9 +23,9 @@ public class Sleeper extends ServerSleeper_Standard {
 			String string) {
 		pillows.vPCSRequest.setWaitingForShake(isWaitingForShake);
 		System.out.flush();
-		System.out.println(integer + "- set WaitingForShake(false)");
+		S_logger.Log.logger.info("" + integer + "- set WaitingForShake(false)");
 		System.out.flush();
-		System.out.println(pillows.vPCSResponse.getHashCode() + string);
+		S_logger.Log.logger.info("" + pillows.vPCSResponse.getHashCode() + string);
 	}
 
 	public void closeInputStream() throws IOException {
@@ -108,9 +108,9 @@ public class Sleeper extends ServerSleeper_Standard {
 // .requestIpRecoder(vPCSRequest, vPCSResponse);
 // if(null == vPCSResponse.socket) {//fix later..
 //	 setWaitingForShake(false);
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"- set WaitingForShake(false)");
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"-check requestIpRecoder null err");
 //	 return;
 // }
@@ -118,9 +118,9 @@ public class Sleeper extends ServerSleeper_Standard {
 // .requestLinkRecoder(vPCSRequest, vPCSResponse);
 // if(null == vPCSResponse.socket) {//fix later..
 //	 setWaitingForShake(false);
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"- set WaitingForShake(false)");
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"-check requestLinkRecoder null err");
 //	 return;
 // }
@@ -139,9 +139,9 @@ public class Sleeper extends ServerSleeper_Standard {
 // if(204 == vPCSResponse.errorCode) {//fix later..
 //	 vPCSResponse.returnCode(vPCSResponse.errorCode);
 //	 setWaitingForShake(false);
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"- set WaitingForShake(false)");
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"-check requestLinkRecoder 204 err");
 //	 return;
 // }
@@ -150,17 +150,17 @@ public class Sleeper extends ServerSleeper_Standard {
 // if(null == vPCSResponse.socket) {//fix later..
 //	 vPCSResponse.closeAllBeforeGC();
 //	 setWaitingForShake(false);
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"- set WaitingForShake(false)");
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"-check getForwardType null err");
 //	 return;
 // }
 // if(204 == vPCSResponse.errorCode) {//fix later..
 //	 vPCSResponse.returnCode(vPCSResponse.errorCode);
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"- set WaitingForShake(false)");
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"-check getForwardType 204 err");
 //	 setWaitingForShake(false);
 //	 return;
@@ -169,18 +169,18 @@ public class Sleeper extends ServerSleeper_Standard {
 // .forwardToRestMap(vPCSRequest, vPCSResponse);
 // if(null == vPCSResponse.socket) {//fix later.. 
 //	 vPCSResponse.closeAllBeforeGC();
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"- set WaitingForShake(false)");
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"-check forwardToRestMap null err");
 //	 setWaitingForShake(false);
 //	 return;
 // }
 // if(204 == vPCSResponse.errorCode) {//fix later..
 //	 vPCSResponse.returnCode(vPCSResponse.errorCode);
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"- set WaitingForShake(false)");
-//	 System.out.flush();System.out.println(vPCSResponse.getHashCode()
+//	 System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //			 +"-check forwardToRestMap 404 err");
 //	 setWaitingForShake(false);
 //	 return;
@@ -188,6 +188,6 @@ public class Sleeper extends ServerSleeper_Standard {
 // DetaSrc.org.deta.boot.vpc.vision.RestMapVision
 // .returnResponse(this); 
 // vPCSResponse.closeAllBeforeGC();
-// System.out.flush();System.out.println(vPCSResponse.getHashCode()
+// System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 //		 +"-check returnResponse waiting for skivvy");
 //}

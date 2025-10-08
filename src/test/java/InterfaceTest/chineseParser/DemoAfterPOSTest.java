@@ -76,37 +76,37 @@ public class DemoAfterPOSTest {
 		t.begin();
 		sets = commonTestInition.NE.app_S._A.parserMixedString(sb);
 		t.end();
-		Log.logger.info("");
-		Log.logger.info("--分词后数据--");
-		Log.logger.info("");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "--分词后数据--");
+		S_logger.Log.logger.info("" + "");
 		String stringTemp = "";
 		for (int i = 0; i < sets.size(); i++) {
 			stringTemp += "-" + sets.get(i);
 		}
-		Log.logger.info(stringTemp);
-		Log.logger.info("");
+		S_logger.Log.logger.info("" + stringTemp);
+		S_logger.Log.logger.info("" + "");
 		// 词性归纳
 		List<String> setsInput = testPOS(sets, pos);
-		Log.logger.info("");
-		Log.logger.info("--分词后数据 词性简单归纳--");
-		Log.logger.info("");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "--分词后数据 词性简单归纳--");
+		S_logger.Log.logger.info("" + "");
 		stringTemp = "";
 		for (int i = 0; i < setsInput.size(); i++) {
 			stringTemp += "=" + setsInput.get(i);
 		}
-		Log.logger.info(stringTemp);
-		Log.logger.info("");
-		Log.logger.info("--分词后数据 词性简单组合归纳--");
-		Log.logger.info("");
+		S_logger.Log.logger.info("" + stringTemp);
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "--分词后数据 词性简单组合归纳--");
+		S_logger.Log.logger.info("" + "");
 		// 词性归纳 简单地探索可组合字词
 		List<String> setsAfterInput = testAfterPOS(setsInput, pos);
-		Log.logger.info("");
+		S_logger.Log.logger.info("" + "");
 		stringTemp = "";
 		for (int i = 0; i < setsAfterInput.size(); i++) {
 			stringTemp += "+" + setsAfterInput.get(i);
 		}
-		Log.logger.info(stringTemp);
-		Log.logger.info("");
+		S_logger.Log.logger.info("" + stringTemp);
+		S_logger.Log.logger.info("" + "");
 		// 词性归纳 上面辅助应用于提高POS类计算前精确度
 		// new DemoPOSTest().testPOS(setsAfterInput, pos);
 		// 关闭
@@ -152,18 +152,18 @@ public class DemoAfterPOSTest {
 			if (0 == reg) {
 				// 没有关联就加原变量
 				setsOutput.add(string);
-				//Log.logger.info(string + "----");
+				//S_logger.Log.logger.info("" + string + "----");
 				connectsTemp+=string + "----";
 			} else {
 				String stringConnect = strings[0] + connect + "/"
 					+ strings[1];
 				setsOutput.add(stringConnect);
-				//Log.logger.info(stringConnect + "----");
+				//S_logger.Log.logger.info("" + stringConnect + "----");
 				connectsTemp += stringConnect + "----";
 				i += reg;
 			}
 		}
-		Log.logger.info(connectsTemp);
+		S_logger.Log.logger.info("" + connectsTemp);
 		return setsOutput;
 	}
 
@@ -185,7 +185,7 @@ public class DemoAfterPOSTest {
 		int charPosition = 0;
 		// 结果归纳
 		// 1 名词 动词 形容词归纳
-		Log.logger.info("-展示词性-");
+		S_logger.Log.logger.info("" + "-展示词性-");
 		for (int j = 0; j < 1; j++) {
 			for (int i = 0; i < sets.size(); i++) {
 				String string = sets.get(i);
@@ -198,7 +198,7 @@ public class DemoAfterPOSTest {
 				if (null == wordObjectPOS) {
 					String wordsPOS = word + "/" + "NULL";
 					String wordsPOSs = wordsPOS + "----";
-					Log.logger.info(wordsPOSs);
+					S_logger.Log.logger.info("" + wordsPOSs);
 					setsOutput.add(wordsPOS);
 					continue;
 				}

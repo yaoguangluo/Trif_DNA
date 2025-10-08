@@ -350,7 +350,7 @@ public class StaticRootMap {
 		// ...
 		NE.app_S.staticRootMap.tinShellV005(strings, output, NE);
 		// 写法 3
-		System.out.println(11);
+		S_logger.Log.logger.info("" + 11);
 	}
 
 	private static void doA_VECS_Case(

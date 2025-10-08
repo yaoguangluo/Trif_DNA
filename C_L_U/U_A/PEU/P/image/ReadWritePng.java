@@ -80,7 +80,7 @@ public class ReadWritePng {
         // extract R, G, B values
         h = image.getHeight();
         w = image.getWidth();
-        //20230106-System.out.println(h+"&&"+w);
+        //20230106-S_logger.Log.logger.info("" + h+"&&"+w);
         int[][] g = new int[h][w];
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
@@ -94,7 +94,7 @@ public class ReadWritePng {
         // extract R, G, B values
         h = image.getHeight();
         w = image.getWidth();
-        //20230106-System.out.println(h+"&&"+w);
+        //20230106-S_logger.Log.logger.info("" + h+"&&"+w);
         int[][] g = new int[h][w];
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {

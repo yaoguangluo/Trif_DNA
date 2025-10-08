@@ -18,9 +18,9 @@ public class ArffTransferOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
 
     public void run(final ArffTransferOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ _SQ__OVQ_OSQ_VSQ) {
         try {
-            System.out.println("runed" + value);
-            System.out.println(toptablein.getModel().getValueAt(0, 0));
-            System.out.println("runed" + value);
+            S_logger.Log.logger.info("" + "runed" + value);
+            S_logger.Log.logger.info("" + toptablein.getModel().getValueAt(0, 0));
+            S_logger.Log.logger.info("" + "runed" + value);
             File file = new File(filepath);
 
             file.createNewFile();
@@ -74,8 +74,8 @@ public class ArffTransferOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
                 }
                 wr.write("\n");
             }
-            System.out.println("===完成省份：");
-            System.out.println("全部完成。。。。。。。。");
+            S_logger.Log.logger.info("" + "===完成省份：");
+            S_logger.Log.logger.info("" + "全部完成。。。。。。。。");
             wr.flush();
             wr.close();
             _SQ__OVQ_OSQ_VSQ.tableout = toptablein;

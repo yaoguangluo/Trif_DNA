@@ -25,7 +25,7 @@ public class SaveAnd_U_File {
         }
         //save
         String fileSavepath = fileCurrentpath;
-        //20230106-System.out.println(fileSavepath);
+        //20230106-S_logger.Log.logger.info("" + fileSavepath);
         //create file and save
         try {
             FileWriter fileWriter = new FileWriter(fileSavepath);

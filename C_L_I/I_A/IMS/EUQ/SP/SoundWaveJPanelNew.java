@@ -159,7 +159,7 @@ public class SoundWaveJPanelNew extends SoundWave implements Runnable {
                 filedialog.setFilenameFilter(new TXTFilter("png"));
                 filedialog.setVisible(true);
                 String filepath = filedialog.getDirectory() + filedialog.getFile();
-                //20230106-System.out.println(filepath);
+                //20230106-S_logger.Log.logger.info("" + filepath);
                 try {
                     File outputBin = new File(filepath + ".png");
                     if (null == imageForOutput) {
@@ -167,7 +167,7 @@ public class SoundWaveJPanelNew extends SoundWave implements Runnable {
                     }
                     ImageIO.write(imageForOutput, "png", outputBin);
                 } catch (IOException writePngError) {
-                    //20230106-System.out.println(filepath);
+                    //20230106-S_logger.Log.logger.info("" + filepath);
                 }
                 //输出图片
             }

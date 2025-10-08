@@ -80,7 +80,7 @@ public class DemoPOSTest {
 		/*
 		 * 因为混合中文数字是charPosition 所以分词的sets也要charPosition变换增加精确度。
 		 */
-		Log.logger.info("-展示词性-");
+		S_logger.Log.logger.info("" + "-展示词性-");
 		for (int j = 0; j < 1; j++) {
 			String wordsTemp = "";
 			for (int i = 0; i < sets.size(); i++) {
@@ -220,7 +220,7 @@ public class DemoPOSTest {
 				adv.put(word, wordFrequency);
 				charPosition += string.length();
 			}
-			Log.logger.info(wordsTemp);
+			S_logger.Log.logger.info("" + wordsTemp);
 		}
 		/*
 		// 输出显示
@@ -243,7 +243,7 @@ public class DemoPOSTest {
 				.getAveragePosition();
 			wordFrequencyTemp += "--出现频率->" + wordFrequency
 				.get_frequency();
-			Log.logger.info(wordFrequencyTemp);
+			S_logger.Log.logger.info("" + wordFrequencyTemp);
 		}
 
 		/* 
@@ -265,7 +265,7 @@ public class DemoPOSTest {
 				.getAveragePosition();
 			wordFrequencyTemp += "--出现频率->" + wordFrequency
 				.get_frequency();
-			Log.logger.info(wordFrequencyTemp);
+			S_logger.Log.logger.info("" + wordFrequencyTemp);
 		}
 		/*
 		// 形容词
@@ -286,7 +286,7 @@ public class DemoPOSTest {
 				.getAveragePosition();
 			wordFrequencyTemp += "--出现频率->" + wordFrequency
 				.get_frequency();
-			Log.logger.info(wordFrequencyTemp);
+			S_logger.Log.logger.info("" + wordFrequencyTemp);
 		}
 		/*
 		// 副词
@@ -307,7 +307,7 @@ public class DemoPOSTest {
 				.getAveragePosition();
 			wordFrequencyTemp += "--出现频率->" + wordFrequency
 				.get_frequency();
-			Log.logger.info(wordFrequencyTemp);
+			S_logger.Log.logger.info("" + wordFrequencyTemp);
 		}
 	}
 
@@ -324,7 +324,7 @@ public class DemoPOSTest {
 		/*
 		 * 因为混合中文数字是charPosition 所以分词的sets也要charPosition变换增加精确度。
 		 */
-		Log.logger.info("-展示词性-");
+		S_logger.Log.logger.info("" + "-展示词性-");
 		for (int j = 0; j < 1; j++) {
 			String wordsTemp = "";
 			for (int i = 0; i < sets.size(); i++) {
@@ -380,7 +380,7 @@ public class DemoPOSTest {
 				output.add(word + "/" + wordPOS);
 				charPosition += string.length();
 			}
-			Log.logger.info(wordsTemp);
+			S_logger.Log.logger.info("" + wordsTemp);
 		}
 		return output;
 	}
@@ -388,17 +388,17 @@ public class DemoPOSTest {
 	//原测试函数分解后逻辑
 	public void testPOS(List<String> sets, IMV_SQI pos) {
 
-		Log.logger.info("----------");
-		Log.logger.info("进行词性修正");
+		S_logger.Log.logger.info("" + "----------");
+		S_logger.Log.logger.info("" + "进行词性修正");
 		List<String> setsInput = testPOSOnlyGetList(sets, pos);
 		DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
-		Log.logger.info("----------");
-		Log.logger.info("进行词性组合");
+		S_logger.Log.logger.info("" + "----------");
+		S_logger.Log.logger.info("" + "进行词性组合");
 		List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(
 			setsInput, pos);
 		//--最终将修正的list 处理成 wordFrequency 格式list。
-		Log.logger.info("----------");
-		Log.logger.info("进行词性封装");
+		S_logger.Log.logger.info("" + "----------");
+		S_logger.Log.logger.info("" + "进行词性封装");
 		testPOStoWordFrequencyList(setsAfterInput, pos);
 
 	}
@@ -509,7 +509,7 @@ public class DemoPOSTest {
 ///*
 // * 因为混合中文数字是charPosition 所以分词的sets也要charPosition变换增加精确度。
 // */
-//System.out.println("-展示词性-");
+//S_logger.Log.logger.info("" + "-展示词性-");
 //for (int j = 0; j < 1; j++) {
 //	for (int i = 0; i < sets.size(); i++) {
 //		String string = sets.get(i);
@@ -529,7 +529,7 @@ public class DemoPOSTest {
 //			// 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
 //			// 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
 //			if (word.equals("不断")) {
-//				System.out.println();
+//				S_logger.Log.logger.info("" + "");
 //			}
 //			if (wordPOS.contains("未知") || wordPOS.contains("形")
 //					|| wordPOS.contains("副")) {
@@ -686,7 +686,7 @@ public class DemoPOSTest {
 //while (iteratorNoun.hasNext()) {
 //	String wordNoun = iteratorNoun.next();
 //	WordFrequency wordFrequency = noun.get(wordNoun);
-//	System.out.println();
+//	S_logger.Log.logger.info("" + "");
 //	System.out.print("--词汇->" + wordFrequency.get_word());
 //	System.out.print("-词性->" + wordFrequency.get_pos());
 //	System.out.print("-平均距离->" + wordFrequency.getAveragePosition());
@@ -702,7 +702,7 @@ public class DemoPOSTest {
 //while (iteratorVerb.hasNext()) {
 //	String wordVerb = iteratorVerb.next();
 //	WordFrequency wordFrequency = verb.get(wordVerb);
-//	System.out.println();
+//	S_logger.Log.logger.info("" + "");
 //	System.out.print("--词汇->" + wordFrequency.get_word());
 //	System.out.print("-词性->" + wordFrequency.get_pos());
 //	System.out.print("-平均距离->" + wordFrequency.getAveragePosition());
@@ -718,7 +718,7 @@ public class DemoPOSTest {
 //while (iteratorAdj.hasNext()) {
 //	String wordAdj = iteratorAdj.next();
 //	WordFrequency wordFrequency = adj.get(wordAdj);
-//	System.out.println();
+//	S_logger.Log.logger.info("" + "");
 //	System.out.print("--词汇->" + wordFrequency.get_word());
 //	System.out.print("-词性->" + wordFrequency.get_pos());
 //	System.out.print("-平均距离->" + wordFrequency.getAveragePosition());
@@ -734,7 +734,7 @@ public class DemoPOSTest {
 //while (iteratorAdv.hasNext()) {
 //	String wordAdv = iteratorAdv.next();
 //	WordFrequency wordFrequency = adv.get(wordAdv);
-//	System.out.println();
+//	S_logger.Log.logger.info("" + "");
 //	System.out.print("--词汇->" + wordFrequency.get_word());
 //	System.out.print("-词性->" + wordFrequency.get_pos());
 //	System.out.print("-平均距离->" + wordFrequency.getAveragePosition());
@@ -742,42 +742,42 @@ public class DemoPOSTest {
 //}
 //}
 
-/*	Log.logger.info("");
-//	Log.logger.info("--词汇->" + wordFrequency.get_word());
-//	Log.logger.info("-词性->" + wordFrequency.get_pos());
-//	Log.logger.info("-平均距离->" + wordFrequency
+/*	S_logger.Log.logger.info("" + "");
+//	S_logger.Log.logger.info("" + "--词汇->" + wordFrequency.get_word());
+//	S_logger.Log.logger.info("" + "-词性->" + wordFrequency.get_pos());
+//	S_logger.Log.logger.info("" + "-平均距离->" + wordFrequency
 //		.getAveragePosition());
-//	Log.logger.info("-出现频率->" + wordFrequency
+//	S_logger.Log.logger.info("" + "-出现频率->" + wordFrequency
 //		.get_frequency());
 //
  */
 
 /*
-//	Log.logger.info("");
-//	Log.logger.info("--词汇->" + wordFrequency.get_word());
-//	Log.logger.info("-词性->" + wordFrequency.get_pos());
-//	Log.logger.info("-平均距离->" + wordFrequency
+//	S_logger.Log.logger.info("" + "");
+//	S_logger.Log.logger.info("" + "--词汇->" + wordFrequency.get_word());
+//	S_logger.Log.logger.info("" + "-词性->" + wordFrequency.get_pos());
+//	S_logger.Log.logger.info("" + "-平均距离->" + wordFrequency
 //		.getAveragePosition());
-//	Log.logger.info("-出现频率->" + wordFrequency
+//	S_logger.Log.logger.info("" + "-出现频率->" + wordFrequency
 //		.get_frequency());
 */
 
 /*
-//	Log.logger.info("");
-//	Log.logger.info("--词汇->" + wordFrequency.get_word());
-//	Log.logger.info("-词性->" + wordFrequency.get_pos());
-//	Log.logger.info("-平均距离->" + wordFrequency
+//	S_logger.Log.logger.info("" + "");
+//	S_logger.Log.logger.info("" + "--词汇->" + wordFrequency.get_word());
+//	S_logger.Log.logger.info("" + "-词性->" + wordFrequency.get_pos());
+//	S_logger.Log.logger.info("" + "-平均距离->" + wordFrequency
 //		.getAveragePosition());
-//	Log.logger.info("-出现频率->" + wordFrequency
+//	S_logger.Log.logger.info("" + "-出现频率->" + wordFrequency
 //		.get_frequency());
 */
 
 /*			
- * Log.logger.info("");
- * Log.logger.info("--词汇->" + wordFrequency.get_word());
- * Log.logger.info("-词性->" + wordFrequency.get_pos());
- * Log.logger.info("-平均距离->" + wordFrequency
+ * S_logger.Log.logger.info("" + "");
+ * S_logger.Log.logger.info("" + "--词汇->" + wordFrequency.get_word());
+ * S_logger.Log.logger.info("" + "-词性->" + wordFrequency.get_pos());
+ * S_logger.Log.logger.info("" + "-平均距离->" + wordFrequency
  *	 .getAveragePosition());
- * Log.logger.info("-出现频率->" + wordFrequency
+ * S_logger.Log.logger.info("" + "-出现频率->" + wordFrequency
  *	 .get_frequency());
  */

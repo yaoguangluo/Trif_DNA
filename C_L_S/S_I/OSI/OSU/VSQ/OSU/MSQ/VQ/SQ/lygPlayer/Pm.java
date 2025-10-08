@@ -46,7 +46,7 @@ public class Pm extends JPanel implements Runnable {
         DetaThread.sleepDeta(30);
         //this.paint((Image)bi);
         while (reg++ < io.header.MFrameLeangth - 1) {
-            //20230106-System.out.println(reg+1);
+            //20230106-S_logger.Log.logger.info("" + reg+1);
             read.asyBufferReader(raf, io, fsize, 0);
             len = ((int) fsize[3] << 24 & 0xff000000) | ((int) fsize[2] << 16 & 0x00ff0000) | ((int) fsize[1] << 8 & 0x0000ff00) | ((int) fsize[0] & 0x000000ff);
             int use = 0;
@@ -112,8 +112,8 @@ public class Pm extends JPanel implements Runnable {
                 DetaThread.sleepDeta(30);
                 //		this.paint((Image)bi);
             }
-            //20230106-System.out.println("use-->"+use);
+            //20230106-S_logger.Log.logger.info("" + "use-->"+use);
         }
-        //20230106-System.out.println(io.header.SMovCurrentPos);
+        //20230106-S_logger.Log.logger.info("" + io.header.SMovCurrentPos);
     }
 }

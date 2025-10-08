@@ -122,7 +122,7 @@ public class MakeContainerYXTP_X extends Thread implements Runnable {
 			while (iteratorPath.hasNext()) {
 				String StringPath = iteratorPath.next();
 				if (null != StringPath) {
-					// System.out.println(StringPath.replace("\\", "/"));
+					// S_logger.Log.logger.info("" + StringPath.replace("\\", "/"));
 					String[] StringsPath = StringPath.replace("\\", "/")
 							.split("/");
 					if (StringsPath.length > 1) {

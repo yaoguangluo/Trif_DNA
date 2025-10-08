@@ -34,7 +34,7 @@ public class MaxMiniPro {
         if (audioBytes == null) {
             try {
                 audioBytes = new byte[(int) (ais.getFrameLength() * af.getFrameSize())];
-                //20230106-System.out.println("audiobyte length:"+audioBytes.length);
+                //20230106-S_logger.Log.logger.info("" + "audiobyte length:"+audioBytes.length);
                 ais.read(audioBytes);
             } catch (Exception ex) {
                 //reportStatus(ex.toString());
@@ -77,8 +77,8 @@ public class MaxMiniPro {
                 }
             }
         }
-        //20230106-System.out.println(audioBytes.length);
-        //20230106-System.out.println(af.getFrameSize());
+        //20230106-S_logger.Log.logger.info("" + audioBytes.length);
+        //20230106-S_logger.Log.logger.info("" + af.getFrameSize());
         int count = 0;
         int comp = 2000;
         int find = 0;
@@ -97,7 +97,7 @@ public class MaxMiniPro {
                         audioData[i - j] = audioData[i - j] * max;
                     }
                 }
-                ////20230106-System.out.println(count);
+                ////20230106-S_logger.Log.logger.info("" + count);
                 count = 0;
             }
             count++;
@@ -108,7 +108,7 @@ public class MaxMiniPro {
         count = 0;
         for (int i = 0; i < audioData.length; i++) {
             if (audioData[i] < 0 && audioData[i + 1] > 0) {
-                //20230106-System.out.println("cur count"+count);
+                //20230106-S_logger.Log.logger.info("" + "cur count"+count);
                 if (count < 5 || count > 200) {
                     for (int j = 0; j < count; j++) {
                         audioData[i - j] = 0.0;
@@ -119,8 +119,8 @@ public class MaxMiniPro {
             count++;
         }
         double y_last = 0.0;
-        //20230106-System.out.println(w);
-        //20230106-System.out.println(audioData.length);
+        //20230106-S_logger.Log.logger.info("" + w);
+        //20230106-S_logger.Log.logger.info("" + audioData.length);
         int frames_per_pixel = audioBytes.length / af.getFrameSize() / w;
         byte my_byte = 0;
         int idx = 0;

@@ -13,7 +13,7 @@ import DetaSrc.org.html5.upload.FileUploaderSimpleSocket;
 import DetaSrc.org.html5.upload.FileUploaderSimpleSocketPDE;
 import DetaSrc.org.html5.upload.FileUploaderSimpleSocketSound;
 import DetaSrc.org.html5.upload.FileUploaderSimpleSocketSoundImage;
-
+import S_logger.Log;
 //import org.html5.upload.FileUploaderSimpleSocketSoundImageMpeg;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -39,11 +39,11 @@ public class LocalRestCall {
             }
         }//checkstatus
         System.out.flush();
-        System.out.println("mess-" + mess);
+        S_logger.Log.logger.info("" + "mess-" + mess);
         if (stringInput.contains(".png") || stringInput.contains(".jpeg")
             || stringInput.contains("JFIF") || stringInput.contains(".jpg")) {
             System.out.flush();
-            System.out.println(2);
+            S_logger.Log.logger.info("" + 2);
             //Thread.sleep(15);
             FileUploaderSimpleSocket.processForm(inputStream, bytes
                 , ".jpg", vPCSRequest, vPCSResponse, stringInput);
@@ -103,17 +103,17 @@ public class LocalRestCall {
             }
         }
         System.out.flush();
-        System.out.println("mess1-" + mess);
+        S_logger.Log.logger.info("" + "mess1-" + mess);
         if (stringInput.contains(".wav")) {
             System.out.flush();
-            System.out.println(2);
+            S_logger.Log.logger.info("" + 2);
             //Thread.sleep(15);
             FileUploaderSimpleSocketSoundImage.processForm(inputStream
                 , bytes, ".wav", vPCSRequest, vPCSResponse, stringInput);
             return;
         } else if (stringInput.contains(".mp3")) {
             System.out.flush();
-            System.out.println(2);
+            S_logger.Log.logger.info("" + 2);
             //Thread.sleep(15);//later
             //FileUploaderSimpleSocketSoundImageMpeg.processForm(inputStream
             //		, bytes, ".mp3", vPCSRequest, vPCSResponse, stringInput);
@@ -141,11 +141,11 @@ public class LocalRestCall {
         }
         //checkstatus
         System.out.flush();
-        System.out.println("mess-2" + mess);
+        S_logger.Log.logger.info("" + "mess-2" + mess);
         if (stringInput.contains(".png") || stringInput.contains(".jpeg")
             || stringInput.contains("JFIF") || stringInput.contains(".jpg")) {
             System.out.flush();
-            System.out.println(2);
+            S_logger.Log.logger.info("" + 2);
             //Thread.sleep(15);
             FileUploaderSimpleSocketPDE.processForm(inputStream, bytes
                 , ".jpg", vPCSRequest, vPCSResponse, stringInput);
@@ -174,11 +174,11 @@ public class LocalRestCall {
             }
         }
         System.out.flush();
-        System.out.println("mess-3" + mess);
+        S_logger.Log.logger.info("" + "mess-3" + mess);
         if (stringInput.contains(".png") || stringInput.contains(".jpeg")
             || stringInput.contains("JFIF") || stringInput.contains(".jpg")) {
             System.out.flush();
-            System.out.println(2);
+            S_logger.Log.logger.info("" + 2);
             //Thread.sleep(15);
             FileUploaderSimple.processForm(inputStream, bytes
                 , ".jpg", vPCSRequest, vPCSResponse);
@@ -203,11 +203,11 @@ public class LocalRestCall {
             }
         }
         System.out.flush();
-        System.out.println("mess-4" + mess);
+        S_logger.Log.logger.info("" + "mess-4" + mess);
         if (stringInput.contains(".png") || stringInput.contains(".jpeg")
             || stringInput.contains("JFIF") || stringInput.contains(".jpg")) {
             System.out.flush();
-            System.out.println(2);
+            S_logger.Log.logger.info("" + 2);
             //Thread.sleep(15);
             FileUploaderSimpleDNA.processForm(inputStream, bytes
                 , ".jpg", vPCSRequest, vPCSResponse);
@@ -233,10 +233,10 @@ public class LocalRestCall {
             }
         }
         System.out.flush();
-        System.out.println("mess-5" + mess);
+        S_logger.Log.logger.info("" + "mess-5" + mess);
         if (stringInput.contains(".wav")) {
             System.out.flush();
-            System.out.println(2);
+            S_logger.Log.logger.info("" + 2);
             //Thread.sleep(15);
             FileUploaderSimpleSocketSound.processForm(inputStream, bytes
                 , ".wav", vPCSRequest, vPCSResponse, stringInput);

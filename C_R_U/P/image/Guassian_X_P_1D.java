@@ -36,7 +36,7 @@
 //				sum1= sum1 + kenel[i][j];
 //			}
 //		}
-//		////20230106-System.out.println("gaussian sum: " + sum1);
+//		////20230106-S_logger.Log.logger.info("" + "gaussian sum: " + sum1);
 //		////GAUSSIAN KENEL col
 //		for(int k= d/2; k<d/2+1; ++k){
 //			for(int l= 0; l<e; ++l){
@@ -47,7 +47,7 @@
 //				sumcol= sumcol + kenel[k][l];
 //			}
 //		}
-//		////20230106-System.out.println("--->"+sumcol);
+//		////20230106-S_logger.Log.logger.info("" + "--->"+sumcol);
 //		//--normalization col
 //		double sum2=0.0;
 //		for(int i=d/2; i<d/2+1; ++i){
@@ -57,7 +57,7 @@
 //			}
 //		}
 //		//--end of producing gaussian matrix
-//		////20230106-System.out.println("gaussian sum: " + sum2);
+//		////20230106-S_logger.Log.logger.info("" + "gaussian sum: " + sum2);
 //		//GAUSSIAN pro for row
 //		for (int i=d/2;i<g.length+d/2;i++) {
 //			for(int j=e/2;j<g[0].length+e/2;j++) {
@@ -67,10 +67,10 @@
 //						sum=(sum+flac_grn[i+k-d/2][j+l-e/2]*kenel[k][l]);
 //					}
 //				}
-//				// //20230106-System.out.println(sum+"|");
-//				// //20230106-System.out.println(i-d/2);
-//				// //20230106-System.out.println(j-e/2);
-//				////20230106-System.out.println(g.length);
+//				// //20230106-S_logger.Log.logger.info("" + sum+"|");
+//				// //20230106-S_logger.Log.logger.info("" + i-d/2);
+//				// //20230106-S_logger.Log.logger.info("" + j-e/2);
+//				////20230106-S_logger.Log.logger.info("" + g.length);
 //				//if(j-e/2>)
 //				g[i-d/2][j-e/2]=sum;
 //				// 	flac_grn[i][j]=(int)sum;
@@ -87,7 +87,7 @@
 //						sum=sum+flac_grn[i+k-d/2][j+l-e/2]*kenel[k][l];
 //					}
 //				}
-//				// //20230106-System.out.println(sum);
+//				// //20230106-S_logger.Log.logger.info("" + sum);
 //				g[i-d/2][j-e/2]=sum;
 //			}
 //		}

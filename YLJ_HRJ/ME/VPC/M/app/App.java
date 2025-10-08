@@ -69,7 +69,7 @@ public class App extends JApplet implements KeyListener, ActionListener {
 				return;
 			}
 		}
-		// System.out.println(lookrot);
+		// S_logger.Log.logger.info("" + lookrot);
 		this.app_S.appConfig.SectionJPanel.jTextPane
 				.setText("" + app_S.lookrot);
 		String zhongyao = S_Tag.STRING_EMPTY;

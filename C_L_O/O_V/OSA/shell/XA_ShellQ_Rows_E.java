@@ -59,7 +59,7 @@ public class XA_ShellQ_Rows_E {
         new XA_ShellQ_Rows_E().selectRowsByAttribute("backend", "login"
             , "usr_name", "yaoguangluo");
         // deletefile("D:/file");
-        //20230106-System.out.println("ok");
+        //20230106-S_logger.Log.logger.info("" + "ok");
     }
 
     //今天看了下发现我的数据库 没有分页, 以后会设计一个文件夹最大为3000 rows

@@ -38,7 +38,7 @@ public class ANNTest {
                 sum += Double.valueOf(annMatrix[j][i]);
             }
             if (sum >= 0.6) {
-                //20230106-System.out.println(AnnMatrix[j][0]+AnnMatrix[j][1]
+                //20230106-S_logger.Log.logger.info("" + AnnMatrix[j][0]+AnnMatrix[j][1]
                 // + AnnMatrix[j][2] + AnnMatrix[j][3] + "ANN:" + sum);
             }
         }

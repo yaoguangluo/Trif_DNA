@@ -46,7 +46,7 @@ public class RequestRecordControllerBUp {
 		}
 		if (length < 1) {
 			System.out.flush();
-			System.out.println(vPCSResponse.getHashCode() + "-check");
+			S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-check");
 			vPCSResponse.setErrorCode(204);
 			return;
 		}
@@ -58,7 +58,7 @@ public class RequestRecordControllerBUp {
 		rbytes = null;
 		String temp = stringInput.substring(0, length > 60 ? 60 : length);
 		System.out.flush();
-		System.out.println(vPCSResponse.getHashCode() + "->" + temp);
+		S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "->" + temp);
 		String[] stringInputs = stringInput.split("\r\n");
 		String mess = stringInputs[0];
 		if (null == mess) {
@@ -191,7 +191,7 @@ public class RequestRecordControllerBUp {
 // }
 
 // 
-// System.out.flush();System.out.println(vPCSResponse.getHashCode()+"-bytes null");
+// System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()+"-bytes null");
 // StableBlob.addException();
 // vPCSResponse.returnCode(204);
 // return;

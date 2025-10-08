@@ -1,6 +1,7 @@
 package test.java.InterfaceTest.computingPDE.linePage;
 
 import A_I.MPE.MAQPVDCOISIV.pdi.RangePDI;
+import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
@@ -49,7 +50,7 @@ class PageQ_ETest {
 			commonTestInition.NE);
 		// 输出
 		for (int i = 0; i < 32; i++) {
-			System.out.println(bili0[i]);
+			S_logger.Log.logger.info("" + bili0[i]);
 		}
 		// 关闭
 		commonTestInition.endEnvironment();

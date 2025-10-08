@@ -66,17 +66,17 @@ public class Sample_X_Register {
 					filedialog.setVisible(true);
 					gUISample.fileCurrentpath = filedialog.getDirectory()
 							+ filedialog.getFile();
-					// 20230106-System.out.println(gUISample.fileCurrentpath);
+					// 20230106-S_logger.Log.logger.info("" + gUISample.fileCurrentpath);
 					if (null == gUISample.fileCurrentpath
 							|| gUISample.fileCurrentpath.isEmpty()
 							|| !gUISample.fileCurrentpath
 									.contains(S_Annotation.FILE_FORMAT_ETL)) {
-						// 20230106-System.out.println(S_Annotation.ATTENSION_RECHOICE);
+						// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
 						return;
 					}
 					File file = new File(gUISample.fileCurrentpath);
 					if (!file.isFile()) {
-						// 20230106-System.out.println(S_Annotation.ATTENSION_RECHOICE);
+						// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
 						return;
 					}
 					LinkNode needDeleteNode = gUISample.first.first;
@@ -104,7 +104,7 @@ public class Sample_X_Register {
 			@SuppressWarnings({ S_Annotation.TAG_STATIC_ACCESS })
 			public void actionPerformed(ActionEvent e) {
 				if (null == gUISample.fileCurrentpath) {
-					// 20230106-System.out.println(S_Annotation.ATTENSION_UNCURRENT_CHOICE);
+					// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_UNCURRENT_CHOICE);
 					return;
 				}
 				javax.swing.JOptionPane jOptionPane = new JOptionPane(
@@ -142,16 +142,16 @@ public class Sample_X_Register {
 						new TXTFilter(S_Annotation.FILE_FORMAT_ETL));
 				filedialog.setVisible(true);
 				jarCategoryLink = filedialog.getDirectory();
-				//// 20230106-System.out.println(jarCategoryLink);
+				//// 20230106-S_logger.Log.logger.info("" + jarCategoryLink);
 				if (null == jarCategoryLink || jarCategoryLink.isEmpty()
 						|| jarCategoryLink
 								.contains(S_Annotation.FILE_FORMAT_JAR)) {
-					// 20230106-System.out.println(S_Annotation.ATTENSION_RECHOICE);
+					// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
 					return;
 				}
 				File file = new File(jarCategoryLink);
 				if (file.isFile()) {
-					// 20230106-System.out.println(S_Annotation.ATTENSION_FILE_CHOICE);
+					// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_FILE_CHOICE);
 					return;
 				}
 				File[] files = file.listFiles();
@@ -187,18 +187,18 @@ public class Sample_X_Register {
 							.toUpperCase();
 					String NewlastName = FirstCharOfLastName
 							+ lastName.subSequence(1, lastName.length());
-					// 20230106-System.out.println(filename);
+					// 20230106-S_logger.Log.logger.info("" + filename);
 					// 数组 尾组
 					// 首字母 大写
 					// filename= (""+
 					// filename.split("\\.")[filename.split("\\.")
 					// .length- 1].charAt(0)).toUpperCase();
-					//// 20230106-System.out.println(filename.replace(filename.split(".")
+					//// 20230106-S_logger.Log.logger.info("" + filename.replace(filename.split(".")
 					// .length, newChar)filename.split(".").length);
 					try {
 						String className = filename + "." + NewlastName
 								+ S_Annotation.NODE_NODE_INTERFACE;
-						// 20230106-System.out.println(className);
+						// 20230106-S_logger.Log.logger.info("" + className);
 						myclass = loader.loadClass(className);
 					} catch (ClassNotFoundException e1) {
 						//// 增加小写识别一次, 兼容老的插件。之后我会统一进行修改
@@ -206,10 +206,10 @@ public class Sample_X_Register {
 						// FirstCharOfLastName= (""+ lastName.charAt(0));
 						// NewlastName= FirstCharOfLastName
 						// + lastName.subSequence(1, lastName.length());
-						//// 20230106-System.out.println(filename);
+						//// 20230106-S_logger.Log.logger.info("" + filename);
 						// String className= filename+ "."+ NewlastName
 						// + S_Data.NODE_NODE_INTERFACE;
-						//// 20230106-System.out.println(className);
+						//// 20230106-S_logger.Log.logger.info("" + className);
 						// try {myclass= loader.loadClass(className);
 						// } catch (ClassNotFoundException e2) {
 						// e2.printStackTrace();}
@@ -294,17 +294,17 @@ public class Sample_X_Register {
 							filedialog.setVisible(true);
 							gUISample.fileCurrentpath = filedialog
 									.getDirectory() + filedialog.getFile();
-							// 20230106-System.out.println(gUISample.fileCurrentpath);
+							// 20230106-S_logger.Log.logger.info("" + gUISample.fileCurrentpath);
 							if (null == gUISample.fileCurrentpath
 									|| gUISample.fileCurrentpath.isEmpty()
 									|| !gUISample.fileCurrentpath.contains(
 											S_Annotation.FILE_FORMAT_ETL)) {
-								// 20230106-System.out.println(S_Annotation.ATTENSION_RECHOICE);
+								// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
 								return;
 							}
 							File file = new File(gUISample.fileCurrentpath);
 							if (!file.isFile()) {
-								// 20230106-System.out.println(S_Annotation.ATTENSION_RECHOICE);
+								// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
 								return;
 							}
 							LinkNode needDeleteNode = gUISample.first.first;
@@ -454,7 +454,7 @@ public class Sample_X_Register {
 								gUISample.leftSplitPane.getDividerLocation());
 						gUISample.nodeProject.validate();
 						gUISample.mainSplitPane.validate();
-						// 20230106-System.out.println(gUISample.w + "<>" +
+						// 20230106-S_logger.Log.logger.info("" + gUISample.w + "<>" +
 						// gUISample.h);
 					}
 

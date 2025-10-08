@@ -22,34 +22,34 @@ public class dsd{
 		String VECS= "VECS";
 		String IDUQ= "IDUQ";
 		Map<String, String> mapL= new HashMap<>();
-//		System.out.flush();System.out.println("��Ԫ��");
+//		System.out.flush();S_logger.Log.logger.info("" + "��Ԫ��");
 //		for(int i=0;i<12;i++) {
 //			for(int j=0;j<12;j++) {
 //				for(int k=0;k<12;k++) {
 //					if(s[i].equalsIgnoreCase(s[j])||s[i].equalsIgnoreCase(s[k]) 
 //		||s[j].equalsIgnoreCase(s[k])) {
 //						if(!mapL.containsKey(s[i]+s[j]+s[k])) {
-//							System.out.flush();System.out.println(s[i]+s[j]+s[k]+"   "+s1[i]+s1[j]+s1[k] );
+//							System.out.flush();S_logger.Log.logger.info("" + s[i]+s[j]+s[k]+"   "+s1[i]+s1[j]+s1[k] );
 //							mapL.put(s[i]+s[j]+s[k], "");
 //						}
 //						if(!mapL.containsKey(s[i]+s[k]+s[j])) {
-//							System.out.flush();System.out.println(s[i]+s[k]+s[j]+"   "+s1[i]+s1[k]+s1[j] );
+//							System.out.flush();S_logger.Log.logger.info("" + s[i]+s[k]+s[j]+"   "+s1[i]+s1[k]+s1[j] );
 //							mapL.put(s[i]+s[k]+s[j], "");
 //						}
 //						if(!mapL.containsKey(s[j]+s[k]+s[i])) {
-//							System.out.flush();System.out.println(s[j]+s[k]+s[i]+"   "+s1[j]+s1[k]+s1[i] );
+//							System.out.flush();S_logger.Log.logger.info("" + s[j]+s[k]+s[i]+"   "+s1[j]+s1[k]+s1[i] );
 //							mapL.put(s[j]+s[k]+s[i], "");
 //						}
 //						if(!mapL.containsKey(s[j]+s[i]+s[k])) {
-//							System.out.flush();System.out.println(s[j]+s[i]+s[k]+"   "+s1[j]+s1[i]+s1[k] );
+//							System.out.flush();S_logger.Log.logger.info("" + s[j]+s[i]+s[k]+"   "+s1[j]+s1[i]+s1[k] );
 //							mapL.put(s[j]+s[i]+s[k], "");
 //						}
 //						if(!mapL.containsKey(s[k]+s[i]+s[j])) {
-//							System.out.flush();System.out.println(s[k]+s[i]+s[j]+"   "+s1[k]+s1[i]+s1[j] );
+//							System.out.flush();S_logger.Log.logger.info("" + s[k]+s[i]+s[j]+"   "+s1[k]+s1[i]+s1[j] );
 //							mapL.put(s[k]+s[i]+s[j], "");
 //						}
 //						if(!mapL.containsKey(s[k]+s[j]+s[i])) {
-//							System.out.flush();System.out.println(s[k]+s[j]+s[i]+"   "+s1[k]+s1[j]+s1[i] );
+//							System.out.flush();S_logger.Log.logger.info("" + s[k]+s[j]+s[i]+"   "+s1[k]+s1[j]+s1[i] );
 //							mapL.put(s[k]+s[j]+s[i], "");
 //						}
 //					}
@@ -57,85 +57,85 @@ public class dsd{
 //				}
 //			}
 //		}
-		System.out.flush();System.out.println("ͬԪ��");
+		System.out.flush();S_logger.Log.logger.info("" + "ͬԪ��");
 		for(int i=0;i<12;i++) {
 			for(int j=0;j<12;j++) {
 				for(int k=0;k<12;k++) {
 					if(AOPM.contains(s[i]) && AOPM.contains(s[j])&& AOPM.contains(s[k])) {
 						if(!mapL.containsKey(s[i]+s[j]+s[k])) {
-						System.out.flush();System.out.println(s[i]+s[j]+s[k]+"   "+s1[i]+s1[j]+s1[k] );
+						System.out.flush();S_logger.Log.logger.info("" + s[i]+s[j]+s[k]+"   "+s1[i]+s1[j]+s1[k] );
 						mapL.put(s[i]+s[j]+s[k], "");
 					}
 					if(!mapL.containsKey(s[i]+s[k]+s[j])) {
-						System.out.flush();System.out.println(s[i]+s[k]+s[j]+"   "+s1[i]+s1[k]+s1[j] );
+						System.out.flush();S_logger.Log.logger.info("" + s[i]+s[k]+s[j]+"   "+s1[i]+s1[k]+s1[j] );
 						mapL.put(s[i]+s[k]+s[j], "");
 					}
 					if(!mapL.containsKey(s[j]+s[k]+s[i])) {
-						System.out.flush();System.out.println(s[j]+s[k]+s[i]+"   "+s1[j]+s1[k]+s1[i] );
+						System.out.flush();S_logger.Log.logger.info("" + s[j]+s[k]+s[i]+"   "+s1[j]+s1[k]+s1[i] );
 						mapL.put(s[j]+s[k]+s[i], "");
 					}
 					if(!mapL.containsKey(s[j]+s[i]+s[k])) {
-						System.out.flush();System.out.println(s[j]+s[i]+s[k]+"   "+s1[j]+s1[i]+s1[k] );
+						System.out.flush();S_logger.Log.logger.info("" + s[j]+s[i]+s[k]+"   "+s1[j]+s1[i]+s1[k] );
 						mapL.put(s[j]+s[i]+s[k], "");
 					}
 					if(!mapL.containsKey(s[k]+s[i]+s[j])) {
-						System.out.flush();System.out.println(s[k]+s[i]+s[j]+"   "+s1[k]+s1[i]+s1[j] );
+						System.out.flush();S_logger.Log.logger.info("" + s[k]+s[i]+s[j]+"   "+s1[k]+s1[i]+s1[j] );
 						mapL.put(s[k]+s[i]+s[j], "");
 					}
 					if(!mapL.containsKey(s[k]+s[j]+s[i])) {
-						System.out.flush();System.out.println(s[k]+s[j]+s[i]+"   "+s1[k]+s1[j]+s1[i] );
+						System.out.flush();S_logger.Log.logger.info("" + s[k]+s[j]+s[i]+"   "+s1[k]+s1[j]+s1[i] );
 						mapL.put(s[k]+s[j]+s[i], "");
 					}
 					}
 					if(VECS.contains(s[i]) && VECS.contains(s[j])&& VECS.contains(s[k])) {
 						if(!mapL.containsKey(s[i]+s[j]+s[k])) {
-						System.out.flush();System.out.println(s[i]+s[j]+s[k]+"   "+s1[i]+s1[j]+s1[k] );
+						System.out.flush();S_logger.Log.logger.info("" + s[i]+s[j]+s[k]+"   "+s1[i]+s1[j]+s1[k] );
 						mapL.put(s[i]+s[j]+s[k], "");
 					}
 					if(!mapL.containsKey(s[i]+s[k]+s[j])) {
-						System.out.flush();System.out.println(s[i]+s[k]+s[j]+"   "+s1[i]+s1[k]+s1[j] );
+						System.out.flush();S_logger.Log.logger.info("" + s[i]+s[k]+s[j]+"   "+s1[i]+s1[k]+s1[j] );
 						mapL.put(s[i]+s[k]+s[j], "");
 					}
 					if(!mapL.containsKey(s[j]+s[k]+s[i])) {
-						System.out.flush();System.out.println(s[j]+s[k]+s[i]+"   "+s1[j]+s1[k]+s1[i] );
+						System.out.flush();S_logger.Log.logger.info("" + s[j]+s[k]+s[i]+"   "+s1[j]+s1[k]+s1[i] );
 						mapL.put(s[j]+s[k]+s[i], "");
 					}
 					if(!mapL.containsKey(s[j]+s[i]+s[k])) {
-						System.out.flush();System.out.println(s[j]+s[i]+s[k]+"   "+s1[j]+s1[i]+s1[k] );
+						System.out.flush();S_logger.Log.logger.info("" + s[j]+s[i]+s[k]+"   "+s1[j]+s1[i]+s1[k] );
 						mapL.put(s[j]+s[i]+s[k], "");
 					}
 					if(!mapL.containsKey(s[k]+s[i]+s[j])) {
-						System.out.flush();System.out.println(s[k]+s[i]+s[j]+"   "+s1[k]+s1[i]+s1[j] );
+						System.out.flush();S_logger.Log.logger.info("" + s[k]+s[i]+s[j]+"   "+s1[k]+s1[i]+s1[j] );
 						mapL.put(s[k]+s[i]+s[j], "");
 					}
 					if(!mapL.containsKey(s[k]+s[j]+s[i])) {
-						System.out.flush();System.out.println(s[k]+s[j]+s[i]+"   "+s1[k]+s1[j]+s1[i] );
+						System.out.flush();S_logger.Log.logger.info("" + s[k]+s[j]+s[i]+"   "+s1[k]+s1[j]+s1[i] );
 						mapL.put(s[k]+s[j]+s[i], "");
 					}
 					}
 					if(IDUQ.contains(s[i]) && IDUQ.contains(s[j])&& IDUQ.contains(s[k])) {
 						if(!mapL.containsKey(s[i]+s[j]+s[k])) {
-						System.out.flush();System.out.println(s[i]+s[j]+s[k]+"   "+s1[i]+s1[j]+s1[k] );
+						System.out.flush();S_logger.Log.logger.info("" + s[i]+s[j]+s[k]+"   "+s1[i]+s1[j]+s1[k] );
 						mapL.put(s[i]+s[j]+s[k], "");
 					}
 					if(!mapL.containsKey(s[i]+s[k]+s[j])) {
-						System.out.flush();System.out.println(s[i]+s[k]+s[j]+"   "+s1[i]+s1[k]+s1[j] );
+						System.out.flush();S_logger.Log.logger.info("" + s[i]+s[k]+s[j]+"   "+s1[i]+s1[k]+s1[j] );
 						mapL.put(s[i]+s[k]+s[j], "");
 					}
 					if(!mapL.containsKey(s[j]+s[k]+s[i])) {
-						System.out.flush();System.out.println(s[j]+s[k]+s[i]+"   "+s1[j]+s1[k]+s1[i] );
+						System.out.flush();S_logger.Log.logger.info("" + s[j]+s[k]+s[i]+"   "+s1[j]+s1[k]+s1[i] );
 						mapL.put(s[j]+s[k]+s[i], "");
 					}
 					if(!mapL.containsKey(s[j]+s[i]+s[k])) {
-						System.out.flush();System.out.println(s[j]+s[i]+s[k]+"   "+s1[j]+s1[i]+s1[k] );
+						System.out.flush();S_logger.Log.logger.info("" + s[j]+s[i]+s[k]+"   "+s1[j]+s1[i]+s1[k] );
 						mapL.put(s[j]+s[i]+s[k], "");
 					}
 					if(!mapL.containsKey(s[k]+s[i]+s[j])) {
-						System.out.flush();System.out.println(s[k]+s[i]+s[j]+"   "+s1[k]+s1[i]+s1[j] );
+						System.out.flush();S_logger.Log.logger.info("" + s[k]+s[i]+s[j]+"   "+s1[k]+s1[i]+s1[j] );
 						mapL.put(s[k]+s[i]+s[j], "");
 					}
 					if(!mapL.containsKey(s[k]+s[j]+s[i])) {
-						System.out.flush();System.out.println(s[k]+s[j]+s[i]+"   "+s1[k]+s1[j]+s1[i] );
+						System.out.flush();S_logger.Log.logger.info("" + s[k]+s[j]+s[i]+"   "+s1[k]+s1[j]+s1[i] );
 						mapL.put(s[k]+s[j]+s[i], "");
 					}
 					}

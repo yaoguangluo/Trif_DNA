@@ -30,7 +30,7 @@ public class PLETL_E implements PLETL_C {
             String fileCurrentpath = documentFlowAddress;
             File file = new File(fileCurrentpath);
             if (!file.isFile()) {
-                //20230106-System.out.println(S_Annotation.ATTENSION_RECHOICE);
+                //20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
                 return false;
             }
             LinkNode needDeleteNode = first.first;

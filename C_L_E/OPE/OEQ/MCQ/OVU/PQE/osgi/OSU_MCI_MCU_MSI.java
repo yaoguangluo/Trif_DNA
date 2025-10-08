@@ -21,24 +21,24 @@ public class OSU_MCI_MCU_MSI extends OSU_MCI_MCU_MSI_S implements Cloneable {
     public boolean showed = false;
 
     public OSU_MCI_MCU_MSI AOP_MVE_CSI_DUQ(App NE) {
-    	S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-00-01");
+    	S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-00-01");
         return _SQ_OSU_MSQ_OSU_MCI_MCU_MSI;
         //tinshell因为走一键执行, 没有new到子类, 而子类的button又是新的panel执行,
         //于是产生了非遗传隔层, 准备解决。
     }
 
     public OSU_MCI_MCU_MSI() {
-    	S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-00-01-01");
+    	S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-00-01-01");
         thisIcon = null;
         thisImage = null;
         _SQ_OSU_MSQ_OSU_AVQ_ASQ_SQ_VPC_PCS = null;
-        S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-00-01-02");
+        S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-00-01-02");
         _SQ__AOU_AOQ_VES = new OSU_AOU_AOQ_VES();
-        S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-00-01-03");
+        S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-00-01-03");
         _SQ__OPE_OPC_ECI = new OSU_OPE_OPC_ECI();
-        S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-00-01-04");
+        S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-00-01-04");
         _SQ__OVQ_OSQ_VSQ = new OSU_OVQ_OSQ_VSQ();
-        S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-00-01-05");
+        S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-00-01-05");
     }
 
     public void MEI_MSU(JTextPane rightBotJTextPane, ThisCanvas canvas) {

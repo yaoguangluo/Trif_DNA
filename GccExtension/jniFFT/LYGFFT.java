@@ -22,11 +22,11 @@ public class LYGFFT {
         double[] a= new double[128];
         for(int i=0; i<128; i++){
             a[i]= (1000000 * Math.random());
-            System.out.println(a[i]);
+            S_logger.Log.logger.info("" + a[i]);
         }
         double[]  b= new LYGFFT().jnifft(a);
         for(int i=0; i<128;i++){
-            System.out.println(b[i]);
+            S_logger.Log.logger.info("" + b[i]);
         }
     }
 }

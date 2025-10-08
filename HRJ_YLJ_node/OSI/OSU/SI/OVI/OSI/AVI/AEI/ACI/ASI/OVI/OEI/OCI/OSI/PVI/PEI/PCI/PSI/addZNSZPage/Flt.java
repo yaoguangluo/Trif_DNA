@@ -204,7 +204,7 @@ public class Flt extends JPanel{
 		double fengtong[][]= PeakStatistic_X_fengTong1.fengTong1(sihua8);
 		double fengtongYy[][]= PeakStatistic_X_fengPaiyY.fengPaiYy(fengtong);
 		double r= fengtongYy[0][0]>fengtongYy[1][0]?fengtongYy[0][0]:fengtongYy[1][0];
-		System.out.println(r);
+		S_logger.Log.logger.info("" + r);
 		if(r>200) {
 			return "";
 		}
@@ -251,9 +251,9 @@ public class Flt extends JPanel{
 		//		Set llll=cache_sj.keySet();
 		//		@SuppressWarnings("rawtypes")
 		//		Iterator lllll=llll.iterator();
-		//		//System.out.println("outsj");
+		//		//S_logger.Log.logger.info("" + "outsj");
 		//		while(lllll.hasNext()) {
-		//			//System.out.println(lllll.next());
+		//			//S_logger.Log.logger.info("" + lllll.next());
 		//		}
 		//		String rt="no find in txt";
 		//		InputStream ain= getClass().getResourceAsStream("a.txt");

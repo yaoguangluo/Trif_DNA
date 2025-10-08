@@ -32,15 +32,15 @@ public class Sample_X_I_MapAddPlugin {
 				.setFilenameFilter(new TXTFilter(S_Annotation.FILE_FORMAT_ETL));
 		filedialog.setVisible(true);
 		jarCategoryLink = filedialog.getDirectory();
-		//// 20230106-System.out.println(jarCategoryLink);
+		//// 20230106-S_logger.Log.logger.info("" + jarCategoryLink);
 		if (null == jarCategoryLink || jarCategoryLink.isEmpty()
 				|| jarCategoryLink.contains(S_Annotation.FILE_FORMAT_JAR)) {
-			// 20230106-System.out.println(S_Annotation.ATTENSION_RECHOICE);
+			// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
 			return;
 		}
 		File file = new File(jarCategoryLink);
 		if (file.isFile()) {
-			// 20230106-System.out.println(S_Annotation.ATTENSION_FILE_CHOICE);
+			// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_FILE_CHOICE);
 			return;
 		}
 		File[] files = file.listFiles();
@@ -72,19 +72,19 @@ public class Sample_X_I_MapAddPlugin {
 					.toUpperCase();
 			String NewlastName = FirstCharOfLastName
 					+ lastName.subSequence(1, lastName.length());
-			// 20230106-System.out.println(filename);
+			// 20230106-S_logger.Log.logger.info("" + filename);
 			Class<?> myclass = null;
 			// 数组 //尾组 //首字母 大写
 			// filename= (""+
 			// filename.split("\\.")[filename.split("\\.")
 			//
 			// .length- 1].charAt(0)).toUpperCase();
-			//// 20230106-System.out.println(filename.replace(filename.split(".")
+			//// 20230106-S_logger.Log.logger.info("" + filename.replace(filename.split(".")
 			// .length, newChar)filename.split(".").length);
 			try {
 				String className = filename + "." + NewlastName
 						+ S_Annotation.NODE_NODE_INTERFACE;
-				// 20230106-System.out.println(className);
+				// 20230106-S_logger.Log.logger.info("" + className);
 				myclass = loader.loadClass(className);
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
@@ -135,10 +135,10 @@ public class Sample_X_I_MapAddPlugin {
 //                //FirstCharOfLastName= (""+ lastName.charAt(0));
 //                //NewlastName= FirstCharOfLastName+ lastName.subSequence(1
 //                //, lastName.length());
-//                ////20230106-System.out.println(filename);
+//                ////20230106-S_logger.Log.logger.info("" + filename);
 //                //String className= filename+ "."+ NewlastName
 //                //		+ S_Data.NODE_NODE_INTERFACE;
-//                ////20230106-System.out.println(className);
+//                ////20230106-S_logger.Log.logger.info("" + className);
 //                //try {
 //                //	myclass= loader.loadClass(className);
 //                //} catch (ClassNotFoundException e) {

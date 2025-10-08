@@ -83,7 +83,7 @@ public class Application24 extends Thread {
 		while (read.isEmpty()) {
 			DetaThread.sleepDeta(100);
 		}
-		// 20230106-System.out.println("Tin God at here!");
+		// 20230106-S_logger.Log.logger.info("" + "Tin God at here!");
 		return false;
 	}
 
@@ -190,7 +190,7 @@ public class Application24 extends Thread {
 		printFile(string2, DNA_CHOMOS, DNA_INITON, string2);
 		printCMS(cmss);
 		printCMSLink(cmss);
-		// 20230106-System.out.println("finished");
+		// 20230106-S_logger.Log.logger.info("" + "finished");
 
 		// input link
 		// search sublink
@@ -201,8 +201,8 @@ public class Application24 extends Thread {
 		Iterator<String> iterators = cmss.javaCMSs.keySet().iterator();
 		while (iterators.hasNext()) {
 			String choclass = iterators.next();
-			// 20230106-System.out.println();
-			// 20230106-System.out.println("养疗经 染色体团:"+ choclass);
+			// 20230106-S_logger.Log.logger.info("" + "");
+			// 20230106-S_logger.Log.logger.info("" + "养疗经 染色体团:"+ choclass);
 			Map<String, PDN> classLeaf = cmss.javaCMSs.get(choclass);
 			Iterator<String> iteratorsClassLeaf = classLeaf.keySet().iterator();
 			while (iteratorsClassLeaf.hasNext()) {
@@ -230,29 +230,29 @@ public class Application24 extends Thread {
 		Iterator<String> iterators = cmss.javaCMSs.keySet().iterator();
 		while (iterators.hasNext()) {
 			String choclass = iterators.next();
-			// 20230106-System.out.println("养疗经 染色体团:"+ choclass);
+			// 20230106-S_logger.Log.logger.info("" + "养疗经 染色体团:"+ choclass);
 			Map<String, PDN> classLeaf = cmss.javaCMSs.get(choclass);
 			Iterator<String> iteratorsClassLeaf = classLeaf.keySet().iterator();
 			while (iteratorsClassLeaf.hasNext()) {
 				String pdnClassLeaf = iteratorsClassLeaf.next();
-				// 20230106-System.out.println("养疗经 染色体团:"+ choclass+
+				// 20230106-S_logger.Log.logger.info("" + "养疗经 染色体团:"+ choclass+
 				// "染色体枝叶:"+ pdnClassLeaf);
 				PDN pdn = classLeaf.get(pdnClassLeaf);
 				Iterator<String> pdnLinkIterator = pdn.javaPDNs.keySet()
 						.iterator();
 				while (pdnLinkIterator.hasNext()) {
 					String pdnLeaf = pdnLinkIterator.next();
-					// 20230106-System.out.println("养疗经 染色体团:"+ choclass
+					// 20230106-S_logger.Log.logger.info("" + "养疗经 染色体团:"+ choclass
 					// + "染色体枝叶:"+ pdnClassLeaf
 					// + "叶肽:"+ pdnLeaf);
 					List<String> pdnLink = pdn.javaPDNs.get(pdnLeaf);
 					Iterator<String> pdnLinkSetIterator = pdnLink.iterator();
-					// 20230106-System.out.println("养疗经 染色体团:"+ choclass
+					// 20230106-S_logger.Log.logger.info("" + "养疗经 染色体团:"+ choclass
 					// + "染色体枝叶:"+ pdnClassLeaf
 					// + "叶肽:"+ pdnLeaf
 					// + "肽单元+");
 					while (pdnLinkSetIterator.hasNext()) {
-						// 20230106-System.out.println(pdnLinkSetIterator.next());
+						// 20230106-S_logger.Log.logger.info("" + pdnLinkSetIterator.next());
 					}
 				}
 			}

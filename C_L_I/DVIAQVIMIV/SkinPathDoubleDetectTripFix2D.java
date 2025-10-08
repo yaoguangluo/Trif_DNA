@@ -266,7 +266,7 @@ public class SkinPathDoubleDetectTripFix2D {
 					string) ? 0.0 : afterFirstNames.get(string)) * i;
 				if (string.contains("结节性硬化症叶状白斑") || string.contains(
 					"白癜风") || string.contains("黄瘤")) {
-					//20230106-System.out.println(scoreRank+"--"+afterFirstNames.get(string)
+					//20230106-S_logger.Log.logger.info("" + scoreRank+"--"+afterFirstNames.get(string)
 					//	+ "相似图片:"+ i+ "位"+ string+ "--分数:"+ scoreDouble[i]);
 				}
 			}
@@ -337,14 +337,14 @@ public class SkinPathDoubleDetectTripFix2D {
 						string) ? 0.0 : afterFirstNames.get(string));
 					if (string.contains("结节性硬化症叶状白斑") || string
 						.contains("白癜风") || string.contains("黄瘤")) {
-						//20230106-System.out.println(">>>>"+scoreRank+"--"
+						//20230106-S_logger.Log.logger.info("" + ">>>>"+scoreRank+"--"
 						//		+afterFirstNames.get(string)+ "相似图片:"+ i+ "位"
 						//		+ string+ "--分数:"+ scoreDouble[i]);
 					}
 				}
 			}
 			map.remove(scoreDouble[i]);
-			//	//20230106-System.out.println("相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
+			//	//20230106-S_logger.Log.logger.info("" + "相似图片:"+ nameScore[i]+ "-----分数:"+ scoreInt[i]);
 		}
 	}
 
@@ -402,7 +402,7 @@ public class SkinPathDoubleDetectTripFix2D {
 							.get(string) ? 0.0
 								: afterFirstNames.get(string));
 						if (scoreRank > times) {//mask
-							//20230106-System.out.println(scoreRank+"--"+afterFirstNames.get(string)
+							//20230106-S_logger.Log.logger.info("" + scoreRank+"--"+afterFirstNames.get(string)
 							//	+ "相似图片:"+ i+ "位"+ string+ "--分数:"+ scoreDouble[i]
 							//			+"---"+scoreDouble[i]/scoreRank);
 						}
@@ -412,7 +412,7 @@ public class SkinPathDoubleDetectTripFix2D {
 					string) ? 0.0 : afterFirstNames.get(string));
 				if (string.contains("结节性硬化症叶状白斑") || string.contains(
 					"白癜风") || string.contains("黄瘤")) {
-					//20230106-System.out.println(">>>>"+scoreRank+"--"+afterFirstNames.get(string)
+					//20230106-S_logger.Log.logger.info("" + ">>>>"+scoreRank+"--"+afterFirstNames.get(string)
 					//+ "相似图片:"+ i+ "位"+ string+ "--分数:"+ scoreDouble[i]);
 				}
 			}

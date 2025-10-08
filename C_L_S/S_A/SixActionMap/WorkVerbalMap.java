@@ -131,7 +131,7 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		/*
 		*  分词 提取 英文段和数字段形成变量。比如dnn 12345等
 		*/
-		S_logger.Log.logger.info(
+		S_logger.Log.logger.info("" + 
 			"chineseSimpleCommandWithoutNumerics400-->"
 				+ command_V.chineseSimpleCommandWithoutNumerics);
 
@@ -248,8 +248,8 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 	/*
 	* 阿拉伯数字加进map中，归纳在子函数这，是方便函数被第三方接口封装调用方便。
 	* 
-	* S_logger.Log.logger.info("--" + command_V._IMV_SQI_SS_Q.size());
-	* S_logger.Log.logger.info("--" + command_V._IMV_SQI_SS.size());
+	* S_logger.Log.logger.info("" + "--" + command_V._IMV_SQI_SS_Q.size());
+	* S_logger.Log.logger.info("" + "--" + command_V._IMV_SQI_SS.size());
 	* Iterator<String> iteratorNumbers = command_V._IMV_SQI_SS_Q
 	* 	.keySet().iterator();
 	* while (iteratorNumbers.hasNext()) {
@@ -258,7 +258,7 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 	* 		.getW(temp);
 	* 	command_V._IMV_SQI_SS.put(temp, wordFrequency);
 	* }
-	* S_logger.Log.logger.info("++" + command_V._IMV_SQI_SS.size());
+	* S_logger.Log.logger.info("" + "++" + command_V._IMV_SQI_SS.size());
 	*/
 	
 	public void setHumanTalk(CommandClass command_V, App NE) {
@@ -270,7 +270,7 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		command_V._IMV_SQI_SS_ = NE.app_S._A.parserMixedString(
 			command_V.command);
 		for (int i = 0; i < command_V._IMV_SQI_SS_.size(); i++) {
-			System.out.println(command_V._IMV_SQI_SS_.get(i));
+			S_logger.Log.logger.info("" + command_V._IMV_SQI_SS_.get(i));
 		}
 		/*
 		* 1 精确词汇pos函数

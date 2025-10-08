@@ -149,13 +149,13 @@ public class StringSequency{
 //				, testValue.length-1, 16);
 		//testValue= stringToSequencyArrayIncrement(testValue, 0);
 	//	testValue= stringArrayToSequencyArrayDecrement(testValue, 16);
-		//20230106-System.out.println(testValue[0]);
-		//20230106-System.out.println(testValue[1]);
-		//20230106-System.out.println(testValue[2]);
-		//20230106-System.out.println(testValue[3]);	
-		//20230106-System.out.println(testValue[4]);
-		//20230106-System.out.println(testValue[5]);
-		//20230106-System.out.println(testValue[6]);
+		//20230106-S_logger.Log.logger.info("" + testValue[0]);
+		//20230106-S_logger.Log.logger.info("" + testValue[1]);
+		//20230106-S_logger.Log.logger.info("" + testValue[2]);
+		//20230106-S_logger.Log.logger.info("" + testValue[3]);	
+		//20230106-S_logger.Log.logger.info("" + testValue[4]);
+		//20230106-S_logger.Log.logger.info("" + testValue[5]);
+		//20230106-S_logger.Log.logger.info("" + testValue[6]);
 		testValue= new String[2500];
 		testValue[0]= "ca罗cded";
 		testValue[1]= "ba罗cded";
@@ -170,14 +170,14 @@ public class StringSequency{
 		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0
 				, testValue.length-1, 16);
 //		testValue= stringArrayToSequencyArrayDecrement(testValue, 16);
-		//20230106-System.out.println(testValue[0]);
-		//20230106-System.out.println(testValue[1]);
-		//20230106-System.out.println(testValue[2]);
-		//20230106-System.out.println(testValue[3]);	
-		//20230106-System.out.println(testValue[4]);
-		//20230106-System.out.println(testValue[5]);
-		//20230106-System.out.println(testValue[6]);
+		//20230106-S_logger.Log.logger.info("" + testValue[0]);
+		//20230106-S_logger.Log.logger.info("" + testValue[1]);
+		//20230106-S_logger.Log.logger.info("" + testValue[2]);
+		//20230106-S_logger.Log.logger.info("" + testValue[3]);	
+		//20230106-S_logger.Log.logger.info("" + testValue[4]);
+		//20230106-S_logger.Log.logger.info("" + testValue[5]);
+		//20230106-S_logger.Log.logger.info("" + testValue[6]);
 		//2		////				String value= "AabusahudBDHDbuHgfUiGgfj";
-		////				//20230106-System.out.println(stringToSequency(value));
+		////				//20230106-S_logger.Log.logger.info("" + stringToSequency(value));
 	}
 }

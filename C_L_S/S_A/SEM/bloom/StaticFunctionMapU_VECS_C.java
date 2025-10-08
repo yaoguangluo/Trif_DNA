@@ -254,7 +254,7 @@ public interface StaticFunctionMapU_VECS_C {
 			lYG10D15D_X_CUA.processKernel(strings1D, 0,
 				strings1D.length - 1, 30, 0);
 			for (String string : strings1D) {
-				//20230106-System.out.println(string);
+				//20230106-S_logger.Log.logger.info("" + string);
 			}
 			cReaderb.close();
 			cReaderp.close();

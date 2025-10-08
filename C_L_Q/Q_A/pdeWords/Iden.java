@@ -12,7 +12,7 @@ package Q_A.pdeWords;
 public class Iden {
     public String timetoPDW(String time) {
         String outime = "";
-        //20230106-System.out.println(time);
+        //20230106-S_logger.Log.logger.info("" + time);
         for (int i = 0; i < time.length(); i++) {
             if (time.charAt(i) == '0') {
                 outime += "A";
@@ -45,13 +45,13 @@ public class Iden {
                 outime += "D";
             }
         }
-        //20230106-System.out.println(outime);
+        //20230106-S_logger.Log.logger.info("" + outime);
         return outime;
     }
 
     public String PDWtoTime(String PDW) {
         String outime = "";
-        //20230106-System.out.println(PDW);
+        //20230106-S_logger.Log.logger.info("" + PDW);
         for (int i = 0; i < PDW.length(); i++) {
             if (PDW.charAt(i) == 'A') {
                 outime += "0";
@@ -84,7 +84,7 @@ public class Iden {
                 outime += "9";
             }
         }
-        //20230106-System.out.println(outime);
+        //20230106-S_logger.Log.logger.info("" + outime);
         return outime;
     }
 

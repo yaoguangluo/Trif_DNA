@@ -47,7 +47,7 @@ public class SoundWaveVector {
         if (audioBytes == null) {
             try {
                 audioBytes = new byte[(int) (ais.getFrameLength() * af.getFrameSize()) / 2];
-                // System.out.println("audiobyte length:"+audioBytes.length);
+                // S_logger.Log.logger.info("" + "audiobyte length:"+audioBytes.length);
                 ais.read(audioBytes);
             } catch (Exception ex) {
                 //reportStatus(ex.toString());

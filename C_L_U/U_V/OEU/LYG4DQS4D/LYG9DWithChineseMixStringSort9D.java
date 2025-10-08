@@ -402,7 +402,7 @@
 ////    		lYG9DWithChineseMixStringSort9D.quick4DChineseStringArray(strings
 //		, 0, strings.length-1, 100, map, 7, 70);
 ////    		for(String string:strings) {
-////    			//20230106-System.out.println(string);
+////    			//20230106-S_logger.Log.logger.info("" + string);
 ////    		}
 ////    		cReaderc.close();
 //			cReaderp.close();

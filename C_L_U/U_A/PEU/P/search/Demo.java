@@ -37,10 +37,10 @@ public class Demo{
 	}
 	
 	private static void print(boolean find) {
-    if( find== true) {//20230106-System.out.println("find");
+    if( find== true) {//20230106-S_logger.Log.logger.info("" + "find");
  
     }
-    else {//20230106-System.out.println("not find");
+    else {//20230106-S_logger.Log.logger.info("" + "not find");
     }
 	}
 	private static int[] arrayInit() {	
@@ -48,7 +48,7 @@ public class Demo{
 		java.util.Random r=new java.util.Random(); 
 		for(int i=999999, j=0;i>0;i--, j++){
 			array[j]=r.nextInt(999999);
-			////20230106-System.out.println(array[j]);
+			////20230106-S_logger.Log.logger.info("" + array[j]);
 		}
 		
 		return array;

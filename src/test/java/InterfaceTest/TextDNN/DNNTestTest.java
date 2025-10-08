@@ -7,7 +7,7 @@ import S_A.SVQ.stable.S_String;
 import test.java.interfaces.test.CommonTestInition;
 
 import org.junit.jupiter.api.Test;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -52,7 +52,7 @@ class DNNTestTest {
 			System.out.print(ann[i][3] + ":");
 			System.out.print(dnn[i][0] + ":");
 			System.out.print(dnn[i][3] + ":");
-			System.out.println("");
+			S_logger.Log.logger.info("" + "");
 		}
 		// output
 

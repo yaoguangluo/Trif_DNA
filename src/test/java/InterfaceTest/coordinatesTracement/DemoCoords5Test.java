@@ -3,6 +3,8 @@ package test.java.InterfaceTest.coordinatesTracement;
 import ASQ.classification.fissile.Fissile_X_fissilePosition2D;
 import ASQ.find.mean.Distance_X_findPascalMeanDistanceByEachPositions2D;
 import P_V.PCI.ASQ.demension.AMV_MVS_VSQ_2D;
+import S_logger.Log;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -64,13 +66,13 @@ public class DemoCoords5Test {
 		Iterator<Double> iterator = output.keySet().iterator();
 		while (iterator.hasNext()) {
 			double temp = iterator.next();
-			System.out.println();
-			System.out.println(temp);
+			S_logger.Log.logger.info("" + "");
+			S_logger.Log.logger.info("" + temp);
 			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp)
 				.iterator();
 			while (iterator1.hasNext()) {
 				AMV_MVS_VSQ_2D temp1 = iterator1.next();
-				System.out.println(temp1.getX() + ":" + temp1.getY());
+				S_logger.Log.logger.info("" + temp1.getX() + ":" + temp1.getY());
 			}
 		}
 		//
@@ -79,11 +81,11 @@ public class DemoCoords5Test {
 		position2D5.I_Y(25);
 		input.add(position2D5);
 		//double v= FindPCAMeanDistance.findMeanDistanceFromPositions2D(input, 5, 4);
-		//System.out.println(v);
+		//S_logger.Log.logger.info("" + v);
 		double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D
 			._E(input, 3, 4);
 		for (int i = 0; i < v.length; i++) {
-			System.out.println(v[i]);
+			S_logger.Log.logger.info("" + v[i]);
 		}
 	}
 
@@ -94,21 +96,21 @@ public class DemoCoords5Test {
 		Iterator<Double> iterator = output.keySet().iterator();
 		while (iterator.hasNext()) {
 			double temp = iterator.next();
-			System.out.println();
-			System.out.println(temp);
+			S_logger.Log.logger.info("" + "");
+			S_logger.Log.logger.info("" + temp);
 			Iterator<AMV_MVS_VSQ_2D> iterator1 = output.get(temp)
 				.iterator();
 			while (iterator1.hasNext()) {
 				AMV_MVS_VSQ_2D temp1 = iterator1.next();
-				System.out.println(temp1.getX() + ":" + temp1.getY());
+				S_logger.Log.logger.info("" + temp1.getX() + ":" + temp1.getY());
 			}
 		}
 		//double v= FindPCAMeanDistance.findMeanDistanceFromPositions2D(input, 5, 4);
-		//System.out.println(v);
+		//S_logger.Log.logger.info("" + v);
 		double[] v = Distance_X_findPascalMeanDistanceByEachPositions2D
 			._E(inputs, 3, 4);
 		for (int i = 0; i < v.length; i++) {
-			System.out.println(v[i]);
+			S_logger.Log.logger.info("" + v[i]);
 		}
 	}
 }
@@ -119,7 +121,7 @@ public class DemoCoords5Test {
 //		while(iterator2.hasNext()) {
 //			double temp= iterator2.next();
 //			AMV_MVS_VSQ_2D heartTemp= Eclid.findHeartAMV_MVS_VSQ_2D(output.get(temp));
-//			System.out.println("hearts->"+heartTemp.getX()+ ":"+ heartTemp.getY());
+//			S_logger.Log.logger.info("" + "hearts->"+heartTemp.getX()+ ":"+ heartTemp.getY());
 //			groupsHeart.put(temp, heartTemp);
 //		}
 //		//2观测结果 用10 和11分别带入可测试。
@@ -128,12 +130,12 @@ public class DemoCoords5Test {
 //		Iterator<Double> iterator3= fusion.keySet().iterator();
 //		while(iterator3.hasNext()) {
 //			double temp= iterator3.next();
-//			System.out.println();
-//			System.out.println(temp);
+//			S_logger.Log.logger.info("" + "");
+//			S_logger.Log.logger.info("" + temp);
 //			Iterator<AMV_MVS_VSQ_2D> iterator1= output.get(temp).iterator();
 //			while(iterator1.hasNext()) {
 //				AMV_MVS_VSQ_2D temp1= iterator1.next();
-//				System.out.println(temp1.getX()+ ":"+ temp1.getY());
+//				S_logger.Log.logger.info("" + temp1.getX()+ ":"+ temp1.getY());
 //			}
 //		}
 //
@@ -149,12 +151,12 @@ public class DemoCoords5Test {
 //		Iterator<Double> iterator= output.keySet().iterator();
 //		while(iterator.hasNext()) {
 //			double temp= iterator.next();
-//			System.out.println();
-//			System.out.println(temp);
+//			S_logger.Log.logger.info("" + "");
+//			S_logger.Log.logger.info("" + temp);
 //			Iterator<AMV_MVS_VSQ_2D> iterator1= output.get(temp).iterator();
 //			while(iterator1.hasNext()) {
 //				AMV_MVS_VSQ_2D temp1= iterator1.next();
-//				System.out.println(temp1.getX()+ ":"+ temp1.getY());
+//				S_logger.Log.logger.info("" + temp1.getX()+ ":"+ temp1.getY());
 //			}
 //		}
 
@@ -166,7 +168,7 @@ public class DemoCoords5Test {
 //		while(iterator2.hasNext()) {
 //			double temp= iterator2.next();
 //			AMV_MVS_VSQ_2D heartTemp= Eclid.findHeartAMV_MVS_VSQ_2D(output.get(temp));
-//			System.out.println("hearts->"+heartTemp.getX()+ ":"+ heartTemp.getY());
+//			S_logger.Log.logger.info("" + "hearts->"+heartTemp.getX()+ ":"+ heartTemp.getY());
 //			groupsHeart.put(temp, heartTemp);
 //		}
 //		//2观测结果 用10 和11分别带入可测试。
@@ -175,12 +177,12 @@ public class DemoCoords5Test {
 //		Iterator<Double> iterator3= fusion.keySet().iterator();
 //		while(iterator3.hasNext()) {
 //			double temp= iterator3.next();
-//			System.out.println();
-//			System.out.println(temp);
+//			S_logger.Log.logger.info("" + "");
+//			S_logger.Log.logger.info("" + temp);
 //			Iterator<AMV_MVS_VSQ_2D> iterator1= output.get(temp).iterator();
 //			while(iterator1.hasNext()) {
 //				AMV_MVS_VSQ_2D temp1= iterator1.next();
-//				System.out.println(temp1.getX()+ ":"+ temp1.getY());
+//				S_logger.Log.logger.info("" + temp1.getX()+ ":"+ temp1.getY());
 //			}
 //		}
 //
@@ -196,12 +198,12 @@ public class DemoCoords5Test {
 //		Iterator<Double> iterator= output.keySet().iterator();
 //		while(iterator.hasNext()) {
 //			double temp= iterator.next();
-//			System.out.println();
-//			System.out.println(temp);
+//			S_logger.Log.logger.info("" + "");
+//			S_logger.Log.logger.info("" + temp);
 //			Iterator<AMV_MVS_VSQ_2D> iterator1= output.get(temp).iterator();
 //			while(iterator1.hasNext()) {
 //				AMV_MVS_VSQ_2D temp1= iterator1.next();
-//				System.out.println(temp1.getX()+ ":"+ temp1.getY());
+//				S_logger.Log.logger.info("" + temp1.getX()+ ":"+ temp1.getY());
 //			}
 //		}
 //

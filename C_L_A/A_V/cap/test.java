@@ -98,7 +98,7 @@
 //        	bmv= fgc.grabFrame();
 //        	img=(new BufferToImage((VideoFormat)bmv.getFormat()).createImage(bmv));
 //        	this.paint(img);
-//        	//20230106-System.out.println(i);
+//        	//20230106-S_logger.Log.logger.info("" + i);
 //        }
 //		 */
 //		int f1= fpc.seek(1);
@@ -126,7 +126,7 @@
 //				}
 //			}
 //		}
-//		//20230106-System.out.println(1);
+//		//20230106-S_logger.Log.logger.info("" + 1);
 //		//WRITE FRAME
 //		i=19;
 //		while(i < endtimes){
@@ -165,7 +165,7 @@
 //						}
 //					}
 //				}
-//				//20230106-System.out.println(i+"-------------------------------------------------------");
+//				//20230106-S_logger.Log.logger.info("" + i+"-------------------------------------------------------");
 //			}
 //			i++;
 //		}

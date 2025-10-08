@@ -10,7 +10,7 @@ public class Show3DRun extends OSU_OPE_OPC_ECI {
 		super();
  	}
 	public void run(final Show3DView _SQ__OVQ_OSQ_VSQ) {
-		//20230106-System.out.println("runed"+value); 
+		//20230106-S_logger.Log.logger.info("" + "runed"+value); 
   		//_SQ__OVQ_OSQ_VSQ.path=new String(filepath); 
 	 	  int out[][]= new int[topgin.length][topgin[0].length];
 	       for (int i= 0; i < topgin.length; i++) {

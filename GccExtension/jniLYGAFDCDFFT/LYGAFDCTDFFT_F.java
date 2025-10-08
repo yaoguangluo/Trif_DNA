@@ -160,10 +160,10 @@ public class LYGAFDCTDFFT_F {
 			sumca += out[j].ca;
 			sumcb += out[j].cb;
 		}
-		System.out.println("--");
-		System.out.println(sum);
-		System.out.println(sumca);
-		System.out.println(sumcb);
+		S_logger.Log.logger.info("" + "--");
+		S_logger.Log.logger.info("" + sum);
+		S_logger.Log.logger.info("" + sumca);
+		S_logger.Log.logger.info("" + sumcb);
 		return output;
 	}
 

@@ -14,7 +14,7 @@ public class TimeCheck{
 	public long before;
 	public long now;
 	public void begin(){
-		////20230106-System.out.println("start: " + (new Date()));
+		////20230106-S_logger.Log.logger.info("" + "start: " + (new Date()));
 		before= System.currentTimeMillis();
 	}
 	public void end(){
@@ -23,6 +23,6 @@ public class TimeCheck{
 	@SuppressWarnings("unused")
 	public void duration(){
 		long du=now-before;
-		//20230106-System.out.println("耗时: " + du + " 毫秒");
+		//20230106-S_logger.Log.logger.info("" + "耗时: " + du + " 毫秒");
 	}
 }

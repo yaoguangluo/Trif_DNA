@@ -192,7 +192,7 @@ public class DNAAuth {
 		pDE_RNA_Formular2.pdedeKey = ie;
 		pDE_RNA_Formular2.pdedsKey = is;
 
-		////20230106-System.out.println("准备计算元基DNA序列："+ token.getmPassword());
+		////20230106-S_logger.Log.logger.info("" + "准备计算元基DNA序列："+ token.getmPassword());
 		//加了老版本集成, 先去掉dnn计算的DNA假数据测试。罗瑶光 20210730
 		//if(null== password) {
 		id = "313699483@qq.com";
@@ -209,7 +209,7 @@ public class DNAAuth {
 			.getmPassword(), "UTF8", "UTF8");
 		String passwordEncoder = String_ESU_X_stringToURIencode._E(
 			passwordString, "UTF8");
-		//20230106-System.out.println("pds--1>"+ tokenCerts.getPds());
+		//20230106-S_logger.Log.logger.info("" + "pds--1>"+ tokenCerts.getPds());
 		id = idEncoder.toString();
 		password = passwordEncoder.toString();
 		de = token.getUpdsde();
@@ -224,7 +224,7 @@ public class DNAAuth {
 		//}
 		pDE_RNA_Formular2.doSessionKeyUnPress(password,
 			pDE_RNA_Formular2, true);
-		//20230106-System.out.println("pds--2>"+ pDE_RNA_Formular2.pds);
+		//20230106-S_logger.Log.logger.info("" + "pds--2>"+ pDE_RNA_Formular2.pds);
 
 		@SuppressWarnings("unused")
 		String DB_id = "313699483@qq.com";
@@ -243,7 +243,7 @@ public class DNAAuth {
 		pDE_RNA_Formular1.pdeisKey = is;
 		pDE_RNA_Formular.doKeyUnPress(tokenCerts.getPdnPassword(),
 			pDE_RNA_Formular1, true);
-		//20230106-System.out.println("pds--3>"+ pDE_RNA_Formular1.pds);
+		//20230106-S_logger.Log.logger.info("" + "pds--3>"+ pDE_RNA_Formular1.pds);
 		//开始比对
 		if (!pDE_RNA_Formular1.pde.equalsIgnoreCase(password) ? true
 			: false) {

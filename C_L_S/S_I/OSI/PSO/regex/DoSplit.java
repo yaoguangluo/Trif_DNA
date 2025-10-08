@@ -94,7 +94,7 @@ public class DoSplit {
 		while (iterator.hasNext()) {
 			// iterator.next();
 			// 20230106-//20230106-
-			System.out.println(iterator.next());
+			S_logger.Log.logger.info("" + iterator.next());
 		}
 	}
 }

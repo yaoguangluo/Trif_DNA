@@ -31,7 +31,7 @@
 //                break;
 //            }
 //        }
-//        ////20230106-System.out.println("dr:"+dr);
+//        ////20230106-S_logger.Log.logger.info("" + "dr:"+dr);
 //        p = 0;
 //        for (int i = 0; i < 256; i++) {
 //            p = p + histgram[i];
@@ -40,7 +40,7 @@
 //                break;
 //            }
 //        }
-//        ////20230106-System.out.println("br:"+br);
+//        ////20230106-S_logger.Log.logger.info("" + "br:"+br);
 //        int out[][] = new int[g.length][g[0].length];
 //        for (int i = 0; i < g.length; i++) {
 //            for (int j = 0; j < g[0].length; j++) {

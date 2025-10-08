@@ -58,7 +58,7 @@ public class Quick_Luoyaoguang_1D{
 		t.end();
 		t.duration();
 //		for(int i:a) {
-//			//20230106-System.out.println(i);
+//			//20230106-S_logger.Log.logger.info("" + i);
 //		}
 	}
 }

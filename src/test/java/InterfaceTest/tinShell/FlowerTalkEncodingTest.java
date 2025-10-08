@@ -5,6 +5,8 @@ import P_V.PEQ.AMV.ECS.test.DNNTest;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.pheromone.IMV_SQI;
 import S_A.pheromone.IMV_SQI_SS;
+import S_logger.Log;
+
 import org.junit.jupiter.api.Test;
 
 import test.java.InterfaceTest.chineseParser.DemoPOSTest;
@@ -119,54 +121,54 @@ class FlowerTalkEncodingTest {
 			listDNN.add(dnn[i][0]);
 		}
 		// 输出
-		System.out.println("--程度 词汇一览");
+		S_logger.Log.logger.info("" + "--程度 词汇一览");
 		Iterator<String> iteratorsAdj = _IMV_SQI_SS_adj.keySet()
 			.iterator();
 		while (iteratorsAdj.hasNext()) {
 			System.out.print(" " + iteratorsAdj.next());
 		}
-		System.out.println();
+		S_logger.Log.logger.info("" + "");
 		Iterator<String> iteratorsAdv = _IMV_SQI_SS_adv.keySet()
 			.iterator();
 		while (iteratorsAdv.hasNext()) {
 			System.out.print(" " + iteratorsAdv.next());
 		}
-		System.out.println();
-		System.out.println();
-		System.out.println("--DNN 词汇一览");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "--DNN 词汇一览");
 		for (int i = 0; i < dnn.length; i++) {
 			System.out.print(" " + listDNN.get(i));
 		}
-		System.out.println();
-		System.out.println();
-		System.out.println("--名词 词汇一览");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "--名词 词汇一览");
 		Iterator<String> iteratorsNoun = _IMV_SQI_SS_noun.keySet()
 			.iterator();
 		while (iteratorsNoun.hasNext()) {
 			System.out.print(" " + iteratorsNoun.next());
 		}
-		System.out.println();
-		System.out.println();
-		System.out.println("--动词 词汇一览");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "--动词 词汇一览");
 		Iterator<String> iteratorsVerb = _IMV_SQI_SS_verb.keySet()
 			.iterator();
 		while (iteratorsVerb.hasNext()) {
 			System.out.print(" " + iteratorsVerb.next());
 		}
-		System.out.println();
-		System.out.println();
-		System.out.println("--组合 词汇 距离一览");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "--组合 词汇 距离一览");
 		//
 		Iterator<String> iteratorsRNN = connectionRNN.keySet()
 			.iterator();
 		while (iteratorsRNN.hasNext()) {
 			String string = iteratorsRNN.next();
 			double temp = connectionRNN.get(string);
-			System.out.println(string + "-" + temp);
+			S_logger.Log.logger.info("" + string + "-" + temp);
 		}
 		//
-		System.out.println();
-		System.out.println();
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "");
 		// 价值
 		// 根据2 的罗瑶光DNN价值词汇打分排序去写各类触发函数 优先来 寻找1 的德塔分词
 		// POS词汇组合根据RNN距离权重打分进行罗瑶光极速排序5代来笛卡尔匹配十六元基花

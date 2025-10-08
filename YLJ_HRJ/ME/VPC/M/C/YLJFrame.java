@@ -25,7 +25,7 @@ public class YLJFrame {
 	public static void main(String[] args) {
 		//Log.logger.setLevel(Level.WARNING);
 		Log.logger.setLevel(Level.INFO);
-		Log.logger.info("启动400编码调试开始-00000001");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000001");
 		App_X NE = new App_X();
 		// App NE = (App)(NE_X);//稍后一把app 线程启动
 		// vpcs，于是做动态app，有600文件要改动加NE。
@@ -48,9 +48,9 @@ public class YLJFrame {
 			WindowsUI.basicHeight - 5 + NE.app_S.rangeHigh);
 		NE.app_S.frame.setVisible(true);
 		try {
-			Log.logger.info("启动400编码调试开始-00000002");
+			S_logger.Log.logger.info("" + "启动400编码调试开始-00000002");
 			NE.init(NE);
-			Log.logger.info("启动400编码调试开始-00000003");
+			S_logger.Log.logger.info("" + "启动400编码调试开始-00000003");
 			DetaThread.sleepDeta(100);
 			NE.start();
 		} catch (Exception e) {
@@ -60,11 +60,11 @@ public class YLJFrame {
 		NE.app_S.frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent windowevent) {
 				try {
-					Log.logger.info("pre closing...1");
+					S_logger.Log.logger.info("" + "pre closing...1");
 					if (NE.app_S.monitor != null) {
 						NE.app_S.monitor.monitor_X_S.stop = 1;
 					}
-					Log.logger.info("pre closing...2");
+					S_logger.Log.logger.info("" + "pre closing...2");
 					if (NE.app_S.monitor != null) {
 						NE.app_S.monitor.removeAll();
 						DetaThread.sleepDeta(500);
@@ -75,13 +75,13 @@ public class YLJFrame {
 						NE.app_S.monitor = null;
 						DetaThread.sleepDeta(500);
 					}
-					Log.logger.info("pre closing...3");
+					S_logger.Log.logger.info("" + "pre closing...3");
 					NE.stop();
 					NE.app_S.frame.removeAll();
-					Log.logger.info("closed");
+					S_logger.Log.logger.info("" + "closed");
 				} catch (Exception e) {
-					Log.logger.info("启动400编码调试开始-00000004");
-					Log.logger.info("close error");
+					S_logger.Log.logger.info("" + "启动400编码调试开始-00000004");
+					S_logger.Log.logger.info("" + "close error");
 					NE.disable();
 					NE.destroy();
 					e.printStackTrace();
@@ -90,7 +90,7 @@ public class YLJFrame {
 					NE.app_S.frame.removeAll();
 					NE.app_S.frame.disable();
 				}
-				Log.logger.info("启动400编码调试开始-00000005");
+				S_logger.Log.logger.info("" + "启动400编码调试开始-00000005");
 				System.gc();
 				System.exit(0);
 			}

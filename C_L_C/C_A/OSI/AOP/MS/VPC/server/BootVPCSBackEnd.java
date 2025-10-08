@@ -44,14 +44,14 @@ public class BootVPCSBackEnd extends Thread {
 	public BootVPCSBackEnd(App_S app, App NE) {
 		properties = new Properties();
 		this.app = app;
-		S_logger.Log.logger.info("启动400编码调试开始-00000052");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000052");
 		if (null == app._A) {
 			this._A = new CogsBinaryForest_AE();
 			this._A.IV_Mixed(NE);
 		} else {
 			this._A = app._A;
 		}
-		S_logger.Log.logger.info("启动400编码调试开始-00000052-01");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-01");
 	}
 
 	public BootVPCSBackEnd() {
@@ -59,10 +59,10 @@ public class BootVPCSBackEnd extends Thread {
 
 	public void IV_(App NE) {// 代入逻辑必定都是E实体。不确定的具体引用加Q
 		try {
-			S_logger.Log.logger.info("启动400编码调试开始-00000052-02");
+			S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-02");
 			// port= Integer.parseInt(properties.getProperty("port"));
 			int port = Integer.parseInt(app.backendTxt);
-			S_logger.Log.logger.info("启动400编码调试开始-00000053-" + port);
+			S_logger.Log.logger.info("" + "启动400编码调试开始-00000053-" + port);
 			// port= Config.detaVPCSBackEndPort;
 			server = new ServerSocket(port);
 			if (null == this._A) {
@@ -72,11 +72,11 @@ public class BootVPCSBackEnd extends Thread {
 			emotionMap = NE.app_S.emotionMap_E;
 			ratioMap_E = NE.app_S.ratioMap_E;// later。。局部对象需要单例，不能apps取。
 			environmentInit = NE.app_S.environmentInit;// later。。局部对象需要单例，不能apps取。
-			// 20230106-System.out.println();
-			// 20230106-System.out.println("----德塔VPCS后端服务器端口启动:" +
+			// 20230106-S_logger.Log.logger.info("" + "");
+			// 20230106-S_logger.Log.logger.info("" + "----德塔VPCS后端服务器端口启动:" +
 			// port);
 			// MrTin.born.start();
-			// 20230106-System.out.println("----Tin神 VPCS-AOPM-IDUQ
+			// 20230106-S_logger.Log.logger.info("" + "----Tin神 VPCS-AOPM-IDUQ
 			// 第一代类人催化生命特征开启:" + port);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -88,32 +88,32 @@ public class BootVPCSBackEnd extends Thread {
 		// SocketThreadPool socketThreadPool = new
 		// SocketThreadPool();
 		long before = System.currentTimeMillis();
-		S_logger.Log.logger.info("启动400编码调试开始-00000052-01-02");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-01-02");
 		IV_(NE);
-		S_logger.Log.logger.info("启动400编码调试开始-00000052-01-03");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-01-03");
 		I_RestService();
-		S_logger.Log.logger.info("启动400编码调试开始-00000052-01-04");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-01-04");
 		long now = System.currentTimeMillis();
-		S_logger.Log.logger.info("----DETA VPCS BackEnd--2.0");
-		S_logger.Log.logger.info("----Author: 罗瑶光");
-		S_logger.Log.logger.info("----浏阳德塔软件开发有限公司开源项目");
-		S_logger.Log.logger.info("----德塔VPCS后端服务器----");
-		S_logger.Log.logger.info("----德塔VPCS后端服务器启动一切正常-总耗时:" + (now - before) + "毫秒");
-		S_logger.Log.logger.info("启动400编码调试开始-00000052-01-04-01");
+		S_logger.Log.logger.info("" + "----DETA VPCS BackEnd--2.0");
+		S_logger.Log.logger.info("" + "----Author: 罗瑶光");
+		S_logger.Log.logger.info("" + "----浏阳德塔软件开发有限公司开源项目");
+		S_logger.Log.logger.info("" + "----德塔VPCS后端服务器----");
+		S_logger.Log.logger.info("" + "----德塔VPCS后端服务器启动一切正常-总耗时:" + (now - before) + "毫秒");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-01-04-01");
 		while (true) {
 			try {
 				if (socketThreadPool.getThreadsCount() < 300) {
-					S_logger.Log.logger.info("启动400编码调试开始-00000052-01-04-02");
+					S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-01-04-02");
 					SocketThread clientSocket = new SocketThread(
 							socketThreadPool, server.accept(),
 							System.currentTimeMillis() + ""
 									+ new Random().nextLong(),
 							NE);
-					S_logger.Log.logger.info("启动400编码调试开始-00000052-01-04-03");
+					S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-01-04-03");
 					socketThreadPool.I_E_Socket(clientSocket.getSid(),
 							clientSocket);
 					clientSocket.start();
-					S_logger.Log.logger.info("启动400编码调试开始-00000052-01-04-04");
+					S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-01-04-04");
 					DetaThread.sleepDeta(30);// lag limited
 				}
 			} catch (Exception e) {
@@ -135,7 +135,7 @@ public class BootVPCSBackEnd extends Thread {
 	}
 
 	public void run(SocketThreadPool socketThreadPool, App NE) {
-		Log.logger.info("启动400编码调试开始-00000052-01-01");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-01-01");
 		bootBackEnd(socketThreadPool, NE);
 	}
 

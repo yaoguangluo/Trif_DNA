@@ -75,17 +75,17 @@ public class StringUtil {
 		pDE_RNA_Formular.key[3] = 0.632;
 
 		pDE_RNA_Formular.text = uPassword;
-		//20230106-System.out.println("原文: " + pDE_RNA_Formular.text);
+		//20230106-S_logger.Log.logger.info("" + "原文: " + pDE_RNA_Formular.text);
 		pDE_RNA_Formular.pdw = pDE_RNA_Formular.initonSect(key);
 		for (int i = 0; i < pDE_RNA_Formular.pdw.length(); i++) {
 			pDE_RNA_Formular.code += pDE_RNA_Formular.lock
 				+ pDE_RNA_Formular.pdw.charAt(i);
 		}
-		//20230106-System.out.println("肽语: "+ pDE_RNA_Formular.pdw);
-		//20230106-System.out.println("肽锁: "+ key);
-		//20230106-System.out.println("散列肽语: 保密" );
+		//20230106-S_logger.Log.logger.info("" + "肽语: "+ pDE_RNA_Formular.pdw);
+		//20230106-S_logger.Log.logger.info("" + "肽锁: "+ key);
+		//20230106-S_logger.Log.logger.info("" + "散列肽语: 保密" );
 		pDE_RNA_Formular.bys = "0.6/0.3/0.5/0.632";
-		//20230106-System.out.println("静态密钥: " + pDE_RNA_Formular.bys);
+		//20230106-S_logger.Log.logger.info("" + "静态密钥: " + pDE_RNA_Formular.bys);
 		pDE_RNA_Formular.doKeyPress(pDE_RNA_Formular.code,
 			pDE_RNA_Formular, false);
 		token.I_Updsde(pDE_RNA_Formular.pdedeKey);
@@ -95,10 +95,10 @@ public class StringUtil {
 		pDE_RNA_Formular.time = "" + System.currentTimeMillis();
 		pDE_RNA_Formular.cacheId = "ID" + Math.random() + ":" + Math
 			.random();
-		//20230106-System.out.println("时间:  " + pDE_RNA_Formular.time);
-		//20230106-System.out.println("账号随机缓存字符串:  "+ pDE_RNA_Formular.cacheId);
+		//20230106-S_logger.Log.logger.info("" + "时间:  " + pDE_RNA_Formular.time);
+		//20230106-S_logger.Log.logger.info("" + "账号随机缓存字符串:  "+ pDE_RNA_Formular.cacheId);
 		pDE_RNA_Formular.session_key = pDE_RNA_Formular.pde;
-		//20230106-System.out.println("Session: "+ pDE_RNA_Formular.session_key);
+		//20230106-S_logger.Log.logger.info("" + "Session: "+ pDE_RNA_Formular.session_key);
 		return pDE_RNA_Formular.session_key;
 	}
 }

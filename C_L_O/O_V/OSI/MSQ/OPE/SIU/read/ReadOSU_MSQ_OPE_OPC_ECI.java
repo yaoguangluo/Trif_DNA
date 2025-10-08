@@ -67,11 +67,11 @@ public class ReadOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
         //拿到中文数据
         pos = ((BinaryForest_AE) _A).getPosCnToCn();
         indexResult = new ArrayList<String[]>();
-        //20230106-System.out.println("runed"+ value);
+        //20230106-S_logger.Log.logger.info("" + "runed"+ value);
         //_SQ__OVQ_OSQ_VSQ.path= new String(filepath);
         //_SQ__OVQ_OSQ_VSQ.out= new JTable(content, spec);
-        //20230106-System.out.println(addressString);
-        //20230106-System.out.println(searchString);
+        //20230106-S_logger.Log.logger.info("" + addressString);
+        //20230106-S_logger.Log.logger.info("" + searchString);
         //loop category
         File category = new File(addressString);
         if (!category.isDirectory() || !category.exists()) {
@@ -85,7 +85,7 @@ public class ReadOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
             indexWords.put(string, pos.containsKey(string) ? pos.get(string) : "未知");
         }
         indexFile(addressString, fileList);
-        //20230106-System.out.println(fileList.length);
+        //20230106-S_logger.Log.logger.info("" + fileList.length);
         _SQ__OVQ_OSQ_VSQ.indexResult = indexResult;
     }
 
@@ -112,7 +112,7 @@ public class ReadOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
             double rank = 0.0;
             double important = 0.0;
             String path = file.getAbsolutePath();
-            //20230106-System.out.println(path);
+            //20230106-S_logger.Log.logger.info("" + path);
             String[] result = new String[3];
             if (!file.exists()) {
                 return;

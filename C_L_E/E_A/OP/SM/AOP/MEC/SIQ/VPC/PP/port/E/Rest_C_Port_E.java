@@ -51,7 +51,7 @@ public class Rest_C_Port_E {
 		}
 		try {
 			URL url = new URL("http://localhost:3306/aa?aa=1");
-			// 20230106-System.out.println("http://localhost:3306/aa?aa=1");
+			// 20230106-S_logger.Log.logger.info("" + "http://localhost:3306/aa?aa=1");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Accept", "application/json");
@@ -63,7 +63,7 @@ public class Rest_C_Port_E {
 					DetaInputStreamReader.E((conn.getInputStream())));
 			String out = "";
 			String out1;
-			// 20230106-System.out.println("Output from Server ....
+			// 20230106-S_logger.Log.logger.info("" + "Output from Server ....
 			// \n");
 			while ((out1 = br.readDetaLine()) != null) {
 				out += out1;
@@ -163,7 +163,7 @@ public class Rest_C_Port_E {
 		return db;
 	}
 }
-//29	//20230106-System.out.println("4444" + result.get("end"));
+//29	//20230106-S_logger.Log.logger.info("" + "4444" + result.get("end"));
 // String AA= helloBean.saySomething(aa);
 // result.put("end", AA);
 //return Response.status(Status.OK).entity(result).build();
@@ -189,16 +189,16 @@ public class Rest_C_Port_E {
  * click_long= Long.parseLong(click); click_long += 1;
  * redisTemplate.opsForValue().set("click",
  * String.valueOf(click_long) , 24000, TimeUnit.HOURS); }
- * //20230106-System.out.println(1111); EventDispatcher
+ * //20230106-S_logger.Log.logger.info("" + 1111); EventDispatcher
  * dispatcher= new EventDispatcher();
  * dispatcher.registerHandler(UserCreatedEvent.class, new
  * UserCreatedEventHandler());
- * //20230106-System.out.println(2222); User user= new
+ * //20230106-S_logger.Log.logger.info("" + 2222); User user= new
  * User("iluwatar"); dispatcher.dispatch(new
  * UserCreatedEvent(user));
  * 
- * //20230106-System.out.println(3333); IMV_SQI result=new
+ * //20230106-S_logger.Log.logger.info("" + 3333); IMV_SQI result=new
  * IMV_SQI(); result.put("end", user.getUsername());
- * //20230106-System.out.println("4444"+result.get("end"));
+ * //20230106-S_logger.Log.logger.info("" + "4444"+result.get("end"));
  * return Response.status(Status.OK).entity(result).build();
  */

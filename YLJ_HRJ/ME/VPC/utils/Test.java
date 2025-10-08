@@ -3,7 +3,7 @@ package ME.VPC.utils;
 @SuppressWarnings("unused")
 public class Test{	
 	public static void main(String argv[]){
-		System.out.println(System.currentTimeMillis());
+		S_logger.Log.logger.info("" + System.currentTimeMillis());
 		//}  
 	}  
 }	

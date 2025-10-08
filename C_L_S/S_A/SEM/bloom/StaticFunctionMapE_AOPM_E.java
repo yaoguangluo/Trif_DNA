@@ -160,7 +160,7 @@ public class StaticFunctionMapE_AOPM_E extends StaticFunctionMapCASE
 		//        Iterator<String> iterator = sets.iterator(); //得到分词的Iterator数列
 		//        while (iterator.hasNext()) {
 		//            iterator.next();
-		//            //20230106-//20230106-System.out.println(iterator.next());
+		//            //20230106-//20230106-S_logger.Log.logger.info("" + iterator.next());
 		//        }
 	}
 }

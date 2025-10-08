@@ -206,7 +206,7 @@ public class SectionJPanel extends SectionJPanel_X_S {
 			filedialog.setVisible(true);
 			String filepath = filedialog.getDirectory();// +
 														// filedialog.getFile();
-			System.out.println(filepath);
+			S_logger.Log.logger.info("" + filepath);
 			try {
 				String fileType = ".xlsx";
 			} catch (Exception e1) {

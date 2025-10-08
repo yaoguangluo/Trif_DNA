@@ -67,11 +67,11 @@
 //		//fsize to int
 //		int reg=1;
 //		while(reg++<fl){
-//			//20230106-System.out.println(reg);
+//			//20230106-S_logger.Log.logger.info("" + reg);
 //			byte[] fsize= new byte[4];
 //			fis.read(fsize);
 //			int len= ((int)fsize[3]<<24&0xff000000)|((int)fsize[2]<<16&0x00ff0000)|((int)fsize[1]<<8&0x0000ff00)|((int)fsize[0]&0x000000ff);
-//			//20230106-System.out.println(len);
+//			//20230106-S_logger.Log.logger.info("" + len);
 //			byte[] jpeg= new byte[len];
 //			fis.read(jpeg);
 //			InputStream is=new ByteArrayInputStream(jpeg);

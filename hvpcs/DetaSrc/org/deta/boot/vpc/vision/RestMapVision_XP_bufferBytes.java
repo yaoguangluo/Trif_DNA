@@ -86,17 +86,17 @@ import DetaSrc.org.deta.boot.sets.VPCSResponse;
 			}
 			vPCSResponse.dataOutputStream.close();
 			System.out.flush();
-			System.out.println(vPCSResponse.getHashCode() + "-f");
+			S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-f");
 		} catch (Exception e) {
 			System.out.flush();
-			System.out.println(e.getMessage());
+			S_logger.Log.logger.info("" + e.getMessage());
 			System.out.flush();
-			System.out.println(vPCSResponse.getHashCode()
+			S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 					+ "-processBufferBytes dataOutputStream err");
 			System.out.flush();
-			System.out.println(vPCSRequest.getRequestLink());
+			S_logger.Log.logger.info("" + vPCSRequest.getRequestLink());
 			System.out.flush();
-			System.out.println(vPCSRequest.getRequestFilePath());
+			S_logger.Log.logger.info("" + vPCSRequest.getRequestFilePath());
 			StableBlob.addException();
 			return;
 		}

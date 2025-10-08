@@ -40,7 +40,7 @@ public class DistanceRatio {
             //x y z  3 1 4   1/4  0。25
             //sin角越小，sin比值越小；从小到大排为
             double v = y / z;
-            System.out.println("1-x:" + x1 + "y:" + y1 + "--x:" + x + "y:" + y + "v:" + v);
+            S_logger.Log.logger.info("" + "1-x:" + x1 + "y:" + y1 + "--x:" + x + "y:" + y + "v:" + v);
             return v;
         }
         //首先第二种为在第二象限
@@ -50,7 +50,7 @@ public class DistanceRatio {
             //x y z  -3 1 4  1/4  0.25
             //sin角越大，sin比值越大；从小到大排为
             double v = 2 - y / z;
-            System.out.println("2-x:" + x1 + "y:" + y1 + "--x:" + x + "y:" + y + "v:" + v);
+            S_logger.Log.logger.info("" + "2-x:" + x1 + "y:" + y1 + "--x:" + x + "y:" + y + "v:" + v);
             return v;
         }
         //首先第三种为在第三象限
@@ -60,7 +60,7 @@ public class DistanceRatio {
             //x y z  -3 -1  4  -1/4  -0.25
             //sin角越小，sin比值越大；从小到大排为
             double v = 3 - y / z;
-            System.out.println("3-x:" + x1 + "y:" + y1 + "--x:" + x + "y:" + y + "v:" + v);
+            S_logger.Log.logger.info("" + "3-x:" + x1 + "y:" + y1 + "--x:" + x + "y:" + y + "v:" + v);
             return v;
         }
         //首先第四种为在第四象限
@@ -70,7 +70,7 @@ public class DistanceRatio {
             //x y z  3 -1  4  -1/4  -0.25
             //sin角越大，sin比值越小；从小到大排为
             double v = 5 + y / z;
-            System.out.println("4-x:" + x1 + "y:" + y1 + "--x:" + x + "y:" + y + "v:" + v);
+            S_logger.Log.logger.info("" + "4-x:" + x1 + "y:" + y1 + "--x:" + x + "y:" + y + "v:" + v);
             return v;
         }
         //infinity

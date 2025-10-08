@@ -87,7 +87,7 @@ public class MakeContainerYXTP extends MakeContainerYXTP_X {
 					// String root = pgCategoryLink.split("pgSearch")[0] +
 					// "pgSearch/";
 					String root = pgCategoryLink + "";
-					System.out.println(root);
+					S_logger.Log.logger.info("" + root);
 					nullPG = root + "nullPG.jpg";
 					bufferedImageNullPG = ImageIO.read(new File(nullPG));// later
 																		 // trif
@@ -95,7 +95,7 @@ public class MakeContainerYXTP extends MakeContainerYXTP_X {
 					if (rootFile.exists() && rootFile.isDirectory()) {
 						String[] strings = rootFile.list();
 						for (String string : strings) {
-							// System.out.println(string);
+							// S_logger.Log.logger.info("" + string);
 							File subRoot = new File(root + string);
 							if (subRoot.exists() && subRoot.isDirectory()) {
 								String[] subStrings = subRoot.list();

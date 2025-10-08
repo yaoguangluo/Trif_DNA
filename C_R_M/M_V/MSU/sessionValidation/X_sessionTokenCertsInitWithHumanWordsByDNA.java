@@ -32,7 +32,7 @@ public class X_sessionTokenCertsInitWithHumanWordsByDNA {
 		pDE_RNA_FullFormular.text = humanWordsPassword;
 		pDE_RNA_FullFormular.pdw = pDE_RNA_FullFormular
 				.initonSect(pDE_RNA_FullFormular.text);
-		// //20230106-System.out.println("原文: "+
+		// //20230106-S_logger.Log.logger.info("" + "原文: "+
 		// pDE_RNA_FullFormular.text);
 		// pDE_RNA_FullFormular.pdw= "字典保密：MSIOCUOCIPCUPCI";
 		if (bys) {
@@ -64,11 +64,11 @@ public class X_sessionTokenCertsInitWithHumanWordsByDNA {
 			pDE_RNA_FullFormular.code += pDE_RNA_FullFormular.lock
 					+ pDE_RNA_FullFormular.pdw.charAt(i);
 		}
-		// //20230106-System.out.println("肽语: "+
+		// //20230106-S_logger.Log.logger.info("" + "肽语: "+
 		// pDE_RNA_FullFormular.pdw);
-		// //20230106-System.out.println("肽锁: "+
+		// //20230106-S_logger.Log.logger.info("" + "肽锁: "+
 		// pDE_RNA_FullFormular.lock);
-		// //20230106-System.out.println("散列肽语:"+
+		// //20230106-S_logger.Log.logger.info("" + "散列肽语:"+
 		// pDE_RNA_FullFormular.code);
 		TokenCerts tokenCerts = new TokenCerts();
 		tokenCerts.I_PdnKey(pDE_RNA_FullFormular.pdw);

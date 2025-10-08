@@ -1,7 +1,7 @@
 package test.java.InterfaceTest.DNASession;
 
 import org.junit.jupiter.api.Test;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -47,19 +47,19 @@ class FullDNATokenPDITestTest {
 		// String inputInitons = "EDVSDTUVSQVSQEA";
 		// String inputInitons ="VMECSIDUQDUQTXH";
 		String beforeLoopInitons = inputInitons;
-		System.out.println("输入char->" + beforeLoopInitons);
+		S_logger.Log.logger.info("" + "输入char->" + beforeLoopInitons);
 		beforeLoopInitons = duplication1(inputInitons);
 		// 计算
-		System.out.println("简单去重单char->" + beforeLoopInitons);
+		S_logger.Log.logger.info("" + "简单去重单char->" + beforeLoopInitons);
 		beforeLoopInitons = duplication2(beforeLoopInitons, 2);
 		// 计算
-		System.out.println("简单去重双char->" + beforeLoopInitons);
+		S_logger.Log.logger.info("" + "简单去重双char->" + beforeLoopInitons);
 		beforeLoopInitons = duplication2(beforeLoopInitons, 3);
 		// 计算
-		System.out.println("简单去重3char->" + beforeLoopInitons);
+		S_logger.Log.logger.info("" + "简单去重3char->" + beforeLoopInitons);
 		beforeLoopInitons = duplication2(beforeLoopInitons, 4);
 		// 计算
-		System.out.println("简单去重4char，可loop->" + beforeLoopInitons);
+		S_logger.Log.logger.info("" + "简单去重4char，可loop->" + beforeLoopInitons);
 
 		// PDS丝化降元 A = VS， O = ES， P = EC，M = CS，
 		beforeLoopInitons = beforeLoopInitons.replace("A", "VS");
@@ -73,13 +73,13 @@ class FullDNATokenPDITestTest {
 		beforeLoopInitons = beforeLoopInitons.replace("H", "H");
 		// HC HE 等同于P这里忽略先。
 		beforeLoopInitons = beforeLoopInitons.replace("F", "ECS");
-		System.out.println("简单PDS AOPM-VPCS->" + beforeLoopInitons);
+		S_logger.Log.logger.info("" + "简单PDS AOPM-VPCS->" + beforeLoopInitons);
 		// PDI浓缩增元 , 不考虑酸，
 		beforeLoopInitons = beforeLoopInitons.replace("V", "UQ");
 		beforeLoopInitons = beforeLoopInitons.replace("E", "DU");
 		beforeLoopInitons = beforeLoopInitons.replace("C", "DI");
 		beforeLoopInitons = beforeLoopInitons.replace("S", "QI");
-		System.out.println("简单PDS VPCS-IDUQ->" + beforeLoopInitons);
+		S_logger.Log.logger.info("" + "简单PDS VPCS-IDUQ->" + beforeLoopInitons);
 		// PDI 很多人不知道肽展公式PDE怎么广泛运用，我就多举几把测试DEMO例子先。
 		beforeLoopInitons = beforeLoopInitons.replace("UQ", "V");
 		beforeLoopInitons = beforeLoopInitons.replace("QU", "V");
@@ -89,7 +89,7 @@ class FullDNATokenPDITestTest {
 		beforeLoopInitons = beforeLoopInitons.replace("ID", "C");
 		beforeLoopInitons = beforeLoopInitons.replace("QI", "S");
 		beforeLoopInitons = beforeLoopInitons.replace("IQ", "S");
-		System.out.println("简单PDI IDUQ-VECS->" + beforeLoopInitons);
+		S_logger.Log.logger.info("" + "简单PDI IDUQ-VECS->" + beforeLoopInitons);
 		//
 		beforeLoopInitons = beforeLoopInitons.replace("VS", "A");
 		beforeLoopInitons = beforeLoopInitons.replace("SV", "A");
@@ -116,7 +116,7 @@ class FullDNATokenPDITestTest {
 		beforeLoopInitons = beforeLoopInitons.replace("CSE", "F");
 		beforeLoopInitons = beforeLoopInitons.replace("SEC", "F");
 		beforeLoopInitons = beforeLoopInitons.replace("SCE", "F");
-		System.out.println("简单PDI VECS-AOPM->" + beforeLoopInitons);
+		S_logger.Log.logger.info("" + "简单PDI VECS-AOPM->" + beforeLoopInitons);
 	}
 
 	private String duplication1(String inputInitons) {

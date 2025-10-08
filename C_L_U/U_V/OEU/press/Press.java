@@ -17,8 +17,8 @@ public class Press {
     public static void main(String[] argv) {
         String input = "10110101000101001010101111110101000101001010010100"
             + "10100101010010101001010100100000000000101111111101010";
-        //20230106-System.out.println(input);
-        //20230106-System.out.println("");
+        //20230106-S_logger.Log.logger.info("" + input);
+        //20230106-S_logger.Log.logger.info("" + "");
         Node node = new Node();
         node.value = 1;
         //20230106-System.out.print("1");
@@ -48,11 +48,11 @@ public class Press {
                 }
             }
         }
-        //20230106-System.out.println("");
+        //20230106-S_logger.Log.logger.info("" + "");
         for (int i = 0; i < 1; i++) {
-            //20230106-System.out.println(output);
-            //20230106-System.out.println(i);
-            //20230106-System.out.println("");
+            //20230106-S_logger.Log.logger.info("" + output);
+            //20230106-S_logger.Log.logger.info("" + i);
+            //20230106-S_logger.Log.logger.info("" + "");
             input = print(head.AOP_MVE_CSI_DUQ(), "");
             Node temp = new Node();
             temp.value = input.charAt(0) == '0' ? 0 : 1;
@@ -86,16 +86,16 @@ public class Press {
         }
         //print
 //		printPrefix(head.AOP_MVE_CSI_DUQ());
-//		//20230106-System.out.println("");
+//		//20230106-S_logger.Log.logger.info("" + "");
 //		printInfix(head.AOP_MVE_CSI_DUQ());
-//		//20230106-System.out.println("");
+//		//20230106-S_logger.Log.logger.info("" + "");
 //		printBackfix(head.AOP_MVE_CSI_DUQ());
     }
 
     private static String print(Node head, String input) {
-        //20230106-System.out.println("");
+        //20230106-S_logger.Log.logger.info("" + "");
         input = printInfix(head.AOP_MVE_CSI_DUQ(), input);
-        //20230106-System.out.println("");
+        //20230106-S_logger.Log.logger.info("" + "");
         return input;
     }
 

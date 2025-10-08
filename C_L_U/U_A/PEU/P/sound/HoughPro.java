@@ -32,7 +32,7 @@ public class HoughPro{
 		if (audioBytes== null) {
 			try {
 				audioBytes= new byte[(int) (ais.getFrameLength() *af.getFrameSize())];
-				//20230106-System.out.println("audiobyte length:"+audioBytes.length);
+				//20230106-S_logger.Log.logger.info("" + "audiobyte length:"+audioBytes.length);
 				ais.read(audioBytes);
 			} catch (Exception ex) { 
 				//reportStatus(ex.toString());
@@ -75,8 +75,8 @@ public class HoughPro{
 				}
 			}
 		}
-		//20230106-System.out.println(audioBytes.length);
-		//20230106-System.out.println(af.getFrameSize());
+		//20230106-S_logger.Log.logger.info("" + audioBytes.length);
+		//20230106-S_logger.Log.logger.info("" + af.getFrameSize());
 		double psita=0.0;
 		for(int i=0;i<audioData.length;i++){
 			psita=0.0;
@@ -87,8 +87,8 @@ public class HoughPro{
 			audioData[i]=psita/360;
 		}
 		double y_last= 0.0;
-		//20230106-System.out.println(w);
-		//20230106-System.out.println(audioData.length);
+		//20230106-S_logger.Log.logger.info("" + w);
+		//20230106-S_logger.Log.logger.info("" + audioData.length);
 		int frames_per_pixel= audioBytes.length / af.getFrameSize()/w;
 		byte my_byte= 0;
 		int idx=0;

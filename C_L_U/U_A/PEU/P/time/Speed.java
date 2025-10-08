@@ -26,6 +26,6 @@ public class Speed{
 		}
 		timeCheck.end();
 		timeCheck.duration();
-		//20230106-System.out.println(t);
+		//20230106-S_logger.Log.logger.info("" + t);
 	}
 }

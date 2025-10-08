@@ -140,4 +140,4 @@ public class Q_Rows_E_X_selectRowsByAttribute {
 }
 //118
 // deletefile("D:/file");
-//20230106-System.out.println("ok");
+//20230106-S_logger.Log.logger.info("" + "ok");

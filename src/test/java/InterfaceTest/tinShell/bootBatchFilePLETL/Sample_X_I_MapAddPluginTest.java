@@ -89,14 +89,14 @@ class Sample_X_I_MapAddPluginTest {
 			}
 			NE.app_S.makeContainerXLSList.add(makeContainerXLS);
 			if (makeContainerXLS.tabNames.size() < 1) {
-				System.out.println("error read table");
+				S_logger.Log.logger.info("" + "error read table");
 				NE.stop();
 				return;
 			}
 			String XLSTableName = makeContainerXLS.jpanelSecond.pageName;
 			String XLSTableNamePath = makeContainerXLS.jpanelSecond.xlsFilePath;
-			System.out.println("path table:" + XLSTableName);
-			System.out.println("name table:" + XLSTableNamePath);
+			S_logger.Log.logger.info("" + "path table:" + XLSTableName);
+			S_logger.Log.logger.info("" + "name table:" + XLSTableNamePath);
 			// init test
 			// 模式1 需要界面配置好PLETL的命令然后保存，之后执行这个保存文件 去弹窗输出即可
 			// 物理形式加密文，非古拉丁语语义加密
@@ -113,7 +113,7 @@ class Sample_X_I_MapAddPluginTest {
 				+ "/tinShell/bootBatchFilePLETL/tinshellExample.etl";
 			File file = new File(NE._I_U.gUISample.fileCurrentpath);
 			if (!file.isFile()) {
-				System.out.println(S_Annotation.ATTENSION_RECHOICE);
+				S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
 				return;
 			}
 			LinkNode needDeleteNode = NE._I_U.gUISample.first.first;
@@ -160,7 +160,7 @@ class Sample_X_I_MapAddPluginTest {
 				// 上海马吉路88号产地的货，浏阳天虹苹果店买的金色笔记本。自从我2010年后就再没去
 				// 过上海了。--罗瑶光2010年后任何上海同事我都没有再见过面，我以后会浏阳出门时候
 				// 会注意下各类橡胶头套装扮的社会人尾随卡点猫腻。
-				System.out.println("执行->"
+				S_logger.Log.logger.info("" + "执行->"
 					+ linkNode.thisFace.nodeConfiguration);
 				TinMap tinMap = linkNode.thisFace._SQ__OVQ_OSQ_VSQ.outputOut;
 				TinMap tinShell = (TinMap) tinMap.get("TinShellETL");
@@ -171,11 +171,12 @@ class Sample_X_I_MapAddPluginTest {
 					Object _object = _IMV_SQI.get("rowValue");
 					IMV_SQI _IMV_SQI_ = (IMV_SQI) _object;
 					if (times++ < 1) {
-						System.out.println("列数->" + _IMV_SQI_.size());
+						S_logger.Log.logger.info("" + "列数->" + _IMV_SQI_.size());
 					}
 					Object _object_ = _IMV_SQI_.get("中药名称");
 					IMV_SQI __IMV_SQI_ = (IMV_SQI) _object_;
-					System.out.println(__IMV_SQI_.get("culumnValue"));
+					//later..trif
+					S_logger.Log.logger.info("" + __IMV_SQI_.get("culumnValue"));
 				}
 				linkNode = linkNode.next;
 			}

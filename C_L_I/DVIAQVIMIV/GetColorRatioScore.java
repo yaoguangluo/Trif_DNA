@@ -73,7 +73,7 @@ public class GetColorRatioScore {
                         }
                     }
                 } catch (Exception e) {
-                    //20230106-System.out.println(Doubles[i]);
+                    //20230106-S_logger.Log.logger.info("" + Doubles[i]);
                     score[lineCount] += 0;
                 }
             }
@@ -124,7 +124,7 @@ public class GetColorRatioScore {
                         }
                     }
                 } catch (Exception e) {
-                    //20230106-System.out.println(Doubles[i]);
+                    //20230106-S_logger.Log.logger.info("" + Doubles[i]);
                     score[lineCount] += 0;
                 }
             }
@@ -163,7 +163,7 @@ public class GetColorRatioScore {
 //						}
 //					}
 //		//				}catch(Exception e) {
-//					//20230106-System.out.println(Doubles[i]);
+//					//20230106-S_logger.Log.logger.info("" + Doubles[i]);
 //					score[lineCount]+= 0;
 //				}
 //			}

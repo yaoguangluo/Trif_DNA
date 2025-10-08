@@ -16,7 +16,7 @@ public class test {
 		c.setValue("good");
 		CacheManager.putCache("result", c);
 		System.out.flush();
-		System.out.println(
+		S_logger.Log.logger.info("" + 
 				CacheManager.getCacheInfo("result").getValue().toString());
 	}
 }

@@ -53,15 +53,15 @@ public class ForwardVision {
 			String fileString = URLDecoder.decode(filePath, "UTF8");
 			File file = new File(fileString);
 			System.out.flush();
-			System.out.println("-fi-" + fileString);
+			S_logger.Log.logger.info("" + "-fi-" + fileString);
 			if (!file.exists() || !file.isFile()) {
 				fileString = URLDecoder.decode(filePath, "UTF8");
 				File fileUTF8 = new File(fileString);
 				System.out.flush();
-				System.out.println("-fi-" + fileString);
+				S_logger.Log.logger.info("" + "-fi-" + fileString);
 				if (!fileUTF8.exists() || !fileUTF8.isFile()) {
 					System.out.flush();
-					System.out.println(vPCSResponse.getHashCode()
+					S_logger.Log.logger.info("" + vPCSResponse.getHashCode()
 							+ "-getForwardType unfile err");
 					vPCSResponse.setErrorCode(404);
 					return; // fix later
@@ -93,9 +93,9 @@ public class ForwardVision {
 			}
 		} catch (Exception e) {
 			System.out.flush();
-			System.out.println(e.getMessage());
+			S_logger.Log.logger.info("" + e.getMessage());
 			System.out.flush();
-			System.out.println(
+			S_logger.Log.logger.info("" + 
 					vPCSResponse.getHashCode() + "-getForwardType 204 err");
 			vPCSResponse.setErrorCode(204);
 		}
@@ -106,27 +106,27 @@ public class ForwardVision {
 		try {
 			if (vPCSRequest.getRequestForwardType() == null) {
 				System.out.flush();
-				System.out.println("-getRequestForwardType 204");
+				S_logger.Log.logger.info("" + "-getRequestForwardType 204");
 				vPCSResponse.setErrorCode(204);
 				return;
 			}
 			if (vPCSRequest.getRequestForwardType().equalsIgnoreCase("rest")) {
 				System.out.flush();
-				System.out.println("-rest");
+				S_logger.Log.logger.info("" + "-rest");
 				RestMapVision_XP_rest.processRest(vPCSRequest, vPCSResponse);
 				return;
 			}
 			if (vPCSRequest.getRequestForwardType().equalsIgnoreCase("bytes")) {
 				System.out.flush();
-				System.out.println("-bytes");
+				S_logger.Log.logger.info("" + "-bytes");
 				RestMapVision_XP_bytes.processBytes(vPCSRequest, vPCSResponse);
 				return;
 			}
 		} catch (Exception e) {
 			System.out.flush();
-			System.out.println(e.getMessage());
+			S_logger.Log.logger.info("" + e.getMessage());
 			System.out.flush();
-			System.out.println(
+			S_logger.Log.logger.info("" + 
 					vPCSResponse.getHashCode() + "-forwardToRestMap 204 err");
 			vPCSResponse.setErrorCode(204);
 		}
@@ -223,7 +223,7 @@ public class ForwardVision {
 
 // if(!StableBlob.addBlobLimit(filePath,
 // System.currentTimeMillis())) {//fix later
-// System.out.flush();System.out.println(vPCSResponse.getHashCode()+"-dreaming
+// System.out.flush();S_logger.Log.logger.info("" + vPCSResponse.getHashCode()+"-dreaming
 // asyc");
 // vPCSResponse.returnCode(204);
 // return;
@@ -231,19 +231,19 @@ public class ForwardVision {
 // 
 // if(vPCSRequest.getRequestForwardType().equalsIgnoreCase("buffer")){
 //	 System.out.flush();
-//	 System.out.println("-buffer");
+//	 S_logger.Log.logger.info("" + "-buffer");
 //	 RestMapVision_XP_buffer.processBuffer(vPCSRequest, vPCSResponse);
 //	 return;
 // }
 // if(vPCSRequest.getRequestForwardType().equalsIgnoreCase("bytesBuffer")){
 //	 System.out.flush();
-//	 System.out.println("-bytesBuffer");
+//	 S_logger.Log.logger.info("" + "-bytesBuffer");
 //	 RestMapVision_XP_bufferBytes.processBufferBytes(vPCSRequest, vPCSResponse);
 //	 return;
 // }
 // if(vPCSRequest.getRequestForwardType().equalsIgnoreCase("bytesWithoutZip")){
 //	 System.out.flush();
-//	 System.out.println("-bytesWithoutZip");
+//	 S_logger.Log.logger.info("" + "-bytesWithoutZip");
 //	 RestMapVision_XP_bytesZip.processBytesWithoutZip(vPCSRequest, vPCSResponse);
 //	 return;
 // }

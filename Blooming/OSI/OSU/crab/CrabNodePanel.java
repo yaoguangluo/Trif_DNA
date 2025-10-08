@@ -43,7 +43,7 @@ public class CrabNodePanel extends OSU_AOU_AOQ_VES {
 		button.setBounds(0, 0, 150, 30);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				S_logger.Log.logger.info(e.getSource().toString());
+				S_logger.Log.logger.info("" + e.getSource().toString());
 				close = true;
 				_SQ__OPE_OPC_ECI.value = 1;
 			}
@@ -90,6 +90,6 @@ public class CrabNodePanel extends OSU_AOU_AOQ_VES {
 	}
 
 	public void config() {
-		S_logger.Log.logger.info(S_ShellETL.SHELL_ETL_DID_CONFIG);
+		S_logger.Log.logger.info("" + S_ShellETL.SHELL_ETL_DID_CONFIG);
 	}
 }

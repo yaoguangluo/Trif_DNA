@@ -74,7 +74,7 @@ public class Guassian {
                 sum1 = sum1 + kenel[i][j];
             }
         }
-        ////20230106-System.out.println("gaussian sum: " + sum1);
+        ////20230106-S_logger.Log.logger.info("" + "gaussian sum: " + sum1);
         ////GAUSSIAN KENEL col
         for (int k = frection / 2; k < frection / 2 + 1; ++k) {
             for (int l = 0; l < kernel; ++l) {
@@ -88,7 +88,7 @@ public class Guassian {
                 sumcol = sumcol + kenel[k][l];
             }
         }
-        ////20230106-System.out.println("--->"+sumcol);
+        ////20230106-S_logger.Log.logger.info("" + "--->"+sumcol);
         //--normalization col
         double sum2 = 0.0;
         for (int i = frection / 2; i < frection / 2 + 1; ++i) {
@@ -98,7 +98,7 @@ public class Guassian {
             }
         }
         //--end of producing gaussian matrix
-        ////20230106-System.out.println("gaussian sum: " + sum2);
+        ////20230106-S_logger.Log.logger.info("" + "gaussian sum: " + sum2);
         //GAUSSIAN pro for row
         for (int i = frection / 2; i < g.length + frection / 2; i++) {
             for (int j = kernel / 2; j < g[0].length + kernel / 2; j++) {
@@ -108,10 +108,10 @@ public class Guassian {
                         sum = (sum + flac_grn[i + k - frection / 2][j + l - kernel / 2] * kenel[k][l]);
                     }
                 }
-                // //20230106-System.out.println(sum+"|");
-                // //20230106-System.out.println(i-d/2);
-                // //20230106-System.out.println(j-e/2);
-                ////20230106-System.out.println(g.length);
+                // //20230106-S_logger.Log.logger.info("" + sum+"|");
+                // //20230106-S_logger.Log.logger.info("" + i-d/2);
+                // //20230106-S_logger.Log.logger.info("" + j-e/2);
+                ////20230106-S_logger.Log.logger.info("" + g.length);
                 //if(j-e/2>)
                 g[i - frection / 2][j - kernel / 2] = ((int) sum);
                 // 	flac_grn[i][j]=(int)sum;
@@ -128,7 +128,7 @@ public class Guassian {
                         sum = (sum + flac_grn[i + k - frection / 2][j + l - kernel / 2] * kenel[k][l]);
                     }
                 }
-                // //20230106-System.out.println(sum);
+                // //20230106-S_logger.Log.logger.info("" + sum);
                 g[i - frection / 2][j - kernel / 2] = ((int) sum);
             }
         }

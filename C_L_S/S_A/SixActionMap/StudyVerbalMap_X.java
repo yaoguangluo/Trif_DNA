@@ -365,10 +365,10 @@ public class StudyVerbalMap_X {
         for (int i = 0; i < fields.length; i++) {
             if (null != fields[i]) {
                 String string = fields[i].getName();
-                System.out.println(string);
+                S_logger.Log.logger.info("" + string);
                 Class<?> type = fields[i].getType();
                 String typeNanme = type.getClass().getPackage().getName();
-                System.out.println(typeNanme);
+                S_logger.Log.logger.info("" + typeNanme);
                 _SMV.put(string, new Object());
                 _SMQ.put(string, typeNanme);
             }

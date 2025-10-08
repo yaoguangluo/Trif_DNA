@@ -35,7 +35,7 @@ public class Jpv extends Panel implements Runnable {
         Dimension d = this.getSize();
         int w = 1600;
         int h = 600;
-        // //20230106-System.out.println(d.width+"**"+d.height);
+        // //20230106-S_logger.Log.logger.info("" + d.width+"**"+d.height);
         int INFOPAD = 15;
         //Graphics g= getGraphics();
         Graphics2D g2 = (Graphics2D) g;

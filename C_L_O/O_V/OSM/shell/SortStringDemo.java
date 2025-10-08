@@ -88,7 +88,7 @@ public class SortStringDemo {
 						ReadPinYinBihua.biHua, 7, 70);
 
 		for (String string : strings) {
-			System.out.println(string);
+			S_logger.Log.logger.info("" + string);
 		}
 
 	}

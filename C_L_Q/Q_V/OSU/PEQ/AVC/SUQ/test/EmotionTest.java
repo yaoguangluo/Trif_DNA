@@ -22,8 +22,8 @@ public class EmotionTest {
         double positiveCount = NE.app_S.emotionInit.getPositiveCount();
         double negativeCount = NE.app_S.emotionInit.getNegativeCount();
         double totalCount = NE.app_S.emotionInit.getTotalCount();
-        //20230106-System.out.println("正面数：" + positiveCount);
-        //20230106-System.out.println("负面数：" + negativeCount);
+        //20230106-S_logger.Log.logger.info("" + "正面数：" + positiveCount);
+        //20230106-S_logger.Log.logger.info("" + "负面数：" + negativeCount);
         if (positiveCount == 0) {
             positiveCount = 1.0;
         }
@@ -31,10 +31,10 @@ public class EmotionTest {
             negativeCount = 1.0;
         }
         double adjRatio = Math.abs(positiveCount / negativeCount - negativeCount / positiveCount);
-        //20230106-System.out.println("渲染比率：" + adjRatio);
+        //20230106-S_logger.Log.logger.info("" + "渲染比率：" + adjRatio);
         double phychologicRatio = (positiveCount + negativeCount) / totalCount;
-        //20230106-System.out.println("情绪比率：" + phychologicRatio);
+        //20230106-S_logger.Log.logger.info("" + "情绪比率：" + phychologicRatio);
         double infectionRatio = adjRatio * phychologicRatio;
-        //20230106-System.out.println("感染比率：" + infectionRatio);
+        //20230106-S_logger.Log.logger.info("" + "感染比率：" + infectionRatio);
     }
 }

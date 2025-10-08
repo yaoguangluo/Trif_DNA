@@ -36,10 +36,10 @@ public class EducationLevelTest {
                 + measurement[i][S_Pos.INT_THREE] + measurement[i][S_Pos.INT_FOUR]
                 + measurement[i][S_Pos.INT_FIVE]);
             EducationDuration += EducationLevel[i];
-            //20230106-System.out.println("EducationLevel:" +EducationLevel[i]);
+            //20230106-S_logger.Log.logger.info("" + "EducationLevel:" +EducationLevel[i]);
         }
         EducationDuration /= EducationLevel.length;
-        //20230106-System.out.println("EducationDuration:" + EducationDuration);
+        //20230106-S_logger.Log.logger.info("" + "EducationDuration:" + EducationDuration);
     }
 
     public static void main(String[] argv, CogsBinaryForest_AE _AE) {

@@ -101,7 +101,7 @@ import src.java.org.lyg.common.maps.VtoV;
 						1600);
 			}
 			while ((length = inputStream.read(bytes)) >= 0) {// ��ͷ
-				// System.out.flush();System.out.println(new String(bytes));
+				// System.out.flush();S_logger.Log.logger.info("" + new String(bytes));
 				String string = new String(bytes);
 				if (string.contains("image/jpeg\r\n\r\n")) {
 					processPrefix("image/jpeg\r\n\r\n", bytesIn,
@@ -149,7 +149,7 @@ import src.java.org.lyg.common.maps.VtoV;
 					file);
 			BufferedImage bufferedImageIn = ImageIO.read(inputStreamTemp);
 			System.out.flush();
-			System.out.println(bufferedImageIn.getHeight() + "&&"
+			S_logger.Log.logger.info("" + bufferedImageIn.getHeight() + "&&"
 					+ bufferedImageIn.getWidth());
 			BufferedImage bufferedImage = bufferedImageIn;
 			if (bufferedImageIn.getHeight() > 800
@@ -162,7 +162,7 @@ import src.java.org.lyg.common.maps.VtoV;
 			int h = bufferedImage.getHeight();
 			int w = bufferedImage.getWidth();
 			System.out.flush();
-			System.out.println(h + "&&" + w);
+			S_logger.Log.logger.info("" + h + "&&" + w);
 			// dnaʮ��Ԫ����ʴ
 			int[][] g1 = new int[h][w];
 			int[][] r1 = new int[h][w];
@@ -180,7 +180,7 @@ import src.java.org.lyg.common.maps.VtoV;
 			int[][] g = IPE_AOPM_VECS_IDUQ_TXH_AC(g1, 15);
 			int[][] b = IPE_AOPM_VECS_IDUQ_TXH_AC(b1, 15);
 			System.out.flush();
-			System.out.println("pde");
+			S_logger.Log.logger.info("" + "pde");
 			double maxc = h * w;
 			double rc = 1;// �����ĸΪ0
 			double gc = 1;
@@ -267,7 +267,7 @@ import src.java.org.lyg.common.maps.VtoV;
 			file.delete();
 			Thread.sleep(5);
 			System.out.flush();
-			System.out.println("file delete");
+			S_logger.Log.logger.info("" + "file delete");
 			// ���
 			Map<String, Object> outputMap = new HashMap<>();
 			String string = "�ϴ��ɹ������㷽ʽ: DNAʮ��Ԫ����ʴŨ�� 85%" + "\r\n"
@@ -322,7 +322,7 @@ import src.java.org.lyg.common.maps.VtoV;
 				vPCSResponse.getSleeperHall()
 						.removeThreadById(vPCSResponse.getSocket().hashCode());
 				System.out.flush();
-				System.out.println("success");
+				S_logger.Log.logger.info("" + "success");
 				return;
 			} else {
 				System.out.flush();

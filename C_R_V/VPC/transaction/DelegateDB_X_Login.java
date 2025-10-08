@@ -55,9 +55,9 @@ public class DelegateDB_X_Login {
         String lock = tokenCerts.getPdnLock() + S_Token.ETL_SYMBOL_SMILL + de
             + S_Token.ETL_SYMBOL_SMILL + ds + S_Token.ETL_SYMBOL_SMILL + ie
             + S_Token.ETL_SYMBOL_SMILL + is;//对应非对称的筛子模拟上锁
-        //20230106-System.out.println("lock--1>"+ lock);
+        //20230106-S_logger.Log.logger.info("" + "lock--1>"+ lock);
 
     }
 }
-//20230106-System.out.println("pds--1>"+ tokenCerts.getPds());
-//20230106-System.out.println("pde--1>"+ token.getmPassword());
+//20230106-S_logger.Log.logger.info("" + "pds--1>"+ tokenCerts.getPds());
+//20230106-S_logger.Log.logger.info("" + "pde--1>"+ token.getmPassword());

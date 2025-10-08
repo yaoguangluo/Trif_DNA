@@ -39,7 +39,7 @@ public class DETA_ANN_HMM_L {
                 sum += Double.valueOf(inputNLP[k][i]);
             }
             for (int j = 0; j < inputNLP.length; j++) {
-                ////20230106-System.out.println(sum);
+                ////20230106-S_logger.Log.logger.info("" + sum);
                 outNLP[j][i] = "" + Double.valueOf(inputNLP[j][i]) / sum;
             }
         }

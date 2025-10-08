@@ -76,7 +76,7 @@ public class E_PLSQL_E {
 				PLSQLCommand_E_X_P_E._E(acknowledge, output, mod);
 			}
 		}
-		//20230106-System.out.println("1");
+		//20230106-S_logger.Log.logger.info("" + "1");
 		PLSQLCommand_E_X_P_Check._E(output.get("newCommand").toString(), output, mod);
 		return output;
 	}

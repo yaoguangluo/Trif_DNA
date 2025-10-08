@@ -8,7 +8,7 @@ import test.java.interfaces.test.CommonTestInition;
 import org.junit.jupiter.api.Test;
 
 import java.util.Iterator;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -57,7 +57,7 @@ class LenovoInitTest {
 		IMV_SQI lenovo = commonTestInition.NE.app_S.lenovoInit
 			.getSensingMap().getLenovoMap();
 		// reduce
-		System.out.println("环    境：");
+		S_logger.Log.logger.info("" + "环    境：");
 		Iterator<String> Iterator = environmentSampleMap.keySet()
 			.iterator();
 		while (Iterator.hasNext()) {
@@ -79,8 +79,8 @@ class LenovoInitTest {
 				}
 			}
 		}
-		System.out.println("");
-		System.out.println("动机联想：");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "动机联想：");
 		Iterator = environmentSampleMap.keySet().iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -105,8 +105,8 @@ class LenovoInitTest {
 				}
 			}
 		}
-		System.out.println("");
-		System.out.println("倾向探索：");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "倾向探索：");
 		Iterator = environmentSampleMap.keySet().iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -133,8 +133,8 @@ class LenovoInitTest {
 		}
 
 		// reduce
-		System.out.println("");
-		System.out.println("决策挖掘：");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "决策挖掘：");
 		Iterator = environmentSampleMap.keySet().iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();

@@ -110,7 +110,7 @@ import src.java.org.lyg.common.maps.VtoV;
 						vPCSRequest, vPCSResponse);
 			}
 			while ((length = inputStream.read(bytes)) >= 0) {// ��ͷ
-				// System.out.flush();System.out.println(new String(bytes));
+				// System.out.flush();S_logger.Log.logger.info("" + new String(bytes));
 				String string = new String(bytes);
 				if (string.contains("image/jpeg\r\n\r\n")) {
 					processPrefix("image/jpeg\r\n\r\n", bytesIn, 1024, list,
@@ -153,7 +153,7 @@ import src.java.org.lyg.common.maps.VtoV;
 				Thread.sleep(5);
 			}
 			System.out.flush();
-			System.out.println(list.size());
+			S_logger.Log.logger.info("" + list.size());
 			int fileLength = 0;
 			for (int i = 0; i < list.size(); i++) {
 				fileLength += list.get(i).length;
@@ -173,7 +173,7 @@ import src.java.org.lyg.common.maps.VtoV;
 				bufferedImage = ImageIO.read(imageInputStream);
 			} catch (Exception e) {
 				System.out.flush();
-				System.out.println();
+				S_logger.Log.logger.info("" + "");
 			}
 			// BufferedImage bufferedImage=
 			// ImageIO.read(imageInputStream);
@@ -181,7 +181,7 @@ import src.java.org.lyg.common.maps.VtoV;
 			int h = bufferedImage.getHeight();
 			int w = bufferedImage.getWidth();
 			System.out.flush();
-			System.out.println(h + "&&" + w);
+			S_logger.Log.logger.info("" + h + "&&" + w);
 			int[][] g = new int[h][w];
 			int[][] r = new int[h][w];
 			int[][] b = new int[h][w];
@@ -310,7 +310,7 @@ import src.java.org.lyg.common.maps.VtoV;
 						true);
 			} catch (Exception e) {
 				System.out.flush();
-				System.out.println();
+				S_logger.Log.logger.info("" + "");
 			}
 			if (output.length() > 0) {
 				vPCSResponse.printWriter.println("HTTP/1.1 200 OK\n\n");

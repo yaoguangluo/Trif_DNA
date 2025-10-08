@@ -127,7 +127,7 @@ public class CommandClassBackUp {
 		for (int i = 0; i < inputString.length(); i++) {
 			if (inputString.charAt(i) < 48 || inputString.charAt(i) > 57) {
 				if (!string.isEmpty()) {
-					System.out.println(string + "--" + fixOrder);
+					S_logger.Log.logger.info("" + string + "--" + fixOrder);
 					// println函数走图形打印机，并发工程记得注释掉或者用其他的classic观测API
 					numericsFromUnknownString.put(string.toString(),
 							fixOrder++);
@@ -153,7 +153,7 @@ public class CommandClassBackUp {
 				string += inputString.charAt(i);
 			} else {
 				if (!string.isEmpty()) {
-					System.out.println(string + "--" + fixOrder);
+					S_logger.Log.logger.info("" + string + "--" + fixOrder);
 					alfabeticsFromUnknownString.put(string.toString(),
 							fixOrder++);
 					string = "";
@@ -195,7 +195,7 @@ public class CommandClassBackUp {
 	 */
 	@SuppressWarnings("unused")
 	public String fasterChineseNumberSwap1(String chineseNumber) {
-		System.out.println(chineseNumber);
+		S_logger.Log.logger.info("" + chineseNumber);
 		// 输入分析，开始思考，中文有3套系统，非语义，简体，大写，所以非常混杂，
 		// 有一点好，我们国家至少小数点后的数字不会用中文大写，省了一把函数。如3.一四壹五玖二六。
 		/*
@@ -306,29 +306,29 @@ public class CommandClassBackUp {
 				 * 
 				 */
 				// if (-1 != liangCiFix && -1 != danyuanCi) {
-				System.out.println(
+				S_logger.Log.logger.info("" + 
 						"danyuanCiOperations---->" + danyuanCiOperations);
-				System.out.println("liangCi-------------->" + liangCi);
-				System.out.println("liangCiFix----------->" + liangCiFix);
-				System.out.println("danyuanCi------------>" + danyuanCi);
-				System.out.println("totalCurrent--------->" + totalCurrent);
-				System.out.println("total---------------->" + total);
-				System.out.println("connectCi------------>" + connectCi);
-				System.out.println("connectCiFix------------>" + connectCiFix);
+				S_logger.Log.logger.info("" + "liangCi-------------->" + liangCi);
+				S_logger.Log.logger.info("" + "liangCiFix----------->" + liangCiFix);
+				S_logger.Log.logger.info("" + "danyuanCi------------>" + danyuanCi);
+				S_logger.Log.logger.info("" + "totalCurrent--------->" + totalCurrent);
+				S_logger.Log.logger.info("" + "total---------------->" + total);
+				S_logger.Log.logger.info("" + "connectCi------------>" + connectCi);
+				S_logger.Log.logger.info("" + "connectCiFix------------>" + connectCiFix);
 				if (-1 == liangCiFix) {
 					totalCurrent = 1 * danyuanCi;
 				} else {
 					totalCurrent = liangCiFix * danyuanCi;
 				}
-				System.out.println(
+				S_logger.Log.logger.info("" + 
 						"danyuanCiOperations---->" + danyuanCiOperations);
-				System.out.println("liangCi-------------->" + liangCi);
-				System.out.println("liangCiFix----------->" + liangCiFix);
-				System.out.println("danyuanCi------------>" + danyuanCi);
-				System.out.println("totalCurrent--------->" + totalCurrent);
-				System.out.println("total---------------->" + total);
-				System.out.println("connectCi------------>" + connectCi);
-				System.out.println("connectCiFix------------>" + connectCiFix);
+				S_logger.Log.logger.info("" + "liangCi-------------->" + liangCi);
+				S_logger.Log.logger.info("" + "liangCiFix----------->" + liangCiFix);
+				S_logger.Log.logger.info("" + "danyuanCi------------>" + danyuanCi);
+				S_logger.Log.logger.info("" + "totalCurrent--------->" + totalCurrent);
+				S_logger.Log.logger.info("" + "total---------------->" + total);
+				S_logger.Log.logger.info("" + "connectCi------------>" + connectCi);
+				S_logger.Log.logger.info("" + "connectCiFix------------>" + connectCiFix);
 				// }
 //					liangCidanyuanCi = 10;
 //					danyuanCi = 10;
@@ -337,15 +337,15 @@ public class CommandClassBackUp {
 			}
 			// 计算逻辑分层。
 			if (false == danyuanCiOperations) {
-				System.out.println(
+				S_logger.Log.logger.info("" + 
 						"danyuanCiOperations---->" + danyuanCiOperations);
-				System.out.println("liangCi-------------->" + liangCi);
-				System.out.println("liangCiFix----------->" + liangCiFix);
-				System.out.println("danyuanCi------------>" + danyuanCi);
-				System.out.println("totalCurrent--------->" + totalCurrent);
-				System.out.println("total---------------->" + total);
-				System.out.println("connectCi------------>" + connectCi);
-				System.out.println("connectCiFix------------>" + connectCiFix);
+				S_logger.Log.logger.info("" + "liangCi-------------->" + liangCi);
+				S_logger.Log.logger.info("" + "liangCiFix----------->" + liangCiFix);
+				S_logger.Log.logger.info("" + "danyuanCi------------>" + danyuanCi);
+				S_logger.Log.logger.info("" + "totalCurrent--------->" + totalCurrent);
+				S_logger.Log.logger.info("" + "total---------------->" + total);
+				S_logger.Log.logger.info("" + "connectCi------------>" + connectCi);
+				S_logger.Log.logger.info("" + "connectCiFix------------>" + connectCiFix);
 				/*
 				 * connect词汇的逻辑是 前字和当前字都不是单元字，确定connectCi大于0即可
 				 */
@@ -364,21 +364,21 @@ public class CommandClassBackUp {
 //				}
 				totalCurrent += liangCi;
 				// totalCurrent = liangCiFix;
-				System.out.println(
+				S_logger.Log.logger.info("" + 
 						"danyuanCiOperations---->" + danyuanCiOperations);
-				System.out.println("liangCi-------------->" + liangCi);
-				System.out.println("liangCiFix----------->" + liangCiFix);
-				System.out.println("danyuanCi------------>" + danyuanCi);
-				System.out.println("totalCurrent--------->" + totalCurrent);
-				System.out.println("total---------------->" + total);
-				System.out.println("connectCi------------>" + connectCi);
-				System.out.println("connectCiFix------------>" + connectCiFix);
+				S_logger.Log.logger.info("" + "liangCi-------------->" + liangCi);
+				S_logger.Log.logger.info("" + "liangCiFix----------->" + liangCiFix);
+				S_logger.Log.logger.info("" + "danyuanCi------------>" + danyuanCi);
+				S_logger.Log.logger.info("" + "totalCurrent--------->" + totalCurrent);
+				S_logger.Log.logger.info("" + "total---------------->" + total);
+				S_logger.Log.logger.info("" + "connectCi------------>" + connectCi);
+				S_logger.Log.logger.info("" + "connectCiFix------------>" + connectCiFix);
 			}
 			total = total + totalCurrent;
 			liangCiFix = liangCi;
 			connectCiFix = connectCi;
 		}
-		System.out.println(total);
+		S_logger.Log.logger.info("" + total);
 		return "";
 	}
 
@@ -411,7 +411,7 @@ public class CommandClassBackUp {
 		// ----------------
 		// 0--0
 		// 30--1
-		System.out.println("----------------------");
+		S_logger.Log.logger.info("" + "----------------------");
 		String number = "一";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "拾";
@@ -477,9 +477,9 @@ public class CommandClassBackUp {
 		number = "十万";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "十万万";
-		System.out.println("十万万");
-		System.out.println("-学好语文，这叫十亿-先不处理歧义句");
-		System.out.println("-先不处理超亿句，我框架都写好了，直接split 加函数即可。");
+		S_logger.Log.logger.info("" + "十万万");
+		S_logger.Log.logger.info("" + "-学好语文，这叫十亿-先不处理歧义句");
+		S_logger.Log.logger.info("" + "-先不处理超亿句，我框架都写好了，直接split 加函数即可。");
 		//commandClass.fasterChineseNumberSwap(number);
 		number = "十二万";
 		commandClass.fasterChineseNumberSwap(number);
@@ -487,7 +487,7 @@ public class CommandClassBackUp {
 
 	@SuppressWarnings("unused")
 	public String fasterChineseNumberSwap(String chineseNumber) {
-		System.out.println("输入-->" + chineseNumber);
+		S_logger.Log.logger.info("" + "输入-->" + chineseNumber);
 		/*
 		 * 上面是计算哲学和计算关系和计算逻辑的分析方法，需要巨大的采样，不符合我的思维认知方式
 		 * 于是按照罗瑶光的思绪分析，开始编码。首先我要进行数据预处理，将文字中所有繁体全部简化
@@ -506,7 +506,7 @@ public class CommandClassBackUp {
 		stringSwap = stringSwap.replace("佰", "百");
 		stringSwap = stringSwap.replace("仟", "千");
 		stringSwap = stringSwap.replace("万", "万");
-		System.out.println("简体-->" + stringSwap);
+		S_logger.Log.logger.info("" + "简体-->" + stringSwap);
 		/*
 		 * 简化后文字开始进行精确分析，首先拆分最大逻辑集合确定亿为最大计算量级， 因为单机的long最大只有亿。
 		 * 然后处理京为最大处理量级。关于亿的逻辑意识组合 有 万亿，一万亿， 一万一千零二亿， 乘积是100 000 000
@@ -514,16 +514,16 @@ public class CommandClassBackUp {
 		 */
 		String outputYi = "";
 		String[] stringsYi = stringSwap.split("亿");
-		//System.out.println(stringsYi.length);
+		//S_logger.Log.logger.info("" + stringsYi.length);
 		if (stringsYi.length > 0) {
 			for (String stringYi : stringsYi) {
 				/*
 				 * 简化后文字开始进行精确分析，然后拆分最大逻辑集合确定万为最大计算量级， 有 千万，一百万， 一千零二十万，
 				 * 乘积是10 000 4个零。
 				 */
-				//System.out.println(stringYi);
+				//S_logger.Log.logger.info("" + stringYi);
 				String[] stringsWan = stringYi.split("万");
-				//System.out.println("stringsWan.length-->" + stringsWan.length);
+				//S_logger.Log.logger.info("" + "stringsWan.length-->" + stringsWan.length);
 				String outputWan = "";
 				if (stringsWan.length > 0) {
 					int i = 0;
@@ -532,17 +532,17 @@ public class CommandClassBackUp {
 						/*
 						 * 逻辑分层后，这里只要处理一万以内的组合，大幅减少条件分析。
 						 */
-						//System.out.println("longWan-->" + stringWan);
+						//S_logger.Log.logger.info("" + "longWan-->" + stringWan);
 						if (stringWan.isEmpty()) {
 							outputWan += "" + 1;
-							System.out.println("total-->" + outputWan);
+							S_logger.Log.logger.info("" + "total-->" + outputWan);
 							continue;
 						}
 						long longWan = processWan(stringWan);
-						//System.out.println("longWan-->" + longWan);
+						//S_logger.Log.logger.info("" + "longWan-->" + longWan);
 						if (outputWan.isEmpty()) {
 							outputWan += "" + longWan;
-							System.out.println("total-->" + outputWan);
+							S_logger.Log.logger.info("" + "total-->" + outputWan);
 							continue;
 						}
 						if (longWan < 10) {
@@ -554,11 +554,11 @@ public class CommandClassBackUp {
 						} else {
 							outputWan += "" + longWan;
 						}
-						System.out.println("total-->" + outputWan);
+						S_logger.Log.logger.info("" + "total-->" + outputWan);
 					}
 					if (stringYi.contains("万") && stringsWan.length < 2) {
 						outputWan += "0000";
-						System.out.println("total-->" + outputWan);
+						S_logger.Log.logger.info("" + "total-->" + outputWan);
 					}
 				} else {
 					// wan
@@ -631,7 +631,7 @@ public class CommandClassBackUp {
 			 * 文件末尾呀，然后注释标注格式化，让注释好看呀，这个删除的操作意识有问题。涉嫌
 			 * 毁灭证据的思维。这几年特别写核心源码的时候，想删除的动机意识特别强烈。这是我的 一个严重的错误习惯，以后要改正。
 			 */
-			//System.out.println("loop-->" + total);
+			//S_logger.Log.logger.info("" + "loop-->" + total);
 		}
 		if (-1 != value) {
 			total += value;

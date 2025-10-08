@@ -54,27 +54,27 @@ public class Sample_X_I_Map {
 		NE.app_S.gUISample.h = 820 - 110 - 70;
 		NE.app_S.gUISample.updateRelatedLine = new U_RelatedLineVPS();
 		NE.app_S.gUISample.getContentPane().setLayout(null);
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-01");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-01");
 		UIManager.put("SplitPaneUI",
 				"OPE.OVQ.MSQ.OVU.PQE.platForm.UnicornSplitPaneUI");
 		UIManager.put("ScrollBarUI",
 				"OPE.OVQ.MSQ.OVU.PQE.platForm.UnicornScrollBarUI");
 		UIManager.put("TreeUI", "OPE.OVQ.MSQ.OVU.PQE.platForm.UnicornTreeUI");
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-02");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-02");
 		NE.app_S.gUISample.currentNodeName = new String("");
 		NE.app_S.gUISample.first = new LinkList();
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-03");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-03");
 		NE.app_S.gUISample.popupMenu = new PopupMenu();
 		NE.app_S.gUISample.menuItem = new MenuItem();
 		NE.app_S.gUISample.menuItem.setLabel("add");
 		NE.app_S.gUISample.popupMenu.add(NE.app_S.gUISample.menuItem);
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04");
 		NE.app_S.gUISample.nodeInfo = new NodeInfo();
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01");
 		NE.app_S.gUISample.nodeView = new NodeShow(NE.app_S.gUISample,
 				NE.app_S.gUISample.tableData_old, NE.app_S.gUISample.text,
 				NE.app_S.gUISample.popupMenu, NE);
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-02");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-02");
 		NE.app_S.gUISample.nodeView.tree.setBackground(Color.white);
 		NE.app_S.gUISample.nodeView.setBounds(10, 168, 137, 222);
 		NE.app_S.gUISample.nodeProject = new NodeProject();
@@ -82,7 +82,7 @@ public class Sample_X_I_Map {
 		NE.app_S.gUISample.mainSplitPane = new UnicornJSplitPane();
 		NE.app_S.gUISample.mainSplitPane.setAutoscrolls(true);
 		// mainSplitPane.setEnabled(false);//
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-05");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-05");
 		NE.app_S.gUISample.mainSplitPane.setBounds(10, 50,
 				NE.app_S.gUISample.w - 20, NE.app_S.gUISample.h - 80);
 		NE.app_S.gUISample.mainSplitPane.setVisible(true);
@@ -107,7 +107,7 @@ public class Sample_X_I_Map {
 				.setLeftComponent(NE.app_S.gUISample.righttopSplitPane);
 		NE.app_S.gUISample.rightBotJTextPane = new JTextPane();
 		NE.app_S.gUISample.rightBotJTextPane.setText("你好, 亲~");
-		Log.logger.info("启动400编码调试开始-00000055-001-02-06");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-06");
 		NE.app_S.gUISample.nodeMenu = new PopupMenu();
 		NE.app_S.gUISample.canvas = new ThisCanvas(
 				NE.app_S.gUISample.threadApplet, NE.app_S.gUISample.first,
@@ -127,7 +127,7 @@ public class Sample_X_I_Map {
 				NE.app_S.gUISample.rightBotJTextPane);
 		NE.app_S.gUISample.rightSplitPane
 				.setRightComponent(NE.app_S.gUISample.rightdownScrollPane);
-		Log.logger.info("启动400编码调试开始-00000055-001-02-07");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-07");
 		NE.app_S.gUISample.configre = new MenuItem();
 		NE.app_S.gUISample.configre.setLabel("配置");
 		NE.app_S.gUISample.run = new MenuItem();
@@ -160,7 +160,7 @@ public class Sample_X_I_Map {
 		NE.app_S.gUISample.bootETL.setLabel(S_Annotation.CONFIG_BOOT_ETL);
 		NE.app_S.gUISample.osgis = new MenuItem();
 		NE.app_S.gUISample.osgis.setLabel(S_Annotation.CONFIG_OSGIS);
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-08");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-08");
 		NE.app_S.gUISample.engineMenu.add(NE.app_S.gUISample.load);
 		NE.app_S.gUISample.engineMenu.add(NE.app_S.gUISample.save);
 		NE.app_S.gUISample.engineMenu.add(NE.app_S.gUISample.saveAs);
@@ -168,7 +168,7 @@ public class Sample_X_I_Map {
 		NE.app_S.gUISample.engineMenu.add(NE.app_S.gUISample.boot);
 		NE.app_S.gUISample.engineMenu.add(NE.app_S.gUISample.bootETL);
 		NE.app_S.gUISample.engineMenu.add(NE.app_S.gUISample.osgis);
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-09");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-09");
 		NE.app_S.gUISample.getContentPane().add(NE.app_S.gUISample.engineMenu);
 		Box buttonBox = new Box(BoxLayout.X_AXIS);
 		DetaButton loadButton = new DetaButton("导入文档");
@@ -197,17 +197,17 @@ public class Sample_X_I_Map {
 					filedialog.setVisible(true);
 					NE.app_S.gUISample.fileCurrentpath = filedialog
 							.getDirectory() + filedialog.getFile();
-					// 20230106-System.out.println(NE.app_S.gUISample.fileCurrentpath);
+					// 20230106-S_logger.Log.logger.info("" + NE.app_S.gUISample.fileCurrentpath);
 					if (null == NE.app_S.gUISample.fileCurrentpath
 							|| NE.app_S.gUISample.fileCurrentpath.isEmpty()
 							|| !NE.app_S.gUISample.fileCurrentpath
 									.contains(S_Annotation.FILE_FORMAT_ETL)) {
-						// 20230106-System.out.println(S_Annotation.ATTENSION_RECHOICE);
+						// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
 						return;
 					}
 					File file = new File(NE.app_S.gUISample.fileCurrentpath);
 					if (!file.isFile()) {
-						// 20230106-System.out.println(S_Annotation.ATTENSION_RECHOICE);
+						// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
 						return;
 					}
 					LinkNode needDeleteNode = NE.app_S.gUISample.first.first;
@@ -236,7 +236,7 @@ public class Sample_X_I_Map {
 		});
 		buttonBox.add(loadButton);
 		//
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-10");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-10");
 		DetaButton saveButton = new DetaButton("保存文档");
 		saveButton.setBounds(5 + 105 + 105 + 105 + 105, 3, 100, 20);
 		saveButton.addActionListener(new ActionListener() {
@@ -272,17 +272,17 @@ public class Sample_X_I_Map {
 					filedialog.setVisible(true);
 					NE.app_S.gUISample.fileCurrentpath = filedialog
 							.getDirectory() + filedialog.getFile();
-					System.out.println(NE.app_S.gUISample.fileCurrentpath);
+					S_logger.Log.logger.info("" + NE.app_S.gUISample.fileCurrentpath);
 					if (null == NE.app_S.gUISample.fileCurrentpath
 							|| NE.app_S.gUISample.fileCurrentpath.isEmpty()
 							|| !NE.app_S.gUISample.fileCurrentpath
 									.contains(S_Annotation.FILE_FORMAT_ETL)) {
-						System.out.println(S_Annotation.ATTENSION_RECHOICE);
+						S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
 						return;
 					}
 					File file = new File(NE.app_S.gUISample.fileCurrentpath);
 					if (!file.isFile()) {
-						System.out.println(S_Annotation.ATTENSION_RECHOICE);
+						S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
 						return;
 					}
 					LinkNode needDeleteNode = NE.app_S.gUISample.first.first;
@@ -314,7 +314,7 @@ public class Sample_X_I_Map {
 				NE.app_S.gUISample.rightBotJTextPane.validate();
 			}
 		});
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-11");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-11");
 		buttonBox.add(runButton);
 		DetaButton updateButton = new DetaButton("更新文档");
 		updateButton.setBounds(5 + 105 + 105 + 105 + 105, 3, 100, 20);
@@ -323,7 +323,7 @@ public class Sample_X_I_Map {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (null == NE.app_S.gUISample.fileCurrentpath) {
-					// 20230106-System.out.println(S_Annotation.ATTENSION_UNCURRENT_CHOICE);
+					// 20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_UNCURRENT_CHOICE);
 					return;
 				}
 				javax.swing.JOptionPane jOptionPane = new JOptionPane(

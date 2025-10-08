@@ -47,7 +47,7 @@ public class DNNTest {
                 //20230106-System.out.print(ann[i][3] + ":");
                 //20230106-System.out.print(dnn[i][0] + ":");
                 //20230106-System.out.print(dnn[i][3] + ":");
-                //20230106-System.out.println("");
+                //20230106-S_logger.Log.logger.info("" + "");
             }
         }
     }

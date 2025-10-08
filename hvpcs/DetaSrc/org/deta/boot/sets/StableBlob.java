@@ -34,7 +34,7 @@ public interface StableBlob {
 	}
 	public static void addException() {
 		if(blobLimit.exceptions++ > 8) {
-			System.out.flush();System.out.println("-more exceptions");
+			System.out.flush();S_logger.Log.logger.info("" + "-more exceptions");
 		}
 	}
 	
@@ -42,7 +42,7 @@ public interface StableBlob {
 		if(blobLimit.exceptions > 15) {
 			blobLimit.exceptions = 0;
 			System.gc();
-			System.out.flush();System.out.println("-gc exceptions");
+			System.out.flush();S_logger.Log.logger.info("" + "-gc exceptions");
 		}
 	}
 	

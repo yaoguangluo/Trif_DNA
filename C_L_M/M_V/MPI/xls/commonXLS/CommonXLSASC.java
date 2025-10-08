@@ -28,7 +28,7 @@ public class CommonXLSASC{
 //			pa[0]=stringSearch.ispos;
 //			pa[1]=stringSearch.isascii;
 //			String trcl=new String(nameFile+ "_"+ i);
-//			System.out.println(trcl);
+//			S_logger.Log.logger.info("" + trcl);
 //			subASCmap.put(trcl, pa.clone());
 //		}		
 		return subASCmap;

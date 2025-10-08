@@ -50,7 +50,7 @@ public class DelegateDB_X_RegisterDB_DNA {
         String passwordString = String_ESU_X_charsetSwap._E(token.getmPassword(), "UTF8"
             , "UTF8");//pde
         String passwordEncoder = String_ESU_X_stringToURIencode._E(passwordString, "UTF8");
-        //20230106-System.out.println("pds--1>"+ tokenCerts.getPds());
+        //20230106-S_logger.Log.logger.info("" + "pds--1>"+ tokenCerts.getPds());
         jsobj.put("u_password", token.getmPassword());//pde
         jsobj.put("u_address", uAddress);
         jsobj.put("u_phone", uPhone);

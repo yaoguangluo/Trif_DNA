@@ -21,7 +21,7 @@ public class SoundFrequency {
                 }
             } else {
                 for (int i = 0; i < guassian2.length; i++) {
-                    ////20230106-System.out.println(i+"*"+guassian2.length);
+                    ////20230106-S_logger.Log.logger.info("" + i+"*"+guassian2.length);
                     audioBytes[2 * i] = (byte) (guassian2[i]);
                     audioBytes[2 * i + 1] = (byte) ((int) (guassian2[i]) >> 8);
                 }
@@ -38,7 +38,7 @@ public class SoundFrequency {
             }
         }
         //2:bytes to adataFrame
-        //20230106-System.out.println("now length-->"+audioBytes.length);
+        //20230106-S_logger.Log.logger.info("" + "now length-->"+audioBytes.length);
         ByteArrayInputStream bais = new ByteArrayInputStream(audioBytes);
         ais = new AudioInputStream(bais, ais.getFormat(), audioBytes.length
             / af.getFrameSize());

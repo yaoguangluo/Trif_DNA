@@ -106,8 +106,8 @@ public class DemoEX {
 		String commandSwap = E_pl_XA_E.doHumanTalkSwap(
 			commonTestInition.NE, command_V);
 
-		Log.logger.info("-展示分词识别---" + command_V._IMV_SQI_SS_.size());
-		Log.logger.info("-展示数字提取识别---" + command_V._IMV_SQI_SS_Q
+		S_logger.Log.logger.info("" + "-展示分词识别---" + command_V._IMV_SQI_SS_.size());
+		S_logger.Log.logger.info("" + "-展示数字提取识别---" + command_V._IMV_SQI_SS_Q
 			.size());
 		
 		/*
@@ -129,9 +129,9 @@ public class DemoEX {
 				+ iterators_IMV_SQI_SS_Q.next();
 		}
 
-		Log.logger.info("-展示原文--------->" + ss);
-		Log.logger.info("-展示分词识别------>" + iterators_IMV_SQI_SS_Temp);
-		Log.logger.info("-展示数字提取识别-->" + iterators_IMV_SQI_SS_Q_Temp);
+		S_logger.Log.logger.info("" + "-展示原文--------->" + ss);
+		S_logger.Log.logger.info("" + "-展示分词识别------>" + iterators_IMV_SQI_SS_Temp);
+		S_logger.Log.logger.info("" + "-展示数字提取识别-->" + iterators_IMV_SQI_SS_Q_Temp);
 		// 关闭
 		commonTestInition.endEnvironment();
 	}

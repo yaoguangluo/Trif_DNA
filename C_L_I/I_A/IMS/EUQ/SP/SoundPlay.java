@@ -49,7 +49,7 @@ public class SoundPlay implements Runnable {
             int frameSizeInBytes = ais1.getFormat().getFrameSize();
             int bufferLengthInFrames = line1.getBufferSize() / (1 * 2 * 2 * frameSizeInBytes);
             int bufferLengthInBytes = bufferLengthInFrames * frameSizeInBytes;
-            //20230106-System.out.println("bufferLengthInBytes : "+ bufferLengthInBytes +" **");
+            //20230106-S_logger.Log.logger.info("" + "bufferLengthInBytes : "+ bufferLengthInBytes +" **");
             byte[] data = new byte[bufferLengthInBytes];
             line1.open(format, line1.getBufferSize());
             int numBytesRead = 0;

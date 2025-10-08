@@ -51,7 +51,7 @@ public class CommonTestInition {
 	public App NE;
 	private static final Logger logger = Logger.getLogger("");
 	public App_S initBasic(String stringConfigUI) {
-		logger.info("System.out.println(\"*环境初始化*\")");
+		S_logger.Log.logger.info("" + "*环境初始化*");
 		NE = new App();
 		NE.tempString = stringConfigUI.toString();// 注意哦，这行别乱用
 		NE.app_S = new App_S();
@@ -61,7 +61,7 @@ public class CommonTestInition {
 	}
 
 	public void initConvolution(App_S app_S) {
-		//System.out.println("*卷积环境 init*");
+		//S_logger.Log.logger.info("" + "*卷积环境 init*");
 		logger.info("*卷积环境 init*");
 		U_A.PEU.P.wave.Guassian.initKernel(5, 1.7);// later in golbal
 		app_S.pageQ = new PageQ();
@@ -69,14 +69,14 @@ public class CommonTestInition {
 	}
 
 	public void initPDE(App_S app_S) {
-		//System.out.println("*PDE环境 init*");
+		//S_logger.Log.logger.info("" + "*PDE环境 init*");
 		logger.info("*卷积环境 init*");
 		app_S._S_MapsInitons.init();
 		S_Colors.initFlowers3D();
 	}
 
 	public void initSort(App_S app_S) {
-		//System.out.println("*排序环境 init*");
+		//S_logger.Log.logger.info("" + "*排序环境 init*");
 		logger.info("*排序环境 init*");
 		app_S.quick6DLuoYaoguangSort3DMap_E = new Quick6DLuoYaoguangSort3DMap_E();
 		app_S.studyVerbalMap.putObject(
@@ -88,7 +88,7 @@ public class CommonTestInition {
 	}
 
 	public void initOrtho(App_S app_S) {
-		//System.out.println("*语料库表环境 init*");
+		//S_logger.Log.logger.info("" + "*语料库表环境 init*");
 		logger.info("*语料库表环境 init*");
 		ReadPinYinBihua.getPinYinBihuaMap(NE);
 		app_S.lenovoInit = new LenovoInit();
@@ -141,8 +141,8 @@ public class CommonTestInition {
 	}
 
 	public void initCNN(App_S app_S) {
-		//System.out.println("*CNN type init*");
-		//System.out.println("*ANN RNN DNN init*");
+		//S_logger.Log.logger.info("" + "*CNN type init*");
+		//S_logger.Log.logger.info("" + "*ANN RNN DNN init*");
 		logger.info("*CNN type init*");
 		logger.info("*ANN RNN DNN init*");
 		app_S.dNNTest = new DNNTest();
@@ -155,7 +155,7 @@ public class CommonTestInition {
 	}
 
 	public void initCatalytic(App_S app_S) {
-		//System.out.println("*六元催化 map*");
+		//S_logger.Log.logger.info("" + "*六元催化 map*");
 		logger.info("*六元催化 map*");
 		app_S.workVerbalMap = new WorkVerbalMap();
 		app_S.studyVerbalMap.putObject("workVerbalMap",
@@ -167,7 +167,7 @@ public class CommonTestInition {
 	}
 
 	public void initPOS(App_S app_S) {
-		//System.out.println("*词性环境 init*");
+		//S_logger.Log.logger.info("" + "*词性环境 init*");
 		logger.info("*词性环境 init*");
 		app_S.nERO_C_OneTime_E = new NERO_C_OneTime_E();
 		app_S.studyVerbalMap.putObject("nERO_C_OneTime_E",
@@ -178,7 +178,7 @@ public class CommonTestInition {
 	}
 
 	public void initParser(App_S app_S) {
-		//System.out.println("*分词引擎 init*");
+		//S_logger.Log.logger.info("" + "*分词引擎 init*");
 		logger.info("*分词引擎 init*");
 		app_S._A = new CogsBinaryForest_AE();
 		app_S._A.fHMMList = app_S.fMHMMListOneTime_E;
@@ -191,7 +191,7 @@ public class CommonTestInition {
 	}
 
 	public void initSegment(App_S app_S) {
-		//System.out.println("*自然语言环境 init*");
+		//S_logger.Log.logger.info("" + "*自然语言环境 init*");
 		logger.info("*自然语言环境 init*");
 		app_S._A.IV_Mixed(NE);
 		app_S.fMHMMListOneTime_E_X_S = (FMHMMListOneTime_E_X_S) app_S._A.fHMMList;
@@ -208,7 +208,7 @@ public class CommonTestInition {
 	}
 
 	public void initInitonRoots(App_S app_S) {
-		//System.out.println("*其他枝叶 register*");
+		//S_logger.Log.logger.info("" + "*其他枝叶 register*");
 		logger.info("*其他枝叶 register*");
 		app_S.pos_X_P.wordsForest = app_S.fMHMMListOneTime_E_X_S.posCnToCn;
 		app_S.studyVerbalMap.putObject("pos_X_P.wordsForest",
@@ -252,8 +252,8 @@ public class CommonTestInition {
 		// 6 actions map*/
 		initCatalytic(app_S);
 		// bloosm init*/
-//		System.out.println("*花孢环境 init*");
-//		System.out.println("*略先 init*");
+//		S_logger.Log.logger.info("" + "*花孢环境 init*");
+//		S_logger.Log.logger.info("" + "*略先 init*");
 		logger.info("*花孢环境 init*");
 		logger.info("*略先 init*");
 		// POS init*/

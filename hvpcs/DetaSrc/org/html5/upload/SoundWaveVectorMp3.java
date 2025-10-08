@@ -38,7 +38,7 @@ import javax.sound.sampled.AudioInputStream;
 				int reg = 0;
 				audioBytes = new byte[(int) (sFrameRate * frameSize)];
 				System.out.flush();
-				System.out.println("audiobyte length:" + audioBytes.length);
+				S_logger.Log.logger.info("" + "audiobyte length:" + audioBytes.length);
 				reg = ais.read(audioBytes);
 				if (reg < audioBytes.length)
 					;
@@ -50,7 +50,7 @@ import javax.sound.sampled.AudioInputStream;
 					audioBytes = iner;
 				}
 				System.out.flush();
-				System.out.println(reg);
+				S_logger.Log.logger.info("" + reg);
 			} catch (Exception ex) {
 				// reportStatus(ex.toString());
 				return null;
@@ -96,13 +96,13 @@ import javax.sound.sampled.AudioInputStream;
 			}
 		}
 		System.out.flush();
-		System.out.println(audioBytes.length);
+		S_logger.Log.logger.info("" + audioBytes.length);
 		System.out.flush();
-		System.out.println(af.getFrameSize());
+		S_logger.Log.logger.info("" + af.getFrameSize());
 		System.out.flush();
-		System.out.println(w);
+		S_logger.Log.logger.info("" + w);
 		System.out.flush();
-		System.out.println(audioData.length);
+		S_logger.Log.logger.info("" + audioData.length);
 		int frames_per_pixel = audioBytes.length / frameSize / w;
 		byte my_byte = 0;
 		double y_last = 0;
@@ -134,7 +134,7 @@ import javax.sound.sampled.AudioInputStream;
 			try {
 				audioBytes = new byte[(int) (ais.getFrameLength()
 						* af.getFrameSize())];
-				// System.out.flush();System.out.println("audiobyte
+				// System.out.flush();S_logger.Log.logger.info("" + "audiobyte
 				// length:"+audioBytes.length);
 				ais.read(audioBytes);
 			} catch (Exception ex) {
@@ -179,10 +179,10 @@ import javax.sound.sampled.AudioInputStream;
 				}
 			}
 		}
-		// System.out.flush();System.out.println(audioBytes.length);
-		// System.out.flush();System.out.println(af.getFrameSize());
-		// System.out.flush();System.out.println(w);
-		// System.out.flush();System.out.println(audioData.length);
+		// System.out.flush();S_logger.Log.logger.info("" + audioBytes.length);
+		// System.out.flush();S_logger.Log.logger.info("" + af.getFrameSize());
+		// System.out.flush();S_logger.Log.logger.info("" + w);
+		// System.out.flush();S_logger.Log.logger.info("" + audioData.length);
 		int frames_per_pixel = audioBytes.length / af.getFrameSize() / w;
 		byte my_byte = 0;
 		double y_last = 0;
@@ -196,7 +196,7 @@ import javax.sound.sampled.AudioInputStream;
 			newdata[i] = audioData[idx];
 		}
 		System.out.flush();
-		System.out.println("good1");
+		S_logger.Log.logger.info("" + "good1");
 		// lvbo
 		for (int i = 5; i < newdata.length - 5; i++) {
 			double sum = 0;
@@ -210,10 +210,10 @@ import javax.sound.sampled.AudioInputStream;
 			newdata1[i] *= 2;
 		}
 		System.out.flush();
-		System.out.println("good2");
+		S_logger.Log.logger.info("" + "good2");
 		// xianfu
 		for (double x = 0; x < w; x++) {
-			// System.out.flush();System.out.println("->"+audioData[idx]);
+			// System.out.flush();S_logger.Log.logger.info("" + "->"+audioData[idx]);
 			double y_new = newdata1[(int) x];
 			lines.add(new Line2D.Double(x, y_last, x, y_new));
 			y_last = y_new;
@@ -223,7 +223,7 @@ import javax.sound.sampled.AudioInputStream;
 				nshock = y_new;
 		}
 		System.out.flush();
-		System.out.println("good3");
+		S_logger.Log.logger.info("" + "good3");
 		return lines;
 	}
 
@@ -238,7 +238,7 @@ import javax.sound.sampled.AudioInputStream;
 			try {
 				audioBytes = new byte[(int) (ais.getFrameLength()
 						* af.getFrameSize())];
-				// System.out.flush();System.out.println("audiobyte
+				// System.out.flush();S_logger.Log.logger.info("" + "audiobyte
 				// length:"+audioBytes.length);
 				ais.read(audioBytes);
 			} catch (Exception ex) {
@@ -283,10 +283,10 @@ import javax.sound.sampled.AudioInputStream;
 				}
 			}
 		}
-		// System.out.flush();System.out.println(audioBytes.length);
-		// System.out.flush();System.out.println(af.getFrameSize());
-		// System.out.flush();System.out.println(w);
-		// System.out.flush();System.out.println(audioData.length);
+		// System.out.flush();S_logger.Log.logger.info("" + audioBytes.length);
+		// System.out.flush();S_logger.Log.logger.info("" + af.getFrameSize());
+		// System.out.flush();S_logger.Log.logger.info("" + w);
+		// System.out.flush();S_logger.Log.logger.info("" + audioData.length);
 		int frames_per_pixel = audioBytes.length / af.getFrameSize() / w;
 
 		byte my_byte = 0;
@@ -301,7 +301,7 @@ import javax.sound.sampled.AudioInputStream;
 				my_byte = (byte) (128 * audioData[idx] / 32768);
 			}
 			System.out.flush();
-			System.out.println("->" + audioData[idx]);
+			S_logger.Log.logger.info("" + "->" + audioData[idx]);
 			double y_new = (double) (h * (128 - my_byte) / 256);
 			lines.add(new Line2D.Double(x, y_last, x, y_new));
 			y_last = y_new;
@@ -343,7 +343,7 @@ import javax.sound.sampled.AudioInputStream;
 				audioBytes = new byte[(int) (ais.getFrameLength()
 						* af.getFrameSize())];
 				System.out.flush();
-				System.out.println("audiobyte length:" + audioBytes.length);
+				S_logger.Log.logger.info("" + "audiobyte length:" + audioBytes.length);
 				ais.read(audioBytes);
 			} catch (Exception ex) {
 				// reportStatus(ex.toString());

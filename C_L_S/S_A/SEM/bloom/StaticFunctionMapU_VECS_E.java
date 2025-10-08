@@ -148,7 +148,7 @@ public class StaticFunctionMapU_VECS_E extends StaticFunctionMapCASE
 		strings1D[14] = "dh罗瑶g林";
 		strings1D[15] = "dhv罗1.09瑶光";
 		StaticFunctionMapU_VECS_C.biHuaPinYinSort(strings1D);
-		System.out.println(111);
+		S_logger.Log.logger.info("" + 111);
 		/*输出结果
 		 * 
 		 *

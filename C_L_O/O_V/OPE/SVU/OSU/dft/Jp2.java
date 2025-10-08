@@ -25,7 +25,7 @@ public class Jp2 extends Panel implements Runnable {
         Dimension d = this.getSize();
         int w = 1600;
         int h = 600;
-        // //20230106-System.out.println(d.width+"**"+d.height);
+        // //20230106-S_logger.Log.logger.info("" + d.width+"**"+d.height);
         int INFOPAD = 15;
         //Graphics g= getGraphics();
         Graphics2D g2 = (Graphics2D) g;
@@ -37,7 +37,7 @@ public class Jp2 extends Panel implements Runnable {
         double[] f = new double[128];
         for (int n = 0; n < 128; n++) {
             p[n] = Math.sin(2 * pi * n / 128);
-            //20230106-System.out.println(":"+p[n]);
+            //20230106-S_logger.Log.logger.info("" + ":"+p[n]);
         }
         g2.setColor(Color.RED);
         for (int i = 0; i < (128 - 1); i++) {
@@ -50,9 +50,9 @@ public class Jp2 extends Panel implements Runnable {
                 r = r + p[n] * Math.cos(2 * pi * k * n / N);
                 i = i + p[n] * Math.sin(2 * pi * k * n / N);
             }
-            //	//20230106-System.out.println(":"+r+":"+i);
+            //	//20230106-S_logger.Log.logger.info("" + ":"+r+":"+i);
             f[k] = Math.sqrt(r * r + i * i) * 2;
-            //20230106-System.out.println("::"+f[k]);
+            //20230106-S_logger.Log.logger.info("" + "::"+f[k]);
         }
         g2.setColor(Color.blue);
         f[10] = 100.0;
@@ -69,7 +69,7 @@ public class Jp2 extends Panel implements Runnable {
                 i = i + f[n] * Math.sin(2 * pi * k * (n) / N);
             }
             p[k] = (r - i) / 6;
-            //20230106-System.out.println(":::"+p[k]);
+            //20230106-S_logger.Log.logger.info("" + ":::"+p[k]);
         }
         g2.setColor(Color.black);
 
@@ -85,7 +85,7 @@ public class Jp2 extends Panel implements Runnable {
                 i = i + p[n] * Math.sin(2 * pi * k * n / N);
             }
             f[k] = Math.sqrt(r * r + i * i) / 10;
-            //20230106-System.out.println("::"+f[k]);
+            //20230106-S_logger.Log.logger.info("" + "::"+f[k]);
         }
         g2.setColor(Color.green);
         for (int i = 600; i < (600 + 128 - 1); i++) {
@@ -100,7 +100,7 @@ public class Jp2 extends Panel implements Runnable {
                 i = i + f[n] * Math.sin(2 * pi * k * (n) / N);
             }
             p[k] = (r - i) / 10;
-            //20230106-System.out.println(":::"+p[k]);
+            //20230106-S_logger.Log.logger.info("" + ":::"+p[k]);
         }
         g2.setColor(Color.black);
         for (int i = 800; i < (800 + 128 - 1); i++) {

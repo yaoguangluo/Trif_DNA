@@ -91,7 +91,7 @@ public class VPCBackEnd {
                 return "";    //去写操作权限 罗瑶光
             }
             //return VtoV.ObjectToJsonString(RestNLPPortImpl.dataYL(_A, data.get("input")));
-            //20230106-System.out.println(data.get("medicine"));
+            //20230106-S_logger.Log.logger.info("" + data.get("medicine"));
             return VtoV.ObjectToJsonString(RestNLPPortImpl.dataYL(data.getString("medicine"), NE));
             //这是我2
         }

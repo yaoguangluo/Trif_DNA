@@ -31,19 +31,19 @@ import DetaSrc.org.deta.boot.sets.VPCSResponse;
 					true);
 		} catch (Exception e) {
 			System.out.flush();
-			System.out.println(e.getMessage());
+			S_logger.Log.logger.info("" + e.getMessage());
 			System.out.flush();
-			System.out.println(vPCSResponse.getHashCode() + "-processRest err");
+			S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-processRest err");
 			System.out.flush();
-			System.out.println(vPCSRequest.getRequestLink());
+			S_logger.Log.logger.info("" + vPCSRequest.getRequestLink());
 			System.out.flush();
-			System.out.println(vPCSRequest.getRequestFilePath());
+			S_logger.Log.logger.info("" + vPCSRequest.getRequestFilePath());
 			StableBlob.addException();
 			return;
 		}
 		if (output.length() > 0) {
 			System.out.flush();
-			System.out.println("success YL");
+			S_logger.Log.logger.info("" + "success YL");
 			vPCSResponse.printWriter.flush();
 			vPCSResponse.printWriter.println("HTTP/1.1 200 OK\n\n");
 			output = output.charAt(0) == '"'
@@ -56,13 +56,13 @@ import DetaSrc.org.deta.boot.sets.VPCSResponse;
 			vPCSResponse.printWriter.println(output.replace("\\\"", "\""));
 			vPCSResponse.printWriter.close();
 			System.out.flush();
-			System.out.println(vPCSResponse.getHashCode() + "-f");
+			S_logger.Log.logger.info("" + vPCSResponse.getHashCode() + "-f");
 		} else {
 			vPCSResponse.printWriter.flush();
 			vPCSResponse.printWriter.println("HTTP/1.1 204 OK\n\n");
 			vPCSResponse.printWriter.close();
 			System.out.flush();
-			System.out.println(
+			S_logger.Log.logger.info("" + 
 					vPCSResponse.getHashCode() + "-processRest length err");
 			System.out.flush();
 			System.out.print(vPCSRequest.getRequestLink());

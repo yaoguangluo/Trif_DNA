@@ -53,32 +53,32 @@ public class EnvironmentInit extends EnvironmentInit_X_S {
 		prediction = emotionMap.getPredictionMap();
 		distinction = emotionMap.getDistinctionMap();
 		sets = set;
-		//System.out.println("400-8-0001-004-" + sets.size());
+		//S_logger.Log.logger.info("" + "400-8-0001-004-" + sets.size());
 		wordFrequencyMap = _A.getWordFrequencyByReturnSortMap(sets,
 			NE);
 		//if(wordFrequencyMap.containsKey("街")) {
-		//  System.out.println("400-8-0001-007-03-" + wordFrequencyMap.size());
+		//  S_logger.Log.logger.info("" + "400-8-0001-007-03-" + wordFrequencyMap.size());
 		//}
-		//System.out.println("400-8-0001-005-" + wordFrequencyMap.size());
+		//S_logger.Log.logger.info("" + "400-8-0001-005-" + wordFrequencyMap.size());
 		rationMap = NE.app_S.ratioMap_E;
 		emotionSampleMap = rationMap.getEnvironmentSampleMap(
 			wordFrequencyMap);
 		//if(emotionSampleMap.containsKey("街")) {
-		//	  System.out.println("400-8-0001-007-04-" + emotionSampleMap.size());
+		//	  S_logger.Log.logger.info("" + "400-8-0001-007-04-" + emotionSampleMap.size());
 		// }
-		//System.out.println("400-8-0001-006-" + emotionSampleMap.size());
+		//S_logger.Log.logger.info("" + "400-8-0001-006-" + emotionSampleMap.size());
 		rationMap.IQ_Motivation(emotionSampleMap, motivation);
 		rationMap.IQ_Trending(emotionSampleMap, trending);
 		rationMap.IQ_Prediction(emotionSampleMap, prediction);
-		//System.out.println("400-8-0001-007-" + distinction.size());
+		//S_logger.Log.logger.info("" + "400-8-0001-007-" + distinction.size());
 		//if(distinction.containsKey("街")) {
-		//	  System.out.println("400-8-0001-007-01-" + distinction.getString("街"));
+		//	  S_logger.Log.logger.info("" + "400-8-0001-007-01-" + distinction.getString("街"));
 		//}
 		//if(distinction.containsKey("餐饮")) {
-		//  System.out.println("400-8-0001-007-01-" + distinction.getString("餐饮"));
+		//  S_logger.Log.logger.info("" + "400-8-0001-007-01-" + distinction.getString("餐饮"));
 		//}
 		rationMap.IQ_Distinction(emotionSampleMap, distinction);
-		//System.out.println("400-8-0001-008-" + emotionSampleMap.size());
+		//S_logger.Log.logger.info("" + "400-8-0001-008-" + emotionSampleMap.size());
 	}
 
 	/*

@@ -755,7 +755,7 @@ public class RestMedicinePort_E {
     }
 
     public static Object doSearch(App app, String string) {
-        //20230106-System.out.println(app.app_S.name.getText());
+        //20230106-S_logger.Log.logger.info("" + app.app_S.name.getText());
         if (!app.app_S.name.getText().contains(string)) {
             app.app_S.name.setText(app.app_S.name.getText() + string);
         }

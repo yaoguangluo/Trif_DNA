@@ -71,12 +71,12 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 
 	// Trif later
 	protected void bootDetaBackEnd(App NE) {
-		Log.logger.info("启动400编码调试开始-00000052");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000052");
 //		SocketThreadPool socketThreadPool = new SocketThreadPool();
 //		new BootVPCSBackEnd(NE.app_S, NE).bootBackEnd(socketThreadPool, NE);
 //		;
 //		DetaThread.sleepDeta(6);
-//		System.out.println("启动400编码调试开始-00000052-01-05");
+//		S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-01-05");
 //		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
 //			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();
 //			text = "\r\n" + "----载入德塔 后端服务器 完毕！" + text;
@@ -88,26 +88,26 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 	}
 
 	protected void bootDetaSJFX(App NE) {
-		Log.logger.info("启动400编码调试开始-00000052-01-06");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000052-01-06");
 		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
 			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();
 			text = "\r\n" + "----正在载入数据分析页面！" + text;
 			text = "\r\n" + "..." + text;
 			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
 		}
-		Log.logger.info("启动400编码调试开始-00000055");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055");
 		Container containerPanel = new Container();
 		MakeContainerSJFX makeContainerSJFX = new MakeContainerSJFX(
 				NE.app_S.tableData_old, NE.app_S.text, containerPanel, NE);
 		makeContainerSJFX.start();
 		while (!makeContainerSJFX.isFinished) {
-			Log.logger.info("启动400编码调试开始-00000055-1");
+			S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-1");
 			DetaThread.sleepDeta(500);
 		}
 	}
 
 	protected void bootDetaZNSZ(App NE) {
-		Log.logger.info("启动400编码调试开始-00000056");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000056");
 		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
 			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();
 			text = "\r\n" + "----正在载入智能声诊页面！" + text;
@@ -146,7 +146,7 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 	}
 
 	protected void bootDetaLSYM(App NE) {
-		Log.logger.info("启动400编码调试开始-00000057");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000057");
 		DetaThread.sleepDeta(300);
 		//
 		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
@@ -155,7 +155,7 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 			text = "\r\n" + "..." + text;
 			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
 		}
-		Log.logger.info("启动400编码调试开始-00000058");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000058");
 		Container container = new Container();
 		MakeContainerTemp makeContainerTemp = new MakeContainerTemp(container,
 				NE);
@@ -176,7 +176,7 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 	}
 
 	protected void bootDetaZNXZ(App NE) throws InterruptedException, IOException {
-		Log.logger.info("启动400编码调试开始-00000059");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000059");
 		doAmedicinefilter(NE);
 		if (NE.app_S.appConfig.SectionJPanel.jTextPane != null) {
 			String text = NE.app_S.appConfig.SectionJPanel.jTextPane.getText();
@@ -184,7 +184,7 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 			text = "\r\n" + "..." + text;
 			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(text);
 		}
-		Log.logger.info("启动400编码调试开始-00000060");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000060");
 		// 稍后
 		if (NE.tempString.contains("测试") || NE.tempString.contains("test")) {
 		} else {
@@ -213,7 +213,7 @@ public class AppInit_X_PageLoad_S extends AppInit_X_PageLoad_SD{
 		makeContainerZYNKFJ.start();
 	}
 }
-//		System.out.println("启动400编码调试开始-00000061");
+//		S_logger.Log.logger.info("" + "启动400编码调试开始-00000061");
 //DetaThread.sleepDeta(300);
 //if (app.appConfig.vPCSRestPanel.tabNamesHook[16]) {
 //	if (app.appConfig.SectionJPanel.jTextPane != null) {

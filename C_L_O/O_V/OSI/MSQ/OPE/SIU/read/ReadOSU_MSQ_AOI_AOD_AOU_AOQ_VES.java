@@ -52,7 +52,7 @@ public class ReadOSU_MSQ_AOI_AOD_AOU_AOQ_VES extends OSU_AOU_AOQ_VES {
 		button.setBounds(0, 120, 150, 30);
 		button.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-            	//20230106-System.out.println(e.getSource());
+            	//20230106-S_logger.Log.logger.info("" + e.getSource());
                 	close= true;
                 	_SQ__OPE_OPC_ECI.value= 1;
                 	_SQ__OPE_OPC_ECI.searchString= filterWords.getText();
@@ -70,7 +70,7 @@ public class ReadOSU_MSQ_AOI_AOD_AOU_AOQ_VES extends OSU_AOU_AOQ_VES {
 		buttonRoot.setBounds(0, 0, 150, 30);
 		buttonRoot.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-            	//20230106-System.out.println(e.getSource());
+            	//20230106-S_logger.Log.logger.info("" + e.getSource());
             	String fileCurrentpath= "";
 //        		javax.swing.JOptionPane jOptionPane= new JOptionPane(S_Data.ATTENSION_SELECT_ENSURE
 //        				+ fileCurrentpath+ S_Data.MARK_QUESTION);
@@ -87,7 +87,7 @@ public class ReadOSU_MSQ_AOI_AOD_AOU_AOQ_VES extends OSU_AOU_AOQ_VES {
 				jFileChooser.showDialog(new Frame(), S_Annotation.ATTENSION_SELECT_ENSURE);
 				File file= jFileChooser.getSelectedFile();
 				fileCurrentpath= file.getAbsolutePath();
-	        		//20230106-System.out.println(fileCurrentpath);
+	        		//20230106-S_logger.Log.logger.info("" + fileCurrentpath);
         		labelWords.setText(fileCurrentpath);
             }
         });   
@@ -101,6 +101,6 @@ public class ReadOSU_MSQ_AOI_AOD_AOU_AOQ_VES extends OSU_AOU_AOQ_VES {
 		close= false;
  	}
 	public void config(){    
-		//20230106-System.out.println(S_ShellETL.SHELL_ETL_DID_CONFIG);       
+		//20230106-S_logger.Log.logger.info("" + S_ShellETL.SHELL_ETL_DID_CONFIG);       
 	}
 }

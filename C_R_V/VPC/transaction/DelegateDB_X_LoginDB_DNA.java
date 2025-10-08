@@ -48,7 +48,7 @@ public class DelegateDB_X_LoginDB_DNA {
 
         pDE_RNA_Formular.doKeyUnPress(tokenCerts.getPdnPassword()
             , pDE_RNA_Formular1, true);
-        //20230106-System.out.println("pds--3>"+ pDE_RNA_Formular1.pds);
+        //20230106-S_logger.Log.logger.info("" + "pds--3>"+ pDE_RNA_Formular1.pds);
         //
         if (!pDE_RNA_Formular1.pde.equals(usrToken.getuPassword())) {
             IMV_SQI out = new IMV_SQI();
@@ -63,7 +63,7 @@ public class DelegateDB_X_LoginDB_DNA {
         String passwordString = String_ESU_X_charsetSwap._E(token.getmPassword(), "UTF8"
             , "UTF8");
         String passwordEncoder = String_ESU_X_stringToURIencode._E(passwordString, "UTF8");
-        //20230106-System.out.println("pds--1>"+ token.getmPasswordPDS());
+        //20230106-S_logger.Log.logger.info("" + "pds--1>"+ token.getmPasswordPDS());
         String de = token.getUpdsde(); //对应PDS 概率钥匙加密
         String ds = token.getUpdsds(); //对应PDS 概率钥匙加密
         String ie = token.getUpdsie(); //对应PDS 概率钥匙加密

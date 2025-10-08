@@ -504,7 +504,7 @@ public class CoAuthorForWord extends CoAuthorForWord_XCDX implements GLEventList
                         , GL.GL_UNSIGNED_BYTE, checkImageBuf);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.out.println("2");
+                    S_logger.Log.logger.info("" + "2");
                 }
                 double root1[] = new double[3];
                 for (int regi = 0; regi < root1.length; regi++) {

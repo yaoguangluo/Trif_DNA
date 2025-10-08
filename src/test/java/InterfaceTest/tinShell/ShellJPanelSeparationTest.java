@@ -8,6 +8,7 @@ import OPE.OEQ.MCQ.OVU.PQE.osgi.OSU_OVQ_OSQ_VSQ;
 import OPE.OVU.MVU.OVU.PQE.nodeEdit.LinkNode;
 import O_V.OSM.shell.E_pl_XA_E;
 import S_I.OSI.PEI.PCI.PSI.tinShell.TinMap;
+import S_logger.Log;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -284,7 +285,7 @@ class ShellJPanelSeparationTest {
 	@Test
 	void testTinshell() throws InterruptedException, IOException {
 		// test without mock api
-		System.out.println("test without mock api -- tinshell 批处理测试 执行复杂"
+		S_logger.Log.logger.info("" + "test without mock api -- tinshell 批处理测试 执行复杂"
 				+ "条件搜索逻辑--我本地苹果mac上已经调通可运行。方便我之后的各类型测试");
 		ShellJPanelTest shellJPanelTest = new ShellJPanelTest();
 		// -1
@@ -400,7 +401,7 @@ class ShellJPanelSeparationTest {
 			String string = iterator.next();
 			NE.app_S.appConfig.SectionJPanel.jTextPane
 					.setText(output.get(string).toString());
-			S_logger.Log.logger.info("line-->:" + output.get(string).toString());
+			S_logger.Log.logger.info("" + "line-->:" + output.get(string).toString());
 			// stringBuilder.append("/r/n" +
 			// output.get(string).toString());
 		}
@@ -409,7 +410,7 @@ class ShellJPanelSeparationTest {
 			Iterator<String> iterators = NE.app_S.helpVerbalMap.didJustNow
 					.keySet().iterator();
 			while (iterators.hasNext()) {
-				S_logger.Log.logger.info("Action-->:" + iterators.next());
+				S_logger.Log.logger.info("" + "Action-->:" + iterators.next());
 			}
 		}
 		return output;

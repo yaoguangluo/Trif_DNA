@@ -54,18 +54,18 @@ public class Test{
 		Iterator<String> iterator= hook.exceptionList.iterator();
 		while(iterator.hasNext()) {
 			iterator.next();
-			//20230106-//20230106-System.out.println(iterator.next());
+			//20230106-//20230106-S_logger.Log.logger.info("" + iterator.next());
 		}
 		//map输出
 		Iterator<String> mapKeyIterator= hook.exceptionMap.keySet().iterator();
 		while(mapKeyIterator.hasNext()) {
 			ExceptInformation exceptInformation= hook.exceptionMap.get(mapKeyIterator.next());
-			//20230106-System.out.println("错误次数:"+ exceptInformation.exceptionCount);
-			//20230106-System.out.println("错误标记:"+ exceptInformation.exceptionSession);
-			//20230106-System.out.println("异常发生的时间:");
+			//20230106-S_logger.Log.logger.info("" + "错误次数:"+ exceptInformation.exceptionCount);
+			//20230106-S_logger.Log.logger.info("" + "错误标记:"+ exceptInformation.exceptionSession);
+			//20230106-S_logger.Log.logger.info("" + "异常发生的时间:");
 			Iterator<Long> iteratorLong= exceptInformation.exceptionTimes.iterator();
 			while(iteratorLong.hasNext()) {
-				//20230106-System.out.println(iteratorLong.next());
+				//20230106-S_logger.Log.logger.info("" + iteratorLong.next());
 			}
 			hook.showException(exceptInformation.getException());
 		}

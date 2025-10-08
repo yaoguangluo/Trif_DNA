@@ -12,7 +12,7 @@ public class GuassianFilterRun extends OSU_OPE_OPC_ECI{
  	}
 	
 	public void run(final GuassianFilterView _SQ__OVQ_OSQ_VSQ) {
-		//20230106-System.out.println("runed"+value); 
+		//20230106-S_logger.Log.logger.info("" + "runed"+value); 
 		_SQ__OVQ_OSQ_VSQ.lygout=new LYGFileIO();
 	    _SQ__OVQ_OSQ_VSQ.lygout.image= Guassian.P(toplygin.image, 3.0, 3.0, 1.6);
 	}

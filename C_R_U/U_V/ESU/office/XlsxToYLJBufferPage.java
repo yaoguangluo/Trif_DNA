@@ -38,7 +38,7 @@ public class XlsxToYLJBufferPage {
         @SuppressWarnings("unused")
         Object[][] db = new XlsxToYLJBufferPage().readNonObjectXlsx(null
             , cellPhoneColumn, hasSpec);
-        //System.out.println(db.toString());
+        //S_logger.Log.logger.info("" + db.toString());
     }
 
     public static String[] doHasSpec(XSSFSheet sheet, CommonXlsPage_X_S_s commonXlsPage_X_S_s
@@ -57,7 +57,7 @@ public class XlsxToYLJBufferPage {
                     specNames[cellNumber] = cellInputTemp.getStringCellValue();
                     spec.I_CulumnType(cellInputTemp.getStringCellValue(), "String");
                     commonXlsPage_X_S_s.columnTitle[cellNumber] = specNames[cellNumber];
-                    //System.out.println(cellInputTemp.getStringCellValue());
+                    //S_logger.Log.logger.info("" + cellInputTemp.getStringCellValue());
                 } else if (cellInputTemp.getCellType().equals(CellType.NUMERIC)) {
                     if (DateUtil.isCellDateFormatted(cellInputTemp)) {
                         specNames[cellNumber] = "" + cellInputTemp
@@ -65,18 +65,18 @@ public class XlsxToYLJBufferPage {
                         spec.I_CulumnType(""
                                 + cellInputTemp.getDateCellValue().getTime()
                             , "StringWithDateLong");
-                        //System.out.println(cellInputTemp.getDateCellValue());
+                        //S_logger.Log.logger.info("" + cellInputTemp.getDateCellValue());
                     } else {
                         BigDecimal big = BigDecimal.valueOf(cellInputTemp.getNumericCellValue());
                         if (cellNumber == cellPhoneColumn) {
                             specNames[cellNumber] = "" + big;
                             spec.I_CulumnType("" + big, "StringWithLong");
-                            //System.out.println(big.toString());
+                            //S_logger.Log.logger.info("" + big.toString());
                         } else {
                             specNames[cellNumber] = "" + big.doubleValue();
                             //specNames[cellNumber]=new String(cellInputTemp.toString());
                             spec.I_CulumnType("" + big.doubleValue(), "DoubleString");
-                            //System.out.println(cellInputTemp.toString());
+                            //S_logger.Log.logger.info("" + cellInputTemp.toString());
                         }
                     }
                     commonXlsPage_X_S_s.columnTitle[cellNumber] = specNames[cellNumber];
@@ -84,13 +84,13 @@ public class XlsxToYLJBufferPage {
                     specNames[cellNumber] = cellInputTemp.toString();
                     spec.I_CulumnType(cellInputTemp.toString(), "String");
                     commonXlsPage_X_S_s.columnTitle[cellNumber] = specNames[cellNumber];
-                    //System.out.println(cellInputTemp.toString());
+                    //S_logger.Log.logger.info("" + cellInputTemp.toString());
                 }
             } else {
                 specNames[cellNumber] = "" + cellNumber;
                 spec.I_CulumnType("" + cellNumber, "String");
                 commonXlsPage_X_S_s.columnTitle[cellNumber] = specNames[cellNumber];
-                //System.out.println("");
+                //S_logger.Log.logger.info("" + "");
             }
         }
         tableBuffer.I_Spec(spec);
@@ -148,14 +148,14 @@ public class XlsxToYLJBufferPage {
                             if (cellInputTemp.getCellType().equals(CellType.STRING)) {
                                 cellBuffer.I_CellValue(cellInputTemp.getStringCellValue());
                                 output[rowNumber - startRow][cellNumber] = cellInputTemp.getStringCellValue();
-                                //System.out.println(cellInputTemp.getStringCellValue());
+                                //S_logger.Log.logger.info("" + cellInputTemp.getStringCellValue());
                             } else if (cellInputTemp.getCellType().equals(CellType.NUMERIC)) {
                                 if (DateUtil.isCellDateFormatted(cellInputTemp)) {
                                     //yi lv mo ren current millseconds
                                     cellBuffer.I_CellValue(cellInputTemp.getDateCellValue().getTime());
                                     output[rowNumber - startRow][cellNumber]
                                         = cellInputTemp.getDateCellValue().getTime();
-                                    //System.out.println(cellInputTemp.getDateCellValue());
+                                    //S_logger.Log.logger.info("" + cellInputTemp.getDateCellValue());
                                 } else {
                                     BigDecimal big = BigDecimal.valueOf(cellInputTemp.getNumericCellValue());
                                     cellBuffer.I_CellValue(big.toString());
@@ -164,12 +164,12 @@ public class XlsxToYLJBufferPage {
                             } else {
                                 cellBuffer.I_CellValue(cellInputTemp.toString());
                                 output[rowNumber - startRow][cellNumber] = cellInputTemp.toString();
-                                //System.out.println(cellInputTemp.toString());
+                                //S_logger.Log.logger.info("" + cellInputTemp.toString());
                             }
                         } else {
                             cellBuffer.I_CellValue("");
                             output[rowNumber - startRow][cellNumber] = "";
-                            //System.out.println("");
+                            //S_logger.Log.logger.info("" + "");
                         }
                         if (hasSpec) {
                             rowBuffer.putCell(specNames[cellNumber], cellBuffer);

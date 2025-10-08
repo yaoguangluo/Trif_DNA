@@ -2,6 +2,8 @@ package test.java.InterfaceTest.computingPDE.pdi;
 
 import org.junit.jupiter.api.Test;
 
+import S_logger.Log;
+
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -66,37 +68,37 @@ class RangePDITest {
 		swapKeyAC.delete(0, swapKeyAC.length());
 		stringAK = doAKACSwap(inputInitons, 99, swapKeyAK);
 		stringAC = doAKACSwap(inputInitons, 1, swapKeyAC);
-		System.out.println("输入的十六元基字符->" + inputInitons);
-		System.out.println("浓度比值99:1");
-		System.out.println("强酸浓度下PDE变换->" + stringAK);
-		System.out.println("强酸浓度下改变概率->" + new String(swapKeyAK));
-		System.out.println("强碱浓度下PDE变换->" + stringAC);
-		System.out.println("强碱浓度下改变概率->" + new String(swapKeyAC));
-		System.out.println();
+		S_logger.Log.logger.info("" + "输入的十六元基字符->" + inputInitons);
+		S_logger.Log.logger.info("" + "浓度比值99:1");
+		S_logger.Log.logger.info("" + "强酸浓度下PDE变换->" + stringAK);
+		S_logger.Log.logger.info("" + "强酸浓度下改变概率->" + new String(swapKeyAK));
+		S_logger.Log.logger.info("" + "强碱浓度下PDE变换->" + stringAC);
+		S_logger.Log.logger.info("" + "强碱浓度下改变概率->" + new String(swapKeyAC));
+		S_logger.Log.logger.info("" + "");
 		//弱腐蚀环境变换
 		swapKeyAK.delete(0, swapKeyAK.length());
 		swapKeyAC.delete(0, swapKeyAC.length());
 		stringAK = doAKACSwap(inputInitons, 75, swapKeyAK);
 		stringAC = doAKACSwap(inputInitons, 25, swapKeyAC);
-		System.out.println("输入的十六元基字符->" + inputInitons);
-		System.out.println("浓度比值75:25");
-		System.out.println("强酸浓度下PDE变换->" + stringAK);
-		System.out.println("强酸浓度下改变概率->" + new String(swapKeyAK));
-		System.out.println("强碱浓度下PDE变换->" + stringAC);
-		System.out.println("强碱浓度下改变概率->" + new String(swapKeyAC));
-		System.out.println();
+		S_logger.Log.logger.info("" + "输入的十六元基字符->" + inputInitons);
+		S_logger.Log.logger.info("" + "浓度比值75:25");
+		S_logger.Log.logger.info("" + "强酸浓度下PDE变换->" + stringAK);
+		S_logger.Log.logger.info("" + "强酸浓度下改变概率->" + new String(swapKeyAK));
+		S_logger.Log.logger.info("" + "强碱浓度下PDE变换->" + stringAC);
+		S_logger.Log.logger.info("" + "强碱浓度下改变概率->" + new String(swapKeyAC));
+		S_logger.Log.logger.info("" + "");
 		//中性环境变换
 		swapKeyAK.delete(0, swapKeyAK.length());
 		swapKeyAC.delete(0, swapKeyAC.length());
 		stringAK = doAKACSwap(inputInitons, 55, swapKeyAK);
 		stringAC = doAKACSwap(inputInitons, 45, swapKeyAC);
-		System.out.println("输入的十六元基字符->" + inputInitons);
-		System.out.println("浓度比值55:45");
-		System.out.println("强酸浓度下PDE变换->" + stringAK);
-		System.out.println("强酸浓度下改变概率->" + swapKeyAK);
-		System.out.println("强碱浓度下PDE变换->" + stringAC);
-		System.out.println("强碱浓度下改变概率->" + new String(swapKeyAC));
-		System.out.println();
+		S_logger.Log.logger.info("" + "输入的十六元基字符->" + inputInitons);
+		S_logger.Log.logger.info("" + "浓度比值55:45");
+		S_logger.Log.logger.info("" + "强酸浓度下PDE变换->" + stringAK);
+		S_logger.Log.logger.info("" + "强酸浓度下改变概率->" + swapKeyAK);
+		S_logger.Log.logger.info("" + "强碱浓度下PDE变换->" + stringAC);
+		S_logger.Log.logger.info("" + "强碱浓度下改变概率->" + new String(swapKeyAC));
+		S_logger.Log.logger.info("" + "");
 		//输出
 		//Connected to the target VM, address: '127.0.0.1:54924', transport: 'socket'
 		//输入的十六元基字符->EDVSDTUVSVSE

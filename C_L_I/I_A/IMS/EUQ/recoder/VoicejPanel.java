@@ -109,11 +109,11 @@ public class VoicejPanel extends JPanel implements Runnable {
                 int frameSizeInBytes = format.getFrameSize();
                 int bufferLengthInFrames = line.getBufferSize() / 8;
                 int bufferLengthInBytes = bufferLengthInFrames * frameSizeInBytes;
-                //  //20230106-System.out.println("bufferLengthInBytes : " + bufferLengthInBytes +" **");
+                //  //20230106-S_logger.Log.logger.info("" + "bufferLengthInBytes : " + bufferLengthInBytes +" **");
                 byte[] data = new byte[bufferLengthInBytes];
                 int numBytesRead = 0;
                 line.start();
-                ////20230106-System.out.println(line);
+                ////20230106-S_logger.Log.logger.info("" + line);
                 for (int i = 0; i < 20; i++) {
                     if ((numBytesRead = line.read(data, 0, bufferLengthInBytes)) == -1) {
                         break;
@@ -135,7 +135,7 @@ public class VoicejPanel extends JPanel implements Runnable {
                 ByteArrayInputStream bais = new ByteArrayInputStream(audioBytes);
                 AudioInputStream ais = new AudioInputStream(bais, format, audioBytes.length / format.getFrameSize());
                 lines = sw.getVectorLines1(ais);
-                //20230106-System.out.println(sw.pshock-400);
+                //20230106-S_logger.Log.logger.info("" + sw.pshock-400);
                 jp3.lines = lines;
                 jp3.paint(getGraphics());
                 //显示最大值

@@ -50,15 +50,15 @@ public class BootNeroDoc extends Thread implements Runnable {
 
     public void run() {
         try {
-            //20230106-System.out.println(fileCurrentpath);
+            //20230106-S_logger.Log.logger.info("" + fileCurrentpath);
             if (null == fileCurrentpath || fileCurrentpath.isEmpty()
                 || !fileCurrentpath.contains(S_Annotation.FILE_FORMAT_ETL)) {
-                //20230106-System.out.println(S_Annotation.ATTENSION_RECHOICE);
+                //20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
                 return;
             }
             File file = new File(fileCurrentpath);
             if (!file.isFile()) {
-                //20230106-System.out.println(S_Annotation.ATTENSION_RECHOICE);
+                //20230106-S_logger.Log.logger.info("" + S_Annotation.ATTENSION_RECHOICE);
                 return;
             }
             DetaThread.sleepDeta(2);

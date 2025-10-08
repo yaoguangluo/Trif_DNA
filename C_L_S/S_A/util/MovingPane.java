@@ -45,7 +45,7 @@ public class MovingPane extends JScrollPane implements MouseMotionListener
         }
         int[] ss = new int[1024 * 100 * 100];
         ss[10000000] = 4;
-        System.out.println(ss[10000000]);
+        S_logger.Log.logger.info("" + ss[10000000]);
 
         CanvasPane canvasPane=new CanvasPane();
         canvasPane.setSize(1300, 460);

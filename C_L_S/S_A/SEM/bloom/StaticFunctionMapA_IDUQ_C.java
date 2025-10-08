@@ -68,19 +68,19 @@ public interface StaticFunctionMapA_IDUQ_C {
 	//pde计算 确定pDE_RNA_FullFormular 变量中要有 肽语 肽锁 散列 的输入值。
 	public static PDI_X_ doPDE(App NE) {
 		PDI_X_ pDE_RNA_FullFormular = NE._I_U.pDE_RNA_FullFormular_X;
-		//20230106-System.out.println("肽语: "+ pDE_RNA_FullFormular.pdw);
-		//20230106-System.out.println("肽锁: "+ pDE_RNA_FullFormular.lock);
-		//20230106-System.out.println("散列肽语:"+ pDE_RNA_FullFormular.code);
+		//20230106-S_logger.Log.logger.info("" + "肽语: "+ pDE_RNA_FullFormular.pdw);
+		//20230106-S_logger.Log.logger.info("" + "肽锁: "+ pDE_RNA_FullFormular.lock);
+		//20230106-S_logger.Log.logger.info("" + "散列肽语:"+ pDE_RNA_FullFormular.code);
 		//pDE_RNA_FullFormular.bys= "0.6/0.3/0.5/0.632";
-		//20230106-System.out.println("静态密钥: "+ pDE_RNA_FullFormular.bys);
+		//20230106-S_logger.Log.logger.info("" + "静态密钥: "+ pDE_RNA_FullFormular.bys);
 		pDE_RNA_FullFormular.doKeyPress(pDE_RNA_FullFormular.code,
 			pDE_RNA_FullFormular, false);
-		//20230106-System.out.println("静态肽展降元概率钥匙E: "+ pDE_RNA_FullFormular.pdedeKey);
-		//20230106-System.out.println("静态肽展降元概率钥匙S: "+ pDE_RNA_FullFormular.pdedsKey);
-		//20230106-System.out.println("静态肽展降元: "+ pDE_RNA_FullFormular.pds);
-		//20230106-System.out.println("静态肽展增元概率钥匙E: "+ pDE_RNA_FullFormular.pdeieKey);
-		//20230106-System.out.println("静态肽展增元概率钥匙S: "+ pDE_RNA_FullFormular.pdeisKey);
-		//20230106-System.out.println("静态肽展增元: "+ pDE_RNA_FullFormular.pde);
+		//20230106-S_logger.Log.logger.info("" + "静态肽展降元概率钥匙E: "+ pDE_RNA_FullFormular.pdedeKey);
+		//20230106-S_logger.Log.logger.info("" + "静态肽展降元概率钥匙S: "+ pDE_RNA_FullFormular.pdedsKey);
+		//20230106-S_logger.Log.logger.info("" + "静态肽展降元: "+ pDE_RNA_FullFormular.pds);
+		//20230106-S_logger.Log.logger.info("" + "静态肽展增元概率钥匙E: "+ pDE_RNA_FullFormular.pdeieKey);
+		//20230106-S_logger.Log.logger.info("" + "静态肽展增元概率钥匙S: "+ pDE_RNA_FullFormular.pdeisKey);
+		//20230106-S_logger.Log.logger.info("" + "静态肽展增元: "+ pDE_RNA_FullFormular.pde);
 		return pDE_RNA_FullFormular;
 	}
 
@@ -90,14 +90,14 @@ public interface StaticFunctionMapA_IDUQ_C {
 		pDE_RNA_FullFormular.time = "" + System.currentTimeMillis();
 		pDE_RNA_FullFormular.cacheId = "ID" + Math.random()
 			+ S_Common.STRING_SYMBOL_PER + Math.random();
-		//20230106-System.out.println("时间:  " + pDE_RNA_FullFormular.time);
-		//20230106-System.out.println("账号随机缓存字符串:  " + pDE_RNA_FullFormular.cacheId);
+		//20230106-S_logger.Log.logger.info("" + "时间:  " + pDE_RNA_FullFormular.time);
+		//20230106-S_logger.Log.logger.info("" + "账号随机缓存字符串:  " + pDE_RNA_FullFormular.cacheId);
 		pDE_RNA_FullFormular.session_key = pDE_RNA_FullFormular.pde;
-		//20230106-System.out.println("Session: " + pDE_RNA_FullFormular.session_key);
-		//20230106-System.out.println("=======================================================");
-		//20230106-System.out.println("开始前序验证：");
-		//20230106-System.out.println("开始Session解析： " + pDE_RNA_FullFormular.session_key);
-		//20230106-System.out.println("开始概率钥匙解析：" + pDE_RNA_FullFormular.pdedeKey+ pDE_RNA_FullFormular.pdedsKey
+		//20230106-S_logger.Log.logger.info("" + "Session: " + pDE_RNA_FullFormular.session_key);
+		//20230106-S_logger.Log.logger.info("" + "=======================================================");
+		//20230106-S_logger.Log.logger.info("" + "开始前序验证：");
+		//20230106-S_logger.Log.logger.info("" + "开始Session解析： " + pDE_RNA_FullFormular.session_key);
+		//20230106-S_logger.Log.logger.info("" + "开始概率钥匙解析：" + pDE_RNA_FullFormular.pdedeKey+ pDE_RNA_FullFormular.pdedsKey
 		//		+ pDE_RNA_FullFormular.pdeieKey+ pDE_RNA_FullFormular.pdeisKey);
 
 		PDI_X_ pDE_RNA_FullFormular1 = new PDI_X_();
@@ -112,13 +112,13 @@ public interface StaticFunctionMapA_IDUQ_C {
 
 		pDE_RNA_FullFormular.doKeyUnPress(pDE_RNA_FullFormular.code,
 			pDE_RNA_FullFormular1, true);
-		//20230106-System.out.println();
-		//20230106-System.out.println("得到原降元元基DNA序列："+ pDE_RNA_FullFormular.pds);
-		//20230106-System.out.println("得到新降元元基DNA序列："+ pDE_RNA_FullFormular1.pds);
-		//20230106-System.out.println("得到原元基DNA序列："+ pDE_RNA_FullFormular.pde);
-		//20230106-System.out.println("得到新元基DNA序列："+ pDE_RNA_FullFormular1.pde);
-		//20230106-System.out.println("验证正确？");
-		//20230106-System.out.println(pDE_RNA_FullFormular.pde.equals(pDE_RNA_FullFormular1.pde)? "正确": "失败");
+		//20230106-S_logger.Log.logger.info("" + "");
+		//20230106-S_logger.Log.logger.info("" + "得到原降元元基DNA序列："+ pDE_RNA_FullFormular.pds);
+		//20230106-S_logger.Log.logger.info("" + "得到新降元元基DNA序列："+ pDE_RNA_FullFormular1.pds);
+		//20230106-S_logger.Log.logger.info("" + "得到原元基DNA序列："+ pDE_RNA_FullFormular.pde);
+		//20230106-S_logger.Log.logger.info("" + "得到新元基DNA序列："+ pDE_RNA_FullFormular1.pde);
+		//20230106-S_logger.Log.logger.info("" + "验证正确？");
+		//20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormular.pde.equals(pDE_RNA_FullFormular1.pde)? "正确": "失败");
 		return pDE_RNA_FullFormular1;
 	}
 
@@ -126,8 +126,8 @@ public interface StaticFunctionMapA_IDUQ_C {
 	public static PDI_X_ doPostfixPDE(App NE) {
 		PDI_X_ pDE_RNA_FullFormular = NE._I_U.pDE_RNA_FullFormular_X;
 		PDI_X_ pDE_RNA_FullFormularNew = NE._I_U.pDE_RNA_FullFormularNew;
-		//20230106-System.out.println("==================================================");
-		//20230106-System.out.println("开始后序验证：");
+		//20230106-S_logger.Log.logger.info("" + "==================================================");
+		//20230106-S_logger.Log.logger.info("" + "开始后序验证：");
 		PDI_X_ pDE_RNA_FullFormular2 = new PDI_X_();
 		pDE_RNA_FullFormular2.pdeieKey = pDE_RNA_FullFormular.pdedeKey
 			.toString();
@@ -137,14 +137,14 @@ public interface StaticFunctionMapA_IDUQ_C {
 			.toString();
 		pDE_RNA_FullFormular2.pdedsKey = pDE_RNA_FullFormular.pdeisKey
 			.toString();
-		//20230106-System.out.println("准备计算元基DNA序列："+ pDE_RNA_FullFormularNew.pde);
+		//20230106-S_logger.Log.logger.info("" + "准备计算元基DNA序列："+ pDE_RNA_FullFormularNew.pde);
 		pDE_RNA_FullFormular2.doSessionKeyUnPress(
 			pDE_RNA_FullFormularNew.pde, pDE_RNA_FullFormular2, true);
-		//20230106-System.out.println();
-		//20230106-System.out.println("得到原续降元元基DNA序列："+ pDE_RNA_FullFormularNew.pds);
-		//20230106-System.out.println("得到后续降元元基DNA序列："+ pDE_RNA_FullFormular2.pds);
-		//20230106-System.out.println("验证正确？");
-		//20230106-System.out.println(pDE_RNA_FullFormularNew.pds.equals(pDE_RNA_FullFormular2.pds)? "正确": "失败");
+		//20230106-S_logger.Log.logger.info("" + "");
+		//20230106-S_logger.Log.logger.info("" + "得到原续降元元基DNA序列："+ pDE_RNA_FullFormularNew.pds);
+		//20230106-S_logger.Log.logger.info("" + "得到后续降元元基DNA序列："+ pDE_RNA_FullFormular2.pds);
+		//20230106-S_logger.Log.logger.info("" + "验证正确？");
+		//20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormularNew.pds.equals(pDE_RNA_FullFormular2.pds)? "正确": "失败");
 
 		return pDE_RNA_FullFormular2;
 	}
@@ -153,8 +153,8 @@ public interface StaticFunctionMapA_IDUQ_C {
 	public static PDI_X_ doSurffixPDE(App NE) {
 		PDI_X_ pDE_RNA_FullFormular = NE._I_U.pDE_RNA_FullFormular_X;
 		PDI_X_ pDE_RNA_FullFormularNew = NE._I_U.pDE_RNA_FullFormularNew;
-		//20230106-System.out.println("===============================================");
-		//20230106-System.out.println("开始整序验证：");
+		//20230106-S_logger.Log.logger.info("" + "===============================================");
+		//20230106-S_logger.Log.logger.info("" + "开始整序验证：");
 		PDI_X_ pDE_RNA_FullFormular3 = new PDI_X_();
 
 		pDE_RNA_FullFormular3.pdeieKey = pDE_RNA_FullFormular.pdeieKey
@@ -166,17 +166,17 @@ public interface StaticFunctionMapA_IDUQ_C {
 		pDE_RNA_FullFormular3.pdedsKey = pDE_RNA_FullFormular.pdeisKey
 			.toString();
 
-		//20230106-System.out.println("准备计算元基DNA序列："+ pDE_RNA_FullFormularNew.pde);//pde加成
+		//20230106-S_logger.Log.logger.info("" + "准备计算元基DNA序列："+ pDE_RNA_FullFormularNew.pde);//pde加成
 		pDE_RNA_FullFormular3.doFullSessionKeyUnPress(
 			pDE_RNA_FullFormularNew.pde, pDE_RNA_FullFormular3, true);
-		//20230106-System.out.println();
-		//20230106-System.out.println("得到原续降元元基DNA序列："+ pDE_RNA_FullFormularNew.pds);
-		//20230106-System.out.println("得到后续降元元基DNA序列："+ pDE_RNA_FullFormular3.pds);
-		//20230106-System.out.println("验证正确？");
-		//20230106-System.out.println(pDE_RNA_FullFormularNew.pds.equals(pDE_RNA_FullFormular3.pds)? "正确": "失败");
-		//20230106-System.out.println("准备整序计算元基DNA序列："+ pDE_RNA_FullFormularNew.pde);
-		//20230106-System.out.println("准备整序计算元基DNA序列："+ pDE_RNA_FullFormular3.pde);
-		//20230106-System.out.println(pDE_RNA_FullFormularNew.pde.equals(pDE_RNA_FullFormular3.pde)? "正确": "失败");
+		//20230106-S_logger.Log.logger.info("" + "");
+		//20230106-S_logger.Log.logger.info("" + "得到原续降元元基DNA序列："+ pDE_RNA_FullFormularNew.pds);
+		//20230106-S_logger.Log.logger.info("" + "得到后续降元元基DNA序列："+ pDE_RNA_FullFormular3.pds);
+		//20230106-S_logger.Log.logger.info("" + "验证正确？");
+		//20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormularNew.pds.equals(pDE_RNA_FullFormular3.pds)? "正确": "失败");
+		//20230106-S_logger.Log.logger.info("" + "准备整序计算元基DNA序列："+ pDE_RNA_FullFormularNew.pde);
+		//20230106-S_logger.Log.logger.info("" + "准备整序计算元基DNA序列："+ pDE_RNA_FullFormular3.pde);
+		//20230106-S_logger.Log.logger.info("" + pDE_RNA_FullFormularNew.pde.equals(pDE_RNA_FullFormular3.pde)? "正确": "失败");
 		return pDE_RNA_FullFormular3;
 	}
 }

@@ -22,7 +22,7 @@ public class SetLib {
         if (libpath == null || libpath.length() == 0) {
             throw new RuntimeException("lib path is null");
         }
-        System.out.println(System.getProperty("java.library.path"));
+        S_logger.Log.logger.info("" + System.getProperty("java.library.path"));
         //	String path= null;
         StringTokenizer st = new StringTokenizer(libpath
                 , System.getProperty("path.separator"));

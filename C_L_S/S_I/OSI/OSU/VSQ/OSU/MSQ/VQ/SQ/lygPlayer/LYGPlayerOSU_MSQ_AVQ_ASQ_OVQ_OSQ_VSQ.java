@@ -48,7 +48,7 @@ public class LYGPlayerOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ extends OSU_OVQ_OSQ_VSQ {
 				Dimension d= this.getSize();
 				int w= 800;
 				int h= 600;
-				// //20230106-System.out.println(d.width+"**"+d.height);
+				// //20230106-S_logger.Log.logger.info("" + d.width+"**"+d.height);
 				int INFOPAD= 15;
 				//Graphics g= getGraphics();  
 				Graphics2D g2= (Graphics2D) g;
@@ -61,7 +61,7 @@ public class LYGPlayerOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ extends OSU_OVQ_OSQ_VSQ {
 					g2.setColor(Color.black);
 					for (int i= 1; i < lines.size(); i++) {
 						Line2D v=(Line2D) lines.get(i);
-						//20230106-System.out.println("linenumber"+i+"codin->"+v.getX1()+"|"+v.getY1()+"|"+v.getX2()+"|"+v.getY2());
+						//20230106-S_logger.Log.logger.info("" + "linenumber"+i+"codin->"+v.getX1()+"|"+v.getY1()+"|"+v.getX2()+"|"+v.getY2());
 						g2.draw((Line2D) lines.get(i));
 					}
 				}

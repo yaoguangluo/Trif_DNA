@@ -47,7 +47,7 @@ public class SideEnd_X_getSideEnd2D {
         //之前用了java的自动sorthashmap加值排序，现在用元基编码后，成了普通hashmap，边界点没了自动连圈功能。
         List<AMV_MVS_VSQ_2D> output = new ArrayList<>();
         for (double aDouble : (Iterable<Double>) ratioSide.keySet()) {
-            System.out.println(aDouble);//aDouble排序可连线画圆。注意infinit 等。
+            S_logger.Log.logger.info("" + aDouble);//aDouble排序可连线画圆。注意infinit 等。
             output.add(ratioSide.get_AMV_MVS_VSQ_2D(aDouble));
         }
         return output;

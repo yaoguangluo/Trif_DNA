@@ -61,17 +61,17 @@ class SortFlowerTalkTest {
 		// 拿出FlowerSixDomainActions 的 string key
 		// 初始化 花语函数表
 		// initon plugin types without OSGI
-		System.out.println("FlowerSixDomainActions 元基花自主添加六元催化函数注册");
+		S_logger.Log.logger.info("" + "FlowerSixDomainActions 元基花自主添加六元催化函数注册");
 		CreativeVerbalMap.initInitonActions(commonTestInition.NE);
 		//
-		System.out.println("initonDelegate 元基花触发词汇添加");
+		S_logger.Log.logger.info("" + "initonDelegate 元基花触发词汇添加");
 		StudyVerbalMap.initInitonDelegate();
 		//
-		System.out.println("FlowerP_E_KernelActions 元基花脚本函数注册");
+		S_logger.Log.logger.info("" + "FlowerP_E_KernelActions 元基花脚本函数注册");
 		commonTestInition.NE.app_S.flowerAction
 			.initFlowerP_E_KernelActions();
 		//
-		System.out.println(
+		S_logger.Log.logger.info("" + 
 			"FlowerSixDomainActions 德塔PLSQL数据库ORM函数注册");
 		commonTestInition.NE.app_S.flowerAction
 			.initFlowerSixDomainActions();
@@ -83,12 +83,12 @@ class SortFlowerTalkTest {
 		while (iterators.hasNext()) {
 			nameContent.add(iterators.next());
 		}
-		System.out.println("待搜索指令数据行");
+		S_logger.Log.logger.info("" + "待搜索指令数据行");
 		for (int i = 0; i < nameContent.size(); i++) {
-			System.out.println(nameContent.get(i).toString());
+			S_logger.Log.logger.info("" + nameContent.get(i).toString());
 		}
 		AES_QMS_XSD_TIH searchkey = new AES_QMS_XSD_TIH("确");
-		System.out.println("测试搜索关键字->" + searchkey._S_);
+		S_logger.Log.logger.info("" + "测试搜索关键字->" + searchkey._S_);
 		commonTestInition.NE._I_U.searchkey = searchkey;
 		commonTestInition.NE._I_U.nameContent = nameContent;
 		commonTestInition.NE._I_U.textContent = textContent;
@@ -97,11 +97,11 @@ class SortFlowerTalkTest {
 		List<Object[]> outputList = new StaticFunctionMapQ_VECS_E()
 			.searchFromTablewithScale(commonTestInition.NE, 0, true);
 		Iterator<Object[]> iterator = outputList.iterator();
-		System.out.println("搜索后 排序指令数据行， 0 为冗余输出，true为搜索key码");
+		S_logger.Log.logger.info("" + "搜索后 排序指令数据行， 0 为冗余输出，true为搜索key码");
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();
 			for (int i = 0; i < object.length; i++) {
-				System.out.println(object[i].toString());
+				S_logger.Log.logger.info("" + object[i].toString());
 			}
 		}
 		commonTestInition.endEnvironment();

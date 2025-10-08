@@ -23,7 +23,7 @@ public class WavReadOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
 
     @SuppressWarnings({"unused", "rawtypes"})
     public void run(final WavReadOSU_MSQ_AVQ_ASQ_OVQ_OSQ_VSQ _SQ__OVQ_OSQ_VSQ) {
-        System.out.println("runed" + value);
+        S_logger.Log.logger.info("" + "runed" + value);
         _SQ__OVQ_OSQ_VSQ.path = new String(filepath);
         try {
             topaisin = AudioSystem.getAudioInputStream(new File(filepath));

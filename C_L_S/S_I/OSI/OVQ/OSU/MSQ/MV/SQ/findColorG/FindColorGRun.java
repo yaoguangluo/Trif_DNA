@@ -15,7 +15,7 @@ public class FindColorGRun extends OSU_OPE_OPC_ECI{
 		super();
  	}
 	public void run(final FindColorGView _SQ__OVQ_OSQ_VSQ) {
-		//20230106-System.out.println("runed"+value); 
+		//20230106-S_logger.Log.logger.info("" + "runed"+value); 
 		_SQ__OVQ_OSQ_VSQ.path=new String(filepath);
 		BufferedImage image= null;
 		try {

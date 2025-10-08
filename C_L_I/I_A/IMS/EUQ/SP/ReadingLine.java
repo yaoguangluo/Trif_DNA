@@ -67,7 +67,7 @@ public class ReadingLine extends Thread implements Runnable {
                 DetaThread.sleepDeta(1);
                 DataLine.Info info = new DataLine.Info(TargetDataLine.class, soundWave.format);
                 if (!AudioSystem.isLineSupported(info)) {
-                	System.out.println("-----------Line-Unsupported------------");
+                	S_logger.Log.logger.info("" + "-----------Line-Unsupported------------");
                 	return;
                 }
                 line = (TargetDataLine) AudioSystem.getLine(info);

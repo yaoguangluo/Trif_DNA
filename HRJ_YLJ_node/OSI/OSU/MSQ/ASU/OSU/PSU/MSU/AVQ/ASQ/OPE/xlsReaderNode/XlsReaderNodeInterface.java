@@ -23,18 +23,18 @@ public class XlsReaderNodeInterface extends OSU_MCI_MCU_MSI {
 	public XlsReaderNodeInterface() {
 		// thisIcon= new
 		// ImageIcon(this.getClass().getResource("image.jpg"));
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-00");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-00");
 		thisIcon = FastReadProjectFile.getDetaImageIconReader("image.jpg",
 				"DetaResources/imgETL/");
 		_SQ_OSU_MSQ_OSU_AVQ_ASQ_SQ_VPC_PCS = new String("XlsReader");
 		AMV_MVS_VSQ = new String("BI");
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-01");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-01");
 		Image img = ((ImageIcon) thisIcon).getImage();
 		Image newimg = img.getScaledInstance(30, 30,
 				java.awt.Image.SCALE_SMOOTH);
 		thisImage = img.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
 		thisIcon = new ImageIcon(newimg);
-		S_logger.Log.logger.info("启动400编码调试开始-00000055-001-02-04-01-01-02-02");
+		S_logger.Log.logger.info("" + "启动400编码调试开始-00000055-001-02-04-01-01-02-02");
 	}
 
 	// config 元基节点配置// 因为 节点更新加入cavas的消息对象 和validation,

@@ -46,7 +46,7 @@ public class DetaDBBufferToXlsSample {
                 .detaDBBufferToXlsWithTableName(db
                         , outputXlsFilePath, cellPhoneColumn
                         , baseName, tableName);
-        System.out.println(finished);
+        S_logger.Log.logger.info("" + finished);
     }
 
     @SuppressWarnings({"unused", "resource"})

@@ -13,7 +13,7 @@ import O_V.OSM.shell.CommandClass;
  * */
 public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 	/*
-	 * System.out.println("混合数字字符预处理锁定-->" + string);
+	 * S_logger.Log.logger.info("" + "混合数字字符预处理锁定-->" + string);
 	 * 因为有些用户喜欢写100万2000这种标识，就不用一百万两千和1002000这类规范的。
 	 * 所以我在这个if里面之后还要设计个阿拉伯数字转汉字的数字翻译机。 逻辑是先拆分数汉，
 	 * 再翻译数变汉，最后组合全汉输出即可。 --罗瑶光
@@ -23,7 +23,7 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 	 */
 	@SuppressWarnings("unused")
 	public String getChineseFromNumerics(String number) {
-		System.out.println(number);
+		S_logger.Log.logger.info("" + number);
 		/*
 		 * 首先开始思考，假定这个number是一个标准的整数，因为小数逻辑简单，
 		 * 只要直接翻译char即可。负数只要前面价格符号即可。
@@ -62,14 +62,14 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 			order++;
 		}
 		for (int i = 0; i < chineseParser.length; i++) {
-			// System.out.println(i + "-->" + chineseParser[i]);
+			// S_logger.Log.logger.info("" + i + "-->" + chineseParser[i]);
 		}
 		/*
 		 * 2 numberParser swap to chineseParser
 		 */
 		for (int i = 0; i < chineseParser.length; i++) {
 			chineseParsered[i] = doSwapUnderTenThousands(chineseParser[i]);
-			// System.out.println(i + "-->" + chineseParsered[i]);
+			// S_logger.Log.logger.info("" + i + "-->" + chineseParsered[i]);
 		}
 		/*
 		 * 3 chineseParser combination
@@ -123,7 +123,7 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		output = prefixOptimization(output);
 		// oder-fix
 		output = orderfixOptimization(output);
-		System.out.println("output-->" + output);
+		S_logger.Log.logger.info("" + "output-->" + output);
 		return output;
 	}
 	
@@ -198,14 +198,14 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 				stringChinese = "九" + stringChinese;
 			}
 		}
-		// System.out.println("stringChinese-->" + stringChinese);
+		// S_logger.Log.logger.info("" + "stringChinese-->" + stringChinese);
 		/*
 		 * 加单元
 		 */
 		int order = 0;
 		for (int i = stringChinese.length() - 1; i >= 0; i--) {
 			stringChineseUnits = "" + stringChinese.charAt(i);
-			// System.out.println("stringChineseUnits-->" +
+			// S_logger.Log.logger.info("" + "stringChineseUnits-->" +
 			// stringChineseUnits);
 			if (1 == order && stringChinese.charAt(i) != '零') {
 				stringChineseUnits = stringChinese.charAt(i) + "十";
@@ -225,7 +225,7 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 			stringChineseUnitsFix = stringChineseUnits + stringChineseUnitsFix;
 			order++;
 		}
-		// System.out.println("stringChineseUnitsFix-->" +
+		// S_logger.Log.logger.info("" + "stringChineseUnitsFix-->" +
 		// stringChineseUnitsFix);
 		/*
 		 * 过滤零单元
@@ -233,7 +233,7 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		stringChineseUnitsFix = stringChineseUnitsFix.replace("零零零零", "");
 		stringChineseUnitsFix = stringChineseUnitsFix.replace("零零零", "零");
 		stringChineseUnitsFix = stringChineseUnitsFix.replace("零零", "零");
-		// System.out.println("stringChineseUnitsFixFilter-->" +
+		// S_logger.Log.logger.info("" + "stringChineseUnitsFixFilter-->" +
 		// stringChineseUnitsFix);
 		// pre-fix
 		// oder-fix
@@ -247,83 +247,83 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		String number = "9992980400000088";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "8082940800808033";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "8888888888888888";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "8888888888888888";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "8888000008888888";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "8080800800800088";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "8000000000000000";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "800800000000080";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "800080000000080";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "000800000080000";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "8000000000000";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "008000080";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "8080808";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "808080";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "8080";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "808";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "80";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "0080";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "88";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "8";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		System.out.println("-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = "0";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);

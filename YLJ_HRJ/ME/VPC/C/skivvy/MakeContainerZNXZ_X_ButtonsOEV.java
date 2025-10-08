@@ -219,7 +219,7 @@ public class MakeContainerZNXZ_X_ButtonsOEV {
 				filedialog.setVisible(true);
 				String filepath = filedialog.getDirectory()
 						+ filedialog.getFile();
-				System.out.println(filepath);
+				S_logger.Log.logger.info("" + filepath);
 				try {
 					File outputBin = new File(filepath + ".png");
 					if (null == app_S.monitor.monitor_X_S.imageForOutput) {

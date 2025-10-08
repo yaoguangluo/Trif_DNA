@@ -115,7 +115,7 @@ public class Response_S {
 			socket = null;
 		} catch (Exception e) {
 			System.out.flush();
-			System.out.println("-closeAllBeforeGC err");
+			S_logger.Log.logger.info("" + "-closeAllBeforeGC err");
 			// StableBlob.addException();
 			e.printStackTrace();
 		}
@@ -173,7 +173,7 @@ public class Response_S {
 			}
 		} catch (Exception e) {
 			System.out.flush();
-			System.out.println("-closeAllBeforeGC err");
+			S_logger.Log.logger.info("" + "-closeAllBeforeGC err");
 			// StableBlob.addException();
 			// e.printStackTrace();
 		}

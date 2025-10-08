@@ -59,7 +59,7 @@ public class ZhongYaoTableSimple implements MouseListener {
 			String temp = iter.next();
 			app.copy.add(temp);
 		}
-		// System.out.println(cc);
+		// S_logger.Log.logger.info("" + cc);
 		app.appConfig.SectionJPanel.jTextPane.setText("" + cc);
 		for (int i = 0; i < app.copy.size(); i++) {
 			app.tableData_old[i] = new Object[] {

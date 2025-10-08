@@ -93,7 +93,7 @@ public class ServerRestMap_Standard {
 							output.length() - S_Pos.INT_ONE)
 					: output;
 			printWriter.println(output.replace("\\\"", "\""));
-			// 20230106-System.out.println("db:"+4);
+			// 20230106-S_logger.Log.logger.info("" + "db:"+4);
 			printWriter.flush();
 			printWriter.close();
 			vPCSResponse.getSleeperHall()

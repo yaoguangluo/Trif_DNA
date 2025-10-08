@@ -44,7 +44,7 @@ public class LogFFTcountView extends OSU_OVQ_OSQ_VSQ
 		     	  Dimension d= this.getSize();
 		          int w= 1024;
 		          int h= 600;
-		         // System.out.println(d.width+"**"+d.height);
+		         // S_logger.Log.logger.info("" + d.width+"**"+d.height);
 		          int INFOPAD= 15;
 		          //Graphics g= getGraphics();  
 		          Graphics2D g2= (Graphics2D) g;
@@ -65,7 +65,7 @@ public class LogFFTcountView extends OSU_OVQ_OSQ_VSQ
 	                			          i, 600-(int)lygout.fftLogCount[i]/10);
 	                	  
 	                	  
-	                	  System.out.println(i+"->"+lygout.fftLogCount[i-1]);
+	                	  S_logger.Log.logger.info("" + i+"->"+lygout.fftLogCount[i-1]);
 	                	  
 	                	  
 		                  }

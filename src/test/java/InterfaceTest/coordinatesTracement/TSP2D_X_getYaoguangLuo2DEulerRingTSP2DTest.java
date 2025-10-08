@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -63,7 +63,7 @@ class TSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest {
 			System.out.print("----");
 			System.out.print("x-" + lines2D.getEnd().getX() + "-y-"
 				+ lines2D.getEnd().getY());
-			System.out.println();
+			S_logger.Log.logger.info("" + "");
 		}
 	}
 }

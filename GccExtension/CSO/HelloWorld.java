@@ -25,7 +25,7 @@ public class HelloWorld {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(cStringPath);
+        S_logger.Log.logger.info("" + cStringPath);
         System.load(cStringPath);
     }
 
@@ -57,17 +57,17 @@ public class HelloWorld {
 //             cStringPath +
 //             " -o " +
 //             cStringPath.replace(FileName + FileTail, FileName);
-//         System.out.println(test);
+//         S_logger.Log.logger.info("" + test);
 //         Process sr = Runtime.getRuntime().exec(test);
 //         BufferedReader cin = new BufferedReader(new InputStreamReader(sr
 //             .getInputStream()));
 //         String cline;
 //         while ((cline = cin.readLine()) != null) {
-//            System.out.println(cline);
+//            S_logger.Log.logger.info("" + cline);
 //         }
 //         cin.close();
 //         sr.waitFor();
-//         System.out.println("end");
+//         S_logger.Log.logger.info("" + "end");
 //      } catch (Exception e) {
 //         e.printStackTrace();
 //      }
@@ -77,18 +77,18 @@ public class HelloWorld {
 //         String cStringPath = cFile.getCanonicalPath()
 //             .replace(cFile.getPath(), "" + cFile.getPath());
 //         String test = cStringPath;
-//         System.out.println(test);
+//         S_logger.Log.logger.info("" + test);
 //         Process sr = Runtime.getRuntime().exec(test
 //             + " " + argv[0] + " " + argv[1]);
 //         BufferedReader cin = new BufferedReader(new InputStreamReader(sr
 //             .getInputStream()));
 //         String cline;
 //         while ((cline = cin.readLine()) != null) {
-//            System.out.println(cline);
+//            S_logger.Log.logger.info("" + cline);
 //         }
 //         cin.close();
 //         sr.waitFor();
-//         System.out.println("end");
+//         S_logger.Log.logger.info("" + "end");
 //      } catch (Exception e) {
 //         e.printStackTrace();
 //      }

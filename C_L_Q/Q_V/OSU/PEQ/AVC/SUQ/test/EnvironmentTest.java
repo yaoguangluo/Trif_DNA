@@ -23,7 +23,7 @@ public class EnvironmentTest{
 		environmentInit.IV_(S_String.text1, NE);
 		IMV_SQI_X_ environmentSampleMap= environmentInit.getEmotionSampleMap();
 		//reduce
-		//20230106-System.out.println("环    境：");
+		//20230106-S_logger.Log.logger.info("" + "环    境：");
 		Iterator<String> Iterator= environmentSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word= Iterator.next();
@@ -32,8 +32,8 @@ public class EnvironmentTest{
 				//20230106-System.out.print(emotionSample.getDistinction()+" ");
 			}
 		}
-		//20230106-System.out.println("");
-		//20230106-System.out.println("动    机：");
+		//20230106-S_logger.Log.logger.info("" + "");
+		//20230106-S_logger.Log.logger.info("" + "动    机：");
 		Iterator= environmentSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word= Iterator.next();
@@ -42,8 +42,8 @@ public class EnvironmentTest{
 				//20230106-System.out.print(emotionSample.getMotivation()+" ");
 			}
 		}
-		//20230106-System.out.println("");
-		//20230106-System.out.println("倾    向：" );
+		//20230106-S_logger.Log.logger.info("" + "");
+		//20230106-S_logger.Log.logger.info("" + "倾    向：" );
 		Iterator= environmentSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word= Iterator.next();
@@ -53,8 +53,8 @@ public class EnvironmentTest{
 			}
 		}
 		//reduce
-		//20230106-System.out.println("");
-		//20230106-System.out.println("决    策：");
+		//20230106-S_logger.Log.logger.info("" + "");
+		//20230106-S_logger.Log.logger.info("" + "决    策：");
 		Iterator= environmentSampleMap.keySet().iterator();
 		while(Iterator.hasNext()) {
 			String word= Iterator.next();

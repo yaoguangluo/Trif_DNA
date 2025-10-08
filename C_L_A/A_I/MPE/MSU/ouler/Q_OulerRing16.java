@@ -360,21 +360,21 @@ TVI8
 		//String didInitons= "";
         int count= 0;
 		for(int i= 0; i< initons.length; i++) {
-			////20230106-System.out.println(temp);
+			////20230106-S_logger.Log.logger.info("" + temp);
 			//20230106-System.out.print(initons[i]);
 			initonsCount[i]++;
 			recur(initons[i], initonsLink, didInitonsLink, initons, initonsCount
 					, count, i);
-			////20230106-System.out.println(count);
+			////20230106-S_logger.Log.logger.info("" + count);
 			//下一个
 			count= 0;
-			//20230106-System.out.println();
+			//20230106-S_logger.Log.logger.info("" + "");
 			didInitonsLink.clear();
 			initonsCount= new int[17]; 
 		}
 		// print loop initons
 		//打印可能模式
-		//20230106-System.out.println(count);
+		//20230106-S_logger.Log.logger.info("" + count);
 	}
 	//递归 继续修改。等会加 隔开观测。
 	public static void recur(String firstChar, Map<String, Boolean> initonsLink
@@ -391,7 +391,7 @@ TVI8
 					//20230106-System.out.print(initons[j]);
 					recur(initons[j], initonsLink, didInitonsLink, initons
 							, initonsCount, count+ 1, j);
-					//20230106-System.out.println(count);
+					//20230106-S_logger.Log.logger.info("" + count);
 				}
 			}
 		}

@@ -19,6 +19,6 @@ public class AVItoLYGOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI{
 //		 ff.add(jj);
 //	     ff.setSize(500, 200);
 //	     ff.setVisible(true);
-//	    System.out.println("run end");
+//	    S_logger.Log.logger.info("" + "run end");
 //	}
 }

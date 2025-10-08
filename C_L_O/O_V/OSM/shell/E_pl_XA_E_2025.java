@@ -55,7 +55,7 @@
 //				commandLists = DoSplit.splitRegex(commandSwap, ":", "\\", "\\");
 //				acknowledgeSwap = List_ESU_X_stringlistToStringArray
 //						._E(commandLists);
-//				System.out.println(commandSwap);
+//				S_logger.Log.logger.info("" + commandSwap);
 //				doAcknowledgeSwap(acknowledgeSwap, command, NE);
 //				// return null;
 //			}

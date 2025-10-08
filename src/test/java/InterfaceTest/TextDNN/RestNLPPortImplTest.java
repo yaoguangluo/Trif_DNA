@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -105,7 +105,7 @@ class RestNLPPortImplTest {
 		IMV_SQI _IMV_SQI = (IMV_SQI) object;
 		String string = _IMV_SQI.getString("zf");
 		string = URLDecoder.decode(string, "UTF8");
-		System.out.println(string);
+		S_logger.Log.logger.info("" + string);
 		commonTestInition.endEnvironment();
 	}
 }

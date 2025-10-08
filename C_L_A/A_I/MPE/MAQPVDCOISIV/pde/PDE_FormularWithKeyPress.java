@@ -61,18 +61,18 @@ public class PDE_FormularWithKeyPress {
 		pDE_RNA_Formular.key[3] = 0.632;
 
 		pDE_RNA_Formular.text = "控制吸收";
-		// 20230106-System.out.println("原文: " +
+		// 20230106-S_logger.Log.logger.info("" + "原文: " +
 		// pDE_RNA_Formular.text);
 		pDE_RNA_Formular.pdw = "MSIOCUOCIPCUPCI";
-		// 20230106-System.out.println("肽语: " +
+		// 20230106-S_logger.Log.logger.info("" + "肽语: " +
 		// pDE_RNA_Formular.pdw);
 		pDE_RNA_Formular.bys = "0.6/0.3/0.5/0.632";
-		// 20230106-System.out.println("静态密钥: " +
+		// 20230106-S_logger.Log.logger.info("" + "静态密钥: " +
 		// pDE_RNA_Formular.bys);
 		pDE_RNA_Formular.doKeyPress("MSIOCUOCIPCUPCI", pDE_RNA_Formular);
-		// 20230106-System.out.println("静态肽展降元: "+
+		// 20230106-S_logger.Log.logger.info("" + "静态肽展降元: "+
 		// pDE_RNA_Formular.pds);
-		// 20230106-System.out.println("静态肽展增元: "+
+		// 20230106-S_logger.Log.logger.info("" + "静态肽展增元: "+
 		// pDE_RNA_Formular.pde);
 
 		PDE_FormularWithKeyPress pDE_RNA_Formular1 = new PDE_FormularWithKeyPress();
@@ -82,23 +82,23 @@ public class PDE_FormularWithKeyPress {
 		pDE_RNA_Formular1.key[3] = 0.677;
 		pDE_RNA_Formular1.doKeyPress(pDE_RNA_Formular.pde, pDE_RNA_Formular1);
 		pDE_RNA_Formular1.bys = "0.63/0.2/0.7/0.677";
-		// 20230106-System.out.println("动态密钥: " +
+		// 20230106-S_logger.Log.logger.info("" + "动态密钥: " +
 		// pDE_RNA_Formular1.bys);
-		// 20230106-System.out.println("动态肽展降元: "+
+		// 20230106-S_logger.Log.logger.info("" + "动态肽展降元: "+
 		// pDE_RNA_Formular1.pds);
-		// 20230106-System.out.println("动态肽展增元: "+
+		// 20230106-S_logger.Log.logger.info("" + "动态肽展增元: "+
 		// pDE_RNA_Formular1.pde);
 
 		pDE_RNA_Formular.time = "" + System.currentTimeMillis();
 		pDE_RNA_Formular.cacheId = "ID" + Math.random()
 				+ S_Common.STRING_SYMBOL_PER + Math.random();
-		// 20230106-System.out.println("时间: " +
+		// 20230106-S_logger.Log.logger.info("" + "时间: " +
 		// pDE_RNA_Formular.time);
-		// 20230106-System.out.println("账号随机缓存字符串: " +
+		// 20230106-S_logger.Log.logger.info("" + "账号随机缓存字符串: " +
 		// pDE_RNA_Formular.cacheId);
 		pDE_RNA_Formular.session_key = pDE_RNA_Formular.pds
 				+ pDE_RNA_Formular1.pds;
-		// 20230106-System.out.println("Session: " +
+		// 20230106-S_logger.Log.logger.info("" + "Session: " +
 		// pDE_RNA_Formular.session_key);
 
 	}
@@ -113,9 +113,9 @@ public class PDE_FormularWithKeyPress {
 			InitonPDE = InitonPDE.forwardNext();
 			//// 20230106-System.out.print(InitonPDE.getStore());
 		}
-		//// 20230106-System.out.println();
+		//// 20230106-S_logger.Log.logger.info("" + "");
 
-		//// 20230106-System.out.println("肽展 降元");
+		//// 20230106-S_logger.Log.logger.info("" + "肽展 降元");
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
@@ -125,8 +125,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		////// 20230106-System.out.println();
-		////// 20230106-System.out.println("降元A= V + S");
+		////// 20230106-S_logger.Log.logger.info("" + "");
+		////// 20230106-S_logger.Log.logger.info("" + "降元A= V + S");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -140,8 +140,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		////// 20230106-System.out.println();
-		////// 20230106-System.out.println("降元O= E + S");
+		////// 20230106-S_logger.Log.logger.info("" + "");
+		////// 20230106-S_logger.Log.logger.info("" + "降元O= E + S");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -155,8 +155,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		////// 20230106-System.out.println();
-		////// 20230106-System.out.println("降元P= E + C");
+		////// 20230106-S_logger.Log.logger.info("" + "");
+		////// 20230106-S_logger.Log.logger.info("" + "降元P= E + C");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -170,8 +170,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		////// 20230106-System.out.println();
-		////// 20230106-System.out.println("降元M= C + S");
+		////// 20230106-S_logger.Log.logger.info("" + "");
+		////// 20230106-S_logger.Log.logger.info("" + "降元M= C + S");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -185,8 +185,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		////// 20230106-System.out.println();
-		////// 20230106-System.out.println("降元V= U + Q");
+		////// 20230106-S_logger.Log.logger.info("" + "");
+		////// 20230106-S_logger.Log.logger.info("" + "降元V= U + Q");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -199,13 +199,13 @@ public class PDE_FormularWithKeyPress {
 		Initon InitonPDE_COPY = InitonPDE.copyRNA(InitonPDE);
 
 		if (Math.random() < pDE_RNA_Formular.key[0]) {
-			////// 20230106-System.out.println();
-			////// 20230106-System.out.println("1降元概率IU");
+			////// 20230106-S_logger.Log.logger.info("" + "");
+			////// 20230106-S_logger.Log.logger.info("" + "1降元概率IU");
 			doE_IU(InitonPDE, initonLinkDNA, pDE_RNA_Formular);
 		} else {
 			initonLinkDNA.I_InitonLink(InitonPDE_COPY);
-			////// 20230106-System.out.println();
-			////// 20230106-System.out.println("2降元概率DU");
+			////// 20230106-S_logger.Log.logger.info("" + "");
+			////// 20230106-S_logger.Log.logger.info("" + "2降元概率DU");
 			doE_DU(InitonPDE_COPY, initonLinkDNA, pDE_RNA_Formular);
 		}
 	}
@@ -217,8 +217,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		////// 20230106-System.out.println();
-		////// 20230106-System.out.println("11降元E= I + U");
+		////// 20230106-S_logger.Log.logger.info("" + "");
+		////// 20230106-S_logger.Log.logger.info("" + "11降元E= I + U");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -232,8 +232,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		////// 20230106-System.out.println();
-		//// 20230106-System.out.println("11降元C= I + D");
+		////// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + "11降元C= I + D");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -248,23 +248,23 @@ public class PDE_FormularWithKeyPress {
 		Initon InitonPDE_COPYSI = InitonPDE.copyRNA(InitonPDE);
 		Initon InitonPDE_COPYSQ = InitonPDE.copyRNA(InitonPDE);
 
-		//// 20230106-System.out.println();
+		//// 20230106-S_logger.Log.logger.info("" + "");
 		// String s= "1111概率S_";
 		// String si= "1111概率S_I_";
 		// String sq= "1111概率S_Q_";
-		////// 20230106-System.out.println("1111概率S");
+		////// 20230106-S_logger.Log.logger.info("" + "1111概率S");
 		// doS(s, InitonPDE, initonLinkDNA);
 
 		initonLinkDNA.I_InitonLink(InitonPDE_COPYSI);
 
 		if (Math.random() < pDE_RNA_Formular.key[1]) {
-			//// 20230106-System.out.println();
-			//// 20230106-System.out.println("1112概率S_I");
+			//// 20230106-S_logger.Log.logger.info("" + "");
+			//// 20230106-S_logger.Log.logger.info("" + "1112概率S_I");
 			doS_I("", InitonPDE_COPYSI, initonLinkDNA, pDE_RNA_Formular);
 		} else {
 			initonLinkDNA.I_InitonLink(InitonPDE_COPYSQ);
-			//// 20230106-System.out.println();
-			//// 20230106-System.out.println("1113概率S_Q");
+			//// 20230106-S_logger.Log.logger.info("" + "");
+			//// 20230106-S_logger.Log.logger.info("" + "1113概率S_Q");
 			doS_Q("", InitonPDE_COPYSQ, initonLinkDNA, pDE_RNA_Formular);
 		}
 	}
@@ -277,9 +277,9 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
+		//// 20230106-S_logger.Log.logger.info("" + "");
 
-		//// 20230106-System.out.println(sq+ "降元S= Q");
+		//// 20230106-S_logger.Log.logger.info("" + sq+ "降元S= Q");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			pDE_RNA_Formular.pds += InitonPDE.getStore();
@@ -292,8 +292,8 @@ public class PDE_FormularWithKeyPress {
 		}
 		initonLinkDNA.I_InitonLink(InitonPDE);
 		// 全部 收
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(sq+ "肽展 增元");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + sq+ "肽展 增元");
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
@@ -303,8 +303,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(sq+ "V= U + Q");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + sq+ "V= U + Q");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -317,13 +317,13 @@ public class PDE_FormularWithKeyPress {
 		Initon InitonPDE_COPY = InitonPDE.copyRNA(InitonPDE);
 
 		if (Math.random() < pDE_RNA_Formular.key[2]) {
-			//// 20230106-System.out.println();
-			//// 20230106-System.out.println(sq+ "概率Increment IU");
+			//// 20230106-S_logger.Log.logger.info("" + "");
+			//// 20230106-S_logger.Log.logger.info("" + sq+ "概率Increment IU");
 			doIncrementE_IU(sq, InitonPDE, initonLinkDNA, pDE_RNA_Formular);
 		} else {
 			initonLinkDNA.I_InitonLink(InitonPDE_COPY);
-			//// 20230106-System.out.println();
-			//// 20230106-System.out.println(sq+ "概率Increment DU");
+			//// 20230106-S_logger.Log.logger.info("" + "");
+			//// 20230106-S_logger.Log.logger.info("" + sq+ "概率Increment DU");
 			doIncrementE_DU(sq, InitonPDE_COPY, initonLinkDNA,
 					pDE_RNA_Formular);
 		}
@@ -337,8 +337,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(si+ "11降元S= I");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + si+ "11降元S= I");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			pDE_RNA_Formular.pds += InitonPDE.getStore();
@@ -352,8 +352,8 @@ public class PDE_FormularWithKeyPress {
 		initonLinkDNA.I_InitonLink(InitonPDE);
 
 		// 全部 收
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(si+ "11肽展 增元");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + si+ "11肽展 增元");
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
@@ -363,8 +363,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(si+ "11V= U + Q");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + si+ "11V= U + Q");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -377,13 +377,13 @@ public class PDE_FormularWithKeyPress {
 		Initon InitonPDE_COPY = InitonPDE.copyRNA(InitonPDE);
 
 		if (Math.random() < pDE_RNA_Formular.key[2]) {
-			//// 20230106-System.out.println();
-			//// 20230106-System.out.println(si+ "111概率Increment IU");
+			//// 20230106-S_logger.Log.logger.info("" + "");
+			//// 20230106-S_logger.Log.logger.info("" + si+ "111概率Increment IU");
 			doIncrementE_IU(si, InitonPDE, initonLinkDNA, pDE_RNA_Formular);
 		} else {
 			initonLinkDNA.I_InitonLink(InitonPDE_COPY);
-			//// 20230106-System.out.println();
-			//// 20230106-System.out.println(si+ "112概率Increment DU");
+			//// 20230106-S_logger.Log.logger.info("" + "");
+			//// 20230106-S_logger.Log.logger.info("" + si+ "112概率Increment DU");
 			doIncrementE_DU(si, InitonPDE_COPY, initonLinkDNA,
 					pDE_RNA_Formular);
 		}
@@ -397,9 +397,9 @@ public class PDE_FormularWithKeyPress {
 	// while(InitonPDE.hasPrev()) {
 	// InitonPDE= InitonPDE.forwardPrev();
 	// }
-	// ////20230106-System.out.println();
+	// ////20230106-S_logger.Log.logger.info("" + "");
 	//
-	// ////20230106-System.out.println(s+ "11降元S= I + Q");
+	// ////20230106-S_logger.Log.logger.info("" + s+ "11降元S= I + Q");
 	// while(InitonPDE.hasNext()) {
 	// ////20230106-System.out.print(InitonPDE.getStore());
 	// InitonPDE= InitonPDE.forwardNext();
@@ -411,8 +411,8 @@ public class PDE_FormularWithKeyPress {
 	// initonLinkDNA.I_InitonLink(InitonPDE);
 	//
 	// //全部 收
-	// ////20230106-System.out.println();
-	// ////20230106-System.out.println(s+ "11肽展 增元");
+	// ////20230106-S_logger.Log.logger.info("" + "");
+	// ////20230106-S_logger.Log.logger.info("" + s+ "11肽展 增元");
 	// while(InitonPDE.hasPrev()) {
 	// InitonPDE= InitonPDE.forwardPrev();
 	// }
@@ -423,8 +423,8 @@ public class PDE_FormularWithKeyPress {
 	// while(InitonPDE.hasPrev()) {
 	// InitonPDE= InitonPDE.forwardPrev();
 	// }
-	// ////20230106-System.out.println();
-	// ////20230106-System.out.println(s+ "11V= U + Q");
+	// ////20230106-S_logger.Log.logger.info("" + "");
+	// ////20230106-S_logger.Log.logger.info("" + s+ "11V= U + Q");
 	// while(InitonPDE.hasNext()) {
 	// ////20230106-System.out.print(InitonPDE.getStore());
 	// InitonPDE= InitonPDE.forwardNext();
@@ -435,13 +435,13 @@ public class PDE_FormularWithKeyPress {
 	// }
 	// initonLinkDNA.I_InitonLink(InitonPDE);
 	// Initon InitonPDE_COPY= InitonPDE.copyRNA(InitonPDE);
-	// ////20230106-System.out.println();
-	// ////20230106-System.out.println(s+ "111概率Increment IU");
+	// ////20230106-S_logger.Log.logger.info("" + "");
+	// ////20230106-S_logger.Log.logger.info("" + s+ "111概率Increment IU");
 	// doIncrementE_IU(s, InitonPDE, initonLinkDNA);
 	//
 	// initonLinkDNA.I_InitonLink(InitonPDE_COPY);
-	// ////20230106-System.out.println();
-	// ////20230106-System.out.println(s+ "112概率Increment DU");
+	// ////20230106-S_logger.Log.logger.info("" + "");
+	// ////20230106-S_logger.Log.logger.info("" + s+ "112概率Increment DU");
 	// doIncrementE_DU(s, InitonPDE_COPY, initonLinkDNA);
 	// }
 
@@ -452,8 +452,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println("21降元E= D + U");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + "21降元E= D + U");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -467,8 +467,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println("21降元C= I + D");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + "21降元C= I + D");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -484,19 +484,19 @@ public class PDE_FormularWithKeyPress {
 		// String s= "2222概率S_";
 		// String si= "2222概率S_I_";
 		// String sq= "2222概率S_Q_";
-		// ////20230106-System.out.println();
-		// ////20230106-System.out.println("2111概率S");
+		// ////20230106-S_logger.Log.logger.info("" + "");
+		// ////20230106-S_logger.Log.logger.info("" + "2111概率S");
 		// doS(s, InitonPDE, initonLinkDNA);
 
 		initonLinkDNA.I_InitonLink(InitonPDE_COPYSI);
 		if (Math.random() < pDE_RNA_Formular.key[1]) {
-			//// 20230106-System.out.println();
-			//// 20230106-System.out.println("2112概率S_I");
+			//// 20230106-S_logger.Log.logger.info("" + "");
+			//// 20230106-S_logger.Log.logger.info("" + "2112概率S_I");
 			doS_I("", InitonPDE_COPYSI, initonLinkDNA, pDE_RNA_Formular);
 		} else {
 			initonLinkDNA.I_InitonLink(InitonPDE_COPYSQ);
-			//// 20230106-System.out.println();
-			//// 20230106-System.out.println("2113概率S_Q");
+			//// 20230106-S_logger.Log.logger.info("" + "");
+			//// 20230106-S_logger.Log.logger.info("" + "2113概率S_Q");
 			doS_Q("", InitonPDE_COPYSQ, initonLinkDNA, pDE_RNA_Formular);
 		}
 	}
@@ -510,8 +510,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(sq+ "E= D + U");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + sq+ "E= D + U");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -525,8 +525,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(sq+ "C= I + D");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + sq+ "C= I + D");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -561,8 +561,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(s+ "E= I + U");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + s+ "E= I + U");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -576,8 +576,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(s+ "C= I + D");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + s+ "C= I + D");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -615,8 +615,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(s+ "S= Q");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + s+ "S= Q");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -638,8 +638,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(s+ "S= I");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + s+ "S= I");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -662,8 +662,8 @@ public class PDE_FormularWithKeyPress {
 	// while(InitonPDE.hasPrev()) {
 	// InitonPDE= InitonPDE.forwardPrev();
 	// }
-	// ////20230106-System.out.println();
-	// ////20230106-System.out.println(s+ "S= I + Q");
+	// ////20230106-S_logger.Log.logger.info("" + "");
+	// ////20230106-S_logger.Log.logger.info("" + s+ "S= I + Q");
 	// while(InitonPDE.hasNext()) {
 	// ////20230106-System.out.print(InitonPDE.getStore());
 	// InitonPDE= InitonPDE.forwardNext();
@@ -683,8 +683,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(s+ "A= V + S");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + s+ "A= V + S");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -698,8 +698,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(s+ "O= E + S");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + s+ "O= E + S");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -713,8 +713,8 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println(s+ "P= E + C");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + s+ "P= E + C");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			InitonPDE = InitonPDE.forwardNext();
@@ -728,9 +728,9 @@ public class PDE_FormularWithKeyPress {
 		while (InitonPDE.hasPrev()) {
 			InitonPDE = InitonPDE.forwardPrev();
 		}
-		//// 20230106-System.out.println();
-		//// 20230106-System.out.println("肽展增元: ");
-		//// 20230106-System.out.println(s+ "M= C + S");
+		//// 20230106-S_logger.Log.logger.info("" + "");
+		//// 20230106-S_logger.Log.logger.info("" + "肽展增元: ");
+		//// 20230106-S_logger.Log.logger.info("" + s+ "M= C + S");
 		while (InitonPDE.hasNext()) {
 			//// 20230106-System.out.print(InitonPDE.getStore());
 			pDE_RNA_Formular.pde += InitonPDE.getStore();

@@ -18,28 +18,28 @@ public class SoundAttribute{
 	@SuppressWarnings("unused")
 	public void printAttribute(AudioInputStream ais){
 		long framelength= ais.getFrameLength();
-		//20230106-System.out.println("frame length : " + framelength);
+		//20230106-S_logger.Log.logger.info("" + "frame length : " + framelength);
 
 		AudioFormat af= ais.getFormat();
 		//DataLine.Info info= new DataLine.Info(SourceDataLine.class, af);
 		int frameRate= (int)af.getFrameRate();
-		//20230106-System.out.println("Frames per second: " + frameRate);
+		//20230106-S_logger.Log.logger.info("" + "Frames per second: " + frameRate);
 
 		int sampleRate=(int)af.getSampleRate();
-		//20230106-System.out.println("Sample Rate: " + sampleRate);
+		//20230106-S_logger.Log.logger.info("" + "Sample Rate: " + sampleRate);
 
 		int frameSize= af.getFrameSize();
-		//20230106-System.out.println("each Frame Size: " + frameSize);
+		//20230106-S_logger.Log.logger.info("" + "each Frame Size: " + frameSize);
 
 		int channels= af.getChannels();
-		//20230106-System.out.println("Channels : " + channels);
+		//20230106-S_logger.Log.logger.info("" + "Channels : " + channels);
 
 		int bps= af.getSampleSizeInBits();
-		//20230106-System.out.println("Bits per sample : " + bps);
+		//20230106-S_logger.Log.logger.info("" + "Bits per sample : " + bps);
 
 		double times;
 		long milliseconds= (long)((ais.getFrameLength() * 1000) / ais.getFormat().getFrameRate());
 		times= milliseconds / 1000.0;
-		//20230106-System.out.println("Duration of the songs : " + times +" seconds");
+		//20230106-S_logger.Log.logger.info("" + "Duration of the songs : " + times +" seconds");
 	}
 }

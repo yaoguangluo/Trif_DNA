@@ -2,7 +2,7 @@ package test.java.InterfaceTest.convolution;
 
 import P.image.Strech;
 import org.junit.jupiter.api.Test;
-
+import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -45,9 +45,9 @@ class StrechTest {
 			for (int j = 0; j < 16; j++) {
 				System.out.print("-" + input[i][j]);
 			}
-			System.out.println();
+			S_logger.Log.logger.info("" + "");
 		}
-		System.out.println("------------");
+		S_logger.Log.logger.info("" + "------------");
 		//exe Strech，商业价值用于数值特征在指定区间中的比例拉扯提高特征鲜艳度，如图片渲染。
 		// refer思想：ComputerVision 绿皮书
 		int[][] output = Strech.P(input, 0.05, 0.95);
@@ -56,7 +56,7 @@ class StrechTest {
 			for (int j = 0; j < 16; j++) {
 				System.out.print("-" + output[i][j]);
 			}
-			System.out.println();
+			S_logger.Log.logger.info("" + "");
 		}
 	}
 }

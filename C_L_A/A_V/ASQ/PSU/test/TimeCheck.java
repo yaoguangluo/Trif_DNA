@@ -12,7 +12,7 @@ public class TimeCheck{
 	public long before;
 	public long now;
 	public void begin(){
-		//20230106-System.out.println("start: " + (new Date()));
+		//20230106-S_logger.Log.logger.info("" + "start: " + (new Date()));
 		before= System.currentTimeMillis();
 	}
 	
@@ -23,6 +23,6 @@ public class TimeCheck{
 	@SuppressWarnings("unused")
 	public void duration(){
 		long du=now-before;
-		System.out.println("end cost: " + du + " ms");
+		S_logger.Log.logger.info("" + "end cost: " + du + " ms");
 	}
 }

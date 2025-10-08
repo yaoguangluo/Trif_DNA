@@ -90,7 +90,7 @@
 //		}
 //		//׼����2���¡�
 //		//1 email token ��֤�۵�
-//		//System.out.flush();System.out.println(email+ token);
+//		//System.out.flush();S_logger.Log.logger.info("" + email+ token);
 //		//2 bytesNext �� stringInputNext �����Ƿ���image��boundary����ʼ�������
 //		//��������һ�����⣬����û�е�½�͵������ӿڣ���ô������ڵ�һ��bytes��������next�� ���Ǿ�ֱ�ӱ��������ǡ�
 //		//ȫ��д�������ļ�
@@ -172,7 +172,7 @@
 //			fileOutputStream.flush();
 //			//�ļ��ü�
 //			File F=new File(outPath+ fileName);
-//			System.out.flush();System.out.println(F.length());
+//			System.out.flush();S_logger.Log.logger.info("" + F.length());
 //			MpegAudioFileReader mpegAudioFileReader= new MpegAudioFileReader();
 //			AudioInputStream ais= mpegAudioFileReader.getAudioInputStream(F);
 //			LYGFileIO IO = new LYGFileIO();
@@ -273,7 +273,7 @@
 //			}	
 //			//�ļ�����
 //			//���� ������
-//			System.out.flush();System.out.println("success rgb");
+//			System.out.flush();S_logger.Log.logger.info("" + "success rgb");
 //			//���
 //			Map<String, Object> outputMap= new HashMap<>();
 //			String string= "success write";	
@@ -283,17 +283,17 @@
 //			Thread.sleep(5);
 //			outputMap.put("zt", URLEncoder.encode(string, "UTF-8"));
 //			outputMap.put("tempAddr", URLEncoder.encode(imageName, "UTF-8"));
-//			System.out.flush();System.out.println("success noise");
+//			System.out.flush();S_logger.Log.logger.info("" + "success noise");
 //			String output= VtoV.ObjectToJsonString(outputMap);
 //			vPCSResponse.printWriter = null; 
 //			try {
 //				vPCSResponse.printWriter= new PrintWriter(new BufferedWriter(new OutputStreamWriter(vPCSResponse.getSocket()
 //						.getOutputStream(), "UTF-8")), true);
 //			}catch(Exception e) {
-//				System.out.flush();System.out.println();
+//				System.out.flush();S_logger.Log.logger.info("" + "");
 //			}
 //			if(output.length()> 0) {
-//				System.out.flush();System.out.println("success YLJ");
+//				System.out.flush();S_logger.Log.logger.info("" + "success YLJ");
 //				vPCSResponse.printWriter.println("HTTP/1.1 200 OK\n\n"); 
 //				output=output.charAt(0)=='"'?output.substring(1, output.length()):output;
 //				output=output.charAt(output.length()-1)=='"'?output.substring(0
@@ -305,7 +305,7 @@
 //				Thread.sleep(15);
 //				vPCSResponse.getSleeperHall().removeThreadById(vPCSResponse.getSocket().hashCode());
 //				Thread.sleep(15);
-//				System.out.flush();System.out.println("success all");
+//				System.out.flush();S_logger.Log.logger.info("" + "success all");
 //			}else {
 //				System.out.flush();System.out.print(vPCSRequest.getRequestLink());
 //				System.out.flush();System.out.print(vPCSRequest.getRequestFilePath());

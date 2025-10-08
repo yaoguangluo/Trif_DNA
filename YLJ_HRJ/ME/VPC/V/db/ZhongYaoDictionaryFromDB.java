@@ -53,7 +53,7 @@ public class ZhongYaoDictionaryFromDB {
 		IMV_SQI dic_map = new IMV_SQI();
 		IMV_SQI map = null;
 		// for(int i=0; i<)
-		// System.out.println("1");
+		// S_logger.Log.logger.info("" + "1");
 		NE.app_S.appConfig.SectionJPanel.jTextPane.setText("1");
 		String plsql = "setRoot:C:/DetaDB1;" + "baseName:ZYY;"
 				+ "tableName:zybc:select;" + "condition:or:ID|<=|3000;";

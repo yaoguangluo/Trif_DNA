@@ -172,9 +172,9 @@ public class ShellReplace {
                     file.delete();
                     if (!file.exists()) {
                         if (fileOut.renameTo(new File(filePath))) {
-                            //20230106-System.out.println("succcess");
+                            //20230106-S_logger.Log.logger.info("" + "succcess");
                         } else {
-                            //20230106-System.out.println("unsucccess");
+                            //20230106-S_logger.Log.logger.info("" + "unsucccess");
                         }
                     }
                     //...fileOut.changeFileName(filePath+ file.getName());
@@ -345,9 +345,9 @@ public class ShellReplace {
                     file.delete();
                     if (!file.exists()) {
                         if (fileOutBackup.renameTo(new File(filePath))) {
-                            //20230106-System.out.println("succcess");
+                            //20230106-S_logger.Log.logger.info("" + "succcess");
                         } else {
-                            //20230106-System.out.println("unsucccess");
+                            //20230106-S_logger.Log.logger.info("" + "unsucccess");
                         }
                     }
                 }
@@ -367,7 +367,7 @@ public class ShellReplace {
         while (iterator.hasNext()) {
             String string = iterator.next();
             String writeString = string + "-->" + conditions.get(string);
-            //20230106-System.out.println(writeString);
+            //20230106-S_logger.Log.logger.info("" + writeString);
             DetaFileWriter.I(fileWriter, writeString);
             DetaFileWriter.I(fileWriter, "\r\n");
             DetaFileWriter.UQ(fileWriter);

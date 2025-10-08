@@ -28,7 +28,7 @@ public class MakeImage {
 		Font font= new Font(prePrint, 20, 20);
 		int stringW= g.getFontMetrics().stringWidth(prePrint);
 		int stringH= g.getFontMetrics().getHeight();
-		//20230106-System.out.println(stringW + S_Common.STRING_SYMBOL_PER + stringH);
+		//20230106-S_logger.Log.logger.info("" + stringW + S_Common.STRING_SYMBOL_PER + stringH);
 		int positionX= 10;
 		int positionY= 20;
 		makeImage.weightPrint(prePrint, g, stringW, stringH, positionX, positionY, font);

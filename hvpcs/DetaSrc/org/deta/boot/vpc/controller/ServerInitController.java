@@ -33,40 +33,40 @@ public class ServerInitController {
 	{
 		properties = new Properties();
 		System.out.flush();
-		System.out.println("----德塔VPCS数据库服务器资源载入:成功！");
+		S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器资源载入:成功！");
 
 	}
 
 	public void init() throws IOException {
 		port = 8000;
 		System.out.flush();
-		System.out.println("----德塔VPCS数据库服务器端口启动:" + port);
+		S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器端口启动:" + port);
 		DetaUtil.initDB();
 		System.out.flush();
-		System.out.println("----德塔VPCS数据库服务器DMA确认:成功！");
-		System.out.println("----初始大文件:成功！");
+		S_logger.Log.logger.info("" + "----德塔VPCS数据库服务器DMA确认:成功！");
+		S_logger.Log.logger.info("" + "----初始大文件:成功！");
 		StableBlob.initBlobLimit();
-		System.out.println("----初始固定数据:成功！");
+		S_logger.Log.logger.info("" + "----初始固定数据:成功！");
 		StableSets.intListPartBytes();
-		System.out.println("----初始http数据:成功！");
+		S_logger.Log.logger.info("" + "----初始http数据:成功！");
 		StableSets.initHttpContentTypeMap();
 	}
 
 	public void initServer(App app) throws IOException, InterruptedException {
 		appReg = app;
 		System.out.flush();
-		System.out.println("----DETA HVPCS--1.9070");
+		S_logger.Log.logger.info("" + "----DETA HVPCS--1.9070");
 		System.out.flush();
-		System.out.println("----Author: 罗瑶光");
+		S_logger.Log.logger.info("" + "----Author: 罗瑶光");
 		System.out.flush();
-		System.out.println("----浏阳德塔软件开发有限公司开源项目");
+		S_logger.Log.logger.info("" + "----浏阳德塔软件开发有限公司开源项目");
 		TimeProcess timeProcess = new TimeProcess();
 		timeProcess.begin();
 		SleeperHall sleeperHall = new SleeperHall();
 		init();
 		timeProcess.end();
 		System.out.flush();
-		System.out.println(
+		S_logger.Log.logger.info("" + 
 				"----德塔VPCS前端服务器启动一切正常-总耗时:" + timeProcess.duration() + "毫秒");
 		ServerSocket server = new ServerSocket(port);
 		long clearTime = System.currentTimeMillis();
@@ -88,7 +88,7 @@ public class ServerInitController {
 			}
 			if (0 >= timeHall.getMaxLimist()) {
 				System.out.flush();
-				System.out.println(sleeperHall.getThreadsCount());
+				S_logger.Log.logger.info("" + sleeperHall.getThreadsCount());
 				timeHall.resetLimists();// 20250523
 				continue Here;
 			}

@@ -31,10 +31,10 @@ public class ServerInit_Standard {
             port = Integer.valueOf(frontendTxt);
             //port= Config.detaVPCSDBPort;
             server = new ServerSocket(port);
-            //20230106-System.out.println("----德塔VPCS"+ serverName+ "端口启动:" + port);
-            //20230106-System.out.println("----德塔VPCS"+ serverName+ "DMA确认:成功！");
+            //20230106-S_logger.Log.logger.info("" + "----德塔VPCS"+ serverName+ "端口启动:" + port);
+            //20230106-S_logger.Log.logger.info("" + "----德塔VPCS"+ serverName+ "DMA确认:成功！");
             RequestFilter_C.IV_BlockList();
-            //20230106-System.out.println("----德塔VPCS"+ serverName+ "IP过滤服务启动:成功！");
+            //20230106-S_logger.Log.logger.info("" + "----德塔VPCS"+ serverName+ "IP过滤服务启动:成功！");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -45,15 +45,15 @@ public class ServerInit_Standard {
     }
 
     public void IV_Server(String frontendTxt, String serverName) {
-        //20230106-System.out.println("----DETA VPCS--3.0");
-        //20230106-System.out.println("----Author: 罗瑶光");
-        //20230106-System.out.println("----浏阳德塔软件开发有限公司开源项目");
+        //20230106-S_logger.Log.logger.info("" + "----DETA VPCS--3.0");
+        //20230106-S_logger.Log.logger.info("" + "----Author: 罗瑶光");
+        //20230106-S_logger.Log.logger.info("" + "----浏阳德塔软件开发有限公司开源项目");
         Time_P time_P = new Time_P();
         time_P.begin();
         SleeperHall sleeper_H = new SleeperHall();
         IV_Service(frontendTxt, serverName);
         time_P.end();
-        //20230106-System.out.println("----德塔VPCS"+ serverName+ "启动一切正常-总耗时:"
+        //20230106-S_logger.Log.logger.info("" + "----德塔VPCS"+ serverName+ "启动一切正常-总耗时:"
         //		+ time_P.duration()+ "毫秒");
         while (true) {
             if (sleeper_H.getThreadsCount() < S_Web.SLEEPERS_RANGE) {

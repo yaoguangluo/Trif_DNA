@@ -62,7 +62,7 @@ public class Jpm extends Panel {
             Dimension d = this.getSize();
             int w = 1024;
             int h = 400;
-            ////20230106-System.out.println(d.width+"**"+d.height);
+            ////20230106-S_logger.Log.logger.info("" + d.width+"**"+d.height);
             int INFOPAD = 15;
             //Graphics g= getGraphics();
             Graphics2D g2 = (Graphics2D) g;

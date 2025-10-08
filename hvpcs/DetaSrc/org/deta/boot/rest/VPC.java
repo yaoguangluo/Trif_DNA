@@ -125,11 +125,11 @@ public class VPC {
 		}
 		if (string.equalsIgnoreCase("/dataYL")) {
 			System.out.flush();
-			System.out.println(System.currentTimeMillis());
+			S_logger.Log.logger.info("" + System.currentTimeMillis());
 			System.out.flush();
-			System.out.println("2huaruiji->" + data.get("email"));
+			S_logger.Log.logger.info("" + "2huaruiji->" + data.get("email"));
 			System.out.flush();
-			System.out.println("2huaruiji->" + data.get("token"));
+			S_logger.Log.logger.info("" + "2huaruiji->" + data.get("token"));
 			if (null == data.get("token") || null == data.get("email")) {
 				return "";
 			}
@@ -138,7 +138,7 @@ public class VPC {
 		}
 		if (string.equalsIgnoreCase("/dataSC")) {
 			System.out.flush();
-			System.out.println(System.currentTimeMillis());
+			S_logger.Log.logger.info("" + System.currentTimeMillis());
 		}
 		return "";
 	}

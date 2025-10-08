@@ -183,7 +183,7 @@ public class PlayerControl {
                     filedialog.setFilenameFilter(new TXTFilter("png"));
                     filedialog.setVisible(true);
                     String filepath = filedialog.getDirectory() + filedialog.getFile();
-                    //20230106-System.out.println(filepath);
+                    //20230106-S_logger.Log.logger.info("" + filepath);
                     try {
                         File outputBin = new File(filepath + ".png");
                         if (null == flipImage) {
@@ -191,7 +191,7 @@ public class PlayerControl {
                         }
                         ImageIO.write(flipImage.get(control[6]), "png", outputBin);
                     } catch (IOException writePngError) {
-                        //20230106-System.out.println(filepath);
+                        //20230106-S_logger.Log.logger.info("" + filepath);
                     }
                     //输出图片
                 }
@@ -210,7 +210,7 @@ public class PlayerControl {
                     filedialog.setFilenameFilter(new TXTFilter("lyg"));
                     filedialog.setVisible(true);
                     String filepath = filedialog.getDirectory() + filedialog.getFile();
-                    //20230106-System.out.println(filepath);
+                    //20230106-S_logger.Log.logger.info("" + filepath);
                     File outputBin = new File(filepath + ".lyg");
                     //	Iterator<int[][]> iterator= flipImage.keySet().iterator();
                     Iterator<Integer> iterator = flipImage.keySet().iterator();

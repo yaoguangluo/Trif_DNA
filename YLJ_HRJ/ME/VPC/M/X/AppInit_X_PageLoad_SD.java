@@ -509,7 +509,7 @@ public class AppInit_X_PageLoad_SD {
 		vPCSRestPanel.add(addChuFang);
 	}
 }
-//		System.out.println("启动400编码调试开始-00000061");
+//		S_logger.Log.logger.info("" + "启动400编码调试开始-00000061");
 //DetaThread.sleepDeta(300);
 //if (app.appConfig.vPCSRestPanel.tabNamesHook[16]) {
 //	if (app.appConfig.SectionJPanel.jTextPane != null) {

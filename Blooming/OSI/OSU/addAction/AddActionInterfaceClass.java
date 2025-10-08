@@ -99,22 +99,22 @@ public class AddActionInterfaceClass implements CrabInterface {
 	//
 	// StaticRootMap.chromosomeBlooming.put("crab", null);
 	// StaticRootMap.chromosomeRNA.put("crab", null);
-	// System.out.println("Hello Word!");
+	// S_logger.Log.logger.info("" + "Hello Word!");
 	// return null;
 	@SuppressWarnings("unchecked")
 	public boolean logic(IMV_SQI inputValues, String[] 传参因子, int 因子,
 		App NE, IMV_SQI outputReg) {
-		//System.out.println("Hello Word!");
-		Log.logger.info("Hello Word!");
+		//S_logger.Log.logger.info("" + "Hello Word!");
+		S_logger.Log.logger.info("" + "Hello Word!");
 		if (NE.app_S.workVerbalMap.command_V.cartesianLooped.contains(
 			className)) {
-			//System.out.println("400-size-01-"
+			//S_logger.Log.logger.info("" + "400-size-01-"
 			//		+ NE.app_S.workVerbalMap.command_V.countReject++);
 			return false;
 		}
 		NE.app_S.workVerbalMap.command_V.cartesianLooped.put(
 			className, "");
-		//System.out.println("400-size-02-"
+		//S_logger.Log.logger.info("" + "400-size-02-"
 		//		+ NE.app_S.workVerbalMap.command_V.cartesianLooped.size());
 
 		new AddActionExample().addClass(NE);

@@ -26,7 +26,7 @@ public class DetaDBUtil {
 			conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("POST");
 			System.out.flush();
-			System.out.println("----20000");// ��ֹcleanʧ�ܼ��
+			S_logger.Log.logger.info("" + "----20000");// ��ֹcleanʧ�ܼ��
 			conn.setConnectTimeout(20000);// �Ҳ�����˵ʲô��
 			conn.setRequestProperty("Accept", "application/json");
 			if (conn.getResponseCode() != 200) {
@@ -58,7 +58,7 @@ public class DetaDBUtil {
 			conn = null;
 			out.append(" ");
 			System.out.flush();
-			System.out.println(e.getMessage());
+			S_logger.Log.logger.info("" + e.getMessage());
 			// e.printStackTrace();
 			return out.toString();
 		}
@@ -67,7 +67,7 @@ public class DetaDBUtil {
 
 	public static String huaRuiJiRequest(String request) throws IOException {
 		System.out.flush();
-		System.out.println("request:" + request.length());
+		S_logger.Log.logger.info("" + "request:" + request.length());
 		URL url = new URL("http://192.168.2.16:8080/" + request);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod("POST");

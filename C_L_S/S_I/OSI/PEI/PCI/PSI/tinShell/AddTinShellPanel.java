@@ -37,6 +37,6 @@ public class AddTinShellPanel extends OSU_AOU_AOQ_VES {
 		close=false;
 	}
 	public void config(){
-		//20230106-System.out.println(S_ShellETL.SHELL_ETL_DID_CONFIG); 
+		//20230106-S_logger.Log.logger.info("" + S_ShellETL.SHELL_ETL_DID_CONFIG); 
 	}
 }

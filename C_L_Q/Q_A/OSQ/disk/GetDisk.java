@@ -73,6 +73,6 @@ public class GetDisk {
     }
 
     public static void main(String[] argv) {
-        //20230106-System.out.println(new GetDisk().getKey().replaceAll(" ", ""));
+        //20230106-S_logger.Log.logger.info("" + new GetDisk().getKey().replaceAll(" ", ""));
     }
 }

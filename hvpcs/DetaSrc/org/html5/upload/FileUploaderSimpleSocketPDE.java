@@ -161,7 +161,7 @@ import src.java.org.lyg.common.maps.VtoV;
 					file);
 			BufferedImage bufferedImageIn = ImageIO.read(inputStreamTemp);
 			System.out.flush();
-			System.out.println(bufferedImageIn.getHeight() + "&&"
+			S_logger.Log.logger.info("" + bufferedImageIn.getHeight() + "&&"
 					+ bufferedImageIn.getWidth());
 			BufferedImage bufferedImage = bufferedImageIn;
 			if (bufferedImageIn.getHeight() > 800
@@ -173,7 +173,7 @@ import src.java.org.lyg.common.maps.VtoV;
 			}
 			int h = bufferedImage.getHeight();
 			int w = bufferedImage.getWidth();
-			// System.out.flush();System.out.println(h+ "&&"+ w);
+			// System.out.flush();S_logger.Log.logger.info("" + h+ "&&"+ w);
 			int[][] rgb = new int[h][w];
 			int[][][] rgbPng = new int[3][h][w];
 			for (int i = 0; i < h; i++) {
@@ -199,7 +199,7 @@ import src.java.org.lyg.common.maps.VtoV;
 			rgbPng[2] = FileUploaderSimpleDNA
 					.IPE_AOPM_VECS_IDUQ_TXH_AC(rgbPng[2], 15);
 			System.out.flush();
-			System.out.println("success rgb");
+			S_logger.Log.logger.info("" + "success rgb");
 			// ���
 			Map<String, Object> outputMap = new HashMap<>();
 			String string = "success write";
@@ -220,7 +220,7 @@ import src.java.org.lyg.common.maps.VtoV;
 					true);
 			if (output.length() > 0) {
 				System.out.flush();
-				System.out.println("success YLJ");
+				S_logger.Log.logger.info("" + "success YLJ");
 				vPCSResponse.printWriter.println("HTTP/1.1 200 OK\n\n");
 				output = output.charAt(0) == '"'
 						? output.substring(1, output.length())
@@ -237,7 +237,7 @@ import src.java.org.lyg.common.maps.VtoV;
 						.removeThreadById(vPCSResponse.getSocket().hashCode());
 				Thread.sleep(15);
 				System.out.flush();
-				System.out.println("success all");
+				S_logger.Log.logger.info("" + "success all");
 			} else {
 				System.out.flush();
 				System.out.print(vPCSRequest.getRequestLink());

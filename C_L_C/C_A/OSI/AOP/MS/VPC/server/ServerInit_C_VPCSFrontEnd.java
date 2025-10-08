@@ -33,23 +33,23 @@ public class ServerInit_C_VPCSFrontEnd {
 
 	{
 		properties = new Properties();
-		// 20230106-System.out.println("----德塔VPCS前端服务器资源载入:成功！");
+		// 20230106-S_logger.Log.logger.info("" + "----德塔VPCS前端服务器资源载入:成功！");
 	}
 
 	public void IV_() {
 		try {
 			port = Integer.valueOf(app.frontendTxt);
-			S_logger.Log.logger.info("启动400编码调试开始-00000051-" + port);
+			S_logger.Log.logger.info("" + "启动400编码调试开始-00000051-" + port);
 			// port= Config.detaVPCSFrontEndPort;
 			server = new ServerSocket(port);
-			// 20230106-System.out.println("----德塔VPCS前端服务器端口启动:" +
+			// 20230106-S_logger.Log.logger.info("" + "----德塔VPCS前端服务器端口启动:" +
 			// port);
 			if (null != app.dbConfigPath && !app.dbConfigPath.isEmpty()) {
 				DetaUtil.IV_DB(app.dbConfigPath);// 稍后整理下
 			} else {
 				DetaUtil.IV_DB(ConfigIndex.detaDBPath);
 			}
-			// 20230106-System.out.println("----德塔VPCS前端服务器DMA确认:成功！");
+			// 20230106-S_logger.Log.logger.info("" + "----德塔VPCS前端服务器DMA确认:成功！");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -61,16 +61,16 @@ public class ServerInit_C_VPCSFrontEnd {
 
 	public void IV_Server(App_S app) {
 		this.app = app;
-		System.out.println("");
-		System.out.println("----DETA VPCS--2.0");
-		System.out.println("----Author: 罗瑶光");
-		System.out.println("----浏阳德塔软件开发有限公司开源项目");
+		S_logger.Log.logger.info("" + "");
+		S_logger.Log.logger.info("" + "----DETA VPCS--2.0");
+		S_logger.Log.logger.info("" + "----Author: 罗瑶光");
+		S_logger.Log.logger.info("" + "----浏阳德塔软件开发有限公司开源项目");
 		Time_P time_P = new Time_P();
 		time_P.begin();
 		SleeperHall sleeper_H = new SleeperHall();
 		IV_();
 		time_P.end();
-		System.out.println(
+		S_logger.Log.logger.info("" + 
 				"----德塔VPCS前端服务器启动一切正常-总耗时:" + time_P.duration() + "毫秒");
 		while (true) {
 			if (sleeper_H.getThreadsCount() < 500) {

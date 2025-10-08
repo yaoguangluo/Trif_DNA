@@ -32,7 +32,7 @@ public class WavePlayOSU_MSQ_OPE_OPC_ECI extends OSU_OPE_OPC_ECI {
         ff.setSize(500, 200);
         ff.setVisible(true);
         _SQ__OVQ_OSQ_VSQ.lygout = toplygin;
-        //20230106-System.out.println("end");
+        //20230106-S_logger.Log.logger.info("" + "end");
         //anasys
     }
 }

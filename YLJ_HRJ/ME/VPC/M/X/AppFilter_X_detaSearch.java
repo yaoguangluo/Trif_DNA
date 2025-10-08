@@ -118,7 +118,7 @@ package ME.VPC.M.X;//package ME.VPC.M.app.X;
 //                        //dnnSet.remove("总分");//不参与搜索算子；
 //                    }
 //                    if (null == dnnSet || dnnSet.isEmpty()) {
-//                        System.out.println("文档不完整--");
+//                        S_logger.Log.logger.info("" + "文档不完整--");
 //                        String[][] ann = aNNTest.getANNMatrix(待搜索词典, NE);
 //                        String[][] dnn = dNNTest.getDNNMatrix(ann, 待搜索词典, NE);
 //                        for (String[] dnnTupe : dnn) {

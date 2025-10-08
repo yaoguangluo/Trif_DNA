@@ -22,7 +22,7 @@ public class Demo {
         double[] f = new double[8];
         for (int n = 0; n < 8; n++) {
             p[n] = Math.sin(2 * pi * n / N);
-            //20230106-System.out.println(":"+p[n]);
+            //20230106-S_logger.Log.logger.info("" + ":"+p[n]);
         }
         //dft
         for (int k = 0; k < N; k++) {
@@ -31,9 +31,9 @@ public class Demo {
                 r = r + p[n] * Math.cos(2 * pi * k * n / N);
                 i = i + p[n] * Math.sin(2 * pi * k * n / N);
             }
-            //	//20230106-System.out.println(":"+r+":"+i);
+            //	//20230106-S_logger.Log.logger.info("" + ":"+r+":"+i);
             f[k] = Math.sqrt(r * r + i * i);
-            //20230106-System.out.println("::"+f[k]);
+            //20230106-S_logger.Log.logger.info("" + "::"+f[k]);
         }
         //f[1]=0;  0   1   0    -1   0
         //idft     1   0   -1    0   1
@@ -43,9 +43,9 @@ public class Demo {
                 r = r + f[n] * Math.cos(2 * pi * k * (n) / N);
                 i = i + f[n] * Math.sin(2 * pi * k * (n) / N);
             }
-            //	//20230106-System.out.println(":"+r+":"+i);
+            //	//20230106-S_logger.Log.logger.info("" + ":"+r+":"+i);
             p[k] = (r - i) / 8;
-            ////20230106-System.out.println(":::"+p[k]);
+            ////20230106-S_logger.Log.logger.info("" + ":::"+p[k]);
         }
     }
 }

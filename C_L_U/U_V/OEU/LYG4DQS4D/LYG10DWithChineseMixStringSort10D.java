@@ -450,7 +450,7 @@
 ////			LYG10DWithChineseMixStringSort10D lYG10DWithChineseMixStringSort10D= new LYG10DWithChineseMixStringSort10D();
 ////			lYG10DWithChineseMixStringSort10D.quick4DChineseStringArray1D(strings1D, 30, map, 7, 70);
 ////			for(String string:strings1D) {
-////				//20230106-System.out.println(string);
+////				//20230106-S_logger.Log.logger.info("" + string);
 ////			}
 ////			String[][] strings2D= new String[14][3];
 ////			strings2D[0][1]= "dh罗韵律";
@@ -469,7 +469,7 @@
 ////			strings2D[13][1]= "dh罗瑶光";
 ////			lYG10DWithChineseMixStringSort10D.quick4DChineseStringArray2D(strings2D, 30, map, 7, 70, 1);
 ////			for(String[] string:strings2D) {
-////				//20230106-System.out.println(string[1]);
+////				//20230106-S_logger.Log.logger.info("" + string[1]);
 ////			}
 ////			cReaderc.close();
 ////			cReaderp.close();

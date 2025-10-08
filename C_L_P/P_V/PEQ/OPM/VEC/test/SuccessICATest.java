@@ -54,7 +54,7 @@ public class SuccessICATest {
             for (int j = 0; j < successICATest.kernelCNN[0].length; j++) {
                 //20230106-System.out.print(successICATest.kernelCNN[i][j] + " ");
             }
-            //20230106-System.out.println();
+            //20230106-S_logger.Log.logger.info("" + "");
         }
         //do ICA normalization
         //do ROBUST ICA

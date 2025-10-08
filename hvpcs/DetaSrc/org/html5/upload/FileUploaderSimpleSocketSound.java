@@ -98,7 +98,7 @@ import U_A.PEU.P.wave.DFT;
 		}
 		// ׼����2���¡�
 		// 1 email token ��֤�۵�
-		// System.out.flush();System.out.println(email+ token);
+		// System.out.flush();S_logger.Log.logger.info("" + email+ token);
 		// 2 bytesNext �� stringInputNext
 		// �����Ƿ���image��boundary����ʼ�������
 		// ��������һ�����⣬����û�е�½�͵������ӿڣ���ô������ڵ�һ��bytes��������next��
@@ -184,7 +184,7 @@ import U_A.PEU.P.wave.DFT;
 			// �ļ��ü�
 			File F = new File(outPath + fileName);
 			System.out.flush();
-			System.out.println(F.length());
+			S_logger.Log.logger.info("" + F.length());
 			Thread.sleep(50);
 			AudioInputStream ais = AudioSystem.getAudioInputStream(F);
 			LYGFileIO IO = new LYGFileIO();
@@ -261,7 +261,7 @@ import U_A.PEU.P.wave.DFT;
 			}
 			//
 			System.out.flush();
-			System.out.println("success noise");
+			S_logger.Log.logger.info("" + "success noise");
 			// ���
 			Map<String, Object> outputMap = new HashMap<>();
 			String string = "success";
@@ -293,11 +293,11 @@ import U_A.PEU.P.wave.DFT;
 						true);
 			} catch (Exception e) {
 				System.out.flush();
-				System.out.println();
+				S_logger.Log.logger.info("" + "");
 			}
 			if (output.length() > 0) {
 				System.out.flush();
-				System.out.println("success YLJ");
+				S_logger.Log.logger.info("" + "success YLJ");
 				vPCSResponse.printWriter.println("HTTP/1.1 200 OK\n\n");
 				output = output.charAt(0) == '"'
 						? output.substring(1, output.length())
@@ -314,7 +314,7 @@ import U_A.PEU.P.wave.DFT;
 						.removeThreadById(vPCSResponse.getSocket().hashCode());
 				Thread.sleep(15);
 				System.out.flush();
-				System.out.println("success all");
+				S_logger.Log.logger.info("" + "success all");
 			} else {
 				System.out.flush();
 				System.out.print(vPCSRequest.getRequestLink());

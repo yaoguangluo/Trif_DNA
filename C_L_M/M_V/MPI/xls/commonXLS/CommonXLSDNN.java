@@ -30,7 +30,7 @@ public class CommonXLSDNN {
                     return null;
                 }
                 for (int i = 0; i < tableData_old.length; i++) {
-                    System.out.println(i);
+                    S_logger.Log.logger.info("" + i);
                     double perRatio = 0.0;
                     String needDNNString = "";
                     String stringIdentify = "";
@@ -64,7 +64,7 @@ public class CommonXLSDNN {
             }
             return subDNNmap;
         } catch (Exception e) {
-            System.out.println("读表错误");
+            S_logger.Log.logger.info("" + "读表错误");
             e.printStackTrace();
         }
         return null;

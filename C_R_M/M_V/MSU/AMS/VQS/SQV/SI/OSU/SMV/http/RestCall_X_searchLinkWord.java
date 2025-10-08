@@ -18,7 +18,7 @@ import java.net.URL;
  * */
 public class RestCall_X_searchLinkWord {
 	public static String _E(String request) {
-		//// 20230106-System.out.println("http://localhost:8000" +
+		//// 20230106-S_logger.Log.logger.info("" + "http://localhost:8000" +
 		//// request);
 		URL url;
 		String out;

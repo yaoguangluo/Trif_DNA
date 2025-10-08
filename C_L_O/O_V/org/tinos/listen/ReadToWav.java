@@ -86,7 +86,7 @@ public class ReadToWav {
 			int frameSizeInBytes = format.getFrameSize();
 			int bufferLengthInFrames = line.getBufferSize() / (8);
 			int bufferLengthInBytes = bufferLengthInFrames * frameSizeInBytes;
-			// 20230106-System.out.println("bufferLengthInBytes : "
+			// 20230106-S_logger.Log.logger.info("" + "bufferLengthInBytes : "
 			// + bufferLengthInBytes +" **");
 			int numBytesRead = 0;
 			// byte[] data= new byte[bufferLengthInBytes];
@@ -143,6 +143,6 @@ public class ReadToWav {
 	}
 
 	public static void main(String[] argv) throws LineUnavailableException {
-		// 20230106-System.out.println(new ReadToWav().listen());
+		// 20230106-S_logger.Log.logger.info("" + new ReadToWav().listen());
 	}
 }

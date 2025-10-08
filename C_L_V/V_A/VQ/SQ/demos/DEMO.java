@@ -38,12 +38,12 @@ public class DEMO {
             , 4, 5, true);
         //en /1sample rate /2samplesize /3 channels /4framesize
         ///5 framrate/bigendianture
-        //20230106-System.out.println("Channels"+F.getChannels());
-        //20230106-System.out.println("FrameRate"+F.getFrameRate());
-        //20230106-System.out.println("FrameSize"+F.getFrameSize());
-        //20230106-System.out.println("SampleSizeInBits"+F.getSampleSizeInBits());
-        //20230106-System.out.println("Encod"+F.getEncoding());
-        //20230106-System.out.println("SampleRate"+F.getSampleRate());
-        //20230106-System.out.println("BigEndian"+F.isBigEndian());
+        //20230106-S_logger.Log.logger.info("" + "Channels"+F.getChannels());
+        //20230106-S_logger.Log.logger.info("" + "FrameRate"+F.getFrameRate());
+        //20230106-S_logger.Log.logger.info("" + "FrameSize"+F.getFrameSize());
+        //20230106-S_logger.Log.logger.info("" + "SampleSizeInBits"+F.getSampleSizeInBits());
+        //20230106-S_logger.Log.logger.info("" + "Encod"+F.getEncoding());
+        //20230106-S_logger.Log.logger.info("" + "SampleRate"+F.getSampleRate());
+        //20230106-S_logger.Log.logger.info("" + "BigEndian"+F.isBigEndian());
     }
 }

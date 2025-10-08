@@ -349,14 +349,14 @@ class ShellJPanelTest {
 		}
 		NE.app_S.makeContainerXLSList.add(makeContainerXLS);
 		if (makeContainerXLS.tabNames.size() < 1) {
-			System.out.println("error read table");
+			S_logger.Log.logger.info("" + "error read table");
 			NE.stop();
 			return "NULL";
 		}
 		String XLSTableName = makeContainerXLS.jpanelSecond.pageName;
 		String XLSTableNamePath = makeContainerXLS.jpanelSecond.xlsFilePath;
-		System.out.println("path table:" + XLSTableName);
-		System.out.println("name table:" + XLSTableNamePath);
+		S_logger.Log.logger.info("" + "path table:" + XLSTableName);
+		S_logger.Log.logger.info("" + "name table:" + XLSTableNamePath);
 		return XLSTableName;
 	}
 
@@ -390,7 +390,7 @@ class ShellJPanelTest {
 	void testTinshell() throws InterruptedException, IOException {
 		try {
 			// test without mock api
-			System.out.println(
+			S_logger.Log.logger.info("" + 
 				"test without mock api -- tinshell 批处理测试 执行复杂条件搜索逻辑"
 					+ "--我本地苹果mac上已经调通可运行。" + "方便我之后的各类型测试");
 			// -1
@@ -538,7 +538,7 @@ class ShellJPanelTest {
 				String string = iterator.next();
 				NE.app_S.appConfig.SectionJPanel.jTextPane.setText(
 					output.get(string).toString());
-				S_logger.Log.logger.info("line-->:" + output.get(string)
+				S_logger.Log.logger.info("" + "line-->:" + output.get(string)
 					.toString());
 			}
 			// DNA序列记忆标注
@@ -546,7 +546,7 @@ class ShellJPanelTest {
 				Iterator<String> iterators = NE.app_S.helpVerbalMap.didJustNow
 					.keySet().iterator();
 				while (iterators.hasNext()) {
-					S_logger.Log.logger.info("Action-->:" + iterators
+					S_logger.Log.logger.info("" + "Action-->:" + iterators
 						.next());
 				}
 			}

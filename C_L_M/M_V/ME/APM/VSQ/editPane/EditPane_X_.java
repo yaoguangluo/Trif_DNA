@@ -709,7 +709,7 @@ public class EditPane_X_ extends Container implements KeyListener {
                 filedialog.setFilenameFilter(new TXTFilter("txt"));
                 filedialog.setVisible(true);
                 String filepath = filedialog.getDirectory() + filedialog.getFile();
-                //20230106-System.out.println(filepath);
+                //20230106-S_logger.Log.logger.info("" + filepath);
                 //write file
                 FileWriter fw = null;
                 try {
@@ -1137,7 +1137,7 @@ public class EditPane_X_ extends Container implements KeyListener {
 //				filedialog.setFilenameFilter(new TXTFilter("txt"));
 //				filedialog.setVisible(true);
 //				String filepath= filedialog.getDirectory()+ filedialog.getFile();
-//				//20230106-System.out.println(filepath);
+//				//20230106-S_logger.Log.logger.info("" + filepath);
 //				if(filepath.endsWith(".doc")||filepath.endsWith(".docx")
 //						||filepath.endsWith(".txt")||filepath.endsWith(".pdf")) {
 //					try {

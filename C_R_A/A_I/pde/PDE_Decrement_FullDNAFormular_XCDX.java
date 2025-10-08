@@ -229,12 +229,12 @@ public class PDE_Decrement_FullDNAFormular_XCDX {
             //	pDE_RNA_Formular.pdedeKey+= "2";
             //}
             if (!initonLink.hasNext()) {
-                ////20230106-System.out.println(pDE_RNA_Formular.pdedsKey);
+                ////20230106-S_logger.Log.logger.info("" + pDE_RNA_Formular.pdedsKey);
                 return initonLink;
             }
             initonLink = initonLink.next;//while loop 替增.
         }
-        ////20230106-System.out.println(pDE_RNA_Formular.pdedsKey);
+        ////20230106-S_logger.Log.logger.info("" + pDE_RNA_Formular.pdedsKey);
         return initonLink;
     }
 
@@ -319,12 +319,12 @@ public class PDE_Decrement_FullDNAFormular_XCDX {
 //				pDE_RNA_Formular.pdedsKey+= "2";
 //			}
             if (!initonLink.hasNext()) {
-                //20230106-System.out.println(pDE_RNA_Formular.pdedsKey);
+                //20230106-S_logger.Log.logger.info("" + pDE_RNA_Formular.pdedsKey);
                 return initonLink;
             }
             initonLink = initonLink.next;//while loop 替增.
         }
-        ////20230106-System.out.println(pDE_RNA_Formular.pdedsKey);
+        ////20230106-S_logger.Log.logger.info("" + pDE_RNA_Formular.pdedsKey);
         return initonLink;
     }
 }

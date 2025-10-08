@@ -10,7 +10,7 @@ public class CTest {
         try {
             String cStringPath = sFile.getCanonicalPath()
                     .replace(sFile.getPath(), "" + sFile.getPath());
-            System.out.println(cStringPath);
+            S_logger.Log.logger.info("" + cStringPath);
             System.load(cStringPath);
         } catch (IOException e) {
             throw new RuntimeException(e);

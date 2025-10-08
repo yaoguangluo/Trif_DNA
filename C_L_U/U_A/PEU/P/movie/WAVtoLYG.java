@@ -31,7 +31,7 @@ public class WAVtoLYG {
             //IO.WAVRead("C:\\Users\\yaoguang\\Desktop\\study\\sound\\AHag.wav");
             //File F=new File("C:\\Users\\yaoguang\\Desktop\\study\\sound\\AHag.wav");
             File F = new File(WAVf);
-            //20230106-System.out.println(F.length());
+            //20230106-S_logger.Log.logger.info("" + F.length());
             AudioInputStream ais = null;
             ais = AudioSystem.getAudioInputStream(F);
             //get header
