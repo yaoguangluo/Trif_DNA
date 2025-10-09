@@ -6,7 +6,6 @@ import java.util.Iterator;
 import O_V.OSM.shell.CommandClass;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
 import S_A.SixActionMap.WorkVerbalMap;
-import S_logger.Log;
 import test.java.interfaces.test.CommonTestInition;
 
 /*
@@ -139,14 +138,13 @@ public class FastCartesianIdentifyTest {
 	 * 
 	 * --罗瑶光
 	 */
-	
+
 	@SuppressWarnings("unused")
 	public HashMap<String, String> getCartesianRelationShipFromHumanTalk(
 		WorkVerbalMap workVerbalMap) {
 		Iterator<String> iterators = workVerbalMap.command_V._IMV_SQI_SS
 			.keySet().iterator();
 		while (iterators.hasNext()) {
-
 			Object object = iterators.next();
 			String string = object.toString();
 			S_logger.Log.logger.info("" + string);
@@ -169,7 +167,7 @@ public class FastCartesianIdentifyTest {
 				continue;
 			}
 			if (string.contains("*")) {
-				
+
 			}
 			/*
 			 * ASCII关系 字母关系 65～90 97～122 思考如果是其他语言呢？毫无价值。先不管。
@@ -243,11 +241,68 @@ public class FastCartesianIdentifyTest {
 	 * --罗瑶光
 	 * 
 	 */
+	/*
+	 * 准备定义笛卡尔的符号规范
+	 * 1 因为一开始采用 全局的去动名词的全局笛卡尔关系，所以四个
+	 * cartesianWorkActionsRightsVO
+	 * cartesianWorkActionsRightsSV
+	 * cartesianWorkActionsPositionsVO
+	 * cartesianWorkActionsPositionsSV
+	 * 里面的结果是一致的，所以可以剔除减少75%的计算量。
+	 * averagePositionNoun 比较不再有价值需要进行全补充关系
+	 * 
+	 * 剔除并不是删除这些计算量 而是重新利用。原来的+和-是动和名的组合，因为是全局关系，
+	 * 不再有这个逻辑了，因为人类语法动名词可以变换。动词本就是名词的一种弱属性。
+	 * 那么+和-可以重新定义为 文中的词汇关系 先后为+，后先为-。这个价值可以用来观测词汇
+	 * 的因果发生现象。那么这里出现第二个问题便是 当一个指令句出现多个相同的字，就+-无效了
+	 * 如果做平均数来计算，那么平均数仅仅是代表距离的分布关系，而不是前后关系。
+	 * 
+	 * 在哲学计算的层面上，上面思考的内容属于新的关系更近分析，所以进行归纳，关系分层，
+	 * 这里仅用+做笛卡尔全局计算先，新的关系和新的条件，用新的决策树函数逻辑来处理。
+	 * 
+	 * //那第一层决策关系函数处理的逻辑 就没有了- 和动名词之分。
+	 * //VO map全部省略，SVO逻辑区 先 减少75%的内存占用。
+	 * //这种操作先保留，因为动名词的全局笛卡尔逻辑全省略有风险，
+	 * 
+	 * 主要成分价值map
+	 * cartesianWorkActionsRightsVO
+	 * cartesianWorkActionsRightsSV
+	 * 仅保留PCA，VO map全部省略，SVO逻辑区 ，减少80%的内存占用。
+	 * 当前main功能测试通过。Tinshell测试通过。华瑞集admin界面测试通过。
+	 * WorkVerbalMap_X_S 195行处PCA过滤，以后用到条件再解开slash。
+	 * --罗瑶光
+	 * */
+
+	// 筛选前主要关系数-->13
+	// 筛选后主要关系数-->8
+	// 在含有各类特殊字符的输入中 主要成分计算量减少40% 价值巨大。
+	// 在纯中文的规整字符输入中 准备应用于tinshell 和 tinshellSeparateTest 测试。
+	/* 真实测试结果输出正确，计算量减少 2/38，接近5%。价值可观。
+	Action-->:updateColorAttributesOfColumnsInMemoryClass
+	Action-->:selectRowsByAttributesOfGetCulumns
+	Action-->:findTableInMemory
+	Action-->:P_ListNeedStart
+	Action-->:limitedRowAttributesOfColumnsInMemoryClass
+	Action-->:selectRowsByAttributesOfAggregation
+	Action-->:P_TableName
+	Action-->:P_fileOperations
+	Action-->:selectRowsByAttributesOfCondition
+	Action-->:addFindColumnsInMemoryClass
+	*/
+	// 结束
+	/*
+	 * 思考-条件和逻辑的分层筛选，对特殊的问题会产生一些盲区。可以叫bug。
+	 * 稍后在处理逻辑内容时，要考虑这些盲区，写FIX管理关系函数。
+	 * 并不是现在输出正确就是一直准确。环境是变化的，所以逻辑也应该遵循这个
+	 * 变化中的长期稳定类规律去自适应。
+	 * 
+	 * --罗瑶光
+	 * 
+	 * */
 	@SuppressWarnings("unchecked")
 	public static void main(String[] argv) {
 		// 初始
-		FastCartesianIdentifyTest fastCartesianIdentifyTest 
-		= new FastCartesianIdentifyTest();
+		FastCartesianIdentifyTest fastCartesianIdentifyTest = new FastCartesianIdentifyTest();
 		// 启动测试开始
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
@@ -277,7 +332,6 @@ public class FastCartesianIdentifyTest {
 			command_V._IMV_SQI_SS.put(string, WordFrequency);
 		}
 		commonTestInition.NE.app_S.workVerbalMap.initEnvironment();
-
 		// 统计筛选归纳
 		/*
 		 * 这里效果就出来，去掉之前繁杂的调试逻辑。观测速度翻好几番。 later。。
@@ -285,7 +339,6 @@ public class FastCartesianIdentifyTest {
 		fastCartesianIdentifyTest
 			.getCartesianRelationShipFromHumanTalk(
 				commonTestInition.NE.app_S.workVerbalMap);
-
 		/*
 		 * 函数稳定后我会专门花时间分配 public private protected sync 函数方法。
 		 * 目前在没有冲突的情况下 整体先 public -- 罗瑶光
@@ -335,7 +388,8 @@ public class FastCartesianIdentifyTest {
 
 		// 输出
 		S_logger.Log.logger.info("" + "-----笛卡尔关系推荐逻辑观测-----");
-		S_logger.Log.logger.info("" + "1-cartesianWorkActionsPositionsSV-"
+		S_logger.Log.logger.info(""
+			+ "1-cartesianWorkActionsPositionsSV-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV
@@ -347,7 +401,8 @@ public class FastCartesianIdentifyTest {
 					.getString(string));
 		}
 
-		S_logger.Log.logger.info("" + "2-cartesianWorkActionsPositionsVO-"
+		S_logger.Log.logger.info(""
+			+ "2-cartesianWorkActionsPositionsVO-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO
@@ -359,7 +414,8 @@ public class FastCartesianIdentifyTest {
 					.getString(string));
 		}
 
-		S_logger.Log.logger.info("" + "3-cartesianWorkActionsRightsSV-"
+		S_logger.Log.logger.info(""
+			+ "3-cartesianWorkActionsRightsSV-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
@@ -371,7 +427,8 @@ public class FastCartesianIdentifyTest {
 					.getString(string));
 		}
 
-		S_logger.Log.logger.info("" + "4-cartesianWorkActionsRightsVO-"
+		S_logger.Log.logger.info(""
+			+ "4-cartesianWorkActionsRightsVO-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
@@ -407,7 +464,8 @@ public class FastCartesianIdentifyTest {
 					.getString(string));
 		}
 
-		S_logger.Log.logger.info("" + "7-cartesianWorkActionsRightsParserSV-"
+		S_logger.Log.logger.info(""
+			+ "7-cartesianWorkActionsRightsParserSV-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
@@ -419,7 +477,8 @@ public class FastCartesianIdentifyTest {
 					.getString(string));
 		}
 
-		S_logger.Log.logger.info("" + "8-cartesianWorkActionsRightsParserVO-"
+		S_logger.Log.logger.info(""
+			+ "8-cartesianWorkActionsRightsParserVO-"
 			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 				.size());
 		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
@@ -430,66 +489,7 @@ public class FastCartesianIdentifyTest {
 				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
 					.getString(string));
 		}
-		/*
-		 * 准备定义笛卡尔的符号规范
-		 * 1 因为一开始采用 全局的去动名词的全局笛卡尔关系，所以四个
-		 * cartesianWorkActionsRightsVO
-		 * cartesianWorkActionsRightsSV
-		 * cartesianWorkActionsPositionsVO
-		 * cartesianWorkActionsPositionsSV
-		 * 里面的结果是一致的，所以可以剔除减少75%的计算量。
-		 * averagePositionNoun 比较不再有价值需要进行全补充关系
-		 * 
-		 * 剔除并不是删除这些计算量 而是重新利用。原来的+和-是动和名的组合，因为是全局关系，
-		 * 不再有这个逻辑了，因为人类语法动名词可以变换。动词本就是名词的一种弱属性。
-		 * 那么+和-可以重新定义为 文中的词汇关系 先后为+，后先为-。这个价值可以用来观测词汇
-		 * 的因果发生现象。那么这里出现第二个问题便是 当一个指令句出现多个相同的字，就+-无效了
-		 * 如果做平均数来计算，那么平均数仅仅是代表距离的分布关系，而不是前后关系。
-		 * 
-		 * 在哲学计算的层面上，上面思考的内容属于新的关系更近分析，所以进行归纳，关系分层，
-		 * 这里仅用+做笛卡尔全局计算先，新的关系和新的条件，用新的决策树函数逻辑来处理。
-		 * 
-		 * //那第一层决策关系函数处理的逻辑 就没有了- 和动名词之分。
-		 * //VO map全部省略，SVO逻辑区 先 减少75%的内存占用。
-		 * //这种操作先保留，因为动名词的全局笛卡尔逻辑全省略有风险，
-		 * 
-		 * 主要成分价值map
-		 * cartesianWorkActionsRightsVO
-		 * cartesianWorkActionsRightsSV
-		 * 仅保留PCA，VO map全部省略，SVO逻辑区 ，减少80%的内存占用。
-		 * 当前main功能测试通过。Tinshell测试通过。华瑞集admin界面测试通过。
-		 * WorkVerbalMap_X_S 195行处PCA过滤，以后用到条件再解开slash。
-		 * --罗瑶光
-		 * */
-
-		// 筛选前主要关系数-->13
-		// 筛选后主要关系数-->8
-		// 在含有各类特殊字符的输入中 主要成分计算量减少40% 价值巨大。
-		// 在纯中文的规整字符输入中 准备应用于tinshell 和 tinshellSeparateTest 测试。
-		/* 真实测试结果输出正确，计算量减少 2/38，接近5%。价值可观。
-		Action-->:updateColorAttributesOfColumnsInMemoryClass
-		Action-->:selectRowsByAttributesOfGetCulumns
-		Action-->:findTableInMemory
-		Action-->:P_ListNeedStart
-		Action-->:limitedRowAttributesOfColumnsInMemoryClass
-		Action-->:selectRowsByAttributesOfAggregation
-		Action-->:P_TableName
-		Action-->:P_fileOperations
-		Action-->:selectRowsByAttributesOfCondition
-		Action-->:addFindColumnsInMemoryClass
-		*/
-		// 结束
-		/*
-		 * 思考-条件和逻辑的分层筛选，对特殊的问题会产生一些盲区。可以叫bug。
-		 * 稍后在处理逻辑内容时，要考虑这些盲区，写FIX管理关系函数。
-		 * 并不是现在输出正确就是一直准确。环境是变化的，所以逻辑也应该遵循这个
-		 * 变化中的长期稳定类规律去自适应。
-		 * 
-		 * --罗瑶光
-		 * 
-		 * */
 		commonTestInition.endEnvironment();
-
 	}
 }
 //输出

@@ -160,6 +160,18 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 	* 在计算意识中，单字的价值不打，但是在歧义处理中，单字是普遍存在的，如果下面函数执行，那么
 	* 需要有精确的语法做铺垫，如果没有，那么就要进行概率累积评估，累积打分算法逻辑来灵活驱动。
 	*/
+	/*
+	 * 思考--关于 6到-9 进行行数筛选指令句 的 条件分析，这里6到的组合是因为
+	 * 6是一个char，到也是，小于2就并在一起了，成了6到。于是开始更进思考，
+	 * 这里 如果是600，那么出现了一个问题，便是组字的拆卸问题，这个逻辑进行
+	 * 捋一捋，可以的得到一个流程，便是 数字+一个字词变成高级笛卡尔的渡的关系。
+	 * 而不是之前的 rootM.length() < 3. 这样做需要一个精度来进行控制。会
+	 * 让匹配更灵活，于是开始修改。因为词汇分词后是最大也就4个字。但是一旦包含
+	 * 数字就不同了。所以可以省略。
+	 * 
+	 * --罗瑶光
+	 * 
+	 * */
 	public void relationshipsCombinationWithNoun() {
 		Iterator<String> iteratorNounM = nounInText.keySet()
 			.iterator();
@@ -204,18 +216,6 @@ public class WorkVerbalMap_X extends WorkVerbalMap_X_S {
 					- averagePositionNounN);
 				int positionM = (averagePositionNounM
 					+ averagePositionNounN) >> 1;
-				/*
-				 * 思考--关于 6到-9 进行行数筛选指令句 的 条件分析，这里6到的组合是因为
-				 * 6是一个char，到也是，小于2就并在一起了，成了6到。于是开始更进思考，
-				 * 这里 如果是600，那么出现了一个问题，便是组字的拆卸问题，这个逻辑进行
-				 * 捋一捋，可以的得到一个流程，便是 数字+一个字词变成高级笛卡尔的渡的关系。
-				 * 而不是之前的 rootM.length() < 3. 这样做需要一个精度来进行控制。会
-				 * 让匹配更灵活，于是开始修改。因为词汇分词后是最大也就4个字。但是一旦包含
-				 * 数字就不同了。所以可以省略。
-				 * 
-				 * --罗瑶光
-				 * 
-				 * */
 				//S_logger.Log.logger.info("" + rootM + "--" + rightM);
 				if (2 > rightM && rootM.length() < 3) {
 					//S_logger.Log.logger.info("" + rootM + "--" + rightM);

@@ -8,6 +8,7 @@ import java.util.LinkedList;
 
 import ME.VPC.M.app.App;
 import O_V.OSM.shell.CommandClass;
+
 /*
  * 1 6元SDLC
  * 2 sdlc obss
@@ -43,6 +44,38 @@ public class WorkVerbalMap_X_S {
 	public IMV_SQI positionMap;
 	public IMV_SQI nounInText;
 	public IMV_SQI verbInText;
+	/*
+	 * 开始设计高级笛卡尔关系 分
+	 * 稳定后在思考变量的归纳方式。
+	 * 关于精细化map的价值，举例50个子集成员进行处理，有20个单子集合并成20个双子集，那么当时
+	 * 最早的逻辑是 替换组合子集 = （50 - 20 + 20）*（50 - 20 + 20）= 2500，这种方法在处理从- 到-
+	 * 问题时候失效了，于是后修改为 笛卡尔关系 包含本身 累积是 70 * 70 = 4900。这种方法ok但速度翻了
+	 * 1倍， 于是现在准备采用高级map， 思考--当 map 分区后，原系是 （50-20）*（50-20）= 900， 
+	 * 单子集 20 * 20 = 400，合并双子集 20 * 20 = 400，原系-单子集 = 30 * 20 = 600，
+	 * 原系-合并双子集 = 30 * 20 = 600；单子集-合并双子集= 20 * 20 = 400 
+	 * 共计900 + 400 + 400 + 600 + 600 + 400 = 3300， 效果就出来，不但精确了双子集的价值
+	 * 因为包含 原系-单子集 逻辑， 所以还依旧保留了从- 到-的问题解决方案。
+	 * 
+	 * 稍后编码从理论走向真实论证，注意规避一些 PCA 逻辑误区。估计有200行源码要增删构造。
+	 * 
+	 * 哲学问题论证--任何理论充分的奇想和冥想在没有一个真实具体的客观参照事务作为论据对象，
+	 * 都属于某种形式的空想。不能否定其价值，所以属于一类可以被尊重的无效计算。
+	 * 
+	 * --罗瑶光
+	 * */
+	public IMV_SQI nounInTextSimple;
+	public IMV_SQI verbInTextSimple;
+	/*
+	 * 开始设计高级笛卡尔关系 渡
+	 * */
+	public IMV_SQI nounInTextReason;
+	public IMV_SQI verbInTextReason;
+	/*
+	 * 开始设计高级笛卡尔关系 簇
+	 * */
+	public IMV_SQI nounInTextFix;
+	public IMV_SQI verbInTextFix;
+	/**/
 	public CommandClass command_V;
 
 	public IMV_SQI ActionsObject;
@@ -71,6 +104,7 @@ public class WorkVerbalMap_X_S {
 	 * 于是我的思维是那就直接用阿，于是就把测试函数 new出来然后将Noun和VERB取代
 	 * 这里的nounInText和verbInText，准确率就提高了很多，并不代表结果会更精确，
 	 * 所以替代后要将所有流程都校准一遍。 --罗瑶光
+	 * 
 	 */
 	public void initEnvironment() {
 		subjectName = null;
@@ -105,6 +139,29 @@ public class WorkVerbalMap_X_S {
 		}
 	}
 
+	/* root_v += stringVerb;
+	 * root_v += "-";
+	 * root_v += stringNoun;
+	/* 
+	 * CN
+	 * --十六元基索引逻辑
+	 * 1 名词索引价值用于古拉丁英文索引元基编码加速特征片段识别。
+	 * 2 动词索引价值用于TVM指令集快速降维面化 进行 触发计算识别。
+	 * 
+	 * EN
+	 * 16 Initon indexing
+	 * 1 Latin noun's verbal exchange could make cluster with short
+	 * 	 , less and same sections of DNA initons.
+	 *   better for observation. 
+	 *   
+	 * 2 Latin verb's verbal exchange could make trigger with short
+	 *   , less and same sections of DNA initons.
+	 *   better for computation.
+	 *     
+	 * --罗瑶光
+	 * 
+	 * 稍后开始整理关系map，分出精细的属性成员出来。
+	 * */
 	@SuppressWarnings("unused")
 	public void initCartesianActions(App NE, CommandClass command_V) {
 		Iterator<String> iteratorNoun = nounInText.keySet()
@@ -161,28 +218,6 @@ public class WorkVerbalMap_X_S {
 					root += "+";
 					root += stringVerb;
 
-					/* root_v += stringVerb;
-					 * root_v += "-";
-					 * root_v += stringNoun;
-					/* 
-					 * CN
-					 * --十六元基索引逻辑
-					 * 1 名词索引价值用于古拉丁英文索引元基编码加速特征片段识别。
-					 * 2 动词索引价值用于TVM指令集快速降维面化 进行 触发计算识别。
-					 * 
-					 * EN
-					 * 16 Initon indexing
-					 * 1 Latin noun's verbal exchange could make cluster with short
-					 * 	 , less and same sections of DNA initons.
-					 *   better for observation. 
-					 *   
-					 * 2 Latin verb's verbal exchange could make trigger with short
-					 *   , less and same sections of DNA initons.
-					 *   better for computation.
-					 *   
-					 * --罗瑶光
-					 * 
-					 * */
 					root_pos += "_stringNoun" + averagePositionNoun;
 					root_pos += "_stringVerb" + averagePositionVerb;
 
@@ -201,17 +236,6 @@ public class WorkVerbalMap_X_S {
 							if (!root.contains(" ")) {
 								command_V.cartesianWorkActionsRightsSV
 									.put(root, right);
-								/* command_V.cartesianWorkActions_posSV.put(root,
-								*		root_pos);
-								* command_V.cartesianWorkActionsRightsParserSV.put(stringNoun + "+",
-								*		right);
-								* command_V.cartesianWorkActionsRightsParserSV.put("+" + stringVerb,
-								*		right);
-								* command_V.cartesianWorkActionsPositionsSV.put(root,
-								*		position);
-								* S_logger.Log.logger.info("" + root + ":" + right + ":"
-								*		+ position + ":" + root_pos);
-								*/
 							}
 						}
 					}
@@ -243,19 +267,6 @@ public class WorkVerbalMap_X_S {
 							if (!root.contains(" ")) {
 								command_V.cartesianWorkActionsRightsVO
 									.put(root, right);
-								/*
-								 * command_V.cartesianWorkActions_posVO.put(root,
-								 *		root_pos);
-								 * command_V.cartesianWorkActionsRightsParserVO.put(stringVerb + "-",
-								 *		right);
-								 * command_V.cartesianWorkActionsRightsParserVO.put("-" + stringNoun,
-								 *		right);
-								 * command_V.cartesianWorkActionsPositionsVO.put(root,
-								 *		position);
-								 * S_logger.Log.logger.info("" + root + ":" + right + ":"
-								 *		+ position + ":" + root_pos);
-								 *
-								 */
 							}
 						}
 					}
@@ -263,6 +274,30 @@ public class WorkVerbalMap_X_S {
 			}
 		}
 	}
+	/* command_V.cartesianWorkActions_posSV.put(root,
+	*		root_pos);
+	* command_V.cartesianWorkActionsRightsParserSV.put(stringNoun + "+",
+	*		right);
+	* command_V.cartesianWorkActionsRightsParserSV.put("+" + stringVerb,
+	*		right);
+	* command_V.cartesianWorkActionsPositionsSV.put(root,
+	*		position);
+	* S_logger.Log.logger.info("" + root + ":" + right + ":"
+	*		+ position + ":" + root_pos);
+	*/
+	/*
+	 * command_V.cartesianWorkActions_posVO.put(root,
+	 *		root_pos);
+	 * command_V.cartesianWorkActionsRightsParserVO.put(stringVerb + "-",
+	 *		right);
+	 * command_V.cartesianWorkActionsRightsParserVO.put("-" + stringNoun,
+	 *		right);
+	 * command_V.cartesianWorkActionsPositionsVO.put(root,
+	 *		position);
+	 * S_logger.Log.logger.info("" + root + ":" + right + ":"
+	 *		+ position + ":" + root_pos);
+	 *
+	 */
 
 	public void initActionMap(CommandClass command_V) {
 		// 计算关机分层
