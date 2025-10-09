@@ -310,7 +310,19 @@ public class DemoPOSTest {
 			S_logger.Log.logger.info("" + wordFrequencyTemp);
 		}
 	}
-
+	/*
+	 * 关键字if (!(wordPOS.contains("未知") || wordPOS.contains("形") 处 
+	 * --描述
+	 * 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，里面副词
+	 * 出现了整体性问题，到现在2025年，这7年没有一个人告知我这个问题，我的
+	 * 自己工程又从来没有用过这副词的逻辑，所以一直没碰，现在商业化测试呢，
+	 * 我罗瑶光就还是给出一个解决方案。就是所有出现形容词和副词的词汇，就看
+	 * 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
+	 * 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
+	 * 
+	 * --罗瑶光
+	 */
+	 
 	// 分解
 	@SuppressWarnings("unused")
 	public List<String> testPOSOnlyGetList(List<String> sets,
@@ -342,14 +354,6 @@ public class DemoPOSTest {
 					continue;
 				}
 				String wordPOS = wordObjectPOS.toString();
-				/*
-				 * 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，里面副词
-				 * 出现了整体性问题，到现在2025年，这7年没有一个人告知我这个问题，我的
-				 * 自己工程又从来没有用过这副词的逻辑，所以一直没碰，现在商业化测试呢，
-				 * 我罗瑶光就还是给出一个解决方案。就是所有出现形容词和副词的词汇，就看
-				 * 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
-				 * 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
-				 */
 				if (!(wordPOS.contains("未知") || wordPOS.contains("形")
 					|| wordPOS.contains("副"))) {
 					wordsTemp += word + "/" + wordPOS + "----";

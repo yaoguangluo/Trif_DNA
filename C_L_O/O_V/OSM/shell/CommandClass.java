@@ -73,7 +73,7 @@ public class CommandClass {
 	 * --罗瑶光
 	 * */
 	public List<String> _IMV_SQI_SS_ = new ArrayList<>();
-	public List<String> _IMV_SQI_SS_Q_= new ArrayList<>();
+	public List<String> _IMV_SQI_SS_Q_ = new ArrayList<>();
 	/*
 	 * 稍后这些关于当前的命令句对应的workVerbalMap中需要clear的对象都走这个类，
 	 * 免得以后修改或者增加条件，不谨慎漏了几个clear。我认为这是一种计算关系的优 化方式，
@@ -90,9 +90,9 @@ public class CommandClass {
 	public IMV_SQI_SS relationsASCII = new IMV_SQI_SS();
 	public IMV_SQI_SS relationsGrammar = new IMV_SQI_SS();
 	public IMV_SQI_SS relationsEnglish = new IMV_SQI_SS();
-	
+
 	public IMV_SQI_S_ _IMV_SQI_S_ = new IMV_SQI_S_();
-	
+
 	public IMV_SQI unknown_map = new IMV_SQI();
 	public IMV_SQI cartesianLooped = new IMV_SQI();
 	/*
@@ -102,7 +102,7 @@ public class CommandClass {
 	 */
 	public IMV_SQI cartesianWorkActionsRightsParserVO = new IMV_SQI();//
 	public IMV_SQI cartesianWorkActionsRightsParserSV = new IMV_SQI();//
-	
+
 	public IMV_SQI cartesianWorkActionsRightsSV = new IMV_SQI();//
 	public IMV_SQI cartesianWorkActionsPositionsSV = new IMV_SQI();//
 	public IMV_SQI cartesianWorkActions_posSV = new IMV_SQI();//
@@ -120,24 +120,27 @@ public class CommandClass {
 	 * 在这个逻辑中主要有2类，一类是阿拉伯字符如250，一类是语义字符如二百五十。这个关系是
 	 * 长期稳定的思维。所以当前可进行固定函数编码。
 	 */
+	/*
+	 * 在一切关系明了的环境中开始思考-未知的字符集大体有4类，第一类是数字，第二类是
+	 * 字母，第三类是常见符号，第四类是特殊符号。所以在这里就要有4个识别函数来work。
+	 * 
+	 * --later to do。 --罗瑶光
+	 */
+
 	@SuppressWarnings("unchecked")
 	public void getNumericsFromUnknownMap(String inputString) {
-		/*
-		 * 在一切关系明了的环境中开始思考-未知的字符集大体有4类，第一类是数字，第二类是
-		 * 字母，第三类是常见符号，第四类是特殊符号。所以在这里就要有4个识别函数来work。
-		 * 
-		 * --later to do。 --罗瑶光
-		 */
 		// 1 阿拉伯字母句
 		String string = "";
 		int fixOrder = 0;
 		for (int i = 0; i < inputString.length(); i++) {
-			if (inputString.charAt(i) < 48 || inputString.charAt(i) > 57) {
+			if (inputString.charAt(i) < 48 || inputString.charAt(
+				i) > 57) {
 				if (!string.isEmpty()) {
-					S_logger.Log.logger.info("" + string + "--" + fixOrder);
+					S_logger.Log.logger.info("" + string + "--"
+						+ fixOrder);
 					// println函数走图形打印机，并发工程记得注释掉或者用其他的classic观测API
 					numericsFromUnknownString.put(string.toString(),
-							fixOrder++);
+						fixOrder++);
 					string = "";
 				}
 				continue;
@@ -147,7 +150,8 @@ public class CommandClass {
 		if (!string.isEmpty()) {
 			S_logger.Log.logger.info("" + string + "--" + fixOrder);
 			// println函数走图形打印机，并发工程记得注释掉或者用其他的classic观测API
-			numericsFromUnknownString.put(string.toString(), fixOrder++);
+			numericsFromUnknownString.put(string.toString(),
+				fixOrder++);
 			string = "";
 		}
 		// 2 其他语义，如中文
@@ -160,15 +164,16 @@ public class CommandClass {
 		String string = "";
 		int fixOrder = 0;
 		for (int i = 0; i < inputString.length(); i++) {
-			if ((inputString.charAt(i) > 64 && inputString.charAt(i) < 91)
-					|| (inputString.charAt(i) > 96
-							&& inputString.charAt(i) < 123)) {
+			if ((inputString.charAt(i) > 64 && inputString.charAt(
+				i) < 91) || (inputString.charAt(i) > 96 && inputString
+					.charAt(i) < 123)) {
 				string += inputString.charAt(i);
 			} else {
 				if (!string.isEmpty()) {
-					S_logger.Log.logger.info("" + string + "--" + fixOrder);
+					S_logger.Log.logger.info("" + string + "--"
+						+ fixOrder);
 					alfabeticsFromUnknownString.put(string.toString(),
-							fixOrder++);
+						fixOrder++);
 					string = "";
 				}
 				continue;
@@ -176,17 +181,17 @@ public class CommandClass {
 		}
 		if (!string.isEmpty()) {
 			S_logger.Log.logger.info("" + string + "--" + fixOrder);
-			alfabeticsFromUnknownString.put(string.toString(), fixOrder++);
+			alfabeticsFromUnknownString.put(string.toString(),
+				fixOrder++);
 			string = "";
 		}
 	}
-
+	// 这里的逻辑是构造科学计算器用，华瑞集系统先不cover。
+	/*
+	 * 我要做的是识别指令符号，｜ ; ; 以后变量中含有指令符号做string用， 我用HTTP
+	 * encode去变形，或者元基编码去格式变换，避免被这层逻辑分解即可。 省去一把函数。
+	 */
 	public void getSymbolicsFromUnknownMap(String inputString) {
-		// 这里的逻辑是构造科学计算器用，华瑞集系统先不cover。
-		/*
-		 * 我要做的是识别指令符号，｜ ; ; 以后变量中含有指令符号做string用， 我用HTTP
-		 * encode去变形，或者元基编码去格式变换，避免被这层逻辑分解即可。 省去一把函数。
-		 */
 	}
 
 	public IMV_SQI getUnicodesFromUnknownMap(String inputString) {
@@ -240,7 +245,8 @@ public class CommandClass {
 		// ----------------
 		// 0--0
 		// 30--1
-		S_logger.Log.logger.info("" + "--------中文数字机-V00001---------");
+		S_logger.Log.logger.info(""
+			+ "--------中文数字机-V00001---------");
 		String number = "一";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "拾";
@@ -255,7 +261,7 @@ public class CommandClass {
 		commandClass.fasterChineseNumberSwap(number);
 		number = "捌拾玖";
 		commandClass.fasterChineseNumberSwap(number);
-//
+		//
 		number = "零佰";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "壹百";
@@ -284,7 +290,7 @@ public class CommandClass {
 		commandClass.fasterChineseNumberSwap(number);
 		number = "玖千玖百九拾九万九千九佰九十玖";
 		commandClass.fasterChineseNumberSwap(number);
-//
+		//
 		number = "零万";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "万二十";
@@ -296,7 +302,8 @@ public class CommandClass {
 		number = "十万万";
 		S_logger.Log.logger.info("" + "十万万");
 		S_logger.Log.logger.info("" + "-学好语文，这叫十亿-先不处理歧义句");
-		S_logger.Log.logger.info("" + "-先不处理超亿句，我框架都写好了，直接split 加函数即可。");
+		S_logger.Log.logger.info(""
+			+ "-先不处理超亿句，我框架都写好了，直接split 加函数即可。");
 		number = "十二万";
 		commandClass.fasterChineseNumberSwap(number);
 		number = "万";
@@ -321,7 +328,7 @@ public class CommandClass {
 		commandClass.fasterChineseNumberSwap(number);
 		number = "八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八";
 		commandClass.fasterChineseNumberSwap(number);
-		
+
 		// 我的系统没有16位大数计算业务，有就按这个逻辑+兆+京条件去解决。
 		// 框架都搞好了，直接加函数即可 --罗瑶光
 	}
@@ -344,20 +351,25 @@ public class CommandClass {
 		S_logger.Log.logger.info("" + "简体-->" + stringSwap);
 		return stringSwap;
 	}
-
+	/*
+	 * 上面是计算哲学和计算关系和计算逻辑的分析方法，需要巨大的采样，不符合我的思维认知方式
+	 * 于是按照罗瑶光的思绪分析，开始编码。首先我要进行数据预处理，将文字中所有繁体全部简化
+     *
+	 * 简化后文字开始进行精确分析，首先拆分最大逻辑集合确定亿为最大计算量级， 
+	 * 因为单机的long最大只有亿。然后处理京为最大处理量级。关于亿的逻辑意识组合 
+	 * 有 万亿，一万亿， 一万一千零二亿， 乘积是100 000 000 ，8个零。
+	 * 
+	 * ------
+	 * S_logger.Log.logger.info("" + "stringYi-->" + stringYi)
+	 * 简化后文字开始进行精确分析，然后拆分最大逻辑集合确定万为最大计算量级， 
+	 * 有 千万，一百万， 一千零二十万，乘积是10 000 4个零。
+	 * 
+	 * --罗瑶光
+	 */
 	@SuppressWarnings("unused")
 	public String fasterChineseNumberSwap(String chineseNumber) {
 		S_logger.Log.logger.info("" + "输入-->" + chineseNumber);
-		/*
-		 * 上面是计算哲学和计算关系和计算逻辑的分析方法，需要巨大的采样，不符合我的思维认知方式
-		 * 于是按照罗瑶光的思绪分析，开始编码。首先我要进行数据预处理，将文字中所有繁体全部简化
-		 */
 		String stringSwap = simpleChineseNumberSwap(chineseNumber);
-		/*
-		 * 简化后文字开始进行精确分析，首先拆分最大逻辑集合确定亿为最大计算量级， 
-		 * 因为单机的long最大只有亿。然后处理京为最大处理量级。关于亿的逻辑意识组合 
-		 * 有 万亿，一万亿， 一万一千零二亿， 乘积是100 000 000 ，8个零。
-		 */
 		String regWan = "";
 		String regYi = "";
 		String reg = "";
@@ -375,12 +387,6 @@ public class CommandClass {
 			int j = 0;
 			for (String stringYi : stringsYi) {
 				j++;
-				// S_logger.Log.logger.info("" + "stringYi-->" + stringYi);
-				/*
-				 * 简化后文字开始进行精确分析，然后拆分最大逻辑集合确定万为最大计算量级， 
-				 * 有 千万，一百万， 一千零二十万，乘积是10 000 4个零。
-				 */
-				// S_logger.Log.logger.info("" + stringYi);
 				String[] stringsWan = stringYi.split("万");
 				// S_logger.Log.logger.info("" + "stringsWan.length-->" +
 				// stringsWan.length);
@@ -389,7 +395,6 @@ public class CommandClass {
 					int i = 0;
 					for (String stringWan : stringsWan) {
 						i++;
-						// S_logger.Log.logger.info("" + "stringWan-->" + stringWan);
 						/*
 						 * 逻辑分层后，这里只要处理一万以内的组合，大幅减少条件分析。
 						 */
@@ -397,7 +402,8 @@ public class CommandClass {
 						if (stringWan.isEmpty()) {
 							outputWan += "" + 1;
 							reg = outputWan;
-							S_logger.Log.logger.info("" + "total1-->" + outputWan);
+							S_logger.Log.logger.info("" + "total1-->"
+								+ outputWan);
 							total1 = outputWan.toString();
 							continue;
 						}
@@ -406,7 +412,8 @@ public class CommandClass {
 						if (outputWan.isEmpty()) {
 							outputWan += "" + longWan;
 							reg = outputWan;
-							S_logger.Log.logger.info("" + "total2-->" + outputWan);
+							S_logger.Log.logger.info("" + "total2-->"
+								+ outputWan);
 							total2 = outputWan.toString();
 							continue;
 						}
@@ -420,21 +427,25 @@ public class CommandClass {
 							outputWan += "" + longWan;
 						}
 						reg = outputWan;
-						total3= outputWan.toString();
-						S_logger.Log.logger.info("" + "total3-->" + outputWan);
+						total3 = outputWan.toString();
+						S_logger.Log.logger.info("" + "total3-->"
+							+ outputWan);
 					}
-					if (stringYi.contains("万") && stringsWan.length < 2) {
+					if (stringYi.contains("万")
+						&& stringsWan.length < 2) {
 						outputWan += "0000";
 						reg = outputWan;
 						total4 = outputWan.toString();
-						S_logger.Log.logger.info("" + "total4-->" + outputWan);
+						S_logger.Log.logger.info("" + "total4-->"
+							+ outputWan);
 					}
 				} else {
 					// wan to do
 					outputWan = "10000";
 					reg = outputWan;
 					total5 = outputWan.toString();
-					S_logger.Log.logger.info("" + "total5-->" + outputWan);
+					S_logger.Log.logger.info("" + "total5-->"
+						+ outputWan);
 				}
 				if (1 == j) {
 					regYi = reg;
@@ -450,42 +461,22 @@ public class CommandClass {
 				S_logger.Log.logger.info("" + "total6-->" + outputYi);
 			}
 			if (stringSwap.contains("亿") && stringsYi.length > 1) {
-				//S_logger.Log.logger.info("" + "regYi2-->" + regYi);
-				//S_logger.Log.logger.info("" + "亿2-->" + stringSwap);
-				//S_logger.Log.logger.info("" + "regWan2-->" + regWan);
-				//S_logger.Log.logger.info("" + "stringsYi.length-->" + stringsYi.length);
 				if (regWan.length() < 2) {
 					regYi += "0000000" + regWan;
-					//S_logger.Log.logger.info("" + "regWan1-->" + regWan);
-					//S_logger.Log.logger.info("" + "regYi1-->" + regYi);
 				} else if (regWan.length() < 3) {
 					regYi += "000000" + regWan;
-					//S_logger.Log.logger.info("" + "regWan2-->" + regWan);
-					//S_logger.Log.logger.info("" + "regYi2-->" + regYi);
 				} else if (regWan.length() < 4) {
 					regYi += "00000" + regWan;
-					//S_logger.Log.logger.info("" + "regWan3-->" + regWan);
-					//S_logger.Log.logger.info("" + "regYi3-->" + regYi);
 				} else if (regWan.length() < 5) {
 					regYi += "0000" + regWan;
-					//S_logger.Log.logger.info("" + "regWan4-->" + regWan);
-					//S_logger.Log.logger.info("" + "regYi4-->" + regYi);
 				} else if (regWan.length() < 6) {
 					regYi += "000" + regWan;
-					//S_logger.Log.logger.info("" + "regWan5-->" + regWan);
-					//S_logger.Log.logger.info("" + "regYi5-->" + regYi);
 				} else if (regWan.length() < 7) {
 					regYi += "00" + regWan;
-					//S_logger.Log.logger.info("" + "regWan6-->" + regWan);
-					//S_logger.Log.logger.info("" + "regYi6-->" + regYi);
 				} else if (regWan.length() < 8) {
 					regYi += "0" + regWan;
-					//S_logger.Log.logger.info("" + "regWan7-->" + regWan);
-					//S_logger.Log.logger.info("" + "regYi7-->" + regYi);
-				}else if (regWan.length() < 9) {
+				} else if (regWan.length() < 9) {
 					regYi += "" + regWan;
-					//S_logger.Log.logger.info("" + "regWan7-->" + regWan);
-					//S_logger.Log.logger.info("" + "regYi7-->" + regYi);
 				}
 				outputYi += regYi;
 				S_logger.Log.logger.info("" + "total7-->" + outputYi);
@@ -497,30 +488,62 @@ public class CommandClass {
 			S_logger.Log.logger.info("" + "total8-->" + outputYi);
 
 		}
-		if(!outputYi.isEmpty()) {
+		if (!outputYi.isEmpty()) {
 			return outputYi;
 		}
-		if(!total6.isEmpty()) {
+		if (!total6.isEmpty()) {
 			return total6;
 		}
-		if(!total5.isEmpty()) {
+		if (!total5.isEmpty()) {
 			return total5;
 		}
-		if(!total4.isEmpty()) {
+		if (!total4.isEmpty()) {
 			return total4;
 		}
-		if(!total3.isEmpty()) {
+		if (!total3.isEmpty()) {
 			return total3;
 		}
-		if(!total2.isEmpty()) {
+		if (!total2.isEmpty()) {
 			return total2;
 		}
-		if(!total1.isEmpty()) {
+		if (!total1.isEmpty()) {
 			return total1;
 		}
 		return outputYi;
 	}
-
+	//S_logger.Log.logger.info("" + "regYi2-->" + regYi);
+	//S_logger.Log.logger.info("" + "亿2-->" + stringSwap);
+	//S_logger.Log.logger.info("" + "regWan2-->" + regWan);
+	//S_logger.Log.logger.info("" + "stringsYi.length-->" + stringsYi.length);
+	//S_logger.Log.logger.info("" + "regWan1-->" + regWan);
+	//S_logger.Log.logger.info("" + "regYi1-->" + regYi);
+	//S_logger.Log.logger.info("" + "regWan2-->" + regWan);
+	//S_logger.Log.logger.info("" + "regYi2-->" + regYi);
+	//S_logger.Log.logger.info("" + "regWan7-->" + regWan);
+	//S_logger.Log.logger.info("" + "regYi7-->" + regYi);
+	//S_logger.Log.logger.info("" + "regWan7-->" + regWan);
+	//S_logger.Log.logger.info("" + "regYi7-->" + regYi);
+	//S_logger.Log.logger.info("" + "regWan6-->" + regWan);
+	//S_logger.Log.logger.info("" + "regYi6-->" + regYi);
+	//S_logger.Log.logger.info("" + "regWan5-->" + regWan);
+	//S_logger.Log.logger.info("" + "regYi5-->" + regYi);
+	//S_logger.Log.logger.info("" + "regWan4-->" + regWan);
+	//S_logger.Log.logger.info("" + "regYi4-->" + regYi);
+	//S_logger.Log.logger.info("" + "regWan3-->" + regWan);
+	//S_logger.Log.logger.info("" + "regYi3-->" + regYi);
+	
+	/*
+	 * 关键字
+	 * // S_logger.Log.logger.info("" + "loop-->" + total); 处 --笔记
+	 * 出现了逻辑记录意识错误，以后我在进行修改的时候我要将我的中间文件进行后缀标识保存。
+	 * 不然拜拜浪费几个小时。发现一个问题，我每次在修改后的注释后的函数，我莫名有种强烈
+	 * 要删除掉的意识，为什么要删掉这个注释逻辑呢？动机是源码不好看，不好看可以移出到
+	 * 文件末尾呀，然后注释标注格式化，让注释好看呀，这个删除的操作意识有问题。涉嫌
+	 * 毁灭证据的思维。这几年特别写核心源码的时候，想删除的动机意识特别强烈。这是我的 
+	 * 一个严重的错误习惯，以后要改正。
+	 * 
+	 * --罗瑶光
+	 */
 	private long processWan(String stringWan) {
 		// TODO Auto-generated method stub
 		long total = 0;
@@ -575,14 +598,6 @@ public class CommandClass {
 				total += set;
 				value = -1;
 			}
-			/*
-			 * 出现了逻辑记录意识错误，以后我在进行修改的时候我要将我的中间文件进行后缀标识保存。
-			 * 不然拜拜浪费几个小时。发现一个问题，我每次在修改后的注释后的函数，我莫名有种强烈
-			 * 要删除掉的意识，为什么要删掉这个注释逻辑呢？动机是源码不好看，不好看可以移出到
-			 * 文件末尾呀，然后注释标注格式化，让注释好看呀，这个删除的操作意识有问题。涉嫌
-			 * 毁灭证据的思维。这几年特别写核心源码的时候，想删除的动机意识特别强烈。这是我的 
-			 * 一个严重的错误习惯，以后要改正。
-			 */
 			// S_logger.Log.logger.info("" + "loop-->" + total);
 		}
 		if (-1 != value) {
@@ -590,56 +605,54 @@ public class CommandClass {
 		}
 		return total;
 	}
+
 	/*
 	 * 
 	 * */
-	public  IMV_SQI_SS _IMV_SQI_SS_Q = new IMV_SQI_SS();
-	public  String commandWithoutNumerics = "";
-	public  String chineseSimpleCommandWithoutNumerics = "";
-	public  boolean  initedArabicNumber = false;
+	public IMV_SQI_SS _IMV_SQI_SS_Q = new IMV_SQI_SS();
+	public String commandWithoutNumerics = "";
+	public String chineseSimpleCommandWithoutNumerics = "";
+	public boolean initedArabicNumber = false;
 	/*
 	 * 保证相等长度替换，symbolSwapNumerics只能包含一个位的char符号。
 	 * */
-	public  String symbolSwapNumerics = "*";
+	public String symbolSwapNumerics = "*";
+
+	/*
+	 * --开始填写这几天的逻辑。
+	 * 1 取变量，拿出所有混合数字，标注position，剔除掉原句中的这些变量。这里会遇到一个问题
+	 *   就是 commandClass 的command 要分解出一个 commandWithoutNumerics，用于分词。
+	 *   那么剔除掉的地方需要一个标识，不然序次会打乱，于是用symbolSwap 替换代入到函数中，
+	 *   我先设计个*看看效果，以后跟进测试。 
+	 *  
+	 *   studyVerbalMap 六个元 可以注册到 commandClass
+	 *   --外因太多我管不了，当然公开当面给我钱，我能用合同报税的形式cover一点。
+	 *   --内因就一点，我要把自己的东西不断地优化好。
+	 *  
+	 *   --罗瑶光
+	 *
+	 *   regNE.app_S.studyVerbalMap.formatNumericMap(this);
+	 * 2 取变量，拿出所有混合数字，标注position，剔除掉原句中的这些变量。
+	 * 3
+	 * 4
+	 */
 	public void initArabicNumber() {
-		/*
-		 * --开始填写这几天的逻辑。
-		 * 1 取变量，拿出所有混合数字，标注position，剔除掉原句中的这些变量。这里会遇到一个问题
-		    就是 commandClass 的command 要分解出一个 commandWithoutNumerics，用于分词。
-		    那么剔除掉的地方需要一个标识，不然序次会打乱，于是用symbolSwap 替换代入到函数中，
-		    我先设计个*看看效果，以后跟进测试。 
-		    
-		    studyVerbalMap 六个元 可以注册到 commandClass
-		    
-		    --外因太多我管不了，当然公开当面给我钱，我能用合同报税的形式cover一点。
-		    --内因就一点，我要把自己的东西不断地优化好。
-		    
-		    --罗瑶光
-		*/
 		regNE.app_S.studyVerbalMap.extractNumberfromString(this);
-		/*
-		//regNE.app_S.studyVerbalMap.formatNumericMap(this);
-		
-		// 2 取变量，拿出所有混合数字，标注position，剔除掉原句中的这些变量。
-		// 3
-		// 4
-		//
-		//*/
-		
-		S_logger.Log.logger.info("" + "chineseSimpleCommandWithoutNumerics-->" 
-		+ this.chineseSimpleCommandWithoutNumerics);
-		//
+		S_logger.Log.logger.info(""
+			+ "chineseSimpleCommandWithoutNumerics-->"
+			+ this.chineseSimpleCommandWithoutNumerics);
 	}
+
 	//400局部输出正确
 	//chineseSimpleCommandWithoutNumerics-->在输出的数据表中仅展示从第*行到第*行的数据
 	public void fussionOfArabicNumber() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void initSixActions(App NE) {
 		// TODO Auto-generated method stub
-		this.regNE= NE;
+		this.regNE = NE;
 	}
 }
 //输出
@@ -813,15 +826,15 @@ public class CommandClass {
 //	public IMV_SQI cartesianWorkActionsRights = new IMV_SQI();//
 //	public IMV_SQI cartesianWorkActionsPositions = new IMV_SQI();//
 //	public IMV_SQI cartesianWorkActions_pos = new IMV_SQI();//
-	// 关系大幅减少。
-	// public IMV_SQI cartesianRootMap = new IMV_SQI();
-	// public IMV_SQI cartesianRootWithScaleMap = new IMV_SQI();
-	// public IMV_SQI cartesianRootRelationMap = new IMV_SQI();
-	// public IMV_SQI normalizationalWorkActionsRights = new
-	// IMV_SQI();
-	// public IMV_SQI normalizationalWorkActionsPositions = new
-	// IMV_SQI();
-	// public IMV_SQI complementedWorkActionsRights = new
-	// IMV_SQI();
-	// public IMV_SQI complementedWorkActionsPositions = new
-	// IMV_SQI();
+// 关系大幅减少。
+// public IMV_SQI cartesianRootMap = new IMV_SQI();
+// public IMV_SQI cartesianRootWithScaleMap = new IMV_SQI();
+// public IMV_SQI cartesianRootRelationMap = new IMV_SQI();
+// public IMV_SQI normalizationalWorkActionsRights = new
+// IMV_SQI();
+// public IMV_SQI normalizationalWorkActionsPositions = new
+// IMV_SQI();
+// public IMV_SQI complementedWorkActionsRights = new
+// IMV_SQI();
+// public IMV_SQI complementedWorkActionsPositions = new
+// IMV_SQI();

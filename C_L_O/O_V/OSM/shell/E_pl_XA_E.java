@@ -56,40 +56,40 @@ public class E_pl_XA_E {
 			command_V.commandAcknowledge = command.toString();
 			command_V.command = command.toString();
 			/*
-			 * command是一条最短的指令句，指令句变成指令的中间数据目前保留在NE.app_S.workVerbalMap
-			 * 中，我在思考，每次计算完一句指令，这些过程产物都要clear掉，这是一种C语言的free写法，
-			 * 在高级的java结构中，可以进行单例来class null掉，意思是我可以创造一个command class，
-			 * 这个类专门负责command的数据碎片，这个class可以list形式进入tinmap，也可以每次执行完
-			 * 被G1GC来null掉，想到这里，于是先命名个command Class先。 --地址在package
-			 * O_V.OSM.shell; --函数名CommandClass
-			 * 
-			 */
+			* command是一条最短的指令句，指令句变成指令的中间数据目前保留在NE.app_S.workVerbalMap
+			* 中，我在思考，每次计算完一句指令，这些过程产物都要clear掉，这是一种C语言的free写法，
+			* 在高级的java结构中，可以进行单例来class null掉，意思是我可以创造一个command class，
+			* 这个类专门负责command的数据碎片，这个class可以list形式进入tinmap，也可以每次执行完
+			* 被G1GC来null掉，想到这里，于是先命名个command Class先。 --地址在package
+			* O_V.OSM.shell; --函数名CommandClass
+			* 
+			*/
 			command_V.initSixActions(NE);
 			/*
-			 * 开始构造混合歧义语义数字构造机，在这里要构造2个函数，一个是initArabicNumber
-			 * 用于提取混合数字变量到command_V._IMV_SQI_SS中，我定义为_IMV_SQI_SS_Q
-			 * 另外一个函数是fussionOfArabicNumber，用于原函数进行组合_IMV_SQI_SS_Q的内容。
-			 * 注意initArabicNumber提取数字要提取position，避免序次问题出错。 --罗瑶光
-			 */
+			* 开始构造混合歧义语义数字构造机，在这里要构造2个函数，一个是initArabicNumber
+			* 用于提取混合数字变量到command_V._IMV_SQI_SS中，我定义为_IMV_SQI_SS_Q
+			* 另外一个函数是fussionOfArabicNumber，用于原函数进行组合_IMV_SQI_SS_Q的内容。
+			* 注意initArabicNumber提取数字要提取position，避免序次问题出错。 --罗瑶光
+			*/
 			command_V.initArabicNumber();
 			/*
-			 * 思考关于关系分类的价值，表面的含义我就不介绍了，如果我要输出我的思维方式要优秀于传统的
-			 * 认知方式，就要有明显的论证和论据来强调我的HVPCS关系要优秀于普通的模型，显而易见，今天的
-			 * 逻辑分层和关系分类最大的价值是我挖掘到了一个中间层map unknowMap ，这个隐匿在我的
-			 * workmap中又要的表达在command的逻辑中，于是出现了一行逻辑错误，文件地址package
-			 * E_A.ME.analysis.E; 函数名 CogsBinaryForest_AE的 218行
-			 * //关联studyMap later -trif ，这个unknow关系不应该
-			 * 被包含在workmap中，我扔在网上完整的华瑞集源码和开发文档，
-			 * 
-			 * 我要严谨的提醒的是 这些年一些用户看了后，模仿窥伺我，改我的思维方式和函数名，到时候出了
-			 * 问题，别怪我没提醒。 我的逻辑是HVPCS+ 元基编码 + 时函数 + 计算哲学。用户们既然要模仿我
-			 * 的风格，就要深入接触这4个领域。我的动机是当然希望人才辈出，早点超越我，对得起我苦心
-			 * 细致的文字描述。2018 分词如果lucene 每秒当时能够上 2000万，我就省了好多事。
-			 * 但做事一定要脚踏实地。 我写文字的动机1是著作权在先权分析，文字分解后就可以进行相似度匹配。
-			 * 2 是方便教材方式方向文字描述，制造各类深度思考问题，授人之渔。
-			 * 
-			 * --罗瑶光
-			 */
+			* 思考关于关系分类的价值，表面的含义我就不介绍了，如果我要输出我的思维方式要优秀于传统的
+			* 认知方式，就要有明显的论证和论据来强调我的HVPCS关系要优秀于普通的模型，显而易见，今天的
+			* 逻辑分层和关系分类最大的价值是我挖掘到了一个中间层map unknowMap ，这个隐匿在我的
+			* workmap中又要的表达在command的逻辑中，于是出现了一行逻辑错误，文件地址package
+			* E_A.ME.analysis.E; 函数名 CogsBinaryForest_AE的 218行
+			* //关联studyMap later -trif ，这个unknow关系不应该
+			* 被包含在workmap中，我扔在网上完整的华瑞集源码和开发文档，
+			* 
+			* 我要严谨的提醒的是 这些年一些用户看了后，模仿窥伺我，改我的思维方式和函数名，到时候出了
+			* 问题，别怪我没提醒。 我的逻辑是HVPCS+ 元基编码 + 时函数 + 计算哲学。用户们既然要模仿我
+			* 的风格，就要深入接触这4个领域。我的动机是当然希望人才辈出，早点超越我，对得起我苦心
+			* 细致的文字描述。2018 分词如果lucene 每秒当时能够上 2000万，我就省了好多事。
+			* 但做事一定要脚踏实地。 我写文字的动机1是著作权在先权分析，文字分解后就可以进行相似度匹配。
+			* 2 是方便教材方式方向文字描述，制造各类深度思考问题，授人之渔。
+			* 
+			* --罗瑶光
+			*/
 
 			// -1 计算逻辑关系根据不同的环境会有不同的组合，最优关系是频率出来的，不是关键字分析出来的。
 			// 所以动态化计算是趋势。
@@ -115,12 +115,12 @@ public class E_pl_XA_E {
 			}
 			// -2
 			/*
-			 * 既然用到了normalization的修正，那么这里也替换下进行性能测试将之前的简单
-			 * cartesianWorkActionsRights替换成normalizationalWorkActionsRights
-			 * 看下输出结果，结果正确，之后在不断地增加函数时候会逐步的修正这个map的分类计算结构。
-			 * 我归纳这种计算逻辑概念为计算哲学中的 -逻辑意识因果表达结构分层- -罗瑶光
-			 *
-			 */
+			* 既然用到了normalization的修正，那么这里也替换下进行性能测试将之前的简单
+			* cartesianWorkActionsRights替换成normalizationalWorkActionsRights
+			* 看下输出结果，结果正确，之后在不断地增加函数时候会逐步的修正这个map的分类计算结构。
+			* 我归纳这种计算逻辑概念为计算哲学中的 -逻辑意识因果表达结构分层- -罗瑶光
+			*
+			*/
 			String[] temp = NE._I_U.acknowledge.clone();
 			// Iterator<String> iterators =
 			// NE.app_S.workVerbalMap.cartesianWorkActionsRights
@@ -128,48 +128,49 @@ public class E_pl_XA_E {
 			Iterator<String> iterators = command_V.cartesianWorkActionsRightsSV
 				.keySet().iterator();
 			/*
-			 * 准备把心态摆正一下。降低自己的思维跳跃活性，用于保证持续的思绪稳定。 思考，关于
-			 * normalizationalWorkActionsRights 的形态是 actionsDistance[i]
-			 * + "-" + actionsDistanceV[i] 其中
-			 * actionsDistance[i]的形态是cartesianWorkActionsRights的key 而
-			 * cartesianWorkActionsRights的key构造来自于WorkVerbalMap_X_S的166行的初始root
-			 * 于是我开始思考，在计算关系分层的时候缺少了一些中间过程的碎片记录，这个记录关系导致了
-			 * 我之后要花双倍时间来重复计算曾经已有的却未保留的结果，论证在计算哲学中，计算关系可以
-			 * 外因计算逻辑。于是开始优化准备将root的组合因子进行map化。从而过滤掉下面的重复逻辑。
-			 * 于是在CommandClass中定义rootMap来封装root，rootRelation来封装root的关系。
-			 * 这里root不包含pos后戳，不包含 _ 无效, 去掉此逻辑。于是可以化简如下。
-			 * 
-			 * --罗瑶光
-			 * 
-			 */
+			* 准备把心态摆正一下。降低自己的思维跳跃活性，用于保证持续的思绪稳定。 思考，关于
+			* normalizationalWorkActionsRights 的形态是 actionsDistance[i]
+			* + "-" + actionsDistanceV[i] 其中
+			* actionsDistance[i]的形态是cartesianWorkActionsRights的key 而
+			* cartesianWorkActionsRights的key构造来自于WorkVerbalMap_X_S的166行的初始root
+			* 于是我开始思考，在计算关系分层的时候缺少了一些中间过程的碎片记录，这个记录关系导致了
+			* 我之后要花双倍时间来重复计算曾经已有的却未保留的结果，论证在计算哲学中，计算关系可以
+			* 外因计算逻辑。于是开始优化准备将root的组合因子进行map化。从而过滤掉下面的重复逻辑。
+			* 于是在CommandClass中定义rootMap来封装root，rootRelation来封装root的关系。
+			* 这里root不包含pos后戳，不包含 _ 无效, 去掉此逻辑。于是可以化简如下。
+			* 
+			* --罗瑶光
+			* 
+			*/
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
-				S_logger.Log.logger.info("" + "400-10000001" + string);
+				S_logger.Log.logger.info("" + "400-10000001"
+					+ string);
 				if (null != string) {
 					/* loop s later */
 					/*
-					 * 因为是取精度，所以-号关于stringSets最末一位即可获取答案。
-					 * 我在思考-stringSets也是一种重复逻辑，于是有必要将之间的DNN精度也保留在map中。
-					 * command_V.cartesianWorkActionsRights 通过500字的思绪描述，最终优化的逻辑。
-					 * 大幅减少冗余的变量和堆栈关系。
-					 * 
-					 * 在进行构造关系的分析过程中，发现split的操作是一种流程逻辑错误的弥补。
-					 * 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高 
-					 * 笛卡尔的计算 性能 -trif --罗瑶光
-					 */
+					* 因为是取精度，所以-号关于stringSets最末一位即可获取答案。
+					* 我在思考-stringSets也是一种重复逻辑，于是有必要将之间的DNN精度也保留在map中。
+					* command_V.cartesianWorkActionsRights 通过500字的思绪描述，最终优化的逻辑。
+					* 大幅减少冗余的变量和堆栈关系。
+					* 
+					* 在进行构造关系的分析过程中，发现split的操作是一种流程逻辑错误的弥补。
+					* 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高 
+					* 笛卡尔的计算 性能 -trif --罗瑶光
+					*/
 					int scaleRights;
 					scaleRights = command_V.cartesianWorkActionsRightsSV
 						.getInt(string);
 					/*
-					 * map细化分解的好处显而易见，如我的早期的德塔分词，map全部分解。这是一种
-					 * 计算关系催化过程。之后这个map也可以元基来索引加速遍历。 --罗瑶光
-					 * 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
-					 * 过滤和缩减了海量关系计算集合。
-					 */
+					* map细化分解的好处显而易见，如我的早期的德塔分词，map全部分解。这是一种
+					* 计算关系催化过程。之后这个map也可以元基来索引加速遍历。 --罗瑶光
+					* 德塔分词三个四字成语的最大距离是12 构成一个主谓宾短句
+					* 过滤和缩减了海量关系计算集合。
+					*/
 					if (scaleRights < 12) {
-						S_logger.Log.logger.info("" + "couldDoThenDo-1-"
-							+ string);
+						S_logger.Log.logger.info(""
+							+ "couldDoThenDo-1-" + string);
 						IMV_SQI_utils.couldDoThenDo(string, temp,
 							output, NE, scores);
 					}
@@ -183,7 +184,8 @@ public class E_pl_XA_E {
 			while (iterators.hasNext()) {
 				String string = iterators.next();
 				// String[] strings = string.split("_");//不包含 _ 无效,去掉此逻辑。
-				S_logger.Log.logger.info("" + "400-10000001" + string);
+				S_logger.Log.logger.info("" + "400-10000001"
+					+ string);
 				if (null != string) {
 					int scaleRights;
 					if (command_V.cartesianWorkActionsRightsVO
@@ -194,8 +196,8 @@ public class E_pl_XA_E {
 						scaleRights = 9999;
 					}
 					if (scaleRights < 12) {
-						S_logger.Log.logger.info("" + "couldDoThenDo-2-"
-							+ string);
+						S_logger.Log.logger.info(""
+							+ "couldDoThenDo-2-" + string);
 						IMV_SQI_utils.couldDoThenDo(string, temp,
 							output, NE, scores);
 					}
@@ -203,21 +205,21 @@ public class E_pl_XA_E {
 			}
 			// -3
 			/*
-			 * 目前这种分解方式可以有效地统计函数序列和扩充新的函数集，但是计算结构属于编译结构，
-			 * 所谓的编译结构是，根据已经有的东西进行逻辑编码，让系统通过某种条件能找到和启动它。
-			 * 而不是智慧结构，我理解为面对抽象的数据进行综合评估，得到某些可计算流程，并预想这
-			 * 个逻辑能得到和接近某类想要的结果。构造一个智慧结构于是开始思考，计算辩证学说内因
-			 * 量变，是一种方法，否定论也是一种方法，采样计算也符合这个观点，我就随便选一个练手
-			 * 既然主流天天夸赞采样，打分等方法论多厉害，我就走下否定论思维，反正挑战我自己。怎么
-			 * 难怎么上。首先我否定我自己，我是菜鸟，远离那些高大上先，方便新的开始。 --罗瑶光
-			 * 既然是新的开始，于是开始构造否定思维框架，第一个框架是否定打分和量变的函数价值，
-			 * 我就不打分，做精确匹配怎么做？元基索引，固定的十六元基进行分类明确包含关系标识
-			 * 进行匹配计算，那就开始了，每个函数都依次进行元基索引标识。怎么做？在商业测试文件
-			 * 中进行统计所有的工程函数，每个函数的对应文件夹地址作为KEY，精确搜索Key执行。
-			 * 高频优先，低频下放。那就开干了。见package
-			 * test.java.InterfaceTest.initon.util; --罗瑶光
-			 * 
-			 */
+			* 目前这种分解方式可以有效地统计函数序列和扩充新的函数集，但是计算结构属于编译结构，
+			* 所谓的编译结构是，根据已经有的东西进行逻辑编码，让系统通过某种条件能找到和启动它。
+			* 而不是智慧结构，我理解为面对抽象的数据进行综合评估，得到某些可计算流程，并预想这
+			* 个逻辑能得到和接近某类想要的结果。构造一个智慧结构于是开始思考，计算辩证学说内因
+			* 量变，是一种方法，否定论也是一种方法，采样计算也符合这个观点，我就随便选一个练手
+			* 既然主流天天夸赞采样，打分等方法论多厉害，我就走下否定论思维，反正挑战我自己。怎么
+			* 难怎么上。首先我否定我自己，我是菜鸟，远离那些高大上先，方便新的开始。 --罗瑶光
+			* 既然是新的开始，于是开始构造否定思维框架，第一个框架是否定打分和量变的函数价值，
+			* 我就不打分，做精确匹配怎么做？元基索引，固定的十六元基进行分类明确包含关系标识
+			* 进行匹配计算，那就开始了，每个函数都依次进行元基索引标识。怎么做？在商业测试文件
+			* 中进行统计所有的工程函数，每个函数的对应文件夹地址作为KEY，精确搜索Key执行。
+			* 高频优先，低频下放。那就开干了。见package
+			* test.java.InterfaceTest.initon.util; --罗瑶光
+			* 
+			*/
 			command_V.cartesianWorkActionsRightsSV.clear();
 			command_V.cartesianWorkActionsPositionsSV.clear();
 			command_V.cartesianWorkActions_posSV.clear();
@@ -227,11 +229,12 @@ public class E_pl_XA_E {
 			command_V.cartesianWorkActions_posVO.clear();
 			command_V.unknown_map.clear();
 			/*
-			 * 这样command_V的价值就出来了，clear之后再GC，双重清理，在垃圾器的优化环境里会内存
-			 *  更加稳定。
-			 */
+			* 这样command_V的价值就出来了，clear之后再GC，双重清理，在垃圾器的优化环境里会内存
+			*  更加稳定。
+			*/
 			/* loop s later */
-			S_logger.Log.logger.info("" + "couldDoThenDo-3-" + temp[0]);
+			S_logger.Log.logger.info("" + "couldDoThenDo-3-"
+				+ temp[0]);
 			IMV_SQI_utils.couldDoThenDo(temp[0], temp, output, NE,
 				scores);// later in pdn */
 			if (temp[0].equals("获取临时表名")) {
@@ -337,44 +340,47 @@ public class E_pl_XA_E {
 	}
 
 	// later out to data swap api
+	/*
+	* （首-先，一，开始，于是，顺其自然，）
+	* （将，获-取-得，授权，选择，确-定-保，认-准-定，标-记-出，拿-出-到-来，把，）
+	* （表 表格-单-库，矩阵，文-档-件，对象）
+	* （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
+	*  work domain out later.
+	*  NE.app_S.workVerbalMap.setHumanTalk(command, NE);
+	*  
+	*  准备整体将注解提取到函数体外部，避免无效计算，这样做需要进行标识。如关键字+～+处
+	*  setHumanTalkAfterNewBusinessTest处，避免修改频繁，不要写行数。
+	*  
+	*  举例
+	*  关键字 getCartesianRelationShipFromHumanTalk 处 思考
+	* 思考1 - 当构造混合中文数字提取转换匹配后，进行归纳格式化成map，这个map则需要在
+	* 这一层进行和分词结果整合。这种逻辑属于ETL类型逻辑， command_V._IMV_SQI_SS
+	* command_V._IMV_SQI_SS_Q
+	* 
+	* 思考2 - 所以这种逻辑以后可以更进分解swap成用tinshell OSGI ETL节点来中文节点分层
+	* ，以后人工智能的基础思考模型就稳定了。然后元基索引 使用频率统计排序归纳，创造一个 
+	* 自然选择的计算模拟环境。
+	* 
+	*   这一层逻辑已经并入了 setHumanTalkAfterNewBusinessTest，于是注释掉。	
+	*   Iterator<String> iterators = command_V._IMV_SQI_SS_Q.keySet()
+	*   	.iterator();
+	*   while (iterators.hasNext()) {
+	*   	String string = iterators.next();
+	*   	WordFrequency WordFrequency = command_V._IMV_SQI_SS_Q
+	*   		.getW(string);
+	*   	command_V._IMV_SQI_SS.put(string, WordFrequency);
+	*   }
+	*   分词的position要统计char位置，不是word位置，不然会不准确 later --trif一下
+	*  
+	*  --罗瑶光
+	*/
 	public static String doHumanTalkSwap(App NE,
 		CommandClass command_V) {
-		
-		/*
-		* （首-先，一，开始，于是，顺其自然，）
-		* （将，获-取-得，授权，选择，确-定-保，认-准-定，标-记-出，拿-出-到-来，把，）
-		* （表 表格-单-库，矩阵，文-档-件，对象）
-		* （进行 执行 跟进 更近 更进 数据 智慧 逻辑 选择 操作 确认）
-		*  work domain out later.
-		*  NE.app_S.workVerbalMap.setHumanTalk(command, NE);
-		*/
-		
+
 		NE.app_S.workVerbalMap.setHumanTalkAfterNewBusinessTest(
 			command_V, NE);
-		
-		/*
-		 * 思考1 - 当构造混合中文数字提取转换匹配后，进行归纳格式化成map，这个map则需要在
-		 * 这一层进行和分词结果整合。这种逻辑属于ETL类型逻辑， command_V._IMV_SQI_SS
-		 * command_V._IMV_SQI_SS_Q
-		 * 
-		 * 思考2 - 所以这种逻辑以后可以更进分解swap成用tinshell OSGI ETL节点来中文节点分层
-		 * ，以后人工智能的基础思考模型就稳定了。然后元基索引 使用频率统计排序归纳，创造一个 
-		 * 自然选择的计算模拟环境。
-		 * 
-		 *   这一层逻辑已经并入了 setHumanTalkAfterNewBusinessTest，于是注释掉。	
-		 *   Iterator<String> iterators = command_V._IMV_SQI_SS_Q.keySet()
-		 *   	.iterator();
-		 *   while (iterators.hasNext()) {
-		 *   	String string = iterators.next();
-		 *   	WordFrequency WordFrequency = command_V._IMV_SQI_SS_Q
-		 *   		.getW(string);
-		 *   	command_V._IMV_SQI_SS.put(string, WordFrequency);
-		 *   }
-		 *   分词的position要统计char位置，不是word位置，不然会不准确 later --trif一下
-		 */
-		
-		FastCartesianIdentifyTest fastCartesianIdentifyTest 
-		= new FastCartesianIdentifyTest();
+
+		FastCartesianIdentifyTest fastCartesianIdentifyTest = new FastCartesianIdentifyTest();
 		fastCartesianIdentifyTest
 			.getCartesianRelationShipFromHumanTalk(
 				NE.app_S.workVerbalMap);

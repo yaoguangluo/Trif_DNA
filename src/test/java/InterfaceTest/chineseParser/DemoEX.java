@@ -68,6 +68,19 @@ public class DemoEX {
 	 * --罗瑶光
 	 * */
 	
+	/*
+	 * 关键字 CommandClass command_V = new CommandClass(); 处--笔记
+	 * Sonar--S106协议 修改，这是我第二个sonar纠正处。 去system 改为 log4j。
+	 * 
+	 * 我的华瑞集系统没有需要日志的地方，可以全部把system.out注释掉，不要删除切记。
+	 * logger又有很多级别。 大家的工程需要日志Q就去写个资源文件去配置。不需要就别管。
+	 * 
+	 * 注意我这个版本log4j不支持 common 的logger.setLevel,要util才行，坑不坑先不管，
+	 * 我只是展示下用个fatal其他全部注释掉。
+	 * 
+	 * --罗瑶光
+	 * */
+	
 	public static void main(String[] args) {
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
@@ -84,17 +97,6 @@ public class DemoEX {
 			+ "领域基础作品，2018年后，在60余互联网app上发布德塔开源的作品，罗"
 			+ "瑶光先生认为开源作品对同行呈现包容性。同时对垄断产业有约束性。");
 		/*
-		 * Sonar--S106协议 修改，这是我第二个sonar纠正处。 去system 改为 log4j。
-		 * 
-		 * 我的华瑞集系统没有需要日志的地方，可以全部把system.out注释掉，不要删除切记。
-		 * logger又有很多级别。 大家的工程需要日志Q就去写个资源文件去配置。不需要就别管。
-		 * 
-		 * 注意我这个版本log4j不支持 common 的logger.setLevel,要util才行，坑不坑先不管，
-		 * 我只是展示下用个fatal其他全部注释掉。
-		 * 
-		 * --罗瑶光
-		 * */
-		/*
 		 * 用commandV来处理混合中文，看看效果。
 		 * */
 		CommandClass command_V = new CommandClass();
@@ -109,7 +111,6 @@ public class DemoEX {
 		S_logger.Log.logger.info("" + "-展示分词识别---" + command_V._IMV_SQI_SS_.size());
 		S_logger.Log.logger.info("" + "-展示数字提取识别---" + command_V._IMV_SQI_SS_Q
 			.size());
-		
 		/*
 		 * 之后我函数中所有的用来处理log和状态的变量都加temp后缀，方便统一识别和剔除。
 		 * --罗瑶光

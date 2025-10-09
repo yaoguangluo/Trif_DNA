@@ -74,6 +74,10 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 	 * --罗瑶光
 	 * 
 	 * */
+	/*
+	 * 发现很多变量在逻辑意识优化后，关系也变化了，一些计算产物之后都没有用到了
+	 * 于是先保留，方便之后的逻辑更近。
+	 * */
 	public boolean findSubject(App NE, CommandClass command_V) {
 		initEnvironment();
 		// small talk calculus
@@ -83,10 +87,6 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		relationshipsCombinationWithVerb();
 		// md
 		relationshipsCombinationWithNounAndVerb();
-		/*
-		 * 发现很多变量在逻辑意识优化后，关系也变化了，一些计算产物之后都没有用到了
-		 * 于是先保留，方便之后的逻辑更近。
-		 * */
 		// init cartesianActions
 		initCartesianActions(NE, command_V);
 		//SVO的关系细化分解后，逻辑操作会更加地精确。
@@ -110,19 +110,54 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 	 * 只有2件事情，1挑战我自己和期待对手挑战我，2 改变我自己对以往事物的评价， 
 	 * 给自己传道授业解惑。什么时候被业界打倒了，我就退休。好多东西等我玩。写代码
 	 * 只是我的兴趣爱好。别抽象我。我只是个凡人。
-	 */
+	 *
+	 * 关键字  getWordFrequencyMap 处 --思考
+	 * -1 词频 归纳
+	 * -2 词性 归纳
+	 * 之前逻辑是 所有词性词汇 搜索 归纳
+	 * -未知 词汇 入 NE.app_S.workVerbalMap.unknown_map.put(string,
+	 * true);
+	 * 其他 入 mapSearchWithoutSort.put(string, wordFrequency);
+	 * 测试逻辑是 名 动 形 副 修正归纳 map-string-wordFrequency
+	 * 缺少逻辑是
+	 * 增加其他词性 map 同时统一入 mapSearchWithoutSort 即可逻辑有很多种，
+	 * 我选择 都做一遍，然后loop 替换即可我的动机是确保包含所有形式的 完整计算关系。
+	 *
+	 *
+	 * 关键字 DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest(); 处--思考
+	 * 思考，当一个原来的词汇关系系统计算中，纠正了副词的准确性，那么原来的函数中形容词的词数
+	 * 就会大幅地减少，如果之后的跟进计算用到了形容词，而没有用到副词，那么条件的精度会增加，
+	 * 而过滤数也会增加。这样的计算强调语法包含，质量提高，但性能降低。提高性能的方式是增加
+	 * 副词逻辑的计算函数集。--罗瑶光
+	 *
+	 *
+	 * DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
+	 * List<String> setsInput = demoAfterPOSTest.testPOS(command_V._IMV_SQI_SS_, pos);
+	 * List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(setsInput, pos);
+	 * 
+	 * 在测试文档中已经设计了更为精准的 DemoAfterPOSTest 服务，于是这里进行替换下函数，
+	 * 看效果如何。testAfterPOS 的逻辑是 出现单字的 同词性相联的进行合并， 但是这个格式
+	 * 在当前的tinshell逻辑中不能采纳，于是需要稍微的变形。编程可采纳的格式。
+	 * 
+	 * 问题1 demoPOSTest.testPOS 已经将改变的词性修正 到wordFrequency 类中还注册了
+	 * char position 直接变形比较麻烦，于是开始梳理思路。
+	 * --解决方法 首先分解 demoPOSTest.testPOS 为两个逻辑，先修正pos 变成 含有/的 list
+	 * --再list组合修正。--最终将修正的list 处理成 wordFrequency 格式list。
+	 * 
+	 * 
+	 * 关键字 if (false == command_V.initedArabicNumber) { 处 --笔记
+	 * 在进行分词前进行数字提取过滤，得到数字类nums和序次的map然后过滤掉这些数字
+	 * 的string进行下一步的操作，如果有alfs的提取任务，就alfs也用这个逻辑处理。 
+	 * --罗瑶光
+	 * 
+	 * */
+
 	@SuppressWarnings("unused")
 	public void setHumanTalkAfterNewBusinessTest(
 		CommandClass command_V, App NE) {
-		/*
-		 * 在进行分词前进行数字提取过滤，得到数字类nums和序次的map然后过滤掉这些数字
-		 * 的string进行下一步的操作，如果有alfs的提取任务，就alfs也用这个逻辑处理。 
-		 * --罗瑶光
-		 * 
-		 * */
-		if(false == command_V.initedArabicNumber) {
+		if (false == command_V.initedArabicNumber) {
 			int res = new StudyVerbalMap().extractNumberfromString(
-				command_V);	
+				command_V);
 		}
 		/*
 		 * 将replace 提取出来，然后进行字符的长度进行replace //。。。todo
@@ -131,9 +166,9 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		/*
 		*  分词 提取 英文段和数字段形成变量。比如dnn 12345等
 		*/
-		S_logger.Log.logger.info("" + 
-			"chineseSimpleCommandWithoutNumerics400-->"
-				+ command_V.chineseSimpleCommandWithoutNumerics);
+		S_logger.Log.logger.info(""
+			+ "chineseSimpleCommandWithoutNumerics400-->"
+			+ command_V.chineseSimpleCommandWithoutNumerics);
 
 		TimeCheck t = new TimeCheck();
 		t.begin();
@@ -141,19 +176,6 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 			command_V.chineseSimpleCommandWithoutNumerics);
 		t.end();
 		t.duration();
-		/*
-		* -1 词频 归纳
-		* -2 词性 归纳
-		* 之前逻辑是 所有词性词汇 搜索 归纳
-		* -未知 词汇 入 NE.app_S.workVerbalMap.unknown_map.put(string,
-		* true);
-		* 其他 入 mapSearchWithoutSort.put(string, wordFrequency);
-		* 测试逻辑是 名 动 形 副 修正归纳 map-string-wordFrequency
-		* 缺少逻辑是
-		* 增加其他词性 map 同时统一入 mapSearchWithoutSort 即可逻辑有很多种，
-		* 我选择 都做一遍，然后loop 替换即可我的动机是确保包含所有形式的 完整计算关系。
-		*
-		*/
 
 		command_V._IMV_SQI_SS = NE.app_S._A.getWordFrequencyMap(
 			command_V._IMV_SQI_SS_, NE);
@@ -167,27 +189,6 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		*/
 		List<String> setsInput = demoPOSTest.testPOSOnlyGetList(
 			command_V._IMV_SQI_SS_, pos);
-		/*
-		 * 思考，当一个原来的词汇关系系统计算中，纠正了副词的准确性，那么原来的函数中形容词的词数
-		 * 就会大幅地减少，如果之后的跟进计算用到了形容词，而没有用到副词，那么条件的精度会增加，
-		 * 而过滤数也会增加。这样的计算强调语法包含，质量提高，但性能降低。提高性能的方式是增加
-		 * 副词逻辑的计算函数集。--罗瑶光
-		 */
-		/*
-		 * DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
-		 * List<String> setsInput = demoAfterPOSTest.testPOS(command_V._IMV_SQI_SS_, pos);
-		 * List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(setsInput, pos);
-		 * 
-		 * 在测试文档中已经设计了更为精准的 DemoAfterPOSTest 服务，于是这里进行替换下函数，
-		 * 看效果如何。testAfterPOS 的逻辑是 出现单字的 同词性相联的进行合并， 但是这个格式
-		 * 在当前的tinshell逻辑中不能采纳，于是需要稍微的变形。编程可采纳的格式。
-		 * 
-		 * 问题1 demoPOSTest.testPOS 已经将改变的词性修正 到wordFrequency 类中还注册了
-		 * char position 直接变形比较麻烦，于是开始梳理思路。
-		 * --解决方法 首先分解 demoPOSTest.testPOS 为两个逻辑，先修正pos 变成 含有/的 list
-		 * --再list组合修正。--最终将修正的list 处理成 wordFrequency 格式list。
-		 * 
-		 * */
 		//--再list组合修正
 		DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
 		List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(
@@ -245,6 +246,7 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 			}
 		}
 	}
+
 	/*
 	* 阿拉伯数字加进map中，归纳在子函数这，是方便函数被第三方接口封装调用方便。
 	* 
@@ -259,8 +261,16 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 	* 	command_V._IMV_SQI_SS.put(temp, wordFrequency);
 	* }
 	* S_logger.Log.logger.info("" + "++" + command_V._IMV_SQI_SS.size());
-	*/
-	
+	*
+	* 阿拉伯数字处理--笔记
+	* 1 精确词汇pos函数
+	* 2 精确词汇笛卡尔 取缔之前的老快速 map 频率
+	* 3 精确词汇rnn 和 position loop unknown
+	* 4 精确词汇的mapping肽指令集
+	* 5 局部替换即可，价值可识别12345和英文abcde 方便人类语言中入参识别。
+	* 
+	* --罗瑶光
+	 */
 	public void setHumanTalk(CommandClass command_V, App NE) {
 		command_V._IMV_SQI_SS.clear();
 		command_V._IMV_SQI_SS_.clear();
@@ -270,20 +280,11 @@ public class WorkVerbalMap extends WorkVerbalMap_X {
 		command_V._IMV_SQI_SS_ = NE.app_S._A.parserMixedString(
 			command_V.command);
 		for (int i = 0; i < command_V._IMV_SQI_SS_.size(); i++) {
-			S_logger.Log.logger.info("" + command_V._IMV_SQI_SS_.get(i));
+			S_logger.Log.logger.info("" + command_V._IMV_SQI_SS_.get(
+				i));
 		}
-		/*
-		* 1 精确词汇pos函数
-		* 2 精确词汇笛卡尔 取缔之前的老快速 map 频率
-		*/
 		command_V._IMV_SQI_SS = NE.app_S._A.getWordFrequencyMap(
 			command_V._IMV_SQI_SS_, NE);
-		/*
-		* 3 精确词汇rnn 和 position
-		* loop unknown
-		* 4 精确词汇的mapping肽指令集
-		* 5 局部替换即可，价值可识别12345和英文abcde 方便人类语言中入参识别。
-		 */
 		NE.app_S._A.initPCAWordPOS(command_V._IMV_SQI_SS, NE);
 	}
 

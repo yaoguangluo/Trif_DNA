@@ -113,6 +113,17 @@ public class DemoAfterPOSTest {
 		commonTestInition.endEnvironment();
 	}
 
+	/*
+	 * 关键字 if (3 <= strings[0].length() + connect.length() 处 --笔记
+	 * 关于名词做副词的用法，如 -正面-地-，这种组合，因为地字有明确标
+	 * 识副词性结构助词，所以在跟进语言处理仅仅需要一个检查-正面-前面
+	 * 是否有副词名词或者主语，和地字后面是不是副词或者动词，就能比较
+	 * 准确地判断正面在这里是不是一个名词作副词用的语法。所以间接说明
+	 * ，POS逻辑可以进行拓扑分解细化分层计算。我这里保持严谨，仅组合2
+	 * 字词先。
+	 * --罗瑶光
+	 */
+
 	// 适用于双字 三字 四字 五字 六字 七字 八字的一次条件计算组合。增加准确度
 	public List<String> testAfterPOS(List<String> sets, IMV_SQI pos) {
 		List<String> setsOutput = new ArrayList<>();
@@ -134,14 +145,6 @@ public class DemoAfterPOSTest {
 					// 避免跳跃加载。
 					break;
 				}
-				/*
-				// 关于名词做副词的用法，如 -正面-地-，这种组合，因为地字有明确标
-				// 识副词性结构助词，所以在跟进语言处理仅仅需要一个检查-正面-前面
-				// 是否有副词名词或者主语，和地字后面是不是副词或者动词，就能比较
-				// 准确地判断正面在这里是不是一个名词作副词用的语法。所以间接说明
-				// ，POS逻辑可以进行拓扑分解细化分层计算。我这里保持严谨，仅组合2
-				// 字词先。
-				*/
 				if (3 <= strings[0].length() + connect.length()
 					+ stringsNext[0].length()) {
 					break;
@@ -153,7 +156,7 @@ public class DemoAfterPOSTest {
 				// 没有关联就加原变量
 				setsOutput.add(string);
 				//S_logger.Log.logger.info("" + string + "----");
-				connectsTemp+=string + "----";
+				connectsTemp += string + "----";
 			} else {
 				String stringConnect = strings[0] + connect + "/"
 					+ strings[1];
@@ -179,6 +182,24 @@ public class DemoAfterPOSTest {
 	 * --罗瑶光
 	 * 
 	 * */
+
+	/*
+	 * 关键字 if (!(wordPOS.contains("未知") || wordPOS.contains("形") 处 --描述
+	 * 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，里面副词
+	 * 出现了整体性问题，到现在2025年，这7年没有一个人告知我这个问题，我的
+	 * 自己工程又从来没有用过这副词的逻辑，所以一直没碰，现在商业化测试呢，
+	 * 我罗瑶光就还是给出一个解决方案。就是所有出现形容词和副词的词汇，就看
+	 * 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
+	 * 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
+	 */
+	/*
+	 * 关键字 if (wordNext.equals("地")) { 处 --笔记
+	 * Sonar-S1854协议 在wordPOS处无效。提示重复 = 定义。
+	 * 我思考了下这里不是无效的问题，是没有用到wordPOS变量。
+	 * 加了句setsOutput.add(word + "/" + wordPOS);就
+	 * 好了，所以sonar要修正这个提示错误。
+	 * --罗瑶光
+	 * */
 	@SuppressWarnings("unused")
 	public List<String> testPOS(List<String> sets, IMV_SQI pos) {
 		List<String> setsOutput = new ArrayList<>();
@@ -203,14 +224,6 @@ public class DemoAfterPOSTest {
 					continue;
 				}
 				String wordPOS = wordObjectPOS.toString();
-				/*
-				// 早期20000词汇因为是通过2018年FNLP直接loop花2分钟生成的，里面副词
-				// 出现了整体性问题，到现在2025年，这7年没有一个人告知我这个问题，我的
-				// 自己工程又从来没有用过这副词的逻辑，所以一直没碰，现在商业化测试呢，
-				// 我罗瑶光就还是给出一个解决方案。就是所有出现形容词和副词的词汇，就看
-				// 他下一个词汇是 动词还是名词，动词就改副，名词就改形容词。即可。或者
-				// 统一语料库后缀形副词。我选择前者。这个词性属性不影响分词引擎。
-				*/
 				if (!(wordPOS.contains("未知") || wordPOS.contains("形")
 					|| wordPOS.contains("副"))) {
 					setsOutput.add(word + "/" + wordPOS);
@@ -230,13 +243,6 @@ public class DemoAfterPOSTest {
 					continue;
 				}
 				String wordNextPOS = wordNextObjectPOS.toString();
-				/*
-				 * Sonar-S1854协议 在wordPOS处无效。提示重复 = 定义。
-				 * 我思考了下这里不是无效的问题，是没有用到wordPOS变量。
-				 * 加了句setsOutput.add(word + "/" + wordPOS);就
-				 * 好了，所以sonar要修正这个提示错误。
-				 * --罗瑶光
-				 * */
 				if (wordNext.equals("地")) {
 					wordPOS = "形谓词作副词";
 				} else if (wordNext.equals("的")) {
