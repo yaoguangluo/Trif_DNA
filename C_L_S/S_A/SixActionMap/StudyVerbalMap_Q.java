@@ -21,22 +21,22 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 	 * 首先构造一个getChineseFromNumerics，我设置最大数为16位，因为之前的
 	 * getNumericsFromChinese也是16位，我电脑最大也就8位。大数运算我不cover。
 	 */
+	/*
+	 * 首先开始思考，假定这个number是一个标准的整数，因为小数逻辑简单，
+	 * 只要直接翻译char即可。负数只要前面价格符号即可。
+	 * 
+	 * 于是开始分解，4位的千万位一个区间，那么是4个区间，符合普通人理解。 
+	 * numberParser[0]=0~9999
+	 * numberParser[1]=0 0000~9999 0000 
+	 * numberParser[2]=0 0000 0000~9999 9999 9999 
+	 * numberParser[3]=0 0000 0000 0000~9999 9999 9999 9999 
+	 * 这就简单了，直接加个戳组合即可. 
+	 * --论证了 计算哲学 适合 所有定义类逻辑的描述。
+	 * --罗瑶光
+	 */
 	@SuppressWarnings("unused")
 	public String getChineseFromNumerics(String number) {
 		S_logger.Log.logger.info("" + number);
-		/*
-		 * 首先开始思考，假定这个number是一个标准的整数，因为小数逻辑简单，
-		 * 只要直接翻译char即可。负数只要前面价格符号即可。
-		 * 
-		 * 于是开始分解，4位的千万位一个区间，那么是4个区间，符合普通人理解。 
-		 * numberParser[0]=0~9999
-		 * numberParser[1]=0 0000~9999 0000 
-		 * numberParser[2]=0 0000 0000~9999 9999 9999 
-		 * numberParser[3]=0 0000 0000 0000~9999 9999 9999 9999 
-		 * 这就简单了，直接加个戳组合即可. 
-		 * --论证了 计算哲学 适合 所有定义类逻辑的描述。
-		 * --罗瑶光
-		 */
 		char[] chars = number.toCharArray();
 		String[] chineseParser = new String[4];
 		String[] chineseParsered = new String[4];

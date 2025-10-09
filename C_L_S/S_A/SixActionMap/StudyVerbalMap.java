@@ -4,6 +4,7 @@ import java.util.Iterator;
 
 import O_V.OSM.shell.CommandClass;
 import S_A.AVQ.OVQ.OSQ.VSQ.obj.WordFrequency;
+import S_logger.Log;
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
@@ -58,9 +59,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			command_V.chineseSimpleCommandWithoutNumerics = inputString
 				.toString();
 		}
-		S_logger.Log.logger.info("" + 
-			"chineseSimpleCommandWithoutNumerics400-1-->"
-				+ command_V.chineseSimpleCommandWithoutNumerics);
+		S_logger.Log.logger.info(""
+			+ "chineseSimpleCommandWithoutNumerics400-1-->"
+			+ command_V.chineseSimpleCommandWithoutNumerics);
 		int fixOrder = 0;
 		for (fixOrder = 0; fixOrder < inputString
 			.length(); fixOrder++) {
@@ -106,21 +107,17 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 					 * 更进思考，这里应该直接处理掉数字变换，就能很好地避免-年-月-单字成为词汇的问题。
 					 * */
 					String output = formatNumeric(string, command_V);
-					if(null != output) {
+					if (null != output) {
 						filterString += output;
 					}
 					string = "";
 				}
 				filterString += inputString.charAt(fixOrder);
-				//filterString += "\\&";
-				//S_logger.Log.logger.info("" + filterString);
 				continue;
 			}
 			string += inputString.charAt(fixOrder);
 		}
 		if (!string.isEmpty()) {
-			//filterString += "\\&";
-			//S_logger.Log.logger.info("" + filterString);
 			S_logger.Log.logger.info("" + "nums-->" + string + "--"
 				+ fixOrder);
 			// println函数走图形打印机，并发工程记得注释掉或者用其他的classic观测API
@@ -145,10 +142,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("unused")
 	public String formatNumeric(String input,
 		CommandClass command_V) {
-
 		String string = input;
 		String symbolsSwapNumericsByLength = "";
 		for (int i = 0; i < string.length(); i++) {
@@ -159,7 +155,6 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		 * 准确度，因果增加笛卡尔关系的精确度。
 		 * --罗瑶光
 		 * */
-
 		S_logger.Log.logger.info("" + "混合数字字符探索-->" + string);
 		boolean hasNumerics = false;
 		boolean hasChars = false;
@@ -207,9 +202,6 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			 * */
 			command_V._IMV_SQI_SS_Q.put(stringSwaped, wordFrequency);
 			command_V._IMV_SQI_SS_Q_.add(stringSwaped);
-			//				command_V.chineseSimpleCommandWithoutNumerics 
-			//				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
-			//						, symbolsSwapNumericsByLength);
 			return stringSwaped;//减少遍历
 		}
 		if (!hasNumerics && hasChars) {
@@ -220,7 +212,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			 * */
 			String stringSwaped = command_V.fasterChineseNumberSwap(
 				string);
-			S_logger.Log.logger.info("" + "stringSwaped-400-2->"
+			Log.logger.info("" + "stringSwaped-400-2->"
 				+ stringSwaped);
 			WordFrequency wordFrequency = new WordFrequency(1,
 				stringSwaped);
@@ -233,9 +225,6 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			wordFrequency.I_pos("变换数字字符串代词名词");
 			command_V._IMV_SQI_SS_Q.put(stringSwaped, wordFrequency);
 			command_V._IMV_SQI_SS_Q_.add(stringSwaped);
-			//				command_V.chineseSimpleCommandWithoutNumerics 
-			//				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
-			//						, symbolsSwapNumericsByLength);
 			/*
 			 * 下面注释的逻辑需要按照字符串的长短排序后按照长优先进行replace，不然会字符串断层错误。
 			 * */
@@ -247,8 +236,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			 * 因为有些用户喜欢写100万2000这种标识，就不用一百万两千和1002000这类规范的。
 			 * 所以我在这个if里面之后还要设计个阿拉伯数字转汉字的数字翻译机。 逻辑是先拆分数汉，
 			 * 再翻译数变汉，最后组合全汉输出即可。 --罗瑶光
-			 */
-			/*
+			 * 
 			 * loop 找出阿拉伯数字，然后翻译拼接
 			 */
 			String chineseNumber = "";
@@ -261,11 +249,11 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 						String chineseNumberPars = getChineseFromNumerics(
 							arabicNumber);
 						String fix = "";
-						S_logger.Log.logger.info("" + "chineseNumber-->"
-							+ chineseNumber);
-						S_logger.Log.logger.info("" + 
-							"chineseNumberPars length-->"
-								+ chineseNumberPars.length());
+						S_logger.Log.logger.info(""
+							+ "chineseNumber-->" + chineseNumber);
+						S_logger.Log.logger.info(""
+							+ "chineseNumberPars length-->"
+							+ chineseNumberPars.length());
 						if (!chineseNumber.isEmpty() && arabicNumber
 							.length() < 4) {
 							fix = "零";
@@ -282,7 +270,8 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 				String fix = "";
 				S_logger.Log.logger.info("" + "chineseNumber-->"
 					+ chineseNumber);
-				S_logger.Log.logger.info("" + "chineseNumberPars length-->"
+				S_logger.Log.logger.info(""
+					+ "chineseNumberPars length-->"
 					+ chineseNumberPars.length());
 				if (!chineseNumber.isEmpty() && arabicNumber
 					.length() < 4) {
@@ -320,13 +309,19 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			command_V._IMV_SQI_SS_Q.put(regArabicNumber,
 				wordFrequency);
 			command_V._IMV_SQI_SS_Q_.add(regArabicNumber);
-			//	command_V.chineseSimpleCommandWithoutNumerics 
-			//	= command_V.chineseSimpleCommandWithoutNumerics.replace(string
-			//	, symbolsSwapNumericsByLength);
 			return regArabicNumber;//减少遍历
 		}
 		return null;
 	}
+	//	command_V.chineseSimpleCommandWithoutNumerics 
+	//	= command_V.chineseSimpleCommandWithoutNumerics.replace(string
+	//	, symbolsSwapNumericsByLength);
+	//	command_V.chineseSimpleCommandWithoutNumerics 
+	//				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
+	//						, symbolsSwapNumericsByLength);
+	//command_V.chineseSimpleCommandWithoutNumerics 
+	//				= command_V.chineseSimpleCommandWithoutNumerics.replace(string
+	//						, symbolsSwapNumericsByLength);
 
 	public static void main(String[] argv) {
 		String input = "123万200亿000在输出的123万亿200数据表中123万200亿202万2000仅"
