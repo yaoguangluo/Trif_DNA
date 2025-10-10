@@ -12,7 +12,8 @@ import S_A.pheromone.IMV_SQI_X_;
  * 个人著作权人, 作者 罗瑶光, 浏阳 yaoguangluo@outlook.com,
  * 313699483@qq.com, 2080315360@qq.com,
  * (lyg.tin@gmail.com2018年后因G网屏蔽不再使用）
- * 15116110525-浏阳德塔软件开发有限公司-创始人-法人-总经理-永久非盈利- 430181198505250014, G24402609, EB0581342
+ * 15116110525-浏阳德塔软件开发有限公司-创始人-法人-总经理-永久非盈利- 
+ * 430181198505250014, G24402609, EB0581342
  * 204925063, 389418686, F2406501, 0626136 湖南省 浏阳市 集里街道
  * 神仙坳社区 大塘冲路一段 208号 阳光家园别墅小区 第十栋别墅 第三层
  */
@@ -56,30 +57,26 @@ public class EnvironmentInit extends EnvironmentInit_X_S {
 		//S_logger.Log.logger.info("" + "400-8-0001-004-" + sets.size());
 		wordFrequencyMap = _A.getWordFrequencyByReturnSortMap(sets,
 			NE);
-		//if(wordFrequencyMap.containsKey("街")) {
-		//  S_logger.Log.logger.info("" + "400-8-0001-007-03-" + wordFrequencyMap.size());
-		//}
-		//S_logger.Log.logger.info("" + "400-8-0001-005-" + wordFrequencyMap.size());
 		rationMap = NE.app_S.ratioMap_E;
 		emotionSampleMap = rationMap.getEnvironmentSampleMap(
 			wordFrequencyMap);
-		//if(emotionSampleMap.containsKey("街")) {
-		//	  S_logger.Log.logger.info("" + "400-8-0001-007-04-" + emotionSampleMap.size());
-		// }
-		//S_logger.Log.logger.info("" + "400-8-0001-006-" + emotionSampleMap.size());
 		rationMap.IQ_Motivation(emotionSampleMap, motivation);
 		rationMap.IQ_Trending(emotionSampleMap, trending);
 		rationMap.IQ_Prediction(emotionSampleMap, prediction);
-		//S_logger.Log.logger.info("" + "400-8-0001-007-" + distinction.size());
-		//if(distinction.containsKey("街")) {
-		//	  S_logger.Log.logger.info("" + "400-8-0001-007-01-" + distinction.getString("街"));
-		//}
-		//if(distinction.containsKey("餐饮")) {
-		//  S_logger.Log.logger.info("" + "400-8-0001-007-01-" + distinction.getString("餐饮"));
-		//}
 		rationMap.IQ_Distinction(emotionSampleMap, distinction);
 		//S_logger.Log.logger.info("" + "400-8-0001-008-" + emotionSampleMap.size());
 	}
+	//if(emotionSampleMap.containsKey("街")) {
+	//	  S_logger.Log.logger.info("" + "400-8-0001-007-04-" + emotionSampleMap.size());
+	// }
+	//S_logger.Log.logger.info("" + "400-8-0001-006-" + emotionSampleMap.size());
+	//S_logger.Log.logger.info("" + "400-8-0001-007-" + distinction.size());
+	//if(distinction.containsKey("街")) {
+	//	  S_logger.Log.logger.info("" + "400-8-0001-007-01-" + distinction.getString("街"));
+	//}
+	//if(distinction.containsKey("餐饮")) {
+	//  S_logger.Log.logger.info("" + "400-8-0001-007-01-" + distinction.getString("餐饮"));
+	//}
 
 	/*
 	 * 说明我的函数还可以细化切割成更小的块。

@@ -68,7 +68,8 @@ class EffectionForestIsolationDemoTest {
 			+ "更多的测试DEMO补充小目标26000+函数和1000+个功能DEMO扩大鲁棒性华瑞集测试插件的源码优"
 			+ "化这个项目罗瑶光主要是公开展示下自己的编码实力知道自己的真实斤两同时填补下软算DNA编码"
 			+ "领域的国际空白2018年10月就贴出了本人生活地址方便各类用户组织现场技术群挑";
-		S_logger.Log.logger.info("" + "文字长度->" + inputString.length());
+		S_logger.Log.logger.info("" + "文字长度->" + inputString
+			.length());
 		//计算
 		StringBuilder sb = new StringBuilder(inputString);
 		//准备POS分词
@@ -96,22 +97,23 @@ class EffectionForestIsolationDemoTest {
 		List<AMV_MVS_VSQ_2D> inputNoun = new ArrayList<>();
 		for (int i = 0; i < wordString.length; i++) {
 			for (int j = 0; j < wordString[0].length; j++) {
-				if (null != wordString[i][j]) {
-					Object wordObjectPOS = pos.get(wordString[i][j]);
-					if (null == wordObjectPOS) {
-						continue;
-					}
-					if (wordString[i][j].length() < 2) {
-						continue;
-					}
-					if (wordObjectPOS.toString().contains("名")) {
-						S_logger.Log.logger.info("" + "有效名词-" + wordString[i][j]
-							+ "-坐标-" + i + ":" + j);
-						AMV_MVS_VSQ_2D position2D = new AMV_MVS_VSQ_2D();
-						position2D.I_X(i);
-						position2D.I_Y(j);
-						inputNoun.add(position2D);
-					}
+				if (null == wordString[i][j]) {
+					continue;
+				}
+				Object wordObjectPOS = pos.get(wordString[i][j]);
+				if (null == wordObjectPOS) {
+					continue;
+				}
+				if (wordString[i][j].length() < 2) {
+					continue;
+				}
+				if (wordObjectPOS.toString().contains("名")) {
+					S_logger.Log.logger.info("" + "有效名词-"
+						+ wordString[i][j] + "-坐标-" + i + ":" + j);
+					AMV_MVS_VSQ_2D position2D = new AMV_MVS_VSQ_2D();
+					position2D.I_X(i);
+					position2D.I_Y(j);
+					inputNoun.add(position2D);
 				}
 			}
 		}

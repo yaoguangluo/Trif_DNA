@@ -26,7 +26,8 @@ import org.junit.jupiter.api.Test;
  * */
 class FMHMMListOneTime_ETest {
 	public static void main(String[] argv) {
-		FMHMMListOneTime_ETest MHMMListOneTime_ETest = new FMHMMListOneTime_ETest();
+		FMHMMListOneTime_ETest MHMMListOneTime_ETest 
+		= new FMHMMListOneTime_ETest();
 		MHMMListOneTime_ETest.doTest();
 	}
 
