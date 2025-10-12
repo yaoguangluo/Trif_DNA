@@ -26,9 +26,7 @@ import P_V.PEQ.AMV.ECS.test.RNN_IDETest;
 import P_V.PEQ.AMV.ECS.test.SensingTest;
 import P_V.PEQ.OPM.VEC.test.SuccessICATest;
 import S_A.SVQ.stable.S_Colors;
-import S_A.SVQ.stable.S_MapsInitons;
 import S_A.SixActionMap.CreativeVerbalMap;
-import S_A.SixActionMap.FlowerAction;
 import S_A.SixActionMap.HelpVerbalMap;
 import S_A.SixActionMap.StudyVerbalMap;
 import S_A.SixActionMap.WorkVerbalMap;
@@ -55,160 +53,164 @@ public class App_X extends App {
 	public void init(App NE) throws IOException, InterruptedException {
 		// */
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000006");
-		app_S.studyVerbalMap = new StudyVerbalMap();
-		app_S.helpVerbalMap = new HelpVerbalMap();
-		app_S.lYGAFDCTDFFT = new LYGAFDCTDFFT();
-		app_S.lYGAFDCTDFFT.initk();
-		app_S.lYGAFDCTDFFT_F = new LYGAFDCTDFFT_F();
-		app_S.lYGAFDCTDFFT_F.initk();
+		NE.app_S.studyVerbalMap = new StudyVerbalMap();
+		//新增
+		NE.app_S.studyVerbalMap.initChineseNumberSets();
+		NE.app_S.helpVerbalMap = new HelpVerbalMap();
+		NE.app_S.lYGAFDCTDFFT = new LYGAFDCTDFFT();
+		NE.app_S.lYGAFDCTDFFT.initk();
+		NE.app_S.lYGAFDCTDFFT_F = new LYGAFDCTDFFT_F();
+		NE.app_S.lYGAFDCTDFFT_F.initk();
 		// */
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000007");
-		app_S.flowerAction.initFlowerSixDomainActions();
-		app_S.flowerAction.initFlowerP_E_KernelActions();
+		NE.app_S.flowerAction.initFlowerSixDomainActions();
+		NE.app_S.flowerAction.initFlowerP_E_KernelActions();
 		// */
 		U_A.PEU.P.wave.Guassian.initKernel(5, 1.7);// later in golbal
 		U_A.PEU.P.wave.Guassian_F.initKernel(5, 1.7);// later in golbal
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000008");
-		app_S.pageQ = new PageQ();
-		app_S.pageQ.lYGAFDCTDFFT = app_S.lYGAFDCTDFFT;
-		app_S.pageQ.lYGAFDCTDFFT_F = app_S.lYGAFDCTDFFT_F;
-		app_S.studyVerbalMap.putObject("pageQ", app_S.pageQ);
+		NE.app_S.pageQ = new PageQ();
+		NE.app_S.pageQ.lYGAFDCTDFFT = NE.app_S.lYGAFDCTDFFT;
+		NE.app_S.pageQ.lYGAFDCTDFFT_F = NE.app_S.lYGAFDCTDFFT_F;
+		NE.app_S.studyVerbalMap.putObject("pageQ", NE.app_S.pageQ);
 		/* basic init */
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000009");
-		app_S._S_MapsInitons.init();
+		NE.app_S._S_MapsInitons.init();
 		S_Colors.initFlowers3D();
 		// initon plugin types without OSGI
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000010");
 		CreativeVerbalMap.initInitonActions(NE);
-		StudyVerbalMap.initInitonDelegate();
+		//--later
+		NE.app_S.studyVerbalMap.initInitonDelegate();
 		/* sort init */
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000011");
-		app_S.quick6DLuoYaoguangSort3DMap_E = new Quick6DLuoYaoguangSort3DMap_E();
-		app_S.studyVerbalMap.putObject("quick6DLuoYaoguangSort3DMap_E",
-				app_S.quick6DLuoYaoguangSort3DMap_E);
+		NE.app_S.quick6DLuoYaoguangSort3DMap_E = new Quick6DLuoYaoguangSort3DMap_E();
+		NE.app_S.studyVerbalMap.putObject("quick6DLuoYaoguangSort3DMap_E",
+			NE.app_S.quick6DLuoYaoguangSort3DMap_E);
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000012");
-		app_S.lYGSortESU9D = new LYGSortESU9D();
-		app_S.studyVerbalMap.putObject("lYGSortESU9D", app_S.lYGSortESU9D);
+		NE.app_S.lYGSortESU9D = new LYGSortESU9D();
+		NE.app_S.studyVerbalMap.putObject("lYGSortESU9D", NE.app_S.lYGSortESU9D);
 		// literature init*/
 		ReadPinYinBihua.getPinYinBihuaMap(NE);
-		app_S.lenovoInit = new LenovoInit();
-		app_S.studyVerbalMap.putObject("lenovoInit", app_S.lenovoInit);
-		app_S.environmentInit = new EnvironmentInit();
-		app_S.studyVerbalMap.putObject("environmentInit", app_S.environmentInit);
-		app_S.emotionInit = new EmotionInit();
-		app_S.studyVerbalMap.putObject("emotionInit", app_S.emotionInit);
-		app_S.ratioMap_E = new RatioMap_E();// 350m 70m*/
-		app_S.studyVerbalMap.putObject("ratioMap_E", app_S.ratioMap_E);
-		app_S.ratioMap = app_S.ratioMap_E;
-		app_S.studyVerbalMap.putObject("ratioMap", app_S.ratioMap);
+		NE.app_S.lenovoInit = new LenovoInit();
+		NE.app_S.studyVerbalMap.putObject("lenovoInit", NE.app_S.lenovoInit);
+		NE.app_S.environmentInit = new EnvironmentInit();
+		NE.app_S.studyVerbalMap.putObject("environmentInit", NE.app_S.environmentInit);
+		NE.app_S.emotionInit = new EmotionInit();
+		NE.app_S.studyVerbalMap.putObject("emotionInit", NE.app_S.emotionInit);
+		NE.app_S.ratioMap_E = new RatioMap_E();// 350m 70m*/
+		NE.app_S.studyVerbalMap.putObject("ratioMap_E", NE.app_S.ratioMap_E);
+		NE.app_S.ratioMap = NE.app_S.ratioMap_E;
+		NE.app_S.studyVerbalMap.putObject("ratioMap", NE.app_S.ratioMap);
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000013");
-		app_S.emotionSample = new EmotionSample();// later..*/
-		app_S.studyVerbalMap.putObject("emotionSample", app_S.emotionSample);
-		app_S.sensingTest = new SensingTest();
-		app_S.studyVerbalMap.putObject("sensingTest", app_S.sensingTest);
+		NE.app_S.emotionSample = new EmotionSample();// later..*/
+		NE.app_S.studyVerbalMap.putObject("emotionSample", NE.app_S.emotionSample);
+		NE.app_S.sensingTest = new SensingTest();
+		NE.app_S.studyVerbalMap.putObject("sensingTest", NE.app_S.sensingTest);
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000014");
-		app_S.successICATest = new SuccessICATest();
-		app_S.studyVerbalMap.putObject("successICATest", app_S.successICATest);
-		app_S.sensingMap_E = new SensingMap_E();
-		app_S.studyVerbalMap.putObject("sensingMap_E", app_S.sensingMap_E);
-		app_S.emotionMap_E = new EmotionMap_E();
-		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
+		NE.app_S.successICATest = new SuccessICATest();
+		NE.app_S.studyVerbalMap.putObject("successICATest", NE.app_S.successICATest);
+		NE.app_S.sensingMap_E = new SensingMap_E();
+		NE.app_S.studyVerbalMap.putObject("sensingMap_E", NE.app_S.sensingMap_E);
+		NE.app_S.emotionMap_E = new EmotionMap_E();
+		NE.app_S.studyVerbalMap.putObject("emotionMap_E", NE.app_S.emotionMap_E);
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000015");
-		app_S.emotionMap_E.IV_MotivationMap(NE);
-		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
-		app_S.emotionMap_E.IV_TrendingMap(NE);
-		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
-		app_S.emotionMap_E.IV_PredictionMap(NE);
-		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
-		app_S.emotionMap_E.IV_DistinctionMap(NE);
-		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
-		app_S.emotionMap_E.IV_NegativeMap(NE);
-		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
-		app_S.emotionMap_E.IV_PositiveMap(NE);
-		app_S.studyVerbalMap.putObject("emotionMap_E", app_S.emotionMap_E);
+		NE.app_S.emotionMap_E.IV_MotivationMap(NE);
+		NE.app_S.studyVerbalMap.putObject("emotionMap_E", NE.app_S.emotionMap_E);
+		NE.app_S.emotionMap_E.IV_TrendingMap(NE);
+		NE.app_S.studyVerbalMap.putObject("emotionMap_E", NE.app_S.emotionMap_E);
+		NE.app_S.emotionMap_E.IV_PredictionMap(NE);
+		NE.app_S.studyVerbalMap.putObject("emotionMap_E", NE.app_S.emotionMap_E);
+		NE.app_S.emotionMap_E.IV_DistinctionMap(NE);
+		NE.app_S.studyVerbalMap.putObject("emotionMap_E", NE.app_S.emotionMap_E);
+		NE.app_S.emotionMap_E.IV_NegativeMap(NE);
+		NE.app_S.studyVerbalMap.putObject("emotionMap_E", NE.app_S.emotionMap_E);
+		NE.app_S.emotionMap_E.IV_PositiveMap(NE);
+		NE.app_S.studyVerbalMap.putObject("emotionMap_E", NE.app_S.emotionMap_E);
 		// cnn*/
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000016");
-		app_S.dNNTest = new DNNTest();
-		app_S.studyVerbalMap.putObject("dNNTest", app_S.dNNTest);
-		app_S.aNNTest = new ANNTest();
-		app_S.studyVerbalMap.putObject("aNNTest", app_S.aNNTest);
-		app_S.rNN_IDETest = new RNN_IDETest();
-		app_S.studyVerbalMap.putObject("rNN_IDETest", app_S.rNN_IDETest);
+		NE.app_S.dNNTest = new DNNTest();
+		NE.app_S.studyVerbalMap.putObject("dNNTest", NE.app_S.dNNTest);
+		NE.app_S.aNNTest = new ANNTest();
+		NE.app_S.studyVerbalMap.putObject("aNNTest", NE.app_S.aNNTest);
+		NE.app_S.rNN_IDETest = new RNN_IDETest();
+		NE.app_S.studyVerbalMap.putObject("rNN_IDETest", NE.app_S.rNN_IDETest);
 		// 6 actions map*/
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000017");
-		app_S.workVerbalMap = new WorkVerbalMap();
-		app_S.studyVerbalMap.putObject("workVerbalMap", app_S.workVerbalMap);
+		NE.app_S.workVerbalMap = new WorkVerbalMap();
+		NE.app_S.studyVerbalMap.putObject("workVerbalMap", NE.app_S.workVerbalMap);
 		CommandClass command_V = new CommandClass();
-		app_S.workVerbalMap.initActionMap(command_V);
-		app_S.studyVerbalMap.putObject("workVerbalMap", app_S.workVerbalMap);
+		NE.app_S.workVerbalMap.initActionMap(command_V);
+		NE.app_S.studyVerbalMap.putObject("workVerbalMap", NE.app_S.workVerbalMap);
 		// bloosm init*/
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000018");
-		app_S.app_XCDX = new App_XCDX();
-		app_S.studyVerbalMap.putObject("app_XCDX", app_S.app_XCDX);
-		app_S.app_XCDX.IV_(this);
-		app_S.studyVerbalMap.putObject("app_XCDX", app_S.app_XCDX);
+		NE.app_S.app_XCDX = new App_XCDX();
+		NE.app_S.studyVerbalMap.putObject("app_XCDX", NE.app_S.app_XCDX);
+		NE.app_S.app_XCDX.IV_(this);
+		NE.app_S.studyVerbalMap.putObject("app_XCDX", NE.app_S.app_XCDX);
 		// POS init*/
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000019");
-		app_S.nERO_C_OneTime_E = new NERO_C_OneTime_E();
-		app_S.studyVerbalMap.putObject("nERO_C_OneTime_E",
-				app_S.nERO_C_OneTime_E);
-		app_S.fMHMMListOneTime_E = new FMHMMListOneTime_E();
-		app_S.studyVerbalMap.putObject("fMHMMListOneTime_E",
-				app_S.fMHMMListOneTime_E);
-		app_S._A = new CogsBinaryForest_AE();// 300mb*/
-		app_S._A.IV_Mixed(NE);// 1.5gm*/
-		app_S.studyVerbalMap.putObject("_A", app_S._A);
+		NE.app_S.nERO_C_OneTime_E = new NERO_C_OneTime_E();
+		NE.app_S.studyVerbalMap.putObject("nERO_C_OneTime_E",
+			NE.app_S.nERO_C_OneTime_E);
+		NE.app_S.fMHMMListOneTime_E = new FMHMMListOneTime_E();
+		NE.app_S.studyVerbalMap.putObject("fMHMMListOneTime_E",
+			NE.app_S.fMHMMListOneTime_E);
+		NE.app_S._A = new CogsBinaryForest_AE();// 300mb*/
+		NE.app_S._A.IV_Mixed(NE);// 1.5gm*/
+		NE.app_S.studyVerbalMap.putObject("_A", NE.app_S._A);
 		// 700mb*/
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000020");
-		app_S.fMHMMListOneTime_E_X_S = (FMHMMListOneTime_E_X_S) app_S._A.fHMMList;
-		app_S.studyVerbalMap.putObject("fMHMMListOneTime_E_X_S",
-				app_S.fMHMMListOneTime_E_X_S);
-		app_S._A.forestRoots = app_S._A.fHMMList.getMap();
-		app_S.studyVerbalMap.putObject("_A.forestRoots ", app_S._A.forestRoots);
-		app_S.pos_X_P = new Pos_X_P();
-		app_S.studyVerbalMap.putObject("pos_X_P", app_S.pos_X_P);
-		app_S.nlp_CE_X_S = new Nlp_CE_X_S();
-		app_S.studyVerbalMap.putObject("nlp_CE_X_S", app_S.nlp_CE_X_S);
+		NE.app_S.fMHMMListOneTime_E_X_S = (FMHMMListOneTime_E_X_S) NE.app_S._A.fHMMList;
+		NE.app_S.studyVerbalMap.putObject("fMHMMListOneTime_E_X_S",
+			NE.app_S.fMHMMListOneTime_E_X_S);
+		NE.app_S._A.forestRoots = NE.app_S._A.fHMMList.getMap();
+		NE.app_S.studyVerbalMap.putObject("_A.forestRoots ", NE.app_S._A.forestRoots);
+		NE.app_S.pos_X_P = new Pos_X_P();
+		NE.app_S.studyVerbalMap.putObject("pos_X_P", NE.app_S.pos_X_P);
+		NE.app_S.nlp_CE_X_S = new Nlp_CE_X_S();
+		NE.app_S.studyVerbalMap.putObject("nlp_CE_X_S", NE.app_S.nlp_CE_X_S);
 		// register*/
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000021");
-		app_S.pos_X_P.wordsForest = this.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
-		app_S.studyVerbalMap.putObject("pos_X_P.wordsForest",
-				app_S.pos_X_P.wordsForest);
-		app_S.nlp_CE_X_S.wordsForest = this.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
-		app_S.studyVerbalMap.putObject("nlp_CE_X_S.wordsForest",
-				app_S.nlp_CE_X_S.wordsForest);
-		app_S._A.wordsForest = this.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
-		app_S.studyVerbalMap.putObject("_A.wordsForest", app_S._A.wordsForest);
+		NE.app_S.pos_X_P.wordsForest = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
+		NE.app_S.studyVerbalMap.putObject("pos_X_P.wordsForest",
+			NE.app_S.pos_X_P.wordsForest);
+		NE.app_S.nlp_CE_X_S.wordsForest = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
+		NE.app_S.studyVerbalMap.putObject("nlp_CE_X_S.wordsForest",
+			NE.app_S.nlp_CE_X_S.wordsForest);
+		NE.app_S._A.wordsForest = NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn;
+		NE.app_S.studyVerbalMap.putObject("_A.wordsForest", NE.app_S._A.wordsForest);
 		//
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000022");
-		app_S._A.nlp_C = app_S.nlp_CE_X_S;// later..*/
-		app_S.studyVerbalMap.putObject("_A.nlp_C", app_S._A.nlp_C);
-		app_S._A.nlp_C.pos_X_P = app_S.pos_X_P;// 注意不要出现嵌套计算环境。*/
-		app_S.studyVerbalMap.putObject("_A.nlp_C.pos_X_P",
-				app_S._A.nlp_C.pos_X_P);
-		app_S._A.pos_C = app_S.pos_X_P;
-		app_S.studyVerbalMap.putObject("_A.pos_C", app_S._A.pos_C);
+		NE.app_S._A.nlp_C = NE.app_S.nlp_CE_X_S;// later..*/
+		NE.app_S.studyVerbalMap.putObject("_A.nlp_C", NE.app_S._A.nlp_C);
+		NE.app_S._A.nlp_C.pos_X_P = NE.app_S.pos_X_P;// 注意不要出现嵌套计算环境。*/
+		NE.app_S.studyVerbalMap.putObject("_A.nlp_C.pos_X_P",
+			NE.app_S._A.nlp_C.pos_X_P);
+		NE.app_S._A.pos_C = NE.app_S.pos_X_P;
+		NE.app_S.studyVerbalMap.putObject("_A.pos_C", NE.app_S._A.pos_C);
 		// pheromone intu*/
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000023");
-		_I_U = this.app_S;// later in format.*/
-		app_S._AE = app_S._A;
-		app_S.studyVerbalMap.putObject("_I_U", _I_U);
+		NE._I_U = NE.app_S;// later in format.*/
+		NE.app_S._AE = NE.app_S._A;
+		NE.app_S.studyVerbalMap.putObject("_I_U", _I_U);
 		// init 6 base initons
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000024");
-		app_S.studyVerbalMap = new StudyVerbalMap();
-		app_S.studyVerbalMap.putObject("studyVerbalMap", app_S.studyVerbalMap);
+		//函数中的注释行涉及重要信息的进行描述 + 时间标识，避免疏忽和莫名slash被去掉--20251012。
+		//NE.app_S.studyVerbalMap = new StudyVerbalMap();
+		NE.app_S.studyVerbalMap.putObject("studyVerbalMap", NE.app_S.studyVerbalMap);
 		// GUI*/
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000025");
-		app_S.app_X_getBox = new App_X_getBox();
-		app_S.studyVerbalMap.putObject("app_X_getBox", app_S.app_X_getBox);
-		app_S.app_X_getBox.IV_(this);
-		app_S.studyVerbalMap.putObject("app_X_getBox", app_S.app_X_getBox);
+		NE.app_S.app_X_getBox = new App_X_getBox();
+		NE.app_S.studyVerbalMap.putObject("app_X_getBox", NE.app_S.app_X_getBox);
+		NE.app_S.app_X_getBox.IV_(this);
+		NE.app_S.studyVerbalMap.putObject("app_X_getBox", NE.app_S.app_X_getBox);
 		// start*/
 		S_logger.Log.logger.info("" + "启动400编码调试开始-00000026");
-		app_S.appInit = new AppInit_XCDX();
-		app_S.studyVerbalMap.putObject("appInit", app_S.appInit);
-		app_S.appInit.IV_(this);
-		app_S.studyVerbalMap.putObject("appInit", app_S.appInit);
+		NE.app_S.appInit = new AppInit_XCDX();
+		NE.app_S.studyVerbalMap.putObject("appInit", NE.app_S.appInit);
+		NE.app_S.appInit.IV_(this);
+		NE.app_S.studyVerbalMap.putObject("appInit", NE.app_S.appInit);
 	}
 }
 /*

@@ -57,6 +57,7 @@ public class CommonTestInition {
 		NE.app_S = new App_S();
 		App_S app_S = NE.app_S;
 		app_S.studyVerbalMap = new StudyVerbalMap();
+		app_S.studyVerbalMap.initChineseNumberSets();
 		return app_S;
 	}
 

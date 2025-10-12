@@ -4,6 +4,8 @@ import ME.VPC.M.app.App;
 import S_A.pheromone.IMV_SQI;
 
 import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
@@ -18,11 +20,57 @@ public class StudyVerbalMap_X {
     public IMV_SQI _SMV = new IMV_SQI();
     public IMV_SQI _SMQ = new IMV_SQI();
     public IMV_SQI _SMI = new IMV_SQI();
-    public static IMV_SQI initonDelegate = new IMV_SQI();
-
-    //先归纳汉语 归纳方式 DNA十六元基语义解码规范。 AOPM VECS IDUQ TXHF
+    public IMV_SQI initonDelegate = new IMV_SQI();
+    public Map<String, Boolean> chineseNumberSets = new HashMap<>();
+    public void initChineseNumberSets() {
+    	chineseNumberSets.put( "零" , true);
+    	chineseNumberSets.put( "一" , true);
+    	chineseNumberSets.put( "二" , true);
+    	chineseNumberSets.put( "三" , true);
+    	chineseNumberSets.put( "四" , true);
+    	chineseNumberSets.put( "五" , true);
+    	chineseNumberSets.put( "六" , true);
+    	chineseNumberSets.put( "七" , true);
+    	chineseNumberSets.put( "八" , true);
+    	chineseNumberSets.put( "九" , true);
+    	chineseNumberSets.put( "十" , true);
+    	chineseNumberSets.put( "百" , true);
+    	chineseNumberSets.put( "千" , true);
+    	chineseNumberSets.put( "万" , true);
+    	chineseNumberSets.put( "亿" , true);
+    	chineseNumberSets.put( "壹" , true);
+    	chineseNumberSets.put( "贰" , true);
+    	chineseNumberSets.put( "两" , true);
+    	chineseNumberSets.put( "叁" , true);
+    	chineseNumberSets.put( "肆" , true);
+    	chineseNumberSets.put( "伍" , true);
+    	chineseNumberSets.put( "陆" , true);
+    	chineseNumberSets.put( "柒" , true);
+    	chineseNumberSets.put( "捌" , true);
+    	chineseNumberSets.put( "玖" , true);
+    	chineseNumberSets.put( "拾" , true);
+    	chineseNumberSets.put( "佰" , true);
+    	chineseNumberSets.put( "仟" , true);
+    } 
+    /*
+     * 先归纳汉语 归纳方式 DNA十六元基语义解码规范。 AOPM VECS IDUQ TXHF
+     * 
+     * 人类的动词单字不多，但是词组很多，于是更近思考，是否有必要进行单字化。
+     * 否定论的思维，我就否定单字的价值，让多字词用contains条件来熵化单字计算结果。
+     * 增加准确度。这些年很多狗仔队和同行不知道我在干什么，总想窥探我的思维本源，其实
+     * 我就是一个凡人而已，既然家里穷躲不掉这些社会关系，我就用继续用文字来描述下的我
+     * 的意识。十六元基编码在索引动词的范式上面，比较全面，这样S元基就被释放出来缓存
+     * 未知和名词，S作为吸收机制，X来驱动关系， 其他元基作为消化机制，T作为驱动逻辑。
+     * 这些关系和逻辑在千百年的人类进化中动词相对比较稳定。方便我下一步编码。
+     * 比如标记颜色 的花语驱动就可以增加 --O+颜色-- 这个指令，之后古拉丁文编码，颜色，
+     * 彩色在元基编码后都有V和Q元基相似片段，就可以减少指令集的扩充逻辑。大幅缩进花语
+     * 元基编码函数集。 
+     * 
+     * --罗瑶光
+     * 
+     * */
     @SuppressWarnings("unchecked")
-	public static void initInitonDelegate() {
+	public void initInitonDelegate() {
         // A
         initonDelegate.put("分析", "A");
         initonDelegate.put("细化", "A");
@@ -58,21 +106,6 @@ public class StudyVerbalMap_X {
         initonDelegate.put("触碰", "O");
         initonDelegate.put("练习", "O");
         initonDelegate.put("操练", "O");
-        /*
-         * 人类的动词单字不多，但是词组很多，于是更近思考，是否有必要进行单字化。
-         * 否定论的思维，我就否定单字的价值，让多字词用contains条件来熵化单字计算结果。
-         * 增加准确度。这些年很多狗仔队和同行不知道我在干什么，总想窥探我的思维本源，其实
-         * 我就是一个凡人而已，既然家里穷躲不掉这些社会关系，我就用继续用文字来描述下的我
-         * 的意识。十六元基编码在索引动词的范式上面，比较全面，这样S元基就被释放出来缓存
-         * 未知和名词，S作为吸收机制，X来驱动关系， 其他元基作为消化机制，T作为驱动逻辑。
-         * 这些关系和逻辑在千百年的人类进化中动词相对比较稳定。方便我下一步编码。
-         * 比如标记颜色 的花语驱动就可以增加 --O+颜色-- 这个指令，之后古拉丁文编码，颜色，
-         * 彩色在元基编码后都有V和Q元基相似片段，就可以减少指令集的扩充逻辑。大幅缩进花语
-         * 元基编码函数集。 
-         * 
-         * --罗瑶光
-         * 
-         * */
         // P
         initonDelegate.put("处理", "P");
         initonDelegate.put("处置", "P");
@@ -349,14 +382,18 @@ public class StudyVerbalMap_X {
         initonDelegate.put("全面", "F");
         initonDelegate.put("替代", "F");
     }
+    
     /*
-     * 关于SMV的使用方式，首先我的主要动机是用于做缓存使用。因为NE不够灵动。我想把NE作为数据库使用，
-     * 每次结束工作，会txt文件记录NE，系统工作的过程是NE在map中的计算，读取NE的txt文件。这个txt文件
-     * 可以方便我每次的优化变量中的数据，了解NE变量集合在计算中的波动过程，为下一步做铺垫。 --罗瑶光
-     * 因为用java，我也产生了很多疑惑，首先是我不能清楚地得到变量出现的地方所对应的函数所在的具体的包名。
-     * getPackage是当前的class对应的函数所在的具体的包名。缺了一个级，所以我在思考当年我在印度学C语言的
-     * 时候为什么会买本java来看，因为2008年不碰java，我就会一直搞C和汇编。这十年的出现的问题等于0. 所以
-     * 当初是什么动机让我买java，因为我印度基督大学当时没有java课程。
+     * 关于SMV的使用方式，首先我的主要动机是用于做缓存使用。因为NE不够灵动。我想把NE作为
+     * 数据库使用, 每次结束工作，会txt文件记录NE，系统工作的过程是NE在map中的计算，读取
+     * NE的txt文件。这个txt文件可以方便我每次的优化变量中的数据，了解NE变量集合在计算中
+     * 的波动过程，为下一步做铺垫。因为用java，我也产生了很多疑惑，首先是我不能清楚地得到
+     * 变量出现的地方所对应的函数所在的具体的包名。getPackage是当前的class对应的函数所
+     * 在的具体的包名。缺了一个级，所以我在思考当年我在印度学C语言的时候为什么会买本java
+     * 来看，因为2008年不碰java，我就会一直搞C和汇编。这十年的出现的问题等于0. 所以当初
+     * 是什么动机让我买java，因为我印度基督大学当时没有java课程。
+     * 
+     * --罗瑶光
      * */
     @SuppressWarnings("unchecked")
 	public void init_SMV(App NE) throws NoSuchFieldException

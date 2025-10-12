@@ -371,8 +371,7 @@ class ShellJPanelSeparationTest {
 //	Action-->:addFindColumnsInMemoryClass
 
 	
-//	
-	
+//
 	// 可以是其他的语言。initon talk， plorm， deta db etc。。
 	// osgi view init
 	// 命令需要的表格生成

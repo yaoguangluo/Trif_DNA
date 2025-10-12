@@ -48,14 +48,14 @@ public class CreativeVerbalMap {
 	 * 
 	 * EN
 	 * Mr.YaoguangLuo has been thinking about an optimization of coding-norms since
-	 *  the method of initons-flower created at 2021. In early times, StaticRootMap
-	 *   as a static attribute which was ranged in 24 chromosome-nodes in HRJ-YLJ 
-	 *   system. He extracted it out from S-AOPM package and built a 
-	 *   new singleton class to let the TVM-registrations became more simpler and 
-	 *   faster. The name of class-file is CreativeVerbalMap. Continuing this method, 
-	 *   while thus classes were 2's-developed by problem-consumers, how does to 
-	 *   raise the survive ability itself? Finally Mr.YaoguangLuo determined out
-	 *   that is necessary to change the key word of 'static' into 'new', ASAP. 
+	 * the method of initons-flower created at 2021. In early times, StaticRootMap
+	 * as a static attribute which was ranged in 24 chromosome-nodes in HRJ-YLJ 
+	 * system. He extracted it out from S-AOPM package and built a 
+	 * new singleton class to let the TVM-registrations became more simpler and 
+	 * faster. The name of class-file is CreativeVerbalMap. Continuing this method, 
+	 * while thus classes were 2's-developed by problem-consumers, how does to 
+	 * raise the survive ability itself? Finally Mr.YaoguangLuo determined out
+	 * that is necessary to change the key word of 'static' into 'new', ASAP. 
 	 *  
 	 * --罗瑶光/YaoguangLuo
 	 * --稍后纠正语法。
@@ -179,21 +179,23 @@ public class CreativeVerbalMap {
 
 	}
 
+	/*
+	 * O+\\?+\\+颜色 等正则类指令 later 这是未来的趋势
+	 * 
+	 * 在这种逻辑下，红色的计算关系是颜色属性分支，早年的map关于 红色->颜色 这类关系就
+	 * 可以用上了人类语言-词汇组-关系组-关系归纳-归纳组匹配-匹配计算， 目前我就得到了
+	 * 这类计算逻辑。既然得到了就开始用。
+	 * 
+	 * later 指令集多了，O+颜色 就统一索引 -trif
+	 *
+	 * 用上元基索引TVM指令后，一定要注意函数调用已经更加离散化，所以一定要控制好过滤 
+	 * 筛选和精度，避免计算浪费。
+	 * 
+	 * --罗瑶光
+	 * */
+	
 	static void regUpdateColorAttributesOfColumnsInMemoryClass(
 		App NE) {
-		// O+\\?+\\+颜色 等正则类指令 later 这是未来的趋势
-		/*
-		 * 在这种逻辑下，红色的计算关系是颜色属性分支，早年的map关于 红色->颜色 这类关系就
-		 * 可以用上了人类语言-词汇组-关系组-关系归纳-归纳组匹配-匹配计算， 目前我就得到了
-		 * 这类计算逻辑。既然得到了就开始用。
-		 * 
-		 * --罗瑶光
-		 */
-		// later 指令集多了，O+颜色 就统一索引 -trif
-		/*
-		 * 用上元基索引TVM指令后，一定要注意函数调用已经更加离散化，所以一定要控制好过滤 筛选和精度，避免计算浪费。
-		 * --罗瑶光
-		 * */
 		NE.app_S.flowerAction.FlowerSixDomainActions.put("E+颜色",
 			"updateColorAttributesOfColumnsInMemoryClass");
 		// 注册花函数
@@ -273,17 +275,20 @@ public class CreativeVerbalMap {
 			(long) 0);
 		NE.app_S.staticRootMap.staticBloomingTime.put(
 			callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
-			System.currentTimeMillis());// 增加记忆时间。20241013
+			System.currentTimeMillis());
+		// 增加记忆时间。20241013
 		NE.app_S.staticRootMap.staticClass_XE_Map.put(
 			callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
 			"O_VECS");
 		NE.app_S.staticRootMap.chromosomeNode.put(
 			callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
-			limitedRowAttributesOfColumnsInMemoryClass);// 20241001准备把这行移出去。
-		//		StaticFunctionMapS_AOPM_C.annotationMap.put(
-		//				callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
-		//				"inputValues:传参因子:因子");
-
+			limitedRowAttributesOfColumnsInMemoryClass);
+		/*
+		 * 20241001准备把这行移出去。
+		 * StaticFunctionMapS_AOPM_C.annotationMap.put(
+		 *		callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
+		 *		"inputValues:传参因子:因子");
+		 */
 		NE.app_S.staticFunctionMapO_VECS_C.annotationMap.put(
 			callFunctionKeyLimitedRowAttributesOfColumnsInMemoryClass,
 			"inputValues:传参因子:因子");

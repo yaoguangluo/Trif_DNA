@@ -197,21 +197,21 @@ public class WorkVerbalMap_X_S {
 				//String root_v = "";
 				String root_pos = "";
 				//String root_pos_v = "";
-				if (StudyVerbalMap.initonDelegate.containsKey(
-					stringVerb)) {
-					stringVerb = StudyVerbalMap.initonDelegate
+				if (NE.app_S.studyVerbalMap.initonDelegate
+					.containsKey(stringVerb)) {
+					stringVerb = NE.app_S.studyVerbalMap.initonDelegate
 						.getString(stringVerb);
 				}
 				if (averagePositionNoun < averagePositionVerb) {
 					//                  later do noun's domains. 					
-					if (StudyVerbalMap_X.initonDelegate.containsKey(
-						stringNoun)) {
-						stringNoun = StudyVerbalMap_X.initonDelegate
+					if (NE.app_S.studyVerbalMap.initonDelegate
+						.containsKey(stringNoun)) {
+						stringNoun = NE.app_S.studyVerbalMap.initonDelegate
 							.getString(stringNoun);
 					}
-					if (StudyVerbalMap_X.initonDelegate.containsKey(
-						stringVerb)) {
-						stringVerb = StudyVerbalMap_X.initonDelegate
+					if (NE.app_S.studyVerbalMap.initonDelegate
+						.containsKey(stringVerb)) {
+						stringVerb = NE.app_S.studyVerbalMap.initonDelegate
 							.getString(stringVerb);
 					}
 					root += stringNoun;
@@ -240,14 +240,14 @@ public class WorkVerbalMap_X_S {
 						}
 					}
 				} else {
-					if (StudyVerbalMap_X.initonDelegate.containsKey(
-						stringNoun)) {
-						stringNoun = StudyVerbalMap_X.initonDelegate
+					if (NE.app_S.studyVerbalMap.initonDelegate
+						.containsKey(stringNoun)) {
+						stringNoun = NE.app_S.studyVerbalMap.initonDelegate
 							.getString(stringNoun);
 					}
-					if (StudyVerbalMap_X.initonDelegate.containsKey(
-						stringVerb)) {
-						stringVerb = StudyVerbalMap_X.initonDelegate
+					if (NE.app_S.studyVerbalMap.initonDelegate
+						.containsKey(stringVerb)) {
+						stringVerb = NE.app_S.studyVerbalMap.initonDelegate
 							.getString(stringVerb);
 					}
 					root += stringVerb;

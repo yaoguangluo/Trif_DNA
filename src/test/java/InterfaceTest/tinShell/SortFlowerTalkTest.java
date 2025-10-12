@@ -65,7 +65,7 @@ class SortFlowerTalkTest {
 		CreativeVerbalMap.initInitonActions(commonTestInition.NE);
 		//
 		S_logger.Log.logger.info("" + "initonDelegate 元基花触发词汇添加");
-		StudyVerbalMap.initInitonDelegate();
+		commonTestInition.NE.app_S.studyVerbalMap.initInitonDelegate();
 		//
 		S_logger.Log.logger.info("" + "FlowerP_E_KernelActions 元基花脚本函数注册");
 		commonTestInition.NE.app_S.flowerAction

@@ -15,7 +15,7 @@ import S_logger.Log;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
  * 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
-public class StudyVerbalMap extends StudyVerbalMap_Q {
+public class StudyVerbalMapBU extends StudyVerbalMap_Q {
 	public String filterString = "";
 
 	/*
@@ -44,7 +44,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 	 * 函数中的条件归纳优化。
 	 * ( (A & B ) | ( C | D ... ) ) = res 见该函数尾巴注释部分。
 	 * --优化 1 卡诺图化简
-	 * 略 
+	 * 略
 	 * 
 	 * --优化 2 迪摩根化简
 	 * !res =     ( ! ( ( A &   B )   |        ( C | D ...) ) )       --
@@ -58,11 +58,6 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 	 * Map<String, Boolean> chineseNumberSets = new HashMap<>();
 	 * chineseNumberSets.put('零', true);
 	 * 稍后提取出去成为stable map
-	 * 
-	 * 
-	 * --println函数走图形打印机，并发工程记得注释掉或者用其他的classic观测API--如log4J
-	 * --函数中的更进思考，这里应该直接处理掉数字变换，就能很好地避免-年-月-单字成为词汇的问题。
-	 *
 	 * 
 	 * --罗瑶光
 	 * */
@@ -87,9 +82,10 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		int fixOrder = 0;
 		for (fixOrder = 0; fixOrder < inputString
 			.length(); fixOrder++) {
-			if (!(inputString.charAt(fixOrder) <= 47 || inputString
-				.charAt(fixOrder) >= 58) || chineseNumberSets
-					.containsKey("" + inputString.charAt(fixOrder))) {
+			if ((!(inputString.charAt(fixOrder) <= 47 || inputString
+				.charAt(fixOrder) >= 58) || (chineseNumberSets
+					.containsKey("" + inputString.charAt(
+						fixOrder))))) {
 				string += inputString.charAt(fixOrder);
 				continue;
 			}
@@ -98,6 +94,10 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 					+ fixOrder);
 				command_V.numericsFromUnknownString.put(string
 					.toString(), fixOrder);
+				// println函数走图形打印机，并发工程记得注释掉或者用其他的classic观测API
+				/*
+				 * 更进思考，这里应该直接处理掉数字变换，就能很好地避免-年-月-单字成为词汇的问题。
+				 * */
 				String output = formatNumeric(string, command_V);
 				if (null != output) {
 					filterString += output;
@@ -350,7 +350,7 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			+ "展示123万亿200020从第123万200亿123万106行到2仟6拾第102万2000行的数据";
 		CommandClass commandClass = new CommandClass();
 		commandClass.command = input;
-		StudyVerbalMap studyVerbalMap = new StudyVerbalMap();
+		StudyVerbalMapBU studyVerbalMap = new StudyVerbalMapBU();
 		studyVerbalMap.extractNumberfromString(commandClass);
 		/*
 		 * 稍后可以设计处理混合字符的数字格式化机，关于 3十 这种描述进行格式化。 --罗瑶光

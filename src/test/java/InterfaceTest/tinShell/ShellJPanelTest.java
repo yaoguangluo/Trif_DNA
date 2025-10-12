@@ -312,7 +312,7 @@ class ShellJPanelTest {
 		NE.init(NE);
 		DetaThread.sleepDeta(100);
 		NE.start();
-		while (null == NE.app_S.studyVerbalMap) {
+		while (NE.app_S.studyVerbalMap.chineseNumberSets.isEmpty()) {
 			Thread.sleep(500);
 		}
 		return NE;
