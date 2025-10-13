@@ -259,81 +259,81 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			 * */
 			return stringSwaped;//减少遍历
 		}
-		if (hasNumerics && hasChars) {
-			S_logger.Log.logger.info("" + "混合数字字符预处理锁定-->" + string);
-			String chineseNumber = "";
-			String arabicNumber = "";
-			for (int i = 0; i < string.length(); i++) {
-				if (string.charAt(i) > 47 && string.charAt(i) < 58) {
-					arabicNumber += string.charAt(i);
-					continue;
-				}
-				if (!arabicNumber.isEmpty()) {
-					String chineseNumberPars = getChineseFromNumerics(
-						arabicNumber);
-					String fix = "";
-					S_logger.Log.logger.info("" + "chineseNumber-->"
-						+ chineseNumber);
-					S_logger.Log.logger.info(""
-						+ "chineseNumberPars length-->"
-						+ chineseNumberPars.length());
-					if (!chineseNumber.isEmpty() && arabicNumber
-						.length() < 4) {
-						fix = "零";
-					}
-					chineseNumber += fix + chineseNumberPars;
-					arabicNumber = "";
-				}
-				chineseNumber += string.charAt(i);
+		if (!hasNumerics && !hasChars) {
+			return null;
+		}
+		S_logger.Log.logger.info("" + "混合数字字符预处理锁定-->" + string);
+		String chineseNumber = "";
+		String arabicNumber = "";
+		for (int i = 0; i < string.length(); i++) {
+			if (string.charAt(i) > 47 && string.charAt(i) < 58) {
+				arabicNumber += string.charAt(i);
+				continue;
 			}
 			if (!arabicNumber.isEmpty()) {
-				String chineseNumberPars = getChineseFromNumerics(
-					arabicNumber);
+				String chineseNumberPars = getChineseFromNumerics(arabicNumber);
 				String fix = "";
-				S_logger.Log.logger.info("" + "chineseNumber-->"
-					+ chineseNumber);
-				S_logger.Log.logger.info(""
-					+ "chineseNumberPars length-->"
-					+ chineseNumberPars.length());
+				S_logger.Log.logger.info("" + "chineseNumber-->"+ chineseNumber);
+				S_logger.Log.logger.info(""+ "chineseNumberPars length-->"+ chineseNumberPars.length());
 				if (!chineseNumber.isEmpty() && arabicNumber
-					.length() < 4) {
-					fix = "零";
+					.length() < 4) {	
+					//稍后用StringBuilder替换加速。
+					if(chineseNumber.charAt(chineseNumber.length() - 1) != '零') {
+						fix = "零";	
+					}
 				}
 				chineseNumber += fix + chineseNumberPars;
 				arabicNumber = "";
 			}
-			// fix filter
-			chineseNumber = prefixOptimization(chineseNumber);
-			// oder-fix
-			chineseNumber = orderfixOptimization(chineseNumber);
-			S_logger.Log.logger.info("" + "混合数字字符预处理结果-->"
-				+ chineseNumber);
-			//稍后去重
-			/*
-			 * 思考关于position的位置添加方式，是字符串的头字所取位置，那么之后分词的
-			 * 位置也要符合这个规范，不然有误差。或导致精度过滤的条件类计算不准确。
-			 * later -trif。 罗瑶光
-			 * */
-
-			String regArabicNumber = command_V
-				.fasterChineseNumberSwap(chineseNumber);
-			S_logger.Log.logger.info("" + "stringSwaped-400-2->"
-				+ regArabicNumber);
-			WordFrequency wordFrequency = new WordFrequency(1,
-				regArabicNumber);
-			String temp = command_V.numericsFromUnknownString
-				.getString(string);
-			int tempInt = Integer.valueOf(temp);
-			S_logger.Log.logger.info("" + "position-->" + tempInt);
-			wordFrequency.positions.add(tempInt);
-			//wordFrequency.I_frequency(1);
-			wordFrequency.I_pos("变换数字字符串代词名词");
-			command_V._IMV_SQI_SS_Q.put(regArabicNumber,
-				wordFrequency);
-			command_V._IMV_SQI_SS_Q_.add(regArabicNumber);
-			return regArabicNumber;//减少遍历
+			chineseNumber += string.charAt(i);
 		}
-		return null;
+		if (!arabicNumber.isEmpty()) {
+			String chineseNumberPars = getChineseFromNumerics(
+				arabicNumber);
+			String fix = "";
+			S_logger.Log.logger.info("" + "chineseNumber-->"
+				+ chineseNumber);
+			S_logger.Log.logger.info(""
+				+ "chineseNumberPars length-->" + chineseNumberPars
+					.length());
+			if (!chineseNumber.isEmpty() && arabicNumber
+				.length() < 4) {
+				if(chineseNumber.charAt(chineseNumber.length() - 1) != '零') {
+					fix = "零";	
+				}
+			}
+			chineseNumber += fix + chineseNumberPars;
+			arabicNumber = "";
+		}
+		// fix filter
+		chineseNumber = prefixOptimization(chineseNumber);
+		// oder-fix
+		chineseNumber = orderfixOptimization(chineseNumber);
+		S_logger.Log.logger.info("" + "混合数字字符预处理结果-->"
+			+ chineseNumber);
+		//稍后去重
+		/*
+		 * 思考关于position的位置添加方式，是字符串的头字所取位置，那么之后分词的
+		 * 位置也要符合这个规范，不然有误差。或导致精度过滤的条件类计算不准确。
+		 * later -trif。 罗瑶光
+		 * */
+
+		String regArabicNumber = command_V.fasterChineseNumberSwap(
+			chineseNumber);
+		S_logger.Log.logger.info("" + "stringSwaped-400-2->"
+			+ regArabicNumber);
+		WordFrequency wordFrequency = new WordFrequency(1,
+			regArabicNumber);
+		String temp = command_V.numericsFromUnknownString.getString(
+			string);
+		int tempInt = Integer.valueOf(temp);
+		S_logger.Log.logger.info("" + "position-->" + tempInt);
+		wordFrequency.positions.add(tempInt);
+		//wordFrequency.I_frequency(1);
+		wordFrequency.I_pos("变换数字字符串代词名词");
+		command_V._IMV_SQI_SS_Q.put(regArabicNumber, wordFrequency);
+		command_V._IMV_SQI_SS_Q_.add(regArabicNumber);
+		return regArabicNumber;//减少遍历
 	}
 	//	command_V.chineseSimpleCommandWithoutNumerics 
 	//	= command_V.chineseSimpleCommandWithoutNumerics.replace(string
@@ -351,6 +351,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		CommandClass commandClass = new CommandClass();
 		commandClass.command = input;
 		StudyVerbalMap studyVerbalMap = new StudyVerbalMap();
+		//稍后
+		//有必要将initChineseNumberSets封装入new 里面，因为这类函数可以脱离主引擎环境去执行。。
+		studyVerbalMap.initChineseNumberSets();
 		studyVerbalMap.extractNumberfromString(commandClass);
 		/*
 		 * 稍后可以设计处理混合字符的数字格式化机，关于 3十 这种描述进行格式化。 --罗瑶光

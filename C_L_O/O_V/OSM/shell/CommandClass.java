@@ -547,6 +547,7 @@ public class CommandClass {
 	private long processWan(String stringWan) {
 		// TODO Auto-generated method stub
 		long total = 0;
+		long totalFinal = 0;
 		long set = 0;
 		long value = -1;
 		for (int i = 0; i < stringWan.length(); i++) {
@@ -581,29 +582,49 @@ public class CommandClass {
 				value = 9;
 			}
 			if (stringWan.charAt(i) == '十') {
-				set = 0 != value ? -1 == value ? 1 : value : 0;
-				set = set * 10;
-				total += set;
+//				set = 0 != value ? -1 == value ? 1 : value : 0;
+//				set = set * 10;
+				total = total * 10;
+				totalFinal = totalFinal + total;
+				total = 0;
 				value = -1;
 			}
 			if (stringWan.charAt(i) == '百') {
-				set = 0 != value ? -1 == value ? 1 : value : 0;
-				set = set * 100;
-				total += set;
+//				set = 0 != value ? -1 == value ? 1 : value : 0;
+//				set = set * 100;
+				total = total * 100;
+				totalFinal = totalFinal + total;
+				total = 0;
 				value = -1;
 			}
 			if (stringWan.charAt(i) == '千') {
-				set = 0 != value ? -1 == value ? 1 : value : 0;
-				set = set * 1000;
-				total += set;
+//				set = 0 != value ? -1 == value ? 1 : value : 0;
+//				set = set * 1000;
+				total = total * 1000;
+				totalFinal = totalFinal + total;
+				total = 0;
 				value = -1;
 			}
 			// S_logger.Log.logger.info("" + "loop-->" + total);
+			if (-1 != value) {
+				total = total * 10 + value;
+			}
 		}
+		/*
+		 * 奇怪怎么会在括号外。本来这里简短的函数测试要用sonar测试比较好，因为之前离开了
+		 * 英**，避免非议，我就不用。关于这类错误的函数，最后测试还跑出正确的结果，对这类问题，
+		 * 解决方法有很多，
+		 * 1 反复的加测试例子，上万种条件组合测试，多关联耦合测试，
+		 * 2 不断地分解测试例子，希尔伯特方式分解，不断地组合到最终复杂输出。
+		 * 3 不断地语言描述，不断地进行哲学分析论证，用辩论方式进行论据组织描述和详细证明论据价值。
+		 * 
+		 * --罗瑶光
+		 * */
 		if (-1 != value) {
-			total += value;
+			//total += value;
+			totalFinal = totalFinal + total;
 		}
-		return total;
+		return totalFinal;
 	}
 
 	/*
