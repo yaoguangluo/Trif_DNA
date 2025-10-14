@@ -418,14 +418,13 @@ public class CommandClass {
 							continue;
 						}
 						if (longWan < 10) {
-							outputWan += "000" + longWan;
+							outputWan += "000";
 						} else if (longWan < 100) {
-							outputWan += "00" + longWan;
+							outputWan += "00";
 						} else if (longWan < 1000) {
-							outputWan += "0" + longWan;
-						} else {
-							outputWan += "" + longWan;
+							outputWan += "0";
 						}
+						outputWan += longWan;
 						reg = outputWan;
 						total3 = outputWan.toString();
 						S_logger.Log.logger.info("" + "total3-->"
@@ -461,23 +460,27 @@ public class CommandClass {
 				S_logger.Log.logger.info("" + "total6-->" + outputYi);
 			}
 			if (stringSwap.contains("亿") && stringsYi.length > 1) {
+				String temp = regWan;
 				if (regWan.length() < 2) {
-					regYi += "0000000" + regWan;
+					regYi += "0000000";
 				} else if (regWan.length() < 3) {
-					regYi += "000000" + regWan;
+					regYi += "000000";
 				} else if (regWan.length() < 4) {
-					regYi += "00000" + regWan;
+					regYi += "00000";
 				} else if (regWan.length() < 5) {
-					regYi += "0000" + regWan;
+					regYi += "0000";
 				} else if (regWan.length() < 6) {
-					regYi += "000" + regWan;
+					regYi += "000";
 				} else if (regWan.length() < 7) {
-					regYi += "00" + regWan;
+					regYi += "00";
 				} else if (regWan.length() < 8) {
-					regYi += "0" + regWan;
+					regYi += "0";
 				} else if (regWan.length() < 9) {
-					regYi += "" + regWan;
+					//regYi += "";
+				} else {
+					temp= "";
 				}
+				regYi += temp;
 				outputYi += regYi;
 				S_logger.Log.logger.info("" + "total7-->" + outputYi);
 			}
@@ -582,24 +585,18 @@ public class CommandClass {
 				value = 9;
 			}
 			if (stringWan.charAt(i) == '十') {
-//				set = 0 != value ? -1 == value ? 1 : value : 0;
-//				set = set * 10;
 				total = total * 10;
 				totalFinal = totalFinal + total;
 				total = 0;
 				value = -1;
 			}
 			if (stringWan.charAt(i) == '百') {
-//				set = 0 != value ? -1 == value ? 1 : value : 0;
-//				set = set * 100;
 				total = total * 100;
 				totalFinal = totalFinal + total;
 				total = 0;
 				value = -1;
 			}
 			if (stringWan.charAt(i) == '千') {
-//				set = 0 != value ? -1 == value ? 1 : value : 0;
-//				set = set * 1000;
 				total = total * 1000;
 				totalFinal = totalFinal + total;
 				total = 0;

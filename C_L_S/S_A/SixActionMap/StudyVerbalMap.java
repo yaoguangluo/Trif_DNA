@@ -204,6 +204,10 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			|| string.contains("亿")) {
 			hasChars = true;
 		}
+		if (!hasNumerics && !hasChars) {
+			//流水阀门上提优化。
+			return null;
+		}
 		if (hasNumerics && !hasChars) {
 			/*
 			 * 翻译阿拉伯数字 逻辑是 
@@ -258,9 +262,6 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			 * 下面注释的逻辑需要按照字符串的长短排序后按照长优先进行replace，不然会字符串断层错误。
 			 * */
 			return stringSwaped;//减少遍历
-		}
-		if (!hasNumerics && !hasChars) {
-			return null;
 		}
 		S_logger.Log.logger.info("" + "混合数字字符预处理锁定-->" + string);
 		String chineseNumber = "";
@@ -317,7 +318,6 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		 * 位置也要符合这个规范，不然有误差。或导致精度过滤的条件类计算不准确。
 		 * later -trif。 罗瑶光
 		 * */
-
 		String regArabicNumber = command_V.fasterChineseNumberSwap(
 			chineseNumber);
 		S_logger.Log.logger.info("" + "stringSwaped-400-2->"

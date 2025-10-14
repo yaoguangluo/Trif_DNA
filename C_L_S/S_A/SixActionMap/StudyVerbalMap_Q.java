@@ -68,7 +68,8 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		 * 2 numberParser swap to chineseParser
 		 */
 		for (int i = 0; i < chineseParser.length; i++) {
-			chineseParsered[i] = doSwapUnderTenThousands(chineseParser[i]);
+			chineseParsered[i] = doSwapUnderTenThousands(
+				chineseParser[i]);
 			// S_logger.Log.logger.info("" + i + "-->" + chineseParsered[i]);
 		}
 		/*
@@ -95,7 +96,8 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 			has2 = true;
 		}
 		output = output + chineseParsered[2];
-		if ((true == has2 || true == has3) && !chineseParsered[2].equals("零")) {
+		if ((true == has2 || true == has3) && !chineseParsered[2]
+			.equals("零")) {
 			output = output + '亿';
 		}
 		//
@@ -126,7 +128,7 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		S_logger.Log.logger.info("" + "output-->" + output);
 		return output;
 	}
-	
+
 	/*
 	 * fix filter 和 oder-fix稍后提取成函数，避免重复，然后command class
 	 * 继承这些中间变量， 处理好哲学关系 保持简洁计算性能。。 --罗瑶光
@@ -142,14 +144,14 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 
 	public String orderfixOptimization(String input) {
 		if (!input.isEmpty()) {
-			while (input.charAt(input.length() - 1) == '零'
-					&& input.length() > 1) {
+			while (input.charAt(input.length() - 1) == '零' && input
+				.length() > 1) {
 				input = input.substring(0, input.length() - 1);
 			}
 		}
 		return input;
 	}
-	
+
 	/*
 	 * 这个逻辑开始思考千位变换， 1- 首先string 进行 swap to chars 
 	 * 2- 4位的 char 对应个十百千 这是单位， 3- char是0-9 需要量词翻译。 
@@ -198,51 +200,47 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 				stringChinese = "九" + stringChinese;
 			}
 		}
-		// S_logger.Log.logger.info("" + "stringChinese-->" + stringChinese);
 		/*
 		 * 加单元
 		 */
 		int order = 0;
 		for (int i = stringChinese.length() - 1; i >= 0; i--) {
 			stringChineseUnits = "" + stringChinese.charAt(i);
-			// S_logger.Log.logger.info("" + "stringChineseUnits-->" +
-			// stringChineseUnits);
 			if (1 == order && stringChinese.charAt(i) != '零') {
 				stringChineseUnits = stringChinese.charAt(i) + "十";
-				// System.out
-				// .println("stringChineseUnits-->" + stringChineseUnits);
 			}
 			if (2 == order && stringChinese.charAt(i) != '零') {
 				stringChineseUnits = stringChinese.charAt(i) + "百";
-				// System.out
-				// .println("stringChineseUnits-->" + stringChineseUnits);
 			}
 			if (3 == order && stringChinese.charAt(i) != '零') {
 				stringChineseUnits = stringChinese.charAt(i) + "千";
-				// System.out
-				// .println("stringChineseUnits-->" + stringChineseUnits);
 			}
-			stringChineseUnitsFix = stringChineseUnits + stringChineseUnitsFix;
+			stringChineseUnitsFix = stringChineseUnits
+				+ stringChineseUnitsFix;
 			order++;
 		}
-		// S_logger.Log.logger.info("" + "stringChineseUnitsFix-->" +
-		// stringChineseUnitsFix);
 		/*
 		 * 过滤零单元
 		 */
-		stringChineseUnitsFix = stringChineseUnitsFix.replace("零零零零", "");
-		stringChineseUnitsFix = stringChineseUnitsFix.replace("零零零", "零");
-		stringChineseUnitsFix = stringChineseUnitsFix.replace("零零", "零");
-		// S_logger.Log.logger.info("" + "stringChineseUnitsFixFilter-->" +
-		// stringChineseUnitsFix);
-		// pre-fix
-		// oder-fix
-		stringChineseUnitsFix = orderfixOptimization(stringChineseUnitsFix);
+		stringChineseUnitsFix = stringChineseUnitsFix.replace("零零零零",
+			"");
+		stringChineseUnitsFix = stringChineseUnitsFix.replace("零零零",
+			"零");
+		stringChineseUnitsFix = stringChineseUnitsFix.replace("零零",
+			"零");
+		stringChineseUnitsFix = orderfixOptimization(
+			stringChineseUnitsFix);
 		return stringChineseUnitsFix;
 	}
+	// S_logger.Log.logger.info("" + "stringChineseUnitsFix-->" +
+	// stringChineseUnitsFix);
+	// S_logger.Log.logger.info("" + "stringChineseUnitsFixFilter-->" +
+	// stringChineseUnitsFix);
+	// pre-fix
+	// oder-fix
 
 	public static void main(String[] argv) {
-		CommandClass commandClass=new CommandClass();
+		CommandClass commandClass = new CommandClass();
 		StudyVerbalMap_Q studyVerbalMap_Q = new StudyVerbalMap_Q();
 		String number = "9992980400000088";
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
@@ -328,8 +326,6 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
 		// 不断加不断修正细化即可
-		//
-
 	}
 }
 //不断加测试函数不断修正细化即可
@@ -501,8 +497,6 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 //简体-->零
 //total2-->0
 
-
-
 //if (!output.isEmpty()) {
 //	while (output.charAt(0) == '零' && output.length() > 1) {
 //		output = output.substring(1, output.length());
@@ -524,4 +518,3 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 //			stringChineseUnitsFix.length() - 1);
 //}
 //}
-
