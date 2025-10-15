@@ -39,7 +39,6 @@
 	<classpathentry kind="src" path="HRJ_YLJ_node"/>
 	<classpathentry kind="src" path="InitonsFlowerExtension"/>
 	<classpathentry kind="src" path="YLJ_HRJ"/>
-	<classpathentry kind="src" path="hvpcs"/>
 	<classpathentry kind="src" path="unitTest"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/mylibMac"/>
 	<classpathentry kind="output" path="bin"/>

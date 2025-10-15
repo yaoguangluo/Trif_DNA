@@ -35,16 +35,16 @@
 ////        this.app = app;
 ////        goToBedroom(vPCSRequest, vPCSResponse);
 ////    }
-//	public void goToBedroom(DetaSrc.org.deta.boot.sets.VPCSRequest vPCSRequest,
-//			DetaSrc.org.deta.boot.sets.VPCSResponse vPCSResponse) {
+//	public void goToBedroom(I_Q.hvpcs.boot.sets.VPCSRequest vPCSRequest,
+//			I_Q.hvpcs.boot.sets.VPCSResponse vPCSResponse) {
 //		this.vPCSRequest = vPCSRequest;
 //		this.vPCSResponse = vPCSResponse;
 //		vPCSResponse.setHashCode(this.hashCode());
 //	}
 //
 //	public void goToBedroom(String port,
-//			DetaSrc.org.deta.boot.sets.VPCSRequest vPCSRequest,
-//			DetaSrc.org.deta.boot.sets.VPCSResponse vPCSResponse) {
+//			I_Q.hvpcs.boot.sets.VPCSRequest vPCSRequest,
+//			I_Q.hvpcs.boot.sets.VPCSResponse vPCSResponse) {
 //		// this.app = app;
 //		vPCSRequest.I_RequestPort(port);
 //		goToBedroom(vPCSRequest, vPCSResponse);

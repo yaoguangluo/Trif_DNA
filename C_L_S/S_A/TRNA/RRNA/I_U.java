@@ -8,7 +8,7 @@ import A_V.IVDTIXQCTIV.LenovoInit;
 import A_V.E.RatioMap_E;
 import C_A.OCI.AVC.SUQ.SVQ.MPC.fhmm.C.EmotionMap;
 import C_A.ME.analysis.C.A;
-import DetaSrc.org.deta.boot.vpc.sleeper.SleeperHall;
+import I_Q.hvpcs.boot.vpc.sleeper.SleeperHall;
 import E_A.OEI.AMV.ECS.SVQ.MPC.SOQ.OEM.E.SensingMap_E;
 import E_A.OEI.AVC.SUQ.SVQ.MPC.fhmm.E.EmotionMap_E;
 import E_A.ME.analysis.E.CogsBinaryForest_AE;
@@ -192,10 +192,10 @@ public class I_U extends U_Q {
     public GUISample gUISample;
     public DetaButton detaButton;
     public TokenCerts tokenCerts;
-    public DetaSrc.org.deta.boot.sets.VPCSRequest vPCSRequest;
+    public I_Q.hvpcs.boot.sets.VPCSRequest vPCSRequest;
     public Container containerPanel;
     public DetaBufferedReader reader;
-    public DetaSrc.org.deta.boot.sets.VPCSResponse vPCSResponse;
+    public I_Q.hvpcs.boot.sets.VPCSResponse vPCSResponse;
     public Quick6DLuoYaoguangSort3DMap_E quick6DLuoYaoguangSort3DMap_E;
     public LYGSortESU9D lYGSortESU9D;
     public MSI_EVD_SVX_TVS_DAH makeContainerZNSZ;//挥发计算

@@ -31,8 +31,8 @@ import S_A.SVQ.stable.S_Web;
  * */
 public class Forward_V extends ServerForward_Standard {
 	public static void forwardToRestMap(App_S app,
-			DetaSrc.org.deta.boot.sets.VPCSRequest vPCSRequest,
-			DetaSrc.org.deta.boot.sets.VPCSResponse vPCSResponse) {
+			I_Q.hvpcs.boot.sets.VPCSRequest vPCSRequest,
+			I_Q.hvpcs.boot.sets.VPCSResponse vPCSResponse) {
 		if (null == vPCSRequest
 				|| null == vPCSRequest.getRequestForwardType()) {
 			vPCSResponse.return404();

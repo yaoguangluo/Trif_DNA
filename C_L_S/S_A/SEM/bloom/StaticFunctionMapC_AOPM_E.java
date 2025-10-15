@@ -10,9 +10,9 @@ import C_A.OSI.AOP.MS.VPC.server.ServerInit_Standard;
 import C_A.OSI.AOP.MS.VPC.server.ServerRestMap_Standard;
 import C_A.OSI.AOP.MS.VPC.server.ServerSleeper_Standard;
 import C_A.OSI.AOP.MS.VPC.server.ServerVPC_Standard;
-import DetaSrc.org.deta.boot.sets.VPCSRequest;
-import DetaSrc.org.deta.boot.sets.VPCSResponse;
-import DetaSrc.org.deta.boot.vpc.sleeper.SleeperHall;
+import I_Q.hvpcs.boot.sets.VPCSRequest;
+import I_Q.hvpcs.boot.sets.VPCSResponse;
+import I_Q.hvpcs.boot.vpc.sleeper.SleeperHall;
 import E_A.OEI.AVC.SUQ.SVQ.MPC.fhmm.E.EmotionMap_E;
 import E_A.ME.liner.E.Quick6DLuoYaoguangSort3DMap_E;
 import E_A.ME.nero.E.NERO_C_OneTime_E;
@@ -111,7 +111,7 @@ public class StaticFunctionMapC_AOPM_E extends StaticFunctionMapCASE
 	}
 
 	public void requestIpFixVPCS(App NE) {
-		DetaSrc.org.deta.boot.sets.VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
+		I_Q.hvpcs.boot.sets.VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
 		RequestFix_C.requestIpFix(vPCSRequest, vPCSResponse);
 	}
@@ -147,7 +147,7 @@ public class StaticFunctionMapC_AOPM_E extends StaticFunctionMapCASE
 	}
 
 	public void IQ_ForwardTypeVPCS(App NE) {
-		DetaSrc.org.deta.boot.sets.VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
+		I_Q.hvpcs.boot.sets.VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
 		ServerForward_Standard.IQ_ForwardType(vPCSRequest,
 			vPCSResponse);

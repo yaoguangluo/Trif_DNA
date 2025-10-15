@@ -10,10 +10,10 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.Properties;
 
-import DetaSrc.org.deta.boot.sets.VPCSRequest;
-import DetaSrc.org.deta.boot.sets.VPCSResponse;
-import DetaSrc.org.deta.boot.vpc.sleeper.Sleeper;
-import DetaSrc.org.deta.boot.vpc.sleeper.SleeperHall;
+import I_Q.hvpcs.boot.sets.VPCSRequest;
+import I_Q.hvpcs.boot.sets.VPCSResponse;
+import I_Q.hvpcs.boot.vpc.sleeper.Sleeper;
+import I_Q.hvpcs.boot.vpc.sleeper.SleeperHall;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳

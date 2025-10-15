@@ -11,8 +11,8 @@ package M_V.MS.VPC.V;
 
 import ME.VPC.S.ne.App_S;
 import C_A.OSI.AOP.MS.VPC.server.ServerRestMap_Standard;
-import DetaSrc.org.deta.boot.sets.VPCSRequest;
-import DetaSrc.org.deta.boot.sets.VPCSResponse;
+import I_Q.hvpcs.boot.sets.VPCSRequest;
+import I_Q.hvpcs.boot.sets.VPCSResponse;
 import O_V.OSI.AOP.VPC.rest.VPC;
 import S_A.SVQ.stable.S_Pos;
 import S_A.SVQ.stable.S_Web;
@@ -75,7 +75,7 @@ public class RestMap_V extends ServerRestMap_Standard {
 	}
 
 	public static void P_RestDB(App_S app, VPCSRequest vPCSRequest,
-			DetaSrc.org.deta.boot.sets.VPCSResponse vPCSResponse) {
+			I_Q.hvpcs.boot.sets.VPCSResponse vPCSResponse) {
 		// VPC属于子继承, 如果不用 overrider 来分配, 也有很多方法, 如osgi, 当然,
 		// 我现在用最快map标识, 更爽.
 		// indexVPCMapPillows.get(vPCSRequest.gettag())...;

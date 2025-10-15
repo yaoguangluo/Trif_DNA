@@ -2,8 +2,8 @@ package C_A.OSI.AOP.MS.VPC.server;
 
 import java.net.Socket;
 
-import DetaSrc.org.deta.boot.sets.VPCSRequest;
-import DetaSrc.org.deta.boot.sets.VPCSResponse;
+import I_Q.hvpcs.boot.sets.VPCSRequest;
+import I_Q.hvpcs.boot.sets.VPCSResponse;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳

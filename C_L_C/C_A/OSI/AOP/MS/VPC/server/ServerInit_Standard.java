@@ -6,9 +6,9 @@ import S_A.SVQ.stable.S_Web;
 import java.io.IOException;
 import java.net.ServerSocket;
 
-import DetaSrc.org.deta.boot.sets.VPCSRequest;
-import DetaSrc.org.deta.boot.sets.VPCSResponse;
-import DetaSrc.org.deta.boot.vpc.sleeper.SleeperHall;
+import I_Q.hvpcs.boot.sets.VPCSRequest;
+import I_Q.hvpcs.boot.sets.VPCSResponse;
+import I_Q.hvpcs.boot.vpc.sleeper.SleeperHall;
 
 //VPCS标准函数, 准备之后所有服务器 走继承这个文件。
 //罗瑶光 20200811

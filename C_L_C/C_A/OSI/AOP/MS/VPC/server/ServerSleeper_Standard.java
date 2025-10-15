@@ -2,10 +2,10 @@ package C_A.OSI.AOP.MS.VPC.server;
 
 import java.net.Socket;
 
-import DetaSrc.org.deta.boot.sets.VPCSRequest;
-import DetaSrc.org.deta.boot.sets.VPCSResponse;
-import DetaSrc.org.deta.boot.vpc.sleeper.SleeperHall;
-import DetaSrc.org.deta.boot.vpc.sleeper.Sleeper_X;
+import I_Q.hvpcs.boot.sets.VPCSRequest;
+import I_Q.hvpcs.boot.sets.VPCSResponse;
+import I_Q.hvpcs.boot.vpc.sleeper.SleeperHall;
+import I_Q.hvpcs.boot.vpc.sleeper.Sleeper_X;
 
 //这是标准的sleepr函数, 我稍后会设计 frontend sleeper,  backend sleeper
 //, cache sleeper, database sleeper 继承它, 避免循环嵌套。

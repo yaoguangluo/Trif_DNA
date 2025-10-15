@@ -5,10 +5,10 @@ import S_A.SVQ.stable.S_Web;
 
 import java.net.Socket;
 
-import DetaSrc.org.deta.boot.sets.VPCSRequest;
-import DetaSrc.org.deta.boot.sets.VPCSResponse;
-import DetaSrc.org.deta.boot.vpc.vision.RestMapVision_XP_bytes;
-import DetaSrc.org.deta.boot.vpc.vision.RestMapVision_XP_rest;
+import I_Q.hvpcs.boot.sets.VPCSRequest;
+import I_Q.hvpcs.boot.sets.VPCSResponse;
+import I_Q.hvpcs.boot.vpc.vision.RestMapVision_XP_bytes;
+import I_Q.hvpcs.boot.vpc.vision.RestMapVision_XP_rest;
 
 //import OSI.AOP.VPC.PP.port_E.RestLoginPort_E;
 //import PEU.P.map.VtoV;

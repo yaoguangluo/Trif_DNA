@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import DetaSrc.org.deta.boot.vpc.sleeper.SleeperHall;
+import I_Q.hvpcs.boot.vpc.sleeper.SleeperHall;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
