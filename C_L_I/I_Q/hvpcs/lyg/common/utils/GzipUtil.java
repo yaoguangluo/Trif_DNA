@@ -18,7 +18,6 @@ import java.util.zip.GZIPOutputStream;
 import java.util.zip.InflaterInputStream;
 
 public class GzipUtil {
-	// ѹ��
 	public static byte[] compress(byte[] data) throws IOException {
 		if (data == null || data.length == 0) {
 			return null;
@@ -50,7 +49,7 @@ public class GzipUtil {
 		GZIPInputStream gunzip = new GZIPInputStream(in);
 		byte[] buffer = new byte[256];
 		int n;
-		while ((n = gunzip.read(buffer)) >= 0) {
+		while ((n = gunzip.read(buffer)) != -1) {
 			out.write(buffer, 0, n);
 		}
 		gunzip.close();

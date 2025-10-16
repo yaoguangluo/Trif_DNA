@@ -77,7 +77,7 @@ public class ServerInitController {
 		runServer(server, sleeperHall, clearTime, timeHall);
 	}
 
-	public static void runServer(ServerSocket server, SleeperHall sleeperHall,
+	public void runServer(ServerSocket server, SleeperHall sleeperHall,
 			long clearTime, TimeHall timeHall)
 			throws InterruptedException, IOException {
 		Here: while (true) {// later do 6 dead id filter

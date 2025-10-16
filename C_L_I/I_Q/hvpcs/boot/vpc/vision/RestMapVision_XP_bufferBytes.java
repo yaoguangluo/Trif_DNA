@@ -56,12 +56,12 @@ import I_Q.hvpcs.boot.sets.VPCSResponse;
 					vPCSResponse.socket.getOutputStream());
 			vPCSResponse.dataOutputStream.flush();
 			vPCSResponse.dataOutputStream
-					.write(builderToString.getBytes("UTF8"));
+					.write(builderToString.getBytes("UTF-8"));
 			Thread.sleep(75);
 			byte[] bytes = null;
 			int i = 0;
 			long bytes_length = 0;
-			bytes = GzipUtil.compress(contentBuilderToString.getBytes("UTF8"));
+			bytes = GzipUtil.compress(contentBuilderToString.getBytes("UTF-8"));
 			bytes_length = bytes == null ? 0 : bytes.length;
 			vPCSResponse.dataOutputStream.flush();
 			if (bytes_length > 10000) {

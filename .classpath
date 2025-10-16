@@ -34,7 +34,6 @@
 	<classpathentry kind="src" path="C_R_U"/>
 	<classpathentry kind="src" path="C_R_V"/>
 	<classpathentry kind="src" path="DetaResources"/>
-	<classpathentry kind="src" path="ext"/>
 	<classpathentry kind="src" path="GccExtension"/>
 	<classpathentry kind="src" path="HRJ_YLJ_node"/>
 	<classpathentry kind="src" path="InitonsFlowerExtension"/>

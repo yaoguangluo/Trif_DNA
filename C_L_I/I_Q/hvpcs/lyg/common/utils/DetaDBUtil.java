@@ -17,6 +17,46 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class DetaDBUtil {
+	public static String backEndZipRequest(String port, String request) {
+		BufferedReader br;
+		HttpURLConnection conn;
+		StringBuilder out = new StringBuilder();
+		try {
+			URL url = new URL("http://localhost:" + port + "/" + request);
+			conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("POST");
+			System.out.flush();
+			S_logger.Log.logger.info("" + "----20000");
+			conn.setConnectTimeout(20000);
+			conn.setRequestProperty("Accept", "application/json");
+			if (conn.getResponseCode() != 200) {
+				throw new RuntimeException(
+						"Failed : HTTP error code : " + conn.getResponseCode());
+			}
+			br = new BufferedReader(
+					new InputStreamReader(conn.getInputStream(), "UTF-8"));
+			String out1 = "";
+			// char[] chars= new char[1024];
+			// br.read(chars, 0, 1024);
+			while ((out1 = br.readLine()) != null) {
+				if (!out1.isEmpty()) {
+					S_logger.Log.logger.info(out1);
+					out.append(out1);
+				}
+			}
+			br.close();
+			conn.disconnect();
+			return out.toString();
+		} catch (Exception e) {
+			br = null;
+			conn = null;
+			out.append(" ");
+			System.out.flush();
+			S_logger.Log.logger.info("" + e.getMessage());
+			return out.toString();
+		}
+	}
+	
 	public static String backEndRequest(String request) {
 		BufferedReader br;
 		HttpURLConnection conn;

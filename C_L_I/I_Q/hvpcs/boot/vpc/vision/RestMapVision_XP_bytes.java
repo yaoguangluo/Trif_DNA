@@ -54,8 +54,14 @@ import I_Q.hvpcs.boot.sets.VPCSResponse;
 					vPCSResponse.byteArrayOutputStream.flush();
 				}
 				vPCSResponse.fileInputStream.close();
+				String temp= new String(vPCSResponse.byteArrayOutputStream.toByteArray());
+				S_logger.Log.logger.info("-^-^-" + temp);
 				byte[] sniper = GzipUtil.compress(
 						vPCSResponse.byteArrayOutputStream.toByteArray());
+				for(int i=0;i<sniper.length;i++) {
+					System.out.print(sniper[i]+"_");
+				}
+
 				long sniper_length = sniper == null ? 0 : sniper.length;
 				list.add(("Content-Length: " + sniper_length + " \n")
 						.getBytes("UTF8"));
