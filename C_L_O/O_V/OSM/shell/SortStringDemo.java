@@ -71,7 +71,7 @@ public class SortStringDemo {
 		App NE = new App();
 		ReadPinYinBihua.getPinYinBihuaMap(NE);
 		TableSorterZYNK tableSorterZYNK = new TableSorterZYNK(NE);
-		String[] strings = new String[10];
+		String[] strings = new String[20];
 		strings[0] = "luoy罗瑶光uang";
 		strings[1] = "罗瑶光";
 		strings[2] = "瑶光";
@@ -82,9 +82,19 @@ public class SortStringDemo {
 		strings[7] = "xy瑶光guang";
 		strings[8] = "ya罗瑶光ang";
 		strings[9] = "yaoguang";
+		strings[10] = "luoy罗瑶光uang";
+		strings[11] = "l罗uoy罗瑶光uang";
+		strings[12] = "罗luoy罗瑶光uang";
+		strings[13] = "luoy罗瑶光ua罗ng";
+		strings[14] = "lu光oy罗瑶光uang";
+		strings[15] = "luoy罗瑶光ua光ng";
+		strings[16] = "luoy光罗瑶光uang";
+		strings[17] = "Aluoy罗瑶光uang";
+		strings[18] = "aluoy罗瑶光uang";
+		strings[19] = "zluoy罗瑶光uang";
 		int returnInt = new LYG10D13D_X_CAS()
 				.quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(
-						strings, 0, 9, 30, ReadPinYinBihua.pinYin,
+						strings, 0, 19, 30, ReadPinYinBihua.pinYin,
 						ReadPinYinBihua.biHua, 7, 70);
 
 		for (String string : strings) {
@@ -94,19 +104,47 @@ public class SortStringDemo {
 	}
 }
 
-//  输出 Connected to the target VM, address:
-//  '127.0.0.1:54000', transport: 'socket' 罗瑶 罗瑶光 瑶光
-//  罗瑶
-////罗瑶光
-////瑶光
-////luoy罗瑶光uang
-////xy瑶光guang
-////y瑶光g
-////ya罗瑶光ang
-////yaog瑶光ng
-////yaoguang
-////yaoguang
-//  yaoguang Disconnected from the target VM, address:
-//  '127.0.0.1:54000', transport: 'socket'
-//  
-//  Process finished with exit code 0
+/*
+ * 
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: 罗瑶
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: 罗瑶光
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: 罗luoy罗瑶光uang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: 瑶光
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: Aluoy罗瑶光uang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: aluoy罗瑶光uang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: l罗uoy罗瑶光uang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: lu光oy罗瑶光uang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: luoy光罗瑶光uang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: luoy罗瑶光ua光ng
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: luoy罗瑶光ua罗ng
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: luoy罗瑶光uang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: luoy罗瑶光uang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: xy瑶光guang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: y瑶光g
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: ya罗瑶光ang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: yaog瑶光ng
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: yaoguang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: yaoguang
+10月 16, 2025 12:02:45 下午 O_V.OSM.shell.SortStringDemo main
+信息: zluoy罗瑶光uang
+ * 
+ * */

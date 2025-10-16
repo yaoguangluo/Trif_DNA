@@ -31,7 +31,8 @@ public class RestHVPCS {
 		//test
 		S_logger.Log.logger.info("--test");
 		URL url;
-		ArrayList<Byte> list = new ArrayList<>();
+		ArrayList<byte[]> list = new ArrayList<>();
+		int sizeOfBytes = 0;
 		try {
 			url = new URL("http://localhost:" + "8000" + "/"
 				+ "index.html");
@@ -48,21 +49,30 @@ public class RestHVPCS {
 			byte[] bytes = new byte[1024];
 			int len = 0;
 			while ((len = br.read(bytes)) != -1) {
-				byte[] bytesTemp = new byte[len];
-				for (int i = 0; i < len; i++) {
-					bytesTemp[i] = bytes[i];
-					list.add(bytesTemp[i]);
+				if (len < 1024) {
+					byte[] bytesTemp = new byte[len];
+					for (int i = 0; i < len; i++) {
+						bytesTemp[i] = bytes[i];
+					}
+					list.add(bytesTemp);
+					sizeOfBytes += 1024;
+					continue;
 				}
+				sizeOfBytes += len;
+				list.add(bytes);
 			}
 			conn.disconnect();
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-		byte[] bytes = new byte[list.size()];
-		Iterator<Byte> iterators = list.iterator();
+		byte[] bytes = new byte[sizeOfBytes];
+		Iterator<byte[]> iterators = list.iterator();
 		int count = 0;
 		while (iterators.hasNext()) {
-			bytes[count++] = iterators.next();
+			byte[] byteTemp = iterators.next();
+			for (byte b : byteTemp) {
+				bytes[count++] = b;
+			}
 		}
 		byte[] bs = GzipUtil.uncompress(bytes);
 		S_logger.Log.logger.info(new String(bs));
