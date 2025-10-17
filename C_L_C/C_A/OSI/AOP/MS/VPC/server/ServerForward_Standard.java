@@ -9,6 +9,7 @@ import I_Q.hvpcs.boot.sets.VPCSRequest;
 import I_Q.hvpcs.boot.sets.VPCSResponse;
 import I_Q.hvpcs.boot.vpc.vision.RestMapVision_XP_bytes;
 import I_Q.hvpcs.boot.vpc.vision.RestMapVision_XP_rest;
+import ME.VPC.M.app.App;
 
 //import OSI.AOP.VPC.PP.port_E.RestLoginPort_E;
 //import PEU.P.map.VtoV;
@@ -134,7 +135,7 @@ public class ServerForward_Standard {
 	}
 
 	public static void forwardToRestMap(VPCSRequest vPCSRequest,
-			VPCSResponse vPCSResponse) {
+			VPCSResponse vPCSResponse, App NE) {
 		if (vPCSRequest.getRequestForwardType() == null) {
 			vPCSResponse.return404();
 			return;
@@ -142,7 +143,7 @@ public class ServerForward_Standard {
 		if (vPCSRequest.getRequestForwardType()
 				.equalsIgnoreCase(S_Web.STREAM_REST)) {
 			// ServerRestMap_Standard.P_Rest(vPCSRequest, vPCSResponse);
-			RestMapVision_XP_rest.processRest(vPCSRequest, vPCSResponse);
+			RestMapVision_XP_rest.processRest(vPCSRequest, vPCSResponse, NE);
 			// 注意vpc是否有那个link转发不然会null。trif 2025
 			return;
 		}

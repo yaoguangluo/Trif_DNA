@@ -721,7 +721,7 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 		App app = NE._I_U.app;
 		VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
-		Forward_V.forwardToRestMap(app.app_S, vPCSRequest,
+		Forward_V.forwardToRestMap(app, vPCSRequest,
 			vPCSResponse);
 	}
 
@@ -730,7 +730,7 @@ public class StaticFunctionMapM_VECS_E extends StaticFunctionMapCASE
 		App app = NE._I_U.app;
 		VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
-		RestMap_V.P_Rest(app.app_S, vPCSRequest, vPCSResponse);
+		RestMap_V.P_Rest(app, vPCSRequest, vPCSResponse);
 	}
 
 	public void P_RestDB(App NE) {

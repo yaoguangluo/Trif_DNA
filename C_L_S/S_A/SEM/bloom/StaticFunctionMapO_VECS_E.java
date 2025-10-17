@@ -498,7 +498,7 @@ public class StaticFunctionMapO_VECS_E extends StaticFunctionMapCASE
 		App app = NE._I_U.app;
 		AES_QMS_XSD_TIH string = NE._I_U.string;
 		IMV_SQI data = NE._I_U.dataMap;
-		return VPC.forward(app.app_S, string._S_, data);
+		return VPC.forward(app, string._S_, data);
 
 	}
 

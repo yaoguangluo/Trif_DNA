@@ -8,6 +8,7 @@ import I_Q.hvpcs.boot.rest.VPC;
 import I_Q.hvpcs.boot.sets.StableBlob;
 import I_Q.hvpcs.boot.sets.VPCSRequest;
 import I_Q.hvpcs.boot.sets.VPCSResponse;
+import ME.VPC.M.app.App;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -20,11 +21,11 @@ import I_Q.hvpcs.boot.sets.VPCSResponse;
  * */public class RestMapVision_XP_rest extends RestMapVision {
 	@SuppressWarnings("unchecked")
 	public static void processRest(VPCSRequest vPCSRequest,
-			VPCSResponse vPCSResponse) {
+			VPCSResponse vPCSResponse, App NE) {
 		String output;
 		try {
 			output = VPC.forward(vPCSRequest.getRequestLink(),
-					vPCSRequest.getRequestValue());
+					vPCSRequest.getRequestValue(), NE);
 			vPCSResponse.printWriter = new PrintWriter(
 					new BufferedWriter(new OutputStreamWriter(
 							vPCSResponse.socket.getOutputStream(), "UTF-8")),

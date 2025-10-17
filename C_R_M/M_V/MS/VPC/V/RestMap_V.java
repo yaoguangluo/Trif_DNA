@@ -9,6 +9,7 @@
  * */
 package M_V.MS.VPC.V;
 
+import ME.VPC.M.app.App;
 import ME.VPC.S.ne.App_S;
 import C_A.OSI.AOP.MS.VPC.server.ServerRestMap_Standard;
 import I_Q.hvpcs.boot.sets.VPCSRequest;
@@ -39,14 +40,14 @@ import java.nio.charset.StandardCharsets;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class RestMap_V extends ServerRestMap_Standard {
-	public static void P_Rest(App_S app, VPCSRequest vPCSRequest,
+	public static void P_Rest(App NE, VPCSRequest vPCSRequest,
 			VPCSResponse vPCSResponse) {
 		// VPC属于子继承, 如果不用 overrider 来分配, 也有很多方法, 如osgi, 当然,
 		// 我现在用最快map标识, 更爽.
 		// indexVPCMapPillows.get(vPCSRequest.gettag())...;
 		// 现在仅仅deta的网站处理服务器有web页, 养疗经app还没有涉及, 因此 pillow tag
 		// 区分VPC 函数的rest map 设计优先级稍后
-		String output = VPC.forward(app, vPCSRequest.getRequestLink(),
+		String output = VPC.forward(NE, vPCSRequest.getRequestLink(),
 				vPCSRequest.getRequestValue());
 		output = output.length() > 0 ? output : " ";
 		PrintWriter printWriter;

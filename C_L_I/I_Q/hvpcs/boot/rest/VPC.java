@@ -6,7 +6,7 @@ import java.util.Map;
 import I_Q.hvpcs.lyg.common.maps.VtoV;
 import I_Q.hvpcs.lyg.vpc.process.portImpl.RestAskPortImpl;
 import I_Q.hvpcs.lyg.vpc.process.portImpl.RestLoginPortImpl;
-
+import ME.VPC.M.app.App;
 import I_Q.hvpcs.boot.controller.SelectController;
 
 /*
@@ -22,7 +22,7 @@ import I_Q.hvpcs.boot.controller.SelectController;
  * */
 public class VPC {
 //这个文件以后直接继承和扩展即可。
-	public static String forward(String string, Map<String, String> data)
+	public static String forward(String string, Map<String, String> data, App NE)
 			throws Exception {
 		// controller
 		if (string.contains("/select")) {
@@ -88,7 +88,7 @@ public class VPC {
 					RestAskPortImpl.getAskers(data.get("token")));
 		}
 		if (string.equalsIgnoreCase("/dataWS")) {
-			return RestAskPortImpl.dataWS(data.get("message"));
+			return RestAskPortImpl.dataWS(data.get("input"), NE);
 		}
 		if (string.equalsIgnoreCase("/dataCX")) {
 			return RestAskPortImpl.dataCX(data.get("message"));

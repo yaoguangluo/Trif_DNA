@@ -93,6 +93,7 @@ public class ServerInitController {
 				continue Here;
 			}
 			Sleeper_X sleeper = new Sleeper_X();
+			sleeper.NE = appReg;
 			if (!server.isClosed()) {
 				sleeper.pillows.vPCSResponse.socket = server.accept();
 			}

@@ -20,8 +20,11 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+
+import E_A.OSI.AOP.PCS.PP.port_E.RestNLPPortImpl;
 import I_Q.hvpcs.lyg.common.maps.VtoV;
 import I_Q.hvpcs.lyg.common.utils.DetaDBUtil;
+import ME.VPC.M.app.App;
 
 //import org.lyg.vpc.controller.port.RestAskPort;
 public class RestAskPortImpl {// implements RestAskPort {
@@ -285,14 +288,20 @@ public class RestAskPortImpl {// implements RestAskPort {
 	public static Map<String, Object> recordIp(String string) {
 		Map<String, Object> out = new HashMap<>();
 		out.put("loginInfo", "success");
-		out.put("returnResult", "�Ѿ���ȡ");
+		out.put("returnResult", "�Ѿ���ȡ");//稍后去中文格式乱码
 		return out;
 	}
 
-	public static String dataWS(String string) throws IOException {
-		String object = DetaDBUtil.backEndRequest(
-				"dataWS?input=" + URLEncoder.encode(string, "UTF-8"));
-		return object;
+	public static String dataWS(String string, App NE) throws IOException {
+//		String object = DetaDBUtil.backEndRequest(
+//				"dataWS?input=" + URLEncoder.encode(string, "UTF-8"));
+//		return object;
+		/*
+    	 * 上面3行是rest分布式请求例子
+    	 * 下面是简化执行测试例子
+    	 * --罗瑶光
+    	 * */
+    	return new VtoV().ObjectToJsonString(RestNLPPortImpl.dataWS(string, NE));
 	}
 
 	public static String dataCX(String string)

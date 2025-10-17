@@ -28,7 +28,7 @@ public class RestHvpcsServer extends Thread implements Runnable {
 	public void run() {
 		try {
 			ServerInitController serverInitController= new ServerInitController();
-			serverInitController.initServer(null);
+			serverInitController.initServer(app);
 			S_logger.Log.logger.info("--boot");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

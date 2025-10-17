@@ -1,7 +1,8 @@
 package E_A.OSI.AOP.VPC.PP.port_E;
 
 import DSU.V.VtoV;
-
+import E_A.OSI.AOP.PCS.PP.port_E.RestNLPPortImpl;
+import ME.VPC.M.app.App;
 import exception.net.O.DetaURLEncoder;
 import S_A.pheromone.IMV_SQI;
 import U_V.ESU.json.Json_ESU_X_jsonArrayToList;
@@ -288,10 +289,16 @@ public class RestAskPort_E {// implements RestAskPort {
         return out;
     }
 
-    public static String dataWS(String string) {
-        String object = DetaFrontEndUtil_X_backEndRequest._E("dataWS?input="
-                + DetaURLEncoder.encodeDeta(string, "UTF-8"));
-        return object;
+    public static String dataWS(String string, App NE) {
+//        String object = DetaFrontEndUtil_X_backEndRequest._E("dataWS?input="
+//                + DetaURLEncoder.encodeDeta(string, "UTF-8"));
+//        return object;
+    	/*
+    	 * 上面3行是rest分布式请求例子
+    	 * 下面是简化执行测试例子
+    	 * --罗瑶光
+    	 * */
+    	return new VtoV().ObjectToJsonString(dataWS(string, NE));
     }
 
     public static String dataCX(String string) {

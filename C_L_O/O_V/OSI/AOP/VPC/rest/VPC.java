@@ -1,5 +1,6 @@
 package O_V.OSI.AOP.VPC.rest;
 
+import ME.VPC.M.app.App;
 import ME.VPC.S.ne.App_S;
 import C_A.OSI.AOP.MS.VPC.C.DBCategory_C;
 import C_A.OSI.AOP.MS.VPC.server.ServerVPC_Standard;
@@ -109,7 +110,7 @@ public class VPC extends ServerVPC_Standard {
     }
 
     //remove apps later..
-    public static String forward(App_S app, String string, IMV_SQI data) {
+    public static String forward(App NE, String string, IMV_SQI data) {
 //		if(!DNAAuth.DNAAuthStatusCheckEmailAndPassword(app, string, data)) {
 //			return "";
 //		}
@@ -135,7 +136,7 @@ public class VPC extends ServerVPC_Standard {
         //restMap  // 准备改成1次进入由原来的 前端 后端数据库, 变成前端 数据库。
         // 模式为前端加cache, 后端加数据库。 罗瑶光
         if (string.equalsIgnoreCase("/login")) {
-            if (!DNAAuth.DNAAuthStatusCheckEmailAndPassword(app, string, data)) {
+            if (!DNAAuth.DNAAuthStatusCheckEmailAndPassword(NE.app_S, string, data)) {
                 return "";
             }
             return VtoV.ObjectToJsonString(RestLoginPort_E.login(data.getString("uEmail")
@@ -182,7 +183,7 @@ public class VPC extends ServerVPC_Standard {
             return VtoV.ObjectToJsonString(RestAskPort_E.getAskers(data.getString("token")));
         }
         if (string.equalsIgnoreCase("/dataWS")) {
-            return RestAskPort_E.dataWS(data.getString("message"));
+            return RestAskPort_E.dataWS(data.getString("message"), NE);
         }
         if (string.equalsIgnoreCase("/dataCX")) {
             return RestAskPort_E.dataCX(data.getString("message"));
@@ -197,7 +198,7 @@ public class VPC extends ServerVPC_Standard {
             return RestAskPort_E.dataRN(data.getString("message"));
         }
         if (string.equalsIgnoreCase("/dataCG")) {
-            if (!DNAAuth.DNAAuthStatusCheckEmailAndPassword(app, string, data)) {
+            if (!DNAAuth.DNAAuthStatusCheckEmailAndPassword(NE.app_S, string, data)) {
                 return "";
             }
             return RestAskPort_E.dataCG(data.getString("message"));

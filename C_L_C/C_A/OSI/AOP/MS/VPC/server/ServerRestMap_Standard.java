@@ -27,6 +27,7 @@ import java.util.List;
 
 import I_Q.hvpcs.boot.sets.VPCSRequest;
 import I_Q.hvpcs.boot.sets.VPCSResponse;
+import ME.VPC.M.app.App;
 
 //这里出现了VPC的标识, 让-去小广告-看清楚, 我有很多方法来继承, 我就不用-去小广告-的那种
 //. VPCS 的STABLE就可以解决
@@ -66,7 +67,7 @@ public class ServerRestMap_Standard {
 	}
 
 	public static void P_Rest(VPCSRequest vPCSRequest,
-			VPCSResponse vPCSResponse) {
+			VPCSResponse vPCSResponse, App NE) {
 		// VPC属于子继承, 如果不用 overrider 来分配, 也有很多方法, 如osgi
 		// , 当然, 我现在用最快map标识, 更爽.
 		// indexVPCMapPillows.get(vPCSRequest.gettag())...;
@@ -74,7 +75,7 @@ public class ServerRestMap_Standard {
 		// , 因此 pillow tag 区分VPC 函数的rest map 设计优先级稍后
 		try {
 			String output = VPC.forward(vPCSRequest.getRequestLink(),
-					vPCSRequest.getRequestValue());
+					vPCSRequest.getRequestValue(), NE);
 			output = output.length() > 0 ? output : " ";
 			PrintWriter printWriter = null;
 

@@ -9,6 +9,7 @@ import C_A.OSI.AOP.VPC.C.U_C;
 import DSU.V.VtoV;
 import E_A.OSI.AOP.VPC.PP.port_E.RestAskPort_E;
 import E_A.OSI.AOP.VPC.PP.port_E.RestLoginPort_E;
+import ME.VPC.M.app.App;
 import S_A.pheromone.IMV_SQI;
 
 import java.io.File;
@@ -25,7 +26,7 @@ import java.io.File;
  * */
 public class ServerVPC_Standard {
 	@SuppressWarnings("unchecked")
-	public static String forward(String string, IMV_SQI data) {
+	public static String forward(String string, IMV_SQI data, App NE) {
 //		if(!DNAAuth.DNAAuthStatusCheckEmailAndPassword(app, string, data)) {
 //			return "";
 //		}
@@ -100,7 +101,7 @@ public class ServerVPC_Standard {
 					RestAskPort_E.getAskers(data.getString("token")));
 		}
 		if (string.equalsIgnoreCase("/dataWS")) {
-			return RestAskPort_E.dataWS(data.getString("message"));
+			return RestAskPort_E.dataWS(data.getString("message"), NE);
 		}
 		if (string.equalsIgnoreCase("/dataCX")) {
 			return RestAskPort_E.dataCX(data.getString("message"));

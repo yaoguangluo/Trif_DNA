@@ -9,6 +9,7 @@
  * */
 package M_V.MS.VPC.V;
 
+import ME.VPC.M.app.App;
 import ME.VPC.S.ne.App_S;
 import C_A.OSI.AOP.MS.VPC.server.ServerForward_Standard;
 import S_A.SVQ.stable.S_HTTP;
@@ -30,7 +31,7 @@ import S_A.SVQ.stable.S_Web;
 *  208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class Forward_V extends ServerForward_Standard {
-	public static void forwardToRestMap(App_S app,
+	public static void forwardToRestMap(App NE,
 			I_Q.hvpcs.boot.sets.VPCSRequest vPCSRequest,
 			I_Q.hvpcs.boot.sets.VPCSResponse vPCSResponse) {
 		if (null == vPCSRequest
@@ -43,9 +44,9 @@ public class Forward_V extends ServerForward_Standard {
 			// 与其设计个sleeper继承, 不如在这里设计个condition函数, 然后根据port识别
 			// 来继承这个condition 就是了。, 罗瑶光 20210730
 			if (vPCSRequest.getRequestPort().equals(S_HTTP.PORT_DATABASE)) {
-				RestMap_V.P_RestDB(app, vPCSRequest, vPCSResponse);
+				RestMap_V.P_RestDB(NE.app_S, vPCSRequest, vPCSResponse);
 			} else {
-				RestMap_V.P_Rest(app, vPCSRequest, vPCSResponse);
+				RestMap_V.P_Rest(NE, vPCSRequest, vPCSResponse);
 			}
 		}
 		if (vPCSRequest.getRequestForwardType()

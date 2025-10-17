@@ -52,7 +52,7 @@ public class Sleeper_X extends Sleeper_O implements Runnable {
 		if (needReturn("getForwardType")) {
 			return;
 		}
-		ServerForward_Standard.forwardToRestMap(pillows.vPCSRequest, pillows.vPCSResponse);
+		ServerForward_Standard.forwardToRestMap(pillows.vPCSRequest, pillows.vPCSResponse, NE);
 		if (needReturn("forwardToRestMap")) {
 			return;
 		}

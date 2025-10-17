@@ -6,6 +6,7 @@ import I_Q.hvpcs.boot.sets.VPCSRequest;
 import I_Q.hvpcs.boot.sets.VPCSResponse;
 import I_Q.hvpcs.boot.vpc.sleeper.SleeperHall;
 import I_Q.hvpcs.boot.vpc.sleeper.Sleeper_X;
+import ME.VPC.M.app.App;
 
 //这是标准的sleepr函数, 我稍后会设计 frontend sleeper,  backend sleeper
 //, cache sleeper, database sleeper 继承它, 避免循环嵌套。
@@ -21,6 +22,7 @@ import I_Q.hvpcs.boot.vpc.sleeper.Sleeper_X;
  * */
 
 public class ServerSleeper_Standard extends Thread implements Runnable {
+    public App NE;
 	public VPCSRequest vPCSRequest;
 	public VPCSResponse vPCSResponse;
 

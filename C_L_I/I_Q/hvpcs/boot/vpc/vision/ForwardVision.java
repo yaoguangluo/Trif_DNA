@@ -8,6 +8,7 @@ import I_Q.hvpcs.boot.rest.VPC;
 import I_Q.hvpcs.boot.sets.StableSets;
 import I_Q.hvpcs.boot.sets.VPCSRequest;
 import I_Q.hvpcs.boot.sets.VPCSResponse;
+import ME.VPC.M.app.App;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -102,7 +103,7 @@ public class ForwardVision {
 	}
 
 	public static void forwardToRestMap(VPCSRequest vPCSRequest,
-			VPCSResponse vPCSResponse) {
+			VPCSResponse vPCSResponse, App NE) {
 		try {
 			if (vPCSRequest.getRequestForwardType() == null) {
 				System.out.flush();
@@ -113,7 +114,7 @@ public class ForwardVision {
 			if (vPCSRequest.getRequestForwardType().equalsIgnoreCase("rest")) {
 				System.out.flush();
 				S_logger.Log.logger.info("" + "-rest");
-				RestMapVision_XP_rest.processRest(vPCSRequest, vPCSResponse);
+				RestMapVision_XP_rest.processRest(vPCSRequest, vPCSResponse, NE);
 				return;
 			}
 			if (vPCSRequest.getRequestForwardType().equalsIgnoreCase("bytes")) {

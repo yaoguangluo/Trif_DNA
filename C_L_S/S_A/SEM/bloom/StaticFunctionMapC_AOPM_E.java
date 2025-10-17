@@ -157,7 +157,7 @@ public class StaticFunctionMapC_AOPM_E extends StaticFunctionMapCASE
 		VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
 		ServerForward_Standard.forwardToRestMap(vPCSRequest,
-			vPCSResponse);
+			vPCSResponse, NE);
 	}
 
 	// ServerInit_C_VPCSFrontEnd {// 稍后命名区分下 改成 return
@@ -225,7 +225,7 @@ public class StaticFunctionMapC_AOPM_E extends StaticFunctionMapCASE
 	public void P_Rest(App NE) {
 		VPCSRequest vPCSRequest = NE._I_U.vPCSRequest;
 		VPCSResponse vPCSResponse = NE._I_U.vPCSResponse;
-		ServerRestMap_Standard.P_Rest(vPCSRequest, vPCSResponse);
+		ServerRestMap_Standard.P_Rest(vPCSRequest, vPCSResponse, NE);
 	}
 
 	public void P_View(App NE) {
@@ -276,7 +276,7 @@ public class StaticFunctionMapC_AOPM_E extends StaticFunctionMapCASE
 	public String forward(App NE) {
 		AES_QMS_XSD_TIH string = NE._I_U.string;
 		IMV_SQI data = NE._I_U.dataMap;
-		return ServerVPC_Standard.forward(string._S_, data);
+		return ServerVPC_Standard.forward(string._S_, data, NE);
 	}
 
 	public String getCode(App NE) {
