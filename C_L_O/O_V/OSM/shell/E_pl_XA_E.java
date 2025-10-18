@@ -439,13 +439,13 @@ public class E_pl_XA_E {
 //    IMV_SQI inputValue = new IMV_SQI();
 //    String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //        .getString(callFunctionKey).split(":");
-//                NE._I_U.outputMap = output;//加了map后缀需要更新关联函数
-//                    inputValue.put(传参因子[0], temp);
-//                    inputValue.put(传参因子[1], output);
-//                    outputReg.put("传参因子", 传参因子);
-//                    outputReg.put("inputValues", inputValue);
-//                    strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
-//                    StaticRootMap.tinShellV005(strings, outputReg);
+//NE._I_U.outputMap = output;//加了map后缀需要更新关联函数
+//    inputValue.put(传参因子[0], temp);
+//    inputValue.put(传参因子[1], output);
+//    outputReg.put("传参因子", 传参因子);
+//    outputReg.put("inputValues", inputValue);
+//    strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
+//    StaticRootMap.tinShellV005(strings, outputReg);
 
 //64
 //Pl_XA_Command_E.P_SetRoot(acknowledge, output);
@@ -456,101 +456,101 @@ public class E_pl_XA_E {
 //    IMV_SQI inputValue = new IMV_SQI();
 //    String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
 //        .getString(callFunctionKey).split(":");
-//                NE._I_U.outputMap = output;
-//                    inputValue.put(传参因子[0], temp);
-//                    inputValue.put(传参因子[1], output);
-//                    outputReg.put("传参因子", 传参因子);
-//                    outputReg.put("inputValues", inputValue);
-//                    strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
-//                    StaticRootMap.tinShellV005(strings, outputReg);
+//NE._I_U.outputMap = output;
+//    inputValue.put(传参因子[0], temp);
+//    inputValue.put(传参因子[1], output);
+//    outputReg.put("传参因子", 传参因子);
+//    outputReg.put("inputValues", inputValue);
+//    strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
+//    StaticRootMap.tinShellV005(strings, outputReg);
 //@SuppressWarnings("unchecked")
 //IMV_SQI map= (IMV_SQI) outputReg.get(callFunctionKey);
 //app.app_S.nameFeelFilter= (CfxTextField) map.get("interfaceReturn");
 
 //67
-//                //Pl_XA_Command_E.P_BaseName(acknowledge, output);
-//                String callFunctionKey = ("P_BaseName");
-//                //StaticRootMap.initMap();
-//                String[] strings = new String[1];
-//                IMV_SQI outputReg = new IMV_SQI();
-//                IMV_SQI inputValue = new IMV_SQI();
-//                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
-//                    .getString(callFunctionKey).split(":");// all in 1 later
-//                NE._I_U.outputMap = output;
-//                inputValue.put(传参因子[0], temp);
-//                inputValue.put(传参因子[1], output);
-//                outputReg.put("传参因子", 传参因子);
-//                outputReg.put("inputValues", inputValue);
-//                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
-//                StaticRootMap.tinShellV005(strings, outputReg);
+////Pl_XA_Command_E.P_BaseName(acknowledge, output);
+//String callFunctionKey = ("P_BaseName");
+////StaticRootMap.initMap();
+//String[] strings = new String[1];
+//IMV_SQI outputReg = new IMV_SQI();
+//IMV_SQI inputValue = new IMV_SQI();
+//String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
+//    .getString(callFunctionKey).split(":");// all in 1 later
+//NE._I_U.outputMap = output;
+//inputValue.put(传参因子[0], temp);
+//inputValue.put(传参因子[1], output);
+//outputReg.put("传参因子", 传参因子);
+//outputReg.put("inputValues", inputValue);
+//strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
+//StaticRootMap.tinShellV005(strings, outputReg);
 
 //69
-//                //Pl_XA_Command_E.P_YLJOperation(acknowledge, output);
-//                String callFunctionKey = ("P_YLJOperation");
-//                //StaticRootMap.initMap();
-//                String[] strings = new String[1];
-//                IMV_SQI outputReg = new IMV_SQI();
-//                IMV_SQI inputValue = new IMV_SQI();
-//                String chromosome = StaticRootMap.staticClass_XE_Map.getString(callFunctionKey);
-//                String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome, callFunctionKey); //我是神！ tin神！
-//                NE._I_U.outputMap = output;
-//                inputValue.put(传参因子[0], temp);
-//                inputValue.put(传参因子[1], output);
-//                outputReg.put("传参因子", 传参因子);
-//                outputReg.put("inputValues", inputValue);
-//                strings[0] = "执行 " + chromosome + " 下 " + callFunctionKey + " 接口, 参数是 传参因子";
-//                StaticRootMap.tinShellV005(strings, outputReg);
+////Pl_XA_Command_E.P_YLJOperation(acknowledge, output);
+//String callFunctionKey = ("P_YLJOperation");
+////StaticRootMap.initMap();
+//String[] strings = new String[1];
+//IMV_SQI outputReg = new IMV_SQI();
+//IMV_SQI inputValue = new IMV_SQI();
+//String chromosome = StaticRootMap.staticClass_XE_Map.getString(callFunctionKey);
+//String[] 传参因子 = StaticFunctionMap.callAnnotationMap(chromosome, callFunctionKey); //我是神！ tin神！
+//NE._I_U.outputMap = output;
+//inputValue.put(传参因子[0], temp);
+//inputValue.put(传参因子[1], output);
+//outputReg.put("传参因子", 传参因子);
+//outputReg.put("inputValues", inputValue);
+//strings[0] = "执行 " + chromosome + " 下 " + callFunctionKey + " 接口, 参数是 传参因子";
+//StaticRootMap.tinShellV005(strings, outputReg);
 
 //72
-//                //	Pl_XA_Command_E.P_StoreValues(acknowledge, output);
-//                String callFunctionKey = "P_StoreValues";
-//                //StaticRootMap.initMap();
-//                String[] strings = new String[1];
-//                IMV_SQI outputReg = new IMV_SQI();
-//                IMV_SQI inputValue = new IMV_SQI();
-//                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
-//                    .getString(callFunctionKey).split(":");
-//                NE._I_U.outputMap = output;
-//                inputValue.put(传参因子[0], temp);
-//                inputValue.put(传参因子[1], output);
-//                outputReg.put("传参因子", 传参因子);
-//                outputReg.put("inputValues", inputValue);
-//                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
-//                StaticRootMap.tinShellV005(strings, outputReg);
+////	Pl_XA_Command_E.P_StoreValues(acknowledge, output);
+//String callFunctionKey = "P_StoreValues";
+////StaticRootMap.initMap();
+//String[] strings = new String[1];
+//IMV_SQI outputReg = new IMV_SQI();
+//IMV_SQI inputValue = new IMV_SQI();
+//String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
+//    .getString(callFunctionKey).split(":");
+//NE._I_U.outputMap = output;
+//inputValue.put(传参因子[0], temp);
+//inputValue.put(传参因子[1], output);
+//outputReg.put("传参因子", 传参因子);
+//outputReg.put("inputValues", inputValue);
+//strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
+//StaticRootMap.tinShellV005(strings, outputReg);
 
 //76
-//                //Pl_XA_Command_E.P_fileOperations(acknowledge, output);
-//                String callFunctionKey = "P_fileOperations";
-//                //StaticRootMap.initMap();
-//                String[] strings = new String[1];
-//                IMV_SQI outputReg = new IMV_SQI();
-//                IMV_SQI inputValue = new IMV_SQI();
-//                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
-//                    .getString(callFunctionKey).split(":");
-//                NE._I_U.outputMap = output;
-//                inputValue.put(传参因子[0], temp);
-//                inputValue.put(传参因子[1], output);
-//                outputReg.put("传参因子", 传参因子);
-//                outputReg.put("inputValues", inputValue);
-//                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
-//                StaticRootMap.tinShellV005(strings, outputReg);
+////Pl_XA_Command_E.P_fileOperations(acknowledge, output);
+//String callFunctionKey = "P_fileOperations";
+////StaticRootMap.initMap();
+//String[] strings = new String[1];
+//IMV_SQI outputReg = new IMV_SQI();
+//IMV_SQI inputValue = new IMV_SQI();
+//String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
+//    .getString(callFunctionKey).split(":");
+//NE._I_U.outputMap = output;
+//inputValue.put(传参因子[0], temp);
+//inputValue.put(传参因子[1], output);
+//outputReg.put("传参因子", 传参因子);
+//outputReg.put("inputValues", inputValue);
+//strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
+//StaticRootMap.tinShellV005(strings, outputReg);
 
 //83
-//                //Pl_XA_Command_E.P_fileOperations(acknowledge, output);
-//                String callFunctionKey = "P_fileOperations";
-//                //StaticRootMap.initMap();
-//                String[] strings = new String[1];
-//                IMV_SQI outputReg = new IMV_SQI();
-//                IMV_SQI inputValue = new IMV_SQI();
-//                String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
-//                    .getString(callFunctionKey).split(":");
-//                NE._I_U.outputMap = output;
-//                inputValue.put(传参因子[0], temp);
-//                inputValue.put(传参因子[1], output);
-//                outputReg.put("传参因子", 传参因子);
-//                outputReg.put("inputValues", inputValue);
-//                strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
-//                StaticRootMap.tinShellV005(strings, outputReg);
+////Pl_XA_Command_E.P_fileOperations(acknowledge, output);
+//String callFunctionKey = "P_fileOperations";
+////StaticRootMap.initMap();
+//String[] strings = new String[1];
+//IMV_SQI outputReg = new IMV_SQI();
+//IMV_SQI inputValue = new IMV_SQI();
+//String[] 传参因子 = StaticFunctionMapO_VECS_C.annotationMap
+//    .getString(callFunctionKey).split(":");
+//NE._I_U.outputMap = output;
+//inputValue.put(传参因子[0], temp);
+//inputValue.put(传参因子[1], output);
+//outputReg.put("传参因子", 传参因子);
+//outputReg.put("inputValues", inputValue);
+//strings[0] = "执行 O_VECS 下 " + callFunctionKey + " 接口, 参数是 传参因子";
+//StaticRootMap.tinShellV005(strings, outputReg);
 
 //54
 //if (temp[0].equals("获取表名")) {

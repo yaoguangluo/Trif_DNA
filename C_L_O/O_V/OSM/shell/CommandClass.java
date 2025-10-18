@@ -186,6 +186,7 @@ public class CommandClass {
 			string = "";
 		}
 	}
+
 	// 这里的逻辑是构造科学计算器用，华瑞集系统先不cover。
 	/*
 	 * 我要做的是识别指令符号，｜ ; ; 以后变量中含有指令符号做string用， 我用HTTP
@@ -247,86 +248,86 @@ public class CommandClass {
 		// 30--1
 		S_logger.Log.logger.info(""
 			+ "--------中文数字机-V00001---------");
-		String number = "一";
+		StringBuilder number = new StringBuilder("一");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "拾";
+		number = new StringBuilder("拾");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "零拾";
+		number = new StringBuilder("零拾");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "一拾贰";
+		number = new StringBuilder("一拾贰");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "拾陆";
+		number = new StringBuilder("拾陆");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "零拾三";
+		number = new StringBuilder("零拾三");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "捌拾玖";
-		commandClass.fasterChineseNumberSwap(number);
-		//
-		number = "零佰";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "壹百";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "两佰二十";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "两佰零二";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "两佰贰十二";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "两千两佰贰十二";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "两千两佰零二";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "两千零二";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "两千零二十";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "两千零二十二";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "两千零二十二万";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "两千零二十二万零二";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "两千零二十二万两千零二十二";
-		commandClass.fasterChineseNumberSwap(number);
-		number = "玖千玖百九拾九万九千九佰九十玖";
+		number = new StringBuilder("捌拾玖");
 		commandClass.fasterChineseNumberSwap(number);
 		//
-		number = "零万";
+		number = new StringBuilder("零佰");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "万二十";
+		number = new StringBuilder("壹百");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "二万二佰零二";
+		number = new StringBuilder("两佰二十");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "十万";
+		number = new StringBuilder("两佰零二");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "十万万";
+		number = new StringBuilder("两佰贰十二");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("两千两佰贰十二");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("两千两佰零二");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("两千零二");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("两千零二十");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("两千零二十二");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("两千零二十二万");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("两千零二十二万零二");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("两千零二十二万两千零二十二");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("玖千玖百九拾九万九千九佰九十玖");
+		commandClass.fasterChineseNumberSwap(number);
+		//
+		number = new StringBuilder("零万");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("万二十");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("二万二佰零二");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("十万");
+		commandClass.fasterChineseNumberSwap(number);
+		number = new StringBuilder("十万万");
 		S_logger.Log.logger.info("" + "十万万");
 		S_logger.Log.logger.info("" + "-学好语文，这叫十亿-先不处理歧义句");
 		S_logger.Log.logger.info(""
 			+ "-先不处理超亿句，我框架都写好了，直接split 加函数即可。");
-		number = "十二万";
+		number = new StringBuilder("十二万");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "万";
+		number = new StringBuilder("万");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "亿";
+		number = new StringBuilder("亿");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "十亿";
+		number = new StringBuilder("十亿");
 		commandClass.fasterChineseNumberSwap(number);
 		// 大数运算构造机 later
-		number = "万亿";
+		number = new StringBuilder("万亿");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "九千万亿";
+		number = new StringBuilder("九千万亿");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "九千万亿零九";
+		number = new StringBuilder("九千万亿零九");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "九千万亿零九十";
+		number = new StringBuilder("九千万亿零九十");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "九千零九十万零九十亿零九十";
+		number = new StringBuilder("九千零九十万零九十亿零九十");
 		// 9090 0090 0000 0090
 		commandClass.fasterChineseNumberSwap(number);
-		number = "九千零九十万零九百零九亿零九十万零九百零九";
+		number = new StringBuilder("九千零九十万零九百零九亿零九十万零九百零九");
 		commandClass.fasterChineseNumberSwap(number);
-		number = "八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八";
+		number = new StringBuilder("八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八");
 		commandClass.fasterChineseNumberSwap(number);
 
 		// 我的系统没有16位大数计算业务，有就按这个逻辑+兆+京条件去解决。
@@ -351,10 +352,11 @@ public class CommandClass {
 		S_logger.Log.logger.info("" + "简体-->" + stringSwap);
 		return stringSwap;
 	}
+
 	/*
 	 * 上面是计算哲学和计算关系和计算逻辑的分析方法，需要巨大的采样，不符合我的思维认知方式
 	 * 于是按照罗瑶光的思绪分析，开始编码。首先我要进行数据预处理，将文字中所有繁体全部简化
-     *
+	 *
 	 * 简化后文字开始进行精确分析，首先拆分最大逻辑集合确定亿为最大计算量级， 
 	 * 因为单机的long最大只有亿。然后处理京为最大处理量级。关于亿的逻辑意识组合 
 	 * 有 万亿，一万亿， 一万一千零二亿， 乘积是100 000 000 ，8个零。
@@ -367,7 +369,9 @@ public class CommandClass {
 	 * --罗瑶光
 	 */
 	@SuppressWarnings("unused")
-	public String fasterChineseNumberSwap(String chineseNumber) {
+	public String fasterChineseNumberSwap(
+		StringBuilder stringBuilder) {
+		String chineseNumber = stringBuilder.toString();
 		S_logger.Log.logger.info("" + "输入-->" + chineseNumber);
 		String stringSwap = simpleChineseNumberSwap(chineseNumber);
 		String regWan = "";
@@ -478,7 +482,7 @@ public class CommandClass {
 				} else if (regWan.length() < 9) {
 					//regYi += "";
 				} else {
-					temp= "";
+					temp = "";
 				}
 				regYi += temp;
 				outputYi += regYi;
@@ -534,7 +538,7 @@ public class CommandClass {
 	//S_logger.Log.logger.info("" + "regYi4-->" + regYi);
 	//S_logger.Log.logger.info("" + "regWan3-->" + regWan);
 	//S_logger.Log.logger.info("" + "regYi3-->" + regYi);
-	
+
 	/*
 	 * 关键字
 	 * // S_logger.Log.logger.info("" + "loop-->" + total); 处 --笔记

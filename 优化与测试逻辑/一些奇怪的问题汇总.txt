@@ -1,0 +1,6 @@
+1 我电脑装了sonar lint后 莫名 mds stores 300% cpu占用。
+2 我电脑装了sonar lint后经常一个文件变动时候，只要有关联文件其中一个build path 缺失，可以导致不提示直接卡死。
+3 今天处理 稍后。   
+  
+
+ 

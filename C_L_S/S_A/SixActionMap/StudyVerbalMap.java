@@ -213,11 +213,13 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			 * 翻译阿拉伯数字 逻辑是 
 			 * number = studyVerbalMap_Q.getChineseFromNumerics(number);
 			 * */
-			String stringSwaped = getChineseFromNumerics(string);
+			StringBuilder stringBuilder = new StringBuilder(string);
+			stringBuilder = getChineseFromNumerics(stringBuilder);
+			//稍后逐步替换。stringBuilder
 			S_logger.Log.logger.info("" + "stringSwaped-400-1->"
-				+ stringSwaped);
-			stringSwaped = command_V.fasterChineseNumberSwap(
-				stringSwaped);
+				+ stringBuilder.toString());
+			String stringSwaped = command_V.fasterChineseNumberSwap(
+				stringBuilder);
 			S_logger.Log.logger.info("" + "stringSwaped-400-2->"
 				+ stringSwaped);
 			//String stringSwaped = command_V.fasterChineseNumberSwap(string);
@@ -243,8 +245,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			 * commandClass.fasterChineseNumberSwap(number);
 			 * 之后要归纳下，避免重含，如果有逆向递归操作容易死循环。
 			 * */
+			StringBuilder stringBuilder = new StringBuilder(string);
 			String stringSwaped = command_V.fasterChineseNumberSwap(
-				string);
+				stringBuilder);
 			Log.logger.info("" + "stringSwaped-400-2->"
 				+ stringSwaped);
 			WordFrequency wordFrequency = new WordFrequency(1,
@@ -272,7 +275,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 				continue;
 			}
 			if (!arabicNumber.isEmpty()) {
-				String chineseNumberPars = getChineseFromNumerics(arabicNumber);
+				StringBuilder stringBuilder = new StringBuilder(arabicNumber);
+				stringBuilder = getChineseFromNumerics(stringBuilder);
+				String chineseNumberPars = stringBuilder.toString();
 				String fix = "";
 				S_logger.Log.logger.info("" + "chineseNumber-->"+ chineseNumber);
 				S_logger.Log.logger.info(""+ "chineseNumberPars length-->"+ chineseNumberPars.length());
@@ -289,8 +294,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			chineseNumber += string.charAt(i);
 		}
 		if (!arabicNumber.isEmpty()) {
-			String chineseNumberPars = getChineseFromNumerics(
-				arabicNumber);
+			StringBuilder stringBuilder = new StringBuilder(arabicNumber);
+			stringBuilder = getChineseFromNumerics(stringBuilder);
+			String chineseNumberPars=stringBuilder.toString();
 			String fix = "";
 			S_logger.Log.logger.info("" + "chineseNumber-->"
 				+ chineseNumber);
@@ -307,7 +313,9 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 			arabicNumber = "";
 		}
 		// fix filter
-		chineseNumber = prefixOptimization(chineseNumber);
+		// 稍后分离出去。
+		StringBuilder stringBuilder = new StringBuilder(chineseNumber);
+		stringBuilder = prefixOptimization(stringBuilder);
 		// oder-fix
 		chineseNumber = orderfixOptimization(chineseNumber);
 		S_logger.Log.logger.info("" + "混合数字字符预处理结果-->"
@@ -318,8 +326,10 @@ public class StudyVerbalMap extends StudyVerbalMap_Q {
 		 * 位置也要符合这个规范，不然有误差。或导致精度过滤的条件类计算不准确。
 		 * later -trif。 罗瑶光
 		 * */
+		
+		StringBuilder stringBuilderChineseNumber = new StringBuilder(chineseNumber);
 		String regArabicNumber = command_V.fasterChineseNumberSwap(
-			chineseNumber);
+			stringBuilderChineseNumber);
 		S_logger.Log.logger.info("" + "stringSwaped-400-2->"
 			+ regArabicNumber);
 		WordFrequency wordFrequency = new WordFrequency(1,

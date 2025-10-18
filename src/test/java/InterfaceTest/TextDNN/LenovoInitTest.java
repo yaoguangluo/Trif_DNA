@@ -8,7 +8,7 @@ import test.java.interfaces.test.CommonTestInition;
 import org.junit.jupiter.api.Test;
 
 import java.util.Iterator;
-import S_logger.Log;
+
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -60,27 +60,34 @@ class LenovoInitTest {
 		S_logger.Log.logger.info("" + "环    境：");
 		Iterator<String> Iterator = environmentSampleMap.keySet()
 			.iterator();
+		String tempString = "";
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
 			commonTestInition.NE.app_S.emotionSample = environmentSampleMap
 				.get_S(word);
-			if (null != commonTestInition.NE.app_S.emotionSample
-				.getDistinction()) {
-				if (lenovo.containsKey(
+			String string = commonTestInition.NE.app_S.emotionSample
+				.getDistinction();
+			if (null == string) {
+				continue;
+			}
+			if (string.replace(" ", "").isEmpty()) {
+				continue;
+			}
+			if (lenovo.containsKey(
+				commonTestInition.NE.app_S.emotionSample
+					.getDistinction())) {
+				tempString += (lenovo.get(
 					commonTestInition.NE.app_S.emotionSample
-						.getDistinction())) {
-					System.out.print(lenovo.get(
-						commonTestInition.NE.app_S.emotionSample
-							.getDistinction()).toString() + " ");
-				} else {
-					System.out.print(
-						commonTestInition.NE.app_S.emotionSample
-							.getDistinction() + " ");
-				}
+						.getDistinction()).toString() + " ");
+			} else {
+				tempString += (commonTestInition.NE.app_S.emotionSample
+					.getDistinction() + " ");
 			}
 		}
+		S_logger.Log.logger.info(tempString);
 		S_logger.Log.logger.info("" + "");
 		S_logger.Log.logger.info("" + "动机联想：");
+		tempString = "";
 		Iterator = environmentSampleMap.keySet().iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -95,19 +102,20 @@ class LenovoInitTest {
 				if (lenovo.containsKey(
 					commonTestInition.NE.app_S.emotionSample
 						.getMotivation())) {
-					System.out.print(lenovo.get(
+					tempString += (lenovo.get(
 						commonTestInition.NE.app_S.emotionSample
 							.getMotivation()).toString() + " ");
 				} else {
-					System.out.print(
-						commonTestInition.NE.app_S.emotionSample
-							.getMotivation() + " ");
+					tempString += (commonTestInition.NE.app_S.emotionSample
+						.getMotivation() + " ");
 				}
 			}
 		}
+		S_logger.Log.logger.info(tempString);
 		S_logger.Log.logger.info("" + "");
 		S_logger.Log.logger.info("" + "倾向探索：");
 		Iterator = environmentSampleMap.keySet().iterator();
+		tempString = "";
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
 			commonTestInition.NE.app_S.emotionSample = environmentSampleMap
@@ -121,20 +129,20 @@ class LenovoInitTest {
 				if (lenovo.containsKey(
 					commonTestInition.NE.app_S.emotionSample
 						.getTrending())) {
-					System.out.print(lenovo.get(
+					tempString += (lenovo.get(
 						commonTestInition.NE.app_S.emotionSample
 							.getTrending()).toString() + " ");
 				} else {
-					System.out.print(
-						commonTestInition.NE.app_S.emotionSample
-							.getTrending() + " ");
+					tempString += (commonTestInition.NE.app_S.emotionSample
+						.getTrending() + " ");
 				}
 			}
 		}
-
+		S_logger.Log.logger.info(tempString);
 		// reduce
 		S_logger.Log.logger.info("" + "");
 		S_logger.Log.logger.info("" + "决策挖掘：");
+		tempString = "";
 		Iterator = environmentSampleMap.keySet().iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
@@ -149,16 +157,16 @@ class LenovoInitTest {
 				if (lenovo.containsKey(
 					commonTestInition.NE.app_S.emotionSample
 						.getPrediction())) {
-					System.out.print(lenovo.get(
+					tempString += (lenovo.get(
 						commonTestInition.NE.app_S.emotionSample
 							.getPrediction()).toString() + " ");
 				} else {
-					System.out.print(
-						commonTestInition.NE.app_S.emotionSample
-							.getPrediction() + " ");
+					tempString += (commonTestInition.NE.app_S.emotionSample
+						.getPrediction() + " ");
 				}
 			}
 		}
+		S_logger.Log.logger.info(tempString);
 		//
 		commonTestInition.endEnvironment();
 	}
@@ -172,16 +180,25 @@ class LenovoInitTest {
 	}
 }
 //输出
-//Connected to the target VM, address: '127.0.0.1:54933', transport: 'socket'
-//    trif
-//    环    境：
-//    物资       逻辑  学者  化学 哲学  哲学    娱乐 宇宙   地理            哲学
-//    动机联想：
-//    危险 警惕 利益 了解 贪婪 远离 教育 帮助 纠正 需求 疑虑 进步 思想 了解
-//    倾向探索：
-//    自闭 善良 自恋，自爱 平庸，碌碌之人 自恋，自爱 逆商 优秀
-//    决策挖掘：
-//    防御 合作 合作 示威
-//    Disconnected from the target VM, address: '127.0.0.1:54933', transport: 'socket'
-//
-//    Process finished with exit code 0
+//10月 18, 2025 9:34:32 上午 test.java.InterfaceTest.TextDNN.LenovoInitTest main
+//信息: 环    境：
+//10月 18, 2025 9:34:32 上午 test.java.InterfaceTest.TextDNN.LenovoInitTest main
+//信息: 物资 逻辑 学者 化学 哲学 哲学 娱乐 宇宙 地理 哲学 
+//10月 18, 2025 9:34:32 上午 test.java.InterfaceTest.TextDNN.LenovoInitTest main
+//信息: 
+//10月 18, 2025 9:34:32 上午 test.java.InterfaceTest.TextDNN.LenovoInitTest main
+//信息: 动机联想：
+//10月 18, 2025 9:34:32 上午 test.java.InterfaceTest.TextDNN.LenovoInitTest main
+//信息: 危险 警惕 利益 了解 贪婪 远离 教育 纠正 需求 疑虑 进步 思想 了解 
+//10月 18, 2025 9:34:32 上午 test.java.InterfaceTest.TextDNN.LenovoInitTest main
+//信息: 
+//10月 18, 2025 9:34:32 上午 test.java.InterfaceTest.TextDNN.LenovoInitTest main
+//信息: 倾向探索：
+//10月 18, 2025 9:34:32 上午 test.java.InterfaceTest.TextDNN.LenovoInitTest main
+//信息: 自闭 自恋，自爱 平庸，碌碌之人 自恋，自爱 逆商 优秀 
+//10月 18, 2025 9:34:32 上午 test.java.InterfaceTest.TextDNN.LenovoInitTest main
+//信息: 
+//10月 18, 2025 9:34:32 上午 test.java.InterfaceTest.TextDNN.LenovoInitTest main
+//信息: 决策挖掘：
+//10月 18, 2025 9:34:32 上午 test.java.InterfaceTest.TextDNN.LenovoInitTest main
+//信息: 防御 合作 示威 

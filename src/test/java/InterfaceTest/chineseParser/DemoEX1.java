@@ -78,14 +78,14 @@ public class DemoEX1 {
 	 * 
 	 * --罗瑶光
 	 * */
-	
+
 	public static void main(String[] args) {
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 词性初始化
 		IMV_SQI pos = commonTestInition.NE.app_S._A.getPosCnToCn();
 		TimeCheck t = new TimeCheck();
-		// 等待分词的语句
+		// 等待分词的语句,处理负号+数字是在分词后的组合组词逻辑中，不再这个切词功能测试范畴。
 		String ss = new String("在输出的数据表中仅展示从第零行到第三十行的数据"
 			+ "罗瑶光先生从2零1捌年10月开始，所有个人著作权作品，-1234 566778 900-"
 			+ "全部开源，到现在，和无数群体，技术社团正面交锋7年，一直0纠纷，罗"
@@ -106,9 +106,10 @@ public class DemoEX1 {
 		String commandSwap = E_pl_XA_E.doHumanTalkSwap(
 			commonTestInition.NE, command_V);
 
-		S_logger.Log.logger.info("" + "-展示分词识别---" + command_V._IMV_SQI_SS_.size());
-		S_logger.Log.logger.info("" + "-展示数字提取识别---" + command_V._IMV_SQI_SS_Q
-			.size());
+		S_logger.Log.logger.info("" + "-展示分词识别---"
+			+ command_V._IMV_SQI_SS_.size());
+		S_logger.Log.logger.info("" + "-展示数字提取识别---"
+			+ command_V._IMV_SQI_SS_Q.size());
 		/*
 		 * 之后我函数中所有的用来处理log和状态的变量都加temp后缀，方便统一识别和剔除。
 		 * --罗瑶光
@@ -129,8 +130,10 @@ public class DemoEX1 {
 		}
 
 		S_logger.Log.logger.info("" + "-展示原文--------->" + ss);
-		S_logger.Log.logger.info("" + "-展示分词识别------>" + iterators_IMV_SQI_SS_Temp);
-		S_logger.Log.logger.info("" + "-展示数字提取识别-->" + iterators_IMV_SQI_SS_Q_Temp);
+		S_logger.Log.logger.info("" + "-展示分词识别------>"
+			+ iterators_IMV_SQI_SS_Temp);
+		S_logger.Log.logger.info("" + "-展示数字提取识别-->"
+			+ iterators_IMV_SQI_SS_Q_Temp);
 		// 关闭
 		commonTestInition.endEnvironment();
 	}
