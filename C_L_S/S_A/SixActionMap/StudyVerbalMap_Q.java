@@ -68,6 +68,9 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		 * 2 numberParser swap to chineseParser
 		 */
 		for (int i = 0; i < chineseParser.length; i++) {
+			if (chineseParser[i].isEmpty()) {
+				continue;
+			}
 			chineseParsered[i] = doSwapUnderTenThousands(
 				chineseParser[i]);
 			// S_logger.Log.logger.info("" + i + "-->" + chineseParsered[i]);
@@ -114,8 +117,14 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		if (chineseParsered[0].isEmpty()) {
 			has0 = false;
 		} else {
-			if(chineseParsered[0].length() < 4) {
-				//output = output + '零';
+			if (chineseParsered[0].length() < 4) {
+				if (0 != output.length()) {
+					if (output.charAt(output.length() - 1) == '亿'
+						|| output.charAt(output.length()
+							- 1) == '万') {
+						output = output.append('零');
+					}
+				}
 			}
 			has0 = true;
 		}
@@ -140,7 +149,7 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		if (0 != input.length()) {
 			while (input.charAt(0) == '零' && input.length() > 1) {
 				input.deleteCharAt(0);
-					//.subSequence(1, input.length());
+				//.subSequence(1, input.length());
 			}
 		}
 		return input;
@@ -226,15 +235,16 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		/*
 		 * 过滤零单元
 		 */
-		if(stringChineseUnitsFix.contains("零零")) {
-			stringChineseUnitsFix = stringChineseUnitsFix.replace("零零零零",
-				"");
-			stringChineseUnitsFix = stringChineseUnitsFix.replace("零零零",
-				"零");
-			stringChineseUnitsFix = stringChineseUnitsFix.replace("零零",
-				"零");	
+		if (stringChineseUnitsFix.contains("零零")) {
+			stringChineseUnitsFix = stringChineseUnitsFix.replace(
+				"零零零零", "");
+			stringChineseUnitsFix = stringChineseUnitsFix.replace(
+				"零零零", "零");
+			stringChineseUnitsFix = stringChineseUnitsFix.replace(
+				"零零", "零");
 		}
-		stringChineseUnitsFix = orderfixOptimization(stringChineseUnitsFix);
+		stringChineseUnitsFix = orderfixOptimization(
+			stringChineseUnitsFix);
 		return stringChineseUnitsFix;
 	}
 	// S_logger.Log.logger.info("" + "stringChineseUnitsFix-->" +
@@ -247,7 +257,7 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 	public static void main(String[] argv) {
 		CommandClass commandClass = new CommandClass();
 		StudyVerbalMap_Q studyVerbalMap_Q = new StudyVerbalMap_Q();
-		
+
 		StringBuilder number = new StringBuilder("205602");
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
@@ -283,7 +293,7 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		number = new StringBuilder("8000000000000000");
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
-		S_logger.Log.logger.info(""+ "-------------------");
+		S_logger.Log.logger.info("" + "-------------------");
 		number = new StringBuilder("800800000000080");
 		number = studyVerbalMap_Q.getChineseFromNumerics(number);
 		commandClass.fasterChineseNumberSwap(number);
@@ -365,406 +375,408 @@ public class StudyVerbalMap_Q extends StudyVerbalMap_X {
 		 * --罗瑶光
 		 * */
 		//十六大数测试，覆盖率100%
-		for (int i = 0; i < 99999999; i++) {
-			for (int j = 0; j < 99999999; j++) {
-				StringBuilder bignumber = new StringBuilder(i + "" + j);
-				bignumber = studyVerbalMap_Q.getChineseFromNumerics(bignumber);
-				commandClass.fasterChineseNumberSwap(bignumber);
-			}
-		}
+//		for (int i = 0; i < 99999999; i++) {
+//			for (int j = 0; j < 99999999; j++) {
+//				StringBuilder bignumber = new StringBuilder(i + ""
+//					+ j);
+//				bignumber = studyVerbalMap_Q.getChineseFromNumerics(
+//					bignumber);
+//				commandClass.fasterChineseNumberSwap(bignumber);
+//			}
+//		}
 
 		// 不断加不断修正细化即可
 	}
 }
 //不断加测试函数不断修正细化即可
 //输出
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 205602
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->二十万五千六百零二
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->二十万五千六百零二
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->二十万五千六百零二
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->20
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->205602
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 250602
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->二十五万零六百零二
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->二十五万零六百零二
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->二十五万零六百零二
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->25
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->250602
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 9992980400000088
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->九千九百九十二万九千八百零四亿零八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->九千九百九十二万九千八百零四亿零八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->九千九百九十二万九千八百零四亿零八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->9992
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->99929804
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->88
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total7-->9992980400000088
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 8082940800808033
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八千零八十二万九千四百零八亿零八十万八千零三十三
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八千零八十二万九千四百零八亿零八十万八千零三十三
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八千零八十二万九千四百零八亿零八十万八千零三十三
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8082
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->80829408
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->80
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->808033
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total7-->8082940800808033
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 8888888888888888
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8888
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->88888888
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8888
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->88888888
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total7-->8888888888888888
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 8888888888888888
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8888
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->88888888
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8888
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->88888888
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total7-->8888888888888888
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 8888000008888888
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八千八百八十八万亿零八百八十八万八千八百八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八千八百八十八万亿零八百八十八万八千八百八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八千八百八十八万亿零八百八十八万八千八百八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8888
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total4-->88880000
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->888
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->8888888
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total7-->8888000008888888
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 8080800800800088
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八千零八十万八千零八亿零八十万零八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八千零八十万八千零八亿零八十万零八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八千零八十万八千零八亿零八十万零八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8080
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->80808008
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->80
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->800088
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total7-->8080800800800088
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 8000000000000000
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八千万亿
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八千万亿
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八千万亿
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8000
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total4-->80000000
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 亿1-->八千万亿
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total6-->8000000000000000
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 800800000000080
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
-//信息: output-->八百万八千亿零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
-//信息: 输入-->八百万八千亿零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
-//信息: 简体-->八百万八千亿零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//信息: output-->八百万八千亿零零八十
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//信息: 输入-->八百万八千亿零零八十
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//信息: 简体-->八百万八千亿零零八十
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->800
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->8008000
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->80
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total7-->800800000000080
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 800080000000080
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
-//信息: output-->八百万零八百亿零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
-//信息: 输入-->八百万零八百亿零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
-//信息: 简体-->八百万零八百亿零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//信息: output-->八百万零八百亿零零八十
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//信息: 输入-->八百万零八百亿零零八十
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//信息: 简体-->八百万零八百亿零零八十
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->800
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->8000800
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->80
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total7-->800080000000080
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 000800000080000
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八千亿零八万
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八千亿零八万
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八千亿零八万
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8000
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total4-->80000
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total7-->800000080000
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 8000000000000
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八万亿
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八万亿
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八万亿
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total4-->80000
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 亿1-->八万亿
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:43 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total6-->8000000000000
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:43 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 008000080
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
-//信息: output-->八百万零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
-//信息: 输入-->八百万零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
-//信息: 简体-->八百万零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//信息: output-->八百万零零八十
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//信息: 输入-->八百万零零八十
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//信息: 简体-->八百万零零八十
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->800
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->8000080
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 8080808
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八百零八万零八百零八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八百零八万零八百零八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八百零八万零八百零八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->808
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->8080808
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 808080
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八十万八千零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八十万八千零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八十万八千零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->80
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->808080
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 8080
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八千零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八千零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八千零八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8080
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 808
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八百零八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八百零八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八百零八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->808
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 80
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->80
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 0080
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八十
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->80
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 88
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八十八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->88
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 8
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q main
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q main
 //信息: -------------------
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 0
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->零
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->零
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->零
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->0
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 100900
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
-//信息: output-->一十万零九百
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
-//信息: 输入-->一十万零九百
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
-//信息: 简体-->一十万零九百
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//信息: output-->一十万零零九百
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//信息: 输入-->一十万零零九百
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//信息: 简体-->一十万零零九百
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->10
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->100900
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: 8082040800800803
-//10月 18, 2025 11:41:03 上午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
+//10月 18, 2025 2:03:44 下午 S_A.SixActionMap.StudyVerbalMap_Q getChineseFromNumerics
 //信息: output-->八千零八十二万零四百零八亿零八十万零八百零三
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: 输入-->八千零八十二万零四百零八亿零八十万零八百零三
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass simpleChineseNumberSwap
 //信息: 简体-->八千零八十二万零四百零八亿零八十万零八百零三
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->8082
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->80820408
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total2-->80
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total3-->800803
-//10月 18, 2025 11:41:03 上午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
+//10月 18, 2025 2:03:44 下午 O_V.OSM.shell.CommandClass fasterChineseNumberSwap
 //信息: total7-->8082040800800803
