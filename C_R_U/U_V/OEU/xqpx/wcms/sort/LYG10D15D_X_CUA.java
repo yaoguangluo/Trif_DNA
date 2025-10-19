@@ -124,7 +124,8 @@ public class LYG10D15D_X_CUA extends LYG10D13D_X_CA implements
 						kernel[j] = temp;
 					}
 					continue Here;
-				} else if (!(hasXi || !hasXj)) {
+				}
+				if (!(hasXi || !hasXj)) {
 					if (i < j) {
 						if (!(i == rightPosition + 1
 							|| j == rightPosition + 1)) {
@@ -134,7 +135,8 @@ public class LYG10D15D_X_CUA extends LYG10D13D_X_CA implements
 						}
 					}
 					continue Here;
-				} else if (!(!hasXi || hasXj)) {
+				}
+				if (!(!hasXi || hasXj)) {
 					if (i > j) {
 						if (!(i == rightPosition + 1
 							|| j == rightPosition + 1)) {
@@ -144,7 +146,8 @@ public class LYG10D15D_X_CUA extends LYG10D13D_X_CA implements
 						}
 					}
 					continue Here;
-				} else if (!(hasXi || hasXj)) {
+				}
+				if (!(hasXi || hasXj)) {
 					if (kernel[i].toLowerCase().charAt(
 						point) > kernel[j].toLowerCase().charAt(
 							point)) {
