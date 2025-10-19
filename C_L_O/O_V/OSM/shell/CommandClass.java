@@ -119,8 +119,7 @@ public class CommandClass {
 	/*
 	 * 在这个逻辑中主要有2类，一类是阿拉伯字符如250，一类是语义字符如二百五十。这个关系是
 	 * 长期稳定的思维。所以当前可进行固定函数编码。
-	 */
-	/*
+	 * 
 	 * 在一切关系明了的环境中开始思考-未知的字符集大体有4类，第一类是数字，第二类是
 	 * 字母，第三类是常见符号，第四类是特殊符号。所以在这里就要有4个识别函数来work。
 	 * 
@@ -208,8 +207,8 @@ public class CommandClass {
 	 * 于是出现了问题，当fix连续出现，而 value 没有赋值，所以问题在于变量缺少。 //
 	 * 在计算哲学中，数字有分层关系，我定义为量-0-9-词，单元-十佰千万亿-词， //
 	 * 这里便是数字的哲学辩证量与单元的逻辑关系。所以我一开始变量命名就是错的。 //
-	 * 在数字逻辑中，单元词本身就是个量词，是被包含关系。 // 于是将关系提取 // 于是我需要一个加乘器
-	 * 用connectCi标识 当字符串匹配到单元词的时候，开始区间划分。 //liangCi的 取值为 -1和 0～9
+	 * 在数字逻辑中，单元词本身就是个量词，是被包含关系。 // 于是将关系提取 // 于是我需要
+	 * 一个加乘器用connectCi标识 当字符串匹配到单元词的时候，开始区间划分。 // liangCi的 取值为 -1和 0～9
 	 * //liangCidanyuanCide 取值为 -1和 0～9 10 100 1000 10000
 	 * 100000000 //danyuanCide 取值为 10 100 1000 10000 100000000
 	 * //数字分为三层关系后，开始思考中文的逻辑组合，
@@ -219,33 +218,16 @@ public class CommandClass {
 	 */
 	public static void main(String[] argv) {
 		CommandClass commandClass = new CommandClass();
-		String string = "*&^$^&&567 678&^%Royal!% @123&&@tin yo&&@@luo yaoguang";
+		String string = "*&^$^&&567 678&^%Royal!% @123&"
+			+ "&@tin yo&&@@luo yaoguang";
 		commandClass.getNumericsFromUnknownMap(string);
 		commandClass.getAlfabeticsFromUnknownMap(string);
-		// output
-		// 567--0
-		// 678--1
-		// 123--2
-		// Royal--0
-		// tin--1
-		// yo--2
-		// luo--3
 		commandClass.numericsFromUnknownString.clear();
 		commandClass.alfabeticsFromUnknownString.clear();
 		string = "在输出的数据表中仅展示从第0行到第30行的数据";
 		commandClass.getNumericsFromUnknownMap(string);
 		commandClass.getAlfabeticsFromUnknownMap(string);
-		// output
-		// 567--0
-		// 678--1
-		// 123--2
-		// Royal--0
-		// tin--1
-		// yo--2
-		// luo--3
-		// ----------------
-		// 0--0
-		// 30--1
+
 		S_logger.Log.logger.info(""
 			+ "--------中文数字机-V00001---------");
 		StringBuilder number = new StringBuilder("一");
@@ -327,7 +309,8 @@ public class CommandClass {
 		commandClass.fasterChineseNumberSwap(number);
 		number = new StringBuilder("九千零九十万零九百零九亿零九十万零九百零九");
 		commandClass.fasterChineseNumberSwap(number);
-		number = new StringBuilder("八千八百八十八万八千八百八十八亿八千八百八十八万八千八百八十八");
+		number = new StringBuilder("八千八百八十八万八千八百八十八亿八千八百"
+			+ "八十八万八千八百八十八");
 		commandClass.fasterChineseNumberSwap(number);
 
 		// 我的系统没有16位大数计算业务，有就按这个逻辑+兆+京条件去解决。
@@ -357,14 +340,14 @@ public class CommandClass {
 	 * 上面是计算哲学和计算关系和计算逻辑的分析方法，需要巨大的采样，不符合我的思维认知方式
 	 * 于是按照罗瑶光的思绪分析，开始编码。首先我要进行数据预处理，将文字中所有繁体全部简化
 	 *
-	 * 简化后文字开始进行精确分析，首先拆分最大逻辑集合确定亿为最大计算量级， 
-	 * 因为单机的long最大只有亿。然后处理京为最大处理量级。关于亿的逻辑意识组合 
-	 * 有 万亿，一万亿， 一万一千零二亿， 乘积是100 000 000 ，8个零。
+	 * 简化后文字开始进行精确分析，首先拆分最大逻辑集合确定亿为最大计算量级，因为单机的long
+	 * 最大只有亿。然后处理京为最大处理量级。关于亿的逻辑意识组合有 万亿，一万亿， 
+	 * 一万一千零二亿， 乘积是100 000 000 ，8个零。
 	 * 
 	 * ------
-	 * S_logger.Log.logger.info("" + "stringYi-->" + stringYi)
-	 * 简化后文字开始进行精确分析，然后拆分最大逻辑集合确定万为最大计算量级， 
-	 * 有 千万，一百万， 一千零二十万，乘积是10 000 4个零。
+	 * S_logger.Log.logger.info("" + "stringYi-->" + stringYi) 简化后文字开始进
+	 * 行精确分析，然后拆分最大逻辑集合确定万为最大计算量级，有 千万，一百万， 一千零二十万
+	 * ，乘积是10 000 4个零。
 	 * 
 	 * --罗瑶光
 	 */
@@ -518,26 +501,6 @@ public class CommandClass {
 		}
 		return outputYi;
 	}
-	//S_logger.Log.logger.info("" + "regYi2-->" + regYi);
-	//S_logger.Log.logger.info("" + "亿2-->" + stringSwap);
-	//S_logger.Log.logger.info("" + "regWan2-->" + regWan);
-	//S_logger.Log.logger.info("" + "stringsYi.length-->" + stringsYi.length);
-	//S_logger.Log.logger.info("" + "regWan1-->" + regWan);
-	//S_logger.Log.logger.info("" + "regYi1-->" + regYi);
-	//S_logger.Log.logger.info("" + "regWan2-->" + regWan);
-	//S_logger.Log.logger.info("" + "regYi2-->" + regYi);
-	//S_logger.Log.logger.info("" + "regWan7-->" + regWan);
-	//S_logger.Log.logger.info("" + "regYi7-->" + regYi);
-	//S_logger.Log.logger.info("" + "regWan7-->" + regWan);
-	//S_logger.Log.logger.info("" + "regYi7-->" + regYi);
-	//S_logger.Log.logger.info("" + "regWan6-->" + regWan);
-	//S_logger.Log.logger.info("" + "regYi6-->" + regYi);
-	//S_logger.Log.logger.info("" + "regWan5-->" + regWan);
-	//S_logger.Log.logger.info("" + "regYi5-->" + regYi);
-	//S_logger.Log.logger.info("" + "regWan4-->" + regWan);
-	//S_logger.Log.logger.info("" + "regYi4-->" + regYi);
-	//S_logger.Log.logger.info("" + "regWan3-->" + regWan);
-	//S_logger.Log.logger.info("" + "regYi3-->" + regYi);
 
 	/*
 	 * 关键字
@@ -611,25 +574,21 @@ public class CommandClass {
 				total = total * 10 + value;
 			}
 		}
-		/*
-		 * 奇怪怎么会在括号外。本来这里简短的函数测试要用sonar测试比较好，因为之前离开了
-		 * 英**，避免非议，我就不用。关于这类错误的函数，最后测试还跑出正确的结果，对这类问题，
-		 * 解决方法有很多，
-		 * 1 反复的加测试例子，上万种条件组合测试，多关联耦合测试，
-		 * 2 不断地分解测试例子，希尔伯特方式分解，不断地组合到最终复杂输出。
-		 * 3 不断地语言描述，不断地进行哲学分析论证，用辩论方式进行论据组织描述和详细证明论据价值。
-		 * 
-		 * --罗瑶光
-		 * */
 		if (-1 != value) {
 			//total += value;
 			totalFinal = totalFinal + total;
 		}
 		return totalFinal;
 	}
-
 	/*
+	 * 奇怪怎么会在括号外。本来这里简短的函数测试要用sonar测试比较好，因为之前离开了
+	 * 英**，避免非议，我就不用。关于这类错误的函数，最后测试还跑出正确的结果，对这类问题，
+	 * 解决方法有很多，
+	 * 1 反复的加测试例子，上万种条件组合测试，多关联耦合测试，
+	 * 2 不断地分解测试例子，希尔伯特方式分解，不断地组合到最终复杂输出。
+	 * 3 不断地语言描述，不断地进行哲学分析论证，用辩论方式进行论据组织描述和详细证明论据价值。
 	 * 
+	 * --罗瑶光
 	 * */
 	public IMV_SQI_SS _IMV_SQI_SS_Q = new IMV_SQI_SS();
 	public String commandWithoutNumerics = "";
@@ -650,13 +609,12 @@ public class CommandClass {
 	 *   studyVerbalMap 六个元 可以注册到 commandClass
 	 *   --外因太多我管不了，当然公开当面给我钱，我能用合同报税的形式cover一点。
 	 *   --内因就一点，我要把自己的东西不断地优化好。
-	 *  
-	 *   --罗瑶光
 	 *
 	 *   regNE.app_S.studyVerbalMap.formatNumericMap(this);
 	 * 2 取变量，拿出所有混合数字，标注position，剔除掉原句中的这些变量。
 	 * 3
 	 * 4
+	 *  --罗瑶光
 	 */
 	public void initArabicNumber() {
 		regNE.app_S.studyVerbalMap.extractNumberfromString(this);
@@ -860,3 +818,36 @@ public class CommandClass {
 // IMV_SQI();
 // public IMV_SQI complementedWorkActionsPositions = new
 // IMV_SQI();
+
+//S_logger.Log.logger.info("" + "regYi2-->" + regYi);
+//S_logger.Log.logger.info("" + "亿2-->" + stringSwap);
+//S_logger.Log.logger.info("" + "regWan2-->" + regWan);
+//S_logger.Log.logger.info("" + "stringsYi.length-->" + stringsYi.length);
+//S_logger.Log.logger.info("" + "regWan1-->" + regWan);
+//S_logger.Log.logger.info("" + "regYi1-->" + regYi);
+//S_logger.Log.logger.info("" + "regWan2-->" + regWan);
+//S_logger.Log.logger.info("" + "regYi2-->" + regYi);
+//S_logger.Log.logger.info("" + "regWan7-->" + regWan);
+//S_logger.Log.logger.info("" + "regYi7-->" + regYi);
+//S_logger.Log.logger.info("" + "regWan7-->" + regWan);
+//S_logger.Log.logger.info("" + "regYi7-->" + regYi);
+//S_logger.Log.logger.info("" + "regWan6-->" + regWan);
+//S_logger.Log.logger.info("" + "regYi6-->" + regYi);
+//S_logger.Log.logger.info("" + "regWan5-->" + regWan);
+//S_logger.Log.logger.info("" + "regYi5-->" + regYi);
+//S_logger.Log.logger.info("" + "regWan4-->" + regWan);
+//S_logger.Log.logger.info("" + "regYi4-->" + regYi);
+//S_logger.Log.logger.info("" + "regWan3-->" + regWan);
+//S_logger.Log.logger.info("" + "regYi3-->" + regYi);
+
+// output
+// 567--0
+// 678--1
+// 123--2
+// Royal--0
+// tin--1
+// yo--2
+// luo--3
+// ----------------
+// 0--0
+// 30--1

@@ -47,15 +47,15 @@ public class CreativeVerbalMap {
 	 * 某种观测态下，编码规范这种思维也是可以优化进化的。
 	 * 
 	 * EN
-	 * Mr.YaoguangLuo has been thinking about an optimization of coding-norms since
-	 * the method of initons-flower created at 2021. In early times, StaticRootMap
-	 * as a static attribute which was ranged in 24 chromosome-nodes in HRJ-YLJ 
-	 * system. He extracted it out from S-AOPM package and built a 
+	 * Mr.YaoguangLuo has been thinking about an optimization of coding-norms 
+	 * since the method of initons-flower created at 2021. In early times, 
+	 * StaticRootMap as a static attribute which was ranged in 24 chromosome-nodes 
+	 * in HRJ-YLJ system. He extracted it out from S-AOPM package and built a 
 	 * new singleton class to let the TVM-registrations became more simpler and 
-	 * faster. The name of class-file is CreativeVerbalMap. Continuing this method, 
-	 * while thus classes were 2's-developed by problem-consumers, how does to 
-	 * raise the survive ability itself? Finally Mr.YaoguangLuo determined out
-	 * that is necessary to change the key word of 'static' into 'new', ASAP. 
+	 * faster. The name of class-file is CreativeVerbalMap. Continuing this 
+	 * method, while thus classes were 2's-developed by problem-consumers, how 
+	 * does to raise the survive ability itself? Finally Mr.YaoguangLuo determined
+	 * out that is necessary to change the key word of 'static' into 'new', ASAP. 
 	 *  
 	 * --罗瑶光/YaoguangLuo
 	 * --稍后纠正语法。
@@ -66,7 +66,8 @@ public class CreativeVerbalMap {
 		NE.app_S.flowerAction.FlowerSixDomainActions.put("I+表",
 			"findTableInMemory");
 		// 注册花函数
-		AddActionInterfaceClass addActionInterfaceClass = new AddActionInterfaceClass();
+		AddActionInterfaceClass addActionInterfaceClass 
+		= new AddActionInterfaceClass();
 		String callFunctionKey = "findTableInMemory";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
@@ -87,8 +88,10 @@ public class CreativeVerbalMap {
 
 	static void regAddParserMixedStringClass(App NE) {
 		// 注册花函数
-		AddParserMixedStringClass addParserMixedStringClass = new AddParserMixedStringClass();
-		String callFunctionKeyaddParserMixedStringClass = "parserMixedString";
+		AddParserMixedStringClass addParserMixedStringClass 
+		= new AddParserMixedStringClass();
+		String callFunctionKeyaddParserMixedStringClass 
+		= "parserMixedString";
 		//
 		NE.app_S.flowerAction.FlowerChromosomeActions.put(
 			callFunctionKeyaddParserMixedStringClass,
@@ -117,8 +120,10 @@ public class CreativeVerbalMap {
 
 	static void regAddParserMixedStringToListClass(App NE) {
 		// 注册花函数
-		AddParserMixedStringToListClass addParserMixedStringToListClass = new AddParserMixedStringToListClass();
-		String callFunctionKeyAddParserMixedStringToListClass = "parserMixedStringToList";
+		AddParserMixedStringToListClass addParserMixedStringToListClass 
+		= new AddParserMixedStringToListClass();
+		String callFunctionKeyAddParserMixedStringToListClass
+		= "parserMixedStringToList";
 		//
 		NE.app_S.flowerAction.FlowerChromosomeActions.put(
 			callFunctionKeyAddParserMixedStringToListClass,
@@ -145,18 +150,19 @@ public class CreativeVerbalMap {
 	}
 
 	/*
-	 * important key = '输出-内容'  '仅含-'  '+列', those three keys could increase to a 
-	 * combination key ,and '+列' is a fit rights key, and '输出-内容' '仅含-' are complement
-	 * keys.
-	 * let's ..
+	 * important key = '输出-内容'  '仅含-'  '+列', those three keys could increase 
+	 * to a combination key ,and '+列' is a fit rights key, and '输出-内容' '仅含-'
+	 * are complement keys.  --let's ..
 	 * */
 	static void regAddFindColumnsInMemoryClass(App NE) {
 		// VI+列 later
 		NE.app_S.flowerAction.FlowerSixDomainActions.put("+列",
 			"addFindColumnsInMemoryClass");
 		// 注册花函数
-		AddFindColumnsInMemoryClass addFindColumnsInMemoryClass = new AddFindColumnsInMemoryClass();
-		String callFunctionKeyAddFindColumnsInMemoryClass = "addFindColumnsInMemoryClass";
+		AddFindColumnsInMemoryClass addFindColumnsInMemoryClass 
+		= new AddFindColumnsInMemoryClass();
+		String callFunctionKeyAddFindColumnsInMemoryClass 
+		= "addFindColumnsInMemoryClass";
 		// 20230207 走统计新陈代谢, 见CrabInterfaceClass
 		// chromosomes
 		NE.app_S.staticRootMap.staticBloomingTimes.put(
@@ -182,14 +188,14 @@ public class CreativeVerbalMap {
 	/*
 	 * O+\\?+\\+颜色 等正则类指令 later 这是未来的趋势
 	 * 
-	 * 在这种逻辑下，红色的计算关系是颜色属性分支，早年的map关于 红色->颜色 这类关系就
-	 * 可以用上了人类语言-词汇组-关系组-关系归纳-归纳组匹配-匹配计算， 目前我就得到了
-	 * 这类计算逻辑。既然得到了就开始用。
+	 * 在这种逻辑下，红色的计算关系是颜色属性分支，早年的map关于 红色->颜色 这类关系就可以用上
+	 * 了人类语言-词汇组-关系组-关系归纳-归纳组匹配-匹配计算， 目前我就得到了这类计算逻辑。既然
+	 * 得到了就开始用。
 	 * 
 	 * later 指令集多了，O+颜色 就统一索引 -trif
 	 *
-	 * 用上元基索引TVM指令后，一定要注意函数调用已经更加离散化，所以一定要控制好过滤 
-	 * 筛选和精度，避免计算浪费。
+	 * 用上元基索引TVM指令后，一定要注意函数调用已经更加离散化，所以一定要控制好过滤筛选和精度
+	 * ，避免计算浪费。
 	 * 
 	 * --罗瑶光
 	 * */
@@ -199,7 +205,8 @@ public class CreativeVerbalMap {
 		NE.app_S.flowerAction.FlowerSixDomainActions.put("E+颜色",
 			"updateColorAttributesOfColumnsInMemoryClass");
 		// 注册花函数
-		UpdateColorAttributesOfColumnsInMemoryClass updateColorAttributesOfColumnsInMemoryClass 
+		UpdateColorAttributesOfColumnsInMemoryClass 
+		updateColorAttributesOfColumnsInMemoryClass 
 		= new UpdateColorAttributesOfColumnsInMemoryClass();
 		String callFunctionKeyUpdateColorAttributesOfColumnsInMemoryClass
 		= "updateColorAttributesOfColumnsInMemoryClass";
@@ -235,16 +242,12 @@ public class CreativeVerbalMap {
 
 	/*
 	 *思考 chromosomeNode 里面添加 key limitedRowAttributesOfColumnsInMemoryClass 
-	 *目的是将crab 执行，TVM extension
+	 *目的是将crab 执行，TVM extension FlowerSixDomainActions 里面加 key 
+	 *P_AggregationLimitMap 防止没有识别 指令句走PLSearh老命令驱动花语。
 	 *
-	 *FlowerSixDomainActions 里面加 key P_AggregationLimitMap 防止没有识别 指令句
-	 *走PLSearh老命令驱动花语。
-	 *
-	 *现在二和一出现了多个问题，首先是老工程合并出现了多个花语段，
-	 *然后花肽合并出现了if else 逻辑问题。
-	 *
-	 *因为 if else的价值就是 新函数不走花语 所以花语就不用再管了，以后新的函数直接走肽语调用
-	 *花函数即可
+	 *现在二和一出现了多个问题，首先是老工程合并出现了多个花语段，然后花肽合并出现了if else 
+	 *逻辑问题。因为 if else的价值就是 新函数不走花语 所以花语就不用再管了，以后新的函数直
+	 *接走肽语调用花函数即可
 	 *
 	 * */
 	static void regLimitedRowAttributesOfColumnsInMemoryClass(

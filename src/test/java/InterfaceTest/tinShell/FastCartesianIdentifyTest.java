@@ -21,35 +21,31 @@ public class FastCartesianIdentifyTest {
 	/*
 	 * 思考2点
 	 * 
-	 * CN 1- 之前的意识错误纠正，主要是思维方式的纠正，之前我把2018年分词
-	 * 还是用老版Lucene，把落后归咎于业界的不争气。在这一点上我还是要诚恳地
-	 * 道歉，做人应该符合科学的方法论和合理的制度规范 去 思考论题。不能激进
-	 * 。好比我写函数思想一样，也不能图快和激进，因为我的目标一直很明确，瞬间
-	 * 转移和永生，只是人工智能，元基编码恰好是这个探索过程的中间bonus产物。
+	 * CN 1- 之前的意识错误纠正，主要是思维方式的纠正，之前我把2018年分词还是用老版Lucene
+	 * ，把落后归咎于业界的不争气。在这一点上我还是要诚恳地道歉，做人应该符合科学的方法论和
+	 * 合理的制度规范 去 思考论题。不能激进。好比我写函数思想一样，也不能图快和激进，因为我
+	 * 的目标一直很明确，瞬间转移和永生，只是人工智能，元基编码恰好是这个探索过程的中间 
+	 * bonus 产物。
 	 * 
-	 * 2- 文字的描述内容目的非常明确，就是让计算力有浓度。计算力在某种 观测
-	 * 的面上可以用语言的形式来体现。语言是可以提炼的，所以计算力有浓度。比如
-	 * 笛卡尔关系，为了更准确的提炼TVM extension 花肽语指令。可以将源码的
-	 * 这部份提出来，专门设计针对各种语言，输出计算相似的指令片段标注。最终
-	 * 形成自适应的指令片段而不是人为地去定义这个片段。比如目前的8个肽class
-	 * 还是我手写的，之前的3000多花语class也是我手写的。通过仔细分析，不难
-	 * 得到很多仅自适应逻辑计算，就可以分类的属性，比如相同片段，相同的词性，
-	 * 相同的含义，。。。在map归纳下都可以谨谨有条地归纳出来。
+	 * 2- 文字的描述内容目的非常明确，就是让计算力有浓度。计算力在某种 观测的面上可以用语言
+	 * 的形式来体现。语言是可以提炼的，所以计算力有浓度。比如笛卡尔关系，为了更准确的提炼TVM
+	 * extension 花肽语指令。可以将源码的这部份提出来，专门设计针对各种语言，输出计算相似
+	 * 的指令片段标注。最终形成自适应的指令片段而不是人为地去定义这个片段。比如目前的8个肽
+	 * class 还是我手写的，之前的3000多花语class也是我手写的。通过仔细分析，不难得到很多
+	 * 仅自适应逻辑计算，就可以分类的属性，比如相同片段，相同的词性，相同的含义，。。。在map
+	 * 归纳下都可以谨谨有条地归纳出来。
 	 * 
 	 * 
-	 * EN 2- Type of observation, to raise and make an ability
-	 * of computation more ratios of concentration. Assumption a
-	 * format of An ability of computation could be a detailed
-	 * human's literacy-language. The language has been
-	 * extracting the purity of cognition every times since was
-	 * used, the ability of computation has been mining well in
-	 * production's efficiency-domain simultaneously. And
-	 * recently one of the effect way about making a promotion
-	 * of exporting out the Cartesian's relationship-logic with
-	 * specially test models, to better for continuing
-	 * sub-designs. Thus models could do well in self-adapted
-	 * and initialed as valuable sections of TVM's
-	 * derive-construction.
+	 * EN 2- Type of observation, to raise and make an ability of computation 
+	 * more ratios of concentration. Assumption a format of An ability of 
+	 * computation could be a detailed human's literacy-language. The language
+	 * has been extracting the purity of cognition every times since was used,
+	 * the ability of computation has been mining well in production's 
+	 * efficiency-domain simultaneously. And recently one of the effect way 
+	 * about making a promotion of exporting out the Cartesian's 
+	 * relationship-logic with specially test models, to better for continuing
+	 * sub-designs. Thus models could do well in self-adapted and initialed as
+	 * valuable sections of TVM's derive-construction.
 	 * 
 	 * Could start a few sections work below.
 	 * 
@@ -60,56 +56,49 @@ public class FastCartesianIdentifyTest {
 	 */
 	// to do a swap..
 	/*
-	 * 首先提取已经有的函数通过 getCartesianRelationShipFromHumanTalk
-	 * 计算细腻的处理好 WorkVerbalMap 和他的 SVO 对象，笛卡尔的关系可以通过
-	 * 对象进行PCA，之前的排序就用上了，排序后选择。选择一些有代表性的，没有
-	 * 特殊符号的，明确动词的关系组，然后在这些关系组中通过
-	 * getCartesianPromotionTVMFromRelationShips进行跟进筛选归纳有价值的逻辑。
+	 * 首先提取已经有的函数通过 getCartesianRelationShipFromHumanTalk 计算细腻的处理
+	 * 好 WorkVerbalMap 和他的 SVO 对象，笛卡尔的关系可以通过对象进行PCA，之前的排序就用
+	 * 上了，排序后选择。选择一些有代表性的，没有特殊符号的，明确动词的关系组，然后在这些关系
+	 * 组中通过 getCartesianPromotionTVMFromRelationShips进行跟进筛选归纳有价值的逻辑。
 	 */
 	/*
-	 * 这个函数用于 filter 笛卡尔map 中的 大量无用的成员，每减少一名成员，
-	 * 之后的 计算就增加一分速度和性能。
+	 * 这个函数用于 filter 笛卡尔map 中的 大量无用的成员，每减少一名成员，之后的 计算就增
+	 * 加一分速度和性能。
 	 * 
-	 * 都到这一步了，价值就非常明显了。 1 首先我找出了一个严重的问题，就是
-	 * 我的笛卡尔关系是拆开的分类的关系，所以我应该设计一个新的全局关系比如
-	 * 功效==搜索 然后再区分关系 功效-搜索 和 搜索+功效
-	 * 区分，所以我漏掉了一个全局关系Map，目前还看不出价值，但是处理海量关系
-	 * 一旦有概率这个计算全局逻辑，那么将是巨大的计算浪费。
+	 * 都到这一步了，价值就非常明显了。 1 首先我找出了一个严重的问题，就是我的笛卡尔关系是拆
+	 * 开的分类的关系，所以我应该设计一个新的全局关系比如功效==搜索 然后再区分关系 功效-搜索
+	 * 和 搜索+功效区分，所以我漏掉了一个全局关系Map，目前还看不出价值，但是处理海量关系一旦
+	 * 有概率这个计算全局逻辑，那么将是巨大的计算浪费。
 	 * 
-	 * 2 其次观测发现我的笛卡尔关系变量描述不规范
-	 * 条件+功效:9:5:_stringNoun1_stringVerb10
-	 * 这个例子如果更加适应计算，后后缀应该是数字代号描述会更好， 
-	 * 比如条件+功效:9:5:4:5:1:10,统一格式可以探索一劳永逸的表达方式，加速
-	 * 思考和行为编码。
+	 * 2 其次观测发现我的笛卡尔关系变量描述不规范 条件+功效:9:5:_stringNoun1_stringVerb10
+	 * 这个例子如果更加适应计算，后后缀应该是数字代号描述会更好，比如条件+功效:9:5:4:5:1:10
+	 * , 统一格式可以探索一劳永逸的表达方式，加速思考和行为编码。
 	 * 
-	 * 3 发现这么多当前可以做的事情，说明计算哲学的价值巨大，一个人的研究能力
-	 * 是他的母语水平，一个人的母语水平来自与他对事物的简短文字描述能力。这个
-	 * 能力来自定义 和 辩证的学习力。
+	 * 3 发现这么多当前可以做的事情，说明计算哲学的价值巨大，一个人的研究能力是他的母语水平，
+	 * 一个人的母语水平来自与他对事物的简短文字描述能力。这个能力来自定义 和 辩证的学习力。
 	 * 
-	 * 4 跟进思考，首先剔除和筛选掉 全部是符号的笛卡尔关系成员，再筛选掉含有
-	 * 关键字符号的关系成员。再筛选掉缺失一半关系的成员。不是删除，是筛选，
-	 * 所以我还要设计3个map装载这些垃圾。将来有用。目测一半的数据被清理掉，
-	 * 之后性能指数翻倍。
+	 * 4 跟进思考，首先剔除和筛选掉 全部是符号的笛卡尔关系成员，再筛选掉含有关键字符号的关系
+	 * 成员。再筛选掉缺失一半关系的成员。不是删除，是筛选，所以我还要设计3个map装载这些垃圾。
+	 * 将来有用。目测一半的数据被清理掉，之后性能指数翻倍。
 	 * 
 	 * 5 。。。
 	 * 
-	 * 6 完全正确的源码计算，正确地输出，稍微一个变换思考，一下出现了好多问题
-	 * ，而且这些问题都能有当前环境下的标准答案。。
+	 * 6 完全正确的源码计算，正确地输出，稍微一个变换思考，一下出现了好多问题，而且这些问题
+	 * 都能有当前环境下的标准答案。。
 	 * 
-	 * 很多人不知道自己当前要干什么，并不是能力不行，恰恰是能力太强，譬如我，
-	 * 只是当时不知道自己的兴趣爱好是什么。因为什么事情都思考一下，生活会很
-	 * 累很乏味，只是逃避而已，但是一旦知道了进行有选择地思考，就开挂了。
+	 * 很多人不知道自己当前要干什么，并不是能力不行，恰恰是能力太强，譬如我，只是当时不知道
+	 * 自己的兴趣爱好是什么。因为什么事情都思考一下，生活会很累很乏味，只是逃避而已，但是一旦
+	 * 知道了进行有选择地思考，就开挂了。
 	 * 
 	 * 辩证思考的魅力 - 罗瑶光
 	 * 
 	 */
 	/*
-	 * 开始筛选出含有特殊符号的map，命名为relationsASCII，从command_V. 
-	 * _IMV_SQI_SS 中提取 于是开始思考，是先提取再计算还是先计算再提取？ 
+	 * 开始筛选出含有特殊符号的map，命名为relationsASCII，从command_V. _IMV_SQI_SS 
+	 * 中提取 于是开始思考，是先提取再计算还是先计算再提取？ 
 	 * --先提取再计算，加速主要关系输出。
 	 * --先计算再提取，增加细腻属性关系。
-	 * 于是跟进思考，含有特殊符号的relationsASCII属性对语言分析有什么充份
-	 * 且必要的价值影响？ 
+	 * 于是跟进思考，含有特殊符号的relationsASCII属性对语言分析有什么充份且必要的价值影响？ 
 	 * 1 代号使用价值，以后有变量模型的语言有代换价值。 2 later。。
 	 * 这些符号没有严谨的词性意义，在SVO中的POS作用表达不强，于是采用先提取再计算的逻辑。
 	 * 很多时候在非应激表达的劳动中，说服我做决策的从来不是我的主观爱好，而是客观辩证思维。
@@ -117,18 +106,17 @@ public class FastCartesianIdentifyTest {
 	/*
 	 * 关键字 string.contains("*" 处--笔记
 	 * 歧义数字变量关系 
-	 * 思考 *号代表输入的文字中有变量，于是分析这个* 和处理后的变量是否需要同时
-	 * 存在与关系中。首先早期没有处理变量的时候，变量字符都是断开的，增加了大量
-	 * 的笛卡尔关系。增加了变量处理后，有了*，但是变量的position是char的位置
-	 * 来计算的，不是切词的list位置计算的。那么position也是规范准确的可用于计
-	 * 算的变量。* 在笛卡尔关系中的意义代表变量与词汇的关系。如果筛掉*，用原数字
-	 * 来表达，那么还要增加一层关系，数字是不是变量，再思考变量和词汇的关系。
-	 * 但是通常数字和词汇本就是变量的意思。那么这里可以先筛掉*，加个slash，以后
+	 * 思考 *号代表输入的文字中有变量，于是分析这个* 和处理后的变量是否需要同时存在与关系中。
+	 * 首先早期没有处理变量的时候，变量字符都是断开的，增加了大量的笛卡尔关系。增加了变量处
+	 * 理后，有了*，但是变量的position是char的位置来计算的，不是切词的list位置计算的。
+	 * 那么position也是规范准确的可用于计算的变量。* 在笛卡尔关系中的意义代表变量与词汇的
+	 * 关系。如果筛掉*，用原数字来表达，那么还要增加一层关系，数字是不是变量，再思考变量和
+	 * 词汇的关系。但是通常数字和词汇本就是变量的意思。那么这里可以先筛掉*，加个slash，以后
 	 * 要参考*的笛卡尔条件，去掉slash。目前我的CreativeVerbalMap 十六元基索引 
-	 * TVM extension 和 blooming Action 都没有*的参照条件，可以注释下先筛掉。
-	 * 另外为了一个 * 增加一把笛卡尔关系词汇组其实也是不值得提倡的编码逻辑，可以
-	 * 采用含*的boolean标识，做条件编码，更规范的管理含有变量的逻辑句。于是思路
-	 * 就清晰了 * 属于语法 构造关系。先并入relationsGrammar关系中
+	 * TVM extension 和 blooming Action 都没有*的参照条件，可以注释下先筛掉。另外为了
+	 * 一个 * 增加一把笛卡尔关系词汇组其实也是不值得提倡的编码逻辑，可以采用含*的boolean
+	 * 标识，做条件编码，更规范的管理含有变量的逻辑句。于是思路就清晰了 * 属于语法 构造关系
+	 * 。先并入relationsGrammar关系中
 	 * 
 	 * WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SQI_SS
 	 *		.getW(string);
@@ -156,8 +144,9 @@ public class FastCartesianIdentifyTest {
 					.contains("*") || string.contains(":") || string
 						.contains(" ")) {
 				/*
-				 * 关于这种逻辑的写法逐char匹配，应该在更前分词的时候就过滤掉，因为考虑到分词时候
-				 * 万一有符号+String的代号的组合转码条件，将造成更多断开的碎片。
+				 * 关于这种逻辑的写法逐char匹配，应该在更前分词的时候就过滤掉，因为
+				 * 考虑到分词时候万一有符号+String的代号的组合转码条件，将造成更多
+				 * 断开的碎片。
 				 */
 				WordFrequency wordFrequency = workVerbalMap.command_V._IMV_SQI_SS
 					.getW(string);
@@ -225,8 +214,9 @@ public class FastCartesianIdentifyTest {
 		return null;
 	}
 
-	// 提取子功能测试
 	/*
+	 * 提取子功能测试
+	 * ---
 	 * 在这个逻辑思维中，我一直在思考--碎片记忆与段落记忆的方式不同 则对 函数的计算影响也不同。
 	 * 如何有效地区分和管理这些不同所带来的问题集合。 这是一个非常抽象的难以描述的逻辑和概念
 	 * ，如果不经过反复地推敲和细腻的文字描述，很难发现这些点。可这些点偏偏价值巨大。 在科学
@@ -237,11 +227,7 @@ public class FastCartesianIdentifyTest {
 	 * 2 合理地分配函数在堆栈中的序列构造，减少假缓冲和无效逻辑。
 	 * 3 剔除大量的无关变量和冗余的编码片段，目的性更强。 
 	 * 4 方便更进研究和扩展。
-	 * 
-	 * --罗瑶光
-	 * 
-	 */
-	/*
+	 * --
 	 * 准备定义笛卡尔的符号规范
 	 * 1 因为一开始采用 全局的去动名词的全局笛卡尔关系，所以四个
 	 * cartesianWorkActionsRightsVO
@@ -250,47 +236,32 @@ public class FastCartesianIdentifyTest {
 	 * cartesianWorkActionsPositionsSV
 	 * 里面的结果是一致的，所以可以剔除减少75%的计算量。
 	 * averagePositionNoun 比较不再有价值需要进行全补充关系
-	 * 
+	 * --
 	 * 剔除并不是删除这些计算量 而是重新利用。原来的+和-是动和名的组合，因为是全局关系，
 	 * 不再有这个逻辑了，因为人类语法动名词可以变换。动词本就是名词的一种弱属性。
 	 * 那么+和-可以重新定义为 文中的词汇关系 先后为+，后先为-。这个价值可以用来观测词汇
 	 * 的因果发生现象。那么这里出现第二个问题便是 当一个指令句出现多个相同的字，就+-无效了
 	 * 如果做平均数来计算，那么平均数仅仅是代表距离的分布关系，而不是前后关系。
-	 * 
+	 * --
 	 * 在哲学计算的层面上，上面思考的内容属于新的关系更近分析，所以进行归纳，关系分层，
 	 * 这里仅用+做笛卡尔全局计算先，新的关系和新的条件，用新的决策树函数逻辑来处理。
 	 * 
-	 * //那第一层决策关系函数处理的逻辑 就没有了- 和动名词之分。
-	 * //VO map全部省略，SVO逻辑区 先 减少75%的内存占用。
-	 * //这种操作先保留，因为动名词的全局笛卡尔逻辑全省略有风险，
-	 * 
+	 * --那第一层决策关系函数处理的逻辑 就没有了- 和动名词之分。
+	 * --VO map全部省略，SVO逻辑区 先 减少75%的内存占用。
+	 * --这种操作先保留，因为动名词的全局笛卡尔逻辑全省略有风险，
+	 * ---
 	 * 主要成分价值map
 	 * cartesianWorkActionsRightsVO
 	 * cartesianWorkActionsRightsSV
 	 * 仅保留PCA，VO map全部省略，SVO逻辑区 ，减少80%的内存占用。
 	 * 当前main功能测试通过。Tinshell测试通过。华瑞集admin界面测试通过。
 	 * WorkVerbalMap_X_S 195行处PCA过滤，以后用到条件再解开slash。
-	 * --罗瑶光
-	 * */
-
-	// 筛选前主要关系数-->13
-	// 筛选后主要关系数-->8
-	// 在含有各类特殊字符的输入中 主要成分计算量减少40% 价值巨大。
-	// 在纯中文的规整字符输入中 准备应用于tinshell 和 tinshellSeparateTest 测试。
-	/* 真实测试结果输出正确，计算量减少 2/38，接近5%。价值可观。
-	Action-->:updateColorAttributesOfColumnsInMemoryClass
-	Action-->:selectRowsByAttributesOfGetCulumns
-	Action-->:findTableInMemory
-	Action-->:P_ListNeedStart
-	Action-->:limitedRowAttributesOfColumnsInMemoryClass
-	Action-->:selectRowsByAttributesOfAggregation
-	Action-->:P_TableName
-	Action-->:P_fileOperations
-	Action-->:selectRowsByAttributesOfCondition
-	Action-->:addFindColumnsInMemoryClass
-	*/
-	// 结束
-	/*
+	 * ----
+	 * 筛选前主要关系数-->13
+	 * 筛选后主要关系数-->8
+	 * 在含有各类特殊字符的输入中 主要成分计算量减少40% 价值巨大。
+	 * 在纯中文的规整字符输入中 准备应用于tinshell 和 tinshellSeparateTest 测试。
+	 *  结束
 	 * 思考-条件和逻辑的分层筛选，对特殊的问题会产生一些盲区。可以叫bug。
 	 * 稍后在处理逻辑内容时，要考虑这些盲区，写FIX管理关系函数。
 	 * 并不是现在输出正确就是一直准确。环境是变化的，所以逻辑也应该遵循这个
@@ -302,7 +273,8 @@ public class FastCartesianIdentifyTest {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] argv) {
 		// 初始
-		FastCartesianIdentifyTest fastCartesianIdentifyTest = new FastCartesianIdentifyTest();
+		FastCartesianIdentifyTest fastCartesianIdentifyTest 
+		= new FastCartesianIdentifyTest();
 		// 启动测试开始
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
@@ -370,7 +342,8 @@ public class FastCartesianIdentifyTest {
 		S_logger.Log.logger.info("" + "1-cartesianWorkA-"
 			+ commonTestInition.NE.app_S.workVerbalMap.verbInText
 				.size());
-		Iterator<String> iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.verbInText
+		Iterator<String> iteratorStrings 
+		= commonTestInition.NE.app_S.workVerbalMap.verbInText
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
@@ -390,104 +363,109 @@ public class FastCartesianIdentifyTest {
 		S_logger.Log.logger.info("" + "-----笛卡尔关系推荐逻辑观测-----");
 		S_logger.Log.logger.info(""
 			+ "1-cartesianWorkActionsPositionsSV-"
-			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV
+			+ commonTestInition.NE.app_S.workVerbalMap
+			.command_V.cartesianWorkActionsPositionsSV
 				.size());
-		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap
+			.command_V.cartesianWorkActionsPositionsSV
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
 			S_logger.Log.logger.info("" + string + ">"
-				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsSV
-					.getString(string));
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V
+				.cartesianWorkActionsPositionsSV.getString(string));
 		}
 
 		S_logger.Log.logger.info(""
 			+ "2-cartesianWorkActionsPositionsVO-"
-			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO
-				.size());
-		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO
-			.keySet().iterator();
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V
+			.cartesianWorkActionsPositionsVO.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap
+			.command_V.cartesianWorkActionsPositionsVO.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
 			S_logger.Log.logger.info("" + string + ">"
-				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsPositionsVO
-					.getString(string));
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V
+				.cartesianWorkActionsPositionsVO.getString(string));
 		}
 
 		S_logger.Log.logger.info(""
 			+ "3-cartesianWorkActionsRightsSV-"
-			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
-				.size());
-		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
-			.keySet().iterator();
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V
+			.cartesianWorkActionsRightsSV.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap
+			.command_V.cartesianWorkActionsRightsSV.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
 			S_logger.Log.logger.info("" + string + ">"
-				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsSV
-					.getString(string));
-		}
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V
+				.cartesianWorkActionsRightsSV.getString(string));
+		}//later优化
 
 		S_logger.Log.logger.info(""
 			+ "4-cartesianWorkActionsRightsVO-"
-			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V
+			.cartesianWorkActionsRightsVO
 				.size());
-		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
-			.keySet().iterator();
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap
+			.command_V.cartesianWorkActionsRightsVO.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
 			S_logger.Log.logger.info("" + string + ">"
-				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsVO
-					.getString(string));
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V
+				.cartesianWorkActionsRightsVO.getString(string));
 		}
 
 		S_logger.Log.logger.info("" + "5-cartesianWorkActions_posSV-"
-			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV
-				.size());
-		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV
-			.keySet().iterator();
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V
+			.cartesianWorkActions_posSV.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap
+			.command_V.cartesianWorkActions_posSV.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
 			S_logger.Log.logger.info("" + string + ">"
-				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posSV
-					.getString(string));
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V
+				.cartesianWorkActions_posSV.getString(string));
 		}
 
 		S_logger.Log.logger.info("" + "6-cartesianWorkActions_posVO-"
-			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO
-				.size());
-		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V
+			.cartesianWorkActions_posVO.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap
+			.command_V.cartesianWorkActions_posVO
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
 			S_logger.Log.logger.info("" + string + ">"
-				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActions_posVO
-					.getString(string));
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V
+				.cartesianWorkActions_posVO.getString(string));
 		}
 
 		S_logger.Log.logger.info(""
 			+ "7-cartesianWorkActionsRightsParserSV-"
-			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
-				.size());
-		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
-			.keySet().iterator();
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V
+			.cartesianWorkActionsRightsParserSV.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap
+			.command_V.cartesianWorkActionsRightsParserSV.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
 			S_logger.Log.logger.info("" + string + ">"
-				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserSV
-					.getString(string));
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V
+				.cartesianWorkActionsRightsParserSV.getString(string));
 		}
 
 		S_logger.Log.logger.info(""
 			+ "8-cartesianWorkActionsRightsParserVO-"
-			+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
-				.size());
-		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
+			+ commonTestInition.NE.app_S.workVerbalMap.command_V
+			.cartesianWorkActionsRightsParserVO.size());
+		iteratorStrings = commonTestInition.NE.app_S.workVerbalMap
+			.command_V.cartesianWorkActionsRightsParserVO
 			.keySet().iterator();
 		while (iteratorStrings.hasNext()) {
 			String string = iteratorStrings.next();
 			S_logger.Log.logger.info("" + string + ">"
-				+ commonTestInition.NE.app_S.workVerbalMap.command_V.cartesianWorkActionsRightsParserVO
-					.getString(string));
+				+ commonTestInition.NE.app_S.workVerbalMap.command_V
+				.cartesianWorkActionsRightsParserVO.getString(string));
 		}
 		commonTestInition.endEnvironment();
 	}
@@ -796,3 +774,16 @@ public class FastCartesianIdentifyTest {
 //6-cartesianWorkActions_posVO-0
 //7-cartesianWorkActionsRightsParserSV-0
 //8-cartesianWorkActionsRightsParserVO-0
+
+/* 真实测试结果输出正确，计算量减少 2/38，接近5%。价值可观。
+Action-->:updateColorAttributesOfColumnsInMemoryClass
+Action-->:selectRowsByAttributesOfGetCulumns
+Action-->:findTableInMemory
+Action-->:P_ListNeedStart
+Action-->:limitedRowAttributesOfColumnsInMemoryClass
+Action-->:selectRowsByAttributesOfAggregation
+Action-->:P_TableName
+Action-->:P_fileOperations
+Action-->:selectRowsByAttributesOfCondition
+Action-->:addFindColumnsInMemoryClass
+*/

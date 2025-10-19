@@ -27,12 +27,12 @@ import java.util.List;
 public class E_pl_XA_E {
 	@SuppressWarnings("unchecked")
 	/*
-	* command是一条最短的指令句，指令句变成指令的中间数据目前保留在NE.app_S.workVerbalMap
-	* 中，我在思考，每次计算完一句指令，这些过程产物都要clear掉，这是一种C语言的free写法，
-	* 在高级的java结构中，可以进行单例来class null掉，意思是我可以创造一个command class，
-	* 这个类专门负责command的数据碎片，这个class可以list形式进入tinmap，也可以每次执行完
-	* 被G1GC来null掉，想到这里，于是先命名个command Class先。 --地址在package
-	* O_V.OSM.shell; --函数名CommandClass
+	* command是一条最短的指令句，指令句变成指令的中间数据目前保留在 
+	* NE.app_S.workVerbalMap 中，我在思考，每次计算完一句指令，这些过程产物都要clear
+	* 掉，这是一种C语言的free写法，在高级的java结构中，可以进行单例来class null掉，意
+	* 思是我可以创造一个command class，这个类专门负责command的数据碎片，这个class可
+	* 以list形式进入tinmap，也可以每次执行完被G1GC来null掉，想到这里，于是先命名个
+	* command Class先。 --地址在package O_V.OSM.shell; --函数名CommandClass
 	* 
 	*/
 	/*
@@ -42,19 +42,20 @@ public class E_pl_XA_E {
 	* 注意initArabicNumber提取数字要提取position，避免序次问题出错。 --罗瑶光
 	*/
 	/*
-	* 思考关于关系分类的价值，表面的含义我就不介绍了，如果我要输出我的思维方式要优秀于传统的
-	* 认知方式，就要有明显的论证和论据来强调我的HVPCS关系要优秀于普通的模型，显而易见，今天的
-	* 逻辑分层和关系分类最大的价值是我挖掘到了一个中间层map unknowMap ，这个隐匿在我的
-	* workmap中又要的表达在command的逻辑中，于是出现了一行逻辑错误，文件地址package
-	* E_A.ME.analysis.E; 函数名 CogsBinaryForest_AE的 218行
+	* 思考关于关系分类的价值，表面的含义我就不介绍了，如果我要输出我的思维方式要优秀于传
+	* 统的认知方式，就要有明显的论证和论据来强调我的HVPCS关系要优秀于普通的模型，显而易
+	* 见，今天的逻辑分层和关系分类最大的价值是我挖掘到了一个中间层map unknowMap ，这个
+	* 隐匿在我的workmap中又要的表达在command的逻辑中，于是出现了一行逻辑错误，文件地址
+	* package E_A.ME.analysis.E; 函数名 CogsBinaryForest_AE的 218行
 	* //关联studyMap later -trif ，这个unknow关系不应该
 	* 被包含在workmap中，我扔在网上完整的华瑞集源码和开发文档，
 	* 
-	* 我要严谨的提醒的是 这些年一些用户看了后，模仿窥伺我，改我的思维方式和函数名，到时候出了
-	* 问题，别怪我没提醒。 我的逻辑是HVPCS+ 元基编码 + 时函数 + 计算哲学。用户们既然要模仿我
-	* 的风格，就要深入接触这4个领域。我的动机是当然希望人才辈出，早点超越我，对得起我苦心
-	* 细致的文字描述。2018 分词如果lucene 每秒当时能够上 2000万，我就省了好多事。
-	* 但做事一定要脚踏实地。 我写文字的动机1是著作权在先权分析，文字分解后就可以进行相似度匹配。
+	* 我要严谨的提醒的是 这些年一些用户看了后，模仿窥伺我，改我的思维方式和函数名，到时
+	* 候出了问题，别怪我没提醒。 我的逻辑是HVPCS+ 元基编码 + 时函数 + 计算哲学。用户
+	* 们既然要模仿我的风格，就要深入接触这4个领域。我的动机是当然希望人才辈出，早点超越
+	* 我，对得起我苦心细致的文字描述。2018 分词如果lucene 每秒当时能够上 2000万，我
+	* 就省了好多事。但做事一定要脚踏实地。 我写文字的动机1是著作权在先权分析，文字分解
+	* 后就可以进行相似度匹配。
 	* 2 是方便教材方式方向文字描述，制造各类深度思考问题，授人之渔。
 	* 
 	* --罗瑶光
@@ -71,15 +72,14 @@ public class E_pl_XA_E {
 	* normalizationalWorkActionsRights 的形态是 actionsDistance[i]
 	* + "-" + actionsDistanceV[i] 其中
 	* actionsDistance[i]的形态是cartesianWorkActionsRights的key 而
-	* cartesianWorkActionsRights的key构造来自于WorkVerbalMap_X_S的166行的初始root
-	* 于是我开始思考，在计算关系分层的时候缺少了一些中间过程的碎片记录，这个记录关系导致了
-	* 我之后要花双倍时间来重复计算曾经已有的却未保留的结果，论证在计算哲学中，计算关系可以
-	* 外因计算逻辑。于是开始优化准备将root的组合因子进行map化。从而过滤掉下面的重复逻辑。
-	* 于是在CommandClass中定义rootMap来封装root，rootRelation来封装root的关系。
+	* cartesianWorkActionsRights的key构造来自于WorkVerbalMap_X_S的166行的初始
+	* root 于是我开始思考，在计算关系分层的时候缺少了一些中间过程的碎片记录，这个记录关系
+	* 导致了我之后要花双倍时间来重复计算曾经已有的却未保留的结果，论证在计算哲学中，计算关
+	* 系可以外因计算逻辑。于是开始优化准备将root的组合因子进行map化。从而过滤掉下面的重复
+	* 逻辑。于是在CommandClass中定义rootMap来封装root，rootRelation来封装root的关系。
 	* 这里root不包含pos后戳，不包含 _ 无效, 去掉此逻辑。于是可以化简如下。
 	* 
 	* --罗瑶光
-	* 
 	*/
 	/*
 	* 因为是取精度，所以-号关于stringSets最末一位即可获取答案。
@@ -87,9 +87,9 @@ public class E_pl_XA_E {
 	* command_V.cartesianWorkActionsRights 通过500字的思绪描述，最终优化的逻辑。
 	* 大幅减少冗余的变量和堆栈关系。
 	* 
-	* 在进行构造关系的分析过程中，发现split的操作是一种流程逻辑错误的弥补。
-	* 弥补之前在指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高 
-	* 笛卡尔的计算 性能 -trif --罗瑶光
+	* 在进行构造关系的分析过程中，发现split的操作是一种流程逻辑错误的弥补。弥补之前在
+	* 指令句关系计算中没有规划好属性的形态。稍后优化好形态，提高笛卡尔的计算 性能 
+	* -trif --罗瑶光
 	*/
 	/*
 	* map细化分解的好处显而易见，如我的早期的德塔分词，map全部分解。这是一种
@@ -145,8 +145,8 @@ public class E_pl_XA_E {
 			command_V.initSixActions(NE);
 			command_V.initArabicNumber();
 
-			// -1 计算逻辑关系根据不同的环境会有不同的组合，最优关系是频率出来的，不是关键字分析出来的。
-			// 所以动态化计算是趋势。
+			// -1 计算逻辑关系根据不同的环境会有不同的组合，最优关系是频率出来的，不是
+			// 关键字分析出来的。所以动态化计算是趋势。
 			String commandSwap = doHumanTalkSwap(NE, command_V);
 			command_V.commandSwap = commandSwap;
 			List<String> commandLists = DoSplit.splitRegex(command,
@@ -193,8 +193,8 @@ public class E_pl_XA_E {
 					// later // in // pdn
 				}
 			}
-			// SVO主谓宾的中文缩写。cartesianWorkActionsRights分解后SV和VO可以以后形成
-			// 严谨的指令句匹配规范
+			// SVO主谓宾的中文缩写。cartesianWorkActionsRights分解后SV和VO可以
+			// 以后形成严谨的指令句匹配规范
 			iterators = command_V.cartesianWorkActionsRightsVO
 				.keySet().iterator();
 			while (iterators.hasNext()) {
@@ -229,8 +229,8 @@ public class E_pl_XA_E {
 			command_V.cartesianWorkActions_posVO.clear();
 			command_V.unknown_map.clear();
 			/*
-			* 这样command_V的价值就出来了，clear之后再GC，双重清理，在垃圾器的优化环境里会内存
-			*  更加稳定。
+			* 这样command_V的价值就出来了，clear之后再GC，双重清理，在垃圾器的优化
+			* 环境里会内存更加稳定。
 			*/
 			/* loop s later */
 			S_logger.Log.logger.info("" + "couldDoThenDo-3-"
@@ -289,16 +289,17 @@ public class E_pl_XA_E {
 	}
 
 	/*
-	 * 现在出现了一个问题，我的PLSEARCH系统是针对我的已经有的函数进行语言驱动，
-	 * 这种驱动计算方式是更好地辅助我已经有的函数进行序列可控操作。如果不断地增加
-	 * 新的函数，和扩展系统的使用方式，那么遇到的问题根据这种逻辑便会指数增加，于是我
-	 * 停止了下脚步，我在思考，一种不需要辅助也能计算出有用结果的通用类逻辑，在最恶劣
-	 * 的环境里，只需要加入某种精度组合就能覆盖所有条件搭配的逻辑，目前我找到了很多方法，
+	 * 现在出现了一个问题，我的PLSEARCH系统是针对我的已经有的函数进行语言驱动，这种驱动
+	 * 计算方式是更好地辅助我已经有的函数进行序列可控操作。如果不断地增加新的函数，和扩展
+	 * 系统的使用方式，那么遇到的问题根据这种逻辑便会指数增加，于是我停止了下脚步，我在思
+	 * 考，一种不需要辅助也能计算出有用结果的通用类逻辑，在最恶劣的环境里，只需要加入某种
+	 * 精度组合就能覆盖所有条件搭配的逻辑，目前我找到了很多方法，
+	 * 
 	 * 1-明确动词的指令集，因为人类的动词不但数量少还有限，又精确。非常方便 第一步索引先。
-	 * 2-单句分解指令集，因为单句是一个完整逻辑句，方便以后各类歧义 句型 复句句型首先转换 
+	 * 2-单句分解指令集，因为单句是一个完整逻辑句，方便以后各类歧义 句型 复句句型首先转换
 	 *   为单句再执行即可。
-	 * 3-最大的价值在 1 和 2 可以直接元基 索引 IDUQ 分类即可。方便我的花语系统
-	 *   加速。 如六元-StudyVerbalMap
+	 * 3-最大的价值在 1 和 2 可以直接元基 索引 IDUQ 分类即可。方便我的花语系统加速。 
+	 *   如六元-StudyVerbalMap
 	 * 
 	 */
 	private static void doAcknowledgeSwap(String[] acknowledgeSwap,

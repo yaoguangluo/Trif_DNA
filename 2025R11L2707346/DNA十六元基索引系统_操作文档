@@ -53,7 +53,7 @@ DNA十六元基索引系统_V5.0_操作文档  开始完善补正内容
               --git import执行3种方式。
                 打开任何能编程java的IDE软件，如eclipse或者ideaJ，在软件中左边的project explorer 
                 窗体中鼠标右键点击弹窗 ->点击 import选项 -> 点击 Git -> 可以选择 直接从github，
-                gitcode 和 gitee
+                gitcode 和 gitee 上 import.
               
               --其他方式，对于有能力构建本地maven库的技术员来说，方法就更多了，略--  
 
@@ -76,35 +76,37 @@ DNA十六元基索引系统_V5.0_操作文档  开始完善补正内容
 
 2 主界面包含2中执行模式
   2.1 界面功能使用模式
-      DNA十六元基索引系统 是一个源码系统，主界面可以通过工程 YLJ_HRJ 文件夹 下 ME.VPC.M.C 下的 YLJFrame.java文件
-      来做Admin 端口执行。
+      DNA十六元基索引系统 是一个源码系统，主界面可以通过工程 YLJ_HRJ 文件夹 下 ME.VPC.M.C 下的 
+      YLJFrame.java文件来做Admin 端口执行。
   2.2 接口模式
-      admin 的端口界面功能，同时可以进行插件方式使用，具体方式可以见 src文件夹下的test.java.interfaceTest.*
-      下各种单个功能执行实例。这些实例的具体介绍文档名为工程主目录下 --商业逻辑实践应用文档汇总--进行查阅。
+      admin 的端口界面功能，同时可以进行插件方式使用，具体方式可以见 src文件夹下的
+      test.java.interfaceTest.*下各种单个功能执行实例。这些实例的具体介绍文档名为工程主目录下 
+      --商业逻辑实践应用文档汇总--进行查阅。
       
 3 操作步骤
   3.1 软件方式操作
       通过工程 YLJ_HRJ 文件夹 下 ME.VPC.M.C 下的 YLJFrame.java文件运行，可以在屏幕中看到2个窗体，
       3.1.1 --1个是软件配置小面板
-            面板含有总启动专科与系统配置版面，德塔PLSQL控制台，德塔TINSHELL语言控制台 和 综合游标配置中心等
-            4个tab上分页，用来配置admin的各种功能。
+            面板含有总启动专科与系统配置版面，德塔PLSQL控制台，德塔TINSHELL语言控制台 和 综合游标
+            配置中心等4个tab上分页，用来配置admin的各种功能。
       3.1.2 --1个是华瑞集主admin面板
-            面板含有表格图片搜索，数据分析， 声学， 图形学， 位数术， 编辑页等数据分析功能tab上分页。主要面向
-            键盘和鼠标操作方式。
+            面板含有表格图片搜索，数据分析， 声学， 图形学， 位数术， 编辑页等数据分析功能tab上分页
+            。主要面向键盘和鼠标操作方式。
       
   3.2 源码执行操作
-      src文件夹下的test.java.interfaceTest.* 下很多文件都含有main的函数，这些函数都是可以直接通过鼠标右键
-      点击-> Run as 或者 Debug as + 断点 来 选项化配置执行。注意IDE运行的环境配置。避免内存太小，堆栈太少等错误。
+      src文件夹下的test.java.interfaceTest.* 下很多文件都含有main的函数，这些函数都是可以直接通
+      过鼠标右键点击-> Run as 或者 Debug as + 断点 来 选项化配置执行。注意IDE运行的环境配置。避免
+      内存太小，堆栈太少等错误。
       
   3.3 浏览器操作
-      rest操作方式 见 test.java.interfaces.net.http.socket;下面的 RestCallTest 文件中 main实例
-      url = new URL("http://localhost:" + "8000" + "/" + "dataWS?input=你好世界～");
+      rest操作方式 见 test.java.interfaces.net.http.socket;下面的 RestCallTest 文件中 main
+      实例url = new URL("http://localhost:" + "8000" + "/" + "dataWS?input=你好世界～");
       进行分词 --你好世界～-- 句子例子。这个URL中字符串可以在浏览器中去测试执行。
   
 4 图文结合演示
-  --因为我mac下office app要钱，先用txt，而且特别贵，稍后下wps试试，使用wps前我会检查下其自动的功能全部
-    禁用，避免出现各类初中语法错误。这次我不抢世界在先权首发了，所以时间不急。先列出图文结合的地方，稍后组
-    织图片。
+  --因为我mac下office app要钱，先用txt，而且特别贵，稍后下wps试试，使用wps前我会检查下其自动的功能
+    全部禁用，避免出现各类初中语法错误。这次我不抢世界在先权首发了，所以时间不急。先列出图文结合的地方，
+    稍后组织图片。
     --元基罗盘 T0000001
     --表格筛选 T0000002
     --Tinshell人类语言操作 T0000003
