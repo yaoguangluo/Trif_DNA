@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import S_logger.Log;
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313620483@qq.com, 2080315360@qq.com,
@@ -63,7 +62,8 @@ class List_ESU_X_listToArrayTest {
 			if (outputMap.containsKey(doub)) {
 				// 本例子是double-string，之后会泛化object扩展。
 				List<Object> objectList = outputMap.get(doub);
-				objectList.add(objects[1]);// 伪参数，list等复数objects类型来合并。本测试管。
+				objectList.add(objects[1]);
+				// 伪参数，list等复数objects类型来合并。本测试管。
 				outputMap.put(doub, objectList);
 			} else {
 				List<Object> objectList = new ArrayList<>();
@@ -88,7 +88,7 @@ class List_ESU_X_listToArrayTest {
 		for (int j = 0; j < needKeySort.length; j++) {
 			List<Object> lists = outputMap.get(needKeySort[j]);
 			// 输出
-			System.out.print(needKeySort[j] + "-->");
+			S_logger.Log.logger.info(needKeySort[j] + "-->");
 			for (Object object : lists) {
 				S_logger.Log.logger.info("" + needKeySort[j] + "-" + object
 					.toString());

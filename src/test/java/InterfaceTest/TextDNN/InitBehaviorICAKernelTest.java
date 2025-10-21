@@ -19,7 +19,8 @@ import S_logger.Log;
  * */
 class InitBehaviorICAKernelTest {
 	public static void main(String[] argv) {
-		InitBehaviorICAKernelTest initBehaviorICAKernelTest = new InitBehaviorICAKernelTest();
+		InitBehaviorICAKernelTest initBehaviorICAKernelTest 
+		= new InitBehaviorICAKernelTest();
 		initBehaviorICAKernelTest.main();
 	}
 

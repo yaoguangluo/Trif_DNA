@@ -57,8 +57,7 @@ public class DemoPOSTest {
 			+ "，一个事物，如果有价值，就应该像教材一样在真实的环境中不断地实践测试和"
 			+ "论证，能经得起所有人长年累月地不断地挑剔的东西，才是货真价实的，罗瑶光"
 			+ "的个人著作权作品都是互联网，大数据产业领域基础作品，2018年后，在60余互"
-			+ "联网app上发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同"
-			+ "时对垄断的产业有约束性。";
+			+ "联网app上发布德塔开源的作品，罗瑶光先生认为开源作品对同行呈现包容性。同" + "时对垄断的产业有约束性。";
 		// DemoEX demoEX=new DemoEX();
 		StringBuilder sb = new StringBuilder(ss);
 		// 分词
@@ -85,8 +84,7 @@ public class DemoPOSTest {
 	* 
 	* --罗瑶光
 	*/
-	public void testPOStoWordFrequencyList(List<String> sets,
-		IMV_SQI pos) {
+	public void testPOStoWordFrequencyList(List<String> sets, IMV_SQI pos) {
 		// 结果归纳
 		// 1 名词 动词 形容词归纳
 		int charPosition = 0;
@@ -149,8 +147,7 @@ public class DemoPOSTest {
 						String wordNext = sets.get(i + 1);
 						Object wordNextObjectPOS = pos.get(wordNext);
 						if (null != wordNextObjectPOS) {
-							String wordNextPOS = wordNextObjectPOS
-								.toString();
+							String wordNextPOS = wordNextObjectPOS.toString();
 							if (wordNext.equals("地")) {
 								wordFrequency.I_pos("形谓词作副词");
 							} else if (wordNext.equals("的")) {
@@ -171,8 +168,7 @@ public class DemoPOSTest {
 					}
 					adj.put(word, wordFrequency);
 				}
-				if (!(wordPOS.contains("未知") || wordPOS.contains(
-					"副"))) {
+				if (!(wordPOS.contains("未知") || wordPOS.contains("副"))) {
 					charPosition += string.length();
 					continue;
 				}
@@ -189,8 +185,7 @@ public class DemoPOSTest {
 					String wordNext = sets.get(i + 1);
 					Object wordNextObjectPOS = pos.get(wordNext);
 					if (null != wordNextObjectPOS) {
-						String wordNextPOS = wordNextObjectPOS
-							.toString();
+						String wordNextPOS = wordNextObjectPOS.toString();
 						if (wordNext.equals("地")) {
 							wordFrequency.I_pos("形谓词作副词");
 						} else if (wordNext.equals("的")) {
@@ -228,13 +223,11 @@ public class DemoPOSTest {
 			String wordNoun = iteratorNoun.next();
 			WordFrequency wordFrequency = noun.get(wordNoun);
 			String wordFrequencyTemp = "";
-			wordFrequencyTemp += "----词汇->" + wordFrequency
-				.get_word();
+			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
 			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
 			wordFrequencyTemp += "--平均距离->" + wordFrequency
 				.getAveragePosition();
-			wordFrequencyTemp += "--出现频率->" + wordFrequency
-				.get_frequency();
+			wordFrequencyTemp += "--出现频率->" + wordFrequency.get_frequency();
 			S_logger.Log.logger.info("" + wordFrequencyTemp);
 		}
 
@@ -250,13 +243,11 @@ public class DemoPOSTest {
 			String wordVerb = iteratorVerb.next();
 			WordFrequency wordFrequency = verb.get(wordVerb);
 			String wordFrequencyTemp = "";
-			wordFrequencyTemp += "----词汇->" + wordFrequency
-				.get_word();
+			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
 			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
 			wordFrequencyTemp += "--平均距离->" + wordFrequency
 				.getAveragePosition();
-			wordFrequencyTemp += "--出现频率->" + wordFrequency
-				.get_frequency();
+			wordFrequencyTemp += "--出现频率->" + wordFrequency.get_frequency();
 			S_logger.Log.logger.info("" + wordFrequencyTemp);
 		}
 		/*
@@ -271,13 +262,11 @@ public class DemoPOSTest {
 			String wordAdj = iteratorAdj.next();
 			WordFrequency wordFrequency = adj.get(wordAdj);
 			String wordFrequencyTemp = "";
-			wordFrequencyTemp += "----词汇->" + wordFrequency
-				.get_word();
+			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
 			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
 			wordFrequencyTemp += "--平均距离->" + wordFrequency
 				.getAveragePosition();
-			wordFrequencyTemp += "--出现频率->" + wordFrequency
-				.get_frequency();
+			wordFrequencyTemp += "--出现频率->" + wordFrequency.get_frequency();
 			S_logger.Log.logger.info("" + wordFrequencyTemp);
 		}
 		/*
@@ -292,13 +281,11 @@ public class DemoPOSTest {
 			String wordAdv = iteratorAdv.next();
 			WordFrequency wordFrequency = adv.get(wordAdv);
 			String wordFrequencyTemp = "";
-			wordFrequencyTemp += "----词汇->" + wordFrequency
-				.get_word();
+			wordFrequencyTemp += "----词汇->" + wordFrequency.get_word();
 			wordFrequencyTemp += "--词性->" + wordFrequency.get_pos();
 			wordFrequencyTemp += "--平均距离->" + wordFrequency
 				.getAveragePosition();
-			wordFrequencyTemp += "--出现频率->" + wordFrequency
-				.get_frequency();
+			wordFrequencyTemp += "--出现频率->" + wordFrequency.get_frequency();
 			S_logger.Log.logger.info("" + wordFrequencyTemp);
 		}
 	}
@@ -316,8 +303,7 @@ public class DemoPOSTest {
 
 	// 分解
 	@SuppressWarnings("unused")
-	public List<String> testPOSOnlyGetList(List<String> sets,
-		IMV_SQI pos) {
+	public List<String> testPOSOnlyGetList(List<String> sets, IMV_SQI pos) {
 		List<String> output = new ArrayList<String>();
 		/*
 		// 结果归纳
@@ -345,8 +331,8 @@ public class DemoPOSTest {
 					continue;
 				}
 				String wordPOS = wordObjectPOS.toString();
-				if (!(wordPOS.contains("未知") || wordPOS.contains("形")
-					|| wordPOS.contains("副"))) {
+				if (!(wordPOS.contains("未知") || wordPOS.contains("形") || wordPOS
+					.contains("副"))) {
 					wordsTemp += word + "/" + wordPOS + "----";
 					output.add(word + "/" + wordPOS);
 					charPosition += string.length();
@@ -356,8 +342,7 @@ public class DemoPOSTest {
 					String wordNext = sets.get(i + 1);
 					Object wordNextObjectPOS = pos.get(wordNext);
 					if (null != wordNextObjectPOS) {
-						String wordNextPOS = wordNextObjectPOS
-							.toString();
+						String wordNextPOS = wordNextObjectPOS.toString();
 						if (wordNext.equals("地")) {
 							wordPOS = "形谓词作副词";
 						} else if (wordNext.equals("的")) {
@@ -389,8 +374,8 @@ public class DemoPOSTest {
 		DemoAfterPOSTest demoAfterPOSTest = new DemoAfterPOSTest();
 		S_logger.Log.logger.info("" + "----------");
 		S_logger.Log.logger.info("" + "进行词性组合");
-		List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(
-			setsInput, pos);
+		List<String> setsAfterInput = demoAfterPOSTest.testAfterPOS(setsInput,
+			pos);
 		//--最终将修正的list 处理成 wordFrequency 格式list。
 		S_logger.Log.logger.info("" + "----------");
 		S_logger.Log.logger.info("" + "进行词性封装");

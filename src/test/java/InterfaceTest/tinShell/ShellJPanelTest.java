@@ -94,8 +94,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 @SuppressWarnings({ "unchecked", "unused" })
 class ShellJPanelTest {
-	public static void main(String[] argv)
-		throws InterruptedException, IOException {
+	public static void main(String[] argv) throws InterruptedException,
+		IOException {
 		ShellJPanelTest shellJPanelTest = new ShellJPanelTest();
 		shellJPanelTest.testTinshell();
 	}
@@ -305,8 +305,7 @@ class ShellJPanelTest {
 	// 临时设置用，之后结构优化后进行去除。
 	// 配置组件支持
 	// 配置环境支持
-	App_X initTinshellEnvironment() throws IOException,
-		InterruptedException {
+	App_X initTinshellEnvironment() throws IOException, InterruptedException {
 		App_X NE = new App_X();
 		NE.tempString = "去弹窗组件流测试";
 		NE.init(NE);
@@ -325,20 +324,18 @@ class ShellJPanelTest {
 	// 确定测试文件名为药食同源的表文件，tinshell函数执行这个表的操作计算。
 	String initSourceXLSEnvironment(App_X NE, String filePathXLSX)
 		throws InterruptedException {
-		NE.app_S.appConfig.SectionJPanel.xlsWithSpec.setSelected(
-			true);
+		NE.app_S.appConfig.SectionJPanel.xlsWithSpec.setSelected(true);
 		if (null == NE.app_S._A) {
 			return "NULL";
 		} // later normalization
-		MakeContainerXLS makeContainerXLS = new MakeContainerXLS(
-			NE.app_S._A, NE.app_S, NE.app_S.jTabbedpane,
-			NE.app_S.tabNames,
+		MakeContainerXLS makeContainerXLS = new MakeContainerXLS(NE.app_S._A,
+			NE.app_S, NE.app_S.jTabbedpane, NE.app_S.tabNames,
 			NE.app_S.fMHMMListOneTime_E_X_S.posCnToCn,
 			NE.app_S.fMHMMListOneTime_E_X_S.posEnToEn,
 			NE.app_S.fMHMMListOneTime_E_X_S.enToCn,
 			NE.app_S.fMHMMListOneTime_E_X_S.fullCnToEn, "xls",
-			NE.app_S.emotionSample, NE.app_S.ratioMap_E,
-			NE.app_S.sensingTest, NE);
+			NE.app_S.emotionSample, NE.app_S.ratioMap_E, NE.app_S.sensingTest,
+			NE);
 		NE._I_U.tempString = filePathXLSX;
 		makeContainerXLS.start();
 		while (null == makeContainerXLS.jpanelSecond) {
@@ -380,8 +377,8 @@ class ShellJPanelTest {
 		Object object = new TinMap();
 		// do test
 		TinMap tinMap = (TinMap) object;
-		output = E_pl_XA_E.E_pl_XA(plSearch.replace("\r\n", ""),
-			false, tinMap, NE);// later
+		output = E_pl_XA_E.E_pl_XA(plSearch.replace("\r\n", ""), false, tinMap,
+			NE);// later
 		return output;
 
 	}
@@ -390,9 +387,9 @@ class ShellJPanelTest {
 	void testTinshell() throws InterruptedException, IOException {
 		try {
 			// test without mock api
-			S_logger.Log.logger.info("" + 
-				"test without mock api -- tinshell 批处理测试 执行复杂条件搜索逻辑"
-					+ "--我本地苹果mac上已经调通可运行。" + "方便我之后的各类型测试");
+			S_logger.Log.logger.info(""
+				+ "test without mock api -- tinshell 批处理测试 执行复杂条件搜索逻辑"
+				+ "--我本地苹果mac上已经调通可运行。" + "方便我之后的各类型测试");
 			// -1
 			// 启动测试开始
 			// 配置系统支持
@@ -407,8 +404,7 @@ class ShellJPanelTest {
 			// 确定测试文件名为药食同源的表文件，tinshell函数执行这个表的操作计算。
 			String filePathXLSX = "/Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/"
 				+ "project/TinOS/DetaResources/books/xlsx/zybgPage.xlsx";
-			String XLSTableName = initSourceXLSEnvironment(NE,
-				filePathXLSX);
+			String XLSTableName = initSourceXLSEnvironment(NE, filePathXLSX);
 			// -3
 			// init test
 			// 准备测试命令，sonar覆盖率30%，提高覆盖率方式，我的DNA元基催化与肽计算中
@@ -425,18 +421,20 @@ class ShellJPanelTest {
 				+ "对这个表的功效列进行DNN搜索含有菜谱的关键字" //human talk tvm extension
 				+ "对这个表的功效进行搜索菜谱"//human talk
 				/*
-				 * Tinshell的最大价值目前处理数据库矩阵数据全部语言化，以后处理某一个流程可以类似的
-				 * 指令集不断扩展TVM即可，举例处理烧水，只要说准备好一个烧壶，装满3分之2的纯净水，将烧壶放置
-				 * 在火架上，传感器点火，水沸腾后熄灭火，那么这个流程可以直接work。当这种语言操纵指令丰富后，
-				 * 就是一个真正的听得懂人话的机器。 我要做的就是将框架设计好，不断的翻译指令，加指令，处理指令，
-				 * 精确指令，减少误差指令，识别指令，优化指令，索引指令即可。然后这个指令集的测试函数可以序列化融合
-				 * 杂交，进行遗传进化，就可以逐渐的替代和胜任人类常用语言来描述的各种命令类的工作逻辑，减少劳动负担。。
+				 * Tinshell的最大价值目前处理数据库矩阵数据全部语言化，以后处理某一个流程
+				 * 可以类似的指令集不断扩展TVM即可，举例处理烧水，只要说准备好一个烧壶，装满
+				 * 3分之2的纯净水，将烧壶放置在火架上，传感器点火，水沸腾后熄灭火，那么这个
+				 * 流程可以直接work。当这种语言操纵指令丰富后，就是一个真正的听得懂人话的机器
+				 * 。 我要做的就是将框架设计好，不断的翻译指令，加指令，处理指令，精确指令，
+				 * 减少误差指令，识别指令，优化指令，索引指令即可。然后这个指令集的测试函数可
+				 * 以序列化融合杂交，进行遗传进化，就可以逐渐的替代和胜任人类常用语言来描述的
+				 * 各种命令类的工作逻辑，减少劳动负担。。
 				 * 
-				 * 当年因为探索永生和瞬间转移，没想到的是真正的机器人技术思维逻辑彻底被攻克了。说明机器人是
-				 * 永生和瞬间转移探索路上一个必经的中间过程。
+				 * 当年因为探索永生和瞬间转移，没想到的是真正的机器人技术思维逻辑彻底被攻克了
+				 * 。说明机器人是永生和瞬间转移探索路上一个必经的中间过程。
 				 * 
-				 * 最近一个月的研究思维就确定了。做出一个万金油框架，让用户们可以轻松自由设计指令集。脱离
-				 * 程序员的狭小区域。我觉得我先写一篇Tinshell的TVM指令设计流程。
+				 * 最近一个月的研究思维就确定了。做出一个万金油框架，让用户们可以轻松自由设计
+				 * 指令集。脱离程序员的狭小区域。我觉得我先写一篇Tinshell的TVM指令设计流程。
 				 * 
 				 * --罗瑶光
 				 * 
@@ -465,24 +463,25 @@ class ShellJPanelTest {
 			*/
 			/*
 			 * Question - relationships between TVM and Human Talk Languages HTL.
-			 * 1- a TVM command could be a HTL sentence, the relationship is a type of 
-			 * affiliation by HTL. 2- and a HTL may contains a structure of TVM, 
-			 * continue analyzing those conditions will know HTL's could be a TVM's 
-			 * but TVM's. Hens we need create a logic to connect TVM and HTL. let the 
-			 * TVM's be a type of HTL's. The name of logic is -TVM Extension-.
+			 * 1- a TVM command could be a HTL sentence, the relationship is a 
+			 * type of affiliation by HTL. 2- and a HTL may contains a structure 
+			 * of TVM, continue analyzing those conditions will know HTL's could
+			 * be a TVM's but TVM's. Hens we need create a logic to connect TVM 
+			 * and HTL. let the TVM's be a type of HTL's. The name of logic is
+			 * -TVM Extension-.
 			 * 
-			 * Continuing mind -  -TVM Extension-. At first step could swap TVM's to 
-			 * the output. Then the second step could swap similar-TVM's to TVM's. and 
-			 * finally could swap HTL's to similar-TVM's, let's do the second's now.
+			 * Continuing mind -  -TVM Extension-. At first step could swap TVM's 
+			 * to the output. Then the second step could swap similar-TVM's to 
+			 * TVM's. and finally could swap HTL's to similar-TVM's, let's do the 
+			 * second's now.
 			 * 
 			 * --Yaoguang Luo 
 			 * --Trif in English
 			 * */
-			tinshellInput = ("首先获取一个表，名叫" + XLSTableName
-				+ "，如果有就下一步;\r\n" + "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n"
-				+ "条件为:和:中药名称|包含|菜谱;\r\n" + "条件为:和:风险规避|不包含|孕;\r\n"
-				+ "条件为:和:性味|不包含|凉;\r\n" + "条件为:和:性味|不包含|咸;\r\n"
-				+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
+			tinshellInput = ("首先获取一个表，名叫" + XLSTableName + "，如果有就下一步;\r\n"
+				+ "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n" + "条件为:和:中药名称|包含|菜谱;\r\n"
+				+ "条件为:和:风险规避|不包含|孕;\r\n" + "条件为:和:性味|不包含|凉;\r\n"
+				+ "条件为:和:性味|不包含|咸;\r\n" + "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
 				//here now.
 				+ "在输出的数据表中仅展示从第零行到第3拾行的数据;"
 				+ "做一个操作将列名为中药名称的子集不能用红色来标记为输出的颜色;");
@@ -491,10 +490,10 @@ class ShellJPanelTest {
 					+ "，如果有就下一步;\r\n" + is ok for similar-TVM's extension,
 					let's continue.
 			 * */
-			tinshellInput = ("" + "首先获取一个表，名叫" + XLSTableName
-				+ "，如果有就下一步;\r\n" + "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n"
-				+ "条件为:和:中药名称|包含|菜谱;\r\n" + "条件为:和:风险规避|不包含|孕;\r\n"
-				+ "条件为:和:性味|不包含|凉;\r\n" + "条件为:和:性味|不包含|咸;\r\n"
+			tinshellInput = ("" + "首先获取一个表，名叫" + XLSTableName + "，如果有就下一步;\r\n"
+				+ "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n" + "条件为:和:中药名称|包含|菜谱;\r\n"
+				+ "条件为:和:风险规避|不包含|孕;\r\n" + "条件为:和:性味|不包含|凉;\r\n"
+				+ "条件为:和:性味|不包含|咸;\r\n"
 				//+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n" 
 				+ "输出内容仅含中药名称，打分和功效这三个列;\r\n"
 				//ok for both.
@@ -536,8 +535,8 @@ class ShellJPanelTest {
 			// 输出
 			while (iterator.hasNext()) {
 				String string = iterator.next();
-				NE.app_S.appConfig.SectionJPanel.jTextPane.setText(
-					output.get(string).toString());
+				NE.app_S.appConfig.SectionJPanel.jTextPane.setText(output.get(
+					string).toString());
 				S_logger.Log.logger.info("" + "line-->:" + output.get(string)
 					.toString());
 			}

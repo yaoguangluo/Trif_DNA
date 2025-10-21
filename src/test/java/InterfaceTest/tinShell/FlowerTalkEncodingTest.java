@@ -125,19 +125,19 @@ class FlowerTalkEncodingTest {
 		Iterator<String> iteratorsAdj = _IMV_SQI_SS_adj.keySet()
 			.iterator();
 		while (iteratorsAdj.hasNext()) {
-			System.out.print(" " + iteratorsAdj.next());
+			S_logger.Log.logger.info(" " + iteratorsAdj.next());
 		}
 		S_logger.Log.logger.info("" + "");
 		Iterator<String> iteratorsAdv = _IMV_SQI_SS_adv.keySet()
 			.iterator();
 		while (iteratorsAdv.hasNext()) {
-			System.out.print(" " + iteratorsAdv.next());
+			S_logger.Log.logger.info(" " + iteratorsAdv.next());
 		}
 		S_logger.Log.logger.info("" + "");
 		S_logger.Log.logger.info("" + "");
 		S_logger.Log.logger.info("" + "--DNN 词汇一览");
 		for (int i = 0; i < dnn.length; i++) {
-			System.out.print(" " + listDNN.get(i));
+			S_logger.Log.logger.info(" " + listDNN.get(i));
 		}
 		S_logger.Log.logger.info("" + "");
 		S_logger.Log.logger.info("" + "");
@@ -145,7 +145,7 @@ class FlowerTalkEncodingTest {
 		Iterator<String> iteratorsNoun = _IMV_SQI_SS_noun.keySet()
 			.iterator();
 		while (iteratorsNoun.hasNext()) {
-			System.out.print(" " + iteratorsNoun.next());
+			S_logger.Log.logger.info(" " + iteratorsNoun.next());
 		}
 		S_logger.Log.logger.info("" + "");
 		S_logger.Log.logger.info("" + "");
@@ -153,7 +153,7 @@ class FlowerTalkEncodingTest {
 		Iterator<String> iteratorsVerb = _IMV_SQI_SS_verb.keySet()
 			.iterator();
 		while (iteratorsVerb.hasNext()) {
-			System.out.print(" " + iteratorsVerb.next());
+			S_logger.Log.logger.info(" " + iteratorsVerb.next());
 		}
 		S_logger.Log.logger.info("" + "");
 		S_logger.Log.logger.info("" + "");

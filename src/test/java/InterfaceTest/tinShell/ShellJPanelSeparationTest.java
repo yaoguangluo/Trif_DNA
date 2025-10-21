@@ -71,10 +71,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 class ShellJPanelSeparationTest {
-	public static void main(String[] argv)
-			throws InterruptedException, IOException {
-		ShellJPanelSeparationTest shellJPanelSeparationTest 
-		= new ShellJPanelSeparationTest();
+	public static void main(String[] argv) throws InterruptedException,
+		IOException {
+		ShellJPanelSeparationTest shellJPanelSeparationTest = new ShellJPanelSeparationTest();
 		shellJPanelSeparationTest.testTinshell();
 	}
 
@@ -285,8 +284,9 @@ class ShellJPanelSeparationTest {
 	@Test
 	void testTinshell() throws InterruptedException, IOException {
 		// test without mock api
-		S_logger.Log.logger.info("" + "test without mock api -- tinshell 批处理测试 执行复杂"
-				+ "条件搜索逻辑--我本地苹果mac上已经调通可运行。方便我之后的各类型测试");
+		S_logger.Log.logger.info("" + "test without mock api -- tinshell "
+			+ "批处理测试 执行复杂条件搜索逻辑--我本地苹果mac上已经调通可运行。" 
+			+ "方便我之后的各类型测试");
 		ShellJPanelTest shellJPanelTest = new ShellJPanelTest();
 		// -1
 		// 启动测试开始
@@ -301,77 +301,75 @@ class ShellJPanelSeparationTest {
 		// 临时设置用，之后结构优化后进行去除。
 		// 确定测试文件名为药食同源的表文件，tinshell函数执行这个表的操作计算。
 		String filePathXLSX = "/Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/"
-				+ "project/TinOS/DetaResources/books/xlsx/zybgPage.xlsx";
+			+ "project/TinOS/DetaResources/books/xlsx/zybgPage.xlsx";
 		String XLSTableName = shellJPanelTest.initSourceXLSEnvironment(NE,
-				filePathXLSX);
+			filePathXLSX);
 		// init test
 		// 准备测试命令，sonar覆盖率30%，提高覆盖率方式，我的DNA元基催化与肽计算中所有的
 		// 命令都按下面方式模拟一遍就可以100%。我做的是模拟loader runner 批处理，
 		// 不是sonar体系逻辑。我写测试是满足我罗瑶光的欲望，我的欲望不会告诉大家。大家要sonar，
 		// 去100%填满mock所有单元函数即可。我的欲望是减少计算能消耗量。是不是很简单。说得好轻松一样。
-		String tinshell = ("首先获取一个表，名字是" + XLSTableName + "，如果有这个表，准备下一步选择;\r\n"
-				+ "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n" + "条件为:和:中药名称|包含|菜谱;\r\n"
-				+ "条件为:和:风险规避|不包含|孕;\r\n" + "条件为:和:性味|不包含|凉;\r\n"
-				+ "条件为:和:性味|不包含|咸;\r\n" + "获取列名:中药名称:打分:功效;\r\n");
+		String tinshell = ("首先获取一个表，名字是" + XLSTableName 
+			+ "，如果有这个表，准备下一步选择;\r\n"
+			+ "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n" + "条件为:和:中药名称|包含|菜谱;\r\n"
+			+ "条件为:和:风险规避|不包含|孕;\r\n" + "条件为:和:性味|不包含|凉;\r\n"
+			+ "条件为:和:性味|不包含|咸;\r\n" + "获取列名:中药名称:打分:功效;\r\n");
 		TinMap tinMap = execTest(tinshell, NE, null);
 		// 输出 见末尾 第一段
 		// 拆分----
 		//+ "操作:0|行至|30;\r\n" 
 		//+ "操作:中药名称|颜色标记为|红色;");
 		String tinshell2 = (""
-				/* TVM Extension 初步测试两种输出都正确 */
-				+ "输出内容仅含中药名称，打分和功效这三个列;\r\n" 
-				/*
-				 * 在优化笛卡尔关系的时候这句失效了于是开始排查，说明一个新的问题，
-				 * 我的函数没有问题排查类的系统功能测试集合。这个集合以后要有。
-				 * 文字已经有正确输出，于是调通下 TVM extension 输出的 操作:6|行至|9
-				 * 逻辑句的TVM转接执行。
-				 * 
-				 * --罗瑶光
-				 * 
-				 * */
-				//+ "操作:0|行至|3;\r\n" 
-				//+"在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
-				+ "在输出的数据表中仅展示从第陆行到第"
-				//+ "3拾"
-				+ "九"
-				+ "行的数据;"
-				+ "做一个操作将列名为中药名称的子集用红色来标记为输出的颜色;");
+			/* TVM Extension 初步测试两种输出都正确 */
+			+ "输出内容仅含中药名称，打分和功效这三个列;\r\n"
+			/*
+			 * 在优化笛卡尔关系的时候这句失效了于是开始排查，说明一个新的问题，
+			 * 我的函数没有问题排查类的系统功能测试集合。这个集合以后要有。
+			 * 文字已经有正确输出，于是调通下 TVM extension 输出的 操作:6|行至|9
+			 * 逻辑句的TVM转接执行。
+			 * 
+			 * --罗瑶光
+			 * 
+			 * */
+			//+ "操作:0|行至|3;\r\n" 
+			//+"在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
+			+ "在输出的数据表中仅展示从第陆行到第"
+			//+ "3拾"
+			+ "九" + "行的数据;" + "做一个操作将列名为中药名称的子集用红色来标记为输出的颜色;");
 		execTest(tinshell2, NE, tinMap);
 		// 输出见末尾 第二段
 		// 关闭
 		NE.stop();
 	}
-//输出正确 20250921
-//	line-->:4
-//	Action-->:updateColorAttributesOfColumnsInMemoryClass
-//	Action-->:selectRowsByAttributesOfGetCulumns
-//	Action-->:P_AggregationLimitMap
-//	Action-->:findTableInMemory
-//	Action-->:P_ListNeedStart
-//	Action-->:selectRowsByAttributesOfAggregation
-//	Action-->:P_TableName
-//	Action-->:P_fileOperations
-//	Action-->:selectRowsByAttributesOfCondition
-//	Action-->:addFindColumnsInMemoryClass	
-	
-//之前的	
-//	line-->:10
-//	line-->:success
-//	line-->:0
-//	line-->:10
-//	Action-->:updateColorAttributesOfColumnsInMemoryClass
-//	Action-->:selectRowsByAttributesOfGetCulumns
-//	Action-->:P_ListNeedStart
-//	Action-->:limitedRowAttributesOfColumnsInMemoryClass
-//	Action-->:selectRowsByAttributesOfAggregation
-//	Action-->:P_TableName
-//	Action-->:P_fileOperations
-//	Action-->:selectRowsByAttributesOfCondition
-//	Action-->:addFindColumnsInMemoryClass
+	//输出正确 20250921
+	//	line-->:4
+	//	Action-->:updateColorAttributesOfColumnsInMemoryClass
+	//	Action-->:selectRowsByAttributesOfGetCulumns
+	//	Action-->:P_AggregationLimitMap
+	//	Action-->:findTableInMemory
+	//	Action-->:P_ListNeedStart
+	//	Action-->:selectRowsByAttributesOfAggregation
+	//	Action-->:P_TableName
+	//	Action-->:P_fileOperations
+	//	Action-->:selectRowsByAttributesOfCondition
+	//	Action-->:addFindColumnsInMemoryClass	
 
-	
-//
+	//之前的	
+	//	line-->:10
+	//	line-->:success
+	//	line-->:0
+	//	line-->:10
+	//	Action-->:updateColorAttributesOfColumnsInMemoryClass
+	//	Action-->:selectRowsByAttributesOfGetCulumns
+	//	Action-->:P_ListNeedStart
+	//	Action-->:limitedRowAttributesOfColumnsInMemoryClass
+	//	Action-->:selectRowsByAttributesOfAggregation
+	//	Action-->:P_TableName
+	//	Action-->:P_fileOperations
+	//	Action-->:selectRowsByAttributesOfCondition
+	//	Action-->:addFindColumnsInMemoryClass
+
+	//
 	// 可以是其他的语言。initon talk， plorm， deta db etc。。
 	// osgi view init
 	// 命令需要的表格生成
@@ -379,7 +377,7 @@ class ShellJPanelSeparationTest {
 	// _SQ__OVQ_OSQ_VSQ.outputOut.get(S_ShellETL.SHELL_ETL_TIN_SHELL_ETL);
 	@SuppressWarnings({ "unchecked", "unused" })
 	public TinMap execTest(String tinshell, App NE, TinMap tinMap)
-			throws InterruptedException, IOException {
+		throws InterruptedException, IOException {
 		String plSearch = tinshell;
 		OSU_OVQ_OSQ_VSQ _SQ__OVQ_OSQ_VSQ = new OSU_OVQ_OSQ_VSQ();
 		Object object = new TinMap();
@@ -388,7 +386,7 @@ class ShellJPanelSeparationTest {
 			tinMap = (TinMap) object;
 		}
 		output = E_pl_XA_E.E_pl_XA(plSearch.replace("\r\n", ""), false, tinMap,
-				NE);// later
+			NE);// later
 		// print answer
 		// 打印执行后的输出表格
 		if (null == output) {
@@ -398,16 +396,17 @@ class ShellJPanelSeparationTest {
 		// 输出
 		while (iterator.hasNext()) {
 			String string = iterator.next();
-			NE.app_S.appConfig.SectionJPanel.jTextPane
-					.setText(output.get(string).toString());
-			S_logger.Log.logger.info("" + "line-->:" + output.get(string).toString());
+			NE.app_S.appConfig.SectionJPanel.jTextPane.setText(output.get(
+				string).toString());
+			S_logger.Log.logger.info("" + "line-->:" + output.get(string)
+				.toString());
 			// stringBuilder.append("/r/n" +
 			// output.get(string).toString());
 		}
 		// DNA序列记忆标注
 		if (null != NE.app_S.helpVerbalMap.didJustNow) {
 			Iterator<String> iterators = NE.app_S.helpVerbalMap.didJustNow
-					.keySet().iterator();
+				.keySet().iterator();
 			while (iterators.hasNext()) {
 				S_logger.Log.logger.info("" + "Action-->:" + iterators.next());
 			}
@@ -428,12 +427,12 @@ class ShellJPanelSeparationTest {
 //line-->:true
 //line-->:获取列名
 //line-->:0
-//line-->:[{rowValue={功效={culumnValue=功专托痘疮。下乳汁。吐风痰。中风证以虾半斤。入葱姜酱料水煮
-//。先吃虾。次吃汁。以鹅翎探引吐出痰涎即愈。能壮阳道。动风发呛。...., culumnName=功效}, 中药名称=
-//{culumnValue=虾菜谱, culumnName=中药名称},打分={culumnValue=0, culumnName=打分}}},
-//{rowValue={功效={culumnValue=功专温中益气。多食热中发渴。发疮疥。一名。鱼。....,
-//culumnName=功效}, 中药名称={culumnValue=鲢鱼菜谱, culumnName=中药名称}, 打分=
-//{culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=功专补五脏。除风湿。
+//line-->:[{rowValue={功效={culumnValue=功专托痘疮。下乳汁。吐风痰。中风证以虾半斤。入葱姜
+//酱料水煮。先吃虾。次吃汁。以鹅翎探引吐出痰涎即愈。能壮阳道。动风发呛。...., culumnName=功效}
+//, 中药名称={culumnValue=虾菜谱, culumnName=中药名称},打分={culumnValue=0
+//, culumnName=打分}}},{rowValue={功效={culumnValue=功专温中益气。多食热中发渴。发疮疥。
+//一名。鱼。....,culumnName=功效}, 中药名称={culumnValue=鲢鱼菜谱, culumnName=中药名称}, 
+//打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=功专补五脏。除风湿。
 //尾血疗口眼。斜。少和麝。左涂右。右。涂左。正则洗去。滴耳治耳痛。滴鼻治鼻衄。点目治痘后生翳。头治百
 //虫入耳。...., culumnName=功效}, 中药名称={culumnValue=鳝鱼菜谱, culumnName=中药名称},
 //打分={culumnValue=0, culumnName=打分}}}, {rowValue={功效={culumnValue=功专调胃气。....,
@@ -464,20 +463,25 @@ class ShellJPanelSeparationTest {
 //第2段
 /*
  * 
- * line-->:[{rowValue={功效={culumnValue=功专暖中益气。醒酒解渴。同米粉煮羹食。调中收痔。煮食疗阳事不起。俗名泥鳅。...., culumnName=功效}, 
- * 中药名称={culumnValue=<div style="background:black"><font color="red">鳅鱼菜谱</font></div>, culumnName=中药名称}, 
+ * line-->:[{rowValue={功效={culumnValue=功专暖中益气。醒酒解渴。同米粉煮羹食。调中收痔。
+ * 煮食疗阳事不起。俗名泥鳅。...., culumnName=功效}, 
+ * 中药名称={culumnValue=<div style="background:black"><font color="red">鳅鱼菜谱
+ * </font></div>, culumnName=中药名称}, 
  * 打分={culumnValue=0, culumnName=打分}}},
  
  *  {rowValue={功效={culumnValue=咖喱去腥开胃生津防腐杀虫提神充饥抗癌。., culumnName=功效}, 
- *  中药名称={culumnValue=<div style="background:black"><font color="red">食物咖喱菜谱</font></div>, culumnName=中药名称}, 
+ *  中药名称={culumnValue=<div style="background:black"><font color="red">食物咖喱菜谱
+ *  </font></div>, culumnName=中药名称}, 
  *  打分={culumnValue=0, culumnName=打分}}},
  
  *   {rowValue={功效={culumnValue=常用于润肺护肤抗癌。., culumnName=功效}, 
- *   中药名称={culumnValue=<div style="background:black"><font color="red">西红柿菜谱</font></div>, culumnName=中药名称}, 
+ *   中药名称={culumnValue=<div style="background:black"><font color="red">西红柿菜谱
+ *   </font></div>, culumnName=中药名称}, 
  *   打分={culumnValue=0, culumnName=打分}}}, 
  
- *   {rowValue={功效={culumnValue=蛋有消炎解毒,壮阳,补元气,提神,预防感冒。., culumnName=功效}, 
- *   中药名称={culumnValue=<div style="background:black"><font color="red">鸡鸭鸽子鹌鹑蛋菜谱</font></div>, culumnName=中药名称}, 
+ *   {rowValue={功效={culumnValue=蛋有消炎解毒,壮阳,补元气,提神,预防感冒。., culumnName
+ *   =功效}, 中药名称={culumnValue=<div style="background:black"><font color="red">
+ *   鸡鸭鸽子鹌鹑蛋菜谱</font></div>, culumnName=中药名称}, 
  *   打分={culumnValue=0, culumnName=打分}}}]
 line-->:10
 line-->:success

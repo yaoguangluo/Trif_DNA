@@ -58,10 +58,10 @@ class TSP2D_X_getYaoguangLuo2DEulerRingTSP2DTest {
 			._E(AMV_MVS_VSQs);
 		// 输出
 		for (Line2D lines2D : lines) {
-			System.out.print("x-" + lines2D.getBegin().getX() + "-y-"
+			S_logger.Log.logger.info("x-" + lines2D.getBegin().getX() + "-y-"
 				+ lines2D.getBegin().getY());
-			System.out.print("----");
-			System.out.print("x-" + lines2D.getEnd().getX() + "-y-"
+			S_logger.Log.logger.info("----");
+			S_logger.Log.logger.info("x-" + lines2D.getEnd().getX() + "-y-"
 				+ lines2D.getEnd().getY());
 			S_logger.Log.logger.info("" + "");
 		}

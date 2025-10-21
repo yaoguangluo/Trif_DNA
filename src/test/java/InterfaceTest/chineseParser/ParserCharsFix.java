@@ -25,12 +25,12 @@ import exception.file.O.DetaBufferedReader;
  * */
 
 /*
- * 关于定制map的思考并不是当前世界的所有的领域都要特意地专门地设计一些定制map来进行组词，
- * 因为定制map主要用来处理稀奇古怪的名词缩写问题。对于变化快速的街道，传媒，食品等某些
- * 领域特殊现象归纳，当这个潮流一旦过了热度没了，这些新兴名词之后也会随着时间莫名消失，
- * 添加的方式应该是首先扩充比较通用的名词词汇。所以这些定制词汇应该需要一个频率属性来
- * 统计使用次数，或者使用前和当前的官方开源词库进行比对下，如交通街道名这类全世界几百万
- * 个街道，命名毫无逻辑，想改就能改的组合街名词。过滤的价值在于提高组词识别效率。
+ * 关于定制map的思考并不是当前世界的所有的领域都要特意地专门地设计一些定制map来进行组词，因为定制
+ * map主要用来处理稀奇古怪的名词缩写问题。对于变化快速的街道，传媒，食品等某些领域特殊现象归纳，
+ * 当这个潮流一旦过了热度没了，这些新兴名词之后也会随着时间莫名消失，添加的方式应该是首先扩充比较
+ * 通用的名词词汇。所以这些定制词汇应该需要一个频率属性来统计使用次数，或者使用前和当前的官方开源
+ * 词库进行比对下，如交通街道名这类全世界几百万个街道，命名毫无逻辑，想改就能改的组合街名词。过滤
+ * 的价值在于提高组词识别效率。
  * */
 public class ParserCharsFix {
 	// 索引词汇定制map是固定变量表，可以全局static使用。
@@ -65,27 +65,24 @@ public class ParserCharsFix {
 		 * 词汇越来越多之后可以lyg文件进行文件init扩展。
 		 */
 		HashMap<String, String> militery = new HashMap<>();
-		callFastReadProjectFile(militery, "militery.lyg", NE,
-			"otherlyg", S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("" + "400-0000000001-" + militery
-			.size());
+		callFastReadProjectFile(militery, "militery.lyg", NE, "otherlyg",
+			S_Pos.UTF8_STRING, "/");
+		S_logger.Log.logger.info("" + "400-0000000001-" + militery.size());
 		environmentIndex.put("军事", militery);
 		// 还可以细化
 	}
 
-	public void callFastReadProjectFile(
-		HashMap<String, String> inputs, String fileName, App NE,
-		String category, String charSet, String lineParserSymbol)
-		throws IOException {
+	public void callFastReadProjectFile(HashMap<String, String> inputs,
+		String fileName, App NE, String category, String charSet,
+		String lineParserSymbol) throws IOException {
 		/*
 		 * 问题，当时设计读取资源函数，没有细致到设计成一种非常方便记忆的函数格式。
 		 * 导致每次使用我还要想半天这个逻辑，怎么扩展和重用。
 		 * 
 		 * --罗瑶光
 		 */
-		DetaBufferedReader cReaderp = FastReadProjectFile
-			.getDetaBufferedReader(fileName, NE.resourceTail
-				+ category + "/", charSet);
+		DetaBufferedReader cReaderp = FastReadProjectFile.getDetaBufferedReader(
+			fileName, NE.resourceTail + category + "/", charSet);
 		// index
 		String cInputStringp;
 		while ((cInputStringp = cReaderp.readDetaLine()) != null) {
@@ -104,10 +101,9 @@ public class ParserCharsFix {
 	//	meeting.put("会后", "可英文");
 	public void initMeeting(App NE) throws IOException {
 		HashMap<String, String> meeting = new HashMap<>();
-		callFastReadProjectFile(meeting, "meeting.lyg", NE,
-			"otherlyg", S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("" + "400-0000000002-" + meeting
-			.size());
+		callFastReadProjectFile(meeting, "meeting.lyg", NE, "otherlyg",
+			S_Pos.UTF8_STRING, "/");
+		S_logger.Log.logger.info("" + "400-0000000002-" + meeting.size());
 		environmentIndex.put("会议", meeting);
 
 	}
@@ -119,8 +115,7 @@ public class ParserCharsFix {
 		HashMap<String, String> nation = new HashMap<>();
 		callFastReadProjectFile(nation, "nation.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("" + "400-0000000003-" + nation
-			.size());
+		S_logger.Log.logger.info("" + "400-0000000003-" + nation.size());
 		environmentIndex.put("国家", nation);
 	}
 
@@ -131,8 +126,7 @@ public class ParserCharsFix {
 		HashMap<String, String> music = new HashMap<>();
 		callFastReadProjectFile(music, "music.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("" + "400-0000000004-" + music
-			.size());
+		S_logger.Log.logger.info("" + "400-0000000004-" + music.size());
 		environmentIndex.put("传媒", music);
 	}
 
@@ -142,8 +136,7 @@ public class ParserCharsFix {
 		HashMap<String, String> carFix = new HashMap<>();
 		callFastReadProjectFile(carFix, "carFix.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("" + "400-0000000005-" + carFix
-			.size());
+		S_logger.Log.logger.info("" + "400-0000000005-" + carFix.size());
 		environmentIndex.put("交通", carFix);
 	}
 
@@ -155,8 +148,7 @@ public class ParserCharsFix {
 		HashMap<String, String> food = new HashMap<>();
 		callFastReadProjectFile(food, "food.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("" + "400-0000000006-" + food
-			.size());
+		S_logger.Log.logger.info("" + "400-0000000006-" + food.size());
 		environmentIndex.put("食物", food);
 	}
 
@@ -166,8 +158,7 @@ public class ParserCharsFix {
 		HashMap<String, String> city = new HashMap<>();
 		callFastReadProjectFile(city, "city.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("" + "400-0000000007-" + city
-			.size());
+		S_logger.Log.logger.info("" + "400-0000000007-" + city.size());
 		environmentIndex.put("城市", city);
 	}
 
@@ -176,8 +167,7 @@ public class ParserCharsFix {
 		HashMap<String, String> street = new HashMap<>();
 		callFastReadProjectFile(street, "street.lyg", NE, "otherlyg",
 			S_Pos.UTF8_STRING, "/");
-		S_logger.Log.logger.info("" + "400-0000000008-" + street
-			.size());
+		S_logger.Log.logger.info("" + "400-0000000008-" + street.size());
 		environmentIndex.put("街道", street);
 	}
 
@@ -194,8 +184,7 @@ public class ParserCharsFix {
 	 * 
 	 * --罗瑶光
 	 */
-	public Map<String, String> getInvironment(App NE,
-		List<String> sets) {
+	public Map<String, String> getInvironment(App NE, List<String> sets) {
 		Map<String, String> invironmentMap = new HashMap<>();
 		// 稍后函数提取出来，小片段化去重。
 		// S_logger.Log.logger.info("" + "400-8-0001-001-" + sets.size());
@@ -205,18 +194,15 @@ public class ParserCharsFix {
 			.getEnvironmentInit().getEmotionSampleMap();
 		// S_logger.Log.logger.info("" + "400-8-0001-003-" +
 		// environmentSampleMap.size());
-		IMV_SQI lenovo = NE.app_S.lenovoInit.getSensingMap()
-			.getLenovoMap();
+		IMV_SQI lenovo = NE.app_S.lenovoInit.getSensingMap().getLenovoMap();
 		// reduce
 		S_logger.Log.logger.info("" + "环    境：");
-		Iterator<String> Iterator = environmentSampleMap.keySet()
-			.iterator();
+		Iterator<String> Iterator = environmentSampleMap.keySet().iterator();
 		while (Iterator.hasNext()) {
 			String word = Iterator.next();
 			// S_logger.Log.logger.info("" + "400-8-0001" + word);
 			NE.app_S.emotionSample = environmentSampleMap.get_S(word);
-			String stringDistinction = NE.app_S.emotionSample
-				.getDistinction();
+			String stringDistinction = NE.app_S.emotionSample.getDistinction();
 			// S_logger.Log.logger.info("" + "400-8-0002" + stringDistinction);
 			if (null == stringDistinction) {
 				continue;
@@ -260,8 +246,8 @@ public class ParserCharsFix {
 
 		// 获取环境的组字涉及面。
 		Map<String, String> invironmentMap = getInvironment(NE, sets);
-		Iterator<String> iteratorsInvironmentMap = invironmentMap
-			.keySet().iterator();
+		Iterator<String> iteratorsInvironmentMap = invironmentMap.keySet()
+			.iterator();
 		// 每一个环境面遍历
 		while (iteratorsInvironmentMap.hasNext()) {
 			String temp = iteratorsInvironmentMap.next();
@@ -275,8 +261,7 @@ public class ParserCharsFix {
 			for (int i = 9; i > 1; i--) {
 				if (!subSet.isEmpty()) {
 					computeSet.clear();
-					Iterator<String> iteratorsSubset = subSet
-						.iterator();
+					Iterator<String> iteratorsSubset = subSet.iterator();
 					while (iteratorsSubset.hasNext()) {
 						String string = iteratorsSubset.next();
 						// System.out.print(string + "-");
@@ -289,13 +274,11 @@ public class ParserCharsFix {
 					StringBuilder stringBuilder = new StringBuilder();
 					boolean find = false;
 					// 连字条件stringBuilder内核记录
-					for (int k = j; k < computeSet.size() && k < j
-						+ i; k++) {
+					for (int k = j; k < computeSet.size() && k < j + i; k++) {
 						if (stringBuilder.length() < i) {
-							if (stringBuilder.length() + computeSet
-								.get(k).length() < i) {
-								stringBuilder.append(computeSet.get(
-									k));
+							if (stringBuilder.length() + computeSet.get(k)
+								.length() < i) {
+								stringBuilder.append(computeSet.get(k));
 							}
 						}
 						String string = stringBuilder.toString();
@@ -304,8 +287,7 @@ public class ParserCharsFix {
 							subSet.add(string);
 							find = true;
 							// 同时原list去掉string。
-							stringBuilder.delete(0, stringBuilder
-								.length() - 1);
+							stringBuilder.delete(0, stringBuilder.length() - 1);
 							//
 							j += (k - j);
 						}

@@ -22,11 +22,12 @@ import java.util.Map;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 /*
- * 这是一个 处理处理商旅森林 isolation Forest_X_getTSPForestIsolationGroups2D 测试main函数demo
- * 的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行
- * ，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看数据，
- * 也可以用println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输入
- * 输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
+ * 这是一个 处理处理商旅森林 isolation Forest_X_getTSPForestIsolationGroups2D 测试
+ * main函数demo的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进
+ * 行复制粘贴到工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后
+ * 获取输出需要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友
+ * 好。系统需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化
+ * 的流程，方便商业化落地。
  * --罗瑶光
  * */
 @SuppressWarnings("unused")
@@ -97,8 +98,8 @@ public class DemoCoords3Test {
 	@SuppressWarnings("unchecked")
 	public static void _E(List<AMV_MVS_VSQ_2D> inputs) {
 		// 处理商旅森林 isolation
-		Map<Double, List<AMV_MVS_VSQ_2D>> output = Forest_X_getTSPForestIsolationGroups2D
-			._E(inputs, 12);
+		Map<Double, List<AMV_MVS_VSQ_2D>> output 
+		= Forest_X_getTSPForestIsolationGroups2D._E(inputs, 12);
 		Iterator<Double> iterator = output.keySet().iterator();
 		while (iterator.hasNext()) {
 			double temp = iterator.next();

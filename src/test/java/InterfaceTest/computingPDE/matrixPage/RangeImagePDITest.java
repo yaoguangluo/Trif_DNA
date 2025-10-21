@@ -50,30 +50,30 @@ class RangeImagePDITest {
 		//}
 		// 读取图片
 		//图片来自浏览器搜素 图片 关键字复制下来。
-		String pathImageIn = "/Users/luoyaoguang430181198505250014/eclipse-workspace/TRIF_DNA"
-			+ "/src/test/java/InterfaceTest/computingPDE/matrixPage/input_horri.jpg";
-		String pathImageOut = "/Users/luoyaoguang430181198505250014/eclipse-workspace/TRIF_DNA"
-			+ "/src/test/java/InterfaceTest/computingPDE/matrixPage/output_horri.jpg";
+		String pathImageIn = "/Users/luoyaoguang430181198505250014/eclipse-wo"
+			+ "rkspace/TRIF_DNA/src/test/java/InterfaceTest/computingPDE/"
+			+ "matrixPage/input_horri.jpg";
+		String pathImageOut = "/Users/luoyaoguang430181198505250014/eclipse-wo"
+			+ "rkspace/TRIF_DNA/src/test/java/InterfaceTest/computingPDE/"
+			+ "matrixPage/output_horri.jpg";
 		int[][] rp = new ReadWritePng().REDpngRead(pathImageIn);
 		int[][] gp = new ReadWritePng().GRNpngRead(pathImageIn);
 		int[][] bp = new ReadWritePng().BLUpngRead(pathImageIn);
 		//高斯平滑
-		int[][] outputr = Guassian.P_1D(rp, 15, 15, 1.7);//图片大就要大如15，只能基数设置mask，切记，
+		int[][] outputr = Guassian.P_1D(rp, 15, 15, 1.7);
+		//图片大就要大如15，只能基数设置mask，切记，
 		int[][] outputg = Guassian.P_1D(gp, 15, 15, 1.7);
 		int[][] outputb = Guassian.P_1D(bp, 15, 15, 1.7);
 		// 执行非卷积肽变换滤 255峰值 波测试
-		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputr, facy,
-			commonTestInition.NE);
-		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputg, facy,
-			commonTestInition.NE);
-		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputb, facy,
-			commonTestInition.NE);
+		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputr, facy, commonTestInition.NE);
+		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputg, facy, commonTestInition.NE);
+		RangePDI.IPE_AOPM_VECS_IDUQ_TXH_AC(outputb, facy, commonTestInition.NE);
 		// 输出
 		// 输出图片
 		//Image_ESU_X_imageToFile 稍后 单元测试 会挨个覆盖率测试
 		//Image_ESU_X_bufferedImageToFile 稍后挨个测试
-		Image_ESU_X_pixRGBTableToFile._E(pathImageOut, outputr,
-			outputg, outputb, "png");
+		Image_ESU_X_pixRGBTableToFile._E(pathImageOut, outputr, outputg,
+			outputb, "png");
 		/*
 		 * 从输出的结果可以清晰地看到图片的白色区域有色素波动，黑色属于纯黑，所以没有区间拉值。
 		 * 这种观测适用于海拔，皮肤，不明显特征团

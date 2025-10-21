@@ -28,7 +28,8 @@ import java.util.ArrayList;
 class Sample_X_I_MapAddPluginTest {
 	public static void main(String[] argv)
 		throws InterruptedException, IOException {
-		Sample_X_I_MapAddPluginTest sample_X_I_MapAddPluginTest = new Sample_X_I_MapAddPluginTest();
+		Sample_X_I_MapAddPluginTest sample_X_I_MapAddPluginTest 
+		= new Sample_X_I_MapAddPluginTest();
 		sample_X_I_MapAddPluginTest._E();
 	}
 

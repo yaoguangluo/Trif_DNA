@@ -22,9 +22,9 @@ import java.util.List;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 class StaticFunctionMapQ_VECS_ETest {
-	public static void main(String[] argv)
-		throws InterruptedException {
-		StaticFunctionMapQ_VECS_ETest staticFunctionMapQ_VECS_ETest = new StaticFunctionMapQ_VECS_ETest();
+	public static void main(String[] argv) throws InterruptedException {
+		StaticFunctionMapQ_VECS_ETest staticFunctionMapQ_VECS_ETest 
+		= new StaticFunctionMapQ_VECS_ETest();
 		staticFunctionMapQ_VECS_ETest.main();
 	}
 
@@ -41,8 +41,8 @@ class StaticFunctionMapQ_VECS_ETest {
 	 * api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，
 	 * 即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以
 	 * 用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。系统需要jdk1.8
-	 * 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
-	 * 注意搜索前滤掉一些符号和字母特殊标记等，增加中文行搜索的精确度 --罗瑶光
+	 * 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，方便商业
+	 * 化落地。注意搜索前滤掉一些符号和字母特殊标记等，增加中文行搜索的精确度 --罗瑶光
 	 */
 	@SuppressWarnings({ "unchecked", "unused" })
 	@Test
@@ -96,8 +96,8 @@ class StaticFunctionMapQ_VECS_ETest {
 		commonTestInition.NE._I_U.lookrot = lookrot;
 		commonTestInition.NE._I_U._AE = _AE;
 
-		outputList = new StaticFunctionMapQ_VECS_E()
-			.searchFromTablewithScale(commonTestInition.NE, 0, false);
+		outputList = new StaticFunctionMapQ_VECS_E().searchFromTablewithScale(
+			commonTestInition.NE, 0, false);
 		iterator = outputList.iterator();
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();
@@ -113,8 +113,8 @@ class StaticFunctionMapQ_VECS_ETest {
 		commonTestInition.NE._I_U.textContent = textContent;
 		commonTestInition.NE._I_U.lookrot = lookrot;
 		commonTestInition.NE._I_U._AE = _AE;
-		outputList = new StaticFunctionMapQ_VECS_E()
-			.searchFromTablewithScale(commonTestInition.NE, 0, false);
+		outputList = new StaticFunctionMapQ_VECS_E().searchFromTablewithScale(
+			commonTestInition.NE, 0, false);
 		iterator = outputList.iterator();
 		while (iterator.hasNext()) {
 			Object[] object = iterator.next();

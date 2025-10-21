@@ -51,7 +51,8 @@ class SortFlowerTalkTest {
 		CommonTestInition commonTestInition = new CommonTestInition();
 		commonTestInition.initEnvironment("去弹窗组件流测试");
 		// 优化后 索引变化了。
-		commonTestInition.NE._I_U._AE = (CogsBinaryForest_AE) commonTestInition.NE.app_S._AE;
+		commonTestInition.NE._I_U._AE 
+		= (CogsBinaryForest_AE) commonTestInition.NE.app_S._AE;
 		// 计算搜索
 		// 配置环境，
 		String[] argv = commonTestInition.NE._I_U.argv;
@@ -61,22 +62,22 @@ class SortFlowerTalkTest {
 		// 拿出FlowerSixDomainActions 的 string key
 		// 初始化 花语函数表
 		// initon plugin types without OSGI
-		S_logger.Log.logger.info("" + "FlowerSixDomainActions 元基花自主添加六元催化函数注册");
+		S_logger.Log.logger.info("FlowerSixDomainActions 元基花自主添加六元催化函数注册");
 		CreativeVerbalMap.initInitonActions(commonTestInition.NE);
 		//
-		S_logger.Log.logger.info("" + "initonDelegate 元基花触发词汇添加");
+		S_logger.Log.logger.info("initonDelegate 元基花触发词汇添加");
 		commonTestInition.NE.app_S.studyVerbalMap.initInitonDelegate();
 		//
-		S_logger.Log.logger.info("" + "FlowerP_E_KernelActions 元基花脚本函数注册");
+		S_logger.Log.logger.info("FlowerP_E_KernelActions 元基花脚本函数注册");
 		commonTestInition.NE.app_S.flowerAction
 			.initFlowerP_E_KernelActions();
 		//
-		S_logger.Log.logger.info("" + 
-			"FlowerSixDomainActions 德塔PLSQL数据库ORM函数注册");
+		S_logger.Log.logger.info("FlowerSixDomainActions 德塔PLSQL数据库ORM函数注册");
 		commonTestInition.NE.app_S.flowerAction
 			.initFlowerSixDomainActions();
 		// 输出 linkedHashMap
-		IMV_SQI textContent = commonTestInition.NE.app_S.flowerAction.FlowerSixDomainActions;
+		IMV_SQI textContent 
+		= commonTestInition.NE.app_S.flowerAction.FlowerSixDomainActions;
 
 		// 设置输入待搜索列表，
 		Iterator<String> iterators = textContent.keySet().iterator();

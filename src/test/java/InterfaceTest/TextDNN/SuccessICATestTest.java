@@ -52,7 +52,7 @@ class SuccessICATestTest {
 		successICATest.IQ_KernelCNN(kernel);
 		for (int i = 0; i < successICATest.kernelCNN.length; i++) {
 			for (int j = 0; j < successICATest.kernelCNN[0].length; j++) {
-				System.out.print(successICATest.kernelCNN[i][j]
+				S_logger.Log.logger.info(successICATest.kernelCNN[i][j]
 					+ " ");
 			}
 			S_logger.Log.logger.info("" + "");

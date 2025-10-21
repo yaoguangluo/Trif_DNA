@@ -13,11 +13,12 @@ import S_logger.Log;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 /*
- * 这是一个 用于数值特征在指定区间中的比例拉扯提高特征鲜艳度，如图片渲染 测试main函数demo的test版本，
- * 在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到工程中，直接运行，即可出结果
- * ，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需要的结果，可以用断点来查看数据，也可以用
- * println来显示输出，方便集成，对程序员友好。系统需要jdk1.8 以上的java环境，本人会把测试的输入输出
- * 都注释在这个文件里。及其傻瓜化的流程，方便商业化落地。
+ * 这是一个 用于数值特征在指定区间中的比例拉扯提高特征鲜艳度，如图片渲染 测试main函数demo
+ * 的test版本，在导入了api之后进行系统集成，然后用下面的对应的函数中源码逻辑进行复制粘贴到
+ * 工程中，直接运行，即可出结果，源码的逻辑按照输入准备计算的参数，然后执行，然后获取输出需
+ * 要的结果，可以用断点来查看数据，也可以用println来显示输出，方便集成，对程序员友好。系统
+ * 需要jdk1.8 以上的java环境，本人会把测试的输入输出都注释在这个文件里。及其傻瓜化的流程，
+ * 方便商业化落地。
  * --罗瑶光
  * */
 class StrechTest {
@@ -43,7 +44,7 @@ class StrechTest {
 		}
 		for (int i = 0; i < 16; i++) {
 			for (int j = 0; j < 16; j++) {
-				System.out.print("-" + input[i][j]);
+				S_logger.Log.logger.info("-" + input[i][j]);
 			}
 			S_logger.Log.logger.info("" + "");
 		}
@@ -54,7 +55,7 @@ class StrechTest {
 		//output
 		for (int i = 0; i < 16; i++) {
 			for (int j = 0; j < 16; j++) {
-				System.out.print("-" + output[i][j]);
+				S_logger.Log.logger.info("-" + output[i][j]);
 			}
 			S_logger.Log.logger.info("" + "");
 		}

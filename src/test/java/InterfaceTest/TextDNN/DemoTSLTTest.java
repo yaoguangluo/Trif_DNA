@@ -63,9 +63,9 @@ class DemoTSLTTest {
 		S_logger.Log.logger.info("" + ch);
 
 		for (int i = 0; i < verbals.size(); i++) {
-			System.out.print(verbals.get(i).getChinese());
-			System.out.print(verbals.get(i).getEnglish());
-			System.out.print(verbals.get(i).getExplain());
+			S_logger.Log.logger.info(verbals.get(i).getChinese());
+			S_logger.Log.logger.info(verbals.get(i).getEnglish());
+			S_logger.Log.logger.info(verbals.get(i).getExplain());
 			S_logger.Log.logger.info("" + verbals.get(i).getPartOfSpeech());
 		}
 		List<Verbal> verbalsFix = ts.fixPos(verbals);
@@ -76,16 +76,16 @@ class DemoTSLTTest {
 		S_logger.Log.logger.info("" + en);
 
 		for (int i = 0; i < verbalsFix.size(); i++) {
-			System.out.print(verbalsFix.get(i).getChinese());
-			System.out.print(verbalsFix.get(i).getEnglish());
-			System.out.print(verbalsFix.get(i).getExplain());
+			S_logger.Log.logger.info(verbalsFix.get(i).getChinese());
+			S_logger.Log.logger.info(verbalsFix.get(i).getEnglish());
+			S_logger.Log.logger.info(verbalsFix.get(i).getExplain());
 			S_logger.Log.logger.info("" + verbalsFix.get(i).getPartOfSpeech());
 		}
 
 		S_logger.Log.logger.info("" + "");
 		S_logger.Log.logger.info("" + "中文解释");
 		for (int i = 0; i < verbals.size(); i++) {
-			System.out.print(verbals.get(i).getExplain() == null
+			S_logger.Log.logger.info(verbals.get(i).getExplain() == null
 				? verbals.get(i).getChinese()
 				: verbals.get(i).getExplain());
 		}

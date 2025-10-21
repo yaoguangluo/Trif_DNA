@@ -31,8 +31,8 @@ class LYGAFDCTDFFT_FTest {
 	 */
 	@Test
 	void all() {
-		S_logger.Log.logger.info("" + "罗瑶光时微分 时叠积 函数 在 主流滤波中 的 观测和优化 内积噪"
-			+ " 方式 真实应用方式");
+		S_logger.Log.logger.info("" + "罗瑶光时微分 时叠积 函数 在 主流滤波中 的 "
+			+ "观测和优化 内积噪 方式 真实应用方式");
 		// 罗瑶光个人著作权文件 时量子解析公式
 		// |tero(x)>+|tcol(x)> = (deta[t0-t1]/deta1(t0-t1)) * (m/p)= 1;
 		// 时量子解析公式 跟进解析推导 <76页纸 时流噪公式 N = e ** (i * Pi) +-
@@ -76,42 +76,42 @@ class LYGAFDCTDFFT_FTest {
 		// 输出
 		S_logger.Log.logger.info("" + "--input");
 		for (int i = 0; i < 32; i++) {
-			System.out.print("--" + input[i]);
+			S_logger.Log.logger.info("--" + input[i]);
 		}
 		S_logger.Log.logger.info("" + "--");
 		S_logger.Log.logger.info("" + "--虚构空间变换");
 		for (int i = 0; i < 32; i++) {
-			System.out.print("--" + fit[i]);
+			S_logger.Log.logger.info("--" + fit[i]);
 		}
 		S_logger.Log.logger.info("" + "--");
 		S_logger.Log.logger.info("" + "--虚构时能");
 		for (int i = 0; i < 32; i++) {
-			System.out.print("--" + ffn[i]);
+			S_logger.Log.logger.info("--" + ffn[i]);
 		}
 		S_logger.Log.logger.info("" + "--");
 		S_logger.Log.logger.info("" + "--虚度时能");
 		for (int i = 0; i < 32; i++) {
-			System.out.print("--" + flt[i]);
+			S_logger.Log.logger.info("--" + flt[i]);
 		}
 		S_logger.Log.logger.info("" + "--");
 		S_logger.Log.logger.info("" + "--薛定谔虚度漂移");
 		for (int i = 0; i < 32; i++) {
-			System.out.print("--" + fxet[i]);
+			S_logger.Log.logger.info("--" + fxet[i]);
 		}
 		S_logger.Log.logger.info("" + "--");
 		S_logger.Log.logger.info("" + "--时函数");
 		for (int i = 0; i < 32; i++) {
-			System.out.print("--" + ffl[i]);
+			S_logger.Log.logger.info("--" + ffl[i]);
 		}
 		S_logger.Log.logger.info("" + "--");
 		S_logger.Log.logger.info("" + "--时函数 虚度分解A");
 		for (int i = 0; i < 32; i++) {
-			System.out.print("--" + fflA[i]);
+			S_logger.Log.logger.info("--" + fflA[i]);
 		}
 		S_logger.Log.logger.info("" + "--");
 		S_logger.Log.logger.info("" + "--时函数 虚度分解BI");
 		for (int i = 0; i < 32; i++) {
-			System.out.print("--" + fflBI[i]);
+			S_logger.Log.logger.info("--" + fflBI[i]);
 		}
 	}
 

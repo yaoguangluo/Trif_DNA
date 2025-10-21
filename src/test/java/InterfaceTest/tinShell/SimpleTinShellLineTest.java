@@ -27,22 +27,22 @@ public class SimpleTinShellLineTest {
 	 * 另外我的电脑拼音输入法 竟然就没有这个 -关闭词汇提示靠前的功能- 的选项，真够坑爹
 	 * ，稍微一打快点文字，就会出错。。想起初中语法错误。神操作。
 	 */
-	public static void main(String[] argv)
-		throws InterruptedException, IOException {
-		ShellJPanelSeparationTest shellJPanelSeparationTest = new ShellJPanelSeparationTest();
+	public static void main(String[] argv) throws InterruptedException,
+		IOException {
+		ShellJPanelSeparationTest shellJPanelSeparationTest 
+		= new ShellJPanelSeparationTest();
 		SimpleTinShellLineTest simpleTinShellLineTest = new SimpleTinShellLineTest();
-		simpleTinShellLineTest.testTinshell(
-			shellJPanelSeparationTest);
+		simpleTinShellLineTest.testTinshell(shellJPanelSeparationTest);
 	}
 
 	@SuppressWarnings("unused")
 	public void testTinshell(
-		ShellJPanelSeparationTest shellJPanelSeparationTest)
-		throws IOException, InterruptedException {
+		ShellJPanelSeparationTest shellJPanelSeparationTest) throws IOException,
+		InterruptedException {
 		// test without mock api
-		S_logger.Log.logger.info("" + 
-			"test without mock api -- tinshell 批处理测试 执行复杂"
-				+ "条件搜索逻辑--我本地苹果mac上已经调通可运行。方便我之后的各类型测试");
+		S_logger.Log.logger.info(""
+			+ "test without mock api -- tinshell 批处理测试 执行复杂"
+			+ "条件搜索逻辑--我本地苹果mac上已经调通可运行。方便我之后的各类型测试");
 		ShellJPanelTest shellJPanelTest = new ShellJPanelTest();
 		// -1
 		// 启动测试开始
@@ -54,8 +54,8 @@ public class SimpleTinShellLineTest {
 		// -2
 		String filePathXLSX = "/Users/luoyaoguang430181198505250014/Desktop/YLJHRJ/"
 			+ "project/TinOS/DetaResources/books/xlsx/zybgPage.xlsx";
-		String XLSTableName = shellJPanelTest
-			.initSourceXLSEnvironment(NE, filePathXLSX);
+		String XLSTableName = shellJPanelTest.initSourceXLSEnvironment(NE,
+			filePathXLSX);
 		/*
 		 * 稍后准备对"条件为:和:笔记原文|DNN搜索|功效|菜谱|4;\r\n"  进行TVM 执行前 语言指令
 		 * 句翻译。这句的逻辑翻译处理笛卡尔关系是比较简单的，因为出现了 -DNN搜索- 这种明确的
@@ -69,7 +69,8 @@ public class SimpleTinShellLineTest {
 		 * 3 -这个推荐需要符合某种逻辑条件集合，是一个综合打分的决策树的输出逻辑，
 		 * 
 		 * 稍后可以初步设计下这个函数。最近我游戏账号因为总是卡掉线，莫名进入了放逐之地，需要3把
-		 * 匹配半天不见人，搞得我本来就无聊的一天 莫名又多了6个小时，咋办？ 做人不能老对着电脑写代码吧。
+		 * 匹配半天不见人，搞得我本来就无聊的一天 莫名又多了6个小时，咋办？ 做人不能老对着电脑
+		 * 写代码吧。
 		 * 
 		 * --罗瑶光
 		 * */
@@ -84,8 +85,7 @@ public class SimpleTinShellLineTest {
 			+ "在输出的数据表中仅展示列名为中药名称，打分和功效列这三个即可;\r\n"
 			+ "在输出的数据表中仅展示从第零行到第壹行的数据;");
 
-		TinMap tinMap = shellJPanelSeparationTest.execTest(tinshell,
-			NE, null);
+		TinMap tinMap = shellJPanelSeparationTest.execTest(tinshell, NE, null);
 		// 输出见末尾 第二段
 		// 关闭
 		NE.stop();

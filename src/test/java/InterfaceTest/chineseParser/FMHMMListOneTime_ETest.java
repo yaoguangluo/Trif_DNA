@@ -26,8 +26,7 @@ import org.junit.jupiter.api.Test;
  * */
 class FMHMMListOneTime_ETest {
 	public static void main(String[] argv) {
-		FMHMMListOneTime_ETest MHMMListOneTime_ETest 
-		= new FMHMMListOneTime_ETest();
+		FMHMMListOneTime_ETest MHMMListOneTime_ETest = new FMHMMListOneTime_ETest();
 		MHMMListOneTime_ETest.doTest();
 	}
 
@@ -100,8 +99,8 @@ class FMHMMListOneTime_ETest {
 		S_logger.Log.logger.info("" + "--------头--------");
 		S_logger.Log.logger.info("" + "头-中英对照-->" + chineseToEnglish.getString(
 			"标本"));
-		S_logger.Log.logger.info("" + "头-繁体对照-->" + chineseToTradition.getString(
-			"标本"));
+		S_logger.Log.logger.info("" + "头-繁体对照-->" + chineseToTradition
+			.getString("标本"));
 		S_logger.Log.logger.info("" + "头-中韩对照-->" + chineseToKorean.getString(
 			"标本"));
 		S_logger.Log.logger.info("" + "头-中日对照-->" + chineseToJapanese.getString(
@@ -120,8 +119,8 @@ class FMHMMListOneTime_ETest {
 		//立足
 		S_logger.Log.logger.info("" + "中-中英对照-->" + chineseToEnglish.getString(
 			"立足"));
-		S_logger.Log.logger.info("" + "中-繁体对照-->" + chineseToTradition.getString(
-			"立足"));
+		S_logger.Log.logger.info("" + "中-繁体对照-->" + chineseToTradition
+			.getString("立足"));
 		S_logger.Log.logger.info("" + "中-中韩对照-->" + chineseToKorean.getString(
 			"立足"));
 		S_logger.Log.logger.info("" + "中-中日对照-->" + chineseToJapanese.getString(
@@ -138,8 +137,8 @@ class FMHMMListOneTime_ETest {
 			"立足"));
 		S_logger.Log.logger.info("" + "--------尾--------");
 		//羌活
-		S_logger.Log.logger.info("" + "尾-中英对照总数-->" + chineseToEnglish.getString(
-			"羌活"));
+		S_logger.Log.logger.info("" + "尾-中英对照总数-->" + chineseToEnglish
+			.getString("羌活"));
 		S_logger.Log.logger.info("" + "尾-中繁体字对照-->" + chineseToTradition
 			.getString("羌活"));
 		S_logger.Log.logger.info("" + "尾-中韩对照总数-->" + chineseToKorean.getString(
@@ -148,10 +147,10 @@ class FMHMMListOneTime_ETest {
 			.getString("羌活"));
 		S_logger.Log.logger.info("" + "尾-中法对照总数-->" + chineseToFrench.getString(
 			"羌活"));
-		S_logger.Log.logger.info("" + "尾-中西对照总数-->" + chineseToSpanish.getString(
-			"羌活"));
-		S_logger.Log.logger.info("" + "尾-中俄对照总数-->" + chineseToRussian.getString(
-			"羌活"));
+		S_logger.Log.logger.info("" + "尾-中西对照总数-->" + chineseToSpanish
+			.getString("羌活"));
+		S_logger.Log.logger.info("" + "尾-中俄对照总数-->" + chineseToRussian
+			.getString("羌活"));
 		S_logger.Log.logger.info("" + "尾-中德对照总数-->" + chineseToGerman.getString(
 			"羌活"));
 		S_logger.Log.logger.info("" + "尾-中阿对照总数-->" + chineseToArabic.getString(
@@ -180,14 +179,17 @@ class FMHMMListOneTime_ETest {
 		S_logger.Log.logger.info("" + "乱码-连词总数-->" + S_Maps.lianCi.get("假如"));
 		S_logger.Log.logger.info("" + "乱码-量词总数-->" + S_Maps.liangCi.get("吨"));
 		S_logger.Log.logger.info("" + "乱码-名词总数-->" + S_Maps.mingCi.get("酒桶"));
-		S_logger.Log.logger.info("" + "乱码-情态总数-->" + S_Maps.qingTaiCi.get("应该"));
-		S_logger.Log.logger.info("" + "乱码-省略总数-->" + S_Maps.shengLueCi.get("等"));
+		S_logger.Log.logger.info("" + "乱码-情态总数-->" + S_Maps.qingTaiCi.get(
+			"应该"));
+		S_logger.Log.logger.info("" + "乱码-省略总数-->" + S_Maps.shengLueCi.get(
+			"等"));
 		S_logger.Log.logger.info("" + "乱码-时态总数-->" + S_Maps.shiTaiCi.get("以前"));
 		S_logger.Log.logger.info("" + "乱码-限定总数-->" + S_Maps.xianDingCi.get(
 			"任何"));
 		S_logger.Log.logger.info("" + "乱码-形容总数-->" + S_Maps.xingRongCi.get(
 			"重大"));
-		S_logger.Log.logger.info("" + "乱码-形谓总数-->" + S_Maps.xingWeiCi.get("美丽"));
+		S_logger.Log.logger.info("" + "乱码-形谓总数-->" + S_Maps.xingWeiCi.get(
+			"美丽"));
 		S_logger.Log.logger.info("" + "乱码-助词总数-->" + S_Maps.zhuCi.get("呵"));
 		// 6 词库表分隔符错误等检查
 		// 7 等。。以后添加
@@ -207,9 +209,9 @@ class FMHMMListOneTime_ETest {
 	}
 }
 //当前输出 202508070504
-//从数据上看我的词库很多'未知'词汇，而且没有拼写语法校正，一些总数还很少，而且还不 balancing 说明分词算法还
-//可以更快。从分词的 POS 匹配的map看，里面包含有8国语言词汇，如在导入词汇时候就全部剔除掉，只做纯中文的文本
-//分词该分词测试速度要翻8倍。
+//从数据上看我的词库很多'未知'词汇，而且没有拼写语法校正，一些总数还很少，而且还不 balancing 
+//说明分词算法还可以更快。从分词的 POS 匹配的map看，里面包含有8国语言词汇，如在导入词汇时候就
+//全部剔除掉，只做纯中文的文本分词该分词测试速度要翻8倍。
 //Connected to the target VM, address: '127.0.0.1:54570', transport: 'socket'
 //--------词性类词库--------
 //把动词总数-->8

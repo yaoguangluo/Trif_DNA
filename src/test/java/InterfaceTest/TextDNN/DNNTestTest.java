@@ -46,12 +46,12 @@ class DNNTestTest {
 			commonTestInition.NE);
 		for (int i = 0; i < dnn.length; i++) {
 			double dnn_lwa = DetaDouble.parseDouble(dnn[i][3]);
-			System.out.print(ann[i][0] + ":");
-			System.out.print(ann[i][1] + ":");
-			System.out.print(ann[i][2] + ":");
-			System.out.print(ann[i][3] + ":");
-			System.out.print(dnn[i][0] + ":");
-			System.out.print(dnn[i][3] + ":");
+			S_logger.Log.logger.info(ann[i][0] + ":");
+			S_logger.Log.logger.info(ann[i][1] + ":");
+			S_logger.Log.logger.info(ann[i][2] + ":");
+			S_logger.Log.logger.info(ann[i][3] + ":");
+			S_logger.Log.logger.info(dnn[i][0] + ":");
+			S_logger.Log.logger.info(dnn[i][3] + ":");
 			S_logger.Log.logger.info("" + "");
 		}
 		// output

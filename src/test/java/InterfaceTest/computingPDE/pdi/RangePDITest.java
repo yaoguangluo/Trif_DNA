@@ -2,8 +2,6 @@ package test.java.InterfaceTest.computingPDE.pdi;
 
 import org.junit.jupiter.api.Test;
 
-import S_logger.Log;
-
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -56,8 +54,10 @@ class RangePDITest {
 	void doACAK() {
 		//初始化
 		String inputInitons = "EDVSDTUVSVSE";
-		String stringAK; //碱变换 意思是 碱性元基改变 在某种浓度下变成酸 或者 碱衍生 物质，本函数不讨论。
-		String stringAC; //酸变换 意思是 酸性元基改变 在某种浓度下变成碱 或者 酸衍生 物质，本函数不讨论。
+		String stringAK;
+		//碱变换 意思是 碱性元基改变 在某种浓度下变成酸 或者 碱衍生 物质，本函数不讨论。
+		String stringAC;
+		//酸变换 意思是 酸性元基改变 在某种浓度下变成碱 或者 酸衍生 物质，本函数不讨论。
 		StringBuilder swapKeyAK = new StringBuilder();
 		StringBuilder swapKeyAC = new StringBuilder();
 		//int range = 100;
@@ -99,36 +99,35 @@ class RangePDITest {
 		S_logger.Log.logger.info("" + "强碱浓度下PDE变换->" + stringAC);
 		S_logger.Log.logger.info("" + "强碱浓度下改变概率->" + new String(swapKeyAC));
 		S_logger.Log.logger.info("" + "");
-		//输出
-		//Connected to the target VM, address: '127.0.0.1:54924', transport: 'socket'
-		//输入的十六元基字符->EDVSDTUVSVSE
-		//浓度比值99:1
-		//强酸浓度下PDE变换->EICEIPQCECEE
-		//强酸浓度下改变概率->011111111110
-		//强碱浓度下PDE变换->SDVSDAUVSVSS
-		//强碱浓度下改变概率->100001000001
-		//
-		//输入的十六元基字符->EDVSDTUVSVSE
-		//浓度比值75:25
-		//强酸浓度下PDE变换->EICEDPQVSVES
-		//强酸浓度下改变概率->011101100011
-		//强碱浓度下PDE变换->SDVSIAUVSVSS
-		//强碱浓度下改变概率->100011000001
-		//
-		//输入的十六元基字符->EDVSDTUVSVSE
-		//浓度比值55:45
-		//强酸浓度下PDE变换->SIVEIAQVEVSS
-		//强酸浓度下改变概率->110111101001
-		//强碱浓度下PDE变换->SICSIAUCSVSS
-		//强碱浓度下改变概率->111011010001
-		//
-		//Disconnected from the target VM, address: '127.0.0.1:54924', transport: 'socket'
-		//
-		//Process finished with exit code 0
 	}
+	//输出
+	//Connected to the target VM, address: '127.0.0.1:54924', transport: 'socket'
+	//输入的十六元基字符->EDVSDTUVSVSE
+	//浓度比值99:1
+	//强酸浓度下PDE变换->EICEIPQCECEE
+	//强酸浓度下改变概率->011111111110
+	//强碱浓度下PDE变换->SDVSDAUVSVSS
+	//强碱浓度下改变概率->100001000001
+	//
+	//输入的十六元基字符->EDVSDTUVSVSE
+	//浓度比值75:25
+	//强酸浓度下PDE变换->EICEDPQVSVES
+	//强酸浓度下改变概率->011101100011
+	//强碱浓度下PDE变换->SDVSIAUVSVSS
+	//强碱浓度下改变概率->100011000001
+	//
+	//输入的十六元基字符->EDVSDTUVSVSE
+	//浓度比值55:45
+	//强酸浓度下PDE变换->SIVEIAQVEVSS
+	//强酸浓度下改变概率->110111101001
+	//强碱浓度下PDE变换->SICSIAUCSVSS
+	//强碱浓度下改变概率->111011010001
+	//
+	//Disconnected from the target VM, address: '127.0.0.1:54924', transport: 'socket'
+	//
+	//Process finished with exit code 0
 
-	String doAKACSwap(String input, int range,
-		StringBuilder swapKey) {
+	String doAKACSwap(String input, int range, StringBuilder swapKey) {
 		String output = input.toString();
 		char[] OIQ = new char[output.length()];
 		for (int k = 0; k < input.length(); k++) {
@@ -147,9 +146,10 @@ class RangePDITest {
 	//O= E + S, 酸= E + E= E,  碱= V + S= A
 	//P= E + C, 酸= E + C= P,  碱= S + V= A
 	//M= C + S, 酸= C + E= P,  碱= V + S= A
-	//F= E+  C + S, 酸= H,  碱= V //这里F有问题，我是最简化，别被我误导。面对其他工程，可酌情修改。
-	public static char doACAK(String IDUQ, int k, double tempRandom,
-		int VECS, StringBuilder swapKey) {
+	//F= E+  C + S, 酸= H,  碱= V 
+	//这里F有问题，我是最简化，别被我误导。面对其他工程，可酌情修改。
+	public static char doACAK(String IDUQ, int k, double tempRandom, int VECS,
+		StringBuilder swapKey) {
 		if (IDUQ.charAt(k) == 'T') {//新增 --page204
 			if (tempRandom < VECS) {
 				swapKey.append(1);

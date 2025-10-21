@@ -42,7 +42,7 @@ class RNN_IDETestTest {
 		// output
 		for (int i = 0; i < strings.length; i++) {
 			for (int j = 0; j < strings[0].length; j++) {
-				System.out.print("-" + strings[i][j]);
+				S_logger.Log.logger.info("-" + strings[i][j]);
 			}
 			S_logger.Log.logger.info("" + "-");
 		}
