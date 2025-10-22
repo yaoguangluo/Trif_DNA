@@ -418,8 +418,8 @@ class ShellJPanelTest {
 				+ "，如果有这个表，准备下一步选择;\r\n"
 
 				+ "条件为:和:功效|DNN搜索|功效|菜谱|4;\r\n" //tvm
-				+ "对这个表的功效列进行DNN搜索含有菜谱的关键字" //human talk tvm extension
-				+ "对这个表的功效进行搜索菜谱"//human talk
+				//+ "对这个表的功效列进行DNN搜索含有菜谱的关键字" //human talk tvm extension
+				//+ "对这个表的功效进行搜索菜谱"//human talk
 				/*
 				 * Tinshell的最大价值目前处理数据库矩阵数据全部语言化，以后处理某一个流程
 				 * 可以类似的指令集不断扩展TVM即可，举例处理烧水，只要说准备好一个烧壶，装满
@@ -797,3 +797,5 @@ class ShellJPanelTest {
 //Action-->:addFindColumnsInMemoryClass
 //DNA执行统计标注
 //DNA新陈代谢标注
+
+

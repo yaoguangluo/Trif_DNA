@@ -236,6 +236,10 @@ public class WorkVerbalMap_X_S {
 							if (!root.contains(" ")) {
 								command_V.cartesianWorkActionsRightsSV
 									.put(root, right);
+								command_V.cartesianWorkActionsRightsParserSV.put(
+									stringNoun + "+", right);
+								command_V.cartesianWorkActionsRightsParserSV.put(
+									"+" + stringVerb, right);
 							}
 						}
 					}
@@ -267,6 +271,10 @@ public class WorkVerbalMap_X_S {
 							if (!root.contains(" ")) {
 								command_V.cartesianWorkActionsRightsVO
 									.put(root, right);
+								command_V.cartesianWorkActionsRightsParserVO.put(
+									stringVerb + "-", right);
+								command_V.cartesianWorkActionsRightsParserVO.put(
+									"-" + stringNoun, right);
 							}
 						}
 					}
