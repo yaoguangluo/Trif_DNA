@@ -33,6 +33,7 @@ public class Erosion{
 			}
 		}	
 	}
+	//Reflection的4句是Reinhart课后给我们的源码。
 	public int[][] P(int[][] g, int[][] kenel) {
 		int thisw=g.length;
 		int thish=g[0].length;
