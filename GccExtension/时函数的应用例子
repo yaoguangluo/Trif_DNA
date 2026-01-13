@@ -15,7 +15,7 @@
      * */
     int n1 = input.length;
     int rot1 = 1;
-    while(n/2 > 1) {
+    while(n1/2 > 1) {
     	double Qk = rot1 * 2 * pi / n1;//log2
     	int currentLength = n1/2;
 	    double currentC = Math.cos(Qk);
