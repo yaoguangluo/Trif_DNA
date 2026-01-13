@@ -33,3 +33,37 @@
     for(int i = 0; i < input.length; i++) {
     	System.out.println(output[i]));
     }
+
+
+冒似上面熵化时函数一些价值可取，于是进行完整FFT的时函数关于叠熵进行虚数导积偏微分归纳
+
+ //开始全局进行对数 所有 集合类分支进行总 熵化
+            float[] fxet = new float[bili0.length];
+            int size = bili0.length;//bili是比例 拼音
+            int log = 2; 
+            int rot = 1;
+            float pi = (float) 3.1415926;
+            //log - section - loop
+            while(log < size) {
+            	double Qk = rot * 2 * pi / log;//log2
+            	double currentC = Math.cos(Qk);
+            	double currentQic = Math.cos(Qk);
+                //loop
+                for(int j = 0; j < log/2; j++ ) {
+                	double regc = currentC * ( currentC * currentQic + 1/2); 
+					//时函数 除以2 方便 fxet[i + j 和 log/2] 的平均 +-
+                	currentC = regc;
+            	    //section - loop
+                    for(int i = 0; i + log < size; i = i + log) {                 			  
+                    	if(fxet[i + j] == 0) {
+                    		fxet[i + j]= (float) (bili0[i + j] * currentC);
+                      	}
+                      	fxet[i + j] += (fxet[i + j] * currentC);
+                      	fxet[i + j + log/2] -= (fxet[i + j] * currentC);		 
+           		    }
+                }
+            	log = log * 2;
+            }
+
+做了几个1024区间算子的简单定值观测测试，有一定的保真度，速度相对 nlogn 加快了 10倍， 稍后进行多样化测试，
+方便提取关于优秀频率对应的熵化区间，再去思考一些细化加速逻辑。我对比之前没用递归和迭代，主要是看了烦，就改了。
