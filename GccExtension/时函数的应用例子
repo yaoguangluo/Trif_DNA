@@ -22,7 +22,7 @@
 	    double t = Math.cos(Qk);
 	    for(int i = 0; i + rot1 < currentLength; i += rot1) {
 	    	System.out.println(i);
-	    	t = 2 * currentC * t + 1;//时函数参与计算方法 -替代复杂的和差化积内子
+	    	t = 2 * currentC * t;//时函数参与计算方法 -替代复杂的和差化积内子
 	    	double currentk = input[i] * t;
 	    	output[i] += currentk;
 	    	output[i + currentLength] -= currentk;
