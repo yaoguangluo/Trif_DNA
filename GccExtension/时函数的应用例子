@@ -1,0 +1,35 @@
+ //4  ---- 2cosAcosB + 1---- 时函数对数熵 一些计算应用方法举例
+
+
+    // 引用注意 2cosAcosB + 1 时能噪公式 当前为罗瑶光著作权算法之一
+
+
+    /*
+     * 个人著作权人, 作者 罗瑶光, 浏阳
+     * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
+     * (lyg.tin@gmail.com2018年后因G网屏蔽不再使用）
+     * 15116110525-浏阳德塔软件开发有限公司-创始人-法人-总经理-永久非盈利-
+     * 430181198505250014, G24402609, EB0581342
+     * 204925063, 389418686, F2406501, 0626136
+     * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段 208号 阳光家园别墅小区 第十栋别墅 第三层
+     * */
+    int n1 = input.length;
+    int rot1 = 1;
+    while(n/2 > 1) {
+    	double Qk = rot1 * 2 * pi / n1;//log2
+    	int currentLength = n1/2;
+	    double currentC = Math.cos(Qk);
+	    double currentQic = Math.cos(Qk);
+	    for(int i = 0; i + rot1 < currentLength; i += rot1) {
+	    	System.out.println(i);
+	    	double t = 2 * currentC * currentQic + 1;//时函数参与计算方法 -替代复杂的和差化积内子
+	    	currentC = input[i] * t;
+	    	output[i] += currentC;
+	    	output[i + currentLength] -= currentC;
+	    }
+	    rot1 = rot1 * 2;
+	    n1 = n1/2;
+    }
+    for(int i = 0; i < input.length; i++) {
+    	System.out.println(output[i]));
+    }
