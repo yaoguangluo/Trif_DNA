@@ -57,9 +57,10 @@
                     for(int i = 0; i + log < size; i = i + log) {                 			  
                     	if(fxet[i + j] == 0) {
                     		fxet[i + j]= (float) (bili0[i + j] * currentC);
+                      	}else{
+                      		fxet[i + j] += (fxet[i + j] * currentC);
                       	}
-                      	fxet[i + j] += (fxet[i + j] * currentC);
-                      	fxet[i + j + log/2] -= (fxet[i + j] * currentC);		 
+						fxet[i + j + log/2] -= (fxet[i + j] * currentC);		 
            		    }
                 }
             	log = log * 2;
@@ -67,3 +68,5 @@
 
 做了几个1024区间算子的简单定值观测测试，有一定的保真度，速度相对 nlogn 加快了 10倍， 稍后进行多样化测试，
 方便提取关于优秀频率对应的熵化区间，再去思考一些细化加速逻辑。我对比之前没用递归和迭代，主要是看了烦，就改了。
+上面的cos是可以提取出去的作为定值的，或者用泰勒去掉的。所以其实速度总体是比fft加快了11倍，与我的2cosAcosB+1 无关，我就不管了。
+我很欢迎科技界里一些权威机构找我切磋。
