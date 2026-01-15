@@ -129,5 +129,50 @@
 --熵化在这里的理解为蝶形内积因子在不同的log区间中存在的增量计算。
 --递归排列互换理解为蝶形的计算离散模型的结构体变换。
 --罗瑶光解释，
+
+------介于5和6之间，我昨晚刚又做了一些研究
+
+//因为（2cosAcosB + 1） 除以2的频域误差性，
+	//于是将时函数 的分数熵阶进行 极速处理 对应特殊对称2倍角（2cosAcosB - 1）的 逆代换优化
+	public float[] do2Ldfft(float []input) {		
+		float[] fxet = input.clone();
+        int size = input.length;
+        int log = 2; 
+        float pi = (float) 3.1415926;
+        //这个for for循环init可以拿出去new， 提高实时计算效率
+    	double [][]cosNT = new double[input.length][input.length * 2];
+		for(int i = 0; i < input.length; i++) {
+			for(int j = 2; j < input.length * 2; j*=2) {
+				cosNT[i][j] = Math.cos((i - 1) * pi / j);
+			}
+		}
+//        //log - section - loop
+        while(log < size) {
+        	double currentC;
+            //loop
+        	double Ei = 0;
+            for(int j = 0; j < log/2; j++ ) {    	   
+                //currentC = regc;
+            	//这种只考虑 +- 2cosAcosB +- 1 中关于的 + 2cosAcosB - 1 时候 A 又= B 的 
+            	//绝对固定的2倍角公式条件来化解分数熵对数用法，
+            	//有效计算小于2万次，但比之前除以2的熵化7000次要多，质量还保真。
+            	//求各类权威机构心理想法，o不ok？
+            	//我罗瑶光给大家的提的疑问是为什么不用同理的sin变换来处理fft倍频熵？我定义为大三或者研一的难度。 
+        	    double detaT = cosNT[j * 2 + 2][log * 2]; 
+        	    currentC = 2 * detaT * detaT - 1;
+        	    //section - loop
+                for(int i = 0; i + log < size; i = i + log) {                 			  
+                	Ei = fxet[i + j] * currentC;
+                  	fxet[i + j] += Ei;	
+                  	fxet[i + j + log/2] -= Ei;	
+       		    }
+            }
+        	log = log * 2;
+        }
+        for(int i = 0; i < fxet.length; i++) {
+        	fxet[i] = Math.abs(fxet[i]);
+        }
+        return fxet;
+	}
             
 
