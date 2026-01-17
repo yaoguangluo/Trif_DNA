@@ -130,7 +130,7 @@
 --递归排列互换理解为蝶形的计算离散模型的结构体变换。
 --罗瑶光解释，
 
-------介于5和6之间，我昨晚刚又做了一些研究
+------7 介于5和6之间，我昨晚刚又做了一些研究
 
 //因为（2cosAcosB + 1） 除以2的频域误差性，
 	//于是将时函数 的分数熵阶进行 极速处理 对应特殊对称2倍角（2cosAcosB - 1）的 逆代换优化
@@ -180,3 +180,44 @@
 refer 《DNA元基催化与肽计算_第6修订版_V00095》 第124页 ，第24～39行
 D.噪⾳能系数 = 【+- 1 +- 2cosAcosB】
 --DNA元基催化与肽计算_第6修订版_V00095 -国作登字-2026-L-00004415
+
+
+-----8 将介于5和6之间的 7进行时函数特殊等角增进行的2倍角频固定数内核化 走查询模式，总体计算次数为1024个bit计算+6000次乘法。其实还可以优化，这里就略了。
+---------------
+public float[] doEt2Ldfft(float []input) {		
+		float[] fxet = input.clone();
+        int size = input.length;
+        int log = 2; 
+        float pi = (float) 3.1415926;
+        //这个for for循环init可以拿出去new， 提高实时计算效率
+    	double [][]cosNT = new double[input.length][input.length * 2];
+		for(int i = 0; i < input.length; i++) {
+			for(int j = 2; j < input.length * 2; j*=2) {
+				cosNT[i][j] = Math.cos((i - 1) * pi / j);
+			}
+		}
+        //log - section - loop
+        while(log < size) {
+            //loop
+        	double Ei = 0;
+        	int logd = log >> 1;
+            int logi = log << 1;
+            //double detaT = cosNT[0][log * 2]; // 1/16
+            for(int j = 0; j < logd; j++ ) { 
+            	//去掉时函数的2倍角代换进行内核化T熵查询即可，
+            	double detaT = cosNT[j << 2][log << 1]; 
+            	//因为我设计内核是从0开始，而这里幂计算是1开始对2的倍数熵，所以大家用于各类具体实际工程记得去校准一下，
+        	    //section - loop
+                for(int i = 0; i + log < size; i = i + log) {                 			  
+                	Ei = fxet[i + j] * detaT;
+                  	fxet[i + j] += Ei;	
+                  	fxet[i + j + logd] -= Ei;	
+       		    }
+            }
+        	log = logi;
+        }
+        for(int i = 0; i < fxet.length; i++) {
+        	fxet[i] = Math.abs(fxet[i]);
+        }
+        return fxet;
+	}
