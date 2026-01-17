@@ -182,7 +182,7 @@ D.噪⾳能系数 = 【+- 1 +- 2cosAcosB】
 --DNA元基催化与肽计算_第6修订版_V00095 -国作登字-2026-L-00004415
 
 
------8 将介于5和6之间的 7进行时函数特殊等角增进行的2倍角频固定数内核化 走查询模式，总体计算次数为1024个bit计算+6000次乘法。其实还可以优化，这里就略了。
+-----8， 让5和6之间的 7进行时函数特殊等角增进行的2倍角频固定数内核化 走查询模式，总体计算次数为1024个bit计算+6000次乘法。其实还可以幂数导优化，这里就略了。
 ---------------
 public float[] doEt2Ldfft(float []input) {		
 		float[] fxet = input.clone();
@@ -202,7 +202,6 @@ public float[] doEt2Ldfft(float []input) {
         	double Ei = 0;
         	int logd = log >> 1;
             int logi = log << 1;
-            //double detaT = cosNT[0][log * 2]; // 1/16
             for(int j = 0; j < logd; j++ ) { 
             	//去掉时函数的2倍角代换进行内核化T熵查询即可，
             	double detaT = cosNT[j << 2][log << 1]; 
