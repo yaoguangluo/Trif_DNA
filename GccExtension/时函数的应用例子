@@ -220,3 +220,54 @@ public float[] doEt2Ldfft(float []input) {
         }
         return fxet;
 	}
+
+
+//昨天思考了2个小时，关于log熵内积去时函数特殊关系和2倍角关系进行定值k提取，现在通过迪摩根的比特
+	//位计算进行归一化，我得到一个最简单的方式，
+	public float[] doSigmaEt2Ldfft(float []input) {		
+		float[] fxet = input.clone();
+        int size = input.length;
+        int log = 2; 
+        float pi = (float) 3.1415926;
+        //这个for for循环init可以拿出去new， 提高实时计算效率
+    	double [][]cosNT = new double[input.length][input.length * 2];
+		for(int i = 0; i < input.length; i++) {
+			for(int j = 2; j < input.length * 2; j*=2) {
+				cosNT[i][j] = Math.cos((i - 1) * pi / j);
+			}
+		}
+	  float Et_cosk_logn_bit_sign[] = new float [size];
+	  for(int i = 0; i < fxet.length; i++) {
+		  Et_cosk_logn_bit_sign[i] = 1;
+      }
+	  
+      //log - section - loop
+      while(log < size) {
+          //loop
+      	  double Ei = 0;
+      	  int logd = log >> 1;
+          int logi = log << 1;
+          //double detaT = cosNT[0][log * 2]; // 1/16
+          for(int j = 0; j < logd; j++) { 
+        	  //去掉时函数的2倍角代换进行内核化T熵查询即可，
+        	  double detaT = cosNT[j << 2][log << 1]; 
+        	  //因为我设计内核是从0开始，而这里幂计算是1开始对2的倍数熵，所以大家用于各类具体实际工程记得去校准一下，
+        	  //section - loop
+        	  for(int i = 0; i + log < size; i = i + log) {                 			  
+        		  Et_cosk_logn_bit_sign[i + j] = (float) (Et_cosk_logn_bit_sign[i + j]*(1 + detaT));	
+        		  //于是跟进思考，这里的多倍区间熵减是一种交换律形态，不是单倍的detat 对称迪摩根和交换律迪摩根分析 伽马集需要稍后计算讨论，
+        		  //但这种优化方式直接将熵成为了定值，o（nlogn） fft计算量因为定值提出去，成为了 o（n）也即是1024次。。
+        		  // Et_cosk_logn_bit_sign[i + j + logd] -= detaT;	
+        	  }
+          }
+      	  log = logi;
+      }
+	  //fx 是当前的fxet子集对应的倍频率域 的 带有符号和	
+      for(int i = 0; i < fxet.length; i++) {
+          //还没完，稍后。。我要吃饭睡觉玩，今天就到这。
+    	  // fxet[i] = Math.abs(fxet[i] * Et_cosk_logn_bit_sign[i]);
+      }
+        return fxet;
+	}
+
+事情呢总是没完，我呢也一直在专注。。
