@@ -271,3 +271,83 @@ public float[] doEt2Ldfft(float []input) {
 	}
 
 事情呢总是没完，我呢也一直在专注。。
+
+
+//今天花了3个小时，剔除了2倍角的蝶形熵减，来满足计算加速，最后做1024的乘法，
+	//速度提高10倍，但质量降低10%，仅对2的指数倍频敏感，于是增加sin核做迪摩根补码。
+	//价值是多频调制解调，能精确控制某组频率的分贝值。用途广泛+巨大。
+	public float[] doSigmaEt2Ldfft(float []input) {		
+		float[] fxet = input.clone();
+		float[] fxetb = new float[input.length];
+        int size = input.length;
+        int log = 2; 
+        float pi = (float) 3.1415926;
+        //这个for for循环init可以拿出去new， 提高实时计算效率
+    	float [][]cosNT = new float[input.length][input.length * 2];
+    	float [][]sinNT = new float[input.length][input.length * 2];
+		for(int i = 0; i < input.length; i++) {
+			for(int j = 2; j < input.length * 2; j*=2) {
+				cosNT[i][j] = (float) Math.cos((i - 1) * pi / j);
+				sinNT[i][j] = (float) Math.sin((i - 1) * pi / j);
+			}
+		}
+		float detaT[][] = new float[size][size];
+		float detaTs[][] = new float[size][size];
+		float detaET[][] = new float[size][size];
+		float detaETs[][] = new float[size][size];
+        //log - section - loop
+        while(log < size) {
+            //loop
+        	double Ei = 0;
+        	int logd = log >> 1;
+            int logi = log << 1;
+            //double detaT = cosNT[0][log * 2]; // 1/16
+            for(int j = 0; j < logd; j++ ) { 
+            	//去掉时函数的2倍角代换进行内核化T熵查询即可，
+            	//double detaT = cosNT[j << 2][log << 1]; 
+            	detaT[j][log]= cosNT[j << 2][log << 1]; 
+            	detaTs[j][log]= sinNT[j << 2][log << 1]; 
+            	detaET[j][log]= 1 + detaT[j][log]; 
+            	detaETs[j][log]= 1 - detaT[j][log]; 
+            	//因为我设计内核是从0开始，而这里幂计算是1开始对2的倍数熵，所以大家用于各类具体实际工程记得去校准一下，
+        	    //section - loop
+            }
+        	log = logi;
+        }
+        log = 2;
+        float[] dlt = new float[input.length];
+        float[] dlts = new float[input.length];
+        for(int i = 0; i < fxet.length; i++) {
+        	dlt[i] = 1;
+        	dlts[i] = 1;
+        }
+        while(log < size) {
+            //loop
+        	double Ei = 0;
+        	double Eis = 0;
+        	int logd = log >> 1;
+            int logi = log << 1;
+            for(int j = 0; j < logd; j++) { 
+                for(int i = 0; i + log < size; i = i + log) {   
+                	Ei = dlt[i + j] * detaT[j][log];	
+                	Eis = dlts[i + j] * detaTs[j][log];	
+                	dlt[i + j] += Ei;	
+                	dlt[i + j + logd] -= Eis;
+                	//因为减熵是不规则的补码加乘逻辑，于是剔除，因为剔除了蝶形的倍频减熵，于是用sin来补充迪摩根互补律。
+                	dlts[i + j] -= Eis;
+                	dlts[i + j + logd] += Ei;
+       		    }
+            }
+        	log = logi;
+        }
+        for(int i = 0; i < fxet.length; i++) {
+        	 dlt[i] =  (float) Math.abs(2 * dlt[i] * dlt[i] - 1);
+        	 dlts[i] =  (float) Math.abs(2 * dlts[i] * dlts[i] - 1);
+        }
+        //上面的函数可以全部拿出去做定值全局，fft的o（nlogn） 次数在这里成了 o（n），切记只对2的指数峰敏感。
+        //老工程用记得修正 0 1 -1的计算偏移量和误区，新工程用记得重写测时函数。
+        for(int i = 0; i < fxet.length; i++) {
+        	 fxet[i] =  (float) Math.abs(fxet[i] * dlt[i] + fxet[i] * dlts[i]);
+        }
+        return fxet;
+	}
