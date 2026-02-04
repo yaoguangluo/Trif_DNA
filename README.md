@@ -23,6 +23,8 @@ DNA十六元基索引PDE工程
 ###### --方法--通过一种在真实的环境下, 用极简源码, 详细描述, 直观逻辑, 具体对象并含有输入输出参数实例的测试DEMO, 进行丰富地论证API的商业前景和使用价值。
 ###### --资源--词库文件在老的工程中lib 和lyg下都有 如poscc文件等，因为这是一个通用api包，而 mac linux windows 安卓等操作系统环境不一样， 所以添加jar到工程使用，一定要确定好资源文件路径，然后用NE.resourceTail=""；来正确赋值修正本地工程路径。如果还不行就extends一个文件覆盖自己写路径即可。omg。。
 ###### --来源--测试项目开始于https://github.com/yaoguangluo/ChromosomeDNA/blob/main/2025/华瑞集5019579_core.jar
+###### --当前下载点--华瑞集R最新java插件api下载点-https://github.com/yaoguangluo/Trif_DNA/blob/master/DNA十六元基索引系统_华瑞集商业测试版_15万行完整源码/HRJ5.2.5.1.jar   --该import的api中 包含可阅读资源文件。大小12兆。
+
 ###### --配置--一台干净的电脑, 下个jdk1.8+ 如Java11版本, 下个ide, 然后导入api插件, 和相关底层api如 Mock-测试, Gson-web,  Javacv-显卡和.lyg-词库集等-github我早期工程中lib文件夹中都有-, 就可以运行测试了, 找个软件工程师2年经验+几乎都能配置好。有问题也可联系我罗瑶光本人.
 &nbsp;
 &nbsp;
