@@ -1,0 +1,149 @@
+微分催化排序 罗瑶光小高峰过滤计算版本 版权函数 进行去递归 测试
+
+1原逻辑
+
+
+ private int partition(float[] array, int leftPoint, int rightPoint) {
+		    	float x = array[leftPoint] <= array[rightPoint] ? array[leftPoint] : array[rightPoint];
+		        int leftPointReflection = leftPoint;
+		        while (leftPointReflection < rightPoint) {
+		            while (!(array[leftPointReflection] > x || leftPointReflection++ >= rightPoint)) {
+		            }
+		            while (array[rightPoint--] > x) {
+		            }
+		            if (leftPointReflection < ++rightPoint) {
+		            	float temp = array[rightPoint];
+		                array[rightPoint] = array[leftPointReflection];
+		                array[leftPointReflection] = temp;
+		            }
+		        }
+		        array[leftPoint] = array[rightPoint];
+		        array[rightPoint] = x;
+		        return rightPoint;
+		    }
+2class逻辑
+
+private void processDouble(float[] array, int leftPoint, int rightPoint, int deep) {
+			LogSortNode logSortNode = new LogSortNode();
+		    logSortNode.L = leftPoint;
+		    logSortNode.R = rightPoint;
+		    cur = logSortNode;
+		    end = cur;
+		    float x;
+		    int l;
+		    int r;
+		    float temp;
+		    int pos;
+		    while(cur != null) {
+		    	leftPoint = cur.L;
+		    	rightPoint = cur.R;
+		    	int c = rightPoint - leftPoint + 1;
+			    if (!(c < this.range || deep > this.deeps)) {
+			        x = array[leftPoint] <= array[rightPoint] ? array[leftPoint] : array[rightPoint];
+				    l = leftPoint;
+				    r = rightPoint;
+				    while (l < r) {
+				        while (!(array[l] > x || l++ >= r)) {
+				        }
+				        while (array[r--] > x) {
+				        }
+				        if (l < ++r) {
+				            temp = array[r];
+				            array[r] = array[l];
+				            array[l] = temp;
+				        }
+				    }
+				    array[leftPoint] = array[r];
+				    array[r] = x;
+				    pos = r;  
+				    if (leftPoint < pos - 1) {
+				        LogSortNode node = new LogSortNode();
+				        node.L = leftPoint;
+				        node.R = pos - 1;
+				        end.next = node;
+				        end= end.next;
+				    }
+				    if (pos + 1 < rightPoint) {
+				        LogSortNode node = new LogSortNode();
+				        node.L = pos + 1;
+				        node.R = rightPoint;
+				        end.next = node;
+				        end= end.next;
+				    }
+			    }else {
+			    	int i = leftPoint;
+			        for (int j = i + 1; j < leftPoint + c; j = i++) {
+			        	while (j > leftPoint) {
+			        		if (array[j] < array[--j]) {
+			        			temp = array[j + 1];
+			        			array[j + 1] = array[j];
+			        			array[j] = temp;
+			        		}
+			        	}
+			        }
+			        }
+			        cur = cur.next;
+		    	}
+		    	//System.out.println("tot-->" + flows);
+		    }
+
+3array逻辑
+private void processDouble(float[] array, int leftPoint, int rightPoint, int deep) {
+		    	if(flows == 0) {
+	    			hashArrayL[flows] = leftPoint;
+	    			hashArrayR[flows] = rightPoint;
+	    		}
+		    	do {
+		    		leftPoint = hashArrayL[flows];
+		    		rightPoint = hashArrayR[flows];
+		    		int c = rightPoint - leftPoint + 1;
+			        //if (!(c < this.range || deep > this.deeps)) {
+			        	int pos = partition(array, leftPoint, rightPoint);    
+			            if (leftPoint < pos - 1) {
+			            	hashArrayL[fix] = leftPoint;
+			            	hashArrayR[fix++] = pos - 1;
+			            }
+			            if (pos + 1 < rightPoint) {
+			            	hashArrayL[fix] = pos + 1;
+			            	hashArrayR[fix++] = rightPoint;
+			            }
+			        //}
+//			        else {
+//			        	int i = leftPoint;
+//			        	for (int j = i + 1; j < leftPoint + c; j = i++) {
+//			        		while (j > leftPoint) {
+//			        			if (array[j] < array[--j]) {
+//			        				float temp = array[j + 1];
+//			        				array[j + 1] = array[j];
+//			        				array[j] = temp;
+//			        			}
+//			        		}
+//			        	}
+//			        }
+		    	}while(flows++ < fix);
+		    	System.out.println("tot-->" + flows);
+		    }
+
+
+
+
+
+测试问题
+原函数5000万在苹果m1芯片 2。4g 4核 8线程 老年机电脑上测试 需要8.8秒
+在去递归后用array 是9.2秒
+在去递归后用node class是 10.2秒
+
+我很疑惑 省掉了大量的funtion call 和递归 竟然还慢了个5%效率
+于是贴出来以飨观众
+
+
+/*
+ * 个人著作权人 ，作者 罗瑶光, 浏阳
+ * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com
+ * , -
+ ** 15116110525-浏阳德塔软件开发有限公司-创始人-法人-总经理-永久非盈利-
+ * 430181198505250014, G24402609, EB0581342
+ * 204925063, 389418686, F2406501, 0626136
+ * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲路一段
+ *  208号 阳光家园别墅小区 第十栋别墅 第三层
+ * */
