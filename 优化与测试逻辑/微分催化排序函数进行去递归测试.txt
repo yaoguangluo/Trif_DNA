@@ -136,6 +136,50 @@ private void processDouble(float[] array, int leftPoint, int rightPoint, int dee
 我很疑惑 省掉了大量的funtion call 和递归 竟然还慢了个5%效率
 于是贴出来以飨观众
 
+于是归纳下心得
+
+//递归在区间计算中能 提高计算数组的堆栈中指针数列寻址效率，但要注意是递归对超过10行源码的function call量级才有一定的效率，
+			private void processDouble(float[] array, int leftPoint, int rightPoint, int deep) {
+		    		int c = rightPoint - leftPoint + 1;
+			        if (!(c < this.range || deep > this.deeps)) {
+			        	float x = array[leftPoint] <= array[rightPoint] ? array[leftPoint] : array[rightPoint];
+				        int leftPointReflection = leftPoint;
+				        int r = rightPoint;
+				        while (leftPointReflection < r) {
+				            while (!(array[leftPointReflection] > x || leftPointReflection++ >= r)) {
+				            }
+				            while (array[r--] > x) {
+				            }
+				            if (leftPointReflection < ++r) {
+				            	float temp = array[r];
+				                array[r] = array[leftPointReflection];
+				                array[leftPointReflection] = temp;
+				            }
+				        }
+				        array[leftPoint] = array[r];
+				        array[r] = x;   
+			            if (leftPoint < r - 1) {
+			                processDouble(array, leftPoint, r - 1, deep + 1);
+			            }
+			            if (r + 1 < rightPoint) {
+			                processDouble(array, r + 1, rightPoint, deep + 1);
+			            }
+			            return;
+			        }
+			        int i = leftPoint;
+			        for (int j = i + 1; j < leftPoint + c; j = i++) {
+			        	while (j > leftPoint) {
+			        		if (array[j] < array[--j]) {
+			        			float temp = array[j + 1];
+			        			array[j + 1] = array[j];
+			        			array[j] = temp;
+			        		}
+			        	}
+			        }
+		    }
+
+
+另外我的测试时间是我这台m1苹果老年机指纹笔记本电脑在没有充电的状态下测试的。性能本身是联想Y7000 的一半 ，没充电来跑测试，于是 性能又要再减半。
 
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
