@@ -181,6 +181,21 @@ private void processDouble(float[] array, int leftPoint, int rightPoint, int dee
 
 另外我的测试时间是我这台m1苹果老年机指纹笔记本电脑在没有充电的状态下测试的。性能本身是联想Y7000 的一半 ，没充电来跑测试，于是 性能又要再减半。
 
+研发测试中的归纳
+
+/*
+ * log 熵化 关于2的指数倍数幂 和化积公式
+ * 
+ * Log(A + B) = 2 * LogA * LogB + DetaC
+ * 当A = B 时候， DetaC= - 4 * E（n-2）-（n-2） 
+ * 
+ * 发现者 罗瑶光- 430181198505250014
+ * 应用1 离散傅里叶On核 倍角聚变 实现
+ * 范畴1 属于时函数的新增公式集。
+ * 具体实现 HRJ5.2.5.1.jar
+ * 
+ * */
+
 /*
  * 个人著作权人 ，作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com
