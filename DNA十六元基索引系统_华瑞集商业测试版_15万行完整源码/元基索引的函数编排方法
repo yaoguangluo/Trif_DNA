@@ -12,21 +12,23 @@ import java.io.File;
  * 湖南省 浏阳市 集里街道 神仙坳社区 大塘冲一段路 208号 阳光家园别墅小区 第十栋别墅 第三层
  * */
 public class RootListShow{
-	/*
+	 /*
 	 * 这个函数主要实现3个简单的功能 2次新陈代谢优化 实践
 	 * 1 工程的所有文件夹进行排列出来，2d即可 形式名为 文件夹名 + 文件名 + 函数名
 	 * 2 排列出来后进行每个形式名进行元基统计。
 	 * 3 统计完后执行新陈代谢 pde 缩进。
 	 * 4 再次打包迁徙，优化和缩进路径名，预计提高20%-30%的总计算效率。
-     *  5 对应  HuaRuiJi_V5019671.jar 文件
 	 * --罗瑶光
 	 * */
+	 static int totalLines = 0;
+	 //A-O-P-M-V-E-C-S-I-D-U-Q-T-X-H-F
+	 static float[][] linesRatio = new float[2223][16];
 	 public static void main(String[] argv) {
 		 //println
 		 String fileRoot = "/Users/luoyaoguang430181198505250014/eclipse-workspace/Trif_DNA-master";
 		 File file = new File(fileRoot);
 		 printFiles(file);
-		
+		 System.out.println(totalLines);
 	 }
 
 	private static void printFiles(File file) {
@@ -38,6 +40,7 @@ public class RootListShow{
 				 System.out.println(category);	
 				 category = category.replace(file.getName(), "");
 				 System.out.println(category);	
+				 totalLines += 1;
 				 printStatics(category);
 				 
 			}
@@ -137,54 +140,71 @@ public class RootListShow{
 			}
 		}
 		
-		System.out.println("total-->" + totalInitons);
+		linesRatio[totalLines][0]=initonsA/totalInitons;
+		
+	    System.out.println("total-->" + totalInitons);
 		System.out.println("total A-->" + initonsA);
-		System.out.println("ratio of A -->" + initonsA/totalInitons);
+		System.out.println("ratio of A -->" + linesRatio[totalLines][0]);
 		
+		linesRatio[totalLines][1]=initonsO/totalInitons;
 		System.out.println("total O-->" + initonsO);
-		System.out.println("ratio of O -->" + initonsO/totalInitons);
+		System.out.println("ratio of O -->" + linesRatio[totalLines][1]);
 	
+		linesRatio[totalLines][2]=initonsP/totalInitons;
 		System.out.println("total P-->" + initonsP);
-		System.out.println("ratio of P -->" + initonsP/totalInitons);
+		System.out.println("ratio of P -->" + linesRatio[totalLines][2]);
 	
+		linesRatio[totalLines][3]=initonsM/totalInitons;
 		System.out.println("total M-->" + initonsM);
-		System.out.println("ratio of M -->" + initonsM/totalInitons);
+		System.out.println("ratio of M -->" + linesRatio[totalLines][3]);
 		
+		linesRatio[totalLines][4]=initonsV/totalInitons;
 		System.out.println("total V-->" + initonsV);
-		System.out.println("ratio of V -->" + initonsV/totalInitons);
+		System.out.println("ratio of V -->" + linesRatio[totalLines][4]);
 		
+		linesRatio[totalLines][5]=initonsE/totalInitons;
 		System.out.println("total E-->" + initonsE);
-		System.out.println("ratio of E -->" + initonsE/totalInitons);
+		System.out.println("ratio of E -->" + linesRatio[totalLines][5]);
 		
+		linesRatio[totalLines][6]=initonsC/totalInitons;
 		System.out.println("total C-->" + initonsC);
-		System.out.println("ratio of C -->" + initonsC/totalInitons);
+		System.out.println("ratio of C -->" + linesRatio[totalLines][6]);
 		
+		linesRatio[totalLines][7]=initonsS/totalInitons;
 		System.out.println("total S-->" + initonsS);
-		System.out.println("ratio of S -->" + initonsS/totalInitons);
+		System.out.println("ratio of S -->" + linesRatio[totalLines][7]);
 		
+		linesRatio[totalLines][8]=initonsI/totalInitons;
 		System.out.println("total I-->" + initonsI);
-		System.out.println("ratio of I -->" + initonsI/totalInitons);
+		System.out.println("ratio of I -->" + linesRatio[totalLines][8]);
 		
+		linesRatio[totalLines][9]=initonsD/totalInitons;
 		System.out.println("total D-->" + initonsD);
-		System.out.println("ratio of D -->" + initonsD/totalInitons);
+		System.out.println("ratio of D -->" + linesRatio[totalLines][9]);
 		
+		linesRatio[totalLines][10]=initonsU/totalInitons;
 		System.out.println("total U-->" + initonsU);
-		System.out.println("ratio of U -->" + initonsU/totalInitons);
+		System.out.println("ratio of U -->" + linesRatio[totalLines][10]);
 		
+		linesRatio[totalLines][11]=initonsQ/totalInitons;
 		System.out.println("total Q-->" + initonsQ);
-		System.out.println("ratio of Q -->" + initonsQ/totalInitons);
+		System.out.println("ratio of Q -->" + linesRatio[totalLines][11]);
 		
+		linesRatio[totalLines][12]=initonsT/totalInitons;
 		System.out.println("total T-->" + initonsT);
-		System.out.println("ratio of T -->" + initonsT/totalInitons);
+		System.out.println("ratio of T -->" + linesRatio[totalLines][12]);
 		
+		linesRatio[totalLines][13]=initonsX/totalInitons;
 		System.out.println("total X-->" + initonsX);
-		System.out.println("ratio of X -->" + initonsX/totalInitons);
+		System.out.println("ratio of X -->" + linesRatio[totalLines][13]);
 		
+		linesRatio[totalLines][14]=initonsH/totalInitons;
 		System.out.println("total H-->" + initonsH);
-		System.out.println("ratio of H -->" + initonsH/totalInitons);
+		System.out.println("ratio of H -->" + linesRatio[totalLines][14]);
 		
+		linesRatio[totalLines][15]=initonsF/totalInitons;
 		System.out.println("total F-->" + initonsF);
-		System.out.println("ratio of F -->" + initonsF/totalInitons);
+		System.out.println("ratio of F -->" + linesRatio[totalLines][15]);
 		
 		
 		
@@ -193,17 +213,20 @@ public class RootListShow{
 		 * --罗瑶光
 		 * 
 		 * 1 稍后去文件名。
+		 * 
 		 * 2 每一行文件路径元基的统计，和比重统计
+		 * 
 		 * 3 统计后进行重心排序，稍后数组化变量可排。
 		 * 
 		 * 4 排序后进行可染色体迁移的 包路径推荐， 稍后。。。
-		 * 
 		 * 
 		 * 5 推荐优化 优化后分包新陈代谢。
 		 * 
 		 * 6 我之后有新工程，元基编码以后就是个业余科研项目搞搞。开发文档和书籍我扔在网上的已经很全了。
 		 * 
+		 * 7 将linesRatio[totalLines][15] 进行排序，然后得到前序元基，进行将2222个函数重新分类索引
 		 * 
+		 * 8 之后24组染色体开始逐渐均匀化呈现蒲公英肽模型
 		 * 
 		 * --罗瑶光 
 		 * */
@@ -249,8 +272,15 @@ total H-->0.0
 ratio of H -->0.0
 total F-->0.0
 ratio of F -->0.0
-
-
+/*
+ * 仔细的看了下上下文 我有什么， 
+ * 1 每行的文件夹目录索引的DNA编码化结构链条。
+ * 2 每个文件函数链条的元基明确比例。
+ * 3 每个元基的占比数据。
+ * 4 这些数据可以进行明确该函数文件的元基比重，可以快速地分类到对应24个染色体组，
+ * 5 于是开始构造一个16列数组，包含比重值域进行排序，
+ * */
+/*
 /C_L_S/S_I/OSI/OVU/OSU/MSQ/MV/SQ/houghTransform/HoughTransformRun.java
 /C_L_S/S_I/OSI/OVU/OSU/MSQ/MV/SQ/houghTransform/HoughTransformInterface.java
 /C_L_S/S_I/OSI/OVU/OSU/MSQ/MV/SQ/houghTransform/HoughTransformPanel.java
