@@ -23,12 +23,93 @@ public class RootListShow{
 	 static int totalLines = 0;
 	 //A-O-P-M-V-E-C-S-I-D-U-Q-T-X-H-F
 	 static float[][] linesRatio = new float[2223][16];
+	 static float[][] linesChar = new float[2223][16]; //0-15 对应 A-F 方便排序
+	 static String[] linesInitons = new String[2223];
+	 static String[] linesIndex = new String[2223];
+	 
 	 public static void main(String[] argv) {
 		 //println
 		 String fileRoot = "/Users/luoyaoguang430181198505250014/eclipse-workspace/Trif_DNA-master";
 		 File file = new File(fileRoot);
 		 printFiles(file);
 		 System.out.println(totalLines);
+		 //1 排序
+		 //linesRatio
+		 //linesChar
+		 for(int i=0;i<2223;i++) {
+			 //因为就16个所有用选择排序或者泡沫排序即可。
+			 for(int j = 0; j < linesRatio[i].length; j++) {
+				 for(int k = 0; k < j; k++) {
+					 if(linesRatio[i][j] < linesRatio[i][k]) {
+						 float temp= linesRatio[i][j];
+						 linesRatio[i][j] = linesRatio[i][k];
+						 linesRatio[i][k] = temp;
+						 
+						 float tempc= linesChar[i][j];
+						 linesChar[i][j] = linesChar[i][k];
+						 linesChar[i][k] = tempc;
+					 }
+				 } 
+			 }
+		     for(int j = 0; j < linesRatio[i].length; j++) {
+		    	 if(linesRatio[i][j] > 0) {
+		    		 if(linesChar[i][j] == 0) {
+		    			 linesIndex[i] += "A"; 
+			    	 }
+		    		 if(linesChar[i][j] == 1) {
+		    			 linesIndex[i] += "O"; 
+			    	 }
+		    		 if(linesChar[i][j] == 2) {
+		    			 linesIndex[i] += "P"; 
+			    	 }
+		    		 if(linesChar[i][j] == 3) {
+		    			 linesInitons[i] += "M"; 
+			    	 }
+		    		 if(linesChar[i][j] == 4) {
+		    			 linesIndex[i] += "V"; 
+			    	 }
+		    		 if(linesChar[i][j] == 5) {
+		    			 linesIndex[i] += "E"; 
+			    	 }
+		    		 if(linesChar[i][j] == 6) {
+		    			 linesInitons[i] += "C"; 
+			    	 }
+		    		 if(linesChar[i][j] == 7) {
+		    			 linesIndex[i] += "S"; 
+			    	 }
+		    		 if(linesChar[i][j] == 8) {
+		    			 linesIndex[i] += "I"; 
+			    	 }
+		    		 if(linesChar[i][j] == 9) {
+		    			 linesIndex[i] += "D"; 
+			    	 }
+		    		 if(linesChar[i][j] == 10) {
+		    			 linesIndex[i] += "U"; 
+			    	 }
+		    		 if(linesChar[i][j] == 11) {
+		    			 linesIndex[i] += "Q"; 
+			    	 }
+		    		 if(linesChar[i][j] == 12) {
+		    			 linesIndex[i] += "T"; 
+			    	 }
+		    		 if(linesChar[i][j] == 13) {
+		    			 linesIndex[i] += "X"; 
+			    	 }
+		    		 if(linesChar[i][j] == 14) {
+		    			 linesIndex[i] += "H"; 
+			    	 }
+		    		 if(linesChar[i][j] == 15) {
+		    			 linesIndex[i] += "F"; 
+			    	 }
+		    	 }
+		     }
+		     System.out.println(linesInitons[i]);
+		     System.out.println(linesIndex[i]);
+		 }
+		 
+		 //2 排序后进行linesInitons[totalLines] 添加索引序列
+		 
+		 //3 之后文件夹函数文件按linesInitons[totalLines] 进行重新分包排列
 	 }
 
 	private static void printFiles(File file) {
@@ -37,12 +118,14 @@ public class RootListShow{
 			if(string.contains("C_L") || string.contains("C_R")) {
 				 String category = file.getPath().replace("/Users/luoyaoguang"
 				 	+ "430181198505250014/eclipse-workspace/Trif_DNA-master", "");
-				 System.out.println(category);	
+				 //System.out.println(category);	
 				 category = category.replace(file.getName(), "");
-				 System.out.println(category);	
+				 //System.out.println(category);	
 				 totalLines += 1;
 				 printStatics(category);
-				 
+				 linesInitons[totalLines] = category;
+				 //System.out.println(linesInitons[totalLines]);	
+				
 			}
 		 }else {
 			 File[] files = file.listFiles();
@@ -142,69 +225,133 @@ public class RootListShow{
 		
 		linesRatio[totalLines][0]=initonsA/totalInitons;
 		
-	    System.out.println("total-->" + totalInitons);
-		System.out.println("total A-->" + initonsA);
-		System.out.println("ratio of A -->" + linesRatio[totalLines][0]);
+	    //System.out.println("total-->" + totalInitons);
+		//System.out.println("total A-->" + initonsA);
+		//System.out.println("ratio of A -->" + linesRatio[totalLines][0]);
+		linesChar[totalLines][0] = 0;//方便排序
+		if(linesRatio[totalLines][0] > 0) {
+			//linesInitons[totalLines] += "A";
+		}
 		
 		linesRatio[totalLines][1]=initonsO/totalInitons;
-		System.out.println("total O-->" + initonsO);
-		System.out.println("ratio of O -->" + linesRatio[totalLines][1]);
-	
+		//System.out.println("total O-->" + initonsO);
+		//System.out.println("ratio of O -->" + linesRatio[totalLines][1]);
+		linesChar[totalLines][1] = 1;//方便排序
+		if(linesRatio[totalLines][1] > 0) {
+			//linesInitons[totalLines] += "O";
+		}
+		
 		linesRatio[totalLines][2]=initonsP/totalInitons;
-		System.out.println("total P-->" + initonsP);
-		System.out.println("ratio of P -->" + linesRatio[totalLines][2]);
-	
+		//System.out.println("total P-->" + initonsP);
+		//System.out.println("ratio of P -->" + linesRatio[totalLines][2]);
+		linesChar[totalLines][2] = 2;//方便排序
+		if(linesRatio[totalLines][2] > 0) {
+			//linesInitons[totalLines] += "P";
+		}
+		
 		linesRatio[totalLines][3]=initonsM/totalInitons;
-		System.out.println("total M-->" + initonsM);
-		System.out.println("ratio of M -->" + linesRatio[totalLines][3]);
+		//System.out.println("total M-->" + initonsM);
+		//System.out.println("ratio of M -->" + linesRatio[totalLines][3]);
+		linesChar[totalLines][3] = 3;//方便排序
+		if(linesRatio[totalLines][3] > 0) {
+			//linesInitons[totalLines] += "M";
+		}
 		
 		linesRatio[totalLines][4]=initonsV/totalInitons;
-		System.out.println("total V-->" + initonsV);
-		System.out.println("ratio of V -->" + linesRatio[totalLines][4]);
+		//System.out.println("total V-->" + initonsV);
+		//System.out.println("ratio of V -->" + linesRatio[totalLines][4]);
+		linesChar[totalLines][4] = 4;//方便排序
+		if(linesRatio[totalLines][4] > 0) {
+			//linesInitons[totalLines] += "V";
+		}
 		
 		linesRatio[totalLines][5]=initonsE/totalInitons;
-		System.out.println("total E-->" + initonsE);
-		System.out.println("ratio of E -->" + linesRatio[totalLines][5]);
+		//System.out.println("total E-->" + initonsE);
+		//System.out.println("ratio of E -->" + linesRatio[totalLines][5]);
+		linesChar[totalLines][5] = 5;//方便排序
+		if(linesRatio[totalLines][5] > 0) {
+			//linesInitons[totalLines] += "E";
+		}
 		
 		linesRatio[totalLines][6]=initonsC/totalInitons;
-		System.out.println("total C-->" + initonsC);
-		System.out.println("ratio of C -->" + linesRatio[totalLines][6]);
+		//System.out.println("total C-->" + initonsC);
+		//System.out.println("ratio of C -->" + linesRatio[totalLines][6]);
+		linesChar[totalLines][6] = 6;//方便排序
+		if(linesRatio[totalLines][6] > 0) {
+			//linesInitons[totalLines] += "C";
+		}
 		
 		linesRatio[totalLines][7]=initonsS/totalInitons;
-		System.out.println("total S-->" + initonsS);
-		System.out.println("ratio of S -->" + linesRatio[totalLines][7]);
+		//System.out.println("total S-->" + initonsS);
+		//System.out.println("ratio of S -->" + linesRatio[totalLines][7]);
+		linesChar[totalLines][7] = 7;//方便排序
+		if(linesRatio[totalLines][7] > 0) {
+			//linesInitons[totalLines] += "S";
+		}
 		
 		linesRatio[totalLines][8]=initonsI/totalInitons;
-		System.out.println("total I-->" + initonsI);
-		System.out.println("ratio of I -->" + linesRatio[totalLines][8]);
+		//System.out.println("total I-->" + initonsI);
+		//System.out.println("ratio of I -->" + linesRatio[totalLines][8]);
+		linesChar[totalLines][8] = 8;//方便排序
+		if(linesRatio[totalLines][8] > 0) {
+			//linesInitons[totalLines] += "I";
+		}
 		
 		linesRatio[totalLines][9]=initonsD/totalInitons;
-		System.out.println("total D-->" + initonsD);
-		System.out.println("ratio of D -->" + linesRatio[totalLines][9]);
+		//System.out.println("total D-->" + initonsD);
+		//System.out.println("ratio of D -->" + linesRatio[totalLines][9]);
+		linesChar[totalLines][9] = 9;//方便排序
+		if(linesRatio[totalLines][9] > 0) {
+			//linesInitons[totalLines] += "D";
+		}
 		
 		linesRatio[totalLines][10]=initonsU/totalInitons;
-		System.out.println("total U-->" + initonsU);
-		System.out.println("ratio of U -->" + linesRatio[totalLines][10]);
+		//System.out.println("total U-->" + initonsU);
+		//System.out.println("ratio of U -->" + linesRatio[totalLines][10]);
+		linesChar[totalLines][10] = 10;//方便排序
+		if(linesRatio[totalLines][10] > 0) {
+			//linesInitons[totalLines] += "U";
+		}
 		
 		linesRatio[totalLines][11]=initonsQ/totalInitons;
-		System.out.println("total Q-->" + initonsQ);
-		System.out.println("ratio of Q -->" + linesRatio[totalLines][11]);
+		//System.out.println("total Q-->" + initonsQ);
+		//System.out.println("ratio of Q -->" + linesRatio[totalLines][11]);
+		linesChar[totalLines][11] = 11;//方便排序
+		if(linesRatio[totalLines][11] > 0) {
+			//linesInitons[totalLines] += "Q";
+		}
 		
 		linesRatio[totalLines][12]=initonsT/totalInitons;
-		System.out.println("total T-->" + initonsT);
-		System.out.println("ratio of T -->" + linesRatio[totalLines][12]);
+		//System.out.println("total T-->" + initonsT);
+		//System.out.println("ratio of T -->" + linesRatio[totalLines][12]);
+		linesChar[totalLines][12] = 12;//方便排序
+		if(linesRatio[totalLines][12] > 0) {
+			//linesInitons[totalLines] += "T";
+		}
 		
 		linesRatio[totalLines][13]=initonsX/totalInitons;
-		System.out.println("total X-->" + initonsX);
-		System.out.println("ratio of X -->" + linesRatio[totalLines][13]);
+		//System.out.println("total X-->" + initonsX);
+		//System.out.println("ratio of X -->" + linesRatio[totalLines][13]);
+		linesChar[totalLines][13] = 13;//方便排序
+		if(linesRatio[totalLines][13] > 0) {
+			//linesInitons[totalLines] += "X";
+		}
 		
 		linesRatio[totalLines][14]=initonsH/totalInitons;
-		System.out.println("total H-->" + initonsH);
-		System.out.println("ratio of H -->" + linesRatio[totalLines][14]);
+		//System.out.println("total H-->" + initonsH);
+		//System.out.println("ratio of H -->" + linesRatio[totalLines][14]);
+		linesChar[totalLines][14] = 14;//方便排序
+		if(linesRatio[totalLines][14] > 0) {
+			//linesInitons[totalLines] += "H";
+		}
 		
 		linesRatio[totalLines][15]=initonsF/totalInitons;
-		System.out.println("total F-->" + initonsF);
-		System.out.println("ratio of F -->" + linesRatio[totalLines][15]);
+		//System.out.println("total F-->" + initonsF);
+		//System.out.println("ratio of F -->" + linesRatio[totalLines][15]);
+		linesChar[totalLines][15] = 15;//方便排序
+		if(linesRatio[totalLines][15] > 0) {
+			//linesInitons[totalLines] += "F";
+		}
 		
 		
 		
@@ -1690,3 +1837,76 @@ ratio of F -->0.0
 /C_L_P/P_V/.DS_Store
 
 */
+
+
+/*
+ * 文件夹索引缩进优化的当前文件可缩进编辑形式，macro计算 和 宏调度引用平均消费 速度效率提高5倍左右。
+ * ullVUHQI
+/C_L_I/I_Q/hvpcs/CIIUIH/vpc/V/C
+nullVUHQI
+/C_L_I/I_Q/hvpcs/CIIUIH/vpc/V/C
+nullVUHQI
+/C_L_I/I_Q/hvpcs/CIIUIH/vpc/P/DOVSEDSQVQMSIUE/MC
+nullOPHUVEDSQI
+/C_L_I/I_Q/hvpcs/CIIUIH/vpc/P/EDVQIMIQVSDTIUE/MC
+nullSTPHUEVDQI
+/C_L_I/I_Q/hvpcs/CIIUIH/vpc/P/IQVQMSSQE/MC
+nullPUVHESQI
+/C_L_I/I_Q/hvpcs/CIIUIH/vpc/P/IQVQMSSQE/MC
+nullPUVHESQI
+/C_L_I/I_Q/hvpcs/CIIUIH/vpc/P/IQMSVQOIIVEDSQE/MC
+nullDUOPHSVEQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/IVAXEDIVIQSQXSVQDTAE/MC
+nullUHATXSEDVQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/IVAXEDIVIQSQXSVQDTAE/MC
+nullUHATXSEDVQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/IVAXEDIVIQSQXSVQDTAE/MC
+nullUHATXSEDVQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/IVAXEDIVIQSQXSVQDTAE/MC
+nullUHATXSEDVQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/MC
+nullUTEHDVQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/MC
+nullUTEHDVQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/IMVSIQAE/CM
+nullUTAHSDEVQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/SUSQXSCIAE/MC
+nullTXHAVEDUSQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/SUSQXSCIAE/MC
+nullTXHAVEDUSQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/SUSQXSCIAE/MC
+nullTXHAVEDUSQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/SUSQXSCIAE/MC
+nullTXHAVEDUSQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/MC
+nullUTEHDVQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/EDVQDTAESQVSDTSQAE/MC
+nullHUATSEVDIQ
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/MC
+nullUTEHDVQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/MC
+nullUTEHDVQI
+/C_L_I/I_Q/hvpcs/CIIUIH/EDVQIMVQDT/MC
+nullUTEHDVQI
+/C_L_I/I_Q/hvpcs/SIVQSQ/MSIVAESQ/CM
+nullEAVIQS
+/C_L_I/I_Q/hvpcs/SIVQSQ/MSIVAESQ/CM
+nullEAVIQS
+/C_L_I/I_Q/hvpcs/SIVQSQ/S/C
+nullVIQS
+/C_L_I/I_Q/hvpcs/SIVQSQ/S/C
+nullVIQS
+/C_L_I/I_Q/hvpcs/SIVQSQ/S/C
+nullVIQS
+/C_L_I/I_Q/hvpcs/SIVQSQ/S/C
+nullVIQS
+/C_L_I/I_Q/hvpcs/SIVQSQ/S/C
+nullVIQS
+/C_L_I/I_Q/hvpcs/SIVQSQ/S/C
+nullVIQS
+/C_L_I/I_Q/hvpcs/SIVQSQ/S/C
+nullVIQS
+/C_L_I/I_Q/hvpcs/SIVQSQ/S/C
+nullVIQS
+/C_L_I/I_Q/hvpcs/SIVQSQ/S/C
+ * */
