@@ -1,6 +1,8 @@
 package test.java.InterfaceTest.PDE.tree;
 
 import java.io.File;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
@@ -26,6 +28,14 @@ public class RootListShow{
 	 static float[][] linesChar = new float[2223][16]; //0-15 对应 A-F 方便排序
 	 static String[] linesInitons = new String[2223];
 	 static String[] linesIndex = new String[2223];
+	 
+	 /*
+	  * 1 这时候我需要一个map，进行将函数名和索引名单一化，
+	  * 2 单一化索引名后，开始将索引名3个元基展开，进行索引文件夹枝叶化
+	  * -- 罗瑶光
+	  * */
+	 static LinkedHashMap<String, String> indexedInitonsMap= new LinkedHashMap<>();
+	 
 	 
 	 public static void main(String[] argv) {
 		 //println
@@ -103,9 +113,88 @@ public class RootListShow{
 			    	 }
 		    	 }
 		     }
-		     System.out.println(linesInitons[i]);
-		     System.out.println(linesIndex[i]);
+		     //System.out.println(linesInitons[i]);
+		     //System.out.println(linesIndex[i]);
+		     indexedInitonsMap.put(linesInitons[i], linesIndex[i]);
+		     //later map进行单一化 去重
+		     Iterator<String> iterators=  indexedInitonsMap.keySet().iterator();
+		     //然后开始函数重排。
+		     while(iterators.hasNext()) {
+		    	 String string = iterators.next();
+		         System.out.println(string);
+		         String value = indexedInitonsMap.get(string);
+			     System.out.println(value);
+			     //三元化 包名索引重构
+			     String threeTupes = "";
+			     if(null != value) {
+			    	  value = value.replace("null", "");
+			    	 for(int j = 0; j < value.length(); j++ ) {
+			    		 int k = j % 3;
+				    	 if(k == 0) {
+				    		 threeTupes += "."; 
+				    	 }
+				    	 threeTupes += value.charAt(j);
+				     }	 
+			     }
+			     if(threeTupes.length() > 1) {
+			    	 threeTupes= threeTupes.substring(1, threeTupes.length());
+			     }
+			     System.out.println(threeTupes);	 
+			     indexedInitonsMap.put(string, threeTupes);
+			     /*
+			      * 于是开始思考三元基map的分层索引模型构造方式 基于indexedInitonsMap的value
+			      * 方便整体文件夹全部替换成 十六元语义元基索引。
+			      * --罗瑶光
+			      * 
+			      * --元基索引通过新陈代谢进行生长的方式--
+			      * 
+			      * IXD.QVP.S
+/C_L_P/P_V/PCS/EDVQIMVQDT/MC
+nullTESIQDVP
+TES.IQD.VP
+/C_L_P/P_V/PCI/ASQ/IQEDVS/C
+nullDAEQSIVP
+DAE.QSI.VP
+/C_L_P/P_V/PCI/ASQ/DCIVAEVQCIVSSQXSVQDT/C
+nullXETDAPIQSV
+XET.DAP.IQS.V
+/C_L_P/P_V/PCI/ASQ/AEEDVQMSIV/MC
+nullDEQSIAVP
+DEQ.SIA.VP
+/C_L_P/P_V/PCI/ASQ/SIVSAEXSED/C
+nullXQDEIAVPS
+XQD.EIA.VPS
+/C_L_P/P_V/PCI/ASQ/MSVSSQXSVQ/MC
+nullIXAPQVS
+IXA.PQV.S
+/C_L_P/P_V/PCI/ASQ/XSAESUIVDCVSSQIV/C
+nullEXDUAQIPVS
+EXD.UAQ.IPV.S
+/C_L_P/P_V/PCI/ASQ/DCIVIMIVDTAEXSVQDT/MC
+nullXETSAQPDIV
+XET.SAQ.PDI.V
+/C_L_P/P_V/PCI/ASQ/IQMSVQSIVSSIXSCIXSSQIU/MC
+nullAUXVPQIS
+AUX.VPQ.IS
+/C_L_P/P_V/PCI/ASQ/XSIMVSIHIV/MC
+nullQXHAVSPI
+QXH.AVS.PI
+/C_L_P/P_V/PCI/ASQ/AESQVSSQXSAESQXSED/C
+nullIDXVEAPQS
+IDX.VEA.PQS
+/C_L_P/P_V/C
+nullVP
+VP
+			      * 
+			      * */
+			     
+			     
+		     }
 		 }
+		 /*
+		  * 
+		  * */
+		 
 		 
 		 //2 排序后进行linesInitons[totalLines] 添加索引序列
 		 
@@ -1840,7 +1929,7 @@ ratio of F -->0.0
 
 
 /*
- * 文件夹索引缩进优化的当前文件可缩进编辑形式，macro计算 和 宏调度引用平均消费 速度效率提高5倍左右。
+ * 当前文件可缩进编辑形式，macro引用平均调度速度提高5倍左右。
  * ullVUHQI
 /C_L_I/I_Q/hvpcs/CIIUIH/vpc/V/C
 nullVUHQI
