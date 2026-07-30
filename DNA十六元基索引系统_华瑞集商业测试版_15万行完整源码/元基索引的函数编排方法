@@ -4,6 +4,11 @@ import java.io.File;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 
+import ME.VPC.M.app.App;
+import U_A.PEU.P.SQVSSICIIV.TableSorterZYNK;
+import U_V.OEU.AXUDIQAX.SDEDIMAE.AEVQMSSQ.SQAEIQ.LYG10D13D_X_CAS;
+import V_A.SQ.ReadPinYinBihua;
+
 /*
  * 个人著作权人, 作者 罗瑶光, 浏阳
  * yaoguangluo@outlook.com, 313699483@qq.com, 2080315360@qq.com,
@@ -35,7 +40,8 @@ public class RootListShow{
 	  * -- 罗瑶光
 	  * */
 	 static LinkedHashMap<String, String> indexedInitonsMap= new LinkedHashMap<>();
-	 
+	 static LinkedHashMap<String, String> indexedInitonsMapVK= new LinkedHashMap<>();
+	 static String[] indexedInitonsMapV = new String[464];
 	 
 	 public static void main(String[] argv) {
 		 //println
@@ -116,9 +122,13 @@ public class RootListShow{
 		     //System.out.println(linesInitons[i]);
 		     //System.out.println(linesIndex[i]);
 		     indexedInitonsMap.put(linesInitons[i], linesIndex[i]);
+		 }
+		 
+		 //
 		     //later map进行单一化 去重
 		     Iterator<String> iterators=  indexedInitonsMap.keySet().iterator();
 		     //然后开始函数重排。
+		     int reg = 0;
 		     while(iterators.hasNext()) {
 		    	 String string = iterators.next();
 		         System.out.println(string);
@@ -127,7 +137,7 @@ public class RootListShow{
 			     //三元化 包名索引重构
 			     String threeTupes = "";
 			     if(null != value) {
-			    	  value = value.replace("null", "");
+			    	 value = value.replace("null", "");
 			    	 for(int j = 0; j < value.length(); j++ ) {
 			    		 int k = j % 3;
 				    	 if(k == 0) {
@@ -137,10 +147,18 @@ public class RootListShow{
 				     }	 
 			     }
 			     if(threeTupes.length() > 1) {
-			    	 threeTupes= threeTupes.substring(1, threeTupes.length());
+			    	 threeTupes = threeTupes.substring(1, threeTupes.length());
 			     }
 			     System.out.println(threeTupes);	 
 			     indexedInitonsMap.put(string, threeTupes);
+			     
+			     //互换
+			     indexedInitonsMapVK.put(threeTupes, string);
+			     if(null != threeTupes) {
+			    	 indexedInitonsMapV[reg++] = threeTupes;	 
+			     }else {
+			    	 indexedInitonsMapV[reg++] = "";
+			     }
 			     /*
 			      * 于是开始思考三元基map的分层索引模型构造方式 基于indexedInitonsMap的value
 			      * 方便整体文件夹全部替换成 十六元语义元基索引。
@@ -189,18 +207,513 @@ VP
 			      * */
 			     
 			     
-		     }
+		     
 		 }
 		 /*
+		  * 上面的这种结构，因为是已经排序好的状态，所以最开始的元基字母，可以直接进行16个元基索引
+		  * 开始划分。这时候，需要我的德塔拼音笔画排序进行 处理。
 		  * 
+		  * 我现在要做一个算法设计，将一个已经三元化的map进行value的字母排序。
+		  * 所以我要做一个逆向map，将key value变成value key，然后将value进行数组，然后排序，
+		  * 并最终变成一个数组。这个排序后的数组方便我函数分包。
+		  * 
+		  * 目前含有464个可索引项。包含2222个函数，进行分包索引。
+		  * 
+		  * --罗瑶光
 		  * */
-		 
+		     
+		 String[] strings = sortIndexedInitonsMapVK(indexedInitonsMapV);
 		 
 		 //2 排序后进行linesInitons[totalLines] 添加索引序列
 		 
 		 //3 之后文件夹函数文件按linesInitons[totalLines] 进行重新分包排列
 	 }
 
+	private static String[] sortIndexedInitonsMapVK(
+		String[] input) {
+		String [] output;
+		App NE = new App();
+		ReadPinYinBihua.getPinYinBihuaMap(NE);
+		TableSorterZYNK tableSorterZYNK = new TableSorterZYNK(NE);
+		int returnInt = new LYG10D13D_X_CAS()
+				.quick4DChineseStringArrayWithSmallInTwoChar3bihuaReturns(
+					input, 0, 463, 30, ReadPinYinBihua.pinYin,
+						ReadPinYinBihua.biHua, 7, 70);
+		for (String string : input) {
+			System.out.println(string);
+			//S_CIVQIHIVMS.Log.logger.info("" + string);
+		}
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+/*
+ *  464个索引包排序后的列表如下稍后可直接按此DNA语义十六元基花重新设计分包索引文件夹肽花索引模型 
+ *  --罗瑶光 送给世界的礼物。
+ * ADO.PXV.IQS
+ADQ.UIO.VS
+ADS.QUV.E
+AEI.DPU
+AEI.DSP.VU
+AEI.DUQ.TXH.OVS
+AEI.QVS
+AEP.U
+AE
+AE
+AES
+AES.HPO.QIV
+AEU.S
+AEX.HPV.SUI
+AEX.SDI.PVQ.O
+AI
+AIO
+AIO
+AIO.VSQ
+AIT.XEP.VDU.QS
+AIU.QVD.ES
+AIV.QS
+AIV.SEP.Q
+AOD.XQS.IV
+AOQ
+AOQ.XPT.IVS.D
+AOQ.IS
+APE.VSQ.OI
+APH.QSI.EV
+APQ
+APT.XED.VQS
+APT.XUI.DVS
+AQ
+AQ
+AQE.VPU.IS
+AQE.DVI.S
+AQE.IXV.US
+AQS.XEV.U
+AQT.XHD.VSI
+AQX.VEP.SIU
+AS
+ASQ.V
+ATE.ODQ.VS
+ATE.SXD.QIV
+ATX.DSI.QV
+ATX.DSI.QV
+ATX.PED.IQS.V
+AU
+AUT.XVE.SIQ.D
+AUD.EQV.SI
+AUQ.VXE.IS
+AUX.VPQ.IS
+AUQ.OIX.VS
+AV
+AVT.XED.SI
+AVI.OEQ.SP
+AVX.ESI.U
+AVQ.IS
+AVQ.EUS
+AXD.UQS.IPV.EO
+AXD.UQS.IPV.EO
+AXH.PSU.IV
+AXH.PVO.IS
+A
+A
+A
+A
+AXO.QPI.DEV.S
+AXO.QPI.DEV.S
+AXV.UID.ES
+AXV.USI.DE
+DAE.QSI.VP
+DAP.XVS.QIO.E
+DAQ.TES.IV
+DAQ.TSI.VE
+DAS.VOQ.EIP
+DAV.OIQ.SPE
+DEQ.PVS.OI
+DEQ.SIA.VP
+DIA.PVO.EQS
+DOE.HXU.QIV.S
+DOT.AVX.QEP.SI
+DOV.SQ
+DOV.XAS.IQ
+DPQ.VXI.EAS
+DPT.EIX.AVQ.S
+DPT.XVS.QIE.A
+DPV.XAS.IOQ
+DQA.ESI.VOU
+DQE.XPU.VSO
+DQT.OEA.I
+DQX.ISA.VPU.E
+DTX.VOQ.IS
+DUA.VIO.SQE
+DUO.PHS.VEQ.I
+DUP.EIV.SOQ
+DUQ.APE.SIV
+DUQ.PVE.SAI
+DUV.IOQ.S
+D
+D
+DVX.EOS.AQ
+DVU.IOE.S
+DXE.SAV
+DXU.AIP.VOS
+DXV.SEA
+EAP.VSQ.OI
+EAS.IVD.Q
+EAT.PDX.IVQ.S
+EAU.OPX.VSI
+EAU.QSV.I
+EAU.VS
+EAV.IQS
+EAV.QIS
+EDQ.TPV.UIA.XS
+EDV.ISU
+EIA.QVS
+EID.QUV.S
+EIP.OTQ.XUV.DS
+EIS.OVQ
+EOP.ATX.DSI.QV
+EOQ.VPS.ADI
+EOT.XPQ.VID.AS
+EPA.SQD.IV
+EPD.QSU.IV
+EPU.TXO.VAQ.DS
+EQI.APV.SO
+EQS.IDV.A
+EQS.IPX.VA
+EQV.SIU
+ESD.AIQ.V
+ESH.VPO
+ESV.PO
+ETQ.DIS.V
+EUQ.PXA.VID.S
+EXD.PVQ.OSI.A
+EXD.UAQ.IPV.S
+EXH.IVU.S
+EXI.PQA.UVS
+EXP.DTA.HUQ.VIS
+EXS.QIA.VO
+E
+E
+E
+E
+E
+E
+FQV.IUO.S
+FQV.IUO.S
+FQV.IUO.S
+FQV.IUO.S
+FQV.IUO.S
+FQV.IUO.S
+FVU.QIO.S
+HAX.EUQ.IVS
+HDA.TXO.EIV.QS
+HPS.V
+HTV.QAU.SDE.I
+HUA.TSE.VDI.Q
+HUX.PAS.VOQ.IE
+IAE.QSV.PO
+IA
+IA
+IAO.S
+IAO.S
+IAO.SVQ.EP
+IAQ.SVE.P
+IAT.XPE.DVS.Q
+IAU.XHS.PVO.QE
+IAV.QPO.ES
+IDA.PEV.QS
+IDO.PEV.ASQ
+IDO.QPV.AUE.S
+IDP.AVE.SQ
+IDP.USV
+IDX.VEA.PQS
+IEP.A
+IEV.DQS
+IEV.US
+IEV.US
+IPO.AEU.VSQ
+IPT.EAQ.DV
+IQA.XSD.VPU.E
+IS
+ITX.ADE.UQV.S
+IUT.AEQ.XDV.S
+I
+I
+IVA.OPS
+IVS.O
+IVQ.S
+IXA.PQV.S
+IXA.UES.POV
+IXD.QVP.S
+OED.QIV.US
+OEP.XQA.IDS.V
+OIS
+OIU.VS
+OPE
+OPH.UVE.DSQ.I
+OPT.IQS.DV
+OPX.DEI.AQV.S
+OQA.SVE.IU
+OQT.XPA.SD
+OQV.S
+OTP.IXA.EDQ.VS
+OTX.EAD.QIV.S
+O
+O
+OUA.IVE.QPS
+OUQ.AXE.IVS
+OUX.ATI.QSV.D
+OVA.S
+OVE.U
+OXA.IUV.QS
+OXV.IDS.UAQ.E
+PAQ.TXO.SIH.VED
+PAV
+PAX.DUE.IQV.S
+PDA.QVX.ES
+PDU.QAH.OS
+PE
+PES.AVI.U
+PEO
+PEI.DAQ.VS
+PHA.VQX.IS
+PHQ.XSI.EVA
+PIA.QVO.SE
+PIV.XQA.S
+POQ.DSV.I
+PQA.XSI.EDV
+PQE.VDU.SO
+PQE.VUA.SI
+PQI.DSV
+PSV
+PSV
+PTA.EOD.XSQ.VI
+PTA.EXS.DIQ.V
+PTA.SDI.Q
+PTE.DIA.SQV.O
+PTO.IAE.XVQ.DS
+PTO.QIA.EVD.XS
+PTX.QDV.EIA
+PUQ.AES.I
+PUV.EXH.IOS
+PUV.HAI.SQ
+PUV.HES.QI
+PV
+PVE.SHI
+PVE.SXQ.AI
+PVU.IOQ.S
+PXA.EHS.VI
+PXA.ETD.QVS
+PXD.UAV.OSI.Q
+PXD.UOA.VSI.QE
+P
+P
+PXE.VDU.SO
+QDA.VI
+QEI.VUS
+QEI.VUS
+QEP.DUV.SO
+QEP.UVD.SO
+QEX.DAI.SV
+QEX.SAV.IO
+QHU.I
+QHU.I
+QHV.IS
+QI
+QI
+QIX.AUS
+QOI.DUV.S
+QOX.IDS.EUV
+QPA.UVE.SIO
+QPE.DUI.VOS
+QPS.DUI.EA
+QSI.V
+QSP.A
+QTE.ADP.IU
+QTH.AVX.EDU.IS
+QTI.OEA.VDS
+QTO.UEA.VDS
+QTX.PIV.DA
+Q
+QV
+QVX.AHI.S
+QVX.IAE.US
+QVI.UOS
+QXH.AVS.PI
+QXP.TDV.IA
+SAD.VEU
+SAQ.XEP.IVU
+SIA.PVO
+SID.QTA.OEV.U
+SIQ.AXH.EPU
+SIQ.POV.EDU
+SIQ.TXH.EVD.O
+SIV.AOP
+SIV.O
+SIV.O
+SOE.DPQ.VAI
+SOQ.VEP.ADI
+STP.HUE.VDQ.I
+SVE.U
+SVE.U
+S
+S
+SV
+SV
+SVP
+SVP
+SVU.D
+SXD.AIV.PQO.E
+TAD
+TAE.UDX.QIV.S
+TAS
+TDQ.ISV
+TDQ.SIV
+TES.IQD.VP
+TID.ASV.Q
+TID.EVX.AQS
+TID.PVO.AEQ.S
+TIE.QDV
+TIX.ADE.QVS
+TOI.QAP.XVU.EDS
+TOQ.EAV.DS
+TOU.IDE.QAV.S
+TPD.XAV.QS
+TPE.HQD.XVS.I
+TPQ.EXA.DVO.IS
+TQV.IUO.S
+TSA
+TSV.QEA.PDU
+TUD.AOQ.SVI.PE
+TUD.PVQ.ESI.O
+TUP.DOS.EIV.Q
+TXA.DEO.SPV.I
+TXA.OEQ.VID.S
+TXA.PID.VEO.QS
+TXA.UDE.QSV.I
+TXD.API.VOU.QES
+TXD.UIV.ASE
+TXD.UIV.SAE
+TXD.UQI.VEA.S
+TXH.AVE.DUS.QI
+TXI.SPQ.OED.UV
+TXI.SPU.QOE.DV
+TXO.AQE.UVI.DS
+TXP.DUI.VQS
+TXP.OAQ.VDS
+TXQ.ODS.IV
+UAQ.VID.OEP.S
+UDA.IQO.VSE.P
+UED.IQA.VS
+UEI.PVQ.AS
+UEO.PAI.SV
+UEP.AIS.OV
+UHA.TXS.EDV.QI
+UIV.OQS
+UIV.OQS
+UIV.OQS
+UOT.XDV.IAE.S
+UOV.S
+UP
+UPT.XEI.VDO.S
+UPX.HSV.I
+UPV.DQI.AES
+UQE.PVO.SDA.I
+UQI.DAV.OSE.P
+USD
+UTA.EXS.QVI.D
+UTA.HSD.EVQ.I
+UTE.HDV.QI
+UTI.DVS.Q
+U
+U
+UTO.QAV.DSE.IP
+UTO.QAS.DVE.IP
+UTO.PAE.DVX.IQS
+UTO.ADE.IQV.S
+UVA.TEQ.SD
+UVQ.IOS
+UXH.AET.DVQ.IS
+UXI.TSP.OEV.QD
+VA
+VA
+VAH.OED.IU
+VAQ.S
+VAQ.S
+VAT.SQE.D
+VA
+VAU.QIP.EOS
+VEA
+VEP.OS
+VES.IPO
+VE
+VE
+VE
+VEX.AOQ.I
+VEX.ISU.Q
+VEX.AQU.S
+VIA.OEQ.PS
+VIA.OEQ.SP
+VIA.QPD.EOS
+VIA.SQE.U
+VID.QTX.HAE.US
+VID.QTX.HAE.US
+VIQ.S
+VIQ.S
+VO
+VOP.IEA.Q
+VOI.EAQ
+VP
+VPS.IQ
+VQ
+VQA.EPI.OS
+VQA.SPE.U
+VQD.AI
+VQE.IAX.PUS
+VQS
+VQX.SHI
+VSI.Q
+VSI.Q
+VSI.Q
+VSQ.A
+VTE.SAD.PU
+VTX.DAI.SE
+VU
+VU
+VUH.QI
+VUI.OQS
+VUS
+V
+V
+V
+V
+VXE.PAI
+XAE.TPQ.DVS
+XAI.QSV
+XAT.EPQ.DVI.OS
+XDP.AIQ.ESV
+XDQ.ATI.V
+XDU.VSQ.I
+XEP.TQI.DAS.V
+XET.DAP.IQS.V
+XET.SAQ.PDI.V
+XHQ.EAV.IS
+XHQ.ETS.IUV.D
+XIE.UQV.S
+XOE.QVP.SDA.I
+XPD.OAE.VIS.Q
+XPE.ADQ.IOV.S
+XPI.S
+XQD.EIA.VPS
+XQV.OIP.AS
+XSE.DVQ.I
+XTP.SIQ.EOD.UV
+XUO.IAD.EVQ.S
+
+708-251-457-- 464-457=7个相同包。
+
+ * 
+ * 
+ * */
 	private static void printFiles(File file) {
 		if(file.isFile()) {
 			String string = file.getPath();
